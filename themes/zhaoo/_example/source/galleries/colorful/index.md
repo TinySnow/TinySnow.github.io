@@ -1,4 +1,0 @@
----
-title: colorful
-layout: "gallery"
----
