@@ -1,0 +1,20 @@
+{
+  "name": "blog-vuepress",
+  "version": "1.0.0",
+  "description": "A blog website from TinySnow.(Temporarily)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "keywords": [
+    "blog",
+    "techology"
+  ],
+  "author": "TinySnow (lo.tinysnow.ol@outlook.com/lo.tinysnow.ol@foxmail.com/lo.tinysnow.ol@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.22"
+  }
+}
