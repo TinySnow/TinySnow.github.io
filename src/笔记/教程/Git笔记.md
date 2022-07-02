@@ -1,4 +1,6 @@
-# 学习笔记
+# Git笔记
+
+## 学习笔记
 
 　　1. Git 是分布式的版本控制系统
 
@@ -84,7 +86,7 @@
 
 
 
-# 命令
+## 命令
 
 　　1. `git status` 查看仓库当前的状态
 
@@ -165,7 +167,7 @@
 
 
 
-# 常见错误
+## 常见错误
 
 　　1. `fatal: not a git repository (or any of the parent directories)`
 

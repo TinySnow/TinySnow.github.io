@@ -1,3 +1,5 @@
+# GalGame 记录
+
 　　Making Lovers
 
 
