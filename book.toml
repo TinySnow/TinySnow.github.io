@@ -9,7 +9,8 @@ src = "src"
 [output.html]
 default-theme = "light"
 preferrd-dark-theme = "navy"
-no-section-label = true
+# google-analytics = "GTM-5VTTZ9C"
+# no-section-label = true
 git-repository-url = "https://github.com/TinySnow/TinySnow.github.io"
 git-repository-icon = "fa-github"
 input-404 = "404.md"
