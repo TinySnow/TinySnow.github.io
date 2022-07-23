@@ -59,6 +59,7 @@ https://tinysnow.github.io/技术/ArchRISC-V/ArchRISC-V
 https://tinysnow.github.io/技术/ArchRISC-V/FrequentlyUsed
 https://tinysnow.github.io/技术/ArchRISC-V/IssueTemplate
 https://tinysnow.github.io/技术/ArchRISC-V/Workflow
+https://tinysnow.github.io/技术/ArchRISC-V/工作注意事项
 https://tinysnow.github.io/技术/Java/AnnotationsAndReflection
 https://tinysnow.github.io/技术/Java/HighConcurrencyKnowledge
 https://tinysnow.github.io/技术/Java/Java
@@ -128,6 +129,7 @@ https://tinysnow.github.io/断章/文章/蕴愈彼此，共渡红尘
 https://tinysnow.github.io/断章/文章/语言漫谈
 https://tinysnow.github.io/断章/文章/追随
 https://tinysnow.github.io/断章/文章/通往优秀的路上，痛苦是一种试炼
+https://tinysnow.github.io/断章/文章/阑珊，散落人间
 https://tinysnow.github.io/断章/文章/随便聊聊
 https://tinysnow.github.io/断章/文章/随想录
 https://tinysnow.github.io/断章/文章/韧尽万花春绽美，待到寒冬自释香 - 2021年度总结
@@ -138,6 +140,7 @@ https://tinysnow.github.io/断章/胡言/胡言乱语之三
 https://tinysnow.github.io/断章/胡言/胡言乱语之二
 https://tinysnow.github.io/断章/胡言/胡言乱语之四
 https://tinysnow.github.io/断章/诗词/Hide and Seek
+https://tinysnow.github.io/断章/诗词/一如既往
 https://tinysnow.github.io/断章/诗词/一瞬间
 https://tinysnow.github.io/断章/诗词/不屈
 https://tinysnow.github.io/断章/诗词/减字木兰花 · 伊愿
@@ -163,6 +166,7 @@ https://tinysnow.github.io/断章/诗词/春秋三载
 https://tinysnow.github.io/断章/诗词/期冀
 https://tinysnow.github.io/断章/诗词/期待
 https://tinysnow.github.io/断章/诗词/极端
+https://tinysnow.github.io/断章/诗词/沉睡在天空之上
 https://tinysnow.github.io/断章/诗词/清平乐 • 琴韵
 https://tinysnow.github.io/断章/诗词/点绛唇 • 祈珍
 https://tinysnow.github.io/断章/诗词/纸鸢
@@ -227,6 +231,11 @@ https://tinysnow.github.io/断章/随记/随记 - 2022 年 3 月 28 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 4 月 1 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 4 月 3 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 5 月 2 日
+https://tinysnow.github.io/断章/随记/随记 - 2022 年 5 月 25 日
+https://tinysnow.github.io/断章/随记/随记 - 2022 年 6 月 3 日
+https://tinysnow.github.io/断章/随记/随记 - 2022 年 7 月 13 日
+https://tinysnow.github.io/断章/随记/随记 - 2022 年 7 月 21 日
+https://tinysnow.github.io/断章/随记/随记 - 2022 年 7 月 7 日
 https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
 https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
 https://tinysnow.github.io/笔记/教程/Basic Elements

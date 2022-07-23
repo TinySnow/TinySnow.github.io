@@ -40,7 +40,7 @@ elif [[ $1 == '-e' || $1 == '--execute' ]]; then
 		# 进行 git 提交
 		git add .
 		# 提交 message 取第二个参数，需要打引号
-		git commit -m "\"$2\""
+		git commit -m "$2"
 		# 推送至远程仓库
 		git push origin master
 		# echo "\"$2\""

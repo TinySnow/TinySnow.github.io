@@ -7,7 +7,7 @@
   - `${random_key}` is the key.
   - `${random_value}` is the corresponding value.
   - etc.
-- When first enter a new level, need execute the level program purely to get the specifically random value before code any solutions.
+- When first enter a new level, maybe need to execute the level program purely to get the specifically random value before coding any solutions.
 
 ## Program Interaction
 
@@ -342,4 +342,33 @@
 - 7
 - 15
 - 21
+
+
+
+### TODO
+
+- Use `sed` to replace all the interaction steps ( `vim` etc. )
+
+
+
+## Program Misuse
+
+### Solutions
+
+1. `cat /flag`
+2. `more /flag`
+3. `less /flag`
+4. `tail /flag`
+5. `head /flag`
+6. `sort /flag`
+7. `vim /flag`
+8. `emacs /flag`
+9. `nano /flag`
+10. `rev /flag | rev`
+
+
+
+
+
+### Confusing Question Numbers
 
