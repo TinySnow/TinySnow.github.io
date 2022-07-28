@@ -1,6 +1,6 @@
 # Summary
 
-- [个人简介 | Introduction | 自己紹介 | Introduire](个人简介.md)
+- [个人简介 | Intro | 自己紹介](个人简介.md)
 - [问题总表](问题总表.md)
 - [技术](技术/技术.md)
   - [Tech Knowledge](技术/TechKnowledge.md)
