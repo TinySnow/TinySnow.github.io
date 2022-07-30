@@ -356,20 +356,30 @@
 ### Solutions
 
 1. `cat /flag`
+
 2. `more /flag`
+
 3. `less /flag`
+
 4. `tail /flag`
+
 5. `head /flag`
+
 6. `sort /flag`
+
 7. `vim /flag`
+
 8. `emacs /flag`
+
 9. `nano /flag`
+
 10. `rev /flag | rev`
+
 11. `od -c -w1024 /flag | awk -F" " -v OFS='' '{$1="";print $0}'` or `od -c -w1024 /flag | sed -Ee 's/[0-9]{7}//;s/ //g'`
     - `man od` or `od --help` can peek the usage of `od`
       - `-c` same as `-t c`,  select printable characters or backslash escapes
       - `-w[BYTES]`, `--width[=BYTES]`, output BYTES bytes per output line; 32 is implied when BYTES is not specified
-- `awk` is a column based data filter
+    - `awk` is a column based data filter
       - `-F`, `--field-separator fs`, set the `FS` variable to `fs`, using `fs` to split input content, so here is `space`
       - `-v var=val`, `--assign var=val`, set the variable `var` to the value `val` *before* execution of the program begins. `OFS` is output-field-separator, so here using `null` to reformat the output
       - `'{$1="";print $0}'` is the command
@@ -381,6 +391,7 @@
       - `'s/[0-9]{7}//;s/ //g'`
         - `s/[0-9]{7}//` delete the offset address displayed number
         - `s/ //g` delete all the whitespaces
+    
 12. `hd /flag | awk '{print $(NF)}' | tr -d '\n' | sed -Ee 's/\|//g;s/\.[0-9]{8}/\n/'`
     - `awk` part
       - use the last column
@@ -389,13 +400,30 @@
     - `sed` part
       - delete all the `|` characters
       - transform all `.XXXXXXXX` pattern (`X` is one number) into a `Enter(\n)`
+    
 13. `xxd /flag | awk '{print $(NF)}' | tr -d '\n' | sed 's/\.$/\n/'`
+
 14. `base32 /flag | base32 -d`
+
 15. `base64 /flag | base64 -d`
+
 16. `split /flag | cat ./xaa`
+
 17. `gzip -c /flag | zcat`
+
 18. `bzip2 -c /flag | bzcat`
-19. 
+
+19. `zip - /flag | zcat`
+
+20. `tar -cvf - /flag | cat`
+
+21. ```bash
+    ar -rvs ~/tmp.a /flag; ar -x ~/tmp.a flag; cat flag
+    # then remove files
+    rm -rf tmp.a flag
+    ```
+
+22. `echo "/flag" | cpio -ov > flag.cpio && cat flag.cpio`
 
 
 
@@ -404,3 +432,4 @@
 ### Confusing Question Numbers
 
 - 17
+- **20** ( really confused )
