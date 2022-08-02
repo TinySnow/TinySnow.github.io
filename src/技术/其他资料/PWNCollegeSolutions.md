@@ -425,11 +425,71 @@
 
 22. `echo "/flag" | cpio -ov > flag.cpio && cat flag.cpio`
 
+23. `genisoimage -sort /flag -o - /flag` **EXTREMELY HARD**
+    Related explain in confusing numbers.
 
+24. `env -i cat /flag`
 
+25. `find / -maxdepth 1 -name flag -exec cat {} \;`
 
+26. `echo -e "ans: /flag\n\tcat /flag" > Makefile && make`
+
+27. `nice cat /flag`
+
+28. `timeout 1000 cat /flag`
+
+29. `stdbuf -o L cat /flag`
+
+30. `setarch x86_64 -v cat /flag`
+
+31. `watch -x cat /flag`
+
+32. `socat - /flag`
+
+33. `whiptail --textbox /flag 20 60`
+
+34. `awk '{print $0}' /flag`
+
+35. `sed -n 'p' /flag`
+
+36. ```bash
+    ed /flag
+    .
+    q
+    ```
+
+37. `chown -v hacker /flag && cat /flag`
+
+38. `chmod 444 /flag && cat /flag`
+
+39. `cp -v --no-preserve=all /flag ./flag && cat ./flag && rm -rf ./flag`
+
+40. `placeholder`
+
+41. `perl -e 'open(FILE,"</flag");$line=<FILE>;foreach ($line){print $_;}'`
+
+42. `python -c 'print(open("/flag").read())'`
+
+43. `echo 'puts File.read("/flag")' > test.rb && /usr/bin/ruby test.rb && rm -rf test.rb`
+
+44. `placeholder`
+
+45. `date -f /flag`
+
+46. `dmesg -F /flag`
+
+47. `wc --files0-from=/flag`
+
+48. `placeholder`
+
+49. `as @/flag`
+
+50. 
 
 ### Confusing Question Numbers
 
 - 17
 - **20** ( really confused )
+- 23
+  - `genisoimage --help 2>&1 | grep FILE`
+  - [https://www.youtube.com/watch?v=14mIjpOXnrM&t=733](https://www.youtube.com/watch?v=14mIjpOXnrM&t=733)
