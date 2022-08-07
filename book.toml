@@ -11,6 +11,8 @@ default-theme = "light"
 preferrd-dark-theme = "navy"
 # google-analytics = "GTM-5VTTZ9C"
 # no-section-label = true
+additional-css = ["theme/style3.css"]
+additional-js = ["assets/custom.js", "assets/bigPicture.js"]
 git-repository-url = "https://github.com/TinySnow/TinySnow.github.io"
 git-repository-icon = "fa-github"
 input-404 = "404.md"
@@ -23,3 +25,10 @@ page-break = true
 [output.html.fold]
 enable = true
 level = 1
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]
+
+[build]
+use-default-preprocessors = false
