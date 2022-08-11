@@ -10,6 +10,8 @@
       - [imagescan](技术/ArchRISC-V/Packages/imagescan.md)
       - [libopenraw](技术/ArchRISC-V/Packages/libopenraw.md)
       - [gnuchess](技术/ArchRISC-V/Packages/gnuchess.md)
+      - [SVT-VP9](技术/ArchRISC-V/Packages/SVT-VP9.md)
+      - [SVT-HEVC](技术/ArchRISC-V/Packages/SVT-HEVC.md)
     - [Frequently Used](技术/ArchRISC-V/FrequentlyUsed.md)
     - [Issue Template](技术/ArchRISC-V/IssueTemplate.md)
     - [Workflow](技术/ArchRISC-V/Workflow.md)
