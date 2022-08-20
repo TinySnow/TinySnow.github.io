@@ -17,7 +17,6 @@ https://tinysnow.github.io/学习/管理学/概论
 https://tinysnow.github.io/学习/管理学/管理学
 https://tinysnow.github.io/学习/管理学/组织
 https://tinysnow.github.io/学习/管理学/规章制度
-https://tinysnow.github.io/学习/零碎知识整理/Street Dance Basic Elements
 https://tinysnow.github.io/学习/零碎知识整理/中文书面语
 https://tinysnow.github.io/学习/零碎知识整理/俄语译码表
 https://tinysnow.github.io/学习/零碎知识整理/分享想法
@@ -59,7 +58,7 @@ https://tinysnow.github.io/技术/ArchRISC-V/ArchRISC-V
 https://tinysnow.github.io/技术/ArchRISC-V/FrequentlyUsed
 https://tinysnow.github.io/技术/ArchRISC-V/IssueTemplate
 https://tinysnow.github.io/技术/ArchRISC-V/Workflow
-https://tinysnow.github.io/技术/ArchRISC-V/工作注意事项
+https://tinysnow.github.io/技术/ArchRISC-V/工作
 https://tinysnow.github.io/技术/Java/AnnotationsAndReflection
 https://tinysnow.github.io/技术/Java/HighConcurrencyKnowledge
 https://tinysnow.github.io/技术/Java/Java
@@ -252,6 +251,7 @@ https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/fluidd
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/gnuchess
+https://tinysnow.github.io/技术/ArchRISC-V/Packages/grafana-agent
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/imagescan
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/libopenraw
 https://tinysnow.github.io/技术/Java/文件模板/JDBC 连接数据库驱动常用写法

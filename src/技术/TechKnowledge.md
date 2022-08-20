@@ -1,69 +1,5 @@
 # Tech Knowledge
 
-## riscv64 和 riscv64gc
-
-riscv64gc=riscv64imacfdZicsrZifencei
-
-- i是base int inst，integer
-- m是乘除拓展
-- a是原子操作拓展，atomic
-- c是压缩指令，compress
-- f是单精度硬浮点，float
-- d是双精度硬浮点，double
-- Zicsr是CSR寄存器及其操作
-- Zifencei是 inst-fetch fence
-- 最后这俩2.2的时候是i的一部分
-- 上面的去掉c简称g，general
-
-## 编译相关
-
-- build：现在编译编译器的平台
-- host：编译器跑的平台
-- target：编译器编译出来的二进制跑的平台
-
-
-
-## Rust 和 Cargo 升级
-
-```bash
-rustup update
-```
-
-## Mdbook 修改端口号
-
-```bash
-mdbook serve --open --port <port>
-```
-
-## git clone 加速
-
-```bash
-git clone -c http.proxy="http://127.0.0.1:7890" <repo_https_address>
-cd <repo>
-git remote set-url origin <repo_git_address>
-```
-
-## soname
-
-- 指 .so name。
-
-## namcap
-
-- pacman 的反写， 是 pkgbuild 以及 arch 包的检查工具
-
-- 官方定义如下：
-
-  > Namcap is a tool to check binary packages and source PKGBUILDs for 
-  > common packaging mistakes, which can also be automatically enabled.
-
-- 一般会出现在 archbuild 的最后： `No soname differences for <package>. `
-
-- 可以视为是 soname capture 的扩展，但不止检查 soname，也会检查其他的，如对齐，relocation，PIC 之类
-
-- 如果有 soname difference，所有依赖这个包的包就都需要重新 rebuild，否则在运行的时候就会出现 `找不到 xxx.so.y` 提示。于是需要一个机制来告诉 packager：有这种变动发生了，你需要去规划一下如何 rebuild。
-
-
-
 ## Missing Semester 笔记
 
 ### 原视频链接
@@ -294,13 +230,98 @@ git remote set-url origin <repo_git_address>
 - `xorg` 接受多输出，然后将其转化为命令行的参数
 - `writegood` 英语语法和单词静态分析器
 
-## C++ Notes
+## Linux 新机器流程
+
+1. 换源（不是国内机器则跳过）
+
+   - 更新源
+   - 更新软件包或滚包（Arch 系列）
+
+2. 下载 `proxychains` 代理（如果没有网络业障则跳过）
+
+   - 配置 `proxychains`
+
+3. 更新 dotfiles
+
+   - 推荐 MIT 老师 Anish 的 dotfiles 一键配置
+   - ```bash
+     cd ~
+     # 如果是 WSL2，先要打开代理软件的 Allow LAN
+     proxychains git clone https://github.com/anishathalye/dotfiles
+     cd dotfiles && proxychains ./install
+     ```
+
+## 杂项
+
+### riscv64 和 riscv64gc
+
+riscv64gc=riscv64imacfdZicsrZifencei
+
+- i是base int inst，integer
+- m是乘除拓展
+- a是原子操作拓展，atomic
+- c是压缩指令，compress
+- f是单精度硬浮点，float
+- d是双精度硬浮点，double
+- Zicsr是CSR寄存器及其操作
+- Zifencei是 inst-fetch fence
+- 最后这俩2.2的时候是i的一部分
+- 上面的去掉c简称g，general
+
+### 编译相关
+
+- build：现在编译编译器的平台
+- host：编译器跑的平台
+- target：编译器编译出来的二进制跑的平台
+
+
+
+### Rust 和 Cargo 升级
+
+```bash
+rustup update
+```
+
+### Mdbook 修改端口号
+
+```bash
+mdbook serve --open --port <port>
+```
+
+### git clone 加速
+
+```bash
+git clone -c http.proxy="http://127.0.0.1:7890" <repo_https_address>
+cd <repo>
+git remote set-url origin <repo_git_address>
+```
+
+### soname
+
+- 指 .so name。
+
+### namcap
+
+- pacman 的反写， 是 pkgbuild 以及 arch 包的检查工具
+
+- 官方定义如下：
+
+  > Namcap is a tool to check binary packages and source PKGBUILDs for 
+  > common packaging mistakes, which can also be automatically enabled.
+
+- 一般会出现在 archbuild 的最后： `No soname differences for <package>. `
+
+- 可以视为是 soname capture 的扩展，但不止检查 soname，也会检查其他的，如对齐，relocation，PIC 之类
+
+- 如果有 soname difference，所有依赖这个包的包就都需要重新 rebuild，否则在运行的时候就会出现 `找不到 xxx.so.y` 提示。于是需要一个机制来告诉 packager：有这种变动发生了，你需要去规划一下如何 rebuild。
+
+### C++ Notes
 
 - If ‘const’ key word is ahead, then the content can’t be changed. If is between type and variable name, then the address in the ROM/RAM can be changed.
 
-## 必要的 Linux 知识
+### 必要的 Linux 知识
 
-### Commands
+#### Commands
 
 ```bash
 # sync           // Synchronize all the changes you made into your hard disk(硬盘).
@@ -320,19 +341,19 @@ git remote set-url origin <repo_git_address>
   1. If you run a command, the screen doesn't appear the output messages(e.g. error messages), that is the command running successfully, otherwise unsuccessfully, for instance, some warning messages, error messages.
   2. If you wanna shutdown you server, please sync your date at first.
 
-### Explanation to the directories at root directory
+#### Explanation to the directories at root directory
 
 - /bin
   - It's the short of Binary, and there exits some common commands.
 - /boot
   - Here are some
 
-### 快捷键
+#### 快捷键
 
 - Ctrl + A : Move the flag to the head;
 - Ctrl + E : Move the flag to the last;
 
-### Others
+#### Others
 
 1. In Linux operating system, all the things are file;
 2. `/` is the root node of file system.

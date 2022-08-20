@@ -25,4 +25,4 @@ panic: Something in this program imports go4.org/unsafe/assume-no-moving-gc to d
 
 ## 思考
 
-- 从该包的修复中总结出了一个流程，详见工作流程。
+- 从该包的修复中总结出了一个流程，详见工作。
