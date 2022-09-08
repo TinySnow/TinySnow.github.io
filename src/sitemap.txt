@@ -250,10 +250,13 @@ https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/fluidd
+https://tinysnow.github.io/技术/ArchRISC-V/Packages/fulcio(Learning)
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/gnuchess
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/grafana-agent
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/imagescan
+https://tinysnow.github.io/技术/ArchRISC-V/Packages/libgovirt(Learning)
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/libopenraw
+https://tinysnow.github.io/技术/ArchRISC-V/Packages/system-config-printer
 https://tinysnow.github.io/技术/Java/文件模板/JDBC 连接数据库驱动常用写法
 https://tinysnow.github.io/技术/Java/文件模板/MyBatis 配置文件基本框架
 https://tinysnow.github.io/技术/Java/文件模板/Spring 配置文件基本框架
