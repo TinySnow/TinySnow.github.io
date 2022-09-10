@@ -127,3 +127,50 @@ echo ""
 fi  # if [ $# -eq 0 ] ends here
 ```
 
+## 新机器 Flow
+
+```bash
+git config --global user.name "TinySnow"
+git config --global user.email "lo.tinysnow.ol@outlook.com"
+
+# 消除 `-bash: hostname: command not found` 提示
+sudo pacman -S inetutils
+
+cd ~
+rm -rf .bashrc .bash_profile
+git clone https://github.com/anishathalye/dotfiles.git && cd dotfiles
+./install
+
+cd ~
+echo -e '\n# append
+export CACHE_DIR="/home/tinysnow/cache"
+# 这里按环境配置可以替换成任意空文件夹
+alias rv64build="updpkgsums && extra-riscv64-build -- -d $CACHE_DIR:/var/cache/pacman/pkg"
+alias nohuprv64build="updpkgsums && nohup extra-riscv64-build -- -d $CACHE_DIR:/var/cache/pacman/pkg &"
+# alias 可以随便改
+alias prep=". ~/.bin/prepare.sh"
+alias gib=". ~/.bin/gib.sh"' >> ~/.bashrc
+
+cd ~
+mkdir ~/.bin
+touch ~/.bin/prepare.sh
+touch ~/.bin/gib.sh
+chmod +x ~/.bin/*.sh
+mkdir ~/archpkgs
+mkdir ~/cache
+
+# 以下手动操作
+vim ~/.bin/gib.sh
+vim ~/.bin/prepare.sh
+# 添加 ssh 私钥
+vim ~/.ssh/id_rsa
+# 更改私钥的权限
+chmod 700 ~/.ssh/id_rsa
+
+cd ~
+git clone git@github.com:TinySnow/archriscv-packages.git
+cd archriscv-packages
+git remote add upstream https://github.com/felixonmars/archriscv-packages.git
+cd -
+```
+

@@ -249,6 +249,7 @@ https://tinysnow.github.io/笔记/记录/软件订阅记录
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
+https://tinysnow.github.io/技术/ArchRISC-V/Packages/distrobuilder
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/fluidd
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/fulcio(Learning)
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/gnuchess

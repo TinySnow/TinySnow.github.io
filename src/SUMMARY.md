@@ -16,6 +16,7 @@
       - [system-config-printer](技术/ArchRISC-V/Packages/system-config-printer.md)
       - [fulcio(Learning)](技术/ArchRISC-V/Packages/fulcio(Learning).md)
       - [libgovirt(Learning)](技术/ArchRISC-V/Packages/libgovirt(Learning).md)
+      - [distrobuilder](技术/ArchRISC-V/Packages/distrobuilder.md)
     - [Frequently Used](技术/ArchRISC-V/FrequentlyUsed.md)
     - [Issue Template](技术/ArchRISC-V/IssueTemplate.md)
     - [Workflow](技术/ArchRISC-V/Workflow.md)
