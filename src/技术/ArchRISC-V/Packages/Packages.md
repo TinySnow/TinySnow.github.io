@@ -38,3 +38,7 @@
 - dante (`config.guess` trivial)
 - iftop (`config.guess` trivial)
 - link-grammar (`config.guess` trivial)
+- arti (Rust `--target "$CARCH-unknown-linux-gnu"` trivial)
+- distrobuilder (`fix-static-declaration-of-lxd` patch)
+- gsoap (`config.guess` trivial)
+- libopenraw (`config.guess` trivial)
