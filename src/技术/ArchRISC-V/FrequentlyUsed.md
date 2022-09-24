@@ -129,6 +129,27 @@ fi  # if [ $# -eq 0 ] ends here
 
 ## 新机器 Flow
 
+1. 换源（不是国内机器则跳过）
+
+   - 更新源
+   - 更新软件包或滚包（Arch 系列）
+
+2. 下载 `proxychains` 代理（如果没有网络业障则跳过）
+
+   - 配置 `proxychains`
+
+3. 更新 dotfiles
+
+```bash
+# 推荐 MIT 老师 Anish 的 dotfiles 一键配置
+cd ~
+# 如果是 WSL2，先要打开代理软件的 Allow LAN
+proxychains git clone https://github.com/anishathalye/dotfiles
+cd dotfiles && proxychains ./install
+```
+
+4. 半自动 bash script
+
 ```bash
 git config --global user.name "TinySnow"
 git config --global user.email "lo.tinysnow.ol@outlook.com"
@@ -173,4 +194,3 @@ cd archriscv-packages
 git remote add upstream https://github.com/felixonmars/archriscv-packages.git
 cd -
 ```
-

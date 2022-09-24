@@ -236,6 +236,7 @@
     - [重装系统](笔记/教程/重装系统.md)
     - [Git 笔记](笔记/教程/Git%20笔记.md)
     - [Basic Elements](笔记/教程/Basic%20Elements.md)
+    - [Street Dance Basics](笔记/教程/Street%20Dance%20Basics.md)
 - [小说](小说/小说.md)
   - [想象力训练](小说/想象力训练/想象力训练.md)
     - [有些事情，不应转瞬即逝](小说/想象力训练/有些事情，不应转瞬即逝.md)

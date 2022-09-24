@@ -1,8 +1,10 @@
 # Tech Knowledge
 
-## Missing Semester 笔记
+## Knowledge
 
-### 原视频链接
+### Missing Semester 笔记
+
+#### 原视频链接
 
 [哔哩哔哩 完整版](https://www.bilibili.com/video/BV1rU4y1h7Qr)
 
@@ -12,7 +14,7 @@
 
 [笔记](https://missing-semester-cn.github.io)
 
-### Shell
+#### Shell
 
 - `$_` 为上一命令最后参数
 - `!!` 为上一命令
@@ -25,7 +27,7 @@
 - `updatedb` 更新系统建立的索引
 - `Ctrl+R` 倒序搜索命令
 
-### vim
+#### vim
 
 - `:sp` 打开新 window
 - `:qa` 退出所有 window
@@ -42,7 +44,7 @@
 - `.` 会重复之前的编辑命令
 - `.vimrc` 配置文件
 
-### 数据整理
+#### 数据整理
 
 - `less` 查看
 - `sed` 基于行修改， `awk` 基于列修改
@@ -53,7 +55,7 @@
 - `gnuplot` 画图工具
 - `feh` 图片查看工具
 
-### 命令行环境
+#### 命令行环境
 
 - 信号机制
   - `man singal`
@@ -74,7 +76,7 @@
 - `ssh` 及其 config 文件
 - `rsync -avP` 推荐使用在复制多文件的情境下
 
-### 版本控制
+#### 版本控制
 
 - `git clone --shallow` 浅克隆，不包括完整的历史版本记录
 - `git add -p <file>` 交互式设置和暂存修改（可以交互式舍弃部分不希望暂存的修改）
@@ -82,7 +84,7 @@
 - `git stash` 隐藏修改，`git stash pop` 显示修改
 - `git bisect`  通过二分查找搜索历史记录
 
-### 调试及性能分析
+#### 调试及性能分析
 
 - `printf` 调试法，大型系统则使用 `log` 分析
 - 控制台输出着色
@@ -99,7 +101,7 @@
 - 资源监控
 - 基准测试等专用工具
 
-### 元编程
+#### 元编程
 
 - `make`
 - 语义版本号
@@ -110,7 +112,7 @@
 - 持续集成
 - 测试
 
-### 安全和密码学
+#### 安全和密码学
 
 - 熵（Entropy）
 - 散列函数（hash）
@@ -130,7 +132,7 @@
   - 聊天加密
   - SSH
 
-### 大杂烩
+#### 大杂烩
 
 - 修改键位映射
   - 尤其是 Caps Lock
@@ -163,7 +165,7 @@
 - 交互式笔记本编程
   - Jupyter：Julia，Python，R
 
-### 提问&回答
+#### 提问&回答
 
 - 优先工具
   - 多键盘少鼠标
@@ -211,7 +213,7 @@
 - 两步验证 2FA
 - Web 浏览器评价
 
-### 推荐软件
+#### 推荐软件
 
 - `convert`：格式转换
 - `shellcheck`：调试 bash
@@ -230,30 +232,9 @@
 - `xorg` 接受多输出，然后将其转化为命令行的参数
 - `writegood` 英语语法和单词静态分析器
 
-## Linux 新机器流程
+### 杂项
 
-1. 换源（不是国内机器则跳过）
-
-   - 更新源
-   - 更新软件包或滚包（Arch 系列）
-
-2. 下载 `proxychains` 代理（如果没有网络业障则跳过）
-
-   - 配置 `proxychains`
-
-3. 更新 dotfiles
-
-   - 推荐 MIT 老师 Anish 的 dotfiles 一键配置
-   - ```bash
-     cd ~
-     # 如果是 WSL2，先要打开代理软件的 Allow LAN
-     proxychains git clone https://github.com/anishathalye/dotfiles
-     cd dotfiles && proxychains ./install
-     ```
-
-## 杂项
-
-### riscv64 和 riscv64gc
+#### riscv64 和 riscv64gc
 
 riscv64gc=riscv64imacfdZicsrZifencei
 
@@ -268,7 +249,7 @@ riscv64gc=riscv64imacfdZicsrZifencei
 - 最后这俩2.2的时候是i的一部分
 - 上面的去掉c简称g，general
 
-### 编译相关
+#### 编译相关
 
 - build：现在编译编译器的平台
 - host：编译器跑的平台
@@ -276,19 +257,19 @@ riscv64gc=riscv64imacfdZicsrZifencei
 
 
 
-### Rust 和 Cargo 升级
+#### Rust 和 Cargo 升级
 
 ```bash
 rustup update
 ```
 
-### Mdbook 修改端口号
+#### Mdbook 修改端口号
 
 ```bash
 mdbook serve --open --port <port>
 ```
 
-### git clone 加速
+#### git clone 加速
 
 ```bash
 git clone -c http.proxy="http://127.0.0.1:7890" <repo_https_address>
@@ -296,11 +277,11 @@ cd <repo>
 git remote set-url origin <repo_git_address>
 ```
 
-### soname
+#### soname
 
 - 指 .so name。
 
-### namcap
+#### namcap
 
 - pacman 的反写， 是 pkgbuild 以及 arch 包的检查工具
 
@@ -315,13 +296,13 @@ git remote set-url origin <repo_git_address>
 
 - 如果有 soname difference，所有依赖这个包的包就都需要重新 rebuild，否则在运行的时候就会出现 `找不到 xxx.so.y` 提示。于是需要一个机制来告诉 packager：有这种变动发生了，你需要去规划一下如何 rebuild。
 
-### C++ Notes
+#### C++ Notes
 
 - If ‘const’ key word is ahead, then the content can’t be changed. If is between type and variable name, then the address in the ROM/RAM can be changed.
 
-### 必要的 Linux 知识
+#### 必要的 Linux 知识
 
-#### Commands
+##### Commands
 
 ```bash
 # sync           // Synchronize all the changes you made into your hard disk(硬盘).
@@ -341,28 +322,28 @@ git remote set-url origin <repo_git_address>
   1. If you run a command, the screen doesn't appear the output messages(e.g. error messages), that is the command running successfully, otherwise unsuccessfully, for instance, some warning messages, error messages.
   2. If you wanna shutdown you server, please sync your date at first.
 
-#### Explanation to the directories at root directory
+##### Explanation to the directories at root directory
 
 - /bin
   - It's the short of Binary, and there exits some common commands.
 - /boot
   - Here are some
 
-#### 快捷键
+##### 快捷键
 
 - Ctrl + A : Move the flag to the head;
 - Ctrl + E : Move the flag to the last;
 
-#### Others
+##### Others
 
 1. In Linux operating system, all the things are file;
 2. `/` is the root node of file system.
 
 
 
-# ErrorRelated
+## ErrorRelated
 
-## 连接 Github 出问题
+### 连接 Github 出问题
 
 端口被拒，仔细查看 ssh 连接过程，发现 DNS 解析错误
 
@@ -372,7 +353,7 @@ ssh -vT git@github.com
 
 在 HOST 里面加上 github 就好了
 
-## 缺少 javaee 依赖
+### 缺少 javaee 依赖
 
 问题描述：
 
@@ -382,7 +363,7 @@ Cannot resolve symbol 'annotation' / Add Java EE 6 Jars to Module Dependencies
 
 解决方案：在 `pom.xml` 中添加 javax 的 javaee-api 即可
 
-## 没有合适的驱动
+### 没有合适的驱动
 
 问题描述：
 
@@ -402,15 +383,15 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 - 或者给自己的工程添加依赖 `Project Structure->Libraries->添加解析 jar 包`
 
-## 前端调用后端接口 404
+### 前端调用后端接口 404
 
 解决方案：
 
 降低 tomcat 版本，从 10 降到 7。
 
-## Git
+### Git
 
-### 无法添加文件
+#### 无法添加文件
 
 - 报错描述：
 
@@ -430,7 +411,7 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 > [https://stackoverflow.com/questions/56873278/how-to-fix-error-filename-does-not-have-a-commit-checked-out-fatal-adding](https://stackoverflow.com/questions/56873278/how-to-fix-error-filename-does-not-have-a-commit-checked-out-fatal-adding)
 
-### 无法远程提交文件
+#### 无法远程提交文件
 
 - 报错描述：
 
@@ -444,7 +425,7 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 > [https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/)
 
-### 本地分支远程分支关联错误
+#### 本地分支远程分支关联错误
 
 - 解决方案：
 
@@ -456,7 +437,7 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 ![建立关联](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/Others/建立关联.435h7rpl00zk.webp?raw=true)
 
-### 删除远程分支
+#### 删除远程分支
 
 - 解决方案：
 
