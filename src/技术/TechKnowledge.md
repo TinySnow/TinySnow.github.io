@@ -446,3 +446,23 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 - 例证：
 
 ![删除远程分支](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/Others/删除远程分支.76p1c9bcmuww.webp?raw=true)
+
+
+
+### VMware 与 Device/Credential Guard 不兼容
+
+- 注意：无法与 WSL 共存
+
+- 解决方案：
+
+  ```powershell
+  bcdedit /set hypervisorlaunchtype off
+  ```
+
+- 重新开启：
+
+  ```powershell
+  bcdedit /set hypervisorlaunchtype auto
+  ```
+
+  
