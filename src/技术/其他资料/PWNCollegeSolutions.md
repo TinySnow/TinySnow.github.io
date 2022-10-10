@@ -507,3 +507,27 @@
 
 - 17
 - **20** ( really confused )
+
+
+
+
+
+## Talking Web
+
+### Prenote
+
+In each level, before taking any operation, we must let the server run. However, after we run it, the current terminal can NOT type other commands. So we need a terminal multiplexer in order to input final command that can get the `flag` of each level.
+
+As for the terminal multiplexer, I use `tmux`, readers can also use others (*i.e.* `sceen`).
+
+So, follow these steps as precondition.
+
+```bash
+tmux new -s work
+/challenge/babyhttp
+```
+
+### Solutions
+
+1. `curl 127.0.0.1`
+2. 
