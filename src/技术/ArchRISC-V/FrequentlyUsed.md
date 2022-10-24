@@ -10,6 +10,10 @@
 extra-riscv64-build -- -d "$CACHE_DIR:/var/cache/pacman/pkg" -l tinysnow_2
 
 arch-nspawn /var/lib/archbuild/extra-riscv64/tinysnow
+
+git diff --no-index ${before_modified} ${after_modified} > ${patch_name}.patch
+
+cp /var/lib/archbuild/extra-riscv64/tinysnow/build/${pkgname}/src/${some_path}/${patch_name}.patch
 ```
 
 ## .bashrc
