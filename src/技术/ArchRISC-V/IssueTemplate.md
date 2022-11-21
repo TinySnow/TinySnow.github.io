@@ -1,16 +1,18 @@
 # IssueTemplate
 
+## Issue
+
 Hello, I'm from ArchRISC-V Team, a community porting Arch Linux software to RISC-V architecture.
 
-## Porting records
+### Porting records
 
-### First attempt
+#### First attempt
 
-#### Description
+##### Description
 
 While packaging `libopenraw`, we found an error.
 
-#### Error information
+##### Error information
 
 ```bash
 checking build system type... ./config.guess: unable to guess system type
@@ -49,7 +51,7 @@ UNAME_VERSION = #1 SMP PREEMPT_DYNAMIC Sat, 25 Jun 2022 20:22:01 +0000
 configure: error: cannot guess build type; you must specify one
 ```
 
-#### Solved
+##### Solved
 
 - Added `autoreconf` in the `prepare()` function in the PKGBUILD. Here is the code:
 
@@ -58,13 +60,13 @@ autoupdate
 autoreconf -fiv
 ```
 
-### Second attempt
+#### Second attempt
 
-#### Description
+##### Description
 
 Then we got a second error, and it is a bash script syntax error:
 
-#### Error information
+##### Error information
 
 ```bash
 checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
@@ -74,32 +76,32 @@ checking how to hardcode library paths into programs... immediate
 ./configure: line 17110: `AX_CXX_COMPILE_STDCXX_14(noext,mandatory)'
 ```
 
-#### Solved
+##### Solved
 
 - looking up some docs, know that this is a error about m4 file, which is complaining the macro `AX_CXX_COMPILE_STDCXX_14` not defined.(in other words, is complaining the macro source file is not found.)
 - Downloaded the m4 macros and patched it into source.
 
-### Third attempt
+#### Third attempt
 
-#### Description
+##### Description
 
 After passing `line 17110`, we got the third error.
 
 It seemed the same as the second.
 
-#### Error information
+##### Error information
 
 ```bash
 ./configure: line 19399: syntax error near unexpected token \`-fvisibility=hidden'
 ./configure: line 19399: `AX_APPEND_COMPILE_FLAGS(-fvisibility=hidden)'
 ```
 
-#### Unsolved
+##### Unsolved
 
 - We not solve this error, because we are strange about the similar error: second and third. Looking for some docs, found that it probably was a BUG of low version `autotools`. Because our team member encountered the same problem when porting a package called `imagescan`.
 - So our team gives this advice.
 
-## Advice
+### Advice
 
 - Please consider updating the configure script tools(Especially `config.guess` file). As part of our duty, we do suggest our upstreams doing this once and for all instead.
 - We are searching ways to solve the trouble caused by `autotools` bug. If upstream makes configure tools updated, please leave a comment to notify us and out team will try to port it again to find out whether low version of `autotools` makes it failed or not.
@@ -111,3 +113,47 @@ It seemed the same as the second.
 Sincerely thanks.
 
 :)
+
+
+
+## Email
+
+
+Hello, I'm from ArchRISC-V Team, a community porting Arch Linux software to RISC-V architecture. 
+
+
+### Description
+
+- While packaging `httrack`, we found an [error](https://archriscv.felixc.at/.status/log.htm?url=logs/httrack/httrack-3.49.2-4.log). 
+
+(This link is the log about building processing our lord maintained.) 
+
+- The `config.guess` file is too old to work. 
+
+- So our team gives this advice. 
+
+
+### Advice
+
+- You can find the patch [here](https://github.com/felixonmars/archriscv-packages/wiki/%E6%88%91%E4%BB%AC%E7%9A%84%E5%B7%A5%E4%BD%9C%E4%B9%A0%E6%83%AF#configguess-unable-to-guess-system-type) that how we fix it. 
+
+- Or just see the patch below.(in ArchLinux PKGBUILD file):
+
+```diff
+Some Diff
+```
+
+- Please consider updating the configure script tools (Especially `config.guess` file). As part of our duty, we do suggest our upstreams doing this once and for all instead. 
+
+
+
+Sincerely thanks.
+
+:) 
+
+
+
+
+Arch Linux RISC-V Team,
+
+TinySnow

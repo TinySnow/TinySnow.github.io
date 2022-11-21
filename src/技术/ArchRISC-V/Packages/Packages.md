@@ -16,7 +16,7 @@
 - ltrace
 - libretro-pcsx2
 - memcached
-- libffado(已被他人修复，硬编码 `config.guess`)
+- libffado (已被他人修复，硬编码 `config.guess`)
 
 ## FixedList
 
@@ -42,3 +42,14 @@
 - distrobuilder (`fix-static-declaration-of-lxd` patch)
 - gsoap (`config.guess` trivial)
 - libopenraw (`config.guess` trivial)
+- cargo-binstall (Rust `--target "$CARCH-unknown-linux-gnu"` trivial)
+- slang (`config.guess` trivial)
+- hexyl (Rust `--target "$CARCH-unknown-linux-gnu"` trivial)
+- libetonyek (`config.guess` trivial)
+- updlockfiles (Rust `--target "$CARCH-unknown-linux-gnu"` trivial)
+- sequoia-wot (Rust `--target "$CARCH-unknown-linux-gnu"` trivial)
+- cargo-auditable (Rust `--target "$CARCH-unknown-linux-gnu"` trivial)
+- buddy (`config.guess` trivial)
+- arch-audit-gtk (`ring` trivial)
+- httrack (`config.guess` trivial)
+- libwps (`config.guess` trivial)

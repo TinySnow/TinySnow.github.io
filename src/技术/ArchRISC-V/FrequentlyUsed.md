@@ -2,7 +2,7 @@
 
 ## 机器连接
 
-详见 [Important Docs Save](https://t.me/c/1517524545/2).
+详见 [Important](https://github.com/TinySnow/Important).
 
 ## 常用命令
 
@@ -62,6 +62,8 @@ is_array source && \
     printf "${RED}source = ${ALL_OFF}%s\n" "${source[@]}" # 方便检查源码是 .tar.*z 还是 git+，可以删掉
 is_array _commit && \
     printf "${RED}_commit = ${ALL_OFF}%s\n" "${_commit[@]}"
+
+asp untrack "$1"
 ```
 
 ## Prepare.sh
