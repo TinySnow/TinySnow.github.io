@@ -89,6 +89,7 @@ https://tinysnow.github.io/技术/其他资料/软件知识补充
 https://tinysnow.github.io/技术/其他资料/重装系统 8-7
 https://tinysnow.github.io/技术/其他资料/重装系统知识
 https://tinysnow.github.io/技术/计算机科学极简入门指南/第一章：计算机的历史
+https://tinysnow.github.io/技术/计算机科学极简入门指南/第三章：简单逻辑门
 https://tinysnow.github.io/技术/计算机科学极简入门指南/第二章：计算机的构成
 https://tinysnow.github.io/技术/计算机科学极简入门指南/计算机科学极简入门指南
 https://tinysnow.github.io/断章/句子/句子
