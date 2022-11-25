@@ -504,12 +504,78 @@
 
     - DO NOT use the `-i` option, it turns all the `flag` letters to lowercase because of the `url` encoding rule.
 
-51. UNFINISHED
+51. TODO
 
 #### Confusing Question Numbers
 
 - 17
 - **20** ( really confused )
+
+### Debugging Refresher
+
+1. ```bash
+   r
+   c
+   ```
+   
+   - `run` to start a program, with no breakpoint set. `r` for short.
+   - `start` to start a program, with a breakpoint set on `main`.
+   - `starti` to start a program, with a breakpoint set on `_start`.
+   - `attach <PID>` to attach to some other already running program.
+   - `core <PATH>` to analyze the core dump of an already run program.
+   - `continue` to continue program execution. `c` for short.
+
+
+2. ```bash
+   r
+   p/x $r12
+   # copy the value of $r12
+   c
+   ```
+   
+   - `info registers` to see the values of all registers.
+   - `print` to print a particular (register's) value. `p` for short.
+     - `print $rdi` (in Decimal)
+     - `p/x $rdi` (in Hexadecimal)
+
+3. ```bash
+   r
+   x/8gx $rsp
+   c
+   x/8gx $rsp
+   # copy the newer value which is different from the old one (most of the older one and the corresponding newer one above is the same)
+   c
+   # paste the value
+   ```
+
+   - `x/<n><u><f> <address>` to examine the contents of memory.
+     - `<n>` is the number of elements to display.
+     - `<u>` is the unit size to display.
+       - `b` (1 byte)
+       - `h` (2 bytes)
+       - `w` (4 bytes)
+       - `g` (8 bytes)
+     - `<f>` is the format to display it in.
+       - `d` (decimal)
+       - `x` (hexadecimal)
+       - `s` (string)
+       - `i` (instruction)
+     - `<address>` can be specified using a register name, symbol name, or absolute address.
+     - supply mathematical expressions when specifying the address.
+   - examples
+     - `x/8i $rip` : print the next 8 instructions from the current instruction pointer.
+     - `x/16i main` : print the first 16 instructions of main.
+     - `disassemble main` : print all of the instructions of main. `disas main` for short.
+     - `x/16gx $rsp` : print the first 16 values on the stack.
+     - `x/gx $rbp-0x32` : print the local variable stored there on the stack.
+   - `set disassembly-flavor intel` : set INTEL assembly syntax.
+
+4. ```bash
+   r
+   
+   ```
+
+5. 
 
 ## Computer Systems Security (ASU CSE 466)
 
@@ -520,6 +586,12 @@ Same as `Archive F2021 - Program Misuse`.
 ### Program Interaction
 
 Same as `Archive F2021 - Program Interaction`.
+
+### Debugging Refresher
+
+Same as `Archive F2021 - Debugging Refresher`.
+
+8. TODO
 
 ## Introduction to Cybersecurity (ASU CSE 365)
 
