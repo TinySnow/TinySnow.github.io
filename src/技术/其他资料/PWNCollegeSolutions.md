@@ -572,9 +572,26 @@
 
 4. ```bash
    r
-   
+   x/8gx $rsp
+   ni 18
+x/8gx $rsp
+   # copy the newer value which is different from the old one (most of the older one and the corresponding newer one above is the same)
+   ni 40
+   # paste
+   x/8gx $rsp
+   # copy the changed value
+   ni 40
+   # paste
    ```
-
+   
+   - `stepi <n>` to step forward one instruction. `si <n>` for short.
+     `nexti <n>` to step forward one instruction, while stepping over any function calls. `ni <n>` for short.
+     - `<n>` parameter is optional, but allows you to perform multiple steps at once.
+     - `finish` command in order to finish the currently executing function.
+   - `break *<address>` to set a breakpoint at the specified-address.
+   - `display/<n><u><f>` is the same as the `x/<n><u><f>`.
+   - `layout regs` : puts gdb into its TUI mode and shows the contents of all of the registers, as well as nearby instructions.
+   
 5. 
 
 ## Computer Systems Security (ASU CSE 466)
