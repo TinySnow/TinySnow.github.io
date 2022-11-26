@@ -601,10 +601,11 @@
    - `layout regs` : puts gdb into its TUI mode and shows the contents of all of the registers, as well as nearby instructions.
    
 5. ```bash
+   TODO
    ```
-
+   
    - example.gdb
-
+   
    ```bash
     start
     break *main+42
@@ -616,7 +617,7 @@
     end
     continue 
    ```
-
+   
    - `-x <PATH_TO_SCRIPT>` : gdb will execute all of the gdb commands after gdb launches.
      - filename usually is `example_filename.gdb`.
    - `-ex '<COMMAND>'` : execute individual commands, also can pass multiple commands with multiple `-ex` arguments.

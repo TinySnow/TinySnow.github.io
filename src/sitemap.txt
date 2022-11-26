@@ -9,6 +9,7 @@ https://tinysnow.github.io/技术/技术
 https://tinysnow.github.io/断章/断章
 https://tinysnow.github.io/笔记/笔记
 https://tinysnow.github.io/学习/公共基础知识/公共基础知识
+https://tinysnow.github.io/学习/公共基础知识/公文
 https://tinysnow.github.io/学习/公共基础知识/刑法
 https://tinysnow.github.io/学习/公共基础知识/宪法
 https://tinysnow.github.io/学习/公共基础知识/民法
@@ -77,7 +78,7 @@ https://tinysnow.github.io/技术/其他资料/Bash 代表命令
 https://tinysnow.github.io/技术/其他资料/CCleaner 清理项
 https://tinysnow.github.io/技术/其他资料/Git 学习笔记
 https://tinysnow.github.io/技术/其他资料/MATLAB 复习
-https://tinysnow.github.io/技术/其他资料/PWNCollegeSolutions
+https://tinysnow.github.io/技术/其他资料/PWN College Solutions
 https://tinysnow.github.io/技术/其他资料/Recovery + Root 掉落重新刷入方法
 https://tinysnow.github.io/技术/其他资料/SolutionsAndSteps
 https://tinysnow.github.io/技术/其他资料/Tic-tac-toe Game Note of React
