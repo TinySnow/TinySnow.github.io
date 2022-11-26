@@ -574,13 +574,21 @@
    r
    x/8gx $rsp
    ni 18
-x/8gx $rsp
+   x/8gx $rsp
    # copy the newer value which is different from the old one (most of the older one and the corresponding newer one above is the same)
-   ni 40
+   ni 36
    # paste
    x/8gx $rsp
    # copy the changed value
-   ni 40
+   ni 38
+   # paste
+   x/8gx $rsp
+   # copy the changed value
+   ni 38
+   # paste
+   x/8gx $rsp
+   # copy the changed value
+   ni 38
    # paste
    ```
    
@@ -592,7 +600,29 @@ x/8gx $rsp
    - `display/<n><u><f>` is the same as the `x/<n><u><f>`.
    - `layout regs` : puts gdb into its TUI mode and shows the contents of all of the registers, as well as nearby instructions.
    
-5. 
+5. ```bash
+   ```
+
+   - example.gdb
+
+   ```bash
+    start
+    break *main+42
+    commands
+        silent
+        set $local_variable = *(unsigned long long*)($rbp-0x32)
+        printf "Current value: %llx\n", $local_variable
+        continue
+    end
+    continue 
+   ```
+
+   - `-x <PATH_TO_SCRIPT>` : gdb will execute all of the gdb commands after gdb launches.
+     - filename usually is `example_filename.gdb`.
+   - `-ex '<COMMAND>'` : execute individual commands, also can pass multiple commands with multiple `-ex` arguments.
+   - `~/.gdbinit` : some commands that always executed for any gdb session.
+     - In general, `set disassembly-flavor intel` can be in there.
+   - `silent` indicates that we want gdb to not report that we have hit a breakpoint, to make the output a bit cleaner.
 
 ## Computer Systems Security (ASU CSE 466)
 
