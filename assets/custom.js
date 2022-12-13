@@ -1,5 +1,5 @@
 var initAll = function () {
-    var path = window.location.pathname;
+    var path = window.location.href;
     if (path.endsWith("/print.html")) {
         return;
     }
@@ -122,7 +122,7 @@ var initAll = function () {
     document.getElementById("giscus-container").appendChild(ele);
 
     // 选取浏览器默认使用的语言
-    // const lang = navigator.language || navigator.userLanguage
+    const lang = navigator.language || navigator.userLanguage
 
     // 若当前 mdbook 主题为 Light 或 Rust ，则将 giscuz 主题设置为 light
     var theme = "transparent_dark";
@@ -130,6 +130,26 @@ var initAll = function () {
     if (themeClass.indexOf("light") != -1 || themeClass.indexOf("rust") != -1) {
         theme = "light"
     }
+
+    var script = document.createElement("script")
+    script.type = "text/javascript";
+    script.src = "https://giscus.app/client.js";
+    script.async = true;
+    script.crossOrigin = "anonymous";
+    script.setAttribute("data-repo", "TinySnow/TinySnow.github.io");
+    script.setAttribute("data-repo-id", "MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc=");
+    script.setAttribute("data-category", "Discussions");
+    script.setAttribute("data-category-id", "DIC_kwDOFN98h84CTDFJ");
+    script.setAttribute("data-mapping", "specific");
+    script.setAttribute("data-term", pagePath);
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "top");
+    script.setAttribute("data-theme", theme);
+    script.setAttribute("data-lang", lang);
+    // 预先加载评论会更好，这样用户读到那边时，评论就加载好了
+    script.setAttribute("data-loading", "lazy");
+    document.getElementById("giscus-container").appendChild(script);
 
 };
 
