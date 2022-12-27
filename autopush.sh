@@ -12,44 +12,55 @@
 # bash 脚本安全性保障
 set -Eeuo pipefail
 
-if [[ $1 == '-h' || $1 == '--help' ]]; then
-	echo "用法："
-	echo -e "\t-h                        \t查看脚本用法。\
-			\n\t--help"
-	echo -e "\t-e        <commit_message>\t执行脚本。commit_message 是必选项，且需要带双引号，\
-			\n\t--execute <commit_message>\t用于绑定 git 的提交消息，无此项会引发错误。"	
-	echo "注意："
-	echo -e "\t此脚本必须在 Blog 根目录下执行，未进行路径判断。\
-			\n\t-h 和 -e 命令不能同时出现。\
-			\n\t无其他用法。"	
-	exit 0
-elif [[ $1 == '-e' || $1 == '--execute' ]]; then
+
+if [[ $1 ]]; then
+
+	# 更新 `最近更新.md`
+	echo -e "# 最近更新 | Last Updated\n\n\
+<p style='font-weight: bold; color: red; text-align: center;'>Warning: The content is presented as \`git diff\`.</p>\n\n\
+\`\`\`bash" > ./src/last-updated.md
+
+	# 进行 git 提交
+	git add .
+
+	# 将所有更改追加到 `最近更新.md`
+	git diff --cached >> ./src/last-updated.md
+
+	# 该 sed 进行 diff 的换行格式化，否则挤在一起太难看了
+	# 以 diff 开头，每个更改的文件之间，会空出三行
+	# 以 @@ 开头，每个文件所更改的地方，相互之间会空出一行
+	sed -i -e 's/^@@/\n@@/g; 7,$s/^diff/\n\n\ndiff/;' ./src/last-updated.md
+
+	# 最后加上 bash 的代码块结尾
+	echo -e "\`\`\`" >> ./src/last-updated.md
+
+	# 追加 add `最近更新.md`
+	git add ./src/last-updated.md
+
 	# 编译文章
 	mdbook build
+
 	# 生成 sitemap.xml 和 sitemap.txt 文件，借助 static-sitemap-cli
-	# 安装 static-sitemap-cli 命令：npm i -g static-sitemap-cli
+	# 安装 static-sitemap-cli 命令： npm i -g static-sitemap-cli
 	npx sscli -b https://tinysnow.github.io -r ./book
+
 	# 检查 book 文件夹下是否有这两个文件
 	if [[ -a ./book/sitemap.xml && -a ./book/sitemap.txt ]]; then
 		cp -f ./book/sitemap.xml ./src
 		cp -f ./book/sitemap.txt ./src
 	else
-		echo "sitemap.xml 和 sitemap.txt 不存在，请检查你的 static-sitemap-cli 安装情况。"
+		echo "sitemap.xml 和 sitemap.txt 不存在，请检查 static-sitemap-cli 安装情况。"
 		exit 1
 	fi
-	if [[ $2 ]]; then
-		# 进行 git 提交
-		git add .
-		# 提交 message 取第二个参数，需要打引号
-		git commit -m "$2"
-		# 推送至远程仓库
-		git push origin master
-		# echo "\"$2\""
-	else
-		echo "请提供 -e 选项的后续参数。"
-		exit 1
-	fi
+
+	# 提交 message 取第二个参数，需要打引号
+	git commit -m "$1"
+
+	# 推送至远程仓库
+	git push origin master
+
+	# echo "\"$1\""
 else
-	echo "未知参数。"
-	echo "请使用 ./autopush.sh -h 或 ./autopush.sh --help 查看用法"
+	echo "请提供参数。"
+	exit 1
 fi

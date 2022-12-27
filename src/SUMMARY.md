@@ -1,6 +1,7 @@
 # Summary
 
 - [个人简介 | Intro | 自己紹介](个人简介.md)
+- [最近更新 | Last Updated](last-updated.md)
 - [问题总表](问题总表.md)
 - [技术](技术/技术.md)
   - [Knowledge](技术/Knowledge.md)
