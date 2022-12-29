@@ -67,6 +67,23 @@ if [[ $1 ]]; then
 	# 最后需要加上最后一个 diff 代码块的结尾
 	echo -e "\`\`\`" >> ${file}
 
+	# 因为后续的 last-updated.md 会越拖越长，所以每次在 last-updated.md diff 完成的时候
+	# 在本次的 last-updated.md 文件中删去上一次 last-updated.md 的更改
+	# 原理是记录 last-updated.md 和 sitemap.xml 中间的行数，用 sed 删除
+
+	# 记录 last-updated.md 出现的行数
+	last_updated_line_number=`sed -n -e '/^##\ last\-updated\.md/=' $file | head -1`
+
+	# 记录 sitmap.xml 出现的行数
+	sitemapxml_line_number=`sed -n -e '/^##\ sitemap\.xml/=' $file | head -1`
+
+	# 减去偏移值，因为用 sed 直接删除上面之间的行，会连带 `## sitemap.xml` 这一行也删除掉
+	# 偏移值为 1，删到到前一行即可
+	offset=`expr ${sitemapxml_line_number} - 1`
+
+	# sed 删除
+	sed -i -e "${last_updated_line_number},${offset}d" $file
+
 	git add ${file}
 
 	# 编译文章
