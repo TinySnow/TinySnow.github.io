@@ -24,7 +24,7 @@ page-break = true
 
 [output.html.fold]
 enable = true
-level = 1
+level = 0
 
 # [preprocessor.toc]
 # command = "mdbook-toc"
