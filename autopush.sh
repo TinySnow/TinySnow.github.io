@@ -8,6 +8,9 @@
 # 如果 node 已经进行了此包的安装，则不需要再次进行安装。
 # 安装命令：
 # npm install static-sitemap-cli
+#
+# 如果需要解除 git diff 对于中文的编码，请确保 git 的配置：
+# git config --global core.quotepath false
 
 # bash 脚本安全性保障
 set -Eeuo pipefail
