@@ -86,11 +86,11 @@ https://tinysnow.github.io/技术/其他资料/Bash 代表命令
 https://tinysnow.github.io/技术/其他资料/CCleaner 清理项
 https://tinysnow.github.io/技术/其他资料/Git 学习笔记
 https://tinysnow.github.io/技术/其他资料/MATLAB 复习
-https://tinysnow.github.io/技术/其他资料/PWN College Solutions
 https://tinysnow.github.io/技术/其他资料/Recovery + Root 掉落重新刷入方法
 https://tinysnow.github.io/技术/其他资料/SolutionsAndSteps
 https://tinysnow.github.io/技术/其他资料/Tic-tac-toe Game Note of React
 https://tinysnow.github.io/技术/其他资料/Uniapp 从 HX 迁移到 WebStorm
+https://tinysnow.github.io/技术/其他资料/pwn.college-writeup
 https://tinysnow.github.io/技术/其他资料/临时
 https://tinysnow.github.io/技术/其他资料/其他资料
 https://tinysnow.github.io/技术/其他资料/发送软件清单及其作用解释
@@ -120,19 +120,26 @@ https://tinysnow.github.io/断章/感触/遇见 今天
 https://tinysnow.github.io/断章/感触/零言碎语
 https://tinysnow.github.io/断章/文章/一点看法
 https://tinysnow.github.io/断章/文章/为了爱情，是否应该舍弃友情？
+https://tinysnow.github.io/断章/文章/何谓阳光
 https://tinysnow.github.io/断章/文章/你一定走了很远的路吧 - 姬霄
+https://tinysnow.github.io/断章/文章/克莱因蓝
 https://tinysnow.github.io/断章/文章/冰面少年
 https://tinysnow.github.io/断章/文章/前行
+https://tinysnow.github.io/断章/文章/占有美
 https://tinysnow.github.io/断章/文章/反抗
 https://tinysnow.github.io/断章/文章/哥，咱家要散了
 https://tinysnow.github.io/断章/文章/回望大二
 https://tinysnow.github.io/断章/文章/境遇
 https://tinysnow.github.io/断章/文章/奴化圣经
+https://tinysnow.github.io/断章/文章/她与水獭
+https://tinysnow.github.io/断章/文章/微雪爱情观
+https://tinysnow.github.io/断章/文章/愿你不再焦虑
 https://tinysnow.github.io/断章/文章/所想所见即真实
 https://tinysnow.github.io/断章/文章/文章
 https://tinysnow.github.io/断章/文章/暑期总结与瑰想
 https://tinysnow.github.io/断章/文章/月圆夜
 https://tinysnow.github.io/断章/文章/烟火自述
+https://tinysnow.github.io/断章/文章/猫猫戒指
 https://tinysnow.github.io/断章/文章/番茄
 https://tinysnow.github.io/断章/文章/篮球女孩
 https://tinysnow.github.io/断章/文章/给女性
@@ -253,12 +260,18 @@ https://tinysnow.github.io/断章/随记/随记 - 2022 年 7 月 7 日
 https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
 https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
 https://tinysnow.github.io/笔记/教程/Basic Elements
+https://tinysnow.github.io/笔记/教程/Duilib安装教程
 https://tinysnow.github.io/笔记/教程/Git 笔记
 https://tinysnow.github.io/笔记/教程/Street Dance Basics
+https://tinysnow.github.io/笔记/教程/刷机
+https://tinysnow.github.io/笔记/教程/手机系统更新意外处理
 https://tinysnow.github.io/笔记/教程/教程
 https://tinysnow.github.io/笔记/教程/重装系统
+https://tinysnow.github.io/笔记/记录/喜爱的舞者
+https://tinysnow.github.io/笔记/记录/已投递的简历
 https://tinysnow.github.io/笔记/记录/已读书目记录
 https://tinysnow.github.io/笔记/记录/游玩游戏记录
+https://tinysnow.github.io/笔记/记录/衣服风格记录
 https://tinysnow.github.io/笔记/记录/观影记录
 https://tinysnow.github.io/笔记/记录/记录
 https://tinysnow.github.io/笔记/记录/软件订阅记录
@@ -326,6 +339,7 @@ https://tinysnow.github.io/读书/零零散散/明天，我要和昨天的你约
 https://tinysnow.github.io/读书/零零散散/漫画经济学：生活常识
 https://tinysnow.github.io/读书/零零散散/漫画经济学：金融危机
 https://tinysnow.github.io/读书/零零散散/狮子之家的点心日
+https://tinysnow.github.io/读书/零零散散/美元真相
 https://tinysnow.github.io/读书/零零散散/追风筝的人
 https://tinysnow.github.io/读书/零零散散/零零散散
 https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
