@@ -22,6 +22,21 @@ if [[ $1 ]]; then
 
 	notice_content="Warning: The content is presented as \`git diff\`."
 
+
+	# 生成 sitemap.xml 和 sitemap.txt 文件，借助 static-sitemap-cli
+	# 安装 static-sitemap-cli 命令： npm i -g static-sitemap-cli
+	npx sscli -b https://tinysnow.github.io -r ./book
+
+	# 检查 book 文件夹下是否有这两个文件
+	if [[ -a ./book/sitemap.xml && -a ./book/sitemap.txt ]]; then
+		cp -f ./book/sitemap.xml ./src
+		cp -f ./book/sitemap.txt ./src
+	else
+		echo "sitemap.xml 和 sitemap.txt 不存在，请检查 static-sitemap-cli 安装情况。"
+		exit 1
+	fi
+
+
 	echo -e "# 最近更新 | Last Updated\n\n<p style=\"font-weight: bold; color: red; text-align: center;\">${notice_content}</p>\n" > ${file}
 
 	git add .
@@ -88,19 +103,6 @@ if [[ $1 ]]; then
 
 	# 编译文章
 	mdbook build
-
-	# 生成 sitemap.xml 和 sitemap.txt 文件，借助 static-sitemap-cli
-	# 安装 static-sitemap-cli 命令： npm i -g static-sitemap-cli
-	npx sscli -b https://tinysnow.github.io -r ./book
-
-	# 检查 book 文件夹下是否有这两个文件
-	if [[ -a ./book/sitemap.xml && -a ./book/sitemap.txt ]]; then
-		cp -f ./book/sitemap.xml ./src
-		cp -f ./book/sitemap.txt ./src
-	else
-		echo "sitemap.xml 和 sitemap.txt 不存在，请检查 static-sitemap-cli 安装情况。"
-		exit 1
-	fi
 
 	# 提交 message 取第二个参数，需要打引号
 	git commit -m "$1"

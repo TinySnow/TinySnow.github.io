@@ -46,6 +46,9 @@ https://tinysnow.github.io/小说/其他小说/第一章 冲击
 https://tinysnow.github.io/小说/其他小说/第二章 巨变
 https://tinysnow.github.io/小说/想象力训练/想象力训练
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 公主与夫人（《欢恋》番外）
+https://tinysnow.github.io/小说/想象力训练/想象力训练 - 分享
+https://tinysnow.github.io/小说/想象力训练/想象力训练 - 可能会知道
+https://tinysnow.github.io/小说/想象力训练/想象力训练 - 女性知识
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 少女的夏天
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 就算是厨师也能照亮他人
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 散打很温柔
@@ -66,8 +69,15 @@ https://tinysnow.github.io/小说/想象力训练/想象力训练之二
 https://tinysnow.github.io/小说/想象力训练/想象力训练之五
 https://tinysnow.github.io/小说/想象力训练/想象力训练之六
 https://tinysnow.github.io/小说/想象力训练/想象力训练之四
+https://tinysnow.github.io/小说/想象力训练/承 K 之名
 https://tinysnow.github.io/小说/想象力训练/有些事情，不应转瞬即逝
+https://tinysnow.github.io/小说/想象力训练/欢恋
 https://tinysnow.github.io/小说/想象力训练/深入骨髓
+https://tinysnow.github.io/小说/想象力训练/理想雪 - 为你化妆
+https://tinysnow.github.io/小说/想象力训练/理想雪 - 应不应该
+https://tinysnow.github.io/小说/想象力训练/理想雪 - 那些不重要
+https://tinysnow.github.io/小说/想象力训练/靛青之秋之一
+https://tinysnow.github.io/小说/想象力训练/靛青之秋之二
 https://tinysnow.github.io/技术/ArchRISC-V/ArchRISC-V
 https://tinysnow.github.io/技术/ArchRISC-V/FrequentlyUsed
 https://tinysnow.github.io/技术/ArchRISC-V/IssueTemplate
@@ -164,7 +174,9 @@ https://tinysnow.github.io/断章/诗词/Hide and Seek
 https://tinysnow.github.io/断章/诗词/一如既往
 https://tinysnow.github.io/断章/诗词/一瞬间
 https://tinysnow.github.io/断章/诗词/不屈
+https://tinysnow.github.io/断章/诗词/伪装
 https://tinysnow.github.io/断章/诗词/减字木兰花 · 伊愿
+https://tinysnow.github.io/断章/诗词/卿语
 https://tinysnow.github.io/断章/诗词/变
 https://tinysnow.github.io/断章/诗词/复活
 https://tinysnow.github.io/断章/诗词/夏影
@@ -178,6 +190,7 @@ https://tinysnow.github.io/断章/诗词/忆忆思
 https://tinysnow.github.io/断章/诗词/愿望
 https://tinysnow.github.io/断章/诗词/我不会想见你
 https://tinysnow.github.io/断章/诗词/摊破浣溪沙
+https://tinysnow.github.io/断章/诗词/摩天轮
 https://tinysnow.github.io/断章/诗词/故事
 https://tinysnow.github.io/断章/诗词/新光
 https://tinysnow.github.io/断章/诗词/无题之一
@@ -203,6 +216,7 @@ https://tinysnow.github.io/断章/诗词/赠君
 https://tinysnow.github.io/断章/诗词/迷途
 https://tinysnow.github.io/断章/诗词/酒
 https://tinysnow.github.io/断章/诗词/释放一只蝴蝶
+https://tinysnow.github.io/断章/诗词/金色沙滩
 https://tinysnow.github.io/断章/诗词/顽柔
 https://tinysnow.github.io/断章/诗词/鸡尾酒
 https://tinysnow.github.io/断章/赠与/千人感谢祭名单
