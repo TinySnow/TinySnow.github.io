@@ -1,4 +1,4 @@
-# PWNCollegeSolutions
+# pwn.college writeup
 
 ## Prenote
 
