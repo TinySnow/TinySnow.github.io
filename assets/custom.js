@@ -57,10 +57,16 @@ var initAll = function () {
             case "H1":
                 return;
             case "H3":
-                indent = "20px";
+                indent = "12px";
                 break;
             case "H4":
-                indent = "40px";
+                indent = "24px";
+                break;
+            case "H5":
+                indent = "36px";
+                break;
+            case "H6":
+                indent = "48px";
                 break;
             default:
                 break;
