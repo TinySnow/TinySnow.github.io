@@ -29,6 +29,8 @@ https://tinysnow.github.io/学习/法语/法语
 https://tinysnow.github.io/学习/法语/简明法语教程笔记
 https://tinysnow.github.io/学习/管理学/概论
 https://tinysnow.github.io/学习/管理学/管理学
+https://tinysnow.github.io/学习/管理学/管理思想
+https://tinysnow.github.io/学习/管理学/管理者
 https://tinysnow.github.io/学习/管理学/组织
 https://tinysnow.github.io/学习/管理学/规章制度
 https://tinysnow.github.io/学习/零碎知识整理/中文书面语
@@ -353,11 +355,13 @@ https://tinysnow.github.io/读书/零零散散/你当像鸟飞往你的山
 https://tinysnow.github.io/读书/零零散散/大型网站技术架构：核心原理与案例分析
 https://tinysnow.github.io/读书/零零散散/如何阅读一本书
 https://tinysnow.github.io/读书/零零散散/山茶文具店
+https://tinysnow.github.io/读书/零零散散/强风吹拂
 https://tinysnow.github.io/读书/零零散散/快速抓重点，过目不忘的阅读术
 https://tinysnow.github.io/读书/零零散散/我想要两颗西柚
 https://tinysnow.github.io/读书/零零散散/我离开之后
 https://tinysnow.github.io/读书/零零散散/数学之美
 https://tinysnow.github.io/读书/零零散散/明天，我要和昨天的你约会
+https://tinysnow.github.io/读书/零零散散/智齿
 https://tinysnow.github.io/读书/零零散散/漫画经济学：生活常识
 https://tinysnow.github.io/读书/零零散散/漫画经济学：金融危机
 https://tinysnow.github.io/读书/零零散散/狮子之家的点心日

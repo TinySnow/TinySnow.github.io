@@ -3,6 +3,8 @@
 ## Prenote
 
 - Personal solutions, that is saying maybe not the best.
+- The sequence number of each section is the challenge number. **CORRESPONDING.**
+  - `X.` => `section_name levelX` 
 - **Because the required random value of each user is different, so using `${random}` key word instead of detailed value.**
   - `${random_key}` is the key.
   - `${random_value}` is the corresponding value.
@@ -601,7 +603,34 @@
    - `layout regs` : puts gdb into its TUI mode and shows the contents of all of the registers, as well as nearby instructions.
    
 5. ```bash
+   # 1. Write a `gdb` script file, named ${filename}.gdb
+   # 2. Run command `/challenge/embryogdb_level5 -x {filename}.gdb` (in home directory)
+   # 3. Get the flag
+   # NOTE: Some versions perhaps have corresponding explanation, which provide my thought of solving the challenge
+   
+   # latest version
    TODO
+   ```
+   
+   - first version (it works)
+   
+   ```bash
+   start
+   break scanf@plt
+   continue
+   break *main+818
+   command
+       set $rdx = $rax
+   end
+   continue
+   continue
+   continue
+   continue 
+   continue
+   continue
+   continue 
+   continue
+   continue
    ```
    
    - example.gdb

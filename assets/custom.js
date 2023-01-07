@@ -57,7 +57,7 @@ var initAll = function () {
             case "H1":
                 return;
             case "H3":
-                indent = "12px";
+                indent = "18px";
                 break;
             case "H4":
                 indent = "24px";
