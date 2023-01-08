@@ -65,7 +65,7 @@
     - [Solutions and Steps](技术/其他资料/SolutionsAndSteps.md)
     - [临时](技术/其他资料/临时.md)
 - [学习 | Learning](学习/学习.md)
-  - [耶鲁大学：心理学导论 | Yale's psychology](学习/耶鲁大学：心理学导论.md)
+  - [耶鲁大学：心理学导论 | Yale's Psychology](学习/耶鲁大学：心理学导论.md)
   - [法语 | French](学习/法语/法语.md)
     - [简明法语教程笔记](学习/法语/简明法语教程笔记.md)
   - [日语 | Japanese](学习/日语/日语.md)

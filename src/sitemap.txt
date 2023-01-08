@@ -3,6 +3,7 @@ https://tinysnow.github.io/last-updated
 https://tinysnow.github.io/个人简介
 https://tinysnow.github.io/问题总表
 https://tinysnow.github.io/学习/学习
+https://tinysnow.github.io/学习/耶鲁大学：心理学导论
 https://tinysnow.github.io/小说/小说
 https://tinysnow.github.io/技术/Errors
 https://tinysnow.github.io/技术/Knowledge
@@ -20,6 +21,7 @@ https://tinysnow.github.io/学习/公共基础知识/民法
 https://tinysnow.github.io/学习/公共基础知识/经济学
 https://tinysnow.github.io/学习/公共基础知识/经济法
 https://tinysnow.github.io/学习/公共基础知识/行政法
+https://tinysnow.github.io/学习/公共基础知识/面试
 https://tinysnow.github.io/学习/公共基础知识/马克思主义哲学
 https://tinysnow.github.io/学习/日语/句型整理
 https://tinysnow.github.io/学习/日语/日语
