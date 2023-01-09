@@ -92,7 +92,6 @@ https://tinysnow.github.io/技术/Java/HighConcurrencyKnowledge
 https://tinysnow.github.io/技术/Java/Java
 https://tinysnow.github.io/技术/Java/JavaThreads
 https://tinysnow.github.io/技术/Java/KotlinNote
-https://tinysnow.github.io/技术/Java/文件模板
 https://tinysnow.github.io/技术/Java/集合
 https://tinysnow.github.io/技术/其他资料/Android 常用闭包
 https://tinysnow.github.io/技术/其他资料/Android 笔记截图
@@ -389,6 +388,7 @@ https://tinysnow.github.io/技术/Java/文件模板/JDBC 连接数据库驱动�
 https://tinysnow.github.io/技术/Java/文件模板/MyBatis 配置文件基本框架
 https://tinysnow.github.io/技术/Java/文件模板/Spring 配置文件基本框架
 https://tinysnow.github.io/技术/Java/文件模板/SpringBoot 项目搭建基本流程
+https://tinysnow.github.io/技术/Java/文件模板/文件模板
 https://tinysnow.github.io/技术/其他资料/WingStudio/Wing 第三轮接口设计
 https://tinysnow.github.io/技术/其他资料/WingStudio/WingStudio
 https://tinysnow.github.io/技术/其他资料/WingStudio/WingStudio 第三轮考核说明文档

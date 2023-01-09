@@ -56,13 +56,13 @@ Meta-annotations are a kind of the basic annotations, they are used to express t
 
 Java reflection allows program get any class's information by Reflection API when the program is running. And it can operate any object's inner attributes and methods directly. It's the key mechanism(机制) that let Java be a dynamic programming language.
 
-![反射概述](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/反射概述.6js09ipppke8.webp?raw=true)
+![反射概述](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/反射概述.6js09ipppke8.webp?raw=true)
 
 ---
 
 ### Where can it reply?
 
-![反射功能](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/反射功能.6w4diihzn1xc.webp?raw=true)
+![反射功能](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/反射功能.6w4diihzn1xc.webp?raw=true)
 
 ---
 
@@ -144,7 +144,7 @@ public class GetReflectedClass {
 
 - Result:
 
-![实验截图之一](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/实验截图之一.1g07lbwlmcww.webp?raw=true)
+![实验截图之一](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/实验截图之一.1g07lbwlmcww.webp?raw=true)
 
 
 The other ways to get class can be looked up in the first and second photos at the end of this passage, "Appendix".
@@ -156,15 +156,15 @@ The other ways to get class can be looked up in the first and second photos at t
 ---
 
 
-![反射过程](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/反射过程.68ldyw1e82gw.webp?raw=true)
+![反射过程](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/反射过程.68ldyw1e82gw.webp?raw=true)
 
 #### Some thing about setAccessible()
 
-![反射方法](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/反射方法.56gssk43kcn4.webp?raw=true)
+![反射方法](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/反射方法.56gssk43kcn4.webp?raw=true)
 
 if the setAccessible() method is on, the efficiency(效率) will be very low, here is a result that compared with turning off setAccessible() and common way:
 
-![时间比对](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/时间比对.35a01z64mhhc.webp?raw=true)
+![时间比对](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/时间比对.35a01z64mhhc.webp?raw=true)
 
 common way: new an object.
 
@@ -235,7 +235,7 @@ public class GetReflectedObject {
 
 - Result:
 
-![实验截图之二](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/实验截图之二.5lpu2ahf11c0.webp?raw=true)
+![实验截图之二](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/实验截图之二.5lpu2ahf11c0.webp?raw=true)
 
 
 
@@ -243,7 +243,7 @@ public class GetReflectedObject {
 
 #### About the generic(泛型):
 
-![反射操作泛型](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/反射操作泛型.jj1rwydkikg.webp?raw=true)
+![反射操作泛型](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/反射操作泛型.jj1rwydkikg.webp?raw=true)
 
 ---
 
@@ -256,11 +256,11 @@ public class GetReflectedObject {
 
 ### All the types that own a class
 
-![实验截图之三](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/实验截图之三.2b322d9hyneo.webp?raw=true)
+![实验截图之三](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/实验截图之三.2b322d9hyneo.webp?raw=true)
 
 By the way, the class of array is complicated, so here gives an example:
 
-![实验截图之四](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/实验截图之四.6h2j09i04veo.webp?raw=true)
+![实验截图之四](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/实验截图之四.6h2j09i04veo.webp?raw=true)
 
 ---
 
@@ -315,20 +315,20 @@ public class OperateAnnotationsThroughReflection {
 
 ## Appendix
 
-![获取-Class](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/获取-Class.5uvzgfu42zuo.webp?raw=true)
+![获取-Class](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/获取-Class.5uvzgfu42zuo.webp?raw=true)
 
-![获取类实例代码](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/获取类实例代码.4ltaqczxzngg.webp?raw=true)
-
-
-![类的加载过程](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/类的加载过程.22vgv3nfe5s0.webp?raw=true)
+![获取类实例代码](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/获取类实例代码.4ltaqczxzngg.webp?raw=true)
 
 
-![类加载与-ClassLoader](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/类加载与-ClassLoader.218l4pkqf19c.webp?raw=true)
+![类的加载过程](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/类的加载过程.22vgv3nfe5s0.webp?raw=true)
 
 
-![类初始化的时刻](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/类初始化的时刻.59s1fhb8mpds.webp?raw=true)
+![类加载与-ClassLoader](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/类加载与-ClassLoader.218l4pkqf19c.webp?raw=true)
 
 
-![类加载器的作用](https://git.poker/TinySnow/GithubImageHosting/blob/main/Technology/JavaRelated/类加载器的作用.2id62gftxh6o.webp?raw=true)
+![类初始化的时刻](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/类初始化的时刻.59s1fhb8mpds.webp?raw=true)
+
+
+![类加载器的作用](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/java/类加载器的作用.2id62gftxh6o.webp?raw=true)
 
 
