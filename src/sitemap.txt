@@ -30,6 +30,7 @@ https://tinysnow.github.io/学习/日语/日语语法整理
 https://tinysnow.github.io/学习/法语/法语
 https://tinysnow.github.io/学习/法语/简明法语教程笔记
 https://tinysnow.github.io/学习/管理学/概论
+https://tinysnow.github.io/学习/管理学/目标
 https://tinysnow.github.io/学习/管理学/管理学
 https://tinysnow.github.io/学习/管理学/管理思想
 https://tinysnow.github.io/学习/管理学/管理者
@@ -145,6 +146,7 @@ https://tinysnow.github.io/断章/文章/回望大二
 https://tinysnow.github.io/断章/文章/境遇
 https://tinysnow.github.io/断章/文章/奴化圣经
 https://tinysnow.github.io/断章/文章/她与水獭
+https://tinysnow.github.io/断章/文章/微小痕迹
 https://tinysnow.github.io/断章/文章/微雪爱情观
 https://tinysnow.github.io/断章/文章/愿你不再焦虑
 https://tinysnow.github.io/断章/文章/所想所见即真实
@@ -278,9 +280,11 @@ https://tinysnow.github.io/断章/随记/随记 - 2022 年 5 月 2 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 5 月 25 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 6 月 3 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 7 月 13 日
+https://tinysnow.github.io/断章/随记/随记 - 2022 年 7 月 21 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 7 月 7 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 18 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 26 日
+https://tinysnow.github.io/断章/随记/随记 - 2023 年 1 月 18 日
 https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
 https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
 https://tinysnow.github.io/笔记/教程/Basic Elements
@@ -303,8 +307,10 @@ https://tinysnow.github.io/读书/亲密关系/亲密关系
 https://tinysnow.github.io/读书/亲密关系/第一章：人际关系的构成
 https://tinysnow.github.io/读书/亲密关系/第七章：友谊
 https://tinysnow.github.io/读书/亲密关系/第三章：吸引力
+https://tinysnow.github.io/读书/亲密关系/第九章：性爱
 https://tinysnow.github.io/读书/亲密关系/第二章：研究方法
 https://tinysnow.github.io/读书/亲密关系/第五章：沟通
+https://tinysnow.github.io/读书/亲密关系/第八章：爱情
 https://tinysnow.github.io/读书/亲密关系/第六章：相互依赖
 https://tinysnow.github.io/读书/亲密关系/第四章：社会认知
 https://tinysnow.github.io/读书/没事，一切都会好起来的/一些安慰
