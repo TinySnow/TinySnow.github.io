@@ -28,6 +28,7 @@ https://tinysnow.github.io/学习/日语/日语
 https://tinysnow.github.io/学习/日语/日语易错词
 https://tinysnow.github.io/学习/日语/日语语法整理
 https://tinysnow.github.io/学习/法语/法语
+https://tinysnow.github.io/学习/法语/法语介词
 https://tinysnow.github.io/学习/法语/简明法语教程笔记
 https://tinysnow.github.io/学习/管理学/概论
 https://tinysnow.github.io/学习/管理学/目标
@@ -313,6 +314,11 @@ https://tinysnow.github.io/读书/亲密关系/第二章：研究方法
 https://tinysnow.github.io/读书/亲密关系/第五章：沟通
 https://tinysnow.github.io/读书/亲密关系/第八章：爱情
 https://tinysnow.github.io/读书/亲密关系/第六章：相互依赖
+https://tinysnow.github.io/读书/亲密关系/第十一章：冲突
+https://tinysnow.github.io/读书/亲密关系/第十三章：亲密关系的解体与消亡
+https://tinysnow.github.io/读书/亲密关系/第十二章：权力和暴力
+https://tinysnow.github.io/读书/亲密关系/第十四章：亲密关系的维持和修复
+https://tinysnow.github.io/读书/亲密关系/第十章：压力与紧张
 https://tinysnow.github.io/读书/亲密关系/第四章：社会认知
 https://tinysnow.github.io/读书/没事，一切都会好起来的/一些安慰
 https://tinysnow.github.io/读书/没事，一切都会好起来的/井
