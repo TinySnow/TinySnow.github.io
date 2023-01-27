@@ -95,8 +95,21 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 ### 无法启动 SpringBoot 项目
 
-- 表现为没有绿色三角运行符号（IDEA 环境下）
+#### IDEA 环境
+
+- 表现为没有绿色三角运行符号
 - 正确配置 Java（**一定要有环境变量**）和 Maven，然后 Project Structure，修改对应 SDKs，Language Level，和 Module Language Level。若还是无法启动，修改 pom.xml 里面的 java.version 或者升降 JDK 版本，然后重新 `mvn compile`。
+
+#### Visual Studio Code 环境
+
+- pox 报错：
+
+  ```bash
+  Project build error: Non-resolvable parent POM for com.example:demo:0.0.1-SNAPSHOT: org.springframework.boot:spring-boot-starter-parent:pom:3.0.2 failed to transfer from https://repo.maven.apache.org/maven2 during a previous attempt. This failure was cached in the local repository and resolution is not reattempted until the update interval of central has elapsed or updates are forced. Original error: Could not transfer artifact org.springframework.boot:spring-boot-starter-parent:pom:3.0.2 from/to central (https://repo.maven.apache.org/maven2): Connect timed out and 'parent.relativePath' points at no local POM
+  ```
+
+- 依赖没有正确下载或者加载，删掉默认文件夹（一般是 %USER_HOME%/.m2）重新编译下载就行。
+- Maven 在 VSCode 里面好像改不了默认 repository 的位置，不知道为什么
 
 ### 无法编译
 

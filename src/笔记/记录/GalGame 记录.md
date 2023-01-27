@@ -1,4 +1,4 @@
-# GalGame 记录
+# Galgame 记录
 
 1. Making Lovers
 2. Making Lovers Vol.1
