@@ -13,7 +13,7 @@
 # git config --global core.quotepath false
 
 # bash 脚本安全性保障
-set -Eeuo pipefail
+set -Eeuxo pipefail
 
 # 注意：
 # 生成 last-updated.md 的逻辑已和此脚本分离
@@ -39,9 +39,11 @@ if [[ $1 ]]; then
 		exit 1
 	fi
 
+	git add .
+
 	./generate-last-updated-md.sh
 
-	git add .
+	git add ./src/last-updated.md
 
 	# 编译文章
 	mdbook build

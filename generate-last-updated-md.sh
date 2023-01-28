@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # bash 脚本安全性保障
-set -Eeuo pipefail
+set -Eeuxo pipefail
 
 ###################################变量声明区 START################################
 
