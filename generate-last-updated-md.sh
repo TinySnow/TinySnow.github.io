@@ -21,6 +21,8 @@ echo -e "# ${title}\n\n## Prenote\n\n<p style=\"${prenote_style}\">${notice_cont
 # 将所有更改追加到 `最近更新.md`
 git diff --cached >> ${file}
 
+git add ${file}
+
 # 该 sed 进行 diff 的换行格式化，否则挤在一起太难看了
 # 以 diff 开头，每个更改的文件之间，会空出三行
 # 以 @@ 开头，每个文件所更改的地方，相互之间会空出一行
