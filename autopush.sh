@@ -52,7 +52,7 @@ if [[ $1 ]]; then
 	git commit -m "$1"
 
 	# 推送至远程仓库
-	git push origin master
+	git push
 
 	# echo "\"$1\""
 else

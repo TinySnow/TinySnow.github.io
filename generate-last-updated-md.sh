@@ -68,17 +68,35 @@ echo -e "\`\`\`" >> ${file}
 
 # 因为后续的 last-updated.md 会越拖越长，所以每次在 last-updated.md diff 完成的时候
 # 在本次的 last-updated.md 文件中删去上一次 last-updated.md 的更改
-# 原理是记录 last-updated.md 和 sitemap.xml 文件最后一定会出现的 </urlset> 标志的中间的行数，用 sed 删除
 
-# 记录 last-updated.md 出现的行数
+# 而且每次 sitemap.xml 每次推送都会更新时间，导致每次 sitemap.xml 都会在 lat-updated.md 里面
+# 实际上属于无效信息，所以此处也设置一部分逻辑将其删除
+
+# 但是 sitemap.txt 只记录文章，如果文章没有新增，则 sitemap.txt 不会变，并且 sitemap.txt 不会占用多大空间，可以保留
+
+# 原理是记录首行和尾行，中间用 sed 删除
+
+# 记录 【## last-updated.md】 出现的行数
 last_updated_line_number=`sed -n -e '/^##\ last\-updated\.md/=' $file | head -1`
 
-# 记录 sitmap.xml 最后 </urlset> 标志出现的行数
-sitemapxml_line_number=`sed -n -e '/^\ <\/urlset>/=' $file | head -1`
+# 记录 【## sitmap.xml】 出现的行数
+sitemap_xml_line_number=`sed -n -e '/^##\ sitemap\.xml/=' $file | head -1`
 
-# 加上偏移值，因为用 sed 直接删除上面之间的行，还剩一个 ``` 没有删掉
-# 偏移值为 1，加上这一行即可
-offset=`expr ${sitemapxml_line_number} + 1`
+# 记录 sitmap.xml 最后 【 </urlset>】 标志出现的行数
+sitemap_xml_urlset_line_number=`sed -n -e '/^\ <\/urlset>/=' $file | head -1`
 
-# sed 删除
-sed -i -e "${last_updated_line_number},${offset}d" $file
+# 加上偏移值，因为用 sed 直接删除最后 【 </urlset>】 标志出现的行数，最后会剩一个 ``` 代码块结尾符
+# 需要加上这一行，而这一行就在下面，故偏移值为 1
+sitemap_xml_last_line=`expr ${sitemap_xml_urlset_line_number} + 1`
+
+if [[ ${last_updated_line_number} &&  ${last_updated_line_number} -lt ${sitemap_xml_line_number} ]]; then
+
+	# 删除 【## last-updated.md】 到 【 </urlset>】 下面那一行
+	sed -i -e "${last_updated_line_number},${sitemap_xml_last_line}d" $file
+
+else
+
+	# 删除 【## sitmap.xml】 到 【 </urlset>】 下面那一行
+	sed -i -e "${sitemap_xml_line_number},${sitemap_xml_last_line}d" $file
+
+fi
