@@ -4,56 +4,91 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## gh-pages.yml
+## .travis.yml
 
 ```diff
 
-@@ -0,0 +1,31 @@
-+name: github pages for blog
-+
-+on:
-+  push:
-+    branches:
-+      - master
-+  pull_request:
-+
-+jobs:
-+  deploy:
-+    runs-on: ubuntu-20.04
-+    permissions:
-+      contents: write
-+    concurrency:
-+      group: ${{ github.workflow }}-${{ github.ref }}
-+    steps:
-+      - uses: actions/checkout@v2
-+
-+      - name: mdBook Action
-+        uses: peaceiris/actions-mdbook@v1.2.0
-+        with:
-+          mdbook-version: 'latest'
-+
-+      - run: mdbook build
-+
-+      - name: Deploy
-+        uses: peaceiris/actions-gh-pages@v3
-+        if: ${{ github.ref == 'refs/heads/master' }}
-+        with:
-+          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-+          publish_dir: ./book
+@@ -1,20 +1,20 @@
+-language: rust
+-sudo: false
+-cache:
+-  - cargo
+-rust:
+-  - stable
+-before_script:
+-  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+-  - (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
+-  - cargo install-update -a
+-script:
+-  - mdbook build && mdbook test # In case of custom book path: mdbook build path/to/mybook && mdbook test path/to/mybook
+-deploy:
+-  provider: pages
+-  skip-cleanup: true
+-  github-token: $GH_TOKEN
+-  local-dir: book # In case of custom book path: path/to/mybook/book
+-  keep-history: false
+-  on:
++language: rust
++sudo: false
++cache:
++  - cargo
++rust:
++  - stable
++before_script:
++  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
++  - (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
++  - cargo install-update -a
++script:
++  - mdbook build && mdbook test # In case of custom book path: mdbook build path/to/mybook && mdbook test path/to/mybook
++deploy:
++  provider: pages
++  skip-cleanup: true
++  github-token: $GH_TOKEN
++  local-dir: book # In case of custom book path: path/to/mybook/book
++  keep-history: false
++  on:
+     branch: master
 \ No newline at end of file
 ```
 
-## sitemap.txt
+## SUMMARY.md
 
 ```diff
 
-@@ -12,6 +12,7 @@ https://tinysnow.github.io/断章/断章
- https://tinysnow.github.io/每日一文/一条路 - 亦舒
- https://tinysnow.github.io/每日一文/小生命 - 亦舒
- https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
-+https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
- https://tinysnow.github.io/每日一文/每日一文
- https://tinysnow.github.io/每日一文/油月亮 - 贾平凹
- https://tinysnow.github.io/每日一文/狗这一生不容易 - 王宏哲
+@@ -4,6 +4,7 @@
+ - [最近更新 | Last Updated](last-updated.md)
+ - [问题总表 | Problems](问题总表.md)
+ - [每日一文 | Daily Article](每日一文/每日一文.md)
++  - [女朋友 - 亦舒](每日一文/女朋友%20-%20亦舒.md)
+   - [时间旅行者的妻子 - 奥德丽 · 尼芬格](每日一文/时间旅行者的妻子%20-%20奥德丽%20·%20尼芬格.md)
+   - [狗这一生不容易 - 王宏哲](每日一文/狗这一生不容易%20-%20王宏哲.md)
+   - [断爱近涅盘 - 林清玄](每日一文/断爱近涅盘%20-%20林清玄.md)
 ```
 
+
+## 女朋友 - 亦舒.md
+
+```diff
+
+@@ -0,0 +1,19 @@
++# 女朋友
++
++*亦舒*
++
++　　我有两个要好的女朋友，一个常见面，一个不见面。
++
++　　常见面的差不多每天见，行街一块儿行，看戏一块儿看、写完稿以后通个电话，一聊可以聊半天。
++
++　　没见面的那位已经八个月没见了，只摇一个电话给她，让她教训了一顿，但非常心甘情愿，因为欠她实在太多，不好意思再见她，先得设法将前债还了，再欠新的，这债是感情方面的。
++
++　　这两个女孩子都对我很好，好得惊人，除非说是前世欠下的，否则很难想象到为什么，生平有这么好的两个女朋友，也够满足了。
++
++　　两位小姐都还没结婚，学问和知识都比我高许多倍，有这样的朋友，确是没话讲，有时候自己想想，也莫名其妙。不知她们觉得我有什么好？
++
++　　每个女人都应该有好几个好的女朋友，没有几个，最低限度也要有二个，有心事可以倾告。有想不开的事情可以互相劝慰，有女人觉得快乐的，可以一起快乐。女人待男人不妨坏点，但是对女朋友必须要够坦诚，够真心，女人不对女人好，还有谁对女人好呢？只有头轻脚重的女人，才会巴巴的去讨好男朋友，得罪了女朋友。
++
++　　没有女朋友的女人必然是难堪的女人，不容易相处，极难伺候，男人绝对吃不消。
++
++　　女入婚后不适宜再单独与男朋友来往。也许这样说法是不够新派一点，但是与女朋友在一起，远比与男朋友一起轻松，无所不谈，无所不笑，太开心了。我老是觉得我那两个女朋友，对我好过我对她们，心中歉意越来越浓一竟想不到弥补的办法来，希望日久见真情，有一天等我有帮忙的机会，定然尽力而为。但她们的环境都比我好，我又不希望有一天她们会变得要我出力，心理上也够矛盾的了。有这么两个女朋友，也是我的福气，值得开心的一点。好多人以为我大概是没有女朋友的，事实上刚刚相反呢。
+\ No newline at end of file
+```
