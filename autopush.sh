@@ -54,6 +54,9 @@ if [[ $1 ]]; then
 	# 推送至远程仓库
 	git push
 
+	# 推送到 gitee 备份
+	git push gitee master
+
 	# echo "\"$1\""
 else
 	echo "请提供参数。"
