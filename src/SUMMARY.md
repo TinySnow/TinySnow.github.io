@@ -390,7 +390,7 @@
     - [手机系统更新意外处理](笔记/教程/手机系统更新意外处理.md)
     - [Duilib 安装教程](笔记/教程/Duilib安装教程.md)
     - [Git 笔记](笔记/教程/Git%20笔记.md)
-    - [刷机](笔记/教程/刷机.md)
+    - [刷机教程](笔记/教程/刷机教程.md)
     - [Basic Elements](笔记/教程/Basic%20Elements.md)
     - [Street Dance Basics](笔记/教程/Street%20Dance%20Basics.md)
 - [小说 | Novels](小说/小说.md)
