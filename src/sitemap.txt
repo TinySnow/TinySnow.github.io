@@ -318,7 +318,7 @@ https://tinysnow.github.io/笔记/教程/Basic Elements
 https://tinysnow.github.io/笔记/教程/Duilib安装教程
 https://tinysnow.github.io/笔记/教程/Git 笔记
 https://tinysnow.github.io/笔记/教程/Street Dance Basics
-https://tinysnow.github.io/笔记/教程/刷机
+https://tinysnow.github.io/笔记/教程/刷机教程
 https://tinysnow.github.io/笔记/教程/手机系统更新意外处理
 https://tinysnow.github.io/笔记/教程/教程
 https://tinysnow.github.io/笔记/教程/重装系统
