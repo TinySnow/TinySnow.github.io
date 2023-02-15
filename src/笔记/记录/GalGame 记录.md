@@ -3,7 +3,7 @@
 1. Making Lovers
 2. Making Lovers Vol.1
 3. Making Lovers Vol.2
-4. 爱之钥 ~AfterDays~
+4. 爱之钥 \~AfterDays\~
 5. 春音 Alice\*Gram
 6. 忘却管家与恋爱大小姐的回忆录¹
 7. 星光咖啡馆与死神之蝶
