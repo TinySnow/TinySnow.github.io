@@ -26,6 +26,7 @@ https://tinysnow.github.io/每日一文/我来讲一个故事 - 加西亚 · 马
 https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
 https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
 https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
+https://tinysnow.github.io/每日一文/槐花 - 汪曾祺
 https://tinysnow.github.io/每日一文/每日一文
 https://tinysnow.github.io/每日一文/油月亮 - 贾平凹
 https://tinysnow.github.io/每日一文/熟人厌烦症 - 迈克尔 · 金
@@ -66,6 +67,7 @@ https://tinysnow.github.io/学习/管理学/管理思想
 https://tinysnow.github.io/学习/管理学/管理者
 https://tinysnow.github.io/学习/管理学/组织
 https://tinysnow.github.io/学习/管理学/规章制度
+https://tinysnow.github.io/学习/管理学/计划
 https://tinysnow.github.io/学习/零碎知识整理/中文书面语
 https://tinysnow.github.io/学习/零碎知识整理/俄语译码表
 https://tinysnow.github.io/学习/零碎知识整理/分享想法
@@ -180,6 +182,7 @@ https://tinysnow.github.io/断章/文章/在一起，本身就是一种幸福
 https://tinysnow.github.io/断章/文章/境遇
 https://tinysnow.github.io/断章/文章/奴化圣经
 https://tinysnow.github.io/断章/文章/她与水獭
+https://tinysnow.github.io/断章/文章/小孩子的勇气
 https://tinysnow.github.io/断章/文章/微小痕迹
 https://tinysnow.github.io/断章/文章/微雪爱情观
 https://tinysnow.github.io/断章/文章/愿你不再焦虑
