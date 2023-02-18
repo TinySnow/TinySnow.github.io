@@ -8,86 +8,275 @@
 
 ```diff
 
-@@ -4,6 +4,7 @@
- - [最近更新 | Last Updated](last-updated.md)
- - [问题总表 | Problems](问题总表.md)
- - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [狗难 - 柯灵](每日一文/狗难%20-%20柯灵.md)
-   - [槐花 - 汪曾祺](每日一文/槐花%20-%20汪曾祺.md)
-   - [亲爱的小孩 - 陈晓霞](每日一文/亲爱的小孩%20-%20陈晓霞.md)
-   - [熟人厌烦症 - 迈克尔 · 金](每日一文/熟人厌烦症%20-%20迈克尔%20·%20金.md)
+@@ -112,6 +112,7 @@
+     - [管理思想](学习/管理学/管理思想.md)
+     - [目标](学习/管理学/目标.md)
+     - [计划](学习/管理学/计划.md)
++    - [决策](学习/管理学/决策.md)
+   - [公共基础知识 | Basics](学习/公共基础知识/公共基础知识.md)
+     - [宪法](学习/公共基础知识/宪法.md)
+     - [民法](学习/公共基础知识/民法.md)
 ```
 
 ## sitemap.txt
 
 ```diff
 
-@@ -26,6 +26,7 @@ https://tinysnow.github.io/每日一文/我来讲一个故事 - 加西亚 · 马
- https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
- https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
- https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
-+https://tinysnow.github.io/每日一文/槐花 - 汪曾祺
- https://tinysnow.github.io/每日一文/每日一文
+@@ -31,6 +31,7 @@ https://tinysnow.github.io/每日一文/每日一文
  https://tinysnow.github.io/每日一文/油月亮 - 贾平凹
  https://tinysnow.github.io/每日一文/熟人厌烦症 - 迈克尔 · 金
-
-@@ -66,6 +67,7 @@ https://tinysnow.github.io/学习/管理学/管理思想
- https://tinysnow.github.io/学习/管理学/管理者
- https://tinysnow.github.io/学习/管理学/组织
- https://tinysnow.github.io/学习/管理学/规章制度
-+https://tinysnow.github.io/学习/管理学/计划
- https://tinysnow.github.io/学习/零碎知识整理/中文书面语
- https://tinysnow.github.io/学习/零碎知识整理/俄语译码表
- https://tinysnow.github.io/学习/零碎知识整理/分享想法
-
-@@ -180,6 +182,7 @@ https://tinysnow.github.io/断章/文章/在一起，本身就是一种幸福
- https://tinysnow.github.io/断章/文章/境遇
- https://tinysnow.github.io/断章/文章/奴化圣经
- https://tinysnow.github.io/断章/文章/她与水獭
-+https://tinysnow.github.io/断章/文章/小孩子的勇气
- https://tinysnow.github.io/断章/文章/微小痕迹
- https://tinysnow.github.io/断章/文章/微雪爱情观
- https://tinysnow.github.io/断章/文章/愿你不再焦虑
+ https://tinysnow.github.io/每日一文/狗这一生不容易 - 王宏哲
++https://tinysnow.github.io/每日一文/狗难 - 柯灵
+ https://tinysnow.github.io/每日一文/王府大街 64 号 - 雷达
+ https://tinysnow.github.io/每日一文/第三大道的这间酒馆 - 约翰·麦克纳尔蒂
+ https://tinysnow.github.io/每日一文/等我一年半 - 松本清张
 ```
 
 
-## 狗难 - 柯灵.md
+## 决策.md
 
 ```diff
 
-@@ -0,0 +1,33 @@
-+# 狗难
+@@ -0,0 +1,25 @@
++# 决策
 +
-+*柯灵*
++## 定义
 +
-+　　刮着风，天上有雨意。一个深秋的阴晦的午后，我从上海近郊踽踽地跑回寓所。
++- 为了 **实现某一目的** 而从 **若干可行方案** 中选择一个 **满意方案** 的 **分析判断过程**
++  - （若干一般为两到三个，最多不超过五个）
++  - 最优方案既不经济又不现实，所以选择满意方案
++  - 满意方案：主要目标能够实现，次要目标足够好的方案
 +
-+　　经过一处荒场的时候，耳边送过一串呜呜的狗哭，夹杂着断续的吠声，听起来悲哀而惨厉。
++## 实质
 +
-+　　荒场上有乱莽莽的衰草，萧萧的白杨。一座孤坟上站满了人，大半是拾荒的孩子，目光都望着坟旁那个用洋铁皮围成的小型圜墙；圜墙四周也围着人，一个个弯着腰，把头贴近圜墙的隙处，仿佛正在窥探里面的秘密。
++- 一个 **主观** 判断的过程
 +
-+　　我好奇地走近去，一只狗正在里面作悲愤的绝叫；但忽地砰然一声，破空而起，同时那叫声就寂灭了。
++## 重要性
 +
-+　　我挤进人丛，找着一个小小空隙，也开始向里面窥探。——原来那是个“狗牢”，每天从街头巷尾被用铁车捉了去的野狗都关在这里，这时候正有人在执行野狗的死刑。
++- 管理者从事管理工作的基础
 +
-+　　我占的地位很好，里面的一切看得很清楚。狗牢的一面有一道门，进门处就用铁丝网划出个小小的地位；铁丝网的防线以外，大约有几十匹大小不等的野狗，彷徨徨无计地来回走动。
++## 区别
 +
-+　　它们的眼睛发着异样的光。尾巴下垂。像一群饿狼。但它们的眼色是乞怜的，而且神情也显然不能镇静了；无可奈何地徘徊瞻顾，哭泣般呜呜地叫着。有的侧过头望望铁丝网里面的人——它们的刽子手，接着昂首向天，绝望地狂吠几声，似乎要乞求制裁：有的沿了洋铁皮的墙脚惶惶然走着，走到墙角边，略一犹豫，便纵身向墙顶跳去，想逃出这末日的惨劫，可是墙太高了，跳墙的结局只是被猛的摔倒在地上。铁丝网里面走出一个汉子来，拿着一根竹杠，杠头上有一个活络的铁丝圈。
++- 决策是一个 **过程**
++- 选择和决定是一个 **时间点**
 +
-+　　平时曾经听到过许多“义犬救主”一类故事，当那汉子闯入狗群的一刹那。它们便很快地从我的记忆中浮起，想到狗子们那一份天赋的聪明勇敢，我禁不住为那汉子担忧：我想他也许会被那些亡命之狗所包围的。可是接着我立刻知道那是一种可笑的杞忧了，因为他刚跑出铁丝网，狗子们就吃惊似的远远避开。
++## 推荐书目
 +
-+　　汉子对准一只壮大的黄狗走去，那黄狗只是后退。等到逼近身边，悻悻然张开口来的时候，却早被那汉子从容举起竹杠，用铁丝圈套住了它的头颈，——它的同类张皇地目送着它被拉进铁丝网，于是又彷徨无计地来回走着，呜呜地哭泣。
-+
-+　　黄狗用它所有的力气在挣扎，在狺狺地绝叫，却被竹杠抵住了，动弹不得。另一个手里拿着怪异的手枪的人，把枪口对着了它的脑袋；砰！黄狗的眼睛应声翻了白，默默地倒下去了。汉子随手将它丢在一边，那儿堆着十几匹血痕狼藉的狗尸。
-+
-+　　我闻到了一股刺鼻的血腥。
-+
-+　　汉子又跑出铁丝网来了，这一回捉住了一只有点癞皮的黑狗。……我接连看了这被宰割的悲剧，最后向那些正在呜咽、呻吟、彷徨无计的狗子们，投了失望的一瞥，便匆匆离开了荒场。
-+
-+　　呜呜的鸣声还是从后边传来，我有点悲戚。世上有一种奇怪的动物，他们有天赋的聪明，可是这聪明只用于对主子的愚忠；却没有合群自卫的习惯。狗子们的结局我已经看见了：跟黄狗和癞皮的黑狗那样，一例的，分别的宰割，直到最后一匹。
-+
-+　　我恍惚参观了人间地狱的一面。
-+
-+　　天色显得更灰黯，昙云压得低低的，恐怕就要下雨了。
++- 《条理化思维》
 \ No newline at end of file
+```
+
+## 计划.md
+
+```diff
+
+@@ -17,6 +17,64 @@
+ 
+ ## 要素
+ 
++- 宗旨
++  - 预测
++  - 安排
++  - 应变处理
++- 详细
++  - 前提
++  - 目标（What）
++  - 目的（Why）
++  - 战略（How）
++  - 责任（Who）
++  - 时间表（When）
++  - 范围（Where）
++  - 预算
++  - 应变措施
++
++## 制定过程
++
++- 将要素一条一条予以明确
++
++## 制定方法
++
++### 四种方法
++
++1. 网络计划技术
++   - 任务目标
++   - 工作内容
++   - 相互关系和先后次序
++   - 连线形成网络图
++   - 取最长的路径为关键路径
++2. 甘特图
++3. 滚动计划法
++   - 时间点最近粒度最细
++   - 时间点越远粒度越粗
++4. 情景计划法
++   - 最好情况
++   - 最坏情况
++
++### 理念
++
++- 长计划短安排
++- 短期的计划要围绕着长期的计划展开
++- 长期的计划要分解落实到短期安排中
++
++## 时间管理
++
++- 响应时间：用于响应其他人的要求、请求和问题的时间
++  - 管理重点
++- 自由时间：可以自行控制的时间
++
++- | 重要性和紧急性 |       紧急       |    不紧急    |
++  | :------------: | :--------------: | :----------: |
++  |      重要      |      马上做      | 有时间优先做 |
++  |     不重要     | 授权他人做或不做 | 有空做或不做 |
++
++- 要事优先，难事分解
++- 学会说“不”
++  - 明确自己的价值观以做出选择
++
+ ## 其他
+ 
+ - **善于计划和善于总结是快速晋升的秘诀**
+\ No newline at end of file
+```
+
+## 第一章：计算机的历史.md
+
+```diff
+
+@@ -24,7 +24,7 @@
+ 
+ ### 参考资料
+ 
+-- [第一代电子计算机](https://baike.baidu.com/item/%E7%AC%AC%E4%B8%80%E4%BB%A3%E7%94%B5%E5%AD%90%E8%AE%A1%E7%AE%97%E6%9C%BA/1430548)：美国国防部用它来进行弹道计算。
++1. [第一代电子计算机](https://baike.baidu.com/item/%E7%AC%AC%E4%B8%80%E4%BB%A3%E7%94%B5%E5%AD%90%E8%AE%A1%E7%AE%97%E6%9C%BA/1430548)：美国国防部用它来进行弹道计算。
+ 
+ ### 思考题答案（仅供参考）
+ 
+```
+
+## 第三章：简单逻辑门.md
+
+```diff
+
+@@ -44,7 +44,18 @@
+ 
+ 　　为简化说明，本指南 **认为与或非三门可以直接获得。**
+ 
+-　　由基础三门还可构成稍复杂一点的逻辑门：nand，nor，分别是与非门，或非门。其结果就是与门、非门的结果取反。注意，nand 和 nor 两门因自身特性，均可构成基础三门。所以一台计算机可以只由 nand 门或 nor 门构成。
++　　由基础三门还可构成稍复杂一点的逻辑门：nand（not and 之缩写），nor（not or 之缩写），分别是与非门，或非门。其结果就是与门、非门的结果取反。
++
++- 与非和或非
++
++| 输入 A | 输入 B | and 输出 | nand 输出 | or 输出 | nor 输出 |
++| :----: | :----: | :------: | :-------: | :-----: | :------: |
++|   0    |   0    |    0     |     1     |    0    |    1     |
++|   0    |   1    |    0     |     1     |    1    |    0     |
++|   1    |   0    |    0     |     1     |    1    |    0     |
++|   1    |   1    |    1     |     0     |    1    |    0     |
++
++　　注意，nand 和 nor 两门因自身函数完备性，均可构成基础三门。所以一台计算机可以只由 nand 门或 nor 门构成。
+ 
+ ### 半加器
+ 
+
+@@ -57,11 +68,17 @@
+ | 1      | 0      | (0)1   |
+ | 1      | 1      | (1)0   |
+ 
+-　　暂时不管进位，可以观察到：输入相同，结果为 0；输入不同，结果为 1。这种逻辑在以后也很常见，专门有个名字：异或门。
++　　暂时不管进位，可以观察到：输入相同，结果为 0；输入不同，结果为 1。这种逻辑在以后也很常见，专门有个名字：异或门（xor）。
+ 
+ 　　异或门电路可以使用基础三门搭建，方案也很多。总体来讲，用的逻辑门越少，开销越少，效率越高。下面两种设计方案中，很明显，第一种方案要好。
+ 
+-<br>
++- 第一种方案，四个与非门（4 nand）：
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-3/nand-xor.png)
++
++- 第二种方案，五个基础逻辑门（2 not + 2 and + 1 or）：
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-3/overzicht-xor.jpg)
+ 
+ 　　接下来处理棘手的进位问题：
+ 
+
+@@ -69,7 +86,9 @@
+ 
+ 　　**综上所述，二进制的一位加法器（带进位）可以用一个异或门加上一个与门表示。** 将输入输出引脚分列两边，中间加上逻辑门，可以获得一个一位加法器。
+ 
+-<br>
++- 上为异或门，下为与门，输出 S（Sum）为和，输出 C（Carry）为进位
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-3/half-adder.png)
+ 
+ 　　上述一位加法器也称**半加器**。
+ 
+
+@@ -124,7 +143,8 @@
+ 
+ ### 参考资料
+ 
+-
++1. 晶体管
++2. 函数完备性
+ 
+ ### 思考题答案（仅供参考）
+ 
+```
+
+## 第二章：计算机的构成.md
+
+```diff
+
+@@ -20,7 +20,7 @@
+ - 输入数据（已知条件）
+ - 输出结果（结果结论）
+ 
+-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/flow-calculatable.webp)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-2/flow-calculatable.webp)
+ 
+ ### 内部表示
+ 
+
+@@ -42,7 +42,7 @@
+ 
+ 　　最初的计算机科学家们，想到用纸带打孔。有孔洞，类似开关，电路接通，通电。没有孔洞，电路受阻，不通电。如下图：
+ 
+-![paper_cut_off](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/paper-cut-off.webp)
++![paper_cut_off](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-2/paper-cut-off.webp)
+ 
+ 　　这就是最原始的方法，需要程序员做大量的打孔操作，让机器识别。
+ 
+
+@@ -103,7 +103,7 @@
+ 
+ 　　上述体系结构，被称为冯·诺依曼体系结构，至今仍在沿用（**人类所有知识都来源于好奇心和解决问题**）。如图所示：
+ 
+-![Von_Neumann_Architecture](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/von_neumann-architecture.webp)
++![Von_Neumann_Architecture](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-2/von_neumann-architecture.webp)
+ 
+ **思考题 2**
+ 
+
+@@ -132,15 +132,16 @@
+ 
+ ### 参考资料
+ 
+-[计算理论](https://zh.m.wikipedia.org/zh-cn/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA)：一个问题是否可以计算。偏数学领域，不在讨论范围之内。
++1. [计算理论](https://zh.m.wikipedia.org/zh-cn/%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA)：一个问题是否可以计算。偏数学领域，不在讨论范围之内。
+ 
+-[ASCII 码](https://zh.m.wikipedia.org/zh-cn/ASCII)：American Standard Code for Information Interchange，美国信息交换标准代码。
++2. [ASCII 码](https://zh.m.wikipedia.org/zh-cn/ASCII)：American Standard Code for Information Interchange，美国信息交换标准代码。
+ 
+-[二进制](https://zh.m.wikipedia.org/zh-cn/%E4%BA%8C%E8%BF%9B%E5%88%B6)：数据的表示方法。
++3. [二进制](https://zh.m.wikipedia.org/zh-cn/%E4%BA%8C%E8%BF%9B%E5%88%B6)：数据的表示方法。
+ 
+-[冯·诺依曼体系结构](https://zh.wikipedia.org/zh-cn/%E5%86%AF%C2%B7%E8%AF%BA%E4%BC%8A%E6%9B%BC%E7%BB%93%E6%9E%84)：现代电子计算机的基本体系结构。
++4. [冯·诺依曼体系结构](https://zh.wikipedia.org/zh-cn/%E5%86%AF%C2%B7%E8%AF%BA%E4%BC%8A%E6%9B%BC%E7%BB%93%E6%9E%84)：现代电子计算机的基本体系结构。
++
++5. [Сетунь](https://zh.m.wikipedia.org/zh-cn/%D0%A1%D0%B5%D1%82%D1%83%D0%BD%D1%8C)：苏联诞生的三进制计算机。
+ 
+-[Сетунь](https://zh.m.wikipedia.org/zh-cn/%D0%A1%D0%B5%D1%82%D1%83%D0%BD%D1%8C)：苏联诞生的三进制计算机。
+ 
+ ### 思考题答案（仅供参考）
+ 
 ```
