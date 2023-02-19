@@ -64,7 +64,10 @@ https://tinysnow.github.io/学习/法语/法语介词
 https://tinysnow.github.io/学习/法语/简明法语教程笔记
 https://tinysnow.github.io/学习/法语/语音规则
 https://tinysnow.github.io/学习/管理学/决策
+https://tinysnow.github.io/学习/管理学/权力
 https://tinysnow.github.io/学习/管理学/概论
+https://tinysnow.github.io/学习/管理学/沟通
+https://tinysnow.github.io/学习/管理学/激励与动力
 https://tinysnow.github.io/学习/管理学/目标
 https://tinysnow.github.io/学习/管理学/管理学
 https://tinysnow.github.io/学习/管理学/管理思想
@@ -72,6 +75,7 @@ https://tinysnow.github.io/学习/管理学/管理者
 https://tinysnow.github.io/学习/管理学/组织
 https://tinysnow.github.io/学习/管理学/规章制度
 https://tinysnow.github.io/学习/管理学/计划
+https://tinysnow.github.io/学习/管理学/领导
 https://tinysnow.github.io/学习/零碎知识整理/中文书面语
 https://tinysnow.github.io/学习/零碎知识整理/俄语译码表
 https://tinysnow.github.io/学习/零碎知识整理/分享想法
