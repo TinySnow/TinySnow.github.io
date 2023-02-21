@@ -38,6 +38,7 @@ https://tinysnow.github.io/每日一文/王府大街 64 号 - 雷达
 https://tinysnow.github.io/每日一文/第三大道的这间酒馆 - 约翰·麦克纳尔蒂
 https://tinysnow.github.io/每日一文/等我一年半 - 松本清张
 https://tinysnow.github.io/每日一文/致陈独秀 - 胡适
+https://tinysnow.github.io/每日一文/花脸雀 - 李娟
 https://tinysnow.github.io/每日一文/那些你所不知道的大事 - 李月亮
 https://tinysnow.github.io/每日一文/雨伞 - 川端康成
 https://tinysnow.github.io/每日一文/青春 - 亦舒
@@ -200,6 +201,7 @@ https://tinysnow.github.io/断章/文章/所想所见即真实
 https://tinysnow.github.io/断章/文章/文章
 https://tinysnow.github.io/断章/文章/暑期总结与瑰想
 https://tinysnow.github.io/断章/文章/月圆夜
+https://tinysnow.github.io/断章/文章/母亲的理发推
 https://tinysnow.github.io/断章/文章/烟火自述
 https://tinysnow.github.io/断章/文章/猫猫戒指
 https://tinysnow.github.io/断章/文章/番茄
