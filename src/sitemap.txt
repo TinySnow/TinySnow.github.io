@@ -91,6 +91,11 @@ https://tinysnow.github.io/学习/管理学/组织
 https://tinysnow.github.io/学习/管理学/规章制度
 https://tinysnow.github.io/学习/管理学/计划
 https://tinysnow.github.io/学习/管理学/领导
+https://tinysnow.github.io/学习/花语/花语
+https://tinysnow.github.io/学习/诗词格律/平仄
+https://tinysnow.github.io/学习/诗词格律/词牌名
+https://tinysnow.github.io/学习/诗词格律/诗词格律
+https://tinysnow.github.io/学习/诗词格律/诗韵
 https://tinysnow.github.io/学习/零碎知识整理/中文书面语
 https://tinysnow.github.io/学习/零碎知识整理/俄语译码表
 https://tinysnow.github.io/学习/零碎知识整理/分享想法
@@ -98,6 +103,9 @@ https://tinysnow.github.io/学习/零碎知识整理/半导体集成电路
 https://tinysnow.github.io/学习/零碎知识整理/毕业设计
 https://tinysnow.github.io/学习/零碎知识整理/经济和金融产品理解
 https://tinysnow.github.io/学习/零碎知识整理/零碎知识整理
+https://tinysnow.github.io/学习/音乐/基础乐理
+https://tinysnow.github.io/学习/音乐/常用三和弦
+https://tinysnow.github.io/学习/音乐/音乐
 https://tinysnow.github.io/小说/其他小说/Chapter 1
 https://tinysnow.github.io/小说/其他小说/其他小说
 https://tinysnow.github.io/小说/其他小说/夜天盛世夜天梦
@@ -219,6 +227,7 @@ https://tinysnow.github.io/断章/文章/月圆夜
 https://tinysnow.github.io/断章/文章/母亲的理发推
 https://tinysnow.github.io/断章/文章/烟火自述
 https://tinysnow.github.io/断章/文章/猫猫戒指
+https://tinysnow.github.io/断章/文章/瓦罐饭与糖
 https://tinysnow.github.io/断章/文章/番茄
 https://tinysnow.github.io/断章/文章/篮球女孩
 https://tinysnow.github.io/断章/文章/给女性
