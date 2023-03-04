@@ -1,10 +1,8 @@
 # Tech Knowledge
 
-## Knowledge
+## Missing Semester 笔记
 
-### Missing Semester 笔记
-
-#### 原视频链接
+### 原视频链接
 
 [哔哩哔哩 完整版](https://www.bilibili.com/video/BV1rU4y1h7Qr)
 
@@ -14,7 +12,7 @@
 
 [笔记](https://missing-semester-cn.github.io)
 
-#### Shell
+### Shell
 
 - `$_` 为上一命令最后参数
 - `!!` 为上一命令
@@ -27,7 +25,7 @@
 - `updatedb` 更新系统建立的索引
 - `Ctrl+R` 倒序搜索命令
 
-#### vim
+### vim
 
 - `:sp` 打开新 window
 - `:qa` 退出所有 window
@@ -44,7 +42,7 @@
 - `.` 会重复之前的编辑命令
 - `.vimrc` 配置文件
 
-#### 数据整理
+### 数据整理
 
 - `less` 查看
 - `sed` 基于行修改， `awk` 基于列修改
@@ -55,7 +53,7 @@
 - `gnuplot` 画图工具
 - `feh` 图片查看工具
 
-#### 命令行环境
+### 命令行环境
 
 - 信号机制
   - `man singal`
@@ -76,7 +74,7 @@
 - `ssh` 及其 config 文件
 - `rsync -avP` 推荐使用在复制多文件的情境下
 
-#### 版本控制
+### 版本控制
 
 - `git clone --shallow` 浅克隆，不包括完整的历史版本记录
 - `git add -p <file>` 交互式设置和暂存修改（可以交互式舍弃部分不希望暂存的修改）
@@ -84,7 +82,7 @@
 - `git stash` 隐藏修改，`git stash pop` 显示修改
 - `git bisect`  通过二分查找搜索历史记录
 
-#### 调试及性能分析
+### 调试及性能分析
 
 - `printf` 调试法，大型系统则使用 `log` 分析
 - 控制台输出着色
@@ -101,7 +99,7 @@
 - 资源监控
 - 基准测试等专用工具
 
-#### 元编程
+### 元编程
 
 - `make`
 - 语义版本号
@@ -112,7 +110,7 @@
 - 持续集成
 - 测试
 
-#### 安全和密码学
+### 安全和密码学
 
 - 熵（Entropy）
 - 散列函数（hash）
@@ -132,7 +130,7 @@
   - 聊天加密
   - SSH
 
-#### 大杂烩
+### 大杂烩
 
 - 修改键位映射
   - 尤其是 Caps Lock
@@ -165,7 +163,7 @@
 - 交互式笔记本编程
   - Jupyter：Julia，Python，R
 
-#### 提问&回答
+### 提问&回答
 
 - 优先工具
   - 多键盘少鼠标
@@ -213,7 +211,7 @@
 - 两步验证 2FA
 - Web 浏览器评价
 
-#### 推荐软件
+### 推荐软件
 
 - `convert`：格式转换
 - `shellcheck`：调试 bash
@@ -232,9 +230,23 @@
 - `xorg` 接受多输出，然后将其转化为命令行的参数
 - `writegood` 英语语法和单词静态分析器
 
-### 杂项
+## Rust 相关
 
-#### riscv64 和 riscv64gc
+### Rust 和 Cargo 升级
+
+```bash
+rustup update
+```
+
+### Mdbook 修改端口号
+
+```bash
+mdbook serve --open --port <port>
+```
+
+## 编译相关
+
+### riscv64 和 riscv64gc
 
 riscv64gc=riscv64imacfdZicsrZifencei
 
@@ -249,39 +261,17 @@ riscv64gc=riscv64imacfdZicsrZifencei
 - 最后这俩2.2的时候是i的一部分
 - 上面的去掉c简称g，general
 
-#### 编译相关
+### 格式说明
 
 - build：现在编译编译器的平台
 - host：编译器跑的平台
 - target：编译器编译出来的二进制跑的平台
 
-
-
-#### Rust 和 Cargo 升级
-
-```bash
-rustup update
-```
-
-#### Mdbook 修改端口号
-
-```bash
-mdbook serve --open --port <port>
-```
-
-#### git clone 加速
-
-```bash
-git clone -c http.proxy="http://127.0.0.1:7890" <repo_https_address>
-cd <repo>
-git remote set-url origin <repo_git_address>
-```
-
-#### soname
+### soname
 
 - 指 .so name。
 
-#### namcap
+### namcap
 
 - pacman 的反写， 是 pkgbuild 以及 arch 包的检查工具
 
@@ -296,13 +286,23 @@ git remote set-url origin <repo_git_address>
 
 - 如果有 soname difference，所有依赖这个包的包就都需要重新 rebuild，否则在运行的时候就会出现 `找不到 xxx.so.y` 提示。于是需要一个机制来告诉 packager：有这种变动发生了，你需要去规划一下如何 rebuild。
 
-#### C++ Notes
+## Git 相关
+
+### git clone 加速
+
+```bash
+git clone -c http.proxy="http://127.0.0.1:7890" <repo_https_address>
+cd <repo>
+git remote set-url origin <repo_git_address>
+```
+
+## C++ 相关
 
 - If ‘const’ key word is ahead, then the content can’t be changed. If is between type and variable name, then the address in the ROM/RAM can be changed.
 
-#### 必要的 Linux 知识
+## Linux 相关
 
-##### Commands
+### Commands
 
 ```bash
 # sync           // Synchronize all the changes you made into your hard disk(硬盘).
@@ -322,19 +322,47 @@ git remote set-url origin <repo_git_address>
   1. If you run a command, the screen doesn't appear the output messages(e.g. error messages), that is the command running successfully, otherwise unsuccessfully, for instance, some warning messages, error messages.
   2. If you wanna shutdown you server, please sync your date at first.
 
-##### Explanation to the directories at root directory
+### Explanation to the directories at root directory
 
 - /bin
   - It's the short of Binary, and there exits some common commands.
 - /boot
   - Here are some
 
-##### 快捷键
+### Shotcuts
 
 - Ctrl + A : Move the flag to the head;
 - Ctrl + E : Move the flag to the last;
 
-##### Others
+### Others
 
 1. In Linux operating system, all the things are file;
 2. `/` is the root node of file system.
+
+## MySQL 相关
+
+### MySQL 8.0 Windows `My.ini` 文件位置
+
+- 打开命令行，输入 `echo %PROGRAMDATA%`
+- MySQL 会首先查找 `%PROGRAMDATA%\MySQL\MySQL Server 5.6\my.ini` 文件
+- 一般 `%PROGRAMDATA%` 为 `C:\ProgramData`，而此文件夹是隐藏的，需要打开查看隐藏文件选项
+- 编辑即可
+
+### 开启 binlog
+
+1. 找到 `my.ini` 文件
+2. 添加如下配置
+
+```bash
+# binlog 名称，随便取名
+log-bin="MYSQL-bin"
+# binlog 格式，可选 STATEMENT，ROW 或者 MIXED
+# 对于 canal 只能选择 ROW
+binlog-format=ROW
+# 有关 replication，需要定义
+# 不能与从机的 slaveId 相同
+server_id=1
+
+```
+
+3. 重启 MySQL
