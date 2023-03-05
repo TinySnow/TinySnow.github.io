@@ -339,6 +339,14 @@ git remote set-url origin <repo_git_address>
 1. In Linux operating system, all the things are file;
 2. `/` is the root node of file system.
 
+### Ubuntu
+
+- 显示已安装的软件包
+
+```bash
+sudo apt list --installed
+```
+
 ## MySQL 相关
 
 ### MySQL 8.0 Windows `My.ini` 文件位置
