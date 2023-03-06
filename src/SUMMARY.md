@@ -86,6 +86,8 @@
       - [Spring 配置文件基本框架](技术/Java/文件模板/Spring%20配置文件基本框架.md)
       - [SpringBoot 项目搭建基本流程](技术/Java/文件模板/SpringBoot%20项目搭建基本流程.md)
   - [实践记录 | Practice Record](技术/实践记录/实践记录.md)
+    - [毕业设计环境准备](技术/实践记录/毕业设计环境准备.md)
+    - [Elastic Search 启用](技术/实践记录/ElasticSearch启用.md)
     - [MySQL 与 Elastic Search 的数据同步尝试](技术/实践记录/MySQL与ElasticSearch的数据同步尝试.md)
   - [其他资料 | Other Docs](技术/其他资料/其他资料.md)
     - [Git 学习笔记](技术/其他资料/Git%20学习笔记.md)
