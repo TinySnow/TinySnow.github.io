@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # bash 脚本安全性保障
 set -Eeuxo pipefail

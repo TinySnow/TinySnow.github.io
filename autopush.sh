@@ -28,22 +28,29 @@ if [[ $1 ]]; then
 
 	# 生成 sitemap.xml 和 sitemap.txt 文件，借助 static-sitemap-cli
 	# 安装 static-sitemap-cli 命令： npm i -g static-sitemap-cli
-	npx sscli -b https://tinysnow.github.io -r ./book
+	
+	if ![[ "$OSTYPE" =~ ^linux ]]; then
+	
+		sscli -b https://tinysnow.github.io -r ./book
 
 	# 检查 book 文件夹下是否有这两个文件
-	if [[ -a ./book/sitemap.xml && -a ./book/sitemap.txt ]]; then
-		cp -f ./book/sitemap.xml ./src
-		cp -f ./book/sitemap.txt ./src
-	else
-		echo "sitemap.xml 和 sitemap.txt 不存在，请检查 static-sitemap-cli 安装情况。"
-		exit 1
-	fi
+		if [[ -a ./book/sitemap.xml && -a ./book/sitemap.txt ]]; then
+			cp -f ./book/sitemap.xml ./src
+			cp -f ./book/sitemap.txt ./src
+		else
+			echo "sitemap.xml 和 sitemap.txt 不存在，请检查 static-sitemap-cli 安装情况。"
+			exit 1
+		fi
+		
+		git add .
+
+		./generate-last-updated-md.sh
+
+		git add ./src/last-updated.md
+	
+        fi
 
 	git add .
-
-	./generate-last-updated-md.sh
-
-	git add ./src/last-updated.md
 
 	# 编译文章
 	mdbook build
