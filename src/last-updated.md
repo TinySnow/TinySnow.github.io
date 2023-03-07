@@ -4,105 +4,198 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## SUMMARY.md
+## autopush.sh
 
 ```diff
 
-@@ -4,6 +4,7 @@
- - [最近更新 | Last Updated](last-updated.md)
- - [问题总表 | Problems](问题总表.md)
- - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [未婚妻 - 玛 · 奥克罗克斯](每日一文/未婚妻%20-%20玛%20·%20奥克罗克斯.md)
-   - [刘正风灭门 - 金庸](每日一文/刘正风灭门%20-%20金庸.md)
-   - [花未眠 - 川端康成](每日一文/花未眠%20-%20川端康成.md)
-   - [还记得十六岁时的梦想吗 - 艾明雅](每日一文/还记得十六岁时的梦想吗%20-%20艾明雅.md)
+@@ -29,7 +29,7 @@ if [[ $1 ]]; then
+ 	# 生成 sitemap.xml 和 sitemap.txt 文件，借助 static-sitemap-cli
+ 	# 安装 static-sitemap-cli 命令： npm i -g static-sitemap-cli
+ 	
+-	if ![[ "$OSTYPE" =~ ^linux ]]; then
++	if ! [[ "$OSTYPE" =~ linux ]]; then
+ 	
+ 		sscli -b https://tinysnow.github.io -r ./book
+ 
 ```
 
 ## sitemap.txt
 
 ```diff
 
-@@ -16,7 +16,7 @@ https://tinysnow.github.io/每日一文/一种错觉 - 毛姆
- https://tinysnow.github.io/每日一文/亲爱的小孩 - 陈晓霞
- https://tinysnow.github.io/每日一文/从痴迷到依恋 - 周国平
- https://tinysnow.github.io/每日一文/写在五线谱上的信 - 王小波
--https://tinysnow.github.io/每日一文/刘正风灭门20- 金庸
-+https://tinysnow.github.io/每日一文/刘正风灭门 - 金庸
- https://tinysnow.github.io/每日一文/双鱼 - 三毛
- https://tinysnow.github.io/每日一文/吃饭是一件需要认真对待的事 - 梁文道
- https://tinysnow.github.io/每日一文/夜空中的木拐 - 从维熙
+@@ -4,7 +4,6 @@ https://tinysnow.github.io/个人简介
+ https://tinysnow.github.io/问题总表
+ https://tinysnow.github.io/学习/学习
+ https://tinysnow.github.io/学习/耶鲁大学：心理学导论
+-https://tinysnow.github.io/小说/小说
+ https://tinysnow.github.io/技术/Errors
+ https://tinysnow.github.io/技术/Knowledge
+ https://tinysnow.github.io/技术/技术
+
+@@ -32,6 +31,7 @@ https://tinysnow.github.io/每日一文/我来讲一个故事 - 加西亚 · 马
+ https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
+ https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
+ https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
++https://tinysnow.github.io/每日一文/未婚妻 - 玛 · 奥克罗克斯
+ https://tinysnow.github.io/每日一文/槐花 - 汪曾祺
+ https://tinysnow.github.io/每日一文/每日一文
+ https://tinysnow.github.io/每日一文/没有一本一劳永逸的书 - 毛姆
+
+@@ -53,9 +53,9 @@ https://tinysnow.github.io/每日一文/花未眠 - 川端康成
+ https://tinysnow.github.io/每日一文/花脸雀 - 李娟
+ https://tinysnow.github.io/每日一文/还记得十六岁时的梦想吗 - 艾明雅
+ https://tinysnow.github.io/每日一文/那些你所不知道的大事 - 李月亮
++https://tinysnow.github.io/每日一文/郁金香 - 玛丽娅 · 恩里凯达
+ https://tinysnow.github.io/每日一文/雨伞 - 川端康成
+ https://tinysnow.github.io/每日一文/青春 - 亦舒
+-https://tinysnow.github.io/笔记/笔记
+ https://tinysnow.github.io/读书/电影台词
+ https://tinysnow.github.io/读书/读书
+ https://tinysnow.github.io/学习/公共基础知识/中国近现代史
+
+@@ -107,48 +107,6 @@ https://tinysnow.github.io/学习/零碎知识整理/零碎知识整理
+ https://tinysnow.github.io/学习/音乐/基础乐理
+ https://tinysnow.github.io/学习/音乐/常用三和弦
+ https://tinysnow.github.io/学习/音乐/音乐
+-https://tinysnow.github.io/小说/其他小说/Chapter 1
+-https://tinysnow.github.io/小说/其他小说/其他小说
+-https://tinysnow.github.io/小说/其他小说/夜天盛世夜天梦
+-https://tinysnow.github.io/小说/其他小说/小说设定
+-https://tinysnow.github.io/小说/其他小说/恋人之间的秘密
+-https://tinysnow.github.io/小说/其他小说/第一章 冲击
+-https://tinysnow.github.io/小说/其他小说/第二章 巨变
+-https://tinysnow.github.io/小说/想象力训练/想象力训练
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 公主与夫人（《欢恋》番外）
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 分享
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 可能会知道
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 女性知识
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 少女的夏天
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 就算是厨师也能照亮他人
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 散打很温柔
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 昂贵的教师
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 普通
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 欺负人
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 满足
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 美术生的夜晚
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 芭蕾舞者欺负人
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 认真地发光
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 设计师想要恋爱
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 证明你喜欢
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 遗留
+-https://tinysnow.github.io/小说/想象力训练/想象力训练 - 酒保与冷静
+-https://tinysnow.github.io/小说/想象力训练/想象力训练之一
+-https://tinysnow.github.io/小说/想象力训练/想象力训练之三
+-https://tinysnow.github.io/小说/想象力训练/想象力训练之二
+-https://tinysnow.github.io/小说/想象力训练/想象力训练之五
+-https://tinysnow.github.io/小说/想象力训练/想象力训练之六
+-https://tinysnow.github.io/小说/想象力训练/想象力训练之四
+-https://tinysnow.github.io/小说/想象力训练/承 K 之名
+-https://tinysnow.github.io/小说/想象力训练/无题之一
+-https://tinysnow.github.io/小说/想象力训练/有些事情，不应转瞬即逝
+-https://tinysnow.github.io/小说/想象力训练/欢恋
+-https://tinysnow.github.io/小说/想象力训练/深入骨髓
+-https://tinysnow.github.io/小说/想象力训练/理想雪 - 为你化妆
+-https://tinysnow.github.io/小说/想象力训练/理想雪 - 应不应该
+-https://tinysnow.github.io/小说/想象力训练/理想雪 - 那些不重要
+-https://tinysnow.github.io/小说/想象力训练/靛青之秋之一
+-https://tinysnow.github.io/小说/想象力训练/靛青之秋之二
+ https://tinysnow.github.io/技术/ArchRISC-V/ArchRISC-V
+ https://tinysnow.github.io/技术/ArchRISC-V/FrequentlyUsed
+ https://tinysnow.github.io/技术/ArchRISC-V/IssueTemplate
+
+@@ -181,8 +139,10 @@ https://tinysnow.github.io/技术/其他资料/设计模式极简笔记
+ https://tinysnow.github.io/技术/其他资料/软件知识补充
+ https://tinysnow.github.io/技术/其他资料/重装系统 8-7
+ https://tinysnow.github.io/技术/其他资料/重装系统知识
++https://tinysnow.github.io/技术/实践记录/ElasticSearch启用
+ https://tinysnow.github.io/技术/实践记录/MySQL与ElasticSearch的数据同步尝试
+ https://tinysnow.github.io/技术/实践记录/实践记录
++https://tinysnow.github.io/技术/实践记录/毕业设计环境准备
+ https://tinysnow.github.io/技术/计算机科学极简入门指南/第一章：计算机的历史
+ https://tinysnow.github.io/技术/计算机科学极简入门指南/第三章：简单逻辑门
+ https://tinysnow.github.io/技术/计算机科学极简入门指南/第二章：计算机的构成
+
+@@ -363,26 +323,6 @@ https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 26 日
+ https://tinysnow.github.io/断章/随记/随记 - 2023 年 1 月 18 日
+ https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
+ https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
+-https://tinysnow.github.io/笔记/教程/Basic Elements
+-https://tinysnow.github.io/笔记/教程/Duilib安装教程
+-https://tinysnow.github.io/笔记/教程/Git 笔记
+-https://tinysnow.github.io/笔记/教程/Street Dance Basics
+-https://tinysnow.github.io/笔记/教程/刷机教程
+-https://tinysnow.github.io/笔记/教程/手机系统更新意外处理
+-https://tinysnow.github.io/笔记/教程/教程
+-https://tinysnow.github.io/笔记/教程/重装系统
+-https://tinysnow.github.io/笔记/记录/GalGame 记录
+-https://tinysnow.github.io/笔记/记录/优秀作品记录
+-https://tinysnow.github.io/笔记/记录/喜爱的舞者
+-https://tinysnow.github.io/笔记/记录/喜爱角色记录
+-https://tinysnow.github.io/笔记/记录/已投递的简历
+-https://tinysnow.github.io/笔记/记录/已读书目记录
+-https://tinysnow.github.io/笔记/记录/游玩游戏记录
+-https://tinysnow.github.io/笔记/记录/番剧记录
+-https://tinysnow.github.io/笔记/记录/衣服风格记录
+-https://tinysnow.github.io/笔记/记录/观影记录
+-https://tinysnow.github.io/笔记/记录/记录
+-https://tinysnow.github.io/笔记/记录/软件订阅记录
+ https://tinysnow.github.io/读书/亲密关系/亲密关系
+ https://tinysnow.github.io/读书/亲密关系/第一章：人际关系的构成
+ https://tinysnow.github.io/读书/亲密关系/第七章：友谊
+
+@@ -415,14 +355,11 @@ https://tinysnow.github.io/读书/没事，一切都会好起来的/幸福
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/心
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/我的宇宙
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/散步
+-https://tinysnow.github.io/读书/没事，一切都会好起来的/最美的东西
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/朝着尽头
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/来自宇宙的信
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/来自月亮的回信
+-https://tinysnow.github.io/读书/没事，一切都会好起来的/枕边的故事
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/梦尽头的你
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/梦的距离
+-https://tinysnow.github.io/读书/没事，一切都会好起来的/永远
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/沙漠里的玫瑰
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/没事，一切都会好起来的
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/海浪
+
+@@ -434,37 +371,12 @@ https://tinysnow.github.io/读书/没事，一切都会好起来的/相信
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/离别
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/精灵之舞
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/紧急降落
+-https://tinysnow.github.io/读书/没事，一切都会好起来的/终点站
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/给你
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/花
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/门
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/阳光
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/音乐
+ https://tinysnow.github.io/读书/没事，一切都会好起来的/飞吧
+-https://tinysnow.github.io/读书/零零散散/二十首情诗和一首绝望的歌
+-https://tinysnow.github.io/读书/零零散散/人间告白
+-https://tinysnow.github.io/读书/零零散散/你当像鸟飞往你的山
+-https://tinysnow.github.io/读书/零零散散/大型网站技术架构：核心原理与案例分析
+-https://tinysnow.github.io/读书/零零散散/如何阅读一本书
+-https://tinysnow.github.io/读书/零零散散/山茶文具店
+-https://tinysnow.github.io/读书/零零散散/强风吹拂
+-https://tinysnow.github.io/读书/零零散散/快速抓重点，过目不忘的阅读术
+-https://tinysnow.github.io/读书/零零散散/我想要两颗西柚
+-https://tinysnow.github.io/读书/零零散散/我离开之后
+-https://tinysnow.github.io/读书/零零散散/数学之美
+-https://tinysnow.github.io/读书/零零散散/时间简史
+-https://tinysnow.github.io/读书/零零散散/明天，我要和昨天的你约会
+-https://tinysnow.github.io/读书/零零散散/智齿
+-https://tinysnow.github.io/读书/零零散散/漫画经济学：生活常识
+-https://tinysnow.github.io/读书/零零散散/漫画经济学：金融危机
+-https://tinysnow.github.io/读书/零零散散/焦虑的人
+-https://tinysnow.github.io/读书/零零散散/狮子之家的点心日
+-https://tinysnow.github.io/读书/零零散散/美元真相
+-https://tinysnow.github.io/读书/零零散散/追风筝的人
+-https://tinysnow.github.io/读书/零零散散/零零散散
+-https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
+-https://tinysnow.github.io/读书/零零散散/非暴力沟通
+-https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
+ https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
+ https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
+ https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
 ```
 
-
-## 刘正风灭门20- 金庸.md
-
-```diff
-
-@@ -1 +0,0 @@
--# 刘正风灭门 - 金庸
-```
-
-## 未婚妻 - 玛 · 奥克罗克斯.md
-
-```diff
-
-@@ -0,0 +1,57 @@
-+# 未婚妻
-+
-+*玛 · 奥克罗克斯*
-+
-+　　假期之后，我回巴黎去。我到车站的时候，火车上已坐满了旅客。我在各节车厢里都寻找遍了，想觅一个座位。但找来找去，只在最末一节车厢里，寻着一个空座，并且上面还放了两个鸡鸭篮子，里面的鸡鸭不停地伸出头在窥探。我迟疑了半天，才决定进去。我正想在这熙攘的旅客中，寻找这篮子的主人，有一个穿农夫衣服的人对我说：“小姐，请等一会儿，我就把那个篮子拿下来。”
-+
-+　　我于是把放在他膝上的果篮拿下来，他这才立起身来，将鸡鸭篮移在座位底下。鸭子很不愿意，我由它们的叫声中可以知道，鸡低下它们的头，好象被侮辱了似的。农夫的妻子，叫着它们的名字，和它们谈话。
-+
-+　　当我坐下来的时候，鸭子也安静了。坐在我对面的一位旅客，问农夫的鸡鸭是否带到市场上去的。
-+
-+　　“先生，不是的。”农夫这样的回答，“我带给我儿子的，后天他就要结婚了。”
-+
-+　　他容光焕发，四下看着，很象要人人都知道他现在是非常幸福的人似的。
-+
-+　　火车开行了。问他鸡鸭的那个旅客，展开了他的报纸。在这时候，农夫又和他攀谈起来：“我的儿子，他在巴黎一家商店里做事，他将要和一个青年女郎结婚，也是在商店里做事的。”
-+
-+　　旅客将报放在膝上，一只手还拿着，静听了一会儿道：“那个女郎很美丽吗？”
-+
-+　　农夫说：“我们不知道，我们还没有见过她呢。”
-+
-+　　旅客说：“真的吗！那么，倘若她是很丑，你恐怕也要不喜欢她了罢？”
-+
-+　　村人回答道：“那也许她是很丑的。不过，我们仍是欢喜她，因为我们最疼爱的孩子，愿意娶一个貌丑的妻子。”
-+
-+　　坐在我旁边的农夫妻子接口道：“还有，若是她能令我们的菲力欢喜，一定也能叫我们欢喜的。”她转过来看着我，在她的小圆脸上，温和的眼光，表示着笑容。从她的外表看去，我绝不相信，她能有一个行将结婚的儿子。她问我是否到巴黎去。当我点头承认后，坐在我对面的旅客，又说起笑话来。
-+
-+　　他说：“我愿意打赌，这位青年女士就是你儿子的未婚妻。她是秘密地来会她的公婆的，却不说出她是谁来。”
-+
-+　　人们都望着我，我脸不由得红起来。村人和他的妻子一同说道：“倘若这是真的，我们真欢喜极了！”
-+
-+　　我告诉他们那完全不对。但是，那位旅客仍然不相信。他的理由是，我将上车的时候，窥探了两次，好象在找人似的，并且迟疑了半天，才决定进来。别的旅客都笑了。我极力解释，说那是因为寻觅座位的缘故。
-+
-+　　村人说：“那也没有什么要紧，若是我们的媳妇真象你一样，那我们就幸福极了。”
-+
-+　　那位旅客仍保持着他的戏谑态度，看了我一眼，对农夫说：“等你到了巴黎时，你就知道，我并没有弄错。你的儿子将要对你说，‘这就是我的未婚妻。’”
-+
-+　　过了一会儿，村妇转过来对着我，在篮子里寻出一块饼来，对我说，这是她那天早上亲自做的。我没有什么话可以推辞，只好说，我身体有些不舒服，受了寒，将饼退还给她。她扔在篮里，却又给我一串葡萄。我无法推辞，只好接受了。
-+
-+　　当火车停了的时候，她丈夫要去替我弄热水喝，我又无法阻止他，真觉十分的不安。
-+
-+　　我看着这位慈善的老人，不禁很为懊恼，因为我不能真正当他的媳妇啊！我知道他们对我的感情是很深厚的。唉！我到处漂泊，没有见过我的父母，永远是异乡过客。
-+
-+　　我时时看见他们在注视着我。
-+
-+　　火车到了巴黎车站的时候，我帮助他们把篮子拿下去，并且给他们指路。我看见一个少年奔向他们跟前来，双手紧紧地搂抱着他们。我赶紧躲开了。离着他们远些站着。他和他们不住地接吻，亲了又亲，亲了又亲。他们面含着笑容，一望而知他们心中是无限快乐。行李撞着的时候，挑夫们的呼喊声，他们都没有听见。
-+
-+　　我跟着他们到了车站门。儿子一只手臂挎着一篮鸡，另一只手紧搂着他母亲的腰。他愉快的眼睛含着笑容，和他父亲一样。
-+
-+　　站外面很暗，我将大衣领子翻了起来，相隔数步跟在这对老夫妇后面。儿子出去看他的马车。村人用手抚摸着一个花点的大头鸡，对妻子说道：“若是我们早知道她不是我们的媳妇，我们应当把这只花点的鸡送给她。”
-+
-+　　妻子也抚摸着鸡说：“是的，若是我们早知道了。”
-+
-+　　她转向出站的人们看了一会，并且向远处也看了看道：“她不在这些人当中了。”
-+
-+　　儿子和马车来了，他扶着他父母进了车，他坐在一旁，仍然不住地看着他们。他看起来很强健和蔼。我想，他的未婚妻，真是一个幸福的女子呢！
-+
-+　　马车走远了，我慢慢地走到街上去。今天的所遇，感动着我，使我不愿再回到我那孤寂的小屋子里。我已经二十岁了，还没有人向我求过婚呢。
-\ No newline at end of file
-```

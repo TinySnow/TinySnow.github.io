@@ -29,7 +29,7 @@ if [[ $1 ]]; then
 	# 生成 sitemap.xml 和 sitemap.txt 文件，借助 static-sitemap-cli
 	# 安装 static-sitemap-cli 命令： npm i -g static-sitemap-cli
 	
-	if ![[ "$OSTYPE" =~ ^linux ]]; then
+	if ! [[ "$OSTYPE" =~ linux ]]; then
 	
 		sscli -b https://tinysnow.github.io -r ./book
 
