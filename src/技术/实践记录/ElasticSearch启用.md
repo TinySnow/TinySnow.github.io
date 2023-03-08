@@ -48,3 +48,15 @@ ERROR: Elasticsearch exited unexpectedly
 
 - 中文默认分词器惨不忍睹，需要自己安装额外分词器
 - 查询比较特殊，要求 GET 请求携带数据体
+- 查询也可以用 POST，不是必须用 GET
+- 允许跨域需要在 `elasticsearch.yml` 中添加配置
+
+```yaml
+
+#开启跨域
+http.cors.enabled: true
+#允许所有
+http.cors.allow-origin: "*"
+
+```
+
