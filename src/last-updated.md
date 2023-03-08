@@ -4,198 +4,282 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## autopush.sh
+## SUMMARY.md
 
 ```diff
 
-@@ -29,7 +29,7 @@ if [[ $1 ]]; then
- 	# 生成 sitemap.xml 和 sitemap.txt 文件，借助 static-sitemap-cli
- 	# 安装 static-sitemap-cli 命令： npm i -g static-sitemap-cli
- 	
--	if ![[ "$OSTYPE" =~ ^linux ]]; then
-+	if ! [[ "$OSTYPE" =~ linux ]]; then
- 	
- 		sscli -b https://tinysnow.github.io -r ./book
- 
+@@ -4,6 +4,7 @@
+ - [最近更新 | Last Updated](last-updated.md)
+ - [问题总表 | Problems](问题总表.md)
+ - [每日一文 | Daily Article](每日一文/每日一文.md)
++  - [爱情故事 - 余华](每日一文/爱情故事%20-%20余华.md)
+   - [郁金香 - 玛丽娅 · 恩里凯达](每日一文/郁金香%20-%20玛丽娅%20·%20恩里凯达.md)
+   - [未婚妻 - 玛 · 奥克罗克斯](每日一文/未婚妻%20-%20玛%20·%20奥克罗克斯.md)
+   - [刘正风灭门 - 金庸](每日一文/刘正风灭门%20-%20金庸.md)
 ```
 
 ## sitemap.txt
 
 ```diff
 
-@@ -4,7 +4,6 @@ https://tinysnow.github.io/个人简介
+@@ -4,6 +4,7 @@ https://tinysnow.github.io/个人简介
  https://tinysnow.github.io/问题总表
  https://tinysnow.github.io/学习/学习
  https://tinysnow.github.io/学习/耶鲁大学：心理学导论
--https://tinysnow.github.io/小说/小说
++https://tinysnow.github.io/小说/小说
  https://tinysnow.github.io/技术/Errors
  https://tinysnow.github.io/技术/Knowledge
  https://tinysnow.github.io/技术/技术
 
-@@ -32,6 +31,7 @@ https://tinysnow.github.io/每日一文/我来讲一个故事 - 加西亚 · 马
- https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
- https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
- https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
-+https://tinysnow.github.io/每日一文/未婚妻 - 玛 · 奥克罗克斯
- https://tinysnow.github.io/每日一文/槐花 - 汪曾祺
- https://tinysnow.github.io/每日一文/每日一文
- https://tinysnow.github.io/每日一文/没有一本一劳永逸的书 - 毛姆
-
-@@ -53,9 +53,9 @@ https://tinysnow.github.io/每日一文/花未眠 - 川端康成
- https://tinysnow.github.io/每日一文/花脸雀 - 李娟
- https://tinysnow.github.io/每日一文/还记得十六岁时的梦想吗 - 艾明雅
- https://tinysnow.github.io/每日一文/那些你所不知道的大事 - 李月亮
-+https://tinysnow.github.io/每日一文/郁金香 - 玛丽娅 · 恩里凯达
+@@ -56,6 +57,7 @@ https://tinysnow.github.io/每日一文/那些你所不知道的大事 - 李月
+ https://tinysnow.github.io/每日一文/郁金香 - 玛丽娅 · 恩里凯达
  https://tinysnow.github.io/每日一文/雨伞 - 川端康成
  https://tinysnow.github.io/每日一文/青春 - 亦舒
--https://tinysnow.github.io/笔记/笔记
++https://tinysnow.github.io/笔记/笔记
  https://tinysnow.github.io/读书/电影台词
  https://tinysnow.github.io/读书/读书
  https://tinysnow.github.io/学习/公共基础知识/中国近现代史
 
-@@ -107,48 +107,6 @@ https://tinysnow.github.io/学习/零碎知识整理/零碎知识整理
+@@ -107,6 +109,48 @@ https://tinysnow.github.io/学习/零碎知识整理/零碎知识整理
  https://tinysnow.github.io/学习/音乐/基础乐理
  https://tinysnow.github.io/学习/音乐/常用三和弦
  https://tinysnow.github.io/学习/音乐/音乐
--https://tinysnow.github.io/小说/其他小说/Chapter 1
--https://tinysnow.github.io/小说/其他小说/其他小说
--https://tinysnow.github.io/小说/其他小说/夜天盛世夜天梦
--https://tinysnow.github.io/小说/其他小说/小说设定
--https://tinysnow.github.io/小说/其他小说/恋人之间的秘密
--https://tinysnow.github.io/小说/其他小说/第一章 冲击
--https://tinysnow.github.io/小说/其他小说/第二章 巨变
--https://tinysnow.github.io/小说/想象力训练/想象力训练
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 公主与夫人（《欢恋》番外）
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 分享
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 可能会知道
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 女性知识
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 少女的夏天
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 就算是厨师也能照亮他人
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 散打很温柔
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 昂贵的教师
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 普通
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 欺负人
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 满足
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 美术生的夜晚
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 芭蕾舞者欺负人
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 认真地发光
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 设计师想要恋爱
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 证明你喜欢
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 遗留
--https://tinysnow.github.io/小说/想象力训练/想象力训练 - 酒保与冷静
--https://tinysnow.github.io/小说/想象力训练/想象力训练之一
--https://tinysnow.github.io/小说/想象力训练/想象力训练之三
--https://tinysnow.github.io/小说/想象力训练/想象力训练之二
--https://tinysnow.github.io/小说/想象力训练/想象力训练之五
--https://tinysnow.github.io/小说/想象力训练/想象力训练之六
--https://tinysnow.github.io/小说/想象力训练/想象力训练之四
--https://tinysnow.github.io/小说/想象力训练/承 K 之名
--https://tinysnow.github.io/小说/想象力训练/无题之一
--https://tinysnow.github.io/小说/想象力训练/有些事情，不应转瞬即逝
--https://tinysnow.github.io/小说/想象力训练/欢恋
--https://tinysnow.github.io/小说/想象力训练/深入骨髓
--https://tinysnow.github.io/小说/想象力训练/理想雪 - 为你化妆
--https://tinysnow.github.io/小说/想象力训练/理想雪 - 应不应该
--https://tinysnow.github.io/小说/想象力训练/理想雪 - 那些不重要
--https://tinysnow.github.io/小说/想象力训练/靛青之秋之一
--https://tinysnow.github.io/小说/想象力训练/靛青之秋之二
++https://tinysnow.github.io/小说/其他小说/Chapter 1
++https://tinysnow.github.io/小说/其他小说/其他小说
++https://tinysnow.github.io/小说/其他小说/夜天盛世夜天梦
++https://tinysnow.github.io/小说/其他小说/小说设定
++https://tinysnow.github.io/小说/其他小说/恋人之间的秘密
++https://tinysnow.github.io/小说/其他小说/第一章 冲击
++https://tinysnow.github.io/小说/其他小说/第二章 巨变
++https://tinysnow.github.io/小说/想象力训练/想象力训练
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 公主与夫人（《欢恋》番外）
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 分享
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 可能会知道
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 女性知识
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 少女的夏天
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 就算是厨师也能照亮他人
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 散打很温柔
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 昂贵的教师
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 普通
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 欺负人
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 满足
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 美术生的夜晚
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 芭蕾舞者欺负人
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 认真地发光
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 设计师想要恋爱
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 证明你喜欢
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 遗留
++https://tinysnow.github.io/小说/想象力训练/想象力训练 - 酒保与冷静
++https://tinysnow.github.io/小说/想象力训练/想象力训练之一
++https://tinysnow.github.io/小说/想象力训练/想象力训练之三
++https://tinysnow.github.io/小说/想象力训练/想象力训练之二
++https://tinysnow.github.io/小说/想象力训练/想象力训练之五
++https://tinysnow.github.io/小说/想象力训练/想象力训练之六
++https://tinysnow.github.io/小说/想象力训练/想象力训练之四
++https://tinysnow.github.io/小说/想象力训练/承 K 之名
++https://tinysnow.github.io/小说/想象力训练/无题之一
++https://tinysnow.github.io/小说/想象力训练/有些事情，不应转瞬即逝
++https://tinysnow.github.io/小说/想象力训练/欢恋
++https://tinysnow.github.io/小说/想象力训练/深入骨髓
++https://tinysnow.github.io/小说/想象力训练/理想雪 - 为你化妆
++https://tinysnow.github.io/小说/想象力训练/理想雪 - 应不应该
++https://tinysnow.github.io/小说/想象力训练/理想雪 - 那些不重要
++https://tinysnow.github.io/小说/想象力训练/靛青之秋之一
++https://tinysnow.github.io/小说/想象力训练/靛青之秋之二
  https://tinysnow.github.io/技术/ArchRISC-V/ArchRISC-V
  https://tinysnow.github.io/技术/ArchRISC-V/FrequentlyUsed
  https://tinysnow.github.io/技术/ArchRISC-V/IssueTemplate
 
-@@ -181,8 +139,10 @@ https://tinysnow.github.io/技术/其他资料/设计模式极简笔记
- https://tinysnow.github.io/技术/其他资料/软件知识补充
- https://tinysnow.github.io/技术/其他资料/重装系统 8-7
- https://tinysnow.github.io/技术/其他资料/重装系统知识
-+https://tinysnow.github.io/技术/实践记录/ElasticSearch启用
- https://tinysnow.github.io/技术/实践记录/MySQL与ElasticSearch的数据同步尝试
- https://tinysnow.github.io/技术/实践记录/实践记录
-+https://tinysnow.github.io/技术/实践记录/毕业设计环境准备
- https://tinysnow.github.io/技术/计算机科学极简入门指南/第一章：计算机的历史
- https://tinysnow.github.io/技术/计算机科学极简入门指南/第三章：简单逻辑门
- https://tinysnow.github.io/技术/计算机科学极简入门指南/第二章：计算机的构成
-
-@@ -363,26 +323,6 @@ https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 26 日
+@@ -323,6 +367,26 @@ https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 26 日
  https://tinysnow.github.io/断章/随记/随记 - 2023 年 1 月 18 日
  https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
  https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
--https://tinysnow.github.io/笔记/教程/Basic Elements
--https://tinysnow.github.io/笔记/教程/Duilib安装教程
--https://tinysnow.github.io/笔记/教程/Git 笔记
--https://tinysnow.github.io/笔记/教程/Street Dance Basics
--https://tinysnow.github.io/笔记/教程/刷机教程
--https://tinysnow.github.io/笔记/教程/手机系统更新意外处理
--https://tinysnow.github.io/笔记/教程/教程
--https://tinysnow.github.io/笔记/教程/重装系统
--https://tinysnow.github.io/笔记/记录/GalGame 记录
--https://tinysnow.github.io/笔记/记录/优秀作品记录
--https://tinysnow.github.io/笔记/记录/喜爱的舞者
--https://tinysnow.github.io/笔记/记录/喜爱角色记录
--https://tinysnow.github.io/笔记/记录/已投递的简历
--https://tinysnow.github.io/笔记/记录/已读书目记录
--https://tinysnow.github.io/笔记/记录/游玩游戏记录
--https://tinysnow.github.io/笔记/记录/番剧记录
--https://tinysnow.github.io/笔记/记录/衣服风格记录
--https://tinysnow.github.io/笔记/记录/观影记录
--https://tinysnow.github.io/笔记/记录/记录
--https://tinysnow.github.io/笔记/记录/软件订阅记录
++https://tinysnow.github.io/笔记/教程/Basic Elements
++https://tinysnow.github.io/笔记/教程/Duilib安装教程
++https://tinysnow.github.io/笔记/教程/Git 笔记
++https://tinysnow.github.io/笔记/教程/Street Dance Basics
++https://tinysnow.github.io/笔记/教程/刷机教程
++https://tinysnow.github.io/笔记/教程/手机系统更新意外处理
++https://tinysnow.github.io/笔记/教程/教程
++https://tinysnow.github.io/笔记/教程/重装系统
++https://tinysnow.github.io/笔记/记录/GalGame 记录
++https://tinysnow.github.io/笔记/记录/优秀作品记录
++https://tinysnow.github.io/笔记/记录/喜爱的舞者
++https://tinysnow.github.io/笔记/记录/喜爱角色记录
++https://tinysnow.github.io/笔记/记录/已投递的简历
++https://tinysnow.github.io/笔记/记录/已读书目记录
++https://tinysnow.github.io/笔记/记录/游玩游戏记录
++https://tinysnow.github.io/笔记/记录/番剧记录
++https://tinysnow.github.io/笔记/记录/衣服风格记录
++https://tinysnow.github.io/笔记/记录/观影记录
++https://tinysnow.github.io/笔记/记录/记录
++https://tinysnow.github.io/笔记/记录/软件订阅记录
  https://tinysnow.github.io/读书/亲密关系/亲密关系
  https://tinysnow.github.io/读书/亲密关系/第一章：人际关系的构成
  https://tinysnow.github.io/读书/亲密关系/第七章：友谊
 
-@@ -415,14 +355,11 @@ https://tinysnow.github.io/读书/没事，一切都会好起来的/幸福
+@@ -355,11 +419,14 @@ https://tinysnow.github.io/读书/没事，一切都会好起来的/幸福
  https://tinysnow.github.io/读书/没事，一切都会好起来的/心
  https://tinysnow.github.io/读书/没事，一切都会好起来的/我的宇宙
  https://tinysnow.github.io/读书/没事，一切都会好起来的/散步
--https://tinysnow.github.io/读书/没事，一切都会好起来的/最美的东西
++https://tinysnow.github.io/读书/没事，一切都会好起来的/最美的东西
  https://tinysnow.github.io/读书/没事，一切都会好起来的/朝着尽头
  https://tinysnow.github.io/读书/没事，一切都会好起来的/来自宇宙的信
  https://tinysnow.github.io/读书/没事，一切都会好起来的/来自月亮的回信
--https://tinysnow.github.io/读书/没事，一切都会好起来的/枕边的故事
++https://tinysnow.github.io/读书/没事，一切都会好起来的/枕边的故事
  https://tinysnow.github.io/读书/没事，一切都会好起来的/梦尽头的你
  https://tinysnow.github.io/读书/没事，一切都会好起来的/梦的距离
--https://tinysnow.github.io/读书/没事，一切都会好起来的/永远
++https://tinysnow.github.io/读书/没事，一切都会好起来的/永远
  https://tinysnow.github.io/读书/没事，一切都会好起来的/沙漠里的玫瑰
  https://tinysnow.github.io/读书/没事，一切都会好起来的/没事，一切都会好起来的
  https://tinysnow.github.io/读书/没事，一切都会好起来的/海浪
 
-@@ -434,37 +371,12 @@ https://tinysnow.github.io/读书/没事，一切都会好起来的/相信
+@@ -371,12 +438,37 @@ https://tinysnow.github.io/读书/没事，一切都会好起来的/相信
  https://tinysnow.github.io/读书/没事，一切都会好起来的/离别
  https://tinysnow.github.io/读书/没事，一切都会好起来的/精灵之舞
  https://tinysnow.github.io/读书/没事，一切都会好起来的/紧急降落
--https://tinysnow.github.io/读书/没事，一切都会好起来的/终点站
++https://tinysnow.github.io/读书/没事，一切都会好起来的/终点站
  https://tinysnow.github.io/读书/没事，一切都会好起来的/给你
  https://tinysnow.github.io/读书/没事，一切都会好起来的/花
  https://tinysnow.github.io/读书/没事，一切都会好起来的/门
  https://tinysnow.github.io/读书/没事，一切都会好起来的/阳光
  https://tinysnow.github.io/读书/没事，一切都会好起来的/音乐
  https://tinysnow.github.io/读书/没事，一切都会好起来的/飞吧
--https://tinysnow.github.io/读书/零零散散/二十首情诗和一首绝望的歌
--https://tinysnow.github.io/读书/零零散散/人间告白
--https://tinysnow.github.io/读书/零零散散/你当像鸟飞往你的山
--https://tinysnow.github.io/读书/零零散散/大型网站技术架构：核心原理与案例分析
--https://tinysnow.github.io/读书/零零散散/如何阅读一本书
--https://tinysnow.github.io/读书/零零散散/山茶文具店
--https://tinysnow.github.io/读书/零零散散/强风吹拂
--https://tinysnow.github.io/读书/零零散散/快速抓重点，过目不忘的阅读术
--https://tinysnow.github.io/读书/零零散散/我想要两颗西柚
--https://tinysnow.github.io/读书/零零散散/我离开之后
--https://tinysnow.github.io/读书/零零散散/数学之美
--https://tinysnow.github.io/读书/零零散散/时间简史
--https://tinysnow.github.io/读书/零零散散/明天，我要和昨天的你约会
--https://tinysnow.github.io/读书/零零散散/智齿
--https://tinysnow.github.io/读书/零零散散/漫画经济学：生活常识
--https://tinysnow.github.io/读书/零零散散/漫画经济学：金融危机
--https://tinysnow.github.io/读书/零零散散/焦虑的人
--https://tinysnow.github.io/读书/零零散散/狮子之家的点心日
--https://tinysnow.github.io/读书/零零散散/美元真相
--https://tinysnow.github.io/读书/零零散散/追风筝的人
--https://tinysnow.github.io/读书/零零散散/零零散散
--https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
--https://tinysnow.github.io/读书/零零散散/非暴力沟通
--https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
++https://tinysnow.github.io/读书/零零散散/二十首情诗和一首绝望的歌
++https://tinysnow.github.io/读书/零零散散/人间告白
++https://tinysnow.github.io/读书/零零散散/你当像鸟飞往你的山
++https://tinysnow.github.io/读书/零零散散/大型网站技术架构：核心原理与案例分析
++https://tinysnow.github.io/读书/零零散散/如何阅读一本书
++https://tinysnow.github.io/读书/零零散散/山茶文具店
++https://tinysnow.github.io/读书/零零散散/强风吹拂
++https://tinysnow.github.io/读书/零零散散/快速抓重点，过目不忘的阅读术
++https://tinysnow.github.io/读书/零零散散/我想要两颗西柚
++https://tinysnow.github.io/读书/零零散散/我离开之后
++https://tinysnow.github.io/读书/零零散散/数学之美
++https://tinysnow.github.io/读书/零零散散/时间简史
++https://tinysnow.github.io/读书/零零散散/明天，我要和昨天的你约会
++https://tinysnow.github.io/读书/零零散散/智齿
++https://tinysnow.github.io/读书/零零散散/漫画经济学：生活常识
++https://tinysnow.github.io/读书/零零散散/漫画经济学：金融危机
++https://tinysnow.github.io/读书/零零散散/焦虑的人
++https://tinysnow.github.io/读书/零零散散/狮子之家的点心日
++https://tinysnow.github.io/读书/零零散散/美元真相
++https://tinysnow.github.io/读书/零零散散/追风筝的人
++https://tinysnow.github.io/读书/零零散散/零零散散
++https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
++https://tinysnow.github.io/读书/零零散散/非暴力沟通
++https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
  https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
  https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
  https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
 ```
 
+
+## 爱情故事 - 余华.md
+
+```diff
+
+@@ -0,0 +1,101 @@
++# 爱情故事
++
++*余华*
++
++　　一九七七年的秋天和两个少年有关。在那个天空明亮的日子里，他们乘坐一辆嘎吱作响的公共汽车，去四十里以外的某个地方。车票是男孩买的，女孩一直躲在车站外的一根水泥电线杆后。在她的四周飘扬着落叶和尘土，水泥电线杆发出的嗡嗡声覆盖着周围错综复杂的声响，女孩此刻的心情像一页课文一样单调，她偷偷望着车站敞开的小门，她的目光平静如水。然后男孩从车站走了出来，他的脸色苍白而又憔悴。他知道女孩躲在何处，但他没有看她。他往那座桥的方向走了过去，他在走过去时十分紧张地左顾右盼。不久之后他走到了桥上，他心神不安地站住了脚，然后才朝那边的女孩望了一眼。他看到女孩此刻正看着自己，他便狠狠地盯了她一眼，可她依旧看着他。他非常生气地转过脸去。在此后的一段时间里，他一直站在桥上，他一直没有看她。但他总觉得她始终都在看着自己，这个想法使他惊慌失措。后来他确定四周没有熟人，才朝她走去。他走过去时的胆战心惊，她丝毫不觉。她看到这个白皙的少年在阳光里走来时十分动人。她内心微微有些激动，因此她脸上露出了笑容。然而他走到她身旁后却对她的笑容表示了愤怒，他低声说：“这种时候你还能笑？”
++
++　　她的美丽微笑还未成长便被他摧残了。她有些紧张地望着他，因为他的神色有些凶狠。这种凶狠此刻还在继续下去，他说：“我说过多少次，你不要看我，你要装着不认识我。你为什么看我？真讨厌。”她没有丝毫反抗的表示，只是将目光从他脸上无声地移开。她看着地上一片枯黄的树叶，听着他从牙缝里出来的声音。他告诉她：“上车以后你先找到座位坐下，如果没有熟人，我就坐到你身旁。如果有熟人，我就站在车门旁。记住，我们互相不要说话。”他将车票递了过去，她拿住后他就走开了。他没有走向候车室，而是走向那座桥。
++
++　　这个女孩在十多年之后接近三十岁的时候，就坐在我的对面。我们一起坐在一间黄昏的屋子里，那是我们的寓所。我们的窗帘垂挂在两端，落日的余辉在窗台上飘浮。她坐在窗前的一把椅子里，正在织一条天蓝色的围巾。此刻围巾的长度已经超过了她的身高，可她还在往下织。坐在她对面的我，曾在一九七七年的秋天与她一起去那个四十里以外的地方。我们在五岁的时候就相互认识，这种认识经过长途跋涉以后，导致了婚姻的出现。我们的第一次性生活是在我们十六岁行将结束时完成的。她第一次怀孕也是在那时候。她此刻坐在窗前的姿势已经重复了五年，因此我看着她的目光怎么还会有激情？多年来，她总是在我眼前晃来晃去，这种晃来晃去使我沮丧无比。我的最大错误就是在结婚的前一夜，没有及时意识到她一生都将在我眼前晃来晃去。所以我的生活才变得越来越陈旧。现在她在织着围巾的时候，我手里正拿着作家洪峰的一封信。洪峰的美妙经历感动了我，我觉得自己没有理由将这种旧报纸似的生活继续下去。
++
++　　因此我像她重复的坐姿一样重复着现在的话，我不断向她指明的，是青梅竹马的可怕。我一次又一次地问她：
++
++　　“难道你不觉得我太熟悉了吗？”
++
++　　但她始终以一种迷茫的神色望着我。
++
++　　我继续说：“我们从五岁的时候就认识了，二十多年后我们居然还在一起。我们谁还能指望对方来改变自己呢？”
++
++　　她总是在这个时候表现出一些慌乱。
++
++　　“你对我来说，早已如一张贴在墙上的白纸一样一览无余。而我对于你，不也同样如此？”
++
++　　我看到她眼泪流下来时显得有些愚蠢。
++
++　　我仍然往下说：“我们唯一可做的事只剩下回忆过去。可是过多的回忆，使我们的过去像每日的早餐那样，总在预料之中。”我们的第一次性生活是我们十六岁行将结束时完成的。在那个没有月光的夜晚，我们在学校操场中央的草地上，我们颤抖不已地拥抱在一起，是因为我们胆战心惊。不远的那条小路上，有拿着手电走过的人，他们的说话声在夜空里像匕首一样锋利，好几次都差点使我仓皇而逃。只是因为我被她紧紧抱住，才使我现在回忆当初的情景时，没有明显地看到自己的狼狈。
++
++　　我一想到那个夜晚就会感受到草地上露珠的潮湿。当我的手侵入她的衣服时，她热烈的体温使我不停地打寒战。我的手在她的腹部往下进入，我开始感受到如草地一样的潮湿了。起先我什么都不想干，我觉得抚摸一下就足够了。可是后来我非常想看一眼，我很想知道那地方是怎么回事。但是在那个没有月光的夜晚，我凑过去闻到的只是一股平淡的气味。在那个黑乎乎潮湿的地方所散发的气味，是我以前从未闻到过的气味。然而这种气味并未像我以前想象的那么激动人心。尽管如此，在不久之后我还是干了那桩事。欲望的一往无前差点毁了我，在此后很多的日子里，我设计了多种自杀与逃亡的方案。在她越来越像孕妇的时候，我接近崩溃的绝望使我对当初只有几分钟天旋地转般的快乐痛恨无比。在一九七七年秋天的那一日，我与她一起前往四十里以外的那个地方，我希望那家坐落在马路旁的医院能够证实一切都是一场虚惊。她面临困难所表现出来的紧张，并未像我那样来势凶猛。当我提出应该去医院检查一下时，她马上想起那个四十里以外的地方。她当时表现的冷静与理智使我暗暗有些吃惊。她提出的这个地方向我暗示了一种起码的安全，这样将会没人知道我们所进行的这次神秘的检查。可是她随后颇有激情地提起五年前她曾去过那个地方，她对那个地方街道的描述，以及泊在海边退役的海轮的抒情，使我十分生气。我告诉她我们准备前往并不是为了游玩，而是一次要命的检查。这次检查关系到我们是否还能活下去。我告诉她这次检查的结果若证实她确已怀孕，那么我们将被学校开除，将被各自的父母驱出家门。有关我们的传闻将像街上的灰尘一样经久不息。我们最后只能：“自杀。”她只有在这个时候才显得惊慌失措。几年以后她告诉我，我当时的脸色十分恐怖。我当时对我们的结局的设计，显然使她大吃一惊。可是她即便在惊慌失措的时候也从不真正绝望。她认为起码是她的父母不会把她驱出家庭，但她承认她的父母会惩罚她。她安慰我：
++
++　　“惩罚比自杀好。”那天我是最后一个上车的，我从后面看着她上车，她不停地向我回身张望。我让她不要看我，反复提醒在她那里始终是一页白纸。我上车的时候汽车已经发动起来。我没有立刻走向我的座位，而是站在门旁。我的目光在车内所有的脸上转来转去，我看到起码有二十张曾经见过的脸。因此我无法走向自己的座位，我只能站在这辆已经行驶的汽车里。我看着那条破烂不堪的公路怎样捉弄着我们的汽车。我感到自己像是被装在瓶子里，然后被人不停地摇晃。后来我听到她在叫我的声音，她的声音使我蓦然产生无比的恐惧。我因为她的不懂事而极为愤怒，我没有答理。我希望她因此终止那种叫声，可是她那种令人讨厌的叫声却不停地重复着。我只能转过头去，我知道自己此刻的脸色像路旁的杂草一样青得可怕。然而她脸上却洋溢着天真烂漫的笑容，她佯装吃惊的样子表示了她与我是意外相遇。然后她邀请我坐在她身旁的空座位上。我只能走过去。我在她身旁坐下以后感到她的身体有意紧挨着我。她说了很多话，可我一句都没有听进去，我为了掩饰只能不停地点头。这一切使我心烦意乱。那时候她偷偷捏住了我的手指，我立刻甩开她的手。在这种时候她居然还会这样，真要把我气疯过去。此刻她才重视我的愤怒，她不再说话，自然也不会伸过手来。她似乎十分委屈地转过脸去，望着车外萧杀的景色。然而她的安静并未保持多久，在汽车一次剧烈的震颤后，她突然哧哧笑了起来。接着凑近我偷偷说：“腹内的小孩震出来了。”
++
++　　她的玩笑只能加剧我的气愤，因此我凑近她咬牙切齿地低声说：“闭上你的嘴。”后来我看到了几艘泊在海边的轮船，有两艘已被拆得惨不忍睹，只有一艘暂且完整无损。有几只灰色的鸟在海边水草上盘旋。汽车在驶入车站大约几分钟以后，两个少年从车站出口处走了出来。那时候一辆卡车从他们身旁驶过，扬起的灰尘将他们的身体涂改了一下。
++
++　　男孩此刻铁青着脸，他一声不吭地往前走。女孩似乎有些害怕地跟在他身后，她不时偷偷看他侧面的脸色。男孩在走到一条胡同口时，没有走向医院的方向，而是走入了胡同。女孩也走了进去。男孩一直走到胡同的中央才站住脚，女孩也站住了脚。他们共同看着一个中年的女人走来，又看着她走出胡同。然后男孩低声吼了起来：
++
++　　“你为什么叫我？”
++
++　　女孩委屈地看着他，然后才说：
++
++　　“我怕你站着太累。”男孩继续吼道：“我说过多少次了，你别看我。可你总看我，而且还叫我的名字，用手捏我。”这时有两个男人从胡同口走来，男孩不再说话，女孩也没有辩解。那两个男人从他们身边走过时，兴趣十足地看了他们一眼。两个男人走过去以后，男孩就往胡同口走去了，女孩迟疑了一下也跟了上去。
++
++　　他们默不作声地走在通往医院的大街上。男孩此刻不再怒气冲冲，在医院越来越接近的时候，他显得越来越忧心忡忡。他转过脸去看着身旁的女孩，女孩的双眼正望着前方。从她有些迷茫的眼神里，他感到医院就在前面。
++
++　　然后他们来到了医院的门厅，挂号处空空荡荡。男孩此刻突然胆怯起来，他不由走出门厅，站在外面。他这时突然害怕地感到自己会被人抓住，他没有丝毫勇气进入眼下的冒险。当女孩也走出门厅时，他找到了掩盖自己胆怯的理由，他要让女孩独自去冒险，而自己则随时准备逃之夭夭。他告诉她：他继续陪着她实在太危险，别人一眼就会看出这两个少年干了什么坏事。他让她：
++
++　　“你一个人去吧。”她没有表示异议，点了点头后就走了进去。他看着她走到挂号处的窗前，她从口袋里掏出钱来时没有显出一丝紧张。他听到她告诉里面的人她叫什么名字，她二十岁。名字是假的，年龄也是假的。这些他事先并未设计好。然后他听到她说：“妇科。”这两个字使他不寒而栗，他感到她的声音有些疲倦。接着她离开窗口转身看了他一眼，随后走上楼梯。她手里拿着的病历在上楼时摇摇晃晃。
++
++　　男孩一直看着她的身影在楼梯上消失，然后才将目光移开。他感到心情越来越沉重，呼吸也困难起来。他望着大街上的目光在此刻杂乱无章。他在那里站了好长一段时间，那个楼梯总有人下来，可是她一直没有下来。他不由害怕起来，他感到自己所干的事已在这个楼上被揭发。这个想法变得越来越真实，因此他也越发紧张。他决定逃离这个地方，于是便往大街对面走去，他在横穿大街时显得丧魂落魄。他来到街对面后，没有停留，而是立刻钻入一家商店。
++
++　　那是一家杂货店，一个丑陋不堪的年轻女子站在柜台内一副无所事事的模样。另一边有两个男人在拉玻璃，他便走到近旁看着他们。同时不时地往街对面的医院望上一眼。那是一块青色的玻璃，两个男人都在抽烟，因此玻璃上有几堆小小的烟灰。两个男人那种没有心事的无聊模样，使他更为沉重。他看着钻石在玻璃上划过时出现一道白痕，那声音仿佛破裂似的来回响着。不久后女孩出现在街对面，她站在一棵梧桐树旁有些不知所措地在寻找男孩。男孩透过商店布满灰尘的窗玻璃看到了她。他看到女孩身后并未站着可疑的人，于是立刻走出商店。他在穿越街道时，她便看到了他。待他走到近旁，她向他苦笑一下，低声说：“有了。”男孩像一棵树一样半晌没有动弹，仅有的一丝希望在此刻彻底破灭了。他望着眼前愁眉不展的女孩说：
++
++　　“怎么办呢？”女孩轻声说：“我不知道。”
++
++　　男孩继续说：“怎么办呢？
++
++　　女孩安慰他：“别去想这些了，我们去那些商店看看吧。”
++
++　　男孩摇摇头，说：“我不想去。”
++
++　　女孩不再说话，她看着大街上来回的车辆，几个行人过来时发出嘻嘻笑声。他们过去以后，女孩再次说：
++
++　　“去商店看看吧。”男孩还是说：“我不想去。”
++
++　　他们一直站在那里，很久以后男孩才有气无力地说：“我们回去吧。”女孩点点头。然后他们往回走去。走不多远，在一家商店前，女孩站住了脚，她拉住男孩的衣袖，说道：
++
++　　“我们进去看看吧。”男孩迟疑了一会儿就和她一起走入商店。他们在一条白色的学生裙前站了很久，女孩一直看着这条裙子，她告诉男孩：“我很喜欢这条裙子。”
++
++　　女孩的嗓音在十六岁时已经固定下来。在此后的十多年里，她的声音几乎每日都要在我的耳边盘旋。这种过于熟悉的声音，已将我的激情清扫。因此在此刻的黄昏里，我看着坐在对面的妻子，只会感到越来越疲倦。她还在织着那条天蓝色的围巾。她的脸依然还是过去的脸。只是此刻的脸已失去昔日的弹性。她脸上的皱纹是在我的目光下成长起来的，我熟悉它们犹如熟悉自己的手掌。现在她开始注意我的话了。
++
++　　“在你还没有说话的时候，我就知道你要说什么；在每天中午十一点半和傍晚五点的时候，我知道你要回家了。我可以在一百个女人的脚步声里，听出你的声音。而我对你来说，不也同样如此？”她停止了织毛衣的动作，她开始认真地望着我。
++
++　　我继续说：“因此我们互相都不可能使对方感到惊喜。我们最多只能给对方一点高兴，而这种高兴在大街上到处都有。”这时她开口说话了，她说：
++
++　　“我明白你的意思了。”
++
++　　“是吗？”我不知道该如何对付她这句话。所以我只能这么说。她又说：“我明白你的意思了。”
++
++　　我看到她的眼泪流了出来。
++
++　　她说：“你是想把我一脚踢开。”
++
++　　我没有否认，而是说：“这话多难听。”
++
++　　她又重复道：“你想把我一脚踢开。”她的眼泪在继续流。
++
++　　“这话太难听了。”我说。然后我建议道：
++
++　　“让我们共同来回忆一下往事吧。”
++
++　　“是最后一次吗？”她问。
++
++　　我回避她的问话，继续说：“我们的回忆从什么时候开始呢？”“是最后一次吧？”她仍然这样问。
++
++　　“从一九七七年的秋天开始吧。”我说，“我们坐上那辆嘎吱作响的汽车，去四十里以外的那个地方，去检查你是否已经怀孕。那个时候我可真是丧魂落魄。”
++
++　　“你没有丧魂落魄。”她说。
++
++　　“你不用安慰我，我确实丧魂落魄了。”
++
++　　“不，你没有丧魂落魄。”她再次这样说，“我从认识你到现在，你只有一次丧魂落魄。”
++
++　　我问：“什么时候？”“现在。”她回答。
+\ No newline at end of file
+```
