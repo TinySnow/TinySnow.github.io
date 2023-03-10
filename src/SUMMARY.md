@@ -93,6 +93,7 @@
     - [毕业设计环境准备](技术/实践记录/毕业设计环境准备.md)
     - [Elastic Search 启用](技术/实践记录/ElasticSearch启用.md)
     - [MySQL 与 Elastic Search 的数据同步尝试](技术/实践记录/MySQL与ElasticSearch的数据同步尝试.md)
+    - [毕业设计解决方案](技术/实践记录/毕业设计解决方案.md)
   - [其他资料 | Other Docs](技术/其他资料/其他资料.md)
     - [Git 学习笔记](技术/其他资料/Git%20学习笔记.md)
     - [Bash 代表命令](技术/其他资料/Bash%20代表命令.md)

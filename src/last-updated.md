@@ -8,52 +8,111 @@
 
 ```diff
 
-@@ -4,6 +4,7 @@
- - [最近更新 | Last Updated](last-updated.md)
- - [问题总表 | Problems](问题总表.md)
- - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [你要是在麦田里遇到了我 - 罗伯特 · 彭斯](每日一文/你要是在麦田里遇到了我%20-%20罗伯特%20·%20彭斯.md)
-   - [你有没有钱 - 李敖](每日一文/你有没有钱%20-%20李敖.md)
-   - [爱情故事 - 余华](每日一文/爱情故事%20-%20余华.md)
-   - [郁金香 - 玛丽娅 · 恩里凯达](每日一文/郁金香%20-%20玛丽娅%20·%20恩里凯达.md)
+@@ -93,6 +93,7 @@
+     - [毕业设计环境准备](技术/实践记录/毕业设计环境准备.md)
+     - [Elastic Search 启用](技术/实践记录/ElasticSearch启用.md)
+     - [MySQL 与 Elastic Search 的数据同步尝试](技术/实践记录/MySQL与ElasticSearch的数据同步尝试.md)
++    - [毕业设计解决方案](技术/实践记录/毕业设计解决方案.md)
+   - [其他资料 | Other Docs](技术/其他资料/其他资料.md)
+     - [Git 学习笔记](技术/其他资料/Git%20学习笔记.md)
+     - [Bash 代表命令](技术/其他资料/Bash%20代表命令.md)
 ```
 
-
-## 你要是在麦田里遇到了我 - 罗伯特 · 彭斯.md
+## sitemap.txt
 
 ```diff
 
-@@ -0,0 +1,31 @@
-+# 你要是在麦田里遇到了我
+@@ -16,6 +16,7 @@ https://tinysnow.github.io/每日一文/一种错觉 - 毛姆
+ https://tinysnow.github.io/每日一文/亲爱的小孩 - 陈晓霞
+ https://tinysnow.github.io/每日一文/从痴迷到依恋 - 周国平
+ https://tinysnow.github.io/每日一文/你有没有钱 - 李敖
++https://tinysnow.github.io/每日一文/你要是在麦田里遇到了我 - 罗伯特 · 彭斯
+ https://tinysnow.github.io/每日一文/写在五线谱上的信 - 王小波
+ https://tinysnow.github.io/每日一文/刘正风灭门 - 金庸
+ https://tinysnow.github.io/每日一文/双鱼 - 三毛
+```
+
+
+## ElasticSearch启用.md
+
+```diff
+
+@@ -52,11 +52,9 @@ ERROR: Elasticsearch exited unexpectedly
+ - 允许跨域需要在 `elasticsearch.yml` 中添加配置
+ 
+ ```yaml
+-
+ #开启跨域
+ http.cors.enabled: true
+ #允许所有
+ http.cors.allow-origin: "*"
+-
+ ```
+ 
+```
+
+## 实践记录.md
+
+```diff
+
+@@ -1,3 +1,3 @@
+-# 实践记录 | Practice Record
++# 实践记录
+ 
+ 所有计算机工程途中遇到的问题，解决方案，想法等，收录于此。
+```
+
+## 毕业设计环境准备.md
+
+```diff
+
+@@ -24,7 +24,6 @@ sudo n stable
+ # 然后刷新，否则容易出现 node -v 还是旧本版的情况
+ hash -r
+ # 特别提醒：node 旧版本不支持 await 等语法，运行不了代码，必须更新版本
+-
+ ```
+ 
+ ## 设置 Maven
+
+@@ -123,3 +122,4 @@ npm install --registry=registry.npmmirror.com
+ ```
+ 
+ - 然后运行项目即可
 +
-+*罗伯特 · 彭斯*
+```
+
+## 毕业设计解决方案.md
+
+```diff
+
+@@ -0,0 +1,28 @@
++# 毕业设计解决方案
 +
-+　　这里不是家
++## Spring Doc
 +
-+　　你却是生长根茎的影子
++- 访问 /swagger-ui.html 重定向的页面，没有 api 显示
 +
-+　　习惯把自己养在金黄的梦里
++- 因为用到 Spring Security，所以很有可能请求被拦截了，需要配置 Spring Security 访问 Spring Doc 资源
 +
-+　　我在你的世界练习降落
++  - 注意，Spring Doc 配置和以前 Spring Fox 的 Swagger 放行路径不太一样
 +
-+　　不谈金钱 权利和性
++  - 这个导致困惑了好几天，最后根据 Doc 的 Default swagger 页面的 Explore 默认项试出来了
 +
-+　　只开着一扇干净的窗户
++  - ```java
++        @Bean
++        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
++            http
++                	// 其他配置项可以随便加
++                	// Spring Fox 的 Swagger 需要放行 "/swagger-resources/**", "/swagger-ui/**"
++                	// Spring Doc 的 Swagger 需要放行 "/v2/**"
++                	// 这里放行 v2/v3 依据自己的 Spring Doc 版本决定
++                    .antMatchers("/v3/**").permitAll()
++                    .anyRequest().authenticated();
++            return http.build();
++        }
++    ```
 +
-+　　折射低飞的阳光
++---
 +
-+　　你要是在麦田里遇到了我
-+
-+　　我要是在麦田里遇到了你
-+
-+　　我们要是看到很多孩子
-+
-+　　在麦田里做游戏
-+
-+　　请微笑 请对视
-+
-+　　态度都浮在生活的措辞里
-+
-+　　我们都活在彼此的文字里
-\ No newline at end of file
 ```

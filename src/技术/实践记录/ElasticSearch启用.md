@@ -52,11 +52,9 @@ ERROR: Elasticsearch exited unexpectedly
 - 允许跨域需要在 `elasticsearch.yml` 中添加配置
 
 ```yaml
-
 #开启跨域
 http.cors.enabled: true
 #允许所有
 http.cors.allow-origin: "*"
-
 ```
 
