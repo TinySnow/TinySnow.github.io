@@ -92,6 +92,7 @@
   - [实践记录 | Practice Record](技术/实践记录/实践记录.md)
     - [毕业设计环境准备](技术/实践记录/毕业设计环境准备.md)
     - [Elastic Search 启用](技术/实践记录/ElasticSearch启用.md)
+    - [Logstash 同步 MySQL 数据到 Elastic Search](技术/实践记录/Logstash同步MySQL数据到ElasticSearch.md)
     - [MySQL 与 Elastic Search 的数据同步尝试](技术/实践记录/MySQL与ElasticSearch的数据同步尝试.md)
     - [毕业设计解决方案](技术/实践记录/毕业设计解决方案.md)
   - [其他资料 | Other Docs](技术/其他资料/其他资料.md)

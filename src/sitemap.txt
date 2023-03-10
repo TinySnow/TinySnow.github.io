@@ -190,6 +190,7 @@ https://tinysnow.github.io/技术/实践记录/ElasticSearch启用
 https://tinysnow.github.io/技术/实践记录/MySQL与ElasticSearch的数据同步尝试
 https://tinysnow.github.io/技术/实践记录/实践记录
 https://tinysnow.github.io/技术/实践记录/毕业设计环境准备
+https://tinysnow.github.io/技术/实践记录/毕业设计解决方案
 https://tinysnow.github.io/技术/计算机科学极简入门指南/第一章：计算机的历史
 https://tinysnow.github.io/技术/计算机科学极简入门指南/第三章：简单逻辑门
 https://tinysnow.github.io/技术/计算机科学极简入门指南/第二章：计算机的构成
