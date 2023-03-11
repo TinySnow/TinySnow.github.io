@@ -187,6 +187,7 @@ https://tinysnow.github.io/技术/其他资料/软件知识补充
 https://tinysnow.github.io/技术/其他资料/重装系统 8-7
 https://tinysnow.github.io/技术/其他资料/重装系统知识
 https://tinysnow.github.io/技术/实践记录/ElasticSearch启用
+https://tinysnow.github.io/技术/实践记录/Logstash同步MySQL数据到ElasticSearch
 https://tinysnow.github.io/技术/实践记录/MySQL与ElasticSearch的数据同步尝试
 https://tinysnow.github.io/技术/实践记录/实践记录
 https://tinysnow.github.io/技术/实践记录/毕业设计环境准备
