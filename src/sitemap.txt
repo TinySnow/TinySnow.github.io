@@ -31,6 +31,7 @@ https://tinysnow.github.io/每日一文/我们为什么要过节 - 冯骥才
 https://tinysnow.github.io/每日一文/我们的老式婚姻 - 杨修峰
 https://tinysnow.github.io/每日一文/我们都有病 - 朱德庸
 https://tinysnow.github.io/每日一文/我来讲一个故事 - 加西亚 · 马尔克斯
+https://tinysnow.github.io/每日一文/打工经历 - 王小波
 https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
 https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
 https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
@@ -292,6 +293,7 @@ https://tinysnow.github.io/断章/诗词/极端
 https://tinysnow.github.io/断章/诗词/沉睡在天空之上
 https://tinysnow.github.io/断章/诗词/清平乐 • 琴韵
 https://tinysnow.github.io/断章/诗词/点绛唇 • 祈珍
+https://tinysnow.github.io/断章/诗词/站在迎风坡
 https://tinysnow.github.io/断章/诗词/纸鸢
 https://tinysnow.github.io/断章/诗词/给你
 https://tinysnow.github.io/断章/诗词/继续
@@ -306,6 +308,7 @@ https://tinysnow.github.io/断章/诗词/迷途
 https://tinysnow.github.io/断章/诗词/酒
 https://tinysnow.github.io/断章/诗词/释放一只蝴蝶
 https://tinysnow.github.io/断章/诗词/金色沙滩
+https://tinysnow.github.io/断章/诗词/雨
 https://tinysnow.github.io/断章/诗词/顽柔
 https://tinysnow.github.io/断章/诗词/鸡尾酒
 https://tinysnow.github.io/断章/赠与/千人感谢祭名单
