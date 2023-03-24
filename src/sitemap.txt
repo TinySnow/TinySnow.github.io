@@ -37,6 +37,7 @@ https://tinysnow.github.io/每日一文/我们的老式婚姻 - 杨修峰
 https://tinysnow.github.io/每日一文/我们都有病 - 朱德庸
 https://tinysnow.github.io/每日一文/我来讲一个故事 - 加西亚 · 马尔克斯
 https://tinysnow.github.io/每日一文/打工经历 - 王小波
+https://tinysnow.github.io/每日一文/掉到井里的人 - 卡夫卡
 https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
 https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
 https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
@@ -130,6 +131,7 @@ https://tinysnow.github.io/小说/其他小说/小说设定
 https://tinysnow.github.io/小说/其他小说/恋人之间的秘密
 https://tinysnow.github.io/小说/其他小说/第一章 冲击
 https://tinysnow.github.io/小说/其他小说/第二章 巨变
+https://tinysnow.github.io/小说/想象力训练/公交车
 https://tinysnow.github.io/小说/想象力训练/想象力训练
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 公主与夫人（《欢恋》番外）
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 分享
@@ -161,6 +163,7 @@ https://tinysnow.github.io/小说/想象力训练/有些事情，不应转瞬即
 https://tinysnow.github.io/小说/想象力训练/欢恋
 https://tinysnow.github.io/小说/想象力训练/深入骨髓
 https://tinysnow.github.io/小说/想象力训练/理想雪 - 为你化妆
+https://tinysnow.github.io/小说/想象力训练/理想雪 - 冬季是最温暖的季节
 https://tinysnow.github.io/小说/想象力训练/理想雪 - 应不应该
 https://tinysnow.github.io/小说/想象力训练/理想雪 - 那些不重要
 https://tinysnow.github.io/小说/想象力训练/靛青之秋之一
