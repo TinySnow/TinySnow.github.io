@@ -42,6 +42,7 @@ https://tinysnow.github.io/每日一文/掉到井里的人 - 卡夫卡
 https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
 https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
 https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
+https://tinysnow.github.io/每日一文/未婚夫和爸爸 - 契诃夫
 https://tinysnow.github.io/每日一文/未婚妻 - 玛 · 奥克罗克斯
 https://tinysnow.github.io/每日一文/槐花 - 汪曾祺
 https://tinysnow.github.io/每日一文/每日一文
@@ -304,6 +305,7 @@ https://tinysnow.github.io/断章/诗词/春秋三载
 https://tinysnow.github.io/断章/诗词/期冀
 https://tinysnow.github.io/断章/诗词/期待
 https://tinysnow.github.io/断章/诗词/极端
+https://tinysnow.github.io/断章/诗词/每个人都是一个容器
 https://tinysnow.github.io/断章/诗词/沉睡在天空之上
 https://tinysnow.github.io/断章/诗词/清平乐 • 琴韵
 https://tinysnow.github.io/断章/诗词/点绛唇 • 祈珍
