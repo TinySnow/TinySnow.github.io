@@ -19,6 +19,7 @@ https://tinysnow.github.io/每日一文/丈夫留下的备忘录 - 梅洁
 https://tinysnow.github.io/每日一文/亲爱的小孩 - 陈晓霞
 https://tinysnow.github.io/每日一文/人类的群星闪耀时 - 茨威格
 https://tinysnow.github.io/每日一文/从痴迷到依恋 - 周国平
+https://tinysnow.github.io/每日一文/你到底喜不喜欢我 - 王丫米
 https://tinysnow.github.io/每日一文/你有没有钱 - 李敖
 https://tinysnow.github.io/每日一文/你要是在麦田里遇到了我 - 罗伯特 · 彭斯
 https://tinysnow.github.io/每日一文/修软垫椅的女人 - 莫泊桑
@@ -215,6 +216,7 @@ https://tinysnow.github.io/技术/实践记录/毕业设计解决方案
 https://tinysnow.github.io/技术/计算机科学极简入门指南/第一章：计算机的历史
 https://tinysnow.github.io/技术/计算机科学极简入门指南/第三章：简单逻辑门
 https://tinysnow.github.io/技术/计算机科学极简入门指南/第二章：计算机的构成
+https://tinysnow.github.io/技术/计算机科学极简入门指南/第四章：负数与减法
 https://tinysnow.github.io/技术/计算机科学极简入门指南/计算机科学极简入门指南
 https://tinysnow.github.io/断章/句子/句子
 https://tinysnow.github.io/断章/句子/日记扉页
