@@ -139,8 +139,21 @@ https://tinysnow.github.io/学习/零碎知识整理/半导体集成电路
 https://tinysnow.github.io/学习/零碎知识整理/毕业设计
 https://tinysnow.github.io/学习/零碎知识整理/经济和金融产品理解
 https://tinysnow.github.io/学习/零碎知识整理/零碎知识整理
+https://tinysnow.github.io/学习/音乐/作曲编曲入门
+https://tinysnow.github.io/学习/音乐/其他资料
 https://tinysnow.github.io/学习/音乐/基础乐理
 https://tinysnow.github.io/学习/音乐/常用三和弦
+https://tinysnow.github.io/学习/音乐/第一章第一节：音程旋律
+https://tinysnow.github.io/学习/音乐/第一章第七节：终止
+https://tinysnow.github.io/学习/音乐/第一章第三节：和弦
+https://tinysnow.github.io/学习/音乐/第一章第九节：乐句概述
+https://tinysnow.github.io/学习/音乐/第一章第二节：旋律发展趋势
+https://tinysnow.github.io/学习/音乐/第一章第五节：流畅连接和弦
+https://tinysnow.github.io/学习/音乐/第一章第八节：曲式
+https://tinysnow.github.io/学习/音乐/第一章第六节：旋律和声搭配
+https://tinysnow.github.io/学习/音乐/第一章第十节：乐句展示部
+https://tinysnow.github.io/学习/音乐/第一章第四节：功能和声
+https://tinysnow.github.io/学习/音乐/第一章：概述
 https://tinysnow.github.io/学习/音乐/音乐
 https://tinysnow.github.io/小说/其他小说/Chapter 1
 https://tinysnow.github.io/小说/其他小说/其他小说
@@ -408,6 +421,7 @@ https://tinysnow.github.io/断章/随记/随记 - 2022 年 7 月 7 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 18 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 26 日
 https://tinysnow.github.io/断章/随记/随记 - 2023 年 1 月 18 日
+https://tinysnow.github.io/断章/随记/随记 - 2023 年 4 月 4 日
 https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
 https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
 https://tinysnow.github.io/笔记/教程/Basic Elements
