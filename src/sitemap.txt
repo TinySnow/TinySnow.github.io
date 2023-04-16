@@ -27,6 +27,7 @@ https://tinysnow.github.io/每日一文/修软垫椅的女人 - 莫泊桑
 https://tinysnow.github.io/每日一文/关于朋友 - 叔本华
 https://tinysnow.github.io/每日一文/写在五线谱上的信 - 王小波
 https://tinysnow.github.io/每日一文/刘正风灭门 - 金庸
+https://tinysnow.github.io/每日一文/双文化时代 - 周有光
 https://tinysnow.github.io/每日一文/双鱼 - 三毛
 https://tinysnow.github.io/每日一文/吃饭是一件需要认真对待的事 - 梁文道
 https://tinysnow.github.io/每日一文/向自己说再见 - 希区柯克
@@ -42,6 +43,7 @@ https://tinysnow.github.io/每日一文/小生命 - 亦舒
 https://tinysnow.github.io/每日一文/展示品 - 于尔克 · 舒比格
 https://tinysnow.github.io/每日一文/当三毛还是在二毛的时候 - 三毛
 https://tinysnow.github.io/每日一文/律师太太 - 希区柯克
+https://tinysnow.github.io/每日一文/恶之平庸 - 刘瑜
 https://tinysnow.github.io/每日一文/我们为什么要过节 - 冯骥才
 https://tinysnow.github.io/每日一文/我们的老式婚姻 - 杨修峰
 https://tinysnow.github.io/每日一文/我们都有病 - 朱德庸
@@ -92,6 +94,7 @@ https://tinysnow.github.io/每日一文/郁金香 - 玛丽娅 · 恩里凯达
 https://tinysnow.github.io/每日一文/重圆 - 亦舒
 https://tinysnow.github.io/每日一文/雨伞 - 川端康成
 https://tinysnow.github.io/每日一文/青春 - 亦舒
+https://tinysnow.github.io/每日一文/青梅竹马 - 佚名
 https://tinysnow.github.io/每日一文/鬼剃头 - 冯骥才
 https://tinysnow.github.io/笔记/笔记
 https://tinysnow.github.io/读书/电影台词
@@ -177,17 +180,6 @@ https://tinysnow.github.io/学习/音乐/作曲编曲入门
 https://tinysnow.github.io/学习/音乐/其他资料
 https://tinysnow.github.io/学习/音乐/基础乐理
 https://tinysnow.github.io/学习/音乐/常用三和弦
-https://tinysnow.github.io/学习/音乐/第一章第一节：音程旋律
-https://tinysnow.github.io/学习/音乐/第一章第七节：终止
-https://tinysnow.github.io/学习/音乐/第一章第三节：和弦
-https://tinysnow.github.io/学习/音乐/第一章第九节：乐句概述
-https://tinysnow.github.io/学习/音乐/第一章第二节：旋律发展趋势
-https://tinysnow.github.io/学习/音乐/第一章第五节：流畅连接和弦
-https://tinysnow.github.io/学习/音乐/第一章第八节：曲式
-https://tinysnow.github.io/学习/音乐/第一章第六节：旋律和声搭配
-https://tinysnow.github.io/学习/音乐/第一章第十节：乐句展示部
-https://tinysnow.github.io/学习/音乐/第一章第四节：功能和声
-https://tinysnow.github.io/学习/音乐/第一章：概述
 https://tinysnow.github.io/学习/音乐/音乐
 https://tinysnow.github.io/小说/其他小说/Chapter 1
 https://tinysnow.github.io/小说/其他小说/其他小说
@@ -563,6 +555,20 @@ https://tinysnow.github.io/读书/零零散散/零零散散
 https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
 https://tinysnow.github.io/读书/零零散散/非暴力沟通
 https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
+https://tinysnow.github.io/学习/音乐/第一章/概述
+https://tinysnow.github.io/学习/音乐/第一章/第一节：音程旋律
+https://tinysnow.github.io/学习/音乐/第一章/第七节：终止
+https://tinysnow.github.io/学习/音乐/第一章/第三节：和弦
+https://tinysnow.github.io/学习/音乐/第一章/第九节：乐句概述
+https://tinysnow.github.io/学习/音乐/第一章/第二节：旋律发展趋势
+https://tinysnow.github.io/学习/音乐/第一章/第五节：流畅连接和弦
+https://tinysnow.github.io/学习/音乐/第一章/第八节：曲式
+https://tinysnow.github.io/学习/音乐/第一章/第六节：旋律和声搭配
+https://tinysnow.github.io/学习/音乐/第一章/第十一节：乐句发展部
+https://tinysnow.github.io/学习/音乐/第一章/第十三节：乐句与乐段的区别
+https://tinysnow.github.io/学习/音乐/第一章/第十二节：乐段
+https://tinysnow.github.io/学习/音乐/第一章/第十节：乐句展示部
+https://tinysnow.github.io/学习/音乐/第一章/第四节：功能和声
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
