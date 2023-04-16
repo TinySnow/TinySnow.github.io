@@ -98,5 +98,6 @@ else
 
 	# 删除 【## sitmap.xml】 到 【 </urlset>】 下面那一行
 	sed -i -e "${sitemap_xml_line_number},${sitemap_xml_last_line}d" $file
+	# echo "TODO"
 
 fi
