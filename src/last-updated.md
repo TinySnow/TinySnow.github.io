@@ -4,51 +4,112 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## SUMMARY.md
+## generate-last-updated-md.sh
 
 ```diff
 
-@@ -5,6 +5,7 @@
- - [问题总表 | Problems](问题总表.md)
- -----
- - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [皱起眉头的男人 - 张小娴](每日一文/皱起眉头的男人%20-%20张小娴.md)
-   - [肯肯舞 - 阿图洛 · 维万特](每日一文/肯肯舞%20-%20阿图洛%20·%20维万特.md)
-   - [活出爱 - 史铁生](每日一文/活出爱%20-%20史铁生.md)
-   - [老猴赫尼 - 沈石溪](每日一文/老猴赫尼%20-%20沈石溪.md)
-```
+@@ -3,7 +3,7 @@
+ # bash 脚本安全性保障
+ set -Eeuxo pipefail
+ 
+-###################################变量声明区 START################################
++################################## 变量声明区 START ###############################
+ 
+ 
+ file="./src/last-updated.md"
 
-## 皱起眉头的男人 - 张小娴.md
+@@ -14,7 +14,7 @@ prenote_style="font-size: larger; font-weight: bold; color: red; text-align: cen
+ 
+ notice_content="NOTICE: This content is presented as \`git diff\`."
+ 
+-##################################变量声明区 END###################################
++################################# 变量声明区 END ##################################
+ 
+ echo -e "# ${title}\n\n## Prenote\n\n<p style=\"${prenote_style}\">${notice_content}</p>\n" > ${file}
+ 
 
-```diff
+@@ -29,7 +29,7 @@ git add ${file}
+ sed -i -e 's/^@@/\n@@/g' ${file}
+ 
+ # 计数经过修改的文件数量，用于下面的循环
+-count=`sed -n -e '/^diff/p' ${file} | wc -l`
++count=$(sed -n -e '/^diff/p' ${file} | wc -l)
+ 
+ for (( i = 0; i < count; i++ )); do
+ 
 
-@@ -0,0 +1,27 @@
-+# 皱起眉头的男人
-+
-+*张小娴*
-+
-+　　你曾经为多少人多少事皱过眉头？
-+
-+　　我从来没有。只怕眉头皱得多，形成了皱纹，即使用上两千元一瓶的去皱膏也无法力挽狂澜。
-+
-+　　但我希望有一个时常为我皱眉头的男人。
-+
-+　　他因为我这个人太麻烦、太蛮横、太任性、太不讲理，又莫奈我何而时常皱眉。终于不单眉头出现两条弯弯的小皱纹，连额头都开始有皱纹了。
-+
-+　　当他为皱纹苦恼，我告诉他，他的皱纹比别的男人好看。然后请他继续为我皱眉头。
-+
-+　　因为关心和爱，我们才会忘记会有皱纹啊！
-+
-+　　而且，经历风霜的男人最好看。
-+
-+　　几条皱纹，散乱的白发，证实他为理想和事业付出过。
-+
-+　　忙于奋斗的男人，哪有时间兼顾外表？
-+
-+　　最怕那些只顾外表，讨异性欢心的男人。他们天天上健美院与岁月争雄，肩膀和胸肌练得象一只横放的皮箱。臀部练得扁平，与背部可以划成一条直线，即使沙滩躺上一天，他不会出现一个凹位。
-+
-+　　他们不卖风霜，他们卖风情。
-+
-+　　但男人为他所热衷的事业，他所爱的女人，专注地紧皱眉头的那一刻，才是最好看的。
+@@ -39,13 +39,13 @@ for (( i = 0; i < count; i++ )); do
+ 	#       不使用匹配后直接删除是因为下面还有 diff 提取行号的逻辑
+ 	#       此逻辑可能有 bug：即当文件名中出现 slash(/) 的时候此逻辑会失效
+ 	#       但是此概率几乎为零，因为 Windows 和 Linux 中都不允许出现半角 slash，MacOS 不知道，没测试
+-	file_name=`sed -n -e '/^diff/p' $file | sed -n -e 's/diff.*\///p'| head -1`
++	file_name=$(sed -n -e '/^diff/p' $file | sed -n -e 's/diff.*\///p'| head -1)
+ 
+ 	# 提取 diff 开头一行的行号
+-	diff_line_number=`sed -n -e '/^diff/=' $file | head -1`
++	diff_line_number=$(sed -n -e '/^diff/=' $file | head -1)
+ 
+ 	# 提取 +++ 开头一行的行号
+-	triple_plus_line_number=`sed -n -e '/^+++/=' $file | head -1`
++	triple_plus_line_number=$(sed -n -e '/^+++/=' $file | head -1)
+ 
+ 	# 将 diff 和 +++ 中间的内容，替换为：
+ 	# ----------------------------------------
+
+@@ -68,36 +68,35 @@ echo -e "\`\`\`" >> ${file}
+ 
+ # 因为后续的 last-updated.md 会越拖越长，所以每次在 last-updated.md diff 完成的时候
+ # 在本次的 last-updated.md 文件中删去上一次 last-updated.md 的更改
++# 原理是记录首行和尾行，中间用 sed 删除
+ 
+ # 而且每次 sitemap.xml 每次推送都会更新时间，导致每次 sitemap.xml 都会在 lat-updated.md 里面
+-# 实际上属于无效信息，所以此处也设置一部分逻辑将其删除
++# 实际上属于无效信息，所以此处也设置一部分逻辑将其删除，原理与上相同
+ 
+ # 但是 sitemap.txt 只记录文章，如果文章没有新增，则 sitemap.txt 不会变，并且 sitemap.txt 不会占用多大空间，可以保留
+ 
+-# 原理是记录首行和尾行，中间用 sed 删除
+-
+ # 记录 【## last-updated.md】 出现的行数
+-last_updated_line_number=`sed -n -e '/^##\ last\-updated\.md/=' $file | head -1`
++last_updated_start=$(sed -n -e '/^##\ last\-updated\.md/=' ${file} | head -1)
+ 
+-# 记录 【## sitmap.xml】 出现的行数
+-sitemap_xml_line_number=`sed -n -e '/^##\ sitemap\.xml/=' $file | head -1`
++if [[ ${last_updated_start} ]]; then
++	
++	# 记录从 【## last-updated.md】 一行开始，第二个出现的 ```，也即整个代码块的结尾
++	last_updated_end=$(expr ${last_updated_start} + $(sed -n "${last_updated_start},\$p" ${file} | grep -n '^```$' | head -2 | tail -1 | cut -d ':' -f 1))
+ 
+-# 记录 sitmap.xml 最后 【 </urlset>】 标志出现的行数
+-sitemap_xml_urlset_line_number=`sed -n -e '/^\ <\/urlset>/=' $file | head -1`
++	# 删除 【## last-updated.md】 到 其代码块结尾
++	sed -i -e "${last_updated_start},${last_updated_end}d" ${file}
+ 
+-# 加上偏移值，因为用 sed 直接删除最后 【 </urlset>】 标志出现的行数，最后会剩一个 ``` 代码块结尾符
+-# 需要加上这一行，而这一行就在下面，故偏移值为 1
+-sitemap_xml_last_line=`expr ${sitemap_xml_urlset_line_number} + 1`
++fi
+ 
+-if [[ ${last_updated_line_number} &&  ${last_updated_line_number} -lt ${sitemap_xml_line_number} ]]; then
++# 记录 【## sitmap.xml】 出现的行数
++sitemap_xml_start=$(sed -n -e '/^##\ sitemap\.xml/=' ${file} | head -1)
+ 
+-	# 删除 【## last-updated.md】 到 【 </urlset>】 下面那一行
+-	sed -i -e "${last_updated_line_number},${sitemap_xml_last_line}d" $file
++if [[ ${sitemap_xml_start} ]]; then
+ 
+-else
++	# 记录从 【## sitmap.xml】 一行开始，第二个出现的 ```，也即整个代码块的结尾
++	sitemap_xml_end=$(expr ${sitemap_xml_start} + $(sed -n "${sitemap_xml_start},\$p" ${file} | grep -n '^```$' | head -2 | tail -1 | cut -d ':' -f 1))
+ 
+-	# 删除 【## sitmap.xml】 到 【 </urlset>】 下面那一行
+-	sed -i -e "${sitemap_xml_line_number},${sitemap_xml_last_line}d" $file
+-	# echo "TODO"
++	# 删除 【## sitmap.xml】 到 其代码块结尾
++	sed -i -e "${sitemap_xml_start},${sitemap_xml_end}d" ${file}
+ 
+-fi
++fi
 \ No newline at end of file
 ```
