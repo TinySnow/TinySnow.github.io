@@ -4,112 +4,58 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## generate-last-updated-md.sh
+## SUMMARY.md
 
 ```diff
 
-@@ -3,7 +3,7 @@
- # bash 脚本安全性保障
- set -Eeuxo pipefail
- 
--###################################变量声明区 START################################
-+################################## 变量声明区 START ###############################
- 
- 
- file="./src/last-updated.md"
-
-@@ -14,7 +14,7 @@ prenote_style="font-size: larger; font-weight: bold; color: red; text-align: cen
- 
- notice_content="NOTICE: This content is presented as \`git diff\`."
- 
--##################################变量声明区 END###################################
-+################################# 变量声明区 END ##################################
- 
- echo -e "# ${title}\n\n## Prenote\n\n<p style=\"${prenote_style}\">${notice_content}</p>\n" > ${file}
- 
-
-@@ -29,7 +29,7 @@ git add ${file}
- sed -i -e 's/^@@/\n@@/g' ${file}
- 
- # 计数经过修改的文件数量，用于下面的循环
--count=`sed -n -e '/^diff/p' ${file} | wc -l`
-+count=$(sed -n -e '/^diff/p' ${file} | wc -l)
- 
- for (( i = 0; i < count; i++ )); do
- 
-
-@@ -39,13 +39,13 @@ for (( i = 0; i < count; i++ )); do
- 	#       不使用匹配后直接删除是因为下面还有 diff 提取行号的逻辑
- 	#       此逻辑可能有 bug：即当文件名中出现 slash(/) 的时候此逻辑会失效
- 	#       但是此概率几乎为零，因为 Windows 和 Linux 中都不允许出现半角 slash，MacOS 不知道，没测试
--	file_name=`sed -n -e '/^diff/p' $file | sed -n -e 's/diff.*\///p'| head -1`
-+	file_name=$(sed -n -e '/^diff/p' $file | sed -n -e 's/diff.*\///p'| head -1)
- 
- 	# 提取 diff 开头一行的行号
--	diff_line_number=`sed -n -e '/^diff/=' $file | head -1`
-+	diff_line_number=$(sed -n -e '/^diff/=' $file | head -1)
- 
- 	# 提取 +++ 开头一行的行号
--	triple_plus_line_number=`sed -n -e '/^+++/=' $file | head -1`
-+	triple_plus_line_number=$(sed -n -e '/^+++/=' $file | head -1)
- 
- 	# 将 diff 和 +++ 中间的内容，替换为：
- 	# ----------------------------------------
-
-@@ -68,36 +68,35 @@ echo -e "\`\`\`" >> ${file}
- 
- # 因为后续的 last-updated.md 会越拖越长，所以每次在 last-updated.md diff 完成的时候
- # 在本次的 last-updated.md 文件中删去上一次 last-updated.md 的更改
-+# 原理是记录首行和尾行，中间用 sed 删除
- 
- # 而且每次 sitemap.xml 每次推送都会更新时间，导致每次 sitemap.xml 都会在 lat-updated.md 里面
--# 实际上属于无效信息，所以此处也设置一部分逻辑将其删除
-+# 实际上属于无效信息，所以此处也设置一部分逻辑将其删除，原理与上相同
- 
- # 但是 sitemap.txt 只记录文章，如果文章没有新增，则 sitemap.txt 不会变，并且 sitemap.txt 不会占用多大空间，可以保留
- 
--# 原理是记录首行和尾行，中间用 sed 删除
--
- # 记录 【## last-updated.md】 出现的行数
--last_updated_line_number=`sed -n -e '/^##\ last\-updated\.md/=' $file | head -1`
-+last_updated_start=$(sed -n -e '/^##\ last\-updated\.md/=' ${file} | head -1)
- 
--# 记录 【## sitmap.xml】 出现的行数
--sitemap_xml_line_number=`sed -n -e '/^##\ sitemap\.xml/=' $file | head -1`
-+if [[ ${last_updated_start} ]]; then
-+	
-+	# 记录从 【## last-updated.md】 一行开始，第二个出现的 ```，也即整个代码块的结尾
-+	last_updated_end=$(expr ${last_updated_start} + $(sed -n "${last_updated_start},\$p" ${file} | grep -n '^```$' | head -2 | tail -1 | cut -d ':' -f 1))
- 
--# 记录 sitmap.xml 最后 【 </urlset>】 标志出现的行数
--sitemap_xml_urlset_line_number=`sed -n -e '/^\ <\/urlset>/=' $file | head -1`
-+	# 删除 【## last-updated.md】 到 其代码块结尾
-+	sed -i -e "${last_updated_start},${last_updated_end}d" ${file}
- 
--# 加上偏移值，因为用 sed 直接删除最后 【 </urlset>】 标志出现的行数，最后会剩一个 ``` 代码块结尾符
--# 需要加上这一行，而这一行就在下面，故偏移值为 1
--sitemap_xml_last_line=`expr ${sitemap_xml_urlset_line_number} + 1`
-+fi
- 
--if [[ ${last_updated_line_number} &&  ${last_updated_line_number} -lt ${sitemap_xml_line_number} ]]; then
-+# 记录 【## sitmap.xml】 出现的行数
-+sitemap_xml_start=$(sed -n -e '/^##\ sitemap\.xml/=' ${file} | head -1)
- 
--	# 删除 【## last-updated.md】 到 【 </urlset>】 下面那一行
--	sed -i -e "${last_updated_line_number},${sitemap_xml_last_line}d" $file
-+if [[ ${sitemap_xml_start} ]]; then
- 
--else
-+	# 记录从 【## sitmap.xml】 一行开始，第二个出现的 ```，也即整个代码块的结尾
-+	sitemap_xml_end=$(expr ${sitemap_xml_start} + $(sed -n "${sitemap_xml_start},\$p" ${file} | grep -n '^```$' | head -2 | tail -1 | cut -d ':' -f 1))
- 
--	# 删除 【## sitmap.xml】 到 【 </urlset>】 下面那一行
--	sed -i -e "${sitemap_xml_line_number},${sitemap_xml_last_line}d" $file
--	# echo "TODO"
-+	# 删除 【## sitmap.xml】 到 其代码块结尾
-+	sed -i -e "${sitemap_xml_start},${sitemap_xml_end}d" ${file}
- 
--fi
-+fi
-\ No newline at end of file
+@@ -5,6 +5,7 @@
+ - [问题总表 | Problems](问题总表.md)
+ -----
+ - [每日一文 | Daily Article](每日一文/每日一文.md)
++  - [白肉 - 梁实秋](每日一文/白肉%20-%20梁实秋.md)
+   - [皱起眉头的男人 - 张小娴](每日一文/皱起眉头的男人%20-%20张小娴.md)
+   - [肯肯舞 - 阿图洛 · 维万特](每日一文/肯肯舞%20-%20阿图洛%20·%20维万特.md)
+   - [活出爱 - 史铁生](每日一文/活出爱%20-%20史铁生.md)
 ```
+
+## sitemap.txt
+
+```diff
+
+@@ -66,6 +66,7 @@ https://tinysnow.github.io/每日一文/永远欠一顿饭 - 刘亮程
+ https://tinysnow.github.io/每日一文/汤包 - 梁实秋
+ https://tinysnow.github.io/每日一文/没有一本一劳永逸的书 - 毛姆
+ https://tinysnow.github.io/每日一文/油月亮 - 贾平凹
++https://tinysnow.github.io/每日一文/活出爱 - 史铁生
+ https://tinysnow.github.io/每日一文/活着真好 - 维克多 · 科克留什金
+ https://tinysnow.github.io/每日一文/熟人厌烦症 - 迈克尔 · 金
+ https://tinysnow.github.io/每日一文/爱情故事 - 余华
+
+@@ -77,6 +78,7 @@ https://tinysnow.github.io/每日一文/王府大街 64 号 - 雷达
+ https://tinysnow.github.io/每日一文/生日女郎 - 村上春树
+ https://tinysnow.github.io/每日一文/电影音乐给谁听 - 梁文道
+ https://tinysnow.github.io/每日一文/白痴的故事 - 倪匡
++https://tinysnow.github.io/每日一文/皱起眉头的男人 - 张小娴
+ https://tinysnow.github.io/每日一文/目送 - 龙应台
+ https://tinysnow.github.io/每日一文/看谁的文章写得好 - 李敖
+ https://tinysnow.github.io/每日一文/神迹下的健康心态 - 吴澧
+
+@@ -87,6 +89,7 @@ https://tinysnow.github.io/每日一文/经济学的旁听生 - 张晓风
+ https://tinysnow.github.io/每日一文/给我未来的孩子 - 张梅
+ https://tinysnow.github.io/每日一文/老来多健忘 - 叶倾城
+ https://tinysnow.github.io/每日一文/老猴赫尼 - 沈石溪
++https://tinysnow.github.io/每日一文/肯肯舞 - 阿图洛 · 维万特
+ https://tinysnow.github.io/每日一文/致陈独秀 - 胡适
+ https://tinysnow.github.io/每日一文/花未眠 - 川端康成
+ https://tinysnow.github.io/每日一文/花脸雀 - 李娟
+
+@@ -143,6 +146,7 @@ https://tinysnow.github.io/学习/管理学/组织
+ https://tinysnow.github.io/学习/管理学/规章制度
+ https://tinysnow.github.io/学习/管理学/计划
+ https://tinysnow.github.io/学习/管理学/领导
++https://tinysnow.github.io/学习/美妆/美妆
+ https://tinysnow.github.io/学习/花语/丁香花
+ https://tinysnow.github.io/学习/花语/三叶草
+ https://tinysnow.github.io/学习/花语/兰花
+```
+
