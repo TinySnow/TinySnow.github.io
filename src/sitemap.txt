@@ -335,6 +335,7 @@ https://tinysnow.github.io/断章/文章/色气之下，清纯最大
 https://tinysnow.github.io/断章/文章/茉莉清茶
 https://tinysnow.github.io/断章/文章/蕴愈彼此，共渡红尘
 https://tinysnow.github.io/断章/文章/语言漫谈
+https://tinysnow.github.io/断章/文章/近期的一些总结
 https://tinysnow.github.io/断章/文章/迷失
 https://tinysnow.github.io/断章/文章/追随
 https://tinysnow.github.io/断章/文章/通往优秀的路上，痛苦是一种试炼
@@ -584,6 +585,15 @@ https://tinysnow.github.io/学习/音乐/第一章/第十三节：乐句与乐�
 https://tinysnow.github.io/学习/音乐/第一章/第十二节：乐段
 https://tinysnow.github.io/学习/音乐/第一章/第十节：乐句展示部
 https://tinysnow.github.io/学习/音乐/第一章/第四节：功能和声
+https://tinysnow.github.io/学习/音乐/第三章/概述
+https://tinysnow.github.io/学习/音乐/第二章/概述
+https://tinysnow.github.io/学习/音乐/第二章/第一节：和声旋律
+https://tinysnow.github.io/学习/音乐/第二章/第七节：二段体音乐
+https://tinysnow.github.io/学习/音乐/第二章/第三节：分解和弦
+https://tinysnow.github.io/学习/音乐/第二章/第二节：旋律装饰
+https://tinysnow.github.io/学习/音乐/第二章/第五节：小型二段体
+https://tinysnow.github.io/学习/音乐/第二章/第六节：小型三段体
+https://tinysnow.github.io/学习/音乐/第二章/第四节：和声织体
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
