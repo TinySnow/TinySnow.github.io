@@ -5,6 +5,7 @@
 - [问题总表 | Problems](问题总表.md)
 -----
 - [每日一文 | Daily Article](每日一文/每日一文.md)
+  - [御旨 - 卡夫卡](每日一文/御旨%20-%20卡夫卡.md)
   - [忘却 - 亦舒](每日一文/忘却%20-%20亦舒.md)
   - [银行抢案 - 史蒂文 · 舒曼](每日一文/银行抢案%20-%20史蒂文%20·%20舒曼.md)
   - [白肉 - 梁实秋](每日一文/白肉%20-%20梁实秋.md)
@@ -108,6 +109,7 @@
 - [技术 | Technology](技术/技术.md)
   - [知识 | Knowledge](技术/Knowledge.md)
   - [报错处理 | Errors and Solutions](技术/Errors.md)
+  - [常用命令 | Commands](技术/Commands.md)
   - [ArchLinux RISC-V](技术/ArchRISC-V/ArchRISC-V.md)
     - [Packages](技术/ArchRISC-V/Packages/Packages.md)
       - [fluidd](技术/ArchRISC-V/Packages/fluidd.md)

@@ -76,10 +76,6 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 - 注意：此处的 `origin` 是指当前所在的远程仓库，默认为此名字 。
 
-### 删除远程分支
-
-`git push origin --delete [remote_branch_name]`
-
 ## Maven
 
 ###  程序包不存在

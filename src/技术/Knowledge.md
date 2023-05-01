@@ -230,20 +230,6 @@
 - `xorg` 接受多输出，然后将其转化为命令行的参数
 - `writegood` 英语语法和单词静态分析器
 
-## Rust 相关
-
-### Rust 和 Cargo 升级
-
-```bash
-rustup update
-```
-
-### Mdbook 修改端口号
-
-```bash
-mdbook serve --open --port <port>
-```
-
 ## 编译相关
 
 ### riscv64 和 riscv64gc
@@ -286,66 +272,9 @@ riscv64gc=riscv64imacfdZicsrZifencei
 
 - 如果有 soname difference，所有依赖这个包的包就都需要重新 rebuild，否则在运行的时候就会出现 `找不到 xxx.so.y` 提示。于是需要一个机制来告诉 packager：有这种变动发生了，你需要去规划一下如何 rebuild。
 
-## Git 相关
-
-### git clone 加速
-
-```bash
-git clone -c http.proxy="http://127.0.0.1:7890" <repo_https_address>
-cd <repo>
-git remote set-url origin <repo_git_address>
-```
-
 ## C++ 相关
 
 - If ‘const’ key word is ahead, then the content can’t be changed. If is between type and variable name, then the address in the ROM/RAM can be changed.
-
-## Linux 相关
-
-### Commands
-
-```bash
-# sync           // Synchronize all the changes you made into your hard disk(硬盘).
-# shutdown       // Shutdown the sever.
-# shutdown –h 10      // Shutdown the server in 10 minutes.
-# shutdown –h now    // Shutdown the server right now.
-# shutdown –h 20:25   // Shutdown the server at 20:25.
-# shutdown –h +10    // Shutdown the server in 10 minutes.
-# shutdown –r now    // Reboot the system right now.
-# shutdown –r +10    // Reboot the system in 10 minutes.
-# reboot        // Reboot, equal to                                shutdown –r now
-# halt         // Shutdown the system, equal to             shutdown –h now || poweroff
-# ls /                   // List all the files at / directory.
-```
-
-- Attention:
-  1. If you run a command, the screen doesn't appear the output messages(e.g. error messages), that is the command running successfully, otherwise unsuccessfully, for instance, some warning messages, error messages.
-  2. If you wanna shutdown you server, please sync your date at first.
-
-### Explanation to the directories at root directory
-
-- /bin
-  - It's the short of Binary, and there exits some common commands.
-- /boot
-  - Here are some
-
-### Shotcuts
-
-- Ctrl + A : Move the flag to the head;
-- Ctrl + E : Move the flag to the last;
-
-### Others
-
-1. In Linux operating system, all the things are file;
-2. `/` is the root node of file system.
-
-### Ubuntu
-
-- 显示已安装的软件包
-
-```bash
-sudo apt list --installed
-```
 
 ## MySQL 相关
 
@@ -370,7 +299,7 @@ binlog-format=ROW
 # 有关 replication，需要定义
 # 不能与从机的 slaveId 相同
 server_id=1
-
 ```
 
 3. 重启 MySQL
+
