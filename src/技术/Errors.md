@@ -112,3 +112,17 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 - pom.xml 所有配置项均正确，但就是运行不起来
 - 正确配置 Java（**一定要有环境变量**）和 Maven，确保 JDK 各个版本对应相同（如环境变量和 Project，Project 和 Module 等），最后确保 IDEA 能够处理当前 JDK 版本（如 IDEA2020 无法处理 JDK17，需要升级），然后重新 `mvn compile`。
 
+## Docker
+
+### `systemctl start docker` 失败
+
+- 报错
+
+```log
+    failed to start daemon: Error initializing network controller:  error obtaining controller instance: failed to create NAT chain DOCKER: iptables failed: iptables -t nat -N DOCKER: iptable `filter': Table does not exist (do you need to insmod?)\nPerhaps iptables or your kernel needs to be upgraded.`" error="exit status 3"
+    Perhaps iptables or your kernel needs to be upgraded.
+    (exit status 3)
+    docker.service: Main process exited, code=exited, status=1/FAILURE
+```
+
+- 一般是 arch linux 滚包之后需要重新安装内核，重启即可

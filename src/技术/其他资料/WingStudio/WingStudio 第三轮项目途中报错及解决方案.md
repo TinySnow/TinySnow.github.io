@@ -2,11 +2,11 @@
 
 # 请遵循一步一测试的原则，否则后续定位错误极其麻烦！！！
 
-## 一、sql驱动连接不上，抛出 ClassNotFoundException
+## 一、sql 驱动连接不上，抛出 ClassNotFoundException
 
 解决方案：
 
-检查sql驱动版本与所装sql版本是否一致。
+检查 sql驱动版本与所装 sql 版本是否一致。
 
 ## 二、 MyBatis 加载全局配置文件时出错
 
