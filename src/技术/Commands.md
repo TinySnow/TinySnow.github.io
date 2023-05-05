@@ -66,5 +66,11 @@ sudo passwd <user>
 sudo apt list --installed
 ```
 
+- 切换 JDK 版本
+
+```bash
+update-alternatives --config java
+```
+
 #### Arch Linux
 
