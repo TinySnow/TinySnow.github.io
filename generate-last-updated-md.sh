@@ -94,7 +94,7 @@ sitemap_xml_start=$(sed -n -e '/^##\ sitemap\.xml/=' ${file} | head -1)
 if [[ ${sitemap_xml_start} ]]; then
 
 	# 记录从 【## sitmap.xml】 一行开始，第二个出现的 ```，也即整个代码块的结尾
-	sitemap_xml_end=$(expr ${sitemap_xml_start} + $(sed -n "${sitemap_xml_start},\$p" ${file} | grep -n '^```$' | head -2 | tail -1 | cut -d ':' -f 1))
+	sitemap_xml_end=$(expr ${sitemap_xml_start} + $(sed -n "${sitemap_xml_start},\$p" ${file} | grep -n '^```$' | head -1 | cut -d ':' -f 1))
 
 	# 删除 【## sitmap.xml】 到 其代码块结尾
 	sed -i -e "${sitemap_xml_start},${sitemap_xml_end}d" ${file}
