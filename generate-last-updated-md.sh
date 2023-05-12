@@ -80,8 +80,8 @@ last_updated_start=$(sed -n -e '/^##\ last\-updated\.md/=' ${file} | head -1)
 
 if [[ ${last_updated_start} ]]; then
 	
-	# 记录从 【## last-updated.md】 一行开始，第二个出现的 ```，也即整个代码块的结尾
-	last_updated_end=$(expr ${last_updated_start} + $(sed -n "${last_updated_start},\$p" ${file} | grep -n '^```$' | head -2 | tail -1 | cut -d ':' -f 1))
+	# 记录从 【## last-updated.md】 一行开始，第一个出现的 ```，也即整个代码块的结尾
+	last_updated_end=$(expr ${last_updated_start} + $(sed -n "${last_updated_start},\$p" ${file} | grep -n '^```$' | head -1 | cut -d ':' -f 1))
 
 	# 删除 【## last-updated.md】 到 其代码块结尾
 	sed -i -e "${last_updated_start},${last_updated_end}d" ${file}
@@ -93,7 +93,7 @@ sitemap_xml_start=$(sed -n -e '/^##\ sitemap\.xml/=' ${file} | head -1)
 
 if [[ ${sitemap_xml_start} ]]; then
 
-	# 记录从 【## sitmap.xml】 一行开始，第二个出现的 ```，也即整个代码块的结尾
+	# 记录从 【## sitmap.xml】 一行开始，第一个出现的 ```，也即整个代码块的结尾
 	sitemap_xml_end=$(expr ${sitemap_xml_start} + $(sed -n "${sitemap_xml_start},\$p" ${file} | grep -n '^```$' | head -1 | cut -d ':' -f 1))
 
 	# 删除 【## sitmap.xml】 到 其代码块结尾
