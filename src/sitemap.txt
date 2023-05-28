@@ -345,11 +345,13 @@ https://tinysnow.github.io/断章/文章/月圆夜
 https://tinysnow.github.io/断章/文章/母亲的理发推
 https://tinysnow.github.io/断章/文章/烟火自述
 https://tinysnow.github.io/断章/文章/猫猫戒指
+https://tinysnow.github.io/断章/文章/理想的南国微雪
 https://tinysnow.github.io/断章/文章/瓦罐饭与糖
 https://tinysnow.github.io/断章/文章/番茄
 https://tinysnow.github.io/断章/文章/篮球女孩
 https://tinysnow.github.io/断章/文章/给女性
 https://tinysnow.github.io/断章/文章/给男性
+https://tinysnow.github.io/断章/文章/自私地摄影
 https://tinysnow.github.io/断章/文章/色气之下，清纯最大
 https://tinysnow.github.io/断章/文章/茉莉清茶
 https://tinysnow.github.io/断章/文章/蕴愈彼此，共渡红尘
@@ -502,6 +504,7 @@ https://tinysnow.github.io/笔记/记录/喜爱的舞者
 https://tinysnow.github.io/笔记/记录/喜爱角色记录
 https://tinysnow.github.io/笔记/记录/已投递的简历
 https://tinysnow.github.io/笔记/记录/已读书目记录
+https://tinysnow.github.io/笔记/记录/毕业旅行
 https://tinysnow.github.io/笔记/记录/游玩游戏记录
 https://tinysnow.github.io/笔记/记录/番剧记录
 https://tinysnow.github.io/笔记/记录/衣服风格记录
