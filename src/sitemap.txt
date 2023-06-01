@@ -14,6 +14,7 @@ https://tinysnow.github.io/每日一文/18 本画册的爱恋 - 汤小小
 https://tinysnow.github.io/每日一文/一个人要像一支队伍 - 刘瑜
 https://tinysnow.github.io/每日一文/一个国家，两个世界 - 余华
 https://tinysnow.github.io/每日一文/一个好人 - 詹姆斯 · 瑟伯
+https://tinysnow.github.io/每日一文/一只背袋 - 米洛斯拉夫 · 茹拉夫斯
 https://tinysnow.github.io/每日一文/一条狗的两次死亡 - 照日格图
 https://tinysnow.github.io/每日一文/一条路 - 亦舒
 https://tinysnow.github.io/每日一文/一种错觉 - 毛姆
@@ -347,6 +348,8 @@ https://tinysnow.github.io/断章/文章/文章
 https://tinysnow.github.io/断章/文章/暑期总结与瑰想
 https://tinysnow.github.io/断章/文章/月圆夜
 https://tinysnow.github.io/断章/文章/母亲的理发推
+https://tinysnow.github.io/断章/文章/毕业旅行第一天
+https://tinysnow.github.io/断章/文章/毕业旅行第二天
 https://tinysnow.github.io/断章/文章/烟火自述
 https://tinysnow.github.io/断章/文章/猫猫戒指
 https://tinysnow.github.io/断章/文章/理想的南国微雪
