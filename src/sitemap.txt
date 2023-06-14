@@ -67,6 +67,7 @@ https://tinysnow.github.io/每日一文/我们都有病 - 朱德庸
 https://tinysnow.github.io/每日一文/我来讲一个故事 - 加西亚 · 马尔克斯
 https://tinysnow.github.io/每日一文/打工经历 - 王小波
 https://tinysnow.github.io/每日一文/抽象的爱国 - 梁文道
+https://tinysnow.github.io/每日一文/捣乱者的作用 - 保罗 · 科埃略
 https://tinysnow.github.io/每日一文/掉到井里的人 - 卡夫卡
 https://tinysnow.github.io/每日一文/摆脱童稚状态 - 王小波
 https://tinysnow.github.io/每日一文/救世情结与白日梦 - 王小波
@@ -125,6 +126,7 @@ https://tinysnow.github.io/每日一文/自我机会高估 - 韩少功
 https://tinysnow.github.io/每日一文/致陈独秀 - 胡适
 https://tinysnow.github.io/每日一文/花未眠 - 川端康成
 https://tinysnow.github.io/每日一文/花脸雀 - 李娟
+https://tinysnow.github.io/每日一文/荒唐少年时 - 陈升
 https://tinysnow.github.io/每日一文/荣辱 - 丰子恺
 https://tinysnow.github.io/每日一文/认识自我 - 纪伯伦
 https://tinysnow.github.io/每日一文/记住回家的路 - 周国平
@@ -360,6 +362,7 @@ https://tinysnow.github.io/断章/文章/母亲的理发推
 https://tinysnow.github.io/断章/文章/毕业旅行第一天
 https://tinysnow.github.io/断章/文章/毕业旅行第三天
 https://tinysnow.github.io/断章/文章/毕业旅行第二天
+https://tinysnow.github.io/断章/文章/毕业旅行第五天
 https://tinysnow.github.io/断章/文章/毕业旅行第四天
 https://tinysnow.github.io/断章/文章/烟火自述
 https://tinysnow.github.io/断章/文章/猫猫戒指
