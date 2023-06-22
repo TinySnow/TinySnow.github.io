@@ -121,7 +121,6 @@ Sincerely thanks.
 
 Hello, I'm from ArchRISC-V Team, a community porting Arch Linux software to RISC-V architecture. 
 
-
 ### Description
 
 - While packaging `httrack`, we found an [error](https://archriscv.felixc.at/.status/log.htm?url=logs/httrack/httrack-3.49.2-4.log). 
@@ -131,7 +130,6 @@ Hello, I'm from ArchRISC-V Team, a community porting Arch Linux software to RISC
 - The `config.guess` file is too old to work. 
 
 - So our team gives this advice. 
-
 
 ### Advice
 
@@ -145,14 +143,7 @@ Some Diff
 
 - Please consider updating the configure script tools (Especially `config.guess` file). As part of our duty, we do suggest our upstreams doing this once and for all instead. 
 
-
-
-Sincerely thanks.
-
-:) 
-
-
-
+Sincerely thanks. :) 
 
 Arch Linux RISC-V Team,
 
