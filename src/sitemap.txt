@@ -72,6 +72,7 @@ https://tinysnow.github.io/每日一文/打工经历 - 王小波
 https://tinysnow.github.io/每日一文/抽象的爱国 - 梁文道
 https://tinysnow.github.io/每日一文/捣乱者的作用 - 保罗 · 科埃略
 https://tinysnow.github.io/每日一文/掉到井里的人 - 卡夫卡
+https://tinysnow.github.io/每日一文/排队 - 梁实秋
 https://tinysnow.github.io/每日一文/摆脱童稚状态 - 王小波
 https://tinysnow.github.io/每日一文/救世情结与白日梦 - 王小波
 https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
@@ -166,6 +167,9 @@ https://tinysnow.github.io/学习/公共基础知识/经济法
 https://tinysnow.github.io/学习/公共基础知识/行政法
 https://tinysnow.github.io/学习/公共基础知识/面试
 https://tinysnow.github.io/学习/公共基础知识/马克思主义哲学
+https://tinysnow.github.io/学习/医学/医学
+https://tinysnow.github.io/学习/医学/药理学
+https://tinysnow.github.io/学习/医学/药理学总论——绪言
 https://tinysnow.github.io/学习/摄影/iPad 修图工作流
 https://tinysnow.github.io/学习/摄影/摄影
 https://tinysnow.github.io/学习/日语/句型整理
@@ -618,6 +622,7 @@ https://tinysnow.github.io/读书/零零散散/漫画经济学：金融危机
 https://tinysnow.github.io/读书/零零散散/焦虑的人
 https://tinysnow.github.io/读书/零零散散/狮子之家的点心日
 https://tinysnow.github.io/读书/零零散散/美元真相
+https://tinysnow.github.io/读书/零零散散/薄世宁医学通识讲义
 https://tinysnow.github.io/读书/零零散散/追风筝的人
 https://tinysnow.github.io/读书/零零散散/零零散散
 https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
