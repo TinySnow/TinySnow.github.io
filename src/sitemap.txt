@@ -28,6 +28,7 @@ https://tinysnow.github.io/每日一文/人类的群星闪耀时 - 茨威格
 https://tinysnow.github.io/每日一文/从痴迷到依恋 - 周国平
 https://tinysnow.github.io/每日一文/你到底喜不喜欢我 - 王丫米
 https://tinysnow.github.io/每日一文/你有没有钱 - 李敖
+https://tinysnow.github.io/每日一文/你的那双眼睛 - 三毛
 https://tinysnow.github.io/每日一文/你要是在麦田里遇到了我 - 罗伯特 · 彭斯
 https://tinysnow.github.io/每日一文/修软垫椅的女人 - 莫泊桑
 https://tinysnow.github.io/每日一文/借刀杀人 - 希区柯克
@@ -168,8 +169,6 @@ https://tinysnow.github.io/学习/公共基础知识/行政法
 https://tinysnow.github.io/学习/公共基础知识/面试
 https://tinysnow.github.io/学习/公共基础知识/马克思主义哲学
 https://tinysnow.github.io/学习/医学/医学
-https://tinysnow.github.io/学习/医学/药理学
-https://tinysnow.github.io/学习/医学/药理学总论——绪言
 https://tinysnow.github.io/学习/摄影/iPad 修图工作流
 https://tinysnow.github.io/学习/摄影/摄影
 https://tinysnow.github.io/学习/日语/句型整理
@@ -628,6 +627,8 @@ https://tinysnow.github.io/读书/零零散散/零零散散
 https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
 https://tinysnow.github.io/读书/零零散散/非暴力沟通
 https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
+https://tinysnow.github.io/学习/医学/药理学/药理学
+https://tinysnow.github.io/学习/医学/药理学/药理学总论——绪言
 https://tinysnow.github.io/学习/音乐/第一章/概述
 https://tinysnow.github.io/学习/音乐/第一章/第一节：音程旋律
 https://tinysnow.github.io/学习/音乐/第一章/第七节：终止
