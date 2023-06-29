@@ -1,0 +1,760 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>WingStudio 第三轮项目途中报错及解决方案 - 微雪博客</title>
+        
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/style3.css">
+
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/></pre></li>
+    </head>
+<body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../../个人简介.html"><strong aria-hidden="true">1.</strong> 简介 | Intro | プロフ | préface</a></li><li class="chapter-item "><a href="../../../last-updated.html"><strong aria-hidden="true">2.</strong> 最近更新 | Last Updated</a></li><li class="chapter-item "><a href="../../../问题总表.html"><strong aria-hidden="true">3.</strong> 问题总表 | Problems</a></li><li class="spacer"></li><li class="chapter-item "><a href="../../../每日一文/每日一文.html"><strong aria-hidden="true">4.</strong> 每日一文 | Daily Article</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../每日一文/你嘴上所说的人生就是你的人生 - 佐藤富雄.html"><strong aria-hidden="true">4.1.</strong> 你嘴上所说的人生就是你的人生 - 佐藤富雄</a></li><li class="chapter-item "><a href="../../../每日一文/想起草药 - 许冬林.html"><strong aria-hidden="true">4.2.</strong> 想起草药 - 许冬林</a></li><li class="chapter-item "><a href="../../../每日一文/溜索 - 阿城.html"><strong aria-hidden="true">4.3.</strong> 溜索 - 阿城</a></li><li class="chapter-item "><a href="../../../每日一文/尾生 - 芥川龙之介.html"><strong aria-hidden="true">4.4.</strong> 尾生 - 芥川龙之介</a></li><li class="chapter-item "><a href="../../../每日一文/为什么要读经典 - 伊塔洛 · 卡尔维诺.html"><strong aria-hidden="true">4.5.</strong> 为什么要读经典 - 伊塔洛 · 卡尔维诺</a></li><li class="chapter-item "><a href="../../../每日一文/你的那双眼睛 - 三毛.html"><strong aria-hidden="true">4.6.</strong> 你的那双眼睛 - 三毛</a></li><li class="chapter-item "><a href="../../../每日一文/排队 - 梁实秋.html"><strong aria-hidden="true">4.7.</strong> 排队 - 梁实秋</a></li><li class="chapter-item "><a href="../../../每日一文/吾先生 - 杨绛.html"><strong aria-hidden="true">4.8.</strong> 吾先生 - 杨绛</a></li><li class="chapter-item "><a href="../../../每日一文/迈锡尼的小行星旅馆 - 村上春树.html"><strong aria-hidden="true">4.9.</strong> 迈锡尼的小行星旅馆 - 村上春树</a></li><li class="chapter-item "><a href="../../../每日一文/黑夜与黎明之间 - 纪伯伦.html"><strong aria-hidden="true">4.10.</strong> 黑夜与黎明之间 - 纪伯伦</a></li><li class="chapter-item "><a href="../../../每日一文/林中猫的故事 - 彭蒂 · 哈恩帕.html"><strong aria-hidden="true">4.11.</strong> 林中猫的故事 - 彭蒂 · 哈恩帕</a></li><li class="chapter-item "><a href="../../../每日一文/卖猪肠粉的女人 - 蔡澜.html"><strong aria-hidden="true">4.12.</strong> 卖猪肠粉的女人 - 蔡澜</a></li><li class="chapter-item "><a href="../../../每日一文/泥沙俱下地生活 - 毕淑敏.html"><strong aria-hidden="true">4.13.</strong> 泥沙俱下地生活 - 毕淑敏</a></li><li class="chapter-item "><a href="../../../每日一文/论读书 - 培根.html"><strong aria-hidden="true">4.14.</strong> 论读书 - 培根</a></li><li class="chapter-item "><a href="../../../每日一文/我的呈奶酪蛋糕形状的贫穷 - 村上春树.html"><strong aria-hidden="true">4.15.</strong> 我的呈奶酪蛋糕形状的贫穷 - 村上春树</a></li><li class="chapter-item "><a href="../../../每日一文/荒唐少年时 - 陈升.html"><strong aria-hidden="true">4.16.</strong> 荒唐少年时 - 陈升</a></li><li class="chapter-item "><a href="../../../每日一文/捣乱者的作用 - 保罗 · 科埃略.html"><strong aria-hidden="true">4.17.</strong> 捣乱者的作用 - 保罗 · 科埃略</a></li><li class="chapter-item "><a href="../../../每日一文/等待 - 太宰治.html"><strong aria-hidden="true">4.18.</strong> 等待 - 太宰治</a></li><li class="chapter-item "><a href="../../../每日一文/救世情结与白日梦 - 王小波.html"><strong aria-hidden="true">4.19.</strong> 救世情结与白日梦 - 王小波</a></li><li class="chapter-item "><a href="../../../每日一文/卖猪 - 路遥.html"><strong aria-hidden="true">4.20.</strong> 卖猪 - 路遥</a></li><li class="chapter-item "><a href="../../../每日一文/自我机会高估 - 韩少功.html"><strong aria-hidden="true">4.21.</strong> 自我机会高估 - 韩少功</a></li><li class="chapter-item "><a href="../../../每日一文/永生 - 高铭.html"><strong aria-hidden="true">4.22.</strong> 永生 - 高铭</a></li><li class="chapter-item "><a href="../../../每日一文/老水车旁的风景 - 梁晓声.html"><strong aria-hidden="true">4.23.</strong> 老水车旁的风景 - 梁晓声</a></li><li class="chapter-item "><a href="../../../每日一文/家有名妻 - 刘海北.html"><strong aria-hidden="true">4.24.</strong> 家有名妻 - 刘海北</a></li><li class="chapter-item "><a href="../../../每日一文/祖父 - 威廉 · 萨默塞特 · 毛姆.html"><strong aria-hidden="true">4.25.</strong> 祖父 - 威廉 · 萨默塞特 · 毛姆</a></li><li class="chapter-item "><a href="../../../每日一文/老人鱼 - 严歌苓.html"><strong aria-hidden="true">4.26.</strong> 老人鱼 - 严歌苓</a></li><li class="chapter-item "><a href="../../../每日一文/一只背袋 - 米洛斯拉夫 · 茹拉夫斯.html"><strong aria-hidden="true">4.27.</strong> 一只背袋 - 米洛斯拉夫 · 茹拉夫斯</a></li><li class="chapter-item "><a href="../../../每日一文/平凡最难 - 林清玄.html"><strong aria-hidden="true">4.28.</strong> 平凡最难 - 林清玄</a></li><li class="chapter-item "><a href="../../../每日一文/婴儿蛋糕 - 尼尔 · 盖曼.html"><strong aria-hidden="true">4.29.</strong> 婴儿蛋糕 - 尼尔 · 盖曼</a></li><li class="chapter-item "><a href="../../../每日一文/如果你没有了我 - 刘墉.html"><strong aria-hidden="true">4.30.</strong> 如果你没有了我 - 刘墉</a></li><li class="chapter-item "><a href="../../../每日一文/无人看管的面包圈 - 张抒.html"><strong aria-hidden="true">4.31.</strong> 无人看管的面包圈 - 张抒</a></li><li class="chapter-item "><a href="../../../每日一文/文艺与木匠 - 老舍.html"><strong aria-hidden="true">4.32.</strong> 文艺与木匠 - 老舍</a></li><li class="chapter-item "><a href="../../../每日一文/棋王 - 阿城.html"><strong aria-hidden="true">4.33.</strong> 棋王 - 阿城</a></li><li class="chapter-item "><a href="../../../每日一文/炊烟 - 阿城.html"><strong aria-hidden="true">4.34.</strong> 炊烟 - 阿城</a></li><li class="chapter-item "><a href="../../../每日一文/巫婆 - 雪莉 · 杰克逊.html"><strong aria-hidden="true">4.35.</strong> 巫婆 - 雪莉 · 杰克逊</a></li><li class="chapter-item "><a href="../../../每日一文/孤独地走向未来 - 贾平凹.html"><strong aria-hidden="true">4.36.</strong> 孤独地走向未来 - 贾平凹</a></li><li class="chapter-item "><a href="../../../每日一文/猫城的故事 - 村上春树.html"><strong aria-hidden="true">4.37.</strong> 猫城的故事 - 村上春树</a></li><li class="chapter-item "><a href="../../../每日一文/三只野猫 - 简平.html"><strong aria-hidden="true">4.38.</strong> 三只野猫 - 简平</a></li><li class="chapter-item "><a href="../../../每日一文/玩具 - 泰戈尔.html"><strong aria-hidden="true">4.39.</strong> 玩具 - 泰戈尔</a></li><li class="chapter-item "><a href="../../../每日一文/与人为友 - 亦舒.html"><strong aria-hidden="true">4.40.</strong> 与人为友 - 亦舒</a></li><li class="chapter-item "><a href="../../../每日一文/签名 - 斯蒂芬 · 狄克逊.html"><strong aria-hidden="true">4.41.</strong> 签名 - 斯蒂芬 · 狄克逊</a></li><li class="chapter-item "><a href="../../../每日一文/轻蔑的一瞥 - 库森别格尔.html"><strong aria-hidden="true">4.42.</strong> 轻蔑的一瞥 - 库森别格尔</a></li><li class="chapter-item "><a href="../../../每日一文/清晨的变故 - 黑井千次.html"><strong aria-hidden="true">4.43.</strong> 清晨的变故 - 黑井千次</a></li><li class="chapter-item "><a href="../../../每日一文/不一样的自由 - 龙应台.html"><strong aria-hidden="true">4.44.</strong> 不一样的自由 - 龙应台</a></li><li class="chapter-item "><a href="../../../每日一文/谁的生命可以不受时间限制 - 沈从文.html"><strong aria-hidden="true">4.45.</strong> 谁的生命可以不受时间限制 - 沈从文</a></li><li class="chapter-item "><a href="../../../每日一文/二手衣 - 亦舒.html"><strong aria-hidden="true">4.46.</strong> 二手衣 - 亦舒</a></li><li class="chapter-item "><a href="../../../每日一文/理发师 - 汪曾祺.html"><strong aria-hidden="true">4.47.</strong> 理发师 - 汪曾祺</a></li><li class="chapter-item "><a href="../../../每日一文/御旨 - 卡夫卡.html"><strong aria-hidden="true">4.48.</strong> 御旨 - 卡夫卡</a></li><li class="chapter-item "><a href="../../../每日一文/忘却 - 亦舒.html"><strong aria-hidden="true">4.49.</strong> 忘却 - 亦舒</a></li><li class="chapter-item "><a href="../../../每日一文/银行抢案 - 史蒂文 · 舒曼.html"><strong aria-hidden="true">4.50.</strong> 银行抢案 - 史蒂文 · 舒曼</a></li><li class="chapter-item "><a href="../../../每日一文/白肉 - 梁实秋.html"><strong aria-hidden="true">4.51.</strong> 白肉 - 梁实秋</a></li><li class="chapter-item "><a href="../../../每日一文/皱起眉头的男人 - 张小娴.html"><strong aria-hidden="true">4.52.</strong> 皱起眉头的男人 - 张小娴</a></li><li class="chapter-item "><a href="../../../每日一文/肯肯舞 - 阿图洛 · 维万特.html"><strong aria-hidden="true">4.53.</strong> 肯肯舞 - 阿图洛 · 维万特</a></li><li class="chapter-item "><a href="../../../每日一文/活出爱 - 史铁生.html"><strong aria-hidden="true">4.54.</strong> 活出爱 - 史铁生</a></li><li class="chapter-item "><a href="../../../每日一文/老猴赫尼 - 沈石溪.html"><strong aria-hidden="true">4.55.</strong> 老猴赫尼 - 沈石溪</a></li><li class="chapter-item "><a href="../../../每日一文/枕头人 - 马丁 · 麦克多纳.html"><strong aria-hidden="true">4.56.</strong> 枕头人 - 马丁 · 麦克多纳</a></li><li class="chapter-item "><a href="../../../每日一文/紫色人形 - 毕淑敏.html"><strong aria-hidden="true">4.57.</strong> 紫色人形 - 毕淑敏</a></li><li class="chapter-item "><a href="../../../每日一文/记住回家的路 - 周国平.html"><strong aria-hidden="true">4.58.</strong> 记住回家的路 - 周国平</a></li><li class="chapter-item "><a href="../../../每日一文/借刀杀人 - 希区柯克.html"><strong aria-hidden="true">4.59.</strong> 借刀杀人 - 希区柯克</a></li><li class="chapter-item "><a href="../../../每日一文/幸福的生日 - 黑井千次.html"><strong aria-hidden="true">4.60.</strong> 幸福的生日 - 黑井千次</a></li><li class="chapter-item "><a href="../../../每日一文/给我未来的孩子 - 张梅.html"><strong aria-hidden="true">4.61.</strong> 给我未来的孩子 - 张梅</a></li><li class="chapter-item "><a href="../../../每日一文/摆脱童稚状态 - 王小波.html"><strong aria-hidden="true">4.62.</strong> 摆脱童稚状态 - 王小波</a></li><li class="chapter-item "><a href="../../../每日一文/青梅竹马 - 佚名.html"><strong aria-hidden="true">4.63.</strong> 青梅竹马 - 佚名</a></li><li class="chapter-item "><a href="../../../每日一文/双文化时代 - 周有光.html"><strong aria-hidden="true">4.64.</strong> 双文化时代 - 周有光</a></li><li class="chapter-item "><a href="../../../每日一文/恶之平庸 - 刘瑜.html"><strong aria-hidden="true">4.65.</strong> 恶之平庸 - 刘瑜</a></li><li class="chapter-item "><a href="../../../每日一文/独处是一种能力 - 周国平.html"><strong aria-hidden="true">4.66.</strong> 独处是一种能力 - 周国平</a></li><li class="chapter-item "><a href="../../../每日一文/抽象的爱国 - 梁文道.html"><strong aria-hidden="true">4.67.</strong> 抽象的爱国 - 梁文道</a></li><li class="chapter-item "><a href="../../../每日一文/汤包 - 梁实秋.html"><strong aria-hidden="true">4.68.</strong> 汤包 - 梁实秋</a></li><li class="chapter-item "><a href="../../../每日一文/重圆 - 亦舒.html"><strong aria-hidden="true">4.69.</strong> 重圆 - 亦舒</a></li><li class="chapter-item "><a href="../../../每日一文/鬼剃头 - 冯骥才.html"><strong aria-hidden="true">4.70.</strong> 鬼剃头 - 冯骥才</a></li><li class="chapter-item "><a href="../../../每日一文/天上落下来的一片叶子 - 安徒生.html"><strong aria-hidden="true">4.71.</strong> 天上落下来的一片叶子 - 安徒生</a></li><li class="chapter-item "><a href="../../../每日一文/在什么地方活着 - 小川未明.html"><strong aria-hidden="true">4.72.</strong> 在什么地方活着 - 小川未明</a></li><li class="chapter-item "><a href="../../../每日一文/神迹下的健康心态 - 吴澧.html"><strong aria-hidden="true">4.73.</strong> 神迹下的健康心态 - 吴澧</a></li><li class="chapter-item "><a href="../../../每日一文/律师太太 - 希区柯克.html"><strong aria-hidden="true">4.74.</strong> 律师太太 - 希区柯克</a></li><li class="chapter-item "><a href="../../../每日一文/邻家的拖鞋 - 姬中宪.html"><strong aria-hidden="true">4.75.</strong> 邻家的拖鞋 - 姬中宪</a></li><li class="chapter-item "><a href="../../../每日一文/18 本画册的爱恋 - 汤小小.html"><strong aria-hidden="true">4.76.</strong> 18 本画册的爱恋 - 汤小小</a></li><li class="chapter-item "><a href="../../../每日一文/大胡子与我 - 三毛.html"><strong aria-hidden="true">4.77.</strong> 大胡子与我 - 三毛</a></li><li class="chapter-item "><a href="../../../每日一文/认识自我 - 纪伯伦.html"><strong aria-hidden="true">4.78.</strong> 认识自我 - 纪伯伦</a></li><li class="chapter-item "><a href="../../../每日一文/永远欠一顿饭 - 刘亮程.html"><strong aria-hidden="true">4.79.</strong> 永远欠一顿饭 - 刘亮程</a></li><li class="chapter-item "><a href="../../../每日一文/你到底喜不喜欢我 - 王丫米.html"><strong aria-hidden="true">4.80.</strong> 你到底喜不喜欢我 - 王丫米</a></li><li class="chapter-item "><a href="../../../每日一文/修软垫椅的女人 - 莫泊桑.html"><strong aria-hidden="true">4.81.</strong> 修软垫椅的女人 - 莫泊桑</a></li><li class="chapter-item "><a href="../../../每日一文/目送 - 龙应台.html"><strong aria-hidden="true">4.82.</strong> 目送 - 龙应台</a></li><li class="chapter-item "><a href="../../../每日一文/丈夫留下的备忘录 - 梅洁.html"><strong aria-hidden="true">4.83.</strong> 丈夫留下的备忘录 - 梅洁</a></li><li class="chapter-item "><a href="../../../每日一文/向自己说再见 - 希区柯克.html"><strong aria-hidden="true">4.84.</strong> 向自己说再见 - 希区柯克</a></li><li class="chapter-item "><a href="../../../每日一文/未婚夫和爸爸 - 契诃夫.html"><strong aria-hidden="true">4.85.</strong> 未婚夫和爸爸 - 契诃夫</a></li><li class="chapter-item "><a href="../../../每日一文/展示品 - 于尔克 · 舒比格.html"><strong aria-hidden="true">4.86.</strong> 展示品 - 于尔克 · 舒比格</a></li><li class="chapter-item "><a href="../../../每日一文/掉到井里的人 - 卡夫卡.html"><strong aria-hidden="true">4.87.</strong> 掉到井里的人 - 卡夫卡</a></li><li class="chapter-item "><a href="../../../每日一文/一个人要像一支队伍 - 刘瑜.html"><strong aria-hidden="true">4.88.</strong> 一个人要像一支队伍 - 刘瑜</a></li><li class="chapter-item "><a href="../../../每日一文/足底按摩 - 恰克 · 帕拉尼克.html"><strong aria-hidden="true">4.89.</strong> 足底按摩 - 恰克 · 帕拉尼克</a></li><li class="chapter-item "><a href="../../../每日一文/一个国家，两个世界 - 余华.html"><strong aria-hidden="true">4.90.</strong> 一个国家，两个世界 - 余华</a></li><li class="chapter-item "><a href="../../../每日一文/关于朋友 - 叔本华.html"><strong aria-hidden="true">4.91.</strong> 关于朋友 - 叔本华</a></li><li class="chapter-item "><a href="../../../每日一文/当三毛还是在二毛的时候 - 三毛.html"><strong aria-hidden="true">4.92.</strong> 当三毛还是在二毛的时候 - 三毛</a></li><li class="chapter-item "><a href="../../../每日一文/经济学的旁听生 - 张晓风.html"><strong aria-hidden="true">4.93.</strong> 经济学的旁听生 - 张晓风</a></li><li class="chapter-item "><a href="../../../每日一文/荣辱 - 丰子恺.html"><strong aria-hidden="true">4.94.</strong> 荣辱 - 丰子恺</a></li><li class="chapter-item "><a href="../../../每日一文/电影音乐给谁听 - 梁文道.html"><strong aria-hidden="true">4.95.</strong> 电影音乐给谁听 - 梁文道</a></li><li class="chapter-item "><a href="../../../每日一文/人类的群星闪耀时 - 茨威格.html"><strong aria-hidden="true">4.96.</strong> 人类的群星闪耀时 - 茨威格</a></li><li class="chapter-item "><a href="../../../每日一文/打工经历 - 王小波.html"><strong aria-hidden="true">4.97.</strong> 打工经历 - 王小波</a></li><li class="chapter-item "><a href="../../../每日一文/远处的一双眼睛 - 张小娴.html"><strong aria-hidden="true">4.98.</strong> 远处的一双眼睛 - 张小娴</a></li><li class="chapter-item "><a href="../../../每日一文/你要是在麦田里遇到了我 - 罗伯特 · 彭斯.html"><strong aria-hidden="true">4.99.</strong> 你要是在麦田里遇到了我 - 罗伯特 · 彭斯</a></li><li class="chapter-item "><a href="../../../每日一文/你有没有钱 - 李敖.html"><strong aria-hidden="true">4.100.</strong> 你有没有钱 - 李敖</a></li><li class="chapter-item "><a href="../../../每日一文/爱情故事 - 余华.html"><strong aria-hidden="true">4.101.</strong> 爱情故事 - 余华</a></li><li class="chapter-item "><a href="../../../每日一文/郁金香 - 玛丽娅 · 恩里凯达.html"><strong aria-hidden="true">4.102.</strong> 郁金香 - 玛丽娅 · 恩里凯达</a></li><li class="chapter-item "><a href="../../../每日一文/未婚妻 - 玛 · 奥克罗克斯.html"><strong aria-hidden="true">4.103.</strong> 未婚妻 - 玛 · 奥克罗克斯</a></li><li class="chapter-item "><a href="../../../每日一文/刘正风灭门 - 金庸.html"><strong aria-hidden="true">4.104.</strong> 刘正风灭门 - 金庸</a></li><li class="chapter-item "><a href="../../../每日一文/花未眠 - 川端康成.html"><strong aria-hidden="true">4.105.</strong> 花未眠 - 川端康成</a></li><li class="chapter-item "><a href="../../../每日一文/还记得十六岁时的梦想吗 - 艾明雅.html"><strong aria-hidden="true">4.106.</strong> 还记得十六岁时的梦想吗 - 艾明雅</a></li><li class="chapter-item "><a href="../../../每日一文/夜空中的木拐 - 从维熙.html"><strong aria-hidden="true">4.107.</strong> 夜空中的木拐 - 从维熙</a></li><li class="chapter-item "><a href="../../../每日一文/大坝垮的那天 - 詹姆斯 · 瑟伯.html"><strong aria-hidden="true">4.108.</strong> 大坝垮的那天 - 詹姆斯 · 瑟伯</a></li><li class="chapter-item "><a href="../../../每日一文/看谁的文章写得好 - 李敖.html"><strong aria-hidden="true">4.109.</strong> 看谁的文章写得好 - 李敖</a></li><li class="chapter-item "><a href="../../../每日一文/老来多健忘 - 叶倾城.html"><strong aria-hidden="true">4.110.</strong> 老来多健忘 - 叶倾城</a></li><li class="chapter-item "><a href="../../../每日一文/我们为什么要过节 - 冯骥才.html"><strong aria-hidden="true">4.111.</strong> 我们为什么要过节 - 冯骥才</a></li><li class="chapter-item "><a href="../../../每日一文/白痴的故事 - 倪匡.html"><strong aria-hidden="true">4.112.</strong> 白痴的故事 - 倪匡</a></li><li class="chapter-item "><a href="../../../每日一文/没有一本一劳永逸的书 - 毛姆.html"><strong aria-hidden="true">4.113.</strong> 没有一本一劳永逸的书 - 毛姆</a></li><li class="chapter-item "><a href="../../../每日一文/活着真好 - 维克多 · 科克留什金.html"><strong aria-hidden="true">4.114.</strong> 活着真好 - 维克多 · 科克留什金</a></li><li class="chapter-item "><a href="../../../每日一文/一种错觉 - 毛姆.html"><strong aria-hidden="true">4.115.</strong> 一种错觉 - 毛姆</a></li><li class="chapter-item "><a href="../../../每日一文/生日女郎 - 村上春树.html"><strong aria-hidden="true">4.116.</strong> 生日女郎 - 村上春树</a></li><li class="chapter-item "><a href="../../../每日一文/花脸雀 - 李娟.html"><strong aria-hidden="true">4.117.</strong> 花脸雀 - 李娟</a></li><li class="chapter-item "><a href="../../../每日一文/吃饭是一件需要认真对待的事 - 梁文道.html"><strong aria-hidden="true">4.118.</strong> 吃饭是一件需要认真对待的事 - 梁文道</a></li><li class="chapter-item "><a href="../../../每日一文/爸爸的味道 - 张小娴.html"><strong aria-hidden="true">4.119.</strong> 爸爸的味道 - 张小娴</a></li><li class="chapter-item "><a href="../../../每日一文/狗难 - 柯灵.html"><strong aria-hidden="true">4.120.</strong> 狗难 - 柯灵</a></li><li class="chapter-item "><a href="../../../每日一文/槐花 - 汪曾祺.html"><strong aria-hidden="true">4.121.</strong> 槐花 - 汪曾祺</a></li><li class="chapter-item "><a href="../../../每日一文/亲爱的小孩 - 陈晓霞.html"><strong aria-hidden="true">4.122.</strong> 亲爱的小孩 - 陈晓霞</a></li><li class="chapter-item "><a href="../../../每日一文/熟人厌烦症 - 迈克尔 · 金.html"><strong aria-hidden="true">4.123.</strong> 熟人厌烦症 - 迈克尔 · 金</a></li><li class="chapter-item "><a href="../../../每日一文/婚姻是一种修养 - 胡杨.html"><strong aria-hidden="true">4.124.</strong> 婚姻是一种修养 - 胡杨</a></li><li class="chapter-item "><a href="../../../每日一文/敬酒要喝 - 梁文道.html"><strong aria-hidden="true">4.125.</strong> 敬酒要喝 - 梁文道</a></li><li class="chapter-item "><a href="../../../每日一文/一个好人 - 詹姆斯 · 瑟伯.html"><strong aria-hidden="true">4.126.</strong> 一个好人 - 詹姆斯 · 瑟伯</a></li><li class="chapter-item "><a href="../../../每日一文/从痴迷到依恋 - 周国平.html"><strong aria-hidden="true">4.127.</strong> 从痴迷到依恋 - 周国平</a></li><li class="chapter-item "><a href="../../../每日一文/青春 - 亦舒.html"><strong aria-hidden="true">4.128.</strong> 青春 - 亦舒</a></li><li class="chapter-item "><a href="../../../每日一文/等我一年半 - 松本清张.html"><strong aria-hidden="true">4.129.</strong> 等我一年半 - 松本清张</a></li><li class="chapter-item "><a href="../../../每日一文/写在五线谱上的信 - 王小波.html"><strong aria-hidden="true">4.130.</strong> 写在五线谱上的信 - 王小波</a></li><li class="chapter-item "><a href="../../../每日一文/我们的老式婚姻 - 杨修峰.html"><strong aria-hidden="true">4.131.</strong> 我们的老式婚姻 - 杨修峰</a></li><li class="chapter-item "><a href="../../../每日一文/一条狗的两次死亡 - 照日格图.html"><strong aria-hidden="true">4.132.</strong> 一条狗的两次死亡 - 照日格图</a></li><li class="chapter-item "><a href="../../../每日一文/我来讲一个故事 - 加西亚 · 马尔克斯.html"><strong aria-hidden="true">4.133.</strong> 我来讲一个故事 - 加西亚 · 马尔克斯</a></li><li class="chapter-item "><a href="../../../每日一文/双鱼 - 三毛.html"><strong aria-hidden="true">4.134.</strong> 双鱼 - 三毛</a></li><li class="chapter-item "><a href="../../../每日一文/我们都有病 - 朱德庸.html"><strong aria-hidden="true">4.135.</strong> 我们都有病 - 朱德庸</a></li><li class="chapter-item "><a href="../../../每日一文/王府大街 64 号 - 雷达.html"><strong aria-hidden="true">4.136.</strong> 王府大街 64 号 - 雷达</a></li><li class="chapter-item "><a href="../../../每日一文/女人的星球 - 高铭.html"><strong aria-hidden="true">4.137.</strong> 女人的星球 - 高铭</a></li><li class="chapter-item "><a href="../../../每日一文/雨伞 - 川端康成.html"><strong aria-hidden="true">4.138.</strong> 雨伞 - 川端康成</a></li><li class="chapter-item "><a href="../../../每日一文/那些你所不知道的大事 - 李月亮.html"><strong aria-hidden="true">4.139.</strong> 那些你所不知道的大事 - 李月亮</a></li><li class="chapter-item "><a href="../../../每日一文/女朋友 - 亦舒.html"><strong aria-hidden="true">4.140.</strong> 女朋友 - 亦舒</a></li><li class="chapter-item "><a href="../../../每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格.html"><strong aria-hidden="true">4.141.</strong> 时间旅行者的妻子 - 奥德丽 · 尼芬格</a></li><li class="chapter-item "><a href="../../../每日一文/狗这一生不容易 - 王宏哲.html"><strong aria-hidden="true">4.142.</strong> 狗这一生不容易 - 王宏哲</a></li><li class="chapter-item "><a href="../../../每日一文/断爱近涅盘 - 林清玄.html"><strong aria-hidden="true">4.143.</strong> 断爱近涅盘 - 林清玄</a></li><li class="chapter-item "><a href="../../../每日一文/油月亮 - 贾平凹.html"><strong aria-hidden="true">4.144.</strong> 油月亮 - 贾平凹</a></li><li class="chapter-item "><a href="../../../每日一文/第三大道的这间酒馆 - 约翰·麦克纳尔蒂.html"><strong aria-hidden="true">4.145.</strong> 第三大道的这间酒馆 - 约翰·麦克纳尔蒂</a></li><li class="chapter-item "><a href="../../../每日一文/小生命 - 亦舒.html"><strong aria-hidden="true">4.146.</strong> 小生命 - 亦舒</a></li><li class="chapter-item "><a href="../../../每日一文/一条路 - 亦舒.html"><strong aria-hidden="true">4.147.</strong> 一条路 - 亦舒</a></li><li class="chapter-item "><a href="../../../每日一文/致陈独秀 - 胡适.html"><strong aria-hidden="true">4.148.</strong> 致陈独秀 - 胡适</a></li></ol></li><li class="chapter-item expanded "><a href="../../../技术/技术.html"><strong aria-hidden="true">5.</strong> 技术 | Technology</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/Knowledge.html"><strong aria-hidden="true">5.1.</strong> 知识 | Knowledge</a></li><li class="chapter-item "><a href="../../../技术/Errors.html"><strong aria-hidden="true">5.2.</strong> 报错处理 | Errors and Solutions</a></li><li class="chapter-item "><a href="../../../技术/Commands.html"><strong aria-hidden="true">5.3.</strong> 常用命令 | Commands</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/ArchRISC-V.html"><strong aria-hidden="true">5.4.</strong> ArchLinux RISC-V</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/Packages.html"><strong aria-hidden="true">5.4.1.</strong> Packages</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/fluidd.html"><strong aria-hidden="true">5.4.1.1.</strong> fluidd</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/imagescan.html"><strong aria-hidden="true">5.4.1.2.</strong> imagescan</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/libopenraw.html"><strong aria-hidden="true">5.4.1.3.</strong> libopenraw</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/gnuchess.html"><strong aria-hidden="true">5.4.1.4.</strong> gnuchess</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/SVT-VP9.html"><strong aria-hidden="true">5.4.1.5.</strong> SVT-VP9</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/SVT-HEVC.html"><strong aria-hidden="true">5.4.1.6.</strong> SVT-HEVC</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/grafana-agent.html"><strong aria-hidden="true">5.4.1.7.</strong> grafana-agent</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/system-config-printer.html"><strong aria-hidden="true">5.4.1.8.</strong> system-config-printer</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/fulcio(Learning).html"><strong aria-hidden="true">5.4.1.9.</strong> fulcio(Learning)</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/libgovirt(Learning).html"><strong aria-hidden="true">5.4.1.10.</strong> libgovirt(Learning)</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Packages/distrobuilder.html"><strong aria-hidden="true">5.4.1.11.</strong> distrobuilder</a></li></ol></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/FrequentlyUsed.html"><strong aria-hidden="true">5.4.2.</strong> 工作常用 | Frequently Used</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/IssueTemplate.html"><strong aria-hidden="true">5.4.3.</strong> 上游汇报模板 | Issue Template</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/Workflow.html"><strong aria-hidden="true">5.4.4.</strong> 工作流程 | Workflow</a></li><li class="chapter-item "><a href="../../../技术/ArchRISC-V/工作.html"><strong aria-hidden="true">5.4.5.</strong> 工作 | Work</a></li></ol></li><li class="chapter-item "><a href="../../../技术/计算机科学极简入门指南/计算机科学极简入门指南.html"><strong aria-hidden="true">5.5.</strong> 计算机科学极简入门指南 | CS Teaching</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/计算机科学极简入门指南/第一章：计算机的历史.html"><strong aria-hidden="true">5.5.1.</strong> 第一章：计算机的历史</a></li><li class="chapter-item "><a href="../../../技术/计算机科学极简入门指南/第二章：计算机的构成.html"><strong aria-hidden="true">5.5.2.</strong> 第二章：计算机的构成</a></li><li class="chapter-item "><a href="../../../技术/计算机科学极简入门指南/第三章：简单逻辑门.html"><strong aria-hidden="true">5.5.3.</strong> 第三章：简单逻辑门</a></li><li class="chapter-item "><a href="../../../技术/计算机科学极简入门指南/第四章：负数与减法.html"><strong aria-hidden="true">5.5.4.</strong> 第四章：负数与减法</a></li></ol></li><li class="chapter-item "><a href="../../../技术/Java/Java.html"><strong aria-hidden="true">5.6.</strong> Java</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/Java/集合.html"><strong aria-hidden="true">5.6.1.</strong> 集合</a></li><li class="chapter-item "><a href="../../../技术/Java/JavaThreads.html"><strong aria-hidden="true">5.6.2.</strong> Java Threads</a></li><li class="chapter-item "><a href="../../../技术/Java/AnnotationsAndReflection.html"><strong aria-hidden="true">5.6.3.</strong> Annotations and Reflection</a></li><li class="chapter-item "><a href="../../../技术/Java/HighConcurrencyKnowledge.html"><strong aria-hidden="true">5.6.4.</strong> High Concurrency Knowledge</a></li><li class="chapter-item "><a href="../../../技术/Java/KotlinNote.html"><strong aria-hidden="true">5.6.5.</strong> Kotlin Note</a></li><li class="chapter-item "><a href="../../../技术/Java/文件模板/文件模板.html"><strong aria-hidden="true">5.6.6.</strong> 文件模板 | Templates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/Java/文件模板/JDBC 连接数据库驱动常用写法.html"><strong aria-hidden="true">5.6.6.1.</strong> JDBC 连接数据库驱动常用写法</a></li><li class="chapter-item "><a href="../../../技术/Java/文件模板/MyBatis 配置文件基本框架.html"><strong aria-hidden="true">5.6.6.2.</strong> MyBatis 配置文件基本框架</a></li><li class="chapter-item "><a href="../../../技术/Java/文件模板/Spring 配置文件基本框架.html"><strong aria-hidden="true">5.6.6.3.</strong> Spring 配置文件基本框架</a></li><li class="chapter-item "><a href="../../../技术/Java/文件模板/SpringBoot 项目搭建基本流程.html"><strong aria-hidden="true">5.6.6.4.</strong> SpringBoot 项目搭建基本流程</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../技术/实践记录/实践记录.html"><strong aria-hidden="true">5.7.</strong> 实践记录 | Practice Record</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/实践记录/毕业设计环境准备.html"><strong aria-hidden="true">5.7.1.</strong> 毕业设计环境准备</a></li><li class="chapter-item "><a href="../../../技术/实践记录/ElasticSearch启用.html"><strong aria-hidden="true">5.7.2.</strong> Elastic Search 启用</a></li><li class="chapter-item "><a href="../../../技术/实践记录/Logstash同步MySQL数据到ElasticSearch.html"><strong aria-hidden="true">5.7.3.</strong> Logstash 同步 MySQL 数据到 Elastic Search</a></li><li class="chapter-item "><a href="../../../技术/实践记录/MySQL与ElasticSearch的数据同步尝试.html"><strong aria-hidden="true">5.7.4.</strong> MySQL 与 Elastic Search 的数据同步尝试</a></li><li class="chapter-item "><a href="../../../技术/实践记录/毕业设计解决方案.html"><strong aria-hidden="true">5.7.5.</strong> 毕业设计解决方案</a></li></ol></li><li class="chapter-item expanded "><a href="../../../技术/其他资料/其他资料.html"><strong aria-hidden="true">5.8.</strong> 其他资料 | Other Docs</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/其他资料/Git 学习笔记.html"><strong aria-hidden="true">5.8.1.</strong> Git 学习笔记</a></li><li class="chapter-item "><a href="../../../技术/其他资料/Bash 代表命令.html"><strong aria-hidden="true">5.8.2.</strong> Bash 代表命令</a></li><li class="chapter-item "><a href="../../../技术/其他资料/第一个 Bash 脚本.html"><strong aria-hidden="true">5.8.3.</strong> 第一个 Bash 脚本</a></li><li class="chapter-item "><a href="../../../技术/其他资料/设计模式极简笔记.html"><strong aria-hidden="true">5.8.4.</strong> 设计模式极简笔记</a></li><li class="chapter-item "><a href="../../../技术/其他资料/汇编复习笔记.html"><strong aria-hidden="true">5.8.5.</strong> 汇编复习笔记</a></li><li class="chapter-item "><a href="../../../技术/其他资料/MATLAB 复习.html"><strong aria-hidden="true">5.8.6.</strong> MATLAB 复习</a></li><li class="chapter-item "><a href="../../../技术/其他资料/软件知识补充.html"><strong aria-hidden="true">5.8.7.</strong> 软件知识补充</a></li><li class="chapter-item "><a href="../../../技术/其他资料/重装系统知识.html"><strong aria-hidden="true">5.8.8.</strong> 重装系统知识</a></li><li class="chapter-item "><a href="../../../技术/其他资料/重装系统 8-7.html"><strong aria-hidden="true">5.8.9.</strong> 重装系统 8-&gt;7</a></li><li class="chapter-item "><a href="../../../技术/其他资料/pwn.college-writeup.html"><strong aria-hidden="true">5.8.10.</strong> pwn.college writeup</a></li><li class="chapter-item "><a href="../../../技术/其他资料/Uniapp 从 HX 迁移到 WebStorm.html"><strong aria-hidden="true">5.8.11.</strong> Uniapp 从 HX 迁移到 WebStorm</a></li><li class="chapter-item "><a href="../../../技术/其他资料/给计算机 202102 班的选修课建议.html"><strong aria-hidden="true">5.8.12.</strong> 给计算机 202102 班的选修课建议</a></li><li class="chapter-item expanded "><a href="../../../技术/其他资料/WingStudio/WingStudio.html"><strong aria-hidden="true">5.8.13.</strong> WingStudio</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../技术/其他资料/WingStudio/WingStudio 第二轮考核 工程实现记录.html"><strong aria-hidden="true">5.8.13.1.</strong> WingStudio 第二轮考核 工程实现记录</a></li><li class="chapter-item "><a href="../../../技术/其他资料/WingStudio/Wing 第三轮接口设计.html"><strong aria-hidden="true">5.8.13.2.</strong> Wing 第三轮接口设计</a></li><li class="chapter-item "><a href="../../../技术/其他资料/WingStudio/WingStudio 第三轮考核说明文档.html"><strong aria-hidden="true">5.8.13.3.</strong> WingStudio 第三轮考核说明文档</a></li><li class="chapter-item expanded "><a href="../../../技术/其他资料/WingStudio/WingStudio 第三轮项目途中报错及解决方案.html" class="active"><strong aria-hidden="true">5.8.13.4.</strong> WingStudio 第三轮项目途中报错及解决方案</a></li></ol></li><li class="chapter-item "><a href="../../../技术/其他资料/Android 笔记截图.html"><strong aria-hidden="true">5.8.14.</strong> Android 笔记截图</a></li><li class="chapter-item "><a href="../../../技术/其他资料/Android 常用闭包.html"><strong aria-hidden="true">5.8.15.</strong> Android 常用闭包</a></li><li class="chapter-item "><a href="../../../技术/其他资料/CCleaner 清理项.html"><strong aria-hidden="true">5.8.16.</strong> CCleaner 清理项</a></li><li class="chapter-item "><a href="../../../技术/其他资料/Recovery + Root 掉落重新刷入方法.html"><strong aria-hidden="true">5.8.17.</strong> Recovery + Root 掉落重新刷入方法</a></li><li class="chapter-item "><a href="../../../技术/其他资料/发送软件清单及其作用解释.html"><strong aria-hidden="true">5.8.18.</strong> 发送软件清单及其作用解释</a></li><li class="chapter-item "><a href="../../../技术/其他资料/Tic-tac-toe Game Note of React.html"><strong aria-hidden="true">5.8.19.</strong> Tic-tac-toe Game Note of React</a></li><li class="chapter-item "><a href="../../../技术/其他资料/SolutionsAndSteps.html"><strong aria-hidden="true">5.8.20.</strong> Solutions and Steps</a></li><li class="chapter-item "><a href="../../../技术/其他资料/临时.html"><strong aria-hidden="true">5.8.21.</strong> 临时</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../学习/学习.html"><strong aria-hidden="true">6.</strong> 学习 | Learning</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/耶鲁大学：心理学导论.html"><strong aria-hidden="true">6.1.</strong> 耶鲁大学：心理学导论 | Yale's Psychology</a></li><li class="chapter-item "><a href="../../../学习/法语/法语.html"><strong aria-hidden="true">6.2.</strong> 法语 | French</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/法语/语音规则.html"><strong aria-hidden="true">6.2.1.</strong> 语音规则</a></li><li class="chapter-item "><a href="../../../学习/法语/法语介词.html"><strong aria-hidden="true">6.2.2.</strong> 法语介词</a></li><li class="chapter-item "><a href="../../../学习/法语/简明法语教程笔记.html"><strong aria-hidden="true">6.2.3.</strong> 简明法语教程笔记</a></li></ol></li><li class="chapter-item "><a href="../../../学习/日语/日语.html"><strong aria-hidden="true">6.3.</strong> 日语 | Japanese</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/日语/日语语法整理.html"><strong aria-hidden="true">6.3.1.</strong> 日语语法整理</a></li><li class="chapter-item "><a href="../../../学习/日语/句型整理.html"><strong aria-hidden="true">6.3.2.</strong> 句型整理</a></li><li class="chapter-item "><a href="../../../学习/日语/日语易错词.html"><strong aria-hidden="true">6.3.3.</strong> 日语易错词</a></li></ol></li><li class="chapter-item "><a href="../../../学习/摄影/摄影.html"><strong aria-hidden="true">6.4.</strong> 摄影 | Photography</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/摄影/iPad 修图工作流.html"><strong aria-hidden="true">6.4.1.</strong> iPad 修图工作流</a></li></ol></li><li class="chapter-item "><a href="../../../学习/美妆/美妆.html"><strong aria-hidden="true">6.5.</strong> 美妆 | Makeup</a></li><li class="chapter-item "><a href="../../../学习/医学/医学.html"><strong aria-hidden="true">6.6.</strong> 医学 | Medicine</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/医学/药理学/药理学.html"><strong aria-hidden="true">6.6.1.</strong> 药理学 | Pharmacology</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/医学/药理学/药理学总论——绪言.html"><strong aria-hidden="true">6.6.1.1.</strong> 药理学总论——绪言</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../学习/音乐/音乐.html"><strong aria-hidden="true">6.7.</strong> 音乐 | Music</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/音乐/其他资料.html"><strong aria-hidden="true">6.7.1.</strong> 其他资料 | Others</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/音乐/基础乐理.html"><strong aria-hidden="true">6.7.1.1.</strong> 基础乐理</a></li><li class="chapter-item "><a href="../../../学习/音乐/常用三和弦.html"><strong aria-hidden="true">6.7.1.2.</strong> 常用三和弦</a></li></ol></li><li class="chapter-item "><a href="../../../学习/音乐/作曲编曲入门.html"><strong aria-hidden="true">6.7.2.</strong> 第零章：作曲编曲入门 | Compose</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/概述.html"><strong aria-hidden="true">6.7.3.</strong> 第一章：概述 | Chapter 1</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/音乐/第一章/第一节：音程旋律.html"><strong aria-hidden="true">6.7.3.1.</strong> 第一节：音程旋律</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第二节：旋律发展趋势.html"><strong aria-hidden="true">6.7.3.2.</strong> 第二节：旋律发展趋势</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第三节：和弦.html"><strong aria-hidden="true">6.7.3.3.</strong> 第三节：和弦</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第四节：功能和声.html"><strong aria-hidden="true">6.7.3.4.</strong> 第四节：功能和声</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第五节：流畅连接和弦.html"><strong aria-hidden="true">6.7.3.5.</strong> 第五节：流畅连接和弦</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第六节：旋律和声搭配.html"><strong aria-hidden="true">6.7.3.6.</strong> 第六节：旋律和声搭配</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第七节：终止.html"><strong aria-hidden="true">6.7.3.7.</strong> 第七节：终止</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第八节：曲式.html"><strong aria-hidden="true">6.7.3.8.</strong> 第八节：曲式</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第九节：乐句概述.html"><strong aria-hidden="true">6.7.3.9.</strong> 第九节：乐句概述</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第十节：乐句展示部.html"><strong aria-hidden="true">6.7.3.10.</strong> 第十节：乐句展示部</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第十一节：乐句发展部.html"><strong aria-hidden="true">6.7.3.11.</strong> 第十一节：乐句发展部</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第十二节：乐段.html"><strong aria-hidden="true">6.7.3.12.</strong> 第十二节：乐段</a></li><li class="chapter-item "><a href="../../../学习/音乐/第一章/第十三节：乐句与乐段的区别.html"><strong aria-hidden="true">6.7.3.13.</strong> 第十三节：乐句与乐段的区别</a></li></ol></li><li class="chapter-item "><a href="../../../学习/音乐/第二章/概述.html"><strong aria-hidden="true">6.7.4.</strong> 第二章：概述 | Chapter 2</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/音乐/第二章/第一节：和声旋律.html"><strong aria-hidden="true">6.7.4.1.</strong> 第一节：和声旋律</a></li><li class="chapter-item "><a href="../../../学习/音乐/第二章/第二节：旋律装饰.html"><strong aria-hidden="true">6.7.4.2.</strong> 第二节：旋律装饰</a></li><li class="chapter-item "><a href="../../../学习/音乐/第二章/第三节：分解和弦.html"><strong aria-hidden="true">6.7.4.3.</strong> 第三节：分解和弦</a></li><li class="chapter-item "><a href="../../../学习/音乐/第二章/第四节：和声织体.html"><strong aria-hidden="true">6.7.4.4.</strong> 第四节：和声织体</a></li><li class="chapter-item "><a href="../../../学习/音乐/第二章/第五节：小型二段体.html"><strong aria-hidden="true">6.7.4.5.</strong> 第五节：小型二段体</a></li><li class="chapter-item "><a href="../../../学习/音乐/第二章/第六节：小型三段体.html"><strong aria-hidden="true">6.7.4.6.</strong> 第六节：小型三段体</a></li><li class="chapter-item "><a href="../../../学习/音乐/第二章/第七节：二段体音乐.html"><strong aria-hidden="true">6.7.4.7.</strong> 第七节：二段体音乐</a></li></ol></li><li class="chapter-item "><a href="../../../学习/音乐/第三章/概述.html"><strong aria-hidden="true">6.7.5.</strong> 第三章：概述 | Chapter 3</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/音乐/第三章/第一节：动机及其加工.html"><strong aria-hidden="true">6.7.5.1.</strong> 第一节：动机及其加工</a></li><li class="chapter-item "><a href="../../../学习/音乐/第三章/第二节：速度，节拍与切分.html"><strong aria-hidden="true">6.7.5.2.</strong> 第二节：速度，节拍与切分</a></li><li class="chapter-item "><a href="../../../学习/音乐/第三章/第三节：调式与调性.html"><strong aria-hidden="true">6.7.5.3.</strong> 第三节：调式与调性</a></li><li class="chapter-item "><a href="../../../学习/音乐/第三章/第四节：转调.html"><strong aria-hidden="true">6.7.5.4.</strong> 第四节：转调</a></li><li class="chapter-item "><a href="../../../学习/音乐/第三章/第五节：混合主题.html"><strong aria-hidden="true">6.7.5.5.</strong> 第五节：混合主题</a></li><li class="chapter-item "><a href="../../../学习/音乐/第三章/第六节：复合主题.html"><strong aria-hidden="true">6.7.5.6.</strong> 第六节：复合主题</a></li><li class="chapter-item "><a href="../../../学习/音乐/第三章/第七节：回旋曲.html"><strong aria-hidden="true">6.7.5.7.</strong> 第七节：回旋曲</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../学习/诗词格律/诗词格律.html"><strong aria-hidden="true">6.8.</strong> 诗词格律 | Rules of Poem</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/诗词格律/诗韵.html"><strong aria-hidden="true">6.8.1.</strong> 诗韵</a></li><li class="chapter-item "><a href="../../../学习/诗词格律/平仄.html"><strong aria-hidden="true">6.8.2.</strong> 平仄</a></li><li class="chapter-item "><a href="../../../学习/诗词格律/词牌名.html"><strong aria-hidden="true">6.8.3.</strong> 词牌名</a></li></ol></li><li class="chapter-item "><a href="../../../学习/花语/花语.html"><strong aria-hidden="true">6.9.</strong> 花语 | Language of Flowers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/花语/其他.html"><strong aria-hidden="true">6.9.1.</strong> 其他 | Other Flowers</a></li><li class="chapter-item "><a href="../../../学习/花语/康乃馨.html"><strong aria-hidden="true">6.9.2.</strong> 康乃馨 | Carnation</a></li><li class="chapter-item "><a href="../../../学习/花语/玫瑰.html"><strong aria-hidden="true">6.9.3.</strong> 玫瑰 | Rose</a></li><li class="chapter-item "><a href="../../../学习/花语/蔷薇.html"><strong aria-hidden="true">6.9.4.</strong> 蔷薇 | Rose</a></li><li class="chapter-item "><a href="../../../学习/花语/兰花.html"><strong aria-hidden="true">6.9.5.</strong> 兰花 | Orchid</a></li><li class="chapter-item "><a href="../../../学习/花语/菊花.html"><strong aria-hidden="true">6.9.6.</strong> 菊花 | Chrysanthemum</a></li><li class="chapter-item "><a href="../../../学习/花语/百合花.html"><strong aria-hidden="true">6.9.7.</strong> 百合花 | Lily</a></li><li class="chapter-item "><a href="../../../学习/花语/风信子.html"><strong aria-hidden="true">6.9.8.</strong> 风信子 | Hyacinth</a></li><li class="chapter-item "><a href="../../../学习/花语/牡丹.html"><strong aria-hidden="true">6.9.9.</strong> 牡丹 | Peony</a></li><li class="chapter-item "><a href="../../../学习/花语/杜鹃.html"><strong aria-hidden="true">6.9.10.</strong> 杜鹃 | Azalea</a></li><li class="chapter-item "><a href="../../../学习/花语/梅花.html"><strong aria-hidden="true">6.9.11.</strong> 梅花 | Plum Blossom</a></li><li class="chapter-item "><a href="../../../学习/花语/荷花.html"><strong aria-hidden="true">6.9.12.</strong> 荷花 | Lotus</a></li><li class="chapter-item "><a href="../../../学习/花语/葵花.html"><strong aria-hidden="true">6.9.13.</strong> 葵花 | Sunflower</a></li><li class="chapter-item "><a href="../../../学习/花语/樱花.html"><strong aria-hidden="true">6.9.14.</strong> 樱花 | Oriental Cherry</a></li><li class="chapter-item "><a href="../../../学习/花语/三叶草.html"><strong aria-hidden="true">6.9.15.</strong> 三叶草 | Clover</a></li><li class="chapter-item "><a href="../../../学习/花语/郁金香.html"><strong aria-hidden="true">6.9.16.</strong> 郁金香 | Tulip</a></li><li class="chapter-item "><a href="../../../学习/花语/丁香花.html"><strong aria-hidden="true">6.9.17.</strong> 丁香花 | Lilac</a></li><li class="chapter-item "><a href="../../../学习/花语/蒲公英.html"><strong aria-hidden="true">6.9.18.</strong> 蒲公英 | Dandelion</a></li><li class="chapter-item "><a href="../../../学习/花语/牵牛花.html"><strong aria-hidden="true">6.9.19.</strong> 牵牛花 | Morning Glory</a></li><li class="chapter-item "><a href="../../../学习/花语/水仙花.html"><strong aria-hidden="true">6.9.20.</strong> 水仙花 | Daffodil</a></li><li class="chapter-item "><a href="../../../学习/花语/鸢尾.html"><strong aria-hidden="true">6.9.21.</strong> 鸢尾 | Iris</a></li><li class="chapter-item "><a href="../../../学习/花语/金鱼草.html"><strong aria-hidden="true">6.9.22.</strong> 金鱼草 | Snapdragon</a></li><li class="chapter-item "><a href="../../../学习/花语/苜蓿.html"><strong aria-hidden="true">6.9.23.</strong> 苜蓿 | Alfalfa</a></li><li class="chapter-item "><a href="../../../学习/花语/石竹花.html"><strong aria-hidden="true">6.9.24.</strong> 石竹花 | The Pink</a></li><li class="chapter-item "><a href="../../../学习/花语/火鹤.html"><strong aria-hidden="true">6.9.25.</strong> 火鹤 | Flamingo Flower</a></li><li class="chapter-item "><a href="../../../学习/花语/海芋.html"><strong aria-hidden="true">6.9.26.</strong> 海芋 | Alocasia Flower</a></li><li class="chapter-item "><a href="../../../学习/花语/彼岸花.html"><strong aria-hidden="true">6.9.27.</strong> 彼岸花 | Red Lycoris</a></li><li class="chapter-item "><a href="../../../学习/花语/夹竹桃.html"><strong aria-hidden="true">6.9.28.</strong> 夹竹桃 | Oleander</a></li><li class="chapter-item "><a href="../../../学习/花语/堇花.html"><strong aria-hidden="true">6.9.29.</strong> 堇花 | Pansy</a></li></ol></li><li class="chapter-item "><a href="../../../学习/管理学/管理学.html"><strong aria-hidden="true">6.10.</strong> 管理学 | Management</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/管理学/概论.html"><strong aria-hidden="true">6.10.1.</strong> 概论</a></li><li class="chapter-item "><a href="../../../学习/管理学/规章制度.html"><strong aria-hidden="true">6.10.2.</strong> 规章制度</a></li><li class="chapter-item "><a href="../../../学习/管理学/组织.html"><strong aria-hidden="true">6.10.3.</strong> 组织</a></li><li class="chapter-item "><a href="../../../学习/管理学/管理者.html"><strong aria-hidden="true">6.10.4.</strong> 管理者</a></li><li class="chapter-item "><a href="../../../学习/管理学/管理思想.html"><strong aria-hidden="true">6.10.5.</strong> 管理思想</a></li><li class="chapter-item "><a href="../../../学习/管理学/目标.html"><strong aria-hidden="true">6.10.6.</strong> 目标</a></li><li class="chapter-item "><a href="../../../学习/管理学/计划.html"><strong aria-hidden="true">6.10.7.</strong> 计划</a></li><li class="chapter-item "><a href="../../../学习/管理学/决策.html"><strong aria-hidden="true">6.10.8.</strong> 决策</a></li><li class="chapter-item "><a href="../../../学习/管理学/权力.html"><strong aria-hidden="true">6.10.9.</strong> 权力</a></li><li class="chapter-item "><a href="../../../学习/管理学/领导.html"><strong aria-hidden="true">6.10.10.</strong> 领导</a></li><li class="chapter-item "><a href="../../../学习/管理学/沟通.html"><strong aria-hidden="true">6.10.11.</strong> 沟通</a></li><li class="chapter-item "><a href="../../../学习/管理学/激励与动力.html"><strong aria-hidden="true">6.10.12.</strong> 激励与动力</a></li><li class="chapter-item "><a href="../../../学习/管理学/控制.html"><strong aria-hidden="true">6.10.13.</strong> 控制</a></li><li class="chapter-item "><a href="../../../学习/管理学/创新.html"><strong aria-hidden="true">6.10.14.</strong> 创新</a></li></ol></li><li class="chapter-item "><a href="../../../学习/公共基础知识/公共基础知识.html"><strong aria-hidden="true">6.11.</strong> 公共基础知识 | Basics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/公共基础知识/宪法.html"><strong aria-hidden="true">6.11.1.</strong> 宪法</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/民法.html"><strong aria-hidden="true">6.11.2.</strong> 民法</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/刑法.html"><strong aria-hidden="true">6.11.3.</strong> 刑法</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/行政法.html"><strong aria-hidden="true">6.11.4.</strong> 行政法</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/经济法.html"><strong aria-hidden="true">6.11.5.</strong> 经济法</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/马克思主义哲学.html"><strong aria-hidden="true">6.11.6.</strong> 马克思主义哲学</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/中国近现代史.html"><strong aria-hidden="true">6.11.7.</strong> 中国近现代史</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/经济学.html"><strong aria-hidden="true">6.11.8.</strong> 经济学</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/公文.html"><strong aria-hidden="true">6.11.9.</strong> 公文</a></li><li class="chapter-item "><a href="../../../学习/公共基础知识/面试.html"><strong aria-hidden="true">6.11.10.</strong> 面试</a></li></ol></li><li class="chapter-item "><a href="../../../学习/零碎知识整理/零碎知识整理.html"><strong aria-hidden="true">6.12.</strong> 零碎知识整理 | Others</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../学习/零碎知识整理/经济和金融产品理解.html"><strong aria-hidden="true">6.12.1.</strong> 经济和金融产品理解</a></li><li class="chapter-item "><a href="../../../学习/零碎知识整理/半导体集成电路.html"><strong aria-hidden="true">6.12.2.</strong> 半导体集成电路</a></li><li class="chapter-item "><a href="../../../学习/零碎知识整理/俄语译码表.html"><strong aria-hidden="true">6.12.3.</strong> 俄语译码表</a></li><li class="chapter-item "><a href="../../../学习/零碎知识整理/中文书面语.html"><strong aria-hidden="true">6.12.4.</strong> 中文书面语</a></li><li class="chapter-item "><a href="../../../学习/零碎知识整理/毕业设计.html"><strong aria-hidden="true">6.12.5.</strong> 毕业设计</a></li><li class="chapter-item "><a href="../../../学习/零碎知识整理/分享想法.html"><strong aria-hidden="true">6.12.6.</strong> 分享想法</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../断章/断章.html"><strong aria-hidden="true">7.</strong> 断章 | Articles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../断章/文章/文章.html"><strong aria-hidden="true">7.1.</strong> 文章 | Literature</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../断章/文章/毕业旅行第七天.html"><strong aria-hidden="true">7.1.1.</strong> 毕业旅行第七天</a></li><li class="chapter-item "><a href="../../../断章/文章/长跑.html"><strong aria-hidden="true">7.1.2.</strong> 长跑</a></li><li class="chapter-item "><a href="../../../断章/文章/毕业旅行第六天.html"><strong aria-hidden="true">7.1.3.</strong> 毕业旅行第六天</a></li><li class="chapter-item "><a href="../../../断章/文章/毕业总结.html"><strong aria-hidden="true">7.1.4.</strong> 毕业总结</a></li><li class="chapter-item "><a href="../../../断章/文章/毕业旅行第五天.html"><strong aria-hidden="true">7.1.5.</strong> 毕业旅行第五天</a></li><li class="chapter-item "><a href="../../../断章/文章/毕业旅行第四天.html"><strong aria-hidden="true">7.1.6.</strong> 毕业旅行第四天</a></li><li class="chapter-item "><a href="../../../断章/文章/毕业旅行第三天.html"><strong aria-hidden="true">7.1.7.</strong> 毕业旅行第三天</a></li><li class="chapter-item "><a href="../../../断章/文章/毕业旅行第二天.html"><strong aria-hidden="true">7.1.8.</strong> 毕业旅行第二天</a></li><li class="chapter-item "><a href="../../../断章/文章/毕业旅行第一天.html"><strong aria-hidden="true">7.1.9.</strong> 毕业旅行第一天</a></li><li class="chapter-item "><a href="../../../断章/文章/理想的南国微雪.html"><strong aria-hidden="true">7.1.10.</strong> 理想的南国微雪</a></li><li class="chapter-item "><a href="../../../断章/文章/自私地摄影.html"><strong aria-hidden="true">7.1.11.</strong> 自私地摄影</a></li><li class="chapter-item "><a href="../../../断章/文章/近期的一些总结.html"><strong aria-hidden="true">7.1.12.</strong> 近期的一些总结</a></li><li class="chapter-item "><a href="../../../断章/文章/感知到的友情.html"><strong aria-hidden="true">7.1.13.</strong> 感知到的友情</a></li><li class="chapter-item "><a href="../../../断章/文章/关于美甲.html"><strong aria-hidden="true">7.1.14.</strong> 关于美甲</a></li><li class="chapter-item "><a href="../../../断章/文章/天生喜欢恋爱.html"><strong aria-hidden="true">7.1.15.</strong> 天生喜欢恋爱</a></li><li class="chapter-item "><a href="../../../断章/文章/迷失.html"><strong aria-hidden="true">7.1.16.</strong> 迷失</a></li><li class="chapter-item "><a href="../../../断章/文章/瓦罐饭与糖.html"><strong aria-hidden="true">7.1.17.</strong> 瓦罐饭与糖</a></li><li class="chapter-item "><a href="../../../断章/文章/内侧衣兜.html"><strong aria-hidden="true">7.1.18.</strong> 内侧衣兜</a></li><li class="chapter-item "><a href="../../../断章/文章/母亲的理发推.html"><strong aria-hidden="true">7.1.19.</strong> 母亲的理发推</a></li><li class="chapter-item "><a href="../../../断章/文章/小孩子的勇气.html"><strong aria-hidden="true">7.1.20.</strong> 小孩子的勇气</a></li><li class="chapter-item "><a href="../../../断章/文章/在一起，本身就是一种幸福.html"><strong aria-hidden="true">7.1.21.</strong> 在一起，本身就是一种幸福</a></li><li class="chapter-item "><a href="../../../断章/文章/仍然在路上 - 2022年度总结.html"><strong aria-hidden="true">7.1.22.</strong> 仍然在路上 - 2022年度总结</a></li><li class="chapter-item "><a href="../../../断章/文章/微小痕迹.html"><strong aria-hidden="true">7.1.23.</strong> 微小痕迹</a></li><li class="chapter-item "><a href="../../../断章/文章/占有美.html"><strong aria-hidden="true">7.1.24.</strong> 占有美</a></li><li class="chapter-item "><a href="../../../断章/文章/她与水獭.html"><strong aria-hidden="true">7.1.25.</strong> 她与水獭</a></li><li class="chapter-item "><a href="../../../断章/文章/何谓阳光.html"><strong aria-hidden="true">7.1.26.</strong> 何谓阳光</a></li><li class="chapter-item "><a href="../../../断章/文章/愿你不再焦虑.html"><strong aria-hidden="true">7.1.27.</strong> 愿你不再焦虑</a></li><li class="chapter-item "><a href="../../../断章/文章/克莱因蓝.html"><strong aria-hidden="true">7.1.28.</strong> 克莱因蓝</a></li><li class="chapter-item "><a href="../../../断章/文章/猫猫戒指.html"><strong aria-hidden="true">7.1.29.</strong> 猫猫戒指</a></li><li class="chapter-item "><a href="../../../断章/文章/微雪爱情观.html"><strong aria-hidden="true">7.1.30.</strong> 微雪爱情观</a></li><li class="chapter-item "><a href="../../../断章/文章/阑珊，散落人间.html"><strong aria-hidden="true">7.1.31.</strong> 阑珊，散落人间</a></li><li class="chapter-item "><a href="../../../断章/文章/给男性.html"><strong aria-hidden="true">7.1.32.</strong> 给男性</a></li><li class="chapter-item "><a href="../../../断章/文章/烟火自述.html"><strong aria-hidden="true">7.1.33.</strong> 烟火自述</a></li><li class="chapter-item "><a href="../../../断章/文章/给女性.html"><strong aria-hidden="true">7.1.34.</strong> 给女性</a></li><li class="chapter-item "><a href="../../../断章/文章/语言漫谈.html"><strong aria-hidden="true">7.1.35.</strong> 语言漫谈</a></li><li class="chapter-item "><a href="../../../断章/文章/篮球女孩.html"><strong aria-hidden="true">7.1.36.</strong> 篮球女孩</a></li><li class="chapter-item "><a href="../../../断章/文章/冰面少年.html"><strong aria-hidden="true">7.1.37.</strong> 冰面少年</a></li><li class="chapter-item "><a href="../../../断章/文章/韧尽万花春绽美，待到寒冬自释香 - 2021年度总结.html"><strong aria-hidden="true">7.1.38.</strong> 韧尽万花春绽美，待到寒冬自释香 - 2021年度总结</a></li><li class="chapter-item "><a href="../../../断章/文章/为了爱情，是否应该舍弃友情？.html"><strong aria-hidden="true">7.1.39.</strong> 为了爱情，是否应该舍弃友情？</a></li><li class="chapter-item "><a href="../../../断章/文章/你一定走了很远的路吧 - 姬霄.html"><strong aria-hidden="true">7.1.40.</strong> 你一定走了很远的路吧 - 姬霄</a></li><li class="chapter-item "><a href="../../../断章/文章/茉莉清茶.html"><strong aria-hidden="true">7.1.41.</strong> 茉莉清茶</a></li><li class="chapter-item "><a href="../../../断章/文章/所想所见即真实.html"><strong aria-hidden="true">7.1.42.</strong> 所想所见即真实</a></li><li class="chapter-item "><a href="../../../断章/文章/回望大二.html"><strong aria-hidden="true">7.1.43.</strong> 回望大二</a></li><li class="chapter-item "><a href="../../../断章/文章/番茄.html"><strong aria-hidden="true">7.1.44.</strong> 番茄</a></li><li class="chapter-item "><a href="../../../断章/文章/随想录.html"><strong aria-hidden="true">7.1.45.</strong> 随想录</a></li><li class="chapter-item "><a href="../../../断章/文章/月圆夜.html"><strong aria-hidden="true">7.1.46.</strong> 月圆夜</a></li><li class="chapter-item "><a href="../../../断章/文章/反抗.html"><strong aria-hidden="true">7.1.47.</strong> 反抗</a></li><li class="chapter-item "><a href="../../../断章/文章/奴化圣经.html"><strong aria-hidden="true">7.1.48.</strong> 奴化圣经</a></li><li class="chapter-item "><a href="../../../断章/文章/境遇.html"><strong aria-hidden="true">7.1.49.</strong> 境遇</a></li><li class="chapter-item "><a href="../../../断章/文章/前行.html"><strong aria-hidden="true">7.1.50.</strong> 前行</a></li><li class="chapter-item "><a href="../../../断章/文章/哥，咱家要散了.html"><strong aria-hidden="true">7.1.51.</strong> 哥，咱家要散了</a></li><li class="chapter-item "><a href="../../../断章/文章/暑期总结与瑰想.html"><strong aria-hidden="true">7.1.52.</strong> 暑期总结与瑰想</a></li><li class="chapter-item "><a href="../../../断章/文章/随便聊聊.html"><strong aria-hidden="true">7.1.53.</strong> 随便聊聊</a></li><li class="chapter-item "><a href="../../../断章/文章/色气之下，清纯最大.html"><strong aria-hidden="true">7.1.54.</strong> 色气之下，清纯最大</a></li><li class="chapter-item "><a href="../../../断章/文章/追随.html"><strong aria-hidden="true">7.1.55.</strong> 追随</a></li><li class="chapter-item "><a href="../../../断章/文章/一点看法.html"><strong aria-hidden="true">7.1.56.</strong> 一点看法</a></li><li class="chapter-item "><a href="../../../断章/文章/蕴愈彼此，共渡红尘.html"><strong aria-hidden="true">7.1.57.</strong> 蕴愈彼此，共渡红尘</a></li><li class="chapter-item "><a href="../../../断章/文章/通往优秀的路上，痛苦是一种试炼.html"><strong aria-hidden="true">7.1.58.</strong> 通往优秀的路上，痛苦是一种试炼</a></li></ol></li><li class="chapter-item "><a href="../../../断章/赠与/赠与.html"><strong aria-hidden="true">7.2.</strong> 赠与 | Bestowal</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../断章/赠与/千人感谢祭名单.html"><strong aria-hidden="true">7.2.1.</strong> 千人感谢祭名单</a></li><li class="chapter-item "><a href="../../../断章/赠与/频道千人感谢祭.html"><strong aria-hidden="true">7.2.2.</strong> 频道千人感谢祭</a></li><li class="chapter-item "><a href="../../../断章/赠与/给三年后自己的一封信.html"><strong aria-hidden="true">7.2.3.</strong> 给三年后自己的一封信</a></li><li class="chapter-item "><a href="../../../断章/赠与/致两年前自己的回信.html"><strong aria-hidden="true">7.2.4.</strong> 致两年前自己的回信</a></li><li class="chapter-item "><a href="../../../断章/赠与/致南国微雪频道每一位订阅者的一封信.html"><strong aria-hidden="true">7.2.5.</strong> 致南国微雪频道每一位订阅者的一封信</a></li><li class="chapter-item "><a href="../../../断章/赠与/致两年后自己的一封信.html"><strong aria-hidden="true">7.2.6.</strong> 致两年后自己的一封信</a></li></ol></li><li class="chapter-item "><a href="../../../断章/随记/随记.html"><strong aria-hidden="true">7.3.</strong> 随记 | Essays</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../断章/随记/随记 - 2023 年 6 月 27 日.html"><strong aria-hidden="true">7.3.1.</strong> 随记 - 2023 年 6 月 27 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2023 年 6 月 25 日.html"><strong aria-hidden="true">7.3.2.</strong> 随记 - 2023 年 6 月 25 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2023 年 6 月 9 日.html"><strong aria-hidden="true">7.3.3.</strong> 随记 - 2023 年 6 月 9 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2023 年 4 月 4 日.html"><strong aria-hidden="true">7.3.4.</strong> 随记 - 2023 年 4 月 4 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2023 年 1 月 18 日.html"><strong aria-hidden="true">7.3.5.</strong> 随记 - 2023 年 1 月 18 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 12 月 23 日.html"><strong aria-hidden="true">7.3.6.</strong> 随记 - 2022 年 12 月 23 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 12 月 22 日.html"><strong aria-hidden="true">7.3.7.</strong> 随记 - 2022 年 12 月 22 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 11 月 22 日.html"><strong aria-hidden="true">7.3.8.</strong> 随记 - 2022 年 11 月 22 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 11 月 19 日.html"><strong aria-hidden="true">7.3.9.</strong> 随记 - 2022 年 11 月 19 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 11 月 6 日.html"><strong aria-hidden="true">7.3.10.</strong> 随记 - 2022 年 11 月 6 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 10 月 11 日.html"><strong aria-hidden="true">7.3.11.</strong> 随记 - 2022 年 10 月 11 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 9 月 26 日.html"><strong aria-hidden="true">7.3.12.</strong> 随记 - 2022 年 9 月 26 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 9 月 18 日.html"><strong aria-hidden="true">7.3.13.</strong> 随记 - 2022 年 9 月 18 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 7 月 21 日.html"><strong aria-hidden="true">7.3.14.</strong> 随记 - 2022 年 7 月 21 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 7 月 13 日.html"><strong aria-hidden="true">7.3.15.</strong> 随记 - 2022 年 7 月 13 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 7 月 7 日.html"><strong aria-hidden="true">7.3.16.</strong> 随记 - 2022 年 7 月 7 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 6 月 14 日.html"><strong aria-hidden="true">7.3.17.</strong> 随记 - 2022 年 6 月 14 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 6 月 3 日.html"><strong aria-hidden="true">7.3.18.</strong> 随记 - 2022 年 6 月 3 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 5 月 25 日.html"><strong aria-hidden="true">7.3.19.</strong> 随记 - 2022 年 5 月 25 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 5 月 2 日.html"><strong aria-hidden="true">7.3.20.</strong> 随记 - 2022 年 5 月 2 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 4 月 3 日.html"><strong aria-hidden="true">7.3.21.</strong> 随记 - 2022 年 4 月 3 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 4 月 1 日.html"><strong aria-hidden="true">7.3.22.</strong> 随记 - 2022 年 4 月 1 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 3 月 28 日.html"><strong aria-hidden="true">7.3.23.</strong> 随记 - 2022 年 3 月 28 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 3 月 18 日.html"><strong aria-hidden="true">7.3.24.</strong> 随记 - 2022 年 3 月 18 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 3 月 13 日.html"><strong aria-hidden="true">7.3.25.</strong> 随记 - 2022 年 3 月 13 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 2 月 17 日.html"><strong aria-hidden="true">7.3.26.</strong> 随记 - 2022 年 2 月 17 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 2 月 10 日.html"><strong aria-hidden="true">7.3.27.</strong> 随记 - 2022 年 2 月 10 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 2 月 7 日.html"><strong aria-hidden="true">7.3.28.</strong> 随记 - 2022 年 2 月 7 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2022 年 1 月 20 日.html"><strong aria-hidden="true">7.3.29.</strong> 随记 - 2022 年 1 月 20 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 12 月 26 日.html"><strong aria-hidden="true">7.3.30.</strong> 随记 - 2021 年 12 月 26 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 11 月 30 日.html"><strong aria-hidden="true">7.3.31.</strong> 随记 - 2021 年 11 月 30 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 11 月 19 日.html"><strong aria-hidden="true">7.3.32.</strong> 随记 - 2021 年 11 月 19 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 10 月 24 日.html"><strong aria-hidden="true">7.3.33.</strong> 随记 - 2021 年 10 月 24 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 10 月 22 日.html"><strong aria-hidden="true">7.3.34.</strong> 随记 - 2021 年 10 月 22 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 10 月 6 日.html"><strong aria-hidden="true">7.3.35.</strong> 随记 - 2021 年 10 月 6 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 10 月 2 日.html"><strong aria-hidden="true">7.3.36.</strong> 随记 - 2021 年 10 月 2 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 9 月 30 日.html"><strong aria-hidden="true">7.3.37.</strong> 随记 - 2021 年 9 月 30 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 9 月 16 日.html"><strong aria-hidden="true">7.3.38.</strong> 随记 - 2021 年 9 月 16 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 9 月 15 日.html"><strong aria-hidden="true">7.3.39.</strong> 随记 - 2021 年 9 月 15 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 8 月 31 日.html"><strong aria-hidden="true">7.3.40.</strong> 随记 - 2021 年 8 月 31 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 8 月 2 日.html"><strong aria-hidden="true">7.3.41.</strong> 随记 - 2021 年 8 月 2 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 7 月 27 日.html"><strong aria-hidden="true">7.3.42.</strong> 随记 - 2021 年 7 月 27 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 7 月 21 日.html"><strong aria-hidden="true">7.3.43.</strong> 随记 - 2021 年 7 月 21 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 7 月 14 日.html"><strong aria-hidden="true">7.3.44.</strong> 随记 - 2021 年 7 月 14 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 7 月 2 日.html"><strong aria-hidden="true">7.3.45.</strong> 随记 - 2021 年 7 月 2 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记之二 - 2021 年 6 月 13 日.html"><strong aria-hidden="true">7.3.46.</strong> 随记之二 - 2021 年 6 月 13 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记之一 - 2021 年 6 月 13 日.html"><strong aria-hidden="true">7.3.47.</strong> 随记之一 - 2021 年 6 月 13 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 6 月 11 日.html"><strong aria-hidden="true">7.3.48.</strong> 随记 - 2021 年 6 月 11 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 6 月 7 日.html"><strong aria-hidden="true">7.3.49.</strong> 随记 - 2021 年 6 月 7 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 6 月 6 日.html"><strong aria-hidden="true">7.3.50.</strong> 随记 - 2021 年 6 月 6 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 5 月 21 日.html"><strong aria-hidden="true">7.3.51.</strong> 随记 - 2021 年 5 月 21 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 5 月 18 日.html"><strong aria-hidden="true">7.3.52.</strong> 随记 - 2021 年 5 月 18 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 5 月 10 日.html"><strong aria-hidden="true">7.3.53.</strong> 随记 - 2021 年 5 月 10 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 3 月 31 日.html"><strong aria-hidden="true">7.3.54.</strong> 随记 - 2021 年 3 月 31 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 3 月 26 日.html"><strong aria-hidden="true">7.3.55.</strong> 随记 - 2021 年 3 月 26 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 3 月 5 日.html"><strong aria-hidden="true">7.3.56.</strong> 随记 - 2021 年 3 月 5 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 2 月 7 日.html"><strong aria-hidden="true">7.3.57.</strong> 随记 - 2021 年 2 月 7 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 2 月 3 日.html"><strong aria-hidden="true">7.3.58.</strong> 随记 - 2021 年 2 月 3 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2021 年 1 月 28 日.html"><strong aria-hidden="true">7.3.59.</strong> 随记 - 2021 年 1 月 28 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2020 年 10 月 17 日.html"><strong aria-hidden="true">7.3.60.</strong> 随记 - 2020 年 10 月 17 日</a></li><li class="chapter-item "><a href="../../../断章/随记/随记 - 2020 年 5 月 15 日.html"><strong aria-hidden="true">7.3.61.</strong> 随记 - 2020 年 5 月 15 日</a></li></ol></li><li class="chapter-item "><a href="../../../断章/诗词/诗词总录.html"><strong aria-hidden="true">7.4.</strong> 诗词 | Poems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../断章/诗词/在你的瞳孔里.html"><strong aria-hidden="true">7.4.1.</strong> 在你的瞳孔里</a></li><li class="chapter-item "><a href="../../../断章/诗词/得到.html"><strong aria-hidden="true">7.4.2.</strong> 得到</a></li><li class="chapter-item "><a href="../../../断章/诗词/每个人都是一个容器.html"><strong aria-hidden="true">7.4.3.</strong> 每个人都是一个容器</a></li><li class="chapter-item "><a href="../../../断章/诗词/站在迎风坡.html"><strong aria-hidden="true">7.4.4.</strong> 站在迎风坡</a></li><li class="chapter-item "><a href="../../../断章/诗词/雨.html"><strong aria-hidden="true">7.4.5.</strong> 雨</a></li><li class="chapter-item "><a href="../../../断章/诗词/金色沙滩.html"><strong aria-hidden="true">7.4.6.</strong> 金色沙滩</a></li><li class="chapter-item "><a href="../../../断章/诗词/伪装.html"><strong aria-hidden="true">7.4.7.</strong> 伪装</a></li><li class="chapter-item "><a href="../../../断章/诗词/摩天轮.html"><strong aria-hidden="true">7.4.8.</strong> 摩天轮</a></li><li class="chapter-item "><a href="../../../断章/诗词/一如既往.html"><strong aria-hidden="true">7.4.9.</strong> 一如既往</a></li><li class="chapter-item "><a href="../../../断章/诗词/沉睡在天空之上.html"><strong aria-hidden="true">7.4.10.</strong> 沉睡在天空之上</a></li><li class="chapter-item "><a href="../../../断章/诗词/酒.html"><strong aria-hidden="true">7.4.11.</strong> 酒</a></li><li class="chapter-item "><a href="../../../断章/诗词/我不会想见你.html"><strong aria-hidden="true">7.4.12.</strong> 我不会想见你</a></li><li class="chapter-item "><a href="../../../断章/诗词/减字木兰花 · 伊愿.html"><strong aria-hidden="true">7.4.13.</strong> 减字木兰花 · 伊愿</a></li><li class="chapter-item "><a href="../../../断章/诗词/无题之二.html"><strong aria-hidden="true">7.4.14.</strong> 无题之二</a></li><li class="chapter-item "><a href="../../../断章/诗词/鸡尾酒.html"><strong aria-hidden="true">7.4.15.</strong> 鸡尾酒</a></li><li class="chapter-item "><a href="../../../断章/诗词/复活.html"><strong aria-hidden="true">7.4.16.</strong> 复活</a></li><li class="chapter-item "><a href="../../../断章/诗词/释放一只蝴蝶.html"><strong aria-hidden="true">7.4.17.</strong> 释放一只蝴蝶</a></li><li class="chapter-item "><a href="../../../断章/诗词/纸鸢.html"><strong aria-hidden="true">7.4.18.</strong> 纸鸢</a></li><li class="chapter-item "><a href="../../../断章/诗词/极端.html"><strong aria-hidden="true">7.4.19.</strong> 极端</a></li><li class="chapter-item "><a href="../../../断章/诗词/行走在命运之上.html"><strong aria-hidden="true">7.4.20.</strong> 行走在命运之上</a></li><li class="chapter-item "><a href="../../../断章/诗词/至美.html"><strong aria-hidden="true">7.4.21.</strong> 至美</a></li><li class="chapter-item "><a href="../../../断章/诗词/巨人.html"><strong aria-hidden="true">7.4.22.</strong> 巨人</a></li><li class="chapter-item "><a href="../../../断章/诗词/记 11 月 23 日 飘摇动荡.html"><strong aria-hidden="true">7.4.23.</strong> 记 11 月 23 日 飘摇动荡</a></li><li class="chapter-item "><a href="../../../断章/诗词/一瞬间.html"><strong aria-hidden="true">7.4.24.</strong> 一瞬间</a></li><li class="chapter-item "><a href="../../../断章/诗词/夏影.html"><strong aria-hidden="true">7.4.25.</strong> 夏影</a></li><li class="chapter-item "><a href="../../../断章/诗词/如梦令 • 愿.html"><strong aria-hidden="true">7.4.26.</strong> 如梦令 • 愿</a></li><li class="chapter-item "><a href="../../../断章/诗词/给你.html"><strong aria-hidden="true">7.4.27.</strong> 给你</a></li><li class="chapter-item "><a href="../../../断章/诗词/影.html"><strong aria-hidden="true">7.4.28.</strong> 影</a></li><li class="chapter-item "><a href="../../../断章/诗词/赠君.html"><strong aria-hidden="true">7.4.29.</strong> 赠君</a></li><li class="chapter-item "><a href="../../../断章/诗词/期待.html"><strong aria-hidden="true">7.4.30.</strong> 期待</a></li><li class="chapter-item "><a href="../../../断章/诗词/卿语.html"><strong aria-hidden="true">7.4.31.</strong> 卿语</a></li><li class="chapter-item "><a href="../../../断章/诗词/清平乐 • 琴韵.html"><strong aria-hidden="true">7.4.32.</strong> 清平乐 • 琴韵</a></li><li class="chapter-item "><a href="../../../断章/诗词/故事.html"><strong aria-hidden="true">7.4.33.</strong> 故事</a></li><li class="chapter-item "><a href="../../../断章/诗词/小诗.html"><strong aria-hidden="true">7.4.34.</strong> 小诗</a></li><li class="chapter-item "><a href="../../../断章/诗词/无题之一.html"><strong aria-hidden="true">7.4.35.</strong> 无题之一</a></li><li class="chapter-item "><a href="../../../断章/诗词/顽柔.html"><strong aria-hidden="true">7.4.36.</strong> 顽柔</a></li><li class="chapter-item "><a href="../../../断章/诗词/行走.html"><strong aria-hidden="true">7.4.37.</strong> 行走</a></li><li class="chapter-item "><a href="../../../断章/诗词/春秋三载.html"><strong aria-hidden="true">7.4.38.</strong> 春秋三载</a></li><li class="chapter-item "><a href="../../../断章/诗词/不屈.html"><strong aria-hidden="true">7.4.39.</strong> 不屈</a></li><li class="chapter-item "><a href="../../../断章/诗词/点绛唇 • 祈珍.html"><strong aria-hidden="true">7.4.40.</strong> 点绛唇 • 祈珍</a></li><li class="chapter-item "><a href="../../../断章/诗词/天仙子 • 忆灵.html"><strong aria-hidden="true">7.4.41.</strong> 天仙子 • 忆灵</a></li><li class="chapter-item "><a href="../../../断章/诗词/愿望.html"><strong aria-hidden="true">7.4.42.</strong> 愿望</a></li><li class="chapter-item "><a href="../../../断章/诗词/变.html"><strong aria-hidden="true">7.4.43.</strong> 变</a></li><li class="chapter-item "><a href="../../../断章/诗词/摊破浣溪沙.html"><strong aria-hidden="true">7.4.44.</strong> 摊破浣溪沙</a></li><li class="chapter-item "><a href="../../../断章/诗词/期冀.html"><strong aria-hidden="true">7.4.45.</strong> 期冀</a></li><li class="chapter-item "><a href="../../../断章/诗词/迷途.html"><strong aria-hidden="true">7.4.46.</strong> 迷途</a></li><li class="chapter-item "><a href="../../../断章/诗词/蜕变.html"><strong aria-hidden="true">7.4.47.</strong> 蜕变</a></li><li class="chapter-item "><a href="../../../断章/诗词/继续.html"><strong aria-hidden="true">7.4.48.</strong> 继续</a></li><li class="chapter-item "><a href="../../../断章/诗词/忆忆思.html"><strong aria-hidden="true">7.4.49.</strong> 忆忆思</a></li><li class="chapter-item "><a href="../../../断章/诗词/Hide and Seek.html"><strong aria-hidden="true">7.4.50.</strong> Hide and Seek</a></li><li class="chapter-item "><a href="../../../断章/诗词/徨.html"><strong aria-hidden="true">7.4.51.</strong> 徨</a></li><li class="chapter-item "><a href="../../../断章/诗词/新光.html"><strong aria-hidden="true">7.4.52.</strong> 新光</a></li><li class="chapter-item "><a href="../../../断章/诗词/时光与你.html"><strong aria-hidden="true">7.4.53.</strong> 时光与你</a></li></ol></li><li class="chapter-item "><a href="../../../断章/感触/感触.html"><strong aria-hidden="true">7.5.</strong> 感触 | Feelings</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../断章/感触/感触之六.html"><strong aria-hidden="true">7.5.1.</strong> 感触之六</a></li><li class="chapter-item "><a href="../../../断章/感触/感触之五.html"><strong aria-hidden="true">7.5.2.</strong> 感触之五</a></li><li class="chapter-item "><a href="../../../断章/感触/感触之四.html"><strong aria-hidden="true">7.5.3.</strong> 感触之四</a></li><li class="chapter-item "><a href="../../../断章/感触/感触之三.html"><strong aria-hidden="true">7.5.4.</strong> 感触之三</a></li><li class="chapter-item "><a href="../../../断章/感触/感触之二.html"><strong aria-hidden="true">7.5.5.</strong> 感触之二</a></li><li class="chapter-item "><a href="../../../断章/感触/感触之一.html"><strong aria-hidden="true">7.5.6.</strong> 感触之一</a></li><li class="chapter-item "><a href="../../../断章/感触/遇见 今天.html"><strong aria-hidden="true">7.5.7.</strong> 遇见 今天</a></li><li class="chapter-item "><a href="../../../断章/感触/无题.html"><strong aria-hidden="true">7.5.8.</strong> 无题</a></li><li class="chapter-item "><a href="../../../断章/感触/零言碎语.html"><strong aria-hidden="true">7.5.9.</strong> 零言碎语</a></li></ol></li><li class="chapter-item "><a href="../../../断章/句子/句子.html"><strong aria-hidden="true">7.6.</strong> 句子 | Sentences</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../断章/句子/日记扉页.html"><strong aria-hidden="true">7.6.1.</strong> 日记扉页</a></li><li class="chapter-item "><a href="../../../断章/句子/随记断句.html"><strong aria-hidden="true">7.6.2.</strong> 随记断句</a></li></ol></li><li class="chapter-item "><a href="../../../断章/胡言/胡言.html"><strong aria-hidden="true">7.7.</strong> 胡言 | Insanes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../断章/胡言/候场.html"><strong aria-hidden="true">7.7.1.</strong> 候场</a></li><li class="chapter-item "><a href="../../../断章/胡言/胡言乱语之四.html"><strong aria-hidden="true">7.7.2.</strong> 胡言乱语之四</a></li><li class="chapter-item "><a href="../../../断章/胡言/胡言乱语之三.html"><strong aria-hidden="true">7.7.3.</strong> 胡言乱语之三</a></li><li class="chapter-item "><a href="../../../断章/胡言/胡言乱语之二.html"><strong aria-hidden="true">7.7.4.</strong> 胡言乱语之二</a></li><li class="chapter-item "><a href="../../../断章/胡言/胡言乱语之一.html"><strong aria-hidden="true">7.7.5.</strong> 胡言乱语之一</a></li><li class="chapter-item "><a href="../../../断章/胡言/心情.html"><strong aria-hidden="true">7.7.6.</strong> 心情</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../读书/读书.html"><strong aria-hidden="true">8.</strong> 读书 | Reading</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../读书/电影台词.html"><strong aria-hidden="true">8.1.</strong> 电影台词 | Film Lines</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/亲密关系.html"><strong aria-hidden="true">8.2.</strong> 亲密关系 | Intimate Relationship</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../读书/亲密关系/第一章：人际关系的构成.html"><strong aria-hidden="true">8.2.1.</strong> 第一章：人际关系的构成</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第二章：研究方法.html"><strong aria-hidden="true">8.2.2.</strong> 第二章：研究方法</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第三章：吸引力.html"><strong aria-hidden="true">8.2.3.</strong> 第三章：吸引力</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第四章：社会认知.html"><strong aria-hidden="true">8.2.4.</strong> 第四章：社会认知</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第五章：沟通.html"><strong aria-hidden="true">8.2.5.</strong> 第五章：沟通</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第六章：相互依赖.html"><strong aria-hidden="true">8.2.6.</strong> 第六章：相互依赖</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第七章：友谊.html"><strong aria-hidden="true">8.2.7.</strong> 第七章：友谊</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第八章：爱情.html"><strong aria-hidden="true">8.2.8.</strong> 第八章：爱情</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第九章：性爱.html"><strong aria-hidden="true">8.2.9.</strong> 第九章：性爱</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第十章：压力与紧张.html"><strong aria-hidden="true">8.2.10.</strong> 第十章：压力与紧张</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第十一章：冲突.html"><strong aria-hidden="true">8.2.11.</strong> 第十一章：冲突</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第十二章：权力和暴力.html"><strong aria-hidden="true">8.2.12.</strong> 第十二章：权力和暴力</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第十三章：亲密关系的解体与消亡.html"><strong aria-hidden="true">8.2.13.</strong> 第十三章：亲密关系的解体与消亡</a></li><li class="chapter-item "><a href="../../../读书/亲密关系/第十四章：亲密关系的维持和修复.html"><strong aria-hidden="true">8.2.14.</strong> 第十四章：亲密关系的维持和修复</a></li></ol></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/没事，一切都会好起来的.html"><strong aria-hidden="true">8.3.</strong> 没事，一切都会好起来的</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/封底.html"><strong aria-hidden="true">8.3.1.</strong> 封底</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/灿烂的尽头.html"><strong aria-hidden="true">8.3.2.</strong> 灿烂的尽头</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/朝着尽头.html"><strong aria-hidden="true">8.3.3.</strong> 朝着尽头</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/对话.html"><strong aria-hidden="true">8.3.4.</strong> 对话</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/飞吧.html"><strong aria-hidden="true">8.3.5.</strong> 飞吧</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/分享日常.html"><strong aria-hidden="true">8.3.6.</strong> 分享日常</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/给你.html"><strong aria-hidden="true">8.3.7.</strong> 给你</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/海浪.html"><strong aria-hidden="true">8.3.8.</strong> 海浪</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/呼唤的声音.html"><strong aria-hidden="true">8.3.9.</strong> 呼唤的声音</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/花.html"><strong aria-hidden="true">8.3.10.</strong> 花</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/紧急降落.html"><strong aria-hidden="true">8.3.11.</strong> 紧急降落</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/精灵之舞.html"><strong aria-hidden="true">8.3.12.</strong> 精灵之舞</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/井.html"><strong aria-hidden="true">8.3.13.</strong> 井</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/来自宇宙的信.html"><strong aria-hidden="true">8.3.14.</strong> 来自宇宙的信</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/来自月亮的回信.html"><strong aria-hidden="true">8.3.15.</strong> 来自月亮的回信</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/离别.html"><strong aria-hidden="true">8.3.16.</strong> 离别</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/门.html"><strong aria-hidden="true">8.3.17.</strong> 门</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/梦的距离.html"><strong aria-hidden="true">8.3.18.</strong> 梦的距离</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/梦尽头的你.html"><strong aria-hidden="true">8.3.19.</strong> 梦尽头的你</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/哪怕没有理由.html"><strong aria-hidden="true">8.3.20.</strong> 哪怕没有理由</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/你的花园.html"><strong aria-hidden="true">8.3.21.</strong> 你的花园</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/你的季节.html"><strong aria-hidden="true">8.3.22.</strong> 你的季节</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/你的星星.html"><strong aria-hidden="true">8.3.23.</strong> 你的星星</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/散步.html"><strong aria-hidden="true">8.3.24.</strong> 散步</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/沙漠里的玫瑰.html"><strong aria-hidden="true">8.3.25.</strong> 沙漠里的玫瑰</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/守灯人.html"><strong aria-hidden="true">8.3.26.</strong> 守灯人</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/特别的时刻.html"><strong aria-hidden="true">8.3.27.</strong> 特别的时刻</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/温暖的约定.html"><strong aria-hidden="true">8.3.28.</strong> 温暖的约定</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/我的宇宙.html"><strong aria-hidden="true">8.3.29.</strong> 我的宇宙</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/献给身在某处的你.html"><strong aria-hidden="true">8.3.30.</strong> 献给身在某处的你</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/相信.html"><strong aria-hidden="true">8.3.31.</strong> 相信</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/小蜡烛.html"><strong aria-hidden="true">8.3.32.</strong> 小蜡烛</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/小小的对白.html"><strong aria-hidden="true">8.3.33.</strong> 小小的对白</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/心.html"><strong aria-hidden="true">8.3.34.</strong> 心</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/幸福.html"><strong aria-hidden="true">8.3.35.</strong> 幸福</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/阳光.html"><strong aria-hidden="true">8.3.36.</strong> 阳光</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/一些安慰.html"><strong aria-hidden="true">8.3.37.</strong> 一些安慰</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/音乐.html"><strong aria-hidden="true">8.3.38.</strong> 音乐</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/永远.html"><strong aria-hidden="true">8.3.39.</strong> 永远</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/枕边的故事.html"><strong aria-hidden="true">8.3.40.</strong> 枕边的故事</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/终点站.html"><strong aria-hidden="true">8.3.41.</strong> 终点站</a></li><li class="chapter-item "><a href="../../../读书/没事，一切都会好起来的/最美的东西.html"><strong aria-hidden="true">8.3.42.</strong> 最美的东西</a></li></ol></li><li class="chapter-item "><a href="../../../读书/零零散散/零零散散.html"><strong aria-hidden="true">8.4.</strong> 零零散散 | Other Books</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../读书/零零散散/非暴力沟通.html"><strong aria-hidden="true">8.4.1.</strong> 非暴力沟通</a></li><li class="chapter-item "><a href="../../../读书/零零散散/漫画经济学：生活常识.html"><strong aria-hidden="true">8.4.2.</strong> 漫画经济学：生活常识</a></li><li class="chapter-item "><a href="../../../读书/零零散散/漫画经济学：金融危机.html"><strong aria-hidden="true">8.4.3.</strong> 漫画经济学：金融危机</a></li><li class="chapter-item "><a href="../../../读书/零零散散/我想要两颗西柚.html"><strong aria-hidden="true">8.4.4.</strong> 我想要两颗西柚</a></li><li class="chapter-item "><a href="../../../读书/零零散散/我离开之后.html"><strong aria-hidden="true">8.4.5.</strong> 我离开之后</a></li><li class="chapter-item "><a href="../../../读书/零零散散/人间告白.html"><strong aria-hidden="true">8.4.6.</strong> 人间告白</a></li><li class="chapter-item "><a href="../../../读书/零零散散/山茶文具店.html"><strong aria-hidden="true">8.4.7.</strong> 山茶文具店</a></li><li class="chapter-item "><a href="../../../读书/零零散散/狮子之家的点心日.html"><strong aria-hidden="true">8.4.8.</strong> 狮子之家的点心日</a></li><li class="chapter-item "><a href="../../../读书/零零散散/二十首情诗和一首绝望的歌.html"><strong aria-hidden="true">8.4.9.</strong> 二十首情诗和一首绝望的歌</a></li><li class="chapter-item "><a href="../../../读书/零零散散/明天，我要和昨天的你约会.html"><strong aria-hidden="true">8.4.10.</strong> 明天，我要和昨天的你约会</a></li><li class="chapter-item "><a href="../../../读书/零零散散/数学之美.html"><strong aria-hidden="true">8.4.11.</strong> 数学之美</a></li><li class="chapter-item "><a href="../../../读书/零零散散/你当像鸟飞往你的山.html"><strong aria-hidden="true">8.4.12.</strong> 你当像鸟飞往你的山</a></li><li class="chapter-item "><a href="../../../读书/零零散散/如何阅读一本书.html"><strong aria-hidden="true">8.4.13.</strong> 如何阅读一本书</a></li><li class="chapter-item "><a href="../../../读书/零零散散/麻省理工深度思考法.html"><strong aria-hidden="true">8.4.14.</strong> 麻省理工深度思考法</a></li><li class="chapter-item "><a href="../../../读书/零零散散/快速抓重点，过目不忘的阅读术.html"><strong aria-hidden="true">8.4.15.</strong> 快速抓重点，过目不忘的阅读术</a></li><li class="chapter-item "><a href="../../../读书/零零散散/追风筝的人.html"><strong aria-hidden="true">8.4.16.</strong> 追风筝的人</a></li><li class="chapter-item "><a href="../../../读书/零零散散/霍乱时期的爱情.html"><strong aria-hidden="true">8.4.17.</strong> 霍乱时期的爱情</a></li><li class="chapter-item "><a href="../../../读书/零零散散/美元真相.html"><strong aria-hidden="true">8.4.18.</strong> 美元真相</a></li><li class="chapter-item "><a href="../../../读书/零零散散/大型网站技术架构：核心原理与案例分析.html"><strong aria-hidden="true">8.4.19.</strong> 大型网站技术架构：核心原理与案例分析</a></li><li class="chapter-item "><a href="../../../读书/零零散散/智齿.html"><strong aria-hidden="true">8.4.20.</strong> 智齿</a></li><li class="chapter-item "><a href="../../../读书/零零散散/强风吹拂.html"><strong aria-hidden="true">8.4.21.</strong> 强风吹拂</a></li><li class="chapter-item "><a href="../../../读书/零零散散/时间简史.html"><strong aria-hidden="true">8.4.22.</strong> 时间简史</a></li><li class="chapter-item "><a href="../../../读书/零零散散/焦虑的人.html"><strong aria-hidden="true">8.4.23.</strong> 焦虑的人</a></li><li class="chapter-item "><a href="../../../读书/零零散散/薄世宁医学通识讲义.html"><strong aria-hidden="true">8.4.24.</strong> 薄世宁医学通识讲义</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../笔记/笔记.html"><strong aria-hidden="true">9.</strong> 笔记 | Notes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../笔记/记录/记录.html"><strong aria-hidden="true">9.1.</strong> 记录 | Record</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../笔记/记录/已读书目记录.html"><strong aria-hidden="true">9.1.1.</strong> 已读书目记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/观影记录.html"><strong aria-hidden="true">9.1.2.</strong> 观影记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/番剧记录.html"><strong aria-hidden="true">9.1.3.</strong> 番剧记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/GalGame 记录.html"><strong aria-hidden="true">9.1.4.</strong> Galgame 记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/游玩游戏记录.html"><strong aria-hidden="true">9.1.5.</strong> 游玩游戏记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/喜爱角色记录.html"><strong aria-hidden="true">9.1.6.</strong> 喜爱角色记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/优秀作品记录.html"><strong aria-hidden="true">9.1.7.</strong> 优秀作品记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/软件订阅记录.html"><strong aria-hidden="true">9.1.8.</strong> 软件订阅记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/喜爱的舞者.html"><strong aria-hidden="true">9.1.9.</strong> 喜爱的舞者</a></li><li class="chapter-item "><a href="../../../笔记/记录/衣服风格记录.html"><strong aria-hidden="true">9.1.10.</strong> 衣服风格记录</a></li><li class="chapter-item "><a href="../../../笔记/记录/已投递的简历.html"><strong aria-hidden="true">9.1.11.</strong> 已投递的简历</a></li><li class="chapter-item "><a href="../../../笔记/记录/毕业旅行.html"><strong aria-hidden="true">9.1.12.</strong> 毕业旅行</a></li></ol></li><li class="chapter-item "><a href="../../../笔记/教程/教程.html"><strong aria-hidden="true">9.2.</strong> 教程 | Course</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../笔记/教程/重装系统.html"><strong aria-hidden="true">9.2.1.</strong> 重装系统</a></li><li class="chapter-item "><a href="../../../笔记/教程/手机系统更新意外处理.html"><strong aria-hidden="true">9.2.2.</strong> 手机系统更新意外处理</a></li><li class="chapter-item "><a href="../../../笔记/教程/Duilib安装教程.html"><strong aria-hidden="true">9.2.3.</strong> Duilib 安装教程</a></li><li class="chapter-item "><a href="../../../笔记/教程/Git 笔记.html"><strong aria-hidden="true">9.2.4.</strong> Git 笔记</a></li><li class="chapter-item "><a href="../../../笔记/教程/刷机教程.html"><strong aria-hidden="true">9.2.5.</strong> 刷机教程</a></li><li class="chapter-item "><a href="../../../笔记/教程/Basic Elements.html"><strong aria-hidden="true">9.2.6.</strong> Basic Elements</a></li><li class="chapter-item "><a href="../../../笔记/教程/Street Dance Basics.html"><strong aria-hidden="true">9.2.7.</strong> Street Dance Basics</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../小说/小说.html"><strong aria-hidden="true">10.</strong> 小说 | Novels</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练.html"><strong aria-hidden="true">10.1.</strong> 想象力训练 | Imagination</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../小说/想象力训练/理想雪 - 冬季是最温暖的季节.html"><strong aria-hidden="true">10.1.1.</strong> 理想雪 - 冬季是最温暖的季节</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/公交车.html"><strong aria-hidden="true">10.1.2.</strong> 公交车</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/无题之一.html"><strong aria-hidden="true">10.1.3.</strong> 无题之一</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/承 K 之名.html"><strong aria-hidden="true">10.1.4.</strong> 承 K 之名</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/理想雪 - 为你化妆.html"><strong aria-hidden="true">10.1.5.</strong> 理想雪 - 为你化妆</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/理想雪 - 那些不重要.html"><strong aria-hidden="true">10.1.6.</strong> 理想雪 - 那些不重要</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/理想雪 - 应不应该.html"><strong aria-hidden="true">10.1.7.</strong> 理想雪 - 应不应该</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 女性知识.html"><strong aria-hidden="true">10.1.8.</strong> 想象力训练 - 女性知识</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 分享.html"><strong aria-hidden="true">10.1.9.</strong> 想象力训练 - 分享</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/靛青之秋之二.html"><strong aria-hidden="true">10.1.10.</strong> 靛青之秋之二</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/靛青之秋之一.html"><strong aria-hidden="true">10.1.11.</strong> 靛青之秋之一</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 可能会知道.html"><strong aria-hidden="true">10.1.12.</strong> 想象力训练 - 可能会知道</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/有些事情，不应转瞬即逝.html"><strong aria-hidden="true">10.1.13.</strong> 有些事情，不应转瞬即逝</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/深入骨髓.html"><strong aria-hidden="true">10.1.14.</strong> 深入骨髓</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 公主与夫人（《欢恋》番外）.html"><strong aria-hidden="true">10.1.15.</strong> 想象力训练 - 公主与夫人（《欢恋》番外）</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练之六.html"><strong aria-hidden="true">10.1.16.</strong> 想象力训练之六</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练之五.html"><strong aria-hidden="true">10.1.17.</strong> 想象力训练之五</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练之四.html"><strong aria-hidden="true">10.1.18.</strong> 想象力训练之四</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练之三.html"><strong aria-hidden="true">10.1.19.</strong> 想象力训练之三</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练之二.html"><strong aria-hidden="true">10.1.20.</strong> 想象力训练之二</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 证明你喜欢.html"><strong aria-hidden="true">10.1.21.</strong> 想象力训练 - 证明你喜欢</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 美术生的夜晚.html"><strong aria-hidden="true">10.1.22.</strong> 想象力训练 - 美术生的夜晚</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 散打很温柔.html"><strong aria-hidden="true">10.1.23.</strong> 想象力训练 - 散打很温柔</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 就算是厨师也能照亮他人.html"><strong aria-hidden="true">10.1.24.</strong> 想象力训练 - 就算是厨师也能照亮他人</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 芭蕾舞者欺负人.html"><strong aria-hidden="true">10.1.25.</strong> 想象力训练 - 芭蕾舞者欺负人</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练之一.html"><strong aria-hidden="true">10.1.26.</strong> 想象力训练之一</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 普通.html"><strong aria-hidden="true">10.1.27.</strong> 想象力训练 - 普通</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 设计师想要恋爱.html"><strong aria-hidden="true">10.1.28.</strong> 想象力训练 - 设计师想要恋爱</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 酒保与冷静.html"><strong aria-hidden="true">10.1.29.</strong> 想象力训练 - 酒保与冷静</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 认真地发光.html"><strong aria-hidden="true">10.1.30.</strong> 想象力训练 - 认真地发光</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 满足.html"><strong aria-hidden="true">10.1.31.</strong> 想象力训练 - 满足</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 欺负人.html"><strong aria-hidden="true">10.1.32.</strong> 想象力训练 - 欺负人</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 昂贵的教师.html"><strong aria-hidden="true">10.1.33.</strong> 想象力训练 - 昂贵的教师</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 少女的夏天.html"><strong aria-hidden="true">10.1.34.</strong> 想象力训练 - 少女的夏天</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/想象力训练 - 遗留.html"><strong aria-hidden="true">10.1.35.</strong> 想象力训练 - 遗留</a></li><li class="chapter-item "><a href="../../../小说/想象力训练/欢恋.html"><strong aria-hidden="true">10.1.36.</strong> 欢恋</a></li></ol></li><li class="chapter-item "><a href="../../../小说/其他小说/其他小说.html"><strong aria-hidden="true">10.2.</strong> 其他小说 | Other Fictions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../小说/其他小说/第一章 冲击.html"><strong aria-hidden="true">10.2.1.</strong> 第一章 冲击</a></li><li class="chapter-item "><a href="../../../小说/其他小说/第二章 巨变.html"><strong aria-hidden="true">10.2.2.</strong> 第二章 巨变</a></li><li class="chapter-item "><a href="../../../小说/其他小说/夜天盛世夜天梦.html"><strong aria-hidden="true">10.2.3.</strong> 夜天盛世夜天梦</a></li><li class="chapter-item "><a href="../../../小说/其他小说/恋人之间的秘密.html"><strong aria-hidden="true">10.2.4.</strong> 恋人之间的秘密</a></li><li class="chapter-item "><a href="../../../小说/其他小说/小说设定.html"><strong aria-hidden="true">10.2.5.</strong> 小说设定</a></li><li class="chapter-item "><a href="../../../小说/其他小说/Chapter 1.html"><strong aria-hidden="true">10.2.6.</strong> Chapter 1</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="wingstudio第三轮项目途中报错及解决方案"><a class="header" href="#wingstudio第三轮项目途中报错及解决方案">WingStudio第三轮项目途中报错及解决方案</a></h1>
+<h1 id="请遵循一步一测试的原则否则后续定位错误极其麻烦"><a class="header" href="#请遵循一步一测试的原则否则后续定位错误极其麻烦">请遵循一步一测试的原则，否则后续定位错误极其麻烦！！！</a></h1>
+<h2 id="一sql-驱动连接不上抛出-classnotfoundexception"><a class="header" href="#一sql-驱动连接不上抛出-classnotfoundexception">一、sql 驱动连接不上，抛出 ClassNotFoundException</a></h2>
+<p>解决方案：</p>
+<p>检查 sql驱动版本与所装 sql 版本是否一致。</p>
+<h2 id="二-mybatis-加载全局配置文件时出错"><a class="header" href="#二-mybatis-加载全局配置文件时出错">二、 MyBatis 加载全局配置文件时出错</a></h2>
+<p>解决方案：</p>
+<p>全局配置文件的路径应使用 <code>com/tinysnow/easyvote/conf/xml/mybatis-config.xml</code> 这种斜杠方式而非 . 的方式。</p>
+<h2 id="三-mybatis-不能加载-properties-配置文件"><a class="header" href="#三-mybatis-不能加载-properties-配置文件">三、 MyBatis 不能加载 properties 配置文件</a></h2>
+<p>报错如下： <code>Cause: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: java.io.IOException: Could not find resource mysql-connection.properties</code></p>
+<p>解决方案：</p>
+<p>应使用全局的路径 <code>com/tinysnow/easyvote/conf/mysql-connection.properties</code> 结果正确。</p>
+<h2 id="四-mybatis-不能加载-mappers-中的-spl-映射配置文件"><a class="header" href="#四-mybatis-不能加载-mappers-中的-spl-映射配置文件">四、 MyBatis 不能加载 Mappers 中的 spl 映射配置文件</a></h2>
+<p>解决方案：</p>
+<p>路径错了，以及没有使用 / 表示法，而使用 . 的表示法。</p>
+<h2 id="五-绑定数据库两个异常的解决办法"><a class="header" href="#五-绑定数据库两个异常的解决办法">五、 绑定数据库两个异常的解决办法</a></h2>
+<p>第一个：<code>Type interface **************************** is not known to the MapperRegistry.</code></p>
+<p>译文：MapperRegistry不知道类型接口com.tinysnow.easyvote.dao.intrfc.JdbcMethods。</p>
+<p>第二个：<code>Invalid bound statement (not found): ***********************.</code></p>
+<p>译文：无效的绑定语句（未找到）：com.tinysnow.easyvote.dao.intrfc.JdbcMethods.insertUser。</p>
+<p>解决方案：</p>
+<p>映射文件里面的 namespace 路径应该用 . 号，而非 / 或 \ ，路径的最后也不要带上文件后缀名，否则将认为文件后缀名所带的 . 号认为是下一个目标路径。并且在配置诸如   等的标签的时候，里面不要配置 databaseId 。 虽说不清楚啥原理，但这么改就好了。</p>
+<h2 id="六关于使用-maven-管理依赖中-mybatis-报错问题"><a class="header" href="#六关于使用-maven-管理依赖中-mybatis-报错问题">六、关于使用 Maven 管理依赖中 Mybatis 报错问题</a></h2>
+<p>引入 properties 文件后在测试方法中测试最基础的 Mybatis 启动报错，两个异常如下：</p>
+<pre><code class="language-bash">Cause: java.lang.NullPointerException
+ at MyBatisStartTest.main(MyBatisStartTest.java:14)
+</code></pre>
+<pre><code class="language-bash">java.io.IOException: Could not find resource /mybatis-config.xml
+ at MyBatisStartTest.main(MyBatisStartTest.java:14)
+</code></pre>
+<p>解决方案：</p>
+<ol>
+<li>资源文件统一扔在 resources 目录下面；</li>
+<li>测试方法中的路径字符串 <code> String resource = &quot;mybatis-config.xml&quot;;</code> 路径一定要正确，最保险的方法是使用 IDEA 的 copy -&gt; path from source root ；</li>
+<li>最重要的，报 NullPointerException 的原因是 mybatis-config.xml 文件中没有配置 environment 标签，一定要加上如下的代码，否则找死找不到，连接不到数据库。里面的数据库驱动标签什么的按实际情况配置。</li>
+</ol>
+<pre><code class="language-xml">    &lt;environments default=&quot;development&quot;&gt;
+        &lt;environment id=&quot;development&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;${jdbc.driver}&quot;/&gt;
+                &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot;/&gt;
+                &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot;/&gt;
+                &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;/&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+</code></pre>
+<p>另，数据库驱动是使用 properties 标签引进来的。</p>
+<pre><code class="language-xml">&lt;properties resource=&quot;database.properties&quot;&gt;
+&lt;/properties&gt;
+</code></pre>
+<h2 id="七关于在-try-块中定义资源导致无法编译的问题"><a class="header" href="#七关于在-try-块中定义资源导致无法编译的问题">七、关于在 try 块中定义资源导致无法编译的问题</a></h2>
+<p>解决方案：</p>
+<ol>
+<li>进入 idea -&gt; File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Compiler -&gt; Java Compiler -&gt; 选择项目旁边的 Target bytecode version -&gt; 改成8</li>
+<li>进入  idea -&gt; File -&gt; Project Structure -&gt; Modules -&gt; Language Level -&gt; 改成 Project default</li>
+</ol>
+<h2 id="八注意数据库连接问题有坑"><a class="header" href="#八注意数据库连接问题有坑">八、注意：数据库连接问题，有坑</a></h2>
+<p>连接上数据库是没有指定数据库名的，所以在写 sql 语句的时候需要先指定数据库名，然后是表名，用句点连接。比如： select * from user.userinfo where id = #{id}</p>
+<h2 id="九关于-mybatis-中-mapper-文件中-sql-语句执行正确不报异常但是数据表中看不见执行结果的现象"><a class="header" href="#九关于-mybatis-中-mapper-文件中-sql-语句执行正确不报异常但是数据表中看不见执行结果的现象">九、关于 MyBatis 中 Mapper 文件中 sql 语句执行正确不报异常，但是数据表中看不见执行结果的现象</a></h2>
+<p>解决方案：</p>
+<p>在编写的测试方法里面 <code>SqlSession session = build.openSession()</code> session 更新完 sql 是不自动提交的，一定要切记。需要加上如下语句：</p>
+<pre><code class="language-java">session.commit();
+</code></pre>
+<h2 id="十关于-springboot-启动时的报错"><a class="header" href="#十关于-springboot-启动时的报错">十、关于 SpringBoot 启动时的报错</a></h2>
+<p>报错如下：</p>
+<pre><code class="language-bash">Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+ If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+ If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+</code></pre>
+<p>解决方案：</p>
+<p>在 application.yml / application.properties 中添加数据库的相关设置：</p>
+<pre><code class="language-yaml">spring:
+  datasource:
+    username: root
+    password: tinysnow;
+    url: jdbc:mysql://localhost:3306/?useUnicode=true
+      &amp;characterEncoding=utf-8&amp;allowPublicKeyRetrieval=true&amp;useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+</code></pre>
+<p>特别注意： url 下面第二行前面的空格一定不能省略。</p>
+<h2 id="十一关于-mybatis-在-springboot-中找不到绑定文件的错误"><a class="header" href="#十一关于-mybatis-在-springboot-中找不到绑定文件的错误">十一、关于 MyBatis 在 SpringBoot 中找不到绑定文件的错误</a></h2>
+<p>新建了一个 application-mybatis.yml 配置文件如下：（配置文件的文件名一定要是 application- .yml的形式）</p>
+<pre><code class="language-yaml">mybatis:
+  mapper-locations: classpath:mybatis/mappers/*.xml
+  type-aliases-package: com.tinysnow.bean
+</code></pre>
+<p>然后一定不要忘记去主 application.yml 配置文件中激活！</p>
+<pre><code class="language-yaml">spring: 
+  profiles:
+    active: druid,mybatis
+# 激活时只用写 application- 后面的单词
+</code></pre>
+<h2 id="十二-springboot-启动时报错"><a class="header" href="#十二-springboot-启动时报错">十二、 SpringBoot 启动时报错</a></h2>
+<p>异常如下：</p>
+<pre><code class="language-java">java.lang.IllegalStateException: dbType not support : null, url null
+</code></pre>
+<p>解决方案，在 druid 配置文件中的 prefix 后缀中去掉 druid ，只保留 spring.datasource 。启动正常。</p>
+<ul>
+<li>druid 配置文件与 spring 配置文件的双向绑定：</li>
+</ul>
+<pre><code class="language-java">@Configuration
+public class DruidConfig {
+
+    @ConfigurationProperties(prefix = &quot;spring.datasource&quot;)
+    @Bean
+    public DataSource druidDataSource(){
+        return new DruidDataSource();
+    }
+
+    @Bean
+    public ServletRegistrationBean servletRegistrationBean(){
+        final ServletRegistrationBean bean =
+                new ServletRegistrationBean(new StatViewServlet(), &quot;/druid/*&quot;);
+        // 后台需要有人登录，配置账号和密码
+        final HashMap hashMap = new HashMap();
+        // 增加配置
+        hashMap.put(&quot;loginUsername&quot;,&quot;admin&quot;);
+        hashMap.put(&quot;loginPassword&quot;,&quot;123456&quot;);
+        // 允许谁可以访问, Value 不写就默认所有主机都可以访问
+        hashMap.put(&quot;allow&quot;,&quot;&quot;);
+        // 还可以禁止谁能访问，此时的 Key 就是自定义的， Value 指定 ip 地址
+        // 例如 hashMap.put(&quot;tinysnow&quot;,&quot;192.168.3.7&quot;);
+
+        // 设置初始化参数
+        bean.setInitParameters(hashMap);
+        return bean;
+    }
+}
+</code></pre>
+<p>注意：这些注解一个都不能少</p>
+<h2 id="十三关于每次启动项目总是跳出登陆页面的问题"><a class="header" href="#十三关于每次启动项目总是跳出登陆页面的问题">十三、关于每次启动项目总是跳出登陆页面的问题</a></h2>
+<p>如下图所示：</p>
+<p>解决方案：这是 SpringSecurity 的特性，登录的用户名默认是 user ，密码默认是控制台输出的一大串字符，也可以自己设置，凡是具体设置流程暂未关心。</p>
+<h2 id="十四关于-mybatis-查询返回结果过多的问题"><a class="header" href="#十四关于-mybatis-查询返回结果过多的问题">十四、关于 MyBatis 查询返回结果过多的问题</a></h2>
+<p>异常：</p>
+<pre><code class="language-java">TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: *
+</code></pre>
+<p>解决方案：</p>
+<p>将接口中的返回值类型改为 List 即可。</p>
+<h2 id="十五关于-mybatis-查询结果为-null-的问题"><a class="header" href="#十五关于-mybatis-查询结果为-null-的问题">十五、关于 MyBatis 查询结果为 null 的问题</a></h2>
+<p>解决方案：</p>
+<p>实体类(pojo, bean, modal...)中的字段名一定要与数据库中的一一对应，否则查询不出结果。现有松耦合的方法可以使数据库中的名字不与实体类中的一一对应。通过以下方式开启：</p>
+<pre><code class="language-yaml">mybatis:
+  configuration:
+    # 自动开启数据库下划线命名 与 实体类中驼峰命名法的匹配
+    # 以达到双方命名均规范的目的
+    map-underscore-to-camel-case: true
+</code></pre>
+<h2 id="十六关于-git-各种命令都无效的问题"><a class="header" href="#十六关于-git-各种命令都无效的问题">十六、关于 git 各种命令都无效的问题</a></h2>
+<p>解决方案：</p>
+<p>看看自己是在哪个目录下进行操作的，千万不要 cd 错了目录。</p>
+<h2 id="十七关于修改-idea-中数据表的各项属性不能成功的问题"><a class="header" href="#十七关于修改-idea-中数据表的各项属性不能成功的问题">十七、关于修改 IDEA 中数据表的各项属性不能成功的问题</a></h2>
+<p>解决方案：</p>
+<p>在右侧栏 Database 中选中数据表右键 Modify Table 或者按下 Ctrl+F6 在该栏里面修改数据表才算成功。选中数据表点击最上面的笔，修改代码的结果是不能提交的，也就自然不能成功了。</p>
+<h2 id="十八关于新建项目-maven-导入慢的问题"><a class="header" href="#十八关于新建项目-maven-导入慢的问题">十八、关于新建项目 Maven 导入慢的问题</a></h2>
+<p>解决方案：</p>
+<p>在 C: \ Users \ [user] \ .m2 下建立一个文件 settings.xml 将下述代码拷贝进去。或者在 IDEA 的 Project 空白栏右键选择 Maven 然后创建 settings 。</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+          xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+    &lt;mirrors&gt;
+        &lt;!-- mirror
+         | Specifies a repository mirror site to use instead of a given repository. The repository that
+         | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+         | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+         |
+        &lt;mirror&gt;
+          &lt;id&gt;mirrorId&lt;/id&gt;
+          &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+          &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+          &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+        &lt;/mirror&gt;
+         --&gt;
+
+        &lt;mirror&gt;
+            &lt;id&gt;alimaven&lt;/id&gt;
+            &lt;name&gt;aliyun maven&lt;/name&gt;
+            &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;/mirror&gt;
+
+        &lt;mirror&gt;
+            &lt;id&gt;uk&lt;/id&gt;
+            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+            &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+            &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt;
+        &lt;/mirror&gt;
+
+        &lt;mirror&gt;
+            &lt;id&gt;CN&lt;/id&gt;
+            &lt;name&gt;OSChina Central&lt;/name&gt;
+            &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;
+            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;/mirror&gt;
+
+        &lt;mirror&gt;
+            &lt;id&gt;nexus&lt;/id&gt;
+            &lt;name&gt;internal nexus repository&lt;/name&gt;
+            &lt;!-- &lt;url&gt;http://192.168.1.100:8081/nexus/content/groups/public/&lt;/url&gt;--&gt;
+            &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt;
+            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;/mirror&gt;
+
+    &lt;/mirrors&gt;
+&lt;/settings&gt;
+</code></pre>
+<h2 id="十九-关于工程文件夹默认路径的修改"><a class="header" href="#十九-关于工程文件夹默认路径的修改">十九、 关于工程文件夹默认路径的修改</a></h2>
+<p>Settings &gt; Appearance &amp; Behavior &gt; System Settings &gt; Project &gt; Default project directory .</p>
+<h2 id="二十关于新建项目启动后报错-404-的问题"><a class="header" href="#二十关于新建项目启动后报错-404-的问题">二十、关于新建项目启动后报错 404 的问题</a></h2>
+<p>解决方案：</p>
+<p>其实是没有设置默认页面的问题，可以加一个 Controller 和页面，后面发现其实是正常的。可以加如下代码，记得加上 @ResponseBody ，否则还是报错。</p>
+<pre><code class="language-java">package com.tinysnow.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * @author TinySnow
+ */
+@Controller
+public class TestController {
+    
+    @RequestMapping(&quot;/&quot;)
+    @ResponseBody
+    public String test(){
+        return &quot;HelloWorld&quot;;
+    }
+}
+</code></pre>
+<p>然后在 templates 目录下新建一个 HelloWorld.html  后，重新启动项目，发现是正常的。</p>
+<h2 id="二十一关于建立单元测试爆空指针异常的问题"><a class="header" href="#二十一关于建立单元测试爆空指针异常的问题">二十一、关于建立单元测试爆空指针异常的问题</a></h2>
+<p>解决方案：</p>
+<p>是因为此时的 candidateMapper 并没有被 Spring 托管，左侧都没有出现叶子的图标。在类上加上 @SpringBootTest。</p>
+<h2 id="二十二-关于对-mybatis-中-mapper-进行单元测试的报错问题"><a class="header" href="#二十二-关于对-mybatis-中-mapper-进行单元测试的报错问题">二十二、 关于对 Mybatis 中 Mapper 进行单元测试的报错问题</a></h2>
+<pre><code class="language-bash">***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method setCandidateMapper in com.tinysnow.dao.impl.CandidateDaoImpl required a bean of type 'com.tinysnow.mappers.CandidateMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.tinysnow.mappers.CandidateMapper' in your configuration.
+
+</code></pre>
+<p>解决方案：</p>
+<p>是因为这个 com.tinysnow.mappers.CandidateMapper 压根儿就没找到。</p>
+<p>在主启动类上添加 @MapperScan(&quot;com.tinysnow.mappers&quot;) 注解，或者在每一个 Mapper 接口上定义 @Mapper 注解。这样才能被 MyBatis 找到。</p>
+<h2 id="二十三关于没有找到文件的问题"><a class="header" href="#二十三关于没有找到文件的问题">二十三、关于没有找到文件的问题</a></h2>
+<p>报错信息：</p>
+<pre><code class="language-java">F:\Projects\Java\Wing\src\test\java\com\tinysnow\mappers\JudgeMapperTest.java:11:5
+java: 找不到符号
+  符号: 类 JudgeMapper
+  位置: 类 com.tinysnow.mappers.JudgeMapperTest
+</code></pre>
+<p>解决方案：</p>
+<p>这个可能是由于 IDEA 抽疯，没有自动编译，直接复制文件就有可能出现这个问题。点击模块，右键，rebuild 一下就可以了。</p>
+<h2 id="二十四关于-git-拉不下来代码的问题"><a class="header" href="#二十四关于-git-拉不下来代码的问题">二十四、关于 git 拉不下来代码的问题</a></h2>
+<p>拒绝拉代码的提示性语句： <code>refusing to merge unrelated histories</code></p>
+<p>翻译：拒绝合并无关的历史</p>
+<p>解决方案：</p>
+<p>如果合并了两个不同的开始提交的仓库，在新的 git 会发现这两个仓库可能不是同一个，为了防止开发者上传错误，于是就给下面的提示</p>
+<pre><code class="language-bash">fatal: refusing to merge unrelated histories
+</code></pre>
+<p>如我在Github新建一个仓库，写了License，然后把本地一个写了很久仓库上传。这时会发现 github 的仓库和本地的没有一个共同的 commit 所以 git 不让提交，认为是写错了 <code>origin</code> ，如果开发者确定是这个 <code>origin</code> 就可以使用 <code>--allow-unrelated-histories</code>  告诉 git 自己确定</p>
+<p>遇到无法提交的问题，一般先pull 也就是使用 <code>git pull origin master</code> 这里的 <code>origin</code> 就是仓库，而 <code>master</code> 就是需要上传的分支，因为两个仓库不同，发现 git 输出 <code>refusing to merge unrelated histories</code> 无法 pull 内容</p>
+<p>因为他们是两个不同的项目，要把两个不同的项目合并，git需要添加一句代码，在 <code>git pull</code> 之后，这句代码是在git 2.9.2版本发生的，最新的版本需要添加  <code>--allow-unrelated-histories</code>  告诉 git 允许不相关历史合并</p>
+<p>假如我们的源是origin，分支是master，那么我们需要这样写<code>git pull origin master --allow-unrelated-histories</code> 如果有设置了默认上传分支就可以用下面代码</p>
+<pre><code class="language-bash">git pull --allow-unrelated-histories
+</code></pre>
+<p>参考链接：</p>
+<p>https://blog.csdn.net/lindexi_gd/article/details/52554159</p>
+<h2 id="二十五关于-git-更改提交代码的邮箱"><a class="header" href="#二十五关于-git-更改提交代码的邮箱">二十五、关于 git 更改提交代码的邮箱</a></h2>
+<p>查看本机用户下.gitconfig这个文件，打开之后查看对应的 name 和 email 是否和自己想要设置的一致，如果不一致，打开git bash ：</p>
+<pre><code class="language-bash">git config --global user.name &quot;设置自己的名字&quot;
+git config --global user.email &quot;设置自己的邮箱&quot;
+</code></pre>
+<p>这两条指令设置。idea 也中 git commit时有这一框可以选择。</p>
+<p>参考链接：</p>
+<p>https://blog.csdn.net/weixin_42257062/article/details/80509641</p>
+<h2 id="二十六git-合并分支"><a class="header" href="#二十六git-合并分支">二十六、git 合并分支</a></h2>
+<p>切换回主分支，然后</p>
+<pre><code class="language-bash">git merge [想要合并的分支名字]
+</code></pre>
+<p>注意：此命令只会合并分支上的文件到 master 分支，但不会删除分支。</p>
+<h2 id="二十七vue-主页进不去"><a class="header" href="#二十七vue-主页进不去">二十七、Vue 主页进不去</a></h2>
+<p>解决方案：</p>
+<pre><code class="language-javascript">  const routes = [
+    { path: '/', redirect: '/login' },
+    { path: '/login', components: LoginAndRegister },
+    { path: '/create', component: CreateProject },
+    { path: '/manage', component: ManageProject },
+    { path: '/result', component: ShowResult}
+  ]
+</code></pre>
+<p>components 改为 component</p>
+<h2 id="二十八关于通过-vuex-的-mutations-提交修改不起作用的问题"><a class="header" href="#二十八关于通过-vuex-的-mutations-提交修改不起作用的问题">二十八、关于通过 Vuex 的 mutations 提交修改不起作用的问题</a></h2>
+<p>解决方案：</p>
+<p>在自己的 mutations 业务代码里修改 state 里的属性时，引用是 <code>this.state.[property]</code> 而不是 <code>this.[property]</code></p>
+<p>在全局调用 mutation 的函数时不需要传入 state 相关的参数，因为这是一个内部的引用，只需要传入 username 就可以，如：</p>
+<pre><code class="language-javascript">this.$store.commit(&quot;changeUserLoginState&quot;, &quot;114514&quot;)
+</code></pre>
+<h2 id="二十九mybatis数组参数传入报错"><a class="header" href="#二十九mybatis数组参数传入报错">二十九、MyBatis数组参数传入报错</a></h2>
+<p>报错信息：</p>
+<pre><code class="language-bash">org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: java.lang.UnsupportedOperationException
+### The error may exist in file [F:\Projects\Java\Wing\target\classes\mybatis\mappers\CandidateMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into candidates (project_id, candidate_name, describe_msg, vote_number)         values (?,?,?,0);
+### Cause: java.lang.UnsupportedOperationException
+</code></pre>
+<p>报错代码：</p>
+<pre><code class="language-xml">&lt;insert id=&quot;insertCandidate&quot; useGeneratedKeys=&quot;true&quot;&gt;
+    insert into candidates (project_id, candidate_name, describe_msg, vote_number)
+    values (#{list.projectId},#{list.candidateName},#{list.describeMsg},0);
+&lt;/insert&gt;
+</code></pre>
+<p>解决方案：</p>
+<p>因为是数组形式插入的，所以这种写法是不对的，还要在 xml 文件中进行循环遍历取值才能够批量插入。代码如下：</p>
+<pre><code class="language-xml">    &lt;insert id=&quot;insertCandidate&quot; useGeneratedKeys=&quot;true&quot;&gt;
+        insert into candidates (project_id, candidate_name, describe_msg, vote_number) values
+        &lt;foreach item=&quot;list&quot; collection=&quot;list&quot; separator=&quot;,&quot;&gt;
+            (#{list.projectId},#{list.candidateName},#{list.describeMsg},0)
+        &lt;/foreach&gt;;
+    &lt;/insert&gt;
+        /* item 里面填入 Mapper 文件传过来的 list 参数， collection 则为集合的类型， set，list 之类的*/
+        /* separator 填入分隔符，需要符合 mysql 的语法规范，最后循环出来结果如下： */
+        /* insert into candidates (project_id, candidate_name, describe_msg, vote_number)
+           values (XXX,XXX,XXX,0),(XXX,XXX,XXX,0),(XXX,XXX,XXX,0),(XXX,XXX,XXX,0) */
+</code></pre>
+<h2 id="三十关于发出的请求总是404的问题"><a class="header" href="#三十关于发出的请求总是404的问题">三十、关于发出的请求总是404的问题</a></h2>
+<p>解决方案：</p>
+<p>一定要检查自己发出请求的时候，是不是完整的后台代码路径。后台代码里类上的路径很容易被忽略！</p>
+<h2 id="三十一关于在页面上进行增删改查后刷新数据表的方法"><a class="header" href="#三十一关于在页面上进行增删改查后刷新数据表的方法">三十一、关于在页面上进行增删改查后刷新数据表的方法</a></h2>
+<p>参考链接：https://juejin.im/entry/6844903798620553224</p>
+<p>采用的方法3</p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;router-view v-if=&quot;isRouterAlive&quot;&gt;&lt;/router-view&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: &quot;app&quot;,
+  provide () {
+    return {
+      reload: this.reload
+    }
+  },
+  data () {
+    return {
+      isRouterAlive: true
+    }
+  },
+  methods: {
+    reload () {
+      this.isRouterAlive = false
+      this.$nextTick(() =&gt; this.isRouterAlive = true)
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+&lt;/style&gt;
+</code></pre>
+<p>依据代码解析，大概应该是如果当前路由被激活（事实上是一定激活的，不然不可能看得到页面，也就是说，看到页面的时候 isRouterAlive 是一定为 true 的），然后将其赋值为 false 使页面短暂不可见，然后随即又赋值为 true ，期间 Vue 的组件被创建和销毁，以达到刷新的目的。但是 this.$nextTick 这个方法是个什么东西暂时不知道。</p>
+<h2 id="三十二关于前端页面数据表格中点击编辑数据传不到对话框中内嵌表单的输入框默认值的问题"><a class="header" href="#三十二关于前端页面数据表格中点击编辑数据传不到对话框中内嵌表单的输入框默认值的问题">三十二、关于前端页面数据表格中点击编辑，数据传不到对话框中内嵌表单的输入框默认值的问题</a></h2>
+<p>解决方案：</p>
+<p>有一个非常邪道的方法，点击编辑的时候会绑定一个事件，将所有的数据传入到此事件中，然后赋给表单的数据项中，再在对话框里采用表单的数据项就可以了。</p>
+<p>不能在 data 中直接赋值 table 里面的数据，因为 table 里面的每一项是不一样的，动态的，会变的，其中 Element-UI 更是有一个叫 index 和 row 的东西，直接限制了这种做法。代码如下：</p>
+<pre><code class="language-javascript">export default {
+  inject: ['reload'],
+  name: &quot;ShowJudges&quot;,
+  data() {
+    return {
+      tableData: [{
+        judgeId: '',
+        judgeName: '',
+        judgePwd: '',
+        projectId: '',
+        hasVoted: ''
+      }],
+      dialogFormVisible: false,
+      form: {
+        judgeName: '',
+        judgePwd: '',
+        hasVoted: ''
+      },
+      formLabelWidth: '120px'
+    }
+  },
+  methods: {
+    handleEdit(index, row, boolean) {
+      this.dialogFormVisible = boolean
+      this.form.judgeName = row.judgeName
+      this.form.judgePwd = row.judgePwd
+      this.form.hasVoted = row.hasVoted
+      console.log(this.form.hasVoted);
+    }
+</code></pre>
+<h2 id="三十三关于-radio-中不能根据数据项自动默认选中选项的问题"><a class="header" href="#三十三关于-radio-中不能根据数据项自动默认选中选项的问题">三十三、关于 Radio 中不能根据数据项自动默认选中选项的问题</a></h2>
+<pre><code class="language-javascript">&lt;el-form-item label=&quot;投票权&quot; :label-width=&quot;formLabelWidth&quot;&gt;
+  &lt;el-radio v-model=&quot;form.hasVoted&quot; label=&quot;false&quot;&gt;有&lt;/el-radio&gt;
+  &lt;el-radio v-model=&quot;form.hasVoted&quot; label=&quot;true&quot;&gt;无&lt;/el-radio&gt;
+&lt;/el-form-item&gt;
+
+&lt;!--这里仅展示有关的代码段--&gt;
+
+form: {
+    judgeName: '',
+    judgePwd: '',
+    hasVoted: ''
+}
+        
+handleEdit(index, row, boolean) {
+      this.dialogFormVisible = boolean
+      this.form.judgeName = row.judgeName
+      this.form.judgePwd = row.judgePwd
+      this.form.hasVoted = row.hasVoted
+},
+</code></pre>
+<p>解决方案：</p>
+<p>记住，= 后面如果没有使用 v-bind 绑定属性，那么系统默认就是使用字符串！哪怕是 false 或者 true 这种东西，也只会当成字符串处理。所以一定要记得加上 v-bind ！</p>
+<p>在两个 label 前面加上 : 即可。</p>
+<h2 id="三十四关于使用-fastjson-时其自动过滤掉值为-null-的字段名的问题"><a class="header" href="#三十四关于使用-fastjson-时其自动过滤掉值为-null-的字段名的问题">三十四、关于使用 fastjson 时，其自动过滤掉值为 null 的字段名的问题</a></h2>
+<p>如题，如果想要其转成 JSON 时仍然保留值为 null 的字段，需要在 toJSONString(param1, param2) 的 param2 中添加一个配置： SerializerFeature.WriteMapNullValue 。示例如下：</p>
+<p><code>return JSON.toJSONString(judge, SerializerFeature.WriteMapNullValue)</code></p>
+<p>这样既可保留值为 null 的字段。</p>
+<p>参考链接：</p>
+<p>https://blog.csdn.net/SongSir001/article/details/84656579?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param</p>
+<h2 id="三十五-关于-post-请求爆-403-forbidden-的问题"><a class="header" href="#三十五-关于-post-请求爆-403-forbidden-的问题">三十五、 关于 POST 请求爆 403 Forbidden 的问题</a></h2>
+<p>这个问题困扰了我很久，最后请求哥哥帮助才解决。</p>
+<p>是 Spring Security 的问题， Security 在有客户端发起请求的时候会将这些请求先过滤一遍，如果遇到有不合理的请求（可能是没有经过授权或者其他什么原因，目前尚不清楚），会直接进行拦截，如发一个 403 打回去，后台根本拿不到这个请求进行处理。</p>
+<p>解决方案：</p>
+<p>注释 Spring Security 。当然这是最为极端的方法，可以在 Security 中添加白名单从而使 Security 通过这些请求。但是目前没有时间去了解怎样进行操作，暂时先注释掉了。以上情况只针对于前端和后端已经进行了跨域处理的情况，如果未进行跨域处理，则还会爆出其他异常情况。</p>
+<h2 id="三十六关于-requestbody--json-数组转为-java-对象-list-以及连带的-converter-和泛型擦除问题"><a class="header" href="#三十六关于-requestbody--json-数组转为-java-对象-list-以及连带的-converter-和泛型擦除问题">三十六、关于 @RequestBody ， JSON 数组转为 Java 对象 List ，以及连带的 Converter 和泛型擦除问题</a></h2>
+<p>@RequestBody 是 SpringBoot 中自带的一个将 JSON 转化为 Java 对象的一个注解，也就是说，当在 Controller 层的接收参数前加上 @RequestBody 时，这个参数在 SpringBoot 内部就已经由 JSON 转化为了 Java 对象，因此这个注解修饰的对象应该是，包含与 JSON 传过来的字段名相对应的后台实体类对象，所以不需要再进行 JSON 转对象处理。</p>
+<p>而这个注解有些对象是不能进行自动转化的，比较特殊。不能进行自动转化的条件：</p>
+<ul>
+<li>包含泛型</li>
+<li>实体类中含有 Date 诸如此类的必须使用的字段</li>
+</ul>
+<p>因为 JSON 数组转为 Java 对象 List 这个调用中，本身 List 是含有泛型的，所以需要实现一个接口，即 Converter ，以自己手动进行 JSON 转对象的正确处理，代码如下：</p>
+<pre><code class="language-java">import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.databind.util.Converter;
+import com.tinysnow.bean.Candidate;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+/**
+ * @author TinySnow
+ */
+@Component
+public class String2CandidateListConverter implements Converter {
+    @Override
+    public List convert(String s) {
+        return JSON.parseArray(s, Candidate.class);
+    }
+
+    @Override
+    public JavaType getInputType(TypeFactory typeFactory) {
+        return null;
+    }
+
+    @Override
+    public JavaType getOutputType(TypeFactory typeFactory) {
+        return null;
+    }
+}
+</code></pre>
+<p>后两个方法可以不要。这是 JSON 数组转为 Java 对象 List 最为正规和规范的写法。</p>
+<p>之所以不能包含泛型，是因为 Java 在设计之初的泛型擦除机制，即在源码阶段指定的泛型，在编译出来的字节码中被擦除了，不知道这个泛型到底是什么。而不能包含 Date 类型，是因为 Date 在转化时需要经过计算和格式确定。</p>
+<p>注意： Converter 转化成对象时，这个对象的实体类里不能有基础类型，即 int, boolean 等，需要用其对应的包装对象 Integer, Boolean 等。</p>
+<h2 id="三十七关于发起请求时参数传递的形式"><a class="header" href="#三十七关于发起请求时参数传递的形式">三十七、关于发起请求时参数传递的形式</a></h2>
+<p>搞清楚： x-www-form-urlencoded 的参数传递形式是 Key=Value&amp;Key=Value...</p>
+<p>所以在传递到后台时会报错，错误码是 415 ：不支持的媒体类型 (Unsupported media type) 。</p>
+<p>而传递到后台的参数形式应该为 JSON 形式，所以需要在请求时修改请求头 Content-Type 为 application/json 。</p>
+<p>示例：</p>
+<pre><code class="language-javascript">axios.post(&quot;http://localhost:8088/judge/update&quot;, data1, {
+  headers: { 'Content-Type': 'application/json'}
+}).then(resp =&gt; {}).catch(err =&gt; {})
+</code></pre>
+<h2 id="其他知识"><a class="header" href="#其他知识">其他知识</a></h2>
+<ol>
+<li>将两行合并为一行并移除多余空格，可以使用 Ctrl + Shift + J ；</li>
+</ol>
+
+                        <div id="giscus-container"></div>
+                        <div id="docsearch"></div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../技术/其他资料/WingStudio/WingStudio 第三轮考核说明文档.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../技术/其他资料/Android 笔记截图.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../技术/其他资料/WingStudio/WingStudio 第三轮考核说明文档.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../技术/其他资料/Android 笔记截图.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "技术/其他资料/WingStudio/WingStudio 第三轮项目途中报错及解决方案.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript" src="../../../assets/custom.js"></script>
+        <script type="text/javascript" src="../../../assets/bigPicture.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: '364d7154cf1fa31bad0b8fd9c6018351',
+                indexName: 'tinysnowio',
+                container: '#docsearch'
+                debug: false // Set debug to true if you want to inspect the modal
+                });
+        </script>
+    </body>
+</html>
