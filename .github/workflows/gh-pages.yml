@@ -4,18 +4,19 @@ on:
   push:
     branches:
       - master
-  pull_request:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write  # To create a PR from that branch
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v2
-
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: mdBook Action
         uses: peaceiris/actions-mdbook@v1.2.0
         with:

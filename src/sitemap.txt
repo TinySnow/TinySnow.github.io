@@ -28,6 +28,7 @@ https://tinysnow.github.io/每日一文/亲爱的小孩 - 陈晓霞
 https://tinysnow.github.io/每日一文/人类的群星闪耀时 - 茨威格
 https://tinysnow.github.io/每日一文/从痴迷到依恋 - 周国平
 https://tinysnow.github.io/每日一文/你到底喜不喜欢我 - 王丫米
+https://tinysnow.github.io/每日一文/你嘴上所说的人生就是你的人生 - 佐藤富雄
 https://tinysnow.github.io/每日一文/你有没有钱 - 李敖
 https://tinysnow.github.io/每日一文/你的那双眼睛 - 三毛
 https://tinysnow.github.io/每日一文/你要是在麦田里遇到了我 - 罗伯特 · 彭斯
@@ -374,7 +375,9 @@ https://tinysnow.github.io/断章/文章/文章
 https://tinysnow.github.io/断章/文章/暑期总结与瑰想
 https://tinysnow.github.io/断章/文章/月圆夜
 https://tinysnow.github.io/断章/文章/母亲的理发推
+https://tinysnow.github.io/断章/文章/毕业总结
 https://tinysnow.github.io/断章/文章/毕业旅行第一天
+https://tinysnow.github.io/断章/文章/毕业旅行第七天
 https://tinysnow.github.io/断章/文章/毕业旅行第三天
 https://tinysnow.github.io/断章/文章/毕业旅行第二天
 https://tinysnow.github.io/断章/文章/毕业旅行第五天
@@ -397,10 +400,12 @@ https://tinysnow.github.io/断章/文章/近期的一些总结
 https://tinysnow.github.io/断章/文章/迷失
 https://tinysnow.github.io/断章/文章/追随
 https://tinysnow.github.io/断章/文章/通往优秀的路上，痛苦是一种试炼
+https://tinysnow.github.io/断章/文章/长跑
 https://tinysnow.github.io/断章/文章/阑珊，散落人间
 https://tinysnow.github.io/断章/文章/随便聊聊
 https://tinysnow.github.io/断章/文章/随想录
 https://tinysnow.github.io/断章/文章/韧尽万花春绽美，待到寒冬自释香 - 2021年度总结
+https://tinysnow.github.io/断章/胡言/候场
 https://tinysnow.github.io/断章/胡言/心情
 https://tinysnow.github.io/断章/胡言/胡言
 https://tinysnow.github.io/断章/胡言/胡言乱语之一
@@ -525,6 +530,9 @@ https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 18 日
 https://tinysnow.github.io/断章/随记/随记 - 2022 年 9 月 26 日
 https://tinysnow.github.io/断章/随记/随记 - 2023 年 1 月 18 日
 https://tinysnow.github.io/断章/随记/随记 - 2023 年 4 月 4 日
+https://tinysnow.github.io/断章/随记/随记 - 2023 年 6 月 25 日
+https://tinysnow.github.io/断章/随记/随记 - 2023 年 6 月 27 日
+https://tinysnow.github.io/断章/随记/随记 - 2023 年 6 月 9 日
 https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
 https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
 https://tinysnow.github.io/笔记/教程/Basic Elements
