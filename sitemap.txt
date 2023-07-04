@@ -1,6 +1,7 @@
 https://tinysnow.github.io/
 https://tinysnow.github.io/last-updated
 https://tinysnow.github.io/个人简介
+https://tinysnow.github.io/各领域入门
 https://tinysnow.github.io/问题总表
 https://tinysnow.github.io/学习/学习
 https://tinysnow.github.io/学习/耶鲁大学：心理学导论
@@ -136,6 +137,7 @@ https://tinysnow.github.io/每日一文/老来多健忘 - 叶倾城
 https://tinysnow.github.io/每日一文/老水车旁的风景 - 梁晓声
 https://tinysnow.github.io/每日一文/老猴赫尼 - 沈石溪
 https://tinysnow.github.io/每日一文/肯肯舞 - 阿图洛 · 维万特
+https://tinysnow.github.io/每日一文/背带短裤 - 村上春树
 https://tinysnow.github.io/每日一文/自我机会高估 - 韩少功
 https://tinysnow.github.io/每日一文/致陈独秀 - 胡适
 https://tinysnow.github.io/每日一文/花未眠 - 川端康成
@@ -642,6 +644,9 @@ https://tinysnow.github.io/读书/零零散散/零零散散
 https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
 https://tinysnow.github.io/读书/零零散散/非暴力沟通
 https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
+https://tinysnow.github.io/学习/医学/药理学/第一节：药物分子的跨膜转运
+https://tinysnow.github.io/学习/医学/药理学/第二节：药物的体内过程
+https://tinysnow.github.io/学习/医学/药理学/药物代谢动力学
 https://tinysnow.github.io/学习/医学/药理学/药理学
 https://tinysnow.github.io/学习/医学/药理学/药理学总论——绪言
 https://tinysnow.github.io/学习/音乐/第一章/概述
