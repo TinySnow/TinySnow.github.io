@@ -67,7 +67,11 @@
         </script>
 
         <!-- Doc Search -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"/></pre></li>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+
     </head>
 <body>
         <!-- Provide site root to javascript -->
@@ -345,7 +349,13 @@
         {{/if}}
         {{/if}}
 
-        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+            
+
+        <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+        <script>
+            const { autocomplete } = window['@algolia/autocomplete-js'];
+        </script>
+
         <script type="text/javascript">
             docsearch({
                 appId: 'GX9RTL51BH',
@@ -354,6 +364,13 @@
                 container: '#docsearch'
                 debug: false // Set debug to true if you want to inspect the modal
                 });
+            autocomplete({
+              container: '#docsearch',
+              placeholder: '搜索 / Search',
+              getSources() {
+                return [];
+              },
+            });
         </script>
     </body>
 </html>
