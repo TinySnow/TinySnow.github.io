@@ -2,7 +2,6 @@ https://tinysnow.github.io/
 https://tinysnow.github.io/last-updated
 https://tinysnow.github.io/个人简介
 https://tinysnow.github.io/各领域入门
-https://tinysnow.github.io/每日一文刀疤 - 博尔赫斯
 https://tinysnow.github.io/问题总表
 https://tinysnow.github.io/学习/学习
 https://tinysnow.github.io/学习/耶鲁大学：心理学导论
@@ -41,6 +40,7 @@ https://tinysnow.github.io/每日一文/修软垫椅的女人 - 莫泊桑
 https://tinysnow.github.io/每日一文/借刀杀人 - 希区柯克
 https://tinysnow.github.io/每日一文/关于朋友 - 叔本华
 https://tinysnow.github.io/每日一文/写在五线谱上的信 - 王小波
+https://tinysnow.github.io/每日一文/刀疤 - 博尔赫斯
 https://tinysnow.github.io/每日一文/刘正风灭门 - 金庸
 https://tinysnow.github.io/每日一文/卖猪 - 路遥
 https://tinysnow.github.io/每日一文/卖猪肠粉的女人 - 蔡澜
@@ -118,6 +118,7 @@ https://tinysnow.github.io/每日一文/煤桶骑士 - 卡夫卡
 https://tinysnow.github.io/每日一文/熟人厌烦症 - 迈克尔 · 金
 https://tinysnow.github.io/每日一文/爱情与投资 - 希区柯克
 https://tinysnow.github.io/每日一文/爱情故事 - 余华
+https://tinysnow.github.io/每日一文/爱是将心比心 - 刘小昭
 https://tinysnow.github.io/每日一文/爸爸的味道 - 张小娴
 https://tinysnow.github.io/每日一文/狗这一生不容易 - 王宏哲
 https://tinysnow.github.io/每日一文/狗难 - 柯灵
