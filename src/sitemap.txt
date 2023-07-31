@@ -30,6 +30,7 @@ https://tinysnow.github.io/每日一文/买牛肉须知 - 姬中宪
 https://tinysnow.github.io/每日一文/二手衣 - 亦舒
 https://tinysnow.github.io/每日一文/亲爱的小孩 - 陈晓霞
 https://tinysnow.github.io/每日一文/人类的群星闪耀时 - 茨威格
+https://tinysnow.github.io/每日一文/人间椅子 - 江户川乱步
 https://tinysnow.github.io/每日一文/从痴迷到依恋 - 周国平
 https://tinysnow.github.io/每日一文/你到底喜不喜欢我 - 王丫米
 https://tinysnow.github.io/每日一文/你嘴上所说的人生就是你的人生 - 佐藤富雄
@@ -689,10 +690,15 @@ https://tinysnow.github.io/学习/医学/药理学/药理学
 https://tinysnow.github.io/学习/医学/药理学/药理学总论——绪言
 https://tinysnow.github.io/学习/金融/公司信贷/公司信贷
 https://tinysnow.github.io/学习/金融/公司信贷/第一章：公司信贷概述
+https://tinysnow.github.io/学习/金融/公司信贷/第七章：贷款项目评估
 https://tinysnow.github.io/学习/金融/公司信贷/第三章：贷款申请受理和贷前调查
+https://tinysnow.github.io/学习/金融/公司信贷/第九章：信贷审批
 https://tinysnow.github.io/学习/金融/公司信贷/第二章：公司信贷营销
 https://tinysnow.github.io/学习/金融/公司信贷/第五章：借款需求分析
+https://tinysnow.github.io/学习/金融/公司信贷/第八章：贷款担保分析
 https://tinysnow.github.io/学习/金融/公司信贷/第六章：客户分析
+https://tinysnow.github.io/学习/金融/公司信贷/第十一章：贷后管理
+https://tinysnow.github.io/学习/金融/公司信贷/第十章：贷款合同与发放支付
 https://tinysnow.github.io/学习/金融/公司信贷/第四章：贷款环境分析
 https://tinysnow.github.io/学习/音乐/第一章/概述
 https://tinysnow.github.io/学习/音乐/第一章/第一节：音程旋律
