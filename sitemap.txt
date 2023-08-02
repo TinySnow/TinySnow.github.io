@@ -16,6 +16,7 @@ https://tinysnow.github.io/每日一文/2.05 米的绳子 - 周海亮
 https://tinysnow.github.io/每日一文/一个人要像一支队伍 - 刘瑜
 https://tinysnow.github.io/每日一文/一个国家，两个世界 - 余华
 https://tinysnow.github.io/每日一文/一个好人 - 詹姆斯 · 瑟伯
+https://tinysnow.github.io/每日一文/一个特立独行的人 - 乔治 · 奥威尔
 https://tinysnow.github.io/每日一文/一只背袋 - 米洛斯拉夫 · 茹拉夫斯
 https://tinysnow.github.io/每日一文/一座城市的记忆 - 奥罕 · 帕慕克
 https://tinysnow.github.io/每日一文/一条狗的两次死亡 - 照日格图
@@ -734,12 +735,11 @@ https://tinysnow.github.io/学习/音乐/第四章/概述
 https://tinysnow.github.io/学习/音乐/第四章/第一节：旋律装饰
 https://tinysnow.github.io/学习/音乐/第四章/第七节：松散主题
 https://tinysnow.github.io/学习/音乐/第四章/第三节：对位法与支声音乐
-https://tinysnow.github.io/学习/音乐/第四章/第九节：主歌副歌体的书写之一
+https://tinysnow.github.io/学习/音乐/第四章/第九节：主歌副歌体的书写
 https://tinysnow.github.io/学习/音乐/第四章/第二节：多声部音乐
 https://tinysnow.github.io/学习/音乐/第四章/第五节：和声装饰
 https://tinysnow.github.io/学习/音乐/第四章/第八节：主歌副歌体
 https://tinysnow.github.io/学习/音乐/第四章/第六节：和声进行的本质
-https://tinysnow.github.io/学习/音乐/第四章/第十节：主歌副歌体的书写之二
 https://tinysnow.github.io/学习/音乐/第四章/第四节：七和弦与和弦排列
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
