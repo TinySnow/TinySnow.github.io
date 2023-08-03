@@ -25,6 +25,7 @@ https://tinysnow.github.io/每日一文/一种错觉 - 毛姆
 https://tinysnow.github.io/每日一文/丈夫留下的备忘录 - 梅洁
 https://tinysnow.github.io/每日一文/三只野猫 - 简平
 https://tinysnow.github.io/每日一文/不一样的自由 - 龙应台
+https://tinysnow.github.io/每日一文/不要累死你的爱 - 刘墉
 https://tinysnow.github.io/每日一文/与人为友 - 亦舒
 https://tinysnow.github.io/每日一文/为什么要读经典 - 伊塔洛 · 卡尔维诺
 https://tinysnow.github.io/每日一文/买牛肉须知 - 姬中宪
@@ -699,6 +700,8 @@ https://tinysnow.github.io/学习/金融/公司信贷/第五章：借款需求�
 https://tinysnow.github.io/学习/金融/公司信贷/第八章：贷款担保分析
 https://tinysnow.github.io/学习/金融/公司信贷/第六章：客户分析
 https://tinysnow.github.io/学习/金融/公司信贷/第十一章：贷后管理
+https://tinysnow.github.io/学习/金融/公司信贷/第十三章：不良贷款管理
+https://tinysnow.github.io/学习/金融/公司信贷/第十二章：贷款风险分类
 https://tinysnow.github.io/学习/金融/公司信贷/第十章：贷款合同与发放支付
 https://tinysnow.github.io/学习/金融/公司信贷/第四章：贷款环境分析
 https://tinysnow.github.io/学习/音乐/第一章/概述
