@@ -28,6 +28,7 @@ https://tinysnow.github.io/每日一文/三种人生态度 - 梁漱溟
 https://tinysnow.github.io/每日一文/不一样的自由 - 龙应台
 https://tinysnow.github.io/每日一文/不要累死你的爱 - 刘墉
 https://tinysnow.github.io/每日一文/与人为友 - 亦舒
+https://tinysnow.github.io/每日一文/世界上最荒凉的动物园 - 苏童
 https://tinysnow.github.io/每日一文/为什么要读经典 - 伊塔洛 · 卡尔维诺
 https://tinysnow.github.io/每日一文/买牛肉须知 - 姬中宪
 https://tinysnow.github.io/每日一文/二手衣 - 亦舒
@@ -418,6 +419,7 @@ https://tinysnow.github.io/断章/文章/微雪爱情观
 https://tinysnow.github.io/断章/文章/总有一种东西，让你想起那些人
 https://tinysnow.github.io/断章/文章/感知到的友情
 https://tinysnow.github.io/断章/文章/愿你不再焦虑
+https://tinysnow.github.io/断章/文章/我们无法克制的欲望
 https://tinysnow.github.io/断章/文章/我把你们看得很重要
 https://tinysnow.github.io/断章/文章/所想所见即真实
 https://tinysnow.github.io/断章/文章/文章
@@ -587,6 +589,7 @@ https://tinysnow.github.io/断章/随记/随记 - 2023 年 6 月 9 日
 https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 12 日
 https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 22 日
 https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 3 日
+https://tinysnow.github.io/断章/随记/随记 - 2023 年 8 月 7 日
 https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
 https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
 https://tinysnow.github.io/笔记/教程/Basic Elements
