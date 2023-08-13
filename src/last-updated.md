@@ -4,231 +4,145 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## sitemap.txt
+## SUMMARY.md
 
 ```diff
 
-@@ -28,6 +28,7 @@ https://tinysnow.github.io/每日一文/三种人生态度 - 梁漱溟
- https://tinysnow.github.io/每日一文/不一样的自由 - 龙应台
- https://tinysnow.github.io/每日一文/不要累死你的爱 - 刘墉
- https://tinysnow.github.io/每日一文/与人为友 - 亦舒
-+https://tinysnow.github.io/每日一文/世界上最荒凉的动物园 - 苏童
- https://tinysnow.github.io/每日一文/为什么要读经典 - 伊塔洛 · 卡尔维诺
- https://tinysnow.github.io/每日一文/买牛肉须知 - 姬中宪
- https://tinysnow.github.io/每日一文/二手衣 - 亦舒
-
-@@ -418,6 +419,7 @@ https://tinysnow.github.io/断章/文章/微雪爱情观
- https://tinysnow.github.io/断章/文章/总有一种东西，让你想起那些人
- https://tinysnow.github.io/断章/文章/感知到的友情
- https://tinysnow.github.io/断章/文章/愿你不再焦虑
-+https://tinysnow.github.io/断章/文章/我们无法克制的欲望
- https://tinysnow.github.io/断章/文章/我把你们看得很重要
- https://tinysnow.github.io/断章/文章/所想所见即真实
- https://tinysnow.github.io/断章/文章/文章
-
-@@ -587,6 +589,7 @@ https://tinysnow.github.io/断章/随记/随记 - 2023 年 6 月 9 日
- https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 12 日
- https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 22 日
- https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 3 日
-+https://tinysnow.github.io/断章/随记/随记 - 2023 年 8 月 7 日
- https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
- https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
- https://tinysnow.github.io/笔记/教程/Basic Elements
+@@ -415,6 +415,7 @@
+     - [分享想法](学习/零碎知识整理/分享想法.md)
+ - [断章 | Articles](断章/断章.md)
+   - [文章 | Literature](断章/文章/文章.md)
++    - [人間を感知する](断章/文章/人間を感知する.md)
+     - [我们无法克制的欲望](断章/文章/我们无法克制的欲望.md)
+     - [总有一种东西，让你想起那些人](断章/文章/总有一种东西，让你想起那些人.md)
+     - [为了好好生活，那些你所需要了解的领域](断章/文章/为了好好生活，那些你所需要了解的领域.md)
 ```
 
-## 人間を感知する.md
+## 各领域入门.md
 
 ```diff
 
-@@ -0,0 +1,125 @@
-+# 人間を感知する
+@@ -1 +1,121 @@
+ # 各领域入门 | How to Learn
++
++## 前提・Premise
++
++- This article is **Chinese(Simplified) only**.
++- 本文章只使用简体中文。
 +
 +## 写在前面
 +
-+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">1127 字 | 生活 | 感受 | 经历 | 见证</p>
++- 本文章针对笔者所接触的领域，提出最适合入门的最简方案。
++- 最适合入门的方案，定义如下：
++  - 说人话，而非术语；
++  - 自顶向下，能够总览整个领域，产生概念；
++- **附带资料**，不必寻找。
++- **可能会时常修正。**
 +
 +## 正文
 +
-+　　去医院的路上，公交车里。
++### 计算机
 +
-+　　前门有两个座位，并排，上面坐着三个小孩子。一男两女，女孩一大一小。
++1. 整体认知计算机：
 +
-+　　自我上车后他们就在，还很吵。
++- [计算机科学速成课](https://www.bilibili.com/video/BV1EW411u7th)
++  - 注意：此课不会教学编程语言入门。
 +
-+　　中途站，我正看书，听到小女孩说：“我马上要下车啦，来一个抱抱吧。”
++2. 编程语言入门：
 +
-+　　惊觉，抬起头。
++- [C 语言（阮一峰，文档）](https://wangdoc.com/clang/)
++- [C 语言（翁恺，视频）](https://www.bilibili.com/video/BV1XZ4y1S7e1/)
++  - 强烈建议：先看文档，不懂的地方翻阅视频。效率最高。
++  - 目前只列出 C 语言
++    - 整体认知编程语言，C 语言足够，也最经典
++    - 其他语言建立在 C 语言基础上
 +
-+　　小女孩跟大女孩抱了抱，又跟小男孩抱了抱。最后，她展开小小的双臂，一起拥抱了两个人，自己则埋在他们两个中间。三个拥抱，三个满怀。
++3. 深入理解计算机：
 +
-+　　“那我走啦！”小女孩说。
++- [深入理解计算机系统（第三版）](https://github.com/Urinx/Books/blob/master/cs/深入理解计算机系统.pdf)
++- [计算机系统要素：从零开始构建现代计算机](https://github.com/PKUFlyingPig/NandToTetris/blob/master/[计算机系统要素：从零开始构建现代计算机].(尼萨).周维.扫描版.pdf)
++  - 此书根据英语教学项目 [nand2tetris](https://www.nand2tetris.org) 翻译而来，有条件最好直接阅读原版
 +
-+　　“拜拜！”
++4. 学习至此，可根据自身情况选择性继续
++   - TODO
 +
-+　　“拜拜！”
++### 摄影
 +
-+　　我看着她走到后门，然后又看她忽然折返回来：“好像是下一站……”
++- [从零学摄影系列 - 摄影师泰罗](https://space.bilibili.com/110683415/channel/collectiondetail?sid=2809)
 +
-+　　我有些想笑。
++### 心理学
 +
-+　　“那再来抱一个吧！”大女孩说。
++- [耶鲁大学公开课：心理学导论](https://www.bilibili.com/video/BV1gJ41157Yh/)
 +
-+　　“来吧！”小女孩回答。
++### 日语
 +
-+　　大女孩直接把小女孩环腰搂起，抱得小女孩脚尖离地。没有转圈圈，但是他们的空间，就算抱起来转圈圈也没问题。
++- [日语语法指南](https://res.wokanxing.info/jpgramma/)
++- 中日交流新标准日本语（初级-高级 系列教材）
++  - 从 Zlibrary 上面下载
 +
-+　　然后小女孩又抱了一下小男孩。
++### 法语
 +
-+　　**门口传来三个小孩子的笑声。**
++- 你好！法语（A1-C2 系列教材）
++  - 从 Zlibrary 上面下载
++  - 不要下载教师用书
 +
-+　　到站了。
++### 医学
 +
-+　　小女孩下车，在路边朝他们两人挥手。小男孩和大女孩两双手贴在车窗上，用各自小小的声音喊着。
++- [默克家庭诊疗手册](http://www.a-hospital.com/w/默克家庭诊疗手册)
++  - 家庭医学普及版
++  - 也可以从 Zlibrary 上面下载
++- 人民卫生出版社系列教材
++  - 系统解剖学
++  - 生理学
++  - 病理学
++  - 药理学
++  - 内科学
++  - 外科学
++  - 病理生理学
++  - 注意
++    - 蓝色生死恋系列很多，不要全看，看不完
++    - 看上面最主要的几本
 +
-+　　“小心点啊！”
++### 人际关系学
 +
-+　　“注意安全！”
++- 亲密关系（第六版）- 罗兰 · 米勒
++  - 从 Zlibrary 上面下载
++- 非暴力沟通 - 马歇尔 · 卢森堡
++  - 从 Zlibrary 上面下载
 +
-+　　从医院回来，碰上暴雨。
++### 金融经济
 +
-+　　没带伞，被困在路边。与我一同避雨的人们，许多身上都淋湿了。
++- 半小时漫画经济学（生活常识篇，金融危机篇）
++  - 追求趣味性建议阅读
++- 曼昆经济学原理（宏观经济和微观经济，两分册）
++  - 从 Zlibrary 上面下载
++- 银行业从业资格证科目系列教材
++  - 从 Zlibrary 上面下载
 +
-+　　为了解乏，同时填肚子，走进了一家书亦烧仙草。
++### 哲学
 +
-+　　店里没有音乐，分外静谧。只有零星几个客人坐在里面。
++- 大问题：简明哲学导论（第十版）
++  - 从 Zlibrary 上面下载
 +
-+　　有位男性，大约二十多岁。不像是避雨，像是等着谁。
++### 作曲编曲
 +
-+　　我点好单后，坐在板凳上等。
++- [程嘉溪音乐作曲教程](https://space.bilibili.com/364738464/channel/series)
++  - 视频作者并不非常专业，但非常适合用来入门
++- 音乐理论基础 - 李重光
++  - 从 Zlibrary 上面下载
++- [Open Music Theory](https://openmusictheory.github.io)
++  - 只有英语版
 +
-+　　半晌，那位男性走出店张望，又进来。又过了一会，进来一位女性。
++### 管理学
 +
-+　　他很开心的样子，走出店。带着一束花走出去。
++- [浙江大学管理学 - 邢以群](https://www.bilibili.com/video/BV1qF411p7N6)
 +
-+　　我不知道那束花哪里来，魔法一般。不重要。那花束精心包装，上面零星亮着几盏小灯，发出暖黄色的光。
++### 美妆
 +
-+　　那位女性笑靥如花。
-+
-+　　提包，点单，坐下，聊天，笑声，一气呵成。
-+
-+　　我走出店。
-+
-+　　**暴雨天里，在奶茶店收到一束花，应该是件很幸福的事情吧。我这样想着。**
-+
-+　　我站在超商门口，望着地面暴雨掀起的白色波浪，一阵一阵地发呆。
-+
-+　　暴雨之下，内心却获得了难以寻觅的平静。
-+
-+　　我觉得我该写些什么，又不知道如何表达。
-+
-+　　这里的医院，住院部与门诊楼连在一起。第一次来，迷路，误入住院部。
-+
-+　　看着过道占满两列的病床，看着仅一人通过的过道，看着应对电话风暴的护士，看着吊液仍在改卷子的年轻老师，看着黯淡经久的灯泡，我忽然觉得很难过。
-+
-+　　有些事情，听人描述与亲眼见证，感觉完全不同。
-+
-+　　而避雨这种事情，我一直认为与我无关。虽然看过无数的插画，却始终觉得很遥远。
-+
-+　　如今在这里等雨停，消磨时间，忽然觉得有了一丝人间的气息。
-+
-+　　不仅仅是住处，工作，网络，觅食几点一线，偶尔也会有这样的事情发生。
-+
-+　　这样，挺好。不至于机械而麻木。
-+
-+　　**人間を感知する。**
-+
-+<br />
-+
-+　　南国微雪 Miyuki
-+
-+　　2023 年 8 月 12 日
++- TODO
 +
 +## 写在后面
 +
-+　　我很羡慕他们。
-+
-+　　同时，我也觉得医生和护士是十分伟大的职业。
-+
-+## 引用及附注
-+
-+　　题目中文意为：《感受人间》。
-+
-+　　- 人間：人类，人们；人间，社会。
-+
-+　　- を：提示宾语的日语助词。
-+
-+　　- 感知する：感知，感觉，感受。
-+
-+## 封面图
-+
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/filip-mroz-VH7NuUbj104-unsplash.jpg)
-+
-+> 摄影师 | Filip Mroz
-+>
-+> 图源 | Unsplash
-\ No newline at end of file
-```
-
-## 我们无法克制的欲望.md
-
-```diff
-
-@@ -1,5 +1,11 @@
- # 我们无法克制的欲望
- 
-+## 写在前面
-+
-+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">852 字 | 欲望 | 思考 | 认知</p>
-+
-+## 正文
-+
- 　　跑步时总爱乱想。一边看着路人一边发呆。而每当难过的时候，总会有一阵头脑风暴。
- 
- 　　这次，是与世俗的金钱有关。
-
-@@ -49,3 +55,11 @@
- 　　南国微雪 Miyuki
- 
- 　　2023 年 8 月 10 日
-+
-+## 封面图
-+
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/christian-lue-qUrIIzSWhh8-unsplash.jpg)
-+
-+> 摄影师 | Christian Lue
-+>
-+> 图源 | Unsplash
-\ No newline at end of file
-```
-
-## 随记 - 2023 年 8 月 7 日.md
-
-```diff
-
-@@ -1,5 +1,11 @@
- # 随记 - 2023 年 8 月 7 日
- 
-+## 写在前面
-+
-+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">638 字 | 经历 | 工人 | 生活 | 人际关系</p>
-+
-+## 正文
-+
- 　　工作日第一天，单位的人抢饭很快。我去的时候菜盆都光了……
- 
- 　　做饭的阿姨笑说，她数了人，发现少两个，就给我们留了盘菜。那菜盘里每一样菜都挑了一些。
-
-@@ -51,3 +57,11 @@
- 　　南国微雪 Miyuki
- 
- 　　2023 年 8 月 7 日
-+
-+## 封面图
-+
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/essays/christopher-burns-Wiu3w-99tNg-unsplash.jpg)
-+
-+> 摄影师 | Christopher Burns
-+>
-+> 图源 | Unsplash
++- **强烈建议将上述学习资料存档，以防失效。**
 \ No newline at end of file
 ```
