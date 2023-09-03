@@ -4,76 +4,41 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## sitemap.txt
+## SUMMARY.md
 
 ```diff
 
-@@ -68,6 +68,7 @@ https://tinysnow.github.io/每日一文/吹兵 - 三毛
- https://tinysnow.github.io/每日一文/吾先生 - 杨绛
- https://tinysnow.github.io/每日一文/在一个时代里缓慢行走 - 朱德庸
- https://tinysnow.github.io/每日一文/在什么地方活着 - 小川未明
-+https://tinysnow.github.io/每日一文/垃圾工 - 雷 · 布拉德伯里
- https://tinysnow.github.io/每日一文/夜空中的木拐 - 从维熙
- https://tinysnow.github.io/每日一文/大坝垮的那天 - 詹姆斯 · 瑟伯
- https://tinysnow.github.io/每日一文/大胡子与我 - 三毛
+@@ -6,6 +6,7 @@
+ - [问题总表 | Problems](问题总表.md)
+ -----
+ - [每日一文 | Daily Article](每日一文/每日一文.md)
++  - [小达子 - 冯骥才](每日一文/小达子%20-%20冯骥才.md)
+   - [垃圾工 - 雷 · 布拉德伯里](每日一文/垃圾工%20-%20雷%20·%20布拉德伯里.md)
+   - [我不喜欢人类，我想住进森林 - 阿澜 · 卢](每日一文/我不喜欢人类，我想住进森林%20-%20阿澜%20·%20卢.md)
+   - [名字花哨的时代 - 肖复兴](每日一文/名字花哨的时代%20-%20肖复兴.md)
 ```
 
-## 个人简介.md
+## 小达子 - 冯骥才.md
 
 ```diff
 
-@@ -6,7 +6,7 @@
- 
- ## Chinese（中文，简体）
- 
--　　你好！我是南国微雪，一个大学生，主攻计算机科学与技术。
-+　　你好！我是南国微雪，本科毕业生，主攻计算机科学与技术，目前工作在中国农业发展银行（ADBC）。
- 
- 　　兴趣使然之下建立了这个博客，用于记录生活中的一切。包含计算机技术，但更多内容写给生活。
- 
-
-@@ -20,7 +20,7 @@
- 
- ## English（English）
- 
--　　Hi! I'm TinySnow, a college student majoring in computer science and technology.
-+　　Hi! I'm TinySnow, a bachelor's degree graduate, majoring in computer science and technology, and currently working at the Agricultural Development Bank of China (ADBC).
- 
- 　　Because of interest, I established this blog to record everything in my life. Contains modern technology, but more content is written for life.
- 
-
-@@ -34,7 +34,7 @@
- 
- ## Japanese（日本語）
- 
--　　こんにちは！Miyuki です。今大学で、コンピュータサイエンスとテクノロジーを専攻しています。
-+　　こんにちは！Miyuki です。コンピュータ サイエンスとテクノロジーを専攻し、学士号を取得しており、現在は中国農業開発銀行 (ADBC) で働いています。
- 
- 　　興味があったので、このブログを立ち上げて、見えるすべてを記録してつもりです。現代のテクノロジーが含まれていますが、より多くのコンテンツが生涯にわたって書かれています。
- 
-
-@@ -48,7 +48,7 @@
- 
- ## French（Français）
- 
--　　Salut! Je suis TinySnow, un étudiant universitaire spécialisé en informatique et technologie.
-+　　Salut! Je suis TinySnow, diplômé d'une licence, spécialisé en informatique et technologie, et je travaille actuellement à la Banque de développement agricole de Chine (ADBC).
- 
- 　　Par intérêt, j'ai créé ce blog pour enregistrer tout dans ma vie. Contient une technologie moderne, mais plus de contenu est écrit pour la vie.
- 
-```
-
-## 毕业总结.md
-
-```diff
-
-@@ -122,6 +122,6 @@ WingStudio 软件工作室
- 
- ![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_0126.jpg)
- 
--![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/Screenshot_20230612-223631_Pixel%20%E5%90%AF%E5%8A%A8%E5%99%A8.png)
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/20230614215234460.jpg)
- 
- ![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/screenshot-telegram-channel.png)
+@@ -0,0 +1,17 @@
++# 小达子
++
++*冯骥才*
++
++　　其貌儿不扬，短脖短腿，灰眼灰皮，软绵绵赛块烤山芋；站着赛个影子，走路赛一道烟儿，人说这种人天生是当贼的材料。没错！小达子眼刁手疾，就是你把票子贴在肚皮上，转眼也会到他手里，还保管叫你不知不觉，连肚皮贴票子的感觉也没变。可他最看家的本事，是在电车上。你在车上要是遇到他，千万别往他身上靠，否则你身上有什么，就一准没什么。
++
++　　举个例子说，比方那种穿西服的小子，要是上了电车，保他没跑！因为那种小子好时髦，钱包都掖在西服裤子的屁股后边口袋里，口袋没盖，上边露着钱包窄窄一道边儿。可要想伸手把钱包抻出来，也是妄想。口袋小，钱包鼓，紧绷绷，屁股上的神经不比脸皮的神经差，一动就察觉，小达子却自有招儿。逢到此时，他往车门边的柱了一倚，等车一停，那小子下车的一刹那，他手比电光还快，刷地过去，用食指和中指的指尖夹住钱包的边儿。下车时人的重心和注意力都向下，于是口袋的钱包不用去抻，它自个儿就舒舒服服不知不觉出来了。
++
++　　话说到这儿，别以为这电车上的天下就是小达子的。
++
++　　一天，小达子在车上，打白帽衙门那站上来一位中年男子，黑礼服呢的褂子外边亮晶晶晃荡着一条纯金的怀表链，还挺粗。小达子呆着没动，等车快到梨栈时，他靠上去。这儿的车轨有一截Ｓ型。车到这里，必得一晃，他借势往那人身上一靠，表就到他手里，跟手揣入怀中。动作快得连眼珠子也跟不上。等车到梨栈，下车人多，他便挤在人群中，快快下车离开了现场。
++
++　　他一边走，一边美滋滋琢磨着今天的收获。忽然间发现走在前边的一个人，很像刚才车上那个中年男子。他正犹疑的当口，那人转过身来，果真就是那人；奇怪的是，那人胸口地方亮闪闪，依然晃着那条又粗又亮的表链！难道他还有一块表？小达子不自觉用手一摸自己怀中，吓了一跳，竟然空空如也。他半辈子偷别人，头一遭尝到挨偷后的感觉。更栽跟斗似的，他怎么也琢磨不出这家伙用什么法儿从他身上把表取回去。这人见他发傻的样子，龇牙一笑，笑里分明带着几分轻贱他的意味，好似说：“你笨手笨脚也想干这个！”然后收起笑来，转身而去。
++
++　　打这天，小达子不再上电车。
++
++　　选自《俗世奇人》
 \ No newline at end of file
 ```
