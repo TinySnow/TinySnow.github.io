@@ -73,6 +73,7 @@ https://tinysnow.github.io/每日一文/夜空中的木拐 - 从维熙
 https://tinysnow.github.io/每日一文/大坝垮的那天 - 詹姆斯 · 瑟伯
 https://tinysnow.github.io/每日一文/大胡子与我 - 三毛
 https://tinysnow.github.io/每日一文/天上落下来的一片叶子 - 安徒生
+https://tinysnow.github.io/每日一文/天堂之门 - 马克
 https://tinysnow.github.io/每日一文/女人的星球 - 高铭
 https://tinysnow.github.io/每日一文/女朋友 - 亦舒
 https://tinysnow.github.io/每日一文/如果你没有了我 - 刘墉
@@ -314,6 +315,7 @@ https://tinysnow.github.io/小说/其他小说/第一章 冲击
 https://tinysnow.github.io/小说/其他小说/第二章 巨变
 https://tinysnow.github.io/小说/想象力训练/公交车
 https://tinysnow.github.io/小说/想象力训练/冥界的混乱
+https://tinysnow.github.io/小说/想象力训练/努力的样子
 https://tinysnow.github.io/小说/想象力训练/想象力训练
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 公主与夫人（《欢恋》番外）
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 分享
@@ -321,6 +323,7 @@ https://tinysnow.github.io/小说/想象力训练/想象力训练 - 可能会知
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 女性知识
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 少女的夏天
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 就算是厨师也能照亮他人
+https://tinysnow.github.io/小说/想象力训练/想象力训练 - 心脏博物馆
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 散打很温柔
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 昂贵的教师
 https://tinysnow.github.io/小说/想象力训练/想象力训练 - 普通
