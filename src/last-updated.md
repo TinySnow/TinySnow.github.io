@@ -4,119 +4,84 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## SUMMARY.md
-
-```diff
-
-@@ -509,6 +509,8 @@
-     - [致南国微雪频道每一位订阅者的一封信](断章/赠与/致南国微雪频道每一位订阅者的一封信.md)
-     - [致两年后自己的一封信](断章/赠与/致两年后自己的一封信.md)
-   - [随记 | Essays](断章/随记/随记.md)
-+    - [随记 - 2023 年 9 月 7 日](断章/随记/随记%20-%202023%20年%209%20月%207%20日.md)
-+    - [随记 - 2023 年 9 月 4 日](断章/随记/随记%20-%202023%20年%209%20月%204%20日.md)
-     - [随记 - 2023 年 8 月 7 日](断章/随记/随记%20-%202023%20年%208%20月%207%20日.md)
-     - [随记 - 2023 年 7 月 22 日](断章/随记/随记%20-%202023%20年%207%20月%2022%20日.md)
-     - [随记 - 2023 年 7 月 12 日](断章/随记/随记%20-%202023%20年%207%20月%2012%20日.md)
-```
-
 ## sitemap.txt
 
 ```diff
 
-@@ -443,6 +443,7 @@ https://tinysnow.github.io/断章/文章/总有一种东西，让你想起那些
- https://tinysnow.github.io/断章/文章/感知到的友情
- https://tinysnow.github.io/断章/文章/愿你不再焦虑
- https://tinysnow.github.io/断章/文章/我们无法克制的欲望
-+https://tinysnow.github.io/断章/文章/我和她之间
- https://tinysnow.github.io/断章/文章/我把你们看得很重要
- https://tinysnow.github.io/断章/文章/所想所见即真实
- https://tinysnow.github.io/断章/文章/文章
+@@ -615,6 +615,8 @@ https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 12 日
+ https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 22 日
+ https://tinysnow.github.io/断章/随记/随记 - 2023 年 7 月 3 日
+ https://tinysnow.github.io/断章/随记/随记 - 2023 年 8 月 7 日
++https://tinysnow.github.io/断章/随记/随记 - 2023 年 9 月 4 日
++https://tinysnow.github.io/断章/随记/随记 - 2023 年 9 月 7 日
+ https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
+ https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
+ https://tinysnow.github.io/笔记/教程/Basic Elements
 ```
 
-## 我和她之间.md
+## 想象 - 苏吉特 · 马拉.md
 
 ```diff
 
-@@ -158,8 +158,6 @@
- 
- ![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/fausto-garcia-menendez-5qAnYQzZ2Fk-unsplash.jpg)
- 
--![](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52Pn52FNfbkdfR1606icdMPUicdWs1FAfsxJ0t23q36eiaqy8yLia4vyZpasia6BVvU95eSn4G3sNqxh2w/640?wx_fmt=jpeg)
--
- > 摄影师 | Fausto García-Menéndez
- >
- > 图源 | Unsplash
-\ No newline at end of file
-```
-
-## 随记 - 2023 年 9 月 4 日.md
-
-```diff
-
-@@ -0,0 +1,27 @@
-+# 随记 - 2023 年 9 月 4 日
+@@ -0,0 +1,59 @@
++# 想象
 +
-+## 写在前面
++*苏吉特 · 马拉*
 +
-+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">63 字 | 思念</p>
++　　这一天终于来到了，托尼觉得自己很久以来一直都在等待这一天。
 +
-+## 正文
++　　他二十二岁，从未体验过母亲的温暖，母亲在生他的时候难产死了。父亲开始约会别的女人。托尼出生在一个非常富有而且世代享有声望的家族。
 +
-+　　到了一张可以自选号码的流量卡。
++　　托尼有一个孤独的童年，直到简进入他的生活。他依旧记得简搬来做他邻居的那一天。简的陪伴驱散了他的忧伤，更重要的是他开始享受生活。而现在他打算向简求婚，请求她嫁给自己。在花园里等候简的时候，他听见杰克叔叔在喊他。杰克叔叔这些年一直在照顾着他的生活。杰克是一位心理医生，对托尼非常疼爱。
 +
-+　　选了很久，终于找到了满意的号码。
++　　“托尼，我能和你谈一谈吗？”
 +
-+　　尾号是她的生日。
++　　“什么事？”托尼有些紧张地问道。
 +
-+<br />
++　　“还是让我们进客厅去说吧。”杰克叔叔说道。
 +
-+　　南国微雪 Miyuki
++　　托尼既有些渴望又有些不安，他从未见过杰克叔叔这个样子。
 +
-+　　2023 年 9 月 7 日
++　　“托尼，你要保持镇定，这件事对你来说不太容易理解。托尼，还记得那天你告诉我简搬到我们旁边的别墅做邻居吗？”
 +
-+## 封面图
++　　“是关于简？”他尖叫起来，心跳加速。
 +
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/essays/casey-horner-dX9X0KTT42g-unsplash.jpg)
++　　“托尼，这些年来没有人住在旁边那幢别墅……”
 +
-+> 摄影师 | Casey Horner
-+>
-+> 图源 | Unsplash
-\ No newline at end of file
-```
-
-## 随记 - 2023 年 9 月 7 日.md
-
-```diff
-
-@@ -0,0 +1,29 @@
-+# 随记 - 2023 年 9 月 7 日
++　　“你怎么能这么说？我触摸过她，甚至吻过她的面颊。是你疯了？”
 +
-+## 写在前面
++　　“托尼，我知道这难以置信，但这是事实，我一直想告诉你，但当时你太小，还不能理解。”
 +
-+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">127 字</p>
++　　“不，这不可能！你在撒谎！”
 +
-+## 正文
++　　“不，孩子，是你自己的意识在欺骗你，托尼，你要保持冷静，一切都会好的，相信我！”
 +
-+　　加班。疲惫之后越来越觉得，自己一直苟且着，为生活低头。
++　　托尼冲出客厅。他从一扇破窗户进到简的房子里面。一切都废弃了，那张沙发已经落满厚厚的灰尘，他和简曾经坐在那里聊天，一聊就是几个小时。这里除了一些锈迹斑斑的家具和尘土，什么都没有。他回去见杰克叔叔。
 +
-+　　这个世界甚是复杂，我尝试着去理解它。理解愈深，便愈觉有趣，世界亦愈迷人。
++　　“孩子，我很难过，但你必须从中解脱出来。”杰克叔叔安慰道。
 +
-+　　同时也越发感受，自己渺小如蜉蝣。
++　　托尼不能相信发生的一切，那个他深爱并想娶之为妻的女孩并不存在！
 +
-+　　但就算这样，我还是想留下些什么。
++　　他花了大约一个月的时间来接受这个现实。这天，他在睡觉前拿起自己吃了十五年的药片。他一直想知道杰克叔叔为什么一直给他吃这些药片，现在他知道了答案。他病了，是一种精神疾病。
 +
-+<br />
++　　当他准备睡觉时，有人敲门，是简。“简，你不能来这里，你并不存在……”
 +
-+　　南国微雪 Miyuki
++　　“什么？你是在开玩笑吗？托尼，我来这儿是来向你道歉的，那天我没告诉你就离开了，因为我妈妈在那天出车祸去世了，我当时想联系你但怎么都联系不上。”
 +
-+　　2023 年 9 月 7 日
++　　“不不不，这不是真的。”托尼说。
 +
-+## 封面图
++　　“托尼，你到底出了什么毛病？我是你深爱的女孩简。”
 +
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/essays/casey-horner-dX9X0KTT42g-unsplash.jpg)
++　　“不，那不是真的！”托尼闭上眼睛，希望他的梦快点结束。
 +
-+> 摄影师 | Casey Horner
-+>
-+> 图源 | Unsplash
++　　“托尼，你不能这样伤我的心，你那样爱我，我们曾一起度过那么多美好的时光！”
++
++　　“不，简，我是和我自己度过很多美好的时光！”
++
++　　他走近她，“简，我虚构了你，现在我要毁灭你！”他向她刺了三刀。简流血了，托尼触到了鲜红的液体。大脑还在跟他玩恶作剧！
++
++　　“杰克叔叔，你在哪儿？我的病已经好了，从现在起简这个人就不存在了。杰克叔叔，你在哪里？”托尼大喊着。
++
++　　“杰克叔叔并不存在，我就是想告诉你这件事的，这些日子……”简喘息着，呼吸完最后一口气。
 \ No newline at end of file
 ```
