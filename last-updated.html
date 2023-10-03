@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh-CN" class="sidebar-visible no-js light">
+<html lang="zh-CN" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,10 +7,10 @@
         
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
         <meta name="description" content="南国微雪的博客">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="theme/style3.css">
 
         <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
         <!-- Baidu Site Analytics -->
         <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
@@ -54,15 +54,16 @@
         />
 
     </head>
-<body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -76,27 +77,35 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
+
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -106,20 +115,42 @@
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -155,7 +186,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     // Get viewed page store
@@ -195,11 +226,730 @@
        - name: mdBook Action
          uses: peaceiris/actions-mdbook@v1.2.0
          with:
--          mdbook-version: 'latest'
-+          mdbook-version: '0.4.30'
+-          mdbook-version: '0.4.30'
++          mdbook-version: 'latest'
  
        - run: mdbook build
  
+</code></pre>
+<h2 id="indexhbs"><a class="header" href="#indexhbs">index.hbs</a></h2>
+<pre><code class="language-diff">
+@@ -1,11 +1,11 @@
+ &lt;!DOCTYPE HTML&gt;
+-&lt;html lang=&quot;{{ language }}&quot; class=&quot;sidebar-visible no-js {{ default_theme }}&quot;&gt;
++&lt;html lang=&quot;{{ language }}&quot; class=&quot;{{ default_theme }}&quot; dir=&quot;{{ text_direction }}&quot;&gt;
+     &lt;head&gt;
+         &lt;!-- Book generated using mdBook --&gt;
+         &lt;meta charset=&quot;UTF-8&quot;&gt;
+         &lt;title&gt;{{ title }}&lt;/title&gt;
+         {{#if is_print }}
+-        &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot; /&gt;
++        &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;
+         {{/if}}
+         {{#if base_url}}
+         &lt;base href=&quot;{{ base_url }}&quot;&gt;
+
+@@ -14,10 +14,10 @@
+         &lt;!-- Custom HTML head --&gt;
+         {{&gt; head}}
+ 
+-        &lt;meta content=&quot;text/html; charset=utf-8&quot; http-equiv=&quot;Content-Type&quot;&gt;
++
+         &lt;meta name=&quot;description&quot; content=&quot;{{ description }}&quot;&gt;
+         &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+-        &lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot; /&gt;
++        &lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+ 
+         {{#if favicon_svg}}
+         &lt;link rel=&quot;icon&quot; href=&quot;{{ path_to_root }}favicon.svg&quot;&gt;
+
+@@ -50,7 +50,7 @@
+ 
+         {{#if mathjax_support}}
+         &lt;!-- MathJax --&gt;
+-        &lt;script async type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;
++        &lt;script async src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;
+         {{/if}}
+ 
+         &lt;!-- Baidu Site Analytics --&gt;
+
+@@ -73,15 +73,16 @@
+         /&gt;
+ 
+     &lt;/head&gt;
+-&lt;body&gt;
++    &lt;body class=&quot;sidebar-visible no-js&quot;&gt;
++    &lt;div id=&quot;body-container&quot;&gt;
+         &lt;!-- Provide site root to javascript --&gt;
+-        &lt;script type=&quot;text/javascript&quot;&gt;
++        &lt;script&gt;
+             var path_to_root = &quot;{{ path_to_root }}&quot;;
+             var default_theme = window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;).matches ? &quot;{{ preferred_dark_theme }}&quot; : &quot;{{ default_theme }}&quot;;
+         &lt;/script&gt;
+ 
+         &lt;!-- Work around some values being stored in localStorage wrapped in quotes --&gt;
+-        &lt;script type=&quot;text/javascript&quot;&gt;
++        &lt;script&gt;
+             try {
+                 var theme = localStorage.getItem('mdbook-theme');
+                 var sidebar = localStorage.getItem('mdbook-sidebar');
+
+@@ -95,27 +96,35 @@
+         &lt;/script&gt;
+ 
+         &lt;!-- Set the theme before any content is loaded, prevents flash --&gt;
+-        &lt;script type=&quot;text/javascript&quot;&gt;
++        &lt;script&gt;
+             var theme;
+             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+             if (theme === null || theme === undefined) { theme = default_theme; }
+             var html = document.querySelector('html');
+-            html.classList.remove('no-js')
++
+             html.classList.remove('{{ default_theme }}')
+             html.classList.add(theme);
+-            html.classList.add('js');
++            var body = document.querySelector('body');
++            body.classList.remove('no-js')
++            body.classList.add('js');
+         &lt;/script&gt;
+ 
++        &lt;input type=&quot;checkbox&quot; id=&quot;sidebar-toggle-anchor&quot; class=&quot;hidden&quot;&gt;
++
+         &lt;!-- Hide / unhide sidebar before it is displayed --&gt;
+-        &lt;script type=&quot;text/javascript&quot;&gt;
+-            var html = document.querySelector('html');
+-            var sidebar = 'hidden';
++        &lt;script&gt;
++            var body = document.querySelector('body');
++            var sidebar = null;
++            var sidebar_toggle = document.getElementById(&quot;sidebar-toggle-anchor&quot;);
+             if (document.body.clientWidth &gt;= 1080) {
+                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                 sidebar = sidebar || 'visible';
++            } else {
++                sidebar = 'hidden';
+             }
+-            html.classList.remove('sidebar-visible');
+-            html.classList.add(&quot;sidebar-&quot; + sidebar);
++            sidebar_toggle.checked = sidebar === 'visible';
++            body.classList.remove('sidebar-visible');
++            body.classList.add(&quot;sidebar-&quot; + sidebar);
+         &lt;/script&gt;
+ 
+         &lt;nav id=&quot;sidebar&quot; class=&quot;sidebar&quot; aria-label=&quot;Table of contents&quot;&gt;
+
+@@ -125,25 +134,47 @@
+             &lt;div id=&quot;sidebar-resize-handle&quot; class=&quot;sidebar-resize-handle&quot;&gt;&lt;/div&gt;
+         &lt;/nav&gt;
+ 
++        &lt;!-- Track and set sidebar scroll position --&gt;
++        &lt;script&gt;
++            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
++            sidebarScrollbox.addEventListener('click', function(e) {
++                if (e.target.tagName === 'A') {
++                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
++                }
++            }, { passive: true });
++            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
++            sessionStorage.removeItem('sidebar-scroll');
++            if (sidebarScrollTop) {
++                // preserve sidebar scroll position when navigating via links within sidebar
++                sidebarScrollbox.scrollTop = sidebarScrollTop;
++            } else {
++                // scroll sidebar to current active section when navigating via &quot;next/previous chapter&quot; buttons
++                var activeSection = document.querySelector('#sidebar .active');
++                if (activeSection) {
++                    activeSection.scrollIntoView({ block: 'center' });
++                }
++            }
++        &lt;/script&gt;
++
+         &lt;div id=&quot;page-wrapper&quot; class=&quot;page-wrapper&quot;&gt;
+ 
+             &lt;div class=&quot;page&quot;&gt;
+                 {{&gt; header}}
+                 &lt;div id=&quot;menu-bar-hover-placeholder&quot;&gt;&lt;/div&gt;
+-                &lt;div id=&quot;menu-bar&quot; class=&quot;menu-bar sticky bordered&quot;&gt;
++                &lt;div id=&quot;menu-bar&quot; class=&quot;menu-bar sticky&quot;&gt;
+                     &lt;div class=&quot;left-buttons&quot;&gt;
+-                        &lt;button id=&quot;sidebar-toggle&quot; class=&quot;icon-button&quot; type=&quot;button&quot; title=&quot;Toggle Table of Contents&quot; aria-label=&quot;Toggle Table of Contents&quot; aria-controls=&quot;sidebar&quot;&gt;
++                        &lt;label id=&quot;sidebar-toggle&quot; class=&quot;icon-button&quot; for=&quot;sidebar-toggle-anchor&quot; title=&quot;Toggle Table of Contents&quot; aria-label=&quot;Toggle Table of Contents&quot; aria-controls=&quot;sidebar&quot;&gt;
+                             &lt;i class=&quot;fa fa-bars&quot;&gt;&lt;/i&gt;
+-                        &lt;/button&gt;
++                        &lt;/label&gt;
+                         &lt;button id=&quot;theme-toggle&quot; class=&quot;icon-button&quot; type=&quot;button&quot; title=&quot;Change theme&quot; aria-label=&quot;Change theme&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;theme-list&quot;&gt;
+                             &lt;i class=&quot;fa fa-paint-brush&quot;&gt;&lt;/i&gt;
+                         &lt;/button&gt;
+                         &lt;ul id=&quot;theme-list&quot; class=&quot;theme-popup&quot; aria-label=&quot;Themes&quot; role=&quot;menu&quot;&gt;
+-                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;light&quot;&gt;{{ theme_option &quot;Light&quot; }}&lt;/button&gt;&lt;/li&gt;
+-                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;rust&quot;&gt;{{ theme_option &quot;Rust&quot; }}&lt;/button&gt;&lt;/li&gt;
+-                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;coal&quot;&gt;{{ theme_option &quot;Coal&quot; }}&lt;/button&gt;&lt;/li&gt;
+-                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;navy&quot;&gt;{{ theme_option &quot;Navy&quot; }}&lt;/button&gt;&lt;/li&gt;
+-                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;ayu&quot;&gt;{{ theme_option &quot;Ayu&quot; }}&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;light&quot;&gt;Light&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;rust&quot;&gt;Rust&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;coal&quot;&gt;Coal&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;navy&quot;&gt;Navy&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;ayu&quot;&gt;Ayu&lt;/button&gt;&lt;/li&gt;
+                         &lt;/ul&gt;
+                         {{#if search_enabled}}
+                         &lt;button id=&quot;search-toggle&quot; class=&quot;icon-button&quot; type=&quot;button&quot; title=&quot;Search. (Shortkey: s)&quot; aria-label=&quot;Toggle Searchbar&quot; aria-expanded=&quot;false&quot; aria-keyshortcuts=&quot;S&quot; aria-controls=&quot;searchbar&quot;&gt;
+
+@@ -188,7 +219,7 @@
+                 {{/if}}
+ 
+                 &lt;!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM --&gt;
+-                &lt;script type=&quot;text/javascript&quot;&gt;
++                &lt;script&gt;
+                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                     // Get viewed page store
+
+@@ -233,7 +264,7 @@
+                         {{/previous}}
+ 
+                         {{#next}}
+-                            &lt;a rel=&quot;next&quot; href=&quot;{{ path_to_root }}{{link}}&quot; class=&quot;mobile-nav-chapters next&quot; title=&quot;Next chapter&quot; aria-label=&quot;Next chapter&quot; aria-keyshortcuts=&quot;Right&quot;&gt;
++                            &lt;a rel=&quot;next prefetch&quot; href=&quot;{{ path_to_root }}{{link}}&quot; class=&quot;mobile-nav-chapters next&quot; title=&quot;Next chapter&quot; aria-label=&quot;Next chapter&quot; aria-keyshortcuts=&quot;Right&quot;&gt;
+                                 &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;
+                             &lt;/a&gt;
+                         {{/next}}
+
+@@ -251,7 +282,7 @@
+                 {{/previous}}
+ 
+                 {{#next}}
+-                    &lt;a rel=&quot;next&quot; href=&quot;{{ path_to_root }}{{link}}&quot; class=&quot;nav-chapters next&quot; title=&quot;Next chapter&quot; aria-label=&quot;Next chapter&quot; aria-keyshortcuts=&quot;Right&quot;&gt;
++                    &lt;a rel=&quot;next prefetch&quot; href=&quot;{{ path_to_root }}{{link}}&quot; class=&quot;nav-chapters next&quot; title=&quot;Next chapter&quot; aria-label=&quot;Next chapter&quot; aria-keyshortcuts=&quot;Right&quot;&gt;
+                         &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;
+                     &lt;/a&gt;
+                 {{/next}}
+
+@@ -259,10 +290,12 @@
+ 
+         &lt;/div&gt;
+ 
+-        {{#if livereload}}
++        {{#if live_reload_endpoint}}
+         &lt;!-- Livereload script (if served using the cli tool) --&gt;
+-        &lt;script type=&quot;text/javascript&quot;&gt;
+-            var socket = new WebSocket(&quot;{{{livereload}}}&quot;);
++        &lt;script&gt;
++            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
++            const wsAddress = wsProtocol + &quot;//&quot; + location.host + &quot;/&quot; + &quot;{{{live_reload_endpoint}}}&quot;;
++            const socket = new WebSocket(wsAddress);
+             socket.onmessage = function (event) {
+                 if (event.data === &quot;reload&quot;) {
+                     socket.close();
+
+@@ -277,7 +310,7 @@
+ 
+         {{#if google_analytics}}
+         &lt;!-- Google Analytics Tag --&gt;
+-        &lt;script type=&quot;text/javascript&quot;&gt;
++        &lt;script&gt;
+             var localAddrs = [&quot;localhost&quot;, &quot;127.0.0.1&quot;, &quot;&quot;];
+             // make sure we don't activate google analytics if the developer is
+             // inspecting the book locally...
+
+@@ -293,47 +326,47 @@
+         {{/if}}
+ 
+         {{#if playground_line_numbers}}
+-        &lt;script type=&quot;text/javascript&quot;&gt;
++        &lt;script&gt;
+             window.playground_line_numbers = true;
+         &lt;/script&gt;
+         {{/if}}
+ 
+         {{#if playground_copyable}}
+-        &lt;script type=&quot;text/javascript&quot;&gt;
++        &lt;script&gt;
+             window.playground_copyable = true;
+         &lt;/script&gt;
+         {{/if}}
+ 
+         {{#if playground_js}}
+-        &lt;script src=&quot;{{ path_to_root }}ace.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script src=&quot;{{ path_to_root }}editor.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script src=&quot;{{ path_to_root }}mode-rust.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script src=&quot;{{ path_to_root }}theme-dawn.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script src=&quot;{{ path_to_root }}theme-tomorrow_night.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}ace.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}editor.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}mode-rust.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}theme-dawn.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}theme-tomorrow_night.js&quot;&gt;&lt;/script&gt;
+         {{/if}}
+ 
+         {{#if search_js}}
+-        &lt;script src=&quot;{{ path_to_root }}elasticlunr.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script src=&quot;{{ path_to_root }}mark.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script src=&quot;{{ path_to_root }}searcher.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}elasticlunr.min.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}mark.min.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}searcher.js&quot;&gt;&lt;/script&gt;
+         {{/if}}
+ 
+-        &lt;script src=&quot;{{ path_to_root }}clipboard.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script src=&quot;{{ path_to_root }}highlight.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script src=&quot;{{ path_to_root }}book.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+-        &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
+-        var pagePath = &quot;{{ path }}&quot;
+-        &lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}clipboard.min.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}highlight.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}book.js&quot;&gt;&lt;/script&gt;
++
++
++
+ 
+ 
+         &lt;!-- Custom JS scripts --&gt;
+         {{#each additional_js}}
+-        &lt;script type=&quot;text/javascript&quot; src=&quot;{{ ../path_to_root }}{{this}}&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ ../path_to_root }}{{this}}&quot;&gt;&lt;/script&gt;
+         {{/each}}
+ 
+         {{#if is_print}}
+         {{#if mathjax_support}}
+-        &lt;script type=&quot;text/javascript&quot;&gt;
++        &lt;script&gt;
+         window.addEventListener('load', function() {
+             MathJax.Hub.Register.StartupHook('End', function() {
+                 window.setTimeout(window.print, 100);
+
+@@ -341,7 +374,7 @@
+         });
+         &lt;/script&gt;
+         {{else}}
+-        &lt;script type=&quot;text/javascript&quot;&gt;
++        &lt;script&gt;
+         window.addEventListener('load', function() {
+             window.setTimeout(window.print, 100);
+         });
+
+@@ -349,7 +382,7 @@
+         {{/if}}
+         {{/if}}
+ 
+-            
++    &lt;/div&gt;            
+ 
+         &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js&quot;&gt;&lt;/script&gt;
+         &lt;script&gt;
+</code></pre>
+<h2 id="indexhbsbak"><a class="header" href="#indexhbsbak">index.hbs.bak</a></h2>
+<pre><code class="language-diff">
+@@ -0,0 +1,407 @@
++&lt;!DOCTYPE HTML&gt;
++&lt;html lang=&quot;{{ language }}&quot; class=&quot;{{ default_theme }}&quot; dir=&quot;{{ text_direction }}&quot;&gt;
++    &lt;head&gt;
++        &lt;!-- Book generated using mdBook --&gt;
++        &lt;meta charset=&quot;UTF-8&quot;&gt;
++        &lt;title&gt;{{ title }}&lt;/title&gt;
++        {{#if is_print }}
++        &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;
++        {{/if}}
++        {{#if base_url}}
++        &lt;base href=&quot;{{ base_url }}&quot;&gt;
++        {{/if}}
++        
++        &lt;!-- Custom HTML head --&gt;
++        {{&gt; head}}
++
++
++        &lt;meta name=&quot;description&quot; content=&quot;{{ description }}&quot;&gt;
++        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
++        &lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
++
++        {{#if favicon_svg}}
++        &lt;link rel=&quot;icon&quot; href=&quot;{{ path_to_root }}favicon.svg&quot;&gt;
++        {{/if}}
++        {{#if favicon_png}}
++        &lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ path_to_root }}favicon.png&quot;&gt;
++        {{/if}}
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}css/variables.css&quot;&gt;
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}css/general.css&quot;&gt;
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}css/chrome.css&quot;&gt;
++        {{#if print_enable}}
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}css/print.css&quot; media=&quot;print&quot;&gt;
++        {{/if}}
++
++        &lt;!-- Fonts --&gt;
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}FontAwesome/css/font-awesome.css&quot;&gt;
++        {{#if copy_fonts}}
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}fonts/fonts.css&quot;&gt;
++        {{/if}}
++
++        &lt;!-- Highlight.js Stylesheets --&gt;
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}highlight.css&quot;&gt;
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}tomorrow-night.css&quot;&gt;
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ path_to_root }}ayu-highlight.css&quot;&gt;
++
++        &lt;!-- Custom theme stylesheets --&gt;
++        {{#each additional_css}}
++        &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ ../path_to_root }}{{ this }}&quot;&gt;
++        {{/each}}
++
++        {{#if mathjax_support}}
++        &lt;!-- MathJax --&gt;
++        &lt;script async src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;
++        {{/if}}
++
++        &lt;!-- Baidu Site Analytics --&gt;
++        &lt;meta name=&quot;baidu-site-verification&quot; content=&quot;code-he9gAvXT8G&quot; /&gt;
++
++        &lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
++        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW&quot;&gt;&lt;/script&gt;
++        &lt;script&gt;
++          window.dataLayer = window.dataLayer || [];
++          function gtag(){dataLayer.push(arguments);}
++          gtag('js', new Date());
++
++          gtag('config', 'G-P9324YLFBW');
++        &lt;/script&gt;
++
++        &lt;!-- Doc Search --&gt;
++        &lt;link
++            rel=&quot;stylesheet&quot;
++            href=&quot;https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic&quot;
++        /&gt;
++
++    &lt;/head&gt;
++    &lt;body class=&quot;sidebar-visible no-js&quot;&gt;
++    &lt;div id=&quot;body-container&quot;&gt;
++        &lt;!-- Provide site root to javascript --&gt;
++        &lt;script&gt;
++            var path_to_root = &quot;{{ path_to_root }}&quot;;
++            var default_theme = window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;).matches ? &quot;{{ preferred_dark_theme }}&quot; : &quot;{{ default_theme }}&quot;;
++        &lt;/script&gt;
++
++        &lt;!-- Work around some values being stored in localStorage wrapped in quotes --&gt;
++        &lt;script&gt;
++            try {
++                var theme = localStorage.getItem('mdbook-theme');
++                var sidebar = localStorage.getItem('mdbook-sidebar');
++                if (theme.startsWith('&quot;') &amp;&amp; theme.endsWith('&quot;')) {
++                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
++                }
++                if (sidebar.startsWith('&quot;') &amp;&amp; sidebar.endsWith('&quot;')) {
++                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
++                }
++            } catch (e) { }
++        &lt;/script&gt;
++
++        &lt;!-- Set the theme before any content is loaded, prevents flash --&gt;
++        &lt;script&gt;
++            var theme;
++            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
++            if (theme === null || theme === undefined) { theme = default_theme; }
++            var html = document.querySelector('html');
++
++            html.classList.remove('{{ default_theme }}')
++            html.classList.add(theme);
++            var body = document.querySelector('body');
++            body.classList.remove('no-js')
++            body.classList.add('js');
++        &lt;/script&gt;
++
++        &lt;!-- Hide / unhide sidebar before it is displayed --&gt;
++        &lt;script&gt;
++            var body = document.querySelector('body');
++            var sidebar = null;
++            var sidebar_toggle = document.getElementById(&quot;sidebar-toggle-anchor&quot;);
++            if (document.body.clientWidth &gt;= 1080) {
++                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
++                sidebar = sidebar || 'visible';
++            } else {
++                sidebar = 'hidden';
++            }
++            sidebar_toggle.checked = sidebar === 'visible';
++            body.classList.remove('sidebar-visible');
++            body.classList.add(&quot;sidebar-&quot; + sidebar);
++        &lt;/script&gt;
++
++        &lt;nav id=&quot;sidebar&quot; class=&quot;sidebar&quot; aria-label=&quot;Table of contents&quot;&gt;
++            &lt;div class=&quot;sidebar-scrollbox&quot;&gt;
++                {{#toc}}{{/toc}}
++            &lt;/div&gt;
++            &lt;div id=&quot;sidebar-resize-handle&quot; class=&quot;sidebar-resize-handle&quot;&gt;&lt;/div&gt;
++        &lt;/nav&gt;
++
++        &lt;!-- Track and set sidebar scroll position --&gt;
++        &lt;script&gt;
++            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
++            sidebarScrollbox.addEventListener('click', function(e) {
++                if (e.target.tagName === 'A') {
++                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
++                }
++            }, { passive: true });
++            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
++            sessionStorage.removeItem('sidebar-scroll');
++            if (sidebarScrollTop) {
++                // preserve sidebar scroll position when navigating via links within sidebar
++                sidebarScrollbox.scrollTop = sidebarScrollTop;
++            } else {
++                // scroll sidebar to current active section when navigating via &quot;next/previous chapter&quot; buttons
++                var activeSection = document.querySelector('#sidebar .active');
++                if (activeSection) {
++                    activeSection.scrollIntoView({ block: 'center' });
++                }
++            }
++        &lt;/script&gt;
++
++        &lt;div id=&quot;page-wrapper&quot; class=&quot;page-wrapper&quot;&gt;
++
++            &lt;div class=&quot;page&quot;&gt;
++                {{&gt; header}}
++                &lt;div id=&quot;menu-bar-hover-placeholder&quot;&gt;&lt;/div&gt;
++                &lt;div id=&quot;menu-bar&quot; class=&quot;menu-bar sticky bordered&quot;&gt;
++                    &lt;div class=&quot;left-buttons&quot;&gt;
++                        &lt;label id=&quot;sidebar-toggle&quot; class=&quot;icon-button&quot; type=&quot;button&quot; title=&quot;Toggle Table of Contents&quot; aria-label=&quot;Toggle Table of Contents&quot; aria-controls=&quot;sidebar&quot;&gt;
++                            &lt;i class=&quot;fa fa-bars&quot;&gt;&lt;/i&gt;
++                        &lt;/label&gt;
++                        &lt;button id=&quot;theme-toggle&quot; class=&quot;icon-button&quot; type=&quot;button&quot; title=&quot;Change theme&quot; aria-label=&quot;Change theme&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;theme-list&quot;&gt;
++                            &lt;i class=&quot;fa fa-paint-brush&quot;&gt;&lt;/i&gt;
++                        &lt;/button&gt;
++                        &lt;ul id=&quot;theme-list&quot; class=&quot;theme-popup&quot; aria-label=&quot;Themes&quot; role=&quot;menu&quot;&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;light&quot;&gt;Light&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;rust&quot;&gt;Rust&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;coal&quot;&gt;Coal&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;navy&quot;&gt;Navy&lt;/button&gt;&lt;/li&gt;
++                            &lt;li role=&quot;none&quot;&gt;&lt;button role=&quot;menuitem&quot; class=&quot;theme&quot; id=&quot;ayu&quot;&gt;Ayu&lt;/button&gt;&lt;/li&gt;
++                        &lt;/ul&gt;
++                        {{#if search_enabled}}
++                        &lt;button id=&quot;search-toggle&quot; class=&quot;icon-button&quot; type=&quot;button&quot; title=&quot;Search. (Shortkey: s)&quot; aria-label=&quot;Toggle Searchbar&quot; aria-expanded=&quot;false&quot; aria-keyshortcuts=&quot;S&quot; aria-controls=&quot;searchbar&quot;&gt;
++                            &lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;
++                        &lt;/button&gt;
++                        {{/if}}
++                    &lt;/div&gt;
++
++                    &lt;h1 class=&quot;menu-title&quot;&gt;{{ book_title }}&lt;/h1&gt;
++
++                    &lt;div class=&quot;right-buttons&quot;&gt;
++                        {{#if print_enable}}
++                        &lt;a href=&quot;{{ path_to_root }}print.html&quot; title=&quot;Print this book&quot; aria-label=&quot;Print this book&quot;&gt;
++                            &lt;i id=&quot;print-button&quot; class=&quot;fa fa-print&quot;&gt;&lt;/i&gt;
++                        &lt;/a&gt;
++                        {{/if}}
++                        {{#if git_repository_url}}
++                        &lt;a href=&quot;{{git_repository_url}}&quot; title=&quot;Git repository&quot; aria-label=&quot;Git repository&quot;&gt;
++                            &lt;i id=&quot;git-repository-button&quot; class=&quot;fa {{git_repository_icon}}&quot;&gt;&lt;/i&gt;
++                        &lt;/a&gt;
++                        {{/if}}
++                        {{#if git_repository_edit_url}}
++                        &lt;a href=&quot;{{git_repository_edit_url}}&quot; title=&quot;Suggest an edit&quot; aria-label=&quot;Suggest an edit&quot;&gt;
++                            &lt;i id=&quot;git-edit-button&quot; class=&quot;fa fa-edit&quot;&gt;&lt;/i&gt;
++                        &lt;/a&gt;
++                        {{/if}}
++
++                    &lt;/div&gt;
++                &lt;/div&gt;
++
++                {{#if search_enabled}}
++                &lt;div id=&quot;search-wrapper&quot; class=&quot;hidden&quot;&gt;
++                    &lt;form id=&quot;searchbar-outer&quot; class=&quot;searchbar-outer&quot;&gt;
++                        &lt;input type=&quot;search&quot; id=&quot;searchbar&quot; name=&quot;searchbar&quot; placeholder=&quot;Search this book ...&quot; aria-controls=&quot;searchresults-outer&quot; aria-describedby=&quot;searchresults-header&quot;&gt;
++                    &lt;/form&gt;
++                    &lt;div id=&quot;searchresults-outer&quot; class=&quot;searchresults-outer hidden&quot;&gt;
++                        &lt;div id=&quot;searchresults-header&quot; class=&quot;searchresults-header&quot;&gt;&lt;/div&gt;
++                        &lt;ul id=&quot;searchresults&quot;&gt;
++                        &lt;/ul&gt;
++                    &lt;/div&gt;
++                &lt;/div&gt;
++                {{/if}}
++
++                &lt;!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM --&gt;
++                &lt;script&gt;
++                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
++                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
++                    // Get viewed page store
++                    var viewed_key = 'mdbook-viewed';
++                    var viewed_map = {};
++                    try {
++                        var viewed_storage = localStorage.getItem(viewed_key);
++                        if (viewed_storage) {
++                            viewed_map = JSON.parse(viewed_storage)
++                        }
++                    } catch (e) { }
++                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
++                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
++                        
++                        // Apply viewed style
++                        if (viewed_map[link.pathname]) {
++                            link.classList.add('md-viewed')
++                        }
++                    }); 
++                    // Mark viewed after 30s
++                    setTimeout(function() {
++                        viewed_map[location.pathname] = 1;
++                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
++                    }, 30000)
++                &lt;/script&gt;
++
++                &lt;div id=&quot;content&quot; class=&quot;content&quot;&gt;
++                    &lt;!-- Page table of contents --&gt;
++                    &lt;div class=&quot;sidetoc&quot;&gt;&lt;nav class=&quot;pagetoc&quot;&gt;&lt;/nav&gt;&lt;/div&gt;
++                    &lt;main&gt;
++                        {{{ content }}}
++                        &lt;div id=&quot;giscus-container&quot;&gt;&lt;/div&gt;
++                        &lt;div id=&quot;docsearch&quot;&gt;&lt;/div&gt;
++                    &lt;/main&gt;
++
++                    &lt;nav class=&quot;nav-wrapper&quot; aria-label=&quot;Page navigation&quot;&gt;
++                        &lt;!-- Mobile navigation buttons --&gt;
++                        {{#previous}}
++                            &lt;a rel=&quot;prev&quot; href=&quot;{{ path_to_root }}{{link}}&quot; class=&quot;mobile-nav-chapters previous&quot; title=&quot;Previous chapter&quot; aria-label=&quot;Previous chapter&quot; aria-keyshortcuts=&quot;Left&quot;&gt;
++                                &lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;
++                            &lt;/a&gt;
++                        {{/previous}}
++
++                        {{#next}}
++                            &lt;a rel=&quot;next prefetch&quot; href=&quot;{{ path_to_root }}{{link}}&quot; class=&quot;mobile-nav-chapters next&quot; title=&quot;Next chapter&quot; aria-label=&quot;Next chapter&quot; aria-keyshortcuts=&quot;Right&quot;&gt;
++                                &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;
++                            &lt;/a&gt;
++                        {{/next}}
++
++                        &lt;div style=&quot;clear: both&quot;&gt;&lt;/div&gt;
++                    &lt;/nav&gt;
++                &lt;/div&gt;
++            &lt;/div&gt;
++
++            &lt;nav class=&quot;nav-wide-wrapper&quot; aria-label=&quot;Page navigation&quot;&gt;
++                {{#previous}}
++                    &lt;a rel=&quot;prev&quot; href=&quot;{{ path_to_root }}{{link}}&quot; class=&quot;nav-chapters previous&quot; title=&quot;Previous chapter&quot; aria-label=&quot;Previous chapter&quot; aria-keyshortcuts=&quot;Left&quot;&gt;
++                        &lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;
++                    &lt;/a&gt;
++                {{/previous}}
++
++                {{#next}}
++                    &lt;a rel=&quot;next prefetch&quot; href=&quot;{{ path_to_root }}{{link}}&quot; class=&quot;nav-chapters next&quot; title=&quot;Next chapter&quot; aria-label=&quot;Next chapter&quot; aria-keyshortcuts=&quot;Right&quot;&gt;
++                        &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;
++                    &lt;/a&gt;
++                {{/next}}
++            &lt;/nav&gt;
++
++        &lt;/div&gt;
++
++        {{#if live_reload_endpoint}}
++        &lt;!-- Livereload script (if served using the cli tool) --&gt;
++        &lt;script&gt;
++            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
++            const wsAddress = wsProtocol + &quot;//&quot; + location.host + &quot;/&quot; + &quot;{{{live_reload_endpoint}}}&quot;;
++            const socket = new WebSocket(wsAddress);
++            socket.onmessage = function (event) {
++                if (event.data === &quot;reload&quot;) {
++                    socket.close();
++                    location.reload();
++                }
++            };
++            window.onbeforeunload = function() {
++                socket.close();
++            }
++        &lt;/script&gt;
++        {{/if}}
++
++        {{#if google_analytics}}
++        &lt;!-- Google Analytics Tag --&gt;
++        &lt;script&gt;
++            var localAddrs = [&quot;localhost&quot;, &quot;127.0.0.1&quot;, &quot;&quot;];
++            // make sure we don't activate google analytics if the developer is
++            // inspecting the book locally...
++            if (localAddrs.indexOf(document.location.hostname) === -1) {
++                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
++                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
++                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
++                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
++                ga('create', '{{google_analytics}}', 'auto');
++                ga('send', 'pageview');
++            }
++        &lt;/script&gt;
++        {{/if}}
++
++        {{#if playground_line_numbers}}
++        &lt;script&gt;
++            window.playground_line_numbers = true;
++        &lt;/script&gt;
++        {{/if}}
++
++        {{#if playground_copyable}}
++        &lt;script&gt;
++            window.playground_copyable = true;
++        &lt;/script&gt;
++        {{/if}}
++
++        {{#if playground_js}}
++        &lt;script src=&quot;{{ path_to_root }}ace.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}editor.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}mode-rust.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}theme-dawn.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}theme-tomorrow_night.js&quot;&gt;&lt;/script&gt;
++        {{/if}}
++
++        {{#if search_js}}
++        &lt;script src=&quot;{{ path_to_root }}elasticlunr.min.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}mark.min.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}searcher.js&quot;&gt;&lt;/script&gt;
++        {{/if}}
++
++        &lt;script src=&quot;{{ path_to_root }}clipboard.min.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}highlight.js&quot;&gt;&lt;/script&gt;
++        &lt;script src=&quot;{{ path_to_root }}book.js&quot;&gt;&lt;/script&gt;
++
++
++
++
++
++        &lt;!-- Custom JS scripts --&gt;
++        {{#each additional_js}}
++        &lt;script src=&quot;{{ ../path_to_root }}{{this}}&quot;&gt;&lt;/script&gt;
++        {{/each}}
++
++        {{#if is_print}}
++        {{#if mathjax_support}}
++        &lt;script&gt;
++        window.addEventListener('load', function() {
++            MathJax.Hub.Register.StartupHook('End', function() {
++                window.setTimeout(window.print, 100);
++            });
++        });
++        &lt;/script&gt;
++        {{else}}
++        &lt;script&gt;
++        window.addEventListener('load', function() {
++            window.setTimeout(window.print, 100);
++        });
++        &lt;/script&gt;
++        {{/if}}
++        {{/if}}
++
++    &lt;/div&gt;            
++
++        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js&quot;&gt;&lt;/script&gt;
++        &lt;script&gt;
++            const { autocomplete } = window['@algolia/autocomplete-js'];
++        &lt;/script&gt;
++
++        &lt;script type=&quot;text/javascript&quot;&gt;
++            docsearch({
++                appId: 'GX9RTL51BH',
++                apiKey: '364d7154cf1fa31bad0b8fd9c6018351',
++                indexName: 'tinysnowio',
++                container: '#docsearch'
++                debug: false // Set debug to true if you want to inspect the modal
++                });
++            autocomplete({
++              container: '#docsearch',
++              placeholder: '搜索 / Search',
++              getSources() {
++                return [];
++              },
++            });
++        &lt;/script&gt;
++    &lt;/body&gt;
++&lt;/html&gt;
 </code></pre>
 
                         <div id="giscus-container"></div>
@@ -212,7 +962,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="各领域入门.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="各领域入门.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -226,7 +976,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="各领域入门.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="各领域入门.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -236,29 +986,29 @@
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript" charset="utf-8">
-        var pagePath = "last-updated.md"
-        </script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+
+
 
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript" src="assets/custom.js"></script>
-        <script type="text/javascript" src="assets/bigPicture.js"></script>
+        <script src="assets/custom.js"></script>
+        <script src="assets/bigPicture.js"></script>
 
 
-            
+    </div>            
 
         <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
         <script>
