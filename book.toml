@@ -32,3 +32,6 @@ level = 0
 
 # [build]
 # use-default-preprocessors = false
+
+[output.html.search]
+enable = false
