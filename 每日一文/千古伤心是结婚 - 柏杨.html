@@ -52,7 +52,9 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
         />
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
     </head>
     <body class="sidebar-visible no-js">
     <div id="body-container">
@@ -156,9 +158,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
+                        <div id="docsearch" style="align-self: center;"></div>
                     </div>
 
                     <h1 class="menu-title">微雪博客</h1>
@@ -170,20 +170,9 @@
                         <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-
                     </div>
                 </div>
 
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
@@ -226,7 +215,6 @@
 <p>　　女博士嫁人当然是应该的，但如果她阁下折腾了半辈子不过只是煮饭抱娃，我们就忍不住要疑心，当初何必那么穷凶极恶，把臭男人从榜上挤到枯井里乎？当她阁下午夜人静，半闭着瞌睡得要命的秋波，从床上爬起来喂孩子奶时，隐隐约约，不知道听没听到枯井里的哭声也。吾友盛紫娟女士，她在香港读大学时，兼编了好几个刊物，日正当中，前途无量，却忽然结了婚。结婚之日，来信描写远景说，她丈夫是个大律师（也可能是个工程师，日子一久，记不清矣），生活不成问题，所以一定要好好写几本小说。我老人家就一百个不信，盖小姐一旦变成太太，她的朋友圈就会来一个 180 度的转弯，生活方式也会跟着别有天地，而且一有了孩子，更是全盘皆垮。不要说写小说，能有心情看小说，已很可贵矣。她对我的看法颇不服气，在信上致训词曰：“你这个老顽固，总自以为是，总用你过去的陈腐经验去判断新的事物，务请拭目以待。”好吧，我就拭目以待，拭到了今天，已整整 5 年，她不但没有一本小说问世，而且音讯杳然，像是从地球上失了踪。呜呼，非她不上进也，而是形势比人强也。不过女作家和女博士之间又有不同，女作家 20 年之后，儿女渐渐长成，她仍可继续爬她的稿纸，起初可能有点生疏，久了也就可以应付，而且随着年龄见识的增长，作品或许可能更成熟。可是女博士学的是航空工程，20 年之后——不要说 20 年之后，纵使 3 年之后，她学的那一套已落伍了十万八千里，她就不得不成为废料。</p>
 
                         <div id="giscus-container"></div>
-                        <div id="docsearch"></div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -264,45 +252,46 @@
         </script>
 
 
-        <script src="../elasticlunr.min.js"></script>
-        <script src="../mark.min.js"></script>
-        <script src="../searcher.js"></script>
 
         <script src="../clipboard.min.js"></script>
         <script src="../highlight.js"></script>
         <script src="../book.js"></script>
 
 
-
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "每日一文/千古伤心是结婚 - 柏杨.md"
+        </script>
 
 
         <!-- Custom JS scripts -->
         <script src="../assets/custom.js"></script>
         <script src="../assets/bigPicture.js"></script>
 
+            
 
-    </div>            
-
-        <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+<!--         <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
         <script>
             const { autocomplete } = window['@algolia/autocomplete-js'];
-        </script>
+        </script> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 
         <script type="text/javascript">
             docsearch({
                 appId: 'GX9RTL51BH',
-                apiKey: '364d7154cf1fa31bad0b8fd9c6018351',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
                 indexName: 'tinysnowio',
-                container: '#docsearch'
+                container: '#docsearch',
                 debug: false // Set debug to true if you want to inspect the modal
-                });
-            autocomplete({
-              container: '#docsearch',
-              placeholder: '搜索 / Search',
-              getSources() {
-                return [];
-              },
             });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
         </script>
+    </div>
     </body>
 </html>

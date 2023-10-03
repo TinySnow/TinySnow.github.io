@@ -116,16 +116,9 @@ var initAll = function () {
         pagePath = "index"
     }
 
-    // add visitors count
-    var ele = document.createElement("div");
-    ele.setAttribute("align","center");
-    var count = document.createElement("img")
-    count.setAttribute("src", "https://visitor-badge.glitch.me/badge?page_id=" + path);
-    ele.appendChild(count);
-    var divider =document.createElement("hr")
+    var divider = document.createElement("hr")
 
     document.getElementById("giscus-container").appendChild(divider);
-    document.getElementById("giscus-container").appendChild(ele);
 
     // 选取浏览器默认使用的语言
     const lang = navigator.language || navigator.userLanguage
@@ -137,25 +130,25 @@ var initAll = function () {
         theme = "light"
     }
 
-    var script = document.createElement("script")
-    script.type = "text/javascript";
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    script.setAttribute("data-repo", "TinySnow/TinySnow.github.io");
-    script.setAttribute("data-repo-id", "MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc=");
-    script.setAttribute("data-category", "Discussions");
-    script.setAttribute("data-category-id", "DIC_kwDOFN98h84CTDFJ");
-    script.setAttribute("data-mapping", "specific");
-    script.setAttribute("data-term", pagePath);
-    script.setAttribute("data-reactions-enabled", "1");
-    script.setAttribute("data-emit-metadata", "0");
-    script.setAttribute("data-input-position", "top");
-    script.setAttribute("data-theme", theme);
-    script.setAttribute("data-lang", lang);
+    var giscusContainer = document.createElement("script")
+    giscusContainer.type = "text/javascript";
+    giscusContainer.src = "https://giscus.app/client.js";
+    giscusContainer.async = true;
+    giscusContainer.setAttribute("crossOrigin", "anonymous");
+    giscusContainer.setAttribute("data-repo", "TinySnow/TinySnow.github.io");
+    giscusContainer.setAttribute("data-repo-id", "MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc=");
+    giscusContainer.setAttribute("data-category", "Announcements");
+    giscusContainer.setAttribute("data-category-id", "DIC_kwDOFN98h84CTDFJ");
+    giscusContainer.setAttribute("data-mapping", "specific");
+    // giscusContainer.setAttribute("data-term", pagePath);
+    giscusContainer.setAttribute("data-reactions-enabled", "1");
+    giscusContainer.setAttribute("data-emit-metadata", "0");
+    giscusContainer.setAttribute("data-input-position", "top");
+    giscusContainer.setAttribute("data-theme", theme);
+    giscusContainer.setAttribute("data-lang", lang);
     // 预先加载评论会更好，这样用户读到那边时，评论就加载好了
-    script.setAttribute("data-loading", "lazy");
-    document.getElementById("giscus-container").appendChild(script);
+    giscusContainer.setAttribute("data-loading", "lazy");
+    document.getElementById("giscus-container").appendChild(giscusContainer);
 
 };
 
