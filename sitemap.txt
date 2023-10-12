@@ -136,6 +136,7 @@ https://tinysnow.github.io/每日一文/斗车 - 芥川龙之介
 https://tinysnow.github.io/每日一文/断爱近涅盘 - 林清玄
 https://tinysnow.github.io/每日一文/无人看管的面包圈 - 张抒
 https://tinysnow.github.io/每日一文/无酱不欢 - 蔡澜
+https://tinysnow.github.io/每日一文/旧书去哪里了 - 梁文道
 https://tinysnow.github.io/每日一文/早起看人间 - 罗兰
 https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
 https://tinysnow.github.io/每日一文/朋友 - 贾平凹
@@ -527,6 +528,7 @@ https://tinysnow.github.io/断章/诗词/减字木兰花 · 伊愿
 https://tinysnow.github.io/断章/诗词/卿语
 https://tinysnow.github.io/断章/诗词/变
 https://tinysnow.github.io/断章/诗词/在你的瞳孔里
+https://tinysnow.github.io/断章/诗词/在星空下坠落
 https://tinysnow.github.io/断章/诗词/在深夜里出逃
 https://tinysnow.github.io/断章/诗词/复活
 https://tinysnow.github.io/断章/诗词/夏影
@@ -580,6 +582,7 @@ https://tinysnow.github.io/断章/赠与/给三年后自己的一封信
 https://tinysnow.github.io/断章/赠与/致三年前自己的回信
 https://tinysnow.github.io/断章/赠与/致两年前自己的回信
 https://tinysnow.github.io/断章/赠与/致两年后自己的一封信
+https://tinysnow.github.io/断章/赠与/致五年后自己的一封信
 https://tinysnow.github.io/断章/赠与/致南国微雪频道每一位订阅者的一封信
 https://tinysnow.github.io/断章/赠与/赠与
 https://tinysnow.github.io/断章/赠与/频道千人感谢祭
