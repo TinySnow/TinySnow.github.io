@@ -9,6 +9,7 @@
 
 - Mdbook 旧版本升级为 Latest 时，修改了 index.hbs 文件模板
 - 可以通过新版 Mdbook 新建工程时，建立的新 index.hbs 文件看出
+  - 对比文件推荐使用 WinMerge，很好用
 
 ## 解决
 
