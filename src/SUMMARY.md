@@ -6,6 +6,7 @@
 - [问题总表 | Problems](问题总表.md)
 -----
 - [每日一文 | Daily Article](每日一文/每日一文.md)
+  - [对你好 - 亦舒](每日一文/对你好%20-%20亦舒.md)
   - [清贫与富贵 - 梁文道](每日一文/清贫与富贵%20-%20梁文道.md)
   - [八宝饭 - 梁实秋](每日一文/八宝饭%20-%20梁实秋.md)
   - [科学的美好 - 王小波](每日一文/科学的美好%20-%20王小波.md)
@@ -269,6 +270,7 @@
   - [知识 | Knowledge](技术/Knowledge.md)
   - [报错处理 | Errors and Solutions](技术/Errors.md)
   - [常用命令 | Commands](技术/Commands.md)
+  - [其他 | Others](技术/Others.md)
   - [ArchLinux RISC-V](技术/ArchRISC-V/ArchRISC-V.md)
     - [Packages](技术/ArchRISC-V/Packages/Packages.md)
       - [fluidd](技术/ArchRISC-V/Packages/fluidd.md)
