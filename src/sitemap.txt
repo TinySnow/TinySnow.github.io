@@ -192,6 +192,7 @@ https://tinysnow.github.io/每日一文/爸爸的味道 - 张小娴
 https://tinysnow.github.io/每日一文/狗这一生不容易 - 王宏哲
 https://tinysnow.github.io/每日一文/狗难 - 柯灵
 https://tinysnow.github.io/每日一文/独处是一种能力 - 周国平
+https://tinysnow.github.io/每日一文/狼叔叔 - 伊塔洛 · 卡尔维诺
 https://tinysnow.github.io/每日一文/猫城的故事 - 村上春树
 https://tinysnow.github.io/每日一文/猴子 - 芥川龙之介
 https://tinysnow.github.io/每日一文/王府大街 64 号 - 雷达
@@ -826,6 +827,7 @@ https://tinysnow.github.io/读书/零零散散/二十首情诗和一首绝望的
 https://tinysnow.github.io/读书/零零散散/人间告白
 https://tinysnow.github.io/读书/零零散散/众病之王：癌症传
 https://tinysnow.github.io/读书/零零散散/你当像鸟飞往你的山
+https://tinysnow.github.io/读书/零零散散/力哥说理财：手把手教你玩转基金
 https://tinysnow.github.io/读书/零零散散/大型网站技术架构：核心原理与案例分析
 https://tinysnow.github.io/读书/零零散散/如何阅读一本书
 https://tinysnow.github.io/读书/零零散散/小狗钱钱

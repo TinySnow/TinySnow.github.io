@@ -18,3 +18,7 @@ start mshta vbscript:createobject("wscript.shell").run("""%~nx0"" h",0)(window.c
 :begin
 ```
 
+### 查看电脑型号
+
+- `wmic csproduct get name`
+
