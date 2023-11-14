@@ -39,6 +39,7 @@ https://tinysnow.github.io/每日一文/书店男与超市女 - 姬中宪
 https://tinysnow.github.io/每日一文/买牛肉须知 - 姬中宪
 https://tinysnow.github.io/每日一文/二手衣 - 亦舒
 https://tinysnow.github.io/每日一文/京片子与民族自信心 - 王小波
+https://tinysnow.github.io/每日一文/京都老蔡记 - 蔡澜
 https://tinysnow.github.io/每日一文/亲爱的小孩 - 陈晓霞
 https://tinysnow.github.io/每日一文/人生实苦 - 杨绛
 https://tinysnow.github.io/每日一文/人类的群星闪耀时 - 茨威格
@@ -833,6 +834,7 @@ https://tinysnow.github.io/读书/零零散散/二十首情诗和一首绝望的
 https://tinysnow.github.io/读书/零零散散/人间告白
 https://tinysnow.github.io/读书/零零散散/众病之王：癌症传
 https://tinysnow.github.io/读书/零零散散/你当像鸟飞往你的山
+https://tinysnow.github.io/读书/零零散散/力哥说理财：小白理财入门必修课
 https://tinysnow.github.io/读书/零零散散/力哥说理财：手把手教你玩转基金
 https://tinysnow.github.io/读书/零零散散/大型网站技术架构：核心原理与案例分析
 https://tinysnow.github.io/读书/零零散散/如何阅读一本书
