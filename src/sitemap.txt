@@ -170,6 +170,7 @@ https://tinysnow.github.io/每日一文/无酱不欢 - 蔡澜
 https://tinysnow.github.io/每日一文/旧书去哪里了 - 梁文道
 https://tinysnow.github.io/每日一文/早起看人间 - 罗兰
 https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
+https://tinysnow.github.io/每日一文/月亮不见了 - 叶倾城
 https://tinysnow.github.io/每日一文/有毒的兔子 - 伊塔洛 · 卡尔维诺
 https://tinysnow.github.io/每日一文/朋友 - 贾平凹
 https://tinysnow.github.io/每日一文/未婚夫和爸爸 - 契诃夫
@@ -605,6 +606,7 @@ https://tinysnow.github.io/断章/文章/猫猫戒指
 https://tinysnow.github.io/断章/文章/理想的南国微雪
 https://tinysnow.github.io/断章/文章/瓦罐饭与糖
 https://tinysnow.github.io/断章/文章/番茄
+https://tinysnow.github.io/断章/文章/社会正在复制人类
 https://tinysnow.github.io/断章/文章/篮球女孩
 https://tinysnow.github.io/断章/文章/给女性
 https://tinysnow.github.io/断章/文章/给男性
@@ -871,6 +873,7 @@ https://tinysnow.github.io/读书/零零散散/如何阅读一本书
 https://tinysnow.github.io/读书/零零散散/小狗钱钱
 https://tinysnow.github.io/读书/零零散散/山茶文具店
 https://tinysnow.github.io/读书/零零散散/强风吹拂
+https://tinysnow.github.io/读书/零零散散/徐建明谈理财：观念决定一生的财富
 https://tinysnow.github.io/读书/零零散散/快速抓重点，过目不忘的阅读术
 https://tinysnow.github.io/读书/零零散散/我与地坛
 https://tinysnow.github.io/读书/零零散散/我想要两颗西柚
