@@ -4,63 +4,52 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## SUMMARY.md
-
-```diff
-
-@@ -6,6 +6,7 @@
- - [问题总表 | Problems](问题总表.md)
- -----
- - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [打赌 - 契诃夫](每日一文/打赌%20-%20契诃夫.md)
-   - [握手 - 梁实秋](每日一文/握手%20-%20梁实秋.md)
-   - [霍乱时期的爱情（节选）- 加西亚 · 马尔克斯](每日一文/霍乱时期的爱情（节选）-%20加西亚%20·%20马尔克斯.md)
-   - [孩子为什么一定要上学 - 大江健三郎](每日一文/孩子为什么一定要上学%20-%20大江健三郎.md)
-```
-
 ## sitemap.txt
 
 ```diff
 
-@@ -158,6 +158,7 @@ https://tinysnow.github.io/每日一文/捣乱者的作用 - 保罗 · 科埃略
- https://tinysnow.github.io/每日一文/掉到井里的人 - 卡夫卡
- https://tinysnow.github.io/每日一文/排队 - 梁实秋
- https://tinysnow.github.io/每日一文/排骨萝卜汤 - 梁实秋
-+https://tinysnow.github.io/每日一文/握手 - 梁实秋
- https://tinysnow.github.io/每日一文/摆脱童稚状态 - 王小波
- https://tinysnow.github.io/每日一文/救世情结与白日梦 - 王小波
- https://tinysnow.github.io/每日一文/敬酒要喝 - 梁文道
+@@ -151,6 +151,7 @@ https://tinysnow.github.io/每日一文/我来讲一个故事 - 加西亚 · 马
+ https://tinysnow.github.io/每日一文/我的呈奶酪蛋糕形状的贫穷 - 村上春树
+ https://tinysnow.github.io/每日一文/我看国学 - 王小波
+ https://tinysnow.github.io/每日一文/打工经历 - 王小波
++https://tinysnow.github.io/每日一文/打赌 - 契诃夫
+ https://tinysnow.github.io/每日一文/抽象的爱国 - 梁文道
+ https://tinysnow.github.io/每日一文/捉弄 - 契诃夫
+ https://tinysnow.github.io/每日一文/捕快张三 - 汪曾祺
 ```
 
-## 打赌 - 契诃夫.md
+## 第七章：存储器.md
 
 ```diff
 
-@@ -0,0 +1,25 @@
-+# 打赌
-+
-+*契诃夫*
-+
-+　　一个昏暗的秋夜，老银行家回忆起了 15 年前举办的一次晚会，大家谈到了死刑问题。有些人认为世界各地都应废除死刑，而代之以无期徒刑。
-+
-+　　“我不同意诸位的看法，”举办晚会的银行家说，“死刑是立即处死，可是终身监禁却是把人缓慢地处死，使人受好多年罪。你说哪一个更合乎人道主义呢？”一位 25 岁的年轻律师说：“我当然赞成无期徒刑。好死不如赖活着嘛。”大家激烈地争论起来。银行家突然冲着那年轻人嚷道：“你说的不对！我敢打赌，你要是甘愿单独被囚禁 15 年，我就付给你两百万卢布。”
-+
-+　　“如果你说话算数，”那个年轻人说，“我甘愿囚禁 15 年。”“一言为定！”银行家嚷道。这场疯狂的愚眛的打赌居然执行了。那年轻人在最严密的监视之下，住在银行家的花园里某一个小屋中。
-+
-+　　在监禁的第一年，他拒绝烟酒，他要的书籍，主要是轻松读物。
-+
-+　　第二年，他只索取古典作品。第五年，他要求喝酒。从窗口监视他的人说，他除了吃喝便是躺在床上睡觉，或是愤怒地自言自语。不止一次，听见他在哭泣。
-+
-+　　第六年的上半年，被监禁者开始学习语言、哲学、历史。从那时起的四年时间，应他的请求买了六百来卷书。
-+
-+　　第十年以后，被监者在桌前静坐不动，除了《福音书》外什么书也不看。后来，被监禁者又读了神学书籍和宗教史。
-+
-+　　老银行家想：“明天 12 点钟他就要重新获得自由了。我得要付给他两百万卢布，这样我就会倾家荡产。”
-+
-+　　老银行家悄无声息地穿上大衣走出去，来到了小屋窗外。桌旁一动不动地坐着一个人，他的脸色蜡黄，双颊瘪了进去，背脊瘦而狭长，一只手支着乱蓬蓬的头，谁也不会相信，他只有 40 岁。他睡着了，桌上放着一张纸。
-+
-+　　银行家推门进去，看到上面的字句：“明天 12 点，我就要重新获得自由。在离开之前，我想对你说几句话。你的书本给了我智慧，可我现在鄙视智慧和人世间的幸福。这些都毫无价值，如过眼云烟一样漂浮，你们可能聪慧，美好，不可一世，可是到头来死神一下子把你们像地下掘洞的老鼠一样扫的无影无踪。你们的后嗣，你们的历史，将要和地球一起烧为灰烬或冻为冰块。为了以行动证明我的鄙视，我自动放弃两百万卢布，我将于规定时间的 5 小时前出去，从而违背契约，剥夺自己得到这笔钱的权利。”老银行家流着泪走出了小屋。
-+
-+　　第二天早晨，几个看园人面色惨白地禀告小屋里的那个人不见了。银行家点点头，他来到小屋，从桌子上拿起那张自愿放弃两百万卢布的信函，回到家里锁进了防火保险箱。
-\ No newline at end of file
+@@ -30,7 +30,9 @@
+ 
+ 　　那与门和或门各自首尾相连，会有什么效果呢？
+ 
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/and-head-tail-connect.gif)
+ 
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/or-head-tail-connect.gif)
+ 
+ 　　与门和或门在某次输入一个信号之后，无论怎样改变输入值，都不会再改变输出值了。也就是说，有个信号“触发”了变化。
+ 
+
+@@ -40,7 +42,7 @@
+ 
+ 　　接下来我们把三大逻辑门按照下面的顺序，连接起来，形成一个奇怪的结构，研究它的真值表。
+ 
+-
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/and-or-latch.gif)
+ 
+ 　　这个结构，具有记忆和存储的功能。取名为：AND-OR 锁存器。
+ 
+
+@@ -48,7 +50,7 @@
+ 
+ 　　上面的设计虽然达到了目的，但还是有些复杂，所以，我们打算只用两个输入端：D(Data) 为数据端，WE(Write Enable，允许写入) 为控制端。
+ 
+-
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/gated-latch.gif)
+ 
+ ### 触发器
+ 
 ```
