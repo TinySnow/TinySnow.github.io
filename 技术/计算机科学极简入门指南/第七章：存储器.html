@@ -225,13 +225,17 @@
 <p>　　<u>时钟</u> 就是字面意思，就像一个钟表一刻一刻地走， <u>用来标记时序</u> ，但现实时钟有 12 个单位，而二进制时钟只有 2 个单位，所以 <strong>时钟会一直在 0 和 1 中间跳变，永不停息</strong> 。</p>
 <p>　　<strong>之所以是简单的时钟，是因为当逻辑门叠加越多，其延迟越高。</strong> 而非门首尾相连构成的时钟跳变速度极快，其他逻辑部件（如加法器、乘法器、锁存器、触发器和选择器等）变化跟不上。简单起见，我们假设所有部件跳变速度一致，不存在这个问题。</p>
 <p>　　那与门和或门各自首尾相连，会有什么效果呢？</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/and-head-tail-connect.gif" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/or-head-tail-connect.gif" alt="" /></p>
 <p>　　与门和或门在某次输入一个信号之后，无论怎样改变输入值，都不会再改变输出值了。也就是说，有个信号“触发”了变化。</p>
 <p>　　这给了我们一个很重要的启示： <strong>逻辑门可以首尾相连，达到意想不到的效果。</strong></p>
 <h4 id="and-or-锁存器"><a class="header" href="#and-or-锁存器">AND-OR 锁存器</a></h4>
 <p>　　接下来我们把三大逻辑门按照下面的顺序，连接起来，形成一个奇怪的结构，研究它的真值表。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/and-or-latch.gif" alt="" /></p>
 <p>　　这个结构，具有记忆和存储的功能。取名为：AND-OR 锁存器。</p>
 <h4 id="d-锁存器"><a class="header" href="#d-锁存器">D 锁存器</a></h4>
 <p>　　上面的设计虽然达到了目的，但还是有些复杂，所以，我们打算只用两个输入端：D(Data) 为数据端，WE(Write Enable，允许写入) 为控制端。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/gated-latch.gif" alt="" /></p>
 <h3 id="触发器"><a class="header" href="#触发器">触发器</a></h3>
 <h4 id="rs-触发器"><a class="header" href="#rs-触发器">RS 触发器</a></h4>
 <p>　　上述 AND-OR 锁存器可以采取另一种逻辑门实现方案，如下所示：</p>
