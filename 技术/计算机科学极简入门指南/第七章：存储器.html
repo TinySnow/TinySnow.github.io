@@ -222,7 +222,7 @@
 <h4 id="首尾相连"><a class="header" href="#首尾相连">首尾相连</a></h4>
 <p>　　回想一下，非门将输入取反。那如果首尾相接会怎么样？非门会直接短路吗？</p>
 <p>　　正如上面的图所示，非门不仅不会短路，而且输出会一直在 0 和 1 之间跳动。这是一个非常有意思的事情。 <u>利用这个性质可以做一个简单的时钟。</u></p>
-<p>　　<u>时钟</u> 就是字面意思，就像一个钟表一刻一刻地走， <u>用来标记时序</u> ，但现实时钟有 12 个单位，而二进制时钟只有 2 个单位，所以 <strong>时钟会一直在 0 和 1 中间跳变，永不停息</strong> 。</p>
+<p>　　<u>时钟</u> 就是字面意思，就像一个钟表一刻一刻地走， <u>用来标记时序</u> ，但现实时钟有 12 个单位，会从 1 走到 12 然后归位，而二进制时钟只有 2 个单位，所以 <strong>时钟会一直在 0 和 1 中间跳变，永不停息</strong> 。</p>
 <p>　　<strong>之所以是简单的时钟，是因为当逻辑门叠加越多，其延迟越高。</strong> 而非门首尾相连构成的时钟跳变速度极快，其他逻辑部件（如加法器、乘法器、锁存器、触发器和选择器等）变化跟不上。简单起见，我们假设所有部件跳变速度一致，不存在这个问题。</p>
 <p>　　那与门和或门各自首尾相连，会有什么效果呢？</p>
 <p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/and-head-tail-connect.gif" alt="" /></p>
@@ -231,42 +231,137 @@
 <p>　　这给了我们一个很重要的启示： <strong>逻辑门可以首尾相连，达到意想不到的效果。</strong></p>
 <h4 id="and-or-锁存器"><a class="header" href="#and-or-锁存器">AND-OR 锁存器</a></h4>
 <p>　　接下来我们把三大逻辑门按照下面的顺序，连接起来，形成一个奇怪的结构，研究它的真值表。</p>
+<ul>
+<li>结构</li>
+</ul>
 <p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/and-or-latch.gif" alt="" /></p>
-<p>　　这个结构，具有记忆和存储的功能。取名为：AND-OR 锁存器。</p>
+<ul>
+<li>真值表</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">设置端 S(et)</th><th style="text-align: center">重置端 R(eset)</th><th style="text-align: center">输出 Y</th></tr></thead><tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">上一次的输出 Y</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">0</td></tr>
+</tbody></table>
+</div>
+<p>　　当 S = 0 并且 R = 0 时，下一次的输出 Y 取决于图中或门的另一个引脚，而该引脚连接到了上一次的输出 Y。所以，下一次的输出 Y 等于上一次的输出 Y。 <strong>换句话说，当 S = 0 并且 R = 0 时，这个结构锁住了输入的值。</strong></p>
+<ul>
+<li>如果觉得不好理解，把三种情况列出来就明白了：</li>
+<li>当 S = <strong>1</strong> , R = 0 变为 S = 0, R = 0 时，之前的输出 Y 为 1，变化后为 1，之后也一直为 1</li>
+<li>当 S = 0, R = <strong>1</strong> 变为 S = 0, R = 0 时，之前的输出 Y 为 0，变化后为 0，之后也一直为 0</li>
+<li>当 S = <strong>1</strong> , R = <strong>1</strong> 变为 S = 0, R = 0 时，之前的输出 Y 为 0，变化后为 0，之后也一直为 0</li>
+</ul>
+<p>　　所以，这个结构，具有记忆和存储的功能。取名为：AND-OR 锁存器。</p>
 <h4 id="d-锁存器"><a class="header" href="#d-锁存器">D 锁存器</a></h4>
 <p>　　上面的设计虽然达到了目的，但还是有些复杂，所以，我们打算只用两个输入端：D(Data) 为数据端，WE(Write Enable，允许写入) 为控制端。</p>
 <p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/gated-latch.gif" alt="" /></p>
+<p>　　功能为： <strong>当 WE 为 1 时，输出 Y 的值等于输入端 D 的值；当 WE 为 0 时，不允许写入，输出 Y 的值为上一次输出的值。</strong></p>
 <h3 id="触发器"><a class="header" href="#触发器">触发器</a></h3>
-<h4 id="rs-触发器"><a class="header" href="#rs-触发器">RS 触发器</a></h4>
+<h4 id="sr-触发器"><a class="header" href="#sr-触发器">SR 触发器</a></h4>
 <p>　　上述 AND-OR 锁存器可以采取另一种逻辑门实现方案，如下所示：</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/rs-trigger.gif" alt="" /></p>
 <p>　　注意，图中是 nand，也即与非门，从晶体管的角度来说，nand 门要更划算（详见第三章：简单逻辑门的补充部分）。</p>
-<p>　　这个东西有另一个名字：RS 触发器。RS 触发器有两个输入端：S(Set) 为设置端，R(Reset) 为重置端。</p>
+<p>　　这个东西有另一个名字：SR 触发器。SR 触发器有两个输入端：S(Set) 为设置端，R(Reset) 为重置端。</p>
+<ul>
+<li>特征方程（输出公式）：Q<sub>next</sub> = S + <span style="text-decoration:overline">R</span> · Q，且 R · S = 0
+<ul>
+<li><span style="text-decoration:overline">R</span>
+<ul>
+<li>意为 R 的反相，即 R 取反后的值，读作：R 反</li>
+<li>部分教程写作 <code>R'</code>，写法不同，效果相同</li>
+</ul>
+</li>
+<li>R · S
+<ul>
+<li>意为 R <strong>与</strong> S，也意为 R 和 S 取 <strong>交集</strong> </li>
+<li>离散数学和集合论术语，等同于 R ∧ S</li>
+<li>在二进制运算上可以 <strong>一定程度上</strong> 等同于 <strong>乘法</strong> 运算</li>
+</ul>
+</li>
+<li>R + S
+<ul>
+<li>同理， 意为 R <strong>或</strong> S，也意为 R 和 S 取 <strong>并集</strong></li>
+<li>离散数学和集合论术语，等同于 R ∨ S</li>
+<li>在二进制运算上可以 <strong>一定程度上</strong> 等同于 <strong>加法</strong> 运算</li>
+</ul>
+</li>
+<li>运算优先级，同十进制加法和乘法运算法则：先乘后加，括号先算</li>
+<li><strong>后文真值表中 X 为 无意义 或者 任意值均可</strong></li>
+</ul>
+</li>
+<li>状态转移表</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">S</th><th style="text-align: center">R</th><th style="text-align: center">Q<sub>next</sub></th><th style="text-align: center">动作</th></tr></thead><tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">Q</td><td style="text-align: center">保持</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">重置</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">设置</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">X</td><td style="text-align: center">不允许的输入</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>激励表（专业术语，意为上一个输出怎样 影响或激励 下一个输出，所以 Q 在前）</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Q</th><th style="text-align: center">Q<sub>next</sub></th><th style="text-align: center">S</th><th style="text-align: center">R</th></tr></thead><tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">X</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">X</td><td style="text-align: center">0</td></tr>
+</tbody></table>
+</div>
 <h4 id="电平触发和边沿触发"><a class="header" href="#电平触发和边沿触发">电平触发和边沿触发</a></h4>
 <p>　　感觉一切都很完美了。 <strong>但是如果输入的信号并不是期望的信号，而是被干扰的信号呢？</strong> 比如，希望输入 1，但在传输过程中，由于发热或者噪声等原因，导致电子能量逐渐减弱，降到门电压阈值之下，被逻辑门看作了 0。那么输出不就全错了？</p>
 <p>　　<strong>为此，计算机科学家们设计了根据时钟跳变变化的的边沿触发。边沿是指 <code>1 跳变为 0</code> 或 <code>0 跳变为 1</code> 的一瞬间。根据跳变的方向不同，可以分为上升沿和下降沿，因此触发器也分为上升沿触发和下降沿触发。</strong></p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/clock-wave.png" alt="" /></p>
 <p>　　边沿触发可以有效解决传输错误的问题。电平只有在单方向跳变时才发生改变，所以电平被干扰和电平反方向跳变均不会引起改变。</p>
 <h4 id="d-触发器"><a class="header" href="#d-触发器">D 触发器</a></h4>
-<p>　　改造上述的 D 锁存器，改为边沿触发。同样，两个输入端：D(Data) 为数据端，但 WE(Write Enable，允许写入) 改为 CP(Clock Pulse，时钟脉冲) 作为信号端，接受一个上升沿或下降沿作为有效输入，其他时间无论高电平和低电平，均视为不允许写入。</p>
-<p>　　D 触发器本质是，当每一个上升沿或下降沿触发 CP 端时，将 D 端目前的值输出并锁存。</p>
-<p>　　D 触发器的真值表如下：</p>
-<p>　　从真值表可以很显然地推导出 D 触发器的输出公式：Q<sub>next</sub> = D。</p>
+<p>　　改造上述的 D 锁存器，改为边沿触发。同样，两个输入端：D(Data) 为数据端，但 WE(Write Enable，允许写入) 改为 Clk(Clock，时钟脉冲) 作为信号端，接受一个上升沿或下降沿作为有效输入，其他时间无论高电平和低电平，均视为不允许写入。</p>
+<p>　　D 触发器的功能是： <strong>当每一个上升沿或下降沿触发 Clk 端时，将 D 端目前的值输出并锁存。</strong></p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/d-trigger.png" alt="" /></p>
+<ul>
+<li>特征方程（输出公式）：Q<sub>next</sub> = D</li>
+<li>真值表</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">D</th><th style="text-align: center">Clk</th><th style="text-align: center">Q</th><th style="text-align: center">Q<sub>next</sub></th></tr></thead><tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">↑（上升沿）</td><td style="text-align: center">X</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">↑（上升沿）</td><td style="text-align: center">X</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">X</td><td style="text-align: center">0 或 1</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">X</td><td style="text-align: center">0 或 1</td><td style="text-align: center">1</td><td style="text-align: center">1</td></tr>
+</tbody></table>
+</div>
 <h4 id="jk-触发器"><a class="header" href="#jk-触发器">JK 触发器</a></h4>
 <p>　　JK 触发器过于复杂，此处不展开。只贴出其原理图、真值表和输出公式，感兴趣的读者可以自行推导。</p>
 <ul>
-<li>
-<p>输出公式：Q<sub>next</sub> =</p>
-</li>
-<li>
-<p>真值表</p>
-</li>
-<li>
-<p>原理图</p>
-</li>
+<li>原理图</li>
 </ul>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/jk-trigger.png" alt="" /></p>
+<ul>
+<li>特征方程（输出公式）：Q<sub>next</sub> = <span style="text-decoration:overline">K</span> · Q + J · <span style="text-decoration:overline">Q</span></li>
+<li>状态转移表</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">J</th><th style="text-align: center">K</th><th style="text-align: center">Clk</th><th style="text-align: center">动作</th><th style="text-align: center">Q<sub>next</sub></th></tr></thead><tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">↑</td><td style="text-align: center">保持</td><td style="text-align: center">Q</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">↑</td><td style="text-align: center">重置</td><td style="text-align: center">0</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">↑</td><td style="text-align: center">设置</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">↑</td><td style="text-align: center">反转</td><td style="text-align: center"><span style="text-decoration:overline">Q</span></td></tr>
+<tr><td style="text-align: center">X</td><td style="text-align: center">X</td><td style="text-align: center">0 或 1</td><td style="text-align: center">保持</td><td style="text-align: center">Q</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li>激励表</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Q</th><th style="text-align: center">Q<sub>next</sub></th><th style="text-align: center">动作</th><th style="text-align: center">J</th><th style="text-align: center">K</th></tr></thead><tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">不变</td><td style="text-align: center">0</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">设置</td><td style="text-align: center">1</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">重置</td><td style="text-align: center">X</td><td style="text-align: center">1</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">不变</td><td style="text-align: center">X</td><td style="text-align: center">0</td></tr>
+</tbody></table>
+</div>
 <h3 id="存储器"><a class="header" href="#存储器">存储器</a></h3>
 <p>　　将上面的锁存器或触发器连接起来，可以形成存储器。</p>
 <h4 id="简单排列"><a class="header" href="#简单排列">简单排列</a></h4>
 <p>　　简单堆叠 8 个、16 个、32 个、64 个锁存器或触发器，可形成 8 位、16 位、32 位、64 位的存储器。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/8-bit-memory.gif" alt="" /></p>
 <p>　　然而，这种方式，位宽越大，成本越高。因为需要的引脚翻倍增长。</p>
 <ul>
 <li>8 位引脚数：1（允许写入）+ 8（数据输入）+ 8（数据输出）= 17</li>
@@ -278,7 +373,8 @@
 </ul>
 <p>　　现代计算机大多都有 64 位，这样的成本不可接受。</p>
 <h4 id="矩阵排列"><a class="header" href="#矩阵排列">矩阵排列</a></h4>
-<p>　　将锁存器或触发器呈矩阵排列可以解决上述问题，</p>
+<p>　　将锁存器或触发器呈矩阵排列可以解决上述问题。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/cs-teaching/chapter-7/matrix-gate-latches.gif" alt="" /></p>
 <h2 id="小结"><a class="header" href="#小结">小结</a></h2>
 <h3 id="知识点"><a class="header" href="#知识点">知识点</a></h3>
 <ul>
@@ -292,7 +388,7 @@
 <li>边沿触发</li>
 <li>触发器
 <ul>
-<li>RS 触发器</li>
+<li>SR 触发器</li>
 <li>D 触发器</li>
 <li>JK 触发器</li>
 </ul>
