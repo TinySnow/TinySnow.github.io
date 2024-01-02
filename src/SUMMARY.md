@@ -4,6 +4,7 @@
 - [最近更新 | Last Updated](last-updated.md)
 - [各领域入门 | How to Learn](各领域入门.md)
 - [问题总表 | Problems](问题总表.md)
+- [年度计划 | Year Plan](年度计划.md)
 -----
 - [每日一文 | Daily Article](每日一文/每日一文.md)
   - [给我一个岛 - 席慕容](每日一文/给我一个岛%20-%20席慕容.md)
