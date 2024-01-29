@@ -3,7 +3,7 @@ https://tinysnow.github.io/last-updated
 https://tinysnow.github.io/个人简介
 https://tinysnow.github.io/各领域入门
 https://tinysnow.github.io/年度计划
-https://tinysnow.github.io/问题总表
+https://tinysnow.github.io/杂记
 https://tinysnow.github.io/学习/学习
 https://tinysnow.github.io/学习/耶鲁大学：心理学导论
 https://tinysnow.github.io/小说/小说
@@ -128,6 +128,7 @@ https://tinysnow.github.io/每日一文/小生命 - 亦舒
 https://tinysnow.github.io/每日一文/小达子 - 冯骥才
 https://tinysnow.github.io/每日一文/尾生 - 芥川龙之介
 https://tinysnow.github.io/每日一文/展示品 - 于尔克 · 舒比格
+https://tinysnow.github.io/每日一文/工作与人生 - 王小波
 https://tinysnow.github.io/每日一文/巫婆 - 雪莉 · 杰克逊
 https://tinysnow.github.io/每日一文/平凡最难 - 林清玄
 https://tinysnow.github.io/每日一文/幸福 - 莫泊桑
