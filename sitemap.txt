@@ -313,6 +313,7 @@ https://tinysnow.github.io/每日一文/词语洁癖 - 刘瑜
 https://tinysnow.github.io/每日一文/谁的生命可以不受时间限制 - 沈从文
 https://tinysnow.github.io/每日一文/谈抽烟 - 朱自清
 https://tinysnow.github.io/每日一文/谈读书 - 培根
+https://tinysnow.github.io/每日一文/谈谈寂寞 - 梁晓声
 https://tinysnow.github.io/每日一文/象的失踪 - 村上春树
 https://tinysnow.github.io/每日一文/赌徒的遗书 - 希区柯克
 https://tinysnow.github.io/每日一文/赞美骨髓 - 蔡澜
@@ -953,6 +954,7 @@ https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
 https://tinysnow.github.io/学习/医学/药理学/第一章：绪言
 https://tinysnow.github.io/学习/医学/药理学/第三章：药效学
 https://tinysnow.github.io/学习/医学/药理学/第二章：药动学
+https://tinysnow.github.io/学习/医学/药理学/第五章：传出神经系统药理概论
 https://tinysnow.github.io/学习/医学/药理学/第四章：影响药效的因素
 https://tinysnow.github.io/学习/医学/药理学/药理学
 https://tinysnow.github.io/学习/金融/公司信贷/公司信贷
