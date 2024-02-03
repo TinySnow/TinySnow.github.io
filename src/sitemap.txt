@@ -329,6 +329,7 @@ https://tinysnow.github.io/每日一文/那些你所不知道的大事 - 李月�
 https://tinysnow.github.io/每日一文/邻家的拖鞋 - 姬中宪
 https://tinysnow.github.io/每日一文/郁金香 - 玛丽娅 · 恩里凯达
 https://tinysnow.github.io/每日一文/重圆 - 亦舒
+https://tinysnow.github.io/每日一文/金岳霖先生 - 汪曾祺
 https://tinysnow.github.io/每日一文/铁血恋爱 - 蔡康永
 https://tinysnow.github.io/每日一文/银行抢案 - 史蒂文 · 舒曼
 https://tinysnow.github.io/每日一文/门萨的娼妓 - 伍迪 · 艾伦
@@ -949,6 +950,10 @@ https://tinysnow.github.io/读书/零零散散/零零散散
 https://tinysnow.github.io/读书/零零散散/霍乱时期的爱情
 https://tinysnow.github.io/读书/零零散散/非暴力沟通
 https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
+https://tinysnow.github.io/学习/医学/药理学/第一章：绪言
+https://tinysnow.github.io/学习/医学/药理学/第三章：药效学
+https://tinysnow.github.io/学习/医学/药理学/第二章：药动学
+https://tinysnow.github.io/学习/医学/药理学/第四章：影响药效的因素
 https://tinysnow.github.io/学习/医学/药理学/药理学
 https://tinysnow.github.io/学习/金融/公司信贷/公司信贷
 https://tinysnow.github.io/学习/金融/公司信贷/第一章：公司信贷概述
@@ -1026,7 +1031,3 @@ https://tinysnow.github.io/技术/其他资料/WingStudio/WingStudio
 https://tinysnow.github.io/技术/其他资料/WingStudio/WingStudio 第三轮考核说明文档
 https://tinysnow.github.io/技术/其他资料/WingStudio/WingStudio 第三轮项目途中报错及解决方案
 https://tinysnow.github.io/技术/其他资料/WingStudio/WingStudio 第二轮考核 工程实现记录
-https://tinysnow.github.io/学习/医学/药理学/总论/总论
-https://tinysnow.github.io/学习/医学/药理学/总论/第一节：绪言
-https://tinysnow.github.io/学习/医学/药理学/总论/第三节：药动学
-https://tinysnow.github.io/学习/医学/药理学/总论/第二节：药效学
