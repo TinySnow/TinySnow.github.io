@@ -59,6 +59,7 @@ https://tinysnow.github.io/每日一文/何处不相逢 - 罗兰
 https://tinysnow.github.io/每日一文/你到底喜不喜欢我 - 王丫米
 https://tinysnow.github.io/每日一文/你嘴上所说的人生就是你的人生 - 佐藤富雄
 https://tinysnow.github.io/每日一文/你在那里 - 王梅
+https://tinysnow.github.io/每日一文/你必须要有一样拿得出手 - 林夕
 https://tinysnow.github.io/每日一文/你是医生吗？- 雷蒙德 · 卡佛
 https://tinysnow.github.io/每日一文/你有没有钱 - 李敖
 https://tinysnow.github.io/每日一文/你的那双眼睛 - 三毛
@@ -956,9 +957,12 @@ https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
 https://tinysnow.github.io/学习/医学/药理学/第一章：绪言
 https://tinysnow.github.io/学习/医学/药理学/第七章：抗胆碱酯酶药和胆碱酯酶复活药
 https://tinysnow.github.io/学习/医学/药理学/第三章：药效学
+https://tinysnow.github.io/学习/医学/药理学/第九章：胆碱受体阻断药：N 胆碱受体阻断药
 https://tinysnow.github.io/学习/医学/药理学/第二章：药动学
 https://tinysnow.github.io/学习/医学/药理学/第五章：传出神经系统药理概论
+https://tinysnow.github.io/学习/医学/药理学/第八章：胆碱受体阻断药：M 胆碱受体阻断药
 https://tinysnow.github.io/学习/医学/药理学/第六章：胆碱受体激动药
+https://tinysnow.github.io/学习/医学/药理学/第十章：肾上腺素受体激动剂
 https://tinysnow.github.io/学习/医学/药理学/第四章：影响药效的因素
 https://tinysnow.github.io/学习/医学/药理学/药理学
 https://tinysnow.github.io/学习/金融/公司信贷/公司信贷
