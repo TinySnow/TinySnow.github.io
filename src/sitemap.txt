@@ -223,6 +223,7 @@ https://tinysnow.github.io/每日一文/求婚 - 刘瑜
 https://tinysnow.github.io/每日一文/汤包 - 梁实秋
 https://tinysnow.github.io/每日一文/没时间 - 安贝托 · 艾柯
 https://tinysnow.github.io/每日一文/没有一本一劳永逸的书 - 毛姆
+https://tinysnow.github.io/每日一文/没有新雪 - 图霍文斯基
 https://tinysnow.github.io/每日一文/油月亮 - 贾平凹
 https://tinysnow.github.io/每日一文/泥沙俱下地生活 - 毕淑敏
 https://tinysnow.github.io/每日一文/活出爱 - 史铁生
@@ -977,6 +978,7 @@ https://tinysnow.github.io/学习/医学/药理学/第二章：药动学
 https://tinysnow.github.io/学习/医学/药理学/第五章：传出神经系统药理概论
 https://tinysnow.github.io/学习/医学/药理学/第八章：胆碱受体阻断药：M 胆碱受体阻断药
 https://tinysnow.github.io/学习/医学/药理学/第六章：胆碱受体激动药
+https://tinysnow.github.io/学习/医学/药理学/第十一章：肾上腺素受体拮抗剂
 https://tinysnow.github.io/学习/医学/药理学/第十章：肾上腺素受体激动剂
 https://tinysnow.github.io/学习/医学/药理学/第四章：影响药效的因素
 https://tinysnow.github.io/学习/医学/药理学/药理学
