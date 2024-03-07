@@ -332,6 +332,7 @@ https://tinysnow.github.io/每日一文/解谜 - 梁文道
 https://tinysnow.github.io/每日一文/订地方报纸的女人 - 松本清张
 https://tinysnow.github.io/每日一文/认识自我 - 纪伯伦
 https://tinysnow.github.io/每日一文/记住回家的路 - 周国平
+https://tinysnow.github.io/每日一文/记卢冀野和三个胖子剪影 - 顾思齐
 https://tinysnow.github.io/每日一文/讲价 - 梁实秋
 https://tinysnow.github.io/每日一文/论天使 - 唐纳德 · 巴塞尔姆
 https://tinysnow.github.io/每日一文/论读书 - 培根
@@ -996,6 +997,7 @@ https://tinysnow.github.io/学习/医学/药理学/第一章：绪言
 https://tinysnow.github.io/学习/医学/药理学/第七章：抗胆碱酯酶药和胆碱酯酶复活药
 https://tinysnow.github.io/学习/医学/药理学/第三章：药效学
 https://tinysnow.github.io/学习/医学/药理学/第九章：胆碱受体阻断药：N 胆碱受体阻断药
+https://tinysnow.github.io/学习/医学/药理学/第二十章：镇痛药
 https://tinysnow.github.io/学习/医学/药理学/第二章：药动学
 https://tinysnow.github.io/学习/医学/药理学/第五章：传出神经系统药理概论
 https://tinysnow.github.io/学习/医学/药理学/第八章：胆碱受体阻断药：M 胆碱受体阻断药
@@ -1003,6 +1005,7 @@ https://tinysnow.github.io/学习/医学/药理学/第六章：胆碱受体激�
 https://tinysnow.github.io/学习/医学/药理学/第十一章：肾上腺素受体拮抗剂
 https://tinysnow.github.io/学习/医学/药理学/第十七章：治疗中枢神经系统退行性疾病药
 https://tinysnow.github.io/学习/医学/药理学/第十三章：全身麻醉药
+https://tinysnow.github.io/学习/医学/药理学/第十九章：中枢兴奋药
 https://tinysnow.github.io/学习/医学/药理学/第十二章：中枢神经系统药理概论
 https://tinysnow.github.io/学习/医学/药理学/第十五章：镇静催眠药
 https://tinysnow.github.io/学习/医学/药理学/第十八章：抗精神失常药
