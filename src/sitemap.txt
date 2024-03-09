@@ -986,6 +986,7 @@ https://tinysnow.github.io/读书/零零散散/漫画经济学：金融危机
 https://tinysnow.github.io/读书/零零散散/焦虑的人
 https://tinysnow.github.io/读书/零零散散/狮子之家的点心日
 https://tinysnow.github.io/读书/零零散散/福格行为模型
+https://tinysnow.github.io/读书/零零散散/稀缺：我们是如何陷入贫穷与忙碌的
 https://tinysnow.github.io/读书/零零散散/美元真相
 https://tinysnow.github.io/读书/零零散散/薄世宁医学通识讲义
 https://tinysnow.github.io/读书/零零散散/蛤蟆先生去看心理医生
@@ -999,6 +1000,9 @@ https://tinysnow.github.io/学习/医学/药理学/第一章：绪言
 https://tinysnow.github.io/学习/医学/药理学/第七章：抗胆碱酯酶药和胆碱酯酶复活药
 https://tinysnow.github.io/学习/医学/药理学/第三章：药效学
 https://tinysnow.github.io/学习/医学/药理学/第九章：胆碱受体阻断药：N 胆碱受体阻断药
+https://tinysnow.github.io/学习/医学/药理学/第二十一章：解热镇痛抗炎药
+https://tinysnow.github.io/学习/医学/药理学/第二十三章：抗心律失常药
+https://tinysnow.github.io/学习/医学/药理学/第二十二章：抗痛风药
 https://tinysnow.github.io/学习/医学/药理学/第二十章：镇痛药
 https://tinysnow.github.io/学习/医学/药理学/第二章：药动学
 https://tinysnow.github.io/学习/医学/药理学/第五章：传出神经系统药理概论
