@@ -165,6 +165,7 @@ https://tinysnow.github.io/每日一文/幸福的无关 - 林清玄
 https://tinysnow.github.io/每日一文/幸福的生日 - 黑井千次
 https://tinysnow.github.io/每日一文/庙口 - 梁文道
 https://tinysnow.github.io/每日一文/弗洛伊德和受虐狂 - 王小波
+https://tinysnow.github.io/每日一文/张大力 - 冯骥才
 https://tinysnow.github.io/每日一文/弥补 - 大卫 · 伊格曼
 https://tinysnow.github.io/每日一文/当三毛还是在二毛的时候 - 三毛
 https://tinysnow.github.io/每日一文/当东方遭遇西方 - 毛姆
@@ -1075,6 +1076,8 @@ https://tinysnow.github.io/学习/医学/药理学/第九章：胆碱受体阻�
 https://tinysnow.github.io/学习/医学/药理学/第二十一章：解热镇痛抗炎药
 https://tinysnow.github.io/学习/医学/药理学/第二十三章：抗心律失常药
 https://tinysnow.github.io/学习/医学/药理学/第二十二章：抗痛风药
+https://tinysnow.github.io/学习/医学/药理学/第二十五章：抗心绞痛药及调脂药
+https://tinysnow.github.io/学习/医学/药理学/第二十六章：抗高血压药
 https://tinysnow.github.io/学习/医学/药理学/第二十四章：抗慢性心功能不全药
 https://tinysnow.github.io/学习/医学/药理学/第二十章：镇痛药
 https://tinysnow.github.io/学习/医学/药理学/第二章：药动学
