@@ -8,6 +8,7 @@
 - [杂记 | Sundry](杂记.md)
 -----
 - [每日一文 | Daily Article](每日一文/每日一文.md)
+  - [丑鱼多滋味 - 佚名](每日一文/丑鱼多滋味%20-%20佚名.md)
   - [一个问题 - 胡适](每日一文/一个问题%20-%20胡适.md)
   - [张大力 - 冯骥才](每日一文/张大力%20-%20冯骥才.md)
   - [豆腐 - 阿城](每日一文/豆腐%20-%20阿城.md)
@@ -516,6 +517,7 @@
     - [Logstash 同步 MySQL 数据到 Elastic Search](技术/实践记录/Logstash同步MySQL数据到ElasticSearch.md)
     - [MySQL 与 Elastic Search 的数据同步尝试](技术/实践记录/MySQL与ElasticSearch的数据同步尝试.md)
     - [毕业设计解决方案](技术/实践记录/毕业设计解决方案.md)
+    - [Windows 自定义自启动任务](技术/实践记录/Windows%20自定义自启动任务.md)
   - [其他资料 | Other Docs](技术/其他资料/其他资料.md)
     - [Git 学习笔记](技术/其他资料/Git%20学习笔记.md)
     - [Bash 代表命令](技术/其他资料/Bash%20代表命令.md)
