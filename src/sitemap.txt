@@ -47,6 +47,7 @@ https://tinysnow.github.io/每日一文/不要中了愤怒的计 - 王玉红
 https://tinysnow.github.io/每日一文/不要累死你的爱 - 刘墉
 https://tinysnow.github.io/每日一文/与人为友 - 亦舒
 https://tinysnow.github.io/每日一文/丑脸 - 汪曾祺
+https://tinysnow.github.io/每日一文/丑鱼多滋味 - 佚名
 https://tinysnow.github.io/每日一文/世界上最荒凉的动物园 - 苏童
 https://tinysnow.github.io/每日一文/世界上最酷的爸爸 - 安吉 · K · K · 沃德
 https://tinysnow.github.io/每日一文/世界不同于想象 - 张曼娟
@@ -623,6 +624,7 @@ https://tinysnow.github.io/技术/实践记录/ElasticSearch启用
 https://tinysnow.github.io/技术/实践记录/Logstash同步MySQL数据到ElasticSearch
 https://tinysnow.github.io/技术/实践记录/Mdbook 排版混乱
 https://tinysnow.github.io/技术/实践记录/MySQL与ElasticSearch的数据同步尝试
+https://tinysnow.github.io/技术/实践记录/Windows 自定义自启动任务
 https://tinysnow.github.io/技术/实践记录/实践记录
 https://tinysnow.github.io/技术/实践记录/毕业设计环境准备
 https://tinysnow.github.io/技术/实践记录/毕业设计解决方案
