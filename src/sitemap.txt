@@ -521,6 +521,7 @@ https://tinysnow.github.io/学海计划/亲密关系/亲密关系
 https://tinysnow.github.io/学海计划/亲密关系/亲密关系的评判标准
 https://tinysnow.github.io/学海计划/心理学/心理学
 https://tinysnow.github.io/学海计划/心理学/精神分析概述
+https://tinysnow.github.io/学海计划/文学/信息密度
 https://tinysnow.github.io/学海计划/文学/叙事欺诈
 https://tinysnow.github.io/学海计划/文学/文学
 https://tinysnow.github.io/学海计划/文学/画面感
@@ -530,15 +531,23 @@ https://tinysnow.github.io/学海计划/税法/税法
 https://tinysnow.github.io/学海计划/管理学/管理学
 https://tinysnow.github.io/学海计划/管理学/计划
 https://tinysnow.github.io/学海计划/经济学/宏观经济学概述
+https://tinysnow.github.io/学海计划/经济学/消费与投资
+https://tinysnow.github.io/学海计划/经济学/经济与金融
 https://tinysnow.github.io/学海计划/经济学/经济学
+https://tinysnow.github.io/学海计划/经济学/经济学的重要性
 https://tinysnow.github.io/学海计划/经济学/财务自由
+https://tinysnow.github.io/学海计划/经济学/重要的经济学原则
+https://tinysnow.github.io/学海计划/药理学/不良反应
+https://tinysnow.github.io/学海计划/药理学/受体理论
 https://tinysnow.github.io/学海计划/药理学/药效学概述
 https://tinysnow.github.io/学海计划/药理学/药理学
 https://tinysnow.github.io/学海计划/药理学/药理学概述
 https://tinysnow.github.io/学海计划/语言学/标点符号
 https://tinysnow.github.io/学海计划/语言学/语言学
+https://tinysnow.github.io/学海计划/金融学/投资理念
 https://tinysnow.github.io/学海计划/金融学/消费与投资
 https://tinysnow.github.io/学海计划/金融学/财务杠杆概述
+https://tinysnow.github.io/学海计划/金融学/财务规划
 https://tinysnow.github.io/学海计划/金融学/金融学
 https://tinysnow.github.io/小说/其他小说/Chapter 1
 https://tinysnow.github.io/小说/其他小说/其他小说
@@ -1031,6 +1040,7 @@ https://tinysnow.github.io/读书/没事，一切都会好起来的/音乐
 https://tinysnow.github.io/读书/没事，一切都会好起来的/飞吧
 https://tinysnow.github.io/读书/零零散散/一小时搞定全家保险
 https://tinysnow.github.io/读书/零零散散/不可不知的保险常识
+https://tinysnow.github.io/读书/零零散散/不要用别人的脑子思考你的人生
 https://tinysnow.github.io/读书/零零散散/乌合之众
 https://tinysnow.github.io/读书/零零散散/二十首情诗和一首绝望的歌
 https://tinysnow.github.io/读书/零零散散/人间告白
@@ -1155,6 +1165,16 @@ https://tinysnow.github.io/学习/音乐/第四章/第五节：和声装饰
 https://tinysnow.github.io/学习/音乐/第四章/第八节：主歌副歌体
 https://tinysnow.github.io/学习/音乐/第四章/第六节：和声进行的本质
 https://tinysnow.github.io/学习/音乐/第四章/第四节：七和弦与和弦排列
+https://tinysnow.github.io/学海计划/金融学/保险/人寿保险
+https://tinysnow.github.io/学海计划/金融学/保险/人生各阶段投保指南
+https://tinysnow.github.io/学海计划/金融学/保险/保险
+https://tinysnow.github.io/学海计划/金融学/保险/保险专业名词及解释概述
+https://tinysnow.github.io/学海计划/金融学/保险/保险概述
+https://tinysnow.github.io/学海计划/金融学/保险/保险注意事项
+https://tinysnow.github.io/学海计划/金融学/保险/养老保险
+https://tinysnow.github.io/学海计划/金融学/保险/家庭财产保险
+https://tinysnow.github.io/学海计划/金融学/保险/意外伤害保险
+https://tinysnow.github.io/学海计划/金融学/保险/重症或大病医疗保险
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
