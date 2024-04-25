@@ -4,215 +4,39 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## SUMMARY.md
-
-```diff
-
-@@ -819,6 +819,7 @@
-     - [致南国微雪频道每一位订阅者的一封信](断章/赠与/致南国微雪频道每一位订阅者的一封信.md)
-     - [致两年后自己的一封信](断章/赠与/致两年后自己的一封信.md)
-   - [随记 | Essays](断章/随记/随记.md)
-+    - [随记 - 2024 年 4 月 12 日](断章/随记/随记%20-%202024%20年%204%20月%2012%20日.md)
-     - [随记 - 2023 年 12 月 19 日](断章/随记/随记%20-%202023%20年%2012%20月%2019%20日.md)
-     - [随记 - 2023 年 12 月 5 日](断章/随记/随记%20-%202023%20年%2012%20月%205%20日.md)
-     - [随记 - 2023 年 11 月 25 日](断章/随记/随记%20-%202023%20年%2011%20月%2025%20日.md)
-
-@@ -898,6 +899,7 @@
-     - [随记 - 2020 年 10 月 17 日](断章/随记/随记%20-%202020%20年%2010%20月%2017%20日.md)
-     - [随记 - 2020 年 5 月 15 日](断章/随记/随记%20-%202020%20年%205%20月%2015%20日.md)
-   - [诗词 | Poems](断章/诗词/诗词总录.md)
-+    - [在王座上死去](断章/诗词/在王座上死去.md)
-     - [我愿化作一株野草](断章/诗词/我愿化作一株野草.md)
-     - [念](断章/诗词/念.md)
-     - [我不会忘记你的名字](断章/诗词/我不会忘记你的名字.md)
-```
-
 ## sitemap.txt
 
 ```diff
 
-@@ -207,6 +207,7 @@ https://tinysnow.github.io/每日一文/我看国学 - 王小波
- https://tinysnow.github.io/每日一文/我这么喜欢你 - 史铁生
- https://tinysnow.github.io/每日一文/打工经历 - 王小波
- https://tinysnow.github.io/每日一文/打赌 - 契诃夫
-+https://tinysnow.github.io/每日一文/扼杀胎儿 - 渡边淳一
- https://tinysnow.github.io/每日一文/抱孙 - 老舍
- https://tinysnow.github.io/每日一文/抽象的爱国 - 梁文道
- https://tinysnow.github.io/每日一文/拖地 - 亦舒
+@@ -822,6 +822,7 @@ https://tinysnow.github.io/断章/诗词/在你的瞳孔里
+ https://tinysnow.github.io/断章/诗词/在无人的城市，放一束烟花
+ https://tinysnow.github.io/断章/诗词/在星空下坠落
+ https://tinysnow.github.io/断章/诗词/在深夜里出逃
++https://tinysnow.github.io/断章/诗词/在王座上死去
+ https://tinysnow.github.io/断章/诗词/复活
+ https://tinysnow.github.io/断章/诗词/夏影
+ https://tinysnow.github.io/断章/诗词/天仙子 • 忆灵
+
+@@ -959,6 +960,7 @@ https://tinysnow.github.io/断章/随记/随记 - 2023 年 9 月 15 日
+ https://tinysnow.github.io/断章/随记/随记 - 2023 年 9 月 28 日
+ https://tinysnow.github.io/断章/随记/随记 - 2023 年 9 月 4 日
+ https://tinysnow.github.io/断章/随记/随记 - 2023 年 9 月 7 日
++https://tinysnow.github.io/断章/随记/随记 - 2024 年 4 月 12 日
+ https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
+ https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
+ https://tinysnow.github.io/笔记/教程/Basic Elements
 ```
 
-## 在王座上死去.md
+## 第二十六章：抗高血压药.md
 
 ```diff
 
-@@ -0,0 +1,67 @@
-+# 在王座上死去
-+
-+## 写在前面
-+
-+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">186 字 | 希望 | 忍受 | 引导 | 功名 | 真相</p>
-+
-+## 正文
-+
-+　　我在王座上死去，
-+
-+　　空洞的眼窝盯着自己。
-+
-+　　有光透过我的头颅，
-+
-+　　照在袍上。
-+
-+　　补丁熠熠生辉。
-+
-+<br />
-+
-+　　我在王座上死去，
-+
-+　　一如鲸落。
-+
-+　　仅有的两个卫兵，
-+
-+　　挡不住
-+
-+　　春风，草绿，欢笑和生机。
-+
-+<br />
-+
-+　　我在王座上死去，
-+
-+　　不需要纪念。
-+
-+　　无字。
-+
-+<br />
-+
-+　　蚂蚁爬上我的头颅。
-+
-+　　我渴望阳光，
-+
-+　　不怯于被人唾骂，
-+
-+　　但不希望被人看见。
-+
-+<br />
-+
-+　　我在王座上死去，
-+
-+　　觉醒在王座上新生。
-+
-+<br />
-+
-+　　南国微雪 Miyuki
-+
-+　　2024 年 4 月 10 日
-+
-+## 封面图
-+
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/poems/grant-whitty-ExV72ahe4sE-unsplash.jpg)
-+
-+> 摄影师 | Grant Whitty
-+>
-+> 图源 | Unsplash
-\ No newline at end of file
-```
-
-## 诗词总录.md
-
-```diff
-
-@@ -54,6 +54,7 @@
- 50. 我的思念，是一支箭矢
- 51. 我不会忘记你的名字
- 52. 我愿化作一株野草
-+53. 在王座上死去
+@@ -286,4 +286,5 @@
+ - 静注或静滴可治疗高血压危象。
+ - 妊娠期高血压、嗜铬细胞瘤、麻醉或手术时高血压。
  
- ## 英文诗歌
- 
-```
-
-## 随记 - 2024 年 4 月 12 日.md
-
-```diff
-
-@@ -0,0 +1,79 @@
-+# 随记 - 2024 年 4 月 12 日
-+
-+## 写在前面
-+
-+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">444 字 | 生活 | 经历 | 感触</p>
-+
-+## 正文
-+
-+　　或许因为压力大，亦或者简单的糖分不足，今晚好想吃面包和蛋糕。
-+
-+　　蛋糕吃不完也买不起，面包还是可以。
-+
-+　　实在饿，出门了。
-+
-+　　导航两家西点店，关门。怏怏地找另一家。
-+
-+　　在十点前，找到了。怡朵。还在营业。
-+
-+　　登门，看到货架基本都空了，于是在余下的品种里挑。
-+
-+　　“请问您需要什么吗？”
-+
-+　　“今天想吃面包，好不容易找了两家店都关门了。”
-+
-+　　店员愣了一下。
-+
-+　　“请问您需要什么吗？”
-+
-+　　我看了店员一眼，便不再说话。安安静静挑。
-+
-+　　挑了一个肉松面包和一个蛋挞。
-+
-+　　结账，走人，十五块。
-+
-+　　虽然还想买香芋口味的泡芙，但是太贵了。依依不舍地走出店门。
-+
-+　　我前脚刚走，后一秒，店员便关了灯，闭上门。
-+
-+　　我回头看了一眼，正巧再次和她对上眼。
-+
-+　　店员迅速关了门。
-+
-+<br />
-+
-+　　回家，打开口袋，挽下锡碗，尝一口。
-+
-+　　有些冷，但好吃。
-+
-+　　今天还是我第一次吃蛋挞呢。
-+
-+　　吃着，想起那个店员。
-+
-+　　她的眼睛里写满了疲惫。
-+
-+　　两次看向她，两次都是。于是我不再出声叨扰。
-+
-+　　吃着，看向身上还没脱下的西装。
-+
-+　　苦笑一声。
-+
-+<br />
-+
-+　　生活大概就是这样吧。
-+
-+　　大家都一样。
-+
-+<br />
-+
-+　　南国微雪 Miyuki
-+
-+　　2024 年 4 月 12 日
-+
-+## 封面图
-+
-+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/essays/casey-horner-dX9X0KTT42g-unsplash.jpg)
-+
-+> 摄影师 | Casey Horner
-+>
-+> 图源 | Unsplash
+-## 五、钙通道阻断药
 \ No newline at end of file
++## 五、钙通道阻断药
++
 ```
