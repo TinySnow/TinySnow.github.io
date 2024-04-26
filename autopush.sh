@@ -64,6 +64,9 @@ if [[ $1 ]]; then
 	# 推送到 gitee 备份
 	git push gitee master
 
+	# 推送到 gitea 备份
+	git push gitea master
+
 	# echo "\"$1\""
 else
 	echo "请提供参数。"
