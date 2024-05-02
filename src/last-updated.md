@@ -4,102 +4,102 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## SUMMARY.md
+## gh-pages.yml
 
 ```diff
 
-@@ -8,6 +8,7 @@
- - [杂记 | Sundry](杂记.md)
- -----
- - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [明白 - 龙应台](每日一文/明白%20-%20龙应台.md)
-   - [窗 - 泰格特](每日一文/窗%20-%20泰格特.md)
-   - [体验生活 - 王小波](每日一文/体验生活%20-%20王小波.md)
-   - [初恋 - 废名](每日一文/初恋%20-%20废名.md)
+@@ -1,32 +1,39 @@
+-name: github pages for blog
+-
++name: Deploy
+ on:
+   push:
+     branches:
+-      - master
++      - main
+ 
+ jobs:
+   deploy:
+     runs-on: ubuntu-latest
+     permissions:
+-      contents: write
++      contents: write  # To push a branch 
+       pull-requests: write  # To create a PR from that branch
+-    concurrency:
+-      group: ${{ github.workflow }}-${{ github.ref }}
+     steps:
+-      - uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-      - name: mdBook Action
+-        uses: peaceiris/actions-mdbook@v1.2.0
+-        with:
+-          mdbook-version: 'latest'
+-
+-      - run: mdbook build
+-
+-      - name: Deploy
+-        uses: peaceiris/actions-gh-pages@v3
+-        if: ${{ github.ref == 'refs/heads/master' }}
+-        with:
+-          github_token: ${{ secrets.GITHUB_TOKEN }}
+-          publish_dir: ./book
+\ No newline at end of file
++    - uses: actions/checkout@v4
++      with:
++        fetch-depth: 0
++    - name: Install latest mdbook
++      run: |
++        tag=$(curl 'https://api.github.com/repos/rust-lang/mdbook/releases/latest' | jq -r '.tag_name')
++        url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
++        mkdir mdbook
++        curl -sSL $url | tar -xz --directory=./mdbook
++        echo `pwd`/mdbook >> $GITHUB_PATH
++    - name: Deploy GitHub Pages
++      run: |
++        # This assumes your book is in the root of your repository.
++        # Just add a `cd` here if you need to change to another directory.
++        mdbook build
++        git worktree add gh-pages
++        git config user.name "Deploy from CI"
++        git config user.email ""
++        cd gh-pages
++        # Delete the ref to avoid keeping history.
++        git update-ref -d refs/heads/gh-pages
++        rm -rf *
++        mv ../book/* .
++        git add .
++        git commit -m "Deploy $GITHUB_SHA to gh-pages"
++        git push --force --set-upstream origin gh-pages
+\ No newline at end of file
+```
+
+## .gitignore
+
+```diff
+
+@@ -1,4 +1,5 @@
+ book
+ node_modules
+ package.json
+-package-lock.json
+\ No newline at end of file
++package-lock.json
++.git.bfg-report
+\ No newline at end of file
 ```
 
 ## sitemap.txt
 
 ```diff
 
-@@ -763,6 +763,7 @@ https://tinysnow.github.io/断章/文章/新征程的开始，也或许是结束
- https://tinysnow.github.io/断章/文章/时间不公平
- https://tinysnow.github.io/断章/文章/暑期总结与瑰想
- https://tinysnow.github.io/断章/文章/月圆夜
-+https://tinysnow.github.io/断章/文章/有些人，就这样消散在风里
- https://tinysnow.github.io/断章/文章/母亲的理发推
- https://tinysnow.github.io/断章/文章/毕业总结
- https://tinysnow.github.io/断章/文章/毕业旅行第一天
-
-@@ -778,6 +779,7 @@ https://tinysnow.github.io/断章/文章/烟火自述
- https://tinysnow.github.io/断章/文章/猫猫戒指
- https://tinysnow.github.io/断章/文章/理想的南国微雪
- https://tinysnow.github.io/断章/文章/瓦罐饭与糖
-+https://tinysnow.github.io/断章/文章/生财有术与卖铲子的商人
- https://tinysnow.github.io/断章/文章/男性天生有缺陷
- https://tinysnow.github.io/断章/文章/番茄
- https://tinysnow.github.io/断章/文章/社会正在复制人类
-
-@@ -793,6 +795,7 @@ https://tinysnow.github.io/断章/文章/蕴愈彼此，共渡红尘
- https://tinysnow.github.io/断章/文章/论“是……的”
- https://tinysnow.github.io/断章/文章/语言漫谈
- https://tinysnow.github.io/断章/文章/赴约、幸运与感情
-+https://tinysnow.github.io/断章/文章/身为学生，最后的旅行
- https://tinysnow.github.io/断章/文章/近期的一些总结
- https://tinysnow.github.io/断章/文章/这世界是一个巨大的草台班子
- https://tinysnow.github.io/断章/文章/迷失
-
-@@ -813,6 +816,7 @@ https://tinysnow.github.io/断章/胡言/胡言
- https://tinysnow.github.io/断章/胡言/胡言乱语之一
- https://tinysnow.github.io/断章/胡言/胡言乱语之三
- https://tinysnow.github.io/断章/胡言/胡言乱语之二
-+https://tinysnow.github.io/断章/胡言/胡言乱语之五
- https://tinysnow.github.io/断章/胡言/胡言乱语之四
- https://tinysnow.github.io/断章/诗词/Hide and Seek
- https://tinysnow.github.io/断章/诗词/一如既往
+@@ -241,6 +241,7 @@ https://tinysnow.github.io/每日一文/无酱不欢 - 蔡澜
+ https://tinysnow.github.io/每日一文/旧书去哪里了 - 梁文道
+ https://tinysnow.github.io/每日一文/早起看人间 - 罗兰
+ https://tinysnow.github.io/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格
++https://tinysnow.github.io/每日一文/明白 - 龙应台
+ https://tinysnow.github.io/每日一文/最伟大的科幻小说 - 埃里克 · 斯通恩特
+ https://tinysnow.github.io/每日一文/最好的时光 - 刘瑜
+ https://tinysnow.github.io/每日一文/月亮不见了 - 叶倾城
 ```
 
-## 明白 - 龙应台.md
-
-```diff
-
-@@ -0,0 +1,37 @@
-+# 明白
-+
-+*龙应台*
-+
-+　　二十岁的时候，我们的妈妈五十岁。我们是怎么谈她们的？
-+
-+　　我和家萱在一个浴足馆按摩，并排懒坐，有一句每一句地闲聊。一面落地大窗，外面看不进来，我们却可以把过路的人看个清楚。
-+
-+　　这是上海，这是衡山路。每一个亚洲城市都曾经有过这么一条路——餐厅特别时髦，酒吧特别昂贵，时装店冷气极强，灯光特别亮，墙上的海报一定有英文或法文写的“米兰”或“巴黎”。最突出的是走在街上的女郎，不管是露着白皙的腿还是纤细的腰，不管是小男生样的短发配牛仔裤还是随风飘起的长发配透明的丝巾，一颦一笑之间都辐射着美的自觉。每一个经过这面大窗的女郎，即使是独自一人，都带着一种演出的神情和姿态，美美地走过。她们在爱恋自己的青春。
-+
-+　　家萱说，我记得啊，我妈管我管得烦死了，从我上小学开始，她就怕我出门被强奸，到了二十岁了还不准我超过十二点回家，每次晚回来她都一定要等门，然后也不开口说话，就是要让你“良心发现，自觉惭愧”。我妈简直就是个道德警察。
-+
-+　　我说，我也记得啊，我妈给我的印象最深的就是她的“放肆”。那时在美国电影看见演“母亲”的说话细声细气的，浑身是优雅“教养”。我想，我妈也是杭州的绸缎庄大小姐，怎么这么“豪气”啊？当然，逃难，还生四个小孩，管小孩吃喝拉撒睡的日子，人怎么细得起来？她说话声音大，和邻居们讲到高兴时，会笑得惊天动地。她不怒则已，一怒而开骂时，正义凛然，轰轰烈烈，被骂的人只能抱头逃窜。
-+
-+　　现在，我们自己五十多岁了，妈妈们成了八十多岁的“老媪”。
-+
-+　　“你妈会时光错乱吗？”她问。
-+
-+　　会啊，我说，譬如又一次带她到乡下看风景，她很兴奋，一路上说个不停：“这条路走下去转个弯就是我家的地。”或者说：“你看你看，那个山头我常去收租，就是那里。”我就对她说：“妈，这里你没来过啦。”她就开骂了：“乱讲，我就住这里，我家就在那山谷里，那里还有条河，叫新安江。”
-+
-+　　我才明白，这一片台湾的美丽山林，仿佛浙江，使她忽然时光转换回到了自己的童年。她的眼睛发光，孩子似的指着车窗外：“佃农在我家地上种了很多杨梅、桃子，我爸爸让我去收租，佃农都对我很好，给我一大堆果子带走，我还爬很高的树呢。”
-+
-+　　“你今年几岁，妈？”我轻声问她。
-+
-+　　她眼神茫然，想了好一会儿，然后很小声地说：“我……我妈呢？我要找我妈。”
-+
-+　　家萱的母亲住在北京一家安养院里。“开始的时候，她老说有人打她，剃她头发，听得我糊涂——这个赡养院很有品质，怎么会有人打她？”家萱的表情有些忧郁，“后来我才明白，原来她回到了‘文革时期’。年轻的时候，她是厂里的出纳，被拖出去打，让她洗厕所，把她剃成阴阳头——总之，就是对人极尽的侮辱。”
-+
-+　　在你最衰弱的时候，却回到了最暴力、最恐怖的世界——我看着沉默的家萱，“那……你怎么办？”
-+
-+　　她说：“想了好久，后来想出了一个办法。我自己写了个证明书，就写‘某某人工作努力，态度良好，爱国爱党，是本厂优良职工，已经被平反，恢复一切待遇。’然后还刻了一个好大的章，叫什么什么委员会，盖在证明书上。告诉看护说，妈妈一说有人打她，就把这证明书拿出来给她看。”
-+
-+　　我不禁失笑，怎么我们这些五十岁的女人都在做一样的事情啊。我妈每天都在数她钱包里的钞票，每天都边数边说“我没钱，哪里去了？”我们跟她解释说她的钱在银行里，她就用那种怀疑的眼光盯着你看，然后还是时时刻刻紧抓着钱包，焦虑万分，怎么办？我于是打了一个“银行证明”：“兹证明某某女士在本行存有五百万元整”，然后下面盖个方方正正的章，红色的，正的反的连盖好几个，看起来很衙门，很威风。我交代印佣：“她一提到钱，你就把这证明拿出来让她看。”我把好几副老花眼镜也备妥，跟“银行证明”一起放在她床头抽屉。钱包，塞在她枕头底下。
-+
-+　　按摩完了，家萱和我的“妈妈手记”技术交换也差不多了。落地窗前突然又出现了一个年轻的女郎，宽阔飘逸的丝绸裤裙，小背心露背露肩又露腰，一副水灵灵的妖娇模样；她的手指一直绕着自己的发丝，带给别人看的浅浅的笑，款款行走。
-+
-+　　从哪里来，往哪里去，心中渐渐有一分明白，如月光泄地。
-\ No newline at end of file
-```
