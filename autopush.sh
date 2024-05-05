@@ -65,7 +65,7 @@ if [[ $1 ]]; then
 	git push gitee master
 
 	# 推送到 gitea 备份
-	git push gitea master
+	# git push gitea master
 
 	# echo "\"$1\""
 else
