@@ -66,3 +66,14 @@
 3. 变化
    - CC
    - Kick Out
+
+## 第三课
+
+1. 复习 CC + Kick Out
+2. Go Down
+   - Bronx Style Go Down：右脚向前小步，左脚向前跳，带动右脚和身体往前跳，左脚 Hook 状向左迈出，随后右腿 Hook 下地
+   - Mr. Poel Style Go Down：身体左转下地，呈单膝跪地状，随后左腿逆时针画圆，右腿让路，身体转至前方呈 Hook 中间状
+3. Routine
+   - 向后踏 Salah 两个 + 2 Step 两个 + 旋转 Salah 两个 + Up Rock + CC 两个 + 前 Kick Out 一个 + 后 Kick Out 一个 + 旋转起身 + Pose 一个
+   - India Step 两个 + Mr. Poel Style Go Down + 六步 + 六步最后的 Hook 右脚呈 Mr. Poel Style Go Down 旋转状 + Freeze + Ending
+4. 作业：练习 头定 + 倒立 + 三角撑

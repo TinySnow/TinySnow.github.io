@@ -57,6 +57,7 @@ https://tinysnow.github.io/每日一文/中年人的寂寞 - 夏丏尊
 https://tinysnow.github.io/每日一文/为乐趣而读书 - 毛姆
 https://tinysnow.github.io/每日一文/为什么我们对平凡的人生深怀恐惧？- 梁晓声
 https://tinysnow.github.io/每日一文/为什么要读经典 - 伊塔洛 · 卡尔维诺
+https://tinysnow.github.io/每日一文/乡愁 - 余光中
 https://tinysnow.github.io/每日一文/书店男与超市女 - 姬中宪
 https://tinysnow.github.io/每日一文/买牛肉须知 - 姬中宪
 https://tinysnow.github.io/每日一文/二手衣 - 亦舒
@@ -436,6 +437,7 @@ https://tinysnow.github.io/每日一文/静下来 - 玛丽安 · 麦肯译
 https://tinysnow.github.io/每日一文/马戏团的秘密 - 星新一
 https://tinysnow.github.io/每日一文/鬼剃头 - 冯骥才
 https://tinysnow.github.io/每日一文/魔术师与跛足驴 - 迟子建
+https://tinysnow.github.io/每日一文/鸟叫 - 刘亮程
 https://tinysnow.github.io/每日一文/麦田里 - 余华
 https://tinysnow.github.io/每日一文/黑夜与黎明之间 - 纪伯伦
 https://tinysnow.github.io/笔记/笔记
@@ -978,10 +980,12 @@ https://tinysnow.github.io/断章/随记/随记 - 2024 年 4 月 12 日
 https://tinysnow.github.io/断章/随记/随记之一 - 2021 年 6 月 13 日
 https://tinysnow.github.io/断章/随记/随记之二 - 2021 年 6 月 13 日
 https://tinysnow.github.io/笔记/教程/Basic Elements
+https://tinysnow.github.io/笔记/教程/Breaking from Beginning
 https://tinysnow.github.io/笔记/教程/Duilib安装教程
 https://tinysnow.github.io/笔记/教程/Git 笔记
 https://tinysnow.github.io/笔记/教程/Street Dance Basics
 https://tinysnow.github.io/笔记/教程/刷机教程
+https://tinysnow.github.io/笔记/教程/恢复数据步骤
 https://tinysnow.github.io/笔记/教程/手机系统更新意外处理
 https://tinysnow.github.io/笔记/教程/教程
 https://tinysnow.github.io/笔记/教程/重装系统
@@ -1108,9 +1112,12 @@ https://tinysnow.github.io/学习/医学/药理学/第七章：抗胆碱酯酶�
 https://tinysnow.github.io/学习/医学/药理学/第三章：药效学
 https://tinysnow.github.io/学习/医学/药理学/第九章：胆碱受体阻断药：N 胆碱受体阻断药
 https://tinysnow.github.io/学习/医学/药理学/第二十一章：解热镇痛抗炎药
+https://tinysnow.github.io/学习/医学/药理学/第二十七章：利尿药与脱水药
 https://tinysnow.github.io/学习/医学/药理学/第二十三章：抗心律失常药
+https://tinysnow.github.io/学习/医学/药理学/第二十九章：促凝血药和抗凝血药
 https://tinysnow.github.io/学习/医学/药理学/第二十二章：抗痛风药
 https://tinysnow.github.io/学习/医学/药理学/第二十五章：抗心绞痛药及调脂药
+https://tinysnow.github.io/学习/医学/药理学/第二十八章：抗贫血药
 https://tinysnow.github.io/学习/医学/药理学/第二十六章：抗高血压药
 https://tinysnow.github.io/学习/医学/药理学/第二十四章：抗慢性心功能不全药
 https://tinysnow.github.io/学习/医学/药理学/第二十章：镇痛药
