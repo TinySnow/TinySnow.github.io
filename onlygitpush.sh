@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# autopush.sh
+
+# bash 脚本安全性保障
+set -Eeuxo pipefail
+
+# 注意：
+# 生成 last-updated.md 的逻辑已和此脚本分离
+# 详细内容在 generate-last-updated-md.sh
+# 此脚本将专注于自动推送的逻辑
+# 另外
+###################################################################
+# 因为硬编码，generate-last-updated-md.sh 和 本脚本 必须位于同一目录下
+###################################################################
+
+if [[ $1 ]]; then
+
+	# 生成 sitemap.xml 和 sitemap.txt 文件，借助 static-sitemap-cli
+	# 安装 static-sitemap-cli 命令： npm i -g static-sitemap-cli
+	
+	if ! [[ "$OSTYPE" =~ linux ]]; then
+	
+		sscli -b https://tinysnow.github.io -r ./book
+
+		# 检查 book 文件夹下是否有这两个文件
+		if [[ -a ./book/sitemap.xml && -a ./book/sitemap.txt ]]; then
+			cp -f ./book/sitemap.xml ./src
+			cp -f ./book/sitemap.txt ./src
+		else
+			echo "sitemap.xml 和 sitemap.txt 不存在，请检查 static-sitemap-cli 安装情况。"
+			exit 1
+		fi
+	
+    fi
+
+	git add .
+
+	# 编译文章
+	mdbook build
+
+	# 提交 message 取第二个参数，需要打引号
+	git commit -m "$1"
+
+	# 推送至远程仓库
+	git push
+
+	# 推送到 gitee 备份
+	git push gitee master
+
+	# echo "\"$1\""
+else
+	echo "请提供参数。"
+	exit 1
+fi

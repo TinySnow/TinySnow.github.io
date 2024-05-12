@@ -33,7 +33,7 @@ if [[ $1 ]]; then
 	
 		sscli -b https://tinysnow.github.io -r ./book
 
-	# 检查 book 文件夹下是否有这两个文件
+		# 检查 book 文件夹下是否有这两个文件
 		if [[ -a ./book/sitemap.xml && -a ./book/sitemap.txt ]]; then
 			cp -f ./book/sitemap.xml ./src
 			cp -f ./book/sitemap.txt ./src
@@ -48,7 +48,7 @@ if [[ $1 ]]; then
 
 		git add ./src/last-updated.md
 	
-        fi
+    fi
 
 	git add .
 
