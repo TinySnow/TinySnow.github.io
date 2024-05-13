@@ -559,10 +559,6 @@ https://tinysnow.github.io/学海计划/药理学/药理学
 https://tinysnow.github.io/学海计划/药理学/药理学概述
 https://tinysnow.github.io/学海计划/语言学/标点符号
 https://tinysnow.github.io/学海计划/语言学/语言学
-https://tinysnow.github.io/学海计划/金融学/投资理念
-https://tinysnow.github.io/学海计划/金融学/消费与投资
-https://tinysnow.github.io/学海计划/金融学/财务杠杆概述
-https://tinysnow.github.io/学海计划/金融学/财务规划
 https://tinysnow.github.io/学海计划/金融学/金融学
 https://tinysnow.github.io/小说/其他小说/Chapter 1
 https://tinysnow.github.io/小说/其他小说/其他小说
@@ -873,6 +869,7 @@ https://tinysnow.github.io/断章/诗词/极端
 https://tinysnow.github.io/断章/诗词/每个人都是一个容器
 https://tinysnow.github.io/断章/诗词/沉睡在天空之上
 https://tinysnow.github.io/断章/诗词/清平乐 • 琴韵
+https://tinysnow.github.io/断章/诗词/溜走
 https://tinysnow.github.io/断章/诗词/点绛唇 • 祈珍
 https://tinysnow.github.io/断章/诗词/看见
 https://tinysnow.github.io/断章/诗词/站在迎风坡
@@ -1204,6 +1201,11 @@ https://tinysnow.github.io/学海计划/金融学/保险/养老保险
 https://tinysnow.github.io/学海计划/金融学/保险/家庭财产保险
 https://tinysnow.github.io/学海计划/金融学/保险/意外伤害保险
 https://tinysnow.github.io/学海计划/金融学/保险/重症或大病医疗保险
+https://tinysnow.github.io/学海计划/金融学/理财/投资策略
+https://tinysnow.github.io/学海计划/金融学/理财/消费与投资
+https://tinysnow.github.io/学海计划/金融学/理财/理财
+https://tinysnow.github.io/学海计划/金融学/理财/财务杠杆概述
+https://tinysnow.github.io/学海计划/金融学/理财/财务规划
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/Packages
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-HEVC
 https://tinysnow.github.io/技术/ArchRISC-V/Packages/SVT-VP9
