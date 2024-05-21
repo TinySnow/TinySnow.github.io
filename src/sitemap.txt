@@ -132,6 +132,7 @@ https://tinysnow.github.io/每日一文/商业片与艺术片 - 王小波
 https://tinysnow.github.io/每日一文/四季歌 - 铁凝
 https://tinysnow.github.io/每日一文/在一个时代里缓慢行走 - 朱德庸
 https://tinysnow.github.io/每日一文/在什么地方活着 - 小川未明
+https://tinysnow.github.io/每日一文/在墙的另一边 - 高铭
 https://tinysnow.github.io/每日一文/在女儿婚礼上的讲话 - 贾平凹
 https://tinysnow.github.io/每日一文/在桥上 - 余华
 https://tinysnow.github.io/每日一文/垃圾工 - 雷 · 布拉德伯里
@@ -1110,6 +1111,7 @@ https://tinysnow.github.io/读书/零零散散/稀缺：我们是如何陷入贫
 https://tinysnow.github.io/读书/零零散散/美元真相
 https://tinysnow.github.io/读书/零零散散/薄世宁医学通识讲义
 https://tinysnow.github.io/读书/零零散散/蛤蟆先生去看心理医生
+https://tinysnow.github.io/读书/零零散散/诗歌手册：诗歌阅读与创作指南
 https://tinysnow.github.io/读书/零零散散/追风筝的人
 https://tinysnow.github.io/读书/零零散散/雪国
 https://tinysnow.github.io/读书/零零散散/零零散散
