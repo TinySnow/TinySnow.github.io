@@ -77,3 +77,8 @@
    - 向后踏 Salah 两个 + 2 Step 两个 + 旋转 Salah 两个 + Up Rock + CC 两个 + 前 Kick Out 一个 + 后 Kick Out 一个 + 旋转起身 + Pose 一个
    - India Step 两个 + Mr. Poel Style Go Down + 六步 + 六步最后的 Hook 右脚呈 Mr. Poel Style Go Down 旋转状 + Freeze + Ending
 4. 作业：练习 头定 + 倒立 + 三角撑
+
+## 第六课
+
+1. 祖鲁旋转
+2. 各种连接
