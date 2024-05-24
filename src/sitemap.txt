@@ -260,6 +260,7 @@ https://tinysnow.github.io/每日一文/最伟大的科幻小说 - 埃里克 · 
 https://tinysnow.github.io/每日一文/最好的时光 - 刘瑜
 https://tinysnow.github.io/每日一文/月亮不见了 - 叶倾城
 https://tinysnow.github.io/每日一文/有毒的兔子 - 伊塔洛 · 卡尔维诺
+https://tinysnow.github.io/每日一文/有空小姐和篮板球小姐 - 王文华
 https://tinysnow.github.io/每日一文/朋友 - 贾平凹
 https://tinysnow.github.io/每日一文/未婚夫和爸爸 - 契诃夫
 https://tinysnow.github.io/每日一文/未婚妻 - 玛 · 奥克罗克斯
@@ -1122,6 +1123,8 @@ https://tinysnow.github.io/读书/零零散散/非暴力沟通
 https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
 https://tinysnow.github.io/学习/医学/药理学/第一章：绪言
 https://tinysnow.github.io/学习/医学/药理学/第七章：抗胆碱酯酶药和胆碱酯酶复活药
+https://tinysnow.github.io/学习/医学/药理学/第三十一章：作用于消化系统的药物
+https://tinysnow.github.io/学习/医学/药理学/第三十章：其他血液及造血系统药物
 https://tinysnow.github.io/学习/医学/药理学/第三章：药效学
 https://tinysnow.github.io/学习/医学/药理学/第九章：胆碱受体阻断药：N 胆碱受体阻断药
 https://tinysnow.github.io/学习/医学/药理学/第二十一章：解热镇痛抗炎药
