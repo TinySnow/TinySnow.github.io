@@ -129,6 +129,7 @@ https://tinysnow.github.io/每日一文/哪一段青春不荒唐 - 许冬林
 https://tinysnow.github.io/每日一文/哲学不能烤面包 - 沈奇岚
 https://tinysnow.github.io/每日一文/唐人来自何处 - 梁实秋
 https://tinysnow.github.io/每日一文/商业片与艺术片 - 王小波
+https://tinysnow.github.io/每日一文/四千三百年 - 龙应台
 https://tinysnow.github.io/每日一文/四季歌 - 铁凝
 https://tinysnow.github.io/每日一文/在一个时代里缓慢行走 - 朱德庸
 https://tinysnow.github.io/每日一文/在什么地方活着 - 小川未明
@@ -1125,6 +1126,7 @@ https://tinysnow.github.io/读书/零零散散/麻省理工深度思考法
 https://tinysnow.github.io/学习/医学/药理学/第一章：绪言
 https://tinysnow.github.io/学习/医学/药理学/第七章：抗胆碱酯酶药和胆碱酯酶复活药
 https://tinysnow.github.io/学习/医学/药理学/第三十一章：作用于消化系统的药物
+https://tinysnow.github.io/学习/医学/药理学/第三十二章：作用于呼吸系统的药物
 https://tinysnow.github.io/学习/医学/药理学/第三十章：其他血液及造血系统药物
 https://tinysnow.github.io/学习/医学/药理学/第三章：药效学
 https://tinysnow.github.io/学习/医学/药理学/第九章：胆碱受体阻断药：N 胆碱受体阻断药
