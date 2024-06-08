@@ -266,6 +266,7 @@ https://tinysnow.github.io/每日一文/明白 - 龙应台
 https://tinysnow.github.io/每日一文/最伟大的科幻小说 - 埃里克 · 斯通恩特
 https://tinysnow.github.io/每日一文/最好的时光 - 刘瑜
 https://tinysnow.github.io/每日一文/月亮不见了 - 叶倾城
+https://tinysnow.github.io/每日一文/有人弄乱了玫瑰花 - 加西亚 · 马尔克斯
 https://tinysnow.github.io/每日一文/有毒的兔子 - 伊塔洛 · 卡尔维诺
 https://tinysnow.github.io/每日一文/有空小姐和篮板球小姐 - 王文华
 https://tinysnow.github.io/每日一文/朋友 - 贾平凹
@@ -1136,6 +1137,7 @@ https://tinysnow.github.io/学习/医学/药理学/第七章：抗胆碱酯酶�
 https://tinysnow.github.io/学习/医学/药理学/第三十一章：作用于消化系统的药物
 https://tinysnow.github.io/学习/医学/药理学/第三十七章：甲状腺激素和抗甲状腺药
 https://tinysnow.github.io/学习/医学/药理学/第三十三章：抗组胺药
+https://tinysnow.github.io/学习/医学/药理学/第三十九章：影响其他代谢的药物
 https://tinysnow.github.io/学习/医学/药理学/第三十二章：作用于呼吸系统的药物
 https://tinysnow.github.io/学习/医学/药理学/第三十五章：肾上腺皮质激素类药
 https://tinysnow.github.io/学习/医学/药理学/第三十八章：胰岛素及口服降糖药
@@ -1168,6 +1170,7 @@ https://tinysnow.github.io/学习/医学/药理学/第十八章：抗精神失�
 https://tinysnow.github.io/学习/医学/药理学/第十六章：抗癫痫药和抗惊厥药
 https://tinysnow.github.io/学习/医学/药理学/第十四章：局部麻醉药
 https://tinysnow.github.io/学习/医学/药理学/第十章：肾上腺素受体激动剂
+https://tinysnow.github.io/学习/医学/药理学/第四十章：抗菌药物概论（化学治疗药）
 https://tinysnow.github.io/学习/医学/药理学/第四章：影响药效的因素
 https://tinysnow.github.io/学习/医学/药理学/药理学
 https://tinysnow.github.io/学习/金融/公司信贷/公司信贷
