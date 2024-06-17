@@ -83,6 +83,7 @@ https://tinysnow.github.io/每日一文/你必须要有一样拿得出手 - 林�
 https://tinysnow.github.io/每日一文/你是医生吗？- 雷蒙德 · 卡佛
 https://tinysnow.github.io/每日一文/你有没有钱 - 李敖
 https://tinysnow.github.io/每日一文/你的那双眼睛 - 三毛
+https://tinysnow.github.io/每日一文/你的钱夹里有谁？- 戎华
 https://tinysnow.github.io/每日一文/你要是在麦田里遇到了我 - 罗伯特 · 彭斯
 https://tinysnow.github.io/每日一文/侏儒的祈祷 - 芥川龙之介
 https://tinysnow.github.io/每日一文/信使 - 刘慈欣
@@ -1169,6 +1170,7 @@ https://tinysnow.github.io/学习/医学/药理学/第二十六章：抗高血�
 https://tinysnow.github.io/学习/医学/药理学/第二十四章：抗慢性心功能不全药
 https://tinysnow.github.io/学习/医学/药理学/第二十章：镇痛药
 https://tinysnow.github.io/学习/医学/药理学/第二章：药动学
+https://tinysnow.github.io/学习/医学/药理学/第五十章：影响免疫功能的药物
 https://tinysnow.github.io/学习/医学/药理学/第五章：传出神经系统药理概论
 https://tinysnow.github.io/学习/医学/药理学/第八章：胆碱受体阻断药：M 胆碱受体阻断药
 https://tinysnow.github.io/学习/医学/药理学/第六章：胆碱受体激动药
