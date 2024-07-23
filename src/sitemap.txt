@@ -811,6 +811,7 @@ https://tinysnow.github.io/断章/文章/天生喜欢恋爱
 https://tinysnow.github.io/断章/文章/失去作为孩子的资格
 https://tinysnow.github.io/断章/文章/奴化圣经
 https://tinysnow.github.io/断章/文章/她与水獭
+https://tinysnow.github.io/断章/文章/好日子还在后面呢：浅谈未来十年变化趋势
 https://tinysnow.github.io/断章/文章/孩子特有的纯真
 https://tinysnow.github.io/断章/文章/小孩子的勇气
 https://tinysnow.github.io/断章/文章/小说、诗歌与想象力
@@ -823,6 +824,7 @@ https://tinysnow.github.io/断章/文章/愿你不再焦虑
 https://tinysnow.github.io/断章/文章/我们无法克制的欲望
 https://tinysnow.github.io/断章/文章/我和她之间
 https://tinysnow.github.io/断章/文章/我把你们看得很重要
+https://tinysnow.github.io/断章/文章/我没有见过这样的黄昏
 https://tinysnow.github.io/断章/文章/我的恋爱只能在梦里
 https://tinysnow.github.io/断章/文章/所想所见即真实
 https://tinysnow.github.io/断章/文章/文章
@@ -869,6 +871,7 @@ https://tinysnow.github.io/断章/文章/这世界是一个巨大的草台班子
 https://tinysnow.github.io/断章/文章/迷失
 https://tinysnow.github.io/断章/文章/追随
 https://tinysnow.github.io/断章/文章/通往优秀的路上，痛苦是一种试炼
+https://tinysnow.github.io/断章/文章/金融系统与马太效应
 https://tinysnow.github.io/断章/文章/镁光灯下的黑暗
 https://tinysnow.github.io/断章/文章/长跑
 https://tinysnow.github.io/断章/文章/阑珊，散落人间
@@ -1288,6 +1291,9 @@ https://tinysnow.github.io/学海计划/金融学/保险/养老保险
 https://tinysnow.github.io/学海计划/金融学/保险/家庭财产保险
 https://tinysnow.github.io/学海计划/金融学/保险/意外伤害保险
 https://tinysnow.github.io/学海计划/金融学/保险/重症或大病医疗保险
+https://tinysnow.github.io/学海计划/金融学/理财/投资实践：资产配置与风险分散
+https://tinysnow.github.io/学海计划/金融学/理财/投资理念：实践
+https://tinysnow.github.io/学海计划/金融学/理财/投资理念：理财种类
 https://tinysnow.github.io/学海计划/金融学/理财/投资策略
 https://tinysnow.github.io/学海计划/金融学/理财/消费与投资
 https://tinysnow.github.io/学海计划/金融学/理财/理财
