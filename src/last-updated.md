@@ -12,47 +12,903 @@
  - [杂记 | Sundry](杂记.md)
  -----
  - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [庸俗谋划了我们的卑贱 - 克里希 · 那穆提](每日一文/庸俗谋划了我们的卑贱%20-%20克里希%20·%20那穆提.md)
++  - [启程 - 卡夫卡](每日一文/启程%20-%20卡夫卡.md)
+   - [庸俗谋划了我们的卑贱 - 克里希 · 那穆提](每日一文/庸俗谋划了我们的卑贱%20-%20克里希%20·%20那穆提.md)
    - [王小波与沉默的大多数 - 梁文道](每日一文/王小波与沉默的大多数%20-%20梁文道.md)
    - [我们曾到过海边 - 张定浩](每日一文/我们曾到过海边%20-%20张定浩.md)
-   - [爱情故事 - 亦舒](每日一文/爱情故事%20-%20亦舒.md)
+
+@@ -848,6 +849,8 @@
+     - [分享想法](学习/零碎知识整理/分享想法.md)
+ - [断章 | Articles](断章/断章.md)
+   - [文章 | Literature](断章/文章/文章.md)
++    - [哈尔滨的珍同学](断章/文章/哈尔滨的珍同学.md)
++    - [西安之行](断章/文章/西安之行.md)
+     - [极限逼近法](断章/文章/极限逼近法.md)
+     - [订书钉与回形针](断章/文章/订书钉与回形针.md)
+     - [关于“记忆承载”内容的一点看法](断章/文章/关于“记忆承载”内容的一点看法.md)
 ```
 
 ## sitemap.txt
 
 ```diff
 
-@@ -372,6 +372,7 @@ https://tinysnow.github.io/每日一文/猫 - 汪曾祺
- https://tinysnow.github.io/每日一文/猫城的故事 - 村上春树
- https://tinysnow.github.io/每日一文/献欲手册 - 村上春树
- https://tinysnow.github.io/每日一文/猴子 - 芥川龙之介
-+https://tinysnow.github.io/每日一文/王小波与沉默的大多数 - 梁文道
- https://tinysnow.github.io/每日一文/王府大街 64 号 - 雷达
- https://tinysnow.github.io/每日一文/玩具 - 泰戈尔
- https://tinysnow.github.io/每日一文/现代听众的困境 - 梁文道
+@@ -211,6 +211,7 @@ https://tinysnow.github.io/每日一文/幸福的无关 - 林清玄
+ https://tinysnow.github.io/每日一文/幸福的生日 - 黑井千次
+ https://tinysnow.github.io/每日一文/幼稚的成熟与成熟的老到 - 王蒙
+ https://tinysnow.github.io/每日一文/庙口 - 梁文道
++https://tinysnow.github.io/每日一文/庸俗谋划了我们的卑贱 - 克里希 · 那穆提
+ https://tinysnow.github.io/每日一文/弗洛伊德和受虐狂 - 王小波
+ https://tinysnow.github.io/每日一文/张大力 - 冯骥才
+ https://tinysnow.github.io/每日一文/弥补 - 大卫 · 伊格曼
 ```
 
-## 庸俗谋划了我们的卑贱 - 克里希 · 那穆提.md
+## 哈尔滨的珍同学.md
 
 ```diff
 
-@@ -0,0 +1,17 @@
-+# 庸俗谋划了我们的卑贱
+@@ -0,0 +1,831 @@
++# 哈尔滨的珍同学
 +
-+*克里希 · 那穆提*
++## 写在前面
 +
-+　　我们最难的一个问题，就是弄清楚什么东西使人庸俗。你们知道庸俗是什么意思吗？庸俗的心就是受伤的心，不自由的心，陷于恐惧、困难当中的心，绕着自己的利益打转的心，为了急速解决问题绕着成败打转的心，绕着悲伤打转的心。这样的心，到最后都会变成破碎的心。一颗庸俗的心要打破自己习惯、惯性、自由自在的生活、走动、行动，这是最难的一件事，不是吗？你们以后就会知道大部分人的心都很渺小、卑贱。仔细看看自己的心，你会发现其中占满的都是一些小事情——考试及格、不及格、别人怎么想我们、害怕某一个人、怎样才会成功。你想找工作，有了工作，你又想更好的工作，就是这样。你搜寻自己的心，就会发现里面都是这种渺小的、琐碎的、事关切身利益的事情。因为占满了这种事情，所以就制造出很多问题，不是吗？我们的心想用卑贱解决问题，但是，因为解决不了，就更加卑贱。依我所见，教育的作用就是打破这种思考习惯。
++<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">10225 字 | 朋友 | 旅行 | 友谊 | 情感 | 感触 | 思考 | 消极内容</p>
++<p style="text-align:center; font-weight:bold; text-decoration:underline;">全文篇幅过于庞大，请慎重考虑是否阅读。</p>
++<p style="text-align:center;">与佳芯小姐的短文，将另行发布。</p>
 +
-+　　庸俗的心，陷在瓦拉那西窄巷，并且住在那里。它也许识字、也许考试都及格、也许社交生活很活跃，不过，还是活在画地自限的窄巷里。我觉得，重要的是我们每一个人，不分老少，都要看清楚一点，那就是，我们的心不论怎样挣扎，怎样用力，怀抱怎样的希望、恐惧、渴望，永远都是渺小的、都是卑贱的。那些上师、师父，还有卑贱的心建立的社团、宗教，一样卑贱，但是大部分人都不明白，要打破这种思考的惯性很难。
++## TL;DR
 +
-+　　我们年轻时有一些不庸俗的老师不是很重要吗？因为，如果老师自己就很愚昧、疲惫，脑子里想的都是琐碎的事情，深陷在自己的卑贱里面，那么，他就没有办法创造一种气氛，让学生自由自在，让学生打破社会强加在人身上的惯性。
++　　我不知道我和珍的关系还能维持多久。
 +
-+　　我想，要有了解人是否庸俗的能力是非常重要的。因为，大部分人都不承认自己庸俗，我们都觉得自己有一些优秀的东西深藏不露。然而，我们必须明白，我们其实都很庸俗。我们必须明白，我们的庸俗造成了我们的卑贱、琐碎。你们了解这一切吗？真不巧，我只会讲英文，但是我希望你们的老师能够帮助你们了解这一切。他们向你们解说这些东西的时候，也就打破了自己的琐碎。光是解说，就足以让他们觉察自己的卑贱、渺小。渺小的心没有能力爱人，没有能力雍容大度，只会吵一些小事情。印度，还有其他地方，需要的不是聪明人，不是有地位、有学位的人，而是你我这种已经打破琐碎心的人。
++　　按理来说，与朋友见面应当是一件开心的事情。这次见面，基调却充满哀伤。
 +
-+　　琐碎根本就是一种“我”的意念。“我”使心卑贱，永远想着自己的成功、理想、想要完美的欲望。这一切使心卑贱，因为，“我”不论如何扩展，一样渺小。所以，盘踞着小事的心是卑贱的心。一直想着事情，担心考试，担心工作，担心父母、老师、上师、邻居、社会怎么想我们的心，是卑贱的心。这一切念头都是想赢取他人的尊敬。然而，受人尊敬的心、庸俗的心，并不快乐。这一点你们要听好。
++　　我越发地感受到，我和她已经走上了完全不同的人生轨道。轨道之间相隔光年银河。
 +
-+　　你们知道，大家都希望别人尊敬自己，不是吗？希望别人——父母、邻居、社会，重视自己，希望自己行为正当，于是这一切造成了恐惧。这样的心绝不可能创新。然而，这一个败坏的世界需要的却是创造的心，不是发明的心，不是徒有能力的心。但是，这种创造却只有在没有恐惧时才会有，只有在心没有受到问题盘踞时才会有。这一切需要一种让学生真正自由的气氛，这自由不是为所欲为的自由，而是自由发问、追究、寻找、解说，然后又超越解说的自由。学生需要一种自由，去发现自己一生真正喜爱的事物，以免被迫从事自己厌恶的事情、不喜欢的事情。
++　　并且，在这之上，想法与价值观的沟壑也越发不可逾越。
 +
-+　　你们知道，庸俗的心永远不会叛变。庸俗的心顺从政府，顺从父母，什么事都容忍。我很担心，像这个国家，人这么多，生活这么困难，这种压力使我们听话，使我们顺从，于是渐渐的，反叛的精神毁了，不满的精神毁了。我们这种学校应该教育学生一辈子不满、不轻易满足。这种不满，如果没有落入满意、感激的管道，就会开始追寻，就会变成真正的智慧。
++　　或许后者才是更重要的东西。
++
++　　我对这种情况无力挽回，只能拼尽我所有的力量，去告诉她：你是我很重要的朋友。
++
++　　然后，享受当下。就像《泰坦尼克号》沉没前的狂欢一样。
++
++　　或许我转而庆幸，而非哀伤，因为我已经有了这样长时间的友谊。
++
++　　谁知道呢。
++
++　　<u>**Time flies, always the same.**</u>
++
++## 正文
++
++　　现在时间是 2024 年 9 月 9 日下午。写下这些文字的时候，我正在宾馆的窗边，看着外面风雨吹打的柳树发呆。
++
++　　中午便到达了机场，下午住进宾馆。这次旅行之后的时间，我不会再见到她了。
++
++　　前两天的日记里提到，见她似是西天取经。现在，最新的一难加到了她身上，而非我身上。
++
++　　我有时候觉得，加在我身上再多也无所谓，我可以试着去解决。
++
++　　而她太温顺、太温柔了。
++
++### ［2024 年 9 月 7 日  下午至晚上  去往机场］
++
++　　上午和佳芯见了一面。不过，我不打算写在这里。
++
++　　当 A 出现在 B 的传记里面，A 便总是配角。我不希望这样。这次旅行中所见到的每一个朋友，地位平等。
++
++　　于是，关于她和猫猫们，就又是另一个故事了。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06694.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06704.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06753.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06727.jpg)
++
++　　与佳芯分别之后，我便匆匆忙忙前往考试地点。电子科技大学成都学院。软考也在这里。更甚者，这次的考室，就在当初考软件设计师的考室对面。
++
++　　考试途中差点睡着。问单位要题库，他们没找到。我近乎裸考。所以这次大抵也过不了。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-26-53.jpg)
++
++　　学校外面，偶遇了攀。他说，自己已经被调往了财务部门，但信息工作仍然是他负责。并且省分行也默认了这一点。又不涨工资，这很扯淡。他也被行里要求考信贷人员上岗资格考试。他估摸着和我一样，又是明年再来了。我问他是否还回南充，他说不回了，就在酒店待两天，直接去培训。
++
++　　真好，可以休息两天。
++
++　　这次的登机口没有上次飞烟台的那么远。饶是如此，在天府机场兜兜转转，还是花了很长时间。天府机场太大了。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06795.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06791.jpg)
++
++　　航旅纵横上标明了所有的值机柜台，但现场没有那么多。许多柜台都没有工作人员。剩下的柜台前，都有挺长的队。最开始去 F 区，但工作人员说 F 区不办了，让去 E 区。来来回回跑。
++
++　　之前时间预计够用，经过这么一折腾，又陷入了时间不够用的恐慌。然而实际上到达登机口时，离起飞时间差不多还有四十多分钟。
++
++　　那个时候手机已经快没什么电了。群友说天府机场有可以充电的插座。我找了很久，终于找着了。它不一定每个登机口都有，有时候放在两个登机口中间的等待区上。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-29-31.jpg)
++
++　　最初我看航旅纵横上对于这趟航班的评价很差。实际体验下来其实还好。
++
++　　让我意外的是飞机餐。我最初以为七点多钟起飞的飞机没有航空餐。不过不知道夹生饭是不是所有航空公司的传统……
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-29-51.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-29-56.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-30-01.jpg)
++
++　　昆明航空这次的航空餐，是米饭、草莓蛋糕、两个麻花、一盒酸奶。居然是麻花不是蘑菇。居然还有酸奶。只能说上次飞回成都的南方航空确实没钱，昆航都上了酸奶了，南航还是纯净水。
++
++　　草莓蛋糕特别瓷实，我甚至都怀疑是不是压缩蛋糕。
++
++　　我本来以为，夜晚航班没有任何风景。结果在某一个刹那向舷窗看去，发现了北斗七星。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06835.jpg)
++
++　　看到的一瞬间，我便决定要把它拍下来。
++
++　　环境光几乎等于没有，而且舱内的人还在玩手机，手机的光倒映在双层舷窗上，四处折射，让整个画面呈现蓝色。
++
++　　换了最大光圈的镜头，但焦距太大，容易拍不全。快门速度拉到能维持平衡的最低档，ISO 上最大值，曝光补偿开到最大，才勉勉强强拍下了这张眩光强烈的北斗七星。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06826.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06822.jpg)
++
++　　虽然仍然有些不满意，但这已经是我能做到的最好了。
++
++　　飞机快要降落的城市上空，云层有很明显的光。那些光来自城市。我刚开始以为是北京，因为光很强，航线也会途径北京。但想了想，北京应该不会有这样大的河流。途径北京时，我应该在睡觉。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-53-59.jpg)
++
++　　看来，想要看星空，或许只能去高原或者飞机上了。
++
++　　飞机打算降落时，我刚睡醒，不小心打了一个哈欠。内耳蓦地有种撕裂的疼痛，先是左耳，后是右耳。我感觉大事不妙。
++
++　　下了飞机，问路，听力减退。声带发出的声音像是在脑海里很远的地方，只能隐约听见一点点。
++
++　　所幸，睡一觉之后，恢复了。看来下次起降的时候不能再睡觉了。要是飞机耳不能恢复就真的完蛋了。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06790.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06788.jpg)
++
++　　司机等人到齐等了许久，到宾馆时已经很晚了。太累，没有洗漱，上床就睡觉了。
++
++### ［2024 年 9 月 8 日  早上  前往哈工大］
++
++　　早上一早出发。宾馆叫醒人的方式居然是在外面放鞭炮……
++
++　　宾馆在离机场特别偏的地方。公路的两旁甚至没有人户，只有清清冷冷的行道树。乡下大概就这样的感觉吧。
++
++　　机场巴士有很多线路，问到了前往哈工大的 3 号线。上车时，天色已经大亮了。车上只有四个人，司机一一问我们下车地点。
++
++　　**我坐在车上，看着湛蓝天空下的哈尔滨发呆。**
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07167.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06848.jpg)
++
++　　昨天下飞机，一股严寒扑面而来。旁边有东北大哥笑说一声：“我喜欢这个温度。” 立秋虽已过，成都仍留着夏日的炎热。从前只听说东北的寒冷，下飞机那一刻，才有了真切的感受。
++
++　　**人们总喜欢温暖的地方，或许正因如此，黑龙江有着特别澄澈的蓝天。那是一种似乎从未被污染的蓝。**
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06890.jpg)
++
++　　珍问过我，对哈尔滨的第一印象是什么？
++
++　　我说：第一，冷；第二，有非常多纤细的柳树；第三，多风；第四，建筑都为浅色调；第五，东北人说话有点可怕……
++
++　　珍说，柳树的枝条细长有着当地的特殊缘故。许久之前，哈尔滨有一场冻雨，让所有柳条都结了冰。因此，发生过自重过重，柳条断裂砸伤人的事件。自那之后，主枝干隔段时间就会被修剪，慢慢形成了哈尔滨自己的柳树风格。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06989.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06990.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06865.jpg)
++
++　　多风，柳条随着风轻漾，所有柳树一起起舞。伴着吹动树叶的沙沙声，总会让人恍惚觉得，柳树在举行一场华丽而盛大的晚会。我很难描述那是一种怎样的感受与视听体验。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06895.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06894.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06973.jpg)
++
++　　之后的某个时间，我与珍说，要是哈尔滨能一直保持在这种温度，风和太阳经常登场，那么我觉得住在哈尔滨也不错。
++
++　　她无奈地笑笑：“可惜哈尔滨冬天非常非常冷。”
++
++　　有一次，我还在学校里，她给我发了两张图。一张哈尔滨南岗区的温度，一张南极的温度。她说：“出门一趟等于南极科考。”
++
++　　机场巴士上，我看见许多当地的特色的标志。我曾看过一句话，说，青岛的人对外介绍自己时，不会说自己是山东人，而会直接说自己是青岛人。就我去青岛见兰的经历而言，确乎如此。大街小巷，都能见到许多特色的标志，他们似乎总将自己化身为 “青岛人” 这样一个符号。标志越多，越有当地的自豪感。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-13-09.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-13-22.jpg)
++
++　　哈尔滨也如此，却不如青岛强烈。青岛像是逼着你直视他们，无处躲藏。哈尔滨尝试融入生活，总会在不经意间瞥见他们的身影。
++
++　　浅色的建筑也不像大城市的玻璃幕墙，不会到处折射他们的光芒，让人焦虑得睁不开眼。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07068.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07069.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07070.jpg)
++
++　　我打车到哈工大地铁站，跟她发消息：“我到了。”
++
++　　“啊？……”
++
++　　她后面跟我说，她以为我还要很久，所以磨磨蹭蹭地收拾东西，甚至还有时间玩手机。没想到我那么快。
++
++　　她指了一个地方，让我前往小西门。那是离她最近的校门。
++
++　　我一直都想为她买束花。正好途径一个花店。
++
++　　店员回答说，没有万寿菊。我想，风信子应该也没有。所以最后只买了雏菊。
++
++　　雏菊颜色倒挺多，但我这里没有雏菊对应颜色的花语。我只知道雏菊大类本身的花语。我不知道浅绿色和深黄色，会不会有一些暧昧或让人误解的花语，但愿不会。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-05-03.jpg)
++
++　　<u>颜色有时候很重要。就像黄色玫瑰，它并不用来表达爱意，与此相反，它表达歉意。</u>
++
++　　我看着她走出小西门，我躲在一个铁栅栏之后，看着她四处张望。
++
++　　“你在哪儿呢？”
++
++　　“往你左前方看。”
++
++　　“没看见啊……”
++
++　　我闪出身，向她走去。
++
++　　她脸上显出一丝惊讶和笑意。
++
++　　“没认出来吗？”
++
++　　“真没认出来…… 你怎么留了这么一个发型……”
++
++　　“我就猜到了。”
++
++### ［未知时间  旅行之后的内心独白］
++
++　　都说在一个地方待久了，或多或少会染上当地人的特色。珍有一些，但不多。
++
++　　我本来期望她操着东北口音与我聊天，我可以狠狠嘲笑她一番。愿望似乎落空了。她没有任何的口音迹象，她和我说四川话时，甚至语气语调还是那么淳朴。
++
++　　她在东北读了四五年书，我能感受到的当地特色，只有她的气质。
++
++　　那是我说不出来的清冷、寂寥。像北方的温度。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-14-45.jpg)
++
++　　<u>**北方也有暖和的时候，春夏甚至可以很热。但一提起北方，总还是想到寒冷的温度。**</u>
++
++　　**珍也如此。**
++
++　　<u>**或许是我自己的原因。这次旅行，总能感受到潜伏在她身上的拒人于千里之外。仿佛一个客观、冷静、独立、冷漠的旁观者，旁观着世间所有，不参与其中。**</u>
++
++　　<u>**珍会焦虑，会跟我们一样思考未来，计划当下，甚至她比我焦虑很多。她也会玩儿，开心地计划行程，琢磨着怎么度过一段开心的时光。**</u>
++
++　　<u>**就像北方，也有明媚温暖的时刻，被人提起时却总是想起寒冷。**</u>
++
++　　<u>**她的这股清冷气质，对我而言，就像是北方的寒冷。**</u>
++
++　　我后面想了许多，为什么会造成这样的印象。
++
++　　最后找了一个可能的原因。那是在这次旅途中，时常提起的话题。
++
++　　或许，仅仅只是因为，我是一个男生。
++
++　　<u>这次见面之前，我们曾经关于性别话题，关于交际话题吵了一架。她很坦然地跟我说，她对男生就是很有成见。</u>
++
++　　这次旅途中，她又和我提起，她有一个班长，男生，人品不太好。曾经在别人聚餐做饭时，拍了一张照，发朋友圈，配文：我的几个老婆。她当时也在其中。
++
++　　不用说她们，我都感到不舒服。
++
++　　<u>**那是一种真正的凝视。**</u> 居高临下的、睥睨天下的审视。让人觉得自己变成了一件待价而沽的所有物。
++
++　　这是我至今为止都极力抗拒的事情。
++
++　　参加工作之后，我更加了解地位差能带来一种怎样扭曲的人际行为。面具不是人们主动戴上的，而是在地位差之下，为了保护自己被迫戴上的。
++
++　　我没有太大的权力，只能尽力让我的朋友们感受到地位平等的自由魅力。
++
++　　努力消除性别鸿沟，就是我最为努力的其中一个方向。
++
++　　我留长发，体验过长发的辛苦；很少谈及性别话题，否则我们之间会划出明显的楚河汉界，一个团体瞬间划为红黑两方；温和待人，不愿使用暴力，不想让人觉得生理欺压。
++
++　　我深知，为什么我至今没能谈成一段长时间的恋爱。除了缺乏勇气，恋爱关系多少还是会向对方索求：男性希望对方温柔漂亮、贤惠体贴；女性希望对方强健有力、杀伐果断、负责任有担当还能多金。
++
++　　但我不愿意站在楚河汉界，向对面索要。
++
++　　珍说，在一个陌生场合，她更倾向于与女性聊天。这我很能理解，非常正常。
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">我只是难过。</span>
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">难过在她的成长过程中，有这么多抱有敌意的异性，造成了如今的印象。</span>
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">我更难过，我没能挽救回来。</span>
++
++　　<u>**又或许，觉得自己能挽救某个群体的印象，只是单纯自以为是的傲慢吧。**</u>
++
++　　<u>**我不知道，我在她的眼里，会不会带有身为男性的 Original Sin。**</u>
++
++　　<u>**我无法求证，也不应该求证。**</u>
++
++### ［2024 年 9 月 8 日  上午  初次见面］
++
++　　珍那天穿着白色的 T 恤，浅色的牛仔裤。牛仔裤淡水色和白色交替，像是被洗得发白。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06944.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06945.jpg)
++
++　　这一身很有她的风格。淡雅、干净、阳光。
++
++　　我把花递给她。她有些哭笑不得。
++
++　　“我要拿着这束花去太阳岛吗？”
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06840.jpg)
++
++　　“对的。”
++
++　　“怎么还给我找事儿做……”
++
++　　“所以我没买多少嘛，要是不想拿，还可以插在我书包的侧兜里。第一印象还是很重要的。”
++
++　　她听完笑了一声，然后把花插在了我书包的侧兜。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-17-32.jpg)
++
++　　真懒啊。
++
++　　哈尔滨的地铁只有三条线。地铁站风格偏俄式，有着深绿色的色调，地板砖却选了米黄色，灯光偏暗。这种氛围的地铁站，像是我们之后看到的俄国油画那般，给人一种祥和宁静的感受。成都的地铁站，地板砖灰得发亮，明亮的灯光在地面上四处反射，让人焦虑不堪。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06981.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06980.jpg)
++
++　　我和她说四川话，有时我们和店员说普通话。这让她的语言系统混乱不堪。地铁属于我们二人的交流，所以以方言为主。兴许是西南官话的口音，在一片北方官话口音里显得太特殊，每次我和她交流时，都有几个人回头看我们。
++
++　　几分钟后，我们到了太阳岛。
++
++　　太阳岛在地图上确实是一个岛，只有一个出入口，是一座桥。桥修得宏伟而宽阔。桥的左右两边，有着非常广阔的视野，能远眺城市。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06842.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06979.jpg)
++
++　　听珍说，太阳岛是 5A 级景区。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_15-42-46.jpg)
++
++　　我不关心风景，我只关心珍。
++
++### ［未知时间  此行的目的］
++
++　　这次旅行，她似乎总想让我见识更多哈尔滨本地的风景，吃一些本地的美食。
++
++　　她当然知道我此行的目的，是为了见她。不过似乎她总还是有些忿忿，觉得我不关心风景和美食有些亏。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06877.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06875.jpg)
++
++　　我笑。
++
++　　这在第二天她得知不能陪我时，表现得更明显。
++
++　　我在文首曾说，最新的一难加在了她的身上，就是这件事：她的导师，几乎一声不吭加入了考勤打卡制度，上午 9:00 上班，下午 14:00 上班，晚上 21:00 下班。著名的 996。下午组会发布了这个制度，自发布之时起生效。于是第二天她就只能被禁锢在实验室里。
++
++　　组会结束后，她非常生气，也很失落，似乎还对我抱有一丝歉意。
++
++　　我说没关系。
++
++　　这不是宽慰，因为这次旅行的目的，已经完美达成了。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07183.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07012.jpg)
++
++　　她和另一个朋友还约好了国庆节的演唱会，据她说，估计要泡汤了。
++
++　　确实也应该生气。
++
++　　“那就去把你们导师打一顿。毕业了在你们导师面前比一个国际友好手势。” 我笑说。
++
++　　她原计划陪我玩两天，因为这件事情，就把两天的行程压为一天。组会之后，要求我立刻启程。
++
++　　“没时间了，快走！” 那段时间，她总是这么说。
++
++　　“着啥急。” 我也总是笑。
++
++　　她总想带我体验更多的东西，说真心话，我得谢谢她。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06923.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06921.jpg)
++
++　　第二天，我们一起吃齐齐哈尔烤肉。我问过她一个问题。
++
++　　“就像你的毕业旅行，你是喜欢那个地方，还是喜欢跟室友一起出去玩儿？”
++
++　　<u>“肯定是和他们一起出去玩儿啊。要只是喜欢那个地方，找个旅游搭子，跟谁玩儿不是玩儿啊。” 她说。</u>
++
++　　“那你跟我不就是一路人吗，” 我大笑，“你昨天还老说我。”
++
++　　“不吧，我跟你还是不太一样，” 她几乎要翻个白眼，“你是纯为了见人，我好歹到一个地方还是想体验一下当地的新东西。”
++
++　　“好好好，” 我还是笑，“只是我更极端嘛，大方向上我们还是一路人。”
++
++　　那天下午，几乎全程都是，她带着我焦急地奔赴下一个目的地。
++
++　　我中途跟她说，这幅情形，我好像在游戏里见过。一个 Galgame，名字叫《花吻在上》（その花びらにくちづけを）。
++
++　　她问 Galgame 是什么……
++
++　　我突然有些尴尬。
++
++　　“美少女恋爱游戏，对这个游戏而言是讲百合的。”
++
++　　她哦了一声，似乎不感兴趣。
++
++　　里面的女一和女二，就很像现在的我们。二人定了很久的约会计划，女一当天却因为一些事情耽误了，最后见面了按原计划执行，只是每趟行程间隔缩得很短，搞得两人都很累。最后女二冲女一发火了。
++
++　　<u>“所以你还是想跟我说，在一起的人最重要是吗？” 她似笑非笑地看着我。</u>
++
++　　我点了点头。她这个时候仍然步履匆匆，对我的话心不在焉的样子。
++
++　　每次这种时候，我都欲言又止。
++
++　　<u>我知道 “漠视” 她的计划真的很不礼貌——看起来似乎不考虑她所做的工作和成本。</u>
++
++　　**但我最初的愿望，真的非常简单。只是见她一面。**
++
++　　坐在星巴克聊一上午都好。
++
++　　如何取舍、如何抉择，真的是一个很难的课题。
++
++　　第二天中午吃过午饭，她又该回实验室打卡了。因为晚上 21:00 才能出来，我又是明天一早的飞机，所以肯定不能再见面了。
++
++　　于是，我吃过饭，就即刻前往机场附近的宾馆了。
++
++　　那就是我写这篇文章开头的时候。我在宾馆里睡了一下午。
++
++　　**因为我再待在哈尔滨已经没有意义了，甚至在黑龙江都没有意义了。**
++
++　　我从始至终，只是为了来见她。不为了她本人，我年假在家躺两天说不定精力更好，还能执行自己的年度计划，何必这样折腾自己。
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">我只是想见你一面，仅此而已。</span>
++
++### ［2024 年 9 月 8 日  中午  太阳岛］
++
++　　从太阳岛出来，已经正午。我们简单吃了点冒菜，便送她去开组会。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-45-14.jpg)
++
++　　不得不说，全国的大学校门都一样水。曾经我带别人混进校门，也混过浙大校门。哈工大的校门也差不多一样好混。
++
++　　她去开组会，我与猪猪见了一面。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06984.jpg)
++
++　　猪猪本人让我有些意外，不过其实也还好。我们路过经管学院，猪猪说，经管学院前阵子闹过一个笑话。
++
++　　经管学院门口有一块牌子，是很经典的立式 “I ♡ SoM”。SoM 全称 School of Management，管理学院。我问经济呢，得到的回答是：管理要比经济强势很多，所以缩写里面没有经济。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-45-19.jpg)
++
++　　“然后有一天，字母 o 不小心掉了。”
++
++　　两人都笑。
++
++　　“之后学生就到处拍照转发，没过两天，牌子就换成了‘I ♡ 经管’。”
++
++　　猪猪要赶飞机，我们简单聊过之后，便分别了。
++
++　　我继续坐在那巨大火箭模型的长椅前，等着珍开完组会出门。
++
++　　那个时候，哈尔滨的风，吹过静谧的校园。远处闪烁不定的拍球声，旗帜撞到旗杆的金属声和猎猎声，背后被子被风吹起来的沙沙声，许多安静的声音交织在一起，将时间的脚步拖慢。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-03-33.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-03-36.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-03-39.jpg)
++
++　　<u>**我很少有过这样恣意、散漫而慵懒的时间。**</u>
++
++　　<u>**我任凭寒冷北方的暖阳，透过斑驳的柳树照耀在我身上。**</u>
++
++　　<u>**就这样发着呆。**</u>
++
++　　<u>**我有那么一两个瞬间觉得，发呆有时候并不是浪费时间。**</u>
++
++　　我看着珍走过来，知道她在组会上听闻了打卡制度，但还是笑着对她说：“来，我给你让个座。”
++
++　　她无奈地说：“让啥座啊，走吧，没时间了。”
++
++　　“着什么急呀，慢慢来。”
++
++### ［2024 年 9 月 8 日  下午  圣索菲亚教堂］
++
++　　珍打的车，去圣索菲亚教堂。我看着她念念有词的样子，非常心疼。她想抢到今天每一分每一秒的时间。但我真的只需要跟她在一起就好了。
++
++　　校门口放了一个红绿灯，绿灯常亮。部分绿光，映在她的额头上，让本就焦急的她，看起来更加焦虑了。
++
++　　我们这次见面聊的话题，多半都关于迷茫。在太阳岛散步时，话题也是。
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">这次旅行，那个红绿灯灯光下的她，我感觉是这次旅行中，焦虑情绪的顶峰。</span>
++
++　　<u>**我实在无法描述。**</u>
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">当时我特别想说些什么，最后却又归于沉默。</span>
++
++　　我拍拍她的肩膀，说：“真的没事，小事情。不用这么急。”
++
++　　那一刻，我脑海里闪过一首歌：《Everything's Gonna Be Alright》（《一切都会没事》）。
++
++　　<u>我非常感激她重视我的这次旅行，计划了很多。然而不能看到开心快乐的她，我觉得来的这一切都没有了意义。</u>
++
++　　人的愿望，总不会一致。
++
++　　圣索菲亚教堂在市中心的位置，周围有很多游客。拜占庭式的建筑风格，加上俄罗斯的特色，使其在周围的建筑中独树一帜。许多人在教堂前拍照，身着华丽衣裙的模特不可胜数。那些哥特式的衣服夸张又华丽，我甚至难以想象裙撑会有多大。维多利亚一样的贵族风格，让这些女性即使在游客中都甚为显眼。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC06998.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07005.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07003.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07008.jpg)
++
++　　“你没有想过穿一些华丽的衣服吗？”
++
++　　“什么？穿上拍照吗？”
++
++　　“不一定是拍照呀，感觉好功利，” 我补充说，“就是单纯盛装打扮一番。”
++
++　　“当然会呀，” 她似乎很无语，“我又不是机器人。”
++
++　　是吗？看起来不像诶。我心里暗笑。
++
++　　她给我指了指几处风景，然后催促我快拍。
++
++　　嗬，我这一身反骨的人，专门叫我拍我反倒不想拍了。
++
++　　在往中央大街走的途中，时刻已逼近黄昏。
++
++　　夕阳被建筑分割成一条条的线，人们从阴影里吐出，又拥抱斜阳。
++
++　　我走在她的后面，看着她的背影。
++
++　　我思索了很久该怎样形容与修饰，最后放弃了。
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">我永远无法描述，那个在夕阳照耀下，被微风撩起长发的珍，究竟有多美。</span>
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07058.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07061.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07062.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07063.jpg)
++
++### ［2024 年 9 月 8 日  黄昏  中央大街］
++
++　　来见她之前，我给她布置了一个任务：让她挑一个发夹或者发箍。后面我们进一家小商品店，买到了。当时她问我，不买一些纪念品吗，比如圣索菲亚大教堂模型之类的。我晃了晃手中的发夹，说：“这不就是纪念品吗？”
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-47-41.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-04-37.jpg)
++
++　　我感觉她被我气得不轻。
++
++　　中央大街上有一家邮店。我不知道怎么形容那家店，专卖邮票、邮车模型和有关邮政的古玩之类。我偶然发现了两张明信片，上面写着脱单的诚挚祝愿。
++
++　　我跟她说，我买两张，回去之后把它寄给你。
++
++　　<u>她哭笑不得：“你有病吗？”</u>
++
++　　我笑出声。
++
++　　她甚至认真思考了一下在哪里去取明信片。可能潜意识里，觉得我真有可能这么做。
++
++　　她真了解我。要不是最后看到这张明信片背后有广告，我就真打算这么干了。
++
++　　她有些渴，提议我们去买一杯 “茶话弄”。
++
++　　路上她说，茶话弄是西安品牌，问我前阵子去西安没喝过吗。我摇摇头，说没有。
++
++　　*“你又不是不知道，我去西安是干嘛的。”*
++
++　　*“见人是吧。” 她翻个白眼。*
++
++　　*都会抢答了。*
++
++　　她说茶话弄很好喝，推荐我也来一杯。我看着菜单上那些诡异的名字，一时间有些不知所措。
++
++　　她说，如果拿不定，就选店里推荐的吧。
++
++　　我点点头。
++
++　　她点了一杯茶上浮有一大堆奶油的奶茶。我看着那一堆奶油有些发怵，问她不腻吗。她说还好。
++
++　　看来女孩子的胃，跟我们真是两种型号。
++
++　　茶话弄的几乎每一个产品，上面都漂有一层沫。据珍说，那层奶沫是茶话弄的特色，很好喝。我喝不太来，喝起来总有种微妙的奇特感。不过确实挺有特色。
++
++　　我们在缓慢流逝的时间里，从中央大街这一头，散步到了另一头。另一头是江边。
++
++　　<u>我们从黄昏走到了入夜。</u>
++
++### ［未知时间  最开心的事］
++
++　　你知道，在中央大街快结束、去江边之前，我对你说过，我今天最开心的事是什么。
++
++　　<u>**我说，刚才，你似乎忘掉了所有的焦虑、所有的不开心、所有的压迫，只是很单纯地逛街，单纯地聊天。我觉得，这是我做的最好的事情。**</u>
++
++　　<u>**你听完之后，淡淡地笑了一下。**</u>
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07116.jpg)
++
++　　<u>**我不知道你在想什么。**</u>
++
++　　<u>**我只知道，那个时候，我确实由衷为这件事情感到开心与满意。**</u>
++
++　　我来这里，就是为了这个目的。
++
++　　<u>**Live in the present, Enjoy the moment.**</u>
++
++### ［2024 年 9 月 8 日  夜  松花江边］
++
++　　我们到松花江边时，已经入夜。夕阳挣扎着在地平线留下它的最后一抹色彩。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-48-16.jpg)
++
++　　江边有风，比城里的风更凉，带着强烈的江河湖海的标记。抓着最后一捧光线，有人在江上花式游船。江面惊得一波未平一波又起，涟漪从弄潮儿的身边迅速扩散，一圈又一圈，像是出击的士兵。丁达尔光柱让极远处的缆车显得更加醒目。警察在繁忙地维持着秩序，不断走来走去。有人碰掉了警戒线，我将它拉起，准备挂好，警察说他来就可以了，这个本来就很容易掉。挂好，旋即他又走开。河堤有阶梯，人们都坐在河堤上，享受入夜前的这一刻。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07156.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07143.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07155.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07140.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07126.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07151.jpg)
++
++　　珍说，晚上这里景色很好。我默然。
++
++　　我很喜欢这种氛围，我感觉我可以待到散场。
++
++　　我拍下那个蜿蜒的装饰柱，忽然看见了相机左上角闪烁着一个黄色的 0。虽然奇怪，但我没有管它。直到按下下一次快门，相机提示我内存不足。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07157.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07138.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07112.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07158.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07166.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07165.jpg)
++
++　　我错愕不止。
++
++　　我预料到了相机的很多坏结局，但唯独没预料到会把存储卡拍满。在我印象中，这是不太可能的事情。我走之前，起码还有 15 个 G。
++
++　　珍在一边拍手叫好。因为这下我就不能拍她了。
++
++　　我翻了她一个白眼。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07018.jpg)
++
++　　至于之后在 “小味” 的聚餐，我不打算写。没有什么可以写的地方。我只记得，我们隔壁桌在讨论婚姻，声音激烈。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-53-10.jpg)
++
++　　时代的焦虑散播到每一个人身上，就是一座大山。
++
++　　餐桌上的珍，就像一位妈妈，一直在催促着我吃饭，说要不都凉了，不要一直说话。
++
++　　小味很好吃，只是锅底有些油，除此之外便不再记得什么了。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-53-51.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-53-41.jpg)
++
++　　吃完之后，我给她打车。她以为我还要跟着她一起去她学校，但没有。我只是不想让她付钱。我给她关上车门那一刹那，她懵掉了。
++
++　　“啊，” 她发消息说，“我以为你会跟我一起……”
++
++　　我在这边笑出声。
++
++　　“没有，把你送走之后，我肯定就自己打车走了呀。”
++
++　　我忘记了当初酒店定在哈工大附近了，其实一起走也不错。
++
++　　“好吧，” 她说，“那你也早点回去休息。”
++
++　　**“嗯，晚安，好梦。”**
++
++　　**“晚安。”**
++
++### ［2024 年 9 月 9 日  中午  齐齐哈尔烤肉店］
++
++　　珍 996 的第一天。我见到她时，她的 T 恤换成了棕色，不再是浅色。听她的描述，说这是上班穿搭，用来赎罪的。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07213.jpg)
++
++　　我直接到店门口等的她，看她一脸疲惫地走过来。
++
++　　吃饭时，她跟我说，昨天洗完澡睡下之后，脚疼到半夜疼醒了。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07204.jpg)
++
++　　我很诧异，陡生出许多歉意。
++
++　　珍平时不太运动，这次和我一起出门，真是委屈她了。同时我也想恶作剧地把她摁倒健身房里去。
++
++　　这也太弱了一点……
++
++　　第二天，她对于镜头还是很敏感。猫一样，躲得飞快。我放弃了。
++
++　　我们依旧聊一些无关痛痒的话题。
++
++　　昨天在太阳岛时，她问我有什么建议。 <u>**我说，我只有两个忠告：一，身体和健康最重要；二，千万注意安全。**</u>
++
++　　她听完笑出声。我问她笑什么，她说，还以为我这样的人会给一些找工作之类的建议。
++
++　　我说，我也有，不过都没有这两条重要。
++
++　　想了想，最后还是说了这两条。
++
++　　今天吃饭时，又说了。
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">我说：“兴许你的家人对你有更高的要求，但那建立在默认了健康和平安的基础上。一旦失去了这两样东西，他们绝对不会再奢求其他东西了。”</span>
++
++　　我的要求更简单。
++
++　　<u>身为朋友，我从没抱有寻求利益的想法，更不企图在她身上获得什么。只要她健康、平安、幸福快乐地活着就好了。</u>
++
++　　<u>**在骑电动车狠狠地摔在地上之前，我以为平安和健康也是像阳光、空气和水一样触手可得的东西。**</u>
++
++　　关于那顿饭、那些话题，我实在记不太清了。我只记得我稍微说过一些经济类的常识，以及烤肉上的鸡翅很好吃、生菜摆得很漂亮。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-55-17.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-55-25.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07201.jpg)
++
++　　珍问我要喝点什么时，我翻过菜单，看见有一款饮料叫 “珍珍”。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-56-24.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-04-45.jpg)
++
++　　我笑出声。
++
++　　我问她喝过吗，她说没有。我问她要来一个吗，她说不用了。
++
++　　最后她要了加多宝……
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07190.jpg)
++
++　　珍珍是荔枝味的汽水，喝起来感觉味道还行。感觉和成都卖的 “峨眉雪” 差不多。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07192.jpg)
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-04-49.jpg)
++
++　　她当然知道我要这罐饮料基于什么原因，不过我还有另一个原因：我从斯那里学到的，“对一切新鲜事物抱有好奇心”，勇于尝试。
++
++### ［2024 年 9 月 9 日下午及 2024 年 9 月 10 日］
++
++　　吃过饭后，送她进了校门口。我目送着她远去，步履疲惫但坚定。本想拍两张，但她说我们拍了合照之后就不能再拍她了，我得遵守约定。
++
++　　送别珍之后，我迅速前往了当晚的宾馆，第二天一早的飞机。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_11-57-46.jpg)
++
++　　我在宾馆里睡了一下午，晚饭就吃了一盒薯片。看起来浪费了大把大把的时间，但我觉得无所谓。
++
++　　我对她说过很多次，她耳朵也都听出茧子了。
++
++　　所以，不能再见到她的话，我待在这个城市，甚至这个省，都没有意义了。
++
++　　<u>**下午下了很大的雨，吹了很大的风，我在窗边发呆。想着这两天的经历，越发地有些难过。**</u>
++
++　　我和珍已经不是一路人了。
++
++　　共同点越少，亲密关系破裂的可能性越大。
++
++　　<u>**我看过杨绛先生的那句话——“我做好了要跟你过一辈子的打算，也做好了你随时要走的准备。我用真心待你，但不执着于你。活在缘分里，而非关系里。”**</u>
++
++　　<u>**但真到这种时候，这种能明显预感到友谊断裂的时候，我还是会无比慌张。**</u>
++
++　　<u>**我没有做好准备，也不知道什么时候做好准备。**</u>
++
++　　<u>**我的朋友本就不多，我终究还是没有那么豁达。**</u>
++
++　　珍吃饭时跟我说，她兄长跟她说：“没有人会平白无故对你好，特别是异性。” 她深以为然。
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">我当时特别想说些什么，最后又归于沉默。</span>
++
++　　<u>**我没有资格说这些话。“异性好友” 这个立场，终究还是太过特殊了。**</u>
++
++　　<u>**或许我也是有所企图的吧。**</u>
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold;">企图她能一直和我做朋友，能有多久就有多久。我不知道这算不算 “别有所图”，我只知道我没有立场，也没有勇气说这句话。</span>
++
++　　早上 8 点过起飞的飞机，6:30 就要到机场。
++
++　　我背上包，往身后看了看。
++
++　　<span style="color:#0f4c81; text-decoration:underline; font-weight:bold; background-color:#DFF8AD">那天，哈尔滨太平国际机场的天空，那样蓝、那样美，蓝得通透、美到窒息。</span>
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-39-13.jpg)
++
++　　南国微雪 Miyuki
++
++　　2024 年 9 月 11 日
++
++## 写在后面
++
++　　因篇幅过于庞大，故不放出全部影像。
++
++## 封面图
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-39-13.jpg)
++
++（图为早晨六点半的哈尔滨太平国际机场）
++
++> 摄影师 | 南国微雪
++>
++> 图源 | 生活
+\ No newline at end of file
+```
+
+## 西安之行.md
+
+```diff
+
+@@ -0,0 +1 @@
++# 西安之行
+\ No newline at end of file
+```
+
+## 启程 - 卡夫卡.md
+
+```diff
+
+@@ -0,0 +1,15 @@
++# 启程
++
++*卡夫卡*
++
++　　我吩咐将我的马从圈里牵出来。仆人没听懂我的话。我自己来到马圈，给我的马备好鞍具，然后跨了上去。我听见远处有吹小号的声音，我问仆人这意味着什么。他不知道，他什么也没听到。在大门口他挡住我问道："你这是去哪儿，先生？"
++
++　　"我不知道，"我说："只要离开这里，只要离开这里。不停地离开这里，只有这样我才能到达我的目的地。"
++
++　　"那你知道你的目的地啦？"他问。
++
++　　"知道，"我回答说，"我说过：'离开这里'，这就是我的目的地。"
++
++　　"你没带干粮。"他说。
++
++　　"我不需要，"我说，"旅程是那么漫长，如果在路上什么也得不到，那我必定饿死无疑。干粮救不了我的命。幸亏这是一趟确实不同寻常的旅行。"
 \ No newline at end of file
 ```
