@@ -266,6 +266,7 @@ https://tinysnow.github.io/每日一文/打工经历 - 王小波
 https://tinysnow.github.io/每日一文/打赌 - 契诃夫
 https://tinysnow.github.io/每日一文/扼杀胎儿 - 渡边淳一
 https://tinysnow.github.io/每日一文/找到自己的命运，而不是他人的命运 - 赫尔曼 · 黑塞
+https://tinysnow.github.io/每日一文/把每一天当做生命的终点 - 斯蒂夫 · 乔布斯
 https://tinysnow.github.io/每日一文/抱孙 - 老舍
 https://tinysnow.github.io/每日一文/抽象的爱国 - 梁文道
 https://tinysnow.github.io/每日一文/拖地 - 亦舒
@@ -1348,9 +1349,9 @@ https://tinysnow.github.io/学海计划/金融学/保险/家庭财产保险
 https://tinysnow.github.io/学海计划/金融学/保险/意外伤害保险
 https://tinysnow.github.io/学海计划/金融学/保险/重症或大病医疗保险
 https://tinysnow.github.io/学海计划/金融学/理财/投资实践：基金概述
+https://tinysnow.github.io/学海计划/金融学/理财/投资实践：概述
+https://tinysnow.github.io/学海计划/金融学/理财/投资实践：理财种类
 https://tinysnow.github.io/学海计划/金融学/理财/投资实践：资产配置与风险分散
-https://tinysnow.github.io/学海计划/金融学/理财/投资理念：实践
-https://tinysnow.github.io/学海计划/金融学/理财/投资理念：理财种类
 https://tinysnow.github.io/学海计划/金融学/理财/投资策略
 https://tinysnow.github.io/学海计划/金融学/理财/消费与投资
 https://tinysnow.github.io/学海计划/金融学/理财/理财
