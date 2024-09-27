@@ -477,6 +477,7 @@ https://tinysnow.github.io/每日一文/词语洁癖 - 刘瑜
 https://tinysnow.github.io/每日一文/诗人黄昏所见 - 赫尔曼 · 黑塞
 https://tinysnow.github.io/每日一文/话的力量 - 巴甫连科
 https://tinysnow.github.io/每日一文/误解 - P · G · 伍德豪斯
+https://tinysnow.github.io/每日一文/读书是一种享受 - 毛姆
 https://tinysnow.github.io/每日一文/读书有秘诀吗 - 邓拓
 https://tinysnow.github.io/每日一文/谁的生命可以不受时间限制 - 沈从文
 https://tinysnow.github.io/每日一文/谈抽烟 - 朱自清
@@ -1349,6 +1350,7 @@ https://tinysnow.github.io/学海计划/金融学/保险/家庭财产保险
 https://tinysnow.github.io/学海计划/金融学/保险/意外伤害保险
 https://tinysnow.github.io/学海计划/金融学/保险/重症或大病医疗保险
 https://tinysnow.github.io/学海计划/金融学/理财/投资实践：基金概述
+https://tinysnow.github.io/学海计划/金融学/理财/投资实践：基金种类
 https://tinysnow.github.io/学海计划/金融学/理财/投资实践：概述
 https://tinysnow.github.io/学海计划/金融学/理财/投资实践：理财种类
 https://tinysnow.github.io/学海计划/金融学/理财/投资实践：资产配置与风险分散
