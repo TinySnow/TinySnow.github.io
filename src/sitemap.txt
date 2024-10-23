@@ -546,6 +546,7 @@ https://tinysnow.github.io/每日一文/青梅竹马 - 佚名
 https://tinysnow.github.io/每日一文/静下来 - 玛丽安 · 麦肯译
 https://tinysnow.github.io/每日一文/非血之爱 - 毕淑敏
 https://tinysnow.github.io/每日一文/飞越流水线 - 刘瑜
+https://tinysnow.github.io/每日一文/香蕉的尸斑 - 李碧华
 https://tinysnow.github.io/每日一文/马戏团的秘密 - 星新一
 https://tinysnow.github.io/每日一文/马缨花 - 季羡林
 https://tinysnow.github.io/每日一文/鬼剃头 - 冯骥才
@@ -764,6 +765,7 @@ https://tinysnow.github.io/技术/实践记录/Git仓库瘦身
 https://tinysnow.github.io/技术/实践记录/Logstash同步MySQL数据到ElasticSearch
 https://tinysnow.github.io/技术/实践记录/Mdbook排版混乱
 https://tinysnow.github.io/技术/实践记录/MySQL与ElasticSearch的数据同步尝试
+https://tinysnow.github.io/技术/实践记录/Telegram机器人的手机部署
 https://tinysnow.github.io/技术/实践记录/Windows自定义自启动任务
 https://tinysnow.github.io/技术/实践记录/博客历史演进
 https://tinysnow.github.io/技术/实践记录/实践记录
