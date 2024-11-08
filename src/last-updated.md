@@ -4,100 +4,509 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## SUMMARY.md
-
-```diff
-
-@@ -8,6 +8,7 @@
- - [杂记 | Sundry](杂记.md)
- -----
- - [每日一文 | Daily Article](每日一文/每日一文.md)
-+  - [我家的财富 - 德富芦花](每日一文/我家的财富%20-%20德富芦花.md)
-   - [上帝为什么不奖赏好人 - 张若水](每日一文/上帝为什么不奖赏好人%20-%20张若水.md)
-   - [蟹颂 - 蔡澜](每日一文/蟹颂%20-%20蔡澜.md)
-   - [草莓 - 雅 · 伊瓦什凯维奇](每日一文/草莓%20-%20雅%20·%20伊瓦什凯维奇.md)
-```
-
 ## sitemap.txt
 
 ```diff
 
-@@ -734,6 +734,7 @@ https://tinysnow.github.io/小说/想象力训练/理想雪 - 就是为了来见
- https://tinysnow.github.io/小说/想象力训练/理想雪 - 应不应该
- https://tinysnow.github.io/小说/想象力训练/理想雪 - 必须服从命令的一天
- https://tinysnow.github.io/小说/想象力训练/理想雪 - 永远恒温的衣服
-+https://tinysnow.github.io/小说/想象力训练/理想雪 - 翠鸟协会
- https://tinysnow.github.io/小说/想象力训练/理想雪 - 那些不重要
- https://tinysnow.github.io/小说/想象力训练/青鸟
- https://tinysnow.github.io/小说/想象力训练/靛青之秋之一
-
-@@ -876,6 +877,7 @@ https://tinysnow.github.io/断章/文章/冰面少年
- https://tinysnow.github.io/断章/文章/前行
- https://tinysnow.github.io/断章/文章/占有美
- https://tinysnow.github.io/断章/文章/反抗
-+https://tinysnow.github.io/断章/文章/只缘身在旅途中
- https://tinysnow.github.io/断章/文章/吃出的爱意
- https://tinysnow.github.io/断章/文章/哈尔滨的珍同学
- https://tinysnow.github.io/断章/文章/哥，咱家要散了
-
-@@ -973,6 +975,7 @@ https://tinysnow.github.io/断章/胡言/胡言乱语之二
- https://tinysnow.github.io/断章/胡言/胡言乱语之五
- https://tinysnow.github.io/断章/胡言/胡言乱语之四
- https://tinysnow.github.io/断章/诗词/Hide and Seek
-+https://tinysnow.github.io/断章/诗词/“谵妄”
- https://tinysnow.github.io/断章/诗词/一如既往
- https://tinysnow.github.io/断章/诗词/一瞬间
- https://tinysnow.github.io/断章/诗词/不屈
-
-@@ -1005,6 +1008,7 @@ https://tinysnow.github.io/断章/诗词/我不会忘记你的名字
- https://tinysnow.github.io/断章/诗词/我不会想见你
- https://tinysnow.github.io/断章/诗词/我在刺杀你的路上，买了一束鲜花
- https://tinysnow.github.io/断章/诗词/我愿化作一株野草
-+https://tinysnow.github.io/断章/诗词/我的思念藏在海里
- https://tinysnow.github.io/断章/诗词/我的思念，是一支箭矢
- https://tinysnow.github.io/断章/诗词/我的爱如春风化雨
- https://tinysnow.github.io/断章/诗词/摊破浣溪沙
+@@ -265,6 +265,7 @@ https://tinysnow.github.io/每日一文/我们都有病 - 朱德庸
+ https://tinysnow.github.io/每日一文/我只要一种 - 朵拉
+ https://tinysnow.github.io/每日一文/我妈 - 钱海燕
+ https://tinysnow.github.io/每日一文/我妈不让我看电视 - 佚名
++https://tinysnow.github.io/每日一文/我家的财富 - 德富芦花
+ https://tinysnow.github.io/每日一文/我对女性有意见 - 詹姆斯 · 瑟伯
+ https://tinysnow.github.io/每日一文/我所认识的李敖 - 林清玄
+ https://tinysnow.github.io/每日一文/我改变的事物 - 刘亮程
 ```
 
-## 我家的财富 - 德富芦花.md
+## index.hbs
 
 ```diff
 
-@@ -0,0 +1,35 @@
-+# 我家的财富
+@@ -1,5 +1,5 @@
+ <!DOCTYPE HTML>
+-<html lang="{{ language }}" class="{{ default_theme }}" dir="{{ text_direction }}">
++<html lang="{{ language }}" class="{{ default_theme }} sidebar-visible" dir="{{ text_direction }}">
+     <head>
+         <!-- Book generated using mdBook -->
+         <meta charset="UTF-8">
+
+@@ -74,15 +74,17 @@
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+         <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+         
+-    </head>
+-    <body class="sidebar-visible no-js">
+-    <div id="body-container">
 +
-+*德富芦花*
+         <!-- Provide site root to javascript -->
+         <script>
+             var path_to_root = "{{ path_to_root }}";
+             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "{{ preferred_dark_theme }}" : "{{ default_theme }}";
+         </script>
+-
++        <!-- Start loading toc.js asap -->
++        <script src="{{ path_to_root }}toc.js"></script>
++    </head>
++    <body class="sidebar-visible no-js">
++    <div id="body-container">
+         <!-- Work around some values being stored in localStorage wrapped in quotes -->
+         <script>
+             try {
+
+@@ -102,10 +104,11 @@
+             var theme;
+             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+             if (theme === null || theme === undefined) { theme = default_theme; }
+-            var html = document.querySelector('html');
++            const html = document.documentElement;
+ 
+             html.classList.remove('{{ default_theme }}')
+             html.classList.add(theme);
++            html.classList.add("js");
+             var body = document.querySelector('body');
+             body.classList.remove('no-js')
+             body.classList.add('js');
+
+@@ -130,10 +133,14 @@
+         </script>
+ 
+         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+-            <div class="sidebar-scrollbox">
+-                {{#toc}}{{/toc}}
++            <!-- populated by js -->
++            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
++            <noscript>
++                <iframe class="sidebar-iframe-outer" src="{{ path_to_root }}toc.html"></iframe>
++            </noscript>
++            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
++                <div class="sidebar-resize-indicator"></div>
+             </div>
+-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+         </nav>
+ 
+         <!-- Track and set sidebar scroll position -->
+```
+
+## index.hbs.bak
+
+```diff
+
+@@ -0,0 +1,417 @@
++<!DOCTYPE HTML>
++<html lang="{{ language }}" class="{{ default_theme }} sidebar-visible" dir="{{ text_direction }}">
++    <head>
++        <!-- Book generated using mdBook -->
++        <meta charset="UTF-8">
++        <title>{{ title }}</title>
++        {{#if is_print }}
++        <meta name="robots" content="noindex">
++        {{/if}}
++        {{#if base_url}}
++        <base href="{{ base_url }}">
++        {{/if}}
++        
++        <!-- Custom HTML head -->
++        {{> head}}
 +
-+## 一
 +
-+　　房子不过三十三平方，庭院也只有十平方。人说，这里既褊狭，又简陋。屋陋，尚得容膝；院落小，亦能仰望碧空，信步遐想，可以想得很远，很远。
++        <meta name="description" content="{{ description }}">
++        <meta name="viewport" content="width=device-width, initial-scale=1">
++        <meta name="theme-color" content="#ffffff">
 +
-+　　日月之神长照。一年四季，风雨霜雪，轮番光顾，兴味不浅。蝶儿来这里欢舞，蝉儿来这里鸣叫，小鸟来这里玩耍，秋蛩来这里低吟。静观宇宙之大，其财富大多包容在这座十平方的院子里。
++        {{#if favicon_svg}}
++        <link rel="icon" href="{{ path_to_root }}favicon.svg">
++        {{/if}}
++        {{#if favicon_png}}
++        <link rel="shortcut icon" href="{{ path_to_root }}favicon.png">
++        {{/if}}
++        <link rel="stylesheet" href="{{ path_to_root }}css/variables.css">
++        <link rel="stylesheet" href="{{ path_to_root }}css/general.css">
++        <link rel="stylesheet" href="{{ path_to_root }}css/chrome.css">
++        {{#if print_enable}}
++        <link rel="stylesheet" href="{{ path_to_root }}css/print.css" media="print">
++        {{/if}}
 +
-+## 二
++        <!-- Fonts -->
++        <link rel="stylesheet" href="{{ path_to_root }}FontAwesome/css/font-awesome.css">
++        {{#if copy_fonts}}
++        <link rel="stylesheet" href="{{ path_to_root }}fonts/fonts.css">
++        {{/if}}
 +
-+　　院里有一棵老李，到了春四月，树上开满了青白的花朵。碰到有风的日子，李花从迷离的碧空飘舞下来，须臾之间，满院飞雪。
++        <!-- Highlight.js Stylesheets -->
++        <link rel="stylesheet" href="{{ path_to_root }}highlight.css">
++        <link rel="stylesheet" href="{{ path_to_root }}tomorrow-night.css">
++        <link rel="stylesheet" href="{{ path_to_root }}ayu-highlight.css">
 +
-+　　邻家多花树，飞花随风飘到我的院子里，红雨霏霏，白雪纷纷，眼见满院披上花的衣衫。仔细看有桃花，有樱花，有山茶花，有棠棣花，有李花。
++        <!-- Custom theme stylesheets -->
++        {{#each additional_css}}
++        <link rel="stylesheet" href="{{ ../path_to_root }}{{ this }}">
++        {{/each}}
 +
-+## 三
++        {{#if mathjax_support}}
++        <!-- MathJax -->
++        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
++        {{/if}}
 +
-+　　院角上长着一棵栀子。五月黄昏，春阴不晴，白花盛开，清香阵阵。主人沉默寡言，妻子也很少开口。这样的花生在我家，最为相宜。
++        <!-- Baidu Site Analytics -->
++        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
 +
-+　　老李背后有棵梧桐，绿干亭亭，绝无斜出，似乎告诉人们：“要像我一般正直。”
++        <!-- Global site tag (gtag.js) - Google Analytics -->
++        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
++        <script>
++          window.dataLayer = window.dataLayer || [];
++          function gtag(){dataLayer.push(arguments);}
++          gtag('js', new Date());
 +
-+　　梧叶和水盆旁边的八角金盘，叶片宽阔，有了它，我家的雨声也多了起来。
++          gtag('config', 'G-P9324YLFBW');
++        </script>
 +
-+　　李子熟了，每当沾满了白粉的琥珀般的玉球骨碌碌滚到地面的时候，我就想，要是有个孩子，我拾起一个给他，那该多高兴啊！
++        <!-- Doc Search -->
++        <link
++            rel="stylesheet"
++            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
++        />
++        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
++        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
++        
 +
-+## 四
++        <!-- Provide site root to javascript -->
++        <script>
++            var path_to_root = "{{ path_to_root }}";
++            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "{{ preferred_dark_theme }}" : "{{ default_theme }}";
++        </script>
++        <!-- Start loading toc.js asap -->
++        <script src="{{ path_to_root }}toc.js"></script>
++    </head>
++    <body class="sidebar-visible no-js">
++    <div id="body-container">
++        <!-- Work around some values being stored in localStorage wrapped in quotes -->
++        <script>
++            try {
++                var theme = localStorage.getItem('mdbook-theme');
++                var sidebar = localStorage.getItem('mdbook-sidebar');
++                if (theme.startsWith('"') && theme.endsWith('"')) {
++                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
++                }
++                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
++                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
++                }
++            } catch (e) { }
++        </script>
 +
-+　　蝉声凄切之后，世界进入冬季。山茶花开了，三尺高的红枫像燃着一团火。房东留下的一株黄菊也开了。名苑之花固然娇美，然而，秋天里优雅闲寂的情趣，却荟萃在我家的庭树上了。假若我是诗翁蜕岩，我将吟咏“独怜细菊近荆扉”，使我惭愧的是我不能唱出“海内文章落布衣”的诗句来。
++        <!-- Set the theme before any content is loaded, prevents flash -->
++        <script>
++            var theme;
++            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
++            if (theme === null || theme === undefined) { theme = default_theme; }
++            const html = document.documentElement;
 +
-+　　屋后有一株银杏，每逢深秋，一树金黄，朔风乍起，落叶翩翩，恰如仙女玉扇坠地。夜半梦醒，疑为雨声；早起开门一看，一夜过后，满庭灿烂。屋顶房檐，无处不是落叶，片片红枫相间其中。我把黄金翠锦都铺到院子里了。
++            html.classList.remove('{{ default_theme }}')
++            html.classList.add(theme);
++            html.classList.add("js");
++            var body = document.querySelector('body');
++            body.classList.remove('no-js')
++            body.classList.add('js');
++        </script>
 +
-+## 五
++        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 +
-+　　树叶落尽，顿生凄凉之感。然而，日光月影渐渐增多，仰望星空，很少遮障，令人欣喜。
-\ No newline at end of file
++        <!-- Hide / unhide sidebar before it is displayed -->
++        <script>
++            var body = document.querySelector('body');
++            var sidebar = null;
++            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
++            if (document.body.clientWidth >= 1080) {
++                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
++                sidebar = sidebar || 'visible';
++            } else {
++                sidebar = 'hidden';
++            }
++            sidebar_toggle.checked = sidebar === 'visible';
++            body.classList.remove('sidebar-visible');
++            body.classList.add("sidebar-" + sidebar);
++        </script>
++
++        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
++            <div class="sidebar-scrollbox">
++                {{#toc}}{{/toc}}
++            </div>
++            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
++        </nav>
++
++        <!-- Track and set sidebar scroll position -->
++        <script>
++            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
++            sidebarScrollbox.addEventListener('click', function(e) {
++                if (e.target.tagName === 'A') {
++                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
++                }
++            }, { passive: true });
++            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
++            sessionStorage.removeItem('sidebar-scroll');
++            if (sidebarScrollTop) {
++                // preserve sidebar scroll position when navigating via links within sidebar
++                sidebarScrollbox.scrollTop = sidebarScrollTop;
++            } else {
++                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
++                var activeSection = document.querySelector('#sidebar .active');
++                if (activeSection) {
++                    activeSection.scrollIntoView({ block: 'center' });
++                }
++            }
++        </script>
++
++        <div id="page-wrapper" class="page-wrapper">
++
++            <div class="page">
++                {{> header}}
++                <div id="menu-bar-hover-placeholder"></div>
++                <div id="menu-bar" class="menu-bar sticky">
++                    <div class="left-buttons">
++                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
++                            <i class="fa fa-bars"></i>
++                        </label>
++                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
++                            <i class="fa fa-paint-brush"></i>
++                        </button>
++                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
++                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
++                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
++                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
++                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
++                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
++                        </ul>
++                        {{#if search_enabled}}
++                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
++                            <i class="fa fa-search"></i>
++                        </button>
++                        {{/if}}
++                        <div id="docsearch" style="align-self: center;"></div>
++                    </div>
++
++                    <h1 class="menu-title">{{ book_title }}</h1>
++
++                    <div class="right-buttons">
++                        {{#if print_enable}}
++                        <a href="{{ path_to_root }}print.html" title="Print this book" aria-label="Print this book">
++                            <i id="print-button" class="fa fa-print"></i>
++                        </a>
++                        {{/if}}
++                        {{#if git_repository_url}}
++                        <a href="{{git_repository_url}}" title="Git repository" aria-label="Git repository">
++                            <i id="git-repository-button" class="fa {{git_repository_icon}}"></i>
++                        </a>
++                        {{/if}}
++                        {{#if git_repository_edit_url}}
++                        <a href="{{git_repository_edit_url}}" title="Suggest an edit" aria-label="Suggest an edit">
++                            <i id="git-edit-button" class="fa fa-edit"></i>
++                        </a>
++                        {{/if}}
++                    </div>
++                </div>
++
++                {{#if search_enabled}}
++                <div id="search-wrapper" class="hidden">
++                    <form id="searchbar-outer" class="searchbar-outer">
++                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
++                    </form>
++                    <div id="searchresults-outer" class="searchresults-outer hidden">
++                        <div id="searchresults-header" class="searchresults-header"></div>
++                        <ul id="searchresults">
++                        </ul>
++                    </div>
++                </div>
++                {{/if}}
++
++                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
++                <script>
++                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
++                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
++                    // Get viewed page store
++                    var viewed_key = 'mdbook-viewed';
++                    var viewed_map = {};
++                    try {
++                        var viewed_storage = localStorage.getItem(viewed_key);
++                        if (viewed_storage) {
++                            viewed_map = JSON.parse(viewed_storage)
++                        }
++                    } catch (e) { }
++                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
++                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
++                        
++                        // Apply viewed style
++                        if (viewed_map[link.pathname]) {
++                            link.classList.add('md-viewed')
++                        }
++                    }); 
++                    // Mark viewed after 30s
++                    setTimeout(function() {
++                        viewed_map[location.pathname] = 1;
++                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
++                    }, 30000)
++                </script>
++
++                <div id="content" class="content">
++                    <!-- Page table of contents -->
++                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
++                    <main>
++                        {{{ content }}}
++                        <div id="giscus-container"></div>
++                    </main>
++
++                    <nav class="nav-wrapper" aria-label="Page navigation">
++                        <!-- Mobile navigation buttons -->
++                        {{#previous}}
++                            <a rel="prev" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
++                                <i class="fa fa-angle-left"></i>
++                            </a>
++                        {{/previous}}
++
++                        {{#next}}
++                            <a rel="next prefetch" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
++                                <i class="fa fa-angle-right"></i>
++                            </a>
++                        {{/next}}
++
++                        <div style="clear: both"></div>
++                    </nav>
++                </div>
++            </div>
++
++            <nav class="nav-wide-wrapper" aria-label="Page navigation">
++                {{#previous}}
++                    <a rel="prev" href="{{ path_to_root }}{{link}}" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
++                        <i class="fa fa-angle-left"></i>
++                    </a>
++                {{/previous}}
++
++                {{#next}}
++                    <a rel="next prefetch" href="{{ path_to_root }}{{link}}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
++                        <i class="fa fa-angle-right"></i>
++                    </a>
++                {{/next}}
++            </nav>
++
++        </div>
++
++        {{#if live_reload_endpoint}}
++        <!-- Livereload script (if served using the cli tool) -->
++        <script>
++            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
++            const wsAddress = wsProtocol + "//" + location.host + "/" + "{{{live_reload_endpoint}}}";
++            const socket = new WebSocket(wsAddress);
++            socket.onmessage = function (event) {
++                if (event.data === "reload") {
++                    socket.close();
++                    location.reload();
++                }
++            };
++            window.onbeforeunload = function() {
++                socket.close();
++            }
++        </script>
++        {{/if}}
++
++        {{#if google_analytics}}
++        <!-- Google Analytics Tag -->
++        <script>
++            var localAddrs = ["localhost", "127.0.0.1", ""];
++            // make sure we don't activate google analytics if the developer is
++            // inspecting the book locally...
++            if (localAddrs.indexOf(document.location.hostname) === -1) {
++                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
++                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
++                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
++                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
++                ga('create', '{{google_analytics}}', 'auto');
++                ga('send', 'pageview');
++            }
++        </script>
++        {{/if}}
++
++        {{#if playground_line_numbers}}
++        <script>
++            window.playground_line_numbers = true;
++        </script>
++        {{/if}}
++
++        {{#if playground_copyable}}
++        <script>
++            window.playground_copyable = true;
++        </script>
++        {{/if}}
++
++        {{#if playground_js}}
++        <script src="{{ path_to_root }}ace.js"></script>
++        <script src="{{ path_to_root }}editor.js"></script>
++        <script src="{{ path_to_root }}mode-rust.js"></script>
++        <script src="{{ path_to_root }}theme-dawn.js"></script>
++        <script src="{{ path_to_root }}theme-tomorrow_night.js"></script>
++        {{/if}}
++
++        {{#if search_js}}
++        <script src="{{ path_to_root }}elasticlunr.min.js"></script>
++        <script src="{{ path_to_root }}mark.min.js"></script>
++        <script src="{{ path_to_root }}searcher.js"></script>
++        {{/if}}
++
++        <script src="{{ path_to_root }}clipboard.min.js"></script>
++        <script src="{{ path_to_root }}highlight.js"></script>
++        <script src="{{ path_to_root }}book.js"></script>
++
++
++        <script type="text/javascript" charset="utf-8">
++        var pagePath = "{{ path }}"
++        </script>
++
++
++        <!-- Custom JS scripts -->
++        {{#each additional_js}}
++        <script src="{{ ../path_to_root }}{{this}}"></script>
++        {{/each}}
++
++        {{#if is_print}}
++        {{#if mathjax_support}}
++        <script>
++        window.addEventListener('load', function() {
++            MathJax.Hub.Register.StartupHook('End', function() {
++                window.setTimeout(window.print, 100);
++            });
++        });
++        </script>
++        {{else}}
++        <script>
++        window.addEventListener('load', function() {
++            window.setTimeout(window.print, 100);
++        });
++        </script>
++        {{/if}}
++        {{/if}}
++            
++
++<!--         <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
++        <script>
++            const { autocomplete } = window['@algolia/autocomplete-js'];
++        </script> -->
++
++        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
++
++        <script type="text/javascript">
++            docsearch({
++                appId: 'GX9RTL51BH',
++                apiKey: 'c4caea4202132489213a6c5366c9952d',
++                indexName: 'tinysnowio',
++                container: '#docsearch',
++                debug: false // Set debug to true if you want to inspect the modal
++            });
++            // autocomplete({
++            //   container: '#docsearch',
++            //   placeholder: '搜索 / Search',
++            //   getSources() {
++            //     return [];
++            //   },
++            // });
++        </script>
++    </div>
++    </body>
++</html>
 ```
