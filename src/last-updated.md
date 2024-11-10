@@ -4,509 +4,55 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## sitemap.txt
+## SUMMARY.md
 
 ```diff
 
-@@ -265,6 +265,7 @@ https://tinysnow.github.io/每日一文/我们都有病 - 朱德庸
- https://tinysnow.github.io/每日一文/我只要一种 - 朵拉
- https://tinysnow.github.io/每日一文/我妈 - 钱海燕
- https://tinysnow.github.io/每日一文/我妈不让我看电视 - 佚名
-+https://tinysnow.github.io/每日一文/我家的财富 - 德富芦花
- https://tinysnow.github.io/每日一文/我对女性有意见 - 詹姆斯 · 瑟伯
- https://tinysnow.github.io/每日一文/我所认识的李敖 - 林清玄
- https://tinysnow.github.io/每日一文/我改变的事物 - 刘亮程
+@@ -8,6 +8,7 @@
+ - [杂记 | Sundry](杂记.md)
+ -----
+ - [每日一文 | Daily Article](每日一文/每日一文.md)
++  - [上海菜市场 - 蔡澜](每日一文/上海菜市场%20-%20蔡澜.md)
+   - [我家的财富 - 德富芦花](每日一文/我家的财富%20-%20德富芦花.md)
+   - [上帝为什么不奖赏好人 - 张若水](每日一文/上帝为什么不奖赏好人%20-%20张若水.md)
+   - [蟹颂 - 蔡澜](每日一文/蟹颂%20-%20蔡澜.md)
 ```
 
-## index.hbs
+## 上海菜市场 - 蔡澜.md
 
 ```diff
 
-@@ -1,5 +1,5 @@
- <!DOCTYPE HTML>
--<html lang="{{ language }}" class="{{ default_theme }}" dir="{{ text_direction }}">
-+<html lang="{{ language }}" class="{{ default_theme }} sidebar-visible" dir="{{ text_direction }}">
-     <head>
-         <!-- Book generated using mdBook -->
-         <meta charset="UTF-8">
-
-@@ -74,15 +74,17 @@
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-         <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
-         
--    </head>
--    <body class="sidebar-visible no-js">
--    <div id="body-container">
+@@ -0,0 +1,31 @@
++# 上海菜市场
 +
-         <!-- Provide site root to javascript -->
-         <script>
-             var path_to_root = "{{ path_to_root }}";
-             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "{{ preferred_dark_theme }}" : "{{ default_theme }}";
-         </script>
--
-+        <!-- Start loading toc.js asap -->
-+        <script src="{{ path_to_root }}toc.js"></script>
-+    </head>
-+    <body class="sidebar-visible no-js">
-+    <div id="body-container">
-         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-         <script>
-             try {
-
-@@ -102,10 +104,11 @@
-             var theme;
-             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-             if (theme === null || theme === undefined) { theme = default_theme; }
--            var html = document.querySelector('html');
-+            const html = document.documentElement;
- 
-             html.classList.remove('{{ default_theme }}')
-             html.classList.add(theme);
-+            html.classList.add("js");
-             var body = document.querySelector('body');
-             body.classList.remove('no-js')
-             body.classList.add('js');
-
-@@ -130,10 +133,14 @@
-         </script>
- 
-         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
--            <div class="sidebar-scrollbox">
--                {{#toc}}{{/toc}}
-+            <!-- populated by js -->
-+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
-+            <noscript>
-+                <iframe class="sidebar-iframe-outer" src="{{ path_to_root }}toc.html"></iframe>
-+            </noscript>
-+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-+                <div class="sidebar-resize-indicator"></div>
-             </div>
--            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-         </nav>
- 
-         <!-- Track and set sidebar scroll position -->
-```
-
-## index.hbs.bak
-
-```diff
-
-@@ -0,0 +1,417 @@
-+<!DOCTYPE HTML>
-+<html lang="{{ language }}" class="{{ default_theme }} sidebar-visible" dir="{{ text_direction }}">
-+    <head>
-+        <!-- Book generated using mdBook -->
-+        <meta charset="UTF-8">
-+        <title>{{ title }}</title>
-+        {{#if is_print }}
-+        <meta name="robots" content="noindex">
-+        {{/if}}
-+        {{#if base_url}}
-+        <base href="{{ base_url }}">
-+        {{/if}}
-+        
-+        <!-- Custom HTML head -->
-+        {{> head}}
++*蔡澜*
 +
++　　从淮海路的花园酒店出来，往东台路走，见一菜市场，即请司机停下。到任何地方，先逛他们的菜市场，这是我的习惯。菜市场最能反映该地的民生，他们的收入如何，一目了然。聘请工作人员时，要是对方狮子大开口，便能笑着说：“依这个数目，可以买一万斤白菜啰。”
 +
-+        <meta name="description" content="{{ description }}">
-+        <meta name="viewport" content="width=device-width, initial-scale=1">
-+        <meta name="theme-color" content="#ffffff">
++　　但是上菜市场，主要还是因为爱吃，遇到什么没有尝试过的便买下来，如果餐厅不肯代你烧的话，就用随身带的小电煲在酒店房内炮制，其乐无穷。
 +
-+        {{#if favicon_svg}}
-+        <link rel="icon" href="{{ path_to_root }}favicon.svg">
-+        {{/if}}
-+        {{#if favicon_png}}
-+        <link rel="shortcut icon" href="{{ path_to_root }}favicon.png">
-+        {{/if}}
-+        <link rel="stylesheet" href="{{ path_to_root }}css/variables.css">
-+        <link rel="stylesheet" href="{{ path_to_root }}css/general.css">
-+        <link rel="stylesheet" href="{{ path_to_root }}css/chrome.css">
-+        {{#if print_enable}}
-+        <link rel="stylesheet" href="{{ path_to_root }}css/print.css" media="print">
-+        {{/if}}
++　　菜市由自忠路和淡水路组成，面积相当大，至少有数百个档子。蔬菜档中，看到尽是茭白笋，此物拿来油焖，非常美味，蕃茄也特别肥大，其他蔬菜就不敢恭维了，上海菜市的菜，给人一个瘦得可怜的感觉，芹菜瘦、菠菜瘦、苋菜也瘦。还有数条瘦茄子，已经干瘪，还拿出来卖。冬瓜是广东运来的，一元一斤，冬瓜没肉，便宜一点卖一元。有新采的蒜头出售，买了一斤，一块半。
 +
-+        <!-- Fonts -->
-+        <link rel="stylesheet" href="{{ path_to_root }}FontAwesome/css/font-awesome.css">
-+        {{#if copy_fonts}}
-+        <link rel="stylesheet" href="{{ path_to_root }}fonts/fonts.css">
-+        {{/if}}
++　　海鲜档中卖的尽是河产，鲩鱼很多，另外便是齐白石常画的淡水虾，想起从前在一品香吃的抢虾，口水直流，但现在所有河流污染，已没人敢试了。太小的贝壳类，蛏子居多，蚶子不见，还有一种像瓜子那么大小的贝壳，在台湾时听人叫海瓜子，但大得不像瓜子，上海卖的名叫瓜子片，名副其实。据说当年上海流行肝炎，全拜此君之赐。
 +
-+        <!-- Highlight.js Stylesheets -->
-+        <link rel="stylesheet" href="{{ path_to_root }}highlight.css">
-+        <link rel="stylesheet" href="{{ path_to_root }}tomorrow-night.css">
-+        <link rel="stylesheet" href="{{ path_to_root }}ayu-highlight.css">
++　　在香港看不到的是比虾粗大，又有硬壳的虾类，上海人叫它为龙虾，但只有手指那么小。想起丰子恺在一篇叫《吃酒》的小品中提过一个钓虾人的故事：“虾这种东西比鱼好得多。鱼，你钓了来，要剖，要洗，要用油盐酱醋来烧，多少麻烦。这虾就便当得多：只要到开水里一煮，就好吃了……”
 +
-+        <!-- Custom theme stylesheets -->
-+        {{#each additional_css}}
-+        <link rel="stylesheet" href="{{ ../path_to_root }}{{ this }}">
-+        {{/each}}
++　　剖鳝的档子也很多，沪人喜吃鳝，小贩们用纯巧的手法把肉起了，剩下堆积如山的骨头，大概后来扔掉吧。其实把鳝骨烘干，再油炸一下，香脆无比，是送酒的好菜。
 +
-+        {{#if mathjax_support}}
-+        <!-- MathJax -->
-+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-+        {{/if}}
++　　卖鸡的当场替家庭主妇烫好拔毛，鸭摊就少见，其他种类的家禽也不多。猪肉摊少，牛羊摊更少，所有肉类不呈鲜红颜色，死沉沉地蒙一层灰，都不新鲜。怪不得只能做红烧，或者回锅肉等菜色才好吃。
 +
-+        <!-- Baidu Site Analytics -->
-+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
++　　菜市中夹着些熟食档，上海人的早餐莫过于烧饼油条、油饼、生煎包子和烙饼等。烧饼油条是以一层很厚的饼包着油条，此饼可以放只鸡蛋，包起来时是肿大的一团，油腻腻的，试了一客，一块钱，腹已大胀。当然没有想象中那么好吃。上海朋友对烧饼油条的神话，不过于在肚子饿时的第一个印象，也是他们的乡愁。
 +
-+        <!-- Global site tag (gtag.js) - Google Analytics -->
-+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
-+        <script>
-+          window.dataLayer = window.dataLayer || [];
-+          function gtag(){dataLayer.push(arguments);}
-+          gtag('js', new Date());
++　　油饼味较佳，用一个煎锅贴的平底锅以油炸之，一层很厚的饼上铺满芝麻，长三角形地切开一块一块，包君吃饱。生煎包也很精彩，至少比在香港餐厅吃好得多。烙饼贴在一个大泥炉上烤，这个大泥炉就是印度人的丹多里，烙饼这种吃的文化是由那边传来的吧。
 +
-+          gtag('config', 'G-P9324YLFBW');
-+        </script>
++　　花档全街市只有两家，各类也不多。上海的生活质素还没有到达摆花送花的地步。反而是在卖菜的老太婆那里找到了白兰花，两块钱买了四串白兰，每串有三蕊，用铁线钩住，变成个圆扣。研究了一下，才知是用来挂在衬衫上的钮扣的。花味由下面熏上来，香个整天，这种生活的智慧，香港倒学不会。扣着白兰花朵到其他摊子看，小贩们见到我这个样子，态度也亲切起来。
 +
-+        <!-- Doc Search -->
-+        <link
-+            rel="stylesheet"
-+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
-+        />
-+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
-+        
++　　以为这是一个利伯维尔场，什么人都能来卖东西，其实不然，看到一间有盖儿的小屋，里面挂着所有摊位的地图，政府人员在监视着。当然是要收租的，门口还有人龙在排队，大概要申请到一个摊位，是不容易。但是有些老太太卖的只是几块姜，还有几位单单卖鞋带罢了。难道她们也得交租吗？交完了又怎么生活？其中还有些一看就知道是外地来的农民，打开布袋就地卖干笋尖、海草等杂物，他们是来打尖的？不可能吧，管理人员四处巡查，逃不过他们尖锐的目光，是不是有其他的协议？
 +
-+        <!-- Provide site root to javascript -->
-+        <script>
-+            var path_to_root = "{{ path_to_root }}";
-+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "{{ preferred_dark_theme }}" : "{{ default_theme }}";
-+        </script>
-+        <!-- Start loading toc.js asap -->
-+        <script src="{{ path_to_root }}toc.js"></script>
-+    </head>
-+    <body class="sidebar-visible no-js">
-+    <div id="body-container">
-+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-+        <script>
-+            try {
-+                var theme = localStorage.getItem('mdbook-theme');
-+                var sidebar = localStorage.getItem('mdbook-sidebar');
-+                if (theme.startsWith('"') && theme.endsWith('"')) {
-+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-+                }
-+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-+                }
-+            } catch (e) { }
-+        </script>
++　　有一个管理员凶巴巴地骂一位卖鱼的小姑娘，她的脸越涨越红，不知谁是谁非，也不能插手理论，只看到他骂完之后走开两步，转身回去再骂，中国人就是有这种劣根性，一旦有了微小得可怜的权力，一定要使尽它。“喂，好了没有？有完没完？”我忍不住大喝。那厮狠狠地望了我一眼，才肯走开。
 +
-+        <!-- Set the theme before any content is loaded, prevents flash -->
-+        <script>
-+            var theme;
-+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-+            if (theme === null || theme === undefined) { theme = default_theme; }
-+            const html = document.documentElement;
++　　刚刚这边骂完，远处又有人吵架。“侬是啥人？”有一个向对方大叫。对方也说：“侬是啥人？”
 +
-+            html.classList.remove('{{ default_theme }}')
-+            html.classList.add(theme);
-+            html.classList.add("js");
-+            var body = document.querySelector('body');
-+            body.classList.remove('no-js')
-+            body.classList.add('js');
-+        </script>
-+
-+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
-+
-+        <!-- Hide / unhide sidebar before it is displayed -->
-+        <script>
-+            var body = document.querySelector('body');
-+            var sidebar = null;
-+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
-+            if (document.body.clientWidth >= 1080) {
-+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-+                sidebar = sidebar || 'visible';
-+            } else {
-+                sidebar = 'hidden';
-+            }
-+            sidebar_toggle.checked = sidebar === 'visible';
-+            body.classList.remove('sidebar-visible');
-+            body.classList.add("sidebar-" + sidebar);
-+        </script>
-+
-+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-+            <div class="sidebar-scrollbox">
-+                {{#toc}}{{/toc}}
-+            </div>
-+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-+        </nav>
-+
-+        <!-- Track and set sidebar scroll position -->
-+        <script>
-+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-+            sidebarScrollbox.addEventListener('click', function(e) {
-+                if (e.target.tagName === 'A') {
-+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-+                }
-+            }, { passive: true });
-+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-+            sessionStorage.removeItem('sidebar-scroll');
-+            if (sidebarScrollTop) {
-+                // preserve sidebar scroll position when navigating via links within sidebar
-+                sidebarScrollbox.scrollTop = sidebarScrollTop;
-+            } else {
-+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-+                var activeSection = document.querySelector('#sidebar .active');
-+                if (activeSection) {
-+                    activeSection.scrollIntoView({ block: 'center' });
-+                }
-+            }
-+        </script>
-+
-+        <div id="page-wrapper" class="page-wrapper">
-+
-+            <div class="page">
-+                {{> header}}
-+                <div id="menu-bar-hover-placeholder"></div>
-+                <div id="menu-bar" class="menu-bar sticky">
-+                    <div class="left-buttons">
-+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-+                            <i class="fa fa-bars"></i>
-+                        </label>
-+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-+                            <i class="fa fa-paint-brush"></i>
-+                        </button>
-+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-+                        </ul>
-+                        {{#if search_enabled}}
-+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-+                            <i class="fa fa-search"></i>
-+                        </button>
-+                        {{/if}}
-+                        <div id="docsearch" style="align-self: center;"></div>
-+                    </div>
-+
-+                    <h1 class="menu-title">{{ book_title }}</h1>
-+
-+                    <div class="right-buttons">
-+                        {{#if print_enable}}
-+                        <a href="{{ path_to_root }}print.html" title="Print this book" aria-label="Print this book">
-+                            <i id="print-button" class="fa fa-print"></i>
-+                        </a>
-+                        {{/if}}
-+                        {{#if git_repository_url}}
-+                        <a href="{{git_repository_url}}" title="Git repository" aria-label="Git repository">
-+                            <i id="git-repository-button" class="fa {{git_repository_icon}}"></i>
-+                        </a>
-+                        {{/if}}
-+                        {{#if git_repository_edit_url}}
-+                        <a href="{{git_repository_edit_url}}" title="Suggest an edit" aria-label="Suggest an edit">
-+                            <i id="git-edit-button" class="fa fa-edit"></i>
-+                        </a>
-+                        {{/if}}
-+                    </div>
-+                </div>
-+
-+                {{#if search_enabled}}
-+                <div id="search-wrapper" class="hidden">
-+                    <form id="searchbar-outer" class="searchbar-outer">
-+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-+                    </form>
-+                    <div id="searchresults-outer" class="searchresults-outer hidden">
-+                        <div id="searchresults-header" class="searchresults-header"></div>
-+                        <ul id="searchresults">
-+                        </ul>
-+                    </div>
-+                </div>
-+                {{/if}}
-+
-+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-+                <script>
-+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-+                    // Get viewed page store
-+                    var viewed_key = 'mdbook-viewed';
-+                    var viewed_map = {};
-+                    try {
-+                        var viewed_storage = localStorage.getItem(viewed_key);
-+                        if (viewed_storage) {
-+                            viewed_map = JSON.parse(viewed_storage)
-+                        }
-+                    } catch (e) { }
-+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-+                        
-+                        // Apply viewed style
-+                        if (viewed_map[link.pathname]) {
-+                            link.classList.add('md-viewed')
-+                        }
-+                    }); 
-+                    // Mark viewed after 30s
-+                    setTimeout(function() {
-+                        viewed_map[location.pathname] = 1;
-+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
-+                    }, 30000)
-+                </script>
-+
-+                <div id="content" class="content">
-+                    <!-- Page table of contents -->
-+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
-+                    <main>
-+                        {{{ content }}}
-+                        <div id="giscus-container"></div>
-+                    </main>
-+
-+                    <nav class="nav-wrapper" aria-label="Page navigation">
-+                        <!-- Mobile navigation buttons -->
-+                        {{#previous}}
-+                            <a rel="prev" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-+                                <i class="fa fa-angle-left"></i>
-+                            </a>
-+                        {{/previous}}
-+
-+                        {{#next}}
-+                            <a rel="next prefetch" href="{{ path_to_root }}{{link}}" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-+                                <i class="fa fa-angle-right"></i>
-+                            </a>
-+                        {{/next}}
-+
-+                        <div style="clear: both"></div>
-+                    </nav>
-+                </div>
-+            </div>
-+
-+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-+                {{#previous}}
-+                    <a rel="prev" href="{{ path_to_root }}{{link}}" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-+                        <i class="fa fa-angle-left"></i>
-+                    </a>
-+                {{/previous}}
-+
-+                {{#next}}
-+                    <a rel="next prefetch" href="{{ path_to_root }}{{link}}" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-+                        <i class="fa fa-angle-right"></i>
-+                    </a>
-+                {{/next}}
-+            </nav>
-+
-+        </div>
-+
-+        {{#if live_reload_endpoint}}
-+        <!-- Livereload script (if served using the cli tool) -->
-+        <script>
-+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-+            const wsAddress = wsProtocol + "//" + location.host + "/" + "{{{live_reload_endpoint}}}";
-+            const socket = new WebSocket(wsAddress);
-+            socket.onmessage = function (event) {
-+                if (event.data === "reload") {
-+                    socket.close();
-+                    location.reload();
-+                }
-+            };
-+            window.onbeforeunload = function() {
-+                socket.close();
-+            }
-+        </script>
-+        {{/if}}
-+
-+        {{#if google_analytics}}
-+        <!-- Google Analytics Tag -->
-+        <script>
-+            var localAddrs = ["localhost", "127.0.0.1", ""];
-+            // make sure we don't activate google analytics if the developer is
-+            // inspecting the book locally...
-+            if (localAddrs.indexOf(document.location.hostname) === -1) {
-+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-+                ga('create', '{{google_analytics}}', 'auto');
-+                ga('send', 'pageview');
-+            }
-+        </script>
-+        {{/if}}
-+
-+        {{#if playground_line_numbers}}
-+        <script>
-+            window.playground_line_numbers = true;
-+        </script>
-+        {{/if}}
-+
-+        {{#if playground_copyable}}
-+        <script>
-+            window.playground_copyable = true;
-+        </script>
-+        {{/if}}
-+
-+        {{#if playground_js}}
-+        <script src="{{ path_to_root }}ace.js"></script>
-+        <script src="{{ path_to_root }}editor.js"></script>
-+        <script src="{{ path_to_root }}mode-rust.js"></script>
-+        <script src="{{ path_to_root }}theme-dawn.js"></script>
-+        <script src="{{ path_to_root }}theme-tomorrow_night.js"></script>
-+        {{/if}}
-+
-+        {{#if search_js}}
-+        <script src="{{ path_to_root }}elasticlunr.min.js"></script>
-+        <script src="{{ path_to_root }}mark.min.js"></script>
-+        <script src="{{ path_to_root }}searcher.js"></script>
-+        {{/if}}
-+
-+        <script src="{{ path_to_root }}clipboard.min.js"></script>
-+        <script src="{{ path_to_root }}highlight.js"></script>
-+        <script src="{{ path_to_root }}book.js"></script>
-+
-+
-+        <script type="text/javascript" charset="utf-8">
-+        var pagePath = "{{ path }}"
-+        </script>
-+
-+
-+        <!-- Custom JS scripts -->
-+        {{#each additional_js}}
-+        <script src="{{ ../path_to_root }}{{this}}"></script>
-+        {{/each}}
-+
-+        {{#if is_print}}
-+        {{#if mathjax_support}}
-+        <script>
-+        window.addEventListener('load', function() {
-+            MathJax.Hub.Register.StartupHook('End', function() {
-+                window.setTimeout(window.print, 100);
-+            });
-+        });
-+        </script>
-+        {{else}}
-+        <script>
-+        window.addEventListener('load', function() {
-+            window.setTimeout(window.print, 100);
-+        });
-+        </script>
-+        {{/if}}
-+        {{/if}}
-+            
-+
-+<!--         <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
-+        <script>
-+            const { autocomplete } = window['@algolia/autocomplete-js'];
-+        </script> -->
-+
-+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-+
-+        <script type="text/javascript">
-+            docsearch({
-+                appId: 'GX9RTL51BH',
-+                apiKey: 'c4caea4202132489213a6c5366c9952d',
-+                indexName: 'tinysnowio',
-+                container: '#docsearch',
-+                debug: false // Set debug to true if you want to inspect the modal
-+            });
-+            // autocomplete({
-+            //   container: '#docsearch',
-+            //   placeholder: '搜索 / Search',
-+            //   getSources() {
-+            //     return [];
-+            //   },
-+            // });
-+        </script>
-+    </div>
-+    </body>
-+</html>
++　　两个人“侬是啥人”地老半天，重复又重复，中间最多掺了“侬算是中国人”的字眼罢了。最后演变成：“你打我啦！”打字沪人发音成“挡”，挡来挡去，没有一个动手，要是这种情形发生在广东，那粗口满天飞，还来个什么“侬是啥人”？到底，上海人还是可爱的。
+\ No newline at end of file
 ```
