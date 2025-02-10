@@ -4,851 +4,8453 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## SUMMARY.md
-
-```diff
-
-@@ -825,7 +825,9 @@
-   - [不要用别人的脑子思考你的人生](阅读/零零散散/不要用别人的脑子思考你的人生.md)
-   - [献给阿尔吉侬的花束](阅读/零零散散/献给阿尔吉侬的花束.md)
-   - [诗歌手册：诗歌阅读与创作指南](阅读/零零散散/诗歌手册：诗歌阅读与创作指南.md)
-+  - [见证逆潮](阅读/零零散散/见证逆潮.md)
- - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
-+  - [谁在编造历史 - 常彦军](阅读/每日一文/谁在编造历史%20-%20常彦军.md)
-   - [罗素：一九二零 - 龙应台](阅读/每日一文/罗素：一九二零%20-%20龙应台.md)
-   - [最后一只猫 - 刘亮程](阅读/每日一文/最后一只猫%20-%20刘亮程.md)
-   - [一小时的故事 - 凯特 · 肖班](阅读/每日一文/一小时的故事%20-%20凯特%20·%20肖班.md)
 ```
 
 ## sitemap.txt
 
 ```diff
 
-@@ -942,6 +942,7 @@ https://tinysnow.github.io/阅读/每日一文/给我未来的孩子 - 张梅
- https://tinysnow.github.io/阅读/每日一文/绿皮车上的旧时光 - 素猫
- https://tinysnow.github.io/阅读/每日一文/绿石头 - 西尔维娅 · 普拉斯
- https://tinysnow.github.io/阅读/每日一文/缝扣子 - 王小波
-+https://tinysnow.github.io/阅读/每日一文/罗素：一九二零 - 龙应台
- https://tinysnow.github.io/阅读/每日一文/翻浆 - 毕淑敏
- https://tinysnow.github.io/阅读/每日一文/老人鱼 - 严歌苓
- https://tinysnow.github.io/阅读/每日一文/老头子做事总不会错 - 安徒生
+@@ -1001,6 +1001,7 @@ https://tinysnow.github.io/阅读/每日一文/话的力量 - 巴甫连科
+ https://tinysnow.github.io/阅读/每日一文/误解 - P · G · 伍德豪斯
+ https://tinysnow.github.io/阅读/每日一文/读书是一种享受 - 毛姆
+ https://tinysnow.github.io/阅读/每日一文/读书有秘诀吗 - 邓拓
++https://tinysnow.github.io/阅读/每日一文/谁在编造历史 - 常彦军
+ https://tinysnow.github.io/阅读/每日一文/谁明侍者心 - 梁文道
+ https://tinysnow.github.io/阅读/每日一文/谁的生命可以不受时间限制 - 沈从文
+ https://tinysnow.github.io/阅读/每日一文/谈抽烟 - 朱自清
+
+@@ -1157,6 +1158,7 @@ https://tinysnow.github.io/阅读/零零散散/稀缺：我们是如何陷入贫
+ https://tinysnow.github.io/阅读/零零散散/美元真相
+ https://tinysnow.github.io/阅读/零零散散/薄世宁医学通识讲义
+ https://tinysnow.github.io/阅读/零零散散/蛤蟆先生去看心理医生
++https://tinysnow.github.io/阅读/零零散散/见证逆潮
+ https://tinysnow.github.io/阅读/零零散散/诗歌手册：诗歌阅读与创作指南
+ https://tinysnow.github.io/阅读/零零散散/追风筝的人
+ https://tinysnow.github.io/阅读/零零散散/雪国
+```
+
+## sitemap.xml
+
+```diff
+
+@@ -2,6046 +2,6054 @@
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url>
+         <loc>https://tinysnow.github.io/</loc>
+-        <lastmod>2025-02-07T04:44:33.849Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.543Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/last-updated</loc>
+-        <lastmod>2025-02-07T04:44:33.885Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.607Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/个人简介</loc>
+-        <lastmod>2025-02-07T04:44:33.830Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.532Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/各领域入门</loc>
+-        <lastmod>2025-02-07T04:44:38.655Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.553Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/耶鲁大学：心理学导论</loc>
+-        <lastmod>2025-02-07T04:44:57.828Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.877Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/年度计划</loc>
+-        <lastmod>2025-02-07T04:44:33.939Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.638Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/梦想清单</loc>
+-        <lastmod>2025-02-07T04:44:33.917Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.625Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/杂记</loc>
+-        <lastmod>2025-02-07T04:46:05.138Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.598Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/电影台词</loc>
+-        <lastmod>2025-02-07T04:45:00.401Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.958Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/中国近现代史</loc>
+-        <lastmod>2025-02-07T04:44:57.499Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.595Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/公共基础知识</loc>
+-        <lastmod>2025-02-07T04:44:54.844Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.508Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/公文</loc>
+-        <lastmod>2025-02-07T04:44:57.527Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.614Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/刑法</loc>
+-        <lastmod>2025-02-07T04:44:54.868Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.556Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/宪法</loc>
+-        <lastmod>2025-02-07T04:44:54.851Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.521Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/民法</loc>
+-        <lastmod>2025-02-07T04:44:54.860Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.545Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/经济学</loc>
+-        <lastmod>2025-02-07T04:44:57.513Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.604Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/经济法</loc>
+-        <lastmod>2025-02-07T04:44:57.475Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.576Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/行政法</loc>
+-        <lastmod>2025-02-07T04:44:54.875Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.564Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/面试</loc>
+-        <lastmod>2025-02-07T04:44:57.538Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.677Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/公共基础知识/马克思主义哲学</loc>
+-        <lastmod>2025-02-07T04:44:57.484Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.586Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/医学</loc>
+-        <lastmod>2025-02-07T04:44:39.462Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.166Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/妆造及护肤/妆造</loc>
+-        <lastmod>2025-02-07T04:44:57.727Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.806Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/妆造及护肤/洗沐护挑选</loc>
+-        <lastmod>2025-02-07T04:44:57.743Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.818Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/学海计划</loc>
+-        <lastmod>2025-02-07T04:44:38.663Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.562Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/摄影/iPad 修图工作流</loc>
+-        <lastmod>2025-02-07T04:44:57.712Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.794Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/摄影/摄影</loc>
+-        <lastmod>2025-02-07T04:44:57.691Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.785Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/日语/句型整理</loc>
+-        <lastmod>2025-02-07T04:44:57.658Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.761Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/日语/日语</loc>
+-        <lastmod>2025-02-07T04:44:57.626Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.740Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/日语/日语易错词</loc>
+-        <lastmod>2025-02-07T04:44:57.674Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.772Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/日语/日语语法整理</loc>
+-        <lastmod>2025-02-07T04:44:57.643Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.752Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/法语/法语</loc>
+-        <lastmod>2025-02-07T04:44:57.557Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.688Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/法语/法语介词</loc>
+-        <lastmod>2025-02-07T04:44:57.589Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.712Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/法语/简明法语教程笔记</loc>
+-        <lastmod>2025-02-07T04:44:57.608Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.727Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/法语/语音规则</loc>
+-        <lastmod>2025-02-07T04:44:57.572Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.701Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/决策</loc>
+-        <lastmod>2025-02-07T04:44:54.749Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.440Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/创新</loc>
+-        <lastmod>2025-02-07T04:44:54.834Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.500Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/控制</loc>
+-        <lastmod>2025-02-07T04:44:54.824Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.491Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/权力</loc>
+-        <lastmod>2025-02-07T04:44:54.765Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.451Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/概论</loc>
+-        <lastmod>2025-02-07T04:44:54.675Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.364Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/沟通</loc>
+-        <lastmod>2025-02-07T04:44:54.797Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.470Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/激励与动力</loc>
+-        <lastmod>2025-02-07T04:44:54.811Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.483Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/目标</loc>
+-        <lastmod>2025-02-07T04:44:54.722Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.420Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/管理学</loc>
+-        <lastmod>2025-02-07T04:44:54.667Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.352Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/管理思想</loc>
+-        <lastmod>2025-02-07T04:44:54.711Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.408Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/管理者</loc>
+-        <lastmod>2025-02-07T04:44:54.703Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.398Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/组织</loc>
+-        <lastmod>2025-02-07T04:44:54.694Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.388Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/规章制度</loc>
+-        <lastmod>2025-02-07T04:44:54.684Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.375Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/计划</loc>
+-        <lastmod>2025-02-07T04:44:54.736Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.428Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/管理学/领导</loc>
+-        <lastmod>2025-02-07T04:44:54.780Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.460Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/丁香花</loc>
+-        <lastmod>2025-02-07T04:44:51.842Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.125Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/三叶草</loc>
+-        <lastmod>2025-02-07T04:44:51.822Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.108Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/兰花</loc>
+-        <lastmod>2025-02-07T04:44:50.939Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.011Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/其他</loc>
+-        <lastmod>2025-02-07T04:44:50.911Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.965Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/堇花</loc>
+-        <lastmod>2025-02-07T04:44:54.659Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.340Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/夹竹桃</loc>
+-        <lastmod>2025-02-07T04:44:54.649Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.327Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/康乃馨</loc>
+-        <lastmod>2025-02-07T04:44:50.918Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.978Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/彼岸花</loc>
+-        <lastmod>2025-02-07T04:44:54.642Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.317Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/杜鹃</loc>
+-        <lastmod>2025-02-07T04:44:51.352Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.061Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/梅花</loc>
+-        <lastmod>2025-02-07T04:44:51.361Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.073Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/樱花</loc>
+-        <lastmod>2025-02-07T04:44:51.429Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.100Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/水仙花</loc>
+-        <lastmod>2025-02-07T04:44:54.540Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.155Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/海芋</loc>
+-        <lastmod>2025-02-07T04:44:54.630Z</lastmod>
++        <lastmod>2025-02-08T04:56:22.305Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/火鹤</loc>
+-        <lastmod>2025-02-07T04:44:54.619Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.201Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/牡丹</loc>
+-        <lastmod>2025-02-07T04:44:51.344Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.050Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/牵牛花</loc>
+-        <lastmod>2025-02-07T04:44:54.523Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.145Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/玫瑰</loc>
+-        <lastmod>2025-02-07T04:44:50.925Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.992Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/百合花</loc>
+-        <lastmod>2025-02-07T04:44:50.957Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.027Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/石竹花</loc>
+-        <lastmod>2025-02-07T04:44:54.602Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.192Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/花语</loc>
+-        <lastmod>2025-02-07T04:44:50.903Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.953Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/苜蓿</loc>
+-        <lastmod>2025-02-07T04:44:54.586Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.183Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/荷花</loc>
+-        <lastmod>2025-02-07T04:44:51.374Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.082Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/菊花</loc>
+-        <lastmod>2025-02-07T04:44:50.948Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.019Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/葵花</loc>
+-        <lastmod>2025-02-07T04:44:51.403Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.092Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/蒲公英</loc>
+-        <lastmod>2025-02-07T04:44:51.854Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.134Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/蔷薇</loc>
+-        <lastmod>2025-02-07T04:44:50.933Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.001Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/郁金香</loc>
+-        <lastmod>2025-02-07T04:44:51.830Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.117Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/金鱼草</loc>
+-        <lastmod>2025-02-07T04:44:54.570Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.174Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/风信子</loc>
+-        <lastmod>2025-02-07T04:44:50.966Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.040Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/花语/鸢尾</loc>
+-        <lastmod>2025-02-07T04:44:54.555Z</lastmod>
++        <lastmod>2025-02-08T04:56:20.163Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Commands</loc>
+-        <lastmod>2025-02-07T04:44:40.761Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.262Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Errors</loc>
+-        <lastmod>2025-02-07T04:44:40.749Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.254Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Knowledge</loc>
+-        <lastmod>2025-02-07T04:44:40.737Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.243Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Others</loc>
+-        <lastmod>2025-02-07T04:44:40.773Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.272Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/计算机科学</loc>
+-        <lastmod>2025-02-07T04:44:40.721Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.233Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/诗词格律/平仄</loc>
+-        <lastmod>2025-02-07T04:44:57.786Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.854Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/诗词格律/词牌名</loc>
+-        <lastmod>2025-02-07T04:44:57.809Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.865Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/诗词格律/诗词格律</loc>
+-        <lastmod>2025-02-07T04:44:57.759Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.832Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/诗词格律/诗韵</loc>
+-        <lastmod>2025-02-07T04:44:57.775Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.844Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/投资经历与成长</loc>
+-        <lastmod>2025-02-07T04:44:47.484Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.854Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/经济和金融产品理解</loc>
+-        <lastmod>2025-02-07T04:44:45.448Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.838Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/金融</loc>
+-        <lastmod>2025-02-07T04:44:44.516Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.662Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/零碎知识整理/中文书面语</loc>
+-        <lastmod>2025-02-07T04:44:57.868Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.922Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/零碎知识整理/俄语译码表</loc>
+-        <lastmod>2025-02-07T04:44:57.859Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.910Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/零碎知识整理/分享想法</loc>
+-        <lastmod>2025-02-07T04:45:00.388Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.941Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/零碎知识整理/半导体集成电路</loc>
+-        <lastmod>2025-02-07T04:44:57.848Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.897Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/零碎知识整理/毕业设计</loc>
+-        <lastmod>2025-02-07T04:44:57.875Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.932Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/零碎知识整理/零碎知识整理</loc>
+-        <lastmod>2025-02-07T04:44:57.835Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.888Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/作曲编曲入门</loc>
+-        <lastmod>2025-02-07T04:44:47.513Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.874Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/其他资料</loc>
+-        <lastmod>2025-02-07T04:44:50.878Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.922Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/基础乐理</loc>
+-        <lastmod>2025-02-07T04:44:50.885Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.935Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/常用三和弦</loc>
+-        <lastmod>2025-02-07T04:44:50.895Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.942Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/音乐</loc>
+-        <lastmod>2025-02-07T04:44:47.498Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.866Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/小说</loc>
+-        <lastmod>2025-02-07T04:44:38.101Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.036Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/感触</loc>
+-        <lastmod>2025-02-07T04:44:37.896Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.871Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/感触之一</loc>
+-        <lastmod>2025-02-07T04:44:37.971Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.922Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/感触之三</loc>
+-        <lastmod>2025-02-07T04:44:37.949Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.906Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/感触之二</loc>
+-        <lastmod>2025-02-07T04:44:37.959Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.914Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/感触之五</loc>
+-        <lastmod>2025-02-07T04:44:37.925Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.888Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/感触之六</loc>
+-        <lastmod>2025-02-07T04:44:37.910Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.879Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/感触之四</loc>
+-        <lastmod>2025-02-07T04:44:37.938Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.898Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/无题</loc>
+-        <lastmod>2025-02-07T04:44:37.993Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.941Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/遇见 今天</loc>
+-        <lastmod>2025-02-07T04:44:37.982Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.934Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/感触/零言碎语</loc>
+-        <lastmod>2025-02-07T04:44:38.001Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.949Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/一点看法</loc>
+-        <lastmod>2025-02-07T04:44:35.525Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.011Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/专注或许不曾被你注意到</loc>
+-        <lastmod>2025-02-07T04:44:34.484Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.997Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/为了好好生活，那些你所需要了解的领域</loc>
+-        <lastmod>2025-02-07T04:44:34.813Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.289Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/为了爱情，是否应该舍弃友情？</loc>
+-        <lastmod>2025-02-07T04:44:35.321Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.778Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/为什么我信仰长期主义，并且认为觉得没有战略是很恐怖的事情？</loc>
+-        <lastmod>2025-02-07T04:44:34.035Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.741Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/人生就像一场马拉松</loc>
+-        <lastmod>2025-02-07T04:44:34.528Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.036Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/人間を感知する</loc>
+-        <lastmod>2025-02-07T04:44:34.785Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.256Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/仍然在路上 - 2022年度总结</loc>
+-        <lastmod>2025-02-07T04:44:35.074Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.556Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/何谓阳光</loc>
+-        <lastmod>2025-02-07T04:44:35.131Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.608Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/你一定走了很远的路吧 - 姬霄</loc>
+-        <lastmod>2025-02-07T04:44:35.339Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.790Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/你究竟更男性化还是更女性化？</loc>
+-        <lastmod>2025-02-07T04:44:33.959Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.665Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/佳芯小姐与猫</loc>
+-        <lastmod>2025-02-07T04:44:34.086Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.797Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/克莱因蓝</loc>
+-        <lastmod>2025-02-07T04:44:35.160Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.633Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/八字手链人物传记计划——懿</loc>
+-        <lastmod>2025-02-07T04:44:34.727Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.199Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/八字手链人物传记计划——灵</loc>
+-        <lastmod>2025-02-07T04:44:34.776Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.245Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/八字手链人物传记计划——珍</loc>
+-        <lastmod>2025-02-07T04:44:34.745Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.217Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/八字手链人物传记计划——琴</loc>
+-        <lastmod>2025-02-07T04:44:34.735Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.208Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/八字手链人物传记计划——骆</loc>
+-        <lastmod>2025-02-07T04:44:34.593Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.098Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/关于“记忆承载”内容的一点看法</loc>
+-        <lastmod>2025-02-07T04:44:34.134Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.844Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/关于美甲</loc>
+-        <lastmod>2025-02-07T04:44:34.976Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.479Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/内侧衣兜</loc>
+-        <lastmod>2025-02-07T04:44:35.037Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.521Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/冰面少年</loc>
+-        <lastmod>2025-02-07T04:44:35.290Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.749Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/前行</loc>
+-        <lastmod>2025-02-07T04:44:35.460Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.920Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/十四年前和五年前，那个在黑暗中奔跑的少年</loc>
+-        <lastmod>2025-02-07T04:44:34.007Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.712Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/占有美</loc>
+-        <lastmod>2025-02-07T04:44:35.100Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.580Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/反抗</loc>
+-        <lastmod>2025-02-07T04:44:35.426Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.885Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/只缘身在旅途中</loc>
+-        <lastmod>2025-02-07T04:44:34.041Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.750Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/吃出的爱意</loc>
+-        <lastmod>2025-02-07T04:44:34.393Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.920Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/哈尔滨的珍同学</loc>
+-        <lastmod>2025-02-07T04:44:34.098Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.807Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/哥，咱家要散了</loc>
+-        <lastmod>2025-02-07T04:44:35.469Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.937Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/回望大二</loc>
+-        <lastmod>2025-02-07T04:44:35.378Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.836Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/在一起，本身就是一种幸福</loc>
+-        <lastmod>2025-02-07T04:44:35.064Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.548Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/境遇</loc>
+-        <lastmod>2025-02-07T04:44:35.449Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.909Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/天生喜欢恋爱</loc>
+-        <lastmod>2025-02-07T04:44:34.990Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.490Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/失去作为孩子的资格</loc>
+-        <lastmod>2025-02-07T04:44:34.695Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.171Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/奴化圣经</loc>
+-        <lastmod>2025-02-07T04:44:35.438Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.897Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/她与水獭</loc>
+-        <lastmod>2025-02-07T04:44:35.113Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.595Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/好日子还在后面呢：浅谈未来十年变化趋势</loc>
+-        <lastmod>2025-02-07T04:44:34.170Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.885Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/孩子特有的纯真</loc>
+-        <lastmod>2025-02-07T04:44:34.373Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.908Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/小孩子的勇气</loc>
+-        <lastmod>2025-02-07T04:44:35.056Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.539Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/小时候的萤火虫</loc>
+-        <lastmod>2025-02-07T04:44:34.060Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.771Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/小说、诗歌与想象力</loc>
+-        <lastmod>2025-02-07T04:44:34.717Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.190Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/工作半年多的感想</loc>
+-        <lastmod>2025-02-07T04:44:34.447Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.970Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/当下与经济学</loc>
+-        <lastmod>2025-02-07T04:44:34.051Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.761Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/微小痕迹</loc>
+-        <lastmod>2025-02-07T04:44:35.085Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.566Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/微雪爱情观</loc>
+-        <lastmod>2025-02-07T04:44:35.197Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.658Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/忠诚、美与自我发现</loc>
+-        <lastmod>2025-02-07T04:44:33.977Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.684Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/总有一种东西，让你想起那些人</loc>
+-        <lastmod>2025-02-07T04:44:34.804Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.277Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/感知到的友情</loc>
+-        <lastmod>2025-02-07T04:44:34.961Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.469Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/感觉自己正在慢慢变成大人 - 2024 年度总结</loc>
+-        <lastmod>2025-02-07T04:44:34.026Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.732Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/愿你不再焦虑</loc>
+-        <lastmod>2025-02-07T04:44:35.146Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.621Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/我为什么选择留长发</loc>
+-        <lastmod>2025-02-07T04:44:34.142Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.853Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/我们无法克制的欲望</loc>
+-        <lastmod>2025-02-07T04:44:34.794Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.266Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/我和她之间</loc>
+-        <lastmod>2025-02-07T04:44:34.766Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.235Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/我把你们看得很重要</loc>
+-        <lastmod>2025-02-07T04:44:34.831Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.315Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/我没有见过这样的黄昏</loc>
+-        <lastmod>2025-02-07T04:44:34.150Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.864Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/我的恋爱只能在梦里</loc>
+-        <lastmod>2025-02-07T04:44:34.501Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.010Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/我记得我曾喜欢过冬天</loc>
+-        <lastmod>2025-02-07T04:44:34.076Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.789Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/所想所见即真实</loc>
+-        <lastmod>2025-02-07T04:44:35.363Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.821Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/文章</loc>
+-        <lastmod>2025-02-07T04:44:33.949Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.652Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/新征程的开始，也或许是结束 - 2023 年度总结</loc>
+-        <lastmod>2025-02-07T04:44:34.614Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.120Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/时间不公平</loc>
+-        <lastmod>2025-02-07T04:44:34.517Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.021Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/是不是长大之后便很难再专注了？</loc>
+-        <lastmod>2025-02-07T04:44:34.016Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.722Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/暑期总结与瑰想</loc>
+-        <lastmod>2025-02-07T04:44:35.480Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.948Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/月圆夜</loc>
+-        <lastmod>2025-02-07T04:44:35.414Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.873Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/有些人，就这样消散在风里</loc>
+-        <lastmod>2025-02-07T04:44:34.425Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.946Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/极限逼近法</loc>
+-        <lastmod>2025-02-07T04:44:34.116Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.826Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/死亡是万物的基石</loc>
+-        <lastmod>2025-02-07T04:44:33.968Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.675Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/母亲的回头</loc>
+-        <lastmod>2025-02-07T04:44:34.067Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.780Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/母亲的理发推</loc>
+-        <lastmod>2025-02-07T04:44:35.048Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.530Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业总结</loc>
+-        <lastmod>2025-02-07T04:44:34.868Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.365Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业旅行第一天</loc>
+-        <lastmod>2025-02-07T04:44:34.916Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.424Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业旅行第七天</loc>
+-        <lastmod>2025-02-07T04:44:34.841Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.329Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业旅行第三天</loc>
+-        <lastmod>2025-02-07T04:44:34.896Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.403Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业旅行第二天</loc>
+-        <lastmod>2025-02-07T04:44:34.907Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.414Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业旅行第五天</loc>
+-        <lastmod>2025-02-07T04:44:34.877Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.375Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业旅行第八天</loc>
+-        <lastmod>2025-02-07T04:44:34.822Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.303Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业旅行第六天</loc>
+-        <lastmod>2025-02-07T04:44:34.858Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.354Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/毕业旅行第四天</loc>
+-        <lastmod>2025-02-07T04:44:34.886Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.393Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/深埋黑暗里，无人问津</loc>
+-        <lastmod>2025-02-07T04:44:34.666Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.150Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/烟火自述</loc>
+-        <lastmod>2025-02-07T04:44:35.239Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.693Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/猫猫戒指</loc>
+-        <lastmod>2025-02-07T04:44:35.177Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.646Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/现代经济是怎样成长的</loc>
+-        <lastmod>2025-02-07T04:44:33.996Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.702Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/理想中的恋爱，现实中的恋爱</loc>
+-        <lastmod>2025-02-07T04:44:33.987Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.694Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/理想的南国微雪</loc>
+-        <lastmod>2025-02-07T04:44:34.926Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.437Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/瓦罐饭与糖</loc>
+-        <lastmod>2025-02-07T04:44:35.022Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.511Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/生财有术与卖铲子的商人</loc>
+-        <lastmod>2025-02-07T04:44:34.408Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.934Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/男性天生有缺陷</loc>
+-        <lastmod>2025-02-07T04:44:34.555Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.061Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/番茄</loc>
+-        <lastmod>2025-02-07T04:44:35.392Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.850Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/社会正在复制人类</loc>
+-        <lastmod>2025-02-07T04:44:34.679Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.161Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/篮球女孩</loc>
+-        <lastmod>2025-02-07T04:44:35.275Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.733Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/给女性</loc>
+-        <lastmod>2025-02-07T04:44:35.254Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.710Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/给男性</loc>
+-        <lastmod>2025-02-07T04:44:35.226Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.681Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/老师也是小孩子</loc>
+-        <lastmod>2025-02-07T04:44:34.567Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.074Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/自我反省之一</loc>
+-        <lastmod>2025-02-07T04:44:34.637Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.131Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/自私地摄影</loc>
+-        <lastmod>2025-02-07T04:44:34.935Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.448Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/色气之下，清纯最大</loc>
+-        <lastmod>2025-02-07T04:44:35.503Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.978Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/茉莉清茶</loc>
+-        <lastmod>2025-02-07T04:44:35.350Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.803Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/蕴愈彼此，共渡红尘</loc>
+-        <lastmod>2025-02-07T04:44:35.536Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.025Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/西安之行</loc>
+-        <lastmod>2025-02-07T04:44:34.107Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.815Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/订书钉与回形针</loc>
+-        <lastmod>2025-02-07T04:44:34.125Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.834Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/论“小姐”</loc>
+-        <lastmod>2025-02-07T04:44:34.358Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.895Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/论“是……的”</loc>
+-        <lastmod>2025-02-07T04:44:34.708Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.180Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/语言漫谈</loc>
+-        <lastmod>2025-02-07T04:44:35.266Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.720Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/赴约、幸运与感情</loc>
+-        <lastmod>2025-02-07T04:44:34.602Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.110Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/身为学生，最后的旅行</loc>
+-        <lastmod>2025-02-07T04:44:34.436Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.958Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/近期的一些总结</loc>
+-        <lastmod>2025-02-07T04:44:34.948Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.459Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/这世界是一个巨大的草台班子</loc>
+-        <lastmod>2025-02-07T04:44:34.580Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.084Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/迷失</loc>
+-        <lastmod>2025-02-07T04:44:35.006Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.501Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/追随</loc>
+-        <lastmod>2025-02-07T04:44:35.513Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.997Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/通往优秀的路上，痛苦是一种试炼</loc>
+-        <lastmod>2025-02-07T04:44:35.547Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.037Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/金融系统与马太效应</loc>
+-        <lastmod>2025-02-07T04:44:34.159Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.873Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/镁光灯下的黑暗</loc>
+-        <lastmod>2025-02-07T04:44:34.463Z</lastmod>
++        <lastmod>2025-02-08T04:56:02.983Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/长跑</loc>
+-        <lastmod>2025-02-07T04:44:34.850Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.340Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/阑珊，散落人间</loc>
+-        <lastmod>2025-02-07T04:44:35.212Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.667Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/随便聊聊</loc>
+-        <lastmod>2025-02-07T04:44:35.493Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.964Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/随想录</loc>
+-        <lastmod>2025-02-07T04:44:35.404Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.862Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/青春、时间与无数泛滥的感情</loc>
+-        <lastmod>2025-02-07T04:44:34.649Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.139Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/韧尽万花春绽美，待到寒冬自释香 - 2021年度总结</loc>
+-        <lastmod>2025-02-07T04:44:35.307Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.763Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/风筝离家出走</loc>
+-        <lastmod>2025-02-07T04:44:34.755Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.225Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/文章/黯淡的荧光棒</loc>
+-        <lastmod>2025-02-07T04:44:34.542Z</lastmod>
++        <lastmod>2025-02-08T04:56:03.048Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/胡言/候场</loc>
+-        <lastmod>2025-02-07T04:44:38.039Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.980Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/胡言/心情</loc>
+-        <lastmod>2025-02-07T04:44:38.089Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.028Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/胡言/胡言</loc>
+-        <lastmod>2025-02-07T04:44:38.015Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.957Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/胡言/胡言乱语之一</loc>
+-        <lastmod>2025-02-07T04:44:38.078Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.020Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/胡言/胡言乱语之三</loc>
+-        <lastmod>2025-02-07T04:44:38.060Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.000Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/胡言/胡言乱语之二</loc>
+-        <lastmod>2025-02-07T04:44:38.069Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.009Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/胡言/胡言乱语之五</loc>
+-        <lastmod>2025-02-07T04:44:38.029Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.966Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/胡言/胡言乱语之四</loc>
+-        <lastmod>2025-02-07T04:44:38.049Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.991Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/Hide and Seek</loc>
+-        <lastmod>2025-02-07T04:44:37.851Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.838Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/“谵妄”</loc>
+-        <lastmod>2025-02-07T04:44:36.904Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.108Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/一如既往</loc>
+-        <lastmod>2025-02-07T04:44:37.354Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.448Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/一瞬间</loc>
+-        <lastmod>2025-02-07T04:44:37.578Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.608Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/不屈</loc>
+-        <lastmod>2025-02-07T04:44:37.756Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.746Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/他们说我喜欢你</loc>
+-        <lastmod>2025-02-07T04:44:36.846Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.072Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/伪装</loc>
+-        <lastmod>2025-02-07T04:44:37.327Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.416Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/减字木兰花 · 伊愿</loc>
+-        <lastmod>2025-02-07T04:44:37.414Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.500Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/卿语</loc>
+-        <lastmod>2025-02-07T04:44:37.681Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.671Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/变</loc>
+-        <lastmod>2025-02-07T04:44:37.786Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.778Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/在你的瞳孔里</loc>
+-        <lastmod>2025-02-07T04:44:37.249Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.350Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/在你的面前失语</loc>
+-        <lastmod>2025-02-07T04:44:36.954Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.140Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/在无人的城市，放一束烟花</loc>
+-        <lastmod>2025-02-07T04:44:37.185Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.303Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/在星空下坠落</loc>
+-        <lastmod>2025-02-07T04:44:37.200Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.312Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/在暴雨中追逐一只白色的猫</loc>
+-        <lastmod>2025-02-07T04:44:37.046Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.196Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/在深夜里出逃</loc>
+-        <lastmod>2025-02-07T04:44:37.211Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.324Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/在王座上死去</loc>
+-        <lastmod>2025-02-07T04:44:37.125Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.250Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/复活</loc>
+-        <lastmod>2025-02-07T04:44:37.452Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.530Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/夏影</loc>
+-        <lastmod>2025-02-07T04:44:37.594Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.615Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/天仙子 • 忆灵</loc>
+-        <lastmod>2025-02-07T04:44:37.772Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.762Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/如果在机场遇见你</loc>
+-        <lastmod>2025-02-07T04:44:36.833Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.060Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/如梦令 • 愿</loc>
+-        <lastmod>2025-02-07T04:44:37.612Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.626Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/小诗</loc>
+-        <lastmod>2025-02-07T04:44:37.713Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.699Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/巨人</loc>
+-        <lastmod>2025-02-07T04:44:37.549Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.588Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/幽暗的隧道</loc>
+-        <lastmod>2025-02-07T04:44:37.073Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.213Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/影</loc>
+-        <lastmod>2025-02-07T04:44:37.638Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.645Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/得到</loc>
+-        <lastmod>2025-02-07T04:44:37.264Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.358Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/徨</loc>
+-        <lastmod>2025-02-07T04:44:37.863Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.846Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/忆忆思</loc>
+-        <lastmod>2025-02-07T04:44:37.837Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.830Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/忆秦娥</loc>
+-        <lastmod>2025-02-07T04:44:36.938Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.130Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/念</loc>
+-        <lastmod>2025-02-07T04:44:37.150Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.270Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/愿望</loc>
+-        <lastmod>2025-02-07T04:44:37.779Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.770Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/我不会忘记你的名字</loc>
+-        <lastmod>2025-02-07T04:44:37.161Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.281Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/我不会想见你</loc>
+-        <lastmod>2025-02-07T04:44:37.401Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.488Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/我在刺杀你的路上，买了一束鲜花</loc>
+-        <lastmod>2025-02-07T04:44:37.085Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.222Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/我愿化作一株野草</loc>
+-        <lastmod>2025-02-07T04:44:37.136Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.261Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/我的思念藏在海里</loc>
+-        <lastmod>2025-02-07T04:44:36.920Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.119Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/我的思念，是一支箭矢</loc>
+-        <lastmod>2025-02-07T04:44:37.171Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.291Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/我的爱如春风化雨</loc>
+-        <lastmod>2025-02-07T04:44:37.059Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.205Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/我身处于无限的欲望中</loc>
+-        <lastmod>2025-02-07T04:44:36.868Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.083Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/摊破浣溪沙</loc>
+-        <lastmod>2025-02-07T04:44:37.793Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.788Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/摩天轮</loc>
+-        <lastmod>2025-02-07T04:44:37.338Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.431Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/放纵</loc>
+-        <lastmod>2025-02-07T04:44:37.223Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.334Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/故事</loc>
+-        <lastmod>2025-02-07T04:44:37.702Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.690Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/新光</loc>
+-        <lastmod>2025-02-07T04:44:37.873Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.854Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/无题之一</loc>
+-        <lastmod>2025-02-07T04:44:37.721Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.709Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/无题之二</loc>
+-        <lastmod>2025-02-07T04:44:37.425Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.511Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/时光与你</loc>
+-        <lastmod>2025-02-07T04:44:37.886Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.863Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/春秋三载</loc>
+-        <lastmod>2025-02-07T04:44:37.748Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.738Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/有时候，我希望国家变得如足球场那样大</loc>
+-        <lastmod>2025-02-07T04:44:37.033Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.186Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/期冀</loc>
+-        <lastmod>2025-02-07T04:44:37.800Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.796Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/期待</loc>
+-        <lastmod>2025-02-07T04:44:37.669Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.662Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/来一场盛大而梦幻的坠机</loc>
+-        <lastmod>2025-02-07T04:44:37.018Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.178Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/极端</loc>
+-        <lastmod>2025-02-07T04:44:37.497Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.558Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/每个人都是一个容器</loc>
+-        <lastmod>2025-02-07T04:44:37.279Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.369Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/沉睡在天空之上</loc>
+-        <lastmod>2025-02-07T04:44:37.369Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.462Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/清平乐 • 琴韵</loc>
+-        <lastmod>2025-02-07T04:44:37.693Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.681Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/溜走</loc>
+-        <lastmod>2025-02-07T04:44:37.110Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.241Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/点绛唇 • 祈珍</loc>
+-        <lastmod>2025-02-07T04:44:37.765Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.754Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/白月光</loc>
+-        <lastmod>2025-02-07T04:44:36.884Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.093Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/看见</loc>
+-        <lastmod>2025-02-07T04:44:37.234Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.341Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/站在迎风坡</loc>
+-        <lastmod>2025-02-07T04:44:37.290Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.379Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/第 820 次风洞试验</loc>
+-        <lastmod>2025-02-07T04:44:36.971Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.150Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/红玫瑰与纸飞机</loc>
+-        <lastmod>2025-02-07T04:44:37.102Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.232Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/纸鸢</loc>
+-        <lastmod>2025-02-07T04:44:37.485Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.549Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/终极的爱</loc>
+-        <lastmod>2025-02-07T04:44:36.989Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.160Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/给你</loc>
+-        <lastmod>2025-02-07T04:44:37.624Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.634Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/继续</loc>
+-        <lastmod>2025-02-07T04:44:37.826Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.822Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/至美</loc>
+-        <lastmod>2025-02-07T04:44:37.531Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.580Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/蜕变</loc>
+-        <lastmod>2025-02-07T04:44:37.817Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.813Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/行走</loc>
+-        <lastmod>2025-02-07T04:44:37.739Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.731Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/行走在命运之上</loc>
+-        <lastmod>2025-02-07T04:44:37.516Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.570Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/记 11 月 23 日 飘摇动荡</loc>
+-        <lastmod>2025-02-07T04:44:37.562Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.599Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/诗词总录</loc>
+-        <lastmod>2025-02-07T04:44:36.816Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.050Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/赠君</loc>
+-        <lastmod>2025-02-07T04:44:37.655Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.653Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/迷途</loc>
+-        <lastmod>2025-02-07T04:44:37.809Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.803Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/那两天，我的灵魂缺失了</loc>
+-        <lastmod>2025-02-07T04:44:37.008Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.169Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/酒</loc>
+-        <lastmod>2025-02-07T04:44:37.386Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.476Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/释放一只蝴蝶</loc>
+-        <lastmod>2025-02-07T04:44:37.469Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.538Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/金色沙滩</loc>
+-        <lastmod>2025-02-07T04:44:37.313Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.404Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/雨</loc>
+-        <lastmod>2025-02-07T04:44:37.301Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.392Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/顽柔</loc>
+-        <lastmod>2025-02-07T04:44:37.730Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.717Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/诗词/鸡尾酒</loc>
+-        <lastmod>2025-02-07T04:44:37.439Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.518Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记</loc>
+-        <lastmod>2025-02-07T04:44:35.559Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.049Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2020 年 10 月 17 日</loc>
+-        <lastmod>2025-02-07T04:44:36.794Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.027Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2020 年 5 月 15 日</loc>
+-        <lastmod>2025-02-07T04:44:36.805Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.038Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 1 月 28 日</loc>
+-        <lastmod>2025-02-07T04:44:36.783Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.018Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 10 月 2 日</loc>
+-        <lastmod>2025-02-07T04:44:36.313Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.726Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 10 月 22 日</loc>
+-        <lastmod>2025-02-07T04:44:36.289Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.702Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 10 月 24 日</loc>
+-        <lastmod>2025-02-07T04:44:36.277Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.690Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 10 月 6 日</loc>
+-        <lastmod>2025-02-07T04:44:36.300Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.715Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 11 月 19 日</loc>
+-        <lastmod>2025-02-07T04:44:36.266Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.679Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 11 月 30 日</loc>
+-        <lastmod>2025-02-07T04:44:36.247Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.668Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 12 月 26 日</loc>
+-        <lastmod>2025-02-07T04:44:36.229Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.657Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 2 月 3 日</loc>
+-        <lastmod>2025-02-07T04:44:36.771Z</lastmod>
++        <lastmod>2025-02-08T04:56:05.002Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 2 月 7 日</loc>
+-        <lastmod>2025-02-07T04:44:36.763Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.987Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 3 月 26 日</loc>
+-        <lastmod>2025-02-07T04:44:36.745Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.955Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 3 月 31 日</loc>
+-        <lastmod>2025-02-07T04:44:36.731Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.943Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 3 月 5 日</loc>
+-        <lastmod>2025-02-07T04:44:36.753Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.970Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 5 月 10 日</loc>
+-        <lastmod>2025-02-07T04:44:36.717Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.933Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 5 月 18 日</loc>
+-        <lastmod>2025-02-07T04:44:36.706Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.921Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 5 月 21 日</loc>
+-        <lastmod>2025-02-07T04:44:36.693Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.911Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 6 月 11 日</loc>
+-        <lastmod>2025-02-07T04:44:36.645Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.867Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 6 月 6 日</loc>
+-        <lastmod>2025-02-07T04:44:36.676Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.894Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 6 月 7 日</loc>
+-        <lastmod>2025-02-07T04:44:36.661Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.878Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 7 月 14 日</loc>
+-        <lastmod>2025-02-07T04:44:36.586Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.820Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 7 月 2 日</loc>
+-        <lastmod>2025-02-07T04:44:36.602Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.832Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 7 月 21 日</loc>
+-        <lastmod>2025-02-07T04:44:36.574Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.808Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 7 月 27 日</loc>
+-        <lastmod>2025-02-07T04:44:36.556Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.797Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 8 月 2 日</loc>
+-        <lastmod>2025-02-07T04:44:36.536Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.784Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 8 月 31 日</loc>
+-        <lastmod>2025-02-07T04:44:36.515Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.770Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 9 月 15 日</loc>
+-        <lastmod>2025-02-07T04:44:36.499Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.759Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 9 月 16 日</loc>
+-        <lastmod>2025-02-07T04:44:36.483Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.749Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2021 年 9 月 30 日</loc>
+-        <lastmod>2025-02-07T04:44:36.330Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.736Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 1 月 20 日</loc>
+-        <lastmod>2025-02-07T04:44:36.209Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.645Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 10 月 11 日</loc>
+-        <lastmod>2025-02-07T04:44:35.945Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.423Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 11 月 19 日</loc>
+-        <lastmod>2025-02-07T04:44:35.916Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.392Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 11 月 22 日</loc>
+-        <lastmod>2025-02-07T04:44:35.903Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.375Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 11 月 6 日</loc>
+-        <lastmod>2025-02-07T04:44:35.934Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.409Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 12 月 22 日</loc>
+-        <lastmod>2025-02-07T04:44:35.884Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.358Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 12 月 23 日</loc>
+-        <lastmod>2025-02-07T04:44:35.869Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.348Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 2 月 10 日</loc>
+-        <lastmod>2025-02-07T04:44:36.178Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.625Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 2 月 17 日</loc>
+-        <lastmod>2025-02-07T04:44:36.163Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.613Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 2 月 7 日</loc>
+-        <lastmod>2025-02-07T04:44:36.194Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.636Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 3 月 13 日</loc>
+-        <lastmod>2025-02-07T04:44:36.149Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.602Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 3 月 18 日</loc>
+-        <lastmod>2025-02-07T04:44:36.133Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.592Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 3 月 28 日</loc>
+-        <lastmod>2025-02-07T04:44:36.119Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.575Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 4 月 1 日</loc>
+-        <lastmod>2025-02-07T04:44:36.106Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.563Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 4 月 3 日</loc>
+-        <lastmod>2025-02-07T04:44:36.093Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.553Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 5 月 2 日</loc>
+-        <lastmod>2025-02-07T04:44:36.084Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.541Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 5 月 25 日</loc>
+-        <lastmod>2025-02-07T04:44:36.068Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.531Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 6 月 14 日</loc>
+-        <lastmod>2025-02-07T04:44:36.034Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.507Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 6 月 3 日</loc>
+-        <lastmod>2025-02-07T04:44:36.049Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.519Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 7 月 13 日</loc>
+-        <lastmod>2025-02-07T04:44:36.001Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.483Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 7 月 21 日</loc>
+-        <lastmod>2025-02-07T04:44:35.989Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.468Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 7 月 7 日</loc>
+-        <lastmod>2025-02-07T04:44:36.018Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.494Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 9 月 18 日</loc>
+-        <lastmod>2025-02-07T04:44:35.975Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.451Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2022 年 9 月 26 日</loc>
+-        <lastmod>2025-02-07T04:44:35.958Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.438Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 1 月 18 日</loc>
+-        <lastmod>2025-02-07T04:44:35.858Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.338Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 10 月 18 日</loc>
+-        <lastmod>2025-02-07T04:44:35.684Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.181Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 10 月 31 日</loc>
+-        <lastmod>2025-02-07T04:44:35.671Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.171Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 11 月 11 日</loc>
+-        <lastmod>2025-02-07T04:44:35.659Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.159Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 11 月 12 日</loc>
+-        <lastmod>2025-02-07T04:44:35.646Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.146Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 11 月 14 日</loc>
+-        <lastmod>2025-02-07T04:44:35.635Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.135Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 11 月 25 日</loc>
+-        <lastmod>2025-02-07T04:44:35.622Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.124Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 12 月 19 日</loc>
+-        <lastmod>2025-02-07T04:44:35.598Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.092Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 12 月 5 日</loc>
+-        <lastmod>2025-02-07T04:44:35.612Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.107Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 4 月 4 日</loc>
+-        <lastmod>2025-02-07T04:44:35.849Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.323Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 6 月 25 日</loc>
+-        <lastmod>2025-02-07T04:44:35.817Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.294Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 6 月 27 日</loc>
+-        <lastmod>2025-02-07T04:44:35.803Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.283Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 6 月 9 日</loc>
+-        <lastmod>2025-02-07T04:44:35.838Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.308Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 7 月 12 日</loc>
+-        <lastmod>2025-02-07T04:44:35.773Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.264Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 7 月 22 日</loc>
+-        <lastmod>2025-02-07T04:44:35.756Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.255Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 7 月 3 日</loc>
+-        <lastmod>2025-02-07T04:44:35.787Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.273Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 8 月 23 日</loc>
+-        <lastmod>2025-02-07T04:44:35.730Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.232Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 8 月 7 日</loc>
+-        <lastmod>2025-02-07T04:44:35.742Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.244Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 9 月 15 日</loc>
+-        <lastmod>2025-02-07T04:44:35.703Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.202Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 9 月 28 日</loc>
+-        <lastmod>2025-02-07T04:44:35.693Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.192Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 9 月 4 日</loc>
+-        <lastmod>2025-02-07T04:44:35.721Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.223Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2023 年 9 月 7 日</loc>
+-        <lastmod>2025-02-07T04:44:35.712Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.212Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2024 年 12 月 5 日</loc>
+-        <lastmod>2025-02-07T04:44:35.571Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.060Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记 - 2024 年 4 月 12 日</loc>
+-        <lastmod>2025-02-07T04:44:35.581Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.071Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记之一 - 2021 年 6 月 13 日</loc>
+-        <lastmod>2025-02-07T04:44:36.629Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.852Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/随记/随记之二 - 2021 年 6 月 13 日</loc>
+-        <lastmod>2025-02-07T04:44:36.614Z</lastmod>
++        <lastmod>2025-02-08T04:56:04.841Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/归档/归档</loc>
+-        <lastmod>2025-02-07T04:46:08.060Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.087Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/Basic Elements</loc>
+-        <lastmod>2025-02-07T04:46:07.136Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.960Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/Breaking from Beginning</loc>
+-        <lastmod>2025-02-07T04:46:07.530Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.980Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/Duilib安装教程</loc>
+-        <lastmod>2025-02-07T04:46:07.090Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.930Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/Git 笔记</loc>
+-        <lastmod>2025-02-07T04:46:07.104Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.940Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/Street Dance Basics</loc>
+-        <lastmod>2025-02-07T04:46:07.511Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.971Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/刷机教程</loc>
+-        <lastmod>2025-02-07T04:46:07.121Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.951Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/恢复数据步骤</loc>
+-        <lastmod>2025-02-07T04:46:06.710Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.895Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/手机系统更新意外处理</loc>
+-        <lastmod>2025-02-07T04:46:07.074Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.920Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/教程</loc>
+-        <lastmod>2025-02-07T04:46:06.700Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.883Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/教程/重装系统</loc>
+-        <lastmod>2025-02-07T04:46:06.719Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.906Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/GalGame 记录</loc>
+-        <lastmod>2025-02-07T04:46:05.548Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.662Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/优秀作品记录</loc>
+-        <lastmod>2025-02-07T04:46:05.576Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.819Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/喜爱的舞者</loc>
+-        <lastmod>2025-02-07T04:46:05.949Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.841Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/喜爱角色记录</loc>
+-        <lastmod>2025-02-07T04:46:05.566Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.687Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/已投递的简历</loc>
+-        <lastmod>2025-02-07T04:46:06.347Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.862Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/已读书目记录</loc>
+-        <lastmod>2025-02-07T04:46:05.170Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.624Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/毕业旅行</loc>
+-        <lastmod>2025-02-07T04:46:06.363Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.872Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/游玩游戏记录</loc>
+-        <lastmod>2025-02-07T04:46:05.557Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.675Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/番剧记录</loc>
+-        <lastmod>2025-02-07T04:46:05.538Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.652Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/衣服风格记录</loc>
+-        <lastmod>2025-02-07T04:46:05.965Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.851Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/观影记录</loc>
+-        <lastmod>2025-02-07T04:46:05.185Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.638Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/记录</loc>
+-        <lastmod>2025-02-07T04:46:05.155Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.608Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/记录/软件订阅记录</loc>
+-        <lastmod>2025-02-07T04:46:05.935Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.828Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/千人感谢祭名单</loc>
+-        <lastmod>2025-02-07T04:46:07.605Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.021Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/给三年后自己的一封信</loc>
+-        <lastmod>2025-02-07T04:46:07.634Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.041Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/致三年前自己的回信</loc>
+-        <lastmod>2025-02-07T04:46:07.589Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.011Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/致两年前自己的回信</loc>
+-        <lastmod>2025-02-07T04:46:08.008Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.052Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/致两年后自己的一封信</loc>
+-        <lastmod>2025-02-07T04:46:08.043Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.075Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/致五年后自己的一封信</loc>
+-        <lastmod>2025-02-07T04:46:07.574Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.001Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/致南国微雪频道每一位订阅者的一封信</loc>
+-        <lastmod>2025-02-07T04:46:08.027Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.062Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/赠与</loc>
+-        <lastmod>2025-02-07T04:46:07.560Z</lastmod>
++        <lastmod>2025-02-08T04:57:36.991Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/赠与/频道千人感谢祭</loc>
+-        <lastmod>2025-02-07T04:46:07.618Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.031Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/亲密关系</loc>
+-        <lastmod>2025-02-07T04:45:00.416Z</lastmod>
++        <lastmod>2025-02-08T04:56:24.968Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第一章：人际关系的构成</loc>
+-        <lastmod>2025-02-07T04:45:00.432Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.177Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第七章：友谊</loc>
+-        <lastmod>2025-02-07T04:45:00.522Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.236Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第三章：吸引力</loc>
+-        <lastmod>2025-02-07T04:45:00.465Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.197Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第九章：性爱</loc>
+-        <lastmod>2025-02-07T04:45:00.552Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.258Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第二章：研究方法</loc>
+-        <lastmod>2025-02-07T04:45:00.444Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.186Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第五章：沟通</loc>
+-        <lastmod>2025-02-07T04:45:00.492Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.215Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第八章：爱情</loc>
+-        <lastmod>2025-02-07T04:45:00.538Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.248Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第六章：相互依赖</loc>
+-        <lastmod>2025-02-07T04:45:00.507Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.226Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第十一章：冲突</loc>
+-        <lastmod>2025-02-07T04:45:00.585Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.279Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第十三章：亲密关系的解体与消亡</loc>
+-        <lastmod>2025-02-07T04:45:00.619Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.302Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第十二章：权力和暴力</loc>
+-        <lastmod>2025-02-07T04:45:00.602Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.293Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第十四章：亲密关系的维持和修复</loc>
+-        <lastmod>2025-02-07T04:45:00.634Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.310Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第十章：压力与紧张</loc>
+-        <lastmod>2025-02-07T04:45:00.566Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.267Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/亲密关系/第四章：社会认知</loc>
+-        <lastmod>2025-02-07T04:45:00.477Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.205Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/2025，不要一年到头又白忙</loc>
+-        <lastmod>2025-02-07T04:46:04.663Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.468Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/从今往后，男人女人，领导客户，没人能拒绝你</loc>
+-        <lastmod>2025-02-07T04:46:04.735Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.548Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/其他</loc>
+-        <lastmod>2025-02-07T04:46:04.652Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.455Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/十年后的终局是什么？</loc>
+-        <lastmod>2025-02-07T04:46:04.726Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.538Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/如何一步一步成为投资人？</loc>
+-        <lastmod>2025-02-07T04:46:04.746Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.559Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/巨变将至，我们还能做点什么？</loc>
+-        <lastmod>2025-02-07T04:46:04.688Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.500Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/巨变已至，除了迎合，我们别无选择</loc>
+-        <lastmod>2025-02-07T04:46:04.677Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.484Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/当下经济的十个重大问题</loc>
+-        <lastmod>2025-02-07T04:46:04.710Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.526Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/普信男尝试做家务，温柔体贴男内助，为啥不是一条路？</loc>
+-        <lastmod>2025-02-07T04:46:05.107Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.567Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/有些经济话题，再拖下去，可能就来不及了</loc>
+-        <lastmod>2025-02-07T04:46:05.123Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.585Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/其他/美国大选的重大影响以及未来我们的经济预判分析</loc>
+-        <lastmod>2025-02-07T04:46:04.698Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.513Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/18 本画册的爱恋 - 汤小小</loc>
+-        <lastmod>2025-02-07T04:45:55.148Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.442Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/2.05 米的绳子 - 周海亮</loc>
+-        <lastmod>2025-02-07T04:45:43.540Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.158Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/2018 年 4 月 1 日 - 刘慈欣</loc>
+-        <lastmod>2025-02-07T04:45:22.319Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.758Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/PEPA 情人 - 三毛</loc>
+-        <lastmod>2025-02-07T04:45:19.234Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.167Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/“老公”这种动物 - 张小娴</loc>
+-        <lastmod>2025-02-07T04:45:16.505Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.326Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一个乡民的死 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:26.009Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.462Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一个人是群体 - 费尔南多 · 佩索阿</loc>
+-        <lastmod>2025-02-07T04:45:22.764Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.127Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一个人死了 - 朱辉</loc>
+-        <lastmod>2025-02-07T04:45:14.469Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.233Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一个人要像一支队伍 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:55.252Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.556Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一个国家，两个世界 - 余华</loc>
+-        <lastmod>2025-02-07T04:45:55.271Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.575Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一个好人 - 詹姆斯 · 瑟伯</loc>
+-        <lastmod>2025-02-07T04:45:58.120Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.578Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一个特立独行的人 - 乔治 · 奥威尔</loc>
+-        <lastmod>2025-02-07T04:45:43.510Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.141Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一个问题 - 胡适</loc>
+-        <lastmod>2025-02-07T04:45:23.124Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.152Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一代不如一代 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:16.549Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.378Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一句好话 - 张晓风</loc>
+-        <lastmod>2025-02-07T04:45:09.658Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.671Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一只不配对的布鞋 - 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:28.409Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.455Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一只背袋 - 米洛斯拉夫 · 茹拉夫斯</loc>
+-        <lastmod>2025-02-07T04:45:49.293Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.618Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一坛猪油 - 迟子建</loc>
+-        <lastmod>2025-02-07T04:45:36.614Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.191Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一对夫妇的故事 - 伊塔洛 · 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:25.828Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.298Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一小时的故事 - 凯特 · 肖班</loc>
+-        <lastmod>2025-02-07T04:45:05.388Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.890Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一座城市的记忆 - 奥罕 · 帕慕克</loc>
+-        <lastmod>2025-02-07T04:45:44.827Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.283Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一条狗的两次死亡 - 照日格图</loc>
+-        <lastmod>2025-02-07T04:45:58.175Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.651Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一条路 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:46:02.005Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.822Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一次政变 - 莫泊桑</loc>
+-        <lastmod>2025-02-07T04:45:23.480Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.206Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一片树叶 - 东山魁夷</loc>
+-        <lastmod>2025-02-07T04:45:31.657Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.707Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一片考验良心的火腿 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:25.919Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.389Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一种错觉 - 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:58.019Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.838Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/一笑倾人心 - 林 · 拉德纳</loc>
+-        <lastmod>2025-02-07T04:45:22.205Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.626Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/七个铜板 - 莫里斯</loc>
+-        <lastmod>2025-02-07T04:45:05.409Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.916Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/万寿宫丁丁响 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:36.707Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.020Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/万物从容 - 许道军</loc>
+-        <lastmod>2025-02-07T04:45:05.858Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.978Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/丈夫留下的备忘录 - 梅洁</loc>
+-        <lastmod>2025-02-07T04:45:55.209Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.508Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/三只野猫 - 简平</loc>
+-        <lastmod>2025-02-07T04:45:49.799Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.745Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/三种人生态度 - 梁漱溟</loc>
+-        <lastmod>2025-02-07T04:45:43.069Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.093Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/上帝为什么不奖赏好人 - 张若水</loc>
+-        <lastmod>2025-02-07T04:45:11.868Z</lastmod>
++        <lastmod>2025-02-08T04:56:37.086Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/上海童年 - 白先勇</loc>
+-        <lastmod>2025-02-07T04:45:34.131Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.961Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/上海菜市场 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:11.832Z</lastmod>
++        <lastmod>2025-02-08T04:56:37.069Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/下棋 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:28.281Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.365Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不一样的自由 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:50.493Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.804Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不值一文的老奶奶 - 布莱希特</loc>
+-        <lastmod>2025-02-07T04:45:22.133Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.541Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不奋斗的姑娘我不爱 - 石康</loc>
+-        <lastmod>2025-02-07T04:45:16.534Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.360Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不悔 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:26.023Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.829Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不是理由 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:31.471Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.522Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不能被增加的人 - 张晓风</loc>
+-        <lastmod>2025-02-07T04:45:22.221Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.650Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不要中了愤怒的计 - 王玉红</loc>
+-        <lastmod>2025-02-07T04:45:25.890Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.355Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不要累死你的爱 - 刘墉</loc>
+-        <lastmod>2025-02-07T04:45:43.492Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.128Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/不高明又何妨 - L · W · 斯特莉克</loc>
+-        <lastmod>2025-02-07T04:45:09.546Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.599Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/与人为友 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:49.826Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.765Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/与同性恋有关的伦理问题 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:16.565Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.401Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/丑脸 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:34.122Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.953Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/丑鱼多滋味 - 佚名</loc>
+-        <lastmod>2025-02-07T04:45:23.115Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.139Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/世界上最荒凉的动物园 - 苏童</loc>
+-        <lastmod>2025-02-07T04:45:42.979Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.040Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/世界上最酷的爸爸 - 安吉 · K · K · 沃德</loc>
+-        <lastmod>2025-02-07T04:45:42.896Z</lastmod>
++        <lastmod>2025-02-08T04:57:12.987Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/世界不同于想象 - 张曼娟</loc>
+-        <lastmod>2025-02-07T04:45:38.918Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.336Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/东西送人 - 林夕</loc>
+-        <lastmod>2025-02-07T04:45:19.617Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.508Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/两片树叶的故事 - 艾萨克 · 巴什维斯 · 辛格</loc>
+-        <lastmod>2025-02-07T04:45:05.442Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.953Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/中央公园 - 约翰 · 厄普代克</loc>
+-        <lastmod>2025-02-07T04:45:12.105Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.837Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/中山蛇宴 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:16.557Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.387Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/中年人的寂寞 - 夏丏尊</loc>
+-        <lastmod>2025-02-07T04:45:34.107Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.935Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/为乐趣而读书 - 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:40.715Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.238Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/为什么我们对平凡的人生深怀恐惧？- 梁晓声</loc>
+-        <lastmod>2025-02-07T04:45:40.213Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.751Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/为什么要读经典 - 伊塔洛 · 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:47.047Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.808Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/乡愁 - 余光中</loc>
+-        <lastmod>2025-02-07T04:45:22.305Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.736Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/书店男与超市女 - 姬中宪</loc>
+-        <lastmod>2025-02-07T04:45:38.840Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.236Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/书要读得好的日子 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:09.502Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.574Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/买牛肉须知 - 姬中宪</loc>
+-        <lastmod>2025-02-07T04:45:44.838Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.292Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/二手衣 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:52.619Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.823Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/京片子与民族自信心 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:42.937Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.015Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/京都老蔡记 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:36.769Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.091Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/亲爱的小孩 - 陈晓霞</loc>
+-        <lastmod>2025-02-07T04:45:58.082Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.527Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/人为什么不肯死 - 贾平凹</loc>
+-        <lastmod>2025-02-07T04:45:19.323Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.237Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/人人想做他人 - 塞缪尔 · 麦科德 · 克罗瑟斯</loc>
+-        <lastmod>2025-02-07T04:45:36.733Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.051Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/人们杀死了我的阿尔贝蒂娜 - 米兰 · 昆德拉</loc>
+-        <lastmod>2025-02-07T04:45:09.359Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.466Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/人生实苦 - 杨绛</loc>
+-        <lastmod>2025-02-07T04:45:38.804Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.204Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/人生马拉松 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:12.071Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.792Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/人病 - 贾平凹</loc>
+-        <lastmod>2025-02-07T04:45:19.484Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.355Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/人类的群星闪耀时 - 茨威格</loc>
+-        <lastmod>2025-02-07T04:45:55.323Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.636Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/人间椅子 - 江户川乱步</loc>
+-        <lastmod>2025-02-07T04:45:43.528Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.150Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/什么叫气质 - 柴静</loc>
+-        <lastmod>2025-02-07T04:45:31.675Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.730Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/从痴迷到依恋 - 周国平</loc>
+-        <lastmod>2025-02-07T04:45:58.130Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.589Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/他也可以是我 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:06.745Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.418Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/优雅的爱情到哪里去了 - 许知远</loc>
+-        <lastmod>2025-02-07T04:45:19.330Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.246Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/住宅问题 - 星新一</loc>
+-        <lastmod>2025-02-07T04:45:16.487Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.307Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/体验生活 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:22.371Z</lastmod>
++        <lastmod>2025-02-08T04:56:49.278Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/何处不相逢 - 罗兰</loc>
+-        <lastmod>2025-02-07T04:45:40.651Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.795Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你到底喜不喜欢我 - 王丫米</loc>
+-        <lastmod>2025-02-07T04:45:55.182Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.481Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你嘴上所说的人生就是你的人生 - 佐藤富雄</loc>
+-        <lastmod>2025-02-07T04:45:46.618Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.774Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你在那里 - 王梅</loc>
+-        <lastmod>2025-02-07T04:45:40.661Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.806Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你带手帕了吗？- 赫塔 · 米勒</loc>
+-        <lastmod>2025-02-07T04:45:11.937Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.648Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你必须要有一样拿得出手 - 林夕</loc>
+-        <lastmod>2025-02-07T04:45:31.384Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.448Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你怎么现在才来？- 王文华</loc>
+-        <lastmod>2025-02-07T04:45:12.561Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.889Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你是医生吗？- 雷蒙德 · 卡佛</loc>
+-        <lastmod>2025-02-07T04:45:43.960Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.205Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你有没有钱 - 李敖</loc>
+-        <lastmod>2025-02-07T04:45:55.621Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.674Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你的那双眼睛 - 三毛</loc>
+-        <lastmod>2025-02-07T04:45:47.054Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.816Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你的钱夹里有谁？- 戎华</loc>
+-        <lastmod>2025-02-07T04:45:19.508Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.378Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/你要是在麦田里遇到了我 - 罗伯特 · 彭斯</loc>
+-        <lastmod>2025-02-07T04:45:55.612Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.664Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/侏儒的祈祷 - 芥川龙之介</loc>
+-        <lastmod>2025-02-07T04:45:43.948Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.196Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/信使 - 刘慈欣</loc>
+-        <lastmod>2025-02-07T04:45:45.292Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.656Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/修软垫椅的女人 - 莫泊桑</loc>
+-        <lastmod>2025-02-07T04:45:55.190Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.491Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/借刀杀人 - 希区柯克</loc>
+-        <lastmod>2025-02-07T04:45:52.742Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.287Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/偏见 - 罗西</loc>
+-        <lastmod>2025-02-07T04:45:16.468Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.285Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/做大哥的人 - 巴金</loc>
+-        <lastmod>2025-02-07T04:45:11.920Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.638Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/偷听谈话的妙趣 - 海厄特</loc>
+-        <lastmod>2025-02-07T04:45:25.945Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.407Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/僵尸 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:22.259Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.682Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/光明在低头的一瞬 - 迟子建</loc>
+-        <lastmod>2025-02-07T04:45:09.337Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.450Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/全世界的人都知道我丢了 - 李娟</loc>
+-        <lastmod>2025-02-07T04:45:34.156Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.993Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/八宝饭 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:36.844Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.183Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/八月的鬼怪 - 加西亚 · 马尔克斯</loc>
+-        <lastmod>2025-02-07T04:45:26.099Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.326Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/关于朋友 - 叔本华</loc>
+-        <lastmod>2025-02-07T04:45:55.278Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.586Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/关于父子 - 贾平凹</loc>
+-        <lastmod>2025-02-07T04:45:42.952Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.024Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/兵马俑的个性 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:19.454Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.321Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/写在五线谱上的信 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:58.156Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.625Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/写给幸福 - 席慕容</loc>
+-        <lastmod>2025-02-07T04:45:28.949Z</lastmod>
++        <lastmod>2025-02-08T04:56:56.026Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/写给新的一年 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:44.781Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.254Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/写给残酷社会的善意短信 - 蔡康永</loc>
+-        <lastmod>2025-02-07T04:45:39.007Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.559Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/冬天 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:22.143Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.551Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/刀疤 - 博尔赫斯</loc>
+-        <lastmod>2025-02-07T04:45:44.815Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.273Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/刀锋 - 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:28.400Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.444Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/刘正风灭门 - 金庸</loc>
+-        <lastmod>2025-02-07T04:45:57.921Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.716Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/初恋 - 废名</loc>
+-        <lastmod>2025-02-07T04:45:22.385Z</lastmod>
++        <lastmod>2025-02-08T04:56:49.288Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/刺青时代 - 苏童</loc>
+-        <lastmod>2025-02-07T04:45:09.645Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.659Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/剃刀侠 - 本桦</loc>
+-        <lastmod>2025-02-07T04:45:19.471Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.345Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/剩下的事情 - 刘亮程</loc>
+-        <lastmod>2025-02-07T04:45:09.667Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.680Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/包厢里的奇遇 - 卡夫卡</loc>
+-        <lastmod>2025-02-07T04:45:28.512Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.543Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/北京人的遛鸟 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:36.657Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.237Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/北京的茶食 - 周作人</loc>
+-        <lastmod>2025-02-07T04:45:12.006Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.705Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/十二岁的广场 - 顾城</loc>
+-        <lastmod>2025-02-07T04:45:22.398Z</lastmod>
++        <lastmod>2025-02-08T04:56:49.300Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/千古伤心是结婚 - 柏杨</loc>
+-        <lastmod>2025-02-07T04:45:39.419Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.651Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/午夜的汽笛 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:34.229Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.086Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/午餐 - 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:25.845Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.308Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/半张纸 - 斯特林堡</loc>
+-        <lastmod>2025-02-07T04:45:22.246Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.671Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/卖猪 - 路遥</loc>
+-        <lastmod>2025-02-07T04:45:49.212Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.930Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/卖猪肠粉的女人 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:49.124Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.864Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/南北的点心 - 周作人</loc>
+-        <lastmod>2025-02-07T04:45:05.426Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.936Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/双文化时代 - 周有光</loc>
+-        <lastmod>2025-02-07T04:45:52.796Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.335Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/双鱼 - 三毛</loc>
+-        <lastmod>2025-02-07T04:45:58.190Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.681Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/发出声音永远是有用的 - 席慕容</loc>
+-        <lastmod>2025-02-07T04:45:26.052Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.850Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/发明 - 于尔克 · 舒比格</loc>
+-        <lastmod>2025-02-07T04:45:12.594Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.065Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/发民主财 - 韩少功</loc>
+-        <lastmod>2025-02-07T04:45:43.081Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.102Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/变成虫子的人 - 黄惊涛</loc>
+-        <lastmod>2025-02-07T04:45:19.358Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.266Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/可以换吗？- 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:12.027Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.728Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/台阶 - 李森祥</loc>
+-        <lastmod>2025-02-07T04:45:42.858Z</lastmod>
++        <lastmod>2025-02-08T04:57:09.019Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/吃相 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:36.723Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.040Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/吃酒 - 丰子恺</loc>
+-        <lastmod>2025-02-07T04:45:45.277Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.648Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/吃饭是一件需要认真对待的事 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:58.046Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.864Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/吆喝 - 萧乾</loc>
+-        <lastmod>2025-02-07T04:45:25.933Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.398Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/合锦 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:16.598Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.812Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/名字花哨的时代 - 肖复兴</loc>
+-        <lastmod>2025-02-07T04:45:42.849Z</lastmod>
++        <lastmod>2025-02-08T04:57:09.006Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/向自己说再见 - 希区柯克</loc>
+-        <lastmod>2025-02-07T04:45:55.217Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.520Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/启程 - 卡夫卡</loc>
+-        <lastmod>2025-02-07T04:45:14.299Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.101Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/吹兵 - 三毛</loc>
+-        <lastmod>2025-02-07T04:45:46.171Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.727Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/吾先生 - 杨绛</loc>
+-        <lastmod>2025-02-07T04:45:47.071Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.832Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/和时间赛跑 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:36.649Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.228Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/哀悼日 - 余华</loc>
+-        <lastmod>2025-02-07T04:45:28.263Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.345Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/哪一段青春不荒唐 - 许冬林</loc>
+-        <lastmod>2025-02-07T04:45:22.327Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.769Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/哲学不能烤面包 - 沈奇岚</loc>
+-        <lastmod>2025-02-07T04:45:31.502Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.545Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/唐人来自何处 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:38.947Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.505Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/商业片与艺术片 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:36.750Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.070Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/四个相命师 - 吴念真</loc>
+-        <lastmod>2025-02-07T04:45:14.501Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.265Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/四千三百年 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:22.151Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.561Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/四季歌 - 铁凝</loc>
+-        <lastmod>2025-02-07T04:45:22.230Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.659Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/在一个时代里缓慢行走 - 朱德庸</loc>
+-        <lastmod>2025-02-07T04:45:43.023Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.068Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/在什么地方活着 - 小川未明</loc>
+-        <lastmod>2025-02-07T04:45:55.112Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.404Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/在墙的另一边 - 高铭</loc>
+-        <lastmod>2025-02-07T04:45:22.197Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.615Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/在女儿婚礼上的讲话 - 贾平凹</loc>
+-        <lastmod>2025-02-07T04:45:34.139Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.974Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/在我行走很久很久的路上 - 安布洛斯 · 莱尔</loc>
+-        <lastmod>2025-02-07T04:45:22.177Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.592Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/在桥上 - 余华</loc>
+-        <lastmod>2025-02-07T04:45:28.429Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.478Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/垃圾工 - 雷 · 布拉德伯里</loc>
+-        <lastmod>2025-02-07T04:45:42.828Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.984Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/城市和亡灵 - 伊塔洛 · 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:38.831Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.228Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/夜空中的木拐 - 从维熙</loc>
+-        <lastmod>2025-02-07T04:45:57.948Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.748Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/大偶 - 冯唐</loc>
+-        <lastmod>2025-02-07T04:45:36.741Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.059Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/大坝垮的那天 - 詹姆斯 · 瑟伯</loc>
+-        <lastmod>2025-02-07T04:45:57.956Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.758Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/大欲 - 冯唐</loc>
+-        <lastmod>2025-02-07T04:45:38.878Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.279Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/大胡子与我 - 三毛</loc>
+-        <lastmod>2025-02-07T04:45:55.156Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.452Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/天上落下来的一片叶子 - 安徒生</loc>
+-        <lastmod>2025-02-07T04:45:55.101Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.394Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/天堂之门 - 马克</loc>
+-        <lastmod>2025-02-07T04:45:42.807Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.606Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/天堂的颜色 - 邵亚</loc>
+-        <lastmod>2025-02-07T04:45:36.699Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.008Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/夫妻间的隐私 - 周国平</loc>
+-        <lastmod>2025-02-07T04:45:31.602Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.644Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/头发 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:14.428Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.206Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/女人为什么不宜搞哲学 - 周国平</loc>
+-        <lastmod>2025-02-07T04:45:12.035Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.738Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/女人的星球 - 高铭</loc>
+-        <lastmod>2025-02-07T04:45:58.520Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.718Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/女人的猫性 - 佚名</loc>
+-        <lastmod>2025-02-07T04:45:38.911Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.326Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/女朋友 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:58.927Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.752Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/奴性 - 纪伯伦</loc>
+-        <lastmod>2025-02-07T04:45:22.334Z</lastmod>
++        <lastmod>2025-02-08T04:56:49.239Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/她那么看过我 - 老舍</loc>
+-        <lastmod>2025-02-07T04:45:28.271Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.356Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/好人总会有人疼 - 简媜</loc>
+-        <lastmod>2025-02-07T04:45:09.419Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.509Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/好人电影 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:09.587Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.625Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/如果你没有了我 - 刘墉</loc>
+-        <lastmod>2025-02-07T04:45:49.319Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.650Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/如果你爱我 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:09.443Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.527Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/如果把世界比喻成一座城市 - 汤玛斯 · 弗里德曼</loc>
+-        <lastmod>2025-02-07T04:45:09.373Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.481Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/姻缘 - 史铁生</loc>
+-        <lastmod>2025-02-07T04:45:19.599Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.485Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/婚姻是一种修养 - 胡杨</loc>
+-        <lastmod>2025-02-07T04:45:58.100Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.551Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/婴儿的观念 - 唐纳德 · 巴塞尔姆</loc>
+-        <lastmod>2025-02-07T04:45:45.308Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.666Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/婴儿蛋糕 - 尼尔 · 盖曼</loc>
+-        <lastmod>2025-02-07T04:45:49.312Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.637Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/孤单是对你最好的惩罚 - 王朔</loc>
+-        <lastmod>2025-02-07T04:45:09.631Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.649Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/孤独 - 大卫 · 索罗</loc>
+-        <lastmod>2025-02-07T04:45:12.049Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.760Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/孤独地走向未来 - 贾平凹</loc>
+-        <lastmod>2025-02-07T04:45:49.768Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.724Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/孩子为什么一定要上学 - 大江健三郎</loc>
+-        <lastmod>2025-02-07T04:45:34.280Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.134Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/完美的女友 - 木心</loc>
+-        <lastmod>2025-02-07T04:45:19.562Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.438Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/宠物公墓 - 希区柯克</loc>
+-        <lastmod>2025-02-07T04:45:28.501Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.532Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/害羞的爱先生 - 法比安 · 塞比亚</loc>
+-        <lastmod>2025-02-07T04:45:42.871Z</lastmod>
++        <lastmod>2025-02-08T04:57:09.031Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/家具们在聊天，你如何入眠？- 奥尔罕 · 帕慕克</loc>
+-        <lastmod>2025-02-07T04:45:06.299Z</lastmod>
++        <lastmod>2025-02-08T04:56:33.030Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/家有名妻 - 刘海北</loc>
+-        <lastmod>2025-02-07T04:45:49.260Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.582Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/对你好 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:36.825Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.157Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/对生命的谄媚 - 廖一梅</loc>
+-        <lastmod>2025-02-07T04:45:28.453Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.498Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/寻人海报上的孩子 - 恰克 · 帕拉尼克</loc>
+-        <lastmod>2025-02-07T04:45:05.435Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.943Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/寻路的人 - 周作人</loc>
+-        <lastmod>2025-02-07T04:45:16.521Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.344Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小事 - 吉尔贝 · 塞斯勃隆</loc>
+-        <lastmod>2025-02-07T04:45:23.827Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.268Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小偷 - 苏童</loc>
+-        <lastmod>2025-02-07T04:45:39.447Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.674Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小偷 - 雷蒙德 · 卡佛</loc>
+-        <lastmod>2025-02-07T04:45:43.479Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.119Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小公务员之死 - 契诃夫</loc>
+-        <lastmod>2025-02-07T04:45:43.990Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.227Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小女孩与厌倦 - 于尔克 · 舒比格曼</loc>
+-        <lastmod>2025-02-07T04:45:42.884Z</lastmod>
++        <lastmod>2025-02-08T04:57:12.978Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小女孩和死神 - 于尔克 · 舒比格</loc>
+-        <lastmod>2025-02-07T04:45:22.117Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.518Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小桔灯 - 冰心</loc>
+-        <lastmod>2025-02-07T04:45:19.243Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.177Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小生命 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:46:01.997Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.813Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小绿猪 - 马丁 · 麦克多纳</loc>
+-        <lastmod>2025-02-07T04:45:31.488Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.532Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/小达子 - 冯骥才</loc>
+-        <lastmod>2025-02-07T04:45:42.816Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.617Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/尾生 - 芥川龙之介</loc>
+-        <lastmod>2025-02-07T04:45:46.673Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.798Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/展示品 - 于尔克 · 舒比格</loc>
+-        <lastmod>2025-02-07T04:45:55.236Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.537Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/工作与人生 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:31.518Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.558Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/巫婆 - 雪莉 · 杰克逊</loc>
+-        <lastmod>2025-02-07T04:45:49.753Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.708Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/布尔乔亚的伪装趣味 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:09.350Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.458Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/平凡最难 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:49.301Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.628Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/幸福 - 莫泊桑</loc>
+-        <lastmod>2025-02-07T04:45:36.787Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.112Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/幸福就在此刻 - 铁凝</loc>
+-        <lastmod>2025-02-07T04:45:40.703Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.230Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/幸福的与被幸福的 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:22.740Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.107Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/幸福的无关 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:28.468Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.510Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/幸福的生日 - 黑井千次</loc>
+-        <lastmod>2025-02-07T04:45:52.751Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.298Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/幼稚的成熟与成熟的老到 - 王蒙</loc>
+-        <lastmod>2025-02-07T04:45:14.456Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.225Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/庙口 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:38.967Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.529Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/庸俗谋划了我们的卑贱 - 克里希 · 那穆提</loc>
+-        <lastmod>2025-02-07T04:45:14.307Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.109Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/弗洛伊德和受虐狂 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:31.695Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.753Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/弟弟 - 张爱玲</loc>
+-        <lastmod>2025-02-07T04:45:12.120Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.861Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/张大力 - 冯骥才</loc>
+-        <lastmod>2025-02-07T04:45:23.137Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.164Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/弥补 - 大卫 · 伊格曼</loc>
+-        <lastmod>2025-02-07T04:45:43.929Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.179Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/当三毛还是在二毛的时候 - 三毛</loc>
+-        <lastmod>2025-02-07T04:45:55.287Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.596Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/当东方遭遇西方 - 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:46.234Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.765Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/当诚实面临陷阱时 - 刘耀兰</loc>
+-        <lastmod>2025-02-07T04:45:12.057Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.771Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/往日夕阳下的公园里 - 乙一</loc>
+-        <lastmod>2025-02-07T04:45:39.819Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.713Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/律师太太 - 希区柯克</loc>
+-        <lastmod>2025-02-07T04:45:55.133Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.422Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/御旨 - 卡夫卡</loc>
+-        <lastmod>2025-02-07T04:45:52.643Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.842Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/忆周作人先生 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:43.054Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.085Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/忘却 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:52.652Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.851Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/快乐人的衬衫 - 伊塔洛 · 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:43.093Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.111Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/怎样听戏 - 詹姆斯 · 瑟伯</loc>
+-        <lastmod>2025-02-07T04:45:22.214Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.638Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/怎样跌得有尊严 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:38.819Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.215Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/思念那不在者 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:34.083Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.897Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/思想和害臊 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:19.309Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.227Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/性化学杂想 - 严歌苓</loc>
+-        <lastmod>2025-02-07T04:45:05.912Z</lastmod>
++        <lastmod>2025-02-08T04:56:33.013Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/恋人 - 史铁生</loc>
+-        <lastmod>2025-02-07T04:45:06.307Z</lastmod>
++        <lastmod>2025-02-08T04:56:33.042Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/恋爱中的骗子 - 理查德 · 耶茨</loc>
+-        <lastmod>2025-02-07T04:45:31.534Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.567Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/恶之平庸 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:52.809Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.343Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/想北平 - 老舍</loc>
+-        <lastmod>2025-02-07T04:45:36.675Z</lastmod>
++        <lastmod>2025-02-08T04:57:04.977Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/想念草地郎 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:19.222Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.157Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/想起草药 - 许冬林</loc>
+-        <lastmod>2025-02-07T04:45:46.638Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.781Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/感情化了的电视机 - 星新一</loc>
+-        <lastmod>2025-02-07T04:45:28.968Z</lastmod>
++        <lastmod>2025-02-08T04:56:56.047Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/慢看 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:36.805Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.135Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/成长 - 阿城</loc>
+-        <lastmod>2025-02-07T04:45:05.870Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.986Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我一辈子没拉过她的手 - 吴念真</loc>
+-        <lastmod>2025-02-07T04:45:19.498Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.366Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我不像张爱玲 - 王安忆</loc>
+-        <lastmod>2025-02-07T04:45:12.609Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.073Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我不喜欢人类，我想住进森林 - 阿澜 · 卢</loc>
+-        <lastmod>2025-02-07T04:45:42.839Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.996Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我不想去上学了 - 奥尔罕 · 帕慕克</loc>
+-        <lastmod>2025-02-07T04:45:25.898Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.365Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我不是一个怪人 - 梵高</loc>
+-        <lastmod>2025-02-07T04:45:19.533Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.401Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我交给你们一个孩子 - 张晓风</loc>
+-        <lastmod>2025-02-07T04:45:31.583Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.620Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我仅仅是个女孩儿 - 门罗</loc>
+-        <lastmod>2025-02-07T04:45:31.623Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.671Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我们为什么要过节 - 冯骥才</loc>
+-        <lastmod>2025-02-07T04:45:57.983Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.790Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我们当中某些人一直在威胁我们的朋友考尔比 - 唐纳德 · 巴塞尔姆</loc>
+-        <lastmod>2025-02-07T04:45:36.597Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.171Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我们曾到过海边 - 张定浩</loc>
+-        <lastmod>2025-02-07T04:45:14.323Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.128Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我们生活在巨大的差距里 - 余华</loc>
+-        <lastmod>2025-02-07T04:45:38.886Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.292Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我们的老式婚姻 - 杨修峰</loc>
+-        <lastmod>2025-02-07T04:45:58.164Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.636Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我们管脑袋叫什么？- 刘齐</loc>
+-        <lastmod>2025-02-07T04:45:38.859Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.260Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我们都是突然长大 - 马良</loc>
+-        <lastmod>2025-02-07T04:45:05.403Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.907Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我们都有病 - 朱德庸</loc>
+-        <lastmod>2025-02-07T04:45:58.500Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.696Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我只要一种 - 朵拉</loc>
+-        <lastmod>2025-02-07T04:45:36.569Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.144Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我妈 - 钱海燕</loc>
+-        <lastmod>2025-02-07T04:45:16.630Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.148Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我妈不让我看电视 - 佚名</loc>
+-        <lastmod>2025-02-07T04:45:14.440Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.215Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我家的财富 - 德富芦花</loc>
+-        <lastmod>2025-02-07T04:45:11.849Z</lastmod>
++        <lastmod>2025-02-08T04:56:37.077Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我对女性有意见 - 詹姆斯 · 瑟伯</loc>
+-        <lastmod>2025-02-07T04:45:12.098Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.827Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我所认识的李敖 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:25.880Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.346Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我改变的事物 - 刘亮程</loc>
+-        <lastmod>2025-02-07T04:45:25.809Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.288Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我是个窃贼 - 阿 · 康帕尼尔</loc>
+-        <lastmod>2025-02-07T04:45:36.778Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.101Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我是为你好 - 张小娴</loc>
+-        <lastmod>2025-02-07T04:45:06.731Z</lastmod>
++        <lastmod>2025-02-08T04:56:33.069Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我来讲一个故事 - 加西亚 · 马尔克斯</loc>
+-        <lastmod>2025-02-07T04:45:58.182Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.666Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我的信念 - 居里夫人</loc>
+-        <lastmod>2025-02-07T04:45:14.347Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.144Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我的呈奶酪蛋糕形状的贫穷 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:49.162Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.888Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我看国学 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:39.016Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.568Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/我这么喜欢你 - 史铁生</loc>
+-        <lastmod>2025-02-07T04:45:28.526Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.555Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/打工经历 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:55.332Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.644Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/打赌 - 契诃夫</loc>
+-        <lastmod>2025-02-07T04:45:34.246Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.107Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/扼杀胎儿 - 渡边淳一</loc>
+-        <lastmod>2025-02-07T04:45:22.724Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.097Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/找到自己的命运，而不是他人的命运 - 赫尔曼 · 黑塞</loc>
+-        <lastmod>2025-02-07T04:45:22.290Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.716Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/把每一天当做生命的终点 - 斯蒂夫 · 乔布斯</loc>
+-        <lastmod>2025-02-07T04:45:12.542Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.878Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/把烦恼写在沙滩上 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:09.685Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.701Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/抱孙 - 老舍</loc>
+-        <lastmod>2025-02-07T04:45:34.099Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.922Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/抽象的爱国 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:52.833Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.359Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/拖地 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:28.254Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.336Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/择偶记 - 朱自清</loc>
+-        <lastmod>2025-02-07T04:45:31.399Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.462Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/拾麦穗 - 张洁</loc>
+-        <lastmod>2025-02-07T04:45:16.528Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.352Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/捉弄 - 契诃夫</loc>
+-        <lastmod>2025-02-07T04:45:40.677Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.208Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/捕快张三 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:36.641Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.218Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/捣乱者的作用 - 保罗 · 科埃略</loc>
+-        <lastmod>2025-02-07T04:45:49.182Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.904Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/掉到井里的人 - 卡夫卡</loc>
+-        <lastmod>2025-02-07T04:45:55.244Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.547Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/排队 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:47.063Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.825Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/排骨萝卜汤 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:42.922Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.005Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/握手 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:34.255Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.116Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/摆脱童稚状态 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:52.775Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.316Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/放烟花 - 李娟</loc>
+-        <lastmod>2025-02-07T04:45:28.554Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.577Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/救世情结与白日梦 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:49.203Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.921Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/教书 - 韩少功</loc>
+-        <lastmod>2025-02-07T04:45:26.039Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.841Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/教堂与坟墓 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:25.997Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.450Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/教育你的父母 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:14.401Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.182Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/敬酒要喝 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:58.111Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.565Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/文人与粥 - 张远桃</loc>
+-        <lastmod>2025-02-07T04:45:39.058Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.618Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/文学何为？- 韩少功</loc>
+-        <lastmod>2025-02-07T04:45:28.958Z</lastmod>
++        <lastmod>2025-02-08T04:56:56.037Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/文学青年 - 许知远</loc>
+-        <lastmod>2025-02-07T04:45:42.995Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.049Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/文明与反讽 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:09.468Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.547Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/文艺上的异物 - 周作人</loc>
+-        <lastmod>2025-02-07T04:45:25.956Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.418Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/文艺与木匠 - 老舍</loc>
+-        <lastmod>2025-02-07T04:45:49.339Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.675Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/斗车 - 芥川龙之介</loc>
+-        <lastmod>2025-02-07T04:45:43.918Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.169Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/断水人 - 杜拉斯</loc>
+-        <lastmod>2025-02-07T04:45:19.517Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.392Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/断爱近涅盘 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:59.344Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.785Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/新型食品 - 斯蒂芬 · 巴特勒 · 里柯克</loc>
+-        <lastmod>2025-02-07T04:45:11.976Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.681Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/新生活 - 胡适</loc>
+-        <lastmod>2025-02-07T04:45:38.868Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.268Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/旅行与读书 - 詹宏志</loc>
+-        <lastmod>2025-02-07T04:45:22.270Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.692Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/旅行的意义 - 余军戈</loc>
+-        <lastmod>2025-02-07T04:45:19.543Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.414Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/无人看管的面包圈 - 张抒</loc>
+-        <lastmod>2025-02-07T04:45:49.328Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.662Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/无酱不欢 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:39.024Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.579Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/旧书去哪里了 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:38.984Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.541Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/早恋 - 施伟</loc>
+-        <lastmod>2025-02-07T04:45:19.586Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.462Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/早起看人间 - 罗兰</loc>
+-        <lastmod>2025-02-07T04:45:43.009Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.057Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/时间旅行者的妻子 - 奥德丽 · 尼芬格</loc>
+-        <lastmod>2025-02-07T04:45:58.943Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.762Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/明白 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:22.343Z</lastmod>
++        <lastmod>2025-02-08T04:56:49.252Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/最伟大的科幻小说 - 埃里克 · 斯通恩特</loc>
+-        <lastmod>2025-02-07T04:45:31.612Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.657Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/最后一只猫 - 刘亮程</loc>
+-        <lastmod>2025-02-07T04:45:05.379Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.878Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/最后一次演讲 - 罗纳德 · 威尔逊 · 里根</loc>
+-        <lastmod>2025-02-07T04:45:05.897Z</lastmod>
++        <lastmod>2025-02-08T04:56:33.006Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/最好的时光 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:25.907Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.376Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/月亮不见了 - 叶倾城</loc>
+-        <lastmod>2025-02-07T04:45:36.577Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.153Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/有一种活法 - 李银河</loc>
+-        <lastmod>2025-02-07T04:45:14.384Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.171Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/有人弄乱了玫瑰花 - 加西亚 · 马尔克斯</loc>
+-        <lastmod>2025-02-07T04:45:19.573Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.454Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/有毒的兔子 - 伊塔洛 · 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:36.715Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.032Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/有空小姐和篮板球小姐 - 王文华</loc>
+-        <lastmod>2025-02-07T04:45:22.169Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.580Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/朋友 - 贾平凹</loc>
+-        <lastmod>2025-02-07T04:45:45.704Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.683Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/未婚夫和爸爸 - 契诃夫</loc>
+-        <lastmod>2025-02-07T04:45:55.226Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.528Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/未婚妻 - 玛 · 奥克罗克斯</loc>
+-        <lastmod>2025-02-07T04:45:57.911Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.706Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/权力的道德捆绑 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:38.995Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.550Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/杰德 · 彼得斯的运气 - 詹姆斯 · 瑟伯</loc>
+-        <lastmod>2025-02-07T04:45:09.615Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.641Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/枕头人 - 马丁 · 麦克多纳</loc>
+-        <lastmod>2025-02-07T04:45:52.714Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.258Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/林中猫的故事 - 彭蒂 · 哈恩帕</loc>
+-        <lastmod>2025-02-07T04:45:49.114Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.856Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/柔弱的人 - 安东 · 契诃夫</loc>
+-        <lastmod>2025-02-07T04:45:31.637Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.686Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/树王 - 阿城</loc>
+-        <lastmod>2025-02-07T04:45:23.504Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.234Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/梦的真实性 - 高铭</loc>
+-        <lastmod>2025-02-07T04:45:28.385Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.437Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/棋王 - 阿城</loc>
+-        <lastmod>2025-02-07T04:45:49.351Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.688Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/槐花 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:58.073Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.891Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/欢迎你到荷兰来 - 金斯利</loc>
+-        <lastmod>2025-02-07T04:45:39.406Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.641Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/欲望 - 温妮特 · 温特森</loc>
+-        <lastmod>2025-02-07T04:45:36.667Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.246Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/死于1983年的野猪 - 祖克慰</loc>
+-        <lastmod>2025-02-07T04:45:22.187Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.602Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/死亡花朵 - 希区柯克</loc>
+-        <lastmod>2025-02-07T04:45:14.415Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.191Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/每一个女人都漂亮 - 佚名</loc>
+-        <lastmod>2025-02-07T04:45:39.836Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.725Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/每日一文</loc>
+-        <lastmod>2025-02-07T04:45:05.358Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.846Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/比利的马子 - 戈登 · 杰克逊</loc>
+-        <lastmod>2025-02-07T04:45:28.539Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.567Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/比莉 · 荷莉黛的故事 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:34.211Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.064Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/民意与伪民意 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:28.617Z</lastmod>
++        <lastmod>2025-02-08T04:56:56.003Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/永生 - 高铭</loc>
+-        <lastmod>2025-02-07T04:45:49.237Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.563Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/永远欠一顿饭 - 刘亮程</loc>
+-        <lastmod>2025-02-07T04:45:55.173Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.471Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/永远的坐票 - 佚名</loc>
+-        <lastmod>2025-02-07T04:45:28.336Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.403Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/求婚 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:42.793Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.595Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/汉族的孩子们 - 李娟</loc>
+-        <lastmod>2025-02-07T04:45:19.293Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.218Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/汤包 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:52.843Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.368Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/没时间 - 安贝托 · 艾柯</loc>
+-        <lastmod>2025-02-07T04:45:45.734Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.702Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/没有一本一劳永逸的书 - 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:58.001Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.814Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/没有新雪 - 图霍文斯基</loc>
+-        <lastmod>2025-02-07T04:45:28.572Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.587Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/油月亮 - 贾平凹</loc>
+-        <lastmod>2025-02-07T04:45:59.360Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.794Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/泥沙俱下地生活 - 毕淑敏</loc>
+-        <lastmod>2025-02-07T04:45:49.136Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.871Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/洋罪 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:09.321Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.440Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/洪水中的蓝调 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:16.479Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.293Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/活了一百万次的猫 - 佐野洋子</loc>
+-        <lastmod>2025-02-07T04:45:05.417Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.926Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/活出爱 - 史铁生</loc>
+-        <lastmod>2025-02-07T04:45:52.695Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.238Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/活在死亡中 - 费尔南多 · 佩索阿</loc>
+-        <lastmod>2025-02-07T04:45:09.517Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.583Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/活着真好 - 维克多 · 科克留什金</loc>
+-        <lastmod>2025-02-07T04:45:58.009Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.828Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/淡 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:28.420Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.467Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/清晨的变故 - 黑井千次</loc>
+-        <lastmod>2025-02-07T04:45:50.193Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.794Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/清贫与富贵 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:36.835Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.171Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/温暖是一种小确幸 - 庄雅婷</loc>
+-        <lastmod>2025-02-07T04:45:34.165Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.004Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/溜索 - 阿城</loc>
+-        <lastmod>2025-02-07T04:45:46.657Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.790Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/澳门餐 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:39.035Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.590Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/火警 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:19.375Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.275Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/火车六年不到站 - 魏岚</loc>
+-        <lastmod>2025-02-07T04:45:09.698Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.713Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/灵魂曝光 - 马克 · 吐温</loc>
+-        <lastmod>2025-02-07T04:45:16.614Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.828Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/炊烟 - 阿城</loc>
+-        <lastmod>2025-02-07T04:45:49.362Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.698Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/煎馄饨 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:31.413Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.472Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/煤桶骑士 - 卡夫卡</loc>
+-        <lastmod>2025-02-07T04:45:45.325Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.675Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/熟人厌烦症 - 迈克尔 · 金</loc>
+-        <lastmod>2025-02-07T04:45:58.092Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.538Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱因斯坦的梦 - 阿兰 · 莱特曼</loc>
+-        <lastmod>2025-02-07T04:45:43.038Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.076Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱得过分的女人 - 罗宾 · 诺伍德</loc>
+-        <lastmod>2025-02-07T04:45:19.420Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.299Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱怕什么 - 毕淑敏</loc>
+-        <lastmod>2025-02-07T04:45:14.358Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.152Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱情与投资 - 希区柯克</loc>
+-        <lastmod>2025-02-07T04:45:46.201Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.747Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱情之死亡 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:19.346Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.255Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱情故事 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:14.334Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.135Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱情故事 - 余华</loc>
+-        <lastmod>2025-02-07T04:45:55.629Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.686Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱情饥渴症 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:38.850Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.248Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱无葬身之地 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:12.080Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.805Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱时而脆弱 - 罗伯特 · M · 罗斯</loc>
+-        <lastmod>2025-02-07T04:45:23.162Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.183Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爱是将心比心 - 刘小昭</loc>
+-        <lastmod>2025-02-07T04:45:44.797Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.264Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/父母是有效期的 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:28.293Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.377Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/父母的心 - 川端康成</loc>
+-        <lastmod>2025-02-07T04:45:28.350Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.414Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/爸爸的味道 - 张小娴</loc>
+-        <lastmod>2025-02-07T04:45:58.055Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.872Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/狗这一生不容易 - 王宏哲</loc>
+-        <lastmod>2025-02-07T04:45:59.325Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.773Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/狗难 - 柯灵</loc>
+-        <lastmod>2025-02-07T04:45:58.064Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.880Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/狙击手的一个早晨 - 弗 · 格 · 索罗金</loc>
+-        <lastmod>2025-02-07T04:45:09.430Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.517Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/独处是一种能力 - 周国平</loc>
+-        <lastmod>2025-02-07T04:45:52.818Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.351Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/独白 - 席慕容</loc>
+-        <lastmod>2025-02-07T04:45:12.112Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.850Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/狼叔叔 - 伊塔洛 · 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:36.796Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.125Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/猫 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:34.073Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.886Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/猫城的故事 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:49.784Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.734Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/猫婆 - 冯骥才</loc>
+-        <lastmod>2025-02-07T04:45:12.042Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.748Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/献欲手册 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:28.938Z</lastmod>
++        <lastmod>2025-02-08T04:56:56.013Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/猴子 - 芥川龙之介</loc>
+-        <lastmod>2025-02-07T04:45:44.365Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.235Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/王小波与沉默的大多数 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:14.315Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.119Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/王府大街 64 号 - 雷达</loc>
+-        <lastmod>2025-02-07T04:45:58.512Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.707Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/玩具 - 泰戈尔</loc>
+-        <lastmod>2025-02-07T04:45:49.812Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.755Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/现代听众的困境 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:14.508Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.276Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/现在就想见你 - 张小娴</loc>
+-        <lastmod>2025-02-07T04:45:11.991Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.692Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/珍惜不懂 - 杨照</loc>
+-        <lastmod>2025-02-07T04:45:12.065Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.781Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/理发师 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:52.634Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.833Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/琐事 - 芥川龙之介</loc>
+-        <lastmod>2025-02-07T04:45:22.280Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.703Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/瓦加斯万岁！- 伍迪 · 艾伦</loc>
+-        <lastmod>2025-02-07T04:45:09.402Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.500Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/生命中的琐碎时光 - 吴淡如</loc>
+-        <lastmod>2025-02-07T04:45:19.437Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.310Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/生命的尽头 - 高铭</loc>
+-        <lastmod>2025-02-07T04:45:09.674Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.692Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/生日女郎 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:58.028Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.847Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/生活是美好的 - 契河夫</loc>
+-        <lastmod>2025-02-07T04:45:14.488Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.250Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/生蚝 - 村上龙</loc>
+-        <lastmod>2025-02-07T04:45:05.824Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.961Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/电影音乐给谁听 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:55.314Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.626Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/电视有点用，但是不大 - 约翰 · 麦克纳尔蒂</loc>
+-        <lastmod>2025-02-07T04:45:14.494Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.258Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/男人爱女人的最好方式 - 希区柯克</loc>
+-        <lastmod>2025-02-07T04:45:26.090Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.314Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/男人的进化 - 鲁迅</loc>
+-        <lastmod>2025-02-07T04:45:38.894Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.302Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/男人的风度 - 韩少功</loc>
+-        <lastmod>2025-02-07T04:45:31.666Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.719Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/病人 - 纪伯伦</loc>
+-        <lastmod>2025-02-07T04:45:39.806Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.704Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/白天纽约，黑夜巴黎 - 王文华</loc>
+-        <lastmod>2025-02-07T04:45:36.759Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.080Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/白痴的故事 - 倪匡</loc>
+-        <lastmod>2025-02-07T04:45:57.991Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.802Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/白肉 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:52.668Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.871Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/皱起眉头的男人 - 张小娴</loc>
+-        <lastmod>2025-02-07T04:45:52.674Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.880Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/目送 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:55.200Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.499Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/盲人看 - 毕淑敏</loc>
+-        <lastmod>2025-02-07T04:45:16.623Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.138Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/相信不相信 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:36.815Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.146Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/相信自己 - 爱默生</loc>
+-        <lastmod>2025-02-07T04:45:36.607Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.181Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/相爱的日子 - 毕飞宇</loc>
+-        <lastmod>2025-02-07T04:45:34.174Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.018Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/看谁的文章写得好 - 李敖</loc>
+-        <lastmod>2025-02-07T04:45:57.965Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.771Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/社区建筑 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:39.434Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.660Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/祖父 - 威廉 · 萨默塞特 · 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:49.275Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.595Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/神迹下的健康心态 - 吴澧</loc>
+-        <lastmod>2025-02-07T04:45:55.122Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.413Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/科学的美好 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:36.856Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.195Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/积极的人 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:38.955Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.516Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/稻田的故事 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:25.860Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.320Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/穷人 - 托尔斯泰</loc>
+-        <lastmod>2025-02-07T04:45:19.281Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.208Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/穿过大半个中国去睡你 - 余秀华</loc>
+-        <lastmod>2025-02-07T04:45:46.137Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.709Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/窗 - 泰格特</loc>
+-        <lastmod>2025-02-07T04:45:22.354Z</lastmod>
++        <lastmod>2025-02-08T04:56:49.262Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/童年的声音 - 刘墉</loc>
+-        <lastmod>2025-02-07T04:45:36.685Z</lastmod>
++        <lastmod>2025-02-08T04:57:04.989Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/童话 - 陈丹燕</loc>
+-        <lastmod>2025-02-07T04:45:09.491Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.565Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/笛鸣香港 - 韩少功</loc>
+-        <lastmod>2025-02-07T04:45:42.965Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.032Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/笨人 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:34.184Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.029Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/第三大道的这间酒馆 - 约翰·麦克纳尔蒂</loc>
+-        <lastmod>2025-02-07T04:45:59.378Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.804Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/第十三个轮到谁 - 格雷 · 拉威西</loc>
+-        <lastmod>2025-02-07T04:45:25.873Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.332Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/等了一整天 - 海明威</loc>
+-        <lastmod>2025-02-07T04:45:19.461Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.333Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/等待 - 太宰治</loc>
+-        <lastmod>2025-02-07T04:45:49.193Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.913Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/等我一年半 - 松本清张</loc>
+-        <lastmod>2025-02-07T04:45:58.146Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.611Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/签名 - 斯蒂芬 · 狄克逊</loc>
+-        <lastmod>2025-02-07T04:45:49.842Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.774Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/简单 - 三毛</loc>
+-        <lastmod>2025-02-07T04:45:39.051Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.610Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/简单的调查 - 海明威</loc>
+-        <lastmod>2025-02-07T04:45:39.043Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.601Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/紫色人形 - 毕淑敏</loc>
+-        <lastmod>2025-02-07T04:45:52.723Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.267Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/红房子 - 黑塞</loc>
+-        <lastmod>2025-02-07T04:45:31.595Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.632Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/终身不笑者的故事 - 一千零一夜</loc>
+-        <lastmod>2025-02-07T04:45:09.386Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.490Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/经济学的旁听生 - 张晓风</loc>
+-        <lastmod>2025-02-07T04:45:55.296Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.607Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/给失败者 - 罗兰</loc>
+-        <lastmod>2025-02-07T04:45:40.262Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.783Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/给感到不安的你 - 松浦弥太郎</loc>
+-        <lastmod>2025-02-07T04:45:16.582Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.793Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/给我一个岛 - 席慕容</loc>
+-        <lastmod>2025-02-07T04:45:34.115Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.944Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/给我未来的孩子 - 张梅</loc>
+-        <lastmod>2025-02-07T04:45:52.765Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.307Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/绿皮车上的旧时光 - 素猫</loc>
+-        <lastmod>2025-02-07T04:45:11.823Z</lastmod>
++        <lastmod>2025-02-08T04:56:37.058Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/绿石头 - 西尔维娅 · 普拉斯</loc>
+-        <lastmod>2025-02-07T04:45:09.457Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.537Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/缝扣子 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:16.590Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.803Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/罗素：一九二零 - 龙应台</loc>
+-        <lastmod>2025-02-07T04:45:05.369Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.866Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/翻浆 - 毕淑敏</loc>
+-        <lastmod>2025-02-07T04:45:38.926Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.347Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/老人鱼 - 严歌苓</loc>
+-        <lastmod>2025-02-07T04:45:49.284Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.606Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/老头子做事总不会错 - 安徒生</loc>
+-        <lastmod>2025-02-07T04:45:05.839Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.970Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/老年色情店杀人事件 - 蔡莫琰</loc>
+-        <lastmod>2025-02-07T04:45:22.125Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.531Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/老来多健忘 - 叶倾城</loc>
+-        <lastmod>2025-02-07T04:45:57.973Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.781Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/老水车旁的风景 - 梁晓声</loc>
+-        <lastmod>2025-02-07T04:45:49.249Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.572Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/老猴赫尼 - 沈石溪</loc>
+-        <lastmod>2025-02-07T04:45:52.706Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.249Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/老舍先生 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:12.090Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.815Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/肉体有千万种受难的形态 - 张晓风</loc>
+-        <lastmod>2025-02-07T04:45:34.204Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.050Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/肚子里的战争 - 王小波</loc>
+-        <lastmod>2025-02-07T04:45:09.602Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.633Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/肯肯舞 - 阿图洛 · 维万特</loc>
+-        <lastmod>2025-02-07T04:45:52.687Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.890Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/背带短裤 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:46.184Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.740Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/胖子和瘦子 - 契诃夫</loc>
+-        <lastmod>2025-02-07T04:45:44.379Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.245Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/胡同文化 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:25.988Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.440Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/脑 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:11.962Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.671Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/自从我妈从台湾旅游回来 - 李娟</loc>
+-        <lastmod>2025-02-07T04:45:23.470Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.193Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/自信 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:19.254Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.189Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/自我机会高估 - 韩少功</loc>
+-        <lastmod>2025-02-07T04:45:49.224Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.938Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/致亡妻 - 朱自清</loc>
+-        <lastmod>2025-02-07T04:45:31.555Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.585Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/致陈独秀 - 胡适</loc>
+-        <lastmod>2025-02-07T04:46:02.016Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.833Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/良好的教养 - 格利高里 · 戈林</loc>
+-        <lastmod>2025-02-07T04:45:28.440Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.488Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/色 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:22.297Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.727Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/艺术教育 - 沈从文</loc>
+-        <lastmod>2025-02-07T04:45:31.567Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.599Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/花未眠 - 川端康成</loc>
+-        <lastmod>2025-02-07T04:45:57.929Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.726Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/花脸雀 - 李娟</loc>
+-        <lastmod>2025-02-07T04:45:58.036Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.855Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/草莓 - 雅 · 伊瓦什凯维奇</loc>
+-        <lastmod>2025-02-07T04:45:11.893Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.618Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/荒唐少年时 - 陈升</loc>
+-        <lastmod>2025-02-07T04:45:49.173Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.896Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/荒唐的工作 - 黑井千次</loc>
+-        <lastmod>2025-02-07T04:45:43.975Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.217Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/荔枝 - 肖复兴</loc>
+-        <lastmod>2025-02-07T04:45:26.064Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.862Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/荣辱 - 丰子恺</loc>
+-        <lastmod>2025-02-07T04:45:55.306Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.616Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/蓝眼 - 冯骥才</loc>
+-        <lastmod>2025-02-07T04:45:09.532Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.591Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/蓝色的还是带条的 - 格里高利 · 戈林</loc>
+-        <lastmod>2025-02-07T04:45:36.589Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.164Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/蔡二少爷 - 冯骥才</loc>
+-        <lastmod>2025-02-07T04:45:09.481Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.556Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/蝗虫 - 李娟</loc>
+-        <lastmod>2025-02-07T04:45:06.321Z</lastmod>
++        <lastmod>2025-02-08T04:56:33.060Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/蟹颂 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:11.882Z</lastmod>
++        <lastmod>2025-02-08T04:56:37.096Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/行刑 - 乔治 · 奥威尔</loc>
+-        <lastmod>2025-02-07T04:45:39.394Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.631Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/袋鼠佳日 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:14.479Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.243Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/被搁置的生活 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:36.693Z</lastmod>
++        <lastmod>2025-02-08T04:57:04.998Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/裸泳 - 伊塔洛 · 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:28.604Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.607Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/裸胸的女人 - 伊塔洛 · 卡尔维诺</loc>
+-        <lastmod>2025-02-07T04:45:25.976Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.429Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/见义勇为 - 维克多 · 科克留什金</loc>
+-        <lastmod>2025-02-07T04:45:45.246Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.300Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/角色 - 史铁生</loc>
+-        <lastmod>2025-02-07T04:45:34.194Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.038Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/解谜 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:46.216Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.756Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/订地方报纸的女人 - 松本清张</loc>
+-        <lastmod>2025-02-07T04:45:38.901Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.316Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/认识自我 - 纪伯伦</loc>
+-        <lastmod>2025-02-07T04:45:55.164Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.460Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/记住回家的路 - 周国平</loc>
+-        <lastmod>2025-02-07T04:45:52.731Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.278Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/记卢冀野和三个胖子剪影 - 顾思齐</loc>
+-        <lastmod>2025-02-07T04:45:28.307Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.385Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/讲价 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:46.163Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.718Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/论天使 - 唐纳德 · 巴塞尔姆</loc>
+-        <lastmod>2025-02-07T04:45:28.588Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.598Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/论读书 - 培根</loc>
+-        <lastmod>2025-02-07T04:45:49.151Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.880Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/论读书 - 林语堂</loc>
+-        <lastmod>2025-02-07T04:45:19.405Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.290Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/证词 - 松本清张</loc>
+-        <lastmod>2025-02-07T04:45:11.950Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.657Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/词语洁癖 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:31.457Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.510Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/诗人黄昏所见 - 赫尔曼 · 黑塞</loc>
+-        <lastmod>2025-02-07T04:45:12.579Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.057Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/话的力量 - 巴甫连科</loc>
+-        <lastmod>2025-02-07T04:45:19.274Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.198Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/误解 - P · G · 伍德豪斯</loc>
+-        <lastmod>2025-02-07T04:45:22.162Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.571Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/读书是一种享受 - 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:12.523Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.870Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/读书有秘诀吗 - 邓拓</loc>
+-        <lastmod>2025-02-07T04:45:19.390Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.282Z</lastmod>
++    </url>
++    <url>
++        <loc>https://tinysnow.github.io/阅读/每日一文/谁在编造历史 - 常彦军</loc>
++        <lastmod>2025-02-08T04:56:32.857Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/谁明侍者心 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:11.907Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.628Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/谁的生命可以不受时间限制 - 沈从文</loc>
+-        <lastmod>2025-02-07T04:45:52.604Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.814Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/谈抽烟 - 朱自清</loc>
+-        <lastmod>2025-02-07T04:45:34.220Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.075Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/谈独立思考 - 茅盾</loc>
+-        <lastmod>2025-02-07T04:45:23.488Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.217Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/谈读书 - 培根</loc>
+-        <lastmod>2025-02-07T04:45:31.575Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.611Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/谈谈寂寞 - 梁晓声</loc>
+-        <lastmod>2025-02-07T04:45:31.428Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.485Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/豆腐 - 阿城</loc>
+-        <lastmod>2025-02-07T04:45:23.151Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.173Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/象的失踪 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:42.909Z</lastmod>
++        <lastmod>2025-02-08T04:57:12.996Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/贴秋膘 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:14.290Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.092Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/赌徒的遗书 - 希区柯克</loc>
+-        <lastmod>2025-02-07T04:45:45.263Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.310Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/赞美骨髓 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:39.461Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.692Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/赠与今年的大学毕业生 - 胡适</loc>
+-        <lastmod>2025-02-07T04:45:26.075Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.305Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/足底按摩 - 恰克 · 帕拉尼克</loc>
+-        <lastmod>2025-02-07T04:45:55.262Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.566Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/路上的情书 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:45.717Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.692Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/车窗外 - 周国平</loc>
+-        <lastmod>2025-02-07T04:45:31.368Z</lastmod>
++        <lastmod>2025-02-08T04:56:56.059Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/轻蔑的一瞥 - 库森别格尔</loc>
+-        <lastmod>2025-02-07T04:45:50.185Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.784Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/过去的生活 - 王安忆</loc>
+-        <lastmod>2025-02-07T04:45:23.838Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.278Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/过路人 - 卡夫卡</loc>
+-        <lastmod>2025-02-07T04:45:19.554Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.429Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/迈锡尼的小行星旅馆 - 村上春树</loc>
+-        <lastmod>2025-02-07T04:45:47.078Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.841Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/还记得十六岁时的梦想吗 - 艾明雅</loc>
+-        <lastmod>2025-02-07T04:45:57.939Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.738Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/这两个流浪汉要不是穷，就会花钱大方 - 约翰 · 麦克纳尔蒂</loc>
+-        <lastmod>2025-02-07T04:45:40.231Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.760Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/进个圈子锻造自己 - 沈青黎</loc>
+-        <lastmod>2025-02-07T04:45:43.937Z</lastmod>
++        <lastmod>2025-02-08T04:57:13.187Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/远处的一双眼睛 - 张小娴</loc>
+-        <lastmod>2025-02-07T04:45:55.603Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.655Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/远离古典 - 肖复兴</loc>
+-        <lastmod>2025-02-07T04:45:16.513Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.334Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/送行 - 梁实秋</loc>
+-        <lastmod>2025-02-07T04:45:23.497Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.225Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/逃脱 - 毛姆</loc>
+-        <lastmod>2025-02-07T04:45:16.496Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.316Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/逃避自由 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:06.761Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.429Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/选择太多 - 梁文道</loc>
+-        <lastmod>2025-02-07T04:45:28.482Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.521Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/逐臭之夫 - 蔡澜</loc>
+-        <lastmod>2025-02-07T04:45:36.626Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.199Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/那些你所不知道的大事 - 李月亮</loc>
+-        <lastmod>2025-02-07T04:45:58.913Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.741Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/邮递员的童话 - 卡雷尔 · 恰佩克</loc>
+-        <lastmod>2025-02-07T04:45:23.805Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.247Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/邻家的拖鞋 - 姬中宪</loc>
+-        <lastmod>2025-02-07T04:45:55.140Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.429Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/邻居 - 托拜厄斯 · 沃尔夫</loc>
+-        <lastmod>2025-02-07T04:45:22.750Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.117Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/郁金香 - 玛丽娅 · 恩里凯达</loc>
+-        <lastmod>2025-02-07T04:45:57.902Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.696Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/重圆 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:52.853Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.376Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/金岳霖先生 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:31.442Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.498Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/铁血恋爱 - 蔡康永</loc>
+-        <lastmod>2025-02-07T04:45:31.647Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.697Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/铭于心 - 林清玄</loc>
+-        <lastmod>2025-02-07T04:45:05.395Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.899Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/银行抢案 - 史蒂文 · 舒曼</loc>
+-        <lastmod>2025-02-07T04:45:52.660Z</lastmod>
++        <lastmod>2025-02-08T04:57:19.860Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/镜子与面具 - 博尔赫斯</loc>
+-        <lastmod>2025-02-07T04:45:05.886Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.995Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/门萨的娼妓 - 伍迪 · 艾伦</loc>
+-        <lastmod>2025-02-07T04:45:38.935Z</lastmod>
++        <lastmod>2025-02-08T04:57:05.361Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/闲话做人 - 铁凝</loc>
+-        <lastmod>2025-02-07T04:45:16.575Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.785Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/阿内西阿美女皇后 - 马里奥 · 贝内德蒂</loc>
+-        <lastmod>2025-02-07T04:45:42.778Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.246Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/阿格头子灰背青 - 汪曾祺</loc>
+-        <lastmod>2025-02-07T04:45:28.322Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.394Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/陋室心贵 - 奥修</loc>
+-        <lastmod>2025-02-07T04:45:06.314Z</lastmod>
++        <lastmod>2025-02-08T04:56:33.050Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/隐藏的美 - 卢尔斯</loc>
+-        <lastmod>2025-02-07T04:45:39.851Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.736Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/隐身人 - 库佛</loc>
+-        <lastmod>2025-02-07T04:45:36.633Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.207Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/难忘的八个字 - 玛丽 · 安 · 伯德</loc>
+-        <lastmod>2025-02-07T04:45:40.692Z</lastmod>
++        <lastmod>2025-02-08T04:57:08.218Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/雄辩症 - 王蒙</loc>
+-        <lastmod>2025-02-07T04:45:40.246Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.771Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/集体早操 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:31.684Z</lastmod>
++        <lastmod>2025-02-08T04:56:58.743Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/雉 - 李广田</loc>
+-        <lastmod>2025-02-07T04:45:34.147Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.983Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/雨伞 - 川端康成</loc>
+-        <lastmod>2025-02-07T04:45:58.895Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.728Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/雨季不再来 - 三毛</loc>
+-        <lastmod>2025-02-07T04:45:05.924Z</lastmod>
++        <lastmod>2025-02-08T04:56:33.021Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/霍乱时期的爱情（节选）- 加西亚 · 马尔克斯</loc>
+-        <lastmod>2025-02-07T04:45:34.268Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.126Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/青春 - 亦舒</loc>
+-        <lastmod>2025-02-07T04:45:58.138Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.597Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/青春的倦怠 - 三岛由纪夫</loc>
+-        <lastmod>2025-02-07T04:45:23.816Z</lastmod>
++        <lastmod>2025-02-08T04:56:52.257Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/青梅竹马 - 佚名</loc>
+-        <lastmod>2025-02-07T04:45:52.784Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.324Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/静下来 - 玛丽安 · 麦肯译</loc>
+-        <lastmod>2025-02-07T04:45:28.368Z</lastmod>
++        <lastmod>2025-02-08T04:56:55.425Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/非血之爱 - 毕淑敏</loc>
+-        <lastmod>2025-02-07T04:45:14.369Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.164Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/风骚和魅力 - 周国平</loc>
+-        <lastmod>2025-02-07T04:45:09.558Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.608Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/飞越流水线 - 刘瑜</loc>
+-        <lastmod>2025-02-07T04:45:19.608Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.495Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/香蕉的尸斑 - 李碧华</loc>
+-        <lastmod>2025-02-07T04:45:12.018Z</lastmod>
++        <lastmod>2025-02-08T04:56:39.718Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/马戏团的秘密 - 星新一</loc>
+-        <lastmod>2025-02-07T04:45:34.238Z</lastmod>
++        <lastmod>2025-02-08T04:57:02.097Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/马缨花 - 季羡林</loc>
+-        <lastmod>2025-02-07T04:45:16.607Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.821Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/高女人和她的矮丈夫 - 冯骥才</loc>
+-        <lastmod>2025-02-07T04:45:09.569Z</lastmod>
++        <lastmod>2025-02-08T04:56:36.615Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/鬼剃头 - 冯骥才</loc>
+-        <lastmod>2025-02-07T04:45:55.092Z</lastmod>
++        <lastmod>2025-02-08T04:57:24.385Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/魔术师与跛足驴 - 迟子建</loc>
+-        <lastmod>2025-02-07T04:45:34.092Z</lastmod>
++        <lastmod>2025-02-08T04:57:01.911Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/鲤鱼 - 井伏鳟二</loc>
+-        <lastmod>2025-02-07T04:45:16.542Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.370Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/鸟叫 - 刘亮程</loc>
+-        <lastmod>2025-02-07T04:45:22.312Z</lastmod>
++        <lastmod>2025-02-08T04:56:48.749Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/麦田里 - 余华</loc>
+-        <lastmod>2025-02-07T04:45:39.453Z</lastmod>
++        <lastmod>2025-02-08T04:57:07.682Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/黑夜与黎明之间 - 纪伯伦</loc>
+-        <lastmod>2025-02-07T04:45:49.102Z</lastmod>
++        <lastmod>2025-02-08T04:57:16.848Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/每日一文/龙虾复仇记 - 伍迪 · 艾伦</loc>
+-        <lastmod>2025-02-07T04:45:14.277Z</lastmod>
++        <lastmod>2025-02-08T04:56:43.082Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/一些安慰</loc>
+-        <lastmod>2025-02-07T04:46:04.590Z</lastmod>
++        <lastmod>2025-02-08T04:57:31.067Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/井</loc>
+-        <lastmod>2025-02-07T04:46:02.146Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.994Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/你的季节</loc>
+-        <lastmod>2025-02-07T04:46:02.231Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.171Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/你的星星</loc>
+-        <lastmod>2025-02-07T04:46:02.238Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.181Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/你的花园</loc>
+-        <lastmod>2025-02-07T04:46:02.223Z</lastmod>
++        <lastmod>2025-02-08T04:57:29.809Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/分享日常</loc>
+-        <lastmod>2025-02-07T04:46:02.080Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.923Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/呼唤的声音</loc>
+-        <lastmod>2025-02-07T04:46:02.107Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.958Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/哪怕没有理由</loc>
+-        <lastmod>2025-02-07T04:46:02.214Z</lastmod>
++        <lastmod>2025-02-08T04:57:29.793Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/守灯人</loc>
+-        <lastmod>2025-02-07T04:46:02.580Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.215Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/对话</loc>
+-        <lastmod>2025-02-07T04:46:02.064Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.900Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/封底</loc>
+-        <lastmod>2025-02-07T04:46:02.034Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.856Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/小小的对白</loc>
+-        <lastmod>2025-02-07T04:46:04.550Z</lastmod>
++        <lastmod>2025-02-08T04:57:31.025Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/小蜡烛</loc>
+-        <lastmod>2025-02-07T04:46:04.540Z</lastmod>
++        <lastmod>2025-02-08T04:57:31.011Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/幸福</loc>
+-        <lastmod>2025-02-07T04:46:04.569Z</lastmod>
++        <lastmod>2025-02-08T04:57:31.046Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/心</loc>
+-        <lastmod>2025-02-07T04:46:04.559Z</lastmod>
++        <lastmod>2025-02-08T04:57:31.035Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/我的宇宙</loc>
+-        <lastmod>2025-02-07T04:46:04.509Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.592Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/散步</loc>
+-        <lastmod>2025-02-07T04:46:02.563Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.193Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/最美的东西</loc>
+-        <lastmod>2025-02-07T04:46:04.643Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.440Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/朝着尽头</loc>
+-        <lastmod>2025-02-07T04:46:02.054Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.889Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/来自宇宙的信</loc>
+-        <lastmod>2025-02-07T04:46:02.156Z</lastmod>
++        <lastmod>2025-02-08T04:57:29.002Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/来自月亮的回信</loc>
+-        <lastmod>2025-02-07T04:46:02.163Z</lastmod>
++        <lastmod>2025-02-08T04:57:29.365Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/枕边的故事</loc>
+-        <lastmod>2025-02-07T04:46:04.622Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.418Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/梦尽头的你</loc>
+-        <lastmod>2025-02-07T04:46:02.204Z</lastmod>
++        <lastmod>2025-02-08T04:57:29.782Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/梦的距离</loc>
+-        <lastmod>2025-02-07T04:46:02.194Z</lastmod>
++        <lastmod>2025-02-08T04:57:29.766Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/永远</loc>
+-        <lastmod>2025-02-07T04:46:04.611Z</lastmod>
++        <lastmod>2025-02-08T04:57:31.444Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/沙漠里的玫瑰</loc>
+-        <lastmod>2025-02-07T04:46:02.573Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.203Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/没事，一切都会好起来的</loc>
+-        <lastmod>2025-02-07T04:46:02.025Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.848Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/海浪</loc>
+-        <lastmod>2025-02-07T04:46:02.097Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.950Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/温暖的约定</loc>
+-        <lastmod>2025-02-07T04:46:04.500Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.582Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/灿烂的尽头</loc>
+-        <lastmod>2025-02-07T04:46:02.045Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.879Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/特别的时刻</loc>
+-        <lastmod>2025-02-07T04:46:02.590Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.571Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/献给身在某处的你</loc>
+-        <lastmod>2025-02-07T04:46:04.519Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.603Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/相信</loc>
+-        <lastmod>2025-02-07T04:46:04.532Z</lastmod>
++        <lastmod>2025-02-08T04:57:30.615Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/离别</loc>
+-        <lastmod>2025-02-07T04:46:02.173Z</lastmod>
++        <lastmod>2025-02-08T04:57:29.377Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/精灵之舞</loc>
+-        <lastmod>2025-02-07T04:46:02.138Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.986Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/紧急降落</loc>
+-        <lastmod>2025-02-07T04:46:02.126Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.977Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/终点站</loc>
+-        <lastmod>2025-02-07T04:46:04.634Z</lastmod>
++        <lastmod>2025-02-08T04:57:33.427Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/给你</loc>
+-        <lastmod>2025-02-07T04:46:02.088Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.938Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/花</loc>
+-        <lastmod>2025-02-07T04:46:02.114Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.968Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/门</loc>
+-        <lastmod>2025-02-07T04:46:02.185Z</lastmod>
++        <lastmod>2025-02-08T04:57:29.388Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/阳光</loc>
+-        <lastmod>2025-02-07T04:46:04.583Z</lastmod>
++        <lastmod>2025-02-08T04:57:31.059Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/音乐</loc>
+-        <lastmod>2025-02-07T04:46:04.600Z</lastmod>
++        <lastmod>2025-02-08T04:57:31.078Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/没事，一切都会好起来的/飞吧</loc>
+-        <lastmod>2025-02-07T04:46:02.071Z</lastmod>
++        <lastmod>2025-02-08T04:57:28.913Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/一小时搞定全家保险</loc>
+-        <lastmod>2025-02-07T04:45:03.169Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.661Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/不可不知的保险常识</loc>
+-        <lastmod>2025-02-07T04:45:05.270Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.752Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/不要用别人的脑子思考你的人生</loc>
+-        <lastmod>2025-02-07T04:45:05.319Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.795Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/乌合之众</loc>
+-        <lastmod>2025-02-07T04:45:03.095Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.569Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/二十首情诗和一首绝望的歌</loc>
+-        <lastmod>2025-02-07T04:45:00.782Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.420Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/人间告白</loc>
+-        <lastmod>2025-02-07T04:45:00.735Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.386Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/众病之王：癌症传</loc>
+-        <lastmod>2025-02-07T04:45:03.081Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.615Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/你不懂内衣</loc>
+-        <lastmod>2025-02-07T04:45:05.166Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.678Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/你当像鸟飞往你的山</loc>
+-        <lastmod>2025-02-07T04:45:00.809Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.458Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/你的第一本保险指南</loc>
+-        <lastmod>2025-02-07T04:45:05.289Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.764Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/力哥说理财：小白理财入门必修课</loc>
+-        <lastmod>2025-02-07T04:45:03.142Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.625Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/力哥说理财：手把手教你玩转基金</loc>
+-        <lastmod>2025-02-07T04:45:03.133Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.608Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/大型网站技术架构：核心原理与案例分析</loc>
+-        <lastmod>2025-02-07T04:45:03.025Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.540Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/如何阅读一本书</loc>
+-        <lastmod>2025-02-07T04:45:02.936Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.473Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/小岛经济学</loc>
+-        <lastmod>2025-02-07T04:45:05.310Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.779Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/小狗钱钱</loc>
+-        <lastmod>2025-02-07T04:45:03.088Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.559Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/山茶文具店</loc>
+-        <lastmod>2025-02-07T04:45:00.751Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.396Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/强风吹拂</loc>
+-        <lastmod>2025-02-07T04:45:03.044Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.555Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/徐建明谈理财：观念决定一生的财富</loc>
+-        <lastmod>2025-02-07T04:45:03.159Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.649Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/微习惯：简单到不可能失败的自我管理法则</loc>
+-        <lastmod>2025-02-07T04:45:05.202Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.704Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/快速抓重点，过目不忘的阅读术</loc>
+-        <lastmod>2025-02-07T04:45:02.962Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.494Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/我与地坛</loc>
+-        <lastmod>2025-02-07T04:45:03.065Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.586Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/我想要两颗西柚</loc>
+-        <lastmod>2025-02-07T04:45:00.703Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.366Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/我离开之后</loc>
+-        <lastmod>2025-02-07T04:45:00.721Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.376Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/打开一颗心</loc>
+-        <lastmod>2025-02-07T04:45:03.101Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.580Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/把时间当作朋友</loc>
+-        <lastmod>2025-02-07T04:45:05.185Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.692Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/数学之美</loc>
+-        <lastmod>2025-02-07T04:45:00.801Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.444Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/时间简史</loc>
+-        <lastmod>2025-02-07T04:45:03.052Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.566Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/明天，我要和昨天的你约会</loc>
+-        <lastmod>2025-02-07T04:45:00.791Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.433Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/智齿</loc>
+-        <lastmod>2025-02-07T04:45:03.036Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.547Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/杀死一只知更鸟</loc>
+-        <lastmod>2025-02-07T04:45:05.219Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.718Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/漫画经济学：生活常识</loc>
+-        <lastmod>2025-02-07T04:45:00.671Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.342Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/漫画经济学：金融危机</loc>
+-        <lastmod>2025-02-07T04:45:00.687Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.355Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/焦虑的人</loc>
+-        <lastmod>2025-02-07T04:45:03.058Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.575Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/狮子之家的点心日</loc>
+-        <lastmod>2025-02-07T04:45:00.767Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.408Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/献给阿尔吉侬的花束</loc>
+-        <lastmod>2025-02-07T04:45:05.329Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.805Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/福格行为模型</loc>
+-        <lastmod>2025-02-07T04:45:05.239Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.731Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/稀缺：我们是如何陷入贫穷与忙碌的</loc>
+-        <lastmod>2025-02-07T04:45:05.252Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.742Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/美元真相</loc>
+-        <lastmod>2025-02-07T04:45:03.012Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.527Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/薄世宁医学通识讲义</loc>
+-        <lastmod>2025-02-07T04:45:03.074Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.602Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/蛤蟆先生去看心理医生</loc>
+-        <lastmod>2025-02-07T04:45:03.149Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.636Z</lastmod>
++    </url>
++    <url>
++        <loc>https://tinysnow.github.io/阅读/零零散散/见证逆潮</loc>
++        <lastmod>2025-02-08T04:56:32.830Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/诗歌手册：诗歌阅读与创作指南</loc>
+-        <lastmod>2025-02-07T04:45:05.344Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.817Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/追风筝的人</loc>
+-        <lastmod>2025-02-07T04:45:02.978Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.506Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/雪国</loc>
+-        <lastmod>2025-02-07T04:45:03.115Z</lastmod>
++        <lastmod>2025-02-08T04:56:32.595Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/零零散散</loc>
+-        <lastmod>2025-02-07T04:45:00.647Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.318Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/霍乱时期的爱情</loc>
+-        <lastmod>2025-02-07T04:45:02.992Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.515Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/非暴力沟通</loc>
+-        <lastmod>2025-02-07T04:45:00.657Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.331Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/阅读/零零散散/麻省理工深度思考法</loc>
+-        <lastmod>2025-02-07T04:45:02.950Z</lastmod>
++        <lastmod>2025-02-08T04:56:28.485Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/内科学</loc>
+-        <lastmod>2025-02-07T04:44:40.102Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.707Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第一部分：总论</loc>
+-        <lastmod>2025-02-07T04:44:40.112Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.716Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第一章：绪言</loc>
+-        <lastmod>2025-02-07T04:44:39.479Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.185Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第七章：抗胆碱酯酶药和胆碱酯酶复活药</loc>
+-        <lastmod>2025-02-07T04:44:39.533Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.262Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十一章：作用于消化系统的药物</loc>
+-        <lastmod>2025-02-07T04:44:39.853Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.525Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十七章：甲状腺激素和抗甲状腺药</loc>
+-        <lastmod>2025-02-07T04:44:39.943Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.575Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十三章：抗组胺药</loc>
+-        <lastmod>2025-02-07T04:44:39.879Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.540Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十九章：影响其他代谢的药物</loc>
+-        <lastmod>2025-02-07T04:44:39.973Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.594Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十二章：作用于呼吸系统的药物</loc>
+-        <lastmod>2025-02-07T04:44:39.868Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.533Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十五章：肾上腺皮质激素类药</loc>
+-        <lastmod>2025-02-07T04:44:39.911Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.557Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十八章：胰岛素及口服降糖药</loc>
+-        <lastmod>2025-02-07T04:44:39.959Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.585Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十六章：性激素和避孕药</loc>
+-        <lastmod>2025-02-07T04:44:39.928Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.564Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十四章：作用于子宫平滑肌的药物</loc>
+-        <lastmod>2025-02-07T04:44:39.894Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.549Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三十章：其他血液及造血系统药物</loc>
+-        <lastmod>2025-02-07T04:44:39.836Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.518Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第三章：药效学</loc>
+-        <lastmod>2025-02-07T04:44:39.501Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.209Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第九章：胆碱受体阻断药：N 胆碱受体阻断药</loc>
+-        <lastmod>2025-02-07T04:44:39.558Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.280Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十一章：解热镇痛抗炎药</loc>
+-        <lastmod>2025-02-07T04:44:39.704Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.416Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十七章：利尿药与脱水药</loc>
+-        <lastmod>2025-02-07T04:44:39.795Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.488Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十三章：抗心律失常药</loc>
+-        <lastmod>2025-02-07T04:44:39.726Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.442Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十九章：促凝血药和抗凝血药</loc>
+-        <lastmod>2025-02-07T04:44:39.823Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.507Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十二章：抗痛风药</loc>
+-        <lastmod>2025-02-07T04:44:39.714Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.428Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十五章：抗心绞痛药及调脂药</loc>
+-        <lastmod>2025-02-07T04:44:39.754Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.467Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十八章：抗贫血药</loc>
+-        <lastmod>2025-02-07T04:44:39.809Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.497Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十六章：抗高血压药</loc>
+-        <lastmod>2025-02-07T04:44:39.773Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.480Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十四章：抗慢性心功能不全药</loc>
+-        <lastmod>2025-02-07T04:44:39.738Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.455Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二十章：镇痛药</loc>
+-        <lastmod>2025-02-07T04:44:39.688Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.402Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第二章：药动学</loc>
+-        <lastmod>2025-02-07T04:44:39.489Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.195Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第五十章：影响免疫功能的药物</loc>
+-        <lastmod>2025-02-07T04:44:40.096Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.699Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第五章：传出神经系统药理概论</loc>
+-        <lastmod>2025-02-07T04:44:39.516Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.239Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第八章：胆碱受体阻断药：M 胆碱受体阻断药</loc>
+-        <lastmod>2025-02-07T04:44:39.541Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.271Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第六章：胆碱受体激动药</loc>
+-        <lastmod>2025-02-07T04:44:39.525Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.253Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十一章：肾上腺素受体拮抗剂</loc>
+-        <lastmod>2025-02-07T04:44:39.578Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.303Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十七章：治疗中枢神经系统退行性疾病药</loc>
+-        <lastmod>2025-02-07T04:44:39.650Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.374Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十三章：全身麻醉药</loc>
+-        <lastmod>2025-02-07T04:44:39.598Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.325Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十九章：中枢兴奋药</loc>
+-        <lastmod>2025-02-07T04:44:39.675Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.391Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十二章：中枢神经系统药理概论</loc>
+-        <lastmod>2025-02-07T04:44:39.587Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.314Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十五章：镇静催眠药</loc>
+-        <lastmod>2025-02-07T04:44:39.620Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.351Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十八章：抗精神失常药</loc>
+-        <lastmod>2025-02-07T04:44:39.662Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.383Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十六章：抗癫痫药和抗惊厥药</loc>
+-        <lastmod>2025-02-07T04:44:39.635Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.363Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十四章：局部麻醉药</loc>
+-        <lastmod>2025-02-07T04:44:39.609Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.340Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第十章：肾上腺素受体激动剂</loc>
+-        <lastmod>2025-02-07T04:44:39.568Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.290Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十一章：喹诺酮类、磺胺类及其他合成抗菌药</loc>
+-        <lastmod>2025-02-07T04:44:40.011Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.614Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十七章：抗结核病药及抗麻风病药</loc>
+-        <lastmod>2025-02-07T04:44:40.073Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.673Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十三章：大环内酯类、林可霉素及其他抗生素</loc>
+-        <lastmod>2025-02-07T04:44:40.036Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.633Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十九章：抗恶性肿瘤药</loc>
+-        <lastmod>2025-02-07T04:44:40.089Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.692Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十二章：β-内酰胺类抗生素</loc>
+-        <lastmod>2025-02-07T04:44:40.025Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.623Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十五章：四环素类及氯霉素</loc>
+-        <lastmod>2025-02-07T04:44:40.057Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.653Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十八章：抗寄生虫药</loc>
+-        <lastmod>2025-02-07T04:44:40.081Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.682Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十六章：抗真菌药与抗病毒药</loc>
+-        <lastmod>2025-02-07T04:44:40.066Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.663Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十四章：氨基糖苷类与多黏菌素类抗生素</loc>
+-        <lastmod>2025-02-07T04:44:40.047Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.642Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四十章：抗菌药物概论（化学治疗药）</loc>
+-        <lastmod>2025-02-07T04:44:39.993Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.603Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/第四章：影响药效的因素</loc>
+-        <lastmod>2025-02-07T04:44:39.509Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.220Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/药理学/药理学</loc>
+-        <lastmod>2025-02-07T04:44:39.471Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.176Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/亲密关系/亲密关系</loc>
+-        <lastmod>2025-02-07T04:44:39.040Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.838Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/亲密关系/亲密关系的评判标准</loc>
+-        <lastmod>2025-02-07T04:44:39.053Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.847Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/哲学/哲学</loc>
+-        <lastmod>2025-02-07T04:44:39.308Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.034Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/哲学/哲学概述</loc>
+-        <lastmod>2025-02-07T04:44:39.316Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.046Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/心理学/心理学</loc>
+-        <lastmod>2025-02-07T04:44:39.232Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.969Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/心理学/精神分析概述</loc>
+-        <lastmod>2025-02-07T04:44:39.242Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.978Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/文学/信息密度</loc>
+-        <lastmod>2025-02-07T04:44:39.179Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.933Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/文学/匿名化</loc>
+-        <lastmod>2025-02-07T04:44:39.193Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.942Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/文学/叙事欺诈</loc>
+-        <lastmod>2025-02-07T04:44:39.142Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.915Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/文学/文学</loc>
+-        <lastmod>2025-02-07T04:44:39.128Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.905Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/文学/画面感</loc>
+-        <lastmod>2025-02-07T04:44:39.160Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.923Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/税法/专项附加扣除</loc>
+-        <lastmod>2025-02-07T04:44:39.083Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.877Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/税法/个人综合所得算税方法</loc>
+-        <lastmod>2025-02-07T04:44:39.072Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.867Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/税法/税法</loc>
+-        <lastmod>2025-02-07T04:44:39.062Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.857Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/管理学/管理学</loc>
+-        <lastmod>2025-02-07T04:44:39.098Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.887Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/管理学/计划</loc>
+-        <lastmod>2025-02-07T04:44:39.113Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.896Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/经济学/宏观经济学概述</loc>
+-        <lastmod>2025-02-07T04:44:38.757Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.620Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/经济学/消费与投资</loc>
+-        <lastmod>2025-02-07T04:44:38.694Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.586Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/经济学/经济与金融</loc>
+-        <lastmod>2025-02-07T04:44:38.746Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.612Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/经济学/经济学</loc>
+-        <lastmod>2025-02-07T04:44:38.671Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.569Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/经济学/经济学的重要性</loc>
+-        <lastmod>2025-02-07T04:44:38.710Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.595Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/经济学/财务自由</loc>
+-        <lastmod>2025-02-07T04:44:38.682Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.577Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/经济学/重要的经济学原则</loc>
+-        <lastmod>2025-02-07T04:44:38.723Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.604Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/药理学/不良反应</loc>
+-        <lastmod>2025-02-07T04:44:39.291Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.017Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/药理学/受体理论</loc>
+-        <lastmod>2025-02-07T04:44:39.299Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.026Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/药理学/药效学概述</loc>
+-        <lastmod>2025-02-07T04:44:39.281Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.008Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/药理学/药理学</loc>
+-        <lastmod>2025-02-07T04:44:39.256Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.988Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/药理学/药理学概述</loc>
+-        <lastmod>2025-02-07T04:44:39.269Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.995Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/语言学/标点符号</loc>
+-        <lastmod>2025-02-07T04:44:39.219Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.961Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/语言学/语言学</loc>
+-        <lastmod>2025-02-07T04:44:39.205Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.951Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/金融学</loc>
+-        <lastmod>2025-02-07T04:44:38.767Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.628Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/ArchRISC-V</loc>
+-        <lastmod>2025-02-07T04:44:40.786Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.281Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/FrequentlyUsed</loc>
+-        <lastmod>2025-02-07T04:44:40.992Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.386Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/IssueTemplate</loc>
+-        <lastmod>2025-02-07T04:44:41.004Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.395Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Workflow</loc>
+-        <lastmod>2025-02-07T04:44:41.017Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.402Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/工作</loc>
+-        <lastmod>2025-02-07T04:44:41.026Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.408Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/AnnotationsAndReflection</loc>
+-        <lastmod>2025-02-07T04:44:41.064Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.438Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/HighConcurrencyKnowledge</loc>
+-        <lastmod>2025-02-07T04:44:41.074Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.445Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/Java</loc>
+-        <lastmod>2025-02-07T04:44:41.034Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.416Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/JavaThreads</loc>
+-        <lastmod>2025-02-07T04:44:41.049Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.429Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/KotlinNote</loc>
+-        <lastmod>2025-02-07T04:44:41.085Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.452Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/集合</loc>
+-        <lastmod>2025-02-07T04:44:41.041Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.422Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Android 常用闭包</loc>
+-        <lastmod>2025-02-07T04:44:44.437Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.260Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Android 笔记截图</loc>
+-        <lastmod>2025-02-07T04:44:44.421Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.251Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Bash 代表命令</loc>
+-        <lastmod>2025-02-07T04:44:44.226Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.091Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/CCleaner 清理项</loc>
+-        <lastmod>2025-02-07T04:44:44.446Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.268Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Git 学习笔记</loc>
+-        <lastmod>2025-02-07T04:44:44.212Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.081Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/MATLAB 复习</loc>
+-        <lastmod>2025-02-07T04:44:44.290Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.133Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Recovery + Root 掉落重新刷入方法</loc>
+-        <lastmod>2025-02-07T04:44:44.457Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.278Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/SolutionsAndSteps</loc>
+-        <lastmod>2025-02-07T04:44:44.493Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.637Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Tic-tac-toe Game Note of React</loc>
+-        <lastmod>2025-02-07T04:44:44.480Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.295Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Uniapp 从 HX 迁移到 WebStorm</loc>
+-        <lastmod>2025-02-07T04:44:44.346Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.184Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/pwn.college-writeup</loc>
+-        <lastmod>2025-02-07T04:44:44.336Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.174Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/临时</loc>
+-        <lastmod>2025-02-07T04:44:44.506Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.652Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/其他资料</loc>
+-        <lastmod>2025-02-07T04:44:44.198Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.072Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/发送软件清单及其作用解释</loc>
+-        <lastmod>2025-02-07T04:44:44.469Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.286Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/汇编复习笔记</loc>
+-        <lastmod>2025-02-07T04:44:44.275Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.124Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/第一个 Bash 脚本</loc>
+-        <lastmod>2025-02-07T04:44:44.242Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.101Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/给计算机 202102 班的选修课建议</loc>
+-        <lastmod>2025-02-07T04:44:44.353Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.194Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/设计模式极简笔记</loc>
+-        <lastmod>2025-02-07T04:44:44.257Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.111Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/软件知识补充</loc>
+-        <lastmod>2025-02-07T04:44:44.306Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.143Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/重装系统 8-7</loc>
+-        <lastmod>2025-02-07T04:44:44.327Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.161Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/重装系统知识</loc>
+-        <lastmod>2025-02-07T04:44:44.316Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.152Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/DocSearch搜索集成</loc>
+-        <lastmod>2025-02-07T04:44:41.186Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.508Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/ElasticSearch启用</loc>
+-        <lastmod>2025-02-07T04:44:41.232Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.528Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Git仓库瘦身</loc>
+-        <lastmod>2025-02-07T04:44:44.154Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.041Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Logstash同步MySQL数据到ElasticSearch</loc>
+-        <lastmod>2025-02-07T04:44:41.246Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.536Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Mdbook排版混乱</loc>
+-        <lastmod>2025-02-07T04:44:41.203Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.515Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/MySQL与ElasticSearch的数据同步尝试</loc>
+-        <lastmod>2025-02-07T04:44:44.105Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.542Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Telegram中文搜索的不完美解决方案</loc>
+-        <lastmod>2025-02-07T04:44:41.170Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.501Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Telegram机器人的手机部署</loc>
+-        <lastmod>2025-02-07T04:44:44.185Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.061Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Windows自定义自启动任务</loc>
+-        <lastmod>2025-02-07T04:44:44.139Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.031Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/博客历史演进</loc>
+-        <lastmod>2025-02-07T04:44:44.170Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.050Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/实践记录</loc>
+-        <lastmod>2025-02-07T04:44:41.158Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.496Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/毕业设计环境准备</loc>
+-        <lastmod>2025-02-07T04:44:41.220Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.522Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/实践记录/毕业设计解决方案</loc>
+-        <lastmod>2025-02-07T04:44:44.124Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.548Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机科学极简入门指南总览</loc>
+-        <lastmod>2025-02-07T04:44:39.328Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.058Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/公司信贷</loc>
+-        <lastmod>2025-02-07T04:44:44.529Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.670Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第一章：公司信贷概述</loc>
+-        <lastmod>2025-02-07T04:44:44.539Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.680Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第七章：贷款项目评估</loc>
+-        <lastmod>2025-02-07T04:44:44.603Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.093Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第三章：贷款申请受理和贷前调查</loc>
+-        <lastmod>2025-02-07T04:44:44.563Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.698Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第九章：信贷审批</loc>
+-        <lastmod>2025-02-07T04:44:44.630Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.475Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第二章：公司信贷营销</loc>
+-        <lastmod>2025-02-07T04:44:44.550Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.688Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第五章：借款需求分析</loc>
+-        <lastmod>2025-02-07T04:44:44.581Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.074Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第八章：贷款担保分析</loc>
+-        <lastmod>2025-02-07T04:44:44.613Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.103Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第六章：客户分析</loc>
+-        <lastmod>2025-02-07T04:44:44.591Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.083Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第十一章：贷后管理</loc>
+-        <lastmod>2025-02-07T04:44:44.656Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.495Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第十三章：不良贷款管理</loc>
+-        <lastmod>2025-02-07T04:44:45.068Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.516Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第十二章：贷款风险分类</loc>
+-        <lastmod>2025-02-07T04:44:45.054Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.506Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第十章：贷款合同与发放支付</loc>
+-        <lastmod>2025-02-07T04:44:44.642Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.484Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/金融/公司信贷/第四章：贷款环境分析</loc>
+-        <lastmod>2025-02-07T04:44:44.574Z</lastmod>
++        <lastmod>2025-02-08T04:56:12.064Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/概述</loc>
+-        <lastmod>2025-02-07T04:44:47.528Z</lastmod>
++        <lastmod>2025-02-08T04:56:13.205Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第一节：音程旋律</loc>
+-        <lastmod>2025-02-07T04:44:47.544Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.554Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第七节：终止</loc>
+-        <lastmod>2025-02-07T04:44:47.640Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.626Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第三节：和弦</loc>
+-        <lastmod>2025-02-07T04:44:47.578Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.581Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第九节：乐句概述</loc>
+-        <lastmod>2025-02-07T04:44:47.661Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.650Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第二节：旋律发展趋势</loc>
+-        <lastmod>2025-02-07T04:44:47.559Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.567Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第五节：流畅连接和弦</loc>
+-        <lastmod>2025-02-07T04:44:47.609Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.602Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第八节：曲式</loc>
+-        <lastmod>2025-02-07T04:44:47.653Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.638Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第六节：旋律和声搭配</loc>
+-        <lastmod>2025-02-07T04:44:47.622Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.614Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第十一节：乐句发展部</loc>
+-        <lastmod>2025-02-07T04:44:47.678Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.673Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第十三节：乐句与乐段的区别</loc>
+-        <lastmod>2025-02-07T04:44:47.706Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.693Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第十二节：乐段</loc>
+-        <lastmod>2025-02-07T04:44:47.691Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.682Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第十节：乐句展示部</loc>
+-        <lastmod>2025-02-07T04:44:47.670Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.662Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第一章/第四节：功能和声</loc>
+-        <lastmod>2025-02-07T04:44:47.593Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.591Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第三章/概述</loc>
+-        <lastmod>2025-02-07T04:44:50.626Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.792Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第三章/第一节：动机及其加工</loc>
+-        <lastmod>2025-02-07T04:44:50.641Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.803Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第三章/第七节：回旋曲</loc>
+-        <lastmod>2025-02-07T04:44:50.747Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.870Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第三章/第三节：调式与调性</loc>
+-        <lastmod>2025-02-07T04:44:50.681Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.828Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第三章/第二节：速度，节拍与切分</loc>
+-        <lastmod>2025-02-07T04:44:50.652Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.818Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第三章/第五节：混合主题</loc>
+-        <lastmod>2025-02-07T04:44:50.712Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.848Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第三章/第六节：复合主题</loc>
+-        <lastmod>2025-02-07T04:44:50.727Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.858Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第三章/第四节：转调</loc>
+-        <lastmod>2025-02-07T04:44:50.697Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.837Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第二章/概述</loc>
+-        <lastmod>2025-02-07T04:44:47.718Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.704Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第二章/第一节：和声旋律</loc>
+-        <lastmod>2025-02-07T04:44:47.731Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.715Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第二章/第七节：二段体音乐</loc>
+-        <lastmod>2025-02-07T04:44:48.238Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.782Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第二章/第三节：分解和弦</loc>
+-        <lastmod>2025-02-07T04:44:48.176Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.737Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第二章/第二节：旋律装饰</loc>
+-        <lastmod>2025-02-07T04:44:48.157Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.724Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第二章/第五节：小型二段体</loc>
+-        <lastmod>2025-02-07T04:44:48.211Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.759Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第二章/第六节：小型三段体</loc>
+-        <lastmod>2025-02-07T04:44:48.224Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.771Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第二章/第四节：和声织体</loc>
+-        <lastmod>2025-02-07T04:44:48.195Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.747Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/概述</loc>
+-        <lastmod>2025-02-07T04:44:50.764Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.882Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第一节：旋律装饰</loc>
+-        <lastmod>2025-02-07T04:44:50.777Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.892Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第七节：松散主题</loc>
+-        <lastmod>2025-02-07T04:44:50.857Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.890Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第三节：对位法与支声音乐</loc>
+-        <lastmod>2025-02-07T04:44:50.812Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.913Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第九节：主歌副歌体的书写</loc>
+-        <lastmod>2025-02-07T04:44:50.871Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.913Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第二节：多声部音乐</loc>
+-        <lastmod>2025-02-07T04:44:50.791Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.904Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第五节：和声装饰</loc>
+-        <lastmod>2025-02-07T04:44:50.839Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.934Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第八节：主歌副歌体</loc>
+-        <lastmod>2025-02-07T04:44:50.864Z</lastmod>
++        <lastmod>2025-02-08T04:56:19.902Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第六节：和声进行的本质</loc>
+-        <lastmod>2025-02-07T04:44:50.848Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.943Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/音乐/第四章/第四节：七和弦与和弦排列</loc>
+-        <lastmod>2025-02-07T04:44:50.827Z</lastmod>
++        <lastmod>2025-02-08T04:56:16.924Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/其他小说/Chapter 1</loc>
+-        <lastmod>2025-02-07T04:44:38.645Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.543Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/其他小说/其他小说</loc>
+-        <lastmod>2025-02-07T04:44:38.603Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.494Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/其他小说/夜天盛世夜天梦</loc>
+-        <lastmod>2025-02-07T04:44:38.625Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.519Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/其他小说/小说设定</loc>
+-        <lastmod>2025-02-07T04:44:38.639Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.536Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/其他小说/恋人之间的秘密</loc>
+-        <lastmod>2025-02-07T04:44:38.632Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.528Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/其他小说/第一章： 冲击</loc>
+-        <lastmod>2025-02-07T04:44:38.611Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.502Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/其他小说/第二章： 巨变</loc>
+-        <lastmod>2025-02-07T04:44:38.618Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.511Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/公交车</loc>
+-        <lastmod>2025-02-07T04:44:38.255Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.160Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/冥界的混乱</loc>
+-        <lastmod>2025-02-07T04:44:38.214Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.124Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/努力的样子</loc>
+-        <lastmod>2025-02-07T04:44:38.228Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.137Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练</loc>
+-        <lastmod>2025-02-07T04:44:38.113Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.046Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 公主与夫人（《欢恋》番外）</loc>
+-        <lastmod>2025-02-07T04:44:38.431Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.298Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 分享</loc>
+-        <lastmod>2025-02-07T04:44:38.363Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.239Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 可能会知道</loc>
+-        <lastmod>2025-02-07T04:44:38.406Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.269Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 哑声的少女</loc>
+-        <lastmod>2025-02-07T04:44:38.181Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.097Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 女性知识</loc>
+-        <lastmod>2025-02-07T04:44:38.337Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.228Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 少女的夏天</loc>
+-        <lastmod>2025-02-07T04:44:38.578Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.466Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 就算是厨师也能照亮他人</loc>
+-        <lastmod>2025-02-07T04:44:38.496Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.373Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 心脏博物馆</loc>
+-        <lastmod>2025-02-07T04:44:38.201Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.116Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 散打很温柔</loc>
+-        <lastmod>2025-02-07T04:44:38.489Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.365Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 昂贵的教师</loc>
+-        <lastmod>2025-02-07T04:44:38.567Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.458Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 普通</loc>
+-        <lastmod>2025-02-07T04:44:38.517Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.398Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 欺负人</loc>
+-        <lastmod>2025-02-07T04:44:38.559Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.447Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 满足</loc>
+-        <lastmod>2025-02-07T04:44:38.550Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.438Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 美术生的夜晚</loc>
+-        <lastmod>2025-02-07T04:44:38.482Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.357Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 芭蕾舞者欺负人</loc>
+-        <lastmod>2025-02-07T04:44:38.503Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.381Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 认真地发光</loc>
+-        <lastmod>2025-02-07T04:44:38.543Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.428Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 设计师想要恋爱</loc>
+-        <lastmod>2025-02-07T04:44:38.527Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.408Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 证明你喜欢</loc>
+-        <lastmod>2025-02-07T04:44:38.474Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.347Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 遗留</loc>
+-        <lastmod>2025-02-07T04:44:38.588Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.475Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练 - 酒保与冷静</loc>
+-        <lastmod>2025-02-07T04:44:38.534Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.419Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练之一</loc>
+-        <lastmod>2025-02-07T04:44:38.509Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.389Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练之三</loc>
+-        <lastmod>2025-02-07T04:44:38.459Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.332Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练之二</loc>
+-        <lastmod>2025-02-07T04:44:38.467Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.340Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练之五</loc>
+-        <lastmod>2025-02-07T04:44:38.446Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.316Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练之六</loc>
+-        <lastmod>2025-02-07T04:44:38.440Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.308Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/想象力训练之四</loc>
+-        <lastmod>2025-02-07T04:44:38.453Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.325Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/承 K 之名</loc>
+-        <lastmod>2025-02-07T04:44:38.279Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.191Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/无题之一</loc>
+-        <lastmod>2025-02-07T04:44:38.265Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.175Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/有些事情，不应转瞬即逝</loc>
+-        <lastmod>2025-02-07T04:44:38.414Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.278Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/欢恋</loc>
+-        <lastmod>2025-02-07T04:44:38.595Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.485Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/深入骨髓</loc>
+-        <lastmod>2025-02-07T04:44:38.424Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.289Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/理想雪 - 为你化妆</loc>
+-        <lastmod>2025-02-07T04:44:38.293Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.202Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/理想雪 - 冬季是最温暖的季节</loc>
+-        <lastmod>2025-02-07T04:44:38.241Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.148Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/理想雪 - 就是为了来见你</loc>
+-        <lastmod>2025-02-07T04:44:38.134Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.067Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/理想雪 - 应不应该</loc>
+-        <lastmod>2025-02-07T04:44:38.319Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.218Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/理想雪 - 必须服从命令的一天</loc>
+-        <lastmod>2025-02-07T04:44:38.162Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.086Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/理想雪 - 永远恒温的衣服</loc>
+-        <lastmod>2025-02-07T04:44:38.152Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.076Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/理想雪 - 翠鸟协会</loc>
+-        <lastmod>2025-02-07T04:44:38.121Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.055Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/理想雪 - 那些不重要</loc>
+-        <lastmod>2025-02-07T04:44:38.307Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.210Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/青鸟</loc>
+-        <lastmod>2025-02-07T04:44:38.191Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.107Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/靛青之秋之一</loc>
+-        <lastmod>2025-02-07T04:44:38.391Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.258Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/生活碎笔/小说/想象力训练/靛青之秋之二</loc>
+-        <lastmod>2025-02-07T04:44:38.376Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.249Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/归档/句子/日记扉页</loc>
+-        <lastmod>2025-02-07T04:46:08.457Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.099Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/记录和归档/归档/句子/随记断句</loc>
+-        <lastmod>2025-02-07T04:46:08.466Z</lastmod>
++        <lastmod>2025-02-08T04:57:37.111Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第一章：循环系统疾病总论</loc>
+-        <lastmod>2025-02-07T04:44:40.339Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.907Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第三章：心律失常</loc>
+-        <lastmod>2025-02-07T04:44:40.356Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.925Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第三部分：循环系统疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.331Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.897Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第九章：心包疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.393Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.968Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第二章：心力衰竭</loc>
+-        <lastmod>2025-02-07T04:44:40.349Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.917Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第五章：高血压</loc>
+-        <lastmod>2025-02-07T04:44:40.371Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.943Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第八章：心脏瓣膜病</loc>
+-        <lastmod>2025-02-07T04:44:40.386Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.961Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第六章：心肌疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.378Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.952Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第十一章：心脏骤停与心脏性猝死</loc>
+-        <lastmod>2025-02-07T04:44:40.401Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.979Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第十三章：心血管神经症</loc>
+-        <lastmod>2025-02-07T04:44:40.410Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.986Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第十四章：肿瘤心脏病学</loc>
+-        <lastmod>2025-02-07T04:44:40.419Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.994Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第四章：动脉粥样硬化和冠状动脉粥样硬化性心脏病</loc>
+-        <lastmod>2025-02-07T04:44:40.364Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.935Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第一章：呼吸系统疾病总论</loc>
+-        <lastmod>2025-02-07T04:44:40.133Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.731Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第七章：肺结核</loc>
+-        <lastmod>2025-02-07T04:44:40.204Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.790Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第三章：慢性支气管炎、慢性阻塞性肺疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.158Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.753Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第九章：间质性肺疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.231Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.814Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第二章：急性上呼吸道感染和急性气管-支气管炎</loc>
+-        <lastmod>2025-02-07T04:44:40.146Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.742Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第二部分：呼吸系统疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.121Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.724Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第五章：支气管扩张症</loc>
+-        <lastmod>2025-02-07T04:44:40.180Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.772Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第八章：肺癌</loc>
+-        <lastmod>2025-02-07T04:44:40.219Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.800Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第六章：肺部感染性疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.189Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.780Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第十一章：肺动脉高压与肺源性心脏病</loc>
+-        <lastmod>2025-02-07T04:44:40.251Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.832Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第十三章：睡眠呼吸暂停低通气综合征</loc>
+-        <lastmod>2025-02-07T04:44:40.279Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.852Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第十二章：胸膜疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.269Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.844Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第十五章：呼吸衰竭与呼吸支持技术</loc>
+-        <lastmod>2025-02-07T04:44:40.308Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.874Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第十六章：烟草病学概要</loc>
+-        <lastmod>2025-02-07T04:44:40.317Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.883Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第十四章：急性呼吸窘迫综合征</loc>
+-        <lastmod>2025-02-07T04:44:40.296Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.862Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第十章：肺血栓栓塞症</loc>
+-        <lastmod>2025-02-07T04:44:40.239Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.823Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第四章：支气管哮喘</loc>
+-        <lastmod>2025-02-07T04:44:40.171Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.762Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第一章：消化系统疾病总论</loc>
+-        <lastmod>2025-02-07T04:44:40.452Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.011Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第七章：肠结核和结核性腹膜炎</loc>
+-        <lastmod>2025-02-07T04:44:40.501Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.072Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第三章：食管癌</loc>
+-        <lastmod>2025-02-07T04:44:40.471Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.032Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第九章：结直肠癌</loc>
+-        <lastmod>2025-02-07T04:44:40.519Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.090Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第二十一章：胰腺癌</loc>
+-        <lastmod>2025-02-07T04:44:40.648Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.190Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第二十三章：慢性腹泻</loc>
+-        <lastmod>2025-02-07T04:44:40.681Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.206Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第二十二章：腹痛</loc>
+-        <lastmod>2025-02-07T04:44:40.664Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.198Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第二十五章：消化道出血</loc>
+-        <lastmod>2025-02-07T04:44:40.706Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.225Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第二十四章：便秘</loc>
+-        <lastmod>2025-02-07T04:44:40.693Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.215Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第二十章：胰腺炎</loc>
+-        <lastmod>2025-02-07T04:44:40.631Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.181Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第二章：胃食管反流病</loc>
+-        <lastmod>2025-02-07T04:44:40.463Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.024Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第五章：消化性溃疡</loc>
+-        <lastmod>2025-02-07T04:44:40.486Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.051Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第八章：炎症性肠病</loc>
+-        <lastmod>2025-02-07T04:44:40.509Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.081Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第六章：胃癌</loc>
+-        <lastmod>2025-02-07T04:44:40.494Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.062Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十一章：病毒性肝炎</loc>
+-        <lastmod>2025-02-07T04:44:40.539Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.111Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十七章：急性肝衰竭</loc>
+-        <lastmod>2025-02-07T04:44:40.596Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.156Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十三章：自身免疫性肝病</loc>
+-        <lastmod>2025-02-07T04:44:40.566Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.131Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十九章：胆道系统肿瘤</loc>
+-        <lastmod>2025-02-07T04:44:40.618Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.174Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十二章：脂肪性肝病</loc>
+-        <lastmod>2025-02-07T04:44:40.553Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.120Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十五章：肝硬化</loc>
+-        <lastmod>2025-02-07T04:44:40.585Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.147Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十八章：肝外胆系结石及炎症</loc>
+-        <lastmod>2025-02-07T04:44:40.606Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.164Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十四章：药物性肝病</loc>
+-        <lastmod>2025-02-07T04:44:40.576Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.140Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十章：功能性胃肠病</loc>
+-        <lastmod>2025-02-07T04:44:40.529Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.100Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第四章：胃炎</loc>
+-        <lastmod>2025-02-07T04:44:40.478Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.041Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第四部分：消化系统疾病</loc>
+-        <lastmod>2025-02-07T04:44:40.435Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.003Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/人寿保险</loc>
+-        <lastmod>2025-02-07T04:44:38.951Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.784Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/人生各阶段投保指南</loc>
+-        <lastmod>2025-02-07T04:44:39.006Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.822Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/保险</loc>
+-        <lastmod>2025-02-07T04:44:38.903Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.728Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/保险专业名词及解释概述</loc>
+-        <lastmod>2025-02-07T04:44:38.926Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.750Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/保险概述</loc>
+-        <lastmod>2025-02-07T04:44:38.914Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.740Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/保险注意事项</loc>
+-        <lastmod>2025-02-07T04:44:39.022Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.830Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/养老保险</loc>
+-        <lastmod>2025-02-07T04:44:38.974Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.803Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/家庭财产保险</loc>
+-        <lastmod>2025-02-07T04:44:38.990Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.813Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/意外伤害保险</loc>
+-        <lastmod>2025-02-07T04:44:38.940Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.775Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/保险/重症或大病医疗保险</loc>
+-        <lastmod>2025-02-07T04:44:38.962Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.793Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/投资实践：基金概述</loc>
+-        <lastmod>2025-02-07T04:44:38.877Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.712Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/投资实践：基金种类</loc>
+-        <lastmod>2025-02-07T04:44:38.891Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.721Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/投资实践：概述</loc>
+-        <lastmod>2025-02-07T04:44:38.844Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.683Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/投资实践：理财种类</loc>
+-        <lastmod>2025-02-07T04:44:38.854Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.693Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/投资实践：资产配置与风险分散</loc>
+-        <lastmod>2025-02-07T04:44:38.866Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.701Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/投资策略</loc>
+-        <lastmod>2025-02-07T04:44:38.831Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.675Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/消费与投资</loc>
+-        <lastmod>2025-02-07T04:44:38.804Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.654Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/理财</loc>
+-        <lastmod>2025-02-07T04:44:38.775Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.637Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/财务杠杆概述</loc>
+-        <lastmod>2025-02-07T04:44:38.791Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.646Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/学海计划/金融学/理财/财务规划</loc>
+-        <lastmod>2025-02-07T04:44:38.817Z</lastmod>
++        <lastmod>2025-02-08T04:56:06.664Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/Packages</loc>
+-        <lastmod>2025-02-07T04:44:40.803Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.292Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/SVT-HEVC</loc>
+-        <lastmod>2025-02-07T04:44:40.920Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.346Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/SVT-VP9</loc>
+-        <lastmod>2025-02-07T04:44:40.879Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.331Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/distrobuilder</loc>
+-        <lastmod>2025-02-07T04:44:40.981Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.380Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/fluidd</loc>
+-        <lastmod>2025-02-07T04:44:40.818Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.298Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/gnuchess</loc>
+-        <lastmod>2025-02-07T04:44:40.855Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.318Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/grafana-agent</loc>
+-        <lastmod>2025-02-07T04:44:40.933Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.353Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/imagescan</loc>
+-        <lastmod>2025-02-07T04:44:40.831Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.305Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/libopenraw</loc>
+-        <lastmod>2025-02-07T04:44:40.844Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.311Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/system-config-printer</loc>
+-        <lastmod>2025-02-07T04:44:40.946Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.359Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/文件模板/JDBC 连接数据库驱动常用写法</loc>
+-        <lastmod>2025-02-07T04:44:41.105Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.468Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/文件模板/MyBatis 配置文件基本框架</loc>
+-        <lastmod>2025-02-07T04:44:41.114Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.475Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/文件模板/Spring 配置文件基本框架</loc>
+-        <lastmod>2025-02-07T04:44:41.128Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.482Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/文件模板/SpringBoot 项目搭建基本流程</loc>
+-        <lastmod>2025-02-07T04:44:41.142Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.488Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/Java/文件模板/文件模板</loc>
+-        <lastmod>2025-02-07T04:44:41.095Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.462Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/WingStudio/Wing 第三轮接口设计</loc>
+-        <lastmod>2025-02-07T04:44:44.384Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.221Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/WingStudio/WingStudio</loc>
+-        <lastmod>2025-02-07T04:44:44.362Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.202Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/WingStudio/WingStudio 第三轮考核说明文档</loc>
+-        <lastmod>2025-02-07T04:44:44.394Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.232Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/WingStudio/WingStudio 第三轮项目途中报错及解决方案</loc>
+-        <lastmod>2025-02-07T04:44:44.409Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.242Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/其他资料/WingStudio/WingStudio 第二轮考核 工程实现记录</loc>
+-        <lastmod>2025-02-07T04:44:44.371Z</lastmod>
++        <lastmod>2025-02-08T04:56:11.212Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第一章：计算机的历史</loc>
+-        <lastmod>2025-02-07T04:44:39.340Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.066Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第七章：加法器</loc>
+-        <lastmod>2025-02-07T04:44:39.414Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.127Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第三章：计算机的数据表示</loc>
+-        <lastmod>2025-02-07T04:44:39.365Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.086Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第九章：减法器</loc>
+-        <lastmod>2025-02-07T04:44:39.438Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.147Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第二章：计算机的构成</loc>
+-        <lastmod>2025-02-07T04:44:39.353Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.075Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第五章：复杂逻辑门基础</loc>
+-        <lastmod>2025-02-07T04:44:39.389Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.106Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第八章：原反补码</loc>
+-        <lastmod>2025-02-07T04:44:39.427Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.136Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第六章：半加器</loc>
+-        <lastmod>2025-02-07T04:44:39.402Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.115Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十章：乘法器</loc>
+-        <lastmod>2025-02-07T04:44:39.448Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.157Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第四章：简单逻辑门</loc>
+-        <lastmod>2025-02-07T04:44:39.379Z</lastmod>
++        <lastmod>2025-02-08T04:56:07.094Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/fulcio(学习与进步/Learning)</loc>
+-        <lastmod>2025-02-07T04:44:40.962Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.366Z</lastmod>
+     </url>
+     <url>
+         <loc>https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/libgovirt(学习与进步/Learning)</loc>
+-        <lastmod>2025-02-07T04:44:40.970Z</lastmod>
++        <lastmod>2025-02-08T04:56:08.372Z</lastmod>
+     </url>
+ </urlset>
+```
+
+## 第三十一章：缓存原理.md
+
+```diff
+
+@@ -113,18 +113,38 @@
+ - 输出 D 意为 Difference，差值
+ - 如果 B out 为 1，肯定意味着不够减，结果为负
+ 
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/half-subtracter.png)
++
++　　当然我们也可以画成下面这样，不使用异或门，只使用与门和或门。
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/half-subtracter-not-using-xor.png)
++
++　　但是这个图很容易就把人看晕了，跟上面的图一比较，完全不如上图清晰明了。使用异或门还可以跟真值表形成明显的对照。
++
++　　**在计算机科学里，没有什么问题是加一层解决不了的** 。该抽象简化的时候，就应该抽象和简化。
++
+ 　　下面是全减器的真值表。
+ 
+ | A | B | B in | B out | D |
+ |:--:|:--:|:--:|:--:|:--:|
+ | 0 | 0 | 0 | 0 | 0 |
++| 0 | 0 | 1 | 1 | 1 |
+ | 0 | 1 | 0 | 1 | 1 |
+-| 1 | 0 | 0 | 1 | 1 |
+-| 1 | 1 | 1 | 0 | 0 |
++| 0 | 1 | 1 | 1 | 0 |
++| 1 | 0 | 0 | 0 | 1 |
++| 1 | 0 | 1 | 0 | 0 |
++| 1 | 1 | 0 | 0 | 0 |
++| 1 | 1 | 1 | 1 | 0 |
+ 
+ - 默认为 A - B
+ - 输入 B in 与上同理
+ - 输出 D 意为 Difference，差值
++- 这个可能有些复杂，给出化简后的表达式，然后拼接逻辑门
++  - D = A ⊕ B ⊕ Bin（⊕为异或的数学符号）
++  - Bout = <span style="text-decoration: overline">A</span>B + <span style="text-decoration: overline">A</span>Bin + BBin
++
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/full-subtracter.png)
++
+ 
+ ## 小结
+ 
+```
+
+## 第二十一章：尝试加法自动化.md
+
+```diff
+
+@@ -25,7 +25,7 @@
+    - 多路选择器
+ 
+ 2. **工作原理**：
+-   ```
++ ```
+    +--------+    +--------+
+    |  加法器 | <- | 常数+4 |
+    +--------+    +--------+
+
+@@ -37,7 +37,7 @@
+         ^           ^
+         |           |
+    正常递增     跳转地址
+-   ```
++ ```
+ 
+ #### 2. 更新机制
+ 
+
+@@ -61,17 +61,17 @@
+    - 控制信号生成器
+ 
+ 2. **工作流程**：
+-   ```
++ ```
+    指令寄存器 -> 操作码译码 -> 控制信号
+                     |
+                     v
+                地址域译码 -> 操作数地址
+-   ```
++ ```
+ 
+ #### 2. 译码过程示例
+ 
+ 1. **加法指令译码**：
+-   ```
++ ```
+    ADD R1, R2, R3  ; R1 = R2 + R3
+    
+    机器码：
+
+@@ -82,10 +82,10 @@
+    - 读取R2、R3的值
+    - 启动ALU加法运算
+    - 结果写入R1
+-   ```
++ ```
+ 
+ 2. **存储器访问指令译码**：
+-   ```
++ ```
+    LDR R1, [R2, #4]  ; 加载内存数据
+    
+    机器码：
+
+@@ -96,7 +96,7 @@
+    - 计算地址（R2 + 4）
+    - 访问存储器
+    - 数据写入R1
+-   ```
++ ```
+ 
+ ### 时序控制
+ 
+
+@@ -109,12 +109,12 @@
+    - T4：写回结果
+ 
+ 2. **控制信号时序**：
+-   ```
++ ```
+    T1 ----+    T2 ----+    T3 ----+    T4 ----+
+           |          |          |          |
+    取指令  |    译码   |    执行   |    写回   |
+           |          |          |          |
+-   ```
++ ```
+ 
+ #### 2. 流水线基础
+ 
+
+@@ -124,12 +124,12 @@
+    - 提高执行效率
+ 
+ 2. **简单流水线示意**：
+-   ```
++ ```
+    时间 ->  T1    T2    T3    T4
+    指令1：  取指   译码   执行   写回
+    指令2：        取指   译码   执行   写回
+    指令3：              取指   译码   执行   写回
+-   ```
++ ```
+ 
+ ### 硬件协同工作
+ 
+
+@@ -143,12 +143,12 @@
+    - 寄存器组
+ 
+ 2. **数据流动**：
+-   ```
++ ```
+    PC -> 存储器 -> 指令寄存器 -> 译码器
+                                    |
+                                    v
+    寄存器组 <-> ALU <- 控制信号生成器
+-   ```
++ ```
+ 
+ #### 2. 控制信号
+ 
+```
+
+## 第二十四章：指令系统基础.md
+
+```diff
+
+@@ -43,97 +43,97 @@
+ #### 传统长除法
+ 
+ 1. 准备工作：
+-   ```
++```
+    被除数：1111（15）
+    除数：  0011（3）
+    商：    0000（等待填入）
+-   ```
++```
+ 
+ 2. 第一次试商：
+-   ```
++```
+         0
+        _____
+ 11 ) 1111
+        00     <- 注意对齐
+        —————
+        1111
+-   ```
++```
+ 
+ 3. 第二次试商：
+-   ```
++```
+         01
+        _____
+ 11 ) 1111
+         11    <- 注意对齐
+        —————
+         0011
+-   ```
++```
+ 
+ 4. 第三次试商：
+-   ```
++```
+         010
+        _____
+ 11 ) 0011
+         00   <- 注意对齐
+        —————
+         0011
+-   ```
++```
+ 
+ 5. 结束：
+-   ```
++```
+         0101
+        _____
+ 11 ) 0011
+           11  <- 注意对齐
+        —————
+         0000
+-   ```
++```
+ 
+ #### 除法器
+ 
+ 1. 准备工作：
+    
+-   ```
++```
+    被除数：1111（15）
+    除数：  0011（3）
+    商：    ####（等待填入）
+-   ```
++```
+ 
+ 2. 第一步：
+    - 判断能否减去除数：不能减（1 < 11）
+    - 商的最高位记为 0
+    - 除数右移一位
+-   ```
++```
+    商：    ###0
+    被除数：  11110
+-   ```
++```
+ 
+ 3. 第二步：
+    - 判断能否减去除数：可以减（11 >= 11）
+    - 商左移并在最低位记为 1
+    - 1111 - 1100 = 0011，余数为 0011
+-   ```
++```
+    商：    ##01
+    余数：  0011
+-   ```
++```
+ 
+ 4. 第三步：
+    - 判断能否减去除数：不能减（01 < 11）
+    - 商左移并在最低位记为 0
+    - 减去除数后余数为 0011
+-   ```
++```
+    商：    #010
+    余数：  0011
+-   ```
++```
+ 
+ 5. 第四步：
+    - 判断能否减去除数：可以减（11 >= 11）
+    - 商左移并在最低位记为 1
+    - 减去除数后余数为 0000
+-   ```
++```
+    商：    0101（最终结果）
+    余数：  0000
+-   ```
++```
+ 
+ 　　最终结果：15 ÷ 3 = 5（商是 0101），余数为 0000。
+ 
+```
+
+## 第十七章：更大存储.md
+
+```diff
+
+@@ -96,30 +96,30 @@
+ 　　以 5 + 3 为例，看看 ALU 是如何工作的：
+ 
+ 1. **准备阶段**：
+-   ```
++```
+    A 输入：0101（5）
+    B 输入：0011（3）
+    操作码：0000（加法）
+-   ```
++```
+ 
+ 2. **运算阶段**：
+    - 激活加法器模块
+    - 按位相加：
+-     ```
++```
+      0101
+      0011
+      ————
+      1000
+-     ```
++```
+ 
+ 3. **完成阶段**：
+-   ```
++```
+    结果：1000（8）
+    零标志（Z）：0（非零）
+    符号标志（S）：0（正数）
+    进位标志（C）：0（无进位）
+    溢出标志（V）：0（未溢出）
+-   ```
++```
+ 
+ ### 控制信号系统
+ 
+```
+
+## 第十五章：存储器构成.md
+
+```diff
+
+@@ -1,231 +0,0 @@
+-# 存储器构成
+-
+-## 复习
+-
+-7. 设计完成了加法器，可以处理三个输入（两个加数和一个进位），并可以串联构成多位加法器
+-8. 掌握了原码、反码和补码的概念，理解了补码可以统一加减法运算
+-9. 设计完成了减法器、乘法器和除法器，它们都基于加法器和移位操作
+-10. 理解了算术逻辑单元（ALU）如何集成各种运算功能
+-11. 掌握了锁存器和触发器的基本原理，了解它们如何存储一位二进制数据
+-
+-## TL;DR
+-
+-- 存储器由大量存储单元（如触发器）组成
+-- 存储器通过地址线选择要访问的存储单元
+-- 存储器分为随机访问存储器（RAM）和只读存储器（ROM）
+-- 不同类型的存储器在速度、容量和成本上各有优势
+-
+-## 正文
+-
+-### 从触发器到存储单元
+-
+-　　我们已经知道，触发器可以存储一位二进制数据。那么，如何构建更大容量的存储器呢？
+-
+-#### 基本存储单元
+-
+-1. **位（Bit）存储**：
+-   - 一个触发器存储一位
+-   - 通常使用D触发器
+-   - 需要写使能信号控制
+-
+-2. **字节（Byte）存储**：
+-   - 8个触发器组成一个字节
+-   - 共用时钟和写使能信号
+-   - 可以同时读写8位数据
+-
+-### 存储器的基本结构
+-
+-#### 1. 地址译码
+-
+-　　存储器需要能够选择要访问的存储单元：
+-
+-1. **地址线**：
+-   - 用于指定要访问的位置
+-   - n条地址线可以选择2ⁿ个位置
+-
+-2. **译码器**：
+-   - 将地址转换为选择信号
+-   - 只激活一个存储单元
+-
+-#### 2. 数据存取
+-
+-1. **数据线**：
+-   - 读取时传输数据到输出
+-   - 写入时接收输入数据
+-
+-2. **控制信号**：
+-   - 读/写控制
+-   - 片选信号
+-   - 时钟信号
+-
+-### 存储器类型
+-
+-#### 1. RAM（随机访问存储器）
+-
+-　　可以随机读写的存储器：
+-
+-1. **SRAM（静态RAM）**：
+-   - 用触发器存储数据
+-   - 只要通电就保持数据
+-   - 速度快但成本高
+-   - 常用于CPU缓存
+-
+-2. **DRAM（动态RAM）**：
+-   - 用电容存储数据
+-   - 需要定期刷新
+-   - 密度高，成本低
+-   - 常用于主内存
+-
+-#### 2. ROM（只读存储器）
+-
+-　　内容固定的存储器：
+-
+-1. **掩膜ROM**：
+-   - 出厂时写入数据
+-   - 永久不可改写
+-   - 用于存储固定程序
+-
+-2. **PROM/EPROM/EEPROM**：
+-   - 可以重新编程
+-   - 写入速度慢
+-   - 常用于存储BIOS等
+-
+-### 存储器的组织方式
+-
+-#### 1. 位扩展
+-
+-　　增加数据位宽：
+-
+-```
+-8位扩展到16位：
+-[8位存储器] + [8位存储器]
+-共用地址线和控制信号
+-分别处理高8位和低8位
+-```
+-
+-#### 2. 字扩展
+-
+-　　增加存储容量：
+-
+-```
+-1K扩展到2K：
+-[1K存储器]
+-[1K存储器]
+-用地址最高位选择
+-```
+-
+-### 存储器的时序
+-
+-#### 1. 同步存储器
+-
+-　　由时钟信号控制：
+-
+-1. **写操作**：
+-   - 在时钟上升沿写入数据
+-   - 需要满足建立时间和保持时间
+-
+-2. **读操作**：
+-   - 在时钟上升沿输出数据
+-   - 有一定的访问延迟
+-
+-#### 2. 异步存储器
+-
+-　　由控制信号控制：
+-
+-1. **写操作**：
+-   - 写使能有效时写入
+-   - 需要满足最小脉冲宽度
+-
+-2. **读操作**：
+-   - 片选有效时即可读出
+-   - 有一定的访问延迟
+-
+-### 存储器的性能指标
+-
+-1. **容量**：
+-   - 可存储的总位数
+-   - 通常以字节为单位
+-
+-2. **速度**：
+-   - 访问时间
+-   - 周期时间
+-   - 带宽
+-
+-3. **功耗**：
+-   - 工作功耗
+-   - 待机功耗
+-   - 刷新功耗（DRAM）
+-
+-### 实际应用举例
+-
+-　　以一个简单的 4×8 位 RAM 为例：
+-
+-```
+-容量：4个字节（4×8位）
+-地址线：2根（可选择4个位置）
+-数据线：8根（每次传输一个字节）
+-控制线：读/写、片选
+-
+-写入数据：
+-1. 设置地址（如 10）
+-2. 准备数据（8位）
+-3. 写使能有效
+-4. 等待写入完成
+-
+-读取数据：
+-1. 设置地址（如 10）
+-2. 读使能有效
+-3. 等待数据有效
+-4. 获取输出数据
+-```
+-
+-**思考题 1**
+-
+-> 　　为什么 CPU 中要使用多级缓存？
+-
+-**思考题 2**
+-
+-> 　　DRAM 为什么需要刷新？刷新会带来什么问题？
+-
+-## 小结
+-
+-### 知识点
+-
+-- 存储器的基本构成
+-- RAM和ROM的特点
+-- 存储器的组织方式
+-- 同步和异步访问
+-- 存储器的性能指标
+-
+-### 思考题答案（仅供参考）
+-
+-#### 思考题 1
+-
+-　　CPU使用多级缓存的原因：
+-1. 主内存访问速度远低于CPU速度
+-2. 不同级别缓存在速度和容量上做权衡
+-3. 局部性原理使得缓存很有效
+-4. 成本考虑，快速缓存造价高
+-5. 多级缓存可以优化访问模式
+-
+-#### 思考题 2
+-
+-　　DRAM刷新问题：
+-1. DRAM用电容存储，电荷会泄漏
+-2. 需要定期读出并重写数据（刷新）
+-3. 刷新会占用访问带宽
+-4. 刷新会增加功耗
+-5. 刷新会导致访问延迟
+-
+-## 参考资料
+-
+-1. [Wikipedia(zh)：随机存取存储器](https://zh.wikipedia.org/wiki/%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%AD%98%E5%82%A8%E5%99%A8)：RAM的详细介绍
+-2. [Wikipedia(zh)：只读存储器](https://zh.wikipedia.org/wiki/%E5%94%AF%E8%AE%80%E8%A8%98%E6%86%B6%E9%AB%94)：ROM的基本概念
+-
+-### 推荐
+-
+-- [Bilibili：计算机内存是如何工作的](https://www.bilibili.com/video/BV1Zr4y1S7gG/)
+-
+-## 协议
+-
+-　　本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)进行许可。
+```
+
+## 第十五章：触发器.md
+
+```diff
+
+@@ -0,0 +1,213 @@
++# 寄存器与存储器
++
++## 复习
++
++8. 掌握了原码、反码和补码的概念，理解了补码可以统一加减法运算
++9. 设计完成了减法器、乘法器和除法器，它们都基于加法器和移位操作
++10. 理解了算术逻辑单元（ALU）如何集成各种运算功能
++11. 掌握了锁存器和触发器的基本原理，了解它们如何存储一位二进制数据
++12. 了解了存储器的基本构成，包括RAM和ROM的工作原理
++
++## TL;DR
++
++- 寄存器是CPU内部的高速存储单元
++- 寄存器比内存快但容量小
++- 不同类型的寄存器有不同的用途
++- 寄存器和存储器协同工作，构成存储层次结构
++
++## 正文
++
++### 为什么需要寄存器
++
++　　我们已经有了存储器，为什么还需要寄存器呢？这要从计算机的工作原理说起：
++
++1. **速度差异**：
++   - CPU运算速度很快
++   - 内存访问相对较慢
++   - 需要快速的临时存储
++
++2. **频繁访问**：
++   - 某些数据被反复使用
++   - 存放在寄存器中更高效
++   - 减少内存访问次数
++
++### 寄存器的类型
++
++#### 1. 通用寄存器
++
++　　用于临时存储数据：
++
++1. **数据寄存器**：
++   - 存储操作数
++   - 存储中间结果
++   - 直接参与运算
++
++2. **地址寄存器**：
++   - 存储内存地址
++   - 用于内存访问
++   - 支持间接寻址
++
++#### 2. 特殊寄存器
++
++1. **程序计数器（PC）**：
++   - 存储下一条指令的地址
++   - 控制程序执行顺序
++   - 自动递增或跳转
++
++2. **指令寄存器（IR）**：
++   - 存储当前执行的指令
++   - 供指令译码使用
++   - 控制CPU操作
++
++3. **状态寄存器（PSW）**：
++   - 存储CPU状态标志
++   - 记录运算结果特征
++   - 控制程序流程
++
++### 寄存器组织
++
++#### 1. 寄存器文件
++
++　　多个寄存器的集合：
++
++```
++32个通用寄存器：
++R0-R31
++每个寄存器32位
++可以同时访问多个寄存器
++```
++
++#### 2. 访问方式
++
++1. **并行访问**：
++   - 同时读取多个寄存器
++   - 支持多操作数指令
++   - 提高执行效率
++
++2. **灵活寻址**：
++   - 按编号直接访问
++   - 支持间接寻址
++   - 便于编程使用
++
++### 寄存器与存储器的关系
++
++#### 1. 存储层次结构
++
++　　从快到慢，从小到大：
++
++```
++寄存器（最快，最小）
++↓
++缓存（Cache）
++↓
++主存（RAM）
++↓
++外存（最慢，最大）
++```
++
++#### 2. 数据交换
++
++1. **加载（Load）**：
++   - 从存储器读取到寄存器
++   - 准备数据供CPU使用
++   - 减少后续访存
++
++2. **存储（Store）**：
++   - 从寄存器写入存储器
++   - 保存计算结果
++   - 释放寄存器空间
++
++### 实际应用举例
++
++　　以简单的加法运算为例：
++
++```
++计算 A + B，结果存入 C：
++
++1. 加载阶段：
++   Load R1, [A]    // 将A的值加载到R1
++   Load R2, [B]    // 将B的值加载到R2
++
++2. 计算阶段：
++   Add R3, R1, R2  // R1和R2相加，结果存入R3
++
++3. 存储阶段：
++   Store [C], R3   // 将结果从R3存入C
++```
++
++### 性能考虑
++
++#### 1. 访问速度
++
++1. **寄存器访问**：
++   - 单周期或更少
++   - 直接集成在CPU中
++   - 最快的存储形式
++
++2. **存储器访问**：
++   - 多个周期
++   - 需要总线传输
++   - 可能有等待状态
++
++#### 2. 优化策略
++
++1. **寄存器分配**：
++   - 合理使用寄存器
++   - 减少内存访问
++   - 提高程序性能
++
++2. **存储层次利用**：
++   - 利用局部性原理
++   - 合理使用缓存
++   - 减少访存延迟
++
++**思考题 1**
++
++> 　　为什么现代CPU都有大量的寄存器？
++
++**思考题 2**
++
++> 　　程序计数器（PC）为什么是最特殊的寄存器之一？
++
++## 小结
++
++### 知识点
++
++- 寄存器的类型和用途
++- 寄存器与存储器的区别
++- 存储层次结构
++- 数据交换机制
++- 性能优化策略
++
++### 思考题答案（仅供参考）
++
++#### 思考题 1
++
++　　现代CPU使用大量寄存器的原因：
++1. 减少内存访问次数
++2. 支持复杂指令执行
++3. 提高并行处理能力
++4. 优化程序性能
++5. 支持高级编译优化
++
++#### 思考题 2
++
++　　PC寄存器的特殊性：
++1. 控制程序执行流程
++2. 自动更新机制
++3. 影响分支和跳转
++4. 实现程序计数
++5. 中断和异常处理的关键
++
++## 参考资料
++
++1. [Wikipedia(zh)：寄存器](https://zh.wikipedia.org/wiki/%E5%AF%84%E5%AD%98%E5%99%A8)：寄存器的详细介绍
++2. [Wikipedia(zh)：存储器层次结构](https://zh.wikipedia.org/wiki/%E8%A8%98%E6%86%B6%E9%AB%94%E9%9A%8E%E5%B1%A4)：存储层次的基本概念
++
++### 推荐
++
++- [Bilibili：CPU寄存器是如何工作的](https://www.bilibili.com/video/BV1Zr4y1S7gG/)
++
++## 协议
++
++　　本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)进行许可。
+```
+
+## 第十四章：锁存器.md
+
+```diff
+
+@@ -35,9 +35,13 @@
+ 
+ ### 锁存器：最简单的记忆电路
+ 
+-　　最基本的存储单元就是触发器（Flip-Flop）。但在介绍触发器之前，我们先来看一个更简单的电路：锁存器（Latch）。
++　　最基本的存储单元就是触发器（Flip-Flop）。但在介绍触发器之前，我们先来看一个更简单的电路：锁存器（Latch）。锁存器由一个非常奇妙的想法引发。
+ 
+-#### SR锁存器
++#### 首尾相连？
++
++　　既然有反相器这么好玩儿的东西，为什么没有人想到将它首尾相连呢？
++
++#### SR 锁存器
+ 
+ 　　最基本的锁存器是 SR 锁存器（Set-Reset Latch）：
+ 
 ```
 
 ## 已读书目记录.md
 
 ```diff
 
-@@ -139,4 +139,8 @@
- 23. ⭐️理财就是理生活 - 邢力 - <2024.11.25-2024.12.2>
- 24. 稳健投资：年化 10% 收益率的基金组合 - 认真的天马 - <2024.11.25-2024.12.3>
- 25. 定投十年财务自由 - 银行螺丝钉 - <2024.11.24-2024.12.4>
--26. 终身成长 - [美]卡罗尔·德韦克(Carol S.Dweck, Ph.D.) - <2024.11.28-2024.11.29>
+@@ -143,4 +143,5 @@
+ 
+ ## 2025 年
+ 
+-1. 
 \ No newline at end of file
-+26. 终身成长 - [美]卡罗尔·德韦克(Carol S.Dweck, Ph.D.) - <2024.11.28-2024.11.29>
-+
-+## 2025 年
-+
-+1. 
++1. 见证逆潮 - 付鹏 - <2025.1.3-2025.1.14>
++2. 
 \ No newline at end of file
 ```
 
-## 谁在编造历史 - 常彦军.md
+## 一个人的晚餐 - 陈鲁豫.md
 
 ```diff
 
-@@ -0,0 +1,27 @@
-+# 谁在编造历史
+@@ -0,0 +1,19 @@
++# 一个人的晚餐
 +
-+*常彦军*
++*陈鲁豫*
 +
-+　　作家吴稼祥说：“一个人，一个派别陈述的历史是不可靠的。多一个人，一个派别陈述，历史就多一分真实。”最近读到的一些可以叫做历史的文章，让人觉得吴先生的论断真是正确。
++　　今晚我一个人吃饭。这听来不只凄惨，简直有些大逆不道了。我其实很想和谁共进晚餐的，可看看身边的家人同事朋友都在做忙碌状，于是我只能凝神皱眉，琢磨一个人该去吃些什么。
 +
-+　　还是拿大人物来说事吧。
++　　我很想去金融街上我常常光顾的一家韩国餐馆吃石锅拌饭，烤黄鱼和辣白菜。可是，一个人去，总觉得怪怪的吧。打扮整齐独自走进餐厅吃饭之类的事需要超乎寻常的勇气，我做不到。所以，我决定回家吃。
 +
-+　　周恩来是我们很敬重的一位好总理，他于 1976 年 1 月 8 日因患癌症不幸去世。周恩来去世后，设在美国纽约的联合国总部破例降了半旗，据说这是自 1945 年联合国成立以来的第一次。于是一些国家感到不平，他们的外交官聚集在联合国大门前的广场上，言辞激愤地向联合国总部发出质问：“我们国家元首去世，联合国的大旗升得那么高，中国的总理去世，为什么要为他降半旗呢？”
++　　家里有榨菜、咸蛋、方便面和速冻饺子，可我一样也不想吃。
 +
-+　　这时，联合国秘书长瓦尔德海姆走出来，在联合国大厦门前的台阶上发表了一场极为精彩的演讲。他说：“为了悼念周恩来，联合国总部下半旗，这是我决定的。原因有二：一是，中国是一个文明古国，它的金银财宝多得不计其数，它使用的人民币多得我们数不过来。可是它的周总理却没有一分钱存款！二是，中国有 10 亿人口（那时中国只有 8 亿人），占世界人口的 1/4，可是它的周总理却没有一个孩子。你们任何国家的元首，如果能做到其中一条，在他逝世之日，总部将照样为他降半旗。”说完，他转身就走，广场上的外交官们个个哑口无言，随后响起了雷鸣般的掌声。
++　　吃饭对我而言，是件大事，绝对不能将就。我还是要吃黄鱼，还想吃炒圆白菜，还想吃稻香村的素什锦。没有人给我做，我自己试试看，万一实在难吃，我再叫外卖也来得及。
 +
-+　　我最初听到这个事件时，也被感动得要命。可是去年的 11 月，我在网上看到一些资料，说是联合国总部从来没有给周恩来降过半旗！有网友还曾就此事于 2001 年致信联合国总部，答复是“从无此事”。
++　　听说我在家里做饭，朋友的短信只有惊诧的几个字：你怎么了，问号后面还加了感叹号。这倒让我心生感慨了。我穿好围裙，关上厨房的门，把空调开大。
 +
-+　　然而，最近又有人撰文说，联合国总部确实给周恩来降半旗了，但那只是一种例行公事之举。联合国总部于 1947 年制定了一部旗典，其中有关志哀的规定是：凡成员国的国家元首或者政府首脑去世，必须在纽约总部和日内瓦的办事处降半旗志哀一天。这样一来，瓦尔德海姆那一场慷慨激昂的演讲就成了无稽之谈，我也就激动不起来了。
++　　四十分钟后，我把托盘放到餐桌上。我，居然有了一整条烤黄鱼，酥酥的，不放任何调料也很好吃。还有一盘炒圆白菜，细细的丝，我切了好久。素什锦也买了，稻香村做得实在好吃。我还焖了点米饭，还冲了一碗日式味增汤。
 +
-+　　我还要说说李四光。这个被称为“地质之光”的原国家地质部部长，因为提出了“地质力学”理论而誉满神州。据说正是靠着这一理论，中国才在东北大庆找到了石油，从而甩掉了我国贫油的帽子。可是，大庆油田明明是真正的“中国石油之父”黄汲清先生运用他独创的“大地构造理论”和“陆相生油论”，首先提出并且坚持在松辽盆地进行勘探才最终发现的。“大庆等东部油田的普查与发展与地质力学的理论无关”，而且“地质力学理论至今也未得到国际地质界的承认和采用”。
++　　我吃了一顿色彩调和，味道不错的晚餐。
 +
-+　　天哪，这样的事实，这样的结论，时至今日，全中国的男女老少有几个知道？受到“知遇”之恩的李四光，至死一言不发，而“有关方面”也不出来澄清，大家都被蒙在鼓里。就连中学的地理课本上，还在教孩子们运用“地质力学”找石油！
-+
-+　　其他还有在太空能看到长城、美国西点军校学雷锋等，都曾经被炒得沸沸扬扬，最后又有人出来辟谣，说并无此事，让人如坠云里雾里，不知东南西北。
-+
-+　　把本来没有的东西，煞有介事地说出来、写出来，会起到什么效果呢？无非是造谣惑众而已。胡适说过：“历史就是一个小姑娘，任人随便打扮。”中国古代有句成语叫“三人成虎”，西方有句格言叫“谎言重复三遍就成了真理”。
-+
-+　　有一个肯定是要被钉在耻辱柱上而不是记到光荣榜里的人物——安徽省原副省长王怀忠。吴非先生在一篇文章中谈到此人时说道：“早些年，王怀忠开始在阜阳折腾，搜刮民脂民膏为自己树碑立传时，老百姓骂他是‘王坏种’。后来王怀忠在骂声中官运亨通，老百姓眼看着他荣升到副省长，就不大敢骂了——不是胆小，而是开始怀疑自己道听途说，冤枉了贤良，怀疑自己骂错了，进而弄不清社会的价值取向……”
-+
-+　　如今，我们面对种种扑朔迷离的说法，就更加怀疑起自己来。
++　　对我而言，这是值得纪念的一天。
 \ No newline at end of file
-```
-
-## 见证逆潮.md
-
-```diff
-
-@@ -0,0 +1,758 @@
-+# 见证逆潮
-+
-+　　我的父母作为中国金融领域的首批从业者，他们的职业生涯从中国早期的银行业扩展到证券行业，所以我一出生便有了一个更加容易感知金钱的成长环境，这使我早早地感受到了经济和金融的脉搏。
-+
-+　　童年的时候，父母不得不一边工作一边照顾我，导致我从小就要跟着父亲一起进入企业做调研一虽然那时候我只是一个蹭吃蹭喝的小跟班；
-+
-+　　童年的时候，我曾跟随外公作为新中国第一代股民在“486”电脑的 DOS 系统中敲敲“潜龙”、看看“龙虎榜”，跑到楼下散户大厅里盯着那个翻牌报价机，感受美妙的数字世界和人生百态一虽然那时候我只是在暑假来蹭证券公司大户室的空调图凉快的。
-+
-+　　童年的时候，我在银行门口看到有人倒卖外汇券。那是当时的汇率制度不完善的产物，是违法的，但是那种买卖的感觉逐步在我的心中埋下了种子一虽然那时候我只是在那里等母亲下班。
-+
-+　　这些童年的经历，以及间接地和金钱打交道确实为我的成长提供了非常大的帮助。我深刻地认识到，对金钱的敏感度在金融领域的各个方面都有着至关重要的作用，无论是投资、理财还是借贷，都离不开对金融知识的了解和对市场的敏锐洞察力。这种敏感度不仅体现在对货币价值的判断上，还体现在对市场动态、投资机会以及风险评估的洞察力上。
-+
-+　　通过见证和实践，我逐渐掌握了这些必要的技能和知识，并将其运用于我的生活和工作中。因此，我也非常注重让我的子女在金融方面得到良好的熏陶和教育。只有让他们“泡”在和金钱打交道的环境中，参与或见证金融行业的各个维度和方面，才能够让他们对金融有更加深刻的认识和了解，从而在将来具备独立处理金融事务的能力和素质。
-+
-+　　在伦敦的 10 多年时间里，从大学期间倒卖二手车、做换汇业务、汇率套期保值，到毕业后在金融机构实习，再到最后进入一家对冲基金公司工作，我非常幸运地接受了学院派和实战派的共同培养。我非常感谢那些年在工作中与我无私分享的老板和同事，他们的无私分享使我以最小的代价和最少的时间成本获得了最快速的成长。
-+
-+　　他们这种分享精神让我深受启发，使我养成了良好的交流习惯。2000 年，当时新兴的即时通信工具（QQ）在国内开始流行，我逐渐认识到与他人即时交流的重要性。后来，我开始参加国内的一些金融论坛，与他人积极分享和互动。20 多年来，我始终保持着写日记的习惯，并逐步借助更具时代特征的工具与他人保持频繁的沟通和交流。
-+
-+　　我认为沟通和交流是一个互相补充的过程。通过交换信息，我们可以发现彼此的优点并弥补各自的不足。对金融从业人员而言，沟通和交流是基本素质之一。他们不应局限于每天坐在电脑前关注新闻和报价，应适当地放慢交易节奏，多参与户外活动，与同行及非同行进行发散性沟通。这对于他们拓展思维非常有益。
-+
-+　　这么多年来，我一直坚持写日记，并乐于与他人分享我的见解和经验。通过我的日记，许多人获得了很多有价值的建议和启示。然而，也有不少人纳闷，为什么我如此愿意分享，因为在他们看来，大多数人并不会轻易地公开自己的日记。然而，我的分享习惯实际上与我的记录习惯密不可分。我始终认为，我记录下来的不仅是文字，还是自己的成长历程和思考过程。
-+
-+　　全球大类资产所涉及的投资领域非常广泛，它并不是一个不可告人的市场。在这个市场中，一个人展现得更多的是其投资逻辑、投资框架等综合素养。在投资过程中，我公开自己的投资理念和决策过程不但可以增加自己的投资信心，而且可以为他人提供有价值的参考。此外，我通过分享自己的投资经验，还可以帮助他人更好地了解市场动态和投资风险，与他人共同探讨投资之道。
-+
-+---
-+
-+
-+　　伦敦金融城和纽约华尔街都是全球知名的金融中心，汇集了众多的投资大佬。这些投资大佬大多数是经验丰富的老者，他们有着许多年的投资经验，对市场有着深入的理解和精准的判断。与此不同，在中国，我们看到的投资者们往往是年轻气盛、意气风发的年轻人，他们凭借着勇气和冲劲在市场上崭露头角。
-+
-+　　我记得有一位投资非常成功的老前辈跟我说过，金融市场的投资生涯就像是一场马拉松比赛，考验的并不是选手们的速度，而是他们的耐力和节奏。在投资中，职业选手并不会被眼前的短期利益所迷惑，而会以更加长远的眼光来规划自己的投资策略。他们懂得如何控制自己的气息，掌握步伐节奏，从而在投资的长跑中获得最终的胜利。
-+
-+　　而那些“爆发型”的外行，虽然可能会在投资过程中暂时取得大幅度的领先，但如果没有自知之明，不了解自己赚钱的原因，那么他们很可能会对自己的投资能力产生误判，从而变得过于自大和鲁莽。这样的行为往往会导致他们在到达终点前功亏一，错失获得最终胜利的机会。因此，在投资市场上，真正的赢家不仅需要有精准的判断力和长远的眼光，还需要具备稳健的投资策略和良好的心理素质。
-+
-+　　前辈的话，凝结了他的人生体悟。他用自己丰富的经验和深刻的见解，为我们指明了前行的道路。我们选择进入金融市场的第一件事情就是问问自己，我们是在寻找一条长期稳定的投资回报之路，还是希望通过短期的高风险高收益来获得暴富的机会呢？
-+
-+---
-+
-+
-+　　分工和分配是古典经济学和现代经济学的核心框架。经济学并不是一个解决方法，它更多的是对于原因的探求。从亚当·斯密开始，经济学家们试图去解释一种在自由市场模式下起主导作用的分工和分配的体系，理想化地实现自我的再平衡机制。凯恩斯认为，市场经济无法实现充分就业和收入的平等分配。当经济出现结构性问题时，凯恩斯主义无法解决债务扩张和分配失衡等核心矛盾，只能延缓问题的爆发。对于经济危机的爆发，有两种对立的观点：一种观点认为是市场失灵造成的，因此主张强化政府干预：另一种观点认为是政府不当干预造成的，因此应当减少干预，让市场自动实现经济恢复。经济学派先后经历了古典自由主义、凯恩斯主义、主张恢复古典自由主义的新自由主义三个阶段。
-+
-+---
-+
-+
-+　　记得 2016 年我在华盛顿和美国的一些智库进行交流的时候，就已经发现这不是一个简单的贸易问题。美国的“精英们”其实已经将对于矛盾的担忧上升到了对于全球分工和分配问题的核心矛盾的讨论。在这个问题上，中美价值观产生了巨大的分歧，而这种分歧是无法调和的。
-+
-+　　当世界的分工和分配的角色发生变化的时候，意味着我们原本运转了几十年的全球分工体系下的大类资产的逻辑将会随之变化。对于这些内容，我会在后面的章节中详细展开。
-+
-+　　在债务和杠杆领域，达利欧是权威，他对债务和杠杆的洞见颇深。众多人士仅学到了金融的皮毛，而实际上，金融的核心在于债务和杠杆。金融业本质上就是提供债务和杠杆服务的行业，其通过金融市场及服务来满足各领域对债务和杠杆的需求。在后续内容中，我将深入探讨金融对资产的影响。
-+
-+　　收入是支撑债务和杠杆的关键，而债务和杠杆以及金融本身，又是导致收入差距甚至贫富分化的根源，这形成了一种独特的闭环。依赖债务和杠杆的后果便是周期性危机，因此，西方的周期性危机可以从这个维度进行解读。然而，这并非周期性危机的哲学源头，只是其中观危机的表现。
-+
-+　　当然，在现代经济的运转模式下，危机的出现并不是一个完全自然的结果。实际上，它的产生往往是监管政策变化的结果。这些变化驱动着加杠杆和去杠杆的周期性循环。当政策倾向于鼓励加杠杆时，金融市场会受到刺激而进入一种贪婪的状态，即追求高收益和快速回报。然而，当去杠杆开始时，泡沫会被刺破，市场又会经历一次崩溃和重建。
-+
-+---
-+
-+
-+　　对于市场为何不能保持稳定、平衡的发展，或许我们需要跳出金融市场的范畴，从更深层次的心理学的角度去寻找答案。人类的本性可能在其中起到了关键作用。本性使得个别人在追求财富和地位的过程中，会被眼前的利益所迷惑，从而忽略了风险的存在。这也许就是为什么市场会经历一轮又一轮的繁荣和萧条，而无法持续平稳发展的原因。
-+
-+　　收入和贫富是分工和分配所导致的必然结果，也可以被视为债务和杠杆效应的产物。无论是在产业领域还是在国际分工体系中，这一规律都适用。如果仅仅依靠分工和分配来获取收入，那么贫富差距的扩大速度会非常缓慢，不同劳动价值之间并不会因为分工的存在而形成巨大的差异。然而，一旦引入债务和杠杆，贫富差距就会被迅速拉大，进而导致金融领域的实力越强大，危机周期就越短。这种趋势同样适用于国家之间的分配关系，即全球化矛盾会随着金融实力的增强而变得越来越尖锐，危机周期也变得越来越短。
-+
-+　　而我们创造收入的能力、创造新的需求的能力并不会随着金融的强大而加速，或者周期性变短，因为在从技术创新到应用的过程中，金融的作用或许大一些，但在创新的初期，金融的作用微乎其微，这是由资本逐利的天性决定的。
-+
-+---
-+
-+
-+　　社会组织复杂化、技术的发展和垄断，以及金融自由、业空心化都在一定程度上导致了财富不平等的加剧。现代信用货币体系发展以来，金融自由化和债务杠杆在加速全社会财富增长的同时，也加速了财富的分化。分配的不均导致有效需求不足，甚至会导致经济危机或社会危机的爆发。在危机的冲击下，各国决策层形成了宽松刺激政策托底需求的路径依赖，但依靠利率曲线下移推动的需求是以推高杠杆和债务累积为代价的。举债终究是要还的，负债是以未来的收入为基础的。杠杆和信贷刺激了市场的虚假紧荣，金融体系自身也有顺周期性的特点。资本家受利益驱使盲目扩大生产，但从长期来看，没有有效需求支撑的生产最终会过剩。刺激政策本身不能够从根本上解决收入增长和分配的问题，在新的经济增长点出现或以危机的形式完成出清之前，经济增长和通胀预期的中枢仍然趋于下行。近百年来的两次危机一 1929 年的经济大萧条和 2008 年的金融危机，其背后都有分配矛盾累积的影子。历史上，战争的爆发和王朝、政权的更迭也大多是因贫富分化、社会阶级矛盾达到不可调和的程度造成的。
-+
-+---
-+
-+
-+　　随着全球范围内的贫富差距日益扩大，国家内部的贫富差距也呈现出不断扩大的趋势。这种不断加剧的不平等现象最终会导致各种矛盾的不可调节，进而引发全球范围内的剧烈变革和再分配。这种再分配不仅包括国家之间的财富再分配，还包括国家内部的资源再分配。
-+
-+　　贫富差距的扩大不仅会对经济发展产生负面影响，还会对社会的稳定与和谐产生深远的影响。因为贫富差距的扩大会导致社会不同阶层的紧张和不满情绪逐渐积累，进而引发各种社会矛盾和冲突。
-+
-+　　这三部分内容构成了我经济世界观的核心，是我们理解大类资产逻辑框架的关键，也是我们后续从中观或微观角度展开论述所有大类资产关系的基础。这个经济世界观是我们认识经济世界、理解大类资产关系的基石，为我们提供了一个从宏观到微观、从大到小的视角，帮助我们更好地阐述不同维度下大类资产之间的关系。
-+
-+## 1.3 见证逆潮时代
-+
-+　　二战后，全球化的发展经历了一系列显著的变化。从德国和日本开始，全球化逐渐扩展到东南亚、亚洲四小龙，以及中国大陆。全球化一路高歌猛进，不断推动着世界经济的繁荣和发展。然而，2008 年的金融危机给这个看似强劲的发展趋势敲响了警钟。这场危机不但波及范围广，而且给全球经济带来了严重的破坏，许多国家和地区的经济都受到了不同程度的影响。因此，2008 年的金融危机可以被视为一个重要的历史节点，它提醒人们全球化的发展并非一帆风顺，需要人们时刻警惕和审慎应对。
-+
-+　　在那之后的漫长岁月里，全球范围内的分工合作、互利共赢与失衡危机、再分配的博弈，如同一条环环相扣的链条，周而复始地循环着。每一次循环，都似乎在讲述着一个全新的故事，而这个故事又与我们在前文中探讨过的所有议题紧密相连。我们这一代投资者，大多只亲身经历了过去几十年中国逐步融入全球化浪潮后的发展阶段，对于这个周而复始的循环后半段的历程，大多数人只能从书本中寻找那些历史的痕迹。
-+
-+　　这个循环，是一个跨越了时代、国家和文化的复杂现象。在不同的历史阶段，它以不同的形式和表现出现，但无论以哪种形式出现，它都反映了人类社会在寻求发展、进步和平衡过程中的矛盾与挣扎。在这个循环中，我们可以看到全球化的推进如何带动了经济的繁荣和社会的进步，但同时也带来了新的挑战和问题。
-+
-+　　全球化带来的分工合作和互利共赢是不可否认的。通过跨国合作和贸易，企业得以在全球范围内寻找最优的资源、技术和市场条件，从而提高生产效率，促进经济发展。然而，全球化也带来了一系列失衡和再分配的问题。随着技术的快速发展和全球市场的不断扩大，国家之间的贫富差距日益扩大，社会内部的贫富差距也开始显现。
-+
-+　　为了解决这些问题，各国政府和国际组织开始寻找再分配的途径。他们采取了一系列政策措施，如贸易保护主义、社会福利计划、税收改革等，以重新分配全球化的利益，减小社会内部的贫富差距。这些措施在一定程度上取得了成功，同时也带来了一些新的问题。
-+
-+　　对我们这一代投资者来说，全球化带来的发展机遇是前所未有的。中国在过去几十年里的飞速发展，就是全球化进程中的一个重要组成部分。中国经济腾飞在很大程度上得益于中国企业的全球化战略和中国市场的开放。然而，我们也需要清醒地认识到，这个发展过程并非一帆风顺，在享受全球化带来的机遇的同时，我们也要面对全球化带来的挑战。
-+
-+　　历史是一面镜子，它能够让我们更好地理解现在和未来。通过研究全球化的历史，我们可以更好地理解全球化进程的本质和规律，从而更好地应对和把握未来的挑战和机遇。同时，我们也需要认识到，全球化是一个复杂的现象，它需要各国共同努力和协作才能得到有效的推进和发展。在这个过程中，我们需要保持开放的心态、积极的态度和创新的思维，以应对全球化带来的各种挑战和问题。
-+
-+　　2016 年，唐纳德·特朗普的当选让全球局势陷入了动荡和纷争，引发了全球范围内的贸易争端和不确定性，进而导致了全球民粹主义思潮的大幅度升温。这种思潮的崛起，让全球经济开始出现分前离析的现象，动荡和纷争也在这个过程中不断加剧。事实上，这一系列动荡和纷争几乎贯穿了 2008 年金融危机后的 10 年，而这个问题并没有得到有效的解决，直到 2016 年才逐渐浮出水面。
-+
-+　　随着新冠疫情的暴发，逆全球化的声音也日益加大。虽然对这个话题的讨论仍在继续，但实际上，全球经济的分前离析或许早已发生。原有的金融市场逻辑框架发生了一些非常明显的变化，这些变化包括但不限于证券市场上的资本流向、全球资本在选择标的物和投资资产时需要考虑的因素，等等。这些变化让产业端也悄然无声地发生着改变。因此，我们需要认真思考如何应对这些变化，并采取相应的措施来避免未来的动荡和纷争。
-+
-+　　这并不是一种简单的、局限在某一特定领域的矛盾，而是一种深度的、牵涉到大类资产的中观传导逻辑的复杂现象。它远远超出常规逻辑的范畴，需要我们以一种全新的视角去看待和理解。这就是为什么我要把核心的经济世界观放在所有内容的开端，因为我们需要借助它，并以它为基础，从而深入思考未来的可能性。
-+
-+　　这个充满不确定性的逆潮时代，可能会延续很长的时间。当我们在金融市场上观察到由宏观经济、微观经济和产业政策变化驱动资本基本面改变，并逐渐渗透到金融市场上产生强烈反应时，我们不得不去思考过去在全球化分工和分配世界观下的产物在经历 40 多年的时间后是否已经发生了变化。依赖过去这 40 多年全球化的资产交易逻辑似乎已经不再适用，现在我们需要重新审视这个领域，重新思考新的逻辑和框架。
-+
-+　　这也是我撰写本书的重要动机之一。在实体经济和金融及金融衍生产品领域，我们其实都得益于全球化的红利，目睹了地球村这 40 多年的发展。可以说，我们都是这 40 多年经济红利的受益者。然而，对许多人来说，当前这个时代是一个前所未有的、具有重大特征的时代。因此，如果继续依赖过去 40 多年的投资经验和逻辑，很可能会遇到极大的问题。
-+
-+　　事实上，本书从提出立意到成书，已经有好几年的时间了。在这几年中，我发现金融市场在越来越强化这样的路径和逻辑。因此，我认为有必要重新审视并整理这些思路。或许，我们正在见证一个从全球化到全球明暗脱钩的逆潮时代。
-+
-+　　为了对过去 40 多年的逻辑进行回顾，我在本书中以通俗易懂的语言表达了我的思想，并对未来的变化提出了可能性。希望这些思想和提议能给予读者一些启示，并对他们有所启发。
-+
-+　　作为金融领域的一名从业者，或许思考和研究如此大的框架从短期来看意义并不大，但如果人们希望能在金融这个行业长时间耕耘，这样的思考可能会有真正意义上的帮助。这个帮助是全面的，从全局到细节，从宏观到微观，从理论到实践，从价值观到市场，都能帮助人们洞察先机。
-+
-+　　虽然我写作这本书经历了一个漫长而艰辛的过程，耗费了数年时间，但最终呈现出来的成果是值得的。在这个过程中，我静下心来梳理和整理了各种复杂的信息。我希望通过这些内容，帮助大家在当今起伏动荡的全球市场中厘清思路，在复杂多变的全球市场中寻找问题的答案。
-+
-+　　最后，我将这本书赠予我的孩子们，期望它能成为他们未来理解世界、进入经济和金融行业的基石。同时，我要向我的前辈们以及与我共同努力、整理这本书的同事们表示感谢。如果没有他们的协助，我可能要等到正式退休以后，才能完成这样全面、系统的整理工作。
-+
-+---
-+
-+
-+　　我比较认同的理论是克鲁格曼的新贸易理论。它将市场的不完全性、战略性行为和新产业经济学、新增长理论以及新政治经济学等纳入新贸易理论分析框架，突破了传统贸易理论分析框架，在扩大自由贸易的理论基础的同时，对传统自由贸易理论的基本结论和政策提出了挑战。
-+
-+　　新贸易理论所支持的贸易政策被称为战略性贸易政策。全球化发展是资本逐利推动的必然结果，不断扩张产能最终导致需要更大的市场和更低的成本。欠发达地区提供更低成本的劳动力，发展初期的国家普遍会采用包括贸易保护和补贴、信贷优惠、国内税收优惠等政策保护和扶持那些承担巨大风险、需大规模生产以获得规模经济、能够产生外部经济利益的高新技术产业和对本国未来发展至关重要的行业等战略性产业。这些国家的政策制定者认为，这样做能够创造本国在这些产业上的比较优势，并且产生技术外溢，以便在未来主导全球产业分工秩序，获取大量的外部经济利益，增加本国的增长潜力，这就导致了国际市场竞争是不完全的。
-+
-+　　克鲁格曼的新贸易理论曾引发较大的争议和讨论，并未被主流经济学界广泛接受。然而，随着 2008 年金融危机后全球经济形势的逐步演变，克鲁格曼的不完全竞争下的新贸易理论和战略性贸易关系逐渐得到了证实。从自由贸易走向战略博弈的必然结果，就是打破了传统自由贸易分配的模型。国家竞争优势理论、战略性贸易政策理论、贸易自由化和新贸易保护主义无疑会破坏基本的贸易环境，加剧竞争，使全球在分工和分配中失衡。
-+
-+　　当前全球主要经济体纷纷背离自由贸易体系，导致各国国内政治和经济诉求日益增强。这些诉求的日益增强，正在促使大国重新调整它们的优先事项，并对全球贸易体系产生深远影响。多年的竞争关系引发的贸易冲突、供应安全、地缘政治和竞争性贸易政策等问题不断侵蚀着自由贸易的基础，越来越多的国家和地区被卷入战略贸易竞争的版图中，被迫“站队”。
-+
-+　　从全球分工带来的利益，到利益的分配，形成了两个主流的观点。分配是不同价值观的碰撞，说到底是利益的争夺。因此，从利益分配的视角来看，存在两种分配方式：零和博奔下的利益偏向式分配和增量下的共赢分配。
-+
-+　　在全球分工的背景下，利益分配问题逐渐显现。不同的国家和地区在国际贸易中扮演着不同的角色，承担着不同的责任和风险。一些国家和地区通过控制关键资源和市场，获得了大部分利益，而另一些国家和地区则因为缺乏这些资源和市场，无法获得相应的利益。这种利益分配的不均衡导致了各国之间的矛盾和冲突。
-+
-+　　在增量下的共赢分配中，各方可以共同分享利益，实现互利共赢。这种分配方式可以促进各国之间的合作和交流，推动全球贸易体系的稳定和可持续发展：通过加强国际合作、优化资源配置、降低贸易壁垒等措施，可以实现更加公平、合理的利益分配，促进全球经济的繁荣和发展。
-+
-+　　而零和博奔下的利益偏向式分配，意味着某些国家或地区获得更多利益的同时，其他国家或地区则会失去利益，这种分配方式可能导致一些国家或地区获得短期利益，但长期来看会导致其他国家或地区的贫困和不满，进而引发贸易保护主义和贸易冲突的风险。
-+
-+## 2.7 有没有公平的分工和分配？
-+
-+　　国际经济分工和分配背后是否存在真正意义上的公平机制呢？
-+
-+　　在现代经济学的框架中，我们已不再采用古典主义自由市场模型的分工与分配方式，这意味着我们已无法找到真正意义上的公平机制。
-+
-+　　从古至今，各种不同“主义”的相继出现，实质上只是对分配的合理性和公平性进行了不同的量化处理。可以设想，如果有一日，世界真的实现了乌托邦式的绝对平均分配，那么整个社会的发展动力将随之丧失。绝对平均分配无疑会削弱人的积极性，这一做法既违背了人性，也与资本的基本原则相。
-+
-+　　关于这一点，任何对社会运行机制有基本理解的人都会明白，无论是人性、资本还是分配，其运行都是自上而下的。无论何时，都会有人对分配机制存在异议和争论。这些异议和争论，实际上是不同阶层从自身利益出发看待问题的结果。
-+
-+　　其实，如果我们加上一个时间概念并从人类历史的长河中寻找答案，则分工和分配看起来确实是平等的。在漫长的岁月里，没有一个民族或国家能够占有一切生产要素。这就像小到一个家族的财富传承一样，经常会出现“富不过三代”的情况。同样地，大到一个王朝的兴衰，每个时代也都有其独特的辉煌和衰落。在足够长的时间下，分配一定是均衡的。
-+
-+　　然而，当我们考虑到具体的期限时，由生产要素的所有权主导的分配又必然是不平等的。这一点在“时势造英雄”的现象中得到了体现。这也反映了一个事实：即使在同一个社会中，不同的人也会因为拥有不同的生产要素而获得不同的收益和地位。因此，我们不能仅仅从时间的角度来看待分工和分配的平等性，还应该考虑到具体的生产要素所有权和时间期限的影响。
-+
-+　　古典经济学提倡的自由市场理论是经济学发展历程中具有历史意义的一步。这一理论主张让市场自由运行，通过供求关系和竞争机制来调节市场的自我平衡。自由市场理论的提出，为经济学的发展开辟了新的道路，也为后来的经济学研究提供了重要的理论基础。
-+
-+　　在社会的发展进程中，人们对私人财产所有权的确认和保护是一个伟大的进步。这一进步可以追溯到古罗马时期，当时的人们已经开始意识到保护私人财产的重要性。这一观念的兴起，为人类社会的发展注入了新的动力，并大幅推动了社会生产力的进步。
-+
-+　　私有制对于生产要素所有权的保护起到了至关重要的作用。在私有制下，生产要素的所有者可以自由地使用和处置自己的财产，这大大提高了生产效率。同时，私有制也为生产要素所有权的保护提供了法律保障，使人们可以安心地投入生产，不用担心自己的财产被他人侵占或掠夺。
-+
-+　　从这时起，有形的生产要素实现了真正意义上的商品化，这也为后世开启了市场经济的大门。在市场经济中，生产要素以商品的形式在市场上通过交易实现流转和配置，从而形成了各种生产要素市场。这些市场通过供求关系和竞争机制来调节市场价格，进面实现资源的优化配置。
-+
-+## 3.7.2 债务和收入之间的关系
-+
-+　　经济增长是由债务杠杆和收入分配相互关联的数学关系式所描述的（见图 3-2）。经济的发展引起债务和杠杆的需求增加，而债务和杠杆的增加又推动经济的发展。经济的增长促进收入的增加，收入的增加则推动消费进而导致债务和杠杆的进一步增加。这种债务和杠杆的增加又反过来促进经济增长，推动生产并带动债务和杠杆的增加。在债务和杠杆的增加过程中，收入需要与之相匹配地增加。解决任何债务问题，最终都是以是否有持续的收入作为基础的。只要收入的增加能够持续，债务问题就不会演变得很严重。一旦收入的增加无法持续，债务和杠杆潜在的问题就会显现，并且产生连锁反应。
-+
-+---
-+
-+
-+　　金融化程度的加深意味着在给定时间内获得的收入越多，收入和贫富差距会经历以下三个价值阶段：
-+
-+　　第一阶段，即劳动价值阶段。体力劳动者之间的收入差异并不显著。尽管他们在相同的单位时间内可能获得不同的收入，但由于供需关系和职业分工的影响，这种收入差异并不至于形成巨大的贫富差距。例如，一位修车工和一位厨师，他们可能在技能和工作的难易程度方面存在差异，从而导致收入有所不同，但这种差异并不至于形成显著的贫富差距。与债务和杠杆所带来的收入不平等相比，单纯的生产效率提高所带来的收入差异并不会引发整个社会的贫富差距过大的矛盾。每个人都会随着时间的推移和不断学习提高自己的生产效率，这不仅有助于提高整个社会的经济效率，还有助于推动社会向更为公平的橄榄形社会发展。
-+
-+　　第二阶段，即债务价值阶段。企业为了获得超额收入，开始关注如何提高负债能力。它们会将资产负债表中资产的超额投资回报的重点转向如何利用负债获取。
-+
-+　　第三阶段，即杠杆价值阶段。杠杆的运用将迅速提高整个产出或收入的斜率，也就是说，在固定时间内获得的收入将大幅度增加。在这个阶段，贫富差距会被迅速拉大。
-+
-+　　随着债务和杠杆的增加，也就是金融化程度的加深，掌握如何增加负债和杠杆的人就掌握了财富分配的权力。在这种情况下，收入和贫富的分化将会越来越严重。由于一部分人会率先意识到债务和杠杆的作用，而另一部分人则相对滞后，因此债务最终将越来越集中在社会阶层的中底部，而财富将越来越集中在掌握着财富分配权力的顶层。可以说，债务和杠杆应用的先后顺序自然而然地区分了社会的贫富阶层。
-+
-+---
-+
-+
-+　　随着收入的提高，债务规模也在不断扩大。债务增长在一定程度上促进了经济增长，而经济增长反过来又为债务增长提供了支撑。然而，当债务增长超过收入增长时，就有可能出现过度金融化的现象。此时，资本规模的扩大已超过实体经济所需要的程度，导致收入增长与债务增长失衡。
-+
-+　　此外，债务增长还可能导致社会财富分配不均衡。当贫富差距扩大到一定程度时，富人会更富有，而穷人则会更加贫困。这种贫富分化现象会进一步加剧收入增长和债务增长的失衡。
-+
-+　　一旦总收入停止增长，生产函数的斜率将逐渐趋近于零，则债务增长也将停滞。为了恢复平衡，必须降低债务负担。这意味着有人需要承担偿还债务的责任，实现收入和债务的再分配与再平衡。经济的周期性表现正是这些要素综合作用的结果，
-+
-+---
-+
-+
-+　　根据国家分工的不同，我们把世界上的国家分为三类：
-+
-+　　（1）负债国。负债国掌握着负债的权力，是全球分工的分配者，拥有完善的教育体系和大量的研发储备人才，拥有较高技术水平的经济增长效率，对于金融体系拥有绝对的领导能力，拥有较大的消费比重。
-+
-+　　（2）生产国。生产国拥有较大的劳动力优势，其收入依靠全球分工赋予的生产加工制造能力，拥有较高生产优势的经济增长效率。
-+
-+　　（3）资源国。资源国拥有资源票赋优势，但经济结构单一，劳动力和资本优势不明显。
-+
-+　　据此，我们大概可以得出：负债国的收入更多源于资本项目的流动：生产国的收入更多源于经常项目的顺差：资源国的收入则集中在一两种经常项目的出口上。
-+
-+　　在全球总收入增长的过程中，只要能够进入这个全球分工和分配的体系，国家之间并不会体现出明显的贫富差距，甚至一些新进入的国家因为基数小，其增速的表现会更明显。这一阶段的普遍表现是贫富差距的缩小。正如索罗斯评价全球一体化带来的好处时表示，全球经济一体化带来了国家收入的增长，缩小了国家之间的贫富差距。
-+
-+　　如果我们把全球作为一个整体来看，全球生产函数中技术水平的常数的变化，意味着我们必须有跨时代意义的技术革命。从教育、研发、应用到产业化，再到全球产业化分工，新的技术要能够对各行各业都产生重大的影响。无论从其规模、影响范围还是复杂性来看，这种改变全球生产函数的技术革命必须能够彻底改变我们生活、工作和社交的方式，但这样的改变并不容易发生。
-+
-+　　第一次工业革命采用水蒸气为动力，实现了生产的机械化；第二次工业革命通过电力实现了大规模生产：第三次工业革命则使用电子和信息技术，实现了生产的自动化。我们并不知道下一次改变全球生产函数的革命会在何时何地、以何种形式发生，我们唯一知道的是，这需要足够长的时间。这个时间成为我们最大的瓶颈。当全球总收入增长遇到瓶颈的时候，各国内部收入和贫富差距会处在临界值，并且国家之间的收入和分配的问题还直接关系到各国内部的收入和分配。
-+
-+　　在全球总收入增长遇到瓶颈，且生产函数无法获得实质性的变化的真空期内，各个国家为了保证各自的债务能够延续，并降低风险，对于自身收入的保护会大大增强。在这一阶段，全球经济一体化必然会陷入停滞状态。例如，国家 A 如果选择通过自身的优势侵占国家 B 原有的优势来获取收入的增长（准确地说，是“切蛋糕”而不是共同“创造蛋糕”），则国家 A 的收入增长会延缓其负债带来的问题；而国家 B 的蛋糕受到冲击后，其收入的下降则会直接暴露出其债务问题。
-+
-+---
-+
-+
-+　　经常项目顺差通常会流入生产国经济体或国内经营阶层，其分配方式往往是自下而上的。大量经常项目顺差促使生产者收入增加，政府通过税收和资源分配手段进行收入再分配，这种分配方式往往侧重于税负。例如，在新兴市场中的生产加工企业，通常通过出售生产要素来获取利润，政府则运用各种税收手段进行“资金聚集”。这种收入来源使新兴市场中的大多数国家采取自下而上的内部分配方式，并成为重税负的国家。
-+
-+　　在国家财政环节，这些税收会转化为新的投资，从而推动生产国的经济增长。这种投资通常由政府驱动，政府的财政运转机制与这种税收机制高度契合。
-+
-+　　相比之下，消费国对内分配机制更多采用自上而下的分配方式，大量资本流动推动金融机构寡头垄断获取大量收入，政府则通过消费和社会福利保障等方式进行收入再分配，这种收入分配方式更偏向于重福利。
-+
-+　　在国家财政运作过程中，重福利往往会导致财政支出增加。由此引发了一个问题，即在理论上，自上而下的税收机制应加大资本税负并减轻底层消费者税负，以避免财政收支失衡。然而，现实情况并非如此。
-+
-+　　由于国际分工和经常项目逆差的影响，重福利国家在生产环节的税收无法增加，同时资本税收也大量留存在海外，居民部门的薪资增速缓慢导致居民税收无法增加。这一系列原因使得政府不得不采取重福利政策对居民部门进行补偿。长此以往，负债消费和重福利国家的财政赤字不断扩大，这种内部分配机制对其财政运转机制产生了重要影响。
-+
-+　　在全球产业链的演变过程中，美国收入来源已不再过度依赖传统的加工制造或经常项目的收益，而逐步扩大到金融机构和科技企业等。过去，华尔街、白宫以及大型托拉斯（垄断组织的形式）是其重要的收入来源，而当前则还要包括以硅谷为代表的科技领域的收益。在这个体系中，除了少数人能够获得巨额利润，其他人很难从中获益。在这些收入中的大部分进入社会的顶层和精英阶层之后，由于税收处在一个比较低的水平，大量的海外利润通过股票的股息分红等方式进行分配，而且大量跨国企业的海外利润在外截流，所以美国财政税收的改善仍面临着诸多挑战。
-+
-+　　为了维护社会的稳定，对于那些收入增长停滞甚至下降的底层民众，社会福利、教育和医疗等方面的保障与支持函须得到重视和加强。此外，美国的两党制度使得每一届总统在执政时都必须重视并推行高福利政策，以调整和平衡国内的经济分配机制。尽管这些福利政策仅能满足底层民众的基本生活需求，但它们仍然可能导致美国财政收支失衡。
-+
-+　　无论是哪种收入获得的方式，还是何种分配的方式，都必然会带来贫富的差距。无论是前面我们说的国家之间的贫富差距还是国家内部的贫富差距，这两者往往是同时发生的。
-+
-+　　在总体经济增长的情况下，虽然收入和分配问题仍然存在，但总量增长可以掩盖一些问题。一旦总体经济不增长，则国家 A 拿走的就是国家 B 的，国家 B 拿走的就是国家 C 的。然而，对于这个有限的存量经济，各国都在努力确保自己在发展过程中积累的债务风险不被“引爆”，以维持稳定和平衡，这种矛盾必然会导致各国之间为了自身的利益而进行斗争。
-+
-+　　因此，一旦全球出现一个效率超高的国家，将会带来一系列重要且复杂的影响。在资源分配方面，由于这个国家具备极高的资源利用效率，可能会导致全球范围内的资源分配出现严重失调。从分工的角度来看，这个效率超高的国家可能会逐渐成为全球舞台上的一个独立且强大的竞争者，这将对其在国际分工体系中的地位产生重大影响。
-+
-+　　这种情况可能会引发其他国家的担忧，当这些担忧转变为对国内收入和贫富差距的矛盾时，就可能会迅速转化为索罗斯所说的“民粹主义”。在这种情况下，为满足选民的诉求，修正这种贫富差距，最终可能导致民粹主义政府上台。民粹主义政府可能会采取贸易保护主义和设置市场准入壁垒等措施，推翻原有的国际分工体系，寻求收入再分配以实现新的均衡。
-+
-+　　因此，我们可以得出这样的结论：全球分工分配的最终失衡必然会导致民粹主义的崛起。十几年前，索罗斯就已经深刻认识到这个问题，因为他不仅关注国际分工和分配的问题，还关注这些分工方式和分配方式所导致的国内分配失衡问题。一旦国内底层群体开始施加压力，自由贸易政策将迅速让位于国内政治利益，因为对政治家来说，实现自由贸易并不是其真正的目的。
-+
-+---
-+
-+
-+　　人们通常认为里根是自由贸易的积极倡导者，然面实际情况并非如此。在现实中，根本不存在绝对自由贸易或绝对贸易保护主义。美国政府所追求的是符合其国家利益的自由贸易，更准确地说，是在遵循美国制定规则的条件下进行的自由贸易。如果其他国家不遵守这些规则，美国可能会采取相应的行动将其排除在外。这种现象并不只出现在美国，未来我们可能会看到许多其他国家也会出现类似的现象。这些国家的政治家们的最终目标都是确保底层民众的收入分配得以保障。
-+
-+　　然而，若对全球分工和分配进行再调配，则“海洋文明”一般不会选择对内分配，而是倾向于采取对外掠夺的方式，比如历史上的英女王的做法。对于底层民众，英女王采取了给予财富但不允许瓜分权贵利益的方式。在实现国家内部财富均衡分配的过程中，既要不得罪富人，又要让穷人获得财富。要做到这一点，如果只是国家内部财富再分配，必然会导致某些人的利益损失或增加，因此，英女王采取了投资船只、鼓励民众到海外掠夺西班牙人并分享战利品的方式。这种方式实际上是典型的“海洋文明”在终端收入分配时采取的对外掠夺策略，在一定程度上可以化解或缓解国内矛盾。
-+
-+　　相对而言，“大陆文明”则更偏向于通过对内分配来解决内部矛盾。这两种分配机制，一种是通过掠夺外部资源来满足底层民众需求，另一种是通过重新分配本国内部资源来平衡社会各阶层的关系。
-+
-+　　举个例子，如果中国的经常项目顺差受到压缩，那么中国可能会面临总收入减少或增长放缓的情况。一旦总收益呈下降趋势，债务问题就会变得突出，同时各阶层的矛盾，而不会对外扩张或掠夺他国资源。
-+
-+　　需要明确的是，必须有人来承担持续增加的债务。内债不同于一般债务，只要人民存在，它基本上就是一种对内的税收。如果税收基础无法增加，则需要更长的时间来积累。债务将转化为 T 形函数，需要一代人来承担，然后我们需要进行对内的重新分配。我们原有的税负方式将发生变化，即从重劳动税负转变为重资本税负。
-+
-+## 3.8 债务和杠杆——天使还是恶魔？
-+
-+　　在所有的关键要素中，债务、杠杆和金融无疑是重要的加速器。技术的进步、人类的演进以及社会的进化的过程都是十分漫长和艰难的。对财富的积累来说，这三个要素都是较为缓慢的变化因素，包括技术进步在内，它们都无法在短时间内带来巨大的财富积累。然而，金融的出现打破了这种局限性，使我们能够将对未来的预期“折现”到当前来支付。
-+
-+　　金融的发展和创新的本质就是通过质押信用来提前获取未来的财富。这不仅是财富积累得以加速的重要原因，还是导致财富分配加速失衡的重要因素。金融的这种特性，使我们可以利用未来的收益支持现在的消费，从而使财富的积累和分配都得以加速。然而，这也可能导致“富者越富，贫者越贫”的情况，进一步加剧财富分配的不平衡。
-+
-+　　从社会学的角度来看，债务、杠杆和金融的起源可以追溯到对利益的追求。虽然有人认为生产活动需求是金融的催生因素，但是金融的繁荣发展在本质上源于人类追逐利益的天性，这也是金融能够发挥效用的根本原因。随着社会需求的不断增长，金融部门得以扩展和发展。它扮演着债务和杠杆服务者的角色。信用是金融发展的基石，在此基础上，我们可以利用未来资源，为当前需求提供支持，进而加速财富的积累。
-+
-+　　通过金融机制，我们可以用今天的剩余资源满足今天的需要，也可以将这些资源转移到明天以满足未来的需求。此外，我们还能为今天的缺口打开现有资源的通道，并提前从未来获取预期收入。
-+
-+　　金融机制通过时间和空间的转移，以及预期收入的实现，对资源配置进行了优化，使其更加合理和高效。与水流向低处不同，资金倾向于流向高回报的地方。金融业打通了资本流动的渠道，为有财的人提供理财服务，为缺资的人提供融资支持，实现了信息的引导和资源的合理配置。对实体经济而言，借助金融工具，它们可以更好地掌握信用和负债情况，进而实现资产规模扩大和利润的增加。
-+
-+　　金融是历史的加速器，它让人们能够在一代人的时间内完成几代人难以实现的财富积累。这种财富在时间上的转移，无疑缩短了历史的进程。我们不能否认，金融在 K 型社会中扮演了至关重要的角色。它既是社会经济发展的重要推动力，也是造成社会不平等的重要因素。因此，我们需要更加理性地看待金融的双面性，既要充分利用其带来的机遇，也要积极应对其带来的挑战。
-+
-+　　金融服务的目标是促进实体经济的发展、提高投资效率以及扩大生产规模，这可以带来全社会收入的提升。然面，归根结底，金融的本质是债务和杠杆。由于资本天生具有贪婪性，因此债务和杠杆的水平不可能自动达到一个平衡点。实际上，我们基本上就是在债务和杠杆的周期性波动中循环往复。
-+
-+　　过度金融化带来了一些不可避免的整端。
-+
-+　　首先，过度金融化可能会对实体经济产生负面影响。尽管金融业的发展能够拓宽企业的融资渠道，推动企业发展，优化产业结构：但是过度金融化可能导致金融产品过于复杂，其高风险和高收益的特性使大量社会资本无法投入实体经济的发展和创新，而被困在金融市场中循环，从而形成对实体经济的挤出效应。这种情况不仅会导致实体经济发展速度降低，还会对整体经济增长产生负面影响，同时增加金融体系泡沫化的风险。
-+
-+　　其次，金融体制和机制的不完善也可能对市场稳定性产生负面影响。金融业能够通过债务获取时间和空间，但基于信用的债务本身就伴随着风险。如果金融开放速度过快，而相应的监管政策和配套机制未能及时建立和完善，那么债务的积累会对金融市场的稳定性造成极大的冲击。在国际层面上，如果一国对外债务过高而没有相应的约束机制，则会给该国带来巨大的风险。
-+
-+　　最后，债务和杠杆会迅速放大社会的不平等现象。资本的天性是追求利益最大化的，而金融则为资本的逐利行为提供了便利。如果放任金融自由发展，它可能会成为资本无休止搜取剩余价值的工具。在行业中，具有垄断地位的资本会利用信息不对称的优势来获取超额利润，而债务和杠杆的运用更是起到了乘数作用，即成倍地放大了资本的控制力，对社会的 K 型分化产生了巨大的影响。
-+
-+　　此外，还有一个严重的问题集中在负债环节，这最终是对分配权力的挑战和划分。分配和负债存在着紧密的联系，分配的不公平会导致各阶层分配的不均衡，而负债的不公平则需要足够的收入来调节。如果这两者的关系失衡，分配较少的一方如果负债不断增加，就会引发再分配的冲突。如果一个国家内部无法用制度去协调分配和负债之间的关系，就会引发深层次的阶层矛盾。这种矛盾可能会追使国家对外扩张以获取更多的资源以满足日益加大的内部分配矛盾，或者默许矛盾爆发并对其进行重新分配。
-+
-+---
-+
-+
-+　　债务和杠杆归根结底是一个分配问题。在不同的文明框架和不同国家中，我们可以观察到，其解决这一问题的方式有着明显的差异。例如，随着分工和分配会带来经济增长，债务和杠杆也会相应增加。反过来，这种增加又会进一步刺激经济增长。然而，债务和杠杆的增加也会加剧贫富之间的矛盾，当经济增长停滞、收入不再增长时，债务和杠杆就会发生风险。
-+
-+　　当债务和杠杆发生风险时，如果所有的政策制定者都属于精英阶层，则他们往往不愿意损害自身的利益，因而倾向于将一些矛盾转移到基层。然而，这样的做法不但会损害基层民众的权益，而且会进一步拉大收入和贫富的差距，最终演化为严重的社会问题。在面对这些社会问题时，不同的国家所采取的解决方法各有不同。
-+
-+　　通常来说，解决债务问题的方法主要有以下四种：
-+
-+　　（1）减免债务，即通过协商或法定程序减少债务人的偿还金额，以达到债务清偿的目的。
-+
-+　　（2）紧缩支出，即通过控制政府开支和减少非必要消费，以降低债务规模。
-+
-+　　（3）转移财富，即通过向富人征税或募集资金等方式，将财富从富人手中转移到穷人手中，以改善社会财富分配不均的情况，从而减轻政府债务负担。
-+
-+　　（4）使债务货币化，即通过增加货币供应量来偿还债务，但这种方法容易导致通货膨胀。
-+
-+　　如果以上所有方法都无效，战争往往成为解决债务问题的最后手段。
-+
-+---
-+
-+
-+　　债务货币化是一种极其复杂和具有风险的经济手段，一旦实施，可能会引发一系列严重的问题。这种做法最终会使矛盾在贫富差距这个问题上集中爆发。我们不能简单地认为财政政策或货币政策是万能的，任何经济政策的实施都需谨慎评估其利与整。
-+
-+　　虽然在初期，债务货币化可能对经济产生一定的刺激作用，但从长期来看，其负面影响会逐渐显现。这种情况会导致货币政策失去部分有效性，边际效应逐渐降低，同时造成利率下降，但这个过程并不会显著提升整个社会的生产效率。
-+
-+　　此外，债务货币化可能会进一步加大社会贫富差距，导致富者越富，穷者越穷，严重制约社会生产效率的提升。一旦进入这种负反馈循环，将对整体经济环境产生严重影响。因此，对于具有巨大潜在风险的债务货币化经济手段，我们必须保持审慎和理性，全面评估其可能产生的后果，并采取合适的策略来应对可能出现的风险。
-+
-+　　随着收入支出的提升，消费在收入中所占的比例会有所降低，即边际消费倾向和平均消费倾向均会下降。消费是推动经济增长和总收入增加的主要动力和初始因素，若无消费，投资将失去动力，社会财富和收入只可能减少而无法增加。若经济增长无法持续，增量无法被瓜分，则只能对存量进行重新分配。一旦出现全社会的债务问题且所有解决方法均失效，人们便只能选择将财富从富人手中转移到穷人手中，以提高社会平均消费倾向，释放经济活力，进面增加全社会的总收入。
-+
-+　　劳动力创造价值，促使社会财富不断积累，然而债务和杠杆持续上升到一定高度，当资本或收益高于劳动创造的价值时，社会财富便开始出现再度集中的趋势。随后，新的债务问题无法得到解决，将再次引发财富重新分配的过程。经济的发展和财富的分配似乎始终受到这一周期性规律的制约。关于财富再分配的具体机制和影响，此处不做深入探讨。总之，只要收入持续增长，任何债务问题都可以得到有效缓解。然而，一旦收入增长停滞，债务问题便无法避免，必须采取主动的债务去杠杆化措施或债务违约行为，从而引发债务危机。
-+
-+　　达利欧在阐述解决债务问题的方法的时候，其实只有两种。一种是忍痛出清。忍痛出清无非就是要“勒紧裤腰带”想办法削减支出，想尽一切办法提高收入水平。采用这种方法肯定是要变卖一些资产负债的，以便降成本、减计、重组、展期，控制债务的增加，同时增加收入。而极端的紧缩一定会引发流动性、系统性的风险，而且会陷入一个反馈机制。这并不是说紧缩了以后节衣缩食，债务就会减轻，而准确地说，即使节衣缩食，收入也无法增长。
-+
-+　　另一种比较极端的解决债务问题的方法则是债务货币化，但此举会通过通货膨胀和货币贬值把过往的收入大幅度稀释。它在稀释债务的同时，也稀释了财富和储蓄。
-+
-+　　所以，实际上所有理论的结论都是在告诉我们，最好的方法是适度性的组合，即无论是紧缩也好，还是宽松也好，都处在一个适度性的环境下进行积极的结构调整。这里的结构调整实际上指的是使资产、负债、收入、支出之间达到平衡。
-+
-+---
-+
-+
-+　　最终，布雷顿森林体系瓦解，美元与黄金脱钩。从布雷顿森林体系瓦解的过程中我们可以发现，其遵照的是债务膨胀一货币贬值一黄金升值一货币和黄金脱钩的轨迹。从本质上来说，美国关闭“黄金窗口”的行为是一种债务违约的行为，而黄金就是对冲债务和货币风险的资产。
-+
-+## 5.6.3 重温过去与当下的对比
-+
-+　　特朗普时期的美国政策与里根时期有着相似之处，然而在处理方式上略有差异。当时美国在技术上具有明显的领先优势，因此可以让其基础性产业参与公平竞争，并保持高科技领域的技术优势。在这种情况下，美国可以迅速巩固其第一梯队的地位，并依次传递至第二、第三梯队。然而，特朗普时期的中美关系不仅涉及公平竞争，还涉及技术方面。因此，美国也充分考虑到了政策对高科技领域的制约问题。
-+
-+　　美国政客们在选举后政策变化并不明显，这是由于美国政治制度的两党共识机制所导致的。尽管总统和两党轮流执政，但在涉及核心利益时，两党会达成共识。特朗普在接手奥巴马后所处的时代要好于以往其他总统，因此他要考虑新的措施。
-+
-+　　特朗普已经采取了减税和重塑全球贸易体系的措施，但他还需要制定一项对内创新政策。而彼时互联网企业形成了寡头垄断，并垄断了绝大部分数据。如果特朗普想有所作为，他至少应该考虑对现有的大型互联网信息公司进行拆解，破解其垄断地位和优势，以促进更多产业的发展。否则，就会出现大者恒大、强者恒强的局面，其他产业将难以发展。这可能是当前与以往唯一的不同之处，因为当时还没有真正意义上的大者。
-+
-+　　对这一段美国经济的转型进行详细剖析，对中国来讲，是有很大借鉴性意义的。我们正面临着对外再平衡的被动性调整，我们也没有美国当时那么强硬的对外政策。我们可以减税，可以提倡创新，但是我们又面临着经济泡沫，确实无能为力，因为这些事物之间会形成一个制约关系，所以没有办法像 80 年代的美国一样顺利地把所有的累赞进行去除。如今，我们面临着同样的真正意义上的转型，而从美国 80 年代到 90 年代转型成功的经验来看，它不仅仅是一个单一的政策，更是一个综合性政策相互作用的结果。
-+
-+　　确实，中国也在积极寻求类似于里根时期的优化策略。我们可以看到，各国所采取的路径有一定的相似性。1982 年，美国开始进行经济结构调整，10 年后，日本的经济崩溃。同样地，2008 年美国开始进行清理和结构性调整。2016 年，中国出现的问题与 1990 年左右的日本如出一辙。资产、房地产以及大量资本的涌入，使得日本经济得到进一步发展。因此，我总结，在那个阶段，投资者无须关注企业的商业模式或盈利能力，只要看到企业属于互联网领域，就会给予关注。投资者并不在意这些公司的盈利情况，只关注它们何时上市，上市后能获得多少倍的回报，以及市盈率有多高。而拿到资金的公司开始注重公司文化，举办豪华派对，每个人都沉醉其中。如果我不告诉你这是 1992 年至 1998 年美国的情况，你会明显感觉到这与 2009 年至 2014 年中国 Pre-IPO 阶段的情形如出一辙。历史总是在重复上演。
-+
-+　　从资本的角度考量，我认同 2000 年互联网泡沫的存在，因为其狂热导致了资本的汇聚，而资本的注入催生了虚假的繁荣。然而，当资本退潮时，也带来了诸多问题。我们再来看一下美国证券市场上的大牛股，2008 年的金融危机并未对其产生实质性的影响。所有在 2000 年互联网泡沫中脱颖而出的公司都是值得投资的，其相对估值水平偏低，且经历了大浪淘沙的洗礼。真正的起点始于 1992 年，经过 2000 年第一波大浪淘沙，回归理性阶段后，真正的精英企业得以留存，而那些糟柏则被剔除。
-+
-+---
-+
-+
-+　　1929 年美国经济衰退，大萧条带来了严重的通缩，而西方社会在大崩盘后采用的解决方法是实行凯恩斯政策。一方面，通过降低利率实行扩张性的货币政策，利用低息促进借贷、消费和投资：另一方面，为了实现充分就业，同时实行扩张性的财政政策，通过看得见的手主动解决有效需求不足的问题，也起到了扩大政府投资、带动私人投资的作用。
-+
-+　　凯恩斯政策的实行成功地将美国拉出了大萧条的泥沼，通过降低利率释放更大的金融杠杆，主动增加负债，以这样的方式拉动需求，促进经济增长，让扩张性的货币政策一时间成为“灵丹妙药”。然而是药三分毒，货币政策可以解决当下的问题，却给未来留下了隐患。降低利率、货币扩张、放松金融管制、加大杠杆在短期内能刺激经济恢复和增长，但同时增加了经济的不稳定性，使其更容易陷入困境或衰退；而为了应对衰退又不得不采取更低的利率及更扩张的货币政策，由此陷入负反馈的恶性循环。当生产力旺盛、居民收入增长时，经济状况尚可维持，一旦增长放缓或陷入停滞，低利率的负面效应便如同西西费斯的巨石般重现。
-+
-+　　数次金融危机已经告诉了我们经验。当金融危机冲击到人们对世界经济的信心时，凯恩斯经济理论主张的宽松货币政策和更高政府支出来解决短期经济压力的措施确实有效，但随后数年，问题逐渐开始显现。货币政策之所以不是最终的解决办法，是因为实行宽松的货币政策降低利率后，反而把未来的消费都挪到了现在，那么未来人们势必需要再次降低利率来继续拉动往后的消费，结果就是中央银行没有办法，只能继续降低利率。再往深层次思考，则是因为世界经济停滞，背后存在着经济、社会等复杂的原因，即经济体内部生产、支出、分配结构的失衡。它既是 K 型社会形成的原因，也是 K 型社会造成的后果。
-+
-+## 7.4.3 货币政策失效的背后
-+
-+　　贫富差距是理解货币宽松政策失效的关键点。宽松的货币并不像主流学派认为的可以迅速均等地分配给经济中的每个人，而是像非主流学派预言的那样，首先流向极少数富人、高利润率的企业和流动性强的资本市场，然后再流向穷人、不那么赚钱的企业和实体经济。前者获得了大部分，后者获得了小部分。
-+
-+　　但是前者的消费和投资倾向很低，投资之外获得的货币收入被储蓄起来：而后者的消费倾向很高，但是缺乏足够的财富，于是他们成了债务和杠杆的主体。为了弥补经济中的消费和投资不足，政府扩大财政赤字和债务规模，主动加杠杆。于是，伴随贫富差距扩大的是宏观层面的企业、家庭和政府债务占 GDP 的比重不断上升。
-+
-+　　同时，经济中的总储蓄大于总投资，于是利率随着贫富差距的扩大而越来越低，当过度储蓄越强烈，负利率就变得越有可能。由于缺乏足够的消费和投资，经济增长也很难实现，通货膨胀也在低位律徊。由于资本价格的上涨不计入通货膨胀，因此宽松政策只能继续维持，这样一个恶性循环始终无法被打破。
-+
-+　　贫富差距在全球各个主要经济体之间都存在，这样的结构性问题作为经济中最基本的矛盾，影响了货币政策的传导，导致了货币政策的失效。而这个问题在美国最为典型，全球化的浪潮下美国的产业逐渐空心化，贫富问题更加凸显，使“三低”的问题暴露得更加充分，下面我就以美国为例分析货币政策有效性逐渐丧失的原因。
-+
-+　　1. 宽松的货币政策无法再产生通胀
-+
-+　　在货币极度宽松的情况下，美国并未出现通胀现象，非常重要的原因是美国货币流通速度和货币乘数双双下降，货币乘数由 2019 年末的 1.43 下降至 2020 年 6 月的 1.10，流通速度由 2019 年末的 4.50 下降至 2020 年 7 月的 3.89。
-+
-+　　根据费雪方程式的变体 VmB=PY，货币流通速度 V 与货币乘数 m 是影响通胀的重要因素，即使基础货币 B 大量增加，若 V 和 m 同时减少，也会大大削弱其对价格 P 和通胀的影响。从历史经验来看，美国在 1985 年前后经历了“高货币乘数+稳定的货币流通速度”的阶段，在 1995 一 2000 年期间度过了“货币乘数下降+走高的货币流通速度”的阶段。从 2000 年互联网泡沫破裂之后到 2008 金融危机之前，美国经历了货币流通速度下降和货币乘数稳定的阶段。2008 年金融危机后，美联储实行量化宽松政策并未引起通胀，货币乘数和货币流通速度第一次出现双降，反映出美国货币政策传导过程中存在问题。
-+
-+　　2. 宏观角度：产业空心化与收入下降
-+
-+　　一方面，自 1980 一 1985 年美国经济从工业时代转入信息技术时代开始，美国的传统产业就在不断向海外转移。全球化的分工使得美国受益于全球低成本生产带来的低价商品，也压低了美国的通胀幅度。同时，随着产业结构的变更，中低端制造业逐渐空心化，美国制造业等领域的中等收入职业吸纳的就业人口数量减少，虽然早期阶段创新产业驱动了一部分就业人员的转移，但是信息技术的特征就是高附加值，剩余的大量劳动力流向服务业等领域的低收入岗位，全社会平均劳动报酬增速则相对停滞。
-+
-+　　另一方面，随着中国等其他国家的科技进步，美国过去几十年积累的技术领先红利逐渐减少，在蛋糕总量缩减的情况下，财富竞争将更加激烈。而美国通过掌握核心技术，几十年来持续从全球吸引高技术人才，导致社会资源源源不断地向头部倾斜，收入分配向资本要素倾斜，造成的后果便是美国贫富分化加剧，阶层固化且不可逾越。
-+
-+　　美国高收入群体的财富占全社会财富的份额持续提升，财富分配不平等状况持续加剧。特别是在互联网企业寡头崛起的过程中，收入分配向资本要素集中，造成的结果是富人资产快速膨胀。而与之相对应的是普通民众依赖工作收入积累财富的困难越来越大，中产阶级收入水平下降，导致基尼系数不断上升，贫富分化不断加剧。薪资增速的缓慢，弱化了居民部门的消费能力，减缓了货币的流通速度。
-+
-+　　金融危机发生前，资金加速地涌入金融性资产和房地产，导致居民部门的债务杠杆进一步激增。在危机发生前，金融性资产和房地产似乎是有利于投资、需求甚至是消费的，但当危机发生时，杠杆将对最终承担者的资产和负债产生极大的损害，而这些撤退不及时的最终承担者主要是居民部门，他们难以向其他部门继续传递债务。而控制了大量财富的少数人则能通过杠杆获取收益，高额的债务则在其他大部分人身上不断累积。
-+
-+　　金融危机发生后，美国股市持续上涨，给予富人越来越快的财富积累，而劳动力成本却上涨缓慢。高低收入群体之间的断层越来越大，平均收入的意义也将越来越小，居民部门的消费能力越来越弱，造成了通胀低迷的环境。虽然税收机制可以在一定程度上改变这种分配不均的状况，但特朗普政府并不希望对富人加税。财富无法合理再分配，进一步导致居民部门中的债务杠杆无法消除。
-+
-+　　这一部分人消除债务的途径就是增加收入，提高储蓄，但在贫富差距拉大的情况下，收入增速过低致使杠杆在短期内无法被消除，对通胀和货币流通速度都造成了压制。要解决这个问题，必须形成一个新的反馈路径来修复居民部门的收入，同时还需要修复分配关系。若非如此，杠杆和债务问题将长期存在，既压制了扩大信贷消费或投资的需求，也削弱了货币乘数的派生能力。
-+
-+　　3. 微观角度：传导受阻制约了货币派生
-+
-+　　1）宽信用集道受阻金融本身是服务业，我们常挂在嘴边的一句话：银行只会锦上添花，绝不会雪中送炭。金融可以让好的变得更好，但做不到让坏的变好，金融无法改变实体经济，经济结构的转变更不能指望金融来完成。市场化的经济转型换挡，其本质就是不行就淘汰，淘汰之后出清，没饭吃自然就会创新。金融的本质就是服务于实体经济中的本体，本体如果处在落后需要出清但新的还没成长起来的过渡阶段，那么货币通过金融配置是无法产生宽信用的主体的。通道永远都在那里，对金融（服务业）来说，真正核心的问题是这一阶段没有信用敢于扩张的载体。简单来说，就是市场上没有足够多资质良好的企业，银行不敢把钱放心地贷给它们。
-+
-+　　从金融危机开始，在全球经济结构问题暴露后出清和创新转换的过程中，整体投资主体的缺失限制了信贷或投资的扩张。在这种背景下，各国中央银行供应的基础货币难以传导至实体经济，无法转化为投资和对消费的支撑。
-+
-+　　2）逐利的资本脱实向虚
-+
-+　　生产投资活动信心不足，导致流动性没有前往实体经济领域，投放的货币停留在金融系统中，推高了金融资产的价格。而货币仅仅在金融市场中打转，金融系统吸收了大量的流动性，未在实体经济中用于消费、支付和借贷，这最终都会导致货币流通速度大打折扣。
-+
-+　　3）金融机构风险偏好下降
-+
-+　　金融危机之后，美国商业银行的流动性覆盖率等指标受到了更严格的监管和考核要求。面对更加严格的监管环境，银行风险偏好下降，对持有现金资产的偏好上升，提高了低风险高流动性资产的持有比例。另外，正的超额存款准备金率对银行来说因其能够无风险获得利息而更有吸引力，释放信贷意愿降低，妨碍了货币的创造和流通。
-+
-+　　4）居民部门去杠杆，消费倾向发生改变
-+
-+　　金融危机前，美国居民部门债务高企，之后获得的流动性主要用于偿还债务、降低杠杆率。截至 2019 年底，居民部门杠杆率已从高点的 96% 降至 75%。这种居民部门的去杠杆行为本质上是用收入增长来填补债务缺口，更多的是通过约束消费和新增债务的方式来实现。这意味着金融危机发生后美国居民部门的消费比起危机发生前明显放缓，同时储蓄意愿增强，这样的居民部门去杠杆的过程并不利于货币周转，因此导致货币流通速度受到了极大的抑制。
-+
-+　　5）海外生产国的债务储备
-+
-+　　美国对创造债务支撑消费的抑制，导致了生产国的生产过剩，进而催生了生产国企业部门的债务风险。为了应对债务的兑付，生产国储备了大量美元，这也间接降低了全球范围内美元的流通速度。
-+
-+## 7.5.1 货币政策的“三低时代”
-+
-+　　1. 宽松货币政策的负面影响
-+
-+　　（1）宽松货币政策带来了资产价格泡沫。低利率本身就对应着更高的资产价格估值，同时低利率还可能刺激更多高风险的贷款和投资。低利率给金融中介带来了更大的利润压力，金融中介为了保持利润而进行更高风险的投资：低利率降低了债务人的成本，使得债务人举债的标准下降。这些都增加了资产价格的水分，对实体经济产生了资本挤出效应。
-+
-+　　（2）宽松货币政策恶化了收入和财富分配。宽松货币政策有利于密切参与金融市场的群体，不利于没有密切参与金融市场的群体。典型的例子就是在实施宽松货币政策和资产价格上涨期间，金融从业人员的收入增长会更快，这就加剧了收入分配不均的状况。富人持有更多的金融资产，宽松货币政策使得资产价格上涨，就会给富人带来更多的财富，加剧了贫富分化。
-+
-+　　（3）宽松货币政策抢占了市场资源，使大量僵尸企业存在。欧洲中央银行 2012 年推出直接货币交易（OMT）计划以后，欧元区边缘国家的银行被变相地补充了资本，银行体系的稳健性有所提升，然而这并没有带来经济增长。银行增加了针对过去有信贷关系的低效率企业的贷款，但这并没有带来投资和就业的增加。因为信贷资源配置被扭曲，大量僵尸企业的存在不利于那些值得信赖的企业，不利于经济复苏。
-+
-+　　2. 低增长、低利率、低通胀的宿命
-+
-+　　同样是宽松货币、降低利率，但药剂似乎需要下得更猛，这是目前全球中央银行面临的通病。在当前环境下，货币政策对经济的推动作用正逐渐减弱。国际清算银行（BIS）此前指出，仅靠零利率和量化宽松政策无法实现真正的增长。经济下行往往是由总需求不足导致的，总需求不足不是因为需求消失了，而是因为有效需求发生了错配。贫富差距会导致西方经济学家最为头痛的通缩，因为富人消费率低，而穷人无钱消费，必然导致消费的萎缩。如果这种萎缩速度超过了中央银行的印钞速度，则会出现名义上的通缩，整个社会的有效需求就会严重不足。
-+
-+　　这样的低增长无法通过降低利率、放松银根来扭转，贫富分化导致的需求下降也不能通过货币政策刺激产生，货币主义通过货币信用扩张的方式来救助需求，看似解决了问题，但是实质上只是表面功夫。从某种意义上说，货币政策再宽松，也难以使全球经济摆脱放缓的脚步。特别是逆全球化不断蔓延，使得贸易和投资保护主义不断抬头，改变了 2008 年经济全球化的环境，割裂了投资、贸易和全球市场空间。这种情况下的货币宽松政策，已经不能使金融资源在全球经济中实现有效配置。
-+
-+　　由于大资本家手上的筹码和信息源巨大，所以结局就是底层民众被“割韭菜”，贫富差距不断扩大，不受管制的卖方独占市场。在这种市场中，财富“创造行为”被“剥削行为”取代，而剥削行为又反过来助长了“民粹主义”和“本土主义”的声势壮大。这就是我们目前能够观察到的美国经济的特点。贫富差距导致低增长和低通胀水平，中央银行采用低利率无法有效解决这个问题，贫富反而因为杠杆进一步分化，低增长和低通胀的问题不但没解决，中央银行反倒陷入了低利率的泥潭。如此一来，低增长、低通胀、低利率不可避免地形成了恶性循环。
-+
-+　　3.“三低”之间的联系
-+
-+　　“三低”现象是经济内部出现问题后，在增长、物价和利率方面的具体体现，三者之间存在一定的因果和互相强化的关系。
-+
-+　　1）近年来全球化进展及近期逆全球化蔓延
-+
-+　　一方面，在过去 30 多年中，全球化推动货物、服务、资本、劳动力的跨境流动，改善了产品和要素的供给，使需求上升对价格的拉动作用下降，在一定程度上抑制了价格的上涨。例如，伯南克等认为金融全球化使亚洲新兴经济体储蓄流入全球金融体系，是压低全球利率的一个重要原因。
-+
-+　　另一方面，全球化的利益并未被普通民众广泛分享，这导致近年来世界各地质疑全球化的声音越发强烈。贸易保护主义、民粹主义、内顾性政策持续升温，一系列政治和社会事件相继出现。这些事件相互交织，造成众多经济体的企业和消费者信心下降，投资萎靡不振，制造业产量下滑，全球价值链遭受冲击，拖累了全球经济复苏。
-+
-+　　2）技术进步与新业态的出现
-+
-+　　技术的进步和传播使单位生产成本不断降低，进一步推动产品和服务价格下降，从而抑制了通胀。这一点在技术密集型产业中表现得十分明显。
-+
-+　　3）老龄化带来的不利影响
-+
-+　　老龄化是 21 世纪最重要的社会趋势之一，人口老龄化不仅降低了消费和投资，也造成了总需求不足，给通胀带来了下行压力。人口老龄化在一定程度上导致菲利普斯曲线平坦化，且老龄人口对通胀的容忍度更低，中央银行面临更严格履行通胀目标的挑战。另外，劳动者年龄结构与其对全要素生产率的贡献存在“倒 U 形曲线”关系。
-+
-+　　4）金融危机的影响及中央银行的应对措施
-+
-+　　金融危机后许多经济体长期不振，企业投资不足，家庭消费减弱，通胀下行压力仍然存在。金融危机一度造成了大量失业，导致劳动者对失业的恐惧增加，就业安全的重要性上升，议价动力和能力下降，成为工资增长缓慢的重要原因。
-+
-+　　在利率方面，为了应对金融危机的负面影响，中央银行普遍大幅度降息，通过扩表压低长期利率，并使用前瞻性指引来引导预期。另外，在先前的金融周期中，中央银行往往采取非对称做法，即在金融周期下行时降息刺激，但在金融周期上行时又不肯加息，久而久之，利率越来越低。人为降低利率造成了资源错配和债务高企，经济增长面临的下行压力增加，中央银行更难加息。
-+
-+　　5）发达经济体劳动生产率增长乏力
-+
-+　　近年来，全球主要经济体劳动生产率增速放缓，其中发达经济体尤甚，是金融危机后全球复苏乏力的一个重要原因。桥水基金估计，未来十年，美国、日本、德国、英国等国的单位劳动生产率仅增长 1.5% 左右，法国、西班牙、澳大利亚、加拿大等国仅增长 1%，意大利仅增长 0.2%。上述情况主要与全球投资不足和全要素生产率增长缓慢有关。2008 年金融危机后，各国的投资增速放缓，单位劳动力使用的资本增长速度大幅减缓，制约了劳动生产率的提升。
-+
-+## 7.5.2 货币政策放水导致贫富分化的负反馈循环
-+
-+　　现在的货币政策关注的更多的是就业或经济增长（需求），这从美联储货币政策框架的调整中可见一斑。经济增长受制度、技术、人口等因素影响是有一定周期的，债务周期会作用于经济周期，但从长期来看，经济增长总是会向其潜在增长率回归的。因此说，货币政策可以调节经济周期，但是无法解决经济增长的结构性问题。
-+
-+　　举债终究是要还的，负债是以未来的收入为基础的。杠杆和信贷刺激了市场的虚假繁荣，金融体系自身也有顺周期性的特点，而资本家受利益驱使盲目扩大生产，但从长期来看没有有效需求支撑的生产最终会过剩。人们对债务和杠杆周期进行了大量的研究。达利欧将信贷周期分为短债务周期（5～10 年）和长债务周期（75~100 年）。
-+
-+　　在短债务周期中，债务的增长快于产出的增长，导致价格上升，也就是通胀。通胀促使货币政策收紧，这时候衰退就开始出现了。在长债务周期中，债务的增长快于收入及货币的增长，直到不能再增长为止。经历了很多的短债务周期，当又一个衰退期到来的时候，可能会出现资不抵债的情况，此时修复资产负债表的过程一般会持续 8～10 年，人们称之为“失去的 10 年”（TheLostDecade）。萧条之所以发生，就是由于中央银行不能通过降低货币的成本来对抗私人部门的需求萎缩或支出的缩减。
-+
-+　　主要发达经济体货币政策长期宽松，边际效用递减，反而加剧资产价格泡沫以及贫富分化和债务负担等问题。政策制定者虽然希望努力作出更有利于长期经济的决策，但是为了短期的投资回报或各自的利益（例如，政府为了短期利益，金融机构为了自己的奖金和利益）而犯了过度宽松的错误，信用的放松要远比信用的收紧更容易做。
-+
-+　　因此，当经济出现结构性问题时，凯恩斯主义便无法解决债务扩张和分配失衡等核心矛盾，只能延缓问题的爆发。对整个系统而言，一味地通过更低的利率、更大的刺激政策来维持经济的增长，反倒可能会埋下更深的隐患一债务的快速扩张和金融性资产价格的飞涨，金融监管的放松加速了这一过程。
-+
-+　　虽然低利率会降低资产的回报率，但低利率也会推高股票、房地产等资产的价格，而这些资产往往集中在富人手上，这些资产增值的幅度会超过低利率带来的资产回报。债务扩张和金融资产价格的上涨进一步加剧了分配不均，即加速了贫富分化。金融性资产的回报率往往高于实业的投资回报率，随着债务的扩张，即金融化程度不断提高，资本在分配中的比例会越来越高，而劳动在分配中的比例会越来越低。
-+
-+　　贫富差距将会越来越大，最终债务转移后将越来越集中在社会阶层的中底部，而财富将越来越集中在掌握着负债权力的顶层阶层。
-+
-+　　贫富差距扩大导致储蓄率进一步上升，而需求萎缩导致投资下降，利率水平因而持续走低。而同时，宽松的货币政策可能会导致产能进一步扩大，但对需求的拉动有限，难以带来通胀，甚至可能会导致通缩。流动性陷阱，是指即使降低利率也不能使储蓄和投资相匹配。这意味着低利率也无法提振经济，甚至可能导致通胀继续下行。这就是通胀、利率和经济增长之间的反馈关系。
-+
-+　　除了经济结构本身的问题，其实还存在另一层反馈路径。经济结构问题得不到解决，货币政策放水只会导致金融性资产价格上涨，但由于金融性资产大多由富人持有，在经济低迷的背景下其实大部分底层民众的收入是下降的，穷人在全社会财富分配中的占比进一步降低，因此衡量物价水平的通胀率也在下降。简单来说，就是富人通胀，穷人通缩。低通胀、低利率预期进一步刺激了金融性资产价格上涨，直到泡沫破裂。
-+
-+　　收入分配的失衡达到临界值以后，会引发去杠杆，而这必然也会拖累经济，并加剧产出和收入的放缓和下降（经济增长效率下降）。产出和收入的放缓和下降，同时会要求债务和杠杆进一步收缩，而这又加速了经济增长效率的下降。至此，螺旋式的去杠杆、减少负债、缩小贫富差距的过程也就开始了。在去杠杆的过程中，虽然收入的不平等开始明显缓和，但这是背负了高杠杆和高债务的人通过付出巨大代价进行补偿来实现的。
-+
-+---
-+
-+
-+　　中国人民银行的政策制定者们早已从美国经济发展的过程中看出了端倪。时任中国人民银行行长易纲 2020 年底在《求是》杂志撰文称，要坚守币值稳定目标，实施稳健的货币政策，不仅能调节宏观经济，更能影响民众日常。易纲在文章中指出，货币政策与每一家企业、每一个家庭息息相关，关乎大家手中的钱，关乎广大人民群众的切身利益。不能让老百姓手中的钱变得不值钱了。适当的货币条件可以促进财富增长，不适当的货币条件可能会加剧贫富分化和金融风险，甚至引发社会性的问题。
-+
-+　　在过往的货币政策中，供应量增加的结果往往是有钱人、有资产的人更加有钱：相反，那些靠工资、存款生活的大多数普通民众，却面临着通胀风险。表面上大家的收入都在增加，但“获得感”却有很大的差异。放松货币条件总体上有利于资产持有者，超宽松的货币政策可能会加剧贫富分化，固化被扭曲的结构，使金融危机调整的过程更长，而易纲的表述其实暗含了对这种宽松政策的不认可，强调了政策未来的稳健性，货币政策要以人民币值钱为目标，不能让富人更富、穷人更穷。
-+
-+---
-+
-+
-+　　2005 一 2006 年，我们曾经参与了中国上汽和南汽对英国的罗孚的收购。18 世纪发源于英国的工业革命使英国第一个成为现代工业国家。从时间上讲，汽车的发明期属于第二次工业革命时期，汽车行业的制造水平一直是一个国家工业水平的标志。当中国的公司完成了收购后，安排团队进厂拆除生产线的时候，那些已经工作几十年的劳动工人都泪流满面。对于他们而言，这种全球化分工的变化意味着他们失去了赖以生存的企业，而转型对于他们哪有那么简单，几百公里外的伦敦金融城与他们又有什么关系呢？
-+
-+　　在国际分工中一部分非熟练劳动者和熟练劳动者会随着产业转移而失业。越是分配失衡，越会导致居民部门债务杠杆率激增，此时货币政策和财政政策只能延缓问题的爆发而无法解决核心矛盾。对于整个系统而言，一味地通过更低的利率和更大的财政支出来维持其稳定，反倒可能埋下更大的隐患。
-+
-+　　如果没有差异性，生产的高速发展及技术的高度融合，会使得分工的原本优势减少：如果有差异性，也会使得全球经济一体化的分工模式无法继续下去。
-+
-+　　全球化的分工转移带来的产业空心化直接导致的结果就是内部分工和分配的失衡。全球化的好处大多由跨国企业和精英阶层享受，而底层民众承担了绝大多数的成本。大部分居民部门尤其是社会中下层随着收入的增速放缓，出现债务杠杆率增加，贫富矛盾、储蓄失衡、过度消费、过度负债等问题伴生，这时的外部需求是非常脆弱的。
-+
-+## 第 9 章 收入与贫富：K 型之殇
-+
-+　　“在我曾祖父的时代，第一地球 60% 的财富掌握在 1000 万人手中：在爷爷的时代，世界财富的 80% 掌握在 1 万人手中：在爸爸的时代，财富的 90% 掌握在 42 人手中：在我出生时，第一地球的资本主义达到了顶峰上的顶峰，创造了令人难以置信的资本奇迹：99% 的世界财富掌握在一个人的手中，这个人被称作终产者。”作家刘慈欣在他的短篇科幻小说《赠养人类》中曾有这样一段描述。科幻小说中的场景虽然距离现实很遥远，但关于财富的分配问题伴随着人类文明的产生一直存在着。从原始社会、农耕社会到工业社会，再到信息社会，财富分配的不平等可能是人类社会的基本特征之一。《21 世纪资本论》的作者皮凯蒂研究发现，从工业革命至今，只有一战到冷战结束之间的几十年里，发达国家的财富差距与收入差距经历了持续的下降，其他阶段这些差距都在持续上升。
-+
-+　　社会组织复杂化、技术发展和垄断，以及金融自由化、产业空心化都在一定程度上导致了财富不均等的加剧。自现代信用货币体系产生以来，金融自由化和债务杠杆在加速全社会财富增长的同时，也加速了贫富的分化。财富分配的不平等导致有效需求不足，甚至导致经济危机或社会危机爆发。危机冲击下各国决策层形成了宽松刺激政策托底需求的路径依赖，但依靠利率曲线下移推动的需求是以推高杠杆和债务累积为代价的。举债终究是要还的，负债是以未来的收入为基础的。杠杆和信贷刺激了市场的虚假繁荣，金融体系自身也有顺周期性的特点，资本家又受利益驱使盲目扩大生产，但长期来看，没有有效需求支撑的生产最终会过剩。刺激政策本身不能够根本解决收入和分配的问题，在新的经济增长点出现或以危机的形式完成出清之前，经济增长和通胀预期的中枢仍然趋于下行。近百年来的两次大危机—1929 年经济大萧条、2008 年金融危机—背后都有分配矛盾累积的影子。历史上战争的爆发和王朝、政权的更迭背后，也大多是贫富分化、社会阶层撕裂达到不可调和的程度。
-+
-+　　从亚当·斯密开始，经济学家试图解释一种自由市场模型下市场起主导作用的分工和分配的体系一理想化下的实现自我再平衡的机制。凯恩斯认为市场经济无法实现充分就业和收入的平等分配。但当经济出现结构性问题时，凯恩斯主义无法解决债务扩张和分配失衡等核心矛盾，只能延缓问题的爆发。对于经济危机的爆发，有两种对立的观点：一种认为市场失灵，因此主张强化政府干预；另一种认为危机是由政府不当干预造成的，因此应当减少政府干预，让经济自动恢复，政府应当采取放任的经济政策。经济学派先后有古典自由主义、凯恩斯主义、主张恢复古典自由主义的新自由主义。
-+
-+　　库兹涅茨认为，随着经济的发展，收入分配的不平等性先是上升，继而下降，收入分配不平等性与经济发展水平之间的关系呈“倒 U”形状。然而近年来，库兹涅茨的理论在欧美等发达国家陆续遭遇挑战。即便在劳动收入分配相对公平的国家，财富水平差异所导致的收入差距扩大造成的贫富不均，也在逐步加剧。历史的经验告诉我们，没有神秘的经济力量或市场力量会自动降低收入的不平等程度，必须依靠政策的干预。
-+
-+　　从强调自由竞争和效率，奉行“大市场、小政府”的自由经济模式，到强调二次分配作用，实行“高税收、高福利”的福利国家模式，全世界各国由于具备不同资源票赋、政治体制，处在不同发展阶段，在调节国内的分配矛盾、平衡市场和政府在资源配置中的角色时探索着各自不同的道路。共同富裕是社会主义的根本原则，从消灭绝对贫困到实现共同富裕，从推动改革降低住房、教育、医疗等方面的民生支出，到反互联网垄断防正资本无序扩张，我们在共同富裕方面的探索，也为世界解决收入不平等、实现包容性增长等难题贡献了中国的思想和智慧。
-+
-+---
-+
-+
-+　　2. 低端制造业在当下依旧重要
-+
-+　　经济学家普雷维什和辛格曾经从结构性视角，分析了因国际分工差异造成的以出口初级工业品为主的新兴市场，人均收入水平大幅落后于出口高端制造业产品的成熟市场的现象。但是，在全球价值链业已形成的当下，主要问题转化为在国际分工中处于价值链高端还是低端、对核心技术是控制还是依附的问题。在如今的国际环境中，低端制造业对于一国的发展仍然重要。
-+
-+　　解决就业问题仍然是第一要义。以中国为例，首先，虽然适龄劳动人口的绝对数量呈现长期下行的趋势，但是农村人口进城和每年大学毕业生的就业压力仍然较大。在“十四五”规划中，未来常住人口城镇化率将进一步提升至 65%，而 2020 年高校毕业生达 874 万人，同比增加 40 万人。若要维护社会稳定和经济发展，保障就业就成了核心目标。实际上，国内服务业的就业承接能力目前有边际下滑的态势，国家统计局发布的非制造业 PMI 就业指数自 2018 年 9 月起已经连续 32 个月低于 50% 的枯荣线，服务业吸纳就业人口的能力已现疲态。
-+
-+　　其次，中国的工业化聚集具有明显的区域性，东北三省等过去较早实现工业化地区的就业人口数量庞大，同时这些地区的经济增速也较为缓慢。2019 年辽宁的 GDP 增长率只有 5.5%，黑龙江和吉林的 GDP 增长率分别为 4.2% 和 3.0%，明显低于全国水平（6.0%）。在此情况下，一旦过急过快地推进去工业化和服务业替代战略，东北三省出现失业潮的可能性将大幅上升。
-+
-+　　低端制造业是产业升级的重要基础，高端制造业需要低端制造业作为支撑。技术与经验的积累也是产业升级的重要环节，简单的产业转移并不利于技术的积累和进步。我国高度重视工业体系的建设，经过多年的发展，已经拥有 41 个工业大类、207 个工业中类、666 个工业小类，是全世界唯一拥有联合国产业分类中所列全部工业门类的国家。在此基础上，我国工业实现了历史性跨越。世界银行研究显示，按现价美元测算，2010 年我国制造业增加值首次超过美国，成为全球制造业第一大国，我国的经济增速也实现了质的飞跃。全面工业体系建设的战略意义在于，一国如果在发展的初始阶段较为贫困，但通过工业生产不断积累和提升其技术能力，国家终将富裕：而一国如果仅靠自然资源或者服务性劳动换取收益，尽管“蓄积财富”或“经济剩余”暂时可能很多，但无法积累和提升技术能力，国家最终将陷入贫困，就像许多自然资源丰富的拉丁美洲国家陷入发展瓶颈一样。
-+
-+---
-+
-+
-+　　3. 以消费为主的经济会不断地透支未来
-+
-+　　由去工业化话题延伸出来，由消费驱动的经济体，经济就一定能实现长期稳健增长吗？答案似乎并不是肯定的。发达国家的居民部门消费率长期贡献了较大的经济增长占比，但经济总量增速却并不高，因此依靠消费并不能获得经济高增长。
-+
-+　　消费借贷化、债务金融化是一个不可持续的过程。依赖消费驱动经济的主要问题在于，仅仅依靠当期收入所支撑的支出增幅是非常有限的，商业利益最大化的方式在于通过借贷推升消费，这相当于让居民部门加杠杆进行消费。从短期看这是一个多赢的局面，即消费者（特别是年轻人）满足了需求和欲望；商业资本实现了实物产品销售，利润回流：金融资本通过放贷获取了利息等超额收益：地方政府通过放松金融监管促进了信贷增长和经济发展。然而，这一看似多赢的局面，长期的代价相当高，最终获益的只有资本方，因为一个人负的债必然是另一个人的资产，消费者的负债成为放贷方的长期超额收益来源。一旦形成持续的超前消费支撑经济增长的结构，“富者恒富，贫者恒贫”的分化格局则会被大大强化，穷人消费能力受债务和收入问题制约，富人的边际消费倾向随着收入增长而递减，经济体整体的有效需求便会下降，增速放缓。居民部门杠杆率的攀升叠加经济增速放缓，势必加大全社会的债务风险和信用风险，最终将压力传导至金融机构和政府。
-+
-+　　债务营造的超前消费，除在金融层面影响稳定之外，还会侵蚀社会风气。数据显示，2011 年我国“90 后”人口总数大约有 1.7 亿人，开通花呗的人数超过了 4500 万人，即平均每 4 个“90 后”就有 1 人在用花呗进行信用消费；人均负债 12.79 万元，负债总额接近 22 万亿元，债务金融化在吞噬着年轻人的未来收入。信贷催生的超前消费，会刺激年轻人对物质生活的极致追求，过度追求物质享受将使得拜金主义盛行，扭曲年轻人的价值观，甚至产生具有破坏性的享乐主义和浪费文化，这是精神层面极其负面的效果。
-+
-+## 9.2.2.3 逐渐极端化的负反馈
-+
-+　　上述负反馈不仅危害巨大，还具有自我强化的特征，即金融领域中常常提及的“反身性”。
-+
-+　　阶层间不平等情况的加重是其主要表现。历次金融危机都以央行降息和政府救助为危机的终结点，然而，在以服务业为主导的经济体中，央行降息和政府救助所注入的资金，多数流向了企业主和金融机构，这就增加了资本经营的道德风险，使得少数掌握了大量财富的精英风险偏好度愈发上升，最终使得下一次危机的潜在破坏程度不断加深，倒逼政府不断兜底（所谓的央行的“看跌期权”）。底层民众在危机中获得的救助性收入，被其日常积累的债务所消耗，无法在危机中形成资本积累，从而在下一轮经济繁荣中继续保持贫困状态。同时，由于服务业主导的经济体易陷入有效需求不足的状态，统计意义上的长期通货膨胀率下降同样意味着收入增长停滞。危机对贫富阶层的影响程度并不相同，历次危机后出现的金融资产通胀、工业品通缩现象，意味着“穷人通胀，富人通缩”。当底层民众被债务和低增长的收入剥削压迫后，由于相对收入发生变化，社会结构将进一步继续吸食中产阶级，金字塔变得越来越极端。
-+
-+　　阿尔弗雷德等多名学者的研究证实，过去的 50 年间，全球财富不平等现象激增。最引人注目的一点是，占全球总人口数不到 0.01% 的极高收入人群的财富份额升。学术界的研究表明，金融资产的投资收益差异是导致财富分化的重要原因。正如皮凯蒂在《21 世纪资本论》中提到的，投资回报率是激化财富分配不公的重要原因一“有钱人比别人获得更高的平均回报是完全有可能的。”概括地说，压榨底层人的手段是掠夺劳动价值（服务业的陷阱），压榨中产阶级的手段是税收和经济泡沫破裂（金融化推动的资产价格暴跌）。“金舆不返倾城色，玉殿犹分下苑波。
-+
-+　　”如果没有政府的产业政策配合和行政指导的及时调控，过早地去工业化和过快地发展服务业，无异于纵风止燎，其代价是任何一个转型中的经济体都难以承受的。
-+
-+---
-+
-+## 9.3 K 型社会的演化简史——日本、中国香港和美国
-+
-+### 9.3.1 日本——格差社会
-+
-+　　东亚文化圈具有相似的文化内核，在其漫长的历史上均深受儒家文化的影响，因而学术界将东亚各国称为“儒家文化圈”，各国的民族传统和经济、政治、文化等有一定的同源性。其中，日本是东亚各国中最早实现全面工业化和最早进入发达经济体行列的国家，我国当代的制度改革和经济政策或多或少均能找到日本当年的影子，研究日本经济在二战后的兴衰以及造成日本社会 K 型分化的原因，对我国未来的发展具有积极的意义。本章的这部分将梳理日本二战后数十年的发展，以及总结造成日本社会 K 型分化的原因，力图将日本经济政策调整和社会改革中的得失一一呈现出来。
-+
-+### 9.3.1.1 日本经济的发展历程
-+
-+　　1945 年 8 月 15 日，日本裕仁天皇向世界宣布，接受波茨坦公告并无条件投降。9 月 2 日，日本政府正式签署无条件投降书，从而结束了旷日持久的第二次世界大战。随着战争的结束，日本的战时经济政策和生产方式均告以结束。战争经济结束的代价是沉重且残酷的：日本全境陷入供应短缺的泥潭，日用必需消费品大量短缺，粮荒问题因为当年的水稻生产欢收和战局恶化导致的渔业萧条而被无限放大。通货膨胀的魅影也与短缺经济相伴：与二战初期相比，日本官方物价平均上涨 150%，地下经济的流通物价平均上涨 2900%，流通中的国库券金额激增 24 倍。根据日本政府公布的数据，日本约 42% 的财富都在战争中被毁灭，大多数民众陷入贫困。
-+
-+　　战后的日本，唯一免遭巨额损失的，是军工类企业及相应的垄断性资本。数据显示，仅仅在 1945 年 8 月和 9 月两个月内，日本当局的军工复合体及其垄断资本，就从当时被称为“军需订货特别预算”和“复员津贴”两项国家财政预算中撰取了高达 340 亿日元的天量货币资金。这笔资金在当时具有重大意义，因为大量的货币资金代表了偿债能力的保障，军工复合体企业得以继续从银行获得信贷资源，避免了因偿付能力不足而无法续贷导致的破产可能性。从这里我们可以看出，日本战后经济修复早期，最具生命力的企业，是那些依靠侵吞国有资产从而增强自身生命力的公司。当然，这些举动并不是没有代价的一军工复合体的这些举动，成为未来日本将经历的恶性通货膨胀的滥。战后初期，日本信贷资源的扭曲程度一度达到了前无古人、后无来者的顶峰：日本银行业贷款总额近 50% 投向了军工类企业，其中“战前六大行”（第一、三井、三和、三菱、安田和住友银行）向军工类企业投放的贷款总量占其全部贷款总额的 90%。
-+
-+　　一业兴的代价是百业废。随着美军完成对日本的进驻，相应的军需市场陆续受到管制直至完全废除，日本国民经济几乎完全陷入停滞。从日本国民经济研究协会发布的生产指数看，1935 一 1937 年，剔除军工业后日本的国民生产指数平均值为 100，受战争影响，该指数在 1945 年 7 月降到 12.8，8 月进一步下滑至 8.5，生产能力已不足此前的 10%。受负面影响最重的是钢铁行业，1945 年 10 月日本普钢产量约为 5000 吨，生产能力约合战前的 1.4%；11 月煤炭产量为 53 万吨，仅相当于战前水平的 14%。煤钢是近现代工业的基石，其产能的大幅下降，意味着日本的工业生产能力严重倒退，人民生活水平大大下降。以上经济数据也侧面印证了当时日本经济结构失衡的严重程度，即当国民生产不包含军工业订单和供应后，其余部门的供需的衰弱度达到了历史性的极值，这样的经济结构显然是不可持续的，并且也为战后日本经济的重建带来了极大的困难。厚生劳动省估计，从日本宣布无条件投降到当年 10 月的两个月时间里，日本失业人数达到了 1300 万人，燃料和粮食价格在 1946 年一季度环比上涨 100%～200%，北海道在 1946 年 5 月发生了 104 天无粮食主食分配的情况。失业并且生活困苦的民众产生了极度的不满，各地陆续发生了抗议政府的游行活动，其中名为“给我大米”的游行队伍一度冲进了位于东京的日本皇宫。至 1946 年 12 月，日本基于各类诉求而自发组织形成的工会总数达到了 17613 个，参加人数达 441 万人。
-+
-+　　转折点首先来自外部力量，即当时驻日美军的占领政策的大幅调整。客观地说，日本战后经济恢复初期，驻日美军对于社会秩序的修复还是起到了积极的作用，具体表现在平息各地的示威行动和重建经济秩序。从本质上来说，美国对日本的占领政策调整，是为了增强其在二战后的全球霸权，日本是其在远东一个极为重要的战略据点。自 1947 年伊始，美国对日本的改造方针逐渐从原先的“全方位削弱日本”，转变为“强化战后日本的经济、军事和政治能力，并加以利用”。贯穿美国对日本的改造行动始末的，是三条纲领，即①军事上增强日本的实力，让日本成为美国牵制远东的重要力量；②政治上扩大日本的影响力，让日本作为资本主义阵营在亚洲的样板，影响他国政策，并成为美国泛亚政策的起始点和终点；③经济上打开日本国内市场，让日本承接美国商品的出口并接受美国投资，成为美国工业产能和资本溢出的接收方。
-+
-+　　美国改造战后日本的初期政策，可以概括为“两支柱，三基点”。两支柱就是日本的去军事化和民主化；三基点为清算财阀、农地确权和劳动再生。其去军事化就是全面解除日本的武装力量，禁止日本制订军事武器生产计划；民主化则涉及政治体制和经济生产的方方面面，均需要对照资本主义生产关系进行调整。清算财阀类似于现代的反垄断政策，具体表现在对日本大财团及其控股子公司进行分拆，以及废止家族传承式经营方式；农地确权的原型是当年英国在联合国对日理事会提出的农地改革方案，主要方式是政府出资收购原土地所有人的地产，分割产权后低价出售给农民，可以理解为日本版的“耕者有其地”：劳动再生则是基于美国“瓦格纳法案”制定的新劳动法，在保护劳工权益的基础上有序开展恢复性生产。这些对当时千疮百孔的日本经济来说无疑是具有极大正面意义的。
-+
-+　　当然，“两支柱、三基点”作为整体，是美国改造日本密不可分、互相依存的政策体系，但其中清算财阀的意义对后世而言，显然更为重要。一个垄断程度被大幅削弱的竞争性市场，为日本日后的资源配置和生产力增长，打下了良好的基础。数据显示，日本战前的十大财阀在战后初期的资本总量仍然占据全国资本总量的 35.2%，其中前四大财阀更是控制了全日本 24.5% 的资本。对这些财团的清算，为日本市场经济的建立打下了基础，令日本的经济初步恢复了生机。
-+
-+　　日本战后经济初步重回正轨，还得益于日本政府的一项产业政策，即“倾斜生产对策”。该产业政策的核心是，重点扶持重工业中的煤钢生产环节，通过煤炭和钢铁行业的大发展，以点带面，恢复国民经济运行。但是，有一点不得不承认，即日本政府的倾斜性政策是简单而粗暴的，但简单往往也意味着高效：原始生产资料积累完全依靠外部的美国援助（铁矿、焦煤、原油等）和内部的工农业产品价格剪刀差。
-+
-+　　为了竭力扶持本国重工业的国际比较优势，从 1947 年 7 月起日本政府制定了一系列改革政策，包括：
-+
-+　　（1）依靠政府威权，强制降低劳动力成本，进而重构物价体系。在经历了恶性通货膨胀后，日本全新的物价体系以 1800 日元的劳动者月工资为基准，工人的劳动性收入被大幅压降，从而降低了企业人力成本。在基准工资的基础上，日本政府规定新政后的物价标准为战前的 64 倍。形成鲜明对比的是，基准工资仅为战前的 24 倍。日本政府通过降低劳动性收入和提高平均物价，以稀释日本民众财富为代价，控制了通胀趋势的蔓延。
-+
-+　　（2）大幅提高税收，通过征收重税来充实已经空虚的国库。
-+
-+　　（3）以官方强制性收储价格，用极低的成本从分到田地的农户手中购买农产品，以工农业产品的高额价差刺激工业发展。
-+
-+　　当然，仅仅依靠价格体系变革，是不足以刺激工业，尤其是较为依赖原始资本推动的重工业快速发展的。日本当局在完成了清算旧有财团后，在金融资源上也采取了倾斜性政策，确保工业发展能及时获得所需资金。日本政府将产业扶持专项信贷资金命名为“复兴金融金库”，1947 年当年复兴金融金库对外提供的融资额为私人部门融资额的 200%，而专项资金对彼时日本工业的发展起到了非常大的正面作用。仅在 1947 至 1948 两年时间内，煤钢行业从复兴金融金库里就获得了高达 1259 亿日元的授信支持，煤炭、钢铁两大部门融资额占全工业部门融资总额的 40% 以上。
-+
-+　　除信贷支持外，财政政策也对产业政策的实施起到了积极作用。日本政府每年在国家预算中支出 850 亿以上的日元，以价格补贴的方式发放给参与工业生产的企业，这部分财政资金约占日本政府财政预算总额的 12%。
-+
-+　　事实上，任何产业政策的成功，都离不开三大要素：稳定的物价环境（包括低廉的劳动力成本）、宽松的信贷支持和强有力的财政补贴。战后的日本政府也确实做到了这三点。“倾斜生产对策”为后来日本重工业的腾飞奠定了良好的基础，部分日本历史学家也将这一揽子政策称为“起死回生的转折”。
-+
-+　　产业政策的成效是显著的。首先，巨额的信贷资金使得重工业产业迅速扩张，同时因为通胀的消退具有时滞性，较高的通胀部分实现了债务货币化，起到了为企业债务减负的作用。自 1948 年起，日本的煤钢行业迅速发展，并且带动了其他工业部门的发展。特别是，仅仅用了两年时间，在 1948 年末，日本的工业生产除纺织业外，基本都恢复到了战前平均水平，不可不谓一次漂亮的翻身。
-+
-+　　高额的财政补贴和巨量的信贷，为当时的日本企业和政府官员的腐败行为提供了温床，其中较有代表性的大案为“昭和电工事件”。事件的大致经过是，日本昭和电气工业公司为了能在复兴金融金库的融资行动中取得价值 30 亿日元的贷款，向首相、议员、官僚行贿 7000 万日元。在经济高速发展初期，对反腐和提高效率的权衡，是任何经济体都必须考虑的重大难题，日本当然也不例外。
-+
-+
-+　　日本的生产在 1948 年已基本恢复元气，下一步就是要稳住发展局面并开始全面建设，而这一步同样面临一个堪称两难的选择。一种观点认为稳定是复兴的前提，另一种观点则提出稳定要让位于复兴，扩大再生产才是当务之急。当时的日本政府考虑再三后，决定采取折中的方案，即所谓的“中间稳定论”。但是事与愿违，一方面，此前的高通货膨胀率虽然初步得到了控制，但绝对水平仍然不低；另一方面，1948 年美国也遭遇了生产能力下滑的困扰，美国国内对于减少对日援助的呼声越来越高。此时的日本面临内外交困的境地。
-+
-+　　为了使日本摆脱当时无法凭借自身力量克服困难的困境，美国政府采取直接指令的形式在 1948 年 12 月提出了“稳定日本经济的九项原则”，这九项原则分别是：①财政上必须采取平衡预算制：②税务征管方式和税率必须改变；③强化价格管制，优先稳定物价；④改进对外贸易政策；5 部分重工业要采取重点保障政策，原材料供应优先保障核心部门：③重要的原材料和工业品要全面国产化，增强自主供应能力：改善农产品征收制度和征收方式：⑧限制劳动力成本膨胀，控制工资增长幅度；9 管控信贷投放，禁止金融资源过度扩张。由此我们可以看出，美国提出的九项原则尽管具有较明显的针对性，但也较为抽象，在落地执行上存在一定困难。并且，这些原则过于强调保障工业生产，忽视了对民众生活水平的改善，这对扩大生产力并不是完全有利的。道奇路线对这些问题进行了纠偏和改良。
-+
-+　　所谓“道奇路线”，是指由美国人约瑟夫·道奇（JosephDodge，1890 一 1964）根据此前“稳定日本经济的九项原则”所制订的具体执行计划。道奇认为，经济的发展依赖人民对政治生态和社会治理的认可度。在混乱的政治秩序和较低的社会认同度的环境下，经济是无法健康发展的。为此，在保持名义工资稳定的情况下，实际工资（购买力）必须得到增长，本质就是要求放开农产品管制和纺织品配额制度。只有轻工业获得了足够的利润积累，重工业才有可能进一步发展，否则一切将是空中楼阁。道奇一针见血地指出了当时日本经济的主要问题：生产力没有内生增长的持续动力。日本经济此前的大发展完全来自外部帮助（美援）和内部财政赤字的扩大，一旦这两个有任何一个不能保持平稳增长，那么日本经济将重新衰退。为此，必须提前进行金融紧缩，控制债务和通胀。
-+
-+　　道奇路线的核心在于重建日本财税体系，特别是要求日本政府实行平衡预算制，控制政府债务的过度增长。当时日本政府由于前期对债务风险缺乏足够认识，1948 年的财政预算赤字达到 1500 亿日元的惊人水平。而在道奇路线指导下制订的 1949 年财政预算，不仅在当年就消除了政府过度举债问题，还实现了小幅盈余。当然，道奇设计的平衡预算制并不是没有代价的，在政府节流的基础上，收入来源仍然是征收重税。1949 年日本国民宏观税负率几乎是 1946 年的两倍，这极大地压制了日本普通民众的购买力。1950 年，尽管宏观税负率有所下降，但整体水平仍然是战后的高位。同时，还应该注意到，道奇路线中的政府节流措施也是结构性的，对重工业生产的支持依然得到了保障，主要的支出削减方向是教育和文化等社会福利事业，这降低了日本民众生活的幸福感。此前在支持经济重启方面起到了积极作用的复兴金融金库也被勒令停业，尽管这项措施成功控制了政府债务规模继续膨胀，但为经济结构的良性发展埋下了祸根一前期大企业获得了大量信贷资源，中小企业尚未能够参与国家金融支持计划便失去了复兴金融金库这一重要资金来源，从而与大企业的发展差距越来越大。
-+
-+　　1949 年发生的另一个决定日本未来发展路径的重大事件，是汇率制度改革。具体来说，1949 年 4 月 25 日，日本政府根据美国此前为其制定的行动规划，将美元和日元的官方兑换价格定为 1：360，即 1 美元兑 360 日元。尽管在后世看来，固定汇率制度有诸多不足，甚至有引发金融风险的可能，但对当时的日本来说，无疑还是有巨大的进步意义和促进经济发展的作用的。从国际贸易角度看，稳定的货币汇率为日本商品进入国际市场铺平了道路，也为日本从其他国家进口原材料打开了大门，日本在若干年后得以通过“贸易立国”方针迎来大发展，基础正是在此刻打下的。
-+
-+　　道奇路线还为日本制定了资金回流制度。简单来说，资金回流制度就是要求日本政府在获得美援物资后，在销售相应产品时，将获得的营业收入按照一定比例予以冻结，限定被冻结的资金用途为偿债或投资重大项目。按照现代经济学的观点，资金回流制度主要目的在于控制日本政府的债务杠杆率，与当代的去杠杆理论不谋而合，总体上对于促进日本经济平衡、良性发展起到了积极的作用。
-+
-+　　道奇路线的三大方针（平衡预算、固定汇率和资金回流），本质上来说是宏观意义上的财政货币双紧缩政策。日本的通货膨胀直到道奇路线全面推行后，才真正意义上被遏制，代价是日本出现了一波中小企业破产潮和失业潮。据当时日媒的不完全估算，仅 1949 年一年，日本新增失业人数就接近百万人，其中被裁员的公务人员约 20 万人，民营企业裁员约 80 万人。道奇路线的另一个贡献是促使日本政府基本废除了价格统一制的管理思路，将价格机制全面引入日本的资源配置和贸易体系，自由市场在此期间初步建成。道奇路线本身是一项有利有的经济建设举措，虽然大部分政策都有利于当年的日本经济秩序重构，但紧缩政策下“茶杯中的风暴”对日本人民的生活形成较大的打击，日本的普通民众并未享受到经济发展的红利。而改变这一切的，是一场战争，即 1950 年爆发的朝鲜战争。
-+
-+　　1950 年 6 月 25 日，朝鲜战争全面爆发。按照美国的估计，当时的南朝鲜军队可以轻易战胜北朝鲜军队。然而战争初期形势便急转直下，北朝鲜军队的战斗力远远超过了战前美国的预测。由于战事的日渐扩大，驻日美军的军需采购量大幅上升，其中纺织品和工业金属的需求更是一飞冲天。在 1950 年 6 月至 12 月这半年时间里，日本物价指数上涨 23%，其中生活资料指数上涨 11%，生产资料指数上涨 34%，后者中又以棉花和钢材的涨幅最大，钢材价格在 10 月末时较 6 月末上涨 100%，棉花棉纱及其制成品价格在 8 月末时较 6 月末更是暴涨 150%。
-+
-+　　生产的高景气也推动了资本市场的繁荣。日本东证指数自 1950 年 7 月至 1951 年 7 月暴涨 50%，其间虽然因为联合部队的战事失利而短暂遭受打击，但很快便因为纷至沓来的新订单和高盈利而重新恢复上涨。尽管军需物资从长期看并非一项稳定的需求（因为任何现代化大规模战争均不可能持续太久，而小规模热战的军需物资量显然远不如前者)，但带给日本军工企业的盈利却是极大的，订单范围也较历史上其他战争期间更大，从棉纺布料、麻袋到重型卡车、火炮、汽油弹等装备均由日本就地生产供应。此外，武器修理和通信保障也是一大笔收入，这对当时的日本无疑是及时甘霖。根据日本通商产业省事后的整理记录，朝鲜战争爆发后一年内的军需订单合同的累计金额达到 3.3816 亿美元，并且全部以美元支付，这为日本积累了庞大的外汇储备。至 1953 年，军需合同的累计金额已达 13 亿美元，其中 11.170 亿美元以美元支付，剩余部分以日元支付，仅 1953 年一年通过军需订单支付流入日本的美元就占其外汇收入的 38%。同时，除军用物资外，随军前来日本的美国人，特别是大量的军人家属在日的消费也十分可观。据通商产业省的不完全统计，这部分消费开支约合 23 亿美元。
-+
-+　　1953 年 7 月 27 日，随着“朝鲜停战协定”的正式签署，日本经济因朝鲜战争而掀起的景气狂潮，也暂告平息。从朝鲜战争爆发到结束的这段时间里，最大的赢家无疑是日本的大型公司。从日本经济安定总部的资料看，1951 年日本的资本积累为 1949 年的 4 倍，轻工业特别是棉纺工业的前十大企业利润平均增长 9～19 倍，钢铁、化工等行业均有类似的利润涨幅。与此同时，朝鲜战争为日本带来的另一个意想不到的利好是其军事力量得到了极大的扩充，原本在二战后作为战败国被解除了军事力量的日本，被美国重新允许建立武装力量并重新自供武器，而这距离二战结束还不满 10 年，间接导致了日本军国主义势力并未得到完全清除。不过，越过山顶后就是下坡路，沉浸在朝鲜战争带来的发展景气中的日本政府和日本民众还不知道，一场经济危机正在等待着他们。
-+
-+　　自朝鲜战争中后期起，日本的棉纺织品价格和钢铁制品价格已经开始高位回落，但得益于源源不断的军需订单，工业产能仍然在上升，因此生产仍然维持着欣欣向荣的态势，尽管表面的繁荣下早已暗流涌动。潜在威胁之一就是日本工业生产高层在利润暴增期为了抢夺订单和市场份额，盲目地上项目和扩大产能，新设备投资和固定资产更新不断加速，甚至一度出现了部分行业产能同比扩大 50% 的奇观。迅速扩大的生产能力显然超出了下游的承接能力，库存开始缓慢爬升。然而，这在当时的日本工业高层和银行家看来，却是扩大再生产的良机：库存可以作为抵押品进行融资，融资意味着可以继续扩大生产，制造更多库存。产能大幅扩大的背后，是对工业品，特别是军需物资的需求只增不减的信心，毕竟许多人都认为，战事是最大的基本面。然而，过于一致的预期往往会将事物引导至完全相反的结局。
-+
-+
-+　　至 1953 年初，朝鲜战局前景已经基本明朗，日本工业此前大幅扩大的产能一时间成为过剩产能。日本政府本应在此时迅速作出决断，让市场自发出清，终结工业生产的过度无序扩张。然而，日本政府的高层并没有选择这么做。或许是因为对战火重燃心存幻想，又或许是为了维持民众心中“日本经济将长期保持高增长”的幻觉，日本政府决定扩张财政赤字并降息，通过财政货币双宽松的政策刺激生产并稳定工业品价格。在这个阶段，支撑日本工业产能扩大的不再是以需求为主的实体经济，而是金融杠杆。1953 年，日本生产指数同比再度增长 24%，一切看似繁荣依旧。但是，出口增速大幅放缓却不断地告诉人们一个事实：需求，特别是外需，已经不是高景气时的状态了。日本在 1952 年时的巅峰期外汇储备接近 12 亿美元，而在 1953 年末则降至 9.76 亿美元，外汇储备的收缩来自贸易顺差的大幅减少。不过，即便如此，在朝鲜战争时期，日本仍然是资本主义世界的最大赢家，其经济增速远远超过同期其他老牌资本主义强国。如果仅仅是外汇储备收缩，倘若给予足够的时间，也许日本仍有机会消化潜在的风险，只是历史并没有如果。
-+
-+　　雪上加霜的是，1954 年 3 月“日美共同防御援助协定”签署后，美国利用政治和军事优势向日本政府施压，要求其重新恢复财政货币双紧缩的经济状态。12 月，世界银行调查团访日，告诫日本政府要采取金融紧缩以防止通货膨胀。迫于各方压力，日本政府决定压缩 1954 年的财政预算至原先计划的 80%，即削减 20% 的财政支出，同时取消所有的基建项目。
-+
-+　　紧缩政策的威力是巨大的。自 1954 年 3 月起，日本工业生产环比不断收缩，失业率和失业人数超过了此前“道奇路线”时期的顶峰，达到了二战以来日本国内失业率的极值。同时，企业开始出现大规模破产。由于此前积累的高库存，流通中的商品价格水平呈现通缩状态，平均跌幅达到 4.5%。由于经济状况的不断恶化，加之同期海外西欧和美国经济蒸蒸日上，时任日本首相吉田被迫宣布下台。1954 年 12 月，鸠山一郎正式出任日本首相，开启了日本二战后的第二次大繁荣。
-+
-+　　鸠山内阁的组建带有明显的想摆脱美国人为其制定的经济政策的意图，同时也想借美苏冷战的大背景以及亚洲特殊的情况，左右逢源，拓宽外交空间，将发展经济作为第一要务。鸠山内阁的口号是“完成独立”，取得“独立自主的外交”，并于 1955 年加入关税贸易总协定（国际贸易组织 WTO 的前身）。得益于此前经济危机带来的市场出清，日本积累的过剩产能被初步消化，工业品特别是纺织品价格触底回升。其间，鸠山内阁秉持“完成独立”原则，多次拒绝美国的产品输入，为稳定国内物价作出了贡献。
-+
-+　　以经济建设为首要目标的执政思路落地见效，1955 年当年日本贸易顺差再度扩大，实现了约合 4 亿美元的贸易盈余，外汇储备连年下降的趋势得到了扭转。同期，生产指数增长 8.2%，其中约有 1/4 的增长来自出口，国民经济收入增长 12%，而物价水平保持平稳。在 1956 年的《日本经济白皮书》中，日本政府将这段时期的经济成就称为“数量景气”，并正式宣布现在的日本“已经不再是战后状态了”，向世界宣示日本已经完成经济重建，并迈入了追求现代化建设的新时代。
-+
-+　　1956 年，日本的经济继续高歌猛进。全年国民经济收入增长 13.9%，工业生产增长 23.4%，几乎是年初政府计划值的两倍多，日本的工业生产能力再次冠绝资本主义阵营。从分项看，日本船舶制造产值同比增长 63%，电视机产值激增 52%，汽车产量扩张 40%，机械生产指数大涨 45%，全年固定资产投资达 1.2 万亿日元，同比增长 65%，这为后来日本的相关工业部门取得技术优势打下了坚实的基础。日本民众对未来的信心达到了前所未有的高度，民族优越感和乐观的氛围弥漫整个日本，人们将这一年取得的经济成就称为“神武景气”。
-+
-+　　在任期内取得了巨大成功的鸠山一郎因病卸任，其继任者不久也因病离任，岸信介就任日本首相并组建内阁。由于错误地估计了世界经济形势，日本央行在“神武景气”后立即宣布提高法定利率，加息政策拉开了金融紧缩的帷幕。1958 年日本的固定资产投资下降接近 10%，工业生产指数自 1957 年二季度开始转为下降。尽管 1957 年的经济活动收缩和此前相比，并不算一次较大的经济危机，但也中断了“神武景气”期间日本连年高增长的经济态势。
-+
-+　　从 1959 年起，受益于世界经济形势的再度改善，外需成为拉动日本经济增长的新引擎，部分抵消了错误的金融紧缩政策给日本经济带来的负面影响。随着欧美各国家庭消费升级进程的到来，电视机、冰箱、洗衣机和汽车等消费品需求与日俱增，而日本工业在此前“神武景气”中积累的技术优势和设备升级发挥了关键作用，为日本赢得了许多海外订单。从日本通商产业省的统计数据看，1959 年日本制造业综合指数同比增长。26%，其中电气工业同比大增 72%，机械制造增长 44%，彻底打响了“日本制造”良好的国际名声。
-+
-+　　1960 年日本内阁再次换届，池田勇人担任日本首相，并顺势提出了“收入倍增计划”，以 10 年为维度，计划将国民总收入翻番。在金融方面，日本政府深入执行“金融自由化”，外资自 1961 年开始大量流入日本。至 1961 年末，外国资本对日投资总额达到 25 亿美元，其中私人资本为 19 亿美元（包括约 8 亿美元的技术援助)，政府投资约 6 亿美元。从各工业类别看，矿业、石油、机械和电信业等部门引进的外资较多。至 1970 年，日本国内经济收入和国民总收入成功实现翻一番的目标，人均工资增长 65%，工业生产增长接近 200%，“贸易立国”和“金融自由化”无疑起到了重要的作用。特别是，私人部门的固定资产投资在 1967、1968 和 1969 年连续三年增长超过 20%（分别是 27%、27% 和 22%），同期出口增速也保持在 20% 以上。进入 1970 年代后，除 1975 和 1979 两个年份外，贸易增速每年仍在 20% 左右，而巅峰的 1974 年更是达到 50%。
-+
-+　　日本于 1964 年加入 OECD（Organization for Economic Co-operation andDevelopment，经济合作与发展组织)，开始大力实施商品的国际化，将国内生产力向世界各国输出。其成果是显而易见的，1970 年代，日本的 GDP 增速除 1979 年的 8.4% 外，其余全部在 10% 以上，1973 年增速达到峰值，为 21.8%，遥遥领先同期的欧美各国。1978 年日本人均收入水平约为美国同期水平的 3/4，进入 1980 年代后，日本的人均经济实力更是空前接近美国。尽管日美经贸摩擦时有发生，但在当时这并不是一个大问题，因为日本对外输出的工业品足够物美价廉，贸易政策和关税并不足以抵消“日本制造”的全面优势。在取得了世界瞩目的经济成就和相应的经济地位后，日本开始谋求经济结构优化和产业转型，试图进一步增强经济实力，并与美国在经济领域争夺霸主地位。至少在 1980 年初，这一切看起来并不是那么遥不可及的。在经济层面达到甚至超越美国，借着世界经济逐步融合的东风，日本有望成为最先进的经济体。这似乎是当时日本人心中认为理所当然的事情。
-+
-+### 9.3.1.2 日本经济泡沫破裂始末及其影响
-+
-+　　在正式开始讲述日本经济泡沫破裂始末前，我们需要厘清几个关键的概念，比如，什么是泡沫经济。我们所说的泡沫经济，指的是日本在 1980 年中后期至 1990 年代的资产价格暴涨暴跌的异常波动的经济发展阶段。在这一时期，日经指数从初期到巅峰时曾暴涨 3 倍多，妖股更是横行于世；土地价格同步涨超 300%，地价最高时日本仅东京都的住宅用地市值就达到同年日本 GDP 的 1.5 倍，地产价格膨胀速度前所未有。
-+
-+　　这里就引出了“泡沫”的初步含义，即资产价格的膨胀并未对应实体经济产出的增长，或者又可以表示为“金融资产高通胀，实体经济低通胀”的经济形态。当然，泡沫之所以被称为泡沫，那是因为这些虚无缥缈的资产价格来得快，去得也快。在价格到达谷底的一年内，日经指数暴跌超过 40%，东京都地价下跌 15.1%。至 1992 年中，日本股市共计蒸发了超过 300 万亿日元的市值，东京都土地市场损失了约 100 万亿日元的市值，日本居民的财富遭到了洗劫，日本彻底告别了高增长，陷入了漫长的“失去的二十年”。这一切究竟是怎么发生的呢？这还要从泡沫经济的本源一“泡沫”说起。
-+
-+　　学术界对“泡沫”这个词的精确定义语焉不详，但大致的意思可以归纳为以下几个：
-+
-+　　（1）短时间内资产价格全面上涨，资产类别可以多种多样，但一定具有金融属性（可以作为抵押品）。
-+
-+　　（2）资产价格的上涨完全来自估值拔高，资产本身带来的现金流，如房租、股息等并未明显增长。
-+
-+　　（3）资产价格的涨幅超越了基本面，即价格增速大幅偏离经济增速。
-+
-+　　无论在定义上如何有分歧，学术界一致认为，泡沫只有在破裂后才被叫作泡沫，在资产价格没有出现暴跌前，轻易地将某种资产价格的快速上涨定义为泡沫，是不合适的。因为资产价格反映的不仅仅是过去和现在的基本面，还包括对未来的预期。如果预期发生变化，并且资产定价是完全有效的，那么资产价格在短时间内迅速被重估也是合理的。泡沫的这个特性决定了资产价格泡沫在破裂前，是不能够被人们察觉的。以日本为例，1989 年全日本报刊有关泡沫的议论文仅仅 11 篇，而在 1992 年则迅速升至 3475 篇，不得不说这个变化正好完美地契合了经济学理论。
-+
-+　　其实，在日本经济泡沫产生前，历史上已经有数次非常著名的经济泡沫可以借鉴，如 1635 年左右的荷兰郁金香泡沫、18 世纪的英国南海泡沫和 1929 年美国经济大萧条前的虚假繁荣。这些泡沫的产生和破裂都有一个共同的特点，即人性的疯狂在金钱膨胀阶段被放大到极致，投机、狂热和恐慌贯穿了事件的全过程。跳动的数字其实并不足以触动人心，真正刺激人们神经的，是身边的一个个财富神话和暴富传奇。接下来，我们将详细介绍日本泡沫经济形成的全过程，以及它是如何最终将日本拖入深渊，陷入现在的 K 型分化的境地的。
-+
-+
-+　　首先掀起价格飙涨狂潮的，是权益类资产，即人们所熟悉的股票。1983 年，日经 225 指数大致在 8000 点左右徘徊，3 年后即 1986 年，指数达到 13000 点附近，较 1983 年涨幅过半。然而，在下一个 3 年——1986—1989 年，日经 225 指数涨了 2 倍，最高点曾达到 38957.44 点，创下了惊人的涨速和涨幅。值得一提的是，直到 2021 年，日经 225 指数也没有能力再回到这一历史高点，这也意味着如果是在 1989 年进场的日本股市投资者，可能至今也没有实现回本，创收更是无从谈起。
-+
-+　　另一个价格飙升的资产是土地。日本统计局数据显示，东京都核心区（千代田、中央区、港区）不到两年时间（1986 一 1987 年），地价就实现了 3 倍增长。值得一提的是，如果按照套内面积为 75 平方米的房屋购买价格与当时的日本人均年收入之比来看，在 1982 年以前，一个普通的工薪族日本人大约花 8 年时间就可以购置一套位于东京都核心区的房产。在 1987 年，这一数字小幅上升到 10 年，而 3 年后这一数字跳至 20 年。大幅攀升的股价和房价，让许多日本人再也无心工作。毕竟，只需要将资产倒手，就能获取巨额的利润，谁还愿意踏踏实实地挣工资呢？
-+
-+　　以上只是日本泡沫经济时期的具象化表现。其实，任何资产价格的上涨，都离不开廉价资金的推动。学界在复盘日本经济的泡沫化进程时，最易联想到的，还是 1980 年代初期的财政货币双宽松的大放水政策。
-+
-+　　1980 年初，日本央行的官方贴现率为 9%。此后考虑到日美贸易摩擦对日本企业的出口影响，以及 1970 年代石油危机引发的大宗商品输入性通胀对中小企业生产成本的压力，日本央行选择连续降息，以降低制造业的融资成本，对冲生产端面临的成本上涨且需求下降的不利局面。出于审慎考虑，当时的日本央行在 1980 年至 1985 年的 5 年多时间里把官方贴现率降低到 5%，日本的制造业得以在这 5 年时间内以较低的资金成本取得了发展，制造业的工业生产指数长期保持在 70 以上，1985 年一度突破了 90。“日本制造”强大的全球竞争力对其他工业化国家形成了较大的冲击和挤出效应。然而，这一良性循环在 1985 三季度被彻底打破。
-+
-+　　1985 年，日本首次取代美国，成为世界上最大的债权国，日本的冰箱、彩电和汽车等工业品大量涌入美国市场，部分美国报纸刊登出《日本即将和平占领美国！》等耸人听闻的标题。美联储统计测算，1985 年的日本财政累计盈余和外汇储备合计约 545 亿美元，日本人民在二战后 40 年间创造了惊人的财富，迅速完成了过去老牌资本主义国家数百年才能做到的原始资本积累，创造了令人惊叹的经济奇迹。从日本大藏省发布的数据看，截至 1985 年末，日本银行业的储备金达到 100 兆日元，全日本的海外净资产规模达 1298 亿美元，而同期美国的外债规模为 1114 亿美元。有鉴于此，1985 年 9 月 22 日，美国、日本、西德、法国以及英国的财政部部长和中央银行行长在纽约广场饭店举行会议，一致同意将干预外汇市场，通过官方指引有序地实现美元贬值，通过货币化手段解决美国连年的巨额贸易赤字问题。这份协议因签署地点在广场饭店，被称为“广场协议”。
-+
-+　　在广场协议签署后不久，随着各联盟国对外汇市场出手，美元兑日元的官方挂牌汇率从 1 美元兑 260 日元，快速变为 1 美元兑 121 日元，日元在短短时间内迅速升值。然而，改变汇率是把双刃剑，一方面货币购买力上升意味着日本制造业可以享受更为低廉的原材料，另一方面也意味着其产成品的价格提升，国际竞争力下降。为了阻止出口优势的下滑，日本央行故技重施，再度举起了宽松政策的大旗。1986 年日本央行连续 4 次降息，将官方贴现率从此前的 5% 降至 3%，至 1987 年更进一步降低至 2.5%。低成本的资金意味着热钱泛滥，据不完全统计，仅在 1986 一 1988 年这 3 年间，日本银行业合计向私营部门发放了 67.5 兆日元的贷款，巨量廉价的信贷资金与相对有限的资产形成了鲜明的对比，日本资本市场一度出现了“资产荒”，即资金多到没有可匹配对应风险的资产，只好不断地做风险下沉，这为日本金融体系的稳定埋下了巨大的隐患，久期错配和过度风险下沉对银行业而言是致命的。
-+
-+　　伴随货币宽松的，还有大规模的财政支出刺激，具体表现为基建投资的大幅增长。日本的基建项目大致可以归为三类：一是公共道路和桥梁建设，二是港口和海湾建设，三是公共文旅休闲场所等国民福利性设施建设。从投资总额看，1980 年代的日本共计进行了总额为 291.3439 兆日元的公共基础设施投资，1990 年代则进一步扩张至 460.2869 兆日元。基建链条具有极强的货币传导效应，原理在于基础设施建设上游连接玻璃、水泥、钢铁、化工等工业品原材料生产，中游连接机械制造、设备制造等，下游连接房地产、交通运输等终端需求，可以说具有牵一发而动全身的作用。基建链条的货币充盈，意味着全产业链上中下游及其附带的相关行业，均获得了增长动力。从业人员的收入提高也进一步发挥了基建投资的正面作用，更何况，基建支出符合经济学原理中最基本的财政乘数效应，政府支出的增加的的确确带动了国民经济增长。只不过，任何事物都有其两面性，扩张性财政政策也不例外。从 1980 年代起，尽管大规模基建投资为日本经济提供了支撑，但跨越式的基建投资支出令日本政府的债务负担更加沉重，至 1990 年代初其负面效果逐步显现，基建投资占日本 GDP 的比重已经达到 6.4%，是同期美国的 4 倍左右。从债务角度看，1986 年日本国债余额占 GDP 的比重约为 43%，至 1990 年代末方才下降到 38%。过于依赖投资驱动的经济增长显然无法走得更远，因为债务规模存在融资付息约束。
-+
-+　　另一个值得深入研究的问题是泡沫经济前的日本舆论和学术研究观点。对 1980 年代后期迅速上涨的土地价格，尤其是东京都的住宅地价，彼时的日本媒体和学术界的主流观点都给出了“有一定泡沫，但泡沫占比不大，地价总体是由基本面驱动的，风险可控”的结论。例如，在日本政府官方发布的《昭和 63 年国土利用白皮书》中提到，东京都土地价格上涨的原因有三个：一是宽松的货币政策刺激了总需求扩张，同时国民收入水平提高，购买力增强；二是市中心老旧住宅占比较大，市民改善需求较大，资产置换推动了价格上涨；三是以东京圈为中心的城市群较早地实现了城镇化、产业集群，就业机会和平均薪酬相比其他城市更有吸引力，人口流入和产业集中造成的供需缺口推动土地价格上升。在白皮书的总结段落中，日本政府的官方结论是“实体经济的繁荣推动了土地市场的繁荣”，这一点在平成元年的白皮书中才得到一定修正，后者的官方表述中新增了投机性买卖的概念，不过这已经是在住宅价格翻两番之后的事情了。
-+
-+　　另一个生动的例子，是日本经济企划厅高级官员兼早稻田大学政治经济学教授原田泰（HaradaYutaka）在 1988 年发表的题为《东京的高地价对策》讲话。原田泰认为，1985 年后的东京住宅价格飙升，是基于东京圈经济实力和经济地位而产生的土地价值重估，因而不存在泡沫问题。即便有泡沫，也是“非常微小的”。原田泰的论据有二个：①东京圈的 GDP 和就业率大幅领先全国其他城市，产业集中意味着人口持续流入，土地必然是稀缺资源；②从购买力角度看，东京的人均收入大幅领先全国其他城市，而住宅的价格取决于日本精英阶层的支付意愿和支付能力，因此并不是 1985 年后土地价格上涨过快，而是 1980 年前土地价格被低估了，目前只是土地的价值修复和价格回归。在 1990 年的政策构想论坛上，日本经济学家进一步提出，以租售比判断日本住宅价格是否存在泡沫是“不正确的”，并提出“住宅价格泡沫论存在极大的误导性，将妨碍日本未来的财富积累”，否认了金融宽松和杠杆是土地价格暴涨的原因，坚持供需关系才决定住宅价格。
-+
-+　　对于股市的认识同样如此，从政府、学界、业界到民众，当时很少有人认为日本股市存在泡沫。一般来说，市盈率是衡量股票市场泡沫水平的良好指标。市盈率就是用股价除以每股盈利，这个指标更类似于投资回收期的理念，即买入股票后大致多少年可以收回投资金额，年限越短则回收速度越快，股票越被低估，内在价值也就越高；反之，投资回收期越长，股票越被高估，内在价值就越低。主流经济学教科书认为，以欧美市场的投资者风险偏好为基准，平均市盈率在 15 是一个相对合理的水平。从市盈率指标看，1987 年后的日本股市平均市盈率长期保持在 50 以上，远高于同期欧美股市的平均市盈率。但是，日本朝野似乎对这一现象不屑一顾。1989 年，前日本央行货币政策委员会的决策官员植田和男发文指出，由于日本大型企业间存在交叉持股现象，在特殊的资产负债结构下当前的股票估值是合理的；并且由于日本企业的高成长性，较高的盈利增速预期使得日本企业未来可以通过盈利的增长消化当前的市场高估值，因此目前的股票市场是安全并合理的。由于日本多数企业投资了房地产，土地价格的提升助推了企业的资产价格，因此股票价格的上涨也反映了投资者对日本企业所持有的房地产价格继续上涨的信心。
-+
-+　　上述论断在事后看，未免有些滑稽。事实上，我们不难发现，当时的日本企业股价和土地价格，玩了一个“左脚踩右脚平地登天”的游戏。日本企业购买土地，土地价格上涨；土地价格上涨，日本企业的股价上涨，从而通过增发股票获得更多资金；企业获得更多资金后，继续购买土地，推动土地价格进一步上涨。这就形成了一个自我强化且闭环的正反馈循环，土地和股票不断互相推升彼此的价格。由此也不难看出，当年日本的资本市场已经陷入了一个非理性的境地，但在这个非理性的时刻，更多人选择相信泡沫，并不断为泡沫的生成找借口以及合理性，试图说服自己参与到这场狂欢中。
-+
-+
-+　　具体量化地来看，在 1985 年至 1990 年期间，日本非金融企业从银行获得贷款合计 185 万亿日元，通过债券发行和股票增发获得资金 91 万亿日元，从其他渠道筹资约 120 万亿日元，总共获得约 396 万亿日元的资金。然而，在资金运用方面，大约有 65% 的资金（约 258 万亿日元）被投向了金融资产，仅不到 35% 的资金流向了实体经济。造成这一怪象的部分原因是当时的日本在金融自由化后，出现了利率倒挂的情况。根据日本开发银行的统计，1980 年代后期日本企业发行商票的平均融资成本低于 5%，然而由于各家银行高息揽存的行为，大额储蓄订单的利息高于企业商票利率，这就导致资金出现了在金融体系内空转的现象一企业发行商票，低成本融资，再将这些钱存到存款利率较高的银行，从而无风险地获取息差收入。这在当时看来是一笔绝妙的生意：银行获得了存款，企业获得了无风险收益，投资者赚到了商票利息。然而，这一切并不是没有代价的，利差在最终兑现时，要么牺牲金融稳定（银行无法找到匹配高成本负债的资产，最终破产），要么牺牲广大日本民众的利益（央行放水救市，通胀稀释了债务，但也稀释了民众的财富）。当然，这些长期后果并不会立即显现出来。对于 1980 年代后期的日本人来说，只要是能赚钱的生意，就没有不能做的。
-+
-+　　从学术的角度看，企业的资产等于负债加所有者权益，所有者权益通常也被称为净资产。如果一个企业的净资产没有任何变化，仅仅依靠借贷获得资产，那么这个企业就进入了依靠杠杆实现扩张的阶段。1984 年，借助杠杆实现扩张的企业占日本全国企业数量的 60% 不到，而到了 1987 年后，则长期保持在 80% 左右。
-+
-+　　另一个现象更加令人侧目，即日本的银行业贷款投向持续脱实向虚。在资金流向方面，1985 一 1990 年，证券市场投资大幅上升，导致这一现象的一大驱动力是机构投资者，特别是人寿保险类具有超长资金久期的投资方携带大量资金进入资本市场，主动巨量购买日本国债、企业债和股票等资产，快速推升了资产价格。同时，从银行业的融资结构看，第一大突出特征是信贷资金的异常性风险下沉，即将贷款投向本不该获得相应资产的中小企业。银行经营的原则之一是安全性，风险和收益应当匹配。中小企业天然具有更高的经营风险和财务风险，因此从银行获得贷款的总量和利率都应当有所限制。然而，在 1985 年初至 1990 年初的这段时间里，日本银行业对日本中小企业的贷款余额暴增到 2 倍以上，从 105 万亿日元增长至 247 万亿日元，而同期大型企业获得的信贷资金不足 3 万亿日元。1985 年初，日本银行业对中小企业的累计贷款余额约为大型企业贷款余额的 1.5 倍，而在 1990 年初这一数据迅速上升至 3.5 倍。这一现象其实也不难理解：一是大企业可以通过增发股票和发行企业债来更为廉价地融资；二是中小企业的贷款利率能为银行创造更多息差收入，在当时日本经济形势一片大好的背景下，中小企业破产的可能性很小，银行乐意去赚取这一部分在它们看来是“几乎无风险”的收益。值得一提的是，在经济泡沫破裂初期，日本银行业对中小企业的贷款增速迅速下降，这被彼时的日本舆论界批评为“惜贷”“不支持中小企业发展”，然而事实上 1980 年代才是经济史的特例，1990 年代后的日本银行业只是恢复了正常的风控标准而已。
-+
-+　　日本泡沫经济时期的房地产业对金融资源，尤其是信贷资源的虹吸效应，则是另一个增加日本经济运行脆弱性的重要因素。截至 1984 年末，日本银行业对房地产业的贷款余额约合 16.7 万亿日元，而到 1989 年末，这一数据飞升至 41.5 万亿元，5 年间累计增长 24.8 万亿日元。这也就意味着，仅仅在 1980 年代中后期的 5 年时间里，日本房地产行业从银行获取的贷款量，就已经超过了此前数十年的积累。其中，对房地产行业贷款最积极的，要数日本的城市银行，5 年时间内新增贷款累计约达 13 万亿日元，贡献了房地产行业新增贷款中 52.4% 的资金，这也和日本各地房价以东京都为中心，向四周扩散并逐步抬升有一定关系。
-+
-+　　与此同时，影子银行在这波贷款放量增长中，也起到了关键的作用。所谓“影子银行”，是指游离于银行监管体系之外、不具备银行资质但同样从事信用创造业务的机构。影子银行在当时的日本主要以民间借贷、信用租赁和金融合作社等方式出现，主要运作原理是先从正规银行取得贷款，再以更高的利息向用户发放相应资金，从中赚取息差收入。因为影子银行受监管规制较少，同时经营活动具有一定的隐蔽性，所以很难对其进行完整的统计和监管。根据大藏省的不完全统计，1980 年代中后期日本银行业向非金融机构发放的贷款中，大约有 40% 通过影子银行绕道进入了房地产市场，加剧了金融资源向房地产业集聚，推升了房价。从资金运用的角度看，日本企业在 1980 年代前期每年购置土地的费用不足 1 万亿日元，而在 1985 年后的 5 年时间内却斥资 40 万亿日元用于购买土地，显然这不是正常的生产经营需求，而是包含了极大的投机性，企业不再专心于主业的生产经营，而是热衷于参与房地产市场的投机活动。
-+
-+　　针对房地产市场和股票市场过度火热的情况，日本政府决定采取一些措施来为市场降温，一方面是为了防止过快上涨的资产价格造成贫富分化，另一方面也是为了防止日后资产价格失衡导致金融体系动荡。于是，自 1987 年开始，一系列调控政策陆续出台。
-+
-+　　从整体看，日本政府对于宏观调控还是比较慎重的。针对股票市场的过度投机，主要采取的手段有：①金融紧缩，包括适当加息（货币紧缩）和控制财政赤字（财政紧缩）；②税率上调，包括自 1989 年起开征消费税。针对房地产市场的火热，采用的手段有：①控制交易活跃度，即适当降低二手房的流通换手率。由此引入了地价监视制度，即当某一区域的土地交易超过一定规模时，就被纳入管制范围，在管制范围内的土地交易必须经过当地政府的批准。②严控涉及房地产行业的新增信贷。其间出台了房地产关联融资的总量控制政策，通过行政手段控制房地产企业从银行获得的融资规模上限。③开征地价税，即通过对房地产土地所有者进行征税，弱化土地持有者的财富效应。
-+
-+　　组合拳政策的实施速度是非常快的。自 1989 年 5 月 31 日起，日本央行开始了连续加息的进程，至 1990 年 8 月 30 日，日本央行的官方贴现率从此前 2.5% 的低位一路上升至 6.0%，加息的速度和幅度之巨超出了许多人的意料，日本的金融从业者由此明白，金融宽松的日子已经结束了。
-+
-+　　组合拳政策的实施效果是非常显著的。代表日本股市整体水平的日经 225 指数在 1989 年（注意，这是加息的起始点）触及 38957.44 的历史高位一顺便说一句，这是至今也没有被突破的高位，之后，至 1990 年 9 月迅速暴跌至 20983.50 点，在不到一年的时间内日本股市投资者的财富蒸发掉将近一半。
-+
-+　　地价税的出台则被视为日本政府对房地产市场的重拳出击。首先，为了确保征收地价税具有法律依据，在经过此前多年的论证和反复修改讨论后，1989 年 12 月 22 日日本《土地基本法》颁布并正式实施。法律条文明确表示要“对土地采取适宜的税制”，通过征收存量财产税来抑制房地产交易的投机性。日本政府认为，征收地价税是“解决房地产问题的极为重要的手段之一”。形成这一共识的背景是，当时的社会舆论认为，由于日本富人持有固定资产，尤其是房地产的成本过低，如果不对持有的存量财产征税，则不能打击囤房囤地的行为。而征收地价税可以有效地抑制房产空置，迫使大量持有房产的人抛售资产，从而促进土地流转，抑制房价上涨。
-+
-+　　日本地价税的正式开征，则是进入 1990 年代的事情了。地价税以房地产所有人持有的土地价值为计税依据，年税率定为 0.2%，一年后则提升至 0.3%。同时，为了不影响日本刚性的购房求，地价税设置了非常多的免征条件，例如，自住房免征地价税（自住房的定义是个人名下只有一套房产），每平方米单位地价低于特定标准以及租赁住宅的免于征税，教育、医疗、公路、农地等具有一定公益性质的土地也不用交税，可以说在最大范围内避免了对日本普通民众的“误伤”，精准打击了囤房群体。
-+
-+　　地价税对于房地产市场整顿的效果是立竿见影的。自 1991 年起，日本全国范围内土地价格开始快速下跌，自 1991 年中至 1992 年中，东京都住宅用地价格下跌 27.5%，大阪地价下跌约 24%，东京地价下跌 15%。
-+
-+　　伴随股价和地价下跌的，是企业的破产倒闭潮。1990 年日本负债 1000 万日元以上的企业破产 6468 家，债务总额达 2 万亿日元；房地产企业破产 364 家，债务总额约占所有破产企业的 33%，而至 1992 年这一数字进一步上升至 37.5%。日本的金融体系开始出现系统性风险。
-+
-+　　土地价格的崩溃无疑是导致系统性金融风险发生的重要原因。在间接融资体系中，信用创造的基础是抵押品，只有抵押品足够优质，银行才会进行放贷操作。而在当时的日本，房地产是最优抵押资产，大量的贷款产品背后的底层资产都是土地或相应的房产。这也就意味着，如果房地产市场出现波动，那么抵押品价值就会大幅下降，银行发放的贷款价值就会超过抵押品本身，贷款就存在变成坏账的风险。同时，除会计学意义上的抵押品价值下跌影响外，暴跌的房价也使得背上房贷的人断供倾向增多，从而进一步加剧坏账发生率。最后，从国民经济恒等式看，一个人的支出便是另一个人的收入，在地价下跌引发的企业破产潮中，大量的人失业从而失去收入来源，这会导致更多原本与其业务间接相关的企业和个人收入下降，增加全经济系统的负担和压力。从日本大藏省公布的数据看，至 1992 年末，日本城市银行、长期信用银行和信托银行的不良债权规模已达 12.3 万亿日元，潜在坏账率约 32.5%，大量已经发放的贷款无法回收。
-+
-+　　股价和地价泡沫的破裂也不可避免地影响到实体经济。从宏观上看，日本国民支出增速从 1990 年的 5.7% 下降到 1991 年的 3.5%，同期民间设备投资增速从 12.1% 下降至 3.0%，住宅投资增速从 4.9% 降至-11.3%；从微观上看，日本民众的经济压力迅速增大，自杀事件从 1990 年初的 16.4 起/10 万人，增加到 1999 年初的 25.0 起/10 万人。
-+
-+
-+　　日本经济泡沫的形成与破裂，对日本的社会分层和长期经济衰退的影响都是深远的，其警示意义值得重视。
-+
-+　　（1）金融政策的调整需要充分讨论，审慎执行。从日本经济泡沫破裂的始末情况看，金融自由化是导致资产价格飞涨的核心因素，而过急过快地加息是导致资产价格泡沫破裂的重要诱因。几乎可以这样认定：日本全国的资产价格波动与日本央行的金融政策调整波动，几乎是同步且一致的。金融政策应当具备连续性和稳定性，大起大落的政策调整极易催生或刺破泡沫。审慎的政策调整和稳定的金融环境，对于一国的金融体系的安全与稳定来说，是更为重要的因素。
-+
-+　　（2）应当充分认识到房地产和基建在拉动经济发展中的重要意义，但不能过度依赖基建和地产驱动经济增长，也不能污名化房地产和基建投资的意义。宽松的财政政策和连年增加的基建投资预算，无疑是催生日本地价泡沫的重要原因，而房地产投资的快速增长则直接拉动了日本全国的土地价格增长。但是，应当看到基建和地产链较长，涉及的民生项目较多、较宽泛，过度地打压基建和地产投资，只会对国民收入增长起到负面影响。同时，土地和住宅仍然是间接融资体系下重要的信用创造工具，保持其价格稳定和适度增长，能够起到稳定金融体系的作用。
-+
-+　　（3）经济增长推动了人民生活水平的提高，同时也会导致生育率的下降和老龄化的加重。根据日本厚生省的统计，1990 年日本 65 岁以上人口占比约为 12%，到 2050 年日本总人口数将下降至 9500 万人，成为世界上人口自然萎缩速度最快的国家之一。老龄化意味着社保负担加剧和社会生产力持续下滑，这对经济发展而言是致命的。同时，老龄化也会加剧日本社会的阶层固化。日本经济进入存量发展时代后，资产从老一辈人传承给年轻一代人成为财富转移的主要方式，经济低增速意味着年轻人几乎无法凭借自身力量创造并积累更多财富，继承财富是他们得到资产的客观选择。先天如果没有足够的财富积累，后天将很难获得财富，这就是财富的代际固化。
-+
-+### 9.3.1.3 K 型分化的日本社会
-+
-+　　日本在经济泡沫破裂后，伴随着财富蒸发而失去的，还有社会公平。进入 2000 年后，日本社会发生了奇特的现象：子女的收入和父母的收入正相关，子女的职业和父母的职业高度相似，子女所处的社会阶层和父母的阶层基本一致。阶层间存在差距对社会运行来说并不是一个问题，对美好生活的追求是经济发展的根本动力，但社会阶层间缺乏流动性是大问题，无法实现阶层流动的社会是暮气沉沉的。同时，由于“宽松世代”教育政策的不断推进，日本的教育界出现了极端分层，原本属于社会公共福利领域的教育成为阶层固化的助推器：底层民众的子女普遍学历不高，权贵的子女轻松获得了精英教育。日本社会阶层出现严重分化和撕裂，富者恒富、贫者恒贫。日本东京学艺大学教授山田昌弘用了一个非常形象的词来形容经济泡沫破裂后的日本社会 K 型分化一格差社会（かくさしゃかい）。
-+
-+　　日本收入分配格局在泡沫经济前后发生了翻天覆地的变化。从初次收入分配的基尼系数看，1972 年基尼系数为 0.354，其后基本保持小幅波动，直至 1981 年该系数仍为 0.349，整体变化并不大。但是，在经历了 1980 年代后期的资产价格暴涨和 1990 年代的经济泡沫破裂后，日本 2002 年的初次收入分配基尼系数达到了 0.498，较 1980 年代初大幅上升 42.7%。从初次收入分配的角度看，经济危机具有强烈的收入和财富再分配效应，在资产价格泡沫生成和破裂前后，日本的收入不平等情况迅速扩大并严重化。
-+
-+　　即便日本政府采取了税收调节和激励机制，情况也并没有太多好转。从日本二次收入分配基尼系数看，在将政府税收和转移支付收入纳入统计后，1972 年日本国民的二次收入分配基尼系数约为 0.314，在经历了小幅上升和回落后，1981 年该系数仍保持在 0.314 的水平。但是，形成鲜明对比的是，2002 年该系数上升到 0.381。尽管日本政府对收入分化的干预起到了一定作用，日本国民二次收入分配后的 K 型分化并不如初次分配后般严重，但不平等程度仍然较泡沫经济前大大加重了。
-+
-+　　从国际比较视角看，日本的不平等程度也确确实实因为泡沫经济而迅速恶化。研究表明，当基尼系数低于 0.3 时，经济体收入分配属于较平等，系数为 0.3～0.4 属于合理范围，系数为 0.4～0.5 属于不平等较严重，系数为 0.5 以上则被认为极度不平等。2000 年初，OECD 全体国家的平均基尼系数为 0.309，其中丹麦、瑞典和荷兰的基尼系数分别为 0.225、0.243 和 0.251，收入分配的平等性较好；即便是不平等程度较高的葡萄牙、意大利和美国，基尼系数也分别是 0.356、0.347 和 0.337。在这个意义上，进入新千年后的日本社会和普通民众，面临的是收入大分化和社会阶层大分化的局面，这无疑是不利于重建社会信心并鼓励劳动者持续奋斗的。
-+
-+　　另一个惊人的事实是，尽管日本已经成为高度发达的国家，但社会绝对贫困率却不断攀升。这也意味着，日本社会阶层的 K 型分化和撕裂程度并没有随着综合国力的提升而得到减轻，富裕群体的人口总数和绝对贫困群体的人口总数都在增加。日本政府统计的最低生活收入标准为年化 150 万日元（约合人民币 8.8 万元)，收入低于该标准的群体属于日本统计标准下的“绝对贫困”。用这个标准去衡量，日本 2000 年初的贫困率为 15.3%，在 OECD 国家中排名第 5，在发达国家中排名第 3，仅美国和爱尔兰的贫困率高于日本，分别为 17.1% 和 15.4%，而丹麦的贫困率为 4.3%，全球最低。日本一线城市的绝对贫困率在 2002 年达到 15.7%，而在 6 年前这一数字仅为 11.2%；二三线城市 2002 年的绝对贫困率略低于一线城市，约为 11%，而这一数字在 6 年前仅为 7.5%。千禧年后的日本民众生活水平不但没有得到改善，反倒更加恶化了。有意思的现象是，日本一线城市的绝对贫困率要高于二三线城市，这从侧面反映了一个情况，即日本打工族尤其是年轻人，宁可在一线城市拿着较为微薄的收入，也不愿回到二三线城市工作，日本都市圈间的产业集群分化情况和就业机会的不平衡是导致此现象的重要原因。
-+
-+　　需要指出的是，日本零储蓄家庭在 1980 年代初期占比仅在 5% 左右，但在 2005 年却达到了 22.8%，也就是说超过 1/5 的日本家庭每年的收入全部用于生活开支，即便考虑到政府给予的转移支付现金收入，仍然无法留下任何积蓄，因而这部分日本家庭的抗风险能力较弱，一旦任何一位参与工作的家庭成员出现收入波动或者失业，则家庭经济状况将很快陷入困境。与之对应的是，日本个人破产和流浪的人数激增。1995 年日本个人破产案件数量为 4 万件，至 2003 年则达到 24 万件，在东京的流浪人数也从 1990 年代的 3000 多人增长至 2000 年初的 6000 多人。需要指出的是，统计数据是存在一定误差的，例如那些居无定所并且跨市域流动的人，大部分统计调查都难以将其纳入统计中。
-+
-+　　日本政府对于社会阶层的 K 型分化似乎并不持悲观态度，在某种程度上甚至鼓励收入分配的分化。“格差社会”是社会分化和阶层固化的日本本土称谓。2001 年初，时任日本首相小泉纯一郎及其内阁成员认为，“格差社会”只是表面现象，平均主义的收入分配无法激起经济泡沫破裂后日本劳动者的工作欲望。只有一定程度的收入差距，才能促使人们努力工作，参与日本经济社会的重塑。小泉内阁鼓励企业削减员工福利支出，赞成“不劳者不得食”的理念，终身雇佣、年功序列制等被视为创造了日本经济奇迹的制度被一一打破，社会福利支出也在小泉执政期间被不断压降，取而代之的是鼓励民营经济发展和市场充分竞争。
-+
-+　　曾经的发达程度和平等程度令全世界瞩目的日本，是如何在经济泡沫破裂后走到社会剧烈 K 型分化和阶层固化这一步的呢？
-+
-+　　首要因素是失业率的攀升。2000 年 3 月，日本统计局公布的失业率达到 5.2%，这是日本失业率自 1950 年起有数据以来的最高值。然而这并不是最高点，在 3 年后的 2003 年 4 月，日本失业率进一步攀升至 5.8%。值得一提的是，失业率这一统计指标，并不是民间一般理解的失业人数占工作年龄总人数的比例，而是指“有工作意愿但尚未找到工作的人”占“就业市场总人数”的比例。对“有工作意愿但尚未找到工作的人”，日本政府的官方定义为：在一个自然周内完全没有任何工作（包括全职、兼职）并且在认真求职的人。言下之意是，如果自愿放弃参与工作，或者被迫失业但求职时长超过一周没有结果，随后放弃继续找工作的人，是不被算进失业人数中的，也就是说人数较为庞大的“宅家族”和流浪者等并不算失业人口。
-+
-+　　根据日本经济学家大前研一的计算，如果将上述未被纳入统计的潜在失业人口算入失业人口的话，2000 年初的日本总体失业率超过 10%：在已失业人群中，失业在 3 个月以内的男性占比为 34.2%，1 年以上的占比为 31.1%，两者合计为 65.3%。这表明，男性失业群体呈现“M”形结构，中短期的摩擦性失业和长期失业并存，两者占据失业总数的大多数；而失业在 3 个月以内的女性占比为 47.2%，1 年以上的占比为 17.6%，两者合计为 64.8%，与男性的情况相似。但从具体结构看，女性失业群体更多的是短期的摩擦性失业，长期的失业率相比男性而言更低一些。
-+
-+
-+　　导致日本就业市场 K 型分化的重要原因，是如前文所述的日本政府对企业雇佣制度的改革。在年功序列和终身雇佣制被打破后，兼职类受雇人数和非正式受雇员工数量迅速增长。这两类群体的特点是雇用时间不固定，签约时间短且单位劳动时间的工资报酬低于一般企业的正式员工。企业更愿意选择这些灵活的雇用方式：一方面，做着同样的工作，却只需要支付更低的薪酬；另一方面，非正式雇用和兼职雇用的临时工数量可以跟着项目走，当项目完工后即不再与他们续约，在保障企业生产高峰时人力资源充足的前提下，又可以确保在闲时不为余人员支付额外的薪水。同时，为了规避日本劳动法等针对企业解雇人员需要给予足量补偿的法律，日本企业诞生了“劳务外包”的生产模式，通过与派遣劳务的公司合作来获取劳动力，而不是直接与劳动者签约。据不完全统计，日本企业在 1990 年代中期至 2000 年初，正式雇用的员工数量下降约 400 万人，灵活雇用的员工数量增加 630 万人。
-+
-+　　雇佣制度的变化加剧了日本社会的 K 型分化。一是参与灵活用工的劳动者不再享受企业为其支付的社会保险，在失去了医疗保险、养老金等保障后，生活中一次意外受伤或生病即可让此前的积蓄清零，甚至陷入债务困境。二是参与灵活用工的劳动者收入通常只有同样职位的正式员工的 70% 左右，同工不同酬使得他们收入差距不断扩大。三是参与灵活用工的劳动者面临极大的工作不稳定性，上一份工作结束后，下一份工作到来的时间短则数周，长则一年以上，没有稳定的预期现金流收入，这使得他们储蓄和消费能力都受到了极大的制约。四是日本盛行加班文化，无偿加班使得单人工作量上升，在企业工作的员工总数不变的情况下，员工的无偿加班使得企业只需要雇用较少的人去完成同样的工作，这就导致原本并不充裕的就业岗位变得更少，长期失业人数进一步增加。
-+
-+　　薪酬分配制度改革的停滞不前是使得日本社会 K 型分化的又一重要原因。在日本经济高速发展时期，劳动者工资调整的方式被称为“春斗模式”，即每年春天由工人集体或其代表（通常是工会组织或劳动者代表等）与用人企业进行商讨，根据上一会计年度企业的营收增长情况，劳资双方共同决定本年度的薪酬涨幅。然而，在经济泡沫破裂后，“春斗模式”逐渐瓦解，随着小泉内阁对工会的抑制政策出台，企业不再忌禅工会的力量，取而代之的新工资决定方式为“一人一议”制。在这个制度下，企业与每个试图涨薪的劳动者进行单独谈判，薪酬涨幅由企业和劳动者个人商议。同时，由于密薪制的普遍推行，劳动者内部之间形成了信息隔离，互相不知道同僚的工资水平，因而无法对自己的劳动价值客观定价。“一人一议”和密薪制的实行，使得劳动者再也无法以整体的形式对企业要求涨薪，同僚之间的薪酬涨幅也出现了较大的分化，这对改善收入分配格局起到了负面作用。
-+
-+　　税收制度缺乏突破加重了收入分配不均的情况。税收的意义在于调节初次收入分配中巨大的不平等，并通过配套的转移支付机制进行“削峰填谷”，努力实现社会公平。然而，在经济泡沫破裂后，为了调动劳动者的积极性，日本政府不断地降低税率，使得税收在二次收入分配中的作用与效能持续下降。以所得税为例，日本的所得税采取全球通行的累进税制，收入越高的人群税收负担也越大。从边际税率来看，1986 年日本的所得税最高边际税率为 70%，2000 年后逐步下降至 37%。边际税率的下调固然激励了高收入人群更加努力地从事创造性工作，但同时也使得社会各阶层的收入分化失去了制约，最终导致二次收入分配机制僵化，社会各阶层出现撕裂。
-+
-+　　日本社会的 K 型分化，不仅体现在收入分配这样的流量指标的差距上，在家庭财富和社会阶层占比等存量指标上，也无处不体现了日本社会整体看似祥和、实则内部严重失衡的状况。
-+
-+　　（1）日本的年轻人和老年人更容易陷入贫困状态。从 OECD 调查的日本各个年龄段的贫困率来看，18 至 25 岁的日本年轻人贫困率为 16.6%，75 岁以上的老年人贫困率为 23.8%，年轻人和老年人是最容易遭受贫穷问题困扰的人群，这也与前文所述的日本对于灵活雇用人员并没有完善的社会保障体系有关。其中，老年一人户的贫困率为 43%，这也意味着在日本独居的老年人中，有近一半的人长期在贫困线下挣扎，生活水平难以得到保障。年轻人的日子也并不是特别好过，统计显示，户主为 29 岁以下的家庭贫困率为 25.9%，即日本年轻人家庭超过 1/4 生活水平低于贫困线，无力支撑除饮食和日常消费以外的任何开销。
-+
-+　　造成日本年轻人和老年人容易陷入贫困的原因是迥异的。如前文所述，灵活雇佣制和废宅文化造成了年轻人工作机会不稳定，收入连续性缺乏保障，以及在失业后容易放弃进一步寻求新工作，进入彻底自暴自弃的状态。同时，日本的最低薪酬标准与社会平均工资的比例在 OECD 国家中排名倒数第一，这意味着日本社会对于劳动者兜底性质的收入保障较弱，社会阶层分化较明显。社会保障体系的不完善使得高龄老人没有得到应有的保护，同时低生育率使得日本人在进入老年期后，失去家庭内部的转移支付赡养收入，老年生活的财务风险较大。
-+
-+　　（2）日本富裕阶层板结固化。甲南大学经济系教授森刚志在《日本的富豪研究》中采用了如下的方法定义日本的“富裕阶层”：日本国税厅将年综合缴税额超过 3000 万日元的群体定义为大额纳税人，那么根据综合加权税率倒推，年综合收入在 1 亿日元以上的群体可以被认定为日本的富裕阶层。森刚志的研究显示，日本的富裕阶层职业分布是较为集中的，其中 31.7% 的富人是企业主，15.4% 的富人是医生，11.6% 的富人是企业高管，三者合计占比达 58.7%。以上数据表明，日本富裕阶层有超过一半的人的职业与企业主、企业高管和医生有关。
-+
-+　　企业主和企业高管长期维持其财富显赫地位，在日本并不是一件稀奇的事情。自二战后经济重建以来，尽管财团和财阀一度被解散、拆分甚至清算，但只要经济从萧条中恢复，财富增速最快的依然是大企业家和大财阀家族。当然，随着科技进步，1980 年代后日本也涌现了一批以 IT 成名的企业家新贵，如日本知名门户网站活力门（Livedoor）的创始人堀江贵文，其身家最高时曾达到百亿美元。
-+
-+　　医生是另一个富人频出的职业。在日本，医生的供给数是被严格控制的，1990 年全日本医疗从业人数约为 20.3 万人，而到 2000 年初，从业人数仅仅增长至 24 万人，10 年间增长 18.2%，年化复合增速约为 1.7%，远远低于其他国家的医护人员增长情况。有趣的是，10 年间日本儿科和产科医生人数分别负增长 5.5% 和 38.9%，精神科和整形外科医生人数却分别增长 40.9% 和 80.1%。我们甚至可以从日本的医学生选择职业路径这样的微观数据上，看出日本社会在经济泡沫破裂后的阶层分化，以及社会整体风气的变迁。
-+
-+　　除工作职业导致的社会阶层分化外，地域间经济增长的不平衡也是日本社会问题的痼疾。
-+
-+　　首先是就业机会的严重分化。1980 年东京失业率为 2.7%，关西地区的失业率为 2.9%，差异并不明显。然而到了 2000 年，尽管日本全国范围内的失业率都有所上升，但东京的失业率保持在 5% 以下，为 4.8%；关西地区的失业率则上升至 5.8%。地域间就业不平衡的现象较泡沫经济前明显恶化。
-+
-+　　其次是收入增长的不平衡。在经历了经济泡沫的破裂后，各个地区的收入恢复速度也是存在较大差异的。仍以东京和关西地区为例，1990 年东京人均年收入为 414 万日元，2000 年为 432 万日元，10 年间增长 4.3%，基本回到了泡沫经济期的收入水平，并实现了小幅增长；关西地区人均年收入 1990 年为 305 万日元，2000 年为 303 万日元，在经历了 10 年的修复期后，人均年收入不仅没有恢复，反倒负增长 0.7%。地域差异使得选择在不同地区就业的劳动者收入高度分化，最终演变为家庭财富的分化和社会阶层的分化。
-+
-+　　最后是固定资产投资的分层。从传统基建项目数量来看，进入 2000 年后，关东地区 2001 年基建项目数量负增长 4.7%，中部地区负增长 7%，九州地区负增长 6.9%。至 2004 年，情况则进一步发生变化，关东地区基建项目数量同比增长转正，为 0.7%；中部和九州地区仍然保持了负增长，分别下降 6.5% 和 10%。日本全国性的基建投资收缩，固然和小泉内阁的政策导向有关，但地域间经济发展的高度不平衡导致了日本社会的阶层分化更加严重。之所以这么说，是因为在经济学理论中，财政支出是缓解收入分配不均的重要手段。公共资源的分布不均，将使得获得公共投资少的地区的民众收入更低，区域经济发展落后于获得更多公共投资的地方。
-+
-+　　（3）日本社会的代际 K 型分化也是增加社会不公平性的来源。学术界通常认为，如果子女和父母的职业相关度越低，那么这个社会的阶层流动性就越大，也越容易激发人们奋斗的力量；反之，如果子女和父母的职业相关度越高，就意味着职业的家庭传承性越大，社会阶层越固化且高度分化，人们越容易丧失奋斗的动力。从这个角度来看，日本在经济泡沫破裂前，社会阶层流动性长期保持较高的水平，底层民众的子女成为白领的可能性较高，白领阶层的子女阶层滑落，成为蓝领阶层的可能性也同样不低。根据日本学者佐藤俊树的研究，日本泡沫经济时期高级白领家庭职业的代际相关系数约为 0.4，也就是说白领阶层的孩子较大概率不再继续从事白领工作；蓝领家庭职业的代际相关系数约为 0.5，虽然略高于白领阶层，但整体向上流动的机会仍然较多。但是，进入 2000 年后，日本社会的代际固化现象愈演愈烈，政治家大多具有家学传承，而医生群体中有超过 40% 的家庭子女职业仍然为医生。这就意味着子承父业成为当代日本社会的一个普遍现象，人的出身大概率决定了其职业前途和终身命运。阶层代际固化的恶果就是社会阶层流动性的丧失，唯出身论在某些职业领域中起到了更大的作用，同时社会顶层和社会底层的分化无法弥合。
-+
-+
-+　　日本社会在进入千禧年后剧烈的 K 型分化，和小泉内阁奉行的经济政策和社会改革有密切的关系。小泉认为，在经济泡沫破裂后，当务之急是优先发展经济，提升经济发展的效率，社会公平的优先级要让位于经济发展。用小泉政府发言人的原话说，“格差扩大只是表象，格差有何不好”。在日本政府当局看来，如果强调社会分配的公平性，只会养出许多懒汉。只有充分竞争以及给予竞争中的优胜者足够多的经济物质奖励，才能彻底激发日本民众的工作动力。为此，小泉政府推行的一系列经济政策和社会改革措施，都朝着这个方向努力，包括降低边际所得税率、压降公共事业投资支出和削减社会福利支出等。
-+
-+　　然而，这些激进的改革措施和施政理念似乎有些过犹不及。正如老子所说的，过刚者易折，刻意寻求扩大贫富差距和社会阶层收入差距的经济政策，并没有为日本带来有效的经济增长。2000 年日本 GDP 增速为 1.4%，到了 2001 年则变成-0.7%，而在 2002 年进一步恶化为～1.3%，格差看起来似乎并没有如预想的那样有力刺激经济增长，反倒使得经济出现倒退。同时，社会阶层的 K 型分化和撕裂，为社会治安增添了许多不稳定因素。例如，日本每 10 万人的谋杀犯罪率 2000 年为 0.53 人次，至 2004 年小幅上升至 0.55 人次，看似提升幅度不大，然而背后的代价是警察经费支出较 1990 年代同期大幅增长 30.6%，也就是说日本将更多的财政经费用在了治安维护上，才勉强控制了国内治安环境不至于因为社会阶层分化而出现动荡。
-+
-+　　另外，社会的 K 型分化也降低了年轻人的发展欲望。日本在 2000 年度开始流行一个词，叫作“啃老族”，后来发展为“尼特族”（尼特为日语对英语缩写词 NEET 的发音，NEET 的全称为 Not Currently Engaged in Employment, Education or Training）。尼特族和宅家族是同一个含义，用来指代那些不出家门、不参加工作、不接受教育的年轻人，后来也泛指全年龄中具有上述特征的人。日本统计局数据显示，2000 年日本 20～29 岁的年轻人中，共有 105 万人处于无业状态，而仅仅在 10 年前，也就是 1990 年，这一数据为 41 万人，10 年间日本的尼特族人数暴增 156.1%。同时，根据日本厚生劳动省的统计，2000 年全日本约有 200 万个自由职业者，这里面也有相当一部分人的收入是不连续并且不稳定的。根据厚生劳动省发布的《工资结构基本调查》白皮书的估算，每名日本企业的正式员工全生命周期的综合性收入约为 20791 万日元，非正式雇员约为 10426 万日元，而自由职业人员约为 4637 万日元。也就是说，是否成为企业正式员工，对于一个普通日本人来说，其终身收入将天差地别：非正式员工的收入仅为正式员工的一半，而自由职业人员的收入仅为正式员工的 22% 左右。巨大的收入差距不仅显示出雇佣制造成的收入不平等，也反映出过大的收入分配差距下，年轻员工对于未来不抱希望的心态的来源。
-+
-+　　也许正如小泉内阁所称，“格差是全世界范围内的共同现象”。K 型分化的经济结构和社会阶层，不仅仅是日本独有的现象，英美等老牌发达资本主义强国，也存在着内部收入分配不均和代际阶层固化的现象。但是，这并不是小泉政府放纵日本社会阶层撕裂的借口。多劳多得、不劳者不得食的理念，尽管在经济学意义上有其天然的合理性，但是放到社会层面，却显得过于无情。一个运行合理的社会，不应该是冷冰冰的，而应该具有一些人道主义温情；一个现代化国家，不应当只鼓励强者恒强、全民丛林法则式的开拓进取，而应该对弱者伸出援手、施以同情。
-+
-+　　《旧唐书·魏徽传》中这样写道：“夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。”鉴往知来，日本社会二战后数十年的发展，以及最近几十年的社会阶层 K 型分化与撕裂，给了我们怎样的启示？我们应该寻求怎样的发展道路，才能力争避免日本踩过的坑？我们认为，主要可以概括为六大方面。
-+
-+　　（1）效率和公平两手都要抓，两手都要硬，不能厚此薄彼，更不能顾此失彼。从日本的经验看，从二战后重建到经济泡沫兴起，日本政府对社会公平的建设还是比较成功的，较高的边际税率和稳健的公共基础设施建设支出，使得日本社会各个阶层均衡发展。然而，在经济泡沫破裂后，为了快速使经济重新繁荣，日本政府放弃了公平性建设，转而采取追求经济增长的施政方针。从 2000 年开始的一系列经济政策和社会改革，最终促成日本今天的阶层分化和社会撕裂。事实上，我们从欧洲，尤其是北欧诸国的发展经验看，效率和公平并非完全的取舍关系，二者在某些阶段是可以共存的。从日本自身的历史情况看，曾经的终身雇佣制度和相对的高社会福利支出，并未拖垮日本财政，反倒激发了经济活力。从某种意义上来说，给人以稳定和信心的社会氛围，要比充斥着社会达尔文主义的环境，更有利于发挥人的主观能动性。试想，如果一个普通人，对自己的收入稳定性都没有信心，又如何全力以赴地参与工作呢？
-+
-+　　（2）确保教育公平，人人都有机会享受优质教育。我国古代先哲曾经提出“有教无类”的理念，认为无论家境和资质如何，学生都应当受到同等的教育。从日本泡沫经济后期至今的教育政策看，日本教育的突出特点是“公立教育精英化，私立教育贵族化”。自从实施宽松世代的教育政策后，日本的课外补习班和学历崇拜等现象较泡沫经济前有所改善，平民子弟也看似有更多机会进入优质的公立学校。然而，后来的实际情况却与官方最初的施政理念背道而驰。在激烈竞争的年代，日本的阶层流动性在历史上是相对较高的，而在宽松教育政策实施后，尼特族和宅家族等反倒大量出现。2000 年后，日本政府对于公共支出预算的削减，其中大幅压降的是教育经费投入。日本公立学校教育经费占国民总收入的比重约为 4%，同期这一比重英国为 5.0%，法国为 5.9%，丹麦为 8.2%。“再穷不能穷教育”并非只是一句口号，而是实实在在的一项关乎社会公平的措施。只有将对教育的投入落到实处，才能保持社会各阶层间的流动性。
-+
-+　　（3）保障就业优先，缩小职业收入差距。有一份正当且稳定的工作，是获得良好教育的年轻人的共同愿望。如果社会上存在大量失业的年轻人，社会各个阶层就会出现分化及固化，整个社会将变得死气沉沉，进而陷入动荡。无论在哪个国家，创造一切有利条件保障就业，是维护社会安定与发展的必然选择。要做到这一点，首先，要消除就业歧视，让各种人都能有机会获得适合自己的工作；其次，要做到同工同酬，在法律的意义上保障相似的工种收入大致相同，同时要打击企业利用劳务派遣和外包等方式绕开法律管制，人为扩大收入差距的行为；最后，还要完善工作时间分配和最低工资制度，避免少数人的无偿加班行为抢占其他人的就业机会，也要让以灵活方式就业或兼职的人有最低收入保障。
-+
-+　　（4）强化政府的二次收入分配功能。从欧洲各国的经验看，由于个人能力和受教育程度的差异，社会成员个体间的初次收入分配差距较大实际上是不可避免的，重要的在于政府如何做好二次收入分配，以促进社会公平。以德国、瑞典和丹麦为例，其初次收入分配的基尼系数分别为 0.436、0.487 和 0.42，各阶层的收入差距较大，然而经过政府的税收调节和转移支付作用后，二次收入分配的基尼系数分别为 0.282、0.230 和 0.217，成功地将基尼系数控制在较低的区域。如前文所述，日本政府在经济泡沫破裂后的一系列税制改革，将所得税边际税率从 70% 降低至 37% 左右，实际上是不利于实现社会公平的。这一点，后发国家，特别是发展中国家在经济改革中应当引以为戒。
-+
-+　　（5）构建社会安全网，增强群体安全感。在前文中，我们看到日本的小泉内阁为了刺激经济增长，大幅压降社会福利支出，人为制造“格差社会”。其实，从现代政治学意义上说，政府存在的一大作用便是为社会底层民众提供兜底性质的社会保障，让一部分因为意外、天灾或其他原因而陷入贫困的人生活得不至于太过悲惨。完善的社会保障体系不仅不是经济发展的拖累，反而可能是促进经济增长的有力工具。当创业者知道即便自己创业失败，也不至于陷入一穷二白的无保障生活中时，他会有更强的动力从事创造性活动。同时，最低生活保障水平的提高，也有利于全社会安全感的增强，减少社会矛盾，尤其是贫富阶层之间的矛盾。稳定的社会环境，是经济繁荣的起点。
-+
-+　　（6）弥合地域性差异，做到全国一盘棋，经济全面协调并可持续发展。从日本的经济发展历程看，在二战后的经济修复期、神武景气期以及后来的泡沫经济期等经济总量飞速发展期，各个地方的经济发展速度其实并没有太大差别，各地民众都享受到了经济高速增长释放的红利。然而，在经济泡沫破裂后的经济低增长甚至负增长时期，日本各地域间不平衡、不充分发展的问题便一一暴露出来。日本巨大的区域性经济差异，与三大都市圈的虹吸效应以及日本政府有意压减公共事业特别是基建投资支出，是有密切关系的。大都市圈会吸引产业和人口聚集，而就业机会和人力资源的过度集中，又会反过来加速小地方经济的落后与衰退。基于公共事业的财政支出具有福利性和再分配性质，压降此类支出等于变相削弱了经济体内部的平衡能力，最终使得社会 K 型分化日益严峻。
-\ No newline at end of file
-```
