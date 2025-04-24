@@ -1034,6 +1034,7 @@ https://tinysnow.github.io/阅读/每日一文/蚂蚁人生 - 维尔伦
 https://tinysnow.github.io/阅读/每日一文/蝗虫 - 李娟
 https://tinysnow.github.io/阅读/每日一文/蟹颂 - 蔡澜
 https://tinysnow.github.io/阅读/每日一文/行刑 - 乔治·奥威尔
+https://tinysnow.github.io/阅读/每日一文/街 - 沈从文
 https://tinysnow.github.io/阅读/每日一文/表白的快意 - 冯骥才
 https://tinysnow.github.io/阅读/每日一文/袋鼠佳日 - 村上春树
 https://tinysnow.github.io/阅读/每日一文/被搁置的生活 - 刘瑜
@@ -1571,12 +1572,6 @@ https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第八章：原反补码
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第六章：半加器
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十一章：除法器
-https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十七章：更大存储
-https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十三章：与或非门首尾相连
-https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十二章：算术逻辑单元
-https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十五章：触发器
-https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十六章：寄存器
-https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十四章：锁存器
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十章：乘法器
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第四章：简单逻辑门
 https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/fulcio(学习与进步/Learning)
