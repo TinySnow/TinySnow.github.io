@@ -1583,6 +1583,7 @@ https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第八章：原反补码
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第六章：半加器
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十一章：除法器
+https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十二章：算术逻辑单元
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第十章：乘法器
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机组成原理/第四章：简单逻辑门
 https://tinysnow.github.io/学习与进步/计算机科学/ArchRISC-V/Packages/fulcio(学习与进步/Learning)
