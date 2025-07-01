@@ -2,6 +2,7 @@ https://tinysnow.github.io/
 https://tinysnow.github.io/last-updated
 https://tinysnow.github.io/个人简介
 https://tinysnow.github.io/人生规划
+https://tinysnow.github.io/博客阅读指南
 https://tinysnow.github.io/年度计划
 https://tinysnow.github.io/梦想清单
 https://tinysnow.github.io/学习与进步/各领域入门
@@ -527,6 +528,7 @@ https://tinysnow.github.io/阅读/每日一文/一条路 - 亦舒
 https://tinysnow.github.io/阅读/每日一文/一次政变 - 莫泊桑
 https://tinysnow.github.io/阅读/每日一文/一片树叶 - 东山魁夷
 https://tinysnow.github.io/阅读/每日一文/一片考验良心的火腿 - 梁文道
+https://tinysnow.github.io/阅读/每日一文/一种深久的不安 - 乔叶
 https://tinysnow.github.io/阅读/每日一文/一种错觉 - 毛姆
 https://tinysnow.github.io/阅读/每日一文/一笑倾人心 - 林·拉德纳
 https://tinysnow.github.io/阅读/每日一文/一边啃着甜甜圈 - 村上春树
