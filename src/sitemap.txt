@@ -480,6 +480,7 @@ https://tinysnow.github.io/阅读/亲密关系/第十章：压力与紧张
 https://tinysnow.github.io/阅读/亲密关系/第四章：社会认知
 https://tinysnow.github.io/阅读/其他/2025 今年的行业该咋选？今年的志愿该咋填？
 https://tinysnow.github.io/阅读/其他/2025，不要一年到头又白忙
+https://tinysnow.github.io/阅读/其他/6个让你人生极简的良心建议
 https://tinysnow.github.io/阅读/其他/一个大时代终结了，我们该如何自处？
 https://tinysnow.github.io/阅读/其他/互降 115，和谈落地，世界又要恢复旧秩序了？
 https://tinysnow.github.io/阅读/其他/从今往后，男人女人，领导客户，没人能拒绝你
@@ -488,16 +489,21 @@ https://tinysnow.github.io/阅读/其他/十年后的终局是什么？
 https://tinysnow.github.io/阅读/其他/女人这辈子，究竟在逃离什么？
 https://tinysnow.github.io/阅读/其他/如何一步一步成为投资人？
 https://tinysnow.github.io/阅读/其他/孩子见识开阔之后，会不会导致他眼高手低？
+https://tinysnow.github.io/阅读/其他/富人最大的资产是穷人
+https://tinysnow.github.io/阅读/其他/工作的尽头就是灵活就业？
 https://tinysnow.github.io/阅读/其他/巨变将至，我们还能做点什么？
 https://tinysnow.github.io/阅读/其他/巨变已至，除了迎合，我们别无选择
 https://tinysnow.github.io/阅读/其他/当下经济的十个重大问题
+https://tinysnow.github.io/阅读/其他/怎样用AI比别人快10倍地学习？
 https://tinysnow.github.io/阅读/其他/我从来都没见谁逆袭过
 https://tinysnow.github.io/阅读/其他/按照这七步做，回报率比你跳槽、转行、深造都大得多
 https://tinysnow.github.io/阅读/其他/普信男尝试做家务，温柔体贴男内助，为啥不是一条路？
 https://tinysnow.github.io/阅读/其他/普通的房子到底还有没有前途？
 https://tinysnow.github.io/阅读/其他/有些经济话题，再拖下去，可能就来不及了
 https://tinysnow.github.io/阅读/其他/美国大选的重大影响以及未来我们的经济预判分析
+https://tinysnow.github.io/阅读/其他/让生活更美好的100个小窍门
 https://tinysnow.github.io/阅读/其他/财富的真相与人类社会的底层逻辑
+https://tinysnow.github.io/阅读/其他/这个世界的底层逻辑，是保持多数人做“傀儡”
 https://tinysnow.github.io/阅读/每日一文/18 本画册的爱恋 - 汤小小
 https://tinysnow.github.io/阅读/每日一文/2.05 米的绳子 - 周海亮
 https://tinysnow.github.io/阅读/每日一文/2018 年 4 月 1 日 - 刘慈欣
@@ -706,6 +712,7 @@ https://tinysnow.github.io/阅读/每日一文/天上落下来的一片叶子 - 
 https://tinysnow.github.io/阅读/每日一文/天堂之门 - 马克
 https://tinysnow.github.io/阅读/每日一文/天堂的颜色 - 邵亚
 https://tinysnow.github.io/阅读/每日一文/夫妻间的隐私 - 周国平
+https://tinysnow.github.io/阅读/每日一文/失去的森林 - 许达然
 https://tinysnow.github.io/阅读/每日一文/头发 - 梁实秋
 https://tinysnow.github.io/阅读/每日一文/头家返乡 - 吴念真
 https://tinysnow.github.io/阅读/每日一文/女人为什么不宜搞哲学 - 周国平
@@ -1432,6 +1439,8 @@ https://tinysnow.github.io/学习与进步/计算机科学/实践记录/博客�
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/实践记录
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/毕业设计环境准备
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/毕业设计解决方案
+https://tinysnow.github.io/学习与进步/计算机科学/网络安全/第一节：信息收集
+https://tinysnow.github.io/学习与进步/计算机科学/网络安全/网络安全
 https://tinysnow.github.io/学习与进步/计算机科学极简入门指南/原稿/计算机科学极简入门指南总览
 https://tinysnow.github.io/学习与进步/金融/公司信贷/公司信贷
 https://tinysnow.github.io/学习与进步/金融/公司信贷/第一章：公司信贷概述
