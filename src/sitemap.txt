@@ -489,9 +489,11 @@ https://tinysnow.github.io/阅读/其他/个人未来的出路，就隐藏在分
 https://tinysnow.github.io/阅读/其他/互降 115，和谈落地，世界又要恢复旧秩序了？
 https://tinysnow.github.io/阅读/其他/从今往后，男人女人，领导客户，没人能拒绝你
 https://tinysnow.github.io/阅读/其他/其他
+https://tinysnow.github.io/阅读/其他/到底什么叫工作能力强？
 https://tinysnow.github.io/阅读/其他/十年后的终局是什么？
 https://tinysnow.github.io/阅读/其他/女人这辈子，究竟在逃离什么？
 https://tinysnow.github.io/阅读/其他/如何一步一步成为投资人？
+https://tinysnow.github.io/阅读/其他/如何让自己工作情绪稳定，不发疯？
 https://tinysnow.github.io/阅读/其他/孩子见识开阔之后，会不会导致他眼高手低？
 https://tinysnow.github.io/阅读/其他/富人最大的资产是穷人
 https://tinysnow.github.io/阅读/其他/工作的尽头就是灵活就业？
@@ -511,6 +513,7 @@ https://tinysnow.github.io/阅读/其他/让生活更美好的100个小窍门
 https://tinysnow.github.io/阅读/其他/财富的真相与人类社会的底层逻辑
 https://tinysnow.github.io/阅读/其他/这个世界的底层逻辑，是保持多数人做“傀儡”
 https://tinysnow.github.io/阅读/其他/非专业赚钱的5个思路
+https://tinysnow.github.io/阅读/其他/顺势而为！严谨的逻辑思考，才能拥有稳定的心态
 https://tinysnow.github.io/阅读/每日一文/18 本画册的爱恋 - 汤小小
 https://tinysnow.github.io/阅读/每日一文/1905年4月19日 - 阿兰·莱特曼
 https://tinysnow.github.io/阅读/每日一文/2.05 米的绳子 - 周海亮
@@ -928,6 +931,7 @@ https://tinysnow.github.io/阅读/每日一文/枕头人 - 马丁·麦克多纳
 https://tinysnow.github.io/阅读/每日一文/林中猫的故事 - 彭蒂·哈恩帕
 https://tinysnow.github.io/阅读/每日一文/柔弱的人 - 安东·契诃夫
 https://tinysnow.github.io/阅读/每日一文/树王 - 阿城
+https://tinysnow.github.io/阅读/每日一文/桌子还是桌子 - 彼德·比克尔
 https://tinysnow.github.io/阅读/每日一文/梦的真实性 - 高铭
 https://tinysnow.github.io/阅读/每日一文/棋王 - 阿城
 https://tinysnow.github.io/阅读/每日一文/槐花 - 汪曾祺
@@ -1576,6 +1580,7 @@ https://tinysnow.github.io/生活碎笔/小说/想象力训练/靛青之秋之�
 https://tinysnow.github.io/记录和归档/归档/句子/日记扉页
 https://tinysnow.github.io/记录和归档/归档/句子/随记断句
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第一章：循环系统疾病总论
+https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第七章：先天性心血管病
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第三章：心律失常
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第三部分：循环系统疾病
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第九章：心包疾病
@@ -1585,7 +1590,9 @@ https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循�
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第六章：心肌疾病
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第十一章：心脏骤停与心脏性猝死
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第十三章：心血管神经症
+https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第十二章：主动脉疾病和周围血管病
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第十四章：肿瘤心脏病学
+https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第十章：感染性心内膜炎
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第四章：动脉粥样硬化和冠状动脉粥样硬化性心脏病
 https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第一章：呼吸系统疾病总论
 https://tinysnow.github.io/学习与进步/医学/内科学/第二部分：呼吸系统疾病/第七章：肺结核
