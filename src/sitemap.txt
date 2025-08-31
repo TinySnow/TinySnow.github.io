@@ -350,6 +350,10 @@ https://tinysnow.github.io/生活碎笔/诗词/金色沙滩
 https://tinysnow.github.io/生活碎笔/诗词/雨
 https://tinysnow.github.io/生活碎笔/诗词/顽柔
 https://tinysnow.github.io/生活碎笔/诗词/鸡尾酒
+https://tinysnow.github.io/生活碎笔/随笔随记/如果没有学过哲学，可以去了解一下
+https://tinysnow.github.io/生活碎笔/随笔随记/学习不是脑子里塞满知识的行为
+https://tinysnow.github.io/生活碎笔/随笔随记/目前的股市，还没有发生结构性的变化
+https://tinysnow.github.io/生活碎笔/随笔随记/要搞清楚你为什么上班
 https://tinysnow.github.io/生活碎笔/随笔随记/随记
 https://tinysnow.github.io/生活碎笔/随笔随记/随记 - 2020 年 10 月 17 日
 https://tinysnow.github.io/生活碎笔/随笔随记/随记 - 2020 年 5 月 15 日
@@ -433,6 +437,7 @@ https://tinysnow.github.io/生活碎笔/随笔随记/随记 - 2025 年 1 月 15 
 https://tinysnow.github.io/生活碎笔/随笔随记/随记 - 2025 年 3 月 23 日
 https://tinysnow.github.io/生活碎笔/随笔随记/随记之一 - 2021 年 6 月 13 日
 https://tinysnow.github.io/生活碎笔/随笔随记/随记之二 - 2021 年 6 月 13 日
+https://tinysnow.github.io/生活碎笔/随笔随记/领导骂我，我为什么不在意
 https://tinysnow.github.io/记录和归档/归档/归档
 https://tinysnow.github.io/记录和归档/教程/Basic Elements
 https://tinysnow.github.io/记录和归档/教程/Breaking from Beginning
@@ -486,6 +491,7 @@ https://tinysnow.github.io/阅读/其他/2025，不要一年到头又白忙
 https://tinysnow.github.io/阅读/其他/6个让你人生极简的良心建议
 https://tinysnow.github.io/阅读/其他/一个大时代终结了，我们该如何自处？
 https://tinysnow.github.io/阅读/其他/个人未来的出路，就隐藏在分配与债务的经济周期律当中
+https://tinysnow.github.io/阅读/其他/为什么如今的孩子努力学习十几年，长大后却赚不到钱？
 https://tinysnow.github.io/阅读/其他/互降 115，和谈落地，世界又要恢复旧秩序了？
 https://tinysnow.github.io/阅读/其他/从今往后，男人女人，领导客户，没人能拒绝你
 https://tinysnow.github.io/阅读/其他/其他
@@ -805,6 +811,7 @@ https://tinysnow.github.io/阅读/每日一文/彬彬有礼的强盗 - 安德拉
 https://tinysnow.github.io/阅读/每日一文/往日夕阳下的公园里 - 乙一
 https://tinysnow.github.io/阅读/每日一文/律师太太 - 希区柯克
 https://tinysnow.github.io/阅读/每日一文/御旨 - 卡夫卡
+https://tinysnow.github.io/阅读/每日一文/心里难过 - 刘心武
 https://tinysnow.github.io/阅读/每日一文/忆周作人先生 - 梁实秋
 https://tinysnow.github.io/阅读/每日一文/忘却 - 亦舒
 https://tinysnow.github.io/阅读/每日一文/快乐人的衬衫 - 伊塔洛·卡尔维诺
@@ -909,6 +916,7 @@ https://tinysnow.github.io/阅读/每日一文/无酱不欢 - 蔡澜
 https://tinysnow.github.io/阅读/每日一文/旧书去哪里了 - 梁文道
 https://tinysnow.github.io/阅读/每日一文/早恋 - 施伟
 https://tinysnow.github.io/阅读/每日一文/早起看人间 - 罗兰
+https://tinysnow.github.io/阅读/每日一文/早餐 - 纪大伟
 https://tinysnow.github.io/阅读/每日一文/时间旅行者的妻子 - 奥德丽·尼芬格
 https://tinysnow.github.io/阅读/每日一文/明白 - 龙应台
 https://tinysnow.github.io/阅读/每日一文/晚饭花 - 汪曾祺
@@ -996,6 +1004,7 @@ https://tinysnow.github.io/阅读/每日一文/爱我更多 - 张晓风
 https://tinysnow.github.io/阅读/每日一文/爱无葬身之地 - 刘瑜
 https://tinysnow.github.io/阅读/每日一文/爱时而脆弱 - 罗伯特·M·罗斯
 https://tinysnow.github.io/阅读/每日一文/爱是将心比心 - 刘小昭
+https://tinysnow.github.io/阅读/每日一文/爱的距离 - 周国平
 https://tinysnow.github.io/阅读/每日一文/父亲 - 阿城
 https://tinysnow.github.io/阅读/每日一文/父子之战 - 余华
 https://tinysnow.github.io/阅读/每日一文/父母是有效期的 - 龙应台
@@ -1463,6 +1472,7 @@ https://tinysnow.github.io/学习与进步/计算机科学/实践记录/MySQL与
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Telegram中文搜索的不完美解决方案
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Telegram机器人的手机部署
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/Windows自定义自启动任务
+https://tinysnow.github.io/学习与进步/计算机科学/实践记录/兼容模式下运行
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/博客历史演进
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/实践记录
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/毕业设计环境准备

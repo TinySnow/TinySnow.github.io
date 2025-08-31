@@ -1,0 +1,10 @@
+#   DevOps
+invoke
+loguru
+#   RSS
+feedgen
+markdown
+#
+#pip install -r requirements.txt
+#
+

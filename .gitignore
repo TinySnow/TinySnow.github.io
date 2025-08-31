@@ -4,3 +4,4 @@ package.json
 package-lock.json
 .git.bfg-report
 .obsidian
+rss.xml
