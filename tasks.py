@@ -298,15 +298,10 @@ def ver(c):
     )
 
 @task 
-def gen(c, limitmes: int = 14):
+def gen(c):
     """
-    生成基于上次 Git commit 变更的 RSS 订阅源
-    
-    Args:
-        c: Context对象
-        limitmes (int): 限制条目数量，默认14条
+    生成基于上次 Git commit 变更的 RSS 订阅源，包含所有变更文章
     """
-    
     LOG.info("开始生成 RSS 订阅源...")
     
     # 1. 获取上次 commit 的变更文件
@@ -318,7 +313,7 @@ def gen(c, limitmes: int = 14):
         fg = FeedGenerator()
         fg.id(CFG.buri)
         fg.title('微雪博客 RSS')
-        fg.subtitle('lasted updates from tinysnow.github.io')
+        fg.subtitle('最新更新 - tinysnow.github.io')
         fg.link(href=CFG.buri, rel='self')
         fg.author({'name': 'tinysnow', 'email': 'ancielin+blog@outlook.com'})
         fg.language('zh-CN')
@@ -335,11 +330,11 @@ def gen(c, limitmes: int = 14):
     fg = FeedGenerator()
     fg.id(CFG.buri)
     fg.title('微雪博客 RSS')
-    fg.subtitle('lasted updates from tinysnow.github.io')
+    fg.subtitle('最新更新 - tinysnow.github.io')
     fg.link(href=CFG.buri, rel='self')
     fg.author({'name': 'tinysnow', 'email': 'ancielin+blog@outlook.com'})
     fg.language('zh-CN')
-    fg.description(f'RSS feed contains the latest {CFG.last} updates items.')
+    fg.description('包含本次 Git 提交中的所有文章更新')
     
     # 4. 处理变更的文件
     entries = []
@@ -358,10 +353,8 @@ def gen(c, limitmes: int = 14):
         if entry_data:
             entries.append(entry_data)
     
-    # 5. 按时间倒序排序并限制数量
-    sorted_entries = sorted(entries, 
-                          key=lambda x: x['published'], 
-                          reverse=True)[:limitmes]
+    # 5. 按时间倒序排序
+    sorted_entries = sorted(entries, key=lambda x: x['published'], reverse=True)
     
     # 6. 添加条目到 RSS feed
     for entry_data in sorted_entries:
@@ -379,30 +372,10 @@ def gen(c, limitmes: int = 14):
     fg.rss_file('rss.xml')
     
     LOG.info(f'RSS feed 生成完成: rss.xml')
-    LOG.info(f"总共 {len(sorted_entries)} 个条目")
+    LOG.info(f"总共 {len(sorted_entries)} 个条目:")
     LOG.info(f"新增文章: {len([e for e in sorted_entries if e['change_type'] == 'added'])} 篇")
     LOG.info(f"更新文章: {len([e for e in sorted_entries if e['change_type'] == 'modified'])} 篇")
     
     # 显示处理的文件信息
     for entry in sorted_entries:
         LOG.info(f"  {entry['title']} - {entry['published'].strftime('%Y-%m-%d %H:%M:%S')}")
-
-@task
-def test_git(c):
-    """测试 Git 变更检测功能"""
-    LOG.info("测试 Git 变更检测...")
-    
-    added_files, modified_files, deleted_files = get_last_commit_files()
-    
-    print(f"\n=== Git 变更检测结果 ===")
-    print(f"新增文件 ({len(added_files)} 个):")
-    for f in added_files:
-        print(f"  + {f}")
-    
-    print(f"\n修改文件 ({len(modified_files)} 个):")
-    for f in modified_files:
-        print(f"  M {f}")
-    
-    print(f"\n删除文件 ({len(deleted_files)} 个):")
-    for f in deleted_files:
-        print(f"  - {f}")

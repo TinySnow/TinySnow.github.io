@@ -4,18 +4,138 @@
 
 <p style="font-size: larger; font-weight: bold; color: red; text-align: center;">NOTICE: This content is presented as `git diff`.</p>
 
-## .gitignore
+## SUMMARY.md
 
 ```diff
 
-@@ -3,4 +3,5 @@ node_modules
- package.json
- package-lock.json
- .git.bfg-report
--.obsidian
-\ No newline at end of file
-+.obsidian
-+rss.xml
+@@ -877,6 +877,7 @@
+   - [当呼吸化为空气](阅读/零零散散/当呼吸化为空气.md)
+   - [所有女生要知道](阅读/零零散散/所有女生要知道.md)
+ - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
++  - [阿咪的故事 - 王蒙](阅读/每日一文/阿咪的故事%20-%20王蒙.md)
+   - [心里难过 - 刘心武](阅读/每日一文/心里难过%20-%20刘心武.md)
+   - [早餐 - 纪大伟](阅读/每日一文/早餐%20-%20纪大伟.md)
+   - [爱的距离 - 周国平](阅读/每日一文/爱的距离%20-%20周国平.md)
+```
+
+## 阿咪的故事 - 王蒙.md
+
+```diff
+
+@@ -0,0 +1,113 @@
++# 阿咪的故事
++
++*王蒙*
++
++　　要不要养猫，怎么养呢？
++
++　　女儿说：“咱们住到平房小院了，快养一只猫吧。最漂亮、最温柔、最招人疼的动物就是猫。人有什么不痛快的事，一摆弄猫，就全忘啦。”
++
++　　奶奶说：“快养猫吧！昨天晚上，就在暖气片下面，一只小老鼠爬来跑去，它根本就不怕人。等冬天，野地里的老鼠就要往人家跑，咱们家要是进了一窝老鼠……一窝变十窝……可就糟了大糕了！”
++
++　　妻子说：“养猫最毁东西，它没事磨爪子，把地毯，把沙发巾，把新潮家具都会毁掉……又偷肉偷鱼偷奶，什么不吃它也要上桌子闻上一遍……再说，猫屎谁管？”
++
++　　儿子说：“对不起，我可不同意养猫。我的儿子小辉刚出生两个多月，被猫抓了会得一种特殊的儿科疾病……叫作舞蹈病还是黄热病？”
++
++　　女儿说：“美国有一个黑人家庭，不养猫，闹耗子。后来他们的襁褓中的孩子被耗子咬掉了鼻子。”
++
++　　“不要说话这样难听……”妻子连忙使眼色。
++
++　　儿媳妇说：“养猫就要剪掉猫的爪子，还要给猫做（去势）手术，那样的猫就好养了。李院长，赵主任家的猫就是这样经过安全处理的。经过安全处理的猫，有猫的各种好处，没有猫的各种缺点。”
++
++　　最后由教授——一家之主做结论：第一，猫还是要养的；第二，为了猫道主义，不要给猫剪爪子做手术，不要妨碍猫的天性。再说，安全手术也是做不彻底的。比如去势，总不可能去掉排泄机制。它不闹春了，仍然会闹尿闹屎；第三，如果养猫，必须确立一套规矩，不准猫进卧室、客厅、书房，只准猫进厨房、饭厅、锅炉房；当然，猫在户外的活动不受限制。为此，只能从很小很小培养起一只猫，使它适应咱们家的养猫规则、咱们家的猫的生活方式。
++
++　　小猫来了，白色的细长毛，灰蓝色的眼睛，黑鼻头，红嘴，脑瓜顶上有两瓣黑斑。见到人，它发出细而长的声音：“咪呜——”曲折有致。
++
++　　“噢，它真是太娇小了，像个婴儿，而且，它和人是多么亲啊！你们看，它看着我们大家，那么信任，那么依赖，我简直要为它哭出来了！”女儿说。
++
++　　“品种还是不错的，基本上还是波斯猫，当然，祖系不一定完全纯。白毛固然好看，但很容易染脏，一旦染脏了就非常恶心。太小，也不好养，多喂它一口馒头它就能撑死。问题还要看它是公猫还是母猫。公猫不如母猫讲干净。母猫会招一大堆公猫来……”儿子说。
++
++　　“我最怕的就是猫在房顶上叫。”儿媳插嘴说，“叫起来我全身起鸡皮疙瘩。猫一旦乱跑起来，就更容易传染疾病……这个猫的皮毛和眼睛还是都不错的，但是它的下巴太尖，像猴，不像猫。猫头猫脸应该是圆笃笃的，不是吗？”
++
++　　按照教授所确定的，能够被各方面所接受的原则开始养猫，母亲为猫找了一个大木匣子作窝。奶奶专门为猫做了一个小褥子，虽然褥子里装的是旧棉絮，但对于猫来说，至少应该算是“四星级”旅舍的条件了。女儿为猫预备了专门的食盘与水碗。奶奶吃饭的时候喜欢不断地给猫喂食，不断地与猫分享自己的食物：从炸油饼到红烧肉。儿子提出，过分地、毫无界限地把吃食任意提供给一只小猫，未必是可取的：一、猫可能撑出毛病；二、许多食品因吃不了而剩下而变馊，是一种浪费；三、猫本来就有馋的缺点，如此满足供应，只能使猫的胃口比人的胃口更刁更娇更贵族化，一旦例如肉食供应上出现了什么问题，人说不定挺得住，而这只猫会出现悲惨局面。教授首肯了儿子的意见，认为对猫对人太娇惯了都没有好处。教授和他的妻子回忆说，三十年前他们养过一只猫，这个猫专门喜欢吃白薯皮、南瓜皮、烂白菜帮……像这样的饮食习惯就很值得肯定。儿媳妇甚至于说，她的娘家养过的一只黑猫，夏天的时候靠吃蜗牛和土鳖而生存——连白薯南瓜白菜皮都毋庸提供。女儿略带感情地说，她的一位女友家也养了一只猫，品种还不如咱们这只，但人家每天专门购买三角钱羊肝两角钱小鱼喂食之。底下的微词，她没有继续说。但大家认为女儿对猫的关怀和袒护，基本上也是理论性的——因为女儿一周之内，难得在家呆上几个小时。奶奶趁着人们争论的机会把半块豆腐丢给了小猫，小猫不领情，对豆腐的反应是莫名其妙然后退避三舍。
++
++　　不管人们在猫食问题上展开了怎样的论争乃至吵闹，猫儿对饮食状况似乎并无大的不满。相反，对它的“四星级”卧榻却显出了十足的难以适应。白天晚上，它都不肯在木匣里呆。它总是凑到各个房间特别是客厅门口凄楚地哀叫，显然，它希望有人活动的房间能对它开放开户，希望人们能够容纳它的共存。开始，人们感到它的哀求的叫声婉转动情，充满着幼者弱者的天真无助与对主人的殷殷期待：“你们不要我了么？放我进来吧，我只在一个角落呆一会儿……不要让我一个睡在厨房，离开主人我多么害怕……”它的曲折起伏的咪呜声似乎在这样说。
++
++　　“要不把猫放到屋里来吧，怪可怜的……”教授说。
++
++　　“小孩送托儿所还要哭两声呢，一个猫……”教授的妻子想了想，说。
++
++　　于是教授推门走出，抱起猫，给以抚摸安慰，特别是帮助猫抓搔一下它的下巴至脖颈处。据说猫“洗脸”时靠前爪够不着那个地方，据说人这样抓搔一个猫是搔到了痒处，是对猫的最友善最恩惠堪称仁至义尽的表现。果然猫被教授抓到痒处以后喉头发出了幸福的咕噜咕噜声。然后教授像抱着自己的孙儿去托儿所一样地抱着抚着猫咪，走入饭厅，亲手轻轻柔柔地把它置入“四星”榻，蹲下，以十足循循善诱的课堂授业声调对它说。
++
++　　“阿咪，不要吵，不要闹，就在这里好好地睡觉，你看这儿多舒服呀……”
++
++　　教授尽到了自己的类于慈父的责任，他觉得自己对于猫够仁慈的了。
++
++　　可能两小时以后，也可能一小时乃至半小时乃至十分钟五分钟一分钟以后，又传出了猫的哀鸣——它又跑到了卧房客厅门口，它等待着主人的接纳，它要的是人的亲昵而不是“四星”软席。
++
++　　最动人的抒情曲在持续三分钟以后也会引起厌烦，如果是深夜或是夏日中午人们好梦正酣的时候，嗷嗷的惨叫只能引起痛恨而不是怜惜。“这个猫真讨厌！”“臭猫！”“滚！”
++
++　　人们渐渐发出这一类语言信号。如果单凭语言——因为说到底人与猫并没有可以无误地进行交流的“共同语言”——不能停止猫的吵人清梦的咪喵花腔，接着人们就会开开门向猫大喝一声乃至轻轻踢它一脚，使它认识到它的所为已经很是不受欢迎了。
++
++　　有一次，当儿子打开门准备给吵闹的猫以适度告诫的时候，不等告诫生效猫儿已经滋溜钻进了屋。“死猫，进屋了。”儿子说。于是展开了对于猫的围剿。猫吓得钻入柜子底下，抖个不住。人越伸手去捉它便钻得越深，似乎要钻入墙角墙缝。这种表现显得益发不高尚不光明正大不展样，甚至带有故意与人做对的含意：你不让它进屋它偏进屋；你想捉住它它偏藏藏躲躲不让你捉；它究竟要干什么？它找人追人哀鸣要求进屋，不就是和人亲么对人好喜欢人么？那它为什么不听人的话不合人的意而且和人对着干呢？它是不是陷入猫的怪圈了呢？它是不是陷入心思与行为动机与效果的矛盾中去了呢？
++
++　　反正它最后被捉出来了，它当然不是人的对手，它挨了一顿打，被抛入“四星”木匣。
++
++　　它的两眼大睁、上视，眼珠里反映着电灯泡的红光，本来的灰蓝色的眼睛变成令人不快的褐红色两枚弹子，不知道是猫眼充了血还是电灯光与波斯猫眼珠之间的光学反射作用，使猫眼变得那么褐红得骇人。人们不再用软语和爱抚来劝慰它安心木匣，而是咆哮着喝斥说： “你再捣乱，揍不烂你！”
++
++　　经过了许多次一次比一次严厉的训斥与体罚以后，猫似乎终于明白了也不得不接受了主人对自己的要求。它长大了，长胖了，除去吃饭喝水拉屎拉尿及其前前后后、懒洋洋地、漠然地伸伸腰，动动爪子和尾巴以外，不再走出木匣了，甚至连咪呜也很少了。它的嗓子似乎愈来愈嘶哑了，再一点就是猫越来越脏，它不再用自己的猫办法清洁自己的皮毛。白猫不白，这是非常难看的。
++
++　　“这回猫倒挺老实的了。”
++
++　　“可是这个猫太傻，太懒，太蔫！”
++
++　　“脏死了……你看人家家里的波斯猫什么样儿！”
++
++　　“这个猫是不是生理上有缺陷？怎么它不上房，不叫春？
++
++　　我看咱们养了个太监！”
++
++　　“也可能不是生理缺陷而是心理变态吧。”
++
++　　人们议论着，笑着。只有教授有点严肃又有点沉重，他说：“我看这个猫的性格扭曲了。”人们笑了起来。他又说：“我看它缺少的是爱呀！”他叹了一口气，大家沉默了。
++
++　　“我常常不在家，”女儿说，“要不我就让它每天晚上睡到我身边……”儿子说：“那好吧，‘让世界充满爱’嘛！既然爸爸要给它爱，我看从今天晚上就让它睡到爸爸被窝里吧……”
++
++　　教授摇摇头。人们又笑了。他甚至与妻子也是分床睡的，遑论一猫？教授的妻子说：“别分析了。你这一辈子，什么事都分析，连一只猫也分析得叫人难受……除了分析，你又做了什么，你又做得了什么呢？”
++
++　　教授苦笑了：“所以我是教授呀……我做不了兽医，也做不了屠夫……”
++
++　　此后的忽然一天，猫不见了。
++
++　　“四星”级木匣空空荡荡。猫食盘与猫水碗无“人”问津。当慷慨慈善的主人想把鱼头鱼刺鸡臀鸡爪牛肉硬筋赏赐给依赖人恩过活的小动物的时候，他们发现他们失去了施恩的对象。
++
++　　有猫的时候常常觉得猫儿讨厌，甚至猫围着你的裤脚转、抓你的裤脚、舐你的脚趾头、向你乞怜邀宠也让你心烦，它多么碍事！你踩着它的爪子，它怪叫一声，倒叫你吓了一跳。
++
++　　而现在它没有了，你走路不会受到任何阻碍。你切好的酱牛肉摆在餐桌上也不需要加罩防范。晚上睡觉无需关好门，没有什么东西——除去关门也挡不住的苍蝇蚊子蟑螂细菌——会跑进来。当你想喝斥两声逞逞威风或者指桑骂槐地发发怨气的时候，你的主体失去了客体对象；而对人逞威风与发怨气就没有那么便当了。
++
++　　于是都有了失落感。
++
++　　女儿呜呜地哭：“它多可怜呀！来到咱们家就没过过好日子……如果它被别人抱走，它也许会受虐待的。我的一个朋友，他们家养猫是把猫拴在床头的，给猫上了套包子、缰绳……他们对阿咪要是也这样可怎么办呀！”
++
++　　教授的妻子到离家不远的一家个体饮食店买馅饼，看见了一只白猫，大小与那只波斯猫相仿，额头有一块黑斑，眼睛不是灰蓝而是暗黄。这个发现使全家非常激动，会不会是我们那只猫？会不会为猫做了整容、割了双眼皮、染了“发”并且染了眼珠？于是女儿和儿媳妇也去买馅饼，嘴里说买馅饼眼睛却盯住了猫，使女店主直眨巴眼、发毛。
++
++　　不是“我们的猫”，三次核查以后，大家说。
++
++　　这猫是怎么丢的呢？上房了？迷路了？猫还会迷路吗？出大门了，被抱走了？很可能。
++
++　　现在的道德水平太低，这样把人家的猫抱走，形同偷窃乃至抢劫，不知我国刑法对此种行为有没有制裁的规定。听说还有偷了猫去剥皮出售的呢，太残忍了。听说养鸽子的人在房上下夹，如果这个猫被猎夹打住，早就没了命了……谁下的夹？太缺德了！市政府应该明确规定，不准任意下夹……那天早上猫在吗？谁看见了？谁出大门没关门？为什么这么好的一只猫竟没有人关心？
++
++　　探讨了一番，没有结论，女儿再哭了一场。
++
++　　五天以后，教授忽然心事重重地讲了一个故事：据晚报刊载，市郊一个区为防止狂犬病规定在某月某日前必须把所有的家养狗消灭或上缴集中处理，某月某日为“无狗日”，这一天见狗人人得而诛之。有一家兄弟，偏爱一狗，这一天把狗藏在房中，搂着狗不让狗出声吠叫，一副与狗共患难乃至共存亡的架式。谁知天色黄昏之后，人也松懈了狗也受不了了，突然狗跑出房间跑出宅院跑上大街。兄弟俩在后面追，狗在前面跑。打狗的积极分子在后面追，狗在前面跑。石块木棒纷纷向狗身上落去，狗在前面跑。人们大声吆喝，狗在前面跑。人们使用了弹弓、飞镖等土造“武器”，狗在前面跑。最后狗筋疲力尽了跑不动了。爱狗的两兄弟终于追上了狗。他们用身体保护狗宁可以己身代狗受木石的打击。忽然，狗叫起来，咬断了兄弟之一的喉管。晚报记者指出：两兄弟不按规定办，自作自受。
++
++　　大家没说什么。觉得教授的故事很不得体。
++
++　　又一周之后，凌晨，全家都在沉睡，忽然听到阿咪的咪呜声，声音响亮，完全没有哀求的意思，嗓子也毫不嘶哑了。
++
++　　教授一个蹦子从床上跳下来，赤身穿上大衣去欢迎它。全家都起来了，欢呼着，欢迎这个猫。教授急急忙忙从冰箱里找来了牛肉和牛奶，准备用最新鲜的高质量动物蛋白来欢迎这只猫。而且，他们打开了每一个房门。他们准备优礼有加地请猫进入任何它“认为方便”的房间。
++
++　　咪咪，咪咪，……教授叫着，妻子叫着，儿女叫着，儿媳妇也叫着。年已两岁的孙醒了，也叫着。叫咪咪的合唱感人肺腑，催人泪下。
++
++　　阿咪舐了舐牛奶，嗅了嗅牛肉。阿咪很瘦，毛显得很长，也挺脏。但它的眼睛闪闪发光，兴奋而且野性，好像刚刚打了一个胜仗。阿咪抬起头一个又一个地看着大家。几乎可以说是检阅。然后它走近一个又一个的房门，走近一个又一个它想进而不可得的房门，它看了每间房内的摆设。众人屏神静气，不出声。
++
++　　然后阿咪突然转身，一溜烟一样地爬上槐树，跳上屋顶，回身望了望惨叫着它的主人们，离去了。
 \ No newline at end of file
 ```
 
@@ -23,557 +143,96 @@
 
 ```diff
 
-@@ -1,8 +1,10 @@
- import os
- import re
- import sys
-+import subprocess
- from datetime import datetime, timezone, timedelta 
- from urllib.parse import unquote, quote
-+from pathlib import Path
+@@ -298,15 +298,10 @@ def ver(c):
+     )
  
- from feedgen.feed import FeedGenerator
- import markdown
-
-@@ -18,14 +20,9 @@ from loguru import logger as LOG
- 
- # 移除默认的日志处理器
- LOG.remove()
--# LOG.add(sys.stderr, level="WARNING")
- LOG.add(sys.stdout, level="DEBUG")
--# LOG.add(sys.stdout, level="INFO")
--# LOG.add(sys.stdout, level="WARNING")
--# LOG.add(sys.stdout, level="ERROR")
- 
- CONF = {
--    #   self info,
-     "project": "RSS4mdBOOK",
-     "desc": "base SUMMARY.md gen RSS feed->RSS.xml",
-     "version": "24.11.9.2142",
-
-@@ -42,211 +39,370 @@ CONF = {
- Config = namedtuple("Config", CONF.keys())
- CFG = Config(**CONF)
- 
--#   support stuff func.
--def cd(c, path2: str, echo: bool = True) -> None:
-+def safe_path_encode(path: str) -> str:
-     """
--    切换工作目录
-+    安全的路径编码，处理中文路径
-     
-     Args:
--        c: Context对象 
--        path2 (str): 目标路径
--        echo (bool): 是否打印当前路径信息
-+        path (str): 原始路径
-+        
-+    Returns:
-+        str: 编码后的路径
-+    """
-+    # 分割路径为各个部分
-+    parts = path.split('/')
-+    # 对每个部分进行编码，但保留路径分隔符
-+    encoded_parts = [quote(part, safe='') for part in parts if part]
-+    return '/'.join(encoded_parts)
-+
-+def safe_path_decode(path: str) -> str:
-+    """
-+    安全的路径解码，处理中文路径
-     
--    Raises:
--        OSError: 当目录不存在或无法访问时
-+    Args:
-+        path (str): 编码的路径
-+        
-+    Returns:
-+        str: 解码后的路径
-     """
-     try:
--        os.chdir(path2)
--        if echo:
--            print("\n\t crt. PATH ===")
--            c.run("pwd")
--            c.run("echo \n")
--    except OSError as e:
--        LOG.error(f"切换目录失败: {e}")
--        raise
-+        return unquote(path)
-+    except Exception as e:
-+        LOG.warning(f"路径解码失败，使用原路径: {path}, 错误: {e}")
-+        return path
- 
--@task
--def ver(c):
--    """echo crt. verions"""
--    print(
--        f"""{CFG.project}
--    ~> {CFG.desc} <~
--    ~> version   {CFG.version} <~
--    ~> powded by {CFG.author} <~
--    ~> feedback to {CFG.feedback} <~
--    ~> all right reserved: {CFG.license} <~
-+def get_last_commit_files():
-     """
--    )
--    # print(CFG.output)
--    return None
-+    获取上次 commit 中涉及的文件列表，支持中文路径
-+    
-+    Returns:
-+        tuple: (新增文件列表, 修改文件列表, 删除文件列表)
-+    """
-+    try:
-+        # 使用 git diff-tree 获取变更，但使用 --full-index 和 -z 选项以避免路径编码问题
-+        result = subprocess.run(
-+            ['git', 'diff-tree', '--no-commit-id', '--name-status', '-r', '-z', '--full-index', 'HEAD'],
-+            capture_output=True,
-+            encoding='utf-8',  # 明确指定UTF-8编码
-+            check=True
-+        )
-+        
-+        added_files = []
-+        modified_files = []
-+        deleted_files = []
-+        
-+        # -z 选项使用 NULL 字节分割，需要特殊处理
-+        changes = result.stdout.split('\0')
-+        i = 0
-+        while i < len(changes) - 1:  # 最后一个元素是空字符串
-+            status = changes[i]
-+            file_path = changes[i + 1]
-+            
-+            if not file_path:
-+                i += 2
-+                continue
-+                
-+            # 规范化路径格式
-+            file_path = os.path.normpath(file_path).replace('\\', '/')
-+            
-+            # 只处理 src 目录下的 .md 文件，排除 README.md
-+            if (file_path.startswith('src/') and 
-+                file_path.lower().endswith('.md') and 
-+                not file_path.endswith('README.md')):
-+                
-+                # 确保文件路径是有效的UTF-8编码
-+                try:
-+                    if status == 'A':
-+                        if os.path.exists(file_path):  # 验证文件是否存在
-+                            added_files.append(file_path)
-+                        else:
-+                            LOG.warning(f"新增文件不存在: {file_path}")
-+                    elif status == 'M':
-+                        if os.path.exists(file_path):
-+                            modified_files.append(file_path)
-+                        else:
-+                            LOG.warning(f"修改文件不存在: {file_path}")
-+                    elif status == 'D':
-+                        deleted_files.append(file_path)
-+                except UnicodeError as e:
-+                    LOG.error(f"文件路径编码错误: {e}")
-+            
-+            i += 2  # 每次处理状态和路径两个元素
-+        
-+        # 输出详细日志
-+        LOG.info("Git变更文件列表:")
-+        for f in added_files:
-+            LOG.info(f"  新增: {f}")
-+        for f in modified_files:
-+            LOG.info(f"  修改: {f}")
-+        
-+        return added_files, modified_files, deleted_files
-+        
-+    except subprocess.CalledProcessError as e:
-+        LOG.error(f"执行Git命令失败: {e.stderr}")
-+        return [], [], []
-+    except Exception as e:
-+        LOG.error(f"获取Git变更失败: {e}")
-+        return [], [], []
- 
--def get_file_time(file_path: str, use_creation_time: bool = False) -> datetime:
-+def get_file_git_time(file_path: str) -> datetime:
-     """
--    获取文件的Git提交时间
-+    获取文件的最后 Git 提交时间
-     
-     Args:
-         file_path (str): 文件路径
--        use_creation_time (bool): True获取首次提交时间，False获取最后修改时间
--    
-+        
-     Returns:
-         datetime: 带时区信息的时间对象
-     """
-     try:
--        # 确保文件存在
--        if not os.path.exists(file_path):
--            raise FileNotFoundError(f"文件不存在: {file_path}")
--            
--        # 获取相对于仓库根目录的路径
--        repo_path = os.path.relpath(file_path)
--        LOG.debug(f"获取文件 Git 时间: {repo_path}")
-+        # 确保使用正确的文件路径格式
-+        normalized_path = file_path.replace('\\', '/')
-         
--        if use_creation_time:
--            git_cmd = f'git log --follow --format=%ai --reverse "{repo_path}" | head -1'
--        else:
--            git_cmd = f'git log -1 --format=%ai "{repo_path}"'
--        
--        # 使用subprocess.run替代check_output，以获取更好的错误处理
--        import subprocess
-         result = subprocess.run(
--            git_cmd,
--            shell=True,
--            text=True,
-+            ['git', 'log', '-1', '--format=%ai', '--', normalized_path],
-             capture_output=True,
-+            text=True,
-             check=True
-         )
-         
-         if not result.stdout.strip():
--            raise ValueError(f"Git命令没有返回时间戳: {git_cmd}")
-+            LOG.warning(f"无法获取文件 Git 时间: {file_path}")
-+            return datetime.now(timezone(timedelta(hours=8)))
-             
-         timestamp_str = result.stdout.strip()
--        LOG.debug(f"Git时间戳: {timestamp_str}")
--        
--        # Git时间戳格式: YYYY-MM-DD HH:MM:SS +TIMEZONE
-+        # Git 时间戳格式: YYYY-MM-DD HH:MM:SS +TIMEZONE
-         file_time = datetime.strptime(timestamp_str, '%Y-%m-%d %H:%M:%S %z')
-+        
-+        LOG.debug(f"文件 {file_path} Git 时间: {file_time}")
-         return file_time
-         
-     except subprocess.CalledProcessError as e:
--        LOG.error(f"执行Git命令失败: {e.stderr}")
-+        LOG.error(f"获取 Git 时间失败: {file_path}, 错误: {e}")
-         return datetime.now(timezone(timedelta(hours=8)))
-     except Exception as e:
--        LOG.error(f"获取Git时间失败: {str(e)}")
-+        LOG.error(f"处理 Git 时间时出错: {file_path}, 错误: {e}")
-         return datetime.now(timezone(timedelta(hours=8)))
- 
-+def parse_summary_md(summary_path: str) -> dict:
-+    """
-+    解析 SUMMARY.md 文件，建立文件路径到标题的映射
-+    
-+    Args:
-+        summary_path (str): SUMMARY.md 文件路径
-+        
-+    Returns:
-+        dict: {文件路径: 标题} 的映射字典
-+    """
-+    file_title_map = {}
-+    
-+    try:
-+        with open(summary_path, 'r', encoding='utf-8') as f:
-+            summary_content = f.read()
-+        
-+        # 使用正则表达式解析 markdown 链接
-+        link_pattern = re.compile(r'\[(.*?)\]\((.*?)\)')
-+        
-+        for match in link_pattern.findall(summary_content):
-+            title = match[0].strip()
-+            relative_path = match[1].strip()
-+            
-+            # 安全解码路径
-+            decoded_path = safe_path_decode(relative_path)
-+            
-+            # 标准化路径格式
-+            normalized_path = decoded_path.replace('\\', '/')
-+            if not normalized_path.startswith('src/'):
-+                normalized_path = f"src/{normalized_path}"
-+            
-+            file_title_map[normalized_path] = title
-+            LOG.debug(f"映射: {normalized_path} -> {title}")
-+    
-+    except Exception as e:
-+        LOG.error(f"解析 SUMMARY.md 失败: {e}")
-+    
-+    return file_title_map
-+
-+def process_markdown_file(file_path: str, title: str, change_type: str) -> dict:
-+    """
-+    处理单个 Markdown 文件
-+    
-+    Args:
-+        file_path (str): 文件路径
-+        title (str): 文件标题
-+        change_type (str): 变更类型 ('added' 或 'modified')
-+        
-+    Returns:
-+        dict: 文件条目数据，如果处理失败返回 None
-+    """
-+    try:
-+        # 检查文件是否存在
-+        local_file_path = f"./{file_path}"
-+        if not os.path.exists(local_file_path):
-+            LOG.warning(f"文件不存在: {local_file_path}")
-+            return None
-+        
-+        # 获取文件的 Git 提交时间
-+        git_time = get_file_git_time(file_path)
-+        
-+        # 读取文件内容
-+        with open(local_file_path, 'r', encoding='utf-8') as f:
-+            markdown_content = f.read()
-+        
-+        # 转换为 HTML
-+        html_content = markdown.markdown(markdown_content)
-+        
-+        # 生成 URL
-+        # 移除 src/ 前缀，并安全编码
-+        url_path = file_path[4:] if file_path.startswith('src/') else file_path
-+        encoded_url_path = safe_path_encode(url_path)
-+        page_url = f"{CFG.buri.rstrip('/')}/{encoded_url_path}"
-+        
-+        # 将 .md 扩展名替换为 .html
-+        if page_url.endswith('.md'):
-+            page_url = page_url[:-3] + '.html'
-+        
-+        # 生成描述
-+        type_text = "新增" if change_type == "added" else "更新"
-+        description = f"{type_text}: {title} - {git_time.strftime('%Y-%m-%d %H:%M:%S')}"
-+        
-+        entry_data = {
-+            'id': f"{file_path}#{change_type}",
-+            'title': f"[{type_text}] {title}",
-+            'link': page_url,
-+            'published': git_time,
-+            'description': description,
-+            'content': html_content,
-+            'change_type': change_type,
-+            'file_path': file_path
-+        }
-+        
-+        LOG.info(f"处理完成: {type_text} - {title}")
-+        return entry_data
-+        
-+    except Exception as e:
-+        LOG.error(f"处理文件失败 {file_path}: {e}")
-+        return None
-+
-+@task
-+def ver(c):
-+    """echo crt. versions"""
-+    print(
-+        f"""{CFG.project}
-+    ~> {CFG.desc} <~
-+    ~> version   {CFG.version} <~
-+    ~> powered by {CFG.author} <~
-+    ~> feedback to {CFG.feedback} <~
-+    ~> all right reserved: {CFG.license} <~
-+    """
-+    )
-+
  @task 
--def gen(c, limitmes: int = 14, use_creation_time: bool = False):
--    """生成RSS订阅源
-+def gen(c, limitmes: int = 14):
-+    """
-+    生成基于上次 Git commit 变更的 RSS 订阅源
-     
-     Args:
-         c: Context对象
-         limitmes (int): 限制条目数量，默认14条
--        use_creation_time (bool): 是否使用文件创建时间，默认False使用修改时间
+-def gen(c, limitmes: int = 14):
++def gen(c):
      """
--
--    # 1. 定义网站 URL 和 SUMMARY.md 文件位置
--    base_url = CFG.buri #'https://mybooksite.com/'
--    summary_md_path = f'{CFG.rpath}/{CFG.summ}'
--
--    # 2. 初始化 RSS 生成器
-+    
-+    LOG.info("开始生成 RSS 订阅源...")
-+    
-+    # 1. 获取上次 commit 的变更文件
-+    added_files, modified_files, deleted_files = get_last_commit_files()
-+    
-+    if not added_files and not modified_files:
-+        LOG.warning("上次 commit 没有新增或修改的 Markdown 文件")
-+        # 仍然生成一个空的 RSS 文件
-+        fg = FeedGenerator()
-+        fg.id(CFG.buri)
-+        fg.title('微雪博客 RSS')
-+        fg.subtitle('lasted updates from tinysnow.github.io')
-+        fg.link(href=CFG.buri, rel='self')
-+        fg.author({'name': 'tinysnow', 'email': 'ancielin+blog@outlook.com'})
-+        fg.language('zh-CN')
-+        fg.description('RSS feed contains the latest updates items.')
-+        fg.rss_file('rss.xml')
-+        LOG.info("生成空的 RSS 文件: rss.xml")
-+        return
-+    
-+    # 2. 解析 SUMMARY.md 文件
-+    summary_path = f'{CFG.rpath}/{CFG.summ}'
-+    file_title_map = parse_summary_md(summary_path)
-+    
-+    # 3. 初始化 RSS 生成器
-     fg = FeedGenerator()
--    fg.id(base_url)
-+    fg.id(CFG.buri)
-     fg.title('微雪博客 RSS')
-     fg.subtitle('lasted updates from tinysnow.github.io')
--    fg.link(href=base_url, rel='self')
--    fg.author( {'name':'tinysnow','email':'ancielin+blog@outlook.com'} )
-+    fg.link(href=CFG.buri, rel='self')
-+    fg.author({'name': 'tinysnow', 'email': 'ancielin+blog@outlook.com'})
-     fg.language('zh-CN')
--    fg.description(f'RSS feed contains the latest {CFG.last} updates items.')  # 添加全局描述
--
--    # 获取文件的最后修改时间和创建时间
--    def get_file_times(file_path):
--        """获取文件的创建时间和最后修改时间"""
--        creation_time = get_file_time(file_path, use_creation_time=True)
--        modified_time = get_file_time(file_path, use_creation_time=False)
--        return creation_time, modified_time
--
--    # 3. 定义存储条目的列表
-+    fg.description(f'RSS feed contains the latest {CFG.last} updates items.')
-+    
-+    # 4. 处理变更的文件
-     entries = []
--
--    # 4. 解析 SUMMARY.md 文件，提取章节和对应链接
--    with open(summary_md_path, 'r', encoding='utf-8') as f:
--        summary_content = f.read()
--
--    # 5. 使用正则表达式解析 markdown 链接
--    link_pattern = re.compile(r'\[(.*?)\]\((.*?)\)')
--
--    for match in link_pattern.findall(summary_content):
--        title = match[0]  # 链接文本 (页面标题)
--        relative_path = match[1].strip()  # 链接地址 (相对路径)
--        
--        # 解码URL编码的字符（如 %20 -> 空格）
--        decoded_relative_path = unquote(relative_path)
--        
--        # 处理相对路径，生成完整的页面 URL
--        encoded_relative_path = quote(decoded_relative_path, safe='/')
--        page_url = f"{base_url.rstrip('/')}/{encoded_relative_path}"
--
--        # 对于本地文件路径，使用解码后的路径
--        file_path = f'./src/{decoded_relative_path}'  # 使用解码后的路径访问文件
--        
--        _mdfile = decoded_relative_path.split('/')[-1]  # 使用解码后的路径获取文件名
--        #LOG.debug(f"parse:{file_path}")
--        if _mdfile == "README.md":
--            LOG.info(f"IGNORE README.md in \n{file_path}")
--            continue
--        elif _mdfile.lower().endswith('.md') and _mdfile != "README.md":  # 优化条件判断
--            LOG.info(f"处理 Markdown 文件: {title}")
--            
--            try:
--                # 获取文件时间 - 只获取一次
--                creation_time, modified_time = get_file_times(file_path)
--                LOG.info(f"文件: {_mdfile} 创建: {creation_time} 修改: {modified_time}")
--                
--                with open(file_path, 'r', encoding='utf-8') as md_file:
--                    markdown_content = md_file.read()
--                
--                html_content = markdown.markdown(markdown_content)
--                
--                # 基础条目数据
--                base_entry = {
--                    'id': decoded_relative_path,
--                    'title': title,
--                    'link': page_url,
--                    'content': html_content,
--                }
--                
--                # 创建两个条目：新建和更新
--                entries.extend([
--                    {**base_entry,
--                     'type': 'created',
--                     'published': creation_time,
--                     'description': f'NEW: {title} - Created: {creation_time.strftime("%Y-%m-%d %H:%M:%S")}'},
--                    {**base_entry,
--                     'type': 'updated',
--                     'published': modified_time,
--                     'description': f'UPDATED: {title} - Modified: {modified_time.strftime("%Y-%m-%d %H:%M:%S")}'}
--                ])
--                
--            except Exception as e:
--                LOG.error(f"处理文件 {file_path} 时出错: {e}")
--                continue
--
--    # 直接按时间倒序排序并获取最新的N条
-+    
-+    # 处理新增文件
-+    for file_path in added_files:
-+        title = file_title_map.get(file_path, os.path.basename(file_path))
-+        entry_data = process_markdown_file(file_path, title, 'added')
-+        if entry_data:
-+            entries.append(entry_data)
-+    
-+    # 处理修改文件
-+    for file_path in modified_files:
-+        title = file_title_map.get(file_path, os.path.basename(file_path))
-+        entry_data = process_markdown_file(file_path, title, 'modified')
-+        if entry_data:
-+            entries.append(entry_data)
-+    
-+    # 5. 按时间倒序排序并限制数量
-     sorted_entries = sorted(entries, 
--                          key=lambda x: x['published'],
-+                          key=lambda x: x['published'], 
-                           reverse=True)[:limitmes]
+-    生成基于上次 Git commit 变更的 RSS 订阅源
+-    
+-    Args:
+-        c: Context对象
+-        limitmes (int): 限制条目数量，默认14条
++    生成基于上次 Git commit 变更的 RSS 订阅源，包含所有变更文章
+     """
+-    
+     LOG.info("开始生成 RSS 订阅源...")
      
--    # 添加到 RSS feed
-+    # 6. 添加条目到 RSS feed
+     # 1. 获取上次 commit 的变更文件
+
+@@ -318,7 +313,7 @@ def gen(c, limitmes: int = 14):
+         fg = FeedGenerator()
+         fg.id(CFG.buri)
+         fg.title('微雪博客 RSS')
+-        fg.subtitle('lasted updates from tinysnow.github.io')
++        fg.subtitle('最新更新 - tinysnow.github.io')
+         fg.link(href=CFG.buri, rel='self')
+         fg.author({'name': 'tinysnow', 'email': 'ancielin+blog@outlook.com'})
+         fg.language('zh-CN')
+
+@@ -335,11 +330,11 @@ def gen(c, limitmes: int = 14):
+     fg = FeedGenerator()
+     fg.id(CFG.buri)
+     fg.title('微雪博客 RSS')
+-    fg.subtitle('lasted updates from tinysnow.github.io')
++    fg.subtitle('最新更新 - tinysnow.github.io')
+     fg.link(href=CFG.buri, rel='self')
+     fg.author({'name': 'tinysnow', 'email': 'ancielin+blog@outlook.com'})
+     fg.language('zh-CN')
+-    fg.description(f'RSS feed contains the latest {CFG.last} updates items.')
++    fg.description('包含本次 Git 提交中的所有文章更新')
+     
+     # 4. 处理变更的文件
+     entries = []
+
+@@ -358,10 +353,8 @@ def gen(c, limitmes: int = 14):
+         if entry_data:
+             entries.append(entry_data)
+     
+-    # 5. 按时间倒序排序并限制数量
+-    sorted_entries = sorted(entries, 
+-                          key=lambda x: x['published'], 
+-                          reverse=True)[:limitmes]
++    # 5. 按时间倒序排序
++    sorted_entries = sorted(entries, key=lambda x: x['published'], reverse=True)
+     
+     # 6. 添加条目到 RSS feed
      for entry_data in sorted_entries:
--        entry_type = '更新' if entry_data['type'] == 'updated' else '新增'
--        LOG.debug(f"添加{entry_type}条目: {entry_data['id']} - {entry_data['published']}")
-+        LOG.debug(f"添加条目: {entry_data['title']} - {entry_data['published']}")
-         
-         entry = fg.add_entry()
--        entry.id(f"{entry_data['id']}#{entry_data['type']}")
--        entry.title(f"[{entry_type}] {entry_data['title']}")
--        entry.link(href=f"{entry_data['link'][:-3]}.html")
-+        entry.id(entry_data['id'])
-+        entry.title(entry_data['title'])
-+        entry.link(href=entry_data['link'])
-         entry.published(entry_data['published'].isoformat())
-         entry.description(entry_data['description'])
-         entry.content(entry_data['content'], type='html')
--
--    # 生成 RSS 文件
-+    
-+    # 7. 生成 RSS 文件
+
+@@ -379,30 +372,10 @@ def gen(c, limitmes: int = 14):
      fg.rss_file('rss.xml')
--    LOG.info(f'RSS feed 已生成: rss.xml (共 {len(sorted_entries)} 条)')
-\ No newline at end of file
-+    
-+    LOG.info(f'RSS feed 生成完成: rss.xml')
-+    LOG.info(f"总共 {len(sorted_entries)} 个条目")
-+    LOG.info(f"新增文章: {len([e for e in sorted_entries if e['change_type'] == 'added'])} 篇")
-+    LOG.info(f"更新文章: {len([e for e in sorted_entries if e['change_type'] == 'modified'])} 篇")
-+    
-+    # 显示处理的文件信息
-+    for entry in sorted_entries:
+     
+     LOG.info(f'RSS feed 生成完成: rss.xml')
+-    LOG.info(f"总共 {len(sorted_entries)} 个条目")
++    LOG.info(f"总共 {len(sorted_entries)} 个条目:")
+     LOG.info(f"新增文章: {len([e for e in sorted_entries if e['change_type'] == 'added'])} 篇")
+     LOG.info(f"更新文章: {len([e for e in sorted_entries if e['change_type'] == 'modified'])} 篇")
+     
+     # 显示处理的文件信息
+     for entry in sorted_entries:
+-        LOG.info(f"  {entry['title']} - {entry['published'].strftime('%Y-%m-%d %H:%M:%S')}")
+-
+-@task
+-def test_git(c):
+-    """测试 Git 变更检测功能"""
+-    LOG.info("测试 Git 变更检测...")
+-    
+-    added_files, modified_files, deleted_files = get_last_commit_files()
+-    
+-    print(f"\n=== Git 变更检测结果 ===")
+-    print(f"新增文件 ({len(added_files)} 个):")
+-    for f in added_files:
+-        print(f"  + {f}")
+-    
+-    print(f"\n修改文件 ({len(modified_files)} 个):")
+-    for f in modified_files:
+-        print(f"  M {f}")
+-    
+-    print(f"\n删除文件 ({len(deleted_files)} 个):")
+-    for f in deleted_files:
+-        print(f"  - {f}")
 +        LOG.info(f"  {entry['title']} - {entry['published'].strftime('%Y-%m-%d %H:%M:%S')}")
-+
-+@task
-+def test_git(c):
-+    """测试 Git 变更检测功能"""
-+    LOG.info("测试 Git 变更检测...")
-+    
-+    added_files, modified_files, deleted_files = get_last_commit_files()
-+    
-+    print(f"\n=== Git 变更检测结果 ===")
-+    print(f"新增文件 ({len(added_files)} 个):")
-+    for f in added_files:
-+        print(f"  + {f}")
-+    
-+    print(f"\n修改文件 ({len(modified_files)} 个):")
-+    for f in modified_files:
-+        print(f"  M {f}")
-+    
-+    print(f"\n删除文件 ({len(deleted_files)} 个):")
-+    for f in deleted_files:
-+        print(f"  - {f}")
+\ No newline at end of file
 ```
