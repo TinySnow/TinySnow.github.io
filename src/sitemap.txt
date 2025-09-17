@@ -353,6 +353,7 @@ https://tinysnow.github.io/生活碎笔/诗词/鸡尾酒
 https://tinysnow.github.io/生活碎笔/随笔随记/医学如果不追求深入的话，其实门槛没有特别高
 https://tinysnow.github.io/生活碎笔/随笔随记/如果没有学过哲学，可以去了解一下
 https://tinysnow.github.io/生活碎笔/随笔随记/学习不是脑子里塞满知识的行为
+https://tinysnow.github.io/生活碎笔/随笔随记/很大程度上，你决定了你现在的生活，而不是历史决定了你
 https://tinysnow.github.io/生活碎笔/随笔随记/目前的股市，还没有发生结构性的变化
 https://tinysnow.github.io/生活碎笔/随笔随记/要搞清楚你为什么上班
 https://tinysnow.github.io/生活碎笔/随笔随记/随记
@@ -720,6 +721,7 @@ https://tinysnow.github.io/阅读/每日一文/四个相命师 - 吴念真
 https://tinysnow.github.io/阅读/每日一文/四千三百年 - 龙应台
 https://tinysnow.github.io/阅读/每日一文/四季歌 - 铁凝
 https://tinysnow.github.io/阅读/每日一文/回忆梁左 - 王朔
+https://tinysnow.github.io/阅读/每日一文/围城 - 钱钟书
 https://tinysnow.github.io/阅读/每日一文/在一个时代里缓慢行走 - 朱德庸
 https://tinysnow.github.io/阅读/每日一文/在什么地方活着 - 小川未明
 https://tinysnow.github.io/阅读/每日一文/在催眠术表演会上 - 契诃夫
