@@ -18,6 +18,7 @@ https://tinysnow.github.io/学习与进步/公共基础知识/民法
 https://tinysnow.github.io/学习与进步/公共基础知识/经济学
 https://tinysnow.github.io/学习与进步/公共基础知识/经济法
 https://tinysnow.github.io/学习与进步/公共基础知识/行政法
+https://tinysnow.github.io/学习与进步/公共基础知识/跨学科工具箱
 https://tinysnow.github.io/学习与进步/公共基础知识/面试
 https://tinysnow.github.io/学习与进步/公共基础知识/马克思主义哲学
 https://tinysnow.github.io/学习与进步/医学/医学
@@ -115,6 +116,7 @@ https://tinysnow.github.io/生活碎笔/感触/感触之四
 https://tinysnow.github.io/生活碎笔/感触/无题
 https://tinysnow.github.io/生活碎笔/感触/遇见 今天
 https://tinysnow.github.io/生活碎笔/感触/零言碎语
+https://tinysnow.github.io/生活碎笔/文章与写作/Default Man（默认角色）
 https://tinysnow.github.io/生活碎笔/文章与写作/“人最终都会变成自己讨厌的样子”之新解
 https://tinysnow.github.io/生活碎笔/文章与写作/一步一步，奔向光明
 https://tinysnow.github.io/生活碎笔/文章与写作/一点看法
@@ -130,8 +132,10 @@ https://tinysnow.github.io/生活碎笔/文章与写作/你一定走了很远的
 https://tinysnow.github.io/生活碎笔/文章与写作/你究竟更男性化还是更女性化？
 https://tinysnow.github.io/生活碎笔/文章与写作/佳芯小姐与猫
 https://tinysnow.github.io/生活碎笔/文章与写作/克莱因蓝
+https://tinysnow.github.io/生活碎笔/文章与写作/八字手链人物传记计划——予
 https://tinysnow.github.io/生活碎笔/文章与写作/八字手链人物传记计划——懿
 https://tinysnow.github.io/生活碎笔/文章与写作/八字手链人物传记计划——旭
+https://tinysnow.github.io/生活碎笔/文章与写作/八字手链人物传记计划——泽
 https://tinysnow.github.io/生活碎笔/文章与写作/八字手链人物传记计划——灵
 https://tinysnow.github.io/生活碎笔/文章与写作/八字手链人物传记计划——珍
 https://tinysnow.github.io/生活碎笔/文章与写作/八字手链人物传记计划——琴
@@ -297,9 +301,11 @@ https://tinysnow.github.io/生活碎笔/诗词/忆忆思
 https://tinysnow.github.io/生活碎笔/诗词/忆秦娥
 https://tinysnow.github.io/生活碎笔/诗词/念
 https://tinysnow.github.io/生活碎笔/诗词/愿望
+https://tinysnow.github.io/生活碎笔/诗词/我一定要在衬衫上画一架大大的飞机
 https://tinysnow.github.io/生活碎笔/诗词/我不会忘记你的名字
 https://tinysnow.github.io/生活碎笔/诗词/我不会想见你
 https://tinysnow.github.io/生活碎笔/诗词/我在刺杀你的路上，买了一束鲜花
+https://tinysnow.github.io/生活碎笔/诗词/我将孑自飞往上海
 https://tinysnow.github.io/生活碎笔/诗词/我愿化作一株野草
 https://tinysnow.github.io/生活碎笔/诗词/我的思念藏在海里
 https://tinysnow.github.io/生活碎笔/诗词/我的思念，是一支箭矢
@@ -340,6 +346,7 @@ https://tinysnow.github.io/生活碎笔/诗词/行走
 https://tinysnow.github.io/生活碎笔/诗词/行走在命运之上
 https://tinysnow.github.io/生活碎笔/诗词/记 11 月 23 日 飘摇动荡
 https://tinysnow.github.io/生活碎笔/诗词/诗词总录
+https://tinysnow.github.io/生活碎笔/诗词/请将准星对准我
 https://tinysnow.github.io/生活碎笔/诗词/赠君
 https://tinysnow.github.io/生活碎笔/诗词/迷宫
 https://tinysnow.github.io/生活碎笔/诗词/迷途
