@@ -18,7 +18,6 @@ https://tinysnow.github.io/学习与进步/公共基础知识/民法
 https://tinysnow.github.io/学习与进步/公共基础知识/经济学
 https://tinysnow.github.io/学习与进步/公共基础知识/经济法
 https://tinysnow.github.io/学习与进步/公共基础知识/行政法
-https://tinysnow.github.io/学习与进步/公共基础知识/跨学科工具箱
 https://tinysnow.github.io/学习与进步/公共基础知识/面试
 https://tinysnow.github.io/学习与进步/公共基础知识/马克思主义哲学
 https://tinysnow.github.io/学习与进步/医学/医学
@@ -99,6 +98,7 @@ https://tinysnow.github.io/学习与进步/零碎知识整理/俄语译码表
 https://tinysnow.github.io/学习与进步/零碎知识整理/分享想法
 https://tinysnow.github.io/学习与进步/零碎知识整理/半导体集成电路
 https://tinysnow.github.io/学习与进步/零碎知识整理/毕业设计
+https://tinysnow.github.io/学习与进步/零碎知识整理/跨学科工具箱
 https://tinysnow.github.io/学习与进步/零碎知识整理/零碎知识整理
 https://tinysnow.github.io/学习与进步/音乐/作曲编曲入门
 https://tinysnow.github.io/学习与进步/音乐/其他资料
@@ -361,6 +361,7 @@ https://tinysnow.github.io/生活碎笔/随笔随记/医学如果不追求深入
 https://tinysnow.github.io/生活碎笔/随笔随记/如果没有学过哲学，可以去了解一下
 https://tinysnow.github.io/生活碎笔/随笔随记/学习不是脑子里塞满知识的行为
 https://tinysnow.github.io/生活碎笔/随笔随记/很大程度上，你决定了你现在的生活，而不是历史决定了你
+https://tinysnow.github.io/生活碎笔/随笔随记/极端的主动，一定能为你争取到什么东西
 https://tinysnow.github.io/生活碎笔/随笔随记/目前的股市，还没有发生结构性的变化
 https://tinysnow.github.io/生活碎笔/随笔随记/稍微人格解离一点也无所谓，别太过就行
 https://tinysnow.github.io/生活碎笔/随笔随记/美联储降息25个基点，这事儿跟我们有多大关系？
@@ -927,6 +928,7 @@ https://tinysnow.github.io/阅读/每日一文/断崖 - 德富芦花
 https://tinysnow.github.io/阅读/每日一文/断水人 - 杜拉斯
 https://tinysnow.github.io/阅读/每日一文/断爱近涅盘 - 林清玄
 https://tinysnow.github.io/阅读/每日一文/新型食品 - 斯蒂芬·巴特勒·里柯克
+https://tinysnow.github.io/阅读/每日一文/新年的求婚者 - 顾湘
 https://tinysnow.github.io/阅读/每日一文/新生活 - 胡适
 https://tinysnow.github.io/阅读/每日一文/旅行与读书 - 詹宏志
 https://tinysnow.github.io/阅读/每日一文/旅行的意义 - 余军戈
