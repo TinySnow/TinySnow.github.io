@@ -1169,6 +1169,7 @@ https://tinysnow.github.io/阅读/每日一文/英雄之器 - 芥川龙之介
 https://tinysnow.github.io/阅读/每日一文/草莓 - 雅·伊瓦什凯维奇
 https://tinysnow.github.io/阅读/每日一文/荒唐少年时 - 陈升
 https://tinysnow.github.io/阅读/每日一文/荒唐的工作 - 黑井千次
+https://tinysnow.github.io/阅读/每日一文/荒诞是什么 - 余华
 https://tinysnow.github.io/阅读/每日一文/荔枝 - 肖复兴
 https://tinysnow.github.io/阅读/每日一文/荣辱 - 丰子恺
 https://tinysnow.github.io/阅读/每日一文/蓝眼 - 冯骥才
@@ -1687,6 +1688,7 @@ https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消�
 https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十二章：脂肪性肝病
 https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十五章：肝硬化
 https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十八章：肝外胆系结石及炎症
+https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十六章：原发性肝癌
 https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十四章：药物性肝病
 https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第十章：功能性胃肠病
 https://tinysnow.github.io/学习与进步/医学/内科学/第四部分：消化系统疾病/第四章：胃炎
