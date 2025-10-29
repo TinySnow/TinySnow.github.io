@@ -756,6 +756,7 @@ https://tinysnow.github.io/阅读/每日一文/在桥上 - 余华
 https://tinysnow.github.io/阅读/每日一文/在贫穷中挣扎的父亲 - 马德
 https://tinysnow.github.io/阅读/每日一文/在逃亡路上 - 施努累
 https://tinysnow.github.io/阅读/每日一文/垃圾工 - 雷·布拉德伯里
+https://tinysnow.github.io/阅读/每日一文/城市与欲望 - 伊塔洛·卡尔维诺
 https://tinysnow.github.io/阅读/每日一文/城市和亡灵 - 伊塔洛·卡尔维诺
 https://tinysnow.github.io/阅读/每日一文/多年父子成兄弟 - 汪曾祺
 https://tinysnow.github.io/阅读/每日一文/夜空中的木拐 - 从维熙
@@ -1497,6 +1498,7 @@ https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Android 
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Android 笔记截图
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Bash 代表命令
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/CCleaner 清理项
+https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Chrome进入简悦阅读模式后复制全文图片不带链接
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Git 学习笔记
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/MATLAB 复习
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Recovery + Root 掉落重新刷入方法
@@ -1513,6 +1515,7 @@ https://tinysnow.github.io/学习与进步/计算机科学/其他资料/给计�
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/设计模式极简笔记
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/软件知识补充
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/重装系统 8-7
+https://tinysnow.github.io/学习与进步/计算机科学/其他资料/重装系统后Firefox无法登录哔哩哔哩
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/重装系统知识
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/DocSearch搜索集成
 https://tinysnow.github.io/学习与进步/计算机科学/实践记录/ElasticSearch启用
