@@ -895,6 +895,7 @@ https://tinysnow.github.io/阅读/每日一文/我妈 - 钱海燕
 https://tinysnow.github.io/阅读/每日一文/我妈不让我看电视 - 佚名
 https://tinysnow.github.io/阅读/每日一文/我家的财富 - 德富芦花
 https://tinysnow.github.io/阅读/每日一文/我对女性有意见 - 詹姆斯·瑟伯
+https://tinysnow.github.io/阅读/每日一文/我总是依靠陌生人的善意 - 严歌苓
 https://tinysnow.github.io/阅读/每日一文/我所能带给你们的事物 - 李娟
 https://tinysnow.github.io/阅读/每日一文/我所认识的李敖 - 林清玄
 https://tinysnow.github.io/阅读/每日一文/我改变的事物 - 刘亮程
@@ -1503,6 +1504,7 @@ https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Git 学�
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/MATLAB 复习
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Recovery + Root 掉落重新刷入方法
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/SolutionsAndSteps
+https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Telegram删除线快捷键无法使用
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Tic-tac-toe Game Note of React
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Uniapp 从 HX 迁移到 WebStorm
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/pwn.college-writeup
