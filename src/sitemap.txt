@@ -167,6 +167,7 @@ https://tinysnow.github.io/生活碎笔/文章与写作/孩子特有的纯真
 https://tinysnow.github.io/生活碎笔/文章与写作/家庭旅行 - 丽江篇
 https://tinysnow.github.io/生活碎笔/文章与写作/家庭旅行 - 大理篇
 https://tinysnow.github.io/生活碎笔/文章与写作/小孩子的勇气
+https://tinysnow.github.io/生活碎笔/文章与写作/小孩子眼里的长发男生
 https://tinysnow.github.io/生活碎笔/文章与写作/小时候的萤火虫
 https://tinysnow.github.io/生活碎笔/文章与写作/小说、诗歌与想象力
 https://tinysnow.github.io/生活碎笔/文章与写作/工作半年多的感想
@@ -530,6 +531,7 @@ https://tinysnow.github.io/阅读/其他/成长很重要的一点就是不固执
 https://tinysnow.github.io/阅读/其他/我从来都没见谁逆袭过
 https://tinysnow.github.io/阅读/其他/投资，我还来得及么？
 https://tinysnow.github.io/阅读/其他/按照这七步做，回报率比你跳槽、转行、深造都大得多
+https://tinysnow.github.io/阅读/其他/新周期已经两年了，从不相信到不甘心，我还来得及么？
 https://tinysnow.github.io/阅读/其他/普信男尝试做家务，温柔体贴男内助，为啥不是一条路？
 https://tinysnow.github.io/阅读/其他/普通的房子到底还有没有前途？
 https://tinysnow.github.io/阅读/其他/有些经济话题，再拖下去，可能就来不及了
@@ -1274,6 +1276,7 @@ https://tinysnow.github.io/阅读/每日一文/铁血恋爱 - 蔡康永
 https://tinysnow.github.io/阅读/每日一文/铭于心 - 林清玄
 https://tinysnow.github.io/阅读/每日一文/银行抢案 - 史蒂文·舒曼
 https://tinysnow.github.io/阅读/每日一文/镜子与面具 - 博尔赫斯
+https://tinysnow.github.io/阅读/每日一文/长街短梦 - 铁凝
 https://tinysnow.github.io/阅读/每日一文/门萨的娼妓 - 伍迪·艾伦
 https://tinysnow.github.io/阅读/每日一文/闲话做人 - 铁凝
 https://tinysnow.github.io/阅读/每日一文/阿内西阿美女皇后 - 马里奥·贝内德蒂
@@ -1513,6 +1516,8 @@ https://tinysnow.github.io/学习与进步/计算机科学/其他资料/pwn.coll
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/临时
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/其他资料
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/发送软件清单及其作用解释
+https://tinysnow.github.io/学习与进步/计算机科学/其他资料/启动UsbEAm-LAN-Party-Server
+https://tinysnow.github.io/学习与进步/计算机科学/其他资料/启动n2n服务器端
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/汇编复习笔记
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/第一个 Bash 脚本
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/给计算机 202102 班的选修课建议
