@@ -1264,6 +1264,7 @@ https://tinysnow.github.io/阅读/每日一文/进个圈子锻造自己 - 沈青
 https://tinysnow.github.io/阅读/每日一文/进学解 - 林奕含
 https://tinysnow.github.io/阅读/每日一文/远处的一双眼睛 - 张小娴
 https://tinysnow.github.io/阅读/每日一文/远离古典 - 肖复兴
+https://tinysnow.github.io/阅读/每日一文/退路 - 刘墉
 https://tinysnow.github.io/阅读/每日一文/送行 - 梁实秋
 https://tinysnow.github.io/阅读/每日一文/逃脱 - 毛姆
 https://tinysnow.github.io/阅读/每日一文/逃避自由 - 刘瑜
@@ -1512,6 +1513,7 @@ https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Android 
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Android 笔记截图
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Bash 代表命令
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/CCleaner 清理项
+https://tinysnow.github.io/学习与进步/计算机科学/其他资料/CCleaner激活码
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Chrome进入简悦阅读模式后复制全文图片不带链接
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Git 学习笔记
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/MATLAB 复习
