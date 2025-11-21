@@ -3,7 +3,6 @@ title = "微雪博客"
 authors = ["TinySnow"]
 language = "zh-CN"
 description = "南国微雪的博客"
-multilingual = false
 src = "src"
 
 [output.html]
