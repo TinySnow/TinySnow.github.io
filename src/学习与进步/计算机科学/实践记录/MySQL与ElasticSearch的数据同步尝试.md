@@ -1,4 +1,4 @@
-# MySQL 与 Elastic Search 的数据同步尝试
+《# MySQL 与 Elastic Search 的数据同步尝试
 
 ## 起因
 
@@ -96,7 +96,7 @@
       - 报错信息：`canal Unrecognized VM option 'AggressiveOpts'`
       - 在 `startup.bat`(Windows) 或 `startup.sh`(Linux) 删除 ` -XX:+AggressiveOpts` 即可
       
-          - 需要能看懂 bash 脚本，或者直接 <C-h> 搜索也可以
+          - 需要能看懂 bash 脚本，或者直接 \<C-h\> 搜索也可以
 
 ## 使用 canal-example 
 

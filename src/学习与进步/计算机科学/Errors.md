@@ -52,7 +52,7 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 ### 无法添加文件
 
-> error: '<filename>' does not have a commit checked out fatal: adding files failed when inputting "git add ." in command prompt
+> error: '\<filename\>' does not have a commit checked out fatal: adding files failed when inputting "git add ." in command prompt
 
 - 删去子文件夹中的 `.git` 仓库。
 
