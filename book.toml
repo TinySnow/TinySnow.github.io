@@ -7,10 +7,10 @@ src = "src"
 
 [output.html]
 default-theme = "light"
-preferred-dark-theme = "navy"
+preferred-dark-theme = "Ayu"
 # google-analytics = "GTM-5VTTZ9C"
 # no-section-label = true
-additional-css = ["theme//customized/style.css"]
+additional-css = ["theme/customized/style.css"]
 additional-js = ["assets/custom.js", "assets/bigPicture.js"]
 git-repository-url = "https://github.com/TinySnow/TinySnow.github.io"
 git-repository-icon = "fab-github"
