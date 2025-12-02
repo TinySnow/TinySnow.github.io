@@ -545,6 +545,7 @@ https://tinysnow.github.io/阅读/其他/美国大选的重大影响以及未来
 https://tinysnow.github.io/阅读/其他/股票市场真正赚钱的核心逻辑
 https://tinysnow.github.io/阅读/其他/让生活更美好的100个小窍门
 https://tinysnow.github.io/阅读/其他/财富的真相与人类社会的底层逻辑
+https://tinysnow.github.io/阅读/其他/这一轮的机会，和以往都不一样
 https://tinysnow.github.io/阅读/其他/这个世界的底层逻辑，是保持多数人做“傀儡”
 https://tinysnow.github.io/阅读/其他/非专业赚钱的5个思路
 https://tinysnow.github.io/阅读/其他/顺势而为！严谨的逻辑思考，才能拥有稳定的心态
@@ -625,6 +626,7 @@ https://tinysnow.github.io/阅读/每日一文/为谁 - 龙应台
 https://tinysnow.github.io/阅读/每日一文/乡下的猫 - 佚名
 https://tinysnow.github.io/阅读/每日一文/乡愁 - 余光中
 https://tinysnow.github.io/阅读/每日一文/书店男与超市女 - 姬中宪
+https://tinysnow.github.io/阅读/每日一文/书店轶事 - 乔治·奥威尔
 https://tinysnow.github.io/阅读/每日一文/书要读得好的日子 - 梁文道
 https://tinysnow.github.io/阅读/每日一文/买牛肉须知 - 姬中宪
 https://tinysnow.github.io/阅读/每日一文/二手衣 - 亦舒
@@ -736,6 +738,7 @@ https://tinysnow.github.io/阅读/每日一文/吆喝 - 萧乾
 https://tinysnow.github.io/阅读/每日一文/合锦 - 汪曾祺
 https://tinysnow.github.io/阅读/每日一文/吉祥鸟 - 林清玄
 https://tinysnow.github.io/阅读/每日一文/名字花哨的时代 - 肖复兴
+https://tinysnow.github.io/阅读/每日一文/向美好的旧日时光道歉 - 朱成玉
 https://tinysnow.github.io/阅读/每日一文/向自己说再见 - 希区柯克
 https://tinysnow.github.io/阅读/每日一文/启程 - 卡夫卡
 https://tinysnow.github.io/阅读/每日一文/吹兵 - 三毛
@@ -1012,6 +1015,7 @@ https://tinysnow.github.io/阅读/每日一文/比利的马子 - 戈登·杰克�
 https://tinysnow.github.io/阅读/每日一文/比莉·荷莉黛的故事 - 村上春树
 https://tinysnow.github.io/阅读/每日一文/毛姆 - 刘瑜
 https://tinysnow.github.io/阅读/每日一文/民意与伪民意 - 刘瑜
+https://tinysnow.github.io/阅读/每日一文/水果该怎么吃 - 梁文道
 https://tinysnow.github.io/阅读/每日一文/永生 - 高铭
 https://tinysnow.github.io/阅读/每日一文/永远欠一顿饭 - 刘亮程
 https://tinysnow.github.io/阅读/每日一文/永远的坐票 - 佚名
@@ -1156,10 +1160,12 @@ https://tinysnow.github.io/阅读/每日一文/给我未来的孩子 - 张梅
 https://tinysnow.github.io/阅读/每日一文/绿皮车上的旧时光 - 素猫
 https://tinysnow.github.io/阅读/每日一文/绿石头 - 西尔维娅·普拉斯
 https://tinysnow.github.io/阅读/每日一文/缝扣子 - 王小波
+https://tinysnow.github.io/阅读/每日一文/罗生门 - 芥川龙之介
 https://tinysnow.github.io/阅读/每日一文/罗素：一九二零 - 龙应台
 https://tinysnow.github.io/阅读/每日一文/美与同情 - 丰子恺
 https://tinysnow.github.io/阅读/每日一文/翻浆 - 毕淑敏
 https://tinysnow.github.io/阅读/每日一文/老人鱼 - 严歌苓
+https://tinysnow.github.io/阅读/每日一文/老冰棍 - 许冬林
 https://tinysnow.github.io/阅读/每日一文/老友 - 王蒙
 https://tinysnow.github.io/阅读/每日一文/老头子做事总不会错 - 安徒生
 https://tinysnow.github.io/阅读/每日一文/老年色情店杀人事件 - 蔡莫琰
