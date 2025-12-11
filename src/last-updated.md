@@ -8,11 +8,13 @@
 
 ```diff
 
-@@ -919,6 +919,7 @@
+@@ -919,7 +919,8 @@
    - [当呼吸化为空气](阅读/零零散散/当呼吸化为空气.md)
    - [所有女生要知道](阅读/零零散散/所有女生要知道.md)
  - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
-+  - [想我的母亲 - 梁实秋桑](阅读/每日一文/想我的母亲%20-%20梁实秋.md)
+-  - [想我的母亲 - 梁实秋桑](阅读/每日一文/想我的母亲%20-%20梁实秋.md)
++  - [第九味 - 徐国能](阅读/每日一文/第九味%20-%20徐国能.md)
++  - [想我的母亲 - 梁实秋](阅读/每日一文/想我的母亲%20-%20梁实秋.md)
    - [巴蒂斯特太太 - 莫泊桑](阅读/每日一文/巴蒂斯特太太%20-%20莫泊桑.md)
    - [悠哉游哉 - 伯尔](阅读/每日一文/悠哉游哉%20-%20伯尔.md)
    - [雅舍 - 梁实秋](阅读/每日一文/雅舍%20-%20梁实秋.md)
@@ -22,43 +24,193 @@
 
 ```diff
 
-@@ -855,6 +855,7 @@ https://tinysnow.github.io/阅读/每日一文/尾生 - 芥川龙之介
- https://tinysnow.github.io/阅读/每日一文/展示品 - 于尔克·舒比格
- https://tinysnow.github.io/阅读/每日一文/工作与人生 - 王小波
- https://tinysnow.github.io/阅读/每日一文/巫婆 - 雪莉·杰克逊
-+https://tinysnow.github.io/阅读/每日一文/巴蒂斯特太太 - 莫泊桑
- https://tinysnow.github.io/阅读/每日一文/布尔乔亚的伪装趣味 - 梁文道
- https://tinysnow.github.io/阅读/每日一文/平凡最难 - 林清玄
- https://tinysnow.github.io/阅读/每日一文/并不完全孤独 - 埃特加·凯雷特
+@@ -900,6 +900,7 @@ https://tinysnow.github.io/阅读/每日一文/情债肉偿 - 张小娴
+ https://tinysnow.github.io/阅读/每日一文/想北平 - 老舍
+ https://tinysnow.github.io/阅读/每日一文/想当上帝的司机 - 埃德加·凯里特
+ https://tinysnow.github.io/阅读/每日一文/想念草地郎 - 龙应台
++https://tinysnow.github.io/阅读/每日一文/想我的母亲 - 梁实秋
+ https://tinysnow.github.io/阅读/每日一文/想起草药 - 许冬林
+ https://tinysnow.github.io/阅读/每日一文/感情化了的电视机 - 星新一
+ https://tinysnow.github.io/阅读/每日一文/愿你降临 - 周云蓬
 ```
 
-## 想我的母亲 - 梁实秋.md
+## 拥抱是不发生相互侵犯的最高亲密行为.md
 
 ```diff
 
-@@ -0,0 +1,23 @@
-+# 想我的母亲
+@@ -44,7 +44,7 @@
+ 
+ 　　**拥抱是不发生相互侵犯的最高亲密行为。**
+ 
+-
++<br />
+ 
+ 　　南国微雪 Miyuki
+ 
+
+@@ -52,7 +52,7 @@
+ 
+ ## 封面图
+ 
+-
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/anastasia-sklyar-xR2TmS56j7A-unsplash.jpg)
+ 
+ > 摄影师・画师 | Anastasia Sklyar
+ >
+```
+
+## 更稳定的核心与更愿意正视自我的勇气 - 2025 年度总结.md
+
+```diff
+
+@@ -508,61 +508,61 @@
+ 
+ ## 2025 年年度照片
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xp6AmRbNc5FSa1e2I9kiaMQz9k15j6S5dQ5icqBBjriaqxEqSmr4NB73Dg/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_20250323_164818.jpg)
+ 
+-## ![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xNKTxVMJ7Z8cpnNxVKx3y02BU1rKWawyHhGlhX60xPzH8va8Ku0dH0g/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/beauty_20251025191155.jpg)
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5x9m4Zajja8IiaN5pJJbp9MXZdFpkvicTUCBtxrLZAz6WQiaCl4Zo3Qtyicg/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_20250615_213208.jpg)
+ 
+ 　　更有勇气正视那些男性风的我。虽然他们有时在镜面中并不好看，也不帅气。
+ 
+ 　　此处有一段视频，请前往微信公众号查看，本博客暂时无法播放视频 T^T。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xMFOMgFrmRxE367PIkPP8w1CAb6jsTLmvcsDoMVd94Qy483j30miaicCA/640?wx_fmt=jpeg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_20250415_220159.jpg)
+ 
+ 　　希望自己更具男性气概时，跳舞摔的痕迹。现在想想，真是傻得可爱。这应该叫鲁莽了，而并非什么气概。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5x6qdIDlqlAz9WzYXaucM0NribyNKHU2oicgvXROf6EpGO6ZtLxUCKzdUA/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/beauty_20250927165650.jpg)
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xuygic5ibia73UCq3ViaZCNSGgT8JVicrypsatEv0M1j8RBW0HwnbX08UArg/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/beauty_20250927165233.jpg)
+ 
+ 　　那些中性风的我。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5x4RlChcwAZibYyhpSQHP9DOHDicObmdasicJ2C3hI0IJqUSZMDibyZpJdfQ/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/beauty_20251123073712.jpg)
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xWgdrRZFPxSvKgRNlRfC07INloNtRhUibtRjWPrxiafEke2hWjCVK2zcg/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/beauty_20251108113757.jpg)
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xMIibdUkSwibDQYZH5YciaXibHKlibnibBU2e8kvsBm5McFK0pjAKwHZnSoHg/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/beauty_20251021203047.jpg)
+ 
+ 　　更有勇气，正视那些女性风的我。这或许是大男子主义的人永远也不会体验的经历。正因为经历，所以了解；正因为了解，所以理解。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xnNT8fTVmBJHvCiaibbvl7iaXn2sy2pVgCEp4v4D8RJaW9fhDeUPvovLMQ/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_20250104_134622.jpg)
+ 
+ 　　办了第一张信用卡。今年还真用它薅了羊毛。一月。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xdZZaiauT1ibfle42kThD1o6IiaM2d3b7cA2icDoEPsnmzhAUt84l2SHmEA/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_20251020_194928.jpg)
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG50nCnNicSJ9FLjmSYwqYVespnngDMuVVzpUdm3FyVDHiaFetN1rfHGWCBNTbGZfswbaPcRCkZIop3aw/640?wx_fmt=jpeg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/beauty_20251206134817.jpg)
+ 
+ 　　装了人生中的第一台台式电脑。装完之后拍照，感觉小窝看起来就很堕落🥰。十月。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xflakLafeHwItiauYFanZxsJ5JRbBmb5GMib1UN0A8ha974WZ7xAdsyHQ/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_20251002_125707.jpg)
+ 
+ 　　第一次玩了卡丁车。第二次体验专心到极致的感觉。十月。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xsC1K3GiarfjV2IupOxwEVY1v49Ra7y9U8AFVv2pqrDavXpibaib5KJ8kw/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/PANO_20250720_172400.jpg)
+ 
+ 　　第一次带家人去旅行。不知道会不会有下一次。图为大理。详见[《家庭旅行 - 丽江篇》](https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&mid=2247493762&idx=1&sn=eb01152ae8ea12d0a35c8dc70e9f8775&scene=21#wechat_redirect)[《家庭旅行 - 大理篇》](https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&mid=2247493880&idx=1&sn=bddf4ecddc2653454bfebfc4284aee48&scene=21#wechat_redirect)。七月。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5x5icOW4q6rq7BXRQssZaDHibJScTOz3Y6FiaQdySH5ibtO683qpRVUNMIwQ/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/mmexport1749520363189.jpg)
+ 
+ 　　回学校，陪 2021 级毕业生完成了他们的本科生涯，同时收获了一件无比宝贵的礼物。详见[《物是人非事事休，欲语泪先流》](https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&mid=2247493546&idx=1&sn=215dc15a76a502d34438b63fbcff5fab&scene=21#wechat_redirect)。六月。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xYCSd9XDa8zbmeDUF69gLWFEKfsiceib6fDiaibQgO6xWtj6EYnvibZQhiaJw/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_20250323_174149.jpg)
+ 
+ 　　那些漫山遍野的油菜花。三月。
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52iblmDt2hPDVLIfEBmxYY5xeiaRQjj3VyDu2GMUv9xwTcYicSkL0fvr5iaEAagV0Yok1ecAO29EKicrxw/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/IMG_20250713_194421.jpg)
+ 
+ 　　或许是疲惫的出差回程之中，唯一的美了。随手的影像，却留有了恒久的难忘。生活或许就是这样坚持下来的吧。七月。
+ 
+
+@@ -634,7 +634,7 @@
+ 
+ ## 封面图
+ 
+-![img](https://mmbiz.qpic.cn/mmbiz_jpg/dWftlibjLG52MS54xZqdaAkXhceDRHF8ROibD3icnbkUpXbKicQeWeeibicmesjIDxOxVhuibx98I8DWaAV47gVBYUwaw/640?wx_fmt=jpeg&from=appmsg)
++![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/content-pixie-2V5PJgGqyts-unsplash.jpg)
+ 
+ > 摄影师・画师 | Content Pixie
+ >
+```
+
+## 第九味 - 徐国能.md
+
+```diff
+
+@@ -0,0 +1,53 @@
++# 第九味
 +
-+*梁实秋*
++*徐国能*
 +
-+　　父母对子女的爱，子女对父母的爱，是神圣的。我写过一些杂忆的文字，不曾写过我的父母，因为关于这个题目我不敢轻易下笔。小民女士逼我写几句话，辞不获已，谨先略述二三小事以应，然已临文不胜风木之悲。
++　　我的父亲常说：“吃是为己，穿是为人。”这话有时想来的确有些意思，吃在肚里长在身上，自是一点肥不了别人，但穿在身上，漂亮一番，往往取悦了别人而折腾了自己。父亲做菜时这么说，吃菜时这么说，看我们穿新衣时也这么说，我一度以为这是父亲的人生体会，但后来才知道我的父亲并不是这个哲学的始作俑者，而是当时我们“健乐园”大厨曾先生的口头禅。
 +
-+　　我的母亲姓沈，杭州人。世居城内上羊市街。我在幼时曾侍母归宁，时外祖母尚在，年近八十。外祖父入学后，没有更进一步的功名，但是课子女读书甚严。我的母亲教导我们读书启蒙，尝说起她小时苦读的情形。她同我的两位舅父一起冬夜读书，冷得腿脚僵冻，取大竹篓一，实以败絮，三个人伸足其中以取暖。我当时听得惕然心惊，遂不敢荒嬉。我的母亲来我家时年甫十八九，以后操持家务尽瘁终身，不复有暇进修。
++　　曾先生矮，但矮得很精神，头发已略显花白而眼角无一丝皱纹，从来也看不出曾先生有多大岁数。我从未见过曾先生穿着一般厨师的围裙高帽，天热时他只是一件麻纱水青斜衫，冬寒时经常是月白长袍，干干净净，不染一般膳房的油腻肮脏。不识他的人看他一脸清矍，而眉眼间总带着一股凛然之色，恐怕以为他是个不出世的画家诗人之类，或是笑傲世事的某某教授之流。
 +
-+　　我同胞兄弟姐妹十一人，母亲的煦育之劳可想而知。我记得我母亲常于百忙之中抽空给我们几个较小的孩子们洗澡。我怕肥皂水流到眼里，我怕痒，总是躲躲闪闪，总是格格的笑个不住，母亲没有功夫和我们纠缠，随手一巴掌打在身上，边洗边打边笑。
++　　曾先生从不动手做菜，只吃菜，即使再怎么忙，曾先生都是一派闲气地坐在柜台后读他的《中央日报》。据说他酷爱唐鲁孙先生的文章，虽然门派不同（曾先生是湘川菜而唐鲁孙属北方口味儿），但曾先生说：“天下的吃到底都是一个样的，不过是一根舌头九样味。”那时我年方十岁，不喜读书，从来就在厨房窜进窜出，我只知酸甜苦辣咸涩腥冲八味，至于第九味，曾先生说：“小子你才几岁，就想尝遍天下，滚你的蛋去。”据父亲说，曾先生是花了大钱请了人物套交情才聘来的，否则当时“健乐园”怎能高过“新爱群”一个等级呢？花钱请人来光吃而不做事，我怎么看都是不合算的。
 +
-+　　北方的冬天冷，屋里虽然有火炉，睡时被褥还是凉似铁。尤其是钻进被窝之后，脖子后面透风，冷气顺着脊背吹了进来。我们几个孩子睡一个大炕，头朝外，一排四个被窝。母亲每晚看到我们钻进了被窝，叽叽喳喳的笑语不停，便过来把油灯吹熄，然后给我们一个个的把脖子后面的棉被塞紧，被窝立刻暖和起来，不知不觉的就睡着了。我不知道母亲用的什么手法，只知道她塞棉被带给我无可言说的温暖舒适，我至今想起来还是快乐的，可是那个感受不可复得了。
++　　我从小命好，有得吃。
 +
-+　　我从小不喜欢喧闹。祖父母生日照例院里搭台唱傀儡戏或滦州影。一过八点我便掉头而去进屋睡觉。母亲得暇便取出一个大簸箩，里面装的是针线剪尺一类的缝纫器材，她要做一下缝缝连连的工作，这时候我总是一声不响的偎在她的身旁，她赶我走我也不走，有时候竟睡着了。母亲说我乖，也说我孤僻。如今想想，一个人能有多少时间可以偎在母亲身旁？
++　　母亲的手艺绝佳，母亲是浙江人，我们家有道经常上桌的家常菜，名曰：“冬瓜蒸火腿”，作法极简，将火腿（多以家乡肉替代）切成薄片，冬瓜取中段一截，削皮后切成梯形块，一块冬瓜一片火腿放好，蒸熟即可食。须知此菜的奥妙在于蒸熟的过程冬瓜会吸干火腿之蜜汁，所以上桌后火腿已淡乎寡味，而冬瓜则具有瓜蔬的清苦之风与火腿的华贵之气，心软边硬，汁甜而不腻，令人倾倒。但父亲总嫌母亲切菜时肉片厚薄不一，瓜块大小不匀，因此味道上有些太浓而又有些太淡，只能“凑合凑合”。父亲在买菜切菜炒菜调味上颇有功夫，一片冬瓜切得硬是切得像量角器般精准，这刀工自是大有来头，因与本文无关暂且按下不表。话说父亲虽有一手绝艺，但每每感叹他只是个“二厨”的料，真正的大厨，只有曾先生。
 +
-+　　在我的儿时记忆中，我母亲好像是没有时候睡觉。天亮就要起来，给我们梳小辫是一桩大事，一根一根的梳个没完。她自己要梳头，我记得她用一把抿子蘸着刨花水，把头发弄得锃光大亮。然后她要一听上房有动静便急忙前去当差。盖茶碗、燕窝、莲子、点心，都有人预备好了，但是需要她去双手捧着送到祖父母跟前，否则要儿媳妇做什么？在公婆面前，儿媳妇永远是站着的，没有座位的。足足的站几个钟头下来，不是缠足的女人怕也受不了！最苦的是，公婆年纪大，不过午夜不安歇，儿媳妇要跟着熬夜在一旁侍候。她困极了，有时候回到房里来不及脱衣服倒下便睡着了。虽然如此，母亲从来没有说过一句怨言。到了民元前几年，祖父母相继去世，我母亲才稍得清闲，然而主持家政教养儿女也够她劳苦的了。她抽暇个几年返回杭州老家去度夏，有好几次都是由我随侍。
++　　稍具规模的餐厅都有大厨，有些名气高的厨师身兼数家“大厨”，谓之“通灶”，曾先生不是“通灶”，但绝不表示他名气不高。“健乐园”的席分数种价位，凡是挂曾先生排席的，往往要贵上许多。外行人常以为曾先生排席就是请曾先生亲自设计一桌从冷盘到甜汤的筵席，其实大非，菜色与菜序排不排席谁来排席其实都是差不多的，差别只在上菜前曾先生是不是亲口尝过。从来我见曾先生都是一尝即可，从来没有打过回票，有时甚至只是看一眼就“派司”，有人以为这只是个形式或是排场而已，这当然又是外行话了。
 +
-+　　母亲爱她的家乡，在北京住了几十年，乡音不能完全改掉。我们常取笑她，例如北京的“京”，她说成“金”，她有时也跟我们学，总是学不好，她自己也觉得好笑。我有时学着说杭州话，她说难听死了，像是门口儿卖笋尖的小贩说的话。
++　　要知道在厨房经年累月的师傅，大多熟能生巧，经常喜欢苛扣菜色，中饱私囊，或是变些魔术，譬如鲍鱼海参排翅之类，成色不同自有些价差，即使冬菇笋片大蒜，也是失之毫厘差之千里。而大厨的功用就是在此，他是一个餐厅信誉的保证，有大厨排席的菜色，厨师们便不敢装神弄鬼，大厨的舌头是老天赏来人间享口福的，禁不起一点假，你不要想瞒混过关，味精充鸡汤，稍经察觉，即使你是国家鉴定的厨师也很难再立足厨界，从此江湖上没了这号人物。有这层顾忌，曾先生的席便没人敢滑头，自是顺利稳当。据父亲说，现下的厨界十分混乱，那些“通灶”有时兼南北各地之大厨，一晚多少筵席，哪个人能如孙悟空分身千万，所以一般餐厅多是马马虎虎，凑合凑合，言下有不胜唏嘘之意。
 +
-+　　我想一般人都会同意，凡是自己母亲做的菜永远都是最好吃的。我的母亲平常不下厨房，但是她高兴的时候，尤其是父亲亲自到市场买回鱼鲜或其他南货的时候，在父亲特烦之下，她也欣然操起刀俎。这时候我们就有福了。我十四岁离家到清华，每星期回家一天，母亲就特别疼爱我，几乎很少例外的要亲自给我炒一盘冬笋木耳韭菜黄肉丝，起锅时浇一勺花雕酒，这是我最喜欢的一道菜。但是这一盘菜一定要母亲自己炒，别人炒味道就不一样了。
++　　曾先生和我有缘，这是掌勺的赵胖子说的。每回放学，我必往餐厅逛去，将书包往那幅金光闪闪的《乐游园歌》下一丢，闪进厨房找吃的。这时的曾先生多半在看《中央日报》，经常有一香吉士果汁杯的高粱，早年白金龙算是好酒，曾先生的酒是自己带的，他从不开餐厅的酒，不像赵胖子他们常常“干喝”。
 +
-+　　我母亲喜欢在高兴的时候喝几盅酒。冬天午后围炉的时候，她常要我们打电话到长发叫五斤花雕，绿釉瓦罐，口上罩着一张毛边纸，湿热了倒在茶杯里和我们共饮。下酒的是大落花生，若是有“抓空儿”的，买些干瘪的花生吃则更有味。我和两位姊姊陪母亲一顿吃完那一罐酒。后来我在四川独居无聊，一斤花生一关茅台当晚饭，朋友们笑我吃“花酒”，其实是我母亲留下的作风。
++　　赵胖子喜欢叫曾先生“师父”，但曾先生从没答理过。曾先生特爱和我讲故事，说南道北，尤其半醉之际。曾先生嗜辣，说这是百味之王，正因为是王者之味，所以他味不易亲近，有些菜中酸甜咸涩交杂，曾先生谓之“风尘味”，没有意思。辣之于味最高最纯，不与他味相混，是王者气象，有君子自重之道在其中，曾先生说用辣宜猛，否则便是昏君庸主，纲纪凌迟，人人可欺，国焉有不亡之理？而甜则是后妃之味，最解辣，最宜人，如秋月春风，但用甜则尚淡，才是淑女之德，过腻之甜最令人反感，是露骨的谄媚。曾先生常对我讲这些，我也似懂非懂，赵胖子他们则是在一旁暗笑，哥儿们几岁懂些什么呢？父亲则抄抄写写地勤作笔记。
 +
-+　　我自从入了清华，以后和母亲在一起的时候就少了。抗战前后各有三年和母亲住在一起。母亲晚年喜欢听评剧，最常去的地方是吉祥，因为离家近，打个电话给卖飞票的，总有好的座位。我很后悔，我没能分出时间陪她听戏，只是由我的姊姊弟弟们陪她消遣。我父亲曾对我说，我们的家所以成为一个家，我们几个孩子所以能成为人，全是靠了我母亲的辛劳维护。三十八年以后，音讯中断，直等到恢复联系，才知道母亲早已弃养，享寿九十岁。西俗，母亲节佩红康乃馨，如不确知母亲是否尚在则佩红白康乃馨各一。如今我只有佩白康乃馨的份了，养生送死，两俱有亏，惨痛惨痛！
++　　有一次父亲问起咸辣两味之理，曾先生说道：“咸最俗而苦最高，常人日不可无咸但苦不可兼日，况且苦味要等众味散尽方才知觉，是味之隐逸者，如晚秋之菊，冬雪之梅；而咸则最易化舌，入口便觉，看似最寻常不过，但很奇怪，咸到极致反而是苦，所以寻常之中，往往有最不寻常之处，旧时王谢堂前燕，就看你怎么尝它，怎么用它。”曾先生从不阻止父亲作笔记，但他常说“烹调之道要自出机杼，得于心而忘于形，记记笔记不过是纸上的工夫，与真正的吃是不可同日而语的。”
++
++　　“健乐园”结束于民国七十年间，从此我们家再没人谈起吃的事，似乎有点儿感伤。
++
++　　“健乐园”的结束与曾先生的离去有很密切的关系。
++
++　　曾先生好赌，有时常一连几天不见人影，有人说他去豪赌，有人说他去躲债，谁也不知道，但经常急死大家，许多次赵胖子私下建议父亲，曾先生似乎不大可靠，不如另请高明，但总被父亲一句“刀三火五吃一生”给回绝，意谓“刀工三年或可以成，而火候的精准则需时间稍长，但真正能吃出真味，非用一辈子去追求，不是一般遇得上的”，父亲对曾先生既敬且妒自不在话下。
++
++　　据父亲回忆，那回罗中将嫁女儿，“健乐园”与“新爱群”都想接下这笔生意，结果罗中将买曾先生一个面子，点的是曾先生排的席，有百桌之余，这在当时算是桩大生意，而罗中将又是同乡名人，父亲与赵胖子摩拳擦掌准备了一番，但曾先生当晚却不见人影。一阵鸡飞狗跳，本来父亲要退罗中将的钱，但赵胖子硬说不可，一来没有大厨排席的酒筵对罗中将面子上不好看，二来这笔钱数目实在不小，对当时已是危机重重的“健乐园”来说是救命仙丹，赵胖子发誓一定好好做，不会有差池。
++
++　　这赵胖子莫看他一脸肥相，如弥勒转世，论厨艺却是博大精深，他纵横厨界也有二三十年，是独当一面的人物。那天看他挥汗如雨，如八臂金刚将铲勺使得风雨不透。本来宴会进行得十分顺利，一道道菜如流水般地上，就在最后关头，罗中将半醺之际竟拿起酒杯，要敬曾先生一杯，场面一时僵住。事情揭穿后，罗中将铁青着脸，哐啷一声扔下酒杯，最后竟有点不欢而散。几个月后“健乐园”都没再接到大生意，卫生局又经常上门罗嗦，清廉得不寻常。父亲本不善经营，负债累累下终于宣布倒闭。
++
++　　曾先生从那晚起没有再出现过，那个月的薪俸也没有拿，只留下半瓶白金龙高粱酒，被赵胖子砸了个稀烂。
++
++　　长大后我问父亲关于曾先生的事，父亲说曾先生是湘乡人，似乎是曾涤生家的远亲，与我们算是小同乡，据说是清朝皇帝曾赏给曾涤生家一位厨子，这位御厨没有儿子，将本事传给了女婿，而这女婿，就是曾先生的师父了。这种稗官野史我只好将信将疑，不过父亲说，要真正吃过点好东西，才是当大厨的命，曾先生大约是有些背景的，而他自己一生穷苦，是命不如曾先生。父亲又说：“曾先生这种人，吃尽了天地精华，往往没有好下场，不是带着病根，就是有一门恶习。”其实这些年来，父亲一直知道曾先生在躲道上兄弟的债，没得过一天好日子，所以父亲说：“平凡人有其平凡的乐趣，自有其甘醇的真味。”
++
++　　“健乐园”结束后，赔赔卖卖，父亲只拿回来几个帐房用的算盘，小学的珠算课我惊奇地发现我那上二下五的算盘与老师同学的大不相同，同学争看我这酷似连续剧中武林高手用的奇门武器，但没有人会打这种东西，我只好假装上下各少一颗珠子地“凑合凑合”。
++
++　　从学校毕业后，我被分发至澎湖当装甲兵，在军中我沉默寡言，朋友极少，放假又无亲戚家可去，往往一个人在街上乱逛。有一回在文化中心看完了书报杂志，正打算好好吃一顿，转入附近的巷子，一爿低矮的小店歪歪斜斜地写着“九味牛肉面”。我心中一动，进到店中，简单的陈设与极少的几种选择，不禁使我有些失望，一个肥胖的女人帮我点单下面后，自顾自的忙了起来，我这才发现暗暗的店中还有一桌有人，一个秃头的老人沉浸在电视新闻的巨大声量中，好熟悉的背影，尤其桌上一份《中央日报》，与那早已满渍油水的唐鲁孙的《天下味》。曾先生，我大声唤了几次，他都没有回头，“我们老板姓吴”，胖女人端面来的时候说。
++
++　　“不！我姓曾。”曾先生在我面前坐下。
++
++　　我们聊起了许多往事，曾先生依然精神，但眼角已有一些落寞与沧桑之感，满身厨房的气味，磨破的袖口油渍斑斑，想来常常抹桌下面之类。
++
++　　我们谈到了吃，曾先生说：“一般人好吃，但大多食之无味，要能粗辨味者，始可言吃，但真正能入味之人，又不在乎吃了，像那些大和尚，一杯水也能喝出许多道理来。”我指着招牌问他“九味”的意思，曾先生说：“辣甜咸苦是四主味，属正；酸涩腥冲是四宾味，属偏。偏不能胜正而宾不能夺主，主菜必以正味出之，而小菜则多偏味，是以好的筵席应以正奇相生而始，正奇相克而终……”突然我觉得彷彿又回到了“健乐园”的厨房，满鼻子菜香酒香，爆肉的哔啵声，剁碎的笃笃声，赵胖子在一旁暗笑，而父亲正勤作笔记。我无端想起了“健乐园”穿堂口的一幅字：“乐游古园森森爽，烟绵碧草萋萋长。公子华筵势最高，秦川对酒平如掌……”
++
++　　那逝去的像流水，像云烟，多少繁华的盛宴聚了又散散了又聚，多少人事在其中，而没有一样是留得住的。曾先生谈兴极好，用香吉士的果汁杯倒满了白金龙，颤抖地举起，我们的眼中都有了泪光，“欲忆年年人醉时，只今未醉已先悲”，我记得《乐游园歌》是这么说的，我们一直喝到夜阑人静。
++
++　　之后几个星期连上忙着装备检查，都没放假，再次去找曾先生时门上贴了“今日休息”的红纸，一直到我退伍。我知道我再也找不到他了，心中不免惘然。有时想想，那会是一个梦吗？我对父亲说起这件事，父亲并没有讶异的表情，只是淡淡地说：“劳碌一生，没人的时候急死，有人的时候忙死……”我不懂这话在说什么。
++
++　　如今我重新拾起书本，觉得天地间充满了学问，一啄一饮都是一种宽慰。有时我会翻出《乐游园歌》吟哦一番，有时我会想起曾先生话中的趣味，曾先生一直没有告诉我那第九味的真义究竟是什么，也许是连他自己也不清楚；也许是因为他相信，我很快就会明白。
 \ No newline at end of file
 ```
