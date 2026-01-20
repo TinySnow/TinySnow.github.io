@@ -49,9 +49,9 @@ WARNING: 'help2man' is missing on your system.
          You should only need it if you modified a dependency of a man page.
          You may want to install the GNU Help2man package:
          <https://www.gnu.org/software/help2man/>
-make[1]: *** [Makefile:560: gnuchess.1] Error 127
+make[1]: * ** [Makefile:560: gnuchess.1] Error 127
 make[1]: Leaving directory '/build/gnuchess/src/gnuchess-6.2.9/man'
-make: *** [Makefile:518: all-recursive] Error 1
+make: ** * [Makefile:518: all-recursive] Error 1
 ```
 
 ### 解决

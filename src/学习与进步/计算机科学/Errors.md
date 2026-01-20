@@ -39,7 +39,7 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 ## VMware
 
-- VMware 与 Device/Credential Guard 不兼容。**注意：无法与 WSL 共存。**
+- VMware 与 Device/Credential Guard 不兼容。 **注意：无法与 WSL 共存。** 
 
 - ```powershell
   # 解决方案：
@@ -82,19 +82,19 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 
 -  `java: 程序包 org.springframework.boot 不存在`
 
-- 删除 Maven 的 Repository 文件夹里的所有文件，重新下载（**请确保 Maven 一定配置正确了，并且 Maven 的 `settings.xml` 和 Repository 都存在**）。
+- 删除 Maven 的 Repository 文件夹里的所有文件，重新下载（ **请确保 Maven 一定配置正确了，并且 Maven 的 `settings.xml` 和 Repository 都存在** ）。
 
 ### 依赖丢失
 
 - `Dependency 'org.springframework.boot:spring-boot-starter-web:' not found`（pom.xml 报错）
-- 请正确配置 Maven（**确保 Maven 的 `settings.xml` 和 Repository 都存在**），然后 `mvn clean && mvn compile`。
+- 请正确配置 Maven（ **确保 Maven 的 `settings.xml` 和 Repository 都存在** ），然后 `mvn clean && mvn compile`。
 
 ### 无法启动 SpringBoot 项目
 
 #### IDEA 环境
 
 - 表现为没有绿色三角运行符号
-- 正确配置 Java（**一定要有环境变量**）和 Maven，然后 Project Structure，修改对应 SDKs，Language Level，和 Module Language Level。若还是无法启动，修改 pom.xml 里面的 java.version 或者升降 JDK 版本，然后重新 `mvn compile`。
+- 正确配置 Java（ **一定要有环境变量** ）和 Maven，然后 Project Structure，修改对应 SDKs，Language Level，和 Module Language Level。若还是无法启动，修改 pom.xml 里面的 java.version 或者升降 JDK 版本，然后重新 `mvn compile`。
 
 #### Visual Studio Code 环境
 
@@ -110,7 +110,7 @@ Class.forName("com.mysql.cj.jdbc.Driver");
 ### 无法编译
 
 - pom.xml 所有配置项均正确，但就是运行不起来
-- 正确配置 Java（**一定要有环境变量**）和 Maven，确保 JDK 各个版本对应相同（如环境变量和 Project，Project 和 Module 等），最后确保 IDEA 能够处理当前 JDK 版本（如 IDEA2020 无法处理 JDK17，需要升级），然后重新 `mvn compile`。
+- 正确配置 Java（ **一定要有环境变量** ）和 Maven，确保 JDK 各个版本对应相同（如环境变量和 Project，Project 和 Module 等），最后确保 IDEA 能够处理当前 JDK 版本（如 IDEA2020 无法处理 JDK17，需要升级），然后重新 `mvn compile`。
 
 ## Docker
 

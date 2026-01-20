@@ -30,11 +30,11 @@
 
 ## 五、 绑定数据库两个异常的解决办法
 
-第一个：`Type interface **************************** is not known to the MapperRegistry.`
+第一个：`Type interface **** **** **** **** **** **** **** is not known to the MapperRegistry.`
 
 译文：MapperRegistry不知道类型接口com.tinysnow.easyvote.dao.intrfc.JdbcMethods。
 
-第二个：`Invalid bound statement (not found): ***********************.`
+第二个：`Invalid bound statement (not found): **** **** **** **** **** ***.`
 
 译文：无效的绑定语句（未找到）：com.tinysnow.easyvote.dao.intrfc.JdbcMethods.insertUser。
 
@@ -349,9 +349,9 @@ public class TestController {
 ## 二十二、 关于对 Mybatis 中 Mapper 进行单元测试的报错问题
 
 ```bash
-***************************
+ **** **** **** **** **** **** * **
 APPLICATION FAILED TO START
-***************************
+** **** **** **** **** **** **** *
 
 Description:
 

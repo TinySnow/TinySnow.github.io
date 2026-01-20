@@ -3,9 +3,9 @@
 ## Premise
 
 - Personal solutions, that is saying maybe not the best.
-- The sequence number of each section is the challenge number. **CORRESPONDING.**
+- The sequence number of each section is the challenge number. **CORRESPONDING.** 
   - `X.` => `section_name levelX` 
-- **Because the required random value of each user is different, so using `${random}` key word instead of detailed value.**
+- **Because the required random value of each user is different, so using `${random}` key word instead of detailed value.** 
   - `${random_key}` is the key.
   - `${random_value}` is the corresponding value.
   - etc.
@@ -147,7 +147,7 @@
     cat /flag
     ```
     
-    - **HARD**
+    - **HARD** 
     - Recommend source: [bash suid](https://gtfobins.github.io/gtfobins/bash/#suid)
 
 45. `date -f /flag`
@@ -696,7 +696,7 @@ tmux new -s work
 
 ### Introduction
 
-**No challenges in this module.**
+ **No challenges in this module.** 
 
 ### Sandboxing
 
