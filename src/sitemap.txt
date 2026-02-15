@@ -1610,6 +1610,7 @@ https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Android 
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Bash 代表命令
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/CCleaner 清理项
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/CCleaner激活码
+https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Cargo无法连接网络
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Chrome进入简悦阅读模式后复制全文图片不带链接
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Git 学习笔记
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/MATLAB 复习
