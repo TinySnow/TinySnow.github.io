@@ -174,6 +174,7 @@ https://tinysnow.github.io/生活碎笔/文章与写作/小时候的萤火虫
 https://tinysnow.github.io/生活碎笔/文章与写作/小说、诗歌与想象力
 https://tinysnow.github.io/生活碎笔/文章与写作/工作半年多的感想
 https://tinysnow.github.io/生活碎笔/文章与写作/当下与经济学
+https://tinysnow.github.io/生活碎笔/文章与写作/当下的价值
 https://tinysnow.github.io/生活碎笔/文章与写作/微小痕迹
 https://tinysnow.github.io/生活碎笔/文章与写作/微雪爱情观
 https://tinysnow.github.io/生活碎笔/文章与写作/忠诚、美与自我发现
@@ -229,6 +230,7 @@ https://tinysnow.github.io/生活碎笔/文章与写作/生财有术与卖铲子
 https://tinysnow.github.io/生活碎笔/文章与写作/男性天生有缺陷
 https://tinysnow.github.io/生活碎笔/文章与写作/番茄
 https://tinysnow.github.io/生活碎笔/文章与写作/社会正在复制人类
+https://tinysnow.github.io/生活碎笔/文章与写作/突然长大
 https://tinysnow.github.io/生活碎笔/文章与写作/篮球女孩
 https://tinysnow.github.io/生活碎笔/文章与写作/糯米饭
 https://tinysnow.github.io/生活碎笔/文章与写作/纪念碑谷、机械迷城与未上锁的房间
@@ -281,6 +283,7 @@ https://tinysnow.github.io/生活碎笔/诗词/一瞬间
 https://tinysnow.github.io/生活碎笔/诗词/不屈
 https://tinysnow.github.io/生活碎笔/诗词/他们说我喜欢你
 https://tinysnow.github.io/生活碎笔/诗词/伪装
+https://tinysnow.github.io/生活碎笔/诗词/你说，你很喜欢满山遍野的向日葵
 https://tinysnow.github.io/生活碎笔/诗词/减字木兰花·伊愿
 https://tinysnow.github.io/生活碎笔/诗词/卿语
 https://tinysnow.github.io/生活碎笔/诗词/变
@@ -314,6 +317,7 @@ https://tinysnow.github.io/生活碎笔/诗词/我不会忘记你的名字
 https://tinysnow.github.io/生活碎笔/诗词/我不会想见你
 https://tinysnow.github.io/生活碎笔/诗词/我在刺杀你的路上，买了一束鲜花
 https://tinysnow.github.io/生活碎笔/诗词/我将孑自飞往上海
+https://tinysnow.github.io/生活碎笔/诗词/我想在春暖花开的时候，去你家懒洋洋地睡觉
 https://tinysnow.github.io/生活碎笔/诗词/我愿化作一株野草
 https://tinysnow.github.io/生活碎笔/诗词/我的思念藏在海里
 https://tinysnow.github.io/生活碎笔/诗词/我的思念，是一支箭矢
@@ -336,6 +340,7 @@ https://tinysnow.github.io/生活碎笔/诗词/极端
 https://tinysnow.github.io/生活碎笔/诗词/每个人都是一个容器
 https://tinysnow.github.io/生活碎笔/诗词/每年惊蛰，我想送你一份春天
 https://tinysnow.github.io/生活碎笔/诗词/沉睡在天空之上
+https://tinysnow.github.io/生活碎笔/诗词/泥泞的国道
 https://tinysnow.github.io/生活碎笔/诗词/清平乐·琴韵
 https://tinysnow.github.io/生活碎笔/诗词/溜走
 https://tinysnow.github.io/生活碎笔/诗词/点绛唇·祈珍
@@ -352,6 +357,7 @@ https://tinysnow.github.io/生活碎笔/诗词/至美
 https://tinysnow.github.io/生活碎笔/诗词/蜕变
 https://tinysnow.github.io/生活碎笔/诗词/行走
 https://tinysnow.github.io/生活碎笔/诗词/行走在命运之上
+https://tinysnow.github.io/生活碎笔/诗词/视影
 https://tinysnow.github.io/生活碎笔/诗词/记 11 月 23 日 飘摇动荡
 https://tinysnow.github.io/生活碎笔/诗词/诗词总录
 https://tinysnow.github.io/生活碎笔/诗词/请将准星对准我
@@ -362,6 +368,7 @@ https://tinysnow.github.io/生活碎笔/诗词/那两天，我的灵魂缺失了
 https://tinysnow.github.io/生活碎笔/诗词/酒
 https://tinysnow.github.io/生活碎笔/诗词/释放一只蝴蝶
 https://tinysnow.github.io/生活碎笔/诗词/金色沙滩
+https://tinysnow.github.io/生活碎笔/诗词/铁丝网
 https://tinysnow.github.io/生活碎笔/诗词/雨
 https://tinysnow.github.io/生活碎笔/诗词/顽柔
 https://tinysnow.github.io/生活碎笔/诗词/鸡尾酒
