@@ -1631,6 +1631,7 @@ https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Solution
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Telegram删除线快捷键无法使用
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Tic-tac-toe Game Note of React
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Uniapp 从 HX 迁移到 WebStorm
+https://tinysnow.github.io/学习与进步/计算机科学/其他资料/Windows11无法运行地平线4
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/pwn.college-writeup
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/临时
 https://tinysnow.github.io/学习与进步/计算机科学/其他资料/其他资料
