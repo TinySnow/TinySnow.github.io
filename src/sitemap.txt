@@ -1306,6 +1306,7 @@ https://tinysnow.github.io/阅读/每日一文/解谜 - 梁文道
 https://tinysnow.github.io/阅读/每日一文/订地方报纸的女人 - 松本清张
 https://tinysnow.github.io/阅读/每日一文/认故乡 - 毛姆
 https://tinysnow.github.io/阅读/每日一文/认识自我 - 纪伯伦
+https://tinysnow.github.io/阅读/每日一文/记一次书缘 - 梁文道
 https://tinysnow.github.io/阅读/每日一文/记住回家的路 - 周国平
 https://tinysnow.github.io/阅读/每日一文/记卢冀野和三个胖子剪影 - 顾思齐
 https://tinysnow.github.io/阅读/每日一文/讲价 - 梁实秋
@@ -1781,6 +1782,7 @@ https://tinysnow.github.io/记录和归档/记录/个人纪录/番剧记录
 https://tinysnow.github.io/记录和归档/记录/个人纪录/衣服风格记录
 https://tinysnow.github.io/记录和归档/记录/个人纪录/观影记录
 https://tinysnow.github.io/记录和归档/记录/个人纪录/软件订阅记录
+https://tinysnow.github.io/记录和归档/记录/其他/Github学生认证过程及注意事项
 https://tinysnow.github.io/记录和归档/记录/其他/其他
 https://tinysnow.github.io/记录和归档/记录/其他/爆炸盐衣物烧伤抢救
 https://tinysnow.github.io/学习与进步/医学/内科学/第三部分：循环系统疾病/第一章：循环系统疾病总论

@@ -323,27 +323,27 @@ Myosung 创始人追求蛇的形象（这也是为什么选择了 Wave 元素）
 
 ## 推荐舞者
 
-**Urban**
+### Urban
 
 - Franklin（余衍林）[美]
 - Jawn Ha（何展成）[美]
 
-**Hiphop**
+### Hiphop
 
 - Bouboo [法]
 
-**Popping**
+### Popping
 
 - 田一德 [中国台湾]
 - Super Dino（黄景行）
 - Hoan [韩]
 
-**Locking**
+### Locking
 
 - 叶音
 - The Lockers [美]
 
-**Breaking**
+### Breaking
 
 - 金小根 [韩]
 - Hong10 [韩]
