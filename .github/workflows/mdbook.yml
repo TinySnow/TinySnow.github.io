@@ -1,37 +1,172 @@
-# Sample workflow for building and deploying a mdBook site to GitHub Pages
-#
-# To get started with mdBook see: https://rust-lang.github.io/mdBook/index.html
-#
+# Build and deploy mdBook site to GitHub Pages
 name: Deploy mdBook site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
-  build:
+  preflight:
     runs-on: ubuntu-latest
+    outputs:
+      git_range: ${{ steps.compute_range.outputs.git_range }}
+
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 获取完整的Git历史记录
+          fetch-depth: 0
+
+      - name: Compute git diff range
+        id: compute_range
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          ZERO_SHA="0000000000000000000000000000000000000000"
+          EMPTY_TREE="$(git hash-object -t tree /dev/null)"
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          if [[ -z "${AFTER}" ]]; then
+            AFTER="$(git rev-parse HEAD)"
+          fi
+
+          if [[ -z "${BEFORE}" || "${BEFORE}" == "${ZERO_SHA}" ]]; then
+            if git rev-parse "${AFTER}^" >/dev/null 2>&1; then
+              RANGE="${AFTER}^..${AFTER}"
+            else
+              RANGE="${EMPTY_TREE}..${AFTER}"
+            fi
+          else
+            RANGE="${BEFORE}..${AFTER}"
+          fi
+
+          echo "git_range=${RANGE}" >> "${GITHUB_OUTPUT}"
+          echo "BLOG_GIT_RANGE=${RANGE}"
+
+      - name: Preflight checks (fail fast)
+        env:
+          BLOG_GIT_RANGE: ${{ steps.compute_range.outputs.git_range }}
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          bad=0
+
+          while IFS= read -r -d '' file; do
+            [[ -z "${file}" ]] && continue
+
+            if [[ "${file}" =~ (^|/)\.env($|\.) ]]; then
+              echo "::error file=${file}::Blocked sensitive env file."
+              bad=1
+            fi
+
+            if [[ "${file}" =~ (\.pem$|\.p12$|\.pfx$|\.key$|(^|/)id_rsa($|\.pub$)) ]]; then
+              echo "::error file=${file}::Blocked key/certificate-like file."
+              bad=1
+            fi
+
+            if [[ "${file}" =~ (^|/)\.DS_Store$ || "${file}" =~ (~$|\.tmp$|\.swp$|\.bak$) ]]; then
+              echo "::error file=${file}::Blocked temporary/system file."
+              bad=1
+            fi
+
+            if [[ -f "${file}" ]]; then
+              size_bytes="$(wc -c < "${file}" | tr -d '[:space:]')"
+              if (( size_bytes > 5242880 )); then
+                echo "::error file=${file}::Blocked large file (>5MB)."
+                bad=1
+              fi
+            fi
+          done < <(git diff --name-only -z "${BLOG_GIT_RANGE}")
+
+          if (( bad )); then
+            echo "Preflight failed."
+            exit 1
+          fi
+
+          echo "Preflight checks passed."
+
+  generate_metadata:
+    runs-on: ubuntu-latest
+    needs: preflight
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate Last Updated
+        shell: bash
+        env:
+          BLOG_GIT_RANGE: ${{ needs.preflight.outputs.git_range }}
+        run: |
+          set -Eeuo pipefail
+          chmod +x ./generate-last-updated-md.sh
+          ./generate-last-updated-md.sh --range "${BLOG_GIT_RANGE}"
+
+      - name: Generate RSS feed
+        env:
+          RSS_GIT_RANGE: ${{ needs.preflight.outputs.git_range }}
+        run: |
+          inv ver
+          inv gen
+
+      - name: Pack metadata artifact
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p .ci-artifact/src
+          cp -v src/last-updated.md .ci-artifact/src/last-updated.md
+          cp -v rss.xml .ci-artifact/rss.xml
+
+      - name: Upload metadata artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-metadata
+          path: .ci-artifact
+
+  build_site:
+    runs-on: ubuntu-latest
+    needs: generate_metadata
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download metadata artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: blog-metadata
+          path: .ci-artifact
+
+      - name: Apply generated metadata files
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          cp -v .ci-artifact/src/last-updated.md src/last-updated.md
+          cp -v .ci-artifact/rss.xml rss.xml
 
       - name: Install mdBook
         run: |
@@ -39,44 +174,40 @@ jobs:
           rustup update
           cargo install mdbook
 
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.12'
+          node-version: "20"
+          cache: npm
 
-      - name: Install Python dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install -r requirements.txt
+      - name: Install Node dependencies
+        run: npm ci
 
-      - name: Generate RSS feed
-        run: |
-          inv ver
-          inv gen
-          echo "RSS feed generation finished."
+      - name: Build with mdBook
+        run: mdbook build
+
+      - name: Generate sitemap
+        run: npx sscli -b https://tinysnow.github.io -r ./book
+
+      - name: Copy rss.xml to book directory
+        run: cp -v rss.xml book/
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build with mdBook
-        run: mdbook build
-
-      - name: Copy rss.xml to book directory
-        run: cp -v rss.xml book/
-
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: book
 
-  # Deployment job
   deploy:
+    runs-on: ubuntu-latest
+    needs: build_site
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

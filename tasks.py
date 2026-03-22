@@ -5,6 +5,7 @@ import subprocess
 from datetime import datetime, timezone, timedelta 
 from urllib.parse import unquote, quote
 from pathlib import Path
+from typing import Optional
 
 from feedgen.feed import FeedGenerator
 import markdown
@@ -71,73 +72,106 @@ def safe_path_decode(path: str) -> str:
         LOG.warning(f"路径解码失败，使用原路径: {path}, 错误: {e}")
         return path
 
-def get_last_commit_files():
+def iter_name_status_z(changes: list[str]):
     """
-    获取上次 commit 中涉及的文件列表，支持中文路径
-    
+    解析 `git ... --name-status -z` 输出
+    普通状态: <status>\0<path>\0
+    重命名/复制: <R|C...>\0<old>\0<new>\0
+    """
+    i = 0
+    while i < len(changes) - 1:
+        status_token = changes[i]
+        if not status_token:
+            i += 1
+            continue
+
+        status_code = status_token[0]
+        if status_code in {"R", "C"}:
+            if i + 2 >= len(changes):
+                break
+            old_path = changes[i + 1]
+            new_path = changes[i + 2]
+            yield status_code, old_path, new_path
+            i += 3
+        else:
+            if i + 1 >= len(changes):
+                break
+            path = changes[i + 1]
+            yield status_code, path, None
+            i += 2
+
+
+def get_last_commit_files(git_range: Optional[str] = None):
+    """
+    获取指定范围（或最近一次提交）的变更文件列表，支持中文路径
+
+    Args:
+        git_range (str | None): 例如 "abc123..def456"
+
     Returns:
         tuple: (新增文件列表, 修改文件列表, 删除文件列表)
     """
     try:
-        # 使用 git diff-tree 获取变更，但使用 --full-index 和 -z 选项以避免路径编码问题
+        if git_range:
+            cmd = ['git', 'diff', '--name-status', '-z', git_range]
+            LOG.info(f"使用 Git 范围生成 RSS: {git_range}")
+        else:
+            cmd = ['git', 'diff-tree', '--no-commit-id', '--name-status', '-r', '-z', 'HEAD']
+            LOG.info("使用 HEAD 最近一次提交生成 RSS")
+
         result = subprocess.run(
-            ['git', 'diff-tree', '--no-commit-id', '--name-status', '-r', '-z', '--full-index', 'HEAD'],
+            cmd,
             capture_output=True,
-            encoding='utf-8',  # 明确指定UTF-8编码
+            encoding='utf-8',
+            cwd=PROOT,
             check=True
         )
-        
+
         added_files = []
         modified_files = []
         deleted_files = []
-        
-        # -z 选项使用 NULL 字节分割，需要特殊处理
+
         changes = result.stdout.split('\0')
-        i = 0
-        while i < len(changes) - 1:  # 最后一个元素是空字符串
-            status = changes[i]
-            file_path = changes[i + 1]
-            
+        for status_code, path_a, path_b in iter_name_status_z(changes):
+            # 对重命名/复制，优先使用新路径
+            file_path = path_b if path_b else path_a
             if not file_path:
-                i += 2
                 continue
-                
-            # 规范化路径格式
+
             file_path = os.path.normpath(file_path).replace('\\', '/')
-            
+
             # 只处理 src 目录下的 .md 文件，排除 README.md
-            if (file_path.startswith('src/') and 
-                file_path.lower().endswith('.md') and 
-                not file_path.endswith('README.md')):
-                
-                # 确保文件路径是有效的UTF-8编码
-                try:
-                    if status == 'A':
-                        if os.path.exists(file_path):  # 验证文件是否存在
-                            added_files.append(file_path)
-                        else:
-                            LOG.warning(f"新增文件不存在: {file_path}")
-                    elif status == 'M':
-                        if os.path.exists(file_path):
-                            modified_files.append(file_path)
-                        else:
-                            LOG.warning(f"修改文件不存在: {file_path}")
-                    elif status == 'D':
-                        deleted_files.append(file_path)
-                except UnicodeError as e:
-                    LOG.error(f"文件路径编码错误: {e}")
-            
-            i += 2  # 每次处理状态和路径两个元素
-        
-        # 输出详细日志
+            if (not file_path.startswith('src/')
+                or not file_path.lower().endswith('.md')
+                or file_path.endswith('README.md')):
+                continue
+
+            abs_path = os.path.join(PROOT, file_path)
+
+            try:
+                if status_code == 'A':
+                    if os.path.exists(abs_path):
+                        added_files.append(file_path)
+                    else:
+                        LOG.warning(f"新增文件不存在: {file_path}")
+                elif status_code in {'M', 'R', 'C', 'T'}:
+                    if os.path.exists(abs_path):
+                        modified_files.append(file_path)
+                    else:
+                        LOG.warning(f"修改文件不存在: {file_path}")
+                elif status_code == 'D':
+                    deleted_files.append(file_path)
+            except UnicodeError as e:
+                LOG.error(f"文件路径编码错误: {e}")
+
         LOG.info("Git变更文件列表:")
         for f in added_files:
             LOG.info(f"  新增: {f}")
         for f in modified_files:
             LOG.info(f"  修改: {f}")
-        
+
         return added_files, modified_files, deleted_files
-        
+
     except subprocess.CalledProcessError as e:
         LOG.error(f"执行Git命令失败: {e.stderr}")
         return [], [], []
@@ -163,6 +197,7 @@ def get_file_git_time(file_path: str) -> datetime:
             ['git', 'log', '-1', '--format=%ai', '--', normalized_path],
             capture_output=True,
             text=True,
+            cwd=PROOT,
             check=True
         )
         
@@ -237,7 +272,7 @@ def process_markdown_file(file_path: str, title: str, change_type: str) -> dict:
     """
     try:
         # 检查文件是否存在
-        local_file_path = f"./{file_path}"
+        local_file_path = os.path.join(PROOT, file_path)
         if not os.path.exists(local_file_path):
             LOG.warning(f"文件不存在: {local_file_path}")
             return None
@@ -267,7 +302,7 @@ def process_markdown_file(file_path: str, title: str, change_type: str) -> dict:
         description = f"{type_text}: {title} - {git_time.strftime('%Y-%m-%d %H:%M:%S')}"
         
         entry_data = {
-            'id': f"{file_path}#{change_type}",
+            'id': f"{file_path}#{change_type}#{git_time.isoformat()}",
             'title': f"[{type_text}] {title}",
             'link': page_url,
             'published': git_time,
@@ -304,8 +339,9 @@ def gen(c):
     """
     LOG.info("开始生成 RSS 订阅源...")
     
-    # 1. 获取上次 commit 的变更文件
-    added_files, modified_files, deleted_files = get_last_commit_files()
+    # 1. 获取上次 commit（或指定范围）的变更文件
+    git_range = os.getenv("RSS_GIT_RANGE", "").strip()
+    added_files, modified_files, deleted_files = get_last_commit_files(git_range or None)
     
     if not added_files and not modified_files:
         LOG.warning("上次 commit 没有新增或修改的 Markdown 文件")
@@ -323,7 +359,7 @@ def gen(c):
         return
     
     # 2. 解析 SUMMARY.md 文件
-    summary_path = f'{CFG.rpath}/{CFG.summ}'
+    summary_path = os.path.join(PROOT, CFG.rpath, CFG.summ)
     file_title_map = parse_summary_md(summary_path)
     
     # 3. 初始化 RSS 生成器
