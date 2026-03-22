@@ -13,7 +13,10 @@ from invoke import task
 
 
 SROOT = os.path.dirname(os.path.abspath(__file__))
-PROOT = os.path.abspath(os.path.join(SROOT, os.pardir))
+if os.path.isdir(os.path.join(SROOT, "src")):
+    PROOT = SROOT
+else:
+    PROOT = os.path.abspath(os.path.join(SROOT, os.pardir))
 print(f"SROOT:{SROOT}\nPROOT:{PROOT}\n")
 
 from collections import namedtuple

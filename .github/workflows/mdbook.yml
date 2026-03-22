@@ -179,16 +179,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: npm
 
       - name: Install Node dependencies
-        run: npm ci
+        run: npm install -g static-sitemap-cli
 
       - name: Build with mdBook
         run: mdbook build
 
       - name: Generate sitemap
-        run: npx sscli -b https://tinysnow.github.io -r ./book
+        run: sscli -b https://tinysnow.github.io -r ./book
 
       - name: Copy rss.xml to book directory
         run: cp -v rss.xml book/
