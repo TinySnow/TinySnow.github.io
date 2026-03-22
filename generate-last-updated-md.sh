@@ -6,6 +6,10 @@
 # 该脚本是 “最近更新” 页面生成器，输出结构固定为：
 # - H1 标题
 # - Prenote 提示
+# - 最近 N 次变更记录（默认 3 次，先进先出）
+#
+# 每条“变更记录”包含：
+# - 记录标题（本次变更总标题）
 # - Summary（生成时间、基准提交、diff 来源、统计）
 # - Index（文件索引 + +/-）
 # - 每个文件一个可折叠 diff 区块
@@ -20,6 +24,11 @@
 # - 默认排除 src/last-updated.md（避免自引用递归膨胀）
 # - 默认排除 src/sitemap.xml（该文件时间戳噪音大，几乎每次都变）
 # - 保留 sitemap.txt（文章新增时具有信息价值）
+#
+# 历史保留策略：
+# - 默认最多保留 3 条记录（可通过 --history-limit 调整）
+# - 新记录始终在最上方
+# - 超出数量时淘汰最旧记录（FIFO）
 #
 # 依赖：
 # - git、bash、sed、awk、cksum、mktemp
@@ -46,6 +55,10 @@ FENCE="~~~~~"
 
 MODE="staged"
 GIT_RANGE=""
+HISTORY_LIMIT=3
+
+ENTRY_START_MARK="<!-- LAST_UPDATED_ENTRY_START -->"
+ENTRY_END_MARK="<!-- LAST_UPDATED_ENTRY_END -->"
 
 # 默认排除 generated 文件自身和 sitemap.xml（仅时间戳噪音）
 EXCLUDE_FILES=(
@@ -55,19 +68,20 @@ EXCLUDE_FILES=(
 
 usage() {
   # 打印脚本帮助信息。
-  cat <<'EOF'
+  cat <<'USAGE'
 Usage:
-  ./generate-last-updated-md.sh [--staged] [--range <git-range>] [--output <path>]
+  ./generate-last-updated-md.sh [--staged] [--range <git-range>] [--history-limit <n>] [--output <path>]
 
 Options:
-  --staged             Use staged diff (default).
-  --range <range>      Use git range diff, e.g. abc123..def456.
-  --output <path>      Output markdown file path.
-  -h, --help           Show this help.
-EOF
+  --staged               Use staged diff (default).
+  --range <range>        Use git range diff, e.g. abc123..def456.
+  --history-limit <n>    Keep latest n records (FIFO), default: 3.
+  --output <path>        Output markdown file path.
+  -h, --help             Show this help.
+USAGE
 }
 
-# 参数解析：将用户意图映射到 MODE + GIT_RANGE + OUTPUT_FILE。
+# 参数解析：将用户意图映射到 MODE + GIT_RANGE + HISTORY_LIMIT + OUTPUT_FILE。
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --staged)
@@ -82,6 +96,14 @@ while [[ $# -gt 0 ]]; do
       fi
       MODE="range"
       GIT_RANGE="$2"
+      shift 2
+      ;;
+    --history-limit)
+      if [[ $# -lt 2 ]]; then
+        echo "Error: --history-limit requires a value." >&2
+        exit 1
+      fi
+      HISTORY_LIMIT="$2"
       shift 2
       ;;
     --output)
@@ -109,6 +131,12 @@ if [[ "${MODE}" == "range" && -z "${GIT_RANGE}" ]]; then
   exit 1
 fi
 
+# 正则 ^[1-9][0-9]*$：history limit 必须是正整数。
+if ! [[ "${HISTORY_LIMIT}" =~ ^[1-9][0-9]*$ ]]; then
+  echo "Error: --history-limit must be a positive integer." >&2
+  exit 1
+fi
+
 # 防御式检查：防止在错误目录下执行并误写文件。
 if ! git -C "${PROOT}" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Error: ${PROOT} is not a git repository." >&2
@@ -122,9 +150,10 @@ fi
 
 TMP_ROOT="${TMPDIR:-/tmp}"
 TMP_DIR="$(mktemp -d "${TMP_ROOT%/}/last-updated.XXXXXX")"
+
 # 无论成功或失败都清理临时目录，避免残留 patch 文件。
 cleanup() {
-  # 删除用于缓存每个文件 patch 的临时目录。
+  # 删除用于缓存每个文件 patch 与历史记录切片的临时目录。
   rm -rf "${TMP_DIR}"
 }
 trap cleanup EXIT
@@ -147,8 +176,10 @@ make_anchor() {
   # 规则：
   # 1) 先把路径做 slug 化（仅保留字母数字，其他字符压成 -）
   # 2) 再拼接 cksum，避免不同路径 slug 冲突
+  # 3) 再拼接 entry_key，避免不同“历史记录块”之间锚点冲突
   local file_path="$1"
   local index="$2"
+  local entry_key="$3"
   local slug checksum
 
   # sed 正则说明：
@@ -164,7 +195,7 @@ make_anchor() {
     slug="file-${index}"
   fi
 
-  printf 'f-%s-%s' "${slug}" "${checksum}"
+  printf 'f-%s-%s-%s' "${entry_key}" "${slug}" "${checksum}"
 }
 
 stat_to_display() {
@@ -205,89 +236,124 @@ collect_numstat() {
   printf '%s\t%s\n' "${added}" "${deleted}"
 }
 
-write_header() {
-  # 写入文档固定头部：标题、提示、Summary 统计。
-  local generated_at="$1"
-  local base_ref="$2"
-  local diff_source="$3"
-  local file_count="$4"
-  local total_added="$5"
-  local total_deleted="$6"
-  local binary_count="$7"
-
-  cat > "${OUTPUT_FILE}" <<EOF
+write_document_header() {
+  # 写入文档固定头部：H1 + Prenote。
+  local target_file="$1"
+  cat > "${target_file}" <<EOF_HEADER
 # ${TITLE}
 
 ## Prenote
 
 > ${NOTICE_CONTENT}
 
-## Summary
+EOF_HEADER
+}
 
-- Generated at: \`${generated_at}\`
-- Base commit: \`${base_ref}\`
-- Diff source: \`${diff_source}\`
-- Changed files: \`${file_count}\`
-- Total lines: \`+${total_added} / -${total_deleted}\`
-EOF
+write_current_entry() {
+  # 写入“本次变更记录块”，包含标题、Summary、Index 与 diff 详情。
+  local target_file="$1"
+  local entry_title="$2"
+  local generated_at="$3"
+  local base_ref="$4"
+  local diff_source="$5"
+  local file_count="$6"
+  local total_added="$7"
+  local total_deleted="$8"
+  local binary_count="$9"
 
-  if [[ "${binary_count}" -gt 0 ]]; then
-    printf -- '- Binary-like diffs: `%s`\n' "${binary_count}" >> "${OUTPUT_FILE}"
+  local i add_display del_display
+
+  {
+    printf '%s\n' "${ENTRY_START_MARK}"
+    printf '## %s\n\n' "${entry_title}"
+
+    printf '### Summary\n\n'
+    printf -- '- Generated at: `%s`\n' "${generated_at}"
+    printf -- '- Base commit: `%s`\n' "${base_ref}"
+    printf -- '- Diff source: `%s`\n' "${diff_source}"
+    printf -- '- Changed files: `%s`\n' "${file_count}"
+    printf -- '- Total lines: `+%s / -%s`\n' "${total_added}" "${total_deleted}"
+    if [[ "${binary_count}" -gt 0 ]]; then
+      printf -- '- Binary-like diffs: `%s`\n' "${binary_count}"
+    fi
+    printf '\n'
+
+    if [[ "${file_count}" -eq 0 ]]; then
+      printf '### No Changes\n\n'
+      printf 'No file changes found for the selected diff source.\n\n'
+    else
+      printf '### Index\n\n'
+      for ((i = 0; i < file_count; i++)); do
+        printf '%s. [%s](#%s) `+%s / -%s`\n' \
+          "$((i + 1))" \
+          "${FILES[$i]}" \
+          "${ANCHORS[$i]}" \
+          "$(stat_to_display "${ADDED_STATS[$i]}")" \
+          "$(stat_to_display "${DELETED_STATS[$i]}")"
+      done
+      printf '\n'
+
+      printf '### Diffs\n\n'
+      for ((i = 0; i < file_count; i++)); do
+        add_display="$(stat_to_display "${ADDED_STATS[$i]}")"
+        del_display="$(stat_to_display "${DELETED_STATS[$i]}")"
+
+        printf '<a id="%s"></a>\n' "${ANCHORS[$i]}"
+        printf '#### %s\n\n' "${FILES[$i]}"
+        printf '<details>\n'
+        printf '<summary><code>+%s / -%s</code> Click to expand diff</summary>\n\n' "${add_display}" "${del_display}"
+        printf '%sdiff\n' "${FENCE}"
+        cat "${DIFF_FILES[$i]}"
+        printf '\n%s\n\n' "${FENCE}"
+        printf '</details>\n\n'
+      done
+    fi
+
+    printf '%s\n\n' "${ENTRY_END_MARK}"
+  } > "${target_file}"
+}
+
+extract_old_entries() {
+  # 从旧版 last-updated.md 中提取历史记录块（按出现顺序：新 -> 旧）。
+  # 仅识别被 ENTRY_START/ENTRY_END 包裹的块，旧格式（无标记）会被自动忽略。
+  local source_file="$1"
+  local line in_entry=0 entry_file="" idx=0
+
+  OLD_ENTRY_FILES=()
+
+  if [[ ! -f "${source_file}" ]]; then
+    return 0
   fi
 
-  printf '\n' >> "${OUTPUT_FILE}"
+  while IFS= read -r line || [[ -n "${line}" ]]; do
+    if [[ "${line}" == "${ENTRY_START_MARK}" ]]; then
+      in_entry=1
+      entry_file="${TMP_DIR}/entry-old-${idx}.md"
+      : > "${entry_file}"
+      printf '%s\n' "${line}" >> "${entry_file}"
+      continue
+    fi
+
+    if [[ "${in_entry}" -eq 1 ]]; then
+      printf '%s\n' "${line}" >> "${entry_file}"
+      if [[ "${line}" == "${ENTRY_END_MARK}" ]]; then
+        OLD_ENTRY_FILES+=("${entry_file}")
+        idx=$((idx + 1))
+        in_entry=0
+      fi
+    fi
+  done < "${source_file}"
 }
 
-append_index() {
-  # 写入 Index 目录，提供“文件 -> 锚点”跳转。
-  local count="$1"
+append_old_entries() {
+  # 将旧记录按顺序追加到目标文件，最多追加 keep_count 条。
+  local target_file="$1"
+  local keep_count="$2"
   local i
-  printf '## Index\n\n' >> "${OUTPUT_FILE}"
-  for ((i = 0; i < count; i++)); do
-    printf '%s. [%s](#%s) `+%s / -%s`\n' \
-      "$((i + 1))" \
-      "${FILES[$i]}" \
-      "${ANCHORS[$i]}" \
-      "$(stat_to_display "${ADDED_STATS[$i]}")" \
-      "$(stat_to_display "${DELETED_STATS[$i]}")" \
-      >> "${OUTPUT_FILE}"
-  done
-  printf '\n' >> "${OUTPUT_FILE}"
-}
 
-append_no_changes_note() {
-  # 没有匹配到变更文件时写入兜底提示。
-  cat >> "${OUTPUT_FILE}" <<'EOF'
-## No Changes
-
-No file changes found for the selected diff source.
-
-EOF
-}
-
-append_file_sections() {
-  # 写入每个文件的正文区块：
-  # - 文件标题
-  # - 可折叠详情（details/summary）
-  # - 原始 diff 内容
-  local count="$1"
-  local i
-  local add_display del_display
-
-  for ((i = 0; i < count; i++)); do
-    add_display="$(stat_to_display "${ADDED_STATS[$i]}")"
-    del_display="$(stat_to_display "${DELETED_STATS[$i]}")"
-
-    {
-      printf '<a id="%s"></a>\n' "${ANCHORS[$i]}"
-      printf '## %s\n\n' "${FILES[$i]}"
-      printf '<details>\n'
-      printf '<summary><code>+%s / -%s</code> Click to expand diff</summary>\n\n' "${add_display}" "${del_display}"
-      printf '%sdiff\n' "${FENCE}"
-      cat "${DIFF_FILES[$i]}"
-      printf '\n%s\n\n' "${FENCE}"
-      printf '</details>\n\n'
-    } >> "${OUTPUT_FILE}"
+  for ((i = 0; i < keep_count && i < ${#OLD_ENTRY_FILES[@]}; i++)); do
+    cat "${OLD_ENTRY_FILES[$i]}" >> "${target_file}"
+    printf '\n' >> "${target_file}"
   done
 }
 
@@ -303,12 +369,15 @@ else
 fi
 
 GENERATED_AT="$(date '+%Y-%m-%d %H:%M:%S %z')"
+ENTRY_KEY="$(printf '%s|%s|%s' "${GENERATED_AT}" "${BASE_REF}" "${DIFF_SOURCE}" | cksum | awk '{print $1}')"
+ENTRY_TITLE="更新记录（${GENERATED_AT} | ${BASE_REF}）"
 
 declare -a FILES
 declare -a ADDED_STATS
 declare -a DELETED_STATS
 declare -a ANCHORS
 declare -a DIFF_FILES
+declare -a OLD_ENTRY_FILES
 
 TOTAL_ADDED=0
 TOTAL_DELETED=0
@@ -350,7 +419,7 @@ while IFS= read -r -d '' changed_file; do
   FILES+=("${changed_file}")
   ADDED_STATS+=("${added}")
   DELETED_STATS+=("${deleted}")
-  ANCHORS+=("$(make_anchor "${changed_file}" "${FILE_COUNT}")")
+  ANCHORS+=("$(make_anchor "${changed_file}" "${FILE_COUNT}" "${ENTRY_KEY}")")
   DIFF_FILES+=("${local_diff_file}")
 
   file_has_binary_stat=false
@@ -376,13 +445,26 @@ while IFS= read -r -d '' changed_file; do
   FILE_COUNT=$((FILE_COUNT + 1))
 done < <("${FILE_SOURCE_CMD[@]}")
 
-# 先写头部再写正文，No Changes 场景也能保留固定框架与统计信息。
-write_header "${GENERATED_AT}" "${BASE_REF}" "${DIFF_SOURCE}" "${FILE_COUNT}" "${TOTAL_ADDED}" "${TOTAL_DELETED}" "${BINARY_COUNT}"
+CURRENT_ENTRY_FILE="${TMP_DIR}/entry-current.md"
 
-if [[ "${FILE_COUNT}" -eq 0 ]]; then
-  append_no_changes_note
-  exit 0
+# 先生成本次记录，再抽取旧记录，最后按“新 + 旧(最多 N-1 条)”重建文件。
+write_current_entry \
+  "${CURRENT_ENTRY_FILE}" \
+  "${ENTRY_TITLE}" \
+  "${GENERATED_AT}" \
+  "${BASE_REF}" \
+  "${DIFF_SOURCE}" \
+  "${FILE_COUNT}" \
+  "${TOTAL_ADDED}" \
+  "${TOTAL_DELETED}" \
+  "${BINARY_COUNT}"
+
+extract_old_entries "${OUTPUT_FILE}"
+
+write_document_header "${OUTPUT_FILE}"
+cat "${CURRENT_ENTRY_FILE}" >> "${OUTPUT_FILE}"
+printf '\n' >> "${OUTPUT_FILE}"
+
+if (( HISTORY_LIMIT > 1 )); then
+  append_old_entries "${OUTPUT_FILE}" "$((HISTORY_LIMIT - 1))"
 fi
-
-append_index "${FILE_COUNT}"
-append_file_sections "${FILE_COUNT}"
