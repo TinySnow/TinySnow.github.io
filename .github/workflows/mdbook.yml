@@ -136,15 +136,16 @@ jobs:
         shell: bash
         run: |
           set -Eeuo pipefail
-          mkdir -p .ci-artifact/src
-          cp -v src/last-updated.md .ci-artifact/src/last-updated.md
-          cp -v rss.xml .ci-artifact/rss.xml
+          mkdir -p ci-artifact/src
+          cp -v src/last-updated.md ci-artifact/src/last-updated.md
+          cp -v rss.xml ci-artifact/rss.xml
 
       - name: Upload metadata artifact
         uses: actions/upload-artifact@v4
         with:
           name: blog-metadata
-          path: .ci-artifact
+          path: ci-artifact
+          if-no-files-found: error
 
   build_site:
     runs-on: ubuntu-latest
@@ -159,14 +160,14 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: blog-metadata
-          path: .ci-artifact
+          path: ci-artifact
 
       - name: Apply generated metadata files
         shell: bash
         run: |
           set -Eeuo pipefail
-          cp -v .ci-artifact/src/last-updated.md src/last-updated.md
-          cp -v .ci-artifact/rss.xml rss.xml
+          cp -v ci-artifact/src/last-updated.md src/last-updated.md
+          cp -v ci-artifact/rss.xml rss.xml
 
       - name: Install mdBook
         run: |
