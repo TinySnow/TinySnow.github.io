@@ -16,6 +16,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 快速失败入口：
+  # - 计算本次 push 的 git 范围（before..after）
+  # - 拦截不应入库的文件（敏感信息/临时文件/超大文件）
   preflight:
     runs-on: ubuntu-latest
     outputs:
@@ -26,6 +29,7 @@ jobs:
         with:
           fetch-depth: 0
 
+      # 统一计算 range，后续 metadata 生成与 RSS 生成都共用该值。
       - name: Compute git diff range
         id: compute_range
         shell: bash
@@ -54,6 +58,7 @@ jobs:
           echo "git_range=${RANGE}" >> "${GITHUB_OUTPUT}"
           echo "BLOG_GIT_RANGE=${RANGE}"
 
+      # 这一步失败时，通常不必查看后续构建日志，先修正提交内容即可。
       - name: Preflight checks (fail fast)
         env:
           BLOG_GIT_RANGE: ${{ steps.compute_range.outputs.git_range }}
@@ -97,6 +102,10 @@ jobs:
 
           echo "Preflight checks passed."
 
+  # 元数据生成：
+  # - 生成 src/last-updated.md
+  # - 生成 rss.xml
+  # 产物通过 artifact 传给 build_site，避免 job 之间文件系统不共享的问题。
   generate_metadata:
     runs-on: ubuntu-latest
     needs: preflight
@@ -116,6 +125,7 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # 使用 commit range 与 CI 事件保持一致，避免本地 staged 语义差异。
       - name: Generate Last Updated
         shell: bash
         env:
@@ -125,6 +135,7 @@ jobs:
           chmod +x ./generate-last-updated-md.sh
           ./generate-last-updated-md.sh --range "${BLOG_GIT_RANGE}"
 
+      # RSS_GIT_RANGE 与 Last Updated 使用同一 range，保证两者变更来源一致。
       - name: Generate RSS feed
         env:
           RSS_GIT_RANGE: ${{ needs.preflight.outputs.git_range }}
@@ -132,6 +143,7 @@ jobs:
           inv ver
           inv gen
 
+      # upload-artifact@v4 默认不上传隐藏目录，使用非隐藏目录避免静默跳过。
       - name: Pack metadata artifact
         shell: bash
         run: |
@@ -147,6 +159,11 @@ jobs:
           path: ci-artifact
           if-no-files-found: error
 
+  # 站点构建：
+  # - 下载并应用 metadata 产物
+  # - mdbook build
+  # - 生成 sitemap
+  # - 上传 pages artifact
   build_site:
     runs-on: ubuntu-latest
     needs: generate_metadata
@@ -162,6 +179,7 @@ jobs:
           name: blog-metadata
           path: ci-artifact
 
+      # 将上游 job 产物覆盖到当前工作区后再构建，确保构建输入可复现。
       - name: Apply generated metadata files
         shell: bash
         run: |
@@ -180,12 +198,14 @@ jobs:
         with:
           node-version: "20"
 
+      # 这里仅需 sscli，不依赖项目 lockfile，避免 npm ci 在无 lockfile 场景失败。
       - name: Install Node dependencies
         run: npm install -g static-sitemap-cli
 
       - name: Build with mdBook
         run: mdbook build
 
+      # sitemap 直接从构建后的 book 目录生成，不再本地提交 src/sitemap*.*
       - name: Generate sitemap
         run: sscli -b https://tinysnow.github.io -r ./book
 
@@ -201,6 +221,8 @@ jobs:
         with:
           path: book
 
+  # 部署阶段：
+  # 只负责将 build_site 上传的 Pages artifact 发布到 github-pages 环境。
   deploy:
     runs-on: ubuntu-latest
     needs: build_site

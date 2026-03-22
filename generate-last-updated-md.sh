@@ -1,5 +1,30 @@
 #!/usr/bin/env bash
 
+# ==============================================================================
+# 生成 src/last-updated.md
+#
+# 该脚本是 “最近更新” 页面生成器，输出结构固定为：
+# - H1 标题
+# - Prenote 提示
+# - Summary（生成时间、基准提交、diff 来源、统计）
+# - Index（文件索引 + +/-）
+# - 每个文件一个可折叠 diff 区块
+#
+# 支持两种 diff 来源：
+# 1) --staged（默认）
+#    基于 git 暂存区，适合本地预览“即将提交”的变化。
+# 2) --range "<A..B>"
+#    基于提交范围，适合 CI（与 GitHub Actions 事件 before..after 对齐）。
+#
+# 关键约束：
+# - 默认排除 src/last-updated.md（避免自引用递归膨胀）
+# - 默认排除 src/sitemap.xml（该文件时间戳噪音大，几乎每次都变）
+# - 保留 sitemap.txt（文章新增时具有信息价值）
+#
+# 依赖：
+# - git、bash、sed、awk、cksum、mktemp
+# ==============================================================================
+
 set -Eeuo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -29,6 +54,7 @@ EXCLUDE_FILES=(
 )
 
 usage() {
+  # 打印脚本帮助信息。
   cat <<'EOF'
 Usage:
   ./generate-last-updated-md.sh [--staged] [--range <git-range>] [--output <path>]
@@ -41,6 +67,7 @@ Options:
 EOF
 }
 
+# 参数解析：将用户意图映射到 MODE + GIT_RANGE + OUTPUT_FILE。
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --staged)
@@ -82,6 +109,7 @@ if [[ "${MODE}" == "range" && -z "${GIT_RANGE}" ]]; then
   exit 1
 fi
 
+# 防御式检查：防止在错误目录下执行并误写文件。
 if ! git -C "${PROOT}" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Error: ${PROOT} is not a git repository." >&2
   exit 1
@@ -94,12 +122,16 @@ fi
 
 TMP_ROOT="${TMPDIR:-/tmp}"
 TMP_DIR="$(mktemp -d "${TMP_ROOT%/}/last-updated.XXXXXX")"
+# 无论成功或失败都清理临时目录，避免残留 patch 文件。
 cleanup() {
+  # 删除用于缓存每个文件 patch 的临时目录。
   rm -rf "${TMP_DIR}"
 }
 trap cleanup EXIT
 
 in_excludes() {
+  # 判断文件是否在默认排除列表中。
+  # 目的：避免 last-updated 自引用、避免 sitemap.xml 时间戳噪音。
   local target="$1"
   local excluded
   for excluded in "${EXCLUDE_FILES[@]}"; do
@@ -111,10 +143,18 @@ in_excludes() {
 }
 
 make_anchor() {
+  # 为每个文件生成稳定且可跳转的锚点 id。
+  # 规则：
+  # 1) 先把路径做 slug 化（仅保留字母数字，其他字符压成 -）
+  # 2) 再拼接 cksum，避免不同路径 slug 冲突
   local file_path="$1"
   local index="$2"
   local slug checksum
 
+  # sed 正则说明：
+  # - s/[^[:alnum:]]+/-/g: 将连续非字母数字字符压缩为一个 -
+  # - s/^-+//: 去掉开头连续 -
+  # - s/-+$//: 去掉结尾连续 -
   slug="$(printf '%s' "${file_path}" \
     | tr '[:upper:]' '[:lower:]' \
     | sed -E 's/[^[:alnum:]]+/-/g; s/^-+//; s/-+$//')"
@@ -128,7 +168,10 @@ make_anchor() {
 }
 
 stat_to_display() {
+  # 将 numstat 的统计值转换为可展示文本。
+  # numstat 对二进制文件会给 '-'，此处统一显示为 bin。
   local value="$1"
+  # 正则 ^[0-9]+$ 用于区分普通文本行数与二进制占位符。
   if [[ "${value}" =~ ^[0-9]+$ ]]; then
     printf '%s' "${value}"
   else
@@ -137,6 +180,9 @@ stat_to_display() {
 }
 
 collect_numstat() {
+  # 收集单文件的增删行数统计（added/deleted）。
+  # staged 与 range 模式分别走不同 git 命令，但输出格式统一为:
+  #   <added>\t<deleted>
   local file_path="$1"
   local line added deleted
 
@@ -160,6 +206,7 @@ collect_numstat() {
 }
 
 write_header() {
+  # 写入文档固定头部：标题、提示、Summary 统计。
   local generated_at="$1"
   local base_ref="$2"
   local diff_source="$3"
@@ -192,6 +239,7 @@ EOF
 }
 
 append_index() {
+  # 写入 Index 目录，提供“文件 -> 锚点”跳转。
   local count="$1"
   local i
   printf '## Index\n\n' >> "${OUTPUT_FILE}"
@@ -208,6 +256,7 @@ append_index() {
 }
 
 append_no_changes_note() {
+  # 没有匹配到变更文件时写入兜底提示。
   cat >> "${OUTPUT_FILE}" <<'EOF'
 ## No Changes
 
@@ -217,6 +266,10 @@ EOF
 }
 
 append_file_sections() {
+  # 写入每个文件的正文区块：
+  # - 文件标题
+  # - 可折叠详情（details/summary）
+  # - 原始 diff 内容
   local count="$1"
   local i
   local add_display del_display
@@ -262,6 +315,7 @@ TOTAL_DELETED=0
 BINARY_COUNT=0
 FILE_COUNT=0
 
+# 统一文件源命令，避免在主循环里写两套 while 逻辑。
 if [[ "${MODE}" == "staged" ]]; then
   FILE_SOURCE_CMD=(git -C "${PROOT}" diff --cached --name-only -z)
 else
@@ -277,6 +331,7 @@ while IFS= read -r -d '' changed_file; do
     continue
   fi
 
+  # 按文件提取完整 diff，避免旧方案中基于文本替换/行号操作导致的定位脆弱。
   if [[ "${MODE}" == "staged" ]]; then
     git -C "${PROOT}" diff --cached --no-color -- "${changed_file}" > "${local_diff_file}"
   else
@@ -300,6 +355,8 @@ while IFS= read -r -d '' changed_file; do
 
   file_has_binary_stat=false
 
+  # 正则 ^[0-9]+$：仅当 added/deleted 是纯数字时才累计总行数。
+  # 否则视为二进制/不可计数差异，计入 BINARY_COUNT。
   if [[ "${added}" =~ ^[0-9]+$ ]]; then
     TOTAL_ADDED=$((TOTAL_ADDED + added))
   else
@@ -319,6 +376,7 @@ while IFS= read -r -d '' changed_file; do
   FILE_COUNT=$((FILE_COUNT + 1))
 done < <("${FILE_SOURCE_CMD[@]}")
 
+# 先写头部再写正文，No Changes 场景也能保留固定框架与统计信息。
 write_header "${GENERATED_AT}" "${BASE_REF}" "${DIFF_SOURCE}" "${FILE_COUNT}" "${TOTAL_ADDED}" "${TOTAL_DELETED}" "${BINARY_COUNT}"
 
 if [[ "${FILE_COUNT}" -eq 0 ]]; then

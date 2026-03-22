@@ -11,8 +11,26 @@ from feedgen.feed import FeedGenerator
 import markdown
 from invoke import task
 
+"""
+TinySnowBlog RSS 生成任务入口（invoke）
+
+职责范围：
+1. 根据 Git 变更（默认 HEAD，或 RSS_GIT_RANGE 指定范围）筛选受影响的 Markdown 文件。
+2. 解析 SUMMARY.md 获取标题映射。
+3. 将变更文件转为 RSS 条目并输出 rss.xml。
+
+关键约束：
+- 仅处理 src/ 下的 .md（排除 README.md）。
+- 对 rename/copy 状态做兼容，优先使用新路径。
+- 路径解析与 git 命令都基于 PROOT，避免在 CI 子目录里出现
+  “Not a git repository”。
+"""
+
 
 SROOT = os.path.dirname(os.path.abspath(__file__))
+# 兼容两种放置方式：
+# - 脚本在仓库根目录：SROOT/src 存在
+# - 脚本在子目录（历史兼容）：退回父目录
 if os.path.isdir(os.path.join(SROOT, "src")):
     PROOT = SROOT
 else:
@@ -115,6 +133,8 @@ def get_last_commit_files(git_range: Optional[str] = None):
         tuple: (新增文件列表, 修改文件列表, 删除文件列表)
     """
     try:
+        # CI 中推荐传入 git range，以便与 push 事件 before..after 对齐。
+        # 本地不传时退回到“最近一次提交”模式，便于手工调试。
         if git_range:
             cmd = ['git', 'diff', '--name-status', '-z', git_range]
             LOG.info(f"使用 Git 范围生成 RSS: {git_range}")
@@ -305,6 +325,7 @@ def process_markdown_file(file_path: str, title: str, change_type: str) -> dict:
         description = f"{type_text}: {title} - {git_time.strftime('%Y-%m-%d %H:%M:%S')}"
         
         entry_data = {
+            # id 含 iso 时间，避免同一文件多次 modified 被 RSS 客户端去重吞掉
             'id': f"{file_path}#{change_type}#{git_time.isoformat()}",
             'title': f"[{type_text}] {title}",
             'link': page_url,
@@ -343,6 +364,7 @@ def gen(c):
     LOG.info("开始生成 RSS 订阅源...")
     
     # 1. 获取上次 commit（或指定范围）的变更文件
+    # GitHub Actions 会通过环境变量注入 before..after 范围。
     git_range = os.getenv("RSS_GIT_RANGE", "").strip()
     added_files, modified_files, deleted_files = get_last_commit_files(git_range or None)
     
@@ -362,6 +384,7 @@ def gen(c):
         return
     
     # 2. 解析 SUMMARY.md 文件
+    # 注意这里必须使用 PROOT 的绝对路径，避免 cwd 漂移导致找不到文件。
     summary_path = os.path.join(PROOT, CFG.rpath, CFG.summ)
     file_title_map = parse_summary_md(summary_path)
     
