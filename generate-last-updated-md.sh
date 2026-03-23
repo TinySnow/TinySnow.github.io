@@ -29,6 +29,8 @@
 # - 默认最多保留 3 条记录（可通过 --history-limit 调整）
 # - 新记录始终在最上方
 # - 超出数量时淘汰最旧记录（FIFO）
+# - 前提：输出文件需要先包含“上一轮生成结果”（例如 CI 先恢复上一次 artifact）
+#   若每次都从一个固定旧模板起步，历史自然无法累计
 #
 # 依赖：
 # - git、bash、sed、awk、cksum、mktemp
@@ -316,6 +318,7 @@ write_current_entry() {
 extract_old_entries() {
   # 从旧版 last-updated.md 中提取历史记录块（按出现顺序：新 -> 旧）。
   # 仅识别被 ENTRY_START/ENTRY_END 包裹的块，旧格式（无标记）会被自动忽略。
+  # 这意味着调用方需要提供“上一轮已生成文件”作为输入基线。
   local source_file="$1"
   local line in_entry=0 entry_file="" idx=0
 

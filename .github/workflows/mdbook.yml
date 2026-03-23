@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -114,6 +115,51 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      # 关键：last-updated 的“历史保留”依赖上一轮生成结果。
+      # 若每次都从仓库原始文件起步（不恢复上一轮 artifact），就只能看到 1 条最新记录。
+      - name: Resolve previous successful workflow run
+        id: prev_run
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const workflow_id = 'mdbook.yml';
+            const branch = context.ref.replace('refs/heads/', '');
+
+            const resp = await github.rest.actions.listWorkflowRuns({
+              owner,
+              repo,
+              workflow_id,
+              branch,
+              status: 'success',
+              per_page: 20,
+            });
+
+            const currentRunId = Number(context.runId);
+            const previous = resp.data.workflow_runs.find((run) => run.id !== currentRunId);
+            core.setOutput('run_id', previous ? String(previous.id) : '');
+
+      # 从上一轮成功运行下载 metadata，作为本轮生成输入基线。
+      # continue-on-error 保证首次运行或历史 artifact 过期时仍可继续构建。
+      - name: Download previous metadata artifact
+        if: steps.prev_run.outputs.run_id != ''
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: blog-metadata
+          run-id: ${{ steps.prev_run.outputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ci-prev-artifact
+
+      # 若成功拿到上一轮 last-updated，则先恢复它，再追加本轮变更记录。
+      - name: Restore previous last-updated baseline
+        if: hashFiles('ci-prev-artifact/src/last-updated.md') != ''
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          cp -v ci-prev-artifact/src/last-updated.md src/last-updated.md
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
