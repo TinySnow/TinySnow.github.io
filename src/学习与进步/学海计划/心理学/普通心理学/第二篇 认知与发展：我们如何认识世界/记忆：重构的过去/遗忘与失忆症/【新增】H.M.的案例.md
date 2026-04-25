@@ -1,0 +1,14 @@
+# H.M.的案例
+
+## 写在前面
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/心理学/普通心理学/第二篇 认知与发展：我们如何认识世界/记忆：重构的过去/遗忘与失忆症/H.M.的案例.png>)
+
+## 正文
+
+
+## 封面图
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/心理学/普通心理学/第二篇 认知与发展/记忆/遗忘与失忆症/H.M.的案例.png>)
+
+> 设计师 | 南国微雪

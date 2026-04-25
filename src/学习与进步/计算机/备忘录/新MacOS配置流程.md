@@ -15,7 +15,12 @@
       - 之后所有的命令都要用 python3 或者 pip3，不能直接敲 python 或者 pip，不然认不到
    4. tmux：`brew install tmux`
       - tmux 装完之后可能会有无法复制到系统剪切板的问题，详情见另一篇博客
-   5. git
+   5. git：`brew install git`
+6. 从其他设备粘贴 ssh 公钥私钥
+   1. 如果访达看不到 .ssh 目录，用 Command + Shift + . 显示隐藏文件
+   2. 打开 .ssh 目录，粘贴公钥和私钥
+   3. 记得不要忘了设置权限，公钥是 644，私钥是 600，不然 git 连接会报错，命令 `chmod 644 ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa`
+7. 开一下“允许用户使用 Apple 账户重设密码”，在 设置 -> 用户与群组 -> 找到自己（管理员） -> 点击 i 图标 -> 选择允许用户使用 Apple 账户重设密码
 
 ## 终端配置
 
@@ -23,7 +28,7 @@
 
 ```bash
 # 克隆仓库之后运行
-cd ~ && git@github.com:anishathalye/dotfiles.git && cd dotfiles && ./install
+cd ~ && git clone git@github.com:anishathalye/dotfiles.git && cd dotfiles && ./install && cd ~
 ```
 
 - 如果运行半天都没反应，换一个节点，删了所有文件重来吧

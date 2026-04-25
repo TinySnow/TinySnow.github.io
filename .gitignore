@@ -5,3 +5,4 @@ package-lock.json
 .git.bfg-report
 .obsidian
 rss.xml
+.DS_Store
