@@ -291,6 +291,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Notify Mini
-        run: |
-          curl -X POST http://tinysnow.dynv6.net:9000/hooks/deploy-blog
+      # - name: Notify Mini
+      #   run: |
+      #     curl -X POST http://tinysnow.dynv6.net:9000/hooks/deploy-blog
