@@ -4,7 +4,7 @@
 
 见 [Q1](#Q1).
 
-## 解决方案
+## 参考解决方案
 
 1. 光猫路由改桥接，ARP 绑定 DHCP 分配的 IP 和机器的 MAC 地址。
 2. 用 ipv6（因为 ipv4 申请不到），绑一个免费域名，然后跑 ddns 服务。
@@ -15,6 +15,28 @@
 7. 至于其他挂载的服务，用 ipv6 域名或者 openfrp。
 
 - 以上方案暂时均未经过大面积验证（2026.4.26）。
+
+## 实际方案
+
+1. 光猫路由改桥接，进行 arp 静态路由绑定。
+2. Tailscale SSO 注册，各设备下载其客户端，disable 其 key expiry，加入同一个账号地 tailnet，打洞成功，手机、Mac 和 Windows 均能访问 Macmini；
+3. 上 dynv6 注册账号，绑一个域名 tinysnow.dynv6.net（不能自定义后缀，只能用他的），复制 mini 最稳定的 ipv6 地址（autoconf secured 那个，由网卡 MAC 地址派生，一般来说只要网络前缀不变就不会变）填入 ipv6 prefix；
+4. 下载 ddns-go，具体操作见 [A11](#A11) 及其上下文；
+5. 注册好域名后，将 dynv6 里面 zone 下 instructions 里 ddclient 的 password 值，填入 ddns-go 里面的 token，保存；
+6. 上路由器后台管理页面，关闭防火墙（为了放行 ipv6 流量），ping6 测试公网访问 mini；
+7. 启动各类服务。
+
+## 启动服务
+
+### Telegram Bot
+
+### n2n 服务端
+
+### UsbEAM Lan Party 服务端
+
+### mincraft 服务端
+
+### Terraria(Tmodloader) 服务端
 
 ## 最后附上与 Claude Sonnet 4.6 的对话记录
 
@@ -739,3 +761,33 @@ ddns-go -l :9876 -resetPassword
 ```
 
 然后浏览器访问 `http://localhost:9876`，这次应该会让你重新设置用户名和密码。设好之后 Ctrl+C 停掉，再重新用 launchctl 启动正式服务就行。
+
+### Q13
+
+之前你给我的那个方案，有群友说 tailscale 有时候会失败，他自己用的 easytier，但是 et 说实现不太安全，确实有这种问题吗？
+
+```
+et 代码实现不太安全（
+
+ts 有时候打洞会失败，在一端公网 IP 变了后就没法打洞了
+
+然后 ts 只能用 100.0 这个网段
+
+写死了喵
+
+ts 要清真的话还要自己跑 headscale 控制平面
+
+还要跑 derper 中继器
+
+et 的话跑 et-core 就行
+
+控制平面跑个 et-web
+
+虽然不跑也行，就是要自己搓配置文件
+
+机子多了后就不方便了
+
+然后 et 在连接失败后会疯狂 spam 日志，重试的日志刷屏
+
+我一直懒得修（
+```
