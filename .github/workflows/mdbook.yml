@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   actions: read
   pages: write
   id-token: write
@@ -258,6 +258,17 @@ jobs:
       - name: Copy rss.xml to book directory
         run: cp -v rss.xml book/
 
+      - name: Push mirror branch
+        run: |
+          git config --global user.email "ci@github"
+          git config --global user.name "CI"
+          cd book
+          git init && git add .
+          git commit -m "deploy"
+          git push --force \
+            https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/TinySnow/TinySnow.github.io.git \
+            HEAD:gh-pages-mirror
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -280,3 +291,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      # - name: Notify Mini
+      #   run: |
+      #     curl -X POST http://tinysnow.dynv6.net:9000/hooks/deploy-blog
