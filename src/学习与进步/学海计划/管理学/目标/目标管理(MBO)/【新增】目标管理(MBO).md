@@ -9,6 +9,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/管理学/目标/目标管理/目标管理.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/管理学/目标/目标管理(MBO)/目标管理(MBO).png>)
 
 > 设计师 | 南国微雪

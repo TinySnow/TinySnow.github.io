@@ -9,6 +9,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/税务筹划、反避税与合规边界/跨国避税方法与国际反制/数字经济的税基侵蚀/BEPS支柱二.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/税务筹划、反避税与合规边界/跨国避税方法与国际反制/数字经济的税基侵蚀/BEPS支柱二（全球最低税）：确保跨国企业在每个国家的有效税率不低于15%.png>)
 
 > 设计师 | 南国微雪

@@ -9,6 +9,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/自我提升/行动落地/习惯养成/建立新习惯/实施意图：＂当X发生时，我会做Y＂.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/自我提升/行动落地：如何真正改变/习惯养成/建立新习惯/实施意图(Implementation Intention)：＂当X发生时，我会做Y＂：比单纯设定目标效果强2-3倍.png>)
 
 > 设计师 | 南国微雪

@@ -9,6 +9,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/自我提升/行动落地/目标设定与执行/目标设定框架/SMART框架的优势与局限.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/自我提升/行动落地：如何真正改变/目标设定与执行/目标设定框架/SMART框架的优势与局限：具体、可衡量、可实现、相关、有时限.png>)
 
 > 设计师 | 南国微雪

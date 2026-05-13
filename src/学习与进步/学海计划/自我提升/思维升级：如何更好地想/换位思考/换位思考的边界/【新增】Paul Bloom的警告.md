@@ -9,6 +9,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/自我提升/思维升级/换位思考/换位思考的边界/Paul Bloom的警告.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/自我提升/思维升级：如何更好地想/换位思考/换位思考的边界/Paul Bloom的警告：情感共情是有偏见的道德工具，对近处的具体的人过度共情，忽视远处抽象的更多人.png>)
 
 > 设计师 | 南国微雪

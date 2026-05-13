@@ -13,6 +13,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/心理学/普通心理学/第一篇 基础与大脑/大脑与心理/惊人的假说/惊人的假说.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/心理学/普通心理学/第一篇 基础与大脑：你是谁？/大脑与心理/惊人的假说（Francis Crick）/惊人的假说（Francis Crick）.png>)
 
 > 设计师 | 南国微雪

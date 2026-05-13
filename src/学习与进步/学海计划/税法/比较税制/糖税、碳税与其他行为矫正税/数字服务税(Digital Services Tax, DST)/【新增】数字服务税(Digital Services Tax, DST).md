@@ -9,6 +9,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/比较税制/糖税、碳税与其他行为矫正税/数字服务税/数字服务税.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/比较税制/糖税、碳税与其他行为矫正税/数字服务税(Digital Services Tax, DST)/数字服务税(Digital Services Tax, DST).png>)
 
 > 设计师 | 南国微雪

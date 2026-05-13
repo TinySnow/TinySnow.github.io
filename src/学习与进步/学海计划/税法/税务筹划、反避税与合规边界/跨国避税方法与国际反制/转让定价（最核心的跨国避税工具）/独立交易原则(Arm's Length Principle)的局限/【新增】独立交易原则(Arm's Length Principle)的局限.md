@@ -9,6 +9,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/税务筹划、反避税与合规边界/跨国避税方法与国际反制/转让定价/独立交易原则的局限/独立交易原则的局限.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/税务筹划、反避税与合规边界/跨国避税方法与国际反制/转让定价（最核心的跨国避税工具）/独立交易原则(Arm's Length Principle)的局限/独立交易原则(Arm's Length Principle)的局限.png>)
 
 > 设计师 | 南国微雪

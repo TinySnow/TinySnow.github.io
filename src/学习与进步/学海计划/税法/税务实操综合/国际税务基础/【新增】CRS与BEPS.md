@@ -13,6 +13,6 @@
 
 ## 封面图
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/税务实操综合/国际税务基础/CRS与BEPS.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/税务实操综合/国际税务基础/CRS（共同申报准则）与BEPS（税基侵蚀与利润转移）.png>)
 
 > 设计师 | 南国微雪

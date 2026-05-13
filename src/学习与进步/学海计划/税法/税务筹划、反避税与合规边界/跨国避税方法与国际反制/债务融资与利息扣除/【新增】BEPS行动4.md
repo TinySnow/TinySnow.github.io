@@ -1,5 +1,14 @@
 # BEPS 行动 4：推动各国采用利息扣除上限规则（EBITDA 的 10%～30%）
 
+
+## 正文
+
 > 来源：学海计划.xmind
 >
 > 节点路径：税法 / 税务筹划、反避税与合规边界 / 跨国避税方法与国际反制 / 债务融资与利息扣除 / BEPS 行动 4：推动各国采用利息扣除上限规则（EBITDA 的 10%～30%）
+
+## 封面图
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/covers/税法/税务筹划、反避税与合规边界/跨国避税方法与国际反制/债务融资与利息扣除/BEPS行动4：推动各国采用利息扣除上限规则（EBITDA的10%～30%）.png>)
+
+> 设计师 | 南国微雪
