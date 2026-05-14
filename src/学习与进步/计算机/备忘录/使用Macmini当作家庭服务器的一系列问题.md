@@ -16,7 +16,7 @@
 
 - 以上方案暂时均未经过大面积验证（2026.4.26）。
 
-## 实际方案
+## 实际方案（废弃）
 
 1. 光猫路由改桥接，进行 arp 静态路由绑定。
 2. Tailscale SSO 注册，各设备下载其客户端，disable 其 key expiry，加入同一个账号地 tailnet，打洞成功，手机、Mac 和 Windows 均能访问 Macmini；
@@ -26,6 +26,13 @@
 6. 上路由器后台管理页面，关闭防火墙（为了放行 ipv6 流量），ping6 测试公网访问 mini；
 7. 启动各类服务。
 
+## 改版方案（2026.5.10）
+
+1. 光猫路由改桥接，进行 arp 静态路由绑定。
+2. Tailscale SSO 注册，各设备下载其客户端，disable 其 key expiry，加入同一个账号地 tailnet，打洞成功，手机、Mac 和 Windows 均能访问 Macmini；
+3. 部署博客：使用 Cloudflare Tunnel，需要一个自己的域名。
+4. 所有其他服务用 Docker 起（Mac 上使用轻量替代品客户端 OrbStack，使用 Portainer 管理容器）。需要公网展示的，除博客外均用 OpenFRP。
+
 ## 启动服务
 
 ### Telegram Bot
@@ -34,7 +41,7 @@
 
 ### UsbEAM Lan Party 服务端
 
-### mincraft 服务端
+### Minecraft 服务端
 
 ### Terraria(Tmodloader) 服务端
 
