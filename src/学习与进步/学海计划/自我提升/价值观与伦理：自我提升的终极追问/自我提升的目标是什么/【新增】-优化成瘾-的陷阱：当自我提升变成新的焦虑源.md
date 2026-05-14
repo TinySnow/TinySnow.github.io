@@ -1,0 +1,8 @@
+## 写在前面
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/自我提升_自我提升.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/价值观与伦理：自我提升的终极追问_价值观与伦理：自我提升的终极追问.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/价值观与伦理：自我提升的终极追问_自我提升的目标是什么.png>)
+

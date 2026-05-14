@@ -2,7 +2,11 @@
 
 ## 写在前面
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/经济学/宏观经济学/短期波动：经济为什么会忽冷忽热？/总供给（AS）：短期与长期的根本区别/总供给.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/经济学/经济学_经济学.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/经济学/宏观经济学_宏观经济学.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/经济学/宏观经济学_短期波动：经济为什么会忽冷忽热？.png>)
 
 ## 正文
 

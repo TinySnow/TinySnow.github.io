@@ -1,0 +1,8 @@
+## 写在前面
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/税法/税法_税法.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/税法/个人所得税法_个人所得税法.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/税法/个人所得税法_分类所得的计税规则.png>)
+

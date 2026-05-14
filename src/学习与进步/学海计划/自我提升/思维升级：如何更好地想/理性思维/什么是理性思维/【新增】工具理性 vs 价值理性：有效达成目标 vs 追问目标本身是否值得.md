@@ -1,0 +1,10 @@
+## 写在前面
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/自我提升_自我提升.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/思维升级：如何更好地想_思维升级：如何更好地想.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/理性思维_理性思维.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/理性思维_什么是理性思维.png>)
+

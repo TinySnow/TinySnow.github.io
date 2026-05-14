@@ -2,7 +2,13 @@
 
 ## 写在前面
 
-![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/行动落地：如何真正改变/时间与精力管理/实操框架/每日MIT.png>)
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/自我提升_自我提升.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/行动落地：如何真正改变_行动落地：如何真正改变.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/时间与精力管理_时间与精力管理.png>)
+
+![](<https://raw.githubusercontent.com/TinySnow/patchouli-project-resources/master/maps/自我提升/时间与精力管理_实操框架.png>)
 
 ## 正文
 
