@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>怎样用 AI 比别人快 10 倍地学习？ - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="怎样用-ai-比别人快-10-倍地学习"><a class="header" href="#怎样用-ai-比别人快-10-倍地学习">怎样用 AI 比别人快 10 倍地学习？</a></h1>
+<p><em>快刀青衣</em></p>
+<p>　　这一讲为你推荐的内容来自 AI 学习圈的主理人刀哥，他要为你分享的内容，一听标题你肯定就感兴趣“怎样用 AI 比别人快 10 倍地学习？”这可不是标题党，而是真的有人已经做到了。</p>
+<p>　　这套高手在用方法中，有你熟悉的一些经典学习方法，比如项目制学习和费曼学习法，但不一样的是，这套方法在学习目的制定、记录和反馈等各个环节，都把 AI 完美融合了进去。</p>
+<p>　　这到底是怎样的一套方法？</p>
+<p>　　这一讲为你推荐的内容，来自 YouTube 网站的一条长视频，这条视频的名字叫做《如何用人工智能比任何人快 10 倍地学习任何东西》，是不是光听这个名字，就觉得应该属于武侠小说里，那种被各大门派疯抢的武林秘籍？</p>
+<p>　　说实话，这个标题放在其他人身上，很容易被人说是标题党。但这条视频的作者丹·科伊确实是个狠人。他 1993 年出生，个人资产已经超过 5000 万美金，光 2023 年的收入就有 420 万，利润率高达 98%。这么高的利润率怎么来的？核心原因是，他打造了一个真正的“一人公司”——没有员工、没有庞大的团队，一切工作几乎都是他一个人搞定。</p>
+<p>　　在开始做 YouTube 频道之前，丹·科伊凭借着兴趣做了很多项目，从怎么做广告，到摄影，到电子商务。乍一看，他好像没啥定性，但正是在这些不同领域的摸索中，他找到了自己的核心能力——遇到难题时，能快速学习并找到解决方案。他发现，学习本身就是一门可以优化的“技能”。</p>
+<p>　　于是，他把这个思维方式融入到了自己的 YouTube 频道，专门研究如何用系统化、工程化的方式，加速个人成长。</p>
+<p>　　在今天咱们要聊的这条视频一开头，丹·科伊就先抛出一个扎心的事实：今天的大多数人，其实根本不懂怎么学习。</p>
+<p>　　现在网上的各种学习资源随手可得，播客、YouTube 教程、书籍教材铺天盖地，看上去信息大爆炸，但学得越多，负担越重。尤其是半年过去，回头一看，学了一堆东西，却拿不出任何实际成果。</p>
+<p>　　他说得很直接：你以为自己在学习，其实第二天就全忘光了。问题的根源不是学得不够多，而是学习效率太低。</p>
+<p>　　但如果能把学习速度提升 10 倍，你就能迅速看到成果。</p>
+<p>　　因此，在这条名为《如何用人工智能比任何人快 10 倍地学习任何东西》的视频里，他总结了一套加速学习的方法，很有启发性。</p>
+<p>　　我整理出了其中让我印象最深的办法，分享给大家。</p>
+<h2 id="第一条学习新东西千万不要从学习开始"><a class="header" href="#第一条学习新东西千万不要从学习开始">第一条，学习新东西，千万不要“从学习开始”。</a></h2>
+<p>　　这句话听起来是不是有点矛盾？但作者的意思很明确：学习本身并不是目的，而是达成目标的手段。</p>
+<p>　　这个世界变化太快了，尤其是 AI，每天都在突飞猛进，几乎时时刻刻都有新东西出现。在这种环境下，学习能力才是最核心的“元技能”。</p>
+<p>　　什么是元技能？</p>
+<p>　　就是所有技能的底层逻辑，掌握了它，你才能在不断变化的世界里站稳脚跟。</p>
+<p>　　而最关键的是，这种学习必须是自我驱动的，不能指望学校体系来帮你跟上时代。</p>
+<p>　　那么，为什么不要“从学习开始”？因为很多人一开始就陷入了“我要学习某某东西”的误区，比如“我要学习 AI”或者“我要学音乐”。</p>
+<p>　　但这些目标太宽泛、太模糊，很快就会陷入低效学习的死循环。</p>
+<p>　　正确的做法是：先设定一个具体的目标，让学习有明确的方向。</p>
+<p>　　你要先问自己：“我为什么要学这个东西？”</p>
+<p>　　只有答案足够具体，你的学习才会更有效率。</p>
+<p>　　很多人之所以学不进去，就是因为学习内容和自己的生活、工作没有直接关联，缺乏驱动力，最后只能靠意志力硬撑。</p>
+<p>　　但真正的高手，往往不是最聪明的，而是对某个领域有强烈兴趣的人，他们学起来更快、记得更牢、进步更快。</p>
+<h2 id="第二条找一个-ai-战略顾问"><a class="header" href="#第二条找一个-ai-战略顾问">第二条，找一个 AI 战略顾问。</a></h2>
+<p>　　刚才我们说了，学习一定要有明确的目标。可问题是，如果一个人连自己的目标都不知道怎么制定，那该怎么办呢？</p>
+<p>　　这时候，丹·科伊提出了一个特别有意思的方法——让 AI 帮你梳理目标。</p>
+<p>　　他建议，从记录日常生活开始。每天把自己的活动写下来，尽量详细，从起床吃什么，到上班做了哪些事情，午饭后刷了什么公众号，下班后又花时间干了啥，都记下来。</p>
+<p>　　这样坚持一周，就会积累出一份很真实的“时间账单”。</p>
+<p>　　接下来，每周做一次复盘。哪些事情做得不错？哪些地方还可以改进？本周有没有什么值得感谢的人或事？下周又打算做什么？</p>
+<p>　　这些信息加在一起，就是你现实生活的缩影，也是你“该往哪里努力”的线索。</p>
+<p>　　这时候，就可以把这些记录交给 AI，让它给你提建议。但这里有个关键，你不能只是机械地问 AI“我该如何进步”，你要让它以“战略顾问”的角色来帮你分析。</p>
+<p>　　丹·科伊分享了一个非常实用的 AI 提示词，可以直接复制给 AI，让它像一个经验丰富的导师一样，帮你做分析。</p>
+<p>　　他的提示词是这么写的：</p>
+<p>　　“你是我的个人战略顾问，你有着高情商、敢于直言、曾经创建过数个市值达十亿的公司，而且对心理学、执行策略都很精通，你的任务是帮我找出阻碍我成功的关键差距，可以让我突破舒适区。每次回答都以你最需要听的真话开头，然后提供可执行步骤，最后给我一个直接的挑战或者作业。”</p>
+<p>　　如果你的记录足够详细，AI 就能从你的日常行为中找到问题，比如你的时间是不是浪费在了一些低效的事情上，你的目标是不是太模糊，或者你是不是总在拖延真正重要的事。</p>
+<p>　　更重要的是，AI 不仅会指出问题，还会给出针对性的改进方案，甚至给你布置任务，让你优化行动策略。</p>
+<p>　　不过，这个方法有个前提，你必须足够诚实。如果你刷了三个小时短视频，就别美化成“深入研究短视频行业趋势”；如果你下班后啥也没干，就别写“进行深度思考”。</p>
+<p>　　AI 能帮到你，但它的前提是，你自己得敢于面对真实的自己。</p>
+<p>　　当然，AI 也不是神仙，它不可能一次就给出完美答案。你需要不断和它互动，优化自己的输入，让它的反馈越来越贴合你的需求。经过一段时间的调整和打磨，你就能得到一套真正适合自己的执行计划。</p>
+<h2 id="第三条基于项目学习"><a class="header" href="#第三条基于项目学习">第三条，基于项目学习。</a></h2>
+<p>　　丹·科伊的这个观点非常有价值。他认为，学习最快的方式，不是先看一堆教程，而是直接去做一个真实项目，在遇到问题的时候再去查资料。</p>
+<p>　　你能在项目里做到多少，就学多少，学以致用，才能真正吸收知识。</p>
+<p>　　很多人习惯性地先去搜一堆教程，把大脑塞满信息，结果到了真正动手的时候，反而不知所措，还得重新翻资料、补习教程。</p>
+<p>　　这不仅浪费时间，还容易让自己陷入信息焦虑。所以，与其被动接受海量知识，不如先搭建一个清晰的目标框架，带着问题去学。</p>
+<p>　　当然，这并不是说完全不看教程，而是先开始做，遇到难题时再去学。而且别被“项目”这个词吓到，项目不一定要很庞大，它可以是任何具体的目标，比如制定健身计划、优化一段亲密关系、修一张照片，甚至写一篇文章。项目的意义，就是让你的学习有结构，让每一次查资料、看教程都有明确的方</p>
+<p>　　比如，如果只是说“我要学 AI 绘画”，那需要学习的软件、历史、指令词全都铺天盖地，根本无从下手。但如果你的目标是“帮孩子做一张活动海报”，那么你只需要学会选择合适的软件、找到合适的模板，掌握一些基础指令就够了，学习任务变得具体可行。</p>
+<p>　　漫无目的的学习，会让你的大脑迅速宕机。但如果你有一个明确的目标，那么每次阅读、观看教程，甚至跟别人交流时，都会带着这个目标去思考，学习的效率自然大大提升。</p>
+<h2 id="第四条如果很难下决心开始某个项目就先做一些很小的启动动作"><a class="header" href="#第四条如果很难下决心开始某个项目就先做一些很小的启动动作">第四条，如果很难下决心开始某个项目，就先做一些很小的启动动作。</a></h2>
+<p>　　很多人学习或工作时，最难的不是执行，而是如何开始。针对这个问题，之前有个叫 Justin Sung 的博主提出了一个技巧，叫作“齐格尼克效应的平方（Zeigarnik Effect Squared）”。</p>
+<p>　　众所周知，齐格尼克效应说的是：人更容易记住“未完成”的事情。换句话说，如果你正在做一件事但还没完成，大脑会不断提醒你继续。</p>
+<p>　　但问题是，如果连开始都没开始，怎么制造“未完成”的感觉呢？</p>
+<p>　　Justin Sung 提出的办法是，在正式进入工作或学习前，先做一些很小的启动动作，比如收拾桌子、泡杯咖啡、打开软件随便点几下。</p>
+<p>　　这些事不费脑，也不会让人产生抗拒，但一旦你开始了，大脑就会自然而然地想继续做下去。</p>
+<p>　　这就像很多人不想跑步时，会先骗自己说：“先去健身房走五分钟，实在不想再跑就回家。”</p>
+<p>　　结果往往走了几分钟后，就顺势跑了起来。这个方法的关键，就是降低心理启动成本，用一个微小的动作，让自己进入状态。</p>
+<p>　　当然，前提是你对自己要做的事有清晰的认知，也就是前面说的“目标框架”要明确。如果连“小动作”都不知道该做什么，那可以让 AI 帮你拆解学习计划。</p>
+<p>　　比如，你可以对 AI 说：“我想在 60 天内学会小红书运营，请帮我制定一个详细的学习计划，按天拆分，每天定义一个小任务。”</p>
+<p>　　这样，每天的学习都会有具体的起点，避免陷入拖延或信息过载。</p>
+<h2 id="第五条对于时间不够用的人要把学习和实践融入日常"><a class="header" href="#第五条对于时间不够用的人要把学习和实践融入日常">第五条，对于时间不够用的人，要把学习和实践融入日常。</a></h2>
+<p>　　作者给出了一套简单高效的学习时间安排，特别适合工作忙，但又想推进个人项目的人。</p>
+<p>　　他建议，每天先花 30 到 90 分钟推进项目，不管进展大小，先动手做，别一开始就钻进理论里。做了才知道问题出在哪，才知道该学什么。</p>
+<p>　　接着，用 30 到 60 分钟查资料、看书或视频，但重点是带着问题学，而不是漫无目的地刷信息。这样学习的效率才会更高。</p>
+<p>　　最后，每天留 30 分钟散步或做些轻松的事，可以听播客或有声书，顺便给大脑留点思考的空间。如果有灵感，立刻记录下来，别让好点子溜走。</p>
+<p>　　这样安排时间的核心思路是，先做，再学，最后用轻松的方式进行巩固和反思。</p>
+<p>　　每天的进步可能不大，但长期坚持下来，就会形成强大的积累，而不是陷入“学了很多，却不知道该怎么用”的困境。</p>
+<h2 id="第六条开始写作这是最简单高效的学习方式"><a class="header" href="#第六条开始写作这是最简单高效的学习方式">第六条，开始写作，这是最简单高效的学习方式。</a></h2>
+<p>　　作者的整个成长路径，几乎都是靠分享推动的。所以他建议，把自己正在学的东西写出来，公开展示给大家。这不仅能巩固知识，还能让自己思考得更透彻。</p>
+<p>　　写作其实是所有内容创作的基础。无论是视频、播客，还是社交媒体的短文，核心逻辑都来自文案。</p>
+<p>　　更重要的是，当你试图用文字解释某个概念时，往往能发现自己理解的漏洞，逼着自己回去查资料、补充知识，从而真正掌握它。</p>
+<p>　　这里涉及两个经典的学习方法——费曼技巧和学徒效应。</p>
+<p>　　听着有点学术，但其实很简单：</p>
+<p>　　费曼技巧，也叫费曼学习法，核心思路就是——挑一个概念，试着用最简单的语言讲给一个完全没基础的人听。如果你讲不清楚，说明你自己还没学透。</p>
+<p>　　学徒效应，指的是当你去教别人时，你往往比学生学得还快。因为要教会别人，你就必须把学到的东西重新组织、用自己的方式表达出来，这个过程本身就是深度学习。</p>
+<p>　　所以，如果想真正学透一样东西，就先写出来，或者试着教别人。分享，是最强大的学习加速器。</p>
+<p>　　这个我非常认同。因为我自己在写广播站的过程中，不仅是分享，更是倒逼自己不断学习。</p>
+<p>　　为了讲清楚一个概念，我得查各种资料，甚至连以前不怎么看的学术论文，在过去一段时间也翻看了不少。</p>
+<p>　　而且，视频的作者还列出了具体的写作方法，比如每周写一封邮件或总结，整理自己学到的知识，用自己的话讲给别人听。或者，在社交媒体上发帖，记录自己的问题和思考过程。</p>
+<p>　　写作不只是输出，更是整理思维、深化理解的过程。</p>
+<p>　　当然，有些同学可能会有更细节的问题，比如：“我该用哪个 AI？”</p>
+<p>　　这位 YouTube 博主用的是 ChatGPT，但其实没必要局限于某一个工具。</p>
+<p>　　可以把 AI 当成一个项目，去试试看不同的助手——比如元宝、DeepSeeK、通义、Kimi、智谱，在实际应用中找到最适合自己的那一个。</p>
+<p>　　每个人在这个过程中，都会摸索出属于自己的 AI 使用方法。</p>
+<p>　　最后，我还是重复一遍作者的那句话，在这个快速变化的世界，学习是最核心的“元能力”。</p>
+<p>　　不用等最完美的时机，先动起来，边学边调整，才是最好的方式。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../阅读/其他/文章/成长很重要的一点就是不固执.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../阅读/其他/文章/工作的尽头就是灵活就业？.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../阅读/其他/文章/成长很重要的一点就是不固执.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../阅读/其他/文章/工作的尽头就是灵活就业？.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/其他/文章/怎样用AI比别人快10倍地学习？.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

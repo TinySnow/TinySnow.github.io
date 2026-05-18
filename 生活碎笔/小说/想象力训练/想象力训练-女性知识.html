@@ -1,0 +1,515 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>想象力训练 - 女性知识 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="想象力训练---女性知识"><a class="header" href="#想象力训练---女性知识">想象力训练 - 女性知识</a></h1>
+<p>　　“能不能给我揉揉肩？”她一进客厅便瘫倒在沙发上。面向沙发直挺挺倒下去的那种，我都担心她会不会磕到哪里。</p>
+<p>　　当时我还在切橙子，也不知道她有没有转过头，不过听声音闷闷的，应该是埋在沙发里说的。</p>
+<p>　　“干什么去了，这么累？”</p>
+<p>　　“还不是杨雪韵她要去逛街，非要拉着我一起。”</p>
+<p>　　啊，声音清晰一点了，应该是转过头了。她声音懒懒的，有些生活味。</p>
+<p>　　“陆羽宁呢？他没陪着吗？怎么轮到你了……”</p>
+<p>　　最后一瓣橙子，摆盘。嗯，看起来还不错。</p>
+<p>　　“杨雪韵说他陪朋友打球去了，有些赌气，非要我陪她。要不怎么能轮到我嘛。”</p>
+<p>　　“吃橙子啦，大美女，”我端着盘子走向她，“所以买了多少，累得这么够呛……”，我坐在她身边，问她。</p>
+<p>　　“呜呜……别提了……所以你能给我揉一揉吗？”她看向我，右眼一眨，一个 Wink 甩过来，“我、的、骑、士、大、人？”</p>
+<p>　　我举手投降。</p>
+<p>　　“好好好，我的公主大人。”我叹息一声，后撤一步，在沙发和茶几间做半蹲状。</p>
+<p>　　“嘿嘿……”</p>
+<p>　　绕到沙发背后，看到她拿起一瓣橙子。</p>
+<p>　　“那我要开始了啊……”我把两只手放到她肩上，如临大敌地说。</p>
+<p>　　“你这个阵仗，又不是卫星点火，至于吗……”她有些无语。我看不到她的表情。</p>
+<p>　　“话说你为什么要绕到后边去？”她一边吃着橙子一边说，“我侧一下身子不就好了？”</p>
+<p>　　我摸索着记忆中父亲教给我的按摩手法，一边按摩一边说：“这样你不就不方便吃了嘛，而且沙发后边也好操作一点。”</p>
+<p>　　“这样啊……”她仍只是吃着，没管我。</p>
+<p>　　我揉着揉着，忽然摸到了一个奇怪的东西，然后我瞬间明白了那是什么……</p>
+<p>　　她今天穿短袖，露出半截雪白的胳膊，短袖克莱因色。这种蓝色纯度高，不容易透，所以开始没发觉。我一直觉得这个颜色开朗，和现在透过窗户照进来的橙色光线一样，感觉很阳光。</p>
+<p>　　“那个……公主大人……”我有些谨慎，“摸到你的肩带了……这样没问题吗……”</p>
+<p>　　“欸，没问题啊。为什么会有这种想法？”她回答说。</p>
+<p>　　“这样啊，那就好。”我正准备低头继续干活，然后看她仰过头来看着我。</p>
+<p>　　“还是说……”她露出了恶作剧一般的笑容。</p>
+<p>　　我感觉不妙。</p>
+<p>　　“你……害羞了？”她后仰着盯着我嘿嘿笑。</p>
+<p>　　“吃你的橙子去！”我双手用力一捏。</p>
+<p>　　“啊……疼疼疼……”她马上将头摆了回去，动作迅速，我俩头差点撞上。好险。</p>
+<p>　　“那么用力干嘛……好疼……明明之前那么舒服……”</p>
+<p>　　“公主大人，请您说话之前考虑考虑措辞。”</p>
+<p>　　“你个色鬼。”</p>
+<p>　　我听到她的声音从前面传来，但马上又看到她仰过头盯着我。</p>
+<p>　　“不过……”她又开始笑。</p>
+<p>　　又干嘛啊……我别过头去不看她，真受不了这人了。拜托饶了我吧……</p>
+<p>　　“看吧！果然还是害羞了嘛！”</p>
+<p>　　一阵大笑。</p>
+<p>　　“都、说、了，吃你的橙子去！！！”</p>
+<p>　　她那秀气的肩膀被人捏着一阵乱晃，直到她受不了，头晕眼花。“好了好了，我错了我错了，别晃了，不调戏你就是了……”然后我才继续给她揉肩。</p>
+<p>　　真是的，揉个肩膀事情这么多，我真的不知道当初怎么喜欢上她的……</p>
+<p>　　“不过，话说回来，肩带这个东西真的让人又爱又恨啊。”</p>
+<p>　　“怎么说？”我继续捏着。</p>
+<p>　　“嘿嘿……”她一笑，“想听吗？”</p>
+<p>　　整个房间瞬间安静了下来。只剩下我和她一同买的那只钟表在墙上愉快走动的声音，除此之外，安静到阳光下灰尘的飞舞都惹人注意。</p>
+<p>　　她没看我，仍只是自顾自地吃着橙子。</p>
+<p>　　“手停下了哦？想听的话就继续揉。”</p>
+<p>　　……</p>
+<p>　　“嗯，真是好孩子。”我手下的女孩子传来一声舒服的呻吟声。</p>
+<p>　　这个人……绝对是在捉弄我吧……改天我一定要她好看！</p>
+<p>　　“所以，怎么说？”</p>
+<p>　　“肩带几乎是女生不得不要的一种东西。”</p>
+<p>　　“不是有那种无肩带式的抹胸内衣吗？那个不行吗？”</p>
+<p>　　“我就猜到你要说这个。那个其实大多数产品都稳不住，会往下滑的，穿起来倒是轻松，活动的时候就痛苦了。”</p>
+<p>　　“那其他款式呢？总有一款比较合适吧？”</p>
+<p>　　“那你可真想多了。挂脖式的内衣会让脖子很累；运动内衣又太丑了……虽说运动的时候确实很棒，但是平时真的不想穿；有钢圈的又会扎人，扎一下很疼的；蕾丝边的很多只是好看，实际上穿起来有毛刺，硌得人不舒服；海绵垫的，厚的又热，薄了又怕遮不住；系绳的对我来说没什么安全感，而且因为承重面积小，久了会在背上或者肩上压出一道印。说到最后还是最普通的内衣最合适，但是肩带又隐藏不了。”</p>
+<p>　　“不是有那种透明的肩带吗……我记得很多露肩礼服的女孩子都会搭那种肩带的。”</p>
+<p>　　“可别说那个了。那个也就只有露肩的时候会用了，号称透明，你总不能阻止它反光吧？而且大多数产品是塑料做的，不是布料，布料透明不了，而塑料接触皮肤有多难受不用我多说了吧。那个东西粘性还挺强的，不太好调整。”</p>
+<p>　　“调整啥……”</p>
+<p>　　“男孩子可能不会知道，其实女生调整内衣的时候还挺多的哦。比如肩带下滑的时候，或者做伸展运动之类的，内衣也会上蹿。”</p>
+<p>　　“我头一次知道……”我确实有些感叹……</p>
+<p>　　头一次知道这么多东西，这么多……让人害羞的东西……</p>
+<p>　　“嘿嘿……”</p>
+<p>　　“怪不得好多女孩子都说不想穿内衣。”</p>
+<p>　　“嗯……其实我都不想穿，太麻烦了。”</p>
+<p>　　“那你会有不穿的情况吗？”我随口一问。</p>
+<p>　　她猛地转过头来，把我吓一跳。手也自然脱离了她的肩膀。</p>
+<p>　　“问这种问题可是犯规的哦？”她嘿嘿一笑，“我选择保密。”</p>
+<p>　　“那我还是不猜了吧。”</p>
+<p>　　“那样最好。”她又背对我，把肩膀靠过来。</p>
+<p>　　“不过话说回来，有很多女生会选择在冬天体验一些不穿内衣的日子。冬天衣服多，还厚，穿不穿就看不出来了。”</p>
+<p>　　“冬天啊……”</p>
+<p>　　“没办法，只能在冬天。其实夏天才是最不想穿的时候，本来就热，容易出汗，还要多穿一层布料。不穿的话，有个东西又会突出来，到时候很多男生盯着你看，不尴尬死你才怪。性质恶劣一点还会有人说你不检点，私底下很开放什么的……”</p>
+<p>　　“这样啊……还真是辛苦啊……”</p>
+<p>　　“其实还好，习惯了。”</p>
+<p>　　听到这句“习惯了”，我忽然莫名地心疼。对于眼前的这个女生，尤其心疼。</p>
+<p>　　“既然这么讨厌，在家你可以不穿哦？”</p>
+<p>　　她慢慢地转过身来，白了我一眼，皓齿微启，落下四个音节：“你个变态。”</p>
+<p>　　我汗颜。</p>
+<p>　　她旋即又转过身去，把肩膀靠过来。我的工作继续。</p>
+<p>　　“说到底还是胸部发育了，没办法。说起这个，有个很有意思的事实：你知道为什么有些女孩子跑步姿势横着摆臂吗？看起来特别诡异的那种。”</p>
+<p>　　“不知道……我以为是她们没有受到过正常的运动教育。是这样吗？”</p>
+<p>　　“不是。女生发育早，那时候又什么都不懂，以为自己不正常。跑步的时候就横向摆臂，以为多少能遮掩一下。不过大了就知道那不过是心里安慰罢了。”</p>
+<p>　　“又学到了……”今天被刷新了多少三观我都不知道了……</p>
+<p>　　“那你呢？”我忽然很想了解眼前这个喜欢的女生。</p>
+<p>　　“什么？”</p>
+<p>　　“那个……”我有些不知道怎么开口，“发育时期的事情啦……我想多了解你一些。”</p>
+<p>　　她又转过身来白了我一眼。我再次汗颜。不过这确实是我的真实想法。</p>
+<p>　　“这个倒是可以给你说，”她顿了顿，“其实我跟她们差不多啦……当初发育不是很明显的时候，我也没太在意。后来越来越大，就开始慌了，不知道该拿胸前的突起怎么办才好。给妈妈说吧，又不敢，她也没怎么提到过这种事，不过还好后来她看出来了，拉着我聊了一天。后面才放心下来。”</p>
+<p>　　“感觉老一辈的人都很少提这种事情呢……”</p>
+<p>　　“对啊，从那个时候我就不太喜欢内衣了。妈妈原来还跟我说，这以后会成为你魅力的一部分。但是那个时候哪儿懂嘛……”</p>
+<p>　　“现在确实挺有魅力的……”我小声说。</p>
+<p>　　“嗯？你说了什么吗？”她问。</p>
+<p>　　“没……没什么……”我糊弄道。</p>
+<p>　　“我可都听见了啊！”她嘿嘿一笑，“你要请我吃饭对不对！”</p>
+<p>　　“对对对。”我都懒得糊弄她了，随口应着。</p>
+<p>　　“你说我魅力大，其实我本身没有什么感觉啦……就像我说你认真的时候很帅，你也会一头雾水对不对。”</p>
+<p>　　看来还是被她听到了……不过也确实，离得这么近，听不见才奇怪吧。</p>
+<p>　　“这倒是。”</p>
+<p>　　“对吧。而且，我真的对胸部没什么感觉，好多时候都只觉得麻烦……再说了，长这么大，不都便宜了你吗……跟我有什么关系……”</p>
+<p>　　开始还中气十足，后面声音越说越小，我还以为怎么了……</p>
+<p>　　现在听得只想逃跑……</p>
+<p>　　对不起，公主大人，你有一个色骑士……</p>
+<p>　　“好了好了！揉了得有半个小时了吧，还酸吗？”为了掩饰尴尬和羞耻，我开始转移话题。</p>
+<p>　　“啊，不酸了。挺舒服的，手法不错嘛，没少练吧？”她转过头来嘿嘿一笑。</p>
+<p>　　我满脸黑线，直想给她来个脑瓜崩。</p>
+<p>　　“你真是一瓣没给我剩啊……”我绕到前面去，坐在沙发上，看了一眼茶几，哀叹。</p>
+<p>　　“这不是说得口渴了嘛，”她讪讪笑道，“再说了，虽说没吃，但是获得了这么多知识，也不亏，不是吗？”</p>
+<p>　　“但是你确实一瓣也没给我剩啊？”我抓住这个她想逃避的话题，直视着她。</p>
+<p>　　“好啦好啦，下次给你切嘛……骑士大人好小气……”</p>
+<p>　　这个可爱的女孩子嘟囔道。</p>
+<p>　　我终于知道那些想欺负人的心情是怎么来的了，于是接着追杀。</p>
+<p>　　“那这次呢？你怎么补偿我？”我嘿嘿一笑。</p>
+<p>　　她很明显地凝固住了。</p>
+<p>　　“你想要什么？”她小声地问道。</p>
+<p>　　“你知道我想要什么。”某个人笑得更大声了。</p>
+<p>　　“啊……我、我知道了……”她颤抖着声音说。</p>
+<p>　　我怎么感觉有点不对劲。</p>
+<p>　　下一秒看到她把双手放到衣角，准备开始脱衣服。</p>
+<p>　　“等下等下等下，你干什么啊！笨蛋！！！”我双手捂住眼睛。</p>
+<p>　　“呃……男孩子不都是想要这个的吗……”</p>
+<p>　　我从指缝间偷瞄了一眼，看她没有脱下来，安心地放下手来，叹了一口气。旋即凑过身，抱住了她。</p>
+<p>　　“我想要的是这个啦，笨蛋。看来公主大人也需要好好学习男性知识呢。”我在她耳边笑着声说。</p>
+<p>　　“这样啊……你还真是奇怪呢。”</p>
+<p>　　我感受到她双手摩挲着，尝试回拥我。过了这么久，她还是不习惯拥抱啊……不过就算这样，她还是在回应着我，我觉得很开心。</p>
+<p>　　“啊，还想要一个东西。”我说。</p>
+<p>　　我们从相拥的状态分开。</p>
+<p>　　“还有什么？”她笑笑，似乎笃定了我不会要什么过分的东西。</p>
+<p>　　真是可恶啊，这个笑容。</p>
+<p>　　“还有这个。”我说。</p>
+<p>　　凑近她的脸庞，从下面盯着她，然后伸出舌头，小心地舔了一下她嘴角的橙粒。</p>
+<p>　　“这样就吃到了，不亏。”我笑笑。</p>
+<p>　　她猛地抱住我。</p>
+<p>　　“……笨蛋。”</p>
+<p>　　我有点懵：“怎么了？”</p>
+<p>　　“……”</p>
+<p>　　我尝试从拥抱的状态分开。</p>
+<p>　　“不要……不要看我的脸……”我听到耳边传来这么一句话。</p>
+<p>　　什么嘛……原来这妮子害羞了啊……</p>
+<p>　　我在心里大笑。虽然这么做我也很害羞，但是好说歹说欺负回来了一回，这次是我赢了。</p>
+<p>　　“不行……我要反击。”耳边又传来了这么一句话。</p>
+<p>　　我感觉不太妙……</p>
+<p>　　抱着的这个女生是不服输的类型的啊，都快忘了这一点了。</p>
+<p>　　“你很喜欢抱抱的吧？”她问。</p>
+<p>　　“嗯。”我应了一声。</p>
+<p>　　因为我们两个抱在一起，我很明显地能够感受到她说话时，胸腔震动的感觉。最不妙的是，她在我应声完之后，心跳开始急速上升。搞得我也开始心脏狂跳。</p>
+<p>　　心跳好吵……她要做些什么？</p>
+<p>　　半晌无言，只是拥抱。</p>
+<p>　　墙上的挂钟仍然在害羞地走着，发出滴答滴答的声音。阳光下，灰尘们仍在飞舞，很难不引人注意。太阳西斜，强烈而暧昧的射线，透过窗户照到了她的背上。</p>
+<p>　　“看着我。”发怔之时，听到了她细若蚊蝇的请求。</p>
+<p>　　旋即，身体分开。</p>
+<p>　　她眼睛含泪地盯着我，两只小臂往身后移动。</p>
+<p>　　正当我不明白发生了什么的时候，一声细微的“啪嗒”声，钻入了我的耳朵。那是某种金属结构脱落的声音。饶是呆若木头的我也知道那是什么声音。</p>
+<p>　　我看着她克莱因色的 T 恤，身侧忽然胀大了一圈。</p>
+<p>　　“你在干些什么啊……”不用说我也知道我的脸上正在迅速地发烧。</p>
+<p>　　有些受不了这股羞意，开始用手遮起脸。</p>
+<p>　　“看着我！”</p>
+<p>　　声音不大，但是有股莫名的威严，我无法抗拒。</p>
+<p>　　威严之下，全是羞意。</p>
+<p>　　我一点点地看着，她的脸变得更红，我的脸也变得更加滚烫；一点点地看着，她左手缩进袖口，右手从里面拉出一条肩带；一点点地看着，她右手缩进袖口，左手从里面拉出一条肩带。</p>
+<p>　　阳光透过 T 恤，印下一深一浅的阴影，随后，一团阴影忽然落下来，从 T 恤衣角下方被她勾出……</p>
+<p>　　她将那水蓝色的物件用手指勾到身后，张开双臂：“来吧，抱抱。”</p>
+<p>　　眼睛里仍然含着泪珠，但她就那么直勾勾地盯着我，视线从没移开过。</p>
+<p>　　我的眼睛也快含泪了……</p>
+<p>　　我好想逃……</p>
+<p>　　“这不太好吧……”我本能地感到羞耻。</p>
+<p>　　她一把将我拉过去，抱住我。</p>
+<p>　　“我说过我要反击的吧……”耳边伊人，气息紊乱，音节颤抖不止。</p>
+<p>　　我手掌按着她光滑的背部，脑子里一片空白。</p>
+<p>　　夏天，一次完全不同于以往的拥抱体验。</p>
+<p>　　此次欺负人大赛，以我的完败而告终。</p>
+<br />
+<p>　　南国微雪 Miyuki</p>
+<p>　　2022 年 9 月 26 日</p>
+<p>　　</p>
+<p>　　</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../生活碎笔/小说/想象力训练/理想雪-应不应该.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../生活碎笔/小说/想象力训练/想象力训练-分享.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../生活碎笔/小说/想象力训练/理想雪-应不应该.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../生活碎笔/小说/想象力训练/想象力训练-分享.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/小说/想象力训练/想象力训练-女性知识.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

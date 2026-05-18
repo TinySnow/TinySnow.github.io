@@ -1,0 +1,580 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第二十章：胰腺炎 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第二十章胰腺炎"><a class="header" href="#第二十章胰腺炎">第二十章：胰腺炎</a></h1>
+<h2 id="一病因及发病机制"><a class="header" href="#一病因及发病机制">一、病因及发病机制</a></h2>
+<ol>
+<li>在我国，引起急性胰腺炎 <strong>最主要</strong> 病因是：胆道疾病，称为胆源性胰腺炎。酒精与其共同导致 AP。</li>
+<li>胰道阻塞，胰管结石、蛔虫、狭窄、肿瘤（壶腹周围癌、胰腺癌）。</li>
+<li>其他病因：十二指肠降段疾病、手术与创伤、药物（硫唑嘌呤，肾上腺糖皮质激素，噻嗪类利尿剂，四环素，磺胺等）、感染及全身炎症反应、过度饮食。</li>
+<li>代谢因素：高甘油三酯血症可能因脂球微栓影响胰腺微循环及胰酶分解甘油三酯致毒性脂肪酸损伤细胞而引|发或加重 AP。 <strong>当甘油三酯 &gt; 11.3mmol/L，极易发生。</strong></li>
+<li>各种致病因素导致胰管内高压，腺泡细胞内 Ca2+ 水平显著上升，溶酶体在腺泡细胞内提前激活酶原，大量活化的胰酶消化胰腺自身。
+<ul>
+<li>损伤腺泡细胞，激活炎症反应的枢纽分子及下游系列 <strong>炎症介质</strong> 如 <strong>肿瘤坏死因子-a、白介素-1、花生四烯酸代谢产物</strong> （前列腺素、血小板活化因子）、活性氧等均可增加血管通透性、导致大量炎性渗出。</li>
+<li>胰腺微循环障碍使胰腺出血、坏死。炎症过程中参与的众多因素可以 <strong>正反馈</strong> 方式相互作用，使炎症逐级放大，当超过机体的抗炎能力时，炎症向全身扩展，出现多器官炎症性损伤及功能障碍。</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20251112185343902.png" alt=""></p>
+<h2 id="二病理"><a class="header" href="#二病理">二、病理</a></h2>
+<h3 id="一急性水肿型"><a class="header" href="#一急性水肿型">一）急性水肿型</a></h3>
+<ul>
+<li>较多见，病变累及部分或整个胰腺。</li>
+<li>胰腺肿大、充血、水肿和炎症细胞浸润， <strong>可有轻微的局部坏死</strong> 。</li>
+</ul>
+<h3 id="二急性出血坏死型"><a class="header" href="#二急性出血坏死型">二）急性出血坏死型</a></h3>
+<ul>
+<li>相对较少，胰腺内有灰白色或黄色斑块的脂肪组织坏死，出血严重者，则胰腺呈棕黑色并伴有新鲜出血，坏死灶外周有 <strong>炎症细胞浸润</strong> ，常见 <strong>静脉炎和血栓</strong> 。</li>
+</ul>
+<h2 id="三ap-多器官功能障碍的症状体征及相应的病理生理改变症状及体征"><a class="header" href="#三ap-多器官功能障碍的症状体征及相应的病理生理改变症状及体征">三、AP 多器官功能障碍的症状、体征及相应的病理生理改变症状及体征</a></h2>
+<h3 id="示例症状及体征"><a class="header" href="#示例症状及体征">示例：症状及体征</a></h3>
+<ul>
+<li>其相应的病理生理改变</li>
+</ul>
+<h3 id="一低血压休克"><a class="header" href="#一低血压休克">一）低血压、休克</a></h3>
+<ul>
+<li>大量炎性渗出、严重炎症反应及感染</li>
+</ul>
+<h3 id="二呼吸困难"><a class="header" href="#二呼吸困难">二）呼吸困难</a></h3>
+<ul>
+<li>肺间质水肿，成人呼吸窘迫综合征，胸腔积液；</li>
+<li>严重肠麻痹及腹膜炎</li>
+</ul>
+<h3 id="三腹痛腹胀呕吐全腹膨隆张力较高广泛压痛及反跳痛移动性浊音阳性肠鸣音少而弱甚至消失"><a class="header" href="#三腹痛腹胀呕吐全腹膨隆张力较高广泛压痛及反跳痛移动性浊音阳性肠鸣音少而弱甚至消失">三）腹痛、腹胀、呕吐、全腹膨隆、张力较高，广泛压痛及反跳痛，移动性浊音阳性，肠鸣音少而弱，甚至消失</a></h3>
+<ul>
+<li>肠麻痹、腹膜炎、腹腔间隔室综合征</li>
+</ul>
+<h3 id="四少尿无尿"><a class="header" href="#四少尿无尿">四）少尿、无尿</a></h3>
+<ul>
+<li>休克、肾功能不全</li>
+</ul>
+<h3 id="五黄疸加深"><a class="header" href="#五黄疸加深">五）黄疸加深</a></h3>
+<ul>
+<li>胆总管下端梗阻；</li>
+<li>肝损伤或肝衰竭</li>
+</ul>
+<h3 id="六grey-turner-征cullen-征"><a class="header" href="#六grey-turner-征cullen-征">六）Grey-Turner 征，Cullen 征</a></h3>
+<ul>
+<li>胰腺出血坏死</li>
+</ul>
+<h3 id="七体温持续升高或不降"><a class="header" href="#七体温持续升高或不降">七）体温持续升高或不降</a></h3>
+<ul>
+<li>严重炎症反应及感染</li>
+</ul>
+<h3 id="八意识障碍精神失常"><a class="header" href="#八意识障碍精神失常">八）意识障碍，精神失常</a></h3>
+<ul>
+<li>胰性脑病</li>
+</ul>
+<h3 id="九上消化道出血"><a class="header" href="#九上消化道出血">九）上消化道出血</a></h3>
+<ul>
+<li>应激性溃疡，左侧门静脉高压</li>
+</ul>
+<h3 id="十猝死"><a class="header" href="#十猝死">十）猝死</a></h3>
+<ul>
+<li>严重心律失常</li>
+</ul>
+<h2 id="四临床表现"><a class="header" href="#四临床表现">四、临床表现</a></h2>
+<h3 id="一症状"><a class="header" href="#一症状">一）症状</a></h3>
+<h4 id="腹痛"><a class="header" href="#腹痛">腹痛</a></h4>
+<ul>
+<li>是绝大多数病人的 <strong>首发症状</strong> ，常较剧烈，多位于中左上腹甚至全腹，部分病人腹痛向背部放射。</li>
+<li>病人病初可伴有恶心、呕吐，轻度发热。</li>
+<li>常见体征：中上腹压痛， <strong>肠鸣音减少</strong> ，轻度脱水貌。</li>
+</ul>
+<h4 id="发热"><a class="header" href="#发热">发热</a></h4>
+<ul>
+<li>严重的炎症反应及感染</li>
+</ul>
+<h4 id="低血压或休克"><a class="header" href="#低血压或休克">低血压或休克</a></h4>
+<ul>
+<li>重症胰腺炎常发生；</li>
+<li>主要原因有效血容量不足，缓激肽类物质致周围血管扩张，并发消化道出血。</li>
+</ul>
+<h4 id="水电紊乱"><a class="header" href="#水电紊乱">水电紊乱</a></h4>
+<ul>
+<li>脱水；</li>
+<li>低钾-代碱；</li>
+<li><strong>低钙血症</strong> （脂肪酸 + 钙；刺激甲状腺分泌降钙素）；</li>
+<li>部分 <strong>血糖增高</strong> ；</li>
+</ul>
+<h3 id="二体征"><a class="header" href="#二体征">二）体征</a></h3>
+<ul>
+<li>轻者上腹压痛；</li>
+<li>重者有急性腹膜炎体征；</li>
+<li><strong>Grey-Turner 征；</strong></li>
+<li><strong>Cullen 征。</strong></li>
+</ul>
+<h2 id="五并发症"><a class="header" href="#五并发症">五、并发症</a></h2>
+<h3 id="一急性胰周液体积聚"><a class="header" href="#一急性胰周液体积聚">一）急性胰周液体积聚</a></h3>
+<ul>
+<li>AP 早期，胰腺内、胰周较多渗出液积聚，约半数自行吸收</li>
+</ul>
+<h3 id="二胰瘘"><a class="header" href="#二胰瘘">二）胰瘘</a></h3>
+<ul>
+<li>胰腺炎症致胰管破裂，胰液从胰管漏出，即为胰瘘</li>
+</ul>
+<h3 id="三胰腺假性囊肿及胰性胸腹腔积液"><a class="header" href="#三胰腺假性囊肿及胰性胸腹腔积液">三）胰腺假性囊肿及胰性胸、腹腔积液</a></h3>
+<ul>
+<li>含有胰内痰的渗出液积聚，常难以吸收，病程 <strong>1 个月左右</strong> ，纤维组织增生形成囊壁，与真性囊肿的区别在于，由肉芽或纤维组织构成的囊壁缺之上皮，囊内无菌生长， <strong>含有胰酶</strong> 。</li>
+<li>大量腺炎性渗出伴胰内瘘可导致胰性胸、腹腔积液。</li>
+</ul>
+<h3 id="四胰腺坏死"><a class="header" href="#四胰腺坏死">四）胰腺坏死</a></h3>
+<ul>
+<li>单纯胰腺实质坏死、胰周脂肪坏死及胰腺实质伴胰周脂肪坏死发生的概率分别约为 5%、20% 及 75%。</li>
+<li>早期急性坏死物集聚含有实性及液体成分，通常边界不清。</li>
+<li>1 个月左右，随着病变周围网膜包裹、纤维组织增生，这些实性及液性坏死物被包裹、局限，称为包裹之坏死物。</li>
+</ul>
+<h3 id="五胰腺脓肿"><a class="header" href="#五胰腺脓肿">五）胰腺脓肿</a></h3>
+<ul>
+<li>胰周积液、胰腺假性囊肿或胰腺坏死感染，发展为脓肿。</li>
+</ul>
+<h3 id="六左侧门静脉高压"><a class="header" href="#六左侧门静脉高压">六）左侧门静脉高压</a></h3>
+<ul>
+<li>胰腺坏死严重、大量渗出、假性囊肿压迫和迁延不愈之炎症，导致脾静脉血栓形成，继而脾大、胃底静脉曲张。</li>
+</ul>
+<h2 id="六辅助检查"><a class="header" href="#六辅助检查">六、辅助检查</a></h2>
+<h3 id="一血淀粉酶"><a class="header" href="#一血淀粉酶">一）血淀粉酶</a></h3>
+<ul>
+<li>起病后 <strong>2~12 小时开始升高，24 达到峰值，48 小时开始下降，持续 3~5 天</strong> ；</li>
+<li>高低不一定反映病情轻重</li>
+</ul>
+<h3 id="二血清脂肪酶"><a class="header" href="#二血清脂肪酶">二）血清脂肪酶</a></h3>
+<ul>
+<li>起病后 <strong>24~72 小时开始上升，持续 7~10 天</strong> ，敏感性及特异性优于血淀粉酶</li>
+</ul>
+<h3 id="三血糖"><a class="header" href="#三血糖">三）血糖</a></h3>
+<ul>
+<li>持久的空腹血糖 <strong>&gt; 11.2 mmol/L</strong> ，反映胰腺坏死，预后不良</li>
+</ul>
+<h3 id="四血钙"><a class="header" href="#四血钙">四）血钙</a></h3>
+<ul>
+<li><strong>&lt; 2 mmol/L</strong> ，提示重症胰腺炎；</li>
+<li>低血钙程度与临床严重程度平行</li>
+</ul>
+<h3 id="五b-超"><a class="header" href="#五b-超">五）B 超</a></h3>
+<ul>
+<li>作为常规初筛检查</li>
+</ul>
+<h3 id="六ct"><a class="header" href="#六ct">六）CT</a></h3>
+<ul>
+<li>增强CT是诊断胰腺坏死的 <strong>最佳方法</strong></li>
+</ul>
+<h2 id="七诊断"><a class="header" href="#七诊断">七、诊断</a></h2>
+<ul>
+<li>确定是否为 AP，应具备下列 3 条中任意 2 条：
+<ol>
+<li><strong>急性、持续中上腹痛；</strong></li>
+<li><strong>血淀粉酶或脂肪酶大于正常值上限 3 倍；</strong></li>
+<li><strong>AP 的典型影像学改变。</strong></li>
+</ol>
+</li>
+<li>此诊断一般应在病人就诊后 <strong>48 小时内</strong> 明确。</li>
+</ul>
+<h2 id="八疾病分度"><a class="header" href="#八疾病分度">八、疾病分度</a></h2>
+<ul>
+<li>根据器官衰竭、胰腺坏死及胰腺感染情况将 AP 程度分为下列 4 种程度</li>
+</ul>
+<ol>
+<li>
+<p><strong>轻症急性</strong> 胰腺炎（mild acute pancreatitis，MAP）</p>
+</li>
+<li>
+<p><strong>中度重症急性</strong> 胰腺炎（moderately severe acute pancreatitis, MSAP）</p>
+</li>
+<li>
+<p><strong>重症急性</strong> 胰腺炎（severe acute pancreatitis，SAP）</p>
+</li>
+<li>
+<p><strong>危重急性</strong> 胰腺炎（criticalacute pancreatitis，CAP）</p>
+</li>
+</ol>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th>MAP</th><th>MSAP</th><th>SAP</th><th>CAP</th></tr>
+</thead>
+<tbody>
+<tr><td>器官衰竭</td><td>无</td><td>&lt; 48 小时内恢复</td><td>&gt; 48 小时</td><td>&gt; 48 小时</td></tr>
+<tr><td></td><td>和</td><td>和(或)</td><td>或</td><td>和</td></tr>
+<tr><td>胰腺坏死</td><td>无</td><td>无菌性</td><td>感染性</td><td>感染性</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="九治疗"><a class="header" href="#九治疗">九、治疗</a></h2>
+<h3 id="一一般原则"><a class="header" href="#一一般原则">一）一般原则</a></h3>
+<ul>
+<li>AP，即使是 SAP，应 <strong>尽可能采用内科及微创治疗</strong> 。</li>
+<li>临床实践表明，SAP 时手术创伤将加重全身炎症反应，增加死亡率。</li>
+</ul>
+<h3 id="二监护重症病人"><a class="header" href="#二监护重症病人">二）监护重症病人</a></h3>
+<ul>
+<li>48 小时内禁食， <strong>胃肠减压</strong> 。</li>
+</ul>
+<h3 id="三维持水电解质平衡"><a class="header" href="#三维持水电解质平衡">三）维持水、电解质平衡</a></h3>
+<ul>
+<li><strong>防止休克</strong> ，但 SAP 根据量出为入。</li>
+</ul>
+<h3 id="四止痛"><a class="header" href="#四止痛">四）止痛</a></h3>
+<ul>
+<li>腹痛剧烈者可予哌替啶（ <strong>禁用吗啡</strong> ，吗啡可收缩奥迪括约肌）</li>
+</ul>
+<h3 id="五抑制或减少胰液和胰酶分泌"><a class="header" href="#五抑制或减少胰液和胰酶分泌">五）抑制或减少胰液和胰酶分泌</a></h3>
+<ul>
+<li>选用生长激素及类似物。</li>
+</ul>
+<h3 id="六控制炎症"><a class="header" href="#六控制炎症">六）控制炎症</a></h3>
+<ul>
+<li>选用生长激素、奥曲肽（可抑制胰液的分泌，更重要的是有助于控制胰腺及全身炎症反应）。</li>
+</ul>
+<h3 id="七抗感染"><a class="header" href="#七抗感染">七）抗感染</a></h3>
+<ul>
+<li>针对革兰氏阴性杆菌或厌氧菌。</li>
+</ul>
+<h3 id="八针对并发症"><a class="header" href="#八针对并发症">八）针对并发症</a></h3>
+<h4 id="胰腺假性囊肿"><a class="header" href="#胰腺假性囊肿">胰腺假性囊肿</a></h4>
+<ul>
+<li><strong>&lt; 4 cm 的囊肿几乎均可自行吸收。</strong></li>
+<li>假性囊肿 &lt; 5 cm时，6 周内约 50% 可自行吸收。</li>
+<li>&gt; 6cm 者或多发裹肿则自行吸收的机会较小，在 <strong>观察 6-8 周后</strong> ，若无缩小和吸收的趋势，则需要 <strong>引流</strong> 。</li>
+<li>其方式包括： <strong>经皮穿刺引流内镜引流、外科引流</strong> 。</li>
+</ul>
+<h4 id="胰腺脓肿的处理"><a class="header" href="#胰腺脓肿的处理">胰腺脓肿的处理</a></h4>
+<ul>
+<li>在充分抗生素治疗后，脓肿不能吸收， <strong>可行腹腔引流或灌洗</strong> ，如仍不能控制感染，应施行坏死组织清除和引流手术。</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第四部分：消化系统疾病/第十九章：胆道系统肿瘤.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第四部分：消化系统疾病/第二十一章：胰腺癌.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第四部分：消化系统疾病/第十九章：胆道系统肿瘤.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第四部分：消化系统疾病/第二十一章：胰腺癌.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第四部分：消化系统疾病/第二十章：胰腺炎.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

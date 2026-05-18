@@ -1,0 +1,776 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第十八章：抗精神失常药 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第十八章抗精神失常药"><a class="header" href="#第十八章抗精神失常药">第十八章：抗精神失常药</a></h1>
+<h2 id="一抗精神病药抗精神分裂症"><a class="header" href="#一抗精神病药抗精神分裂症">一、抗精神病药（抗精神分裂症）</a></h2>
+<h3 id="一概述"><a class="header" href="#一概述">一）概述</a></h3>
+<h4 id="精神分裂症的发病机制"><a class="header" href="#精神分裂症的发病机制">精神分裂症的发病机制</a></h4>
+<ul>
+<li>脑内中脑-边缘系统</li>
+<li>中脑-皮层系统</li>
+<li>两者激动 DA（D<sub>2</sub>）受体</li>
+</ul>
+<h4 id="抗精神病药的作用机制"><a class="header" href="#抗精神病药的作用机制">抗精神病药的作用机制</a></h4>
+<ul>
+<li>阻断脑内的 DA（D<sub>2</sub>）受体</li>
+</ul>
+<h4 id="脑内-da-神经系统"><a class="header" href="#脑内-da-神经系统">脑内 DA 神经系统</a></h4>
+<h5 id="调控人类精神活动治疗作用"><a class="header" href="#调控人类精神活动治疗作用">调控人类精神活动（治疗作用）</a></h5>
+<ul>
+<li>中脑-边缘系统</li>
+<li>中脑-皮层系统</li>
+</ul>
+<h5 id="可能牵涉的其他不良反应"><a class="header" href="#可能牵涉的其他不良反应">可能牵涉的其他不良反应</a></h5>
+<ul>
+<li>黑质-纹状体系统：锥体外系，调节运动</li>
+<li>结节-漏斗系统：调控垂体激素分泌</li>
+</ul>
+<h3 id="二吩噻嗪类"><a class="header" href="#二吩噻嗪类">二）吩噻嗪类</a></h3>
+<h4 id="氯丙嗪冬眠灵"><a class="header" href="#氯丙嗪冬眠灵">氯丙嗪（冬眠灵）</a></h4>
+<h5 id="药动学"><a class="header" href="#药动学">药动学</a></h5>
+<ul>
+<li>不同个体口服相同剂量，血药浓度相差可达 10 倍，故需注意用药剂量个体化。</li>
+<li>老年患者消除速率慢，应调整用药剂量。</li>
+</ul>
+<h5 id="作用机制"><a class="header" href="#作用机制">作用机制</a></h5>
+<p>阻断一堆受体</p>
+<p>治疗作用：阻断 D<sub>2</sub> 受体；</p>
+<p>副作用：阻断 α 受体、H<sub>1</sub> 受体、5-HT<sub>2</sub> 受体、M 受体</p>
+<h5 id="药理作用"><a class="header" href="#药理作用">药理作用</a></h5>
+<h6 id="对中枢神经系统的作用"><a class="header" href="#对中枢神经系统的作用">对中枢神经系统的作用</a></h6>
+<p><strong>概述</strong></p>
+<ul>
+<li>阻断 DA 受体而发挥的 治疗作用：
+<ol>
+<li>镇静、抗精神病</li>
+<li>镇吐</li>
+<li>人工冬眠</li>
+<li>加强中枢抑制药的作用</li>
+</ol>
+</li>
+<li>阻断 DA 受体而发挥的 不良反应：
+<ol>
+<li>闭经泌乳</li>
+<li>锥体外系反应</li>
+</ol>
+</li>
+</ul>
+<p><strong>镇静、抗精神病作用</strong></p>
+<ul>
+<li>作用：能消除幻觉、妄想、躁狂，减轻思维和情感障碍等阳性症状，使患者恢复理智、情绪安定、生活自理。</li>
+<li>应用：用于各型精神分裂症，躁狂症。</li>
+<li>机制：阻断中脑-边缘系统、中脑-皮质通路的 D<sub>2</sub> 受体</li>
+</ul>
+<p><strong>镇吐作用</strong></p>
+<ul>
+<li>作用
+<ul>
+<li>小剂量抑制催吐化学感受区（CTZ），对抗去水吗啡的催吐作用。</li>
+<li>大剂量直接抑制呕吐中枢。</li>
+</ul>
+</li>
+<li>应用：用于癌症放射病等多种疾病及药物引起的呕吐、顽固性呃逆，但对前庭刺激所致的呕吐无效。</li>
+<li>机制：阻断 CTZ 和呕吐中枢的 D<sub>2</sub> 采体</li>
+</ul>
+<p><strong>对体温调节的影响</strong></p>
+<ul>
+<li>作用：不仅使发热机体降温，亦能使正常体温下降；降温作用与环境温度有关。</li>
+<li>应用：人工冬眠
+<ul>
+<li>“冬眠合剂”：氯丙嗪，异丙嗪，哌替啶（杜冷丁）</li>
+<li>配合物理降温（冰袋或冰水浴）</li>
+<li>可使患者体温降至 34℃ 或更低，能降低机体对各种伤害性刺激的反应
+<ul>
+<li>如：严重创伤、感染性休克、高热惊厥和甲状腺危象。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>机理：抑制下丘脑体温调节中枢的 D<sub>2</sub> 受体，干扰其恒温调控功能。
+<ul>
+<li>不同于阿司匹林、地塞米松</li>
+<li>阿司、地米只能使体温不升高但不能降低正常体温</li>
+</ul>
+</li>
+</ul>
+<p><strong>加强中枢抑制药的作用</strong></p>
+<ul>
+<li>使麻醉药、镇静催眠药、镇痛药、解热镇痛药和乙醇的作用增强。</li>
+</ul>
+<h6 id="对内分泌系统的影响"><a class="header" href="#对内分泌系统的影响">对内分泌系统的影响</a></h6>
+<ul>
+<li>机制：阻断结节-漏斗系统中的 D<sub>2</sub> 亚型受体，影响下丘脑分泌多种激素的释放</li>
+<li>作用：闭经泌乳
+<ul>
+<li>催乳素分泌↑</li>
+<li>促性腺激素↓</li>
+<li>生长素↓</li>
+</ul>
+</li>
+</ul>
+<h6 id="对植物神经系统自主神经系统的作用"><a class="header" href="#对植物神经系统自主神经系统的作用">对植物神经系统（自主神经系统）的作用</a></h6>
+<ul>
+<li>阻断 α 受体：血管扩张，血压下降（ <strong>致死性低血压</strong> ）
+<ul>
+<li>注意：氯丙嗪可翻转肾上腺素的升压作用</li>
+<li>因此氯丙嗪引起的低血压不能用肾上腺素解救，而因给予去甲肾上腺素。</li>
+</ul>
+</li>
+<li>阻断 M 受体：出现类似阿托品样表现</li>
+</ul>
+<h5 id="不良反应"><a class="header" href="#不良反应">不良反应</a></h5>
+<h6 id="常见不良反应"><a class="header" href="#常见不良反应">常见不良反应</a></h6>
+<ul>
+<li>中枢抑制症状：嗜睡、淡漠、无力等；</li>
+<li>M 受体阻断症状：视力模糊、口干、便秘、无汗和眼内压升高等（青光眼患者禁用）；</li>
+<li>α 受体阻断症状：鼻塞、血压下降、直立性低血压及心悸等，氯丙嗪引起的低血压不能用肾上腺素纠正，用去甲肾上腺素。</li>
+</ul>
+<h6 id="对黑质纹状体的影响锥体外系反应"><a class="header" href="#对黑质纹状体的影响锥体外系反应">对黑质纹状体的影响：锥体外系反应</a></h6>
+<p><strong>刚开始</strong></p>
+<ul>
+<li>机制：阻断黑质-纹状体通路的 D<sub>2</sub> 受体</li>
+<li>不良反应（锥体外系反应）
+<ul>
+<li>药源性帕金森综合征；</li>
+<li>静坐不能；</li>
+<li>急性肌张力障碍</li>
+</ul>
+</li>
+<li>处理（对抗药物）
+<ul>
+<li>苯海索</li>
+<li>金刚烷胺</li>
+<li>不能用左旋多巴</li>
+</ul>
+</li>
+</ul>
+<p><strong>长期用药</strong></p>
+<ul>
+<li>机制：长期阻断，导致黑质-纹状体通路 D<sub>2</sub> 受体上调</li>
+<li>不良反应（锥体外系反应）
+<ul>
+<li>迟发性运动障碍：出现口-舌-颊三联症。</li>
+</ul>
+</li>
+<li>处理
+<ul>
+<li>停药；</li>
+<li>对抗药物：氯氮平</li>
+</ul>
+</li>
+</ul>
+<h5 id="记忆口诀"><a class="header" href="#记忆口诀">记忆口诀</a></h5>
+<ul>
+<li>精神病药氯丙嗪，阻断受体多巴胺，</li>
+<li>镇静止吐兼降温，人工冬眠显奇效，</li>
+<li>长期用药毒性大，震颤麻痹低血压。</li>
+</ul>
+<h5 id="核心总结氯丙嗪对中枢的作用及其临床意义"><a class="header" href="#核心总结氯丙嗪对中枢的作用及其临床意义">核心总结：氯丙嗪对中枢的作用及其临床意义</a></h5>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>作用部位</th><th>临床意义</th><th>效果</th></tr>
+</thead>
+<tbody>
+<tr><td>中脑-皮层和中脑-边缘系统的 D<sub>2 </sub>受体</td><td>精神分裂症</td><td>治疗作用</td></tr>
+<tr><td>抑制催吐化学感受区 D<sub>2</sub> 受体</td><td>止吐</td><td>治疗作用</td></tr>
+<tr><td>抑制体温调定点的 D<sub>2</sub> 受体</td><td>人工冬眠</td><td>治疗作用</td></tr>
+<tr><td>阻断（垂体）结节-漏斗通路的 D<sub>2</sub> 受体</td><td>催乳素分泌↑ 促性腺激素↓ 生长素↓</td><td>不良反应</td></tr>
+<tr><td>阻断黑质-纹状体通路的 D<sub>2</sub> 受体</td><td>锥体外系反应：药源性帕金森综合征； 静坐不能； 急性肌张力障碍</td><td>不良反应</td></tr>
+<tr><td>长期阻断突触后 DA 受体，引起黑质-纹状体通路 D<sub>2</sub>，受体上调</td><td>迟发性运动障碍：出现口-舌-颊三联症</td><td>不良反应</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="其他"><a class="header" href="#其他">其他</a></h4>
+<h5 id="奋乃静氟奋乃静三氟拉嗪"><a class="header" href="#奋乃静氟奋乃静三氟拉嗪">奋乃静、氟奋乃静、三氟拉嗪</a></h5>
+<ul>
+<li>共同特点
+<ul>
+<li>抗精神病作用强；</li>
+<li>镇静作用弱；</li>
+<li>锥体外系反应明显</li>
+</ul>
+</li>
+</ul>
+<h5 id="硫利达嗪"><a class="header" href="#硫利达嗪">硫利达嗪</a></h5>
+<ul>
+<li>镇静作用强，疗效不及氯丙嗪，但椎体外系不良反应小，老年患者易耐受。</li>
+</ul>
+<h3 id="三其他类"><a class="header" href="#三其他类">三）其他类</a></h3>
+<h4 id="氟哌啶醇"><a class="header" href="#氟哌啶醇">氟哌啶醇</a></h4>
+<h5 id="临床应用"><a class="header" href="#临床应用">临床应用</a></h5>
+<h6 id="特点"><a class="header" href="#特点">特点</a></h6>
+<ul>
+<li>抗精神病作用和镇吐作用较氯丙嗪强</li>
+<li>而镇静作用较弱，降温作用不明显。</li>
+</ul>
+<h6 id="应用"><a class="header" href="#应用">应用</a></h6>
+<ul>
+<li>主要用于治疗以兴奋、躁动、幻觉、妄想为主的精神分裂症及躁狂症</li>
+<li>对氯丙嗪无效的患者仍有效；</li>
+<li>还可用于呕吐及顽固性呃逆、焦虑性神经官能症等</li>
+</ul>
+<h5 id="主要不良反应"><a class="header" href="#主要不良反应">主要不良反应</a></h5>
+<ul>
+<li>锥体外系反应发生率高、严重。</li>
+<li>α 受体和 M 受体阻断作用轻，对心血管系统的副作用较小</li>
+</ul>
+<h4 id="舒必利"><a class="header" href="#舒必利">舒必利</a></h4>
+<h5 id="临床应用-1"><a class="header" href="#临床应用-1">临床应用</a></h5>
+<ul>
+<li>特点
+<ul>
+<li>对精神分裂症的阳性和阴性症状均有效，对长期用其他药物治疗无效的难治病例也有效。</li>
+<li>镇吐作用较氯丙嗪强 150 倍，可用于顽固性恶心呕吐。</li>
+</ul>
+</li>
+</ul>
+<h5 id="主要不良反应-1"><a class="header" href="#主要不良反应-1">主要不良反应</a></h5>
+<ul>
+<li>锥体外系不良反应少（对纹状体 D<sub>2</sub> 受体的亲和力低）</li>
+<li>因使血中儿茶酚胺浓度升高，高血压和嗜铬细胞瘤患者禁用；</li>
+<li>可诱发躁狂，躁狂患者禁用</li>
+</ul>
+<h4 id="氯氮平"><a class="header" href="#氯氮平">氯氮平</a></h4>
+<h5 id="临床应用-2"><a class="header" href="#临床应用-2">临床应用</a></h5>
+<h6 id="特点-1"><a class="header" href="#特点-1">特点</a></h6>
+<ul>
+<li>二苯氧氮平类。</li>
+<li>特异性阻断：中脑-边缘系统和中脑-皮层系统的 D<sub>4</sub> 亚型受体，而对黑质-纹状体系统的 D<sub>2</sub> 和 D<sub>3</sub> 亚型受体几无亲和力。</li>
+</ul>
+<h6 id="应用-1"><a class="header" href="#应用-1">应用</a></h6>
+<ul>
+<li>治疗急、慢性精神分裂症，而且对其他药物无效的病例，包括慢性精神分裂症的退缩等阴性症状仍有较好疗效；</li>
+<li>也可用于氯丙嗪引起的迟发运动障碍</li>
+</ul>
+<h5 id="主要不良反应-2"><a class="header" href="#主要不良反应-2">主要不良反应</a></h5>
+<ul>
+<li>几无锥体外系反应及内分泌方面的不良反应</li>
+<li>其他有流涎、便秘、发热、粒细胞减少</li>
+</ul>
+<h4 id="利培酮"><a class="header" href="#利培酮">利培酮</a></h4>
+<h5 id="临床应用-3"><a class="header" href="#临床应用-3">临床应用</a></h5>
+<ul>
+<li>已成为治疗精神分裂症的一线药物。</li>
+<li>对精神分裂症（+）和（-）症状均有效，适于首发急、慢性病人。</li>
+<li>对精神分裂症病人的认知功能障碍和继发性抑郁也有治疗作用</li>
+</ul>
+<h5 id="主要不良反应-3"><a class="header" href="#主要不良反应-3">主要不良反应</a></h5>
+<ul>
+<li>锥体外系不良反应轻</li>
+<li>常见不良反应：失眠、焦虑、头痛、口干、疲劳、注意力下降、皮肤过敏和体重增加</li>
+</ul>
+<h2 id="二抗抑郁药"><a class="header" href="#二抗抑郁药">二、抗抑郁药</a></h2>
+<h3 id="一概述-1"><a class="header" href="#一概述-1">一）概述</a></h3>
+<ul>
+<li>躁狂症、抑郁症：又称情感性精神障碍，是一种以情感病态变化为主要症状的精神病。</li>
+<li><strong>脑内 5-HT 降低是躁狂和抑郁症的共同的病理化基础</strong></li>
+<li>NA 功能亢进 -&gt; 躁狂：表现为情绪高涨、联联想敏捷、活动增多；</li>
+<li>NA 功能降低 -&gt; 抑郁：表现为情绪低落，言语减少，精神活动迟缓</li>
+<li>凡能提高中枢 5-HT 功能，降低 NA 功能：抗躁狂症</li>
+<li>凡能提高中枢 5-HT 功能，提高 NA 功能：抗抑郁症</li>
+</ul>
+<h3 id="二分类"><a class="header" href="#二分类">二）分类</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">作用机制</th><th style="text-align: center">药物</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">非选择性 5-HT 和 NA 再摄取抑制剂</td><td style="text-align: center">丙米嗪、阿米替林、多塞平、氯米帕明</td></tr>
+<tr><td style="text-align: center">选择性 NA 期摄取抑制剂</td><td style="text-align: center">马普替林、米安色林、去甲替林、普罗替林</td></tr>
+<tr><td style="text-align: center">选择性 5-HT 再摄取抑制剂（SSRI）</td><td style="text-align: center">氟西汀、帕罗西汀、舍曲林、西塔罗帕、氟伏沙明</td></tr>
+<tr><td style="text-align: center">单胺氧化酶抑制剂（MAOI）</td><td style="text-align: center">吗氯贝胺、溴法罗明、苯乙肼、异卡波肼</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="三三环类抗抑郁药米帕明丙米嗪"><a class="header" href="#三三环类抗抑郁药米帕明丙米嗪">三）三环类抗抑郁药：米帕明（丙米嗪）</a></h3>
+<h4 id="对中枢神经系统"><a class="header" href="#对中枢神经系统">对中枢神经系统</a></h4>
+<h5 id="机制"><a class="header" href="#机制">机制</a></h5>
+<ul>
+<li>抑制特定脑区神经组织突触前膜对 NA 及 5-HT 的再摄取：提高突触间隙 NA 和 5-HT 浓度。</li>
+</ul>
+<h5 id="作用注意正常人和抑郁症患者截然相反的表现"><a class="header" href="#作用注意正常人和抑郁症患者截然相反的表现">作用（注意正常人和抑郁症患者截然相反的表现）</a></h5>
+<ul>
+<li>正常人服用：以镇静为主；</li>
+<li>抑郁症病人：出现精神振奋，情绪提高，但疗效缓慢，连续用药2～3周后才显效。</li>
+</ul>
+<h4 id="对自主神经系统的作用副作用"><a class="header" href="#对自主神经系统的作用副作用">对自主神经系统的作用（副作用）</a></h4>
+<ul>
+<li>治疗量阻断 M 受体，引起阿托品样作用。</li>
+</ul>
+<h4 id="对心血管系统的作用副作用"><a class="header" href="#对心血管系统的作用副作用">对心血管系统的作用（副作用）</a></h4>
+<ul>
+<li>抑制多种心血管反射，易致低血压和心律失常（心律失常易致死）</li>
+<li>有奎尼丁样作用，心血管疾病患者慎用。</li>
+</ul>
+<h4 id="不良反应多而重"><a class="header" href="#不良反应多而重">不良反应（多而重）</a></h4>
+<ul>
+<li>阻断 M 受体：阿托品样作用；</li>
+<li>中枢反应
+<ul>
+<li>多种三环类均有镇静作用，但阿米替林、多塞平、地昔帕明却有振奋激活作用，震颤、头晕和失眠常见。</li>
+<li>降低痉挛阀值可诱发癫痫。</li>
+</ul>
+</li>
+<li>心血管反应
+<ul>
+<li>三环类中丙米嗪、阿米替林及地昔帕明可引起窦性心动过速、直立性低血压、心律失常，与抑制心肌 NA 再摄取有关。</li>
+</ul>
+</li>
+<li>长期大剂量用药突然停药
+<ul>
+<li>可出现焦虑、失眠、恶心、呕吐、兴奋等症状。过量可引起急性中毒。</li>
+</ul>
+</li>
+</ul>
+<h3 id="四四环类抗抑郁药"><a class="header" href="#四四环类抗抑郁药">四）四环类抗抑郁药</a></h3>
+<h4 id="概述"><a class="header" href="#概述">概述</a></h4>
+<ul>
+<li>代表药：马普替林、米安色林。</li>
+<li>特点：作用迅速、副作用少和易耐受。</li>
+</ul>
+<h4 id="马普替林"><a class="header" href="#马普替林">马普替林</a></h4>
+<ul>
+<li>机制
+<ul>
+<li>为选择性 NA 摄取抑制剂，对 5-HT 的摄取几乎没有影响。</li>
+<li>有强抗组胺和弱抗胆碱作用，故抗胆碱作用和心血管作用弱，镇静作用较强。</li>
+</ul>
+</li>
+<li>应用
+<ul>
+<li>用于各型抑郁症，老年性抑郁症患者较适用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="米安色林"><a class="header" href="#米安色林">米安色林</a></h4>
+<ul>
+<li>机制
+<ul>
+<li>该药不阻滞 NA、5-HT 和 DA 的摄取，而是抑制突触前膜 α<sub>2</sub> 受体促进 NA 的释放。</li>
+</ul>
+</li>
+<li>应用
+<ul>
+<li>有镇静和抗焦虑作用。</li>
+<li>对伴有抑郁的焦虑症有效。</li>
+<li>无抗胆碱作用，无心脏毒性.</li>
+</ul>
+</li>
+</ul>
+<h3 id="五选择性-5-ht-再摄取抑制剂"><a class="header" href="#五选择性-5-ht-再摄取抑制剂">五）选择性 5-HT 再摄取抑制剂</a></h3>
+<h4 id="机制-1"><a class="header" href="#机制-1">机制</a></h4>
+<ul>
+<li>抑制 5-HT 再摄取，升高突触间隙中 5-HT 含量（对 NA 影响小）</li>
+<li>几无抗胆碱作用。</li>
+</ul>
+<h4 id="常用药物"><a class="header" href="#常用药物">常用药物</a></h4>
+<ul>
+<li>氟西汀：抑郁症，疗效与三环类相当，还可用于强迫症、贪食症等。</li>
+<li>舍曲林：各类抑郁症，强迫症，经前焦虑等。</li>
+<li>帕罗西汀</li>
+<li>曲唑酮</li>
+</ul>
+<h3 id="六单胺氧化酶抑制药"><a class="header" href="#六单胺氧化酶抑制药">六）单胺氧化酶抑制药</a></h3>
+<h4 id="作用机制-1"><a class="header" href="#作用机制-1">作用机制</a></h4>
+<ul>
+<li>抑制单胺氧化酶每（MAO），使 NA、5-HT 和 DA 等胺类不被降解，故突触间隙的胺类升高。</li>
+</ul>
+<h4 id="代表药物"><a class="header" href="#代表药物">代表药物</a></h4>
+<h5 id="非选择性-ma0-a-抑制剂"><a class="header" href="#非选择性-ma0-a-抑制剂">非选择性 MA0-A 抑制剂</a></h5>
+<ul>
+<li>苯乙肼、异卡波肼、异羧肼、反苯环丙胺：因用药后易引起高血压和肝毒性，已淘汰；</li>
+</ul>
+<h5 id="选择性-ma0-a抑制剂"><a class="header" href="#选择性-ma0-a抑制剂">选择性 MA0-A抑制剂</a></h5>
+<ul>
+<li>吗氯贝胺、溴法罗明</li>
+<li>能选择性、可逆性抑制 MAO-A，抗抑郁作用起效快，又无三环类抗胆碱所致不良反应，临床上应用较为广泛。</li>
+</ul>
+<h4 id="注意"><a class="header" href="#注意">注意</a></h4>
+<ul>
+<li><strong>单胺氧化酶抑制剂（MAOI）</strong>
+<ul>
+<li>即：吗氯贝胺、溴法罗明</li>
+</ul>
+</li>
+<li><strong>任何其它抗抑郁药不能与它联用</strong>
+<ul>
+<li>否则，易易产生 5-羟色胺综合征（兴奋性神经递质过多）</li>
+</ul>
+</li>
+<li><strong>MAOI 停药 14 天后才能换用其它抗抑郁药物</strong>
+<ul>
+<li><strong>氟西汀需停药 5 周才能换 MAOIs</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="三抗躁狂症药碳酸锂"><a class="header" href="#三抗躁狂症药碳酸锂">三、抗躁狂症药：碳酸锂</a></h2>
+<h3 id="作用机制使突触间隙-na-下降"><a class="header" href="#作用机制使突触间隙-na-下降">作用机制（使突触间隙 NA 下降）</a></h3>
+<ul>
+<li>抑制：脑内 NA 和 DA 释放</li>
+<li>增加：对 NA 和 DA 再摄取</li>
+</ul>
+<h3 id="药理作用和临床应用"><a class="header" href="#药理作用和临床应用">药理作用和临床应用</a></h3>
+<ul>
+<li>主要用于治疗躁狂症
+<ul>
+<li>躁狂抑郁性精神病，躁狂状态；</li>
+<li>躁狂抑郁性精神病，躁狂抑郁交替发作；</li>
+<li>精神分裂症的兴奋躁动。</li>
+</ul>
+</li>
+<li>锂盐对抑郁症也有一定疗效，有有情绪稳定药之称</li>
+</ul>
+<h3 id="不良反应-1"><a class="header" href="#不良反应-1">不良反应</a></h3>
+<ul>
+<li><strong>锂盐安全范围窄，毒性大</strong></li>
+<li>用药初期
+<ul>
+<li>有恶心、呕吐、腹泻、疲乏、肌肉无力，肢体震颤、口干、多尿。</li>
+</ul>
+</li>
+<li>锂盐中毒
+<ul>
+<li>主要表现为意识障碍、昏迷、肌张力增高、深反射亢进、共济失调、震颤等。</li>
+</ul>
+</li>
+<li>当血锂浓度高达 1.6mmol/L 时应立即减量或停药。</li>
+<li>尚可引起甲状腺功能低下或甲状腺肿，停药后可恢复。</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/医学/药理学/第十七章：治疗中枢神经系统退行性疾病药.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第十九章：中枢兴奋药.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/医学/药理学/第十七章：治疗中枢神经系统退行性疾病药.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第十九章：中枢兴奋药.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/药理学/第十八章：抗精神失常药.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

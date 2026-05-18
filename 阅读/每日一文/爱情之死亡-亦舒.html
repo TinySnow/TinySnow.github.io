@@ -1,0 +1,575 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>爱情之死亡 - 亦舒 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="爱情之死亡"><a class="header" href="#爱情之死亡">爱情之死亡</a></h1>
+<p><em>亦舒</em></p>
+<p>　　我醒来是因为钟点女工开始在客厅用吸尘机。</p>
+<p>　　我用手揉揉眼睛，整个额头是酸痛的。电视又开始操作，昨夜忘记关吧。</p>
+<p>　　一切都不重要。</p>
+<p>　　我赤脚走到厨房去取牛奶喝，坐在万脚椅子上想。</p>
+<p>　　我能做什么呢。</p>
+<p>　　我一定会跟俊东离婚。不离也没有用，他要离开我，他已三天没回来了。我必须要接受一个事实，他已经不再爱我。</p>
+<p>　　我取过镇静剂吞一枚，我的一日又开始沉闷。</p>
+<p>　　我不想住在这间房子里，回忆太多，但是我不能回到父母家去，我根本是从那个地方逃出来的，狭小的厅房，简陋的家具，老父喉咙呛咳，然后进洗手间吐痰，一只破旧的无线电永远开在那里叫，关掉无线电开电视，下午二点直到半夜两点。</p>
+<p>　　世界是那么悲惨，人生是那么悲惨，并不是老人的错，是……社会的错。</p>
+<p>　　不，我不会回去与他们住。</p>
+<p>　　所以前天晚上俊东与我摊牌，我说：“你搬出去吧，我不走。”我没有地方可走。</p>
+<p>　　所以做搬了出去。</p>
+<p>　　我的头很痛，连忙拿过两粒阿司匹林吞下。</p>
+<p>　　不知道牛奶是几时喝光的。我写好一张杂物单，拨电话到附近的铺子叫他们把东西送来。</p>
+<p>　　女佣问：“太太。这花不要了？”</p>
+<p>　　瓶子里是焦黑的玫瑰，早谢掉。“是，扔掉吧。”我便是昨日的玫瑰。</p>
+<p>　　我必须要挺起胸膛来做人，我还有一份职业，还不太老，谁知道，或者还可以再嫁一次。</p>
+<p>　　但是最痛苦的是我仍然爱俊东。</p>
+<p>　　被迫离开一个人像是涯一刀，开头只是诧异惊骇，血泊泊的自伤口冒出来，还不知道痛，等到魂魄定下来，那才痛入心脾。</p>
+<p>　　我茫然的想，怎么办呢。</p>
+<p>　　电话铃叫，我的手正按在话筒上，拿起来听。</p>
+<p>　　妈妈的声音：“阿囱呀，你千万不能离婚……”</p>
+<p>　　我马上放下话筒。</p>
+<p>　　她在劝告我，彷佛我不知道。她永远帮不了我，她永远只在旁边摇旗吶喊；我做什么她反对什么。我不介意她没有能力，但是我十分厌恶她不能让我自生自灭。</p>
+<p>　　我叹一口气。哭要一个人躲着哭，笑呢全世界陪你笑。</p>
+<p>　　电话铃又向。</p>
+<p>　　“喂。”</p>
+<p>　　“囱囱？”那边问。</p>
+<p>　　“是。”</p>
+<p>　　“我是表姐。”</p>
+<p>　　“哈啰。”</p>
+<p>　　“怎么，我可以来看你吗？”</p>
+<p>　　“有这个必要吗？离婚在今日很普通。”我说。</p>
+<p>　　“不过是日常探访而已，别多心。”她问：“你一直在家吗？”“在，你可以来。不过下午我要出去一下。”</p>
+<p>　　“我明白，我不会逗留太久。你喜欢吃什么？”</p>
+<p>　　“吃不下。”我挂电话。</p>
+<p>　　女佣一下一下的抹地蜡。有节奏，缓慢地。</p>
+<p>　　我忽然看到我们刚搬进来的情形。</p>
+<p>　　匆匆的买家具，换窗帘，漆墙壁。如今，如今这个家散开来了。</p>
+<p>　　我滚熨的眼泪忍不住流下，心痛如绞，留下腰来。</p>
+<p>　　怎么能够想象他可以如此的撇下我，说变就变了。</p>
+<p>　　我们在这间屋子里曾经享受过多少快乐，怎么样两人赶着下班，出租车停在红灯前都会咒诅。因为想早三分钟回来见对方的面。</p>
+<p>　　满以为我们会相爱到白头。</p>
+<p>　　我茫然的揩干眼泪。</p>
+<p>　　门铃响起来，女佣去开门，是表姐到。她穿得很整齐，大热天还是一套套的实丝，浅色衣服配棕色皮肤。</p>
+<p>　　我的头痛似乎止一点，燃起一枝烟，问她：“你们家的游艇已经出过海了吧？”</p>
+<p>　　“唔，”她应道：“你的气色倒还好，你母亲担心得什么似的。”</p>
+<p>　　“她专门担心小事，衣服穿足没有，出门帑锁匙没有，担心并不见得会造福人。”我平静的说：“表姐，你真幸福，你母亲才四十多岁。”</p>
+<p>　　“四十九。你母亲呢？”她问：“快七十吧？”</p>
+<p>　　“是的。”我低下头。</p>
+<p>　　“别太担心，失去一个男人又不是世界末日，他不见得是你生活的全部，慢慢就会好的。”她安慰我。</p>
+<p>　　“表姐，你不会明白的。”我摇头。</p>
+<p>　　“我不明白？”她问：“我自已前年才离婚。”</p>
+<p>　　我走到沙发上坐下。</p>
+<p>　　“你知道今日阳光有多好吗？”她问。</p>
+<p>　　“与我无关。”我说。</p>
+<p>　　“俊东不值得你这样，他不过是一个普通的男人，又不是长了三只眼睛。”</p>
+<p>　　我点点头，“是，我知道。”</p>
+<p>　　“今天星期六，要是你愿意，我可以陪你去喝下午茶，我们到沙田酒店去。喂，记得吗？当年我们在碧瑶跳完舞，大家出发到沙田喝夜咖啡。”</p>
+<p>　　我用手抓着头，微笑了。“是，那时侯艾莲黎特初在沙田唱，记得吗？杜丽莎还恐怕是个孩子呢，她父亲有乐队在那儿。”</p>
+<p>　　“约会我们的男孩子质素都是不坏的，”她笑，“都有车，后来大家都到外国念书去了。”</p>
+<p>　　“你们去了，”我说：“我没有。”我打个呵欠。</p>
+<p>　　“星期天，我们出去吧。”她央求我。</p>
+<p>　　“我吃过镇静剂，不能走动，我想睡一觉，女佣换好床铺我就睡。”我说：“你自己去。”</p>
+<p>　　“囱囱，你才起的床。”她说：“怎么又睡。”</p>
+<p>　　“是的，梦里日月长，我喜欢睡。”我说：“对不起。”</p>
+<p>　　她耸耸肩，“我不想勉强你，那我先走。”</p>
+<p>　　我送她出门。</p>
+<p>　　女佣说：“太太，我都做好了，杂货店送来的东西全放好，我后天再来。”</p>
+<p>　　“好好，”我说：“走吧。”</p>
+<p>　　关上门。统统都走了。剩下我一个人。那情形跟小学时留堂差不多，全走了，独个儿羞耻又愤辱地留下来，对着黑板，恨不得上去扼死老师。</p>
+<p>　　我能扼死俊东吗？杀人是要填命的，而且我不恨他，他这样做总有他一己的理由，至少他是快乐的，他与他的情人。</p>
+<p>　　我记得我是如何认识俊东的。</p>
+<p>　　十九岁那年，在跑马地上班，午膳后无聊，逛街，女同事都钻到化妆品店、时装店，我喜欢附近一间车行，他们代理林宝基尼与玛萨拉蒂。我常常啃一只苹果，立在车窗门口看，一站站好久。</p>
+<p>　　当时模特儿徐姿很红，她开一部玛萨拉蒂“苗拉”型，玫瑰红的。有钱要会花，不花有什么用。她叫人羡慕。</p>
+<p>　　十九岁的世界充补希望，总有一个玛萨拉蒂王子来故我出堡垒吧。谁还希罕白马黑马，真是的。</p>
+<p>　　可是出现的只是俊东。</p>
+<p>　　他说说：“我开不起林宝基尼，我只有一辆福土威根。”</p>
+<p>　　他廿四，刚自香港大学出来，念建筑，在政府做事，我觉得他很有趣很可爱，可是没想到会跟他结婚。</p>
+<p>　　他说：“每次我开车回家吃饭，总看到一个女孩站在那间车行前面。全神页注地吃一个苹果，白衬衫白裙子。一日复一日，如果我看不到她，茫然若失，所以设法勾搭她。”</p>
+<p>　　他买了一小束蓝色康乃馨，走上来，递给我，他说：“我开不起林宝基尼，我只有一辆福土威根。”</p>
+<p>　　我最后嫁了他。</p>
+<p>　　我们走了两年，结婚三年，今年我廿四岁多一点。</p>
+<p>　　我们有这层房子，他父亲送的结婚礼物，银行有数万元现款，是储蓄。手上小小的方钦是他母亲送的纪念品。</p>
+<p>　　我自己的父母什么也没送，有，一大堆牢骚。</p>
+<p>　　我告诉母亲：何莉莉也不是平白成功的，莉莉是何妈妈的女儿。婚后我几乎正式脱离自己的家，毫无损失。</p>
+<p>　　我与俊东没有孩子。</p>
+<p>　　大概半年前他们告诉我，俊东有女朋友。</p>
+<p>　　下班他开始迟回家，我坐在沙发上等他，一等好几个钟头。我想过吵架，不外只有一个后果：使他更有理由不回家。我也想过出去找别的朋友，我约会过几个男人。</p>
+<p>　　他们都乏味，即使在愤怒下我想把自己送出去，也做不到与这种人躺在床上。</p>
+<p>　　一个男孩子带我上他的公寓，遂样装修介绍，冷气机多少钱，壁橱很名实，饭桌在哪里买，五百多呎的地方，很俗很普通的家具，彷佛已是他毕生的心血成就，彷佛谁能觉得在那个小厨房煮一餐的机会，便算一种殊荣，我顿时倒足胃口。</p>
+<p>　　还是登样入家出来的孩子呢，美国大学毕业生。俊东胜过这些人多多，难怪结过婚还如此吃香。然后我与一个中年男人出去，他有妻子，恐怕妻子不了解他的缘故，常在外头喝酒，很温文和蔼。大概是苦出身，一双手很粗，十个指甲有点霉灰，这还不要紧。他戴一只手表，劳力士金蚝，表带却是香港做来充的。我最讨厌这样，要省全部省下，要不就别省那条原装金表带，俊东有一只这种表，嫌重，把它串在皮带上当挂表。</p>
+<p>　　什么都是俊东。</p>
+<p>　　谁都不及俊东。</p>
+<p>　　我根本提不起兴趣跟别人出去。</p>
+<p>　　还有这位年轻的医生，介绍认识之后，却没有约会，偶而见面，一直很礼貌地微笑，瞧，又一次证明当年俊东对我的感情非同小可的，至少他得鼓起勇气来逼我说话。</p>
+<p>　　如今有资格的男人太少。</p>
+<p>　　是呀，俊东不算什么：但这个世界一切都比较性的，我拿谁来比俊东都比不上。</p>
+<p>　　是星期六呢。搬出去后他住在哪里？跟谁共渡良宵？我悯怅地明白我们之间已经完毕。法文中的 FINIS，结束。</p>
+<p>　　把双人床换了单人床。瞌睡前的喋喋再也没有人听。我的生命也随着枯萎。</p>
+<p>　　我必须要勇敢地面对现实，天天上班不动声色，回家对着电视喝酒吃药，流泪沉思，我不恨俊东，我只是刻骨铭心地想念他，希望他在身边。</p>
+<p>　　他不会知道，永不。</p>
+<p>　　我拉开被子睡觉，不是不后悔没跟表姐去喝茶的，有什么关系呢，出去走走，抬头看天空，我们大家只活那么一剎那，转眼成空，转眼天明。</p>
+<p>　　扭开无线电。</p>
+<p>　　是那首旧歌“绿袖子。”</p>
+<p>　　“可叹我爱汝亏欠我，如此拋弃我太无礼，而我爱汝如此良久，欢娱因汝作我伴。”</p>
+<p>　　这歌是莎士比亚时期的，起码四百多年。</p>
+<p>　　我现在的时间忽然多了一倍不止，微小的事情都叫我想完一次又一次。</p>
+<p>　　我拿起安眠药瓶子服食两粒。他们说就是这样致命的，睡不着多吃两粒，再睡不着又多吃两粒，然后再也醒不过来。</p>
+<p>　　我不想死，真的，也不会死。</p>
+<p>　　这该死的头痛，阿司匹林在什么地方。</p>
+<p>　　终于限期到临，他前夜回来，很镇静的，他说：“我要办离婚。”</p>
+<p>　　我抬起头，也非常镇静的问：“为什么？”</p>
+<p>　　“我不再爱你了。”他说。</p>
+<p>　　“呵，”我记得我说：“多谢你，换了别人，未必会这么坦白，他们总把一干个一万个罪名加诸对方身上，以便证实他们不是负心人。”</p>
+<p>　　“我很抱歉。”他说。</p>
+<p>　　我点点头。我说：“我想为免使你痛苦为难，最好是你搬出去，你搬出去吧，我不走。”</p>
+<p>　　“我想这是对的，”他说：“屋子送你，不是补偿，只是……让你方便点，寻房子好难。”</p>
+<p>　　他便搬了出去。</p>
+<p>　　我自床下来，胃一定有毛病，想吐。床上铺着簇新的床单，不可以弄得一团糟，我挣扎到洗手间，伏在洗脸盘上，一张口，吐出来的是血。</p>
+<p>　　我惊骇地看着四溅的血液，老天，发生了什么事？然后是一阵昏眩。</p>
+<p>　　我需要帮助，俊东。血自胃间喉头涌出，我闭不上口。</p>
+<p>　　我爬到电话处，拿起听筒，打到他公司，希望他还在那儿。</p>
+<p>　　他的秘书来听电话，我说：“我是他太太，我病了，我……”</p>
+<p>　　一定是那时侯失去的知觉。</p>
+<p>　　我在医院中醒来。</p>
+<p>　　俊东坐在我身边。</p>
+<p>　　我看着他的险。心痛。但不能有任何虚弱的表示。</p>
+<p>　　我说：“我不是自杀，我……”</p>
+<p>　　他转过头来，打断我：“是胃出血。酒，过量的阿司匹林，尚有安眠药。”他用这种平和但没有情感的声音。</p>
+<p>　　他对我的爱已经死了，我的眼泪流出来，但是强忍下去。</p>
+<p>　　我说：“你来的时候，一定像看到个吸血僵尸。”我甚至挤出一个微笑。</p>
+<p>　　他说：“你失去知觉一天两夜，现在已是星期一早晨。为什么不当心身体？大家都不好过。你母亲呼天抢地的来看过你。”</p>
+<p>　　我非常惭愧，母亲一直丢我的脸，大大小小的事情。我尽量平静的说：“我不是故意的。”</p>
+<p>　　他隔会儿问：“你为什么不与我吵架？”</p>
+<p>　　我虚弱的问：“你觉得有必要吗？”</p>
+<p>　　“数我的不是好了，骂我，打我。”</p>
+<p>　　“那会使你心安理得？”</p>
+<p>　　“你偏偏不让我心安理得，是不是？”他激我。</p>
+<p>　　“我还是不会跟你吵架的。”我说：“我爱你。”</p>
+<p>　　“没有用。”他说：“我不再爱你。”</p>
+<p>　　“我知道。”我着看墙上的钟，“你可以走了，我想你应该很忙。”</p>
+<p>　　“出院的时候我来接你。”</p>
+<p>　　“没有必要。我能够走路。谢谢你，俊东，给你麻烦不好意思。”</p>
+<p>　　他什么也没说。然后走了。护士来为我打针。她说。“那是你男朋友吗？他对你很好，担心得不得了。”</p>
+<p>　　我转过头就哭，眼泪大滴大滴流下。</p>
+<p>　　我出院时他来接我，带来屋子的锁匙还我。</p>
+<p>　　他说：“你几时方便，我们到律师处去签字分居。还有，房子转名到你户下。”</p>
+<p>　　“是。”我说。</p>
+<p>　　他凝视我，“为什么这样和平？”</p>
+<p>　　“如果我跳上跳下，大吵一顿，把热水瓶往你头上摔，你还是要与我离婚的，我还是省下精力好一点。”</p>
+<p>　　他问：“你不恨我？”</p>
+<p>　　“不，我仍爱你。”</p>
+<p>　　“你不会报复？”</p>
+<p>　　我看他一眼，“为什么要报复？有什么好处？”</p>
+<p>　　“无论你多么乖，我还是不会再爱你，你不如大闹一顿，出一口气”</p>
+<p>　　“谢谢你的忠告，我没有气要出。”</p>
+<p>　　“我不相信。”他摇头。</p>
+<p>　　“我并没有要你相信，”我说：“你不相信也没有关系。”</p>
+<p>　　“当心身体，医生为你输过三磅血，以后严禁阿司匹林，记住。”</p>
+<p>　　“谢谢。”</p>
+<p>　　他发作，“你不要这么礼貌好不好？”他咆吼，“你为什么不可以像其它妇人一样地哭叫？”</p>
+<p>　　我愕然看住他。当一个男人不再爱它的女人，她哭闹是错，静默也是错，活着呼吸是错，死了也是错。</p>
+<p>　　我闭上嘴巴。</p>
+<p>　　他送我到门口。“我不进来了。”他说。</p>
+<p>　　我说：“明天下午两点，我们到律师处去。”</p>
+<p>　　他说：“好。”</p>
+<p>　　他开走小小的福土威根。</p>
+<p>　　钟点女工又在收拾屋子。</p>
+<p>　　我放下锁匙说：“抹灰要当心仔细，一切都要干净。”</p>
+<p>　　一切像没发生过般。</p>
+<p>　　打电话回公司，俊东已代我告五天的假。俊东做事永远是妥当可靠的。</p>
+<p>　　表姐说：“至少他把屋子留给你，你有地方可住，无后顾之忧。”</p>
+<p>　　对。好过要我回去对着七十岁的一双父母，两人除破坏没有其它能力，中气倒还十足，努力批评这个批评那个。</p>
+<p>　　俊东还是替我着想的，有比他更壤的男人。</p>
+<p>　　表姐轻描淡写地说：“总比我那个好……袖手好闲，每顿饭要喝啤酒，我付账还不够，他说别的女人整个钱包都交给他的，那副德性，要我养他哪，说他几句，干脆不回来睡，结果离掉了，真痛快，现在想起来还是愉快的，也许是我一生中最高兴的事。”她畅快的笑。</p>
+<p>　　我微笑问：“可是又怎么结的婚呢？”</p>
+<p>　　“我妈逼的，”表姐埋怨，“那年十七岁，懂得屁，老妈不了解，闹个天翻地覆，于是索性下嫁，看老妈拿我怎么样！”</p>
+<p>　　我笑，“结果谁也没死。”</p>
+<p>　　“是呀，就是痛快。”表姐也笑，那人以为小妞骗到手，怎么也飞不掉……大概现在午夜梦回，还是很后悔的。</p>
+<p>　　我抬起头，“可是我还是爱俊东的。”</p>
+<p>　　表姐忽然之间住了笑，表情空洞，随即低下头来。</p>
+<p>　　“我不后悔嫁他。”我说：“他曾经非常爱我，那很重要你知道。至少曾经一度有人爱过我……很重要。”</p>
+<p>　　以后我就寂寞下来了。</p>
+<p>　　我们签妥分居书。他谢我予他的方便，我静默的离开他。</p>
+<p>　　他母亲来探访我，颇有歉意，非常好的老太太。</p>
+<p>　　我知道这是最后一次我与他们一家发生连系，我用心地招呼她，茶与点心，茶与同情。</p>
+<p>　　同情有什么用呢？</p>
+<p>　　我害怕回去听父母半夜的咳声。老人们，他们全邀往晚上咳嗽。老人真是可怕。</p>
+<p>　　所以我情愿一个人住在这层回忆多多的房子里。</p>
+<p>　　一切布置维持从前的样子，我不是等他回来，有什么必要换装修？改变屋子不等于可以改变我内心世界。</p>
+<p>　　我觉得日子变得空虚，不再有前途。</p>
+<p>　　日复一日，我看到工作成功的女性，婚姻成功的女性，益发觉得自己像芥子。</p>
+<p>　　我到跑马地那间车行去站着，发觉他们已经转卖本田车。太迟，一切已面目全非。</p>
+<p>　　我咬一口手中的苹果，苦涩地想，时光一去不复回，再也不是十九岁。</p>
+<p>　　车行的经理笑着迎出来。“小姐，进来看看吗？”</p>
+<p>　　我缓缓摇头。</p>
+<p>　　五年多前，差不多的季节，几乎一样的地点，俊东向我搭讪成功，他选择我做他的妻子，五年之后，他又去选别人。</p>
+<p>　　有一次喝茶，我看见俊东，他与一个女孩子同行。我看着他们进来。她并不太年轻，皮肤很好，腿很长，衣饰非常入时。</p>
+<p>　　俊东还是那么吸引，白色毛巾 T 恤，帆布色松身长裤，一双球鞋，金手表仍然松松地挂在皮带上，这个熟悉的陌生人，仍然叫我心痛得滴血，我呆呆的注视他，目光再也不肯离开。</p>
+<p>　　他们与朋友坐下来谈笑风生，她坐得他很近，几乎寸步不离，还为他在冰茶里加糖浆。然后俊东转头看到我，我很自然的微笑一下，避开他目光。为免使他尴尬，马上把十元钞票放在桌子上，拉起表姐走。</p>
+<p>　　表姐说：“为什底我们走？应该是他们走！”</p>
+<p>　　我只是微笑，为什么还争这种意气？</p>
+<p>　　但是一转头，看见俊东站在表姐身后，我呆住了。</p>
+<p>　　他温柔的问我：“走了？”</p>
+<p>　　我手足无措，点点头，“是。”</p>
+<p>　　他问：“怎么不与男朋友吃茶？”关心得像老朋友。</p>
+<p>　　“我没有男朋友。”</p>
+<p>　　“为什么没有？”</p>
+<p>　　我想一想：“我不能同比你差的人出去。”</p>
+<p>　　他低一低头，马上笑了。</p>
+<p>　　电梯来到，门打开。</p>
+<p>　　他说：“再见。”</p>
+<p>　　我也说：“再见。”</p>
+<p>　　我与表姐进电梯，电梯门合拢。</p>
+<p>　　我的眼泪心平气和地淌下，心如刀割。我用手帕默默揩干眼泪，走出电梯。</p>
+<p>　　表姐说：“没想到今日天气这么好。”</p>
+<p>　　我抬头。可不是。俊东下午也许会出海滑水，他滑水滑得很好，也教会了我，我不是不感激他的。</p>
+<p>　　我会对他说：“你对我的爱，彷佛像阳光照入我的生命中一般。”</p>
+<p>　　一连串的约会，一连串的欢笑。生命展开新的一页。</p>
+<p>　　表姐问：“你干什么微笑？有什么好笑的？”</p>
+<p>　　我答不出来。</p>
+<p>　　她喃喃的道：“这么快，这么快就有新的人，男人真是容易，是不是？太容易。”</p>
+<p>　　我说：“表姐，我很久没有开车了，让我做司机，我们到浅水湾去看影树。”</p>
+<p>　　“OK。”</p>
+<p>　　我驾驶很坏，但是终于挣扎到浅水湾。</p>
+<p>　　喝红茶的时候表姐说：“人生还是快乐的，看这些男男女女，多么愉快。”</p>
+<p>　　俊东在教别人滑水吧。那幸运的女孩。</p>
+<p>　　“风景这么好，我们的生命还有很长一截，路的确是弯曲一点，但有什么关系？我们终于会到达罗马。”</p>
+<p>　　我忽然记得拜伦有一首诗，最后两句是这样的：</p>
+<p>　　“lf l should see thee：after long year，How should I agreet thee，with silence and tears。”</p>
+<p>　　如我会见到你，事隔多年，我如何贺你，以沉默以眼泪。</p>
+<p>　　我抬起头，回答表姐：“是的，我明白。你看影树的花，爆炸性的震荡感，毫无委曲，激辣辣地开在树顶，那种盛况那种灿烂，这种颜色这种数量，都像强烈的爱情，死而无憾。”</p>
+<p>　　我与俊东的爱情，虽死而无憾。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/优雅的爱情到哪里去了-许知远.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/变成虫子的人-黄惊涛.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/优雅的爱情到哪里去了-许知远.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/变成虫子的人-黄惊涛.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/爱情之死亡-亦舒.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,1249 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>日语语法整理 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="日语语法整理"><a class="header" href="#日语语法整理">日语语法整理</a></h1>
+<h2 id="名词"><a class="header" href="#名词">名词</a></h2>
+<h3 id="构成"><a class="header" href="#构成">构成</a></h3>
+<ul>
+<li>单纯名词</li>
+<li>复合名词
+<ul>
+<li>名名</li>
+<li>名叠</li>
+<li>动名</li>
+<li>名动</li>
+<li>动动</li>
+<li>形名</li>
+</ul>
+</li>
+<li>转化名词
+<ul>
+<li>形转名</li>
+<li>动转名</li>
+</ul>
+</li>
+<li>缩写名词</li>
+</ul>
+<h3 id="种类"><a class="header" href="#种类">种类</a></h3>
+<ul>
+<li>根据表示内容
+<ul>
+<li>一般名词</li>
+<li>专有名词</li>
+</ul>
+</li>
+<li>根据来源
+<ul>
+<li>日语词</li>
+<li>汉字词</li>
+<li>外来语</li>
+<li>混合词</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用"><a class="header" href="#使用">使用</a></h3>
+<h4 id="作主语后续はもが等"><a class="header" href="#作主语后续はもが等">作主语，后续「は」「も」「が」等</a></h4>
+<h4 id="作谓语后续ですだだったである等表时态和文章体"><a class="header" href="#作谓语后续ですだだったである等表时态和文章体">作谓语，后续「です」「だ」「だった」「である」等表时态和文章体</a></h4>
+<h4 id="作宾语后续を"><a class="header" href="#作宾语后续を">作宾语，后续「を」</a></h4>
+<h4 id="作补语后续へとにからまでで等"><a class="header" href="#作补语后续へとにからまでで等">作补语，后续「へ」「と」「に」「から」「まで」「で」等</a></h4>
+<h4 id="后续の做体言修饰"><a class="header" href="#后续の做体言修饰">后续「の」做体言修饰</a></h4>
+<h4 id="人称名词可以做呼语"><a class="header" href="#人称名词可以做呼语">人称名词可以做呼语</a></h4>
+<h4 id="时间名词可做连用修饰语"><a class="header" href="#时间名词可做连用修饰语">时间名词可做连用修饰语</a></h4>
+<h2 id="形式名词"><a class="header" href="#形式名词">形式名词</a></h2>
+<h3 id="特点"><a class="header" href="#特点">特点</a></h3>
+<ul>
+<li>
+<p>不能单独使用，只能接在其他词后面</p>
+</li>
+<li>
+<p>可以使前面的用言具有体言的性质、资格，连同前面一起做句子成分</p>
+</li>
+<li>
+<p>可以表示某种附加意义</p>
+</li>
+</ul>
+<h3 id="概览"><a class="header" href="#概览">概览</a></h3>
+<ul>
+<li>こと</li>
+<li>もの</li>
+<li>の</li>
+<li>ところ</li>
+<li>わけ</li>
+<li>はず</li>
+<li>つもり</li>
+<li>ため</li>
+<li>うえ</li>
+<li>うち</li>
+<li>ほう</li>
+<li>かぎり</li>
+<li>とおり</li>
+<li>まま</li>
+<li>…</li>
+</ul>
+<h3 id="用法"><a class="header" href="#用法">用法</a></h3>
+<h4 id="こと"><a class="header" href="#こと">こと</a></h4>
+<h5 id="实质名词-意为事情"><a class="header" href="#实质名词-意为事情">实质名词： 意为“事情”</a></h5>
+<h5 id="形式名词-1"><a class="header" href="#形式名词-1">形式名词</a></h5>
+<ul>
+<li>抽象事物、概念</li>
+<li>感叹、感慨</li>
+<li>提醒、劝诱</li>
+</ul>
+<h5 id="惯用句型"><a class="header" href="#惯用句型">惯用句型</a></h5>
+<ul>
+<li>～ことがあります
+<ul>
+<li>～＝Vた
+曾经有过某种经历</li>
+<li>～＝Vる
+有时做某事</li>
+</ul>
+</li>
+<li>～ことができます（～＝Vる）
+有能力或有可能做某事</li>
+<li>～ことに「する・なる・なっている」
+<ul>
+<li>する
+对将来行为的某种决定、决心</li>
+<li>なる
+就将来某种行为做出某种决定、达成某种共识、得出某种结论</li>
+<li>なっている
+约定日常生活中的规定、法律以及一些惯例等约束人们生活行为的各种规定
+可视为「ことになる」结果的持续存在</li>
+</ul>
+</li>
+<li>～ことに（～＝表感情、兴趣的词，如遗憾）
+“……的是”</li>
+<li>～ことはない
+没有必要做某事</li>
+<li>～ことだから
+正是前项具备的性质特征，所以有后项的结果很正常</li>
+<li>～ことから
+表原因、理由，由前面的事情引出后面的结果</li>
+</ul>
+<h4 id="もの"><a class="header" href="#もの">もの</a></h4>
+<h5 id="实质名词指人或物"><a class="header" href="#实质名词指人或物">实质名词：指人或物</a></h5>
+<h5 id="形式名词-2"><a class="header" href="#形式名词-2">形式名词</a></h5>
+<ul>
+<li>抽象事物、道理</li>
+<li>感叹、希望</li>
+<li>从常理或道德上来说应该做某事</li>
+<li>带有感叹的心情叙述过去发生的事情
+前接用言，“常常……”、“总是……”</li>
+</ul>
+<h5 id="惯用句型-1"><a class="header" href="#惯用句型-1">惯用句型</a></h5>
+<ul>
+<li>～ものだから（～＝用言连体形）
+“因为……”、“由于……”</li>
+<li>～ものではない（～＝动词连体形）
+“不要……”、“不该……”</li>
+<li>～ものの（～＝用言连体形）
+“虽然……”、“但是……”</li>
+<li>～ものか（～＝用言连体形）
+“怎么会……”、“哪能……”</li>
+</ul>
+<h4 id="の"><a class="header" href="#の">の</a></h4>
+<h5 id="形式名词-3"><a class="header" href="#形式名词-3">形式名词</a></h5>
+<ul>
+<li>接在用言连体形后，使其具有体言性质</li>
+<li>指代人或事物等</li>
+</ul>
+<h5 id="惯用句型-2"><a class="header" href="#惯用句型-2">惯用句型</a></h5>
+<ul>
+<li>～のは～～からだ（～＝用言连体形，～～＝用言终止形）
+“之所以……是因为……”</li>
+<li>～のでは（～＝用言连体形）
+“要是……的话……”</li>
+<li>～のに（～＝用言连体形，N和Na+「な」）
+表示转折，“虽然……但是……”</li>
+<li>～のだ（～＝用言连体形）
+表示原因理由、提醒或说话人的决心</li>
+</ul>
+<h4 id="ところ"><a class="header" href="#ところ">ところ</a></h4>
+<h5 id="实质名词意为场所地方"><a class="header" href="#实质名词意为场所地方">实质名词：意为“场所、地方”</a></h5>
+<h5 id="形式名词-4"><a class="header" href="#形式名词-4">形式名词</a></h5>
+<ul>
+<li>内容</li>
+<li>事情动作发生时间
+<ul>
+<li>动词连体形＋「ところだ」
+“正要……”，“刚要……”</li>
+<li>Vている＋「ところだ」
+“正在……”</li>
+<li>Vた＋「ところだ」
+“刚刚……”</li>
+</ul>
+</li>
+<li>范围、来源、依据
+此时句尾常伴有「らしい」、「そうだ」、「とのことだ」</li>
+<li>某种条件实现即可成为某种状态</li>
+</ul>
+<h5 id="惯用句型-3"><a class="header" href="#惯用句型-3">惯用句型</a></h5>
+<ul>
+<li>～ところから
+“从……来看”，“因为……，所以……”</li>
+<li>～ところを
+<ul>
+<li>“正当……的时候”</li>
+<li>“本该……却……”</li>
+</ul>
+</li>
+</ul>
+<h4 id="はず"><a class="header" href="#はず">はず</a></h4>
+<h5 id="形式名词-5"><a class="header" href="#形式名词-5">形式名词</a></h5>
+<ul>
+<li>从情理、习惯或记忆上来推测应该如此</li>
+<li>预定、估计， <strong>没有否定形式</strong></li>
+<li>原因、道理，“怪不得……”</li>
+</ul>
+<h5 id="惯用句型-4"><a class="header" href="#惯用句型-4">惯用句型</a></h5>
+<ul>
+<li>～はずがない／～はずはない（～＝用言连体形）
+“不可能……”，“不会……”</li>
+<li>～たはず（～た＝Vた）
+说话人深信的事物与现实不符
+“的确……”，“确实……”</li>
+<li>～はずではなかった
+实际与说话人预测不同后的失望和后悔的心情
+“本来不该……”</li>
+</ul>
+<h4 id="わけ"><a class="header" href="#わけ">わけ</a></h4>
+<h5 id="形式名词-6"><a class="header" href="#形式名词-6">形式名词</a></h5>
+<ul>
+<li>原因、缘故</li>
+<li>道理、情理等</li>
+<li>判断、推测
+“当然……”</li>
+</ul>
+<h5 id="惯用句型-5"><a class="header" href="#惯用句型-5">惯用句型</a></h5>
+<ul>
+<li>～わけがない／～わけはない（～＝用言连体形）
+“不会……”，“不可能……”</li>
+<li>～わけではない（～＝用言连体形）
+“并不是……”，“并非……”</li>
+<li>～わけにはいかない（～＝用言连体形）
+“不能……”，“不应该……”</li>
+<li>～ないわけにはいかない（～ない＝Vない）
+不得不做、必然
+“不能不……”，“必须……”</li>
+</ul>
+<h4 id="ため"><a class="header" href="#ため">ため</a></h4>
+<h5 id="形式名词-7"><a class="header" href="#形式名词-7">形式名词</a></h5>
+<ul>
+<li>原因、理由</li>
+<li>目的</li>
+<li>对象</li>
+</ul>
+<h5 id="惯用句型-6"><a class="header" href="#惯用句型-6">惯用句型</a></h5>
+<ul>
+<li>～がため～～
+<ul>
+<li>（～＝表示人物或事物的名词）
+表示对其有益</li>
+<li>（～＝动词未然形＋「ん」）
+文言表达方式，“为了……”</li>
+</ul>
+</li>
+<li>～のは～ためだ</li>
+</ul>
+<h4 id="とおり"><a class="header" href="#とおり">とおり</a></h4>
+<h5 id="形式名词-8"><a class="header" href="#形式名词-8">形式名词</a></h5>
+<ul>
+<li>后面的动作或行为按照前面所教授的去做</li>
+<li>正如之前所说的或所了解的那样</li>
+<li>接数词和「何」、「幾」等疑问词后，表示方法和种类的数量</li>
+</ul>
+<h4 id="つもり"><a class="header" href="#つもり">つもり</a></h4>
+<h5 id="形式名词-9"><a class="header" href="#形式名词-9">形式名词</a></h5>
+<ul>
+<li>计划、打算</li>
+<li>假设</li>
+<li>个人的看法、见解</li>
+</ul>
+<h4 id="うえ"><a class="header" href="#うえ">うえ</a></h4>
+<h5 id="实质名词意为上面"><a class="header" href="#实质名词意为上面">实质名词：意为“上面”</a></h5>
+<h5 id="形式名词-10"><a class="header" href="#形式名词-10">形式名词</a></h5>
+<ul>
+<li>方面</li>
+<li>叠加、添加的内容</li>
+</ul>
+<h5 id="惯用句型-7"><a class="header" href="#惯用句型-7">惯用句型</a></h5>
+<ul>
+<li>Vる＋「上で」
+“在……方面”</li>
+<li>～上は（～＝表示某种责任、决心等的行为词语）
+“正因为要做这件事……”，“既然……”</li>
+<li>その上
+又、而且、还</li>
+</ul>
+<h4 id="ほう"><a class="header" href="#ほう">ほう</a></h4>
+<h5 id="形式名词-11"><a class="header" href="#形式名词-11">形式名词</a></h5>
+<ul>
+<li>方面、方向</li>
+<li>一方、一边</li>
+</ul>
+<h5 id="惯用句型-8"><a class="header" href="#惯用句型-8">惯用句型</a></h5>
+<ul>
+<li>～より～のほうが～です
+“比起……还是在……方面更……”</li>
+<li>～ほうがいいです
+“还是……比较好”</li>
+</ul>
+<h4 id="しだい"><a class="header" href="#しだい">しだい</a></h4>
+<h5 id="形式名词-12"><a class="header" href="#形式名词-12">形式名词</a></h5>
+<ul>
+<li>理由、根据，前项根据后项的情况而定
+前接体言，“要看……如何”</li>
+<li>前项一结束后项就开始
+接续助词，“一……就……”</li>
+</ul>
+<h4 id="かぎり"><a class="header" href="#かぎり">かぎり</a></h4>
+<h5 id="形式名词-13"><a class="header" href="#形式名词-13">形式名词</a></h5>
+<ul>
+<li>范围、极限等</li>
+<li>限定的条件</li>
+<li>前接时间名词，表示期限</li>
+<li>极限</li>
+</ul>
+<h4 id="まま"><a class="header" href="#まま">まま</a></h4>
+<h5 id="形式名词-14"><a class="header" href="#形式名词-14">形式名词</a></h5>
+<ul>
+<li>保持前面动作或状态不变</li>
+<li>任其自由发展</li>
+</ul>
+<h2 id="代词"><a class="header" href="#代词">代词</a></h2>
+<h3 id="种类-1"><a class="header" href="#种类-1">种类</a></h3>
+<ul>
+<li>人称代词
+<ul>
+<li>第一人称</li>
+<li>第二人称</li>
+<li>第三人称</li>
+<li>不定代称，用于不确定的人的称呼</li>
+</ul>
+</li>
+<li>指示代词
+<ul>
+<li>场所、事物、方向</li>
+<li>近称、中称、远称、不定称</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用-1"><a class="header" href="#使用-1">使用</a></h3>
+<h4 id="人称代词"><a class="header" href="#人称代词">人称代词</a></h4>
+<ul>
+<li>作主语</li>
+<li>作谓语</li>
+<li>作宾语</li>
+<li>接助词做其他成分</li>
+<li>作呼语</li>
+</ul>
+<h4 id="指示代词"><a class="header" href="#指示代词">指示代词</a></h4>
+<ul>
+<li>作主语</li>
+<li>作谓语</li>
+<li>作宾语</li>
+<li>接助词做其他成分</li>
+</ul>
+<h3 id="转用"><a class="header" href="#转用">转用</a></h3>
+<ul>
+<li>事物指代人
+用于同辈以下的关系亲密者之间</li>
+<li>方位指代人
+用于尊敬、客气场合</li>
+<li>事物指代时间</li>
+<li>方位指代事物
+多用于两个以上事物的选择</li>
+<li>方位指代场所</li>
+<li>场所指代事物</li>
+<li>场所指代时间</li>
+<li>场所指代程度或状态</li>
+</ul>
+<h3 id="反身代词"><a class="header" href="#反身代词">反身代词</a></h3>
+<ul>
+<li>指自己</li>
+<li>指对方</li>
+<li>泛指</li>
+<li>指代他人</li>
+</ul>
+<h2 id="数词"><a class="header" href="#数词">数词</a></h2>
+<h3 id="种类-2"><a class="header" href="#种类-2">种类</a></h3>
+<ul>
+<li>基数词</li>
+<li>序数词</li>
+<li>数量词</li>
+<li>分数</li>
+<li>小数</li>
+<li>百分数</li>
+<li>概数词</li>
+<li>疑问数词</li>
+</ul>
+<h3 id="用法-1"><a class="header" href="#用法-1">用法</a></h3>
+<ul>
+<li>作主语</li>
+<li>作谓语</li>
+<li>作宾语</li>
+<li>做修饰语</li>
+<li>接助词做其他修饰成分</li>
+<li>常用谚语、惯用语中的数词</li>
+</ul>
+<h3 id="转用-1"><a class="header" href="#转用-1">转用</a></h3>
+<ul>
+<li>用于专有名词</li>
+<li>用于普通名词</li>
+<li>用于副词</li>
+<li>用于动词</li>
+</ul>
+<h2 id="动词"><a class="header" href="#动词">动词</a></h2>
+<h3 id="种类-3"><a class="header" href="#种类-3">种类</a></h3>
+<h4 id="经典分类"><a class="header" href="#经典分类">经典分类</a></h4>
+<h5 id="五段"><a class="header" href="#五段">五段</a></h5>
+<h5 id="一段"><a class="header" href="#一段">一段</a></h5>
+<ul>
+<li>上一段（イ）</li>
+<li>下一段（エ）</li>
+<li>例外（形式上看为一段动词，实际上为五段动词）
+<ul>
+<li>走る（はしる）</li>
+<li>入る（はいる）</li>
+<li>切る（きる）</li>
+<li>帰る（かえる）</li>
+<li>知る（しる）</li>
+<li>減る（へる）</li>
+<li>焦る（あせる）</li>
+<li>要る（いる）</li>
+</ul>
+</li>
+</ul>
+<h5 id="カ变"><a class="header" href="#カ变">カ变</a></h5>
+<ul>
+<li>就一个，来る（くる）</li>
+</ul>
+<h5 id="サ变"><a class="header" href="#サ变">サ变</a></h5>
+<h5 id="一般--复合动词"><a class="header" href="#一般--复合动词">一般 / 复合动词</a></h5>
+<h5 id="自--他动词"><a class="header" href="#自--他动词">自 / 他动词</a></h5>
+<ul>
+<li>自动词
+<ul>
+<li>动作能自发完成，不带宾语，通常用「が」表示</li>
+</ul>
+</li>
+<li>他动词
+<ul>
+<li>动作需要有对象，即宾语，通常用「を」表示</li>
+</ul>
+</li>
+<li>对应关系
+<ul>
+<li>自动词：「あ」段假名＋「る」词尾
+他动词：「え」段假名＋「る」词尾</li>
+<li>自动词：「い／え」段假名＋「る」词尾
+他动词：词尾为「す」</li>
+<li>对应关系不规则
+<ul>
+<li>付くー付ける（つ）</li>
+<li>届くー届ける（とど）</li>
+<li>続くー続ける（つづ）</li>
+<li>割れるー割る（わ）</li>
+<li>建つー建てる（た）</li>
+<li>痛むー痛める（いた）</li>
+<li>解けるー解く（と）</li>
+<li>並ぶー並べる（なら）</li>
+<li>裂けるー裂く（さ）</li>
+</ul>
+</li>
+<li>自他性质兼有的动词
+<ul>
+<li>閉じる（と）</li>
+<li>垂れる（しだ）</li>
+<li>…</li>
+</ul>
+</li>
+<li>只有自动词没有他动词
+<ul>
+<li>ある</li>
+<li>行く（い）</li>
+<li>来る（く）</li>
+<li>走る（はし）</li>
+<li>…</li>
+</ul>
+</li>
+<li>只有他动词没有自动词
+<ul>
+<li>考える（かんが）</li>
+<li>読む（よ）</li>
+<li>食べる（た）</li>
+<li>飲む（の）</li>
+<li>作る（つく）</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="授受动词"><a class="header" href="#授受动词">授受动词</a></h4>
+<ul>
+<li>～は～に～を「あげる・やる・さしあげる」</li>
+<li>～は～「に・から」～を「もらう・いただく」</li>
+<li>～は～に～を「くれる・くださる」</li>
+<li>授受关系动词可以接在「て」后作补助动词
+<ul>
+<li>～て「あげる・差し上げる・やる」</li>
+<li>～て「もらう・いただく」</li>
+<li>～て「くれる・くださる」</li>
+</ul>
+</li>
+</ul>
+<h4 id="敬语动词"><a class="header" href="#敬语动词">敬语动词</a></h4>
+<h5 id="本身就是敬语动词"><a class="header" href="#本身就是敬语动词">本身就是敬语动词</a></h5>
+<ul>
+<li>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>普通动词</th><th>尊他语动词</th><th>自谦语动词</th></tr>
+</thead>
+<tbody>
+<tr><td>いる</td><td>いらっしゃる、おいでになる</td><td>おる</td></tr>
+<tr><td>する</td><td>なさる</td><td>いたす</td></tr>
+<tr><td>行く、来る</td><td>いらっしゃる、おいでになる</td><td>まいる</td></tr>
+<tr><td>言う</td><td>おっしゃる</td><td>申す、申す上げる<br />（もうす、もうすあげる）</td></tr>
+<tr><td>見る</td><td>ご覧になる<br />（ごらんになる）</td><td>拝見する<br />（はいけんする）</td></tr>
+<tr><td>知る</td><td>ご存じ<br />（ごぞんじ）</td><td>存じる<br />（ぞんじる）</td></tr>
+<tr><td>食べる、飲む</td><td>召し上がる<br />（めしあがる）</td><td>いただく</td></tr>
+<tr><td>聞く、訪ねる<br />（きく、たずねる）</td><td></td><td>伺う<br />（うかがう）</td></tr>
+<tr><td>くれる</td><td>くださる</td><td></td></tr>
+<tr><td>もらう</td><td></td><td>いただく</td></tr>
+<tr><td>あげる</td><td></td><td>差し上げる<br />（さしあげる）</td></tr>
+<tr><td>会う（あう）</td><td></td><td>お目にかかる<br />（おめにかかる）</td></tr>
+<tr><td>ある</td><td></td><td>ござる</td></tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+<h5 id="复合敬语动词"><a class="header" href="#复合敬语动词">复合敬语动词</a></h5>
+<ul>
+<li>お＋动词连用形＋なさる／ご＋サ变动词词干＋なさる</li>
+<li>お＋动词连用形＋くださる／ご＋サ变动词词干＋くださる</li>
+<li>お＋动词连用形＋になる／ご＋サ变动词词干＋になる</li>
+<li>お＋动词连用形＋です／ご＋サ变动词词干＋です</li>
+</ul>
+<h5 id="由れるられる构成的敬语动词"><a class="header" href="#由れるられる构成的敬语动词">由「れる・られる」构成的敬语动词</a></h5>
+<ul>
+<li>动词未然形＋「れる・られる」构成敬语动词
+<ul>
+<li>来られる</li>
+<li>言われる</li>
+<li>卒業される</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h4 id="补助动词"><a class="header" href="#补助动词">补助动词</a></h4>
+<h5 id="ている"><a class="header" href="#ている">～ている</a></h5>
+<ul>
+<li>动作或作用的持续进行、正在进行</li>
+<li>前接瞬间动词，表示动作已经结束，但动作或作用的结果仍存在</li>
+<li>前接状态动词，表示事物静止的客观状态</li>
+<li>动作的反复性、习惯性</li>
+</ul>
+<h5 id="てある"><a class="header" href="#てある">～てある</a></h5>
+<ul>
+<li>前接他动词，表示动作行为完成，其结果的存续状态。
+宾语「を」成为句中主语「が」</li>
+<li>预先已经做好的准备</li>
+</ul>
+<h5 id="てしまう"><a class="header" href="#てしまう">～てしまう</a></h5>
+<ul>
+<li>动作的完成</li>
+<li>对动作形成的结果感到遗憾、惋惜、后悔等心情</li>
+<li>注意：
+在口语中常用「～てしまう」的音变形式「ちゃう・ちまう」
+过去式「～てしまった」音变为「～ちゃった・ちまった」</li>
+</ul>
+<h5 id="ていく"><a class="header" href="#ていく">～ていく</a></h5>
+<ul>
+<li>动作由近及远的发展变化过程（时间、空间）</li>
+<li>动作状态的发展趋势，多指从现在向未来的发展趋势</li>
+</ul>
+<h5 id="てくる"><a class="header" href="#てくる">～てくる</a></h5>
+<ul>
+<li>动作由远及近的过程（时间、空间）</li>
+<li>动作状态的发展趋势，多指从过去向现在的发展趋势</li>
+</ul>
+<h5 id="てみる"><a class="header" href="#てみる">～てみる</a></h5>
+<ul>
+<li>表示试试看</li>
+</ul>
+<h5 id="ておく"><a class="header" href="#ておく">～ておく</a></h5>
+<ul>
+<li>预先做好某种准备动作</li>
+<li>动作状态的持续</li>
+</ul>
+<h5 id=""><a class="header" href="#">…</a></h5>
+<h4 id="可能动词"><a class="header" href="#可能动词">可能动词</a></h4>
+<ul>
+<li>本身就是可能动词
+<ul>
+<li>聞こえる</li>
+<li>見える</li>
+<li>できる</li>
+<li>..</li>
+</ul>
+</li>
+<li>动词未然形＋「れる・られる」
+句中宾语助词「を」应改为「が」</li>
+<li>五段动词词尾「う」段假名-&gt;「え」段假名＋る
+句中宾语助词「を」应改为「が」
+<ul>
+<li>読める</li>
+<li>話せる</li>
+<li>行ける</li>
+<li>使える</li>
+<li>作れる</li>
+<li>…</li>
+</ul>
+</li>
+<li>サ变动词词干＋「できる」
+句中宾语助词「を」应改为「が」
+<ul>
+<li>勉強できる</li>
+<li>運動できる</li>
+<li>掃除できる</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h4 id="瞬间动词持续动词"><a class="header" href="#瞬间动词持续动词">瞬间动词／持续动词</a></h4>
+<ul>
+<li>瞬间动词：动作或作用在瞬间发生并完成。但是动作的结果或状态是存在的。
+<ul>
+<li>死ぬ</li>
+<li>結婚する</li>
+<li>届く</li>
+<li>入院する</li>
+<li>出る（でる）</li>
+<li>着く（つく）</li>
+<li>消える</li>
+<li>止まる</li>
+<li>付く（つく）</li>
+<li>…</li>
+</ul>
+</li>
+<li>持续动词：动作能够持续进行。可以后续「～ている」的表现形式，表示动作正在进行或经常的习惯性动作
+<ul>
+<li>勉強する</li>
+<li>読む</li>
+<li>歌う</li>
+<li>食べる</li>
+<li>見る</li>
+<li>鳴く（なく）</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h4 id="状态动词单纯状态动词"><a class="header" href="#状态动词单纯状态动词">状态动词／单纯状态动词</a></h4>
+<ul>
+<li>状态动词：存在、可能或状态的动词。状态动词其后不接「～ている」的表现形式，但可能动词在不表示可能的意义时可以使用「～ている」
+<ul>
+<li>ある</li>
+<li>いる</li>
+<li>わかる</li>
+<li>できる</li>
+<li>要る（いる）</li>
+<li>話せる</li>
+<li>…</li>
+</ul>
+</li>
+<li>单纯状态动词：表示带有某种状态的动词。含有形容词或形容动词的性质。后面常接「～ている」的表现形式，也可以用「た」形，表示人或事物的状态
+<ul>
+<li>優れる（すぐれる）</li>
+<li>似る（にる）</li>
+<li>曲がる（まがる）</li>
+<li>富む（とむ）</li>
+<li>～顔をする</li>
+<li>そびえる</li>
+<li>ありふれる</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h3 id="动词活用及其用法"><a class="header" href="#动词活用及其用法">动词活用及其用法</a></h3>
+<h4 id="未然形"><a class="header" href="#未然形">未然形</a></h4>
+<h5 id="变化规律"><a class="header" href="#变化规律">变化规律</a></h5>
+<ul>
+<li>五段动词：词尾「う」段变「あ」段＋「ない」
+<ul>
+<li>書く-&gt;かかない</li>
+<li>話す-&gt;はなさない</li>
+<li>洗う-&gt;あらわない</li>
+<li>待つ-&gt;またない</li>
+<li>死ぬ-&gt;しなない</li>
+<li>学ぶ-&gt;まなばない</li>
+<li>読む-&gt;よまない</li>
+<li>売る-&gt;うらない</li>
+<li>泳ぐ-&gt;およがない</li>
+<li>注意：「ある」-&gt;「あらない」✕「ない」〇</li>
+<li>…</li>
+</ul>
+</li>
+<li>一段动词：去掉结尾「る」＋「ない」
+<ul>
+<li>起きる-&gt;おきない</li>
+<li>出かける-&gt;でかけない</li>
+<li>食べる-&gt;たべない</li>
+<li>見る-&gt;みない</li>
+<li>…</li>
+</ul>
+</li>
+<li>カ变动词：「くる」变为「こ」＋「ない」
+<ul>
+<li>来る-&gt;こない</li>
+</ul>
+</li>
+<li>サ变动词：「する」变为「し」＋「ない」
+<ul>
+<li>する-&gt;しない</li>
+<li>保存する-&gt;ほぞんしない</li>
+<li>勉強する-&gt;べんきょうしない</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h5 id="主要用法"><a class="header" href="#主要用法">主要用法</a></h5>
+<ul>
+<li>可以后续「ぬ」「せる」「れる」等成分，也可以做语法接续使用</li>
+</ul>
+<h4 id="连用形"><a class="header" href="#连用形">连用形</a></h4>
+<h5 id="变化规律-1"><a class="header" href="#变化规律-1">变化规律</a></h5>
+<ul>
+<li>五段动词：词尾「う」段变「い」段
+<ul>
+<li>書く-&gt;かき</li>
+<li>待つ-&gt;まち</li>
+<li>死ぬ-&gt;しに</li>
+<li>遊ぶ-&gt;あそび</li>
+<li>落とす-&gt;おとし</li>
+<li>住む-&gt;すみ</li>
+<li>作る-&gt;つくり</li>
+<li>歌う-&gt;うたう</li>
+<li>泳ぐ-&gt;およぎ</li>
+<li>続く-&gt;つづき</li>
+<li>…</li>
+</ul>
+</li>
+<li>一段动词：去掉结尾「る」
+<ul>
+<li>起きる-&gt;おき</li>
+<li>迎える-&gt;むかえ</li>
+<li>見る-&gt;み</li>
+<li>疲れる-&gt;つかれ</li>
+<li>受ける-&gt;うけ</li>
+<li>…</li>
+</ul>
+</li>
+<li>カ变动词：「来る」-&gt;「き」</li>
+<li>サ变动词：「する」-&gt;「し」
+<ul>
+<li>予約する-&gt;よやくし</li>
+<li>利用する-&gt;りようし</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h5 id="主要用法-1"><a class="header" href="#主要用法-1">主要用法</a></h5>
+<ul>
+<li>可以后续「～たい」「～ながら」「～そうだ」等语法</li>
+<li>也可以后续一些结尾词「～ぬく」「～放題（ほうだい）」「～にくい」「～やすい」「～過ぎる」等</li>
+</ul>
+<h4 id="终止形"><a class="header" href="#终止形">终止形</a></h4>
+<ul>
+<li>动词终止形与原形相同</li>
+<li>主要用于终止句子，以及后续某些助词、助动词</li>
+</ul>
+<h4 id="命令形"><a class="header" href="#命令形">命令形</a></h4>
+<h5 id="变化规律-2"><a class="header" href="#变化规律-2">变化规律</a></h5>
+<ul>
+<li>五段动词：词尾「う」段变「え」段
+<ul>
+<li>書く -&gt; かけ</li>
+<li>止まる -&gt; とまれ</li>
+<li>…</li>
+</ul>
+</li>
+<li>一段动词：去掉结尾「る」＋「ろ」或「よ」
+<ul>
+<li>食べる -&gt; たべよ</li>
+<li>起きる -&gt; おきろ</li>
+<li>見る -&gt; みろ</li>
+<li>…</li>
+</ul>
+</li>
+<li>カ变动词：「来る」 -&gt; 「こい」</li>
+<li>サ变动词：「する」 -&gt; 「しろ」或「せよ」
+<ul>
+<li>掃除する -&gt; そうじしろ／そうじせよ</li>
+<li>勉強する -&gt; べんきょうしろ／べんきょうせよ</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h5 id="主要用法-2"><a class="header" href="#主要用法-2">主要用法</a></h5>
+<ul>
+<li>常用于命令、口令、口号或引用中，语气傲慢，一般不用在敬体会话中，即使出现也限于男子使用</li>
+<li>日常生活中多使用「～なさい」「～てください」等较为客气的命令式，相当于汉语的“请”</li>
+</ul>
+<h4 id="推量形"><a class="header" href="#推量形">推量形</a></h4>
+<h5 id="变化规律-3"><a class="header" href="#变化规律-3">变化规律</a></h5>
+<ul>
+<li>五段动词：词尾「う」段变「お」段＋「う」
+<ul>
+<li>聞く -&gt; きこう</li>
+<li>働く -&gt; はたらこう</li>
+<li>休む -&gt; やすもう</li>
+<li>読む -&gt; よもう</li>
+<li>…</li>
+</ul>
+</li>
+<li>一段动词：去掉结尾「る」＋「よう」
+<ul>
+<li>見る -&gt; みよう</li>
+<li>出かける -&gt; でかけよう</li>
+<li>起きる -&gt; おきよう</li>
+<li>寝る -&gt; ねよう</li>
+<li>…</li>
+</ul>
+</li>
+<li>カ变动词：来る -&gt; 来よう（くる -&gt; こ＋よう）</li>
+<li>サ变动词：「する」 -&gt; 「し」＋「よう」
+<ul>
+<li>する -&gt; しよう</li>
+<li>勉強する -&gt; べんきょうしよう</li>
+<li>運動する -&gt; うんどうしよう</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h5 id="主要用法-3"><a class="header" href="#主要用法-3">主要用法</a></h5>
+<ul>
+<li>表示第一人称的意志、愿望、决心，或表示第一人称对他人的劝诱</li>
+<li>主要用于语法接续，可以用「～う・よう」＋「と思います」表示说话人的意志，通常用于第一人称，问句可用于第二人称</li>
+</ul>
+<h4 id="连体形"><a class="header" href="#连体形">连体形</a></h4>
+<ul>
+<li>动词所有的简体形式都可以称为是连体形，主要用于修饰体言，作定语。</li>
+</ul>
+<h4 id="假定形"><a class="header" href="#假定形">假定形</a></h4>
+<h5 id="变化规律-4"><a class="header" href="#变化规律-4">变化规律</a></h5>
+<ul>
+<li>五段动词：词尾「う」段变「え」段＋「ば」
+<ul>
+<li>書く -&gt; かけば</li>
+<li>飛ぶ -&gt; とべば</li>
+<li>話す -&gt; はなせば</li>
+<li>…</li>
+</ul>
+</li>
+<li>一段动词：去掉结尾「る」＋「れば」
+<ul>
+<li>見る -&gt; 見れば</li>
+<li>起きる -&gt; おきれば</li>
+<li>寝る -&gt; ねれば</li>
+<li>…</li>
+</ul>
+</li>
+<li>カ变动词：来る -&gt; 来れば（くる -&gt; く＋れば）</li>
+<li>サ变动词：「する」 -&gt; 「すれば」
+<ul>
+<li>勉強する -&gt; べんきょうすれば</li>
+<li>運動する -&gt; うんどうすれば</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+<h5 id="主要用法-4"><a class="header" href="#主要用法-4">主要用法</a></h5>
+<ul>
+<li>表示假定条件、恒常条件、后项的提示话题，以及「～もあれば～もある」「～ば～ほど」「～も～ば～も～」等语法的接续</li>
+</ul>
+<h3 id="动词音变"><a class="header" href="#动词音变">动词音变</a></h3>
+<ul>
+<li>词尾「う」「つ」「る」 -&gt; 促音变 -&gt; ＋て
+<ul>
+<li>買う -&gt; かって</li>
+<li>待つ -&gt; まって</li>
+<li>売る -&gt; うって</li>
+<li>…</li>
+</ul>
+</li>
+<li>词尾「く」「ぐ」 -&gt; イ音变 -&gt; ＋て／で
+<ul>
+<li>書く -&gt; かいて</li>
+<li>泳ぐ -&gt; およいで</li>
+<li>…</li>
+</ul>
+</li>
+<li>词尾「ぬ」「む」「ぶ」 -&gt; 拨音变 -&gt; ＋で
+<ul>
+<li>死ぬ -&gt; しんて</li>
+<li>住む -&gt; すんで</li>
+<li>呼ぶ -&gt; よんで</li>
+<li>…</li>
+</ul>
+</li>
+<li>词尾「す」的词，将「す」改为「し」＋て
+<ul>
+<li>話す -&gt; はなして</li>
+<li>…</li>
+</ul>
+</li>
+<li>注意
+<ul>
+<li>五段动词「行く」发生促音变「行く」 -&gt; 「行（い）って」</li>
+<li>动词有两种连用形
+<ul>
+<li>用于后续敬体助词「ます」或用于句中表示中顿以及后续其他语法的「ます」形连用形，属于一般连用形，通称连用形</li>
+<li>用于后续过去完成的助动词「た」及接续助词「て」等连用形，属于特殊连用形，又称音变形</li>
+</ul>
+</li>
+<li>五段动词音变形共三种：促音变、イ音变、 拨音变</li>
+<li>一段动词、カ变动词、サ变动词只有一般连用形，「ます」连用形和「て」连用形均为同一形式</li>
+</ul>
+</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/语言/日语/日语.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/语言/日语/句型整理.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/语言/日语/日语.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/语言/日语/句型整理.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/语言/日语/日语语法整理.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第七章：肺结核 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第七章肺结核"><a class="header" href="#第七章肺结核">第七章：肺结核</a></h1>
+<h2 id="一病因"><a class="header" href="#一病因">一、病因</a></h2>
+<ul>
+<li>结核分枝杆菌分类</li>
+<li>分型包括人型、牛型、非洲型和鼠型 4 类</li>
+<li><strong>致病菌 90% 以上为人型结核分枝杆菌</strong></li>
+</ul>
+<h2 id="二结核分枝杆菌生物学特性"><a class="header" href="#二结核分枝杆菌生物学特性">二、结核分枝杆菌生物学特性</a></h2>
+<ol>
+<li><strong>多形性</strong> ：细长稍弯曲两端圆形的杆菌</li>
+<li><strong>抗酸性：抗酸染色呈红色，抵抗盐酸酒精脱色</strong></li>
+<li><strong>生长缓慢</strong> ：增代时间为 14-20 小时，需氧菌， <strong>培养时间 2-8 周</strong> ，适宜生长温度 37℃ 左右</li>
+<li><strong>抵抗力强</strong> ：对干燥、冷、酸、碱等抵抗力强</li>
+<li><strong>菌体结构复杂</strong>
+<ul>
+<li>主为类脂质、蛋白质、多糖类</li>
+<li>类脂质中的蜡质（占 50%，坏死、液化、空洞、变态反应）</li>
+<li>蛋白质（结核菌素成分，诱发皮肤变态反应）</li>
+<li>多糖类（血清免疫应答反应）</li>
+</ul>
+</li>
+</ol>
+<h2 id="三结核病在人群中的传播"><a class="header" href="#三结核病在人群中的传播">三、结核病在人群中的传播</a></h2>
+<ul>
+<li>传染源：痰菌阳性的继发性肺结核患者。</li>
+<li>传播途径：飞沫传播。</li>
+<li>易感人群：机体自然免疫力低下和获得性特异性抵抗力低下者，如婴幼儿、老年人、HIV 感染者、免疫抑制剂使用者。</li>
+<li>传染性大小：排菌数量、空间菌微滴的密度及通风接触密切程度、时间以及个人免疫力。</li>
+</ul>
+<h2 id="四结核病的发生与发展"><a class="header" href="#四结核病的发生与发展">四、结核病的发生与发展</a></h2>
+<h3 id="一概述"><a class="header" href="#一概述">一）概述</a></h3>
+<ul>
+<li>原发病灶结核菌
+<ul>
+<li>大部分被消灭</li>
+<li>少量处于休眠
+<ul>
+<li>持续休眠</li>
+<li>继发结核病</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="二发展过程"><a class="header" href="#二发展过程">二）发展过程</a></h3>
+<ul>
+<li>结核菌感染——肺泡巨噬细胞反应分泌细胞因子——吸引淋巴、单核细胞积聚——形成肉芽肿——限制细菌扩散并杀灭细菌</li>
+<li>细胞介导免疫反应：是宿主获得性抗结核保护作用的最主要机制，是由 <strong>T 细胞介导的细胞免疫</strong> 。</li>
+<li>迟发型变态反应：是宿主对细菌及其代谢产物的超常反应，发生于结核菌侵入人体 <strong>4-8 周后</strong> ，亦由 T 细胞介导，以巨噬细胞为效应细胞。</li>
+<li><strong>KOCH 现象</strong> ：机体对结核分枝杆菌再感染和初感染所表现出不同反应的现象。</li>
+</ul>
+<h2 id="五分类"><a class="header" href="#五分类">五、分类</a></h2>
+<h3 id="一概述-1"><a class="header" href="#一概述-1">一）概述</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">类型</th><th style="text-align: center">好发人群</th><th style="text-align: center">临床特点</th><th style="text-align: center">X 线</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">1.原发型</td><td style="text-align: center">少年儿童，有结核接触史</td><td style="text-align: center">症状轻微，类似感冒</td><td style="text-align: center"><strong>肺部原发灶、淋巴管炎、肺部淋巴结肿大，三者呈哑铃性</strong></td></tr>
+<tr><td style="text-align: center">2.1.急性血行播散型</td><td style="text-align: center">婴幼儿、青少年、成人，特别是免疫力低下者</td><td style="text-align: center">起病急，有全身毒血症状，约一半以上合并结核性脑膜炎和其他脏器结核</td><td style="text-align: center">发病2周可见满肺大小、密度、分布均匀的粟粒状结节</td></tr>
+<tr><td style="text-align: center">2.2.亚急性血行播散型</td><td style="text-align: center">青少年、成人</td><td style="text-align: center">起病缓，症状轻或无</td><td style="text-align: center">双肺上中见大小、密度、分布不均的粟粒状结节</td></tr>
+<tr><td style="text-align: center">3.继发型</td><td style="text-align: center">成人</td><td style="text-align: center">缓慢，干酪型可急性发病；迁延，全身毒性症状，咳嗽、咯血等</td><td style="text-align: center">呈渗出 <strong>浸润型、干酪型、结核球、空洞型、纤维空洞型</strong> 等表现</td></tr>
+<tr><td style="text-align: center">4.结核性胸膜炎</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">5.其他肺外结核</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">6.菌阴肺结核</td><td style="text-align: center"></td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="二补充"><a class="header" href="#二补充">二）补充</a></h3>
+<ul>
+<li>
+<p>浸润型：成人最常见</p>
+</li>
+<li>
+<p>干酪型：最严重；毛玻璃阴影</p>
+</li>
+<li>
+<p>空洞型：薄壁；干酪溶解性空洞</p>
+</li>
+<li>
+<p>纤维空洞型：厚壁；肺门抬高和肺纹理呈“垂柳状”；纵膈向患侧移位；开放性结核的来源</p>
+</li>
+<li>
+<p>结核球：卫星灶、直径 2-4cm</p>
+</li>
+</ul>
+<h3 id="三菌阴肺结核"><a class="header" href="#三菌阴肺结核">三）菌阴肺结核</a></h3>
+<ol>
+<li>典型肺结核临床症状和胸部 X 线表现</li>
+<li>临床可排除其他非结核性肺部疾患</li>
+<li>PPD（5IU）强阳性，血清抗结核抗体阳性</li>
+<li>诊断性抗结核治疗有效</li>
+<li>痰结核菌 PCR 和探针检测阳性</li>
+<li>肺外组织病理证实结核病变</li>
+<li>支气管灌洗检出抗酸分枝杆菌</li>
+<li>支气管或肺组织病理证实结合病变</li>
+</ol>
+<ul>
+<li>符合以上 1-6 项中至少 3 项或 7、8 中 1 项可确诊</li>
+</ul>
+<h2 id="六临床表现"><a class="header" href="#六临床表现">六、临床表现</a></h2>
+<h3 id="一呼吸系统症状"><a class="header" href="#一呼吸系统症状">一）呼吸系统症状</a></h3>
+<ul>
+<li>咳嗽、咳痰</li>
+<li><strong>咯血： 1/3 ，少量咯血多见</strong></li>
+<li>胸痛：胸膜性疼痛</li>
+<li>呼吸困难：干酪性肺炎和大量胸腔积液</li>
+</ul>
+<h3 id="二全身症状"><a class="header" href="#二全身症状">二）全身症状</a></h3>
+<ul>
+<li>发热为最常见症状，多为长期午后潮热，部分患者有倦怠乏力、盗汗、食欲减退和体重减轻等。</li>
+<li>育龄女性患者可以有月经不调。</li>
+</ul>
+<h2 id="七辅助检查"><a class="header" href="#七辅助检查">七、辅助检查</a></h2>
+<h3 id="一常规首选-x-线"><a class="header" href="#一常规首选-x-线">一）常规首选 X 线</a></h3>
+<ul>
+<li>
+<p>可发现早期轻微病变；</p>
+</li>
+<li>
+<p>病变多发生在上叶的尖后段和下叶的背段、后基底段；</p>
+</li>
+<li>
+<p>密度不均匀、边缘较清楚和变化较慢，易形成空洞和播散病灶。</p>
+</li>
+<li>
+<p>原发综合征</p>
+<ul>
+<li>右上肺边缘模糊的片状阴影，淋巴管炎和肿大的肺门淋巴结共同构成一哑铃形的病灶。</li>
+<li>肺门淋巴结肿大-胸内淋巴结结核。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二痰结核分枝杆菌检查"><a class="header" href="#二痰结核分枝杆菌检查">二）痰结核分枝杆菌检查</a></h3>
+<ul>
+<li><strong>是确诊肺结核病的主要方法</strong></li>
+<li><strong>痰涂片检查是简单、快速、易行和可靠的方法</strong> ，但欠敏感， <strong>提示有抗酸杆菌</strong> （ &gt;5000/ml，可阳性）</li>
+<li><strong>结核分枝杆菌培养常作为结核病诊断的金标准。</strong></li>
+</ul>
+<h3 id="三结核菌素试验ppd"><a class="header" href="#三结核菌素试验ppd">三）结核菌素试验（PPD）</a></h3>
+<ul>
+<li><strong>广泛应用于检出结核分枝杆菌的感染，而非检出结核病。</strong></li>
+<li><strong>结核菌素试验对儿童、少年和青年的结核病（未接种过卡介苗）诊断有参考意义。</strong></li>
+<li>方法：
+<ul>
+<li>位置 : 左侧前臂曲侧中上 1/3 处</li>
+<li>剂量 : 0.1ml（ 5IU ) 皮内注射</li>
+<li>时间：试验后 48-72 小时观察</li>
+<li>测量： <strong>硬结直径，而不是红晕直径</strong> （硬结为特异性变态反应，而红晕为非特异性变态反应）</li>
+</ul>
+</li>
+<li>结核菌素呈阴性
+<ul>
+<li>感染后 4-8 周前（未形成变态反应）</li>
+<li>营养不良、HIV、麻疹、水痘、癌症</li>
+<li>严重的细菌感染（包括粟粒性肺结核和结核性脑膜炎）</li>
+</ul>
+</li>
+</ul>
+<h3 id="四γ-干扰素释放实验t-spot"><a class="header" href="#四γ-干扰素释放实验t-spot">四）γ-干扰素释放实验（T-SPOT）</a></h3>
+<ul>
+<li>再次接触结核杆菌：特异性 <strong>T 淋巴细胞</strong> 释放细胞因子 γ</li>
+<li>不会受卡介苗接种、非结核分枝杆菌影响</li>
+<li>鉴别结核分枝杆菌感染及卡介苗接种影响、非结核分枝杆菌感染比 PPD 更有意义</li>
+<li><strong>阳性：存在结核感染、不能决定是否为活动性</strong></li>
+</ul>
+<h2 id="八治疗"><a class="header" href="#八治疗">八、治疗</a></h2>
+<ul>
+<li>治疗原则：早期、规律、全程、适量、联合。</li>
+</ul>
+<h3 id="一菌群特征及对药物的敏感性"><a class="header" href="#一菌群特征及对药物的敏感性">一）菌群特征及对药物的敏感性</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>指标</th><th>A 群</th><th>B 群</th><th>C 群</th><th>D 群</th></tr>
+</thead>
+<tbody>
+<tr><td>菌群特点</td><td>快速繁殖，占绝大部分；细菌数量大，易产生耐药变异菌</td><td>处于半静止状态</td><td>处于半静止状态，可突然间歇性短暂的生长繁殖</td><td>休眠状态，不繁殖，数量很少</td></tr>
+<tr><td>部位</td><td>巨噬细胞外和肺空洞干酪液化部分</td><td>巨噬细胞内酸性环境中和空洞壁坏死组织中</td><td>干酪灶</td><td>病灶中</td></tr>
+<tr><td>敏感药物</td><td>异烟肼&gt;链霉素&gt;利福平&gt;乙胺丁醇</td><td>吡嗪酰胺&gt;利福平&gt;异烟肼</td><td>利福平&gt;异烟肼</td><td>无敏感药物</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="二常用药物"><a class="header" href="#二常用药物">二）常用药物</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>药物</th><th>特点</th><th>作用部位</th><th>机制</th><th>副作用</th></tr>
+</thead>
+<tbody>
+<tr><td>异烟肼 INH，H</td><td>杀菌； 口服吸收快；可通过血脑屏障</td><td>细胞内外抑制 DNA 合成</td><td>周围神经炎；偶可发生药物性肝炎</td><td></td></tr>
+<tr><td>利福平 RFP，R</td><td>杀菌；特别是对 C 菌群</td><td>细胞内外抑制 mRNA 合成</td><td>肝功能受损；过敏</td><td></td></tr>
+<tr><td>吡嗪酰胺 PZA，Z</td><td>杀菌</td><td>细胞内吡嗪酸抑菌</td><td>高尿酸；关节痛；肝损害</td><td></td></tr>
+<tr><td>链霉素 SM，S</td><td>杀菌</td><td>细胞外</td><td>抑制蛋白质合成</td><td>耳、肾毒性、前庭功能损害</td></tr>
+<tr><td>乙胺丁醇 EMB，E</td><td>抑菌</td><td>-</td><td>抑制 RNA 合成</td><td>视神经炎</td></tr>
+<tr><td>对氨基水杨酸 PAS，P</td><td>抑菌</td><td>-</td><td>干扰叶酸合成</td><td>胃肠不适</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="三标准治疗方案"><a class="header" href="#三标准治疗方案">三）标准治疗方案</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>情况</th><th>每日用药方案（强化）</th><th>间歇用药方案（巩固）</th></tr>
+</thead>
+<tbody>
+<tr><td>初治肺结核</td><td>2HRZE/4HR<br />（2 个月，4 个月）</td><td>2H3R3Z3E3/4H3R3<br />（2 个月，一周吃 3 次）</td></tr>
+<tr><td>复治涂阳肺结核</td><td>2HRZSE/6~10HRE</td><td>2H3R3Z3SE3/6~10H3R3E3</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="四耐多药结核病的治疗"><a class="header" href="#四耐多药结核病的治疗">四）耐多药结核病的治疗</a></h3>
+<ul>
+<li>耐多药结核病：指标本中分离的结核菌至少耐 <strong>H、R 两种药物</strong> ，两种以上即为耐多药结核病。</li>
+<li>治疗时间长、死亡率及复发率高；</li>
+<li>治疗：选用未曾用过的一或二线药物，或药物敏感试验证实敏感的药物，多种药物联合应用。</li>
+<li><strong>时间：加强期 9-12 个月，总疗程 20 个月及以上（九版更新）</strong></li>
+</ul>
+<h3 id="五其他"><a class="header" href="#五其他">五）其他</a></h3>
+<ul>
+<li>咯血等对症治疗：
+<ul>
+<li>咯血处置要注意镇静、止血，患侧卧位，预防和抢救因咯血所致的室息并防止肺结核播散。</li>
+<li><strong>大咯血 : 垂体后叶素（冠心病、高血压、心衰、孕妇禁用）</strong> 或支气管动脉栓塞。</li>
+</ul>
+</li>
+<li>糖皮质激素：仅用于结核中毒症状重；在有效抗结核的情况下；4-8 周；泼尼松 20mg，1-2 周后递减。</li>
+<li><strong>外科治疗：治疗无效、耐药厚壁空洞、大干酪、脓胸、胸膜瘘、大咯血治疗无效。</strong></li>
+</ul>
+<h2 id="九肺结核及其他疾病"><a class="header" href="#九肺结核及其他疾病">九、肺结核及其他疾病</a></h2>
+<h3 id="一糖尿病合并肺结核"><a class="header" href="#一糖尿病合并肺结核">一）糖尿病合并肺结核</a></h3>
+<ul>
+<li>3-6 倍患病率</li>
+<li>起病较急、较重，易被误诊。</li>
+<li>肺部病变以浸润、渗出、干酪样坏死为主，易于融合并形成空洞，下肺野发生率比一般人群高。</li>
+<li>治疗效果较差</li>
+</ul>
+<h3 id="二hivaids-与结核病"><a class="header" href="#二hivaids-与结核病">二）HIV/AIDS 与结核病</a></h3>
+<ul>
+<li>结核病是 <strong>HIV/AIDS 最常见的机会性感染性疾病</strong></li>
+<li>下肺野结核多见，常伴胸腔积液、纵隔淋巴结肿大，空洞少见</li>
+<li>PPD 皮肤试验阳性率低</li>
+<li>抗结核药疗效差且药物副作用发生率高</li>
+<li>预后差</li>
+</ul>
+<h3 id="三肝炎和肺结核"><a class="header" href="#三肝炎和肺结核">三）肝炎和肺结核</a></h3>
+<ul>
+<li>异烟肼、利福平、吡嗪酰胺有肝毒性</li>
+<li>20% 患者转氨酶轻度升高，无需停药，可恢复</li>
+<li>停药指征：食欲不良、黄疽、肝大</li>
+<li>肝炎严重：2SHE/10HE</li>
+</ul>
+<h3 id="四硅沉着病"><a class="header" href="#四硅沉着病">四）硅沉着病</a></h3>
+<ul>
+<li>III 期矽肺合并肺结核高达 <strong>50% 以上</strong></li>
+<li>同单纯肺结核治疗相同</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第六章：肺部感染性疾病.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第八章：肺癌.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第六章：肺部感染性疾病.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第八章：肺癌.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第二部分：呼吸系统疾病/第七章：肺结核.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

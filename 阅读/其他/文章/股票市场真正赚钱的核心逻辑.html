@@ -1,0 +1,453 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>股票市场真正赚钱的核心逻辑 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="股票市场真正赚钱的核心逻辑"><a class="header" href="#股票市场真正赚钱的核心逻辑">股票市场真正赚钱的核心逻辑</a></h1>
+<p><em>摸鱼录</em></p>
+<p>　　最近有非常多的朋友关心金融市场和股票市场的走势，也有很多跑来问我看法。</p>
+<p>　　本来计划是春节期间给大家分享一下我对金融市场的一些看法的，但是既然这么多朋友问了，那干脆我就择日不如撞日，今天把本该下周讲的第三次课程往前挪一挪，这样的话春节期间大家就给我放个假。</p>
+<p>　　这节课，主要围绕两个核心点：</p>
+<p>　　一、真正能从股票市场把钱赚走的，是什么人？用什么方式？</p>
+<p>　　二、从亲历者的视角，怎么样才能利用规则，去设计一整套方案，把钱套出来。</p>
+<p>　　很多朋友在问我看法的时候应该去看看公众号，看我多久没有写股市相关的内容了，如果你认真去看这些年我发布的文章基本已经没有怎么再跟大家聊过股市，这本来就是一种非常直观的态度和观点的表达了。</p>
+<p>　　在过去的文章《少点意淫，股票市场中期内根本不可能取代房地产市场成为下一个池子》已经非常清楚地阐述了为什么我不觉得股票市场会是下一个取代房地产市场的主体。</p>
+<p>　　在那篇文章里详细地比较了房地产市场跟股票市场的流动性差异和波动性差异，并探讨了它们的波动差异在管理层的角度来看对社会人群的不同影响。</p>
+<p>　　对于房地产市场来说，波动 30%—50% 是非常罕见的事情，但是对于股票市场来说，30%，50% 根本就不算什么，甚至在某些熊市的末期会相较高点出现 70% 到 90% 的跌幅，这都是很有可能的。</p>
+<p>　　像中国这样的国家，你能想象如果一个人他的主要资产在一个非常短的周期之内缩水 30% 到 50%，甚至 70% 以上会发生什么吗？</p>
+<p>　　经历这么大幅度的缩水，社会是要乱的，是要出事的。</p>
+<p>　　但是股票市场这样的波动又是周期性的，不可避免的，这样巨大的对财富的摧毁作用使得股票市场根本不适合拿来承载普通居民的财富。</p>
+<p>　　所以不管过去、现在还是未来，我觉得股票市场在中国都很难成为一个承载居民主要财富的载体。</p>
+<p>　　真要有那么一天，估计得等到我们彻底取代美国之后，有能力吸引全世界的资本来到中国的资本市场，那么或许可以考虑，在此之前想都不要想。</p>
+<p>　　股市不是一个给普通人挣钱的地方。相反，它是一个让少数人去挣绝大多数普通人的钱，对财富进行重新分配的猎场。</p>
+<p>　　如果你不想被割，唯一的方法就是不要贸贸然踏进这个猎场。</p>
+<p>　　而且对于我来讲，这些年来一直有一个非常强烈的直觉，我说不上太多的逻辑，但是我有一种很强烈的直觉，那就是我觉得整个大环境和周期已经变了，完全不再是过去的样子，也不能再用以往的经验来套将来的事。</p>
+<p>　　如果放在过去的话，当股币出现大幅度的像市场上现在这样的跌幅，我是会考虑进去的，但是现在，讲真的我连一点进场的欲望都没有。</p>
+<p>　　这其实涉及到中国股票市场最大的一个秘密，那就是那些在股票市场真正赚到了钱的人，他们是怎么赚的钱？</p>
+<p>　　如果一个人说他主要的财富是从二级市场里面賺到的（也就是大家最常见到的各类“股神”），那么，在我看来，这样的人我给他的定位，会是整个生态圈里面的末流，五分钟的交流都嫌长。</p>
+<p>　　很多人会觉得那些在股票市场买进卖出挣价差，成就各种所谓的传奇、神话的人很高大上，但实际上恰恰相反，这些人是不入流的。</p>
+<p>　　真正能在股票市场挣到钱的人，不是买股票的人，也不是卖股票的人，而是：“印”股票的人。</p>
+<p>　　记住，这个世界上最暴利的生意永远是印钱，拿成本接近零的纸片去换别人的真金白银。</p>
+<p>　　在某种意义上，我觉得股票可以当做是一种特殊的货币，它的股价可以看作是这种货币跟人民币之间一个特殊的汇率。</p>
+<p>　　在很多年前，我有一个朋友非常热衷于去投资各种初创型的公司，所以当时周末的时候我会经常被拉着到处去看各种各样的项目。</p>
+<p>　　拿其中一家做网络安全和相关硬件的公司举个例子吧。</p>
+<p>　　当时我们跟他们几个股东都面对面聊了挺久，他找我们的时候应该是 C 轮，其中有一个 A 轮的股东想退出，然后想问我们有没有兴趣去接盘。</p>
+<p>　　然后我们就去打探了一下他们之前几轮的股东成本。</p>
+<p>　　原始的初创股东的成本大概就在一块左右，到 A 轮的时候差不多是 4 块钱左右每股，然后到 B 轮的时候已经接近 7 块多 8 块钱，找到我们的时候是 C 轮，差不多快上市了。</p>
+<p>　　当时他们开的价格是 17 块钱的接盘价，我们当时计算了一下，这家公司的创始人的家里是有 J 方背景的，以后接政务和芯片相关的安全方面的硬件市场还是非常稳定的，17 块其实不贵，上市之后超 50 块一点问题都没有，但是那个要退出的人手里股份比较多，真压那么多钱三年还是有点风险的，所以我们就没有接。</p>
+<p>　　到了后面上市的时候上市价应该差不多是 37，8 不到 40 这样的价格，拉了几个涨停板之后冲高到 70 多 80 块，后面到第 2 波的时候冲上了 100 多块。</p>
+<p>　　你们看出来这问题在哪里了吗？</p>
+<p>　　如果你只是一个单纯的二级市场的参与者，你能买进去得最低价位理论上是 30 多块钱，但刚开盘的新股都是非常难买的，等到你真正能买得进去时候，可能离 30 多的上市价格已经很远，一般都要去到五六十这样的价位才有可能买得进去。</p>
+<p>　　哪怕可能后面涨到 70 多，甚至是涨到 100 多，我就按 100 多来计算，你也就挣了一倍的钱。而这还建立在你要能在最高点抛得出去的前提下。</p>
+<p>　　很多人往往是股价在八九十这个阶段冲进去的，然后往后那几年就再也没有摸回去那个价位。</p>
+<p>　　而对于那些初创的原始股的持有者来讲，只要这家公司能上市，他们手里的 1 万块钱就能变成 30 万、50 万甚至是 100 万。</p>
+<p>　　对于那些普通的二级市场参与者来讲，你可能 100 万冲进去最后就剩下了 20 万，30 万，这中间的那些差额被谁挣走了？</p>
+<p>　　自然是被那些成本十几块，甚至是几块钱，一块钱的人挣走了啊。</p>
+<p>　　你要是 7，80 买的，心里觉得这股票娇贵着，要好好对待，市场有点风吹草动，也不知道该补一下还是抛一下，纠结来纠结去半天拿不定主意。</p>
+<p>　　但在那些一块钱成本的人眼里，他们是怎么想的？什么？这破玩意居然能涨到 100？卖，使劲卖，你要多少就卖多少给你，一点都不带含糊的。</p>
+<p>　　说白了，那些早几轮参与融资持有股份的那些人，他们就是用股票这么一种东西从你的手里换到了你辛辛苦苦起早贪黑长年累月攒下来的真金白银，而给你留了一大堆他们的股票。</p>
+<p>　　是全国这么多股民用自己挣来的血汗钱去让二级市场上的股东成功地套到现金。</p>
+<p>　　他们得到了真金白银，而你得到了股票这么一种看不见摸不着的东西。</p>
+<p>　　本质上股市就是这么一个游戏。</p>
+<p>　　所以为什么见多了一级市场和二级市场的真实面貌之后我就再也没有兴趣去跟大家谈股票之类的。</p>
+<p>　　因为不管在二级市场上多么光鲜亮丽，能挣到的钱，对于真正“印”股票的人来说，都是很可笑的。</p>
+<p>　　除非你有足够多的钱去把这个公司的绝大部分股票买下来变成股东，然后自己参与决策权决定这家公司的方向，去勾兑二级市场上的机构来进行操纵股价，不然参与二级市场的操作没有任何意义。</p>
+<p>　　因为最肥的那一段跟你是没有任何关系的，你能吃到的那一节，已经是被人家吃了好几轮之后吐出来的一滩食物残渣而已。</p>
+<p>　　就拿我刚才举的那个例子来讲，二级市场上的那些所谓大神们，又是技术派，又是基本面，让你去分析，让你去盯盘，让你去追涨杀跌，从 30 块变成 100 块，那又怎样？</p>
+<p>　　你这一块钱只不过变成了三块钱，但是别人的一块钱已经变成了 100 块，这中间差了多少？差了 30 倍！</p>
+<p>　　所以很多时候大家看到的各种造富神话本质上只是赌场为了骗你进去赌钱。</p>
+<p>　　做为一个真正的挚友，我能给到的建议，是绝对会劝你不要进去这个赌场里面。因为我见过太多人的底牌和成本，要比你们所能买得到的，低上太多太多。</p>
+<p>　　你进去赌场里面，或许能凭运气，或许能凭一些小手段小赢几场，但是赌场是不怕你赢的，他只怕你不来。</p>
+<p>　　只要你一直玩下去，最终肯定大概率还是要还回去。</p>
+<p>　　为什么上海或者深圳这些地方的房价高得离谱？就是因为在你看不见的地方，就是有这么一批钱来得实在是太快，也太轻松的人了。</p>
+<p>　　短短几年，当你手里的钱从 1 块钱变成 1.2，1.3 的时候，他们手里的一块钱，已经可以变成 100 块，200 块，甚至更多。</p>
+<p>　　很多时候其实那些上市公司都是非常垃圾的，但是只要能上市，说白了就相当于可以合法地印钱，可以肆无忌惮地去掠夺股民。</p>
+<p>　　因此我已经给大家点得非常明确，真正赚钱的大头根本就不可能会在二级市场。</p>
+<p>　　不管是买股票还是卖股票，都不可能挣到大钱，真正赚钱的那一部分是去造股票，印股票，这才是赚钱的大头。</p>
+<p>　　但是，你们也要很清楚，有一些所谓的初创公司，就是利用这个来骗钱的，一些根本不可能上市的公司会包装自己的所谓原始股来非法出售。</p>
+<p>　　这就涉及到一个定理，普通人看得见的赚钱机会，通常都是天上掉下的馅饼，骗人的。这种骗子公司，以深圳居多。</p>
+<p>　　不过，在注册制没有实施之前，其实还是有很多门路来快速印股票的，非法的什么搭建关系走后门那种我们不在这里讨论，光是合法的就有不少。</p>
+<p>　　我再可以拿自己经历过的一个真实案例来跟大家解释一下。在注册制没有实行之前，要上市你要满足几个条件：</p>
+<p>　　最近 3 年净利润均为正，且最近 3 年净利润累计不低于 1.5 亿元，最近一年净利润不低于 6000 万元，最近 3 年经营活动产生的现金流量净额累计不低于 1 亿元或营业收入累计不低于 10 亿元；</p>
+<p>　　预计市值不低于 50 亿元，且最近一年净利润为正，最近一年营业收入不低于 6 亿元，最近 3 年经营活动产生的现金流量净额累计不低于 1.5 亿元；</p>
+<p>　　预计市值不低于 80 亿元，且最近一年净利润为正，最近一年营业收入不低于 8 亿元。</p>
+<p>　　这些条件都对一家公司的财务做了较为严格的限制，也就是说如果你在大城市或者其他经济发达的地方，你想上市，其实门槛还是摆在那的。</p>
+<p>　　但是，当时还有一个很多人没有留意到的东西，叫做贫困地区的绿色上市通道，也就是说当时国家为了对贫困地区进行扶持，弄了一个绿色通道。</p>
+<p>　　注册地和主要生产经营地均在贫困地区且开展生产经营满三年、缴纳所得税满三年的企业，或者注册地在贫困地区、最近一年在贫困地区缴纳所得税不低于 2000 万元且承诺上市后三年内不变更注册地的企业，申请首次公开发行股票并上市的，适用”即报即审、审过即发”政策。</p>
+<p>　　当时为了扶持那些贫困地区的企业，其实是开了一个口子，只需要一年 2000 多万的纳税额，就可以去走这个通道了。</p>
+<p>　　我有一个朋友，当时就有这么一家公司。</p>
+<p>　　他们当时卖的是数据，对于很多一些大型的企业来讲，平时是需要用到很多数据的，最新的价格和库存之类，有一些公开的品种你是在期货市场上可以看到和获取的，但是有一些小众的品种，它根本不在期货市场上交易，所以，要获取那些数据要远比公开找到的更难，但是也更值钱。</p>
+<p>　　我不能举他们真正做的那个数据，我只能换另外一个领域的数据来形容，不然的话这个行业太小了，一旦对上大概的数字和规模很容易被猜到是哪一家，我就换到农业这个行业作为举例。</p>
+<p>　　相关的数字我也会做修改和模糊确保大家不那么容易找到。</p>
+<p>　　比如说鸡蛋是期货市场上的一个标准品，但是，鸭蛋、鹅蛋甚至是鹌鹑蛋是没有在期货市场上出现的，如果有一些企业又大量地需要鸭蛋、鹅蛋甚至是鹌鹑蛋的价格和各地的产销数据，库存之类，那这时候怎么办呢？</p>
+<p>　　往往就只能去找那家数据公司来提供这些非标品的价格和供需方面的信息。</p>
+<p>　　所以，这一块其实收入是比较稳定的，因为合作的单位和企业机构相对来说都很稳定，一年大概的纳税额这一块是可以去到千万这样的级别。</p>
+<p>　　但是如果是仅凭这个想去上市的话，是有难度的，因为他们的营业额远远达不到。当时还没有开始注册制，要达到主板的上市要求，估计还得 5 年往后。</p>
+<p>　　而且去走正常渠道的话，光达到标准还不行，他们当时是在一线的大城市，哪怕达到标准还需要排队排很久，甚至还得花钱去打点各个相关的人，这个费用是不低的。</p>
+<p>　　所以，他们就找到了 N 老师，问问我有没有什么路子，当时我就给他们提过一个设想。那就是去走贫困地区的绿色上市通道。</p>
+<p>　　这家公司的优势在于它已经有了成熟的商业模式和产品，也有相对可靠的营收和利润，要满足相对应的纳税额其实在财务上不难实现。</p>
+<p>　　但是这家公司主要的人员都是在一线城市来进行数据的采集和分析，而又不可能为了上市把这几百号人全部挪到贫困县去。</p>
+<p>　　所以，难点有两个，一是要想办法把之前稳定的营收给它转移到一个贫困县的子公司下面，要找到一个承载的载体，能够在那些值钱的数据和贫困县之间建立联系，二是不能像之前那样只靠虚拟的东西，而是要实实在在地雇佣到贫困县当地那些技术水平不高的劳动力，创造相应的就业岗位。</p>
+<p>　　我当时的给出的方案就是往硬件的方向走，去做一个类似于智能音箱的东西。</p>
+<p>　　因为那家公司虽然卖的是数据，但是很多的客户是一些没有文化的土老板，也就是说哪怕给他们一个软件让他们去看，他们可能都会觉得比较复杂，看不懂操作。</p>
+<p>　　但是呢，如果把所有的这些数据给隐藏到后台，只要土老板们发出询问的时候，就能用凌志玲娇嗲嗲的配音给他报出他想要的数据。</p>
+<p>　　那么，其实本质上是没有对业务流程和业务方向做大的修改的，卖的还是数据，只不过换了一种表达方式，连主要的人员也不需要动，无非就是在贫困县那里弄个壳，然后把营收塞过去。</p>
+<p>　　而像天猫精灵之类的智能音箱在当时已经是一个不能说十分完美，但是已经比较成熟，有一整套解决方案能拿得出来的。</p>
+<p>　　说白了只需要在贫困县建立一个工厂，然后从深圳把那些解决方案买过来，对硬件进行一个简单的组装即可立马推向市场。</p>
+<p>　　这样的话，通过这样的一个路径的转换，卖的东西是没有变的，但是增加了一个产品，而这个产品是依托在一个贫困县的工厂，本质上就将在一线城市的营收挪到了那个贫困县。</p>
+<p>　　一旦符合了绿色上市通道的上市标准，很快就能把一个相对应的子公司给弄成上市公司。</p>
+<p>　　当时我们的测算就是哪怕前几年要付出 2000 万的纳税额，但一旦公司上市之后，哪怕是按照 30 倍的市盈率来计算，不管是直接在二级市场上出售，还是将股份抵押给银行，能套出来的钱都不止十几个亿。</p>
+<p>　　就按 10 个亿来算，如果把这套出来的 10 个亿，放进公司自己的供应链金融体系，按照 5% 的收益，一年光是利息就有 5000 万。</p>
+<p>　　躺着什么都不干，就都比之前几百号人累死累活要舒服多了。</p>
+<p>　　这个方案其实我觉得并没有过时，甚至如果能结合现在的人工智能，其实依旧能做的，甚至更有噱头。</p>
+<p>　　这就是为什么我对二级市场挣钱不怎么感兴趣的原因。</p>
+<p>　　因为你会发现，你如果真的有那么一笔规模足够的钱，完全可以找一家相对好一点的公司为载体，把这些钱给装进去，把它的营收弄得好好看看的，再给它找个渠道弄上市，你能撬动的资金，就是这笔钱的数倍甚至是数 10 倍。</p>
+<p>　　那既然有这笔钱的话，干嘛还要苦哈哈的在二级市场上挣那个百分之几十的利润，整天担惊受怕，冒这个风险冒那个风险呢？</p>
+<p>　　以上种种，是大家不可能在书上或者其它公开渠道看到的，因为这是亲历者的视角，给你展示真正的价格和亲自剖析核心的套钱逻辑，如果你真的想明白了，你会明白，光是这一节课，已经远远超出了我们课程的价格。</p>
+<p>　　现在的这个股票市场，它的机制显然是更倾向于公司的股东或者是股票的发行者，而不是二级市场的投资者。</p>
+<p>　　在这种情况下，你是去当狼还是去当肉？难道不是个非常明显的选择吗？为什么一定要把自己当成一块肉往狼的嘴里送呢？</p>
+<p>　　有那个闲钱跟自己的家人或者亲朋好友出去吃顿好的不更值吗？</p>
+<p>　　这种机制不改变的话，什么的基本面技术面我觉得都是没有用的，真正能挣钱的核心就是能利用规则以及规则之外的合法途径去印股票，换别人的真金白银。</p>
+<p>　　对于还在股票市场里的人来讲，我的建议就是尽可能地利用国家出台的每一次救市措施，利用好每一次反弹出来。</p>
+<p>　　其实我觉得你们听完我上面的两个案例之后，应该都能非常深刻的感觉到，股票市场不是一个能够让普通人去轻轻松松的挣钱的地方。</p>
+<p>　　大家带着钱和美好的希望而进来，却不知道，你们正是别人眼里的“钱”啊。金融市场汇聚了一批最聪明，最狡猾同时也是最没有底线的一群人。</p>
+<p>　　你的对手不仅是你周围的散户，更是这么一群没有节操一肚子坏水的坏逼。</p>
+<p>　　前两周跟一些朋友吃饭，他们说现在管基金，一定不能盈利，因为一赚钱，哪怕赚一点点，很多基民就想跑，想赎回，相反，为了套住基民，一定要亏损，只有适当的亏损，才能牢牢套住投资者，期间有个人还笑哈哈地说今年因为亏得恰到好处，今年规模不仅没有缩水，甚至比以前还大了。</p>
+<p>　　你们的钱，就是被这么一群人管理着。</p>
+<p>　　面对这些坏逼，你们是没有任何信息上的优势，也没有任何资金上的优势，想要靠着自己平时业余积累的那一丁点知识和了解的资讯想长期地去战胜市场里面的这些坏人是很难的。</p>
+<p>　　这节课我想讲很久了，甚至三年前我就想讲，但是一直没有机会，趁着今晚利好出来，就跟大家和盘托出吧，能帮到多少人就帮多少人，哪怕能多救一点人，也是好的。</p>
+<p>　　我这些年的文章一直在讲，往后的日子里要优先考虑的是怎么样让自己和你的家人健健康康。先活下来，保住自己的身体，其实健康就是最大的财富，最好的投资就是投资自己的大脑，这句话越往后可能你们会体会得越深刻。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../阅读/其他/文章/如何让自己工作情绪稳定，不发疯？.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../阅读/其他/文章/非专业赚钱的5个思路.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../阅读/其他/文章/如何让自己工作情绪稳定，不发疯？.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../阅读/其他/文章/非专业赚钱的5个思路.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/其他/文章/股票市场真正赚钱的核心逻辑.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

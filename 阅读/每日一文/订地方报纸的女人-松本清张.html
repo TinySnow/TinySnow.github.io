@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>订地方报纸的女人 - 松本清张 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="订地方报纸的女人"><a class="header" href="#订地方报纸的女人">订地方报纸的女人</a></h1>
+<p><em>松本清张</em></p>
+<h2 id="1"><a class="header" href="#1">1</a></h2>
+<p>　　潮田芳子寄了一笔预付款给甲信报社，说要订阅《甲信新闻》。这家报社位于从东京搭快车需约两个半小时的 K 市，在该县算是大报。不过自然，东京并没有这种地方报的销售点。如果想在东京阅读此报，除了直接向总社订阅，请对方邮寄之外，别无他法。</p>
+<p>　　她是在二月二十一日这天，用挂号现金袋把钱寄去的。在随钱附上的信中，她是这么写的：</p>
+<p>　　我要订阅贵报，随函附上报费。贵报连载的《野盗传奇》这篇小说似乎很有趣，所以我想订来看看。请从十九日的报纸开始寄来……</p>
+<p>　　潮田芳子看过《甲信新闻》，是在 K 市车站前一家冷清的餐饮店内。彼时，她点的拉面尚未煮好，女服务生特意把报纸拿到简陋的餐桌上给她看。那是一份看起来像是乡下小报、以铅字排版的粗俗报纸。第三版登满了当地发生的种种事件——一起火灾烧毁了五户民宅、村公所的公务员挪用六万圆公款、一所小学的分校落成、县议员的母亲死了，等等，尽是这类报道。</p>
+<p>　　第二版下半栏，有连载的武侠小说，旁边的插画是两名武士在挥刀过招。作者叫杉本隆治，没听过的名字。那篇小说芳子才看到一半，拉面就送来了，她也就此打住。</p>
+<p>　　不过，芳子把那家报社的社名和地址都抄写在了记事本上。《野盗传奇》这篇小说也在那时烙印在她的脑海中。标题下面写着“第五十四回”，报纸上的日期是十八日。对了，那天是二月十八日。</p>
+<p>　　距离下午三点还有七分钟，芳子走出餐饮店漫步街头。小镇位于盆地内，这是个冬天里罕见的温暖晴天，暖融融的阳光渗入高地澄净的空气中。盆地的南边，有一片连绵起伏的山峦，还能看到雪白的富士山。在阳光的照射下，富士山看起来有些模糊。</p>
+<p>　　小镇上这条马路尽头，横着白雪覆顶的甲斐驹山岳。阳光从侧面照亮山头的积雪，受山坳和光线的影响，雪山从暗处到最亮处，形成流畅曲折的阶梯形状。</p>
+<p>　　在那座山的右侧，层层重叠着以枯叶色彩为基调的低矮山峦。夹在其间的溪谷虽然看不见，但好像有什么在那里蠢蠢欲动。那座山脉的走向，对于芳子而言，充满了暗示，似乎别有所指。</p>
+<p>　　芳子走回到车站前。这时站前广场上聚集了大批人群，写着大字的白布条在黑压压的人群头顶随风飘扬，上面写着“欢迎 XX 大臣返乡”。新内阁在一个月前成立，芳子知道白布条上写的那个大臣就是在这一带出生的。</p>
+<p>　　不久，人群中传来一阵响动，骚动迅速传开，有人高呼万岁，掌声不断。不少远处的行人也快步加入到这个团体中。</p>
+<p>　　演讲开始了。只见那人站在高出一截的讲台上，嚅动着嘴巴。冬阳照亮他的秃头，他的胸前还别着一大朵白玫瑰。人群静默下来，只有偶尔拍手时，才会再次发出鼓噪声。</p>
+<p>　　芳子望着那边。忽然发现不光自己一人，站在她身旁的男人也在远眺这幅光景。对方不是为了听演讲，看起来像是因为人群挡住了路，只好暂且驻足。</p>
+<p>　　芳子偷窥那男人的侧脸。他有宽阔的额头、锐利的眼神和高挺的鼻梁。过去，芳子曾经觉得那是聪颖的额头、值得依赖的眼神和优雅的鼻梁。然而，那份记忆如今已变得虚无。只有那男人束缚人的咒语，一如往昔。</p>
+<p>　　演讲结束，大臣终于走下讲台。人群开始散去，人潮之间出现空隙。芳子迈步走入其中，男人亦然。还有，另一个人……</p>
+<p>　　寄去甲信报社的现金挂号信，总算赶在邮局三点结束受理业务前寄出了。芳子把薄薄的收据塞进手提包深处，在千岁乌山站搭乘电车，花了五十分钟抵达位于涩谷的店。</p>
+<p>　　卢比孔酒吧闪着霓虹灯的招牌映入眼帘，芳子从后门进入。</p>
+<p>　　“大家早。”</p>
+<p>　　她向经理、女伴及男服务生打招呼，然后走进更衣室，开始化妆。</p>
+<p>　　这家店此时正在“苏醒”。肥胖的妈妈桑顶着刚在美容院做好的新发型，在大家的赞美声中走了进来。</p>
+<p>　　“今天是二十一日，星期六，各位，拜托你们好好干哦！”</p>
+<p>　　接着，经理一边顾忌妈妈桑，一边训示小姐们。说什么 A 小姐的服装也该换件新样式了云云，说得那女孩满脸通红。</p>
+<p>　　芳子一边心不在焉地听着，一边暗想，看来该离开这家店了。</p>
+<p>　　在她眼中，似乎有一艘船正破浪而来。特别是最近，不分昼夜，这艘船总在眼前徘徊不去。她用手按住胸口，心跳快得几乎让她窒息。</p>
+<h2 id="2"><a class="header" href="#2">2</a></h2>
+<p>　　《甲信新闻》在四五天之后寄达。三天份的报纸一起寄来，还周到地附上了一张明信片，感谢她的订阅。</p>
+<p>　　正如芳子所要求的，是从十九日的报纸开始寄送的。她打开报纸，翻到社会版——某户人家遭盗贼入侵、山崩造成伤亡、农协爆舞弊案、镇议员选举开始……全是些无聊的报导，还大篇幅刊登了某大臣在 K 车站前的照片。</p>
+<p>　　芳子翻开二十日的报纸，也没什么特别消息；再看二十一日的，也全是普通的报导。她把一叠报纸往壁橱角落一扔——也许可以留着当包装纸之类的吧。</p>
+<p>　　接下来，这份报纸每天都会寄来。牛皮纸封条上，写着油印的“潮田芳子”几个字和住址，可能因为她是按月订阅的长期订户吧。</p>
+<p>　　芳子每天早上都会去公寓信箱取报纸，再回床上撕开茶色封条。由于晚上要十二点左右才回家，所以早上起得很晚。她在被窝里摊开报纸，从头至尾巨细靡遗地慢慢浏览，尽管没什么特别吸引人的新闻。芳子很失望，把报纸往枕边一扔。</p>
+<p>　　就这么日复一日地重复着，一次又一次地失望。不过，在每次撕开茶色封条之前，她还是抱着期待的，这种期待持续了十几天，但依旧毫无新内容。</p>
+<p>　　变化，在第十五天出现了。换言之，就是第十五次寄来的报纸。那变化不是来自于报上的报导，而是一张出乎意料的明信片，上面的署名是杉本隆治。这个名字，芳子似乎在哪里见过——虽然并非切身的记忆，却的确有模糊的印象。</p>
+<p>　　芳子翻到背面，字很丑，再看内容，当下恍然大悟。</p>
+<p>　　您好。承蒙您喜爱在《甲信新闻》上连载的拙作《野盗传奇》，敝人为此深表感激，今后还请多多指教。谨致谢意如上……</p>
+<p>　　杉本隆治就是在那份绑着封条、天天寄来的报纸上连载小说的作者。想来，由于芳子订报时自称是为了看连载小说，报社的人一定转告了作者。杉本隆治似乎十分感动，才寄谢函给这位新读者。</p>
+<p>　　这是一个小变化，但并非她所期待的，不过是天外飞来一张无用的明信片。那篇小说她根本没看，反正故事的内容一定和明信片上的字一样拙劣。</p>
+<p>　　报纸还是每天准确无误地送来，既然已付了报费，这也是理所当然的。芳子照旧每天早上躺在床上看报。同样地，依然一无所获，这份失望不知将持续到何时。</p>
+<p>　　好不容易挨到订报之后约一个月的某天早晨。</p>
+<p>　　这天，寒酸的铅字继续拼缀出有关乡下琐碎事的报道——农协总干事潜逃、公车坠崖造成乘客受伤、大火烧毁了一町①山林、在林云峡发现了一对殉情男女的尸体……</p>
+<p>　　①一町约合九千九百一十七平方米。</p>
+<p>　　芳子仔细阅读了有关殉情男女的报导，地点在林云峡山中，发现者是林业局的巡检员。发现时尸体均已腐烂，预计死亡约有一个月了，已呈半白骨状态，身份不详。这种案子并不稀奇，那个奇峰碧水环抱、宛如世外仙境的溪谷，本来就是自杀与殉情的著名地点。</p>
+<p>　　芳子折起报纸，躺回枕上，把被子高高地拉到下巴处，瞪着天花板。这幢公寓已年久失修，被熏黑的天花板已经开始腐朽。芳子凝视着一片虚无。</p>
+<p>　　翌日的报纸，仿佛是出于义务，详细报道了殉情男女的身份——男的现年三十五岁，是东京某家百货公司的保安，女的是同一家百货公司的店员，现年二十二岁。男的另有妻小。是随处可见的平凡案例。芳子抬起眼，脸上没有丝毫触动的表情。也可说是因为无动于衷而安心。这份报纸已变得索然无趣。她的眼中再次出现那艘航行在海上的船只。</p>
+<p>　　过了两三天，甲信报社的发行部寄来了明信片。</p>
+<p>　　您的预付款已扣尽，尚祈您继续订阅。</p>
+<p>　　这家报社做起生意还真热心。</p>
+<p>　　芳子写了回函。</p>
+<p>　　小说变得不好看了，我不想再继续订阅了。</p>
+<p>　　在去店里上班的途中，她寄出了这封信。在扔进邮筒迈步离去之际，她突然想到，《野盗传奇》的作者一定会大失所望吧？她有点后悔不该写那种话。</p>
+<h2 id="3"><a class="header" href="#3">3</a></h2>
+<p>　　杉本隆治看了甲信报社转来的读者回函，心里很不痛快。这个女读者正是一个月以前主动表示对他的小说有兴趣而订报的人，当时报社还曾把那封信转寄给他，他记得自己还寄了简单的谢函。没想到，现在居然嫌小说不好看，还要把报纸停掉。</p>
+<p>　　“读者竟这样反复无常！”</p>
+<p>　　杉本隆治窝了一肚子火。</p>
+<p>　　《野盗传奇》是他为某家代理地方报纸连载事宜的文艺通讯社写的。虽然考虑到是刊登在地方报纸，基于娱乐取向对文章作了相当程度的调整，但那毕竟是他呕心沥血的作品，绝非敷衍了事，他也很有自信。因此，当得知有东京读者为了看那篇小说而特意订报时，他很高兴，甚至还写了谢函。</p>
+<p>　　没想到，同一名读者，现在却说“小说变得不好看了，所以不想续订了”。隆治起先以苦笑处之，继而越想越气。他觉得好像被耍了，又百思不解。因为与那名读者宣称“很有趣，所以想订阅报纸”的那一回比较起来，这次对方说“不好看，要停止订阅”的这一回内容明明要更精彩——情节上有了耐人寻味的发展，人物都很活跃，各种场面应接不暇，就连他自己都觉得故事已渐入佳境。</p>
+<p>　　“那样的内容，居然说不好看。”</p>
+<p>　　他觉得奇怪。正因为心里有把握故事会大受欢迎，这个任性的读者才使得他格外不悦。</p>
+<p>　　杉本隆治离所谓的畅销作家还很远，不过他经常为娱乐杂志撰稿，被圈内人视为精明的作家。他素来自负，懂得如何抓住读者的胃口。目前在《甲信新闻》连载的这篇小说水准绝对不差。不，他甚至觉得写得痛快淋漓，下笔如有神助。</p>
+<p>　　“想来想去，还是很不愉快。”</p>
+<p>　　整整两天，他都还没能摆脱那种不舒服的感觉。到了第三天，那种感觉虽然淡了，却还是耿耿于怀，心里某处有个疙瘩。一天二十四小时，那种感觉会三不五时地浮现心头，比倾力完成的作品遭到同行的恶意贬损还要难受。自己写的小说害报社少卖一份报纸的明确事实令他极为不快。说得夸张一点，他觉得自己在报社颜面尽失。</p>
+<p>　　杉本隆治甩甩头离开桌前，出门散步。他选择惯走的路径。这一带仍保有武藏野的昔日风貌，落叶缤纷的杂木林彼端，J 池在冬阳下闪着粼粼波光。</p>
+<p>　　他在枯草丛中坐下，凝望着一泓池水。一个外国人正在池畔训练大狗，狗冲出去把扔远的棒子捡起后，又跑回到主人身边。这样的动作一再重复着。</p>
+<p>　　他心不在焉地望着那幅情景。重复单调的场景看久了，有时似乎会迸发出奇想。这时，杉本隆治的脑海中突然萌生出一个疑问。</p>
+<p>　　“那位女读者是从中途开始订阅连载我那篇小说的报纸的，她说是因为小说有趣，但在那之前，她又是从哪里知道我的那篇小说的呢？”</p>
+<p>　　《甲信新闻》的销售区域仅限于 Y 县，东京并没有。所以，她当然不可能是在东京知道这份报纸的。那么，这个自称潮田芳子的东京女人，应该以前曾在 Y 县的某处待过，或是从东京过来造访时看到那份报纸吧？</p>
+<p>　　他的视线继续随那只狗来回移动，同时陷入沉思。假设果真如此，被那篇小说吸引、不惜专程订报的热心读者，不可能在不到一个月之内，又以一句“不好看”停订了。更何况，小说本身明明比以前精彩。</p>
+<p>　　这其中大有问题，他想。照此情形来看，对方显然不是想看我的小说才订报的，那只是临时编的理由，其实应该是想看其他东西吧。换言之，对方说不定想从报上找什么。一旦找到，自然就没有必要再订阅那份报纸了……</p>
+<p>　　杉本隆治从草丛里站起身，快步走回家。此时，种种想法宛如海藻般在他的脑海中乱七八糟地纠结浮动着。</p>
+<p>　　他一回到家，就从信插中抽出之前报社转寄给他的那张潮田芳子写的明信片。</p>
+<p>　　我要订阅贵报，随函附上报费。贵报连载的《野盗传奇》这篇小说似乎很有趣，所以我想订来看看。请从十九日的报纸开始寄来……</p>
+<p>　　就女人的标准来说，潮田芳子的字体相当工整。撇开这个不谈，她要求从订报之日的前两天，也就是十九日的报纸开始寄送，究竟有何用意？报上的消息，最快也不过是刊登前一天所发生的事。《甲信新闻》并没有发行晚报，所以从十九日的报纸开始订阅，就意味着她想知道十八日以后发生的事。杉本如此推测。</p>
+<p>　　报社每天都会把刊载小说的报纸送到杉本手上。他把那堆旧报纸全部摊在桌上，从二月十九日的那一份开始仔细检阅，主要是看社会版，不过为了以防万一，也没漏掉分类广告栏。</p>
+<p>　　他姑且将范围限定在与 Y 县某地和东京均有关的事物上。抱着这个念头，他开始浏览每天的报道。整个二月份都没有可疑的线索；进入三月，到五日为止依然一无所获，到十日也一样；十三日、十四日，翻到十六日的报纸时，他终于发现一篇大意如下的报道。</p>
+<p>　　三月十五下午两点左右，林业局职员在林云峡的山林之中发现了一对殉情男女的尸体。尸体已腐烂，呈白骨状态，死亡约一个月之久。男子身穿鼠灰色大衣和深蓝色西装，年约三十七八岁；女人身穿茶色粗格纹大衣及同色套装，年约二十二三岁。现场只留有装着化妆品的女用手提包一只。警方在提包内发现从新宿至 K 车站的往返车票，判断两人应来自东京……</p>
+<p>　　翌日的报纸，载明了死者的身份。</p>
+<p>　　林云峡的殉情双尸已查明身份。男性为东京某百货公司的保安庄田关次（三十五岁），女性为同一家公司的店员福田梅子（二十二岁）。男性已有妻小，推测应为三角畸恋导致两人走上绝路……</p>
+<p>　　“是这个吧……”</p>
+<p>　　杉本隆治不由得脱口而出。与东京和 Y 县均有关系的线索除此之外再无其他。潮田芳子大概就是看到了这篇报道才停止订报的吧，她肯定是为了看这个才特地订阅乡下报纸的。东京发行的全国版报纸当然不会刊登这种地方新闻。</p>
+<p>　　“等一下……”</p>
+<p>　　他再次陷入沉思。</p>
+<p>　　（潮田芳子订报时，指明要从二月十九日的报纸开始邮寄。尸体是在三月十五日被发现的，死亡已有约一个月。如此说来，推断这桩殉情事件是在二月十八日之前发生的，应该合情合理。她早就知道这对男女会殉情自杀，她一直在等报上出现那两具尸体被发现的消息。为什么？）</p>
+<p>　　杉本隆治突然对潮田芳子这个女人产生了兴趣。</p>
+<p>　　他定定地逼视着报社转来的潮田芳子的住址。</p>
+<h2 id="4"><a class="header" href="#4">4</a></h2>
+<p>　　杉本隆治委托某私人侦探社调查的结果，在大约三个星期后送到了他的手上。</p>
+<p>　　兹就阁下委托之潮田芳子调查事项报告如下：</p>
+<p>　　潮田芳子原籍 H 县 X 郡 X 村，现住址为世田谷区乌山町一 XX 番地深红庄公寓。根据原籍地取得的户籍本显示，她乃潮田早雄之妻。公寓管理员表示，她在三年前独自租房，是个很沉默的人。最近，她曾提及羁留苏联的丈夫即将归国。目前在涩谷的卢比孔酒吧作陪酒女。</p>
+<p>　　向卢比孔酒吧的妈妈桑查证，据说她在一年前开始上班，之前则待过西银座后巷的安琪儿酒吧。她素性良好，也有几名熟客捧场，但似乎没有特殊的男女关系。只有一名年约三十五六岁的瘦削男子，每个月都会上门两三次指名找她。由于每次都是芳子掏钱付账，因此妈妈桑说，或许此人从她以前在安琪儿时代便有深厚交情。据说两人每次都是单独坐在座位上低声交谈。某次和芳子要好的同事曾问她，对方可是她的心上人，芳子听了一脸不悦。还听说只要那男人一到店里，芳子就会沉着脸。没有人知道那个男人的姓名。</p>
+<p>　　敝社派员再去安琪儿酒吧查证后，确认芳子两年前确实在此当过陪酒女郎，风评同样不差。但就陪酒女的标准而言，她不够活泼亮丽，没拉到什么客人。在卢比孔出没的那个男人似乎也来过安琪儿，据说那人在她离职前三个月首次出现。换言之，自从那男人开始上门找她以后，过了三个月，她就到卢比孔上班了。</p>
+<p>　　其次，关于阁下委托调查的某百货公司保安庄田关次，走访其妻，她对刚过世的丈夫没有一句好话。看来丈夫与别的女人殉情之举，似乎令她恨意颇深。保安的工作，是在百货公司内提防小偷。庄田每次只拿一半薪水回家，据说剩下的都花在那个女人身上了。庄田之妻也知道和他一起殉情的那个店员福田梅子，还破口大骂两人不要脸，甚至表示：“我没把我老公的骨灰供在佛坛上，就用绳子捆一捆，扔进壁橱角落了。”</p>
+<p>　　问起潮田芳子时，她的回答是：“我没听说过这个女人，不过我老公本来就喜欢拈花惹草，谁知道他在外面干了什么。”</p>
+<p>　　敝社员工在百般安抚庄田之妻后，顺利借到一张庄田关次的照片。</p>
+<p>　　拿着这张照片，再度走访卢比孔和安琪儿酒吧。妈妈桑和一干酒女均指证，来找芳子的男人确是此人。</p>
+<p>　　重返深红庄向管理员出示这张照片后，管理员抓抓头回答：“这不算什么好事，我本来不想说，此人的确每个月都会来找潮田小姐三四次，就算连住两晚也是常事。”</p>
+<p>　　据此，已可确定潮田芳子和庄田关次之间确有情人关系。不过，两人是在什么机缘下结识的，至今不明。</p>
+<p>　　此外，奉阁下指示，向管理员打听芳子在二月十八日的行动。对方表示，日期虽已记不清楚，但那阵子芳子的确曾在某天早上十点离开公寓。由于芳子向来起得晚，所以管理员当时还暗自稀奇。再去卢比孔向店家调阅出勤表一看，芳子在二月十八日请假。</p>
+<p>　　以上，谨向阁下报告目前为止的调查成果。如有其他特别指示，敝社可再做详细调查。</p>
+<p>　　杉本隆治把这份报告书反复看了两遍。</p>
+<p>　　“不愧是靠这个吃饭的，果然有一套。亏他们还能调查得这么仔细。”</p>
+<p>　　他深感佩服。</p>
+<p>　　到这里，已可确定庄田关次和福田梅子的殉情自杀肯定和潮田芳子有关系。对方知道这两人会在林云峡的山林中殉情身亡。二月十八日，她一大早离开公寓又没去上班的那一天，正是那两个人的殉情日。要去林云峡得搭中央线在 K 站下车，她是在何处送别那两个人的呢？新宿？抑或 K 站？</p>
+<p>　　杉本翻阅时刻表。中央线前往 K 市方向的列车，在八点十分及二十五分各有一班快车从新宿发车。夜车根本不列入考虑，慢车基本上也可以排除。因为那对男女如果要去，搭的应该是快车。</p>
+<p>　　潮田芳子如果在早上十点左右离开公寓，要搭十一点三十二分发车的那班普通车当然也来得及。不过判断她搭的是下一班，即十二点二十五分发车的快车似乎更为合理。这班车会在下午三点零五分抵达 K 站。</p>
+<p>　　从 K 站到林云峡的殉情地点，要先搭公车然后再走一段路，应该要花上一个小时。这表示庄田与梅子这两名殉情者，是在冬阳西斜时抵达那个决定命运的地点的。杉本隆治在脑中想象这对男女在峭壁环绕的山林中徘徊的身影。</p>
+<p>　　这桩殉情事件，直到一个月后才被林业局的员工发现。公之于世之前，应该只有潮田芳子一个人知道。而她，想通过当地的报纸，确定这桩殉情案被公之于世的日期。她在此案中究竟扮演了什么样的角色呢？</p>
+<p>　　杉本再次打开二月十九日的《甲信新闻》——山崖崩塌、农协弊案、镇议员选举……没什么特别的。乡下出身的某大臣在 K 站前演讲的照片占了很大的版面。</p>
+<p>　　此时，他的视线固定在这张照片上，就像之前眺望大狗的无聊动作一样，脑海中涌现出形形色色的念头。</p>
+<p>　　杉本隆治把明天就要交的稿子放到一旁，抱头沉思。他做梦也没想到，区区一个对他小说失去兴趣的读者，竟会把他牵连到这种地步。</p>
+<p>　　他的妻子，想必以为他正苦苦构思小说情节呢吧。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/男人的进化-鲁迅.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/女人的猫性-佚名.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/男人的进化-鲁迅.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/女人的猫性-佚名.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/订地方报纸的女人-松本清张.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

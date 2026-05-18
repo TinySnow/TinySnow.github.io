@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>阶层跃迁五部曲之五：大学毕业当保安，少走 40 年弯路 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="阶层跃迁五部曲之五大学毕业当保安少走-40-年弯路"><a class="header" href="#阶层跃迁五部曲之五大学毕业当保安少走-40-年弯路">阶层跃迁五部曲之五：大学毕业当保安，少走 40 年弯路</a></h1>
+<p><em>原创：万叔创始人笔记</em></p>
+<p>　　大家好，我是创始人万叔。</p>
+<p>　　之前应 200 篇原创之约，写了阶级跃迁系列。</p>
+<p>　　四篇的内容如下：</p>
+<p>　　第一部分，为什么要跃迁？因为非线性增长才是世界的本质。</p>
+<p>　　第二部分，包含被删的文章《阶级论》升级版，详细分析阶级，除了钱以外，还有什么可以描述阶级。</p>
+<p>　　第三部分，不同阶级之间，是怎么焊死大门的，如果要经历惊险一跃，需要做什么准备？</p>
+<p>　　第四部分，梳理你的出身，你的期望，你应该达到的高度，和具体的路径。</p>
+<p>　　很多人留言，看完醍醐灌顶，说自己如果年轻的时候，拿到这个地图，就会少走很多弯路。</p>
+<p>　　事实上，你以为的弯路，不一定是弯路。</p>
+<p>　　这篇文章，是对之前跃迁的补充，有些话写得很直白，可能也很扎心，心里承受能力不强的，请谨慎阅读。</p>
+<p>　　以下是正文。</p>
+<p>　　先从一本书讲起。</p>
+<p>　　这本书叫《Kicking away the ladder》，中文翻译是，踢开梯子。</p>
+<p>　　但出版社给了个很诗意的名字，叫《富国陷阱》。</p>
+<p>　　初版是 2002 年，是英国籍韩裔的经济学家，剑桥大学的经济学教授，张夏准写的。</p>
+<p>　　里面讲了英国、美国、日本、普鲁士，四个国家的工业发展史。</p>
+<p>　　从标准的历史课本上，我们学到是这样的。</p>
+<p>　　英国先搞了自由贸易，激发了市场活力，从而产生了工业革命，在欧洲列强中脱颖而出。</p>
+<p>　　实际上，张教授说，如果研究一下具体的年份，会发现有人故意弄反因果关系。</p>
+<p>　　英国在 1760 年左右，就开启了工业革命。</p>
+<p>　　而在 1860 年之前，英国一直采取的是高关税。取消关税那会，英国已经是世界工业霸主了。</p>
+<p>　　所以，取消关税，开启自由贸易，是英国工业能力达到世界巅峰之后的结果，而不是开启工业能力高速发展的原因。</p>
+<p>　　没听太明白，没关系，先记住这个结论——发达以后喊自由，而不是自由以后变发达。</p>
+<p>　　根据这个逻辑，我们再看看美国。</p>
+<p>　　当年英国是先发展起来的，为了忽悠原材料供应国，跟他们搞自由贸易，掠夺原材料，倾销工业制成品。</p>
+<p>　　有个叫大卫·李嘉图的家伙，搞了个在经济学上，很著名的理论，叫比较优势。</p>
+<p>　　什么意思呢？</p>
+<p>　　就是你是养鸡的，他是种苹果的，你们各自最厉害，那就一直干最厉害的事情，不要养鸡的去想种苹果，种苹果的去想养鸡。</p>
+<p>　　各自把事情干到极致，然后通过自由贸易实现双赢。</p>
+<p>　　听起来好像很对。</p>
+<p>　　但那时候刚建国，一穷二白的美国，多党派的优势就显示出来了，对于这个理论，有部分人信了，有部分人没信。</p>
+<p>　　南方农场主们，大力支持自由贸易，因为这样可以让美国的烟草、棉花顺利进入英国的贸易网络。</p>
+<p>　　而北方的新兴工业主们，则强烈要求，要对英国的工业品征收高关税。</p>
+<p>　　国父之一的汉密尔顿，还写了一份报告，叫《关于制造业问题的报告》。</p>
+<p>　　说我们不仅不应该搞自由贸易，还要从英国这些国家偷技术、抢人才、搞补贴，以扶植我们还不够强大的本国制造业。</p>
+<p>　　事实上，张教授说，整个 19 世纪，直到二战结束，美国是全世界贸易壁垒搞得最狠的，也是全世界贸易保护主义学者的大本营。</p>
+<p>　　你现在很少听到美国说这些，是因为美国在一战、二战时期，拥有全世界最强大的工业体系。</p>
+<p>　　这时候，才从严格的贸易保护，转向积极推动有利于自己的自由贸易。</p>
+<p>　　但美国很鸡贼，他细化了工业品问题，没有一水儿搞零关税，而是通过一系列的手段，对潜在的威胁进行定点清除。</p>
+<p>　　比如上世纪 80 年代对日本，这几年对华为。</p>
+<p>　　跟你聊这本书，是想说明一个什么问题呢？</p>
+<p>　　因为阶段的不同，你看到他们提倡的成功的做法，不是你照做就能成功的法宝。</p>
+<p>　　老一辈的企业家里，很多人喜欢吹自己以前多么多么能吃苦。</p>
+<p>　　比如许皮带以前是锅炉工，杰克马以前是当老师的，湖南高桥大市场的老板，公司楼下一张他 94 年拖板车的照片。</p>
+<p>　　这些是什么？</p>
+<p>　　都是给你暗示。</p>
+<p>　　让你觉得，好像只要你吃得苦中苦，那么就一定会有光明的未来。</p>
+<p>　　狗屁。</p>
+<p>　　事实是，只要肯吃苦，就有吃不完的苦。</p>
+<p>　　万叔很喜欢讲的一个故事是，有个朋友，因为常年自发学习，在自己的岗位上，不仅完成本职工作，还积极思考，工作结果和深度超过了公司的要求，每次年终绩效都是 A 或者 A+。</p>
+<p>　　因为他对工作岗位上，如此刻苦的钻研，深刻的认知，在后来一次竞选部门中层的时候，领导终于因为他离岗以后没有人能接他的工作，而选了另外一位董事长的侄子做部长。</p>
+<p>　　这才是现实。</p>
+<p>　　我为什么会跟你讲这个？</p>
+<p>　　因为知识星球也开了一周多了，里面有很多人，发自内心的，毫无保留的分享和反馈，不断在强化这种正确，但不一定人人能接受的观念。</p>
+<p>　　我记得有个问题是这样的。</p>
+<p>　　有个人说，我自己过去荒废了很多时间，导致到了该往上走的年纪，不仅没升，还面临中年失业的风险云云。</p>
+<p>　　前面一半都是对自己的反思，对万叔说的表示醍醐灌顶一类。</p>
+<p>　　最可笑的是后半部分。</p>
+<p>　　后半部分写的什么？说，我现在要做的，就是加强学习和努力，补回过去浪费的时间，实践好工具价值……</p>
+<p>　　我听了就很气。</p>
+<p>　　这好比你跑步，110 米栏。</p>
+<p>　　你前面有个栏没垮好，拖累了你的速度，结果这个哥们说，我很悔恨，我要把栏扶起来，再去跨一次。</p>
+<p>　　你应该后面加速，努力跑啊！! !!</p>
+<p>　　你应该赶紧去寻找，离你最近的机会，达到你这个年龄该有的高度，这才是把之前损失的补回来，而不是再跑一次。</p>
+<p>　　你 30 多 40 岁再去加班画图，去实践工具价值，比得过 20 来岁一夜七次第二天还能正常来上班的年轻人么？</p>
+<p>　　这就是我一直说的，你的努力，应该瞄准下一次跃迁的需要。</p>
+<p>　　千万不要学什么寿司之神吹牛逼，10 年擦桌子，10 年捏饭团，10 年再上手。</p>
+<p>　　结果 30 年以后，小野二郎把位置传给了他儿子，捏饭团的人继续捏饭团……</p>
+<p>　　所以，作为跃迁而言，你一定要清晰，你自己的目标是什么。</p>
+<p>　　不要被那些先发者，道德给绑架住了。</p>
+<p>　　佛经里早就说了，放下屠刀，立地成佛。</p>
+<p>　　如果你是个好人，一辈子吃斋念佛，或者经历 99 八十一难，最后过独木桥死的时候还不一定能成佛。</p>
+<p>　　但你是个坏人，只要作恶多端杀人如麻，让最牛逼的大佬面对你了。</p>
+<p>　　他跟你说，阿弥陀佛，放下屠刀立地成佛。</p>
+<p>　　你看，爽了一辈子，最后悔改，成佛了。</p>
+<p>　　不仅是佛教，基督教也有这个教义。</p>
+<p>　　新约里，跟耶稣一起被钉在十字架上的，还有俩强盗。</p>
+<p>　　一个强盗说，你不是说你是神嘛？你施个咒把自己放下来试试呗？</p>
+<p>　　另外一个说，你闭嘴，傻逼。</p>
+<p>　　然后转头对耶稣说，我主啊，我信你，我悔改还来得及吗？</p>
+<p>　　耶稣说，明天，你就能跟我一起在乐园里了。</p>
+<p>　　你看，人类传承下来的最高智慧，跨教派，跨种族，跨时空，居然都是这样的逻辑。</p>
+<p>　　再举个例子。</p>
+<p>　　万叔认识一个兄弟，差不多也是毕业 10 年左右，在外企当上大区总监，年薪百万，再往上走，几乎不可能了。</p>
+<p>　　然后就摸鱼，开始做自媒体。</p>
+<p>　　一开始，有人举报，说他自己搞自己自媒体，影响公司。</p>
+<p>　　确实，有领导找他谈话，说搞这些影响不好，要求他不要写了。</p>
+<p>　　总监明确拒绝了。</p>
+<p>　　再然后呢？</p>
+<p>　　然后自己的自媒体，影响力越来越大，到他们公司最顶上，那个老外，需要链接相关政府人的时候，也问他，是不是可以帮忙介绍。</p>
+<p>　　打不死的敌人，成了朋友。</p>
+<p>　　万叔为什么，要在这里讲这个。</p>
+<p>　　因为太多看到的信息、逻辑、道理，被扭曲了。</p>
+<p>　　之前万叔提过一件事，就是这些社会 KOL 里，万叔最佩服的两个人，一个是罗翔教授，一个是网红医生。</p>
+<p>　　他们有个特质，就是有清晰的价值观，明确的历史观。</p>
+<p>　　对历史负责，而不是对情绪、潮流负责。</p>
+<p>　　允许我讲真话，我就出来讲。不允许我讲真话了，我就闭嘴。</p>
+<p>　　但你不可能，让我讲违心的话。</p>
+<p>　　万叔在写公众号的时候，就定下了这个底线，不吃人血馒头，不写违心的东西—— 哪怕能收获流量。</p>
+<p>　　这篇文章链接放最后了，你有兴趣可以去看看。</p>
+<p>　　所以你看，俄乌战争，巴以冲突，万叔一句话没讲。</p>
+<p>　　如果人不能用一套逻辑自洽的生活，就容易精神分裂。</p>
+<p>　　但还是有很多人，接受不了现实，生活在每天正确，连起来看又不正确的生活里。但索性，万叔从一开始，就设计好了商业策略，通过打赏、付费，把认可这套逻辑，理解底层价值观的人，筛选了出来。</p>
+<p>　　就是你们。</p>
+<p>　　所以现在有个特别有意思的现象。</p>
+<p>　　那些评论、私信里，阴阳怪气、冷嘲热讽的，打开面板一看，0 次付费、0 次打赏，留言长期如此风格的。</p>
+<p>　　杀伤力立马就降为了 0。</p>
+<p>　　之前说过的，万叔在荒野上立了一面旗，把真实的世界地图画出来，本来就不是为了去说服谁。</p>
+<p>　　鲁迅早就说过，你永远叫不醒装睡的人。</p>
+<p>　　你根本说服不了，一个屁股坐在别处的人。</p>
+<p>　　所以这个公众号做的，就是筛选！</p>
+<p>　　用概率和大数的逻辑，进行筛选。</p>
+<p>　　筛选出理解跃迁价值的人，醍醐灌顶以后，有意愿有行动力的人，价值观和话语体系一致的人。</p>
+<p>　　之前也经常说，和付费不同，你打赏过，咱们就是自己人。</p>
+<p>　　为什么？</p>
+<p>　　因为打赏是主动的。付费是没看之前被动的。</p>
+<p>　　关于整个公众号、自媒体的商业设计逻辑，我之后会在知识星球慢慢拆解，看看专业选手，是怎么设计的。</p>
+<p>　　但今天，这个不是重点。</p>
+<p>　　重点是，随着明年经济预期的回暖，叠加新的科技机会来临，预计阴霾，迟早会要过去。</p>
+<p>　　下一个经济上行周期来临，新一轮造富开始的时候，我们的公众号伙伴里，一定会有一批人，因为看到、学过、意识到了，而成为新的富人。</p>
+<p>　　那个时候，我的价值，我们这个公众号的价值，我们链接和跃迁产生的价值，就有了十倍、百倍的估值基础。</p>
+<p>　　本来首席内容官，希望万叔把这篇文章，设置为 188 豆付费，讲完逻辑以后，她也同意了。</p>
+<p>　　搭建一个千万级别的业务模型，靠打赏、付费这些，肯定是不行的。</p>
+<p>　　我们指向的，是星辰大海。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../阅读/其他/文章/怎么把学到的知识，变成赚钱的本事？.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../阅读/其他/文章/稀缺催生价值，泛滥滋生轻视.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../阅读/其他/文章/怎么把学到的知识，变成赚钱的本事？.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../阅读/其他/文章/稀缺催生价值，泛滥滋生轻视.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/其他/文章/阶层跃迁五部曲之五：大学毕业当保安，少走40年弯路.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>博客历史演进 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="博客历史演进"><a class="header" href="#博客历史演进">博客历史演进</a></h1>
+<h2 id="tldr"><a class="header" href="#tldr">TL;DR</a></h2>
+<h3 id="主要框架"><a class="header" href="#主要框架">主要框架</a></h3>
+<ul>
+<li><a href="https://rust-lang.github.io/mdBook/">Mdbook</a></li>
+</ul>
+<h3 id="附属模块"><a class="header" href="#附属模块">附属模块</a></h3>
+<ul>
+<li><a href="https://docsearch.algolia.com">DocSearch</a>，用来搜索博客内容</li>
+<li><a href="https://giscus.app/zh-CN">Giscus</a>，用来添加评论</li>
+<li><a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/generate-last-updated-md.sh">自己写的脚本</a>，用来生成“last-updated.md”</li>
+<li>参照 <a href="https://github.com/sunface/rust-course/tree/main/theme">Rust 语言圣经的 hbs 模块</a>，生成 TOC（Table of Content，内容目录）</li>
+<li>使用 <a href="https://github.com/rust-lang/mdBook/wiki/Automated-Deployment:-GitHub-Actions">mdbook wiki</a> 里的 <a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/.github/workflows/mdbook.yml">Github Actions</a> 文件，稍作修改部署</li>
+<li>使用 <a href="https://pages.cloudflare.com">Cloudflare Pages</a> 跟踪 Github 的博客仓库，生成<a href="https://tinysnow.pages.dev">国内可访问的 Pages 网站</a></li>
+<li>添加 <a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/theme/index.hbs#L60">Google 站长工具爬虫</a>，记录网站</li>
+<li>使用 <a href="https://github.com/zerodevx/static-sitemap-cli">static-sitemap-cli</a> 生成网站地图 <a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/src/sitemap.xml">sitemap.xml</a> 和 <a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/src/sitemap.txt">sitemap.txt</a>，配合 Google 和 Bing 站长工具，爬取网站加入搜索引擎</li>
+</ul>
+<h2 id="演进记录"><a class="header" href="#演进记录">演进记录</a></h2>
+<h3 id="hexo-时期"><a class="header" href="#hexo-时期">Hexo 时期</a></h3>
+<ul>
+<li>主题太多，选择太多，反而迷失了自我</li>
+<li>本身就讨厌 npm 和 node_modules，每次编译很烦，懒得折腾</li>
+</ul>
+<h3 id="vuepress-时期"><a class="header" href="#vuepress-时期">VuePress 时期</a></h3>
+<ul>
+<li>配置项太多了，非常麻烦</li>
+<li>同 hexo，用 npm 编译，看到 node_modules 就害怕</li>
+<li>编译产物比 hexo 还大</li>
+</ul>
+<h3 id="mdbook-时期"><a class="header" href="#mdbook-时期">Mdbook 时期</a></h3>
+<h4 id="动机"><a class="header" href="#动机">动机</a></h4>
+<ul>
+<li>左找右找，正好当时在学 Rust，看到 Mdbook 不错</li>
+<li>看了一下<a href="https://rust-lang.github.io/mdBook/">官方文档</a>，配置项也特别少，适合自己这种懒人，就改为 mdbook 了</li>
+<li>刚开始是出于懒选择的 mdbook，后面发现自己做的工作其实不比其他静态网站生成框架少</li>
+</ul>
+<h4 id="困难"><a class="header" href="#困难">困难</a></h4>
+<ul>
+<li>切换成 mdbook 本身没什么困难，所有困难主要集中在附属模块上</li>
+<li>mdbook 本身的困难只有一次，由于 mdbook 版本升级带来的 index.hbs 带来的预置代码变动</li>
+<li>详见这篇<a href="https://tinysnow.github.io/技术/实践记录/Mdbook排版混乱.html">博客</a>和本博客 Github 上源码关于 index.hbs 带来的<a href="https://github.com/TinySnow/TinySnow.github.io/commit/03121f1a82cc4dfbed0410189e4e0c9e798c2da9#diff-ff0ab0acea421fc363f4f84b59a471aab5e609ce1d329d924df8cc6a5fce15aa">更改</a>，另外，Rust 语言圣经也遇到了这个问题，其<a href="https://github.com/sunface/rust-course/commit/d3ecbc208896d67c694568e3257bed896f066e55#diff-ff0ab0acea421fc363f4f84b59a471aab5e609ce1d329d924df8cc6a5fce15aa">更改</a>也可以参考</li>
+</ul>
+<h3 id="添加附属模块"><a class="header" href="#添加附属模块">添加附属模块</a></h3>
+<h4 id="toc"><a class="header" href="#toc">TOC</a></h4>
+<ul>
+<li>切换到 mdbook 首先问题就是没有文章目录
+<ul>
+<li>习惯了先浏览文章大纲，建立框架再补充文章细节，很不习惯</li>
+</ul>
+</li>
+<li>浏览了网上所有关于 mdbook 的 toc 方法，都不太满意</li>
+<li>大多数是在每篇文章顶部添加 toc 链接
+<ul>
+<li>这会占据文章的内容空间，不仅不优雅，每次想跳到另一个章节的时候，还要滚回文章顶部，非常麻烦</li>
+</ul>
+</li>
+<li>正巧当时在学 rust，Rust 语言圣经的 mdbook 里就有 toc 侧边栏，很好奇其实现，就去翻源码
+<ul>
+<li>源码在 <a href="https://github.com/sunface/rust-course/blob/main/assets/custom.js">assets/custom.js</a>，里面的代码大部分都是自定义，toc 侧边栏实现大概是<a href="https://github.com/sunface/rust-course/blob/main/assets/custom.js#L49">遍历网页的 tagName</a></li>
+<li>还有一些其他附加功能，比如当前页面停留三十秒以上，视为已读过，mdbook 的侧边栏，该文章标题会变灰作为提示</li>
+</ul>
+</li>
+<li>照着实现 toc 和研究 hbs 代码花了很多时间（因为当时不懂 hbs，<del>其实现在也不懂</del>）
+<ul>
+<li>途中还遇到了一个怎么都解决不了的难题，最后发现是文件名为 head.hbs，mdbook 会视该文件仅为页面的 head 部分，改成 index.hbs 就好了</li>
+</ul>
+</li>
+</ul>
+<h4 id="评论"><a class="header" href="#评论">评论</a></h4>
+<ul>
+<li>评论模块也是参照 Rust 语言圣经，使用 giscus 实现，不过直到现在都没有人用<del>（挺正常的）</del>
+<ul>
+<li>评论模块没有太大的问题</li>
+<li>之前还附带有 view counter，但是负责 count 的那个网站似乎被炸了，无法完成功能，所以也就把相关代码删了</li>
+</ul>
+</li>
+</ul>
+<h4 id="最近更新"><a class="header" href="#最近更新">最近更新</a></h4>
+<ul>
+<li>mdbook 不按照时间进行倒序排列，而是按照书一样分章节组织</li>
+<li>所以改动了哪里也不知道，对于读者来说可能有点烦，每次都要跑到 github 上看代码提交
+<ul>
+<li>想了一个折中办法，本地用脚本生成一个 <a href="https://tinysnow.github.io/last-updated.html">last-updated.md 文件</a>，每次编译后更新</li>
+</ul>
+</li>
+<li>写<a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/generate-last-updated-md.sh">脚本</a>花了一段时间，也犯了比较多的错，直到现在这个脚本都有 bug，而且不通用，不过也懒得改了
+<ul>
+<li>每次出 bug 的时候，比如 sed 找不到代表代码块的 ``` 标志，就会直接把 last-updated.md 全删了，再 add &amp;&amp; commit，主打一个懒</li>
+</ul>
+</li>
+</ul>
+<h4 id="站内搜索"><a class="header" href="#站内搜索">站内搜索</a></h4>
+<ul>
+<li>mdbook 的中文搜索和 telegram 的中文搜索一样烂，自己写了太多东西记不到，只记得关键词，搜不到就很烦
+<ul>
+<li>mdbook 的搜索，根据西方文字自身的空格作为分词符，但中文根本不用空格这种东西，就没法分词</li>
+</ul>
+</li>
+<li>机缘巧合找到了 docsearch，申请了一下，通过了，官方也给了教程怎么搭建
+<ul>
+<li>不过 docsearch 很长一段时间我都没用到，因为搜索框死活出不来</li>
+<li>本来人就懒，就一直在摆烂，后面有一次有时间了，也实在忍不了搜索之殇了，就好好排查了一下问题</li>
+<li>结果发现是 index.hbs 里面，关于 docsearch 的配置<a href="https://github.com/TinySnow/TinySnow.github.io/commit/6c1a7dff8a54bf9d3a5725d252ab567b03efee2b#diff-ff0ab0acea421fc363f4f84b59a471aab5e609ce1d329d924df8cc6a5fce15aaR401">少了一个逗号</a>，排查出来自己都想笑，怎么犯了这么低级的错误</li>
+</ul>
+</li>
+<li>docsearch 是 algolia 的子服务，要先注册 algolia，然后一步一步配置
+<ul>
+<li>甚至要自己配置 algolia 的 crawler（爬虫），自定义爬取的内容，才能加到 algolia 的倒排索引里面，也才能搜索到</li>
+<li>本来就懒，简直逆了天了，照着网上稍微配置了一下，自定义了一下就没管了</li>
+<li>有一些配置上的 bug 到现在都还没修……</li>
+</ul>
+</li>
+<li>docsearch 用起来倒是挺好用</li>
+<li>配置在附录，如果有需要可以参考一下</li>
+</ul>
+<h4 id="收录网站"><a class="header" href="#收录网站">收录网站</a></h4>
+<ul>
+<li>后来想把网站加到搜索引擎里，想着可能会帮到别人
+<ul>
+<li>一进 Google 和 Bing 的站长工具，又要在 html 的 head 里面<a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/theme/index.hbs#L60">加东西</a>，很麻烦</li>
+<li>加好了之后，又说需要站点地图才能爬网，当时连站点地图都不知道是啥</li>
+</ul>
+</li>
+<li>随便搜了一个生成站点地图的工具 <a href="https://github.com/zerodevx/static-sitemap-cli">static-sitemap-cli</a>，还好用起来不复杂
+<ul>
+<li>可惜又是依赖 node，用 js 写的工具……</li>
+<li>每次本地编译完了之后，就会用这个工具生成站点地图，都在脚本里，自动化一下就可以了</li>
+</ul>
+</li>
+<li>注意，随着文章越来越多，站点地图 <a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/src/sitemap.xml">sitemap.xml</a> 和 <a href="https://github.com/TinySnow/TinySnow.github.io/blob/master/src/sitemap.txt">sitemap.txt</a> 会越来越大，而且 xml 文件每次编译里面的时间都会变，所以 last-updated.md 会越拖越长，这点在写脚本的时候尤其要注意</li>
+</ul>
+<h3 id="部署"><a class="header" href="#部署">部署</a></h3>
+<h4 id="通过分支部署"><a class="header" href="#通过分支部署">通过分支部署</a></h4>
+<ul>
+<li>mdbook 博客搭建好的时候，github pages 的“通过 github actions 部署”还是 experimental（实验性的），采取了主流方案：Deploy from branch（通过分支部署）
+<ul>
+<li>但是当时也写了一个 github actions 每次推送的时候自动编译，然后推送到 gh-pages 分支上，就不用自己本地编译了</li>
+<li>本地编译一遍主要是因为站点地图和生成 last-updated.md 需要，如果不做这两个工作可以直接推送到 remote</li>
+</ul>
+</li>
+<li>当时用的别人的 actions，自己也没注意到 git 会 tracing 编译后的产物，这些产物都在 gh-pages 里，导致仓库越来越大，仅 .git 文件夹就有 800 多 MB，加上编译产物就有 1G 之大，被迫瘦身</li>
+</ul>
+<h4 id="通过-github-actions-部署"><a class="header" href="#通过-github-actions-部署">通过 Github Actions 部署</a></h4>
+<ul>
+<li>原计划是清理 gh-pages 分支，删除所有 git history
+<ul>
+<li>也确实这么做了，从 834MB 减到了 26.8MB，详见这篇<a href="https://tinysnow.github.io/技术/实践记录/Git仓库瘦身.html">博客</a></li>
+<li>但是发现这个时候“通过 Github Actions 部署”已经不再是实验性的了</li>
+<li>经过提醒，于是从 Deploy from branch 改为 Github Actions，所以 gh-pages 分支也就用不到了，直接删除</li>
+</ul>
+</li>
+<li>参照 mdbook wiki 里的官方部署教程，自己<a href="https://github.com/TinySnow/TinySnow.github.io/commit/a22d848d459d07db58adb2683214b6f9109ac4a6">重写了 Github Actions 文件</a>
+<ul>
+<li>感谢<a href="https://t.me/seiuneko">一只昀喵</a>辛勤的指导，受教了</li>
+</ul>
+</li>
+</ul>
+<h4 id="使用-cloudflare-pages"><a class="header" href="#使用-cloudflare-pages">使用 Cloudflare Pages</a></h4>
+<ul>
+<li>这个想法是源于，经常给国内没法翻墙的朋友发博客内容很不方便，半天转不出来，想方便一下国内的朋友
+<ul>
+<li>找了很多静态网站托管服务，要么被墙要么要钱，很搞人，自己甚至还开了一个月腾讯云的静态网站托管服务，结果域名要备案，还要上传 ssl 证书，纯纯大冤种</li>
+<li>gitea + drone CI/CD，腾讯云，vercel，netlify，Gitee Pages 都试过了，没啥用
+<ul>
+<li>最哈皮的还是 Gitee，这玩意儿居然会从源代码里面审查违规内容</li>
+<li>而且规则不透明，上一次部署能通过的文章，下一次部署就通过不了了</li>
+<li>甚至林清玄的文章都是违规内容</li>
+<li>也不告诉你哪儿错了，就告诉你这篇文章有问题，叫人自己排查</li>
+<li>开源中国的反馈 repository，里面至少<a href="https://gitee.com/oschina/git-osc/issues">一半多的 issue</a> 都是反应自己无法部署</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cloudflare Pages 刚开始用了一下，但是没有 mdbook 的选项，也就不了了之，结果后面搜出来有一种比较 dirty 的做法可以曲线救国
+<ul>
+<li>Cloudflare Pages 直接导入 Github 仓库
+<ul>
+<li>构建配置的框架预设选<code>无</code></li>
+<li>构建命令填 <code>curl -L https://github.com/rust-lang/mdBook/releases/download/v0.4.37/mdbook-v0.4.37-x86_64-unknown-linux-gnu.tar.gz | tar xvz &amp;&amp; ./mdbook build</code></li>
+<li>构建输出目录填 book</li>
+</ul>
+</li>
+<li>本解决方案参考这篇同样使用 mdbook 作为博客的<a href="https://predmet.ch/misc/mdbook_on_cf_pages">博文</a>
+<ul>
+<li>Cloudflare Pages 官方说支持 mdbook 构建，但实际上构建选项里并没有 mdbook</li>
+<li>有人在<a href="https://github.com/cloudflare/cloudflare-docs/issues/885">对此的 issue</a> 里提出了一个比较 dirty 的做法，还真有用……</li>
+<li>为什么说 dirty，因为这个方法本质上是在 Cloudflare Pages 的构建服务器上，暴力拉 mdbook 的 binary 下来，构建命令当成注入到别人服务器里的 hack 命令用，看一下构建 log 就知道了（构建日志详见附录）
+<ul>
+<li>重点在  <code>00:14:26.223</code> 那一行，构建命令实际上是一个 <code>user command</code>，按理来说可以乱填，这里拉 mdbook binary 下来就是不太合规的做法</li>
+</ul>
+</li>
+<li>不过能用就行……</li>
+<li>Cloudflare Pages 在国内的访问速度其实一般，不过好歹能访问，不像 Github Pages</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>感谢<a href="https://t.me/seiuneko">一只昀喵</a>辛勤的指导，受教了</li>
+</ul>
+<h2 id="附录"><a class="header" href="#附录">附录</a></h2>
+<h3 id="algolia-crawer-配置"><a class="header" href="#algolia-crawer-配置">Algolia Crawer 配置</a></h3>
+<pre><code class="language-javascript">new Crawler({
+  rateLimit: 8,
+  maxDepth: 10,
+  maxUrls: 5000,
+  startUrls: ["https://tinysnow.github.io"],
+  renderJavaScript: false,
+  sitemaps: [],
+  ignoreCanonicalTo: false,
+  discoveryPatterns: ["https://tinysnow.github.io/ **"],
+  schedule: "at 13:14 on Tuesday",
+  actions: [
+    {
+      indexName: "tinysnowio",
+      pathsToMatch: ["https://tinysnow.github.io/** "],
+      recordExtractor: ({ $, helpers }) =&gt; {
+        // 去除不想要的 DOM
+        $("#sidebar").remove();
+        $("#menu-bar").remove();
+        $("#menu-bar").remove();
+
+        const records = helpers.docsearch({
+          recordProps: {
+            lvl0: {
+              selectors: "",
+              defaultValue: "博客",
+            },
+            lvl1: ["h1"],
+            lvl2: ["h2"],
+            lvl3: ["h3"],
+            lvl4: ["h4"],
+            lvl5: ["h5"],
+            lvl6: ["h6"],
+            content: [
+              "p",
+              "li",
+              "ul",
+              "ol",
+              "code",
+              "span",
+              "strong",
+              "a",
+              "em",
+            ],
+          },
+          aggregateContent: true,
+          recordVersion: "v3",
+        });
+        // 添加语言
+        records.forEach((record) =&gt; {
+          record.lang = "zh-CN";
+        });
+        return records;
+      },
+    },
+  ],
+  safetyChecks: { beforeIndexPublishing: { maxLostRecordsPercentage: 100 } },
+  initialIndexSettings: {
+    tinysnowio: {
+      attributesForFaceting: ["type", "lang"],
+      attributesToRetrieve: [
+        "hierarchy",
+        "content",
+        "anchor",
+        "url",
+        "url_without_anchor",
+        "type",
+      ],
+      attributesToHighlight: ["hierarchy", "content"],
+      attributesToSnippet: ["content:10"],
+      camelCaseAttributes: ["hierarchy", "content"],
+      searchableAttributes: [
+        "unordered(hierarchy.lvl0)",
+        "unordered(hierarchy.lvl1)",
+        "unordered(hierarchy.lvl2)",
+        "unordered(hierarchy.lvl3)",
+        "unordered(hierarchy.lvl4)",
+        "unordered(hierarchy.lvl5)",
+        "unordered(hierarchy.lvl6)",
+        "content",
+      ],
+      distinct: true,
+      attributeForDistinct: "url",
+      customRanking: [
+        "desc(weight.pageRank)",
+        "desc(weight.level)",
+        "asc(weight.position)",
+      ],
+      ranking: [
+        "words",
+        "filters",
+        "typo",
+        "attribute",
+        "proximity",
+        "exact",
+        "custom",
+      ],
+      highlightPreTag: '&lt;span class="algolia-docsearch-suggestion--highlight"&gt;',
+      highlightPostTag: "&lt;/span&gt;",
+      minWordSizefor1Typo: 3,
+      minWordSizefor2Typos: 7,
+      allowTyposOnNumericTokens: false,
+      minProximity: 1,
+      ignorePlurals: true,
+      advancedSyntax: true,
+      attributeCriteriaComputedByMinProximity: true,
+      removeWordsIfNoResults: "allOptional",
+    },
+  },
+  appId: "GX9RTL51BH",
+  apiKey: "PlaceHolder",
+});
+</code></pre>
+<h3 id="cloudflare-pages-构建日志"><a class="header" href="#cloudflare-pages-构建日志">Cloudflare Pages 构建日志</a></h3>
+<pre><code class="language-console">00:14:23.159	Cloning repository...
+00:14:24.014	From https://github.com/TinySnow/TinySnow.github.io
+00:14:24.015	 * branch            3685b9c14d244ab2a2888d820486e261e5174aea -&gt; FETCH_HEAD
+00:14:24.015	
+00:14:24.139	HEAD is now at 3685b9c Added some Pharmacology content
+00:14:24.139	
+00:14:24.222	
+00:14:24.222	Using v2 root directory strategy
+00:14:24.250	Success: Finished cloning repository files
+00:14:25.960	Checking for configuration in a wrangler.toml configuration file (BETA)
+00:14:25.960	
+00:14:26.071	No wrangler.toml file found. Continuing.
+00:14:26.223	Detected the following tools from environment: 
+00:14:26.223	Executing user command: curl -L https://github.com/rust-lang/mdBook/releases/download/v0.4.30/mdbook-v0.4.30-x86_64-unknown-linux-gnu.tar.gz | tar xvz &amp;&amp; ./mdbook build
+00:14:26.245	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+00:14:26.246	                                 Dload  Upload   Total   Spent    Left  Speed
+00:14:26.455	
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+00:14:26.831	mdbook
+00:14:27.065	
+  0 5031k    0 32768    0     0  59463      0  0:01:26 --:--:--  0:01:26 59463
+100 5031k  100 5031k    0     0  6130k      0 --:--:-- --:--:-- --:--:-- 18.1M
+00:14:27.136	2024-05-02 16:14:27 [INFO] (mdbook::book): Book building has started
+00:14:27.146	2024-05-02 16:14:27 [INFO] (mdbook::book): Running the html backend
+00:14:36.384	Finished
+00:14:36.385	Note: No functions dir at /functions found. Skipping.
+00:14:36.385	Validating asset output directory
+00:14:37.224	Deploying your site to Cloudflare's global network...
+00:14:42.448	Uploading... (1254/1254)
+00:14:42.449	✨ Success! Uploaded 0 files (1254 already uploaded) (0.65 sec)
+00:14:42.449	
+00:14:43.060	✨ Upload complete!
+00:14:45.569	Success: Assets published!
+00:14:46.752	Success: Your site was deployed!
+</code></pre>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/计算机/文章/文章.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/计算机/文章/Telegram中文搜索的不完美解决方案.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/计算机/文章/文章.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/计算机/文章/Telegram中文搜索的不完美解决方案.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/计算机/文章/博客历史演进.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

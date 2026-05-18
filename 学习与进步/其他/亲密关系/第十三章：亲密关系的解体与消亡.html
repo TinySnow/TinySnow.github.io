@@ -1,0 +1,699 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第十三章：亲密关系的解体与消亡 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-cecf3db3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第十三章亲密关系的解体与消亡"><a class="header" href="#第十三章亲密关系的解体与消亡">第十三章：亲密关系的解体与消亡</a></h1>
+<h2 id="离婚率的变化"><a class="header" href="#离婚率的变化">离婚率的变化</a></h2>
+<h3 id="离婚的普遍性"><a class="header" href="#离婚的普遍性">离婚的普遍性</a></h3>
+<ul>
+<li>男性（首次）离婚的年龄中位数是 31.8 岁，而女性为 29.4 岁</li>
+</ul>
+<h3 id="离婚率增加的原因"><a class="header" href="#离婚率增加的原因">离婚率增加的原因</a></h3>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/housework.png" alt=""></p>
+<ul>
+<li>只是居住在一起的人都同样可能分手，都比夫妻更经常地分手</li>
+<li>婚姻或同性婚姻能增加亲密关系的筹码</li>
+</ul>
+<blockquote>
+<p>　　社会文化强求婚姻成为个体生命中最亲密、最深厚、最重要和最长久的关系，自然就要求夫妻们做情人、朋友和相互之间的心理治疗师。然而矛盾的是，婚姻却可能日益缺乏必需的情感需求，以致解体。</p>
+</blockquote>
+<ul>
+<li>妻子每周工作的时间越长，其婚姻质量就往往越低</li>
+<li>在全世界，当女性能在经济上独立于男性时，离婚率就更高</li>
+<li>拥有金钱容易使人离婚，但贫穷更会引起紧张，损害婚姻</li>
+<li>经常移居的人比那些待在一个地方并扎根的人更容易离婚</li>
+<li>流行的观念认为同居是有价值的尝试，<strong>但同居与离婚率正相关</strong></li>
+<li>随意的同居会导致：（所有这些都使人们更可能离婚）
+<ol>
+<li>对婚姻制度的不尊重</li>
+<li>对婚姻结果的不利期望</li>
+<li>更强烈的离婚意愿</li>
+</ol>
+</li>
+<li>离婚率上升的可能原因
+<ul>
+<li>对婚姻的高期望</li>
+<li>工作女性经济更自由，更有机会接近替代伴侣，工作和家庭的冲突日益严峻</li>
+<li>个人主义兴起和社会流动性</li>
+<li>新制定的离婚法律程序</li>
+<li>随意的同居削弱了婚姻的承诺</li>
+<li>离婚家庭的孩子长大后更可能离婚</li>
+</ul>
+</li>
+</ul>
+<h2 id="离婚的征兆"><a class="header" href="#离婚的征兆">离婚的征兆</a></h2>
+<h3 id="障碍模型"><a class="header" href="#障碍模型">障碍模型</a></h3>
+<ul>
+<li>关系破裂的三种因素
+<ol>
+<li>吸引力</li>
+<li>替代选择</li>
+<li>社会障碍</li>
+</ol>
+<ul>
+<li>社会压力</li>
+<li>道德约束</li>
+<li>经济负担</li>
+<li>等</li>
+</ul>
+</li>
+<li>部分认知到的离婚重要障碍
+<ul>
+<li>担心孩子受苦</li>
+<li>失去孩子的威胁</li>
+<li>宗教规范</li>
+<li>对配偶的依赖</li>
+<li>对经济困境的恐惧</li>
+</ul>
+</li>
+</ul>
+<h3 id="脆弱应激适应模型"><a class="header" href="#脆弱应激适应模型">脆弱—应激—适应模型</a></h3>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/marry-model.png" alt=""></p>
+<h4 id="脆弱"><a class="header" href="#脆弱">脆弱</a></h4>
+<ul>
+<li>个体成长家庭里的不幸经历</li>
+<li>受教育程度低</li>
+<li>适应不良的人格特质</li>
+<li>拙劣的社交技能</li>
+<li>对婚姻起反作用的态度</li>
+<li>等</li>
+</ul>
+<h4 id="应激"><a class="header" href="#应激">应激</a></h4>
+<ul>
+<li>一段时期的失业或重病在身</li>
+<li>怀孕、分娩和养育</li>
+<li>等</li>
+<li>不能成功地应对压力事件会使得压力更严重
+<ul>
+<li>如果应对不力引起婚姻质量的下降，伴侣的应对能力或许会进一步受损</li>
+</ul>
+</li>
+</ul>
+<h4 id="适应"><a class="header" href="#适应">适应</a></h4>
+<ul>
+<li>伴侣彼此提供支持并使用新的环境</li>
+</ul>
+<h4 id="其他"><a class="header" href="#其他">其他</a></h4>
+<ul>
+<li>脆弱一应激一适应模型中存在着反馈回路和交叉因素</li>
+<li>婚姻的质量取决于下面三者的相互作用，并且在某种程度上这三个重要的因素还会彼此影响
+<ul>
+<li>我们是谁（脆弱）</li>
+<li>我们遭逢的环境（应激）</li>
+<li>我们应对环境的方式（适应）</li>
+</ul>
+</li>
+</ul>
+<h3 id="亲密关系适应过程pair项目结果"><a class="header" href="#亲密关系适应过程pair项目结果">亲密关系适应过程（PAIR）项目结果</a></h3>
+<h4 id="持续的动力模型"><a class="header" href="#持续的动力模型">持续的动力模型</a></h4>
+<ul>
+<li>认为那些注定不满足的夫妻比起那些婚姻最终成功的夫妻，在婚姻一开始就爱意不足，彼此矛盾重重</li>
+<li>认为伴侣把求爱期间就浮现出的问题、矛盾及持续的脆弱带入了他们的婚姻之中</li>
+</ul>
+<h4 id="突现的危难模型"><a class="header" href="#突现的危难模型">突现的危难模型</a></h4>
+<ul>
+<li>认为最终毁灭伴侣的问题行为始于结婚之后</li>
+</ul>
+<h4 id="幻灭模型"><a class="header" href="#幻灭模型">幻灭模型</a></h4>
+<ul>
+<li>认为伴侣们在婚姻开始时，常常对他们的亲密关系有着美好、浪漫的看法，这是不切实际的乐观</li>
+</ul>
+<h4 id="其他-1"><a class="header" href="#其他-1">其他</a></h4>
+<ul>
+<li>持续的动力模型能预测婚姻将来的幸福程度</li>
+<li>然而，对夫妻实际上是否会离婚最好的预测因素是幻灭模型
+<ul>
+<li>某些夫妻在婚姻的头一年，婚姻满意度的下降要比其他夫妻更急剧和显著</li>
+<li>他们是最容易离婚的夫妻</li>
+<li>注定要离婚的夫妻在婚姻刚开始时比大多数人更加充满深情</li>
+</ul>
+</li>
+<li><strong>浪漫爱情变化的大小和速度能最好地预测夫妻是否会离婚</strong></li>
+<li><strong>夫妻们带入婚姻的问题决定了离婚的快慢</strong></li>
+<li>夫妻体验到的满意水平和满意的时间变化是影响关系结果的重要因素</li>
+<li>注定要离婚的夫妻并不总是变得暴躁和仇恨，但他们通常的确会失去他们曾经体验到的快乐</li>
+</ul>
+<h3 id="婚姻早期岁月eym项目结果"><a class="header" href="#婚姻早期岁月eym项目结果">婚姻早期岁月（EYM）项目结果</a></h3>
+<ul>
+<li>EYM 的研究者特别关注夫妻面临的社会条件对婚姻结果的影响</li>
+<li>夫妻们的种族因素会造成巨大的差异
+<ul>
+<li>只有三分之一略多（36%）的白人夫妻离异</li>
+<li>但超过一半（55%）的黑人夫妻解除了他们的婚姻关系</li>
+</ul>
+</li>
+<li>夫妻们确立亲密关系的社会背景对他们的婚姻结果有重大的影响</li>
+<li><strong>不管伴侣们是多么尊重和珍视婚姻，贫穷可能把任何夫妻都置于离婚的风险之中</strong></li>
+</ul>
+<h3 id="婚姻问题的个体知觉"><a class="header" href="#婚姻问题的个体知觉">婚姻问题的个体知觉</a></h3>
+<ul>
+<li>
+<p>影响婚姻结果的三大类因素</p>
+<ol>
+<li>文化规范和其他变量</li>
+</ol>
+<ul>
+<li>确定了婚姻发生的基础</li>
+<li>是最广泛的影响因素</li>
+</ul>
+<ol start="2">
+<li>个人背景</li>
+</ol>
+<ul>
+<li>家人和朋友的社交圈等</li>
+</ul>
+<ol start="3">
+<li>关系背景</li>
+</ol>
+<ul>
+<li>伴侣们通过对彼此的知觉和互动缔造的亲密环境</li>
+<li>好心情，悲观戒备心理等等</li>
+</ul>
+</li>
+<li>
+<p>问及离婚者离异的原因时，提及次数最多的原因全都涉及婚姻关系的某些特征</p>
+<ul>
+<li>女性比男性更多抱怨不贞、物质滥用或者虐待行为
+<ul>
+<li>物质滥用（substance use）：指包括酒精、影响精神的药物和其他化学品如挥发性溶剂的滥用</li>
+</ul>
+</li>
+<li>男性比女性则更可能抱怨沟通不良或者宣称他们根本不知道哪里出错了</li>
+<li>平均而言，前妻的怨言要多于前夫</li>
+<li>但男女两性的解释都极少认可他们亲密关系发生的文化或个人背景可能带来的影响</li>
+</ul>
+</li>
+<li>
+<p>伴侣的社会经济地位（包括教育和收入）有助于预测他们遭遇的婚姻问题</p>
+</li>
+<li>
+<p>伴侣结婚的年龄也有影响：结婚时越年轻的人越有可能报告心生隔阂，存在酗酒和吸毒的问题</p>
+</li>
+</ul>
+<h3 id="特定的离婚信号"><a class="header" href="#特定的离婚信号">特定的离婚信号</a></h3>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/divorce-signals-part-one.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/divorce-signals-part-two.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/divorce-signals-part-three.png" alt=""></p>
+<h2 id="分手"><a class="header" href="#分手">分手</a></h2>
+<ul>
+<li>离婚的决定源于对得失的复杂计算，涉及（有时不确定的）替代选择的考虑</li>
+</ul>
+<h3 id="与婚前伴侣的分手"><a class="header" href="#与婚前伴侣的分手">与婚前伴侣的分手</a></h3>
+<ul>
+<li>个体分手的努力是指向他人（设法保护伴侣的情感）还是指向自己（更自私地损害伴侣的情感）有重要区别
+<ul>
+<li>有时人们在宣布结束关系的意图时，会给予伴侣反应的机会以保存颜面</li>
+<li>指向他人的直接分手策略虽会宣泄个体的不满，但彼此之间会进行详尽的讨论和协商，而不是强求结束关系</li>
+<li>相反，伴侣直接但更自私时，他们有时只是宣布关系已结束，躲避与前伴侣的任何进一步的接触</li>
+</ul>
+</li>
+<li>其他区别还包括
+<ul>
+<li>个体的不满逐渐或突然发作</li>
+<li>结束亲密关系的个人或共同愿望</li>
+<li>个体退出亲密关系时的迅速或拖延特征
+<ul>
+<li>多数情况下，人们在成功退出关系前都要伪装好几次</li>
+</ul>
+</li>
+<li>是否有修复关系的企图
+<ul>
+<li>大多数时间，不会有正式的努力来修复关系</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>当伴侣一方对亲密关系感到厌倦并开始注意其他人时，结束关系的过程通常就已经开始了</li>
+</ul>
+<h3 id="离婚的步骤"><a class="header" href="#离婚的步骤">离婚的步骤</a></h3>
+<ul>
+<li>不满意的夫妻通常要消耗婚姻的最后 5 年来考虑分手</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/intimate-relationship-broken-classic-process.png" alt=""></p>
+<h2 id="分手的后果"><a class="header" href="#分手的后果">分手的后果</a></h2>
+<h3 id="解体后的关系"><a class="header" href="#解体后的关系">解体后的关系</a></h3>
+<ul>
+<li>分手后遭遇的重要事件大多数都会阻碍他们之间的关系，损害他们对分手之后朋友关系的投入</li>
+<li>伴侣结束亲密关系之后的交往或许会显得笨拙、不安，因为一方会嫉妒另一方新的爱情或者他们的性要求被断然拒绝</li>
+</ul>
+<h3 id="克服消极情绪"><a class="header" href="#克服消极情绪">克服消极情绪</a></h3>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/separate-accommodating.png" alt=""></p>
+<ul>
+<li>分手常常看来很可怕，但分手对我们的伤害通常没有我们想象得那般严重</li>
+<li>沉溺只会延续苦恼，而反省（找寻经历中的意义并得到学习）是与正面适应和恢复联系在一起的</li>
+</ul>
+<h3 id="离婚不同于恋人分手"><a class="header" href="#离婚不同于恋人分手">离婚不同于恋人分手</a></h3>
+<ul>
+<li>婚姻的结束一般更为复杂
+<ul>
+<li>分割财产、抚养小孩、遵从法律程序</li>
+<li>离婚会改变人的生活</li>
+<li>有时变好但更多的情况是变差</li>
+</ul>
+</li>
+</ul>
+<h4 id="适应-1"><a class="header" href="#适应-1">适应</a></h4>
+<ul>
+<li>整体来看，离婚是困难的跋涉过程，人们在离婚后的岁月里并不太顺利</li>
+<li>离婚通常是人们生命中的重大事件，虽然时间能疗伤，但并不能彻底治愈伤口</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/life-satisfaction-after-divorce.png" alt=""></p>
+<blockquote>
+<p>需要认识到：丧亲之痛的程度是局外人很难理解的。</p>
+<p>二十年后，寡妇或鳏夫仍旧会和他们失去的爱人在臆想中进行谈话，大约每月一次。</p>
+<p>他们生活的满意度很长一段时间都在降低，在十年之后还会出现偶尔爆发的悲伤。</p>
+<p>所以丧偶就像失去自己的孩子，这种伤害是永远忘不掉的。</p>
+<p>这种丧亲之痛是人们任何时候都不能完全忘记的。</p>
+</blockquote>
+<ul>
+<li>再婚常常是离异单身人士生活的转折点，与其幸福的增加有关联</li>
+<li>离异未再婚的人在接下来的 40 年期间比再婚的同龄人死亡的可能性高出 55%</li>
+<li>但无论是否再婚，离婚 6 年之后就有超过四分之三的人报告他们的离婚是件好事</li>
+</ul>
+<h4 id="社交圈子"><a class="header" href="#社交圈子">社交圈子</a></h4>
+<ul>
+<li>人们在离婚后的数年里社交圈子一般变得更小
+<ul>
+<li>并且，个体社交圈子里剩下的人员并非全部都是支持式的</li>
+</ul>
+</li>
+<li>女性离婚后，财务状况通常会恶化
+<ul>
+<li>这一现象会持续几十年</li>
+<li>部分原因是离婚后只有 50% 的前夫会支付他们本应支付的儿童抚养费</li>
+<li>而且几乎有四分之一的人连监护费用也一起忽略</li>
+</ul>
+</li>
+<li>离婚后男性的经济状况不太可能像女性一样下降
+<ul>
+<li>家庭收入通常也会下降，但他们在婚后比女性更可能独自生活</li>
+<li>离婚后女性通常可能要抚养子女</li>
+</ul>
+</li>
+<li>平均而言，离婚后女性的生活标准降低了，而男性提高了</li>
+</ul>
+<h4 id="前配偶之间的关系"><a class="header" href="#前配偶之间的关系">前配偶之间的关系</a></h4>
+<ul>
+<li>
+<p>一般有四种类型</p>
+<ol>
+<li>暴躁的仇敌</li>
+<li>愤怒的同伴</li>
+<li>合作的同事</li>
+<li>完美的朋友</li>
+</ol>
+</li>
+<li>
+<p>美国中西部离异夫妻的样本中，在离婚一年之后， 前配偶有</p>
+<ul>
+<li>一半有着友好的关系（38% 的合作的同事，12% 的完美的朋友）</li>
+<li>一半有着痛苦的关系（25% 的愤怒的同伴，25% 的暴躁的敌人）</li>
+</ul>
+</li>
+</ul>
+<h3 id="父母离异的孩子"><a class="header" href="#父母离异的孩子">父母离异的孩子</a></h3>
+<ul>
+<li>与那些父母仍维持婚姻的人相比，父母离异的儿童在青少年期和成人早期幸福的水平都较低
+<ul>
+<li>他们的心理适应能力低下</li>
+<li>体验到更多的消沉和焦虑</li>
+<li>对生活满意度较低</li>
+</ul>
+</li>
+<li>离婚家庭的子女比其他人更可能离异
+<ul>
+<li>这些影响一般不是很严重，但是确凿无疑</li>
+<li>父母离异的整体影响始终是负面的，但程度相对适中</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/reading/intimate-relationship/children&#39;s-subjective-happiness-about-whether-parents-divorce.png" alt=""></p>
+<ul>
+<li><strong>双亲丧失</strong> 观点：假定拥有父爱和母爱能让儿童获益，不论何种理由（包括离婚），儿童在失去父亲或母亲后景况就可能不太好</li>
+<li><strong>双亲应激</strong> 模型：认为最关键的问题是儿童接受到的养育质量而非数量，任何能干扰或削弱养育儿童的应激源（包括离婚）都会产生有害的影响</li>
+<li><strong>双亲冲突</strong> ：父母之间尖酸刻薄的交往看来让他们的孩子难以承受
+<ul>
+<li>无论是否离婚，家庭冲突都容易让孩子拥有：
+<ul>
+<li>更高的焦虑</li>
+<li>更差的健康</li>
+<li>以及更多的问题行为</li>
+</ul>
+</li>
+<li>是最有影响力的因素</li>
+</ul>
+</li>
+<li><strong>如果儿童生活在持续发生冲突的家庭之中，父母不离婚时他们的情况更糟糕</strong></li>
+<li><strong>当离婚能结束愤怒、困难重重的家庭时，儿童的幸福几乎就没有一点下降</strong></li>
+<li><strong>痛苦的夫妻是否应该“为了孩子而在一起” 取决于他们能否彼此以礼相待</strong></li>
+<li><strong>当和平的婚姻破裂时儿童就会受到伤害，但如果家庭充满冲突，则离婚会让儿童的境况变得更好</strong></li>
+<li>离婚家庭的儿童体验到的许多糟糕后果随着时间会逐渐减少</li>
+<li>如果子女能享受到免于贫困的自由，得到关爱、可靠和持续的养育，免受父母冲突的戕害，他们]就能幸福地成长</li>
+</ul>
+<h2 id="一些重要的人际关系科学结论"><a class="header" href="#一些重要的人际关系科学结论"><font color="red">一些重要的人际关系科学结论</font></a></h2>
+<ul>
+<li><strong>同居与离婚率正相关</strong></li>
+<li>浪漫爱情变化的大小和速度能最好地预测夫妻是否会离婚</li>
+<li>夫妻们带入婚姻的问题决定了离婚的快慢</li>
+<li>不管伴侣们是多么尊重和珍视婚姻，贫穷可能把任何夫妻都置于离婚的风险之中</li>
+<li><strong>分手虽然看来很可怕，但分手对我们的伤害通常没有我们想象得那般严重</strong></li>
+<li>丧偶之痛和丧亲之痛的程度极深，一般常人难以理解</li>
+<li><strong>如果儿童生活在持续发生冲突的家庭之中，父母不离婚时他们的情况更糟糕</strong></li>
+<li><strong>当离婚能结束愤怒、困难重重的家庭时，儿童的幸福几乎就没有一点下降</strong></li>
+<li><strong>当和平的婚姻破裂时儿童就会受到伤害，但如果家庭充满冲突，则离婚会让儿童的境况变得更好</strong></li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/其他/亲密关系/第十二章：权力和暴力.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/其他/亲密关系/第十四章：亲密关系的维持和修复.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/其他/亲密关系/第十二章：权力和暴力.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/其他/亲密关系/第十四章：亲密关系的维持和修复.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/其他/亲密关系/第十三章：亲密关系的解体与消亡.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>
