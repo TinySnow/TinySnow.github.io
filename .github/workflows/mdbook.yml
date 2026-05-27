@@ -269,6 +269,23 @@ jobs:
             https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/TinySnow/TinySnow.github.io.git \
             HEAD:gh-pages-mirror
 
+      - name: Setup SSH for GitLink
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GITLINK_DEPLOY_KEY }}
+
+      - name: Add GitLink host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H code.gitlink.org.cn >> ~/.ssh/known_hosts
+
+      - name: Push mirror branch to GitLink
+        run: |
+          cd book
+          git push --force \
+            git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git \
+            HEAD:gh-pages-mirror
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

@@ -84,6 +84,5 @@ current_branch="$(git rev-parse --abbrev-ref HEAD)"
 git push gitee "${current_branch}"
 
 git push gitlink -f master
-git push gitlink -f gh-pages-mirror
 
 echo "Done. last-updated / sitemap / rss are generated in GitHub Actions."
