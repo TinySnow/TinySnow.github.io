@@ -1,0 +1,771 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第六章：肺部感染性疾病 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第六章肺部感染性疾病"><a class="header" href="#第六章肺部感染性疾病">第六章：肺部感染性疾病</a></h1>
+<h2 id="一肺炎总论"><a class="header" href="#一肺炎总论">一、肺炎总论</a></h2>
+<h3 id="一肺炎的定义及流行病学"><a class="header" href="#一肺炎的定义及流行病学">一）肺炎的定义及流行病学</a></h3>
+<ul>
+<li>指终末气道、肺泡和肺间质的炎症，可由病原微生物、理化因素、免疫损伤、过敏及药物所致。</li>
+<li>临床以发热、寒战、咳嗽、咳脓痰为特征；胸片至少见 <strong>1 处不透光阴影</strong> 。</li>
+</ul>
+<h3 id="二病因和发病机制"><a class="header" href="#二病因和发病机制">二）病因和发病机制</a></h3>
+<h4 id="两个因素"><a class="header" href="#两个因素">两个因素</a></h4>
+<ul>
+<li>病原体：数量多，毒力强</li>
+<li>宿主：免疫弱，免疫防御系统损害</li>
+</ul>
+<h4 id="传播途径"><a class="header" href="#传播途径">传播途径</a></h4>
+<ol>
+<li>空气吸入</li>
+<li>血流播散</li>
+<li>邻近部位感染</li>
+<li>上呼吸道定植菌误吸</li>
+<li>胃肠道定植菌误吸</li>
+<li>经人工气道吸入</li>
+</ol>
+<h4 id="发病机制"><a class="header" href="#发病机制">发病机制</a></h4>
+<ul>
+<li>肺泡毛细血管充血、水肿、肺泡内纤维蛋白渗出及细胞浸润</li>
+<li>金黄色葡萄球菌、铜绿假单胞菌、肺炎克雷伯菌、厌氧菌等易引起肺组织坏死
+<ul>
+<li>红（克雷伯）黄（金黄葡萄球）绿（铜绿假单胞）臭（厌氧菌）</li>
+</ul>
+</li>
+<li>其它肺炎治疗后肺结构与功能多可恢复</li>
+</ul>
+<h3 id="三分类"><a class="header" href="#三分类">三）分类</a></h3>
+<h4 id="解剖分类"><a class="header" href="#解剖分类">解剖分类</a></h4>
+<ul>
+<li>大叶性肺炎：大面积肺泡，一整块
+<ul>
+<li><strong>病变始于肺泡</strong> ，通过肺泡孔蔓延直至部分段或段或整个肺叶；</li>
+<li>X 线表现为肺叶或段渗出性实变阴影；</li>
+<li>有时肺泡内充满渗出液无气体，唯支气管清晰可见，呈现“支气管充气征”。</li>
+</ul>
+</li>
+<li>小叶性肺炎：大面积支气管，点状、散在
+<ul>
+<li>又称支气管肺炎， <strong>病变常起于支气管或细支气管</strong> ，继而累及腺泡或肺泡；</li>
+<li>X 线体征沿纹理分布于两肺下野内中带，大小不等的小片状或斑点状模糊阴影，密度不均，边缘淡而中心区略高。</li>
+</ul>
+</li>
+<li>间质性肺炎：磨玻璃样、马赛克影、条索状、网格状</li>
+</ul>
+<h4 id="病因分类"><a class="header" href="#病因分类">病因分类</a></h4>
+<ul>
+<li>非感染性</li>
+<li>感染性（细菌、病毒、特殊感染菌）</li>
+</ul>
+<h4 id="患病环境分类主要基于病原体流行病学调查的资料"><a class="header" href="#患病环境分类主要基于病原体流行病学调查的资料">患病环境分类（主要基于病原体流行病学调查的资料）</a></h4>
+<h5 id="社区获得性肺炎cap"><a class="header" href="#社区获得性肺炎cap">社区获得性肺炎（CAP）</a></h5>
+<h6 id="概述"><a class="header" href="#概述">概述</a></h6>
+<ul>
+<li>常见细菌：肺炎链球菌、非典型病原体（支原体、衣原体）、流感嗜血杆菌、呼吸道病毒等。</li>
+<li>以 G+ 球菌为主，肺炎球菌占 40-50%</li>
+</ul>
+<h6 id="诊断依据"><a class="header" href="#诊断依据">诊断依据</a></h6>
+<ol>
+<li>新近出现的咳嗽、咳痰，或原有呼吸道疾病症状加重，并出现脓性痰；伴或不伴有胸痛。</li>
+<li>发热。</li>
+<li>肺实变体征或（和）湿性啰音。</li>
+<li>WBC &gt; 10×10⁹/L 或 &lt; 4×10⁹/L，伴或不伴核左移。</li>
+<li><strong>胸部 X 线检查显示片状、斑片状浸润型阴影或间质性改变，伴或不伴有胸腔积液。</strong></li>
+</ol>
+<ul>
+<li>以上 1-4 项任何一项加第 5 项并除外非感染性疾病。</li>
+</ul>
+<h5 id="医院获得性肺炎hap"><a class="header" href="#医院获得性肺炎hap">医院获得性肺炎（HAP）</a></h5>
+<h6 id="概述-1"><a class="header" href="#概述-1">概述</a></h6>
+<ul>
+<li>指患者入院时不存在，也不处于潜伏期，而于入院 <strong>48 小时后</strong> 在医院内（包括老年护理院、康复院）发生的肺炎。</li>
+<li>常见细菌：金葡菌、大肠杆菌、肺炎克雷伯杆菌，铜绿假单胞菌、肠杆菌属等。</li>
+<li>以 G- 杆菌为主；MDR 增多（MRSA、铜绿假单胞菌、鲍曼不动杆菌）</li>
+</ul>
+<h6 id="诊断依据-1"><a class="header" href="#诊断依据-1">诊断依据</a></h6>
+<ul>
+<li>X 线检查出现新的或进展的肺部浸润影加以下两项：
+<ol>
+<li>发热超过 38℃。</li>
+<li>血白细胞增多或减少。</li>
+<li>脓性气道分泌物。</li>
+</ol>
+</li>
+</ul>
+<h3 id="四各种肺炎的临床表现"><a class="header" href="#四各种肺炎的临床表现">四）各种肺炎的临床表现</a></h3>
+<h4 id="概述-2"><a class="header" href="#概述-2">概述</a></h4>
+<ul>
+<li>症状：咳嗽、咳痰、胸痛、发热、呼吸困难</li>
+<li>体征：呼吸频率增加、发绀、肺实变体征、湿罗音、胸腔积液体征</li>
+<li><strong>早期、轻症患者可无明显体征</strong></li>
+</ul>
+<h4 id="重症肺炎诊断标准"><a class="header" href="#重症肺炎诊断标准">重症肺炎诊断标准</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">主要标准</th><th style="text-align: center">次要标准</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">有创机械通气<br />感染性休克需要血管收缩剂</td><td style="text-align: center">呼吸频率 ≥ 30 次/分<br />氧合指数（PaO2/FiO2 ）≤ 250<br />多肺叶浸润<br />意识模糊，定向力障碍<br />高尿素血症（尿素氮 ≥ 7.14mol/L）<br />低血压需液体复苏</td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>3 条次要标准或 1 条主要标准</li>
+</ul>
+<h4 id="常见肺炎的症状体征x-线征象"><a class="header" href="#常见肺炎的症状体征x-线征象">常见肺炎的症状，体征，X 线征象</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">病原体</th><th style="text-align: center">病史、症状，体征</th><th style="text-align: center">X 线征象</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center"><strong>肺炎链球菌</strong></td><td style="text-align: center">急起病，寒战，高热， <strong>铁锈痰</strong> 、胸痛、肺实变体征</td><td style="text-align: center">肺叶或肺段 <strong>实变</strong> ， <strong>无空洞</strong> ，可伴胸腔积液</td></tr>
+<tr><td style="text-align: center"><strong>金黄色葡萄球菌</strong></td><td style="text-align: center">急起病，寒战，高热， <strong>脓血痰</strong> ，毒血症状、 <strong>休克</strong></td><td style="text-align: center">肺叶或小叶侵润，早期 <strong>空洞脓胸</strong> ， <strong>液气囊腔</strong></td></tr>
+<tr><td style="text-align: center"><strong>肺炎克雷伯杆菌</strong></td><td style="text-align: center">急起病，寒战，高热，全身 <strong>衰弱</strong> ， <strong>砖块色胶冻状痰</strong></td><td style="text-align: center">肺小叶变实，蜂窝状 <strong>脓肿</strong> ， <strong>叶间隙下坠</strong></td></tr>
+<tr><td style="text-align: center">铜绿假单胞菌</td><td style="text-align: center">毒血征明显，脓痰，可呈 <strong>蓝绿色</strong></td><td style="text-align: center">弥漫性支气管炎，早期肺 <strong>脓肿</strong></td></tr>
+<tr><td style="text-align: center">大肠埃希菌</td><td style="text-align: center"><strong>原有慢性病</strong> ，发热，脓痰，呼吸困难</td><td style="text-align: center">支气管肺炎， <strong>脓胸</strong></td></tr>
+<tr><td style="text-align: center">流感嗜血杆菌</td><td style="text-align: center">高热、呼吸困难、 <strong>衰竭</strong></td><td style="text-align: center">支气管肺炎、肺叶实变、无空洞</td></tr>
+<tr><td style="text-align: center"><strong>厌氧菌</strong></td><td style="text-align: center"><strong>吸入病史</strong> ，高热、 <strong>腥臭痰</strong> 、毒血症状</td><td style="text-align: center">支气管肺炎，脓胸，脓气胸，多发肺 <strong>脓肿</strong></td></tr>
+<tr><td style="text-align: center"><strong>军团菌</strong></td><td style="text-align: center">高热， <strong>肌痛</strong> ， <strong>相对缓脉</strong></td><td style="text-align: center">下叶 <strong>斑片</strong> 浸润，进展迅速， <strong>无空洞</strong></td></tr>
+<tr><td style="text-align: center">支原体</td><td style="text-align: center"><strong>缓起病</strong> ，可小流行，乏力，肌痛头痛， <strong>干咳</strong></td><td style="text-align: center">下叶 <strong>间质性</strong> 支气管肺炎， <strong>3-4 周自行消退</strong></td></tr>
+<tr><td style="text-align: center">念珠菌</td><td style="text-align: center"><strong>慢性病史</strong> ，畏寒、高热、 <strong>粘痰</strong></td><td style="text-align: center">双下肺纹理增多，支气管肺炎或大片浸润，可有空洞</td></tr>
+<tr><td style="text-align: center">曲霉菌</td><td style="text-align: center"><strong>免疫抑制宿主</strong> ，发热、干咳或棕黄色痰、胸痛、咯血、喘息</td><td style="text-align: center">以 <strong>胸膜为基底</strong> 的楔形影、结节或团块影，内有空洞；有 <strong>晕轮征和新月体征</strong></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="二常见肺炎"><a class="header" href="#二常见肺炎">二、常见肺炎</a></h2>
+<h3 id="一肺炎球菌肺炎"><a class="header" href="#一肺炎球菌肺炎">一）肺炎球菌肺炎</a></h3>
+<h4 id="定义"><a class="header" href="#定义">定义</a></h4>
+<ul>
+<li>由肺炎链球菌引起的肺段或肺叶的急性炎症实变。</li>
+</ul>
+<h4 id="病因"><a class="header" href="#病因">病因</a></h4>
+<ul>
+<li><strong>其主要致病力是细菌的荚膜</strong> （多糖结构与含量）</li>
+</ul>
+<h4 id="发病机制-1"><a class="header" href="#发病机制-1">发病机制</a></h4>
+<ol>
+<li>肺炎链球菌荚膜</li>
+<li>肺泡壁水肿</li>
+<li>RBC、WBC 和纤维素渗出</li>
+<li>纤维蛋白渗出物溶解、吸收</li>
+<li>肺泡重新充气</li>
+</ol>
+<h4 id="病理"><a class="header" href="#病理">病理</a></h4>
+<ul>
+<li>一般不引起组织结构破坏</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>时期</th><th>病程</th><th>肉眼观</th><th>镜下观</th><th>临床联系</th><th>X-ray</th></tr>
+</thead>
+<tbody>
+<tr><td>充血期</td><td>1-2</td><td>肿大，暗红色</td><td>肺泡壁 cap 扩张充血，浆液性渗出↑，细菌繁殖播散</td><td>毒血症：寒战，高热，wbc↑</td><td>片状稍模糊影</td></tr>
+<tr><td>红色肝变样期</td><td>3-4</td><td>质实，灰红，似肝</td><td>肺泡壁 cap 扩张充血，腔内大量 Rbc，形成纤维网</td><td>铁锈色痰，发绀，胸痛</td><td>大片致密影</td></tr>
+<tr><td>灰色肝变样期</td><td>5-6</td><td>充血消退灰白色，质实</td><td>纤维素性渗出物↑，N↑ ,肺泡壁 cap 受压</td><td>粘液脓痰，缺氧改善</td><td>大片致密影</td></tr>
+<tr><td>消散期</td><td>1 周</td><td>质软，病灶消失</td><td>变性坏死，蛋白溶解酶↑</td><td>体温下降</td><td>阴影减低，消失</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="症状及体征"><a class="header" href="#症状及体征">症状及体征</a></h4>
+<ul>
+<li>健康的 <strong>青壮年</strong></li>
+<li>常有 <strong>受凉</strong> 、 <strong>淋雨</strong> 、疲劳、醉酒或病毒感染史</li>
+<li>临床以 <strong>高热</strong> 、 <strong>寒战</strong> 、咳嗽、 <strong>铁锈色痰及胸痛</strong> 为特征，起病 <strong>急</strong></li>
+<li>鼻翼煽动、发细、 <strong>口角疱疹</strong></li>
+</ul>
+<h4 id="辅助检查"><a class="header" href="#辅助检查">辅助检查</a></h4>
+<ul>
+<li>血白细胞或中性粒细胞比例高，核左移。</li>
+<li>痰涂片：G+，带荚膜的双球菌或链球菌。</li>
+<li>痰培养 <strong>金指标</strong> 。</li>
+<li>X 线胸片：肺段或肺叶呈急性炎症实变。</li>
+<li>CT：实变中可见 <strong>支气管充气征</strong></li>
+</ul>
+<h4 id="治疗"><a class="header" href="#治疗">治疗</a></h4>
+<ul>
+<li>首选青霉素 G</li>
+<li>青霉素过敏或耐青霉素肺炎链球菌肺炎选用三代头孢菌素、呼吸氟喹诺酮类等</li>
+<li>多重耐药菌株者可选用万古霉素、替考拉宁、利奈唑胺</li>
+<li>支持治疗及并发症对症处理</li>
+</ul>
+<h3 id="二葡萄球菌肺炎"><a class="header" href="#二葡萄球菌肺炎">二）葡萄球菌肺炎</a></h3>
+<h4 id="定义-1"><a class="header" href="#定义-1">定义</a></h4>
+<ul>
+<li>由葡萄球菌引起的急性肺化脓性炎症。</li>
+<li>常发生于有基础疾病者和患流感及麻疹的儿童。</li>
+</ul>
+<h4 id="病因及发病机制"><a class="header" href="#病因及发病机制">病因及发病机制</a></h4>
+<ul>
+<li><strong>葡萄球菌的致病物质主要是毒素与酶</strong> ，如溶血毒素、杀白细胞素、肠毒素等，具有溶血、坏死、杀白细胞及血管痉挛等作用。</li>
+<li>葡萄球菌致病力可用 <strong>血浆凝固酶</strong> 来测定，阳性者（如金葡菌）致病力强。</li>
+<li>医院内获得性肺炎中葡萄球菌感染占 11%~25%。</li>
+</ul>
+<h4 id="病理-1"><a class="header" href="#病理-1">病理</a></h4>
+<ul>
+<li><strong>经呼吸道吸入的葡萄球菌肺炎常呈大叶性分布或广泛的融合的支气管肺炎。</strong></li>
+<li>肺气囊肿形成、破溃，导致气胸或脓气胸及支气管胸膜瘘。可并发化脓性心包炎、脑膜炎。</li>
+<li><strong>经血播散至肺的葡萄球菌引起多处肺实变、化脓及组织破坏，形成多个或多发肺脓肿。</strong></li>
+</ul>
+<h4 id="症状及体征-1"><a class="header" href="#症状及体征-1">症状及体征</a></h4>
+<ul>
+<li>本病起病多 <strong>急骤，高热、寒战、胸痛</strong> ；</li>
+<li><strong>痰为脓性，脓血状；</strong></li>
+<li><strong>毒血症状明显</strong> ，病重者可早期出现周围循环衰竭；</li>
+<li><strong>早期可无体征</strong> ，其后可出现肺部湿罗音、肺实变体征及气胸、脓气胸相应体征。</li>
+</ul>
+<h4 id="辅助检查-1"><a class="header" href="#辅助检查-1">辅助检查</a></h4>
+<ul>
+<li>血象明显升高，核左移。</li>
+<li>肺部 X 线显示 <strong>肺段或肺叶实变，可形成空洞</strong> ，或呈小叶状浸润，其中有 <strong>单个或多发的液气囊腔</strong> 。</li>
+<li>X 线的 <strong>易变性</strong> ，表现为一处炎性浸润消失而在另一处出现新的病灶。或很小的单一病灶发展为大片阴影。2-4 周病变吸收。</li>
+</ul>
+<h4 id="治疗-1"><a class="header" href="#治疗-1">治疗</a></h4>
+<ul>
+<li>强调应早期清除引流原发病灶，选用敏感的抗生素。</li>
+<li>金葡菌对青霉素 G 耐药率达90%以上。</li>
+<li>甲氧西林敏感的葡萄球菌选择耐酶的半合成青霉素（苯唑西林、氯唑西林）或头孢菌素，联合氨基糖苷类。</li>
+<li>产酶金葡菌用阿莫西林/氨苄西林+酶抑制剂。</li>
+<li><strong>耐甲氧西林的金葡菌（MRSA）选择万古霉素、替考拉宁、利奈唑胺。</strong></li>
+</ul>
+<h2 id="三其他病原体所致肺部感染"><a class="header" href="#三其他病原体所致肺部感染">三、其他病原体所致肺部感染</a></h2>
+<h3 id="一肺炎支原体肺炎"><a class="header" href="#一肺炎支原体肺炎">一）肺炎支原体肺炎</a></h3>
+<h4 id="概述-3"><a class="header" href="#概述-3">概述</a></h4>
+<ul>
+<li>肺炎支原体介于细菌和病毒之间；</li>
+<li>无细胞壁，故呈多形性；</li>
+<li>约占非细菌性肺炎的 1/3 以上；</li>
+<li>不侵入肺实质；</li>
+<li>常同时引起咽炎、支气管炎、肺炎。</li>
+</ul>
+<h4 id="临床特点"><a class="header" href="#临床特点">临床特点</a></h4>
+<ol>
+<li>潜伏期 2-3 周，起病较缓</li>
+<li><strong>儿童和青壮年</strong> 是主要易感人群</li>
+<li>症状缺乏特异性，类似上呼吸道感染症状</li>
+<li><strong>刺激性咳嗽为突出症状</strong> ，发热可持续 2-3 周</li>
+<li>肺部体征不明显</li>
+<li>肺外表现常见，如皮炎红斑（斑丘疹、多形红斑）等</li>
+</ol>
+<h4 id="实验室和其他检查"><a class="header" href="#实验室和其他检查">实验室和其他检查</a></h4>
+<ol>
+<li>X 线示肺部多种形态的浸润影， <strong>呈节段性分布 ，以肺下野多见</strong> 。</li>
+<li>3-4 周病灶可自行消散。</li>
+<li>白细胞总数正常或略高，以中性粒细胞为主。</li>
+<li><strong>冷凝集试验阳性</strong> （2 周后，2/3 患者，≥ 1:64，或恢复期滴度 4 倍增高具备诊断依据）。</li>
+<li><strong>肺炎支原体 IgM 抗体</strong> ，可作为确诊依据</li>
+<li>肺炎支原体抗原（早期诊断）</li>
+</ol>
+<h4 id="诊断"><a class="header" href="#诊断">诊断</a></h4>
+<ol>
+<li>症状、体征和 X 线表现缺乏特异性；</li>
+<li>刺激性咳嗽经普通抗菌治疗效果不佳者，应考虑本病；</li>
+<li><strong>血清学检查是本病的主要诊断手段；</strong></li>
+<li>冷凝集试验阳性，滴度大于1:32（2 周后）。</li>
+<li>支原体 IgM 抗体检测——特异性好。</li>
+<li>支原体抗原检测——早期诊断。</li>
+<li><strong>IgM 提示近期感染；IgG 提示曾经感染。</strong></li>
+</ol>
+<h4 id="治疗-2"><a class="header" href="#治疗-2">治疗</a></h4>
+<ul>
+<li>有自限性，可自愈。</li>
+<li>首选红霉素为代表的大环内酯类药物；</li>
+<li>其他如氟喹诺酮类、四环素类。</li>
+<li>疗程一般 2-3 周。</li>
+<li><strong>青霉素类、头孢类无效——支原体无细胞壁。</strong></li>
+</ul>
+<h3 id="二病毒性肺炎"><a class="header" href="#二病毒性肺炎">二）病毒性肺炎</a></h3>
+<h4 id="概述-4"><a class="header" href="#概述-4">概述</a></h4>
+<ul>
+<li>由上呼吸道病毒感染向下蔓延所致。</li>
+<li>免疫功能正常或抑制的个体均可罹患，春冬季节好发。</li>
+<li>新爆发流行 : SARS、H5N1、H1N1</li>
+<li>婴幼儿、老人、妊娠妇女或原有慢性心肺疾病者病情较重。</li>
+</ul>
+<h4 id="病因和发病机制"><a class="header" href="#病因和发病机制">病因和发病机制</a></h4>
+<ul>
+<li><strong>常见病毒为甲、乙型流感病毒、腺病毒、副流感病毒、呼吸道合胞病毒和冠状病毒等。</strong></li>
+<li>免疫抑制者易感染疱疹病毒和麻疹病毒。</li>
+<li>移植受者易感染疱疹病毒和巨细胞病毒。</li>
+<li>患者可同时感染一种以上病毒，可继发细菌、真菌等感染。</li>
+<li><strong>呼吸道病毒通过飞沫和直接接触传播。</strong></li>
+</ul>
+<h4 id="病理-2"><a class="header" href="#病理-2">病理</a></h4>
+<ul>
+<li><strong>多为间质性肺炎</strong> ，偶有实变。</li>
+<li>可致支气管痉挛。</li>
+<li>可留有肺纤维化。</li>
+</ul>
+<h4 id="临床表现"><a class="header" href="#临床表现">临床表现</a></h4>
+<ul>
+<li>好发于病毒疾病流行季节。</li>
+<li>起病 <strong>较急</strong> ，发热、头痛、全身酸痛、倦怠等全身症状突出，常在流感症状尚未消退时出现咳嗽、咳白粘痰等呼吸道症状。</li>
+<li>小儿、老年人易患重症肺炎，出现呼吸困难、发绀、嗜睡、休克、心衰、呼衰或 ARDS。</li>
+<li><strong>肺部体征常不明显。</strong></li>
+</ul>
+<h4 id="辅助检查-2"><a class="header" href="#辅助检查-2">辅助检查</a></h4>
+<ul>
+<li>白细胞计数正常、稍高或偏低，血沉正常，痰培养无致病菌。</li>
+<li>X 线表现为肺纹理增多， <strong>磨玻璃状阴影，小片状浸润或广泛浸润、实变</strong> 。大叶实变及胸腔积液不多见。</li>
+</ul>
+<h4 id="诊断-1"><a class="header" href="#诊断-1">诊断</a></h4>
+<ul>
+<li>临床症状 + X 线，除外其它病原体肺炎。</li>
+<li>确诊： <strong>病原学——病毒分离、血清学（抗体）、抗原检测。</strong></li>
+</ul>
+<h4 id="治疗-3"><a class="header" href="#治疗-3">治疗</a></h4>
+<h5 id="以对症治疗为主"><a class="header" href="#以对症治疗为主">以对症治疗为主</a></h5>
+<ul>
+<li>休息、通风、隔离、消毒。</li>
+<li>足量维生素、蛋白质，多饮水。</li>
+<li>酌情输液、吸氧。</li>
+<li>保持呼吸道通畅。</li>
+</ul>
+<h5 id="药物"><a class="header" href="#药物">药物</a></h5>
+<ol>
+<li>利巴韦林（病毒唑）——广谱抗病毒</li>
+<li>阿昔洛韦——疱疹病毒、水痘病毒</li>
+<li>更昔洛韦——巨细胞病毒</li>
+<li>奥司他韦——甲、乙型流感病毒</li>
+<li>阿糖腺苷——免疫缺陷者疱疹、水痘病毒感染</li>
+<li>金刚烷胺——流感病毒</li>
+</ol>
+<h2 id="四肺脓肿"><a class="header" href="#四肺脓肿">四、肺脓肿</a></h2>
+<h3 id="一病因"><a class="header" href="#一病因">一）病因</a></h3>
+<ol>
+<li>多种病原菌所引起</li>
+<li>肺组织的局灶性液化坏死性病变</li>
+<li>坏死性肺炎（有多个直径 &lt; 2cm 的空洞）</li>
+<li>高热、咳嗽、大量脓臭痰</li>
+<li>X 线示含 <strong>气液平的空洞</strong></li>
+<li>男多于女</li>
+</ol>
+<h3 id="二分类"><a class="header" href="#二分类">二）分类</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>感染途径</th><th>致病菌</th><th>特点</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>吸入性</strong></td><td>厌氧菌多见</td><td>最多见。<br />仰卧位时，好发于右肺上叶后段或下叶背段；<br />坐位时好发于下叶后基底段；<br />右侧卧位时，则好发于右上叶前段或后段</td></tr>
+<tr><td><strong>血源性</strong></td><td>金葡菌、表葡菌及链球菌为常见</td><td>皮肤感染、骨髓炎所致的菌血症引起，常位于两肺周边</td></tr>
+<tr><td>继发性</td><td>金葡菌、铜绿假单胞菌和肺炎克雷伯杆菌</td><td>继发于细菌性肺炎、支扩、支气管肺癌、肺结核、异物、脓肿破裂</td></tr>
+</tbody>
+</table>
+</div>
+<p>注意：大肠埃希菌和流感嗜血杆菌可引起坏死性肺炎</p>
+<h3 id="三病理"><a class="header" href="#三病理">三）病理</a></h3>
+<ul>
+<li>早期：细支气管阻塞，小血管炎性栓塞→肺组织发炎、化脓、坏死→形成肺脓肿。</li>
+<li>后期：破溃到支气管内，形成脓腔空洞、气液平面，大量脓痰。</li>
+</ul>
+<h3 id="四临床表现"><a class="header" href="#四临床表现">四）临床表现</a></h3>
+<ol>
+<li><strong>急性吸入性肺脓肿</strong>
+<ul>
+<li>早期：全身中毒症状/呼吸道症状；</li>
+<li>后期（10~14 天）：脓肿形成的临床表现，即大量脓臭痰，分层（一般三层）。</li>
+</ul>
+</li>
+<li><strong>慢性肺脓肿</strong> ：反复发作，持续数周或数月。</li>
+<li><strong>血源性肺脓肿</strong> ：先有原发病表现，后出现肺部症状，极少咯血。</li>
+</ol>
+<h3 id="五体征"><a class="header" href="#五体征">五）体征</a></h3>
+<ul>
+<li><strong>初起无体征</strong> ，病变发展，可出现肺实变体征，可闻及支气管呼吸音；</li>
+<li><strong>肺脓腔增大时，可出现空瓮音；</strong></li>
+<li>病变累及胸膜可闻及胸膜摩擦音或呈现胸腔积液体征。</li>
+<li><strong>慢性肺脓肿常有杵状指。</strong></li>
+</ul>
+<h3 id="六辅助检查"><a class="header" href="#六辅助检查">六）辅助检查</a></h3>
+<h4 id="血常规"><a class="header" href="#血常规">血常规</a></h4>
+<ul>
+<li>白细胞总数达 (20~30)×10⁹/L，中性粒细胞在 90% 以上，核明显左移，常有毒性颗粒。</li>
+</ul>
+<h4 id="x-线"><a class="header" href="#x-线">X 线</a></h4>
+<ul>
+<li>浓密的炎性阴影中有 <strong>空腔</strong> 、 <strong>气液平面</strong> ；</li>
+<li>血源性肺脓肿表现为两肺多发征象。</li>
+<li><strong>（抗菌药物治疗后，肺脓肿周围炎症先吸收，逐渐缩小至脓腔消失，最后仅残留纤维条索阴影）</strong></li>
+</ul>
+<h4 id="痰和细菌学检查"><a class="header" href="#痰和细菌学检查">痰和细菌学检查</a></h4>
+<ul>
+<li>痰培养 + 药敏</li>
+<li>血源性肺脓肿的血培养</li>
+</ul>
+<h3 id="七治疗"><a class="header" href="#七治疗">七）治疗</a></h3>
+<h4 id="治疗原则"><a class="header" href="#治疗原则">治疗原则</a></h4>
+<ul>
+<li>抗感染</li>
+<li>痰液引流</li>
+</ul>
+<ol>
+<li>抗生素治疗</li>
+<li>痰液引流
+<ul>
+<li>体位引流</li>
+<li>纤支镜冲洗引流</li>
+</ul>
+</li>
+<li>手术治疗</li>
+</ol>
+<h4 id="抗感染"><a class="header" href="#抗感染">抗感染</a></h4>
+<ul>
+<li>吸入性肺脓肿——厌氧菌——青霉素（脆弱类杆菌不敏感，可使用林可霉素、克林霉素）</li>
+<li>血源性肺脓肿——葡萄球菌和链球菌感染——耐青霉素酶的半合成（如苯唑西林钠）</li>
+<li>耐甲氧西林的葡萄球菌（MRSA）——万古霉素</li>
+<li>革兰氏阴性杆菌——第二、三代头孢 + 氨基糖苷类</li>
+<li>疗程（6-8 周），至 X 线脓腔和炎症消失，或仅有少量残留纤维化</li>
+</ul>
+<h4 id="脓液引流"><a class="header" href="#脓液引流">脓液引流</a></h4>
+<ul>
+<li>体位引流</li>
+<li>每日至少 2 次，每次 10-15 分钟；</li>
+<li>引流前配合雾化吸入，可增强引流效果；</li>
+<li>如患者体质虚弱或有大咯血时则暂不宜体位引流，以免引起窒息。</li>
+<li>纤维支气管镜冲洗引流</li>
+</ul>
+<h4 id="手术治疗"><a class="header" href="#手术治疗">手术治疗</a></h4>
+<ul>
+<li>肺脓肿病程 <strong>超过 3 个月</strong> ，经内科治疗脓腔不缩小，或脓腔过大 <strong>（&gt;5cm）</strong> 不易闭合；</li>
+<li>大咯血经内科治疗无效或危及生命；</li>
+<li>伴有支气管胸膜瘘或脓胸经抽吸、引流和冲洗疗效不佳者；</li>
+<li>支气管阻塞疑为支气管肺癌致引流不畅的肺脓肿。</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第五章：支气管扩张症.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第七章：肺结核.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第五章：支气管扩张症.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第七章：肺结核.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第二部分：呼吸系统疾病/第六章：肺部感染性疾病.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

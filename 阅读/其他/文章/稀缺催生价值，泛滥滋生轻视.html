@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>稀缺催生价值，泛滥滋生轻视 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="稀缺催生价值泛滥滋生轻视"><a class="header" href="#稀缺催生价值泛滥滋生轻视">稀缺催生价值，泛滥滋生轻视</a></h1>
+<p><em>原创：U 君 公众号：赢在 8 小时之外</em></p>
+<p>　　17 世纪法国寓言诗人“让·德·拉封丹”在他的《寓言集》里讲过这样一则非常短小的寓言故事：</p>
+<p>　　村里的人都没有见过骆驼长什么样，突然有一头骆驼光临，第一个看到骆驼的人直接就逃之夭夭了。</p>
+<p>　　第二个看到骆驼的人，壮着胆子去接近骆驼；第三个人直接大胆地把绳子套在了骆驼的头上。</p>
+<p>　　这个小故事的寓意是：即使再稀奇的事物，只要熟悉了之后，它就会变得平淡无奇。</p>
+<p>　　一些看起来挺可怕又怪异的事物，只要给够时间让眼睛去适应，就会变得非常普通。</p>
+<p>　　公元前八世纪左右，米底人（今伊朗西北部）推翻了亚述人的统治，建立起一个新的政权。</p>
+<p>　　但是，新政权没有领袖，所以各个村落之间纷争不休。</p>
+<p>　　在某个小村庄里，有个叫狄奥克斯的人，因为处事公正、善于解决争端，村民之间有任何纠纷、争执都会找他来解决。</p>
+<p>　　事实上他把每个案子都能非常完美地解决，纠纷双方也都非常满意。</p>
+<p>　　于是，狄奥克斯成了远近皆知的名人，赢得了广泛的赞誉。</p>
+<p>　　结果就是，附近十里八乡的村民遇到法律案件也都来找他解决，大到偷盗行凶，小到偷鸡摸狗，他都能给出公正的裁决。</p>
+<p>　　但是，他付出的代价也是巨大的，每天可能要花 10 个小时来处理村民们的法律纠纷，自己一直是疲惫不堪的状态。</p>
+<p>　　于是他决定退休，于是这个国家再度陷入混乱，村民们如果发生了纠纷，只能诉诸暴力。</p>
+<p>　　国民对法律的蔑视到了无以复加的地步。</p>
+<p>　　于是一些长老们聚集起来，反复哀求狄奥克斯重新“出山”，担任这个国家的领袖，否则这个国家将会陷入万劫不复的境地。</p>
+<p>　　狄奥克斯也不好意思再拒绝，只能同意做这个国家的国王。</p>
+<p>　　但是，他也提出了自己的条件：必须修建一座巨大的王宫，而且四周要建起高高的围墙，卫队在各个城门口把守，禁止普通百姓进入。</p>
+<p>　　如果想跟他交流的话，只能通过信使进行信息交换。</p>
+<p>　　皇宫里的人每周也只能见他一次，如果相见第二次，则需要经过申请和特许。</p>
+<p>　　后来，狄奥克斯统治了 53 年，延续了米底王国，为他的曾曾孙西卢斯后来建立波斯帝国奠定了基础。</p>
+<p>　　在狄奥克斯的统治时期，人们对他的尊敬逐渐演变成一种崇拜：人们相信，他不是凡人，而是神的儿子。</p>
+<p>　　无独有偶，明朝的嘉靖皇帝在位 40 多年，有 20 多年的时间是不上朝的，他几乎不跟任何人接触（除了他的几个信使和几个核心大臣）。</p>
+<p>　　很多人说他是个“懒皇帝”，但是在 U 君看来，这种想法大错特错。大佬文集圈表面上，嘉靖好像是一个社恐的人，整天躲在西苑修道，不理朝政。</p>
+<p>　　实际上，朝中大小的事情都在他的掌控之中，因为他让锦衣卫监视着皇宫内外所发生的一切。</p>
+<p>　　大家平时总也见不到他，但是在每个角落里都能感受到他的“铁腕统治”，所以大家对他都是既尊重又害怕，甚至把他奉若神明。</p>
+<p>　　正是因为如此，他才能安安稳稳地统治大明 40 多年（在整个历史上也算是在位时间极长的皇帝了）</p>
+<p>　　反之，如果他是一个平易近人、广开言路、来者不拒的皇帝，那么几乎可以肯定，根本没人从心底尊重他。</p>
+<p>　　而且，所有的大事小情都来找他咨询，遇到矛盾时大臣们也会跟他针锋相对，用不了 10 年的时间他就累死了（参考雍正）。</p>
+<p>　　总结一下，无论是狄奥克斯国王还是嘉靖皇帝，他们都明白“稀缺”和“不在场”的巨大威力。</p>
+<p>　　大家见到你的次数越少，越会从心底里尊敬你、惧怕你，甚至把你奉若神明，如果你叫随到，那么大家就会轻视你，把你当成奴仆。</p>
+<p>　　那么问题来了，我们普通人该如何塑造自己的“稀缺性”，从而赢得大家的尊重和敬畏、提高自己的价值感？</p>
+<p>　　今天我就跟大家分享 5 个提升自己稀缺性的思维。</p>
+<h2 id="不要随叫随到"><a class="header" href="#不要随叫随到">不要随叫随到</a></h2>
+<p>　　我自己的手机没有任何通知提示，连微信我都设置的“消息不提示”，无论是家人、朋友还是客户找我，都只能给我留言。</p>
+<p>　　我之所以这样做，主要有三个目的：</p>
+<p>　　① 每天我都需要大块时间集中精神写作、思考问题、规划事业方向，我不允许无关紧要的消息打扰到我。</p>
+<p>　　大多数人的操作是这样的：随便一个阿猫阿狗发的消息，他们都要秒回，结果自己永远都无法养成聚焦的习惯。</p>
+<p>　　最后沦落成一事无成的废物。</p>
+<p>　　② 我不仅不按时回复别人的消息，甚至有的消息我压根就不会回复。比如有人问我“在吗”或者提出要见面，或者开口向我借钱。</p>
+<p>　　因为我非常清楚，如果我在他们眼中是一个“平易近人”“来者不拒”的形象，那我就惨了他们会把我当成奴隶来对待。</p>
+<p>　　③人都是看人下菜碟，而且适应性极强。比如，你非常孝顺父母，他们给你发消息你都是第一时间回复，他们提出的请求一般你也不会驳斥。</p>
+<p>　　结果就是，他们会插手你人生中的每一个重大决定，甚至还要起到你头上教你做人，你如果敢反抗，他们就会勃然大怒。</p>
+<p>　　反之，我就从来不回复父母发的无关紧要的消息，他们如果敢染指我的重大决策，我会直接发飙。</p>
+<p>　　结果就是，他们一直老老实实的，也没觉得我这样做有多过分。</p>
+<p>　　说得难听一点，很多人跟狗差不多，你如果对它太好，它就会登堂入室、蹬鼻子上脸，你投喂它时，它还可能会反咬你一口。</p>
+<p>　　相反，如果你给它制定很多规矩，该训斥就训斥它反而能长久、和平地跟你相处，趴在你的脚下。</p>
+<p>　　对待同事、同学、朋友也是如此，在涉及到你的时间、精力、情绪等重要的生命能量分配上，你定要吝惜、吝惜再吝惜。</p>
+<p>　　比如，他们叫你去参加聚会，你不要去（浪费时间、金钱和肠胃健康）；他们让你帮个小忙（比如倒杯水、开车捎一程），你也不要帮。</p>
+<p>　　只要大家觉得很难从你身上获得任何资源，那么大家潜意识里就会尊敬你、敬畏你。</p>
+<p>　　无论在学校还是职场，最忌讳的就是让别人知道你是一个平易近人的“好人”，因为那意味着你会丧失所有尊严。</p>
+<p>　　在男女情感方面也是如此，尤其是男人，最容易成为一个“随叫随到”的舔狗，但越是这样，女人越不会尊重你。</p>
+<p>　　因为女人真正需要的是一个高价值的男人，而这种男人绝对不会随叫随到、任她使唤，因为他大概率有自己的事业要忙。</p>
+<p>　　说句难听的，即使同样是月入 5000、没什么正事的两个男人，前者对女人有求必应、随叫随到百依百顺，后者总是端着架子…</p>
+<p>　　那么女人在潜意识里可能也会觉得，后者才是能成大事、值得托付的男人。</p>
+<h2 id="不要让自己出现在免费的场合"><a class="header" href="#不要让自己出现在免费的场合">不要让自己出现在免费的场合</a></h2>
+<p>　　同事叫你去聚餐、唱歌、团建，这些都是免费的场合，如果你的目标是星辰大海，是赚大钱，是搞大事，那么你一定要慎重前往。</p>
+<p>　　类似的，同学之间、亲戚之间的聚会也是同理，这些免费的场合也尽量不要去。</p>
+<p>　　你以为自己赴会是为了联络感情，是避免给大家留下“性格孤僻”的印象，但如果你去了，你就会发现适得其反。</p>
+<p>　　一方面，如果你是个搞事业的人，不善人情世故，那么你去了这些场合，你就是待宰的羔羊，大家会把你耍得团团转。因为穷鬼不擅长赚钱，但最擅长戏耍别人，比如亲戚故意阴阳你、奚落你。</p>
+<p>　　另一方面，只要你经常参加这种免费的聚会，大家潜意识里就会觉得你是个廉价的人，时间非常不值钱，人格也非常不值钱。</p>
+<p>　　反之，每次聚会都不在场的那个同学或者亲戚，大家就会捉摸不透，虽然不一定因此而更加重视，但绝对不会因此而更加轻视。</p>
+<p>　　因为人性就是这样，会轻视眼前的事物，会重视不在场的人事物。</p>
+<p>　　在互联网上也是如此，不要加入任何一个免费的社群，否则你一定会被其他群友轻视，你宝贵的能量也会被这种免费群所吞噬。</p>
+<p>　　类似的，永远都不要免费帮助别人，否则不仅不会给自己加分，反而会给自己减分</p>
+<p>　　比如，别人请你免费帮忙，你傻乎乎地去帮了，一旦没有达到对方的预期，反而会被对方责怪，甚至反目成仇。</p>
+<p>　　相反，如果你对自己的每一分钟时间都进行标价，只做有偿服务，对方反而会觉得你提供的服务物超所值。</p>
+<p>　　举一个不是很恰当的例子：如果你给朋友介绍对象，最后万一没成，你的这个朋友很可能会怨恨你。</p>
+<p>　　但是，如果 ta 花了 5000 元去婚姻介绍所，或者去参加什么相亲大会，最终没成的话，他一点都不会怨恨那个收 ta 钱的人。</p>
+<p>　　没办法，人性就是这样，越是免费的、低价的东西越要挑三拣四、追求完美。</p>
+<p>　　越是付费的事情，自己潜意识里越觉得值，越觉得受益匪浅。</p>
+<p>　　这也是为什么我只做收费社群、高价社群，从来不做免费社群、低价社群。</p>
+<p>　　因为低价=不满意，高价=满意。我为什么要做那些大家明显会对我不满意的事情呢？</p>
+<h2 id="提高自己的不可替代性"><a class="header" href="#提高自己的不可替代性">提高自己的不可替代性</a></h2>
+<p>　　如果你走的是传统的“考一所好大学、学一个好专业、找一份好工作”的发展路线，那么等你大学毕业之后，迎接你的大概率是一个非常内卷的就业市场。</p>
+<p>　　无论你是学习计算机、外语、化工、土木….</p>
+<p>　　你的月薪可能只有四五千元，因为像你这样的大学生数以亿计，你根本就无法脱颖而出。</p>
+<p>　　这时候，你有两个方向可以发力：走小众赛道；成为复合型人才。</p>
+<p>　　① 所谓小众赛道，就是很少人听说、但是利润率很高的职业。</p>
+<p>　　比如，钢琴调音师，宠物正骨师，家居收纳师，医院陪诊员。大佬文集圈这些小众的职业，根本就没有什么市场价，也没有内卷现象。</p>
+<p>　　当然，你最好要结合线上的展示和营销。</p>
+<p>　　举个例子，你在某个大城市里专门做宠物正骨、疗愈的老师，而且经常在线上展示自己的成果。</p>
+<p>　　那么你的粉丝如果遇到了宠物问题，大概率会愿意付费咨询你，或者线下购买你的服务。</p>
+<p>　　我自己现在做的事情也属于这种类型，比如“教大家做自媒体”这件事，几乎没有什么竞争对手，或者说，根本没有统一的市场定价。</p>
+<p>　　而且，我有自己独特的性格、价值观和个人经历这些东西在粉丝眼中也是独一无二的。</p>
+<p>　　那么我这个“生意”就永远不会遭遇内卷现象。</p>
+<p>　　② 成为复合型人才。</p>
+<p>　　如果你是个导游，那你根本不算是稀缺人才；如果你是个英语流利的导游，那么稀缺程度就高了一些。</p>
+<p>　　如果你是个英语流利的导游，还特别擅长拍摄视频，还会做自媒体营销，在网上积累了很多粉丝，那你绝对是稀缺型人才。</p>
+<p>　　因为同时拥有你这几个复合能力的人太少了。</p>
+<p>　　这时候，你的收入会远远超过那些导游同行，甚至随便接一条广告都能顶普通导游忙活一周的收入。</p>
+<p>　　户子经常说的一句话是：无论你会什么技能（厨艺、电焊、木工），只要搭配英语（雅思成绩）那么你就可以在发达国家生活得非常滋润。</p>
+<p>　　而在我看来，无论你会什么技能，只要搭配写作能力或者拍摄/讲述能力，那么你在任何一个自媒体平台都可以赚得盆满钵满。</p>
+<h2 id="放大罕见的经历"><a class="header" href="#放大罕见的经历">放大罕见的经历</a></h2>
+<p>　　之前我说过一句非常有争议的话：如果你是做自媒体的，那么不要在国内旅游，一次都不要去因为国内所有的城市都一模一样。</p>
+<p>　　在国内能去 2 个旅游城市的钱，就可以出一次国了，出国的体验比在国内游的新鲜感强 10 倍。</p>
+<p>　　毕竟，在国内，跨市旅游过的人可能有 5 亿人，但是出国旅游的人可能不足 5000 万人。</p>
+<p>　　当然，在这方面，我玩的更绝，我旅游必须要去那些及其小众的目的地。</p>
+<p>　　比如，朝鲜。我当年去朝鲜旅游只花了五六干块钱，但是，这段经历我可以吹一辈子，而且它给我贡献的间接收入至少也有五六万元了。</p>
+<p>　　因为我是做自媒体的，这种罕见经历肯定会给我加分。</p>
+<p>　　我也见过类似的博主，他们的经历也很罕见，比如“我在缅北探险的 36 天等等。</p>
+<p>　　有的博主没有去过什么罕见的地方，但是他的经历，或者技能足够小众、足够稀缺，也是非常有吸引力的。</p>
+<p>　　比如有的人更换过心脏，有的人癌症痊愈，有的人能倒立吃饭，有的人擅长在户外搭讪…</p>
+<p>　　如果上面这些你都没有，那你有颠覆性的、震撼世人的观点也行。</p>
+<p>　　很多人之所以愿意关注我这个公众号，就是因为我表达的观点颠覆性足够强，他们在其他地方没见过（稀缺性）。</p>
+<p>　　比如，我在公众号里发表过这样的言论：一个人在 30 岁之前事业不顺、感情不顺，父母要负起 100% 的责任。</p>
+<p>　　有的人听了之后觉得受到了冒犯，有的人却觉得非常有道理。总之，标新立异才能脱颖而出，这是做自媒体的精髓之一</p>
+<h2 id="把能力变成可出售的商品"><a class="header" href="#把能力变成可出售的商品">把能力变成可出售的商品</a></h2>
+<p>　　市面上“写作水平很高”的人非常多，一点都不稀缺。但是，把自己的写作能力打包成商品进行出售的人就非常少了。</p>
+<p>　　比如，我自己就组建一个收费的社群，一个收费的知识星球。</p>
+<p>　　因为我非常清楚，能力如果不能被清晰界定、被有效衡量、被稳定交付，那它就很难成为市场认可的稀缺资产。</p>
+<p>　　如果你整天说自己“很厉害”，但是没有任何收费项目，那么你在大家眼里只是一个非常模糊的形象，更不会被贴上“高价值”的标签。</p>
+<p>　　但是，如果你推出一个高价的产品/服务，那么大家对你的价值就会有一个直观的感受。</p>
+<p>　　最后你会发现，普通人把因果给弄颠倒了，他们以为价值决定价格，但在很多时候，价格决定价值。</p>
+<p>　　你越是敢定一个高价格，那么就越会觉得你的价值很高。</p>
+<p>　　因为价值是虚无缥缈的，而价格才是具体的、落地的。</p>
+<p>　　举个例子，你是一名网页设计师，你在求职或者在向客户吹嘘时，不要总是说自己能力有多强，而是要拿出具体的数据。</p>
+<p>　　比如，去年你帮客户做了一个项目，让他们的销售额直接提升了 30%。</p>
+<p>　　做付费社群这件事也是如此。</p>
+<p>　　假设做公众号需要 2 分的能力，但是做付费社群可能需要 10 分的能力，因为付费社群是一个有价格的、落地的商品，这时候考验的是综合能力。</p>
+<p>　　比如，怎么写文案，怎么收款，怎么维护社群，有人闹事了怎么办。.</p>
+<p>　　最重要的能力是“把握时机”：什么时候开始发文案，什么时候开始提价，什么时候停止收人…</p>
+<p>　　总之，当你能独立推出一个落地的商品时，你就不再是一个普通执行者/螺丝钉，而是一个能拿出落地方案的实战专家。</p>
+<p>　　市面上具有这种能力的人非常稀少，如果你能成为这样的人，那你赚钱肯定非常轻松。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../阅读/其他/文章/阶层跃迁五部曲之五：大学毕业当保安，少走40年弯路.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../阅读/其他/文章/政商权贵告诉子女的人性铁律.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../阅读/其他/文章/阶层跃迁五部曲之五：大学毕业当保安，少走40年弯路.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../阅读/其他/文章/政商权贵告诉子女的人性铁律.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/其他/文章/稀缺催生价值，泛滥滋生轻视.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

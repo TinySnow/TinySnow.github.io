@@ -1,0 +1,716 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第九章：急性肾损伤 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第九章急性肾损伤aki"><a class="header" href="#第九章急性肾损伤aki">第九章：急性肾损伤（AKI）</a></h1>
+<h2 id="一考试大纲"><a class="header" href="#一考试大纲">一、考试大纲</a></h2>
+<ol>
+<li>病因和发病机制</li>
+<li>临床表现</li>
+<li>实验室检查</li>
+<li>诊断、鉴别诊断</li>
+<li>治疗</li>
+</ol>
+<h2 id="二概述"><a class="header" href="#二概述">二、概述</a></h2>
+<h3 id="一定义"><a class="header" href="#一定义">一）定义</a></h3>
+<ol>
+<li>急性肾损伤是由各种病因引起的 <strong>短时间内肾功能快速减退</strong> 所导致的临床综合征</li>
+<li>表现为 <strong>肾小球滤过率（<code>GFR</code>）下降，可伴氮质产物</strong> 如肌酐、尿素氮潴留</li>
+<li>常合并 <strong>水、电解质和酸碱平衡紊乱</strong> ，重者可出现多系统并发症</li>
+</ol>
+<h2 id="三病因及发病机制"><a class="header" href="#三病因及发病机制">三、病因及发病机制</a></h2>
+<h3 id="一病因分类"><a class="header" href="#一病因分类">一）病因分类</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>类型</th><th>性质</th><th>常见情况</th></tr>
+</thead>
+<tbody>
+<tr><td>肾前性</td><td>功能性</td><td>约占 <code>55%</code></td></tr>
+<tr><td>肾性</td><td>器质性</td><td>约占 <code>40%</code>，包括肾小球性、肾小管性（<code>ATN</code>）、肾间质性、肾血管性</td></tr>
+<tr><td>肾后性</td><td>梗阻性</td><td>约占 <code>5%</code></td></tr>
+</tbody>
+</table>
+</div>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260531141914687.png" alt=""></p>
+<h3 id="二肾前性因素"><a class="header" href="#二肾前性因素">二）肾前性因素</a></h3>
+<ol>
+<li>心搏出量减少：各种原因的心功能不全、心包填塞、心律失常</li>
+<li>急性血容量不足：出血、胃肠道及肾脏液体丢失、细胞外液容量分离</li>
+<li>周围血管扩张：败血症、药物等</li>
+<li>肾血管阻力增加</li>
+<li>肾血流调节受损：药物、败血症、肝肾综合征、应激状态等；肾脏早期可代偿</li>
+</ol>
+<h3 id="三肾后性因素"><a class="header" href="#三肾后性因素">三）肾后性因素</a></h3>
+<ul>
+<li>由泌尿道 <strong>急性梗阻</strong>  所致</li>
+<li>常见梗阻部位包括肾盂、输尿管、膀胱</li>
+</ul>
+<h3 id="四肾性因素"><a class="header" href="#四肾性因素">四）肾性因素</a></h3>
+<h4 id="常见类型"><a class="header" href="#常见类型">常见类型</a></h4>
+<ul>
+<li>肾缺血</li>
+<li>肾中毒</li>
+<li>肾小管上皮细胞损伤最常见，表现为 <strong>急性肾小管坏死（<code>ATN</code>）</strong></li>
+<li><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260531142730577.png" alt=""></li>
+</ul>
+<h4 id="肾中毒来源"><a class="header" href="#肾中毒来源">肾中毒来源</a></h4>
+<ul>
+<li>外源性肾毒性物质（以药物最常见）
+<ul>
+<li>某些新型抗生素和抗肿瘤药物</li>
+<li>其次为重金属、化学毒物、生物毒素（如某些草药、鱼胆等）及微生物感染相关毒性因素</li>
+</ul>
+</li>
+<li>内源性肾毒性物质
+<ol>
+<li>肌红蛋白</li>
+<li>血红蛋白</li>
+<li>骨髓瘤轻链蛋白</li>
+<li>尿酸盐</li>
+<li>钙</li>
+<li>草酸盐</li>
+<li>等异常蛋白</li>
+</ol>
+</li>
+<li><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260531143222455.png" alt=""></li>
+</ul>
+<h4 id="缺血性或中毒性-atn-发生机制"><a class="header" href="#缺血性或中毒性-atn-发生机制">缺血性或中毒性 ATN 发生机制</a></h4>
+<ol>
+<li>肾血流动力学异常 <strong>（缺血-肾血浆流量下降是导致肾缺血的原因）</strong>
+<ul>
+<li>交感神经过度兴奋</li>
+<li>肾内肾素-血管紧张素系统兴奋</li>
+<li>肾内血管舒张因子合成减少，如 <code>NO</code>、<code>PGI2</code>、<code>PGE2</code></li>
+<li>缩血管物质合成增加，如血栓素 <code>A2</code> 和内皮素</li>
+</ul>
+</li>
+<li>肾小管上皮代谢障碍
+<ul>
+<li>缺氧，肾小管上皮代谢障碍，导致 <code>ATP</code> 减少</li>
+<li>细胞肿胀，能量代谢障碍</li>
+</ul>
+</li>
+<li>肾小管上皮脱落和管型形成
+<ul>
+<li>小管阻塞使管内压增高</li>
+<li>影响肾小球滤过</li>
+<li>加重已有组织水肿</li>
+</ul>
+</li>
+</ol>
+<h4 id="结果链条"><a class="header" href="#结果链条">结果链条</a></h4>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260531144104321.png" alt=""></p>
+<h2 id="四临床表现"><a class="header" href="#四临床表现">四、临床表现</a></h2>
+<h3 id="一病程分期"><a class="header" href="#一病程分期">一）病程分期</a></h3>
+<ol>
+<li>起始期：持续数小时至数周</li>
+<li>进展期：持续数天至数周</li>
+<li>持续期：常持续 <code>1~2</code> 周</li>
+<li>恢复期：持续数天至数月</li>
+</ol>
+<h3 id="二起始期"><a class="header" href="#二起始期">二）起始期</a></h3>
+<ul>
+<li>机制
+<ol>
+<li>肾血流量下降导致滤过压下降</li>
+<li>上皮细胞坏死脱落形成管型</li>
+<li>肾小管受阻</li>
+<li>滤出液回漏进入间质，导致 <code>GFR</code> 下降</li>
+<li>若缺血未及时纠正，细胞损伤进一步加重，可引起细胞凋亡和坏死</li>
+</ol>
+</li>
+<li>特点
+<ul>
+<li>尚未发生明显肾实质损伤</li>
+<li><strong>可逆转</strong></li>
+</ul>
+</li>
+<li><img src="C:&#92;Users&#92;TinySnow&#92;AppData&#92;Roaming&#92;Typora&#92;typora-user-images&#92;image-20260531144550242.png" alt="image-20260531144550242"></li>
+</ul>
+<h3 id="三进展期"><a class="header" href="#三进展期">三）进展期</a></h3>
+<ul>
+<li>机制
+<ul>
+<li>肾内 <strong>微血管充血</strong> 明显</li>
+<li>持续缺氧和炎症反应存在</li>
+<li><strong>以皮髓交界处最为明显</strong></li>
+<li><strong><code>GFR</code> 进行性下降</strong></li>
+</ul>
+</li>
+<li>特点
+<ul>
+<li><strong>肾功能进一步恶化</strong></li>
+<li>部分患者可出现少尿或无尿</li>
+</ul>
+</li>
+</ul>
+<h3 id="四持续期"><a class="header" href="#四持续期">四）持续期</a></h3>
+<ul>
+<li>
+<p>机制</p>
+<ul>
+<li><code>GFR</code> 持续 <strong>低下</strong> ，常为 <code>5~10 ml/min</code></li>
+<li>尿量减少，<strong>并逐渐出现各种尿毒症并发症</strong></li>
+<li>肾小管细胞开始不断修复、迁移、增殖，以重建细胞和肾小管的完整性</li>
+<li><strong>全身血流动力学虽有改善，但 <code>GFR</code> 仍持续偏低</strong></li>
+</ul>
+</li>
+<li>
+<p>特点</p>
+<ul>
+<li>不论尿量是否减少，随着肾功能减退，临床上出现一系列尿毒症表现</li>
+<li>主要是尿毒症毒素潴留和水、电解质及酸碱平衡紊乱所致</li>
+</ul>
+</li>
+<li>
+<p>尿和氮质变化</p>
+<ul>
+<li>尿的改变：尿量、尿蛋白、管型、低尿比重</li>
+<li>氮质血症：血肌酐和尿素氮升高</li>
+</ul>
+</li>
+<li>
+<p>水、电解质和酸碱失衡</p>
+<ol>
+<li>三高：高血钾、高血磷、高血镁</li>
+<li>三低：低血钠、低血钙、低血氯</li>
+<li>两中毒：酸中毒、水中毒</li>
+</ol>
+</li>
+</ul>
+<h4 id="高钾血症"><a class="header" href="#高钾血症">高钾血症</a></h4>
+<ul>
+<li>是急性肾衰竭死亡的常见原因</li>
+<li>血钾升高时早期往往无明显临床表现</li>
+<li>最初心电图改变为 <code>QT</code> 间期缩短、<code>T</code> 波高尖</li>
+<li>当血钾升高至 <code>6.5 mmol/L</code> 以上时，可出现 <code>QRS</code> 间期延长、<code>PR</code> 间期增宽、<code>P</code> 波降低，甚至心肌纤颤和心跳骤停</li>
+</ul>
+<h4 id="高镁血症"><a class="header" href="#高镁血症">高镁血症</a></h4>
+<ul>
+<li>可出现神经肌肉传导障碍、低血压、呼吸抑制、麻木、肌无力、昏迷</li>
+<li>严重时可发生心脏停搏</li>
+<li>心电图可见 <code>PR</code> 间期延长、<code>QRS</code> 增宽、<code>T</code> 波增高</li>
+</ul>
+<h4 id="高磷血症"><a class="header" href="#高磷血症">高磷血症</a></h4>
+<ul>
+<li>常与低钙血症伴存</li>
+</ul>
+<h4 id="电解质紊乱三低"><a class="header" href="#电解质紊乱三低">电解质紊乱（三低）</a></h4>
+<ol>
+<li>低钙血症：可出现肌抽搐，并加重高血钾对心肌的毒性作用</li>
+<li>低钠血症：多因丢失多、摄入少、“钠泵”效应下降、肾小管对钠重吸收下降所致</li>
+<li>低氯血症：常与呕吐、氯丢失过多有关</li>
+</ol>
+<h4 id="水中毒"><a class="header" href="#水中毒">水中毒</a></h4>
+<ol>
+<li>原因
+<ul>
+<li>内生水增加</li>
+<li>摄入水过多</li>
+</ul>
+</li>
+<li>后果
+<ul>
+<li>肺水肿</li>
+<li>脑水肿</li>
+<li>高血压</li>
+<li>心力衰竭</li>
+</ul>
+</li>
+<li>表现
+<ul>
+<li>恶心、呕吐</li>
+<li>头晕、心悸、呼吸困难</li>
+<li>嗜睡、昏迷</li>
+</ul>
+</li>
+</ol>
+<h4 id="酸中毒"><a class="header" href="#酸中毒">酸中毒</a></h4>
+<ol>
+<li>原因
+<ul>
+<li>酸性代谢产物排出减少</li>
+<li>碱盐和钠盐丢失</li>
+<li>无氧代谢增加</li>
+<li>常伴高钾血症</li>
+</ul>
+</li>
+<li>表现
+<ol>
+<li>呼吸深而快</li>
+<li>可有酮味</li>
+<li>胸闷、气急</li>
+<li>嗜睡、昏迷</li>
+<li>血压下降</li>
+<li>心律失常</li>
+<li>心脏停搏</li>
+</ol>
+</li>
+</ol>
+<h3 id="二恢复期"><a class="header" href="#二恢复期">二）恢复期</a></h3>
+<h4 id="机制"><a class="header" href="#机制">机制</a></h4>
+<ol>
+<li>肾小管上皮细胞逐渐修复、再生</li>
+<li>细胞及器官功能逐步恢复</li>
+<li><code>GFR</code> 开始改善</li>
+<li><strong>若肾小管上皮细胞功能恢复延迟，则溶质和水的重吸收功能恢复晚于肾小球滤过功能</strong></li>
+<li>可伴明显多尿和低钾血症</li>
+</ol>
+<h4 id="特点"><a class="header" href="#特点">特点</a></h4>
+<ul>
+<li><code>GFR</code> 逐渐升高</li>
+<li>可恢复正常或接近正常</li>
+<li>肾小管上皮细胞功能恢复相对延迟</li>
+<li><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260605125017409.png" alt=""></li>
+</ul>
+<h2 id="五辅助检查及诊断"><a class="header" href="#五辅助检查及诊断">五、辅助检查及诊断</a></h2>
+<h3 id="一aki-临床诊断标准"><a class="header" href="#一aki-临床诊断标准">一）AKI 临床诊断标准</a></h3>
+<ol>
+<li><code>48</code> 小时内血清肌酐（<code>Scr</code>）升高 <code>&gt;0.3 mg/dl</code>（<code>&gt;26.5 μmol/L</code>）</li>
+<li>确认或推测 <code>7</code> 天内 <code>Scr</code> 较基础值升高 <code>&gt;50%</code></li>
+<li>尿量减少：<code>&lt;0.5 ml/(kg·h)</code>，持续 <code>&gt;6</code> 小时</li>
+</ol>
+<h3 id="二aki分期标准"><a class="header" href="#二aki分期标准">二）AKI分期标准</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>分期</th><th>血清肌酐标准</th><th>尿量标准</th></tr>
+</thead>
+<tbody>
+<tr><td>1期</td><td><code>Scr</code> 绝对值升高 <code>≥0.3 mg/dl</code>（<code>≥26.5 μmol/L</code>），或较基础值相对升高 <code>0.5~0.9</code> 倍</td><td><code>&lt;0.5 ml/(kg·h)</code>，持续 <code>6~12 h</code></td></tr>
+<tr><td>2期</td><td><code>Scr</code> 较基础值相对升高 <code>1.0~1.9</code> 倍</td><td><code>&lt;0.5 ml/(kg·h)</code>，持续 <code>12-24 h</code></td></tr>
+<tr><td>3期</td><td><code>Scr</code> 较基础值相对升高 <code>≥2</code> 倍，或升高至 <code>≥4.0 mg/dl</code>（<code>≥353.6 μmol/L</code>），或开始肾脏替代治疗；<code>&lt;18</code> 岁病人估算肾小球滤过率下降至 <code>&lt;35 ml/(min·1.73m²)</code></td><td><code>&lt;0.3 ml/(kg·h)</code>，持续 <code>≥24 h</code>，或无尿 <code>≥12 h</code></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="六鉴别诊断"><a class="header" href="#六鉴别诊断">六、鉴别诊断</a></h2>
+<h3 id="一肾前性氮质血症与缺血性急性肾损伤鉴别"><a class="header" href="#一肾前性氮质血症与缺血性急性肾损伤鉴别">一）肾前性氮质血症与缺血性急性肾损伤鉴别</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>尿液诊断指标</th><th>肾前性氮质血症</th><th>缺血性急性肾损伤</th></tr>
+</thead>
+<tbody>
+<tr><td>尿比重</td><td><code>&gt;1.018</code></td><td><code>&lt;1.012</code></td></tr>
+<tr><td>尿渗透压</td><td><code>&gt;500 mOsm/(kg·H2O)</code></td><td><code>&lt;350 mOsm/(kg·H2O)</code></td></tr>
+<tr><td>尿钠</td><td><code>&lt;10 mmol/L</code></td><td><code>&gt;20 mmol/L</code></td></tr>
+<tr><td>尿肌酐/血清肌酐</td><td><code>&gt;40</code></td><td><code>&lt;20</code></td></tr>
+<tr><td>血尿素氮(mg/dl)/血清肌酐(mg/dl)</td><td><code>&gt;20</code></td><td><code>&lt;10~15</code></td></tr>
+<tr><td>钠排泄分数</td><td><code>&lt;1%</code></td><td><code>&gt;1%</code></td></tr>
+<tr><td>肾衰指数</td><td><code>&lt;1</code></td><td><code>&gt;1</code></td></tr>
+<tr><td>尿沉渣</td><td>透明管型</td><td>棕色颗粒管型</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="二相关公式"><a class="header" href="#二相关公式">二）相关公式</a></h3>
+<ul>
+<li>肾衰指数：<code>尿钠 × 血肌酐 / 尿肌酐</code></li>
+<li>钠排泄分数：<code>(尿钠 × 血肌酐) / (血钠 × 尿肌酐) × 100%</code></li>
+</ul>
+<h3 id="三肾前性少尿功能试验"><a class="header" href="#三肾前性少尿功能试验">三）肾前性少尿功能试验</a></h3>
+<h4 id="补液试验"><a class="header" href="#补液试验">补液试验</a></h4>
+<ol>
+<li>输注 <code>5%</code> 葡萄糖 <code>200~250 ml</code></li>
+<li>并静脉注射呋塞米 <code>40~100 mg</code></li>
+<li>若 <strong>补足血容量后血压恢复</strong> 正常、尿量增加，则支持 <strong>肾前性少尿</strong></li>
+</ol>
+<h4 id="被动抬腿试验plr"><a class="header" href="#被动抬腿试验plr">被动抬腿试验（<code>PLR</code>）</a></h4>
+<ol>
+<li>病人基础体位为 <code>45°</code> 半卧位</li>
+<li>上身放平后，双下肢被动抬高 <code>45°</code></li>
+<li>持续约 <strong><code>1</code> 分钟</strong>，可利用自动床调整体位</li>
+<li>病人回心血量可增加约 <code>250~450 ml</code></li>
+<li><code>PLR</code> 后 <strong>每搏心输出量增加 <code>&gt;10% </code></strong> ，提示对容量有反应性</li>
+</ol>
+<h2 id="七治疗"><a class="header" href="#七治疗">七、治疗</a></h2>
+<h3 id="一早期干预治疗"><a class="header" href="#一早期干预治疗">一）早期干预治疗</a></h3>
+<ol>
+<li>肾前性因素：及时纠正</li>
+<li>肾后性因素：尽早解除尿路梗阻</li>
+<li>肾性因素
+<ul>
+<li>继发于肾小球肾炎、小血管炎的 <code>AKI</code>，常需应用糖皮质激素和（或）免疫抑制剂</li>
+<li>临床怀疑 <code>ATN</code> 时，应尽快明确并停用可疑药物</li>
+<li>药物所致者可及时给予糖皮质激素，起始剂量 <code>1 mg/(kg·d)</code>，总疗程 <code>1~4</code> 个月</li>
+</ul>
+</li>
+</ol>
+<h3 id="二营养支持疗法"><a class="header" href="#二营养支持疗法">二）营养支持疗法</a></h3>
+<ol>
+<li>食物中应控制水、钠、钾含量</li>
+<li>保证足够热量</li>
+<li>蛋白质摄入应调整
+<ul>
+<li>一般病人采用低蛋白优质蛋白饮食</li>
+<li>高分解代谢及透析病人每日蛋白摄入量可酌情增加</li>
+</ul>
+</li>
+<li>进液量一般为前一日尿量加 <code>500 ml</code></li>
+</ol>
+<h3 id="三并发症处理"><a class="header" href="#三并发症处理">三）并发症处理</a></h3>
+<h4 id="高钾血症-1"><a class="header" href="#高钾血症-1">高钾血症</a></h4>
+<ol>
+<li><strong>停用一切含钾</strong> 药物和（或）食物</li>
+<li>对抗钾离子心肌毒性： <strong><code>10%</code> 葡萄糖酸钙稀释后静推</strong> （其他均为降钾，仅仅此为抗钾）</li>
+<li>转移钾至细胞内： <strong>葡萄糖与胰岛素</strong> 合用</li>
+<li>伴代谢性酸中毒者 <strong>补充碱剂</strong> ，以促进钾离子向细胞内转移</li>
+<li>清除钾： <strong>离子交换树脂、利尿剂</strong></li>
+<li><strong>急症透析</strong> ：血钾 <code>&gt;6.5 mmol/L</code></li>
+</ol>
+<h4 id="代谢性酸中毒"><a class="header" href="#代谢性酸中毒">代谢性酸中毒</a></h4>
+<ol>
+<li>可选用 <code>5%</code> 碳酸氢钠 <code>125~250 ml</code> 静滴</li>
+<li>严重酸中毒病人，如静脉血 <strong><code>HCO3- &lt;12 mmol/L</code> 或动脉血 <code>pH &lt;7.15~7.20</code></strong> ，应在纠酸同时紧急透析</li>
+</ol>
+<h3 id="四紧急透析指征"><a class="header" href="#四紧急透析指征">四）紧急透析指征</a></h3>
+<ol>
+<li>预计内科保守治疗无效的严重代谢性酸中毒： <strong>动脉血 <code>pH &lt;7.2</code></strong></li>
+<li>高钾血症：<strong><code>K+ &gt;6.5 mmol/L</code> 或已出现严重心律失常</strong></li>
+<li>积极利尿治疗无效的 <strong>严重肺水肿</strong></li>
+<li>严重尿毒症症状，如 <strong>脑病、心包炎、癫痫发作</strong></li>
+</ol>
+<h2 id="五实战演练"><a class="header" href="#五实战演练">五、实战演练</a></h2>
+<h3 id="一单题"><a class="header" href="#一单题">一）单题</a></h3>
+<ol>
+<li>急性小管坏死的机制或因素包括：<strong>肾缺血、肾中毒、原尿外漏、肾小管阻塞</strong></li>
+<li>鉴别肾前性少尿与急性肾损伤时，提示后者的指标是：<strong>血尿素氮/血肌酐比值 <code>&lt;10~15:1</code></strong></li>
+<li>肾前性急性肾衰竭的特点有：<strong>尿比重 <code>&gt;1.018</code>、血尿素氮/血肌酐 <code>&gt;20</code></strong></li>
+<li>支持肾缺血性急性肾衰竭的实验室指标是：<strong>尿钠浓度 <code>&gt;20 mmol/L</code></strong></li>
+<li>急性肾功能衰竭的表现包括：<strong>高钾血症、高磷血症</strong></li>
+</ol>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第五部分：泌尿系统疾病/第八章：遗传性肾病.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第五部分：泌尿系统疾病/第十章：慢性肾衰竭.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第五部分：泌尿系统疾病/第八章：遗传性肾病.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第五部分：泌尿系统疾病/第十章：慢性肾衰竭.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第五部分：泌尿系统疾病/第九章：急性肾损伤.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

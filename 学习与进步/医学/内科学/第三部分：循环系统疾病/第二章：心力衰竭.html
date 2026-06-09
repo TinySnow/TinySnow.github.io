@@ -1,0 +1,789 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第二章：心力衰竭 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第二章心力衰竭"><a class="header" href="#第二章心力衰竭">第二章：心力衰竭</a></h1>
+<h2 id="一病因及诱因"><a class="header" href="#一病因及诱因">一、病因及诱因</a></h2>
+<h3 id="一定义"><a class="header" href="#一定义">一）定义</a></h3>
+<ul>
+<li>心力衰竭是 <strong>各种心脏结构和（或）功能性疾病</strong> 导致 <strong>心室充盈和（或）射血</strong> 功能受损，心排血量不能满足机体代谢的需要，器官、组织血液灌注不足， <strong>肺循环和（或）体循环淤血</strong> 而引起的一组综合症。</li>
+<li>临床主要表现是 <strong>呼吸困难、体力活动受限和体液潴留。</strong></li>
+</ul>
+<h3 id="二基本病因"><a class="header" href="#二基本病因">二）基本病因</a></h3>
+<h4 id="原发性心肌损害"><a class="header" href="#原发性心肌损害">原发性心肌损害</a></h4>
+<ul>
+<li><strong>缺血性心肌病：冠心病心肌缺血和心梗最常见</strong></li>
+<li><strong>心肌炎与心肌病：病毒性心肌炎与扩张性心肌病最常见</strong></li>
+<li><strong>心肌代谢障碍性疾病：糖尿病心肌病最常见</strong></li>
+</ul>
+<h4 id="心脏负荷过重"><a class="header" href="#心脏负荷过重">心脏负荷过重</a></h4>
+<ul>
+<li><strong>压力负荷（后）过重</strong> ：见于高血压、主动脉瓣狭窄、肺动脉高压、肺动脉瓣狭窄等</li>
+<li><strong>容量负荷（前）过重</strong> ：心脏瓣膜关闭不全；左、右心或动静脉分流性先天性心血管病；循环血量增多的疾病
+<ul>
+<li>前负荷：人身上的血，就是人身上的钱，称“ <strong>钱</strong> ”负荷</li>
+<li>前负荷增加的三条原因：不一缺一钱
+<ul>
+<li>不：四个瓣膜关闭“ <strong>不</strong> ”全</li>
+<li>缺：房间隔“ <strong>缺</strong> ”损；室间隔“缺“ 损；</li>
+<li>钱： <strong>贫血、甲亢、动静脉瘘、脚气病、妊娠（评价冻脚人）（钱多一血容量增多）</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="心室前负荷不足"><a class="header" href="#心室前负荷不足">心室前负荷不足</a></h4>
+<ul>
+<li><strong>二狭、心脏压塞、限制性心肌病、缩窄性心肌炎等</strong></li>
+</ul>
+<h3 id="三诱因"><a class="header" href="#三诱因">三）诱因</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">诱因种类</th><th style="text-align: center">常见原因或例子</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">感染</td><td style="text-align: center"><strong>呼吸道感染是最常见，最重要的诱因</strong></td></tr>
+<tr><td style="text-align: center">心律失常</td><td style="text-align: center"><strong>房颤最常见</strong></td></tr>
+<tr><td style="text-align: center">血容量增加</td><td style="text-align: center">如摄入钠盐过多，静脉输入液体过多、过快等</td></tr>
+<tr><td style="text-align: center">过度体力劳累或情绪激动</td><td style="text-align: center">如妊娠后期及分娩过程，暴怒等</td></tr>
+<tr><td style="text-align: center">治疗不当</td><td style="text-align: center">如不恰当停用利尿药物或降血压药等</td></tr>
+<tr><td style="text-align: center">原有心脏病变加重或并发其他疾病</td><td style="text-align: center">如冠心病发生心肌梗死，风湿性心瓣膜病出现风湿活动，合并甲状腺功能亢进或贫血等</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="二病理生理"><a class="header" href="#二病理生理">二、病理生理</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">常见机制</th><th style="text-align: center">解释</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">Frank-Starling 机制</td><td style="text-align: center">即增加心脏的前负荷，使回心血量增多，心室舒张末期容积增加，从而增加心排血量及提高心脏作功量</td></tr>
+<tr><td style="text-align: center">心肌肥厚</td><td style="text-align: center">心脏后负荷增高时心肌肥厚，心肌细胞数量并不增多，以心肌纤维增多为主</td></tr>
+<tr><td style="text-align: center">神经体液的代偿机制</td><td style="text-align: center">交感神经兴奋性增强</td></tr>
+<tr><td style="text-align: center">神经体液的代偿机制</td><td style="text-align: center">肾素-血管紧张素-醛固酮系统（RAAS）激活</td></tr>
+<tr><td style="text-align: center">心脏舒张功能不全</td><td style="text-align: center">主动舒张功能障碍：钙离子不能及时地被肌浆网摄回及泵出胞外</td></tr>
+<tr><td style="text-align: center">心脏舒张功能不全</td><td style="text-align: center">心室肌的顺应性减退及充盈障碍：主要见于心室肥厚如高血压及肥厚性心肌病</td></tr>
+<tr><td style="text-align: center">心肌损害和心室重塑</td><td style="text-align: center">心肌、血管平滑肌、血管内皮细胞等的肥厚、扩张、纤维化等， <strong>心室重塑是心衰的基本病理机制</strong></td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">心衰体液因子变化</th><th style="text-align: center">分泌部位</th><th style="text-align: center">心衰时</th><th style="text-align: center">功能</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center"><strong>心钠肽 ANP</strong></td><td style="text-align: center"><strong>心房肌和心室肌</strong></td><td style="text-align: center"><strong>增多</strong></td><td style="text-align: center"><strong>扩张血管；排钠；水平与心衰程度相关</strong></td></tr>
+<tr><td style="text-align: center"><strong>脑钠肽 BNP</strong></td><td style="text-align: center"><strong>心室肌</strong></td><td style="text-align: center"><strong>增多</strong></td><td style="text-align: center"><strong>扩张血管；排钠；水平与心衰程度相关</strong></td></tr>
+<tr><td style="text-align: center">精氨酸加压素AVP</td><td style="text-align: center">下丘脑</td><td style="text-align: center">增多</td><td style="text-align: center">抗利尿；收缩血管；维持血浆渗透压</td></tr>
+<tr><td style="text-align: center">内皮素</td><td style="text-align: center">血管内皮</td><td style="text-align: center">增多</td><td style="text-align: center">强烈缩血管作用</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="三心衰分型和心功能分级"><a class="header" href="#三心衰分型和心功能分级">三、心衰分型和心功能分级</a></h2>
+<h3 id="一类型"><a class="header" href="#一类型">一）类型</a></h3>
+<ul>
+<li>急性（ <strong>急性左心衰常见</strong> ）和慢性（占大多数）</li>
+<li>左心、右心和全心</li>
+<li>射血分数降低性心衰（同收缩性心衰）</li>
+<li>射血分数保留性心衰（同舒张性心衰）（九版更新）</li>
+</ul>
+<h3 id="二分期"><a class="header" href="#二分期">二）分期</a></h3>
+<ul>
+<li><strong>前心衰阶段</strong> ：患者 <strong>存在心衰高危因素</strong> ，但目前尚无心脏结构或功能异常，也无心衰的症状和（或）体征。</li>
+<li><strong>前临床心衰阶段</strong> ：患者无心衰的症状和（或）体征， <strong>但已发展为结构性心脏病</strong> ，如左室肥厚、无症状瓣膜性心脏病、既往心肌梗死史等。</li>
+<li><strong>临床心衰阶段</strong> ：患者已有 <strong>基础结构性心脏病</strong> ，既往或目前 <strong>有心衰症状和（或）体征</strong> 。</li>
+<li><strong>难治性终末期心衰阶段</strong> ：患者虽经严格优化内科治疗，但休息时仍有症状，常伴心源性恶病质，须反复长期住院。</li>
+</ul>
+<h3 id="三分级"><a class="header" href="#三分级">三）分级</a></h3>
+<ul>
+<li>美国纽约心脏病协会（NYHA）</li>
+</ul>
+<ol>
+<li>I 级：体力活动 <strong>不受限</strong> ，即心功能代偿期</li>
+<li>II 级：体力活动 <strong>轻度受限</strong> 。休息时无症状，日常活动引起乏力，称轻度心衰。</li>
+<li>III 级：体力活动 <strong>明显受限</strong> ，轻于日常活动即乏力，亦称中度心衰。</li>
+<li>IV 级： <strong>休息</strong> 时有心衰症状，亦称重度心衰</li>
+</ol>
+<h3 id="四分度"><a class="header" href="#四分度">四）分度</a></h3>
+<ul>
+<li>六分钟步行试验（US Carvedilol 研究）</li>
+</ul>
+<ol>
+<li>重度心功能不全：距离 &lt;150 米</li>
+<li>中度心功能不全：150-450 米</li>
+<li>轻度心功能不全：&gt;450 米</li>
+</ol>
+<h2 id="四临床表现与体征"><a class="header" href="#四临床表现与体征">四、临床表现与体征</a></h2>
+<h3 id="一左心衰竭"><a class="header" href="#一左心衰竭">一）左心衰竭</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">临床表现</th><th style="text-align: center">说明</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">呼吸困难</td><td style="text-align: center">是左心衰较早出现的症状</td></tr>
+<tr><td style="text-align: center">劳力性呼吸困难</td><td style="text-align: center"><strong>最先出现</strong> （肥厚心、主狭、右心衰、特发肺）</td></tr>
+<tr><td style="text-align: center">夜间阵发性呼吸困难</td><td style="text-align: center"><strong>称“心源性哮喘” （肺充血、迷走兴奋、气管收缩、横膈抬高、肺活量减少等）</strong></td></tr>
+<tr><td style="text-align: center">端坐呼吸、急性肺水肿、心源性哮喘</td><td style="text-align: center"><strong>急性肺水肿是左心衰呼吸困难最严重的形式</strong></td></tr>
+<tr><td style="text-align: center">体征</td><td style="text-align: center"><strong>原心脏病体征、HR↑、奔马律、P2↑、两肺底湿啰音（下垂部位）、哮鸣音</strong></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="二右心衰竭"><a class="header" href="#二右心衰竭">二）右心衰竭</a></h3>
+<h4 id="症状"><a class="header" href="#症状">症状</a></h4>
+<ul>
+<li>消化道症状 ：胃肠道及肝脏淤血引起腹胀、食欲不振、恶心、呕吐等</li>
+<li>劳力性呼吸困难：继发于左心衰的右心衰呼吸困难业已存在</li>
+</ul>
+<h4 id="体征"><a class="header" href="#体征">体征</a></h4>
+<ul>
+<li>水肿： <strong>首先出现于身体最低垂的部位，常为对称性可压陷性</strong></li>
+<li><strong>颈静脉征：颈静脉搏动增强、充盈、怒张；肝颈静脉反流征阳性</strong></li>
+<li>肝脏肿大</li>
+<li>基础心脏病体征 + 三尖瓣关闭不全的反流性杂音</li>
+</ul>
+<h3 id="三其他"><a class="header" href="#三其他">三）其他</a></h3>
+<h4 id="交替脉"><a class="header" href="#交替脉">交替脉</a></h4>
+<ul>
+<li>与左心室的收缩力强弱交替有关，见于左心衰、高血压性心脏病、急性心衰竭</li>
+</ul>
+<h4 id="奇脉"><a class="header" href="#奇脉">奇脉</a></h4>
+<ul>
+<li>吸气时脉搏明显减弱或消失。</li>
+<li>见于右心衰、大量胸腔积液、大量心包积液、缩窄性心包炎、肺气肿、支气管哮喘（心脏受压迫）</li>
+</ul>
+<h4 id="水冲脉"><a class="header" href="#水冲脉">水冲脉</a></h4>
+<ul>
+<li>甲亢、严重贫血、主动脉瓣关闭不全、动静脉瘘</li>
+</ul>
+<h2 id="五检查"><a class="header" href="#五检查">五、检查</a></h2>
+<h3 id="一x-线"><a class="header" href="#一x-线">一）X 线</a></h3>
+<ul>
+<li>心影大小及外形为心脏病的病因诊断提供重要的参考资料（ 左心衰：左室大；右心衰：右房及右室大）</li>
+<li><strong>慢性肺淤血的特征性表现：Kerley B 线是在肺野外侧清晰可见的水平线状影；</strong></li>
+</ul>
+<h3 id="二超声心动图最主要首选"><a class="header" href="#二超声心动图最主要首选">二）超声心动图（最主要，首选）</a></h3>
+<ul>
+<li>正常左室射血分数( LVEF 值）&gt;50%， <strong>LVEF ≤ 40% 为收缩期心力衰竭的诊断标准</strong> 。</li>
+</ul>
+<h3 id="三放射性核素检查"><a class="header" href="#三放射性核素检查">三）放射性核素检查</a></h3>
+<ul>
+<li>判断心室腔大小（EF 值）；左心室最大充盈速率以反映心脏舒张功能</li>
+</ul>
+<h3 id="四心-肺吸氧运动试验"><a class="header" href="#四心-肺吸氧运动试验">四）心-肺吸氧运动试验</a></h3>
+<ul>
+<li>仅适用于慢性稳定性心衰患者：测最大耗氧量、无氧阈值</li>
+</ul>
+<h3 id="五有创性血流动力学金指标"><a class="header" href="#五有创性血流动力学金指标">五）有创性血流动力学（金指标）</a></h3>
+<ul>
+<li>心脏指数（CI）及肺小动脉楔压（PCWP），直接反映左检查心功能，正常时 CI&gt;2.5L/ ( min·m²)；PCWP&lt;12mmHg</li>
+<li>主要提示左心</li>
+</ul>
+<h2 id="六鉴别诊断"><a class="header" href="#六鉴别诊断">六、鉴别诊断</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">指标</th><th style="text-align: center">心源性哮喘</th><th style="text-align: center">支气管哮喘</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">病史</td><td style="text-align: center">老年人多见，有心脏病史（高血压、心梗等）</td><td style="text-align: center">青年人多见，有过敏史</td></tr>
+<tr><td style="text-align: center">症状</td><td style="text-align: center">常在夜间发生，坐起或站立后可缓解，严重时咳白色或粉红色泡沫痰</td><td style="text-align: center">冬春季易发，咳白色粘痰</td></tr>
+<tr><td style="text-align: center">体征</td><td style="text-align: center">心脏病的体征、奔马律、肺干湿啰音</td><td style="text-align: center">心脏正常，肺哮鸣音、桶状胸</td></tr>
+<tr><td style="text-align: center">X 线检查</td><td style="text-align: center">心脏大、肺淤血</td><td style="text-align: center">心脏正常，肺气肿征</td></tr>
+<tr><td style="text-align: center">治疗</td><td style="text-align: center">强心利尿扩管</td><td style="text-align: center">有效氨茶碱、激素</td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>测定血浆 BNP 水平具有参考价值</strong></li>
+</ul>
+<h2 id="七心衰的治疗"><a class="header" href="#七心衰的治疗">七、心衰的治疗</a></h2>
+<h3 id="一概述"><a class="header" href="#一概述">一）概述</a></h3>
+<ul>
+<li>治疗原则：改善生活质量，防止左室进行性扩大，缓解症状，降低死亡率</li>
+<li>病因治疗：基本病因治疗，消除诱因</li>
+<li>一般治疗：休息、控制水钠摄入</li>
+<li>药物治疗：利尿剂、ACEI、洋地黄、β 受体阻滞剂、其他</li>
+</ul>
+<h3 id="二利尿剂"><a class="header" href="#二利尿剂">二）利尿剂</a></h3>
+<h4 id="作用原理"><a class="header" href="#作用原理">作用原理</a></h4>
+<ul>
+<li>通过排钠排水减轻心脏的容量负荷，对缓解淤血症状，减轻水肿有十分显著的效果</li>
+</ul>
+<h4 id="合理应用"><a class="header" href="#合理应用">合理应用</a></h4>
+<ul>
+<li>心功能 I 级一般不用利尿剂；</li>
+<li><strong>急性心衰或肺水肿，首选呋塞米静注</strong> ，如伴有心源性休克，则不易使用；</li>
+<li><strong>轻度心衰首选噻嗪类</strong> ，中度心衰加用潴钾利尿剂；重度心衰选用袢利尿剂与潴钾利尿剂合用； <strong>肾功不全应用袢利尿剂，禁用潴钾利尿剂</strong> ；</li>
+<li>间断用药，以防电解质紊乱；</li>
+</ul>
+<h4 id="药物"><a class="header" href="#药物">药物</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">药物种类</th><th style="text-align: center">代表药物</th><th style="text-align: center">作用机制</th><th style="text-align: center">注意事项</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">噻嗪类（排钾类）</td><td style="text-align: center">氢氯噻嗪</td><td style="text-align: center">作用于肾远曲小管，抑制钠的再吸收</td><td style="text-align: center">副作用： <strong>高尿酸血症、高血糖血脂、低血钾</strong></td></tr>
+<tr><td style="text-align: center">袢利尿剂（排钾类）</td><td style="text-align: center">呋塞米（速尿）</td><td style="text-align: center">作用于 Henle 袢的升支，排钠、排钾</td><td style="text-align: center">主要副作用是低血钾</td></tr>
+<tr><td style="text-align: center">保钾类</td><td style="text-align: center">螺内酯（安体舒通）</td><td style="text-align: center">作用于肾远曲小管，保钾排钠</td><td style="text-align: center">利尿效果不强。与排钾利尿剂合用</td></tr>
+<tr><td style="text-align: center">保钾类</td><td style="text-align: center">氨苯蝶啶</td><td style="text-align: center">作用于肾远曲小管，保钾排钠</td><td style="text-align: center">利尿作用不强。常与排钾利尿剂合用</td></tr>
+<tr><td style="text-align: center">保钾类</td><td style="text-align: center">阿米洛利</td><td style="text-align: center">作用于肾远曲小管，保钾排钠</td><td style="text-align: center">利尿作用较强而保钾作用较弱</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="三血管紧张素转换酶抑制剂-acei"><a class="header" href="#三血管紧张素转换酶抑制剂-acei">三）血管紧张素转换酶抑制剂 ACEI</a></h3>
+<h4 id="常用制剂"><a class="header" href="#常用制剂">常用制剂</a></h4>
+<ul>
+<li>卡托普利、贝那普利、培哚普利、咪达普利、赖诺普利</li>
+</ul>
+<h4 id="作用机理"><a class="header" href="#作用机理">作用机理</a></h4>
+<ul>
+<li>
+<p>抑制肾素血管紧张素系统（RAS）</p>
+</li>
+<li>
+<p>抑制缓激肽的降解可使具有血管扩张作用的前列腺素生成增多，同时亦有抗组织增生的作用。</p>
+</li>
+<li>
+<p>降低神经体液代偿机制副作用，改善心室重塑</p>
+</li>
+</ul>
+<h4 id="副作用"><a class="header" href="#副作用">副作用</a></h4>
+<ul>
+<li><strong>低血压、肾功能（过性恶化）、高血钾及干咳、血管性水肿</strong></li>
+</ul>
+<h4 id="禁忌症"><a class="header" href="#禁忌症">禁忌症</a></h4>
+<ul>
+<li><strong>无尿性肾衰竭、妊娠哺乳期妇女及对 ACEI 过敏者禁用；</strong></li>
+<li><strong>双侧肾动脉狭窄、血肌酐水平明显升高（&gt;265μmol/L )、高血钾（5.5mmol/L）及低血压者亦不宜应用</strong></li>
+</ul>
+<h4 id="应用特点"><a class="header" href="#应用特点">应用特点</a></h4>
+<ul>
+<li>从心功能尚处于代偿期而无明显症状时，即开始给予 ACE 抑制剂的干预治疗是心力衰竭治疗方面的重要进展</li>
+</ul>
+<h3 id="四血管紧张素受体阻滞剂-arbs"><a class="header" href="#四血管紧张素受体阻滞剂-arbs">四）血管紧张素受体阻滞剂 ARBs</a></h3>
+<ul>
+<li>ACEI <strong>干咳不能耐受者选 ARBs</strong> ，如坎地沙坦、氯沙坦、缬沙坦筹</li>
+<li>无抑制缓激肽降解作用，副作用除干咳、血管性水肿外均可见于应用 ARBs 时，ARB 与 ACEI 不连用，以免增加副作用。</li>
+</ul>
+<h3 id="五醛固酮受体拮抗剂"><a class="header" href="#五醛固酮受体拮抗剂">五）醛固酮受体拮抗剂</a></h3>
+<ul>
+<li>螺内酯等抗醛固酮制剂作为保钾利尿剂，能阻断醛固酮效应， <strong>抑制心血管重塑，改善心衰的远期预后</strong> 。</li>
+<li>但必须注意血钾的监测，近期有 <strong>肾功能不全、血肌酐升高或高钾血症者不宜使用</strong> 。</li>
+<li>依普利酮（eplerenone ）是一种新型选择性醛固酮受体拮抗剂，尤适用于 <strong>老龄、糖尿病和肾功能不全患者</strong> 。</li>
+</ul>
+<h3 id="六肾素抑制剂"><a class="header" href="#六肾素抑制剂">六）肾素抑制剂</a></h3>
+<ul>
+<li>阿利吉仑直接抑制肾素降低血浆肾素活性，对心率无影响。</li>
+</ul>
+<h3 id="七β-受体阻滞剂的应用"><a class="header" href="#七β-受体阻滞剂的应用">七）β 受体阻滞剂的应用</a></h3>
+<ul>
+<li>β 受体阻滞剂可对抗心衰时交感神经激活</li>
+<li>长期使用 <strong>减轻症状、改善预后、降低死亡率</strong></li>
+<li><strong>β 受体阻滞剂的禁忌证：支气管痉挛性疾病、心动过缓、二度及二度以上房室传导阻滞、周围血管病、重度急性心衰、体液潴留</strong></li>
+<li>代表药物：美托洛尔、比索洛尔、卡维地洛</li>
+</ul>
+<h3 id="八洋地黄类强心药"><a class="header" href="#八洋地黄类强心药">八）洋地黄类强心药</a></h3>
+<h4 id="适应症"><a class="header" href="#适应症">适应症</a></h4>
+<ul>
+<li>适用于 <strong>快速房颤伴中、重度以收缩功能不全</strong> 为主</li>
+<li>在利尿剂，ACE 抑制剂（或 ARBs）和 β 受体阻滞剂治疗过程中持续有心衰症状的患者，可考虑加用地高辛</li>
+</ul>
+<h4 id="常用制剂-1"><a class="header" href="#常用制剂-1">常用制剂</a></h4>
+<ul>
+<li>地高辛（ <strong>慢性心衰</strong> ）、洋地黄毒苷及毛花苷 C（西地兰）、毒毛花苷 K（ <strong>急性或慢性加重</strong> ）</li>
+</ul>
+<h4 id="药理作用"><a class="header" href="#药理作用">药理作用</a></h4>
+<ul>
+<li>正性肌力作用（抑制 Na-K-ATP 酶）</li>
+<li>抑制心脏传导系统，对房室交界区的抑制最为明显（降低心室率）</li>
+<li>迷走神经兴奋作用</li>
+<li>作用于肾小管细胞减少 NA 吸收并抑制肾素释放</li>
+</ul>
+<h4 id="禁忌症-1"><a class="header" href="#禁忌症-1">禁忌症</a></h4>
+<ol>
+<li><strong>肺心病导致右心衰（易中毒，慎用）</strong></li>
+<li><strong>肥厚型心肌病（加重流出道梗阻）</strong></li>
+<li><strong>窦性心律的单纯二尖瓣狭窄不用</strong></li>
+<li><strong>预激综合症伴房颤（堵正常易旁路）</strong></li>
+<li><strong>高度房室传导阻滞</strong></li>
+<li><strong>病态窦房结综合症</strong></li>
+<li><strong>心包缩窄导致的心衰</strong></li>
+<li><strong>急性心梗 24 小时内（心脏破裂、梗死面积扩大、恶性心律失常）</strong></li>
+</ol>
+<h4 id="中毒表现"><a class="header" href="#中毒表现">中毒表现</a></h4>
+<ul>
+<li>各类心律失常， <strong>最常见者为室早二联律，特征快速房性心律失常伴传导阻滞；</strong></li>
+<li>ST-T 呈鱼钩样改变；</li>
+<li><strong>最早者为胃肠道反应如恶心、呕吐</strong> ，以及中枢神经的症状，如视力模糊、黄视、倦怠等</li>
+</ul>
+<h4 id="中毒处理"><a class="header" href="#中毒处理">中毒处理</a></h4>
+<ul>
+<li>应立即停药；</li>
+<li>对快速性心律失常者，如血钾浓度低则可用静脉补钾，如血钾不低可用利多卡因或苯妥英钠；</li>
+<li><strong>电复律一般禁用，因易致心室颤动；</strong></li>
+<li>有传导阻滞及缓慢性心律失常者可用阿托品 0.5~1.0mg 皮下或静脉注射，一般不需安置临时心脏起搏器</li>
+</ul>
+<h3 id="九非洋地黄类强心药"><a class="header" href="#九非洋地黄类强心药">九）非洋地黄类强心药</a></h3>
+<ul>
+<li>肾上腺素能受体兴奋剂（多巴胺、多巴酚丁胺）在慢性心衰加重时，起到帮助患者渡过难关的作用。
+<ul>
+<li><strong>小剂量多巴胺：可降低外周阻力、扩张肾血管、冠脉、脑血管</strong></li>
+<li>中剂量多巴胺：强烈的 β1、β2 激动作用</li>
+<li>大剂量多巴胺：可兴奋 α 受体
+<ul>
+<li>β1（heart）：心脏功能增强，心率增快，传导加速</li>
+<li>β2（Branch）：支气管功能加强，支气管舒张（联系支气管哮喘</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>磷酸二酯酶抑制剂（米力农）</strong> 仅限于重症心衰，完善心衰的各项治疗措施后症状仍不能控制时短期应用。</li>
+</ul>
+<h3 id="十扩血管药物"><a class="header" href="#十扩血管药物">十）扩血管药物</a></h3>
+<ul>
+<li>慢性心衰不推荐首选</li>
+<li>禁忌症
+<ul>
+<li><strong>低血压、低血容量、肾功衰竭</strong></li>
+<li><strong>阻塞性心脏瓣膜病</strong>
+<ul>
+<li><strong>主动脉狭窄</strong></li>
+<li><strong>二尖瓣狭窄</strong></li>
+<li><strong>肥厚梗阻型心肌症</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="十一其他治疗"><a class="header" href="#十一其他治疗">十一）其他治疗</a></h3>
+<ul>
+<li><strong>心脏再同步化治疗</strong>
+<ul>
+<li><strong>可使用 CRT（最佳药物仍存在心衰、LVEF≤35%、NYHAⅡ-IV 级、窦性节律心脏不同步 QRS&gt;130ms 的情况下使用）</strong></li>
+</ul>
+</li>
+<li>左室辅助装置</li>
+<li><strong>心脏移植：顽固心衰最终治疗方案</strong></li>
+<li>细胞替代治疗</li>
+</ul>
+<h3 id="十二舒张功能不全"><a class="header" href="#十二舒张功能不全">十二）舒张功能不全</a></h3>
+<ul>
+<li>发病机制：心室舒张障碍 -&gt; 舒张末压升高 -&gt; 肺淤血</li>
+<li><strong>常见病因：多见于肥厚心</strong></li>
+<li>治疗原则：治疗基础疾病</li>
+<li>一般治疗
+<ul>
+<li>限制钠盐，应用利尿剂（小剂量）；</li>
+<li>肺淤血，减少静脉回流，应用静脉扩张剂（小剂量）；</li>
+</ul>
+</li>
+<li>常用药物
+<ul>
+<li>β 受体拮抗剂 -&gt; 减慢心率，改善舒张功能、降低血压</li>
+<li>钙通道拮抗剂 -&gt; 降低胞内钙，改善舒张、降低血压用于肥厚心</li>
+<li>ACEI/ARB -&gt; 控制血压，改善心肌重构，用于冠心病</li>
+</ul>
+</li>
+<li><strong>禁用正性肌力类药物</strong></li>
+</ul>
+<h2 id="八急性心力衰竭"><a class="header" href="#八急性心力衰竭">八、急性心力衰竭</a></h2>
+<h3 id="一定义-1"><a class="header" href="#一定义-1">一）定义</a></h3>
+<ul>
+<li>心力衰竭急性发作和（或）加重的一种临床综合症。</li>
+</ul>
+<h3 id="二类型"><a class="header" href="#二类型">二）类型</a></h3>
+<ul>
+<li><strong>急性左心衰竭</strong></li>
+<li><strong>急性右心衰竭</strong></li>
+<li><strong>非心源性急性心衰</strong>
+<ul>
+<li>高心排血量综合征</li>
+<li>严重肾脏疾病（心肾综合征）</li>
+<li>严重肺动脉高压</li>
+</ul>
+</li>
+</ul>
+<h3 id="三分级-1"><a class="header" href="#三分级-1">三）分级</a></h3>
+<ul>
+<li>I 级：尚无明显心力衰竭</li>
+<li>II 级：有左心衰竭，肺部啰音&lt;50%肺野</li>
+<li>III 级：有急性肺水肿，&gt;50% 肺大、小、干、湿啰音</li>
+<li>IV 级：有心源性休克等不同程度或阶段的血流动力学变化</li>
+</ul>
+<h3 id="四临床表现"><a class="header" href="#四临床表现">四）临床表现</a></h3>
+<ul>
+<li>突发严重呼吸困难，R30~40 次/分，强迫坐位，面色灰白，发，大汗，烦躁，频繁咳嗽，咯粉红色泡沫状痰。</li>
+<li>神志模糊，心源性休克。</li>
+<li>两肺满布湿罗音和哮鸣音，HR 快、S1 弱、S3、P2 亢进。</li>
+</ul>
+<h3 id="五治疗"><a class="header" href="#五治疗">五）治疗</a></h3>
+<ol>
+<li>体位：坐位、双腿下垂</li>
+<li>吸氧</li>
+<li>救治准备</li>
+<li>镇静：吗啡 3~5 mgiv，q15min 2~3 次</li>
+<li>快速利尿：呋塞米 20~40 mgiv，q4h</li>
+<li>氨茶碱</li>
+<li>正性肌力或升压药物：毛花苷丙，米力农，多巴酚丁胺，多巴胺，去甲肾上腺</li>
+<li>血管扩张剂：硝普钠，硝酸甘油，奈西立肽</li>
+</ol>
+<ul>
+<li><strong>记忆：端坐位腿下垂、吸氧打吗啡、快强心速利尿、茶碱扩管药</strong></li>
+</ul>
+<h2 id="九抗心力衰竭药物治疗进展"><a class="header" href="#九抗心力衰竭药物治疗进展">九、抗心力衰竭药物治疗进展</a></h2>
+<h3 id="一人重组脑钠肽rhbnp"><a class="header" href="#一人重组脑钠肽rhbnp">一）人重组脑钠肽（rhBNP）</a></h3>
+<ul>
+<li>如奈西立肽（ nesiritide ），具有排钠利尿、抑制交感神经系统、扩张血管等作用， <strong>适用于急性失代偿性心衰。</strong></li>
+</ul>
+<h3 id="二左西孟旦levosimendan"><a class="header" href="#二左西孟旦levosimendan">二）左西孟旦（levosimendan）</a></h3>
+<ul>
+<li>通过与心肌细胞上的肌钙蛋白 C 结合，增加肌丝对钙的敏感性从而增强心肌收缩，并通过介导三磷酸腺苷（ATP）敏感的钾通道，扩张冠状动脉和外周血管，改善顿抑心肌的功能，减轻缺血并纠正血流动力学紊乱， <strong>适用于无显著低血压或低血压倾向的急性左心衰患者</strong> 。</li>
+</ul>
+<h3 id="三伊伐布雷定ivabradine"><a class="header" href="#三伊伐布雷定ivabradine">三）伊伐布雷定（ivabradine）</a></h3>
+<ul>
+<li>首个选择性特异性窦房结 If 电流抑制剂，对心脏内传导、心肌收缩或心室复极化无影响，且无 β 受体拮抗剂的不良反应或反跳现象。</li>
+</ul>
+<h3 id="四avp-受体拮抗剂托伐普坦-tolvaptan"><a class="header" href="#四avp-受体拮抗剂托伐普坦-tolvaptan">四）AVP 受体拮抗剂（托伐普坦 tolvaptan）</a></h3>
+<ul>
+<li>通过结合 V2 受体减少水的重吸收，因不增加排钠而优于利尿剂，因此可用于治疗 <strong>伴有低钠血症的心力衰竭</strong> 。</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第一章：循环系统疾病总论.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第三章：心律失常.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第一章：循环系统疾病总论.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第三章：心律失常.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第三部分：循环系统疾病/第二章：心力衰竭.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

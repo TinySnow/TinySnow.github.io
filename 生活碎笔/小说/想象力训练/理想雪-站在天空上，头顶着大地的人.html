@@ -1,0 +1,544 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>理想雪 - 站在天空上，头顶着大地的人 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="理想雪---站在天空上头顶着大地的人"><a class="header" href="#理想雪---站在天空上头顶着大地的人">理想雪 - 站在天空上，头顶着大地的人</a></h1>
+<h2 id="写在前面"><a class="header" href="#写在前面">写在前面</a></h2>
+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">6431 字 | 小说 | 思考 | 意外 | 幻想 | 离散之外</p>
+
+<p style="text-align:center; font-weight:bold;">《理想雪》系列故事均为架空世界观，所有人名、地名等与现实世界无任何关联。</p>
+
+<p>　　该系列只且仅只为了说明，小说作者在该情境下会诞生的想法和采取的行动，以及背后的世界观、价值观和人生观。</p>
+<p style="text-align:center; font-weight:bold; text-decoration:underline;">未经授权，禁止转载。仅供小范围内阅读。</p>
+
+<h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>　　我的世界是颠倒的。出车祸之后，父母强烈希望保住我的眼睛。医生非常为难，但答应试一试。</p>
+<p>　　“最好不要抱期望。发生什么意外都不为过。”</p>
+<p>　　我本来应该失明的。现在看见了光明。</p>
+<p>　　不过，这光明是颠倒的。</p>
+<p>　　出于某种迫不得已的理由，医生接反了视神经。</p>
+<p>　　外人视角，我与正常人无异，他们都在庆贺我大难不死。</p>
+<p>　　自我视角，我知道这是一场盛大而永恒的灾难。</p>
+<p>　　我是一个站在天空上，头顶着大地的人。</p>
+<p>　　这么说并不准确，因为我的视角，腿脚仍然在地上，只是大地并不在下方，而在上方。天空在下方。</p>
+<p>　　那些我永远触摸不到的天花板，永远安安静静地铺在了下面。</p>
+<p>　　刚开始我非常恶心，时常因为眩晕吐一地。我的大脑无法接受这种讯息。</p>
+<p>　　应该也从来没有人类接受过这样的视野吧。</p>
+<p>　　我想，大脑应该是简单地认为——我中毒了。</p>
+<p>　　但我知道，这不是中毒，我余生都将这样度过。</p>
+<br />
+<p>　　“也许随着时间推移，大脑会自行调整。”医生这样安慰我，但眼神里的不确定性出卖了他们。</p>
+<p>　　出院后，我开始了一段漫长的适应期。每天早上醒来，我都要花几分钟提醒自己：天空在下，大地在上。这不是梦，这是我的新现实。</p>
+<p>　　走路成了一项挑战。我的视觉告诉我，我正在一个无底深渊的边缘行走，随时可能坠入蓝色的虚无。我的脚触碰到的是坚实的地面，但我的眼睛却看到我站在天空之上。这种感官冲突让我常常站在原地发抖。</p>
+<p>　　父母尝试了各种方法帮助我。他们在家里铺设了厚厚的地毯，以防我因眩晕而摔倒。他们在墙上贴满了箭头标识，提醒我方向。他们甚至考虑过让我戴上特制的眼镜，将画面再次颠倒回来，但医生警告说这可能会对我的大脑造成更大的混乱。</p>
+<p>　　“你的大脑正在尝试适应这种新的视觉输入，”神经科医生解释道，“如果我们再次人为干预，可能会导致更严重的后果。”</p>
+<p>　　于是，我只能学着与这个颠倒的世界共处。</p>
+<p>　　最初的几个月，我几乎无法离开家门。外面的世界太广阔，太开放，没有天花板的限制，只有无尽的蓝色深渊在我脚下延伸。每次我抬头看向“上方”的地面，都会感到一阵眩晕，仿佛随时会从这个世界上掉下去。</p>
+<p>　　雨天尤其可怕。雨滴从“上方”的大地落下，却在接近我之前消失在“下方”的天空中。这种违背物理规律的景象让我的大脑更加混乱。</p>
+<p>　　夜晚，当我躺在床上，我感觉自己悬浮在一片黑暗之上，头顶是同样黑暗的大地。这种无依无靠的感觉常常让我惊醒，大汗淋漓。</p>
+<p>　　我开始记日记，试图通过文字来理解和接受这个颠倒的世界。</p>
+<p>　　<em>第 47 天：今天尝试了在院子里散步。走了十步就开始恶心。但比上周的七步有进步。</em></p>
+<p>　　<em>第 83 天：梦见自己在正常的世界里行走。醒来后哭了一个小时。</em></p>
+<p>　　<em>第 112 天：今天看到一只鸟从“上方”飞向“下方”。它在我的视野中是倒着飞行的，却显得那么自然。我想知道在它眼中的世界是什么样子。</em></p>
+<p>　　六个月后，我决定重返学校。我已经落下太多课程，再不回去，这学年就要重修了。</p>
+<p>　　学校为我做了特殊安排。我的座位被安排在教室最后一排，靠墙的位置，这样我可以尽量减少视野中的开阔空间。老师们知道我的情况，但同学们只知道我因为车祸有些“视力问题”。</p>
+<p>　　第一天，当我走进教室，所有人都安静下来，用好奇的眼神看着我。在他们眼中，我是个普通人；在我眼中，他们全都倒立着，头朝下脚朝上地站在天花板上。</p>
+<p>　　“好久不见。”我曾经的好友走过来，拍了拍我的肩膀。在我的视野里，他是从天花板上倒挂下来的，像只蝙蝠。</p>
+<p>　　“嗯，好久不见。”我努力保持镇定。</p>
+<p>　　课堂上，老师在黑板上写字。对我来说，那些字全都是倒着的。我必须在脑海中将它们重新翻转才能理解。这需要额外的精力，让我常常感到疲惫不堪。</p>
+<p>　　午餐时间，我独自坐在角落里。看着同学们在我的视野中倒立着走来走去，让我感到一阵阵眩晕。食物从“上方”的盘子里被我拿起，送入口中，这个简单的动作在我的视觉中变得如此复杂。</p>
+<p>　　就在这时，一个女孩坐到了我对面。</p>
+<p>　　“你好，我是新转来的学生，叫珺。”她微笑着说，“我可以和你一起吃午餐吗？”</p>
+<p>　　这个理由总让我觉得，我们是两个落水的人，抱团相互取暖。区别仅在于她是新来的人，而我是落下的人。</p>
+<p>　　在我的视野中，她倒立着，长发垂向“上方”，却依然美丽动人。我点点头，不知道该说什么。</p>
+<p>　　“我听说你出了车祸，”她继续说道，“我很抱歉。一定很不容易吧？”</p>
+<p>　　这人真会说话，上来就戳人痛处。</p>
+<p>　　我犹豫了一下，然后决定实话实说：“比你想象的还要难。”</p>
+<p>　　“我能理解，”她轻声说，“我也经历过一些事情。”</p>
+<p>　　嗯……？你真的理解吗？我这怕是全球头一例吧？</p>
+<p>　　不知为什么，我那可怜的自尊心唤起了我的骄傲心。</p>
+<p>　　我抬起头，盯着她。在我的颠倒世界里，她的眼睛闪烁着光芒。</p>
+<p>　　“我有先天性耳聋，”她指了指自己的耳朵，我这才注意到她戴着助听器，“虽然现在有了这个，但世界对我来说还是不一样的。”</p>
+<p>　　那天之后，珺成了我的朋友。她似乎并不介意我有时会因为眩晕而突然停下来，或者需要更长的时间来阅读和理解文字。她耐心地等待，从不催促。</p>
+<p>　　“每个人感知世界的方式都不同，”她有一次这样告诉我。</p>
+<p>　　在珺的鼓励下，我开始尝试更多的事情。</p>
+<p>　　我居然学会了骑自行车，我之前视力正常的时候都没有学会。</p>
+<p>　　我想，应该是之前我总是在恐惧，而这次，我只能被迫感受我的身体。</p>
+<p>　　视觉与感受掐架，你总得相信一方。而我们都知道究竟是谁在撒谎。</p>
+<p>　　一年过去了，我的大脑开始适应这个颠倒的世界。眩晕的频率减少了，我可以更长时间地在户外活动而不感到恶心。我甚至可以阅读倒置的文字而不需要太多额外的努力。</p>
+<p>　　但——夜晚仍然困难。</p>
+<p>　　当我躺在床上，感觉自己悬浮在虚无之上，恐惧就会悄然而至。就像之前自己学自行车那样。</p>
+<p>　　有一天晚上，我又一次从噩梦中惊醒。梦中，我从地面上坠落，无限地下坠，坠往蔚蓝色的天空，永远无法找到着陆点。我坐起来，疯狂喘气，大汗淋漓。</p>
+<p>　　我拿起手机，犹豫了一下，然后给珺发了条信息：“你醒着吗？”</p>
+<p>　　几秒钟后，她回复：“醒着。怎么了？”</p>
+<p>　　“又做噩梦了。感觉自己在坠落。”</p>
+<p>　　“想聊聊吗？”</p>
+<p>　　我们通过视频通话连接。在我的屏幕上，珺是倒立的，但她的微笑依然温暖。</p>
+<p>　　我描述了那种无尽坠落的感觉，那种无助和恐惧。</p>
+<p>　　“你知道吗，”她思考了一会儿说，“也许你不是在坠落，而是在飞翔。”</p>
+<p>　　“什么意思？”</p>
+<p>　　“在你的视野中，天空在下方，对吧？那么当你感觉自己在下坠时，实际上你是在向天空飞去。”</p>
+<p>　　我从未这样想过。在我的颠倒世界里，下坠确实意味着向着天空移动。</p>
+<p>　　“试着这样想，”珺继续说，“你不是被困在一个颠倒的世界里，而是获得了一种独特的视角。你可以看到别人看不到的东西。”</p>
+<p>　　她最后补充了一句话，让我至今难忘。</p>
+<p>　　“我从动物世界上看过，说每只雄鹰在学会飞翔前，都会摔得很惨。”</p>
+<p>　　骗子。会摔，但是没有说的那么严重。</p>
+<p>　　我看着屏幕上她的脸，笑出声。</p>
+<p>　　“怎么了？”</p>
+<p>　　“没什么，”我想了想，“我只是觉得，你像一束光。”</p>
+<p>　　那天晚上之后，我开始尝试用不同的方式看待我的情况。也许这不仅仅只是一场灾难。</p>
+<p>　　我开始写作，描述我眼中的世界。我的文字吸引了一些人的注意，他们对这种独特的视角感到好奇。一位神经科学家甚至联系我，希望研究我的情况，以便更好地理解人类大脑的适应能力。</p>
+<p>　　两年后，我和珺一起参加了大学入学考试。我选择了文学专业，她选择了音乐。我们约定在同一所大学相见。</p>
+<p>　　考试那天，当我走进考场，看到那些倒立的考生和监考老师时，我不再感到恐惧。这已经成为我生活的一部分，一种我已经学会接受的现实。</p>
+<p>　　一个月之后，手机屏幕上的她倒立着欢呼：“我被录取了！”</p>
+<p>　　大学生活开始后，我和珺成了室友。</p>
+<p>　　她帮助我适应新环境，我则帮她记录那些她可能听不清的课堂内容。我们互相支持，互相理解，形成了一种奇妙的平衡。</p>
+<p>　　有一天，我们一起去看日落。坐在湖边，我看着太阳从“下方”的天空中升起，将湖水染成金色。</p>
+<p>　　“真美，”珺轻声说。</p>
+<p>　　“是啊，”我同意道，“虽然在我眼中，太阳是从下往上移动的。”</p>
+<p>　　“我都想看看是什么景色了呢。”她笑。</p>
+<p>　　“有时我会想，”我犹豫了一下，“如果有一天医学技术进步了，能修复我的视神经，让我重新看到正常的世界，我会接受吗？”</p>
+<p>　　珺思考了一会儿：“那取决于你。但我认为，无论你的世界是正立的还是颠倒的，重要的是你自己。”</p>
+<p>　　她握住我的手：“就像我的耳朵。即使有了助听器，我听到的世界也和你不一样。但这并不意味着我的世界更糟或更好，只是不同而已。”</p>
+<p>　　那一刻，我突然意识到，也许我一直在思考错误的问题。重要的不是我的视野是否颠倒，而是我如何利用这种独特的视角来理解和体验世界。</p>
+<p>　　大三那年，我的文学作品集《颠倒世界》出版了。这是一系列基于我独特视角的短篇小说和散文。出乎我的意料，它获得了广泛的关注和好评。</p>
+<p>　　“林的作品让我们看到了一个全新的世界，”一位评论家写道，“他不仅仅是描述了一种罕见的医学状况，更是提供了一种全新的思考方式。”</p>
+<p>　　珺为我举办了一个小型的庆祝派对。当我走进房间时，看到了一个特别的蛋糕——它被倒置放置，蜡烛向下燃烧。</p>
+<p>　　“这样在你眼中就是正的了，对吧？“她笑着问。</p>
+<p>　　我只想笑。</p>
+<p>　　他们似乎忘记了一个物理法则。点着的蜡烛，即使向下燃烧，火苗也还是正的。虽然蜡烛燃烧时是正的，但火苗仍然反着。</p>
+<p>　　笑着笑着，我哭了。</p>
+<p>　　这是第一次，有人为我的视角专门做了调整，而不是期望我去适应他们的世界。</p>
+<p>　　毕业前夕，我收到了一封特别的邮件。一位神经外科医生看了我的书，对我的情况产生了浓厚的兴趣。</p>
+<p>　　“我们可能有办法修复你的视神经，”他在邮件中写道，“这是一项实验性手术，我不敢保证一定成功，但成功率很高。”</p>
+<p>　　我将这个消息告诉了珺。</p>
+<p>　　“你会做吗？”她问，眼中充满关切。</p>
+<p>　　“我不知道，”我诚实地回答，“我已经习惯了这个颠倒的世界。如果突然变回正常，我不确定我能否适应。”</p>
+<p>　　她没说话，只是握住了我的手。</p>
+<p>　　我花了几周时间思考这个决定。一方面，能够看到正常的世界是我曾经梦寐以求的；另一方面，这个颠倒的视角已经成为我身份的一部分，塑造了我的思维方式和创作灵感。</p>
+<p>　　我决定接受手术。</p>
+<p>　　不是因为我想要“正常”，而是因为我想要体验另一种视角。就像珺说的，重要的不是我看到的世界是什么样子，而是我。</p>
+<p>　　手术前一天，珺陪我去了湖边，我们最喜欢的地方。</p>
+<p>　　手术那天，当我躺在手术台上，医生解释了整个过程。他们将尝试重新连接我的视神经，恢复正常功能。</p>
+<p>　　“准备好了吗？“医生问。</p>
+<p>　　我深吸一口气，点点头。</p>
+<p>　　麻醉生效前，我最后的念头是：无论结果如何，我都已经学会了在任何情况下找到美和意义。</p>
+<p>　　当我醒来时，房间里一片漆黑。我能感觉到绷带包裹着我的眼睛。</p>
+<p>　　“手术很成功，”我听到医生的声音，“但我们需要等待几天才能知道效果如何。”</p>
+<p>　　三天后，医生小心翼翼地取下了绷带。我慢慢睁开眼睛，心跳加速。</p>
+<p>　　光线涌入，我看到了医生和护士站在我面前，珺站在一旁，紧张地咬着嘴唇。</p>
+<p>　　他们都是正立的。</p>
+<p>　　天花板在上，地板在下。世界恢复了“正常”。</p>
+<p>　　“你能看到什么？“医生问，声音中带着期待。</p>
+<p>　　我看向珺，她的眼中充满希望和担忧。</p>
+<p>　　“我能看到……一切都正常了。”我轻声说。</p>
+<p>　　我从未想过正立的世界，竟然是一种恩赐。</p>
+<p>　　房间里爆发出欢呼声。珺冲过来拥抱我，泪水滑落她的脸颊。</p>
+<p>　　但奇怪的是，我感到一丝失落。那个颠倒的世界，尽管充满挑战，却也给了我独特的视角和灵感。现在它消失了，我不确定自己是否完全高兴。</p>
+<p>　　接下来的几周，我开始适应这个“新”的正常世界。不再有眩晕，不再有恶心，不再有那种悬浮在虚无之上的恐惧。我可以自由地走在户外，抬头看天空而不感到恐慌。</p>
+<p>　　但我发现自己常常怀念那个颠倒的视角。它让我看到了常人看不到的美，思考了常人不会思考的问题。</p>
+<p>　　一天晚上，我和珺坐在我们公寓的阳台上，看着星空。</p>
+<p>　　“想它了吗？”她突然问道，“那个颠倒的世界？”</p>
+<p>　　我点点头：“有时候。它让我与众不同。现在我只是……普通人了。”</p>
+<p>　　珺笑了：“你永远都是普通人，林，也永远都不会是。你经历了别人无法想象的事情，那已经成为你的一部分，”她顿了顿，“但也并没有成为超人。”</p>
+<p>　　我们都笑。</p>
+<p>　　她指向天空：“那些星星。对大多数人来说，它们只是夜空中的光点。但对你来说，它们曾经是你脚下的光芒。你拥有两种看世界的方式，这让你比任何人都更特别。”</p>
+<p>　　我思考着她的话，突然意识到一个事实：我确实拥有两种视角。我经历了常人无法想象的世界，这让我能够以更广阔的视野看待一切。</p>
+<p>　　我想写一本新书。</p>
+<p>　　几个月后，当我完成新书的初稿时，我收到了一封特别的信。是那位为我做手术的神经外科医生。附了几张我仍然看不懂的医学影像。</p>
+<p>　　“我们在研究你的案例时发现了一些有趣的事情，”他写道，“你的大脑在适应颠倒视觉的过程中发展出了一些独特的神经通路。这些通路在手术后仍然存在，这意味着你的大脑现在拥有两套处理视觉信息的系统。这在医学上前所未有。”</p>
+<p>　　我将这个消息告诉了珺。</p>
+<p>　　“所以你真的是独一无二的。”她惊叹。</p>
+<p>　　“我会不会爱上了一个特别的脑子？”旋即，她笑出声。</p>
+<p>　　我的新书《双重视角》出版后获得了比第一本更大的成功。我被邀请到各地演讲，分享我的经历和思考。</p>
+<p>　　在一次演讲后，一位年轻人走上前来，他的眼睛里闪烁着泪光。</p>
+<p>　　“谢谢你，”他说，“我有先天色盲，一直觉得自己有缺陷。听了你的想法，我觉得，也许我可以转变一下想法。”</p>
+<p>　　我真的很高兴你能这么想。</p>
+<p>　　五年后，我和珺结婚了。在我们的婚礼上，她为我准备了一个特别的惊喜。当我们跳第一支舞时，天花板上突然投影出了星空，地面变成了蓝天的影像。</p>
+<p>　　“这样你就可以再次体验那个世界，”她在我耳边轻声说。</p>
+<p>　　“那还是不要再体验了，正向的世界比较好。”</p>
+<p>　　我们都笑。</p>
+<p>　　“不过这次，我们一起。”她说。</p>
+<p>　　“我们一直都在一起。”</p>
+<p>　　我紧紧抱住她。</p>
+<p>　　我曾经是一个站在天空上，头顶着大地的人。现在我是一个拥有双重视角的人，能够看到常人看不到的美，理解常人理解不了的道理。</p>
+<p>　　那不仅仅再是一场灾难。</p>
+<p>　　有时，只有当世界颠倒，我们才能看清什么是真正重要的东西。</p>
+<br />
+<p>　　南国微雪 Miyuki</p>
+<p>　　2025 年 8 月 4 日</p>
+<h2 id="写在后面"><a class="header" href="#写在后面">写在后面</a></h2>
+<p>　　 <strong>因工作繁忙，本文有部分内容由 AI 辅助完成，非纯由作者写作。</strong></p>
+<p>　　这篇微小说没有什么剧情，只是一个怪异的人类想要活下去的故事。</p>
+<p>　　这篇小说部分源于我的医学爱好，另一部分则源于和一位朋友的聊天。</p>
+<p>　　世界上有非常多奇怪的人。现代医学对他们束手无策，发病机制不明，症状不清，无法治疗。</p>
+<p>　　比如那个<a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247493692&amp;idx=1&amp;sn=b138b4f9b0cf807e5fd96827b86daad5&amp;scene=21#wechat_redirect">颅骨内侧长满牙齿的人</a>；</p>
+<p>　　比如那个<a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247493692&amp;idx=1&amp;sn=b138b4f9b0cf807e5fd96827b86daad5&amp;scene=21#wechat_redirect">后脑勺又长出一张脸的人</a>。</p>
+<p>　　我的那位朋友，过敏原非常奇特，不是外来物，而是他自己的身体产生的东西。</p>
+<p>　　所以他饱受过敏的困扰，日常头痛、眩晕，发作时间不定，但频率十分高。</p>
+<p>　　我没有见过他，但仅从他的描述，我便觉得这个世界难以想象。</p>
+<p>　　在创作这篇小说的时候，我有时会想起《三体》里常伟思将军说的那些话。</p>
+<p>　　“常伟思露出了高深莫测的笑容：‘你很快就会知道一切的，所有人都会知道。汪教授，你的人生中有重大的变故吗？这变故突然完全改变了你的生活，对你来说，世界在一夜之间变得完全不同。’</p>
+<p>　　“‘没有。’</p>
+<p>　　“‘那你的生活是一种偶然，世界有这么多变幻莫测的因素，你的人生却没什么变故。’</p>
+<p>　　“汪淼想了半天还是不明白。‘大部分人都是这样吗。’</p>
+<p>　　“‘那大部分人的人生都是偶然。’</p>
+<p>　　“‘可……多少代人都是这么平淡地过来的。’</p>
+<p>　　“‘都是偶然。’</p>
+<p>　　“汪淼摇头笑了起来，‘得承认今天我的理解力太差了，您这岂不是说……’</p>
+<p>　　“‘是的，整个人类历史也是偶然，从石器时代到今天，都没什么重大变故，真幸运。但既然是幸运，总有结束的一天；现在我告诉你，结束了，做好思想准备吧。’”</p>
+<p>　　 <strong>我们能够不用饱受痛苦地、健康而愉快地活到现在，是幸运吗？是偶然吗？</strong></p>
+<p>　　这只是我认识的一个“偶然”之外的人。</p>
+<p>　　世界上，应该还有许许多多的，离散分布的“偶然”的人们。</p>
+<p>　　 <strong>但成为这些离散点，成为这些“偶然”点，并非他们的意愿。他们只是被选中了。</strong></p>
+<p>　　因为恐惧黑暗而难以入眠的人们；</p>
+<p>　　因为花粉过敏而无法享受春天的人们；</p>
+<p>　　因为无法流泪而遭受冷眼的人们；</p>
+<p>　　因为盲聋哑而拼尽全力的人们；</p>
+<p>　　因为无法感受疼痛而短寿的人们；</p>
+<p>　　因为血型特殊而无法输血的人们；</p>
+<p>　　……</p>
+<p>　　这个世界或许不爱你们，但要记得，还有人在爱着你们。</p>
+<p>　　至少，我爱你们。</p>
+<p>　　这就是我创作这篇小说的最大意义。</p>
+<h2 id="封面图"><a class="header" href="#封面图">封面图</a></h2>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/novels/imagination/susanne-feldt-SIoHky3TPeo-unsplash.jpg" alt=""></p>
+<blockquote>
+<p>摄影师・画师 | Susanne Feldt</p>
+<p>图源 | Unsplash</p>
+</blockquote>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../生活碎笔/小说/想象力训练/想象力训练.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../生活碎笔/小说/想象力训练/理想雪-与风沙为敌友.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../生活碎笔/小说/想象力训练/想象力训练.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../生活碎笔/小说/想象力训练/理想雪-与风沙为敌友.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/小说/想象力训练/理想雪-站在天空上，头顶着大地的人.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

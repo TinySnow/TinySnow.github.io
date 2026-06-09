@@ -1,0 +1,888 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>⭐️感觉自己正在慢慢变成大人 - 2024 年度总结 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="感觉自己正在慢慢变成大人---2024-年度总结"><a class="header" href="#感觉自己正在慢慢变成大人---2024-年度总结">感觉自己正在慢慢变成大人 - 2024 年度总结</a></h1>
+<h2 id="写在前面"><a class="header" href="#写在前面">写在前面</a></h2>
+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">2314 字 | 年度总结 | 回顾 | 展望 | 反思 | 总结</p>
+
+<h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>　　今年的年度计划写得很早，十一月就开始了。</p>
+<p>　　写下这些时，外面正在下雨，淅淅沥沥。银行大厅内安静而温暖，地面反射着明亮的光。接近小雪，冬季的雨总是格外寒人心肺。</p>
+<p>　　我仍然在这里工作。走到这里，完全属于误打误撞。</p>
+<p>　　我不知道是否应该感谢那个迷路到今天的自己。我只知道，这一年里，我仿佛身处现代社会的十字路口，看着来往的列车轰鸣。</p>
+<p>　　进入这个行业后，我曾经抱着巨大的迷惑看着它：不理解这种没有任何实体产出的空中楼阁，为什么把持着全社会的命脉。</p>
+<p>　　如今，我想通了。</p>
+<p>　　19 世纪的法国医生卡萨尼斯曾说：“人与血管同寿。”</p>
+<p>　　对人体而言，是血管；对经济而言，是金融；对社会而言，是交通；对能源而言，是电。</p>
+<p>　　<u> <strong>决定他们重要性质的，是“流通”本身。</strong> </u></p>
+<p>　　金融业——好的时候，是渠，灌溉四方；坏的时候，是铁索连环，火烧赤壁。</p>
+<p>　　我仍然不喜欢这个行业。也或许，我只是不喜欢资本。</p>
+<p>　　四季轮转，今年印象最深刻的事情发生在秋季。而秋季本身，又总是姗姗来迟。</p>
+<p>　　只有在哈尔滨落地，出机舱门的那一刻，我才觉得有了些秋的韵味。但那或许也只是东北特有的寒冷。</p>
+<p>　　北方的冷和南方的冷不同。北方的冷清澈、通透、纤细，一瞬间就能钻入人的身体而不觉得违和。南方的冷在这方面有些野蛮，从四周包围，步步紧逼。</p>
+<p>　　在萧山机场，我差点误机。在天府落地，心里数了数朋友们，发出一声叹息。哈尔滨实在太远了。所以今年 5 月份，我对珍做出了承诺：我一定会去见她。</p>
+<p>　　<u>而在 4 个月后，我做到了。</u></p>
+<p>　　十月的一天，她忽然和我发消息，说哈尔滨降温了。那时候，我们这里还很热。那个瞬间，我想，北方的冬天似乎来得比南方早得多。</p>
+<p>　　或许，冬天去哈尔滨见见南方孩子痴迷的雪，也是一种体验呢。</p>
+<p>　　如果说，承诺，对我而言，意味着不计代价的实现，那么计划，便有了更多回旋的余地。它需要完成，只是不再强制要求。</p>
+<p>　　遗憾的是，今年的年度计划，我并没有完全完成，还差一项。</p>
+<p>　　年度计划，从学习管理学之后才开始拟定。算上今年也才两年，却似乎已经成为了一种习惯。然而，我一直有些遗憾，要是能够早点开始，或许就能做更多的事情了。</p>
+<p>　　工作之后，疲于奔命。只能挤出海绵里的水，用仅剩不多的时间去完成。</p>
+<p>　　完成写作 34 篇文章、20 首诗词、3 篇随记、4 篇小说，看了 22 本书、2 部电影和《三体》的剧。不连上年度计划，看起来成果似乎还不错。但我总还是不太满意，我仍然浪费了大把大把的时间。</p>
+<p>　　也或许，能做更多的事情，只是我的一厢情愿吧。那些所谓“浪费的时间”，或许还有另外一个代名词，叫做“休息”。</p>
+<p>　　而关于休息，今年最意外的收获，只会是跳舞。</p>
+<p>　　它不在我的年度计划之内。甚至，我专长的舞种，都不是现在所学的舞种。</p>
+<p>　　在此之前，我一直都惧怕跳 Breaking。 <u>它困难、需要力量、要求具备突破极限的勇气。而我怯懦、瘦弱、软弱。</u></p>
+<p>　　四月的某个晚上，我感觉不能再这样下去了，于是做了一个艰苦的决定。</p>
+<p>　　许多个夜晚，我都在日记里写着：我希望我具备战胜它的勇气。</p>
+<p>　　从 Freeze，到头定，到头转，到 360，再到风车。四月到十二月。</p>
+<p>　　头定和头转那段时间，头上几乎总是鼓着一个包；肩定的前置练习，肩膀总是乌青；练风车时经常摔到左右髂棘；最后终于败在 360 身上，积累起髌下水肿，强制休息了整个十一月。</p>
+<p>　　然而，比起朝哥在暑假班教学生时的跟腱断裂，我觉得不算什么。</p>
+<p>　　朝哥在九月的某个晚上，过来叫我坐下，说让我看看视频可能会有帮助。顺便讲起了他创立的 Crew。</p>
+<p>　　那天晚上，我几乎都忘光了。仅仅记住了一句话。</p>
+<p>　　“我在开这家工作室时，特意在队标上加了一个 The Last One。</p>
+<p>　　“我确实是这片地区，最后一个坚持着最纯粹街舞的人了。</p>
+<p>　　“队标里 Journey Beggins 的 Beggin，既是‘开始’，也是‘乞丐’。坚持着这种东西，永远赚不到钱。</p>
+<p>　　“我一直以来最大的愿望，就是带出来一个学生，能够代表这片地区出去比赛。</p>
+<p>　　“我也只有这个愿望了。”</p>
+<p>　　<u> <strong>那一瞬间，我对人的复杂，才真正有了一个具象化的认识。</strong> </u></p>
+<p>　　底层的信仰，或许才是人们最大的区别。</p>
+<p>　　“除了小孩子，你这里没有招到其他人吗？”我曾经问他。</p>
+<p>　　“曾经有一个，”他想了想说，“然后上了七八节课，跑了。”</p>
+<p>　　沉默良久，他才对我说了下一句话。</p>
+<p>　　“你出来工作了，应该懂成年人的压力。”</p>
+<br />
+<p>　　 <strong>我不确定我懂不懂。我只感到了一种巨大的困惑。</strong></p>
+<p>　　 <strong>我受到的教育，从来都是诚实。</strong></p>
+<p>　　 <strong>没有人教我怎样欺诈。</strong></p>
+<p>　　 <strong>没有人教我怎么反抗，怎样在一团乱麻中串联信息，怎样逢场作戏、虚与委蛇，怎样舔舐伤口，怎样在巨大的社会鸿沟面前弥补自己的精神裂痕。</strong></p>
+<p>　　我不清楚这是不是长大。</p>
+<p>　　我从来不知道要费尽万千努力，把自己逼到七窍流血，控制情绪到胃里翻江倒海，才能成为这个社会上——看起来普通而平凡的正常人。</p>
+<p>　　人们说，人生就是一个不断幻灭的过程。</p>
+<p>　　<u> <strong>我们在一次次幻灭中，捡起自己的碎片，在巨大的狰狞下重建自我。</strong> </u></p>
+<p>　　将时间拉到更长，我相信，未来会看到更多利益攸关且无法调和的矛盾，更多哲学层面的冲突和碰撞。</p>
+<p>　　如果说，观察到这种教育和社会之间的巨大鸿沟叫做长大，那么，我感觉我正在慢慢长大。</p>
+<p>　　或许，我们早该意识到，教育可能另有其目的，并非是要将人培养成社会需要的样子。</p>
+<p>　　 <strong>我不知道 2025 年我会不会发现更多让人困惑的事实与冲突，我只知道我们将一直走下去。</strong></p>
+<p>　　 <strong>在规训与质疑中、在顺从与反抗中、在享乐与忧虑中、在谋划与短视中、在希望与失望中、在坚持与迷茫中，走下去。</strong></p>
+<p>　　按照目前的经济学知识，2025 年可能是比较重要的一年。我说不准。</p>
+<p>　　但我最低的标准仍然是：生命与健康。朋友们寻求建议时，我也依然这样说，注意安全，珍重身体。</p>
+<p>　　所以，2025 年无论怎样，我想这一条，永不会变。至于其他所思、所想、所计划、所决定，能完成多少就完成多少吧。只要在行动就可以了。</p>
+<br />
+<p>　　“宇宙以其不息的欲望将一个歌舞炼为永恒。这欲望有怎样一个人间的姓名，大可忽略不计。”</p>
+<br />
+<p>　　南国微雪 Miyuki</p>
+<p>　　2024 年 12 月 6 日</p>
+<h2 id="2024-年年度计划执行情况tldr"><a class="header" href="#2024-年年度计划执行情况tldr">2024 年年度计划执行情况（TL;DR）</a></h2>
+<pre><code>- [x] 练习会唱：《カタオモイ》《心拍数♯0822》（2024.6.13）
+- [x] 日语语法指南 看完（2024.1.23）
+- [x] 《Baba is You》三个大关卡（2024.1.8）
+- [x] 《黑神话：悟空》通关（2024.11.1）
+- [ ] 【经过调整已废弃终止】【延续自 2023】Rust 的 Spring Boot 代码生成器 基础功能
+- [x] 跑步 100 公里（2024.3.26）
+- [x] 存到能买起 99 新 E 18-135mm f3.5-5.6 OSS 镜头的钱（2024.4.19）
+- [x] 87 个 Hiphop 元素基础动作（非进阶叠加）（2024.11.30）
+- [ ] 【延续自 2023】计算机科学极简入门指南（至少）计算机组成原理部分
+- [x] 《药理学》（2024.6.15）
+- [x] 编曲一首：主歌副歌体音乐（2024.8.18）
+</code></pre>
+<h2 id="2025-年年度计划tldr暂定"><a class="header" href="#2025-年年度计划tldr暂定">2025 年年度计划（TL;DR，暂定）</a></h2>
+<h3 id="注意"><a class="header" href="#注意">注意</a></h3>
+<ul>
+<li>因并无生理学基础，内科学计划随时可能调整终止，或转向生理学</li>
+</ul>
+<h3 id="详情"><a class="header" href="#详情">详情</a></h3>
+<pre><code>- [ ] 至少有 93 天在 24:00 之前睡觉（以真正打算睡觉时间为准，记录日期，舍弃年份）
+- [ ] 减掉下腹部腰围至少1cm（初始下腹腰围81cm）
+- [ ] 【延续自 2023】计算机科学极简入门指南（至少）计算机组成原理部分
+- [ ] 内科学前四篇（总论、呼吸系统疾病、循环系统疾病和消化系统疾病）
+- [ ] FPGA 入门
+- [ ] 和声学教程（伊·斯波索宾，增订重译版）
+</code></pre>
+<h2 id="2024-年已读书目"><a class="header" href="#2024-年已读书目">2024 年已读书目</a></h2>
+<h3 id="凡例"><a class="header" href="#凡例">凡例</a></h3>
+<blockquote>
+<p>⭐️(类别)书名(原书名) - [作者国别]作者中文译名(作者原语言名)(备注)</p>
+</blockquote>
+<ul>
+<li>省略书名号，节省字数。</li>
+<li>回车隔开。</li>
+<li>遗忘书目不计在内。</li>
+<li>⭐️表示推荐阅读。</li>
+<li>部分组成依据书籍省略。</li>
+<li>暂不添加译者信息。</li>
+</ul>
+<h3 id="详情-1"><a class="header" href="#详情-1">详情</a></h3>
+<pre><code>1. 日语入门：零起点图解一看就会 - 川边成，张浩然 - &lt;2023.12.31-2024.1.1&gt;
+2. 日语语法指南 - Tae Kim - &lt;2024.1.5-2024.1.23&gt;
+3. 把时间当作朋友 - 李笑来 - &lt;2024.1.26-2024.2.3&gt;
+4. 微习惯：简单到不可能失败的自我管理法则 - [美]斯蒂芬·盖斯 - &lt;2024.1.5-2024.1.9&gt;
+5. 杀死一只知更鸟 - [美]哈珀·李 - &lt;2023.11.23-2023.12.31+2024.2.10-2024.2.13&gt;
+6. ⭐️置身事内：中国政府与经济发展 - 兰小欢 - &lt;2023.10.22-2023.12.31+2024.2.13-2024.2.15&gt;
+7. 福格行为模型 - [美]B.J.福格 - &lt;2024.2.21-2024.2.26&gt;
+8. 稀缺：我们是如何陷入贫穷与忙碌的 - [美]塞德希尔·穆来纳森(Sendhil Mullainathan),[美]埃尔德·沙菲尔(Eldar Shafir) - &lt;2024.3.1-2024.3.8&gt;
+9. 雪球专刊：不可不知的保险常识 - 雪球 - &lt;2023.12.10-2024.1.2+2024.3.11-2024.3.13&gt;
+10. 你的第一本保险指南 - 槽叔 - &lt;2024.2.15-2024.3.23&gt;
+11. 软件设计师考试同步辅导——考点串讲、真题详解与强化训练 - 钟彩华 傅伟玉 - &lt;2024.3.11-2024.5.24&gt;
+12. 小岛经济学 - [美]彼得·希夫(Peter D. Schiff),[美]安德鲁·希夫(Andrew J. Schiff) - &lt;2024.3.27-2024.3.30&gt;
+13. 不要用别人的脑子思考你的人生 - 采薇 - &lt;2024.4.20-2024.4.23&gt;
+14. 献给阿尔吉侬的花束 - [美]丹尼尔·凯斯(Daniel Keyes) - &lt;2024.4.25-2024.4.29&gt;
+15. 洞穴奇案 - [美]萨伯(Peter Suber) - &lt;2024.4.30-2024.5.11&gt;
+16. 雪球专刊第 40 期：普通青年投资理财指南 - 雪球 - &lt;2024.5.8-2024.5.12&gt;
+17. 诗歌手册：诗歌阅读与创作指南 - [美]玛丽·奥利弗 - &lt;2024.5.13-2024.5.18&gt;
+18. 西游记 - 吴承恩 - &lt;2024.6.8-2024.7.4&gt;
+19. 飞鸟集 - [印]罗宾德拉纳特·泰戈尔 - &lt;2024.7.10-2024.7.11&gt;
+20. 金融专业知识和实务(中级)(全国经济专业技术资格考试用书) - 人力资源和社会保障部人事考试中心 - &lt;2024.7.30-2024.8.31&gt;
+21. 经济基础知识(中级)(全国经济专业技术资格考试用书) - 人力资源和社会保障部人事考试中心 - &lt;2024.7.30-2024.10.8&gt;
+22. 香帅金融学讲义 - 香帅 - &lt;2024.10.12-2024.11.15&gt;
+23. ⭐️理财就是理生活 - 邢力 - &lt;2024.11.25-2024.12.2&gt;
+24. 稳健投资：年化 10% 收益率的基金组合 - 认真的天马 - &lt;2024.11.25-2024.12.3&gt;
+25. 定投十年财务自由 - 银行螺丝钉 - &lt;2024.11.24-2024.12.4&gt;
+26. 终身成长 - [美]卡罗尔·德韦克(Carol S.Dweck, Ph.D.) - &lt;2024.11.28-2024.11.29&gt;
+</code></pre>
+<h2 id="2024-年观影记录"><a class="header" href="#2024-年观影记录">2024 年观影记录</a></h2>
+<pre><code>1. 正义联盟（Justice League，扎克·施耐德 版）
+2. 三体（电视剧，腾讯版）
+3. 守望者（Watchmen，导演剪辑版）
+</code></pre>
+<h2 id="2024-年创作篇目"><a class="header" href="#2024-年创作篇目">2024 年创作篇目</a></h2>
+<h3 id="前注"><a class="header" href="#前注"><strong>前注</strong></a></h3>
+<ul>
+<li>蓝色字样可点击跳转，如不能跳转则为在草稿箱中还未发布；</li>
+<li>按时间顺序正序排列；</li>
+<li>《学海计划》系列文章和《计算机科学极简入门指南》系列文章暂不纳入创作篇目中。</li>
+</ul>
+<h3 id="文章"><a class="header" href="#文章">文章</a></h3>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490490&amp;idx=1&amp;sn=a875f9ca4dc28d47d9c41e03365d140f&amp;scene=21#wechat_redirect">赴约、幸运与感情</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489724&amp;idx=1&amp;sn=33e9bd43a05a5f2746f86471aa11b895&amp;scene=21#wechat_redirect">八字手链人物传记计划——骆</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489425&amp;idx=1&amp;sn=428f96d315cc1efd3b37d1635b9e0608&amp;scene=21#wechat_redirect">这世界是一个巨大的草台班子</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489424&amp;idx=1&amp;sn=457073148f4fdcd91b9de0b67f0ce9d9&amp;scene=21#wechat_redirect">老师也是小孩子</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489791&amp;idx=1&amp;sn=d5c26c112697496eb54b4fc02c2cf608&amp;scene=21#wechat_redirect">男性天生有缺陷</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489646&amp;idx=1&amp;sn=590dccb0783168447a311cf3cbd87f96&amp;scene=21#wechat_redirect">黯淡的荧光棒</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489797&amp;idx=1&amp;sn=a3060cc00ef73b674dd5ec515a49bffb&amp;scene=21#wechat_redirect">人生就像一场马拉松</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490239&amp;idx=1&amp;sn=51a3121f8db88478fc224542c2e001b4&amp;scene=21#wechat_redirect">时间不公平</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489587&amp;idx=1&amp;sn=bda97aec1b5b103ee9b4a5db34217dd0&amp;scene=21#wechat_redirect">我的恋爱只能在梦里</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490241&amp;idx=1&amp;sn=52b66d2f8f626adfac7efd4e7363c28e&amp;scene=21#wechat_redirect">专注或许不曾被你注意到</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490979&amp;idx=1&amp;sn=a935e7e56ca6564c23e319ae6219a996&amp;scene=21#wechat_redirect">镁光灯下的黑暗</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489798&amp;idx=1&amp;sn=4afa7313194bd9c12929d81dbb2cf89d&amp;scene=21#wechat_redirect">工作半年多的感想</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489846&amp;idx=1&amp;sn=971493d29a5bc78a932a0a8151e77b7c&amp;scene=21#wechat_redirect">身为学生，最后的旅行</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490196&amp;idx=1&amp;sn=1aebe4e9986a5a16132d0d16ae213feb&amp;scene=21#wechat_redirect">有些人，就这样消散在风里</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490624&amp;idx=1&amp;sn=bdb6e1a53645feb44b2904e2609b167a&amp;scene=21#wechat_redirect">生财有术与卖铲子的商人</a></li>
+<li>吃出的爱意</li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491228&amp;idx=1&amp;sn=8afb86d6a50ad053fb59b2323533e9a0&amp;scene=21#wechat_redirect">孩子特有的纯真</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490454&amp;idx=1&amp;sn=f668472c404d44d55f2cf2c9c1e15307&amp;scene=21#wechat_redirect">论“小姐”</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490625&amp;idx=1&amp;sn=ee76985a983977132f0a57321308a5a3&amp;scene=21#wechat_redirect">好日子还在后面呢：浅谈未来十年变化趋势</a>（付费文章，1 块钱）</li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490528&amp;idx=1&amp;sn=bad429e752ca9f9660dfa865b813d1bb&amp;scene=21#wechat_redirect">金融系统与马太效应</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492448&amp;idx=1&amp;sn=dcdf506c996154e964e6b3ba1e536bfc&amp;scene=21#wechat_redirect">我没有见过这样的黄昏</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490841&amp;idx=1&amp;sn=1351b2ad817e819e1996306f7f337851&amp;scene=21#wechat_redirect">我为什么选择留长发</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491158&amp;idx=1&amp;sn=c90211b9ed4ffa41e564eee858500175&amp;scene=21#wechat_redirect">关于“记忆承载”内容的一点看法</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491331&amp;idx=1&amp;sn=85a9c3580344692af40f9428f8d1c84f&amp;scene=21#wechat_redirect">订书钉与回形针</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491576&amp;idx=1&amp;sn=8509c39e89b916a4d55a38bdb3383957&amp;scene=21#wechat_redirect">极限逼近法</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491308&amp;idx=1&amp;sn=2f2cc451f37682e0f153cc88ee53ab48&amp;scene=21#wechat_redirect">西安之行</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491465&amp;idx=1&amp;sn=1f9fac33f1dafb8fb38f41354448aed0&amp;scene=21#wechat_redirect">哈尔滨的珍同学</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491499&amp;idx=1&amp;sn=df5f8e4bcac70ed6c1da1fbc568bd990&amp;scene=21#wechat_redirect">佳芯小姐与猫</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491966&amp;idx=1&amp;sn=3949a7c9fa341725f24a00d8998568e5&amp;scene=21#wechat_redirect">我记得我曾喜欢过冬天</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492421&amp;idx=1&amp;sn=85efab9881d353c0dffed571cb511024&amp;scene=21#wechat_redirect">母亲的回头</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492184&amp;idx=1&amp;sn=8ef503d6ee60355bf2e8bd3ea5e57f94&amp;scene=21#wechat_redirect">小时候的萤火虫</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492189&amp;idx=1&amp;sn=a1962d8940ff6393b6edb9e1f674d00e&amp;scene=21#wechat_redirect">当下与经济学</a></li>
+<li>只缘身在旅途中</li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492609&amp;idx=1&amp;sn=58c0c0718afe8028cf15fdce995e0eae&amp;scene=21#wechat_redirect">为什么我信仰长期主义，并且认为觉得没有战略是很恐怖的事情？</a></li>
+</ol>
+<h3 id="随记"><a class="header" href="#随记">随记</a></h3>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491051&amp;idx=1&amp;sn=21ed1cb9257819963fb7c676770f6076&amp;scene=21#wechat_redirect">随记 - 2024 年 4 月 12 日</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492746&amp;idx=1&amp;sn=e0869732b0006d4d146f4e643a0a65dc&amp;scene=21#wechat_redirect">随记 - 2024 年 12 月 5 日</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492830&amp;idx=1&amp;sn=f5c0c86367f472357957e0adc95abca5&amp;scene=21#wechat_redirect">随记 - 2024 年 12 月 16 日</a></li>
+</ol>
+<h3 id="诗词"><a class="header" href="#诗词">诗词</a></h3>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489241&amp;idx=1&amp;sn=634b2546e316f5e47a2049298d0862cb&amp;scene=21#wechat_redirect">我愿化作一株野草</a></li>
+<li>在王座上死去（无法发布）</li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490836&amp;idx=1&amp;sn=71ce8fbf00252c80c96d8b06276b3b4d&amp;scene=21#wechat_redirect">溜走</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490489&amp;idx=1&amp;sn=66aac2b6996fa133275081eceb40aec7&amp;scene=21#wechat_redirect">红玫瑰与纸飞机</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490580&amp;idx=1&amp;sn=41c86ebb63f709aa2a171aad9817db0b&amp;scene=21#wechat_redirect">我在刺杀你的路上，买了一束鲜花</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490842&amp;idx=1&amp;sn=0f17c6433431e54913b0831ffbcdab43&amp;scene=21#wechat_redirect">幽暗的隧道</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490912&amp;idx=1&amp;sn=d5ebdd7a3092d31e047fcb381f0221ec&amp;scene=21#wechat_redirect">我的爱如春风化雨</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492484&amp;idx=1&amp;sn=b764e9c7cf7b838930eb9726f39cc13e&amp;scene=21#wechat_redirect">在暴雨中追逐一只白色的猫</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491575&amp;idx=1&amp;sn=af7d94b6d4ddfa04ea61f8bea60af9e6&amp;scene=21#wechat_redirect">有时候，我希望国家变得如足球场那样大</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491052&amp;idx=1&amp;sn=bb8dbea6e4af0cbed9bf1d0c475a93df&amp;scene=21#wechat_redirect">来一场盛大而梦幻的坠机</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492192&amp;idx=1&amp;sn=544279a467fbdb92ae5544f88d280f10&amp;scene=21#wechat_redirect">那两天，我的灵魂缺失了</a></li>
+<li>终极的爱</li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492239&amp;idx=1&amp;sn=f647dd2ee8ab0de35d5dd926361c275c&amp;scene=21#wechat_redirect">第 820 次风洞试验</a></li>
+<li>在你的面前失语</li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492831&amp;idx=1&amp;sn=7c6a2bab8c6777a284f0e90ae253d1ca&amp;scene=21#wechat_redirect">忆秦娥</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492839&amp;idx=1&amp;sn=549ce8f9638621c44420c97c88bb0779&amp;scene=21#wechat_redirect">我的思念藏在海里</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492422&amp;idx=1&amp;sn=761e1356ffaa86673c355b251c24ab57&amp;scene=21#wechat_redirect">“谵妄”</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492891&amp;idx=1&amp;sn=9a59e48e7eb93d8ca76f1e385c4a8dde&amp;scene=21#wechat_redirect">白月光</a></li>
+<li>我身处于无限的欲望中</li>
+</ol>
+<h3 id="小说"><a class="header" href="#小说">小说</a></h3>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490911&amp;idx=1&amp;sn=12999d53939f6c385242ca1a687c1227&amp;scene=21#wechat_redirect">理想雪 - 必须服从命令的一天</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491343&amp;idx=1&amp;sn=c2887caf07789d19db50d36a3351d264&amp;scene=21#wechat_redirect">理想雪 - 永远恒温的衣服</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491227&amp;idx=1&amp;sn=095cadc5710312e8da09e43b4cecb9aa&amp;scene=21#wechat_redirect">理想雪 - 就是为了来见你</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247492391&amp;idx=1&amp;sn=3f9a6d9942d73406876966fd51e9808e&amp;scene=21#wechat_redirect">理想雪 - 翠鸟协会</a></li>
+</ol>
+<h2 id="截至-2024-年的梦想清单执行情况"><a class="header" href="#截至-2024-年的梦想清单执行情况">截至 2024 年的梦想清单执行情况</a></h2>
+<pre><code>1. - [x] 去往同一所大学；（于 2019.9.1 失败）
+
+2. - [x] 跑步公里数总计 300 公里；（于 2023.4.4 完成）
+
+3. - [x] 主厨或帮厨做成一次全宴；（于 2022.6.5 完成：轰趴馆）
+
+4. - [x] 20 首以上原创诗歌；（于 2021.11.30 完成）
+
+5. - [x] 30 篇小说；（于 2022.10.5 完成）
+
+6. - [ ] 日语 N3 等级；
+
+7. - [ ] 5 幅以上插画；
+
+8. - [x] 10 件不同风格的衣服；（于 2023.5.5 完成）
+
+9. - [x] 无偿捐赠一次；
+- （于 模糊时间 完成：忧郁的弟弟）
+- （于 2021.10.8 完成：Zlib.org）
+
+10. - [x] 每年阅读至少[一本书](https://tinysnow.github.io/笔记/记录/已读书目记录.html)；
+
+11. - [x] 恋爱一次；（于 2021.9.16 - 2021.10.11 完成：佳芯小姐）
+
+12. - [x] 作曲编曲一首；（于 2023.11.21 [完成](https://t.me/TinySnow4Yi/4856) ）
+
+13. - [x] 参加一次街舞比赛；（于 2024.9.16 完成：Turn Up 巴中站）
+
+14. - [x] 编写一个自己的网站；（于 2022.7.23 完成：[博客](https://tinysnow.github.io) ）
+
+15. - [x] 游玩一款游戏 2 遍以上；（于 2022.7.30 完成：Terraria）
+
+16. - [x] 用 PR 剪一次作品；
+- （于 2023.4.7 完成：[舞蹈视频](https://t.me/TinySnow4Yi/4078) ）
+- （于 2023.6.4 完成：[给 KID 2020 届干事](https://t.me/TinySnow4Yi/4288) ）
+
+17. - [x] 洗牙一次；（于 2021.2.3 完成）
+
+18. - [ ] 去一次法国巴黎；
+
+20. - [ ] 去一次日本北海道周围或者东京都；
+
+21. - [x] 拥有一台相机；（于 2023.2.26 完成）
+
+22. - [ ] 为喜欢的人梳一次头发；
+
+22. - [x] 跑一次半马；
+- （于 2023.6.14 完成）
+- （于 2024.3.22 完成）
+
+24. - [x] 乘坐一次飞机；
+- （于 2023.5.18 完成，成都天府 -&gt; 烟台蓬莱）
+- （于 2023.5.25 完成，杭州萧山 -&gt; 成都天府）
+- （于 2024.9.7 完成，成都天府 -&gt; 哈尔滨太平）
+- （于 2024.9.9 完成，哈尔滨太平 -&gt; 成都天府）
+
+25. - [x] 看一次海；
+- （于 2023.5.19 完成）
+- （于 2023.5.21 完成）
+
+26. - [ ] 自驾带家人去川西旅游一次。
+</code></pre>
+<h2 id="2024-年年度照片"><a class="header" href="#2024-年年度照片">2024 年年度照片</a></h2>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC03964.jpg" alt=""></p>
+<p>　　参加工作后，第一次与旧友赴约，重拾生活热情，找到了生活的意义。详见<a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490490&amp;idx=1&amp;sn=a875f9ca4dc28d47d9c41e03365d140f&amp;scene=21#wechat_redirect">《赴约、幸运与感情》</a>。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/DSC07116.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-09-12_10-39-13.jpg" alt=""></p>
+<p>　　履行承诺，前往哈尔滨与珍的会面。因最有意义的一张照片，与原文相同未获本人授权放出，故使用原文中图片替代。详见<a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491465&amp;idx=1&amp;sn=1f9fac33f1dafb8fb38f41354448aed0&amp;scene=21#wechat_redirect">《哈尔滨的珍同学》</a>。</p>
+<p>　　同时，原文为唯一一次使用：加粗、下划线、墨蓝字体和背景色四种格式表示极度强调。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-12-29_22-15-58.jpg" alt=""></p>
+<p>　　辅助斯学会自行车。时至今日，我都很难言说当时是一种怎样的心情：蔚蓝的天空下，我推着他的自行车在后面狂奔，等他稳定之后放开脱手，看着他骑着车慢慢地离我远去。现在想来，既有开心，也有一阵莫名的酸楚。</p>
+<p>　　不过这个二货，学车时没摔，学成时高兴了发癫把自己摔了，草。详见<a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247490932&amp;idx=1&amp;sn=125839496e8d9ae8963043509a0cf6c2&amp;scene=21#wechat_redirect">《【日记】这个人居然一个小时就学会了自行车……（2627 字）》</a>。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/20240923183455.png" alt=""></p>
+<p>　　与五位网友 Hut、蓝言、Acolaen、kit、🐱 的西安会面。详见<a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247491308&amp;idx=1&amp;sn=2f2cc451f37682e0f153cc88ee53ab48&amp;scene=21#wechat_redirect">《西安之行》</a>。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-12-29_22-17-25.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-12-29_22-17-29.jpg" alt=""></p>
+<p>　　大概是我目前送过的，最贵的礼物。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-12-29_22-18-04.jpg" alt=""></p>
+<p>　　目前为止我最喜欢的 AI 生成图。眼睛微眯、淡色妆容、唇角勾起面含笑意，这些连同其他一些元素，将“女性之美”展现得日惊月泣。</p>
+<p>　　在此之前，我没有看过任何一张图能做到此地步。包含如此多元素的同时，每一个细节都能近乎完美地展现女性之美，让美学体验层层叠加，突破天际。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-12-29_22-18-26.jpg" alt=""></p>
+<p>　　那天，我还不知道后面会发生什么，只是做出了这个决定。或许这就是梦开始的地方。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-12-29_22-19-04.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-12-29_22-18-58.jpg" alt=""></p>
+<p>　　有没有一种可能，不止是当天的我，就连现在看到这两张风景时的你，也会觉得生活有那么一两个瞬间，美好如梦幻。</p>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/photo_2024-12-29_22-19-41.jpg" alt=""></p>
+<p>　　那时候，基本功还不牢固。但我仍然很喜欢那个努力拍下这张剪影的自己。</p>
+<h2 id="2024-年年度投资收益数据截至-2024-年-12-月-29-日"><a class="header" href="#2024-年年度投资收益数据截至-2024-年-12-月-29-日">2024 年年度投资收益（数据截至 2024 年 12 月 29 日）</a></h2>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/2024年年度投资收益.png" alt=""></p>
+<h2 id="2024-年年度计划执行情况详情"><a class="header" href="#2024-年年度计划执行情况详情">2024 年年度计划执行情况（详情）</a></h2>
+<pre><code>- [x] 练习会唱：《カタオモイ》《心拍数♯0822》
+  - [x] カタオモイ（2024.5.20）
+  - [x] 心拍数♯0822（2024.6.13）
+- [x] 日语语法指南 看完（2024.1.23）
+- [x] 《Baba is You》三个大关卡
+  - [x] 一个（2024.1.6）
+  - [x] 两个（2024.1.7）
+  - [x] 三个（2024.1.8）
+- [x] 《黑神话：悟空》通关（2024.11.1）
+- [ ] 【经过调整已废弃终止】【延续自 2023】Rust 的 Spring Boot 代码生成器 基础功能
+  - [ ] 读取 JSON 配置文件
+  - [ ] 根据 Test.hbs 文件生成 Test.java 文件
+  - [ ] 连接 MySQL 数据库
+  - [ ] 读取数据库表反向生成 java 文件
+  - [ ] 自定义输出文件夹
+  - [ ] 自定义输出层级目录
+- [x] 跑步 100 公里（2024.3.26）
+- [x] 存到能买起 99 新 E 18-135mm f3.5-5.6 OSS 镜头的钱（2024.4.19）
+- [x] 87 个 Hiphop 元素基础动作（非进阶叠加）（2024.11.30）
+  - [x] Running Man
+  - [x] BK Bounce
+  - [x] Crab
+  - [x] Happy Feet
+  - [x] Patty Duke
+  - [x] Yeek
+  - [x] Kick
+  - [x] Party Machine
+  - [x] Walk it Out
+  - [x] Walk Out
+  - [x] Prep
+  - [x] Wu-Tang
+  - [x] The Wop
+  - [x] The Box Step
+  - [x] The Camel Walk
+  - [x] Sponge Bob
+  - [x] Typewriter
+  - [x] ATL Stomp
+  - [x] Reject
+  - [x] Jerk
+  - [x] Charleston
+  - [x] Kid 'N Play
+  - [x] TLC
+  - [x] Biz Markie
+  - [x] Janet Jackson
+  - [x] James Brown
+  - [x] LL Cool J
+  - [x] Jerry Lewis
+  - [x] Marge Step
+  - [x] Upstairs Downstairs
+  - [x] Toss it Up
+  - [x] Let it Rain
+  - [x] Chicken Noodle Soup
+  - [x] Get Lite
+  - [x] Steve Martin
+  - [x] Reebok
+  - [x] Cabbage Patch
+  - [x] Gucci
+  - [x] Skate
+  - [x] The Hummpty Dance
+  - [x] Stomp
+  - [x] Popcorn
+  - [x] Rock Off
+  - [x] Shamrock
+  - [x] Guess
+  - [x] Smurf
+  - [x] Rooftop
+  - [x] Funky 4 Corners
+  - [x] Cat Daddy
+  - [x] Roger Rabbit
+  - [x] Baseball Step
+  - [x] Monastery
+  - [x] Mike Tyson
+  - [x] Gigolo
+  - [x] Badman
+  - [x] Robocop
+  - [x] Bart Simpson
+  - [x] Pepper Seed
+  - [x] The Fila
+  - [x] The ALF
+  - [x] Harlem Shake
+  - [x] Bankhead Bounce
+  - [x] Superman
+  - [x] Horse Dance
+  - [x] Heel Toe
+  - [x] Crazy Legs
+  - [x] Creep
+  - [x] Dougie
+  - [x] C-Walk
+  - [x] Aunt Jackie
+  - [x] Arm Wave
+  - [x] Body Wave
+  - [x] Snake
+  - [x] Stick&amp;Roll
+  - [x] Water Dance
+  - [x] Butterfly
+  - [x] Funky Water Gate
+  - [x] Cherry Hill
+  - [x] Dipin
+  - [x] Side Glide
+  - [x] India Step (Cross Over)
+  - [x] Diddy Bop
+  - [x] Diddy Dance
+  - [x] Roller Skate
+  - [x] Mary J
+  - [x] Brooklyn
+  - [x] Bedrock
+- [ ] 【延续自 2023】计算机科学极简入门指南（至少）计算机组成原理部分【因大纲调整，暂时无法列出详情】
+- [x] 《药理学》
+  - [x] 第一章 药理学总论一绪言（2024.1.14）
+  - [x] 第二章 药物代谢动力学（2024.2.1）
+  - [x] 第三章 药物效应动力学（2024.1.26）
+  - [x] 第四章 影响药物效应的因素（2024.1.31）
+  - [x] 第五章 传出神经系统药理概论（2024.2.3）
+  - [x] 第六章 胆碱受体激动药（2024.2.3）
+  - [x] 第七章 抗胆碱酯酶药和胆碱酯酶复活药（2024.2.3）
+  - [x] 第八章 胆碱受体阻断药(I)-M 胆碱受体阻断药（2024.2.4）
+  - [x] 第九章 胆碱受体阻断药(II)-N 胆碱受体阻断药（2024.2.4）
+  - [x] 第十章 肾上腺素受体激动药（2024.2.14）
+  - [x] 第十一章 肾上腺素受体阻断药（2024.2.15）
+  - [x] 第十二章 中枢神经系统药理学概论（2024.2.15）
+  - [x] 第十三章 全身麻醉药（2024.2.16）
+  - [x] 第十四章 局部麻醉药（2024.2.15）
+  - [x] 第十五章 镇静催眠药（2024.2.16）
+  - [x] 第十六章 抗癫痫药和抗惊厥药（2024.2.18）
+  - [x] 第十七章 治疗中枢神经系统退行性疾病药（2024.2.22）
+  - [x] 第十八章 抗精神失常药（2024.2.21）
+  - [x] 第十九章 镇痛药（2024.3.9）
+  - [x] 第二十章 解热镇痛抗炎药（2024.3.9）
+  - [x] 第二十一章 离子通道概论及钙通道阻滞药（2024.5.6）
+  - [x] 第二十二章 抗心律失常药（2024.3.26）
+  - [x] 第二十三章 作用于肾素-血管紧张素系统的药物（2024.5.6）
+  - [x] 第二十四章 利尿药（2024.5.8）
+  - [x] 第二十五章 抗高血压药（2024.5.5）
+  - [x] 第二十六章 治疗心力衰竭的药物（2024.4.4）
+  - [x] 第二十七章 调血脂药与抗动脉粥样硬化药（2024.4.17）
+  - [x] 第二十八章 抗心绞痛药（2024.4.12）
+  - [x] 第二十九章 作用于血液及造血系统的药物（2024.5.23）
+  - [x] 第三十章 影响自体活性物质的药物（2024.5.29）
+  - [x] 第三十一章 作用于呼吸系统的药物（2024.5.29）
+  - [x] 第三十二章 作用于消化系统的药物（2024.5.24）
+  - [x] 第三十三章 子宫平滑肌兴奋药和抑制药（2024.5.29）
+  - [x] 第三十四章 性激素类药及避孕药（2024.6.6）
+  - [x] 第三十五章 肾上腺皮质激素类药物（2024.6.5）
+  - [x] 第三十六章 甲状腺激素及抗甲状腺药（2024.6.6）
+  - [x] 第三十七章 胰岛素及其他降血糖药（2024.6.6）
+  - [x] 第三十八章 抗骨质疏松药（2024.6.6）
+  - [x] 第三十九章 抗菌药物概论（2024.6.8）
+  - [x] 第四十章 β-内酰胺类抗生素（2024.6.10）
+  - [x] 第四十一章 大环内酯类、林可霉素类及多肽类抗生素（2024.6.10）
+  - [x] 第四十二章 氨基苷类抗生素（2024.6.12）
+  - [x] 第四十三章 四环素类及氯霉素类（2024.6.12）
+  - [x] 第四十四章 人工合成抗菌药（2024.6.8）
+  - [x] 第四十五章 抗病毒药和抗真菌药（2024.6.13）
+  - [x] 第四十六章 抗结核药及抗麻风病药（2024.6.14）
+  - [x] 第四十七章 抗寄生虫药（2024.6.15）
+  - [x] 第四十八章 抗恶性肿瘤药（2024.6.15）
+  - [x] 第四十九章 影响免疫功能的药物（2024.6.15）
+- [x] 编曲一首：主歌副歌体音乐
+  - [x] 作曲教程第三章（2024.8.11）
+  - [x] 作曲教程第四章（2024.8.18）
+  - [x] 主歌副歌体音乐（2024.8.18）
+</code></pre>
+<h2 id="2025-年年度计划详情暂定"><a class="header" href="#2025-年年度计划详情暂定">2025 年年度计划（详情，暂定）</a></h2>
+<pre><code>- [ ] 至少有 93 天在 24:00 之前睡觉（以真正打算睡觉时间为准，记录日期，舍弃年份）
+- [ ] 减掉下腹部腰围至少1cm（初始下腹腰围81cm）
+- [ ] 【延续自 2023】计算机科学极简入门指南（至少）计算机组成原理部分
+- [ ] 内科学前四篇（总论、呼吸系统疾病、循环系统疾病和消化系统疾病）
+  - [ ] 第一部分：总论
+  - [ ] 第二部分第一章：呼吸系统疾病总论
+  - [ ] 第二章：急性上呼吸道感染和急性气管-支气管炎
+  - [ ] 第三章：慢性支气管炎、慢性阻塞性肺疾病
+  - [ ] 第四章：支气管哮喘
+  - [ ] 第五章：支气管扩张症
+  - [ ] 第六章：肺部感染性疾病
+  - [ ] 第七章：肺结核
+  - [ ] 第八章：肺癌
+  - [ ] 第九章：间质性肺疾病
+  - [ ] 第十章：肺血栓栓塞症
+  - [ ] 第十一章：肺动脉高压与肺源性心脏病
+  - [ ] 第十二章：胸膜疾病
+  - [ ] 第十三章：睡眠呼吸暂停低通气综合征
+  - [ ] 第十四章：急性呼吸窘迫综合征
+  - [ ] 第十五章：呼吸衰竭与呼吸支持技术
+  - [ ] 第十六章：烟草病学概要
+  - [ ] 第三部分第一章：循环系统疾病总论
+  - [ ] 第二章：心力衰竭
+  - [ ] 第三章：心律失常
+  - [ ] 第四章：动脉粥样硬化和冠状动脉粥样硬化性心脏病
+  - [ ] 第五章：高血压
+  - [ ] 第六章：心肌疾病
+  - [ ] 第七章：先天性心血管病
+  - [ ] 第八章：心脏瓣膜病
+  - [ ] 第九章：心包疾病
+  - [ ] 第十章：感染性心内膜炎
+  - [ ] 第十一章：心脏骤停与心脏性猝死
+  - [ ] 第十二章：主动脉疾病和周围血管病
+  - [ ] 第十三章：心血管神经症
+  - [ ] 第十四章：肿瘤心脏病学
+  - [ ] 第四部分第一章：消化系统疾病总论
+  - [ ] 第二章：胃食管反流病
+  - [ ] 第三章：食管癌
+  - [ ] 第四章：胃炎
+  - [ ] 第五章：消化性溃疡
+  - [ ] 第六章：胃癌
+  - [ ] 第七章：肠结核和结核性腹膜炎
+  - [ ] 第八章：炎症性肠病
+  - [ ] 第九章：结直肠癌
+  - [ ] 第十章：功能性胃肠病
+  - [ ] 第十一章：病毒性肝炎
+  - [ ] 第十二章：脂肪性肝病
+  - [ ] 第十三章：自身免疫性肝病
+  - [ ] 第十四章：药物性肝病
+  - [ ] 第十五章：肝硬化
+  - [ ] 第十六章：原发性肝癌
+  - [ ] 第十七章：急性肝衰竭
+  - [ ] 第十八章：肝外胆系结石及炎症
+  - [ ] 第十九章：胆道系统肿瘤
+  - [ ] 第二十章：胰腺炎
+  - [ ] 第二十一章：胰腺癌
+  - [ ] 第二十二章：腹痛
+  - [ ] 第二十三章：慢性腹泻
+  - [ ] 第二十四章：便秘
+  - [ ] 第二十五章：消化道出血
+- [ ] FPGA 入门
+  - [ ] 数字电子技术基础
+  - [ ] Verilog 语法入门
+  - [ ] HDLBits 前十道题目
+- [ ] 和声学教程（伊·斯波索宾，增订重译版）
+</code></pre>
+<h2 id="封面图"><a class="header" href="#封面图">封面图</a></h2>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/ioana-cristiana-ddamygbOo1I-unsplash.jpg" alt=""></p>
+<blockquote>
+<p>摄影师・画师 | Ioana Cristiana</p>
+<p>图源 | Unsplash</p>
+</blockquote>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../生活碎笔/文章与写作/是不是长大之后便很难再专注了？.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../生活碎笔/文章与写作/为什么我信仰长期主义，并且认为觉得没有战略是很恐怖的事情？.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../生活碎笔/文章与写作/是不是长大之后便很难再专注了？.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../生活碎笔/文章与写作/为什么我信仰长期主义，并且认为觉得没有战略是很恐怖的事情？.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/文章与写作/感觉自己正在慢慢变成大人-2024年度总结.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

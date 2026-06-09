@@ -1,0 +1,943 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>最近更新 | Last Updated - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="最近更新--last-updated"><a class="header" href="#最近更新--last-updated">最近更新 | Last Updated</a></h1>
+<h2 id="prenote"><a class="header" href="#prenote">Prenote</a></h2>
+<blockquote>
+<p>NOTICE: This content is presented as <code>git diff</code>.</p>
+</blockquote>
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-06-09-045522-0000--31fd787f"><a class="header" href="#更新记录2026-06-09-045522-0000--31fd787f">更新记录（2026-06-09 04:55:22 +0000 | 31fd787f）</a></h2>
+<h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-06-09 04:55:22 +0000</code></li>
+<li>Base commit: <code>31fd787f</code></li>
+<li>Diff source: <code>60b70aa4bb4e79b45a5d142991a113ab67efb738..31fd787fd489418125f762768de6c611757a7298</code></li>
+<li>Changed files: <code>6</code></li>
+<li>Total lines: <code>+59 / -8</code></li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-1397692042-readme-md-4140682621">README.md</a> <code>+4 / -1</code></li>
+<li><a href="#f-1397692042-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
+<li><a href="#f-1397692042-src-个人简介-md-1285161500">src/个人简介.md</a> <code>+8 / -5</code></li>
+<li><a href="#f-1397692042-src-学习与进步-计算机-备忘录-使用macmini当作家庭服务器的一系列问题-md-3224999888">src/学习与进步/计算机/备忘录/使用Macmini当作家庭服务器的一系列问题.md</a> <code>+3 / -1</code></li>
+<li><a href="#f-1397692042-src-记录和归档-记录-个人记录-观影记录-md-3181202502">src/记录和归档/记录/个人记录/观影记录.md</a> <code>+6 / -1</code></li>
+<li><a href="#f-1397692042-src-阅读-每日一文-我家过去年代的一只猫-李娟-md-1815203436">src/阅读/每日一文/我家过去年代的一只猫-李娟.md</a> <code>+37 / -0</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-1397692042-readme-md-4140682621"></a></p>
+<h4 id="readmemd"><a class="header" href="#readmemd">README.md</a></h4>
+<details>
+<summary><code>+4 / -1</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/README.md b/README.md
+index 84ec6e7a..76ef0ad4 100644
+--- a/README.md
++++ b/README.md
+@@ -20,4 +20,7 @@
+ - [https://tinysnow.netlify.app](https://tinysnow.netlify.app)
+ - [https://tinysnow.vercel.app](https://tinysnow.vercel.app) / [https://tinysnowblog.vercel.app](https://tinysnowblog.vercel.app)
+ - [https://tinysnow.pages.dev](https://tinysnow.pages.dev)
+-- [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)
++- [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)（中国大陆用户推荐）
++- [https://blog.tinysnow.cn/](https://blog.tinysnow.cn/)
++- [http://tinysnow.dynv6.net:9264/](http://tinysnow.dynv6.net:9264/)（IPv6 用户推荐，不限国内和海外）
++- https://tiny-snow-blog.zh-cn.edgeone.cool
+
+</code></pre>
+</details>
+<p><a id="f-1397692042-src-summary-md-3501257646"></a></p>
+<h4 id="srcsummarymd"><a class="header" href="#srcsummarymd">src/SUMMARY.md</a></h4>
+<details>
+<summary><code>+1 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/src/SUMMARY.md b/src/SUMMARY.md
+index 4a01160e..9096c29c 100644
+--- a/src/SUMMARY.md
++++ b/src/SUMMARY.md
+@@ -1114,6 +1114,7 @@
+     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
+     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
+ - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
++  - [我家过去年代的一只猫 - 李娟](阅读/每日一文/我家过去年代的一只猫-李娟.md)
+   - [鬼打墙 - 井上雅彦](阅读/每日一文/鬼打墙-井上雅彦.md)
+   - [多美的故事 - 奧斯卡·王尔德](阅读/每日一文/多美的故事-奧斯卡·王尔德.md)
+   - [给匆忙走路的人 - 严文井](阅读/每日一文/给匆忙走路的人-严文井.md)
+
+</code></pre>
+</details>
+<p><a id="f-1397692042-src-个人简介-md-1285161500"></a></p>
+<h4 id="src个人简介md"><a class="header" href="#src个人简介md">src/个人简介.md</a></h4>
+<details>
+<summary><code>+8 / -5</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\344\270\252\344\272\272\347\256\200\344\273\213.md" "b/src/\344\270\252\344\272\272\347\256\200\344\273\213.md"
+index 5019a98f..49d31413 100644
+--- "a/src/\344\270\252\344\272\272\347\256\200\344\273\213.md"
++++ "b/src/\344\270\252\344\272\272\347\256\200\344\273\213.md"
+@@ -6,10 +6,10 @@
+ 
+ ## Prenote | 前言 | 前書き | Avant-propos
+ 
+-- 强烈推荐中国大陆用户访问国内镜像网站：[http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)，其他镜像网站见联系方式。
+-- We strongly recommend that users in China mainland visit the domestic mirror website: [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net). For other mirror websites, please see the contact information.
+-- 中国本土のユーザーには、国内向けミラーサイト（[http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)）のご利用を強くお勧めします。その他のミラーサイトについては、連絡先情報をご覧ください。
+-- Nous recommandons vivement aux utilisateurs de Chine continentale de consulter le site miroir local : [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net). Pour les autres sites miroirs, veuillez consulter les informations de contact.
++- 强烈推荐中国大陆用户访问[国内镜像网站](http://tinysnow.gitlink.net)，其他镜像网站见联系方式。
++- We strongly recommend that users in China mainland visit the [domestic mirror website](http://tinysnow.gitlink.net). For other mirror websites, please see the contact information.
++- 中国本土のユーザーには、[国内向けミラーサイト](http://tinysnow.gitlink.net)のご利用を強くお勧めします。その他のミラーサイトについては、連絡先情報をご覧ください。
++- Nous recommandons vivement aux utilisateurs de Chine continentale de consulter [le site miroir local](http://tinysnow.gitlink.net). Pour les autres sites miroirs, veuillez consulter les informations de contact.
+ 
+ ## Chinese（中文，简体）
+ 
+@@ -96,4 +96,7 @@
+   - [https://tinysnow.netlify.app](https://tinysnow.netlify.app)
+   - [https://tinysnow.vercel.app](https://tinysnow.vercel.app) / [https://tinysnowblog.vercel.app](https://tinysnowblog.vercel.app)
+   - [https://tinysnow.pages.dev](https://tinysnow.pages.dev)
+-  - [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)
+\ No newline at end of file
++  - [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)（中国大陆用户推荐）
++  - [https://blog.tinysnow.cn/](https://blog.tinysnow.cn/)
++  - [http://tinysnow.dynv6.net:9264/](http://tinysnow.dynv6.net:9264/)（IPv6 用户推荐，不限国内和海外）
++  - https://tiny-snow-blog.zh-cn.edgeone.cool
+\ No newline at end of file
+
+</code></pre>
+</details>
+<p><a id="f-1397692042-src-学习与进步-计算机-备忘录-使用macmini当作家庭服务器的一系列问题-md-3224999888"></a></p>
+<h4 id="src学习与进步计算机备忘录使用macmini当作家庭服务器的一系列问题md"><a class="header" href="#src学习与进步计算机备忘录使用macmini当作家庭服务器的一系列问题md">src/学习与进步/计算机/备忘录/使用Macmini当作家庭服务器的一系列问题.md</a></h4>
+<details>
+<summary><code>+3 / -1</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272/\345\244\207\345\277\230\345\275\225/\344\275\277\347\224\250Macmini\345\275\223\344\275\234\345\256\266\345\272\255\346\234\215\345\212\241\345\231\250\347\232\204\344\270\200\347\263\273\345\210\227\351\227\256\351\242\230.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272/\345\244\207\345\277\230\345\275\225/\344\275\277\347\224\250Macmini\345\275\223\344\275\234\345\256\266\345\272\255\346\234\215\345\212\241\345\231\250\347\232\204\344\270\200\347\263\273\345\210\227\351\227\256\351\242\230.md"
+index bb6ba3d2..0c66d1d2 100644
+--- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272/\345\244\207\345\277\230\345\275\225/\344\275\277\347\224\250Macmini\345\275\223\344\275\234\345\256\266\345\272\255\346\234\215\345\212\241\345\231\250\347\232\204\344\270\200\347\263\273\345\210\227\351\227\256\351\242\230.md"
++++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272/\345\244\207\345\277\230\345\275\225/\344\275\277\347\224\250Macmini\345\275\223\344\275\234\345\256\266\345\272\255\346\234\215\345\212\241\345\231\250\347\232\204\344\270\200\347\263\273\345\210\227\351\227\256\351\242\230.md"
+@@ -254,8 +254,10 @@ mv /app/mod/* /root/.local/share/Terraria/tModLoader/Mods/ # 复制 mod 文件
+    - Netlify，已有：https://tinysnow.netlify.app/
+    - EdgeOne Pages，要备案，好像有时间限制，部署后 3 小时，可以试试 https://tiny-snow-blog.zh-cn.edgeone.cool
+    - Vercel，已有：https://tinysnow.vercel.app 或者 https://tinysnowblog.vercel.app
+-   - Gitlink
++   - Gitlink，已有：http://tinysnow.gitlink.net
+ 2. 暂未开始，也不知道到底需不需要，毕竟用这个方案还要买域名花钱呢，目前来看延迟最低的是 netlify，可以将就着用
++3. gitlink 自带 pages，实名认证之后可以申请个人建站，但是不能自动同步镜像仓库。在 bot 市场里面添加“个人建站自动部署”bot，结合 github actions 的 webhook 可以将部署分支从 github 推送到 gitlink，然后自动部署
++4. 后续（2026.6.9）：买了个域名 tinysnow.cn，375 块钱，10年，腾讯云。修改了其 DNS 服务器，将其托管到 Cloudflare Tunnel，部署子域名 [https://blog.tinysnow.cn/](https://blog.tinysnow.cn/)，但是因为没有买腾讯云的服务器，所以没办法备案，而且如果要备案的话，需要保持服务一直在线，否则有可能会被注销，也就是说需要一直维持服务器续费，感觉有点亏，就不备案了
+ 
+ ### DDNS
+ 
+
+</code></pre>
+</details>
+<p><a id="f-1397692042-src-记录和归档-记录-个人记录-观影记录-md-3181202502"></a></p>
+<h4 id="src记录和归档记录个人记录观影记录md"><a class="header" href="#src记录和归档记录个人记录观影记录md">src/记录和归档/记录/个人记录/观影记录.md</a></h4>
+<details>
+<summary><code>+6 / -1</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\350\256\260\345\275\225\345\222\214\345\275\222\346\241\243/\350\256\260\345\275\225/\344\270\252\344\272\272\350\256\260\345\275\225/\350\247\202\345\275\261\350\256\260\345\275\225.md" "b/src/\350\256\260\345\275\225\345\222\214\345\275\222\346\241\243/\350\256\260\345\275\225/\344\270\252\344\272\272\350\256\260\345\275\225/\350\247\202\345\275\261\350\256\260\345\275\225.md"
+index 1b0dd163..d3c46f80 100644
+--- "a/src/\350\256\260\345\275\225\345\222\214\345\275\222\346\241\243/\350\256\260\345\275\225/\344\270\252\344\272\272\350\256\260\345\275\225/\350\247\202\345\275\261\350\256\260\345\275\225.md"
++++ "b/src/\350\256\260\345\275\225\345\222\214\345\275\222\346\241\243/\350\256\260\345\275\225/\344\270\252\344\272\272\350\256\260\345\275\225/\350\247\202\345\275\261\350\256\260\345\275\225.md"
+@@ -2,7 +2,7 @@
+ 
+ ## 未完成
+ 
+-1. 开端电视剧（周虹灵推荐）
++1. 开端电视剧（有人推荐）
+ 2. 守望者 - 扎克 • 施耐德
+ 3. 一个叫欧维的男人决定去死
+ 4. 信条
+@@ -87,3 +87,8 @@
+ ### 2025 年
+ 
+ 1. 迷失东京
++
++### 2026 年
++
++1. 惊天魔盗团 1（Now You See Me）
++2. 惊天魔盗团 2（Now You See Me 2）
+
+</code></pre>
+</details>
+<p><a id="f-1397692042-src-阅读-每日一文-我家过去年代的一只猫-李娟-md-1815203436"></a></p>
+<h4 id="src阅读每日一文我家过去年代的一只猫-李娟md"><a class="header" href="#src阅读每日一文我家过去年代的一只猫-李娟md">src/阅读/每日一文/我家过去年代的一只猫-李娟.md</a></h4>
+<details>
+<summary><code>+37 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\346\210\221\345\256\266\350\277\207\345\216\273\345\271\264\344\273\243\347\232\204\344\270\200\345\217\252\347\214\253-\346\235\216\345\250\237.md" "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\346\210\221\345\256\266\350\277\207\345\216\273\345\271\264\344\273\243\347\232\204\344\270\200\345\217\252\347\214\253-\346\235\216\345\250\237.md"
+new file mode 100644
+index 00000000..a7db03b0
+--- /dev/null
++++ "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\346\210\221\345\256\266\350\277\207\345\216\273\345\271\264\344\273\243\347\232\204\344\270\200\345\217\252\347\214\253-\346\235\216\345\250\237.md"
+@@ -0,0 +1,37 @@
++# 我家过去年代的一只猫
++
++*李娟*
++
++　　我们祖上几乎每一辈人都会出一个嗜赌成性的败家子。到了我外婆那一代，不幸轮到了我外公。据外婆回忆，当时破草屋里的一切家私被变卖得干干净净，只剩一只木箱一面铁锅和五个碗。此外就只有贴在竹篾墙上的观音像及画像下一只破破烂烂的草蒲团。连全家人冬夏的衣裳都被卖得一人只剩一身单衣，老老小小全打着赤脚。
++
++　　但是外婆一直藏着一只手掌心大小的铜磬，那是她多年前有一次走了五十里的山路，去邻县赶一场隆重的庙会时买的。对她来说，这只小小的磬是精美的器物，质地明亮光滑，小而沉重，真是再漂亮不过了。更何况她曾亲眼见过庙子里的和尚就是敲着它来念经的（当然，那一只大了许多）。于是它又是神圣的。
++
++　　她时常对外公说，那是观音菩萨的东西，不可“起心”。可外公偏偏起了心，有一天输得眼红了回家对外婆拳打脚踢，逼她交出磬。后来外婆实在是被打急了，只好从怀中掏出来掷到门槛外，然后一屁股坐到地上大哭起来。
++
++　　六十多年过去了，外婆至今还时常唠叨起那只小磬，不时地啧啧夸赞它的精巧可爱。而那个男人曾经对她造成的伤害，似乎早已与她毫无关系了。毕竟外公都已经过世半个多世纪了，死去的人全都是已经被原谅的人。
++
++　　另外外婆时常会提到的还有一只大黄猫。那是继外公卖掉磬之后，第二个最不该卖的东西。
++
++　　第一次大黄猫被卖到了放生铺。放生铺离家门只有十几里路。清早捉去卖的，结果还没吃晌午饭，那黄猫就自己跑回来了。外婆和孩子们欢天喜地，连忙从各自的碗里滗出一些米汤倒给猫喝。
++
++　　结果第二天一大早猫又被外公捉去了。这次卖到永泉铺。永泉铺更远一些，离家有三十多里。外婆想，这回猫再也回不来了。结果，那天外公还没回来，那神奇的大黄猫就又一次找回了自家门。亏得外公赶集去的一路上还是把它蒙在布袋子里，又塞进背篼里的。
++
++　　外婆央求外公再也不要卖了。她说，只听说卖猪卖鸡换钱用，哪里听说卖猫的！再说谁家屋头没养只鸡、养条狗的，而自家连鸡都没有一只，就只剩这最后一条养生了，这猫也造孽，都卖了两次还在想着自家里头，就可怜可怜它吧……但外公哪里能听得进去！过了不久，龙林铺逢集时他又把那只黄猫逮走了。
++
++　　龙林铺在邻县境内，离我们足有五十多里。虽然都晓得这回这猫怕是再也回不来了，可外婆还是心存侥幸，天天把喂猫的石钵里注满清水，等它回家。
++
++　　这一次，却再也没有等到。
++
++　　我在新疆出生，大部分时间在新疆长大。我所了解的这片土地，是一片绝大部分才刚刚开始承载人的活动的广袤大地。在这里，泥土还不熟悉粮食，道路还不熟悉脚印，水不熟悉井，火不熟悉煤。在这里，我们报不出上溯三代以上的祖先的名字，我们的孩子比远离故土更加远离我们。哪怕再在这里生活一百年，我仍不能说自己是“新疆人”。
++
++　　——哪怕到了今天，半个多世纪过去了，离家万里，过去的生活被断然切割，我又即将与外婆断然切割。外婆终将携着一世的记忆死去，使我的“故乡”终究变成一处无凭无据的所在。在那里，外婆早已修好的坟窟依山傍水，年复一年地空着，渐渐坍塌；坟前空白的碑石花纹模糊，内部正在悄悄脆裂；老家旧屋久无人住，恐怕已经塌了一间半套……而屋后曾经引来泉水的竹管残迹寂寞地横搁在杂草之中，那泉眼四面围栏的石板早？经塌坏，泉水四处乱淌，荒早丛生。村中旧人过世，年轻人纷纷离家出走。通向家门口的路盖满竹叶，这路通向的木门上，铁锁锈死，屋檐断裂。在这扇门背后，在黑暗的房间里，外婆早年间备下的，漆得乌黑明亮的寿棺早已寂静地朽坏。泥墙上悬挂的纺车挂满蛛丝……再也回不去了！
++
++　　那个地方，与我唯一的关联似乎只是：我的外婆和我母亲曾经在那里生活过……我不认识任何一条能够通向它的道路，我不认识村中的任何一家邻居。但那仍是我的故乡，那条被外婆无数次提及的大黄猫，如被我从小养大一般，深深怜惜着它。当我得知它在远方迷失，难过得梦里也在想：这么多年过去，应该往它的石钵里注上清水了！
++
++　　我不是一个没有来历的人，我走到今天，似乎是我的祖先在使用我的双脚走到今天；我不是一个没有根的人，我的基因以我所不能明白的方式清清楚楚地记录着这条血脉延伸的全部过程；我不是没有故乡的人，那一处我从未去过的地方，在我外婆和我母亲的讲述中反复触动我的本能和命运，永远地留住了我。那里每一粒深埋在地底的紫色浆果，每一只夏日午后准时振翅的鸣蝉，比我亲眼见过的还要令我熟悉。
++
++　　我不是虚弱的人，不是短暂的人——哪怕此时立刻死去也不是短暂的人。
++
++　　还有那只猫，它的故事更为漫长。哪怕到了今天，它仍然在回家的路上继续走着。有时被乡间的顽童追赶过一条条陌生的沟渠；有时迷路了，在高高的坡崖上如婴孩一样凄厉厉地惨叫；有时走着走着突然浑身的毛乍起，看到前面路中央盘起的一条花蛇……圆月当空，它找到一处隐蔽的草丛卧下。有时是冬月间的霜风露气，有时是盛夏的瓢泼大雨。
++
++　　总有一天，它绕过堰塘边的青青竹林，突然看到院子空地上那台熟悉的石磨，看到石磨后屋檐下的水缸——流浪的日子全部结束了！它飞快地窜进院子，径直去到自己往日吃食的石钵边，大口大口地痛饮起来。也不管这水是谁为它注入的，不管是谁，在这些年里正如它从不曾忘记过家一样，从不曾忘记过它。
+\ No newline at end of file
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-06-08-062627-0000--60b70aa4"><a class="header" href="#更新记录2026-06-08-062627-0000--60b70aa4">更新记录（2026-06-08 06:26:27 +0000 | 60b70aa4）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-06-08 06:26:27 +0000</code></li>
+<li>Base commit: <code>60b70aa4</code></li>
+<li>Diff source: <code>6d059cb495e754d00bd7df29f5596cb609502aa7..60b70aa4bb4e79b45a5d142991a113ab67efb738</code></li>
+<li>Changed files: <code>2</code></li>
+<li>Total lines: <code>+161 / -2</code></li>
+</ul>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<ol>
+<li><a href="#f-1117475451-src-学习与进步-医学-内科学-第五部分-泌尿系统疾病-第九章-急性肾损伤-md-689624485">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第九章：急性肾损伤.md</a> <code>+160 / -1</code></li>
+<li><a href="#f-1117475451-src-学习与进步-学海计划-哲学-总论-哲学的分支体系-逻辑学-md-3532710367">src/学习与进步/学海计划/哲学/总论/哲学的分支体系/逻辑学.md</a> <code>+1 / -1</code></li>
+</ol>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<p><a id="f-1117475451-src-学习与进步-医学-内科学-第五部分-泌尿系统疾病-第九章-急性肾损伤-md-689624485"></a></p>
+<h4 id="src学习与进步医学内科学第五部分泌尿系统疾病第九章急性肾损伤md"><a class="header" href="#src学习与进步医学内科学第五部分泌尿系统疾病第九章急性肾损伤md">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第九章：急性肾损伤.md</a></h4>
+<details>
+<summary><code>+160 / -1</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\214\273\345\255\246/\345\206\205\347\247\221\345\255\246/\347\254\254\344\272\224\351\203\250\345\210\206\357\274\232\346\263\214\345\260\277\347\263\273\347\273\237\347\226\276\347\227\205/\347\254\254\344\271\235\347\253\240\357\274\232\346\200\245\346\200\247\350\202\276\346\215\237\344\274\244.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\214\273\345\255\246/\345\206\205\347\247\221\345\255\246/\347\254\254\344\272\224\351\203\250\345\210\206\357\274\232\346\263\214\345\260\277\347\263\273\347\273\237\347\226\276\347\227\205/\347\254\254\344\271\235\347\253\240\357\274\232\346\200\245\346\200\247\350\202\276\346\215\237\344\274\244.md"
+index 06af37b7..ef513af5 100644
+--- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\214\273\345\255\246/\345\206\205\347\247\221\345\255\246/\347\254\254\344\272\224\351\203\250\345\210\206\357\274\232\346\263\214\345\260\277\347\263\273\347\273\237\347\226\276\347\227\205/\347\254\254\344\271\235\347\253\240\357\274\232\346\200\245\346\200\247\350\202\276\346\215\237\344\274\244.md"
++++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\214\273\345\255\246/\345\206\205\347\247\221\345\255\246/\347\254\254\344\272\224\351\203\250\345\210\206\357\274\232\346\263\214\345\260\277\347\263\273\347\273\237\347\226\276\347\227\205/\347\254\254\344\271\235\347\253\240\357\274\232\346\200\245\346\200\247\350\202\276\346\215\237\344\274\244.md"
+@@ -151,4 +151,163 @@
+ 
+ #### 高磷血症
+ 
+-- 常与低钙血症伴存
+\ No newline at end of file
++- 常与低钙血症伴存
++
++#### 电解质紊乱（三低）
++
++1. 低钙血症：可出现肌抽搐，并加重高血钾对心肌的毒性作用
++2. 低钠血症：多因丢失多、摄入少、“钠泵”效应下降、肾小管对钠重吸收下降所致
++3. 低氯血症：常与呕吐、氯丢失过多有关
++
++#### 水中毒
++
++1. 原因
++   - 内生水增加
++   - 摄入水过多
++2. 后果
++   - 肺水肿
++   - 脑水肿
++   - 高血压
++   - 心力衰竭
++3. 表现
++   - 恶心、呕吐
++   - 头晕、心悸、呼吸困难
++   - 嗜睡、昏迷
++
++#### 酸中毒
++
++1. 原因
++   - 酸性代谢产物排出减少
++   - 碱盐和钠盐丢失
++   - 无氧代谢增加
++   - 常伴高钾血症
++2. 表现
++   1. 呼吸深而快
++   2. 可有酮味
++   3. 胸闷、气急
++   4. 嗜睡、昏迷
++   5. 血压下降
++   6. 心律失常
++   7. 心脏停搏
++
++### 二）恢复期
++
++#### 机制
++
++1. 肾小管上皮细胞逐渐修复、再生
++2. 细胞及器官功能逐步恢复
++3. `GFR` 开始改善
++4. **若肾小管上皮细胞功能恢复延迟，则溶质和水的重吸收功能恢复晚于肾小球滤过功能**
++5. 可伴明显多尿和低钾血症
++
++#### 特点
++
++- `GFR` 逐渐升高
++- 可恢复正常或接近正常
++- 肾小管上皮细胞功能恢复相对延迟
++- ![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260605125017409.png)
++
++## 五、辅助检查及诊断
++
++### 一）AKI 临床诊断标准
++
++1. `48` 小时内血清肌酐（`Scr`）升高 `&gt;0.3 mg/dl`（`&gt;26.5 μmol/L`）
++2. 确认或推测 `7` 天内 `Scr` 较基础值升高 `&gt;50%`
++3. 尿量减少：`&lt;0.5 ml/(kg·h)`，持续 `&gt;6` 小时
++
++### 二）AKI分期标准
++
++| 分期 | 血清肌酐标准                                                 | 尿量标准                                       |
++| ---- | ------------------------------------------------------------ | ---------------------------------------------- |
++| 1期  | `Scr` 绝对值升高 `≥0.3 mg/dl`（`≥26.5 μmol/L`），或较基础值相对升高 `0.5~0.9` 倍 | `&lt;0.5 ml/(kg·h)`，持续 `6~12 h`                |
++| 2期  | `Scr` 较基础值相对升高 `1.0~1.9` 倍                          | `&lt;0.5 ml/(kg·h)`，持续 `12-24 h`               |
++| 3期  | `Scr` 较基础值相对升高 `≥2` 倍，或升高至 `≥4.0 mg/dl`（`≥353.6 μmol/L`），或开始肾脏替代治疗；`&lt;18` 岁病人估算肾小球滤过率下降至 `&lt;35 ml/(min·1.73m²)` | `&lt;0.3 ml/(kg·h)`，持续 `≥24 h`，或无尿 `≥12 h` |
++
++## 六、鉴别诊断
++
++### 一）肾前性氮质血症与缺血性急性肾损伤鉴别
++
++| 尿液诊断指标                    | 肾前性氮质血症       | 缺血性急性肾损伤     |
++| ------------------------------- | -------------------- | -------------------- |
++| 尿比重                          | `&gt;1.018`             | `&lt;1.012`             |
++| 尿渗透压                        | `&gt;500 mOsm/(kg·H2O)` | `&lt;350 mOsm/(kg·H2O)` |
++| 尿钠                            | `&lt;10 mmol/L`         | `&gt;20 mmol/L`         |
++| 尿肌酐/血清肌酐                 | `&gt;40`                | `&lt;20`                |
++| 血尿素氮(mg/dl)/血清肌酐(mg/dl) | `&gt;20`                | `&lt;10~15`             |
++| 钠排泄分数                      | `&lt;1%`                | `&gt;1%`                |
++| 肾衰指数                        | `&lt;1`                 | `&gt;1`                 |
++| 尿沉渣                          | 透明管型             | 棕色颗粒管型         |
++
++### 二）相关公式
++
++- 肾衰指数：`尿钠 × 血肌酐 / 尿肌酐`
++- 钠排泄分数：`(尿钠 × 血肌酐) / (血钠 × 尿肌酐) × 100%`
++
++### 三）肾前性少尿功能试验
++
++#### 补液试验
++
++1. 输注 `5%` 葡萄糖 `200~250 ml`
++2. 并静脉注射呋塞米 `40~100 mg`
++3. 若 **补足血容量后血压恢复** 正常、尿量增加，则支持 **肾前性少尿**
++
++#### 被动抬腿试验（`PLR`）
++
++1. 病人基础体位为 `45°` 半卧位
++2. 上身放平后，双下肢被动抬高 `45°`
++3. 持续约 **`1` 分钟**，可利用自动床调整体位
++4. 病人回心血量可增加约 `250~450 ml`
++5. `PLR` 后 **每搏心输出量增加 `&gt;10% `** ，提示对容量有反应性
++
++## 七、治疗
++
++### 一）早期干预治疗
++
++1. 肾前性因素：及时纠正
++2. 肾后性因素：尽早解除尿路梗阻
++3. 肾性因素
++   - 继发于肾小球肾炎、小血管炎的 `AKI`，常需应用糖皮质激素和（或）免疫抑制剂
++   - 临床怀疑 `ATN` 时，应尽快明确并停用可疑药物
++   - 药物所致者可及时给予糖皮质激素，起始剂量 `1 mg/(kg·d)`，总疗程 `1~4` 个月
++
++### 二）营养支持疗法
++
++1. 食物中应控制水、钠、钾含量
++2. 保证足够热量
++3. 蛋白质摄入应调整
++   - 一般病人采用低蛋白优质蛋白饮食
++   - 高分解代谢及透析病人每日蛋白摄入量可酌情增加
++4. 进液量一般为前一日尿量加 `500 ml`
++
++### 三）并发症处理
++
++#### 高钾血症
++
++1. **停用一切含钾** 药物和（或）食物
++2. 对抗钾离子心肌毒性： **`10%` 葡萄糖酸钙稀释后静推** （其他均为降钾，仅仅此为抗钾）
++3. 转移钾至细胞内： **葡萄糖与胰岛素** 合用
++4. 伴代谢性酸中毒者 **补充碱剂** ，以促进钾离子向细胞内转移
++5. 清除钾： **离子交换树脂、利尿剂**
++6. **急症透析** ：血钾 `&gt;6.5 mmol/L`
++
++#### 代谢性酸中毒
++
++1. 可选用 `5%` 碳酸氢钠 `125~250 ml` 静滴
++2. 严重酸中毒病人，如静脉血 **`HCO3- &lt;12 mmol/L` 或动脉血 `pH &lt;7.15~7.20`** ，应在纠酸同时紧急透析
++
++### 四）紧急透析指征
++
++1. 预计内科保守治疗无效的严重代谢性酸中毒： **动脉血 `pH &lt;7.2`**
++2. 高钾血症：**`K+ &gt;6.5 mmol/L` 或已出现严重心律失常**
++3. 积极利尿治疗无效的 **严重肺水肿**
++4. 严重尿毒症症状，如 **脑病、心包炎、癫痫发作**
++
++## 五、实战演练
++
++### 一）单题
++
++1. 急性小管坏死的机制或因素包括：**肾缺血、肾中毒、原尿外漏、肾小管阻塞**
++2. 鉴别肾前性少尿与急性肾损伤时，提示后者的指标是：**血尿素氮/血肌酐比值 `&lt;10~15:1`**
++3. 肾前性急性肾衰竭的特点有：**尿比重 `&gt;1.018`、血尿素氮/血肌酐 `&gt;20`**
++4. 支持肾缺血性急性肾衰竭的实验室指标是：**尿钠浓度 `&gt;20 mmol/L`**
++5. 急性肾功能衰竭的表现包括：**高钾血症、高磷血症**
+\ No newline at end of file
+
+</code></pre>
+</details>
+<p><a id="f-1117475451-src-学习与进步-学海计划-哲学-总论-哲学的分支体系-逻辑学-md-3532710367"></a></p>
+<h4 id="src学习与进步学海计划哲学总论哲学的分支体系逻辑学md"><a class="header" href="#src学习与进步学海计划哲学总论哲学的分支体系逻辑学md">src/学习与进步/学海计划/哲学/总论/哲学的分支体系/逻辑学.md</a></h4>
+<details>
+<summary><code>+1 / -1</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\351\200\273\350\276\221\345\255\246.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\351\200\273\350\276\221\345\255\246.md"
+index 79bb6aeb..4ca6790e 100644
+--- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\351\200\273\350\276\221\345\255\246.md"
++++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\351\200\273\350\276\221\345\255\246.md"
+@@ -36,7 +36,7 @@
+ 
+ 　　因此，逻辑学首先会要求人把话说完整：哪些是前提，哪一句是结论，究竟想证明什么。
+ 
+-　　 **逻辑学最先做的，不是判断对错，而是拆开一段话，看看它到底有没有在论证。** 
++　　 **逻辑学最先做的，比起判断对错，更像是拆开一段话，看看它到底有没有在论证。** 
+ 
+ 　　2. **论证何时算有效？** 
+ 
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-06-05-042724-0000--6d059cb4"><a class="header" href="#更新记录2026-06-05-042724-0000--6d059cb4">更新记录（2026-06-05 04:27:24 +0000 | 6d059cb4）</a></h2>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-06-05 04:27:24 +0000</code></li>
+<li>Base commit: <code>6d059cb4</code></li>
+<li>Diff source: <code>f5d9543c017c00e2703cd5dd9e1545adac6eb0aa..6d059cb495e754d00bd7df29f5596cb609502aa7</code></li>
+<li>Changed files: <code>4</code></li>
+<li>Total lines: <code>+70 / -10</code></li>
+</ul>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
+<ol>
+<li><a href="#f-258016223-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
+<li><a href="#f-258016223-src-学习与进步-学海计划-哲学-总论-哲学的分支体系-哲学的分支体系-md-283586571">src/学习与进步/学海计划/哲学/总论/哲学的分支体系/哲学的分支体系.md</a> <code>+2 / -4</code></li>
+<li><a href="#f-258016223-src-学习与进步-学海计划-哲学-总论-哲学的分支体系-认识论-md-1953803078">src/学习与进步/学海计划/哲学/总论/哲学的分支体系/认识论.md</a> <code>+4 / -6</code></li>
+<li><a href="#f-258016223-src-阅读-每日一文-鬼打墙-井上雅彦-md-1343691340">src/阅读/每日一文/鬼打墙-井上雅彦.md</a> <code>+63 / -0</code></li>
+</ol>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
+<p><a id="f-258016223-src-summary-md-3501257646"></a></p>
+<h4 id="srcsummarymd-1"><a class="header" href="#srcsummarymd-1">src/SUMMARY.md</a></h4>
+<details>
+<summary><code>+1 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/src/SUMMARY.md b/src/SUMMARY.md
+index f5b479ae..4a01160e 100644
+--- a/src/SUMMARY.md
++++ b/src/SUMMARY.md
+@@ -1114,6 +1114,7 @@
+     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
+     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
+ - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
++  - [鬼打墙 - 井上雅彦](阅读/每日一文/鬼打墙-井上雅彦.md)
+   - [多美的故事 - 奧斯卡·王尔德](阅读/每日一文/多美的故事-奧斯卡·王尔德.md)
+   - [给匆忙走路的人 - 严文井](阅读/每日一文/给匆忙走路的人-严文井.md)
+   - [幸福的夜晚 - 黑井千次](阅读/每日一文/幸福的夜晚-黑井千次.md)
+
+</code></pre>
+</details>
+<p><a id="f-258016223-src-学习与进步-学海计划-哲学-总论-哲学的分支体系-哲学的分支体系-md-283586571"></a></p>
+<h4 id="src学习与进步学海计划哲学总论哲学的分支体系哲学的分支体系md"><a class="header" href="#src学习与进步学海计划哲学总论哲学的分支体系哲学的分支体系md">src/学习与进步/学海计划/哲学/总论/哲学的分支体系/哲学的分支体系.md</a></h4>
+<details>
+<summary><code>+2 / -4</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273.md"
+index 86139f7b..fb3577d5 100644
+--- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273.md"
++++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273.md"
+@@ -30,15 +30,13 @@
+ 
+ 　　除了这些之外，现代哲学里还常会提到政治哲学、语言哲学、心灵哲学、科学哲学、宗教哲学、法哲学等方向。也就是说， **哲学的分支从来不是只有五个或六个，而是会随着问题展开得越来越细。**
+ 
+-　　这几条线最容易帮人建立基本坐标。这也是学海计划预计采用的方式。
+-
+-　　就学海计划目前的整理方式而言，会优先沿着 **形而上学、认识论、逻辑学、伦理学、美学** 这几条主线所要 **讨论的具体问题** 展开；而当哲学进一步进入法律、技术、医学、环境、社会治理等现实场景时，再归入“其他应用领域”。
++　　这几条线最容易帮人建立基本坐标，所以目前会优先沿着 **形而上学、认识论、逻辑学、伦理学、美学** 这几条主线所要 **讨论的具体问题** 展开；而当哲学进一步进入法律、技术、医学、环境、社会治理等现实场景时，再归入“其他应用领域”。
+ 
+ 　　 **最后注意，分支不是隔墙。**
+ 
+ 　　哲学里的许多问题，本来就跨越多个分支。比如“人有没有自由意志”，既牵涉形而上学，也牵涉伦理学；“人工智能能否替人作决定”，既牵涉伦理学，也牵涉认识论、技术哲学；“审美判断是不是主观的”，又会碰到认识论与美学。
+ 
+-　　 **真正重要的，不是死记某个分支表，而是看懂：一个问题到底在问世界、问认识、问推理、问行动，还是问审美；又或者，它其实同时在问这几件事。**
++　　 **真正重要的，不是死记某个分支表，这个没有意义。重要的是，要看懂：一个问题到底在问世界、问认识、问推理、问行动，还是问审美；又或者，它其实同时在问这几件事。**
+ 
+ 　　现代大学在课程设置上，也经常不是按一张固定表来死分，而是把相近领域放在一起，例如把形而上学与认识论并列，把逻辑与语言相关问题并列，把伦理与政治或法律问题并列。这恰恰说明：分类是为了理解，不是为了制造僵硬边界。
+ 
+
+</code></pre>
+</details>
+<p><a id="f-258016223-src-学习与进步-学海计划-哲学-总论-哲学的分支体系-认识论-md-1953803078"></a></p>
+<h4 id="src学习与进步学海计划哲学总论哲学的分支体系认识论md"><a class="header" href="#src学习与进步学海计划哲学总论哲学的分支体系认识论md">src/学习与进步/学海计划/哲学/总论/哲学的分支体系/认识论.md</a></h4>
+<details>
+<summary><code>+4 / -6</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\350\256\244\350\257\206\350\256\272.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\350\256\244\350\257\206\350\256\272.md"
+index d2e8cf87..3f3acc20 100644
+--- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\350\256\244\350\257\206\350\256\272.md"
++++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\345\210\206\346\224\257\344\275\223\347\263\273/\350\256\244\350\257\206\350\256\272.md"
+@@ -10,11 +10,7 @@
+ 
+ ## 正文
+ 
+-　　本文讨论“哲学”下，“总论”的“哲学的分支体系”话题。具体细项为“认识论”。
+-
+-　　“认识论”——它大概和“认识世界”有关，我们大部分人的认识，就到此为止了。再往下问，就说不清了。
+-
+-　　可以看看下面这几个问题：
++　　本文讨论：哲学-总论-哲学的分支体系-认识论。
+ 
+ 　　看见窗外地面湿了，于是判断刚刚下过雨。这是知识，还是推测？
+ 
+@@ -88,12 +84,14 @@
+ 
+ 　　一个人相信伴侣出轨，可能会立刻翻脸；一个人相信某种投资必赚，可能会立刻重仓；一个人相信某则新闻是真的，可能会立刻转发。许多行为，都是被信念推动，而不是被知识推动。
+ 
+-　　 **所以，认识论并不是在“知识已经到手之后”锦上添花，而是在“你准备相信之前”先问一句：证据够不够。** 
++　　 **所以，认识论比起是“知识已经到手之后”锦上添花，更像是“你准备相信之前”先问一句：证据够不够。** 
+ 
+ 　　许多人即使从未学过认识论，也天天在使用认识论。相信医生、地图、截图、目击者、新闻标题、回忆、感觉，这些都不是单纯接收信息，而是在做判断。
+ 
+ 　　这也是为什么认识论虽然听起来像教材术语，实际上却与日常生活极近。信息越多，证言越杂，图像越容易伪造，情绪越容易裹挟，一个人越需要知道：自己凭什么信，凭什么不信。
+ 
++　　而在 AI 时代，无论有没有学过认识论，从客观上来说，对于认识论的考验都愈加严格。 **你所相信的舆论、信息、判断，都是真的吗？是 AI 生成的吗？你凭什么这么认为？证据在哪里？如果它不是真的，那么你为什么下意识地相信了它？如果它不是真的，你又会怎么做？**
++
+ 　　 认识论不教人“知道更多事实”，它不负责替你积累知识点，而是追问你凭什么把某件事算作知识；它也跟心理学没什么关系——心理学会研究人怎样形成认知、怎样记忆和误判，认识论则更关心，这些认知和记忆在什么条件下算可靠，什么条件下不算。
+ 
+ 　　 有意思的点在于它和逻辑学之间的关系。认识论在要求证成方面（简单理解为证明过程加证据），要求甚至比逻辑学还要严格：逻辑学研究论证形式是否有效，而认识论更进一步，要问：即便论证形式没问题，前提本身凭什么成立？
+
+</code></pre>
+</details>
+<p><a id="f-258016223-src-阅读-每日一文-鬼打墙-井上雅彦-md-1343691340"></a></p>
+<h4 id="src阅读每日一文鬼打墙-井上雅彦md"><a class="header" href="#src阅读每日一文鬼打墙-井上雅彦md">src/阅读/每日一文/鬼打墙-井上雅彦.md</a></h4>
+<details>
+<summary><code>+63 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\351\254\274\346\211\223\345\242\231-\344\272\225\344\270\212\351\233\205\345\275\246.md" "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\351\254\274\346\211\223\345\242\231-\344\272\225\344\270\212\351\233\205\345\275\246.md"
+new file mode 100644
+index 00000000..01a2bb5a
+--- /dev/null
++++ "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\351\254\274\346\211\223\345\242\231-\344\272\225\344\270\212\351\233\205\345\275\246.md"
+@@ -0,0 +1,63 @@
++# 鬼打墙
++
++*井上雅彦*
++
++　　“胡扯，真是胡扯。我绝不相信。”
++
++　　“哟，说得那么疾言厉色的，这正表示你是相信的。说真的，你其实也害怕了吧。”
++
++　　“我和你不同，不是亲眼看到，就绝不相信。你会为这样的事害怕紧张，这倒叫我羡慕。你似乎还以害怕紧张为乐事呢。”
++
++　　“哟，你怎么会这样想。”
++
++　　“听着怕人的故事而发抖——你在这样子的时候最有魅力。我就爱看你那样子，所以才特地在半夜里跟着你来。……嗯，真邪门。”
++
++　　“怎么了？”
++
++　　“现在说的这句话，刚刚好像才说过。”
++
++　　“不记得啊。不过，你真不相信地方上的人说的这些传说吗？”
++
++　　“当然。这地方古时候是个刑场，这样的地方总不免有迷信的附会，十之八九总是杜撰的。”
++
++　　“那也不尽然。这一带最近才有过这样的事呢。一个年轻的警察外出做例行巡逻，却好久好久都不回来，大家不禁为他担心起来，于是找寻到祠堂附近去，却看到他老在同一个地方绕着圈子走。后来一查，发现他是绕着半径约莫二十米的地方打转，还一本正经地在巡逻着呢。”
++
++　　“他自己难道不知道？”
++
++　　“他自己虽然也急着想回去，可是再怎么走，总是走回原先的地方去。如果不是有人找了来，他还会一直在那儿走下去呢。这一定是狐狸作弄的无疑了。”
++
++　　“什么？狐狸作弄人啊。”
++
++　　“古时候的文献就有类似的记载啊。过路的商旅给狐狸作弄了，一边的腿就短了那么几寸，因此，自己虽以为是在一直向前走，结果却是在绕着圈子打转。”
++
++　　“哈哈，那倒像是圆规了。你真相信这样的事？”
++
++　　“奇怪的事情还有呢。这附近的小学分校里也出现过狐狸童子。”
++
++　　“什么？什么是狐狸童子？”
++
++　　“这分校因为学生不多，所以都要在朝会时点名。”
++
++　　“这又怎么了？”
++
++　　“学生的人数多出了一个。”
++
++　　“不算数的混在里边。”
++
++　　“这不算数的一个就是狐狸童子了。奇怪的事，还多着……”这种故事好无聊。”
++
++　　“譬如说，半夜里只男女两人在那儿谈心，四下也没什么人，可是不知怎的，谈着谈着，似乎另外有人加入谈话，可是两个人却都浑然不觉。”
++
++　　“真叫人毛骨悚然。”
++
++　　“而且也不知什么时候起，两个人的魂魄都给调了包了……”
++
++　　“于是就说那是狐狸或狐狸童子在作弄人了。胡扯，真是胡扯。我绝不相信的。”
++
++　　“哈，说得那么疾言厉色的，这正表示你是相信的。说真的，你其实也害怕了吧。”
++
++　　“我和你不同，不是亲眼看到，就绝不相信。你会为这样的事害怕紧张，这倒叫我羡慕。你似乎还以害怕紧张为乐事呢。”
++
++　　“哈，你怎么会这样想。”
++
++　　“听着怕人的故事而发抖——你在这样子的时候最有魅力。我就爱看你那样子，所以才特地在半夜里……哟，好奇怪。现在说的这句话，刚刚好像才说过呢……。”
+\ No newline at end of file
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="个人简介.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="博客阅读指南.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="个人简介.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="博客阅读指南.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "last-updated.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="assets/custom-7059bd18.js"></script>
+        <script src="assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

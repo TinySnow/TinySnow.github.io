@@ -1,0 +1,836 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第十五章：肝硬化 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第十五章肝硬化及肝性脑病"><a class="header" href="#第十五章肝硬化及肝性脑病">第十五章：肝硬化及肝性脑病</a></h1>
+<h2 id="一肝硬化"><a class="header" href="#一肝硬化">一、肝硬化</a></h2>
+<h3 id="一概述"><a class="header" href="#一概述">一）概述</a></h3>
+<ul>
+<li>是各种慢性肝病进展至以肝脏 <strong>慢性炎症、弥漫性纤维化、假小叶、再生结节和肝内外血管增殖</strong> 为特征的病理阶段；</li>
+<li>代偿期无明显症状；</li>
+<li>失代偿期以 <strong>门静脉高压</strong> 和 <strong>肝功能减退</strong> 为临床特征。</li>
+</ul>
+<h3 id="二病因及发病机制"><a class="header" href="#二病因及发病机制">二）病因及发病机制</a></h3>
+<h4 id="常见病因"><a class="header" href="#常见病因">常见病因</a></h4>
+<ol>
+<li><strong>病毒性肝炎：我国乙肝为主</strong></li>
+<li><strong>慢性酒精中毒：欧美国家常见</strong></li>
+<li>非酒精性脂肪性肝病</li>
+<li>免疫疾病</li>
+<li>药物及化学毒物</li>
+<li>胆汁淤积</li>
+<li>循环障碍</li>
+<li>寄生虫感染血吸虫</li>
+<li>遗传代谢疾病： <strong>肝豆状核变性、血色病、α1-抗胰蛋白酶缺乏症</strong></li>
+</ol>
+<h4 id="发展过程"><a class="header" href="#发展过程">发展过程</a></h4>
+<ol>
+<li>肝星形细胞（HSC）激活，细胞外基质（ECM）增加</li>
+<li>广泛肝细胞变性坏死，肝小叶纤维支架塌陷</li>
+<li>不规则结节状肝细胞团（再生结节）</li>
+<li>纤维间隔包绕再生结节或将残留，肝小叶重新分割（假小叶）</li>
+<li>肝内血循环紊乱</li>
+</ol>
+<h3 id="三肝脏主要的生理作用"><a class="header" href="#三肝脏主要的生理作用">三）肝脏主要的生理作用</a></h3>
+<ul>
+<li>分泌胆汁</li>
+<li>物质代谢
+<ul>
+<li>蛋白质：合成、脱氨、转氨（凝血因子）</li>
+<li>↕</li>
+<li>糖：葡萄糖 ↔ 糖原</li>
+<li>↕</li>
+<li>脂类：合成、储存</li>
+</ul>
+</li>
+<li>解毒作用：氨、激素、醛固酮、抗利尿激素</li>
+</ul>
+<h3 id="四临床表现"><a class="header" href="#四临床表现">四）临床表现</a></h3>
+<h4 id="概述"><a class="header" href="#概述">概述</a></h4>
+<ul>
+<li>代偿期：症状轻、缺乏特异性</li>
+<li>失代偿期：症状显著
+<ul>
+<li><strong>肝功能减退症状</strong></li>
+<li><strong>门静脉高压症状</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="代偿期"><a class="header" href="#代偿期">代偿期</a></h4>
+<ul>
+<li>症状：可有乏力、食欲减退、腹胀不适、恶心、上腹隐痛、轻微腹泻；
+体征：肝脏肿大与否取决与类型， <strong>脾脏轻度~中度肿大</strong> ；</li>
+<li>检查： <strong>肝功能正常或轻度异常</strong> 。</li>
+</ul>
+<h4 id="失代偿期"><a class="header" href="#失代偿期">失代偿期</a></h4>
+<h5 id="肝功能减退症状"><a class="header" href="#肝功能减退症状">肝功能减退症状</a></h5>
+<ol>
+<li>全身症状：疲倦乏力、体重减轻、低热、肌肉萎缩等；</li>
+<li>消化系统：厌食、腹胀、腹泻等；</li>
+<li><strong>黄疸</strong> ：胆汁分泌和排泄障碍 <strong>（肝细胞性黄疽）</strong> ；</li>
+<li><strong>出血倾向与贫血：出血原因肝合成凝血因子减少、脾亢、毛细血管脆性增加。</strong></li>
+<li>内分泌失调
+<ul>
+<li><strong>雌激素增多、雄激素减少</strong> ：蜘蛛痣、肝掌、男性乳房发育；</li>
+<li><strong>肾上腺皮质功能减退</strong> ：肝病面容、皮肤色素沉着；</li>
+<li><strong>醛固酮和抗利尿激素增多</strong> ：钠水猪留。</li>
+<li><strong>（三高两低）</strong></li>
+</ul>
+</li>
+</ol>
+<h5 id="门静脉高压症状三只水虫"><a class="header" href="#门静脉高压症状三只水虫">门静脉高压症状（三只水虫）</a></h5>
+<ul>
+<li><strong>脾大</strong> ：脾亢，三系减低；</li>
+<li><strong>侧支循环形成 -&gt; 价值最高：</strong>
+<ul>
+<li><strong>食管和胃底静脉曲张；</strong></li>
+<li>腹壁静脉显露和曲张；</li>
+<li>痔静脉扩张；</li>
+</ul>
+</li>
+<li><strong>腹水 -&gt; 最突出；</strong>
+<ul>
+<li>门静脉压力增加；</li>
+<li>血浆胶体渗透压降低；</li>
+<li>继发性醛固酮、抗利尿激素分泌增多；</li>
+<li>有效循环血容量不足；</li>
+<li>肝窦内压升高，肝淋巴液生成增多。</li>
+</ul>
+</li>
+<li><img src="https：//raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20251012204346596.png" alt=""></li>
+</ul>
+<h3 id="五并发症"><a class="header" href="#五并发症">五）并发症</a></h3>
+<h4 id="消化道出血最常见"><a class="header" href="#消化道出血最常见">消化道出血（最常见）</a></h4>
+<h5 id="概述-1"><a class="header" href="#概述-1">概述</a></h5>
+<ul>
+<li><strong>最常见的并发症</strong> ，常突然发生</li>
+</ul>
+<h5 id="表现"><a class="header" href="#表现">表现</a></h5>
+<ul>
+<li>呕血、黑便</li>
+<li>休克或诱发肝性脑病</li>
+</ul>
+<h5 id="原因"><a class="header" href="#原因">原因</a></h5>
+<ul>
+<li><strong>食管下段或胃底静脉曲张破裂</strong></li>
+<li>消化性溃疡</li>
+<li>门脉高压性胃</li>
+</ul>
+<h4 id="肝性脑病最严重"><a class="header" href="#肝性脑病最严重">肝性脑病（最严重）</a></h4>
+<h5 id="概述-2"><a class="header" href="#概述-2">概述</a></h5>
+<ul>
+<li><strong>为最严重的并发症，最常见的死亡原因</strong></li>
+</ul>
+<h5 id="肝性脑病分期"><a class="header" href="#肝性脑病分期">肝性脑病分期</a></h5>
+<ol>
+<li>0 期（潜伏期）：无任何症状，只在心智测试时轻微异常</li>
+<li>I 期（前驱期）：轻度的性格改变和行为异常</li>
+<li>Ⅱ 期（昏迷前期）：意识错乱、嗜睡障碍、行为异常</li>
+<li>Ⅲ 期（昏睡期）：昏睡和精神错乱为主</li>
+<li>IV 期（昏迷期）：神志完全丧失，不能唤醒；扑翼样震颤无法引出</li>
+</ol>
+<h5 id="记忆"><a class="header" href="#记忆">记忆</a></h5>
+<ul>
+<li><strong>心有灵（0 期心）犀一点通（1 期行）；三心（3 期精）二意（2 期意）；不省人事（4 期全无）。</strong></li>
+</ul>
+<h4 id="自发性细菌性腹膜炎"><a class="header" href="#自发性细菌性腹膜炎">自发性细菌性腹膜炎</a></h4>
+<h5 id="概述-3"><a class="header" href="#概述-3">概述</a></h5>
+<ul>
+<li>感染（革兰氏阴性杆菌居多）</li>
+</ul>
+<h5 id="原因-1"><a class="header" href="#原因-1">原因</a></h5>
+<ul>
+<li>肠道淤血细菌移位、肝脾异常抵抗力低下、糖代谢异常等因素</li>
+</ul>
+<h5 id="感染途径"><a class="header" href="#感染途径">感染途径</a></h5>
+<ul>
+<li>呼吸道、胆道、肠道、泌尿道</li>
+</ul>
+<h5 id="自发性腹膜炎sbp"><a class="header" href="#自发性腹膜炎sbp">自发性腹膜炎（SBP）</a></h5>
+<ul>
+<li>发热、腹痛、腹胀、 <strong>腹水迅速增长</strong></li>
+</ul>
+<h5 id="记忆-1"><a class="header" href="#记忆-1">记忆</a></h5>
+<ul>
+<li><strong>肝硬化 + 发热 + 腹痛 + 腹膜刺激 + 腹水增加 = SBP</strong></li>
+</ul>
+<h4 id="水电解质和酸碱平衡紊乱"><a class="header" href="#水电解质和酸碱平衡紊乱">水电解质和酸碱平衡紊乱</a></h4>
+<ul>
+<li><strong>低钠</strong> ：摄入不足、利尿、放腹水</li>
+<li><strong>低钾、低氯、代碱</strong> ：摄入不足、呕吐、腹泻、利尿</li>
+<li>可诱发肝性脑病</li>
+</ul>
+<h4 id="原发性肝癌"><a class="header" href="#原发性肝癌">原发性肝癌</a></h4>
+<ul>
+<li><strong>公式：短期内肝迅速大 + 持续性肝区疼痛 + 腹水呈血性 = 原发肝癌</strong></li>
+</ul>
+<h4 id="肝肾综合征"><a class="header" href="#肝肾综合征">肝肾综合征</a></h4>
+<h5 id="概述-4"><a class="header" href="#概述-4">概述</a></h5>
+<ul>
+<li>为功能性肾衰</li>
+<li>特征：自发性少尿、无尿、低尿钠、氮质血症、稀释性低钠血症</li>
+</ul>
+<h5 id="诊断标准"><a class="header" href="#诊断标准">诊断标准</a></h5>
+<ol>
+<li>肝硬化合并腹水；</li>
+<li>血肌酐升高大于 133μmol/L；急进性血清肌酐 2 周内升至 2 倍，大于 226umol/L</li>
+<li>在应用白蛋白扩张血容量并停用利尿剂至少 2 天后，血肌酐不能降至 133μmol/L 以下，白蛋白推荐剂量为 1g/ （kg·d ），最大可达 100g/d ；</li>
+<li>无休克；</li>
+<li>近期未使用肾毒性药物；</li>
+<li>不存在肾实质疾病，如蛋白尿 &gt; 500mg/d、镜下血尿 (&gt; 50 红细胞 / 高倍视野）和（或）超声检查发现肾脏异常。</li>
+</ol>
+<ul>
+<li>记忆：三实（前三）三虚（后三）</li>
+</ul>
+<h4 id="肝肺综合征"><a class="header" href="#肝肺综合征">肝肺综合征</a></h4>
+<h5 id="三联症"><a class="header" href="#三联症">三联症</a></h5>
+<ul>
+<li>严重肝病</li>
+<li>肺血管扩张</li>
+<li>动脉氧合障碍</li>
+</ul>
+<h5 id="三联症的后果"><a class="header" href="#三联症的后果">三联症的后果</a></h5>
+<ul>
+<li>呼吸困难</li>
+<li>低氧血症</li>
+</ul>
+<h4 id="门静脉血栓形成"><a class="header" href="#门静脉血栓形成">门静脉血栓形成</a></h4>
+<ul>
+<li><strong>门静脉血栓形成</strong> ：静脉急性完全阻塞，可出现剧烈腹痛、腹胀、血便、休克，脾脏迅速增大和腹水迅速增加。</li>
+<li><strong>公式：突发腹痛 + 脾大 + 短时血性腹水 + 消化道出血 = 门脉血栓</strong></li>
+<li><strong>总结：血性腹水（合并肝癌、门脉血栓、结核腹膜炎）</strong></li>
+</ul>
+<h4 id="胆石症"><a class="header" href="#胆石症">胆石症</a></h4>
+<ul>
+<li>约占 30%，胆囊及肝外胆管常见</li>
+</ul>
+<h3 id="六辅助检查"><a class="header" href="#六辅助检查">六）辅助检查</a></h3>
+<h4 id="血常规"><a class="header" href="#血常规">血常规</a></h4>
+<ul>
+<li>脾功能亢进时白细胞、红细胞和血小板计数减少</li>
+</ul>
+<h4 id="尿常规"><a class="header" href="#尿常规">尿常规</a></h4>
+<ul>
+<li>有黄疸时可出现胆红素，并有尿胆原增加</li>
+</ul>
+<h4 id="肝功能试验"><a class="header" href="#肝功能试验">肝功能试验</a></h4>
+<ol>
+<li><strong>ALT、AST 升高；</strong></li>
+<li><strong>血清白蛋白下降、球蛋白升高，A/G 倒置；</strong></li>
+<li><strong>凝血酶原时间不同程度延长</strong> ，且不能为注射维生素 K 纠正；</li>
+<li>Ⅲ 型前胶原氨基末端肽和透明质酸增加；</li>
+<li>总胆红素增高。</li>
+</ol>
+<h4 id="门静脉压力测定"><a class="header" href="#门静脉压力测定">门静脉压力测定</a></h4>
+<ul>
+<li>门静脉主干内径 &gt; 13mm，脾静脉内径 &gt; 8mm</li>
+</ul>
+<h4 id="腹水检查"><a class="header" href="#腹水检查">腹水检查</a></h4>
+<ul>
+<li><strong>血清腹腔积液清蛋白梯度 &gt; 11g 时，提示门静脉高压所致腹腔积液的可能性大；</strong></li>
+<li><strong>而 SAAG &lt; 11g 时提示结核、肿瘤等非门静脉高压所致腹腔积液的可能性大。</strong></li>
+</ul>
+<h4 id="b-超"><a class="header" href="#b-超">B 超</a></h4>
+<ul>
+<li>可显示肝脾大小、形态、PV、SV 内径、腹水暗区</li>
+</ul>
+<h4 id="x-ray"><a class="header" href="#x-ray">X-ray</a></h4>
+<ul>
+<li>虫蚀样、蚯蚓状充盈缺损 -&gt; 食道静脉曲张；</li>
+</ul>
+<h4 id="ct-或-mri"><a class="header" href="#ct-或-mri">CT 或 MRI</a></h4>
+<ul>
+<li>显示左右肝比例、肝脾表面状况、腹水；</li>
+</ul>
+<h4 id="内镜"><a class="header" href="#内镜">内镜</a></h4>
+<ul>
+<li>直接窥见静脉曲张的部位、范围、程度、有无糜烂、出血等，对判断出血部位、病因有重要意义，并可行内镜下治疗；</li>
+</ul>
+<h4 id="肝穿刺"><a class="header" href="#肝穿刺">肝穿刺</a></h4>
+<ul>
+<li><strong>活组织送检，可以明确诊断；</strong></li>
+</ul>
+<h4 id="腹腔镜"><a class="header" href="#腹腔镜">腹腔镜</a></h4>
+<ul>
+<li>可观察硬化的肝脏的大体形态。</li>
+</ul>
+<h3 id="七鉴别诊断腹水的鉴别"><a class="header" href="#七鉴别诊断腹水的鉴别">七）鉴别诊断（腹水的鉴别）</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th>肝硬化</th><th>结核性腹膜炎</th><th>缩窄性心包炎</th><th>卵巢囊肿</th></tr>
+</thead>
+<tbody>
+<tr><td>病史</td><td>肝病史</td><td>结核病史</td><td>结核病史</td><td>妇科病病史</td></tr>
+<tr><td>体征</td><td>蜘蛛痣<br />肝掌、脾大移动性浊音(+)</td><td>腹部揉面感</td><td>颈静脉怒张<br />心率↑<br />奇脉、脉压差↓</td><td>鼓音区在腹部两侧</td></tr>
+<tr><td>B 超</td><td>肝缩小、脾大<br />门静脉增宽、腹水</td><td>腹膜增厚、腹水（少）</td><td>心包增厚、钙化<br />心包积液</td><td>巨大囊肿</td></tr>
+<tr><td>腹水</td><td>漏出液</td><td>渗出液</td><td>漏出液</td><td>囊肿液</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="八治疗"><a class="header" href="#八治疗">八）治疗</a></h3>
+<h4 id="一般治疗"><a class="header" href="#一般治疗">一般治疗</a></h4>
+<ul>
+<li>休息 + 高热量、高蛋白饮食</li>
+</ul>
+<h4 id="抗纤维化治疗"><a class="header" href="#抗纤维化治疗">抗纤维化治疗</a></h4>
+<ul>
+<li>对病毒复制活跃的病毒性肝炎肝硬化患者可予抗病毒治疗：</li>
+<li>核苷类似物： <strong>恩替卡韦</strong> 、拉米夫定、替诺福韦</li>
+<li>干扰素</li>
+</ul>
+<h4 id="黄疽"><a class="header" href="#黄疽">黄疽</a></h4>
+<ul>
+<li><strong>熊去氧胆酸</strong> 、S-腺苷甲硫氨酸等。</li>
+</ul>
+<h4 id="其他保肝药"><a class="header" href="#其他保肝药">其他保肝药</a></h4>
+<ul>
+<li>多烯磷脂酰胆碱、水飞蓟宾、还原型谷胱甘肤及甘草酸二按等。</li>
+</ul>
+<h4 id="腹水治疗"><a class="header" href="#腹水治疗">腹水治疗</a></h4>
+<h5 id="限制钠和水的摄入"><a class="header" href="#限制钠和水的摄入">限制钠和水的摄入</a></h5>
+<ul>
+<li><strong>食盐 &lt; 2/d；入水小于 1000ml。</strong></li>
+<li>低钠血症（ &lt; 125mmol/L）者，同时限制水摄入，摄入水量在 500ml/d 以内。</li>
+</ul>
+<h5 id="利尿剂"><a class="header" href="#利尿剂">利尿剂</a></h5>
+<ul>
+<li>
+<p>因肝硬化腹腔积液病人血浆醛固酮浓度升高， <strong>首选螺内酯</strong> ；</p>
+</li>
+<li>
+<p><strong>可合用呋塞米</strong> ；</p>
+</li>
+</ul>
+<h5 id="提高血浆胶体渗透压"><a class="header" href="#提高血浆胶体渗透压">提高血浆胶体渗透压</a></h5>
+<ul>
+<li>
+<p>定期输注白蛋白或血浆；</p>
+</li>
+<li>
+<p>易诱发肝肾综合征及肝性脑病。</p>
+</li>
+</ul>
+<h5 id="难治性腹水的治疗"><a class="header" href="#难治性腹水的治疗">难治性腹水的治疗</a></h5>
+<ul>
+<li>
+<p>大量排放腹水 <strong>1000ml 加输注白蛋白 8g</strong> ；</p>
+</li>
+<li>
+<p>自身腹水浓缩回输；</p>
+</li>
+<li>
+<p>经颈静脉肝内门体分流术（TIPS）；</p>
+</li>
+<li>
+<p>肝移植。</p>
+</li>
+</ul>
+<h4 id="食管胃底静脉曲张破裂出血"><a class="header" href="#食管胃底静脉曲张破裂出血">食管、胃底静脉曲张破裂出血</a></h4>
+<ol>
+<li>出血期：禁食</li>
+<li>补充血容量：输血、补液</li>
+<li>止血
+<ul>
+<li>药物： <strong>生长抑素、奥曲肽最常用</strong></li>
+<li>内镜下治疗： <strong>食管套扎或胃底硬化治疗</strong></li>
+<li>介入：TIPS</li>
+<li>三腔二囊管：上述无效后可用，&lt; 24h</li>
+<li>急诊手术</li>
+</ul>
+</li>
+<li>一级预防
+<ul>
+<li><strong>普萘洛尔、卡地洛尔</strong> ；</li>
+<li>EVL 用于中度曲张</li>
+</ul>
+</li>
+<li>二级预防：药物同一级、TIPS、栓塞胶或断流术</li>
+</ol>
+<h4 id="自发性细菌性腹膜炎-1"><a class="header" href="#自发性细菌性腹膜炎-1">自发性细菌性腹膜炎</a></h4>
+<ul>
+<li>抗生素治疗，用药不得 &lt; 2 周；</li>
+<li>静脉输注白蛋白；</li>
+<li>SBP 的预防。</li>
+</ul>
+<h4 id="门脉血栓形成"><a class="header" href="#门脉血栓形成">门脉血栓形成</a></h4>
+<ul>
+<li>早期肝素治疗，必要时 TIPS。</li>
+</ul>
+<h4 id="肝移植"><a class="header" href="#肝移植">肝移植</a></h4>
+<ul>
+<li>是唯一能使患者长期存活的疗法。</li>
+</ul>
+<h2 id="九肝性脑病"><a class="header" href="#九肝性脑病">九、肝性脑病</a></h2>
+<h3 id="一概述-1"><a class="header" href="#一概述-1">一）概述</a></h3>
+<ul>
+<li>指在肝硬化基础上因 <strong>肝功能不全和（或）门-体分流</strong> 引起的、以代谢乱为基础、中枢神经系统功能失调（嗜睡、模糊、昏睡、谵妄、昏迷，三定力）的综合征。</li>
+<li><strong>约 50%</strong> 肝硬化病人有脑水肿，病程长者大脑皮质变薄，神经元及神经纤维减少。</li>
+</ul>
+<h3 id="二病因及发病机制-1"><a class="header" href="#二病因及发病机制-1">二）病因及发病机制</a></h3>
+<h4 id="病因"><a class="header" href="#病因">病因</a></h4>
+<ol>
+<li>肝硬化</li>
+<li>重症肝炎</li>
+<li>暴发性肝功能衰竭</li>
+<li>原发性肝癌</li>
+<li>严重胆道感染</li>
+<li>妊娠期急性脂肪肝</li>
+</ol>
+<h4 id="诱因"><a class="header" href="#诱因">诱因</a></h4>
+<ol>
+<li>消化道出身</li>
+<li>高蛋白饮食</li>
+<li>低钾性碱中毒</li>
+<li>低血容量与缺氧</li>
+<li>麻醉及镇静类药物</li>
+<li>便秘、低血糖</li>
+</ol>
+<h4 id="氨中毒学说"><a class="header" href="#氨中毒学说">氨中毒学说</a></h4>
+<ul>
+<li>血氨增高 -&gt; 通过血脑屏障 -&gt; 肝性脑病</li>
+<li>氨的来源与去向
+<ul>
+<li>来源：消化道、肾脏、肌肉</li>
+<li>去路：鸟氨酸循环合成尿素、通过侧支循环入血、合成谷氨酰胺等</li>
+</ul>
+</li>
+<li>氨对脑的毒性作用
+<ul>
+<li>干扰脑细胞三羧酸循环，脑细胞能量供应不足</li>
+<li>增加了脑对中性氨基酸如酪氨酸、苯丙氨酸、色氨酸的摄取，这些物质对脑功能具抑制作用</li>
+<li>增加管氨酰胺合成，诱导脑水肿</li>
+<li>直接干扰神经的电活动</li>
+<li>弥散入大脑的 NH3 可上调脑星形胶质细胞苯二氮卓促使氯离子内流，神经传导被抑制</li>
+<li><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20251107122753366.png" alt=""></li>
+<li><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20251107124451742.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h4 id="假性传导递质学说"><a class="header" href="#假性传导递质学说">假性传导递质学说</a></h4>
+<ul>
+<li><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20251107125720852.png" alt=""></li>
+<li><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20251107125932381.png" alt=""></li>
+</ul>
+<h4 id="色氨酸学说"><a class="header" href="#色氨酸学说">色氨酸学说</a></h4>
+<ul>
+<li><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20251107130031441.png" alt=""></li>
+</ul>
+<h4 id="锰离子学说"><a class="header" href="#锰离子学说">锰离子学说</a></h4>
+<ul>
+<li>由肝脏分泌入 <strong>胆道的锰</strong> 具有 <strong>神经毒性</strong> ，正常时经肠道排出。</li>
+<li><strong>肝病时</strong> 锰不能经胆道排出，经血液循环进入脑部，导致 HE。</li>
+</ul>
+<h3 id="三临床表现"><a class="header" href="#三临床表现">三）临床表现</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th>一期（前驱期）</th><th>二期（昏迷前期）</th><th>三期（昏睡期）</th><th>四期（昏迷期）</th></tr>
+</thead>
+<tbody>
+<tr><td>精神行为</td><td>焦虑、淡漠、睡眠倒错；<br />（性格行为轻微改变）</td><td>嗜睡、三力降低（理解力、定向力、计算力）<br />（意识错乱；行为异常）</td><td>昏睡，但可唤醒，各种神经体征持续或加重</td><td>昏迷，不能唤醒</td></tr>
+<tr><td>腱反射</td><td>正常</td><td>亢进</td><td>亢进</td><td>浅昏迷时，腱反射亢进；<br />深昏迷时，各种反射消失</td></tr>
+<tr><td>肌张力</td><td>正常</td><td>增高</td><td>增高</td><td>浅昏迷时肌张力增高；<br />深昏迷时降低</td></tr>
+<tr><td>病理反射</td><td>无</td><td>阳性</td><td>阳性</td><td>无法引出</td></tr>
+<tr><td>扑翼样震颤</td><td>有</td><td>有</td><td>有</td><td>无法引出</td></tr>
+<tr><td>脑电图</td><td>正常</td><td>异常</td><td>异常</td><td>明显异常</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="四辅助检查"><a class="header" href="#四辅助检查">四）辅助检查</a></h3>
+<h4 id="首选查血氨"><a class="header" href="#首选查血氨">首选查血氨</a></h4>
+<ul>
+<li>慢性 HE 血氨升高；</li>
+<li>急性 HE 血氨可以正常。</li>
+</ul>
+<h4 id="影像学检查"><a class="header" href="#影像学检查">影像学检查</a></h4>
+<ul>
+<li>急性—脑水肿；</li>
+<li>慢性——脑萎缩。</li>
+</ul>
+<h4 id="脑电图"><a class="header" href="#脑电图">脑电图</a></h4>
+<ul>
+<li><strong>预后不良。</strong></li>
+</ul>
+<h3 id="五诊断"><a class="header" href="#五诊断">五）诊断</a></h3>
+<ol>
+<li>有 <strong>严重肝病</strong> 和（或）广泛 <strong>门体侧支循环</strong> ；</li>
+<li>精神紊乱、昏睡或 <strong>昏迷</strong> ；</li>
+<li>有肝性脑病的 <strong>诱因</strong> ；</li>
+<li>明显 <strong>肝功能损害</strong> 或血氨增高；</li>
+<li><strong>扑翼样震颤</strong> 和典型脑电图改变；</li>
+<li>头部 CT 或 MRI <strong>排除</strong> 脑血管意外及颅内肿瘤等疾病。</li>
+</ol>
+<h3 id="六治疗"><a class="header" href="#六治疗">六）治疗</a></h3>
+<h4 id="消除诱因"><a class="header" href="#消除诱因">消除诱因</a></h4>
+<ol>
+<li><strong>低蛋白饮食；</strong></li>
+<li>慎用镇静药；</li>
+<li>纠正水电平衡；</li>
+<li><strong>消除消化道积血；</strong></li>
+<li>吸氧；</li>
+<li>控制感染；</li>
+<li>防治便秘</li>
+</ol>
+<h4 id="药物治疗"><a class="header" href="#药物治疗">药物治疗</a></h4>
+<h5 id="减少氨的生成和吸收"><a class="header" href="#减少氨的生成和吸收">减少氨的生成和吸收</a></h5>
+<ul>
+<li>清洁肠道（弱酸性溶液灌肠）；</li>
+<li>口服不吸收糖降低结肠 PH <strong>（乳果糖）</strong> ；</li>
+<li>口服抗生素抑制肠道细菌（ <strong>利福昔明</strong> ）</li>
+</ul>
+<h5 id="促进氨代谢"><a class="header" href="#促进氨代谢">促进氨代谢</a></h5>
+<ul>
+<li><strong>L-鸟氨酸-L-天冬氨酸（促进尿素循环）；</strong></li>
+<li>天冬氨酸（促使氨合成氨基酸）；</li>
+<li>鸟氨酸-a-酮戊二酸；</li>
+<li>其他（谷氨酸钠或钾、精氨酸等）</li>
+</ul>
+<h5 id="支链氨基酸亮异亮缬"><a class="header" href="#支链氨基酸亮异亮缬">支链氨基酸（亮、异亮、缬）</a></h5>
+<ul>
+<li>竞争性抑制芳香族氨基酸入脑</li>
+</ul>
+<h5 id="gababz-复合受体拮抗剂"><a class="header" href="#gababz-复合受体拮抗剂">GABA/BZ 复合受体拮抗剂</a></h5>
+<ul>
+<li>氟马西尼</li>
+</ul>
+<h4 id="其他治疗"><a class="header" href="#其他治疗">其他治疗</a></h4>
+<ul>
+<li>人工肝（分子吸附剂再循环系统 -&gt; 急性肝功能衰竭）</li>
+<li>肝移植</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第四部分：消化系统疾病/第十四章：药物性肝病.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第四部分：消化系统疾病/第十六章：原发性肝癌.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第四部分：消化系统疾病/第十四章：药物性肝病.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第四部分：消化系统疾病/第十六章：原发性肝癌.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第四部分：消化系统疾病/第十五章：肝硬化.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

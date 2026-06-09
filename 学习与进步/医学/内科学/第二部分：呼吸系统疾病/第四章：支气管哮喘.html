@@ -1,0 +1,639 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第四章：支气管哮喘 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第四章支气管哮喘"><a class="header" href="#第四章支气管哮喘">第四章：支气管哮喘</a></h1>
+<h2 id="一病因发病机制"><a class="header" href="#一病因发病机制">一、病因、发病机制</a></h2>
+<h3 id="一定义"><a class="header" href="#一定义">一）定义</a></h3>
+<ul>
+<li>哮喘是一种慢性气道炎症和气道高反应性为特征的异质性疾病。</li>
+<li>主要特征为 <strong>气道慢性炎症</strong> 。</li>
+<li>这种气道慢性炎症导致 <strong>气道高反应性</strong> ，并引起反复发作的喘息、气急胸闷或咳嗽等症状，常在夜间和（或）清晨发作、加剧，通常出现广泛多变的 <strong>可逆性气流受限</strong> ，80% 患者可得到临床控制。</li>
+</ul>
+<h3 id="二病因"><a class="header" href="#二病因">二）病因</a></h3>
+<ul>
+<li>病因复杂，与多基因遗传（polygenic inheritance）有关 ，受遗传和环境因素综合作用</li>
+<li>遗传因素：易感基因（YLK40、IL6R、PDE4D、IL33 等）</li>
+<li>环境因素
+<ul>
+<li>吸入物：尘螨、花粉、真菌、动物毛屑、SO2</li>
+<li>感染：如病毒、细菌、寄生虫等</li>
+<li>食物：如鱼、虾蟹、蛋、牛奶</li>
+<li>药物：心得安、阿司匹林</li>
+<li>气候变化、运动</li>
+</ul>
+</li>
+</ul>
+<h3 id="三发病机制"><a class="header" href="#三发病机制">三）发病机制</a></h3>
+<ul>
+<li>老观念：痉挛学说 -&gt; 反复解痉治疗</li>
+<li>新进展：气道免疫-炎症机制、神经调节机制</li>
+<li>发作期：快速缓解气道痉挛 + 抗炎</li>
+<li>缓解期：长期抗炎治疗，控制发作</li>
+</ul>
+<h2 id="二本质此炎非彼炎"><a class="header" href="#二本质此炎非彼炎">二、本质：此“炎”非彼“炎”</a></h2>
+<h3 id="一inflammation-非特异性变应性炎症"><a class="header" href="#一inflammation-非特异性变应性炎症">一）Inflammation 非特异性变应性炎症</a></h3>
+<ul>
+<li>嗜酸性粒细胞浸润为主</li>
+<li>吸入糖皮质激素为主的抗炎治疗</li>
+</ul>
+<h3 id="二infection-特异性炎症"><a class="header" href="#二infection-特异性炎症">二）Infection 特异性炎症</a></h3>
+<ul>
+<li>红，肿，痛，热</li>
+<li>中性粒细胞浸润为主</li>
+<li>抗生素为主的抗感染治疗</li>
+</ul>
+<h3 id="三炎症构成"><a class="header" href="#三炎症构成">三）炎症构成</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">关键词</th><th style="text-align: left">解释</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">免疫-炎症机制（主要机制）</td><td style="text-align: left">气道慢性炎症反应由多种炎症细胞、炎症介质和细胞因子共同参与，如肥大细胞、B\T 淋巴细胞、嗜酸性细胞、嗜碱性细胞</td></tr>
+<tr><td style="text-align: center">气道高反应性</td><td style="text-align: left">1. 气道对多种刺激因素出现过强或过早的收缩反应<br />2. AHR 是哮喘的基本特征，有症状、即有 AHR<br />3. 气道炎症是导致气道高反应性的重要机制之一<br />4. AHR 具有家族遗传性<br />5. AHR 除见于哮喘，还有吸烟、接触臭氧、病毒感染、COPD 等。</td></tr>
+<tr><td style="text-align: center">气道重构</td><td style="text-align: left">哮喘的重要病理特征，表现为气道上皮细胞黏液化生、平滑肌肥大/增生、上皮下胶原沉积和纤维化、血管增生等</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="四th1th2-失衡学说"><a class="header" href="#四th1th2-失衡学说">四）Th1/Th2 失衡学说</a></h3>
+<ul>
+<li>T 辅助淋巴细胞免疫调节作用失常</li>
+<li>Th1 功能不足，Th2 功能亢进→Th1/Th2↓</li>
+<li>Th1→γIFN</li>
+<li>Th2→IL-13，IL-4，IL-5，GM-CSF</li>
+<li>气道慢性炎症反应，促进 IgE 合成</li>
+</ul>
+<h3 id="五气道炎症形成机制"><a class="header" href="#五气道炎症形成机制">五）气道炎症形成机制</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>炎症细胞</th><th>介质</th><th>症状</th></tr>
+</thead>
+<tbody>
+<tr><td>肥大细胞<br />B 淋巴细胞<br />嗜酸性粒细胞<br />Th2 细胞<br />嗜碱性粒细胞<br />中性粒细胞<br />血小板<br />结构细胞<br />上皮细胞<br />平滑肌细胞<br />内皮细胞<br />成纤维细胞<br />神经纤维</td><td>组胺<br />白细胞三烯<br />前列腺素<br />血小板活化子<br />激肽<br />腺苷<br />内皮素<br />氧化亚氮<br />细胞因子<br />趋化因子<br />生长因子</td><td>黏液腺肥大<br />水肿<br />黏液<br />基膜增厚<br />上皮损伤<br />气道平滑肌<br />炎症细胞浸润<br />血管扩张</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="六神经机制"><a class="header" href="#六神经机制">六）神经机制</a></h3>
+<ul>
+<li>支气管受复杂的植物神经支配</li>
+<li>除胆碱能神经、肾上腺素能神经外，还有非肾上腺素能非胆碱能（NANC）神经系统</li>
+<li>NANC 能释放舒张支气管平滑肌的神经介质，如血管肠激肽（VIP）、一氧化氮（NO），以及收缩支气管平滑肌的介质如 P 物质，神经激肽等</li>
+<li>两者平衡失调，则可引起支气管平滑肌收缩</li>
+</ul>
+<h2 id="三临床类型"><a class="header" href="#三临床类型">三、临床类型</a></h2>
+<h3 id="一早发性哮喘反应"><a class="header" href="#一早发性哮喘反应">一）早发性哮喘反应</a></h3>
+<ul>
+<li>15 ～30分钟达到高峰，2小时后逐渐恢复正常。</li>
+</ul>
+<h3 id="二迟发性哮喘反应"><a class="header" href="#二迟发性哮喘反应">二）迟发性哮喘反应</a></h3>
+<ul>
+<li>数6小时后方始发作哮喘，持续时间长，可达数天；约半数以上表现为迟发。</li>
+</ul>
+<h2 id="四临床表现"><a class="header" href="#四临床表现">四、临床表现</a></h2>
+<ul>
+<li>典型的表现是发作性伴有哮鸣音的呼气性呼吸困难</li>
+<li>双肺可闻及广泛的呼气相为主的哮鸣音，呼气延长哮鸣音消失</li>
+<li>寂静胸-病情危重</li>
+<li>发病特征
+<ul>
+<li>发作性：当遇到诱发因素时呈发作性加重</li>
+<li>节律性：常在夜间及凌晨发作或加重</li>
+<li>季节性：常在秋冬季节发作或加重</li>
+<li>可逆性：通常能够缓解症状，可有明显的缓解期</li>
+</ul>
+</li>
+<li>不典型哮喘：发作性咳嗽和胸闷为主要表现</li>
+<li>咳嗽变异性哮喘，胸闷变异性哮喘</li>
+</ul>
+<h2 id="五实验室检查"><a class="header" href="#五实验室检查">五、实验室检查</a></h2>
+<h3 id="一辅助检查"><a class="header" href="#一辅助检查">一）辅助检查</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">检测内容</th><th style="text-align: left">解释</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">通气功能检测</td><td style="text-align: left">可逆性阻塞性通气功能障碍<br />FEV1、FEV1/FVC%、PEF 均减少，缓解期可恢复正常；<br />呼气流速指标全下降</td></tr>
+<tr><td style="text-align: center">支气管激发试验</td><td style="text-align: left">目的：测定气道反应性（适应症：FEV1 &gt; 70%，非哮喘发作期）<br />方式：吸入组胺或乙酰胆碱<br />定性判断 : FEV1 下降 &gt; 20%，阳性</td></tr>
+<tr><td style="text-align: center">支气管舒张试验</td><td style="text-align: left">目的：测定气流受限的可逆性<br />吸入沙丁胺醇 20 分钟后<br />阳性：FEV1 增加 &gt; 12%，且绝对值增加 &gt; 200ml</td></tr>
+<tr><td style="text-align: center">PEF 变异率</td><td style="text-align: left">若每日昼夜 PEF 变异率&gt;10%，或周变异率 &gt; 20% 提示存在可逆性的气道改变</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="二免疫学检查"><a class="header" href="#二免疫学检查">二）免疫学检查</a></h3>
+<ul>
+<li>特异性变应原检查：
+<ul>
+<li>总 IgE↑：对使用 IgE 抗体治疗有指导</li>
+<li>特异性 IgE（+）：有助于病因诊断</li>
+</ul>
+</li>
+<li>变应原试验：皮肤试验（点刺试验）、吸入性试验</li>
+</ul>
+<h3 id="三血气分析"><a class="header" href="#三血气分析">三）血气分析</a></h3>
+<h4 id="早期"><a class="header" href="#早期">早期</a></h4>
+<ul>
+<li>缺氧，PaO2 下降，过度通气致 PaCO2↓： <strong>呼碱</strong></li>
+</ul>
+<h4 id="晚期"><a class="header" href="#晚期">晚期</a></h4>
+<ul>
+<li>重症哮喘，气道阻塞，呼吸肌疲劳，PaCO2↑： <strong>呼酸</strong> 和（或） <strong>代酸（缺氧明显）</strong></li>
+</ul>
+<h2 id="六诊断鉴别诊断"><a class="header" href="#六诊断鉴别诊断">六、诊断、鉴别诊断</a></h2>
+<h3 id="一诊断标准"><a class="header" href="#一诊断标准">一）诊断标准</a></h3>
+<ol>
+<li>反复发作的喘息、气急、胸闷或咳嗽，多有诱因</li>
+<li>发作时散在或弥漫性哮鸣音，以呼气相为主，呼气相延长</li>
+<li>治疗后症状缓解或自行缓解</li>
+<li>症状不典型者至少应有以下一项阳性
+<ol>
+<li>支气管激发实验或运动实验阳性；</li>
+<li>支气管舒张实验阳性（经吸入 β2 肾上腺素受体激动剂后，FEV1（第一秒用力呼气量）增加 12%，且 FEV 增加绝对值 ≥ 200ml ）；</li>
+<li>PEF（峰值呼气流速）日内变异率 &gt; 10% 或周变异率 &gt; 20%（九版更新）</li>
+</ol>
+</li>
+<li>除外其他疾病</li>
+<li>符合 1-4 或 4, 5 条者可诊断支气管哮喘</li>
+</ol>
+<h3 id="二严重程度"><a class="header" href="#二严重程度">二）严重程度</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>临床特点</th><th>轻度</th><th>中度</th><th>重度</th><th>危重</th></tr>
+</thead>
+<tbody>
+<tr><td>气短</td><td>不行、上楼梯时</td><td>稍事活动</td><td>休息时</td><td>-</td></tr>
+<tr><td><strong>体位</strong></td><td>可平卧</td><td>喜坐位</td><td><strong>端坐呼吸</strong></td><td>-</td></tr>
+<tr><td>讲话方式</td><td>连续成句</td><td>讲话常有中断</td><td>只能发单字表达</td><td>不能讲话</td></tr>
+<tr><td><strong>精神状态</strong></td><td>可有焦虑</td><td>时有焦虑或烦躁</td><td>常有焦虑、烦躁</td><td><strong>嗜睡、意识模糊</strong></td></tr>
+<tr><td><strong>呼吸频率</strong></td><td>轻度增加</td><td>增加</td><td><strong>常 &gt; 30次/分</strong></td><td>-</td></tr>
+<tr><td>三凹征</td><td>常无</td><td>可有</td><td>常有</td><td><strong>胸腹矛盾呼吸</strong></td></tr>
+<tr><td><strong>哮鸣音</strong></td><td>散在哮鸣音</td><td>响亮、弥漫的哮鸣音</td><td>响亮、弥漫的哮鸣音</td><td><strong>哮鸣音减弱，甚至消失</strong></td></tr>
+<tr><td><strong>脉律</strong></td><td>无奇脉</td><td><strong>可有奇脉</strong></td><td><strong>有奇脉</strong></td><td>脉律不规则</td></tr>
+<tr><td>脉率</td><td>&lt; 100 次/分</td><td>100 ~ 120 次/分</td><td>&gt; 120 次分</td><td>脉率变慢</td></tr>
+<tr><td><strong>PaO2</strong></td><td>正常</td><td>60~80 mmhg</td><td><strong>&lt; 60 mmHg</strong></td><td><strong>严重低氧血症</strong></td></tr>
+<tr><td><strong>PaCO2</strong></td><td>&lt; 45 mmhg</td><td>≤ 45 mmhg</td><td><strong>&gt; 45 mmHg</strong></td><td><strong>高 CO2 血症</strong></td></tr>
+<tr><td>SaO2</td><td>&gt; 95%</td><td>91% ~ 95%</td><td>≤ 90%</td><td>严重降低</td></tr>
+<tr><td>pH</td><td>正常</td><td>正常</td><td>可降低</td><td>降低</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="三控制水平分级"><a class="header" href="#三控制水平分级">三）控制水平分级</a></h3>
+<h4 id="哮喘症状控制"><a class="header" href="#哮喘症状控制">哮喘症状控制</a></h4>
+<ul>
+<li>过去四周，病人存在：
+<ol>
+<li>日间哮喘症状 &gt; 2 次/周</li>
+<li>夜间因哮喘憋醒</li>
+<li>使用缓解药次数 &gt; 2 次/周</li>
+<li>哮喘引起的活动受限</li>
+</ol>
+</li>
+<li>哮喘症状控制水平
+<ul>
+<li>良好控制：无</li>
+<li>部分控制：存在 1~2 项</li>
+<li>未控制：存在 3~4 项</li>
+</ul>
+</li>
+</ul>
+<h4 id="未来风险评估"><a class="header" href="#未来风险评估">未来风险评估</a></h4>
+<ul>
+<li>（急性发作风险，病情不稳定，肺功能迅速下降，药物不良反应）</li>
+<li>与未来不良事件风险增加的相关因素包括：
+<ol>
+<li>临床控制不佳；</li>
+<li>过去一年频繁急性发作；</li>
+<li>曾因严重哮喘而住院治疗；</li>
+<li>FEV1 低；</li>
+<li>烟草暴露；</li>
+<li>高剂量药物治疗</li>
+</ol>
+</li>
+</ul>
+<h2 id="七并发症和治疗"><a class="header" href="#七并发症和治疗">七、并发症和治疗</a></h2>
+<h3 id="一哮喘治疗药物分类"><a class="header" href="#一哮喘治疗药物分类">一）哮喘治疗药物分类</a></h3>
+<h4 id="快速缓解药物"><a class="header" href="#快速缓解药物">快速缓解药物</a></h4>
+<ul>
+<li>短效 β2-激动剂</li>
+<li>短效吸入抗胆碱药</li>
+<li>全身性糖皮质激素</li>
+<li>短效茶碱</li>
+</ul>
+<h4 id="长期控制药物"><a class="header" href="#长期控制药物">长期控制药物</a></h4>
+<ol>
+<li>吸入型糖皮质激素</li>
+<li>长效吸入 β2-激动剂</li>
+<li>白三烯受体拮抗剂</li>
+<li>缓释茶碱</li>
+<li>吸入色甘酸钠</li>
+<li>抗 IgE 抗体</li>
+<li>抗 IL-5 抗体（九版新加）</li>
+<li>联合用药</li>
+</ol>
+<h3 id="二支气管舒张药治标"><a class="header" href="#二支气管舒张药治标">二）支气管舒张药（治标）</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>药物分类</th><th>药物</th><th>作用机理</th><th>注意事项</th></tr>
+</thead>
+<tbody>
+<tr><td>β2受体激动剂</td><td>沙丁胺醇<br />特布他林</td><td>激活腺苷酸环化酶，增加 CAMP 的合成，减少游离钙离子，舒张支气管平滑肌，稳定肥大细胞膜</td><td>缓解哮喘症状的首选药物；<br />不易长期单独使用</td></tr>
+<tr><td>茶碱类</td><td>氨茶碱</td><td>抑制磷酸二酯酶，提高平滑肌细胞内 cAMP 的含量</td><td>茶碱的“治疗窗”窄，易出现毒副作用</td></tr>
+<tr><td>抗胆碱药</td><td>溴化异丙托品</td><td>抑制气道平滑肌表面 M3 受体</td><td>青光眼、前列腺肥大和妊娠 3 个月妇女慎用</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="三抗炎平喘药治本"><a class="header" href="#三抗炎平喘药治本">三）抗炎平喘药（治本）</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>药物</th><th>药理作用</th><th>不良反应</th></tr>
+</thead>
+<tbody>
+<tr><td>糖皮质激素<br />（二丙酸倍氯米松）</td><td>抗炎、抗过敏、抗微血管渗漏、间接松弛平滑肌</td><td>吸入性激素局部治疗；<br />控制哮喘最有效药物</td></tr>
+<tr><td>白三烯调节剂<br />（扎鲁司特）</td><td>拮抗细胞表面的白三烯受体，抑制肥大细胞释放介质</td><td>适用于阿司匹林和运动性哮喘</td></tr>
+<tr><td>色甘酸钠</td><td>抑制 IgE 介导的肥大细胞释放炎症介质</td><td>预防发作</td></tr>
+<tr><td>酮替酚</td><td>H1 受体拮抗剂，抗过敏 β2 受体功能的恢复</td><td>嗜睡，高空作业不易使用</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="四急性发作期的治疗"><a class="header" href="#四急性发作期的治疗">四）急性发作期的治疗</a></h3>
+<h4 id="哮喘急性发作的治疗目的"><a class="header" href="#哮喘急性发作的治疗目的">哮喘急性发作的治疗目的</a></h4>
+<ol>
+<li>尽可能快地缓解气流受限</li>
+<li>缓解低氧血症</li>
+<li>尽可能快地使肺功能恢复正常</li>
+<li>预防进一步恶化或再次发作</li>
+<li>防止并发症</li>
+</ol>
+<h4 id="急性发作期的治疗"><a class="header" href="#急性发作期的治疗">急性发作期的治疗</a></h4>
+<ul>
+<li>轻度：间断吸入 SABA，效果不佳，可加缓释茶碱或短小抗胆碱药</li>
+<li>中度：持续吸入 SABA，联合短效抗胆碱、激素或联合静脉茶碱效果不佳，可口服激素 + 吸氧</li>
+<li>重度：持续吸入 SABA，联合短效抗胆碱、激素和静脉茶碱尽早静脉激素，后改口服</li>
+</ul>
+<h3 id="五重度哮喘的治疗"><a class="header" href="#五重度哮喘的治疗">五）重度哮喘的治疗</a></h3>
+<ol>
+<li>氧疗与辅助通气</li>
+<li>补液：遵循先快后慢，先盐后糖，见尿补钾</li>
+<li>纠正酸中毒：严重缺氧可引起代谢性酸中毒，后者可使病人的支气管对平喘药的反应性降低，pH &lt; 7.2，可补碱。</li>
+<li>氨茶碱：小剂量静点</li>
+<li>糖皮质激素：尽早静脉给药</li>
+<li>抗生素：气道阻塞导致肺部感染</li>
+<li>β2 受体激动剂</li>
+</ol>
+<ul>
+<li>（一补二纠氨茶碱，氧疗两素兴奋剂）</li>
+</ul>
+<h3 id="六哮喘长期治疗方案"><a class="header" href="#六哮喘长期治疗方案">六）哮喘长期治疗方案</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>治疗方案</th><th>第 1 级</th><th>第 2 级</th><th>第 3 级</th><th>第 4 级</th><th>第 5 级</th></tr>
+</thead>
+<tbody>
+<tr><td>推荐选择控制药物</td><td>不需使用药物</td><td>低剂量 ICS</td><td>低剂量 ICS 加 LABA</td><td>中/高剂量 ICS 加 LABA</td><td>加其他治疗，如口服糖皮质激素</td></tr>
+<tr><td>其他选择控制药物</td><td>低剂量 ICS</td><td>白三烯受体抗剂<br />低剂量茶碱</td><td>中/高剂量 ICS<br />低剂量 ICS 加白三烯受体抗剂<br />低剂量 ICS 加茶碱</td><td>中/高剂量 ICS 加 LABA 加 LAMA<br />高剂量 ICS 加白三烯受体拮抗剂<br />高剂量 ICS 加茶碱</td><td>加 LAMA<br />加 IgE 单克隆抗体<br />加 IL-5 单克隆抗体</td></tr>
+<tr><td>缓解药物</td><td>按需使用  SABA</td><td>按需使用 SABA</td><td>按需使用 SABA 或低剂量布地奈德/福莫特罗或倍氯米松/福莫特罗</td><td>按需使用 SABA 或低剂量布地奈德/福莫特罗或倍氯米松/福莫特罗</td><td>按需使用 SABA 或低剂量布地奈德/福莫特罗或倍氯米松/福莫特罗</td></tr>
+</tbody>
+</table>
+</div>
+<p>注：推荐选用的治疗方案，但也要考虑病人的实际状况，如经济收人和当地的医疗资源等。低剂量 ICS 指每日吸人布地奈德（或等效其他 ICS）200~400μg，中等剂量为 &gt; 400~800μg，高剂量为 &gt; 800~1600μg</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第三章：慢性支气管炎、慢性阻塞性肺疾病.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第五章：支气管扩张症.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第三章：慢性支气管炎、慢性阻塞性肺疾病.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第五章：支气管扩张症.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第二部分：呼吸系统疾病/第四章：支气管哮喘.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

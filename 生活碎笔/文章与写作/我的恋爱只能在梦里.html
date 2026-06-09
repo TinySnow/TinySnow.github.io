@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>⭐️我的恋爱只能在梦里 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="我的恋爱只能在梦里"><a class="header" href="#我的恋爱只能在梦里">我的恋爱只能在梦里</a></h1>
+<h2 id="写在前面"><a class="header" href="#写在前面">写在前面</a></h2>
+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">5855 字 | 情感 | 感触 | 经历 | 朋友 | 想法 | 观念 | 性别话题 | 暴言注意</p>
+
+<p>　　 <strong>这是我迄今以来，最深层次的自我表露。</strong></p>
+<p>　　这篇文章，将深层次地阐述自己的恋爱观，并给出自己无法谈恋爱的理由。 <strong>“钟情友谊，厌恶爱情”既是主动选择，也是无奈之举。</strong></p>
+<p>　　之前写过一篇<a href="https://tinysnow.github.io/%E6%96%AD%E7%AB%A0/%E6%96%87%E7%AB%A0/%E5%BE%AE%E9%9B%AA%E7%88%B1%E6%83%85%E8%A7%82.html">《微雪爱情观》</a>，然而总结起来就是不信爱情，也未提到过相关观念，约同废话。于是写这一篇文章加以补充。</p>
+<p>　　 <strong>虽说如此，但我仍然不打算讲述有关懿的故事。她永远都将是我内心最深处的秘密。</strong></p>
+<p>　　开始正文之前，我想先向两个人致谢：</p>
+<p>　　<span style="color:#0f4c81; font-weight:bold; text-decoration: underline;">感谢懿小姐，让我知道“喜欢”的感觉；</span></p>
+<p>　　<span style="color:#0f4c81; font-weight:bold; text-decoration: underline;">感谢佳芯小姐，让我了解“被喜欢”的感受；</span></p>
+<p>　　<span style="color:#0f4c81; font-weight:bold; text-decoration: underline;">她们两人给予了我很大的成长，纵然她们已经看不到了。</span></p>
+<p>　　 <strong>最后，篇幅浩大，性别话题，敬请注意。</strong></p>
+<p>　　那么，我们开始吧。</p>
+<h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>　　我的恋爱观，阐述起来就是八个字： <strong>钟情友谊，厌恶爱情。</strong></p>
+<p>　　一般关系的升级路径为：陌生人 -&gt; 点头之交 -&gt; 泛泛之交 -&gt; 熟人 -&gt; 朋友 -&gt; 死党或闺蜜 -&gt; 爱人。而升级为爱人之后漫长的时间里，相处模式更近似亲密的朋友。相互之间都需要隐私、尊重、支持和承诺。</p>
+<p>　　根据爱情三角理论，完美的爱情等于激情加亲密加承诺，而友谊之爱等于亲密加承诺，后者唯独缺一个激情。激情在很大程度上，又与性和狂热联系在一起。</p>
+<p>　　 <strong>我对于陪伴与时间的渴求，远远大于性与激情。既然自己对性保守，没有那么重要，爱人之后的关系又近似友谊，友谊能够长久地发展，那么为什么不维持在“好朋友”这里呢？</strong></p>
+<p>　　所以，维持在友谊阶段，最明智的决定。</p>
+<p>　　当然，原因不止如此。而厌恶爱情，有着更深层次的原因：</p>
+<p>　　 <strong>1. 对于爱情的信任要求极高；</strong></p>
+<p>　　 <strong>2. 对于美的欣赏，大于伴侣本人，爱抽象的人胜过爱具体的人；</strong></p>
+<p>　　 <strong>3. 国内魔怔的节奏已经大幅动摇自己最初的理念；</strong></p>
+<p>　　 <strong>4. 性格过于独立；</strong></p>
+<p>　　 <strong>5. 平等在自己看来极为重要，然而可能不会被对方所接受；</strong></p>
+<p>　　 <strong>6. 长相不过关。</strong></p>
+<p>　　以上所有原因，加权起来构成了自己的八字恋爱观。</p>
+<br />
+<h3 id="一对于爱情的信任要求极高"><a class="header" href="#一对于爱情的信任要求极高">一，对于爱情的信任要求极高。</a></h3>
+<p>　　我原和同事单独两人时，聊起过类似的话题。彼时她正烦恼，问我觉得恋爱双方该如何相处。我只说了一句话。</p>
+<p>　　“我们可以在一张床上睡觉，但是对方打电话时，我一定会避开。”</p>
+<p>　　她沉默了一下，笑笑说：“那你应该打电话跟他聊聊。每次我跟人出去玩儿，接到他电话都觉得烦死了。”</p>
+<p>　　这确实是我长久以来的观点。</p>
+<p>　　这不仅仅是给予双方隐私和尊重，而且这也是信任的证明。信任一直都是一种稀缺资源，无论何时何地，哪种关系。</p>
+<p>　　<u>没有信任，只会让双方的猜忌越来越重，从一个人内耗变成两个人相互内耗，能量散失加剧。</u></p>
+<p>　　我有一位非常好的朋友，现在感觉像是女儿或者妹妹。我一直被她玩弄于鼓掌之间。</p>
+<p>　　她向我表白之后，我苦笑着问她：“你就不怕我拒绝之后消失吗？”</p>
+<p>　　她语音里在笑，说：“不怕啊，我敢说就代表了我有百分之八九十的把握，我们之间的关系不会消失。”</p>
+<p>　　也因此，她有时很放肆。怼着我的脸输出，我只能苦笑。</p>
+<p>　　有一次，她当着群里所有人，开玩笑问我：“要是我压在你身上呢？”</p>
+<p>　　那一瞬间其实我就有了答案。</p>
+<p>　　想了想，还是没有说，公开说出来一定会让她难过。</p>
+<p>　　如果是真的，我一定会推开她。</p>
+<p>　　<u>否则，这将会是一场无法原谅，也不可饶恕的背叛。</u></p>
+<p>　　无论是对于自己，还是对于那个还未到来（抑或永远不会到来）的伴侣。</p>
+<p>　　佳芯小姐曾有一次，在昏黄的路灯下跟我聊天。周围满是下课回宿舍的学生。</p>
+<p>　　她说，她还是没有放下心里的那个人。在此之前，她向我暗示了很久，目前她与他同班。</p>
+<p>　　我沉默了几秒钟，开口。</p>
+<p>　　 <strong>“首先，我非常感谢你能给我说这件事情，这真的需要很大的勇气，无论怎样，谢谢你这么信任我，”</strong> 我努力地斟酌着措辞，表达自己的真实想法， <strong>“然后，关于这件事，我也相信你自己能处理好。如果需要什么援助，我随时在你身后。”</strong></p>
+<p>　　这段措辞虽然是临时之辞，但它一直记在我的脑海里。因为这件事情对我印象非常深刻。</p>
+<p>　　我很多次都觉得，身为一个男朋友，这是我能做的所有事情了。保持信任，然后支持她去处理目前她自己所遇到的麻烦。这件事情我完全没有办法帮忙。</p>
+<p>　　课题分离，这是她的课题，不是我的。我也没办法阻止她不去想。</p>
+<p>　　<u>如果再来一次，我仍然会这么选择，说这些话。</u></p>
+<p>　　至于最后的结果，已经不重要了。所有过往，皆为序章。</p>
+<p>　　佳芯小姐也曾跟我说，她的异性朋友很多，问我会不会介意。我说，不会呀，我相信这个世界上有纯洁的异性友谊，自己就是一个很好的例子，所以轻松随便一些就好。</p>
+<p>　　如果爱情顺利的话，会变成亲情。我不希望家人之间存有猜忌，每一天如同一局局狼人杀。 <strong>我们相互为彼此保留的隐私与尊重，以相互的信任为基础。</strong></p>
+<p>　　 <strong>忠诚不绝对，就是绝对不忠诚。</strong></p>
+<p>　　既然已经走到了“有没有爱情都无所谓”这一步，我便不怕失去这个人。</p>
+<p>　　不怕失去一个人，才能真正拥有一个人。爱情之前，首先我们得有自我。我们需要让所有人知道，一旦触碰底线，便绝不会回头。 <u>这些底线构成了我们自己。</u></p>
+<p>　　我们看影视剧也喜欢那些个性鲜明的角色，不是吗？</p>
+<p>　　 <strong>反复地确认彼此是否相爱，在信任面前是最可笑的行为。</strong></p>
+<p>　　而信任这一个要求，就已经将绝大多数人，挡死在了爱情之门外。</p>
+<br />
+<h3 id="二对于美的欣赏大于伴侣本人爱抽象的人胜过爱具体的人"><a class="header" href="#二对于美的欣赏大于伴侣本人爱抽象的人胜过爱具体的人">二，对于美的欣赏，大于伴侣本人，爱抽象的人胜过爱具体的人。</a></h3>
+<p>　　美的欣赏和愉悦很奇妙。成长的经历中，我曾看过许多异性裸露的照片，但那并不美。比起赤裸裸的照片，更喜欢穿着衣服的日常生活片段；比起原始的刺激，更喜欢两性身上那些特有的美。</p>
+<p>　　温柔、共情、倾诉、坚强、果断、血性、睿智、温暖、阳光和大方等等。</p>
+<p>　　这些只有可能在抽象的人身上出现。我目前还没有过渡到喜欢具体的人这一阶段。</p>
+<p>　　这些听起来很奇怪，但我们平时所追求的正义、教育、道德、底线等等，不也是抽象的东西吗？</p>
+<p>　　或许正因如此，我并不习惯在异性交往中，谈及性别话题。 <u>我和很多朋友们总是“去性别化”交往，聊天时刻意地避开性别话题。后果就是——最后会相处成为朋友。</u></p>
+<p>　　所有跟我关系很好的女孩子，都是很好的朋友，但不会是恋爱对象。</p>
+<p>　　当然我并没有怨言，自己的高表达性需要一些条件去维持，而她们正是我最好的帮手。这是幸福的事，而朋友多，更是一件值得庆幸的事。</p>
+<p>　　只是有时会寂寞，不过这可以忍受。</p>
+<p>　　“去性别化”交往，总让我想起漫画中的一句话：</p>
+<p>　　<span style="color:#0f4c81; font-weight:bold;">「私昔お兄様に言われたことがあるんです。好きな相手にはきちんと自分のことを異性として意識して もらわないとダメだって」</span></p>
+<p>　　<span style="color:#0f4c81; font-weight:bold;">（「我曾经听兄长说过，不好好地让喜欢的人，意识到自己是异性，是不行的哦」）</span></p>
+<p>　　这句话很撩人。只是或许我永远都做不到吧。</p>
+<br />
+<h3 id="三国内魔怔的节奏已经大幅动摇自己最初的理念"><a class="header" href="#三国内魔怔的节奏已经大幅动摇自己最初的理念">三，国内魔怔的节奏已经大幅动摇自己最初的理念。</a></h3>
+<p>　　<u> <strong>这个段落将包含大量而强烈的性别话题。</strong> </u></p>
+<p>　　<u>早些年，国内还没有现在疯狂的节奏。许多人都认为女性是真实的弱势群体，而非现在打着“弱势群体”的旗号索取特权的特殊阶级。</u></p>
+<p>　　<u>那时候，为了体验女性的感受，我真的做过一些很激进的事情。</u></p>
+<p>　　我们不谈中二那些年的黑历史，但这些经历确确实实给我留下了很深的体验和印象。</p>
+<p>　　比如，我真的感受过，掉肩是一件很烦的事情——歪在一边限制肩膀活动的拉扯感，真的很不舒服；旋转楼梯必须走最外侧，既走不快又绕远路，也是让人烦恼的事；冬天等头发干也会花去大量的时间，还容易感冒。</p>
+<p>　　受限于条件，我没有办法体验全部的事情，比如一个月被劈成三部分等等。</p>
+<p>　　 <strong>就有限的这些经历，决定了我现在一直贯彻的理念。</strong></p>
+<p>　　<span style="color:#0f4c81; font-weight:bold; text-decoration: underline;">我希望，起码能让她们感受到，异性不是什么潜在的刑事罪犯，他们也可以温和、阳光、开朗和大方。我不能做到让全部人都感受到，那么至少，我希望自己的恋爱对象能够在我身上，获得这种安心和温暖。</span></p>
+<p>　　因为体验过，我才会有现在对待女性温和的态度。我鼓励她们去追求自己的事业和生活，不加以限制，只是在身后挥手，祝她们一路走好。</p>
+<p>　　有时我又在想，“体验”这一个词，是否又先天地带着男性的傲慢，有居高临下之感。想着想着，总会感到一丝罪恶，似乎我生下来就带着原罪。</p>
+<p>　　于是总摇摇头甩掉。只是贯彻这个理念而不去想。</p>
+<p>　　<u>我知道我的一些女性朋友会因此有些五味杂陈，因为她们问过我，是不是我对每位女性都这样，我在这里可以说，确实如此。</u></p>
+<p>　　<u>然而，待人温和不是上限，仅仅是下限。硬要说，是类似于更高的道德和自我要求。</u></p>
+<p>　　<u>喜欢也分等级。既然我已经将她们当成了关系更好的朋友，那么自然会有比“待人温和”这一点更多的待遇，例如经济支持、精神安慰和一同分享等等等等。而这些待遇之中，又会有频率之分。</u></p>
+<p>　　爱情双方，总有人要承担更大的责任。既然自己身为男性，相对占有一些优势，那么我愿意去承担。而不是将这份责任和苦难转嫁到自己爱的人身上。</p>
+<p>　　上了大学，认识了一些跨性别的朋友。</p>
+<p>　　她们有时候会开玩笑说，我迟早会翻车。我有时候也会开玩笑回说，翻就翻，谁怕谁。</p>
+<p>　　然而， <strong>在可见的未来，我知道我不会</strong> 。因为这个理念已经在我心里扎根了如此之深，贯彻执行了这么之久，我不会放弃。</p>
+<p>　　 <strong>我只是难过</strong> ，现在国内的节奏已经洗脑了很多人的思想。</p>
+<p>　　这些节奏，很大程度上动摇了自己当初的信念。</p>
+<p>　　现在我更有可能遇上一个，把自己当成贵族阶级，凌驾于我之上的恋爱对象。我希望能给对方足够的安全感，但与此相对的，我不希望因此获得一个“你本就应该这样做”的反应和对待。</p>
+<p>　　这让人很寒心。</p>
+<p>　　恋爱双方在渴求对方的时候，玩一些性别上的小性子，想要欺负对方或者被对方欺负，这些都无所谓。有时候我们甚至会希望这样做。</p>
+<p>　　然而如果将这个态度，代入这以外的生活，只会让人感觉不舒服，有权力欺压和逃避责任之感。</p>
+<p>　　<u>目前我仍然会将这个信念贯彻下去。只是，鉴于目前的环境，等到哪天它自然消失了，我也不会奇怪。</u></p>
+<br />
+<h3 id="四性格过于独立"><a class="header" href="#四性格过于独立">四，性格过于独立。</a></h3>
+<p>　　一些朋友也因此困扰。</p>
+<p>性格独立，意味着习惯了什么事情都自己做，伤心难过自己扛。早已经习惯了一个人，很难进入别人的生活或是被别人的生活侵入。</p>
+<p>　　 <strong>独立是一件好事，但在亲密关系上，会变成劣势。</strong></p>
+<br />
+<h3 id="五平等在自己看来极为重要然而可能不会被对方所接受"><a class="header" href="#五平等在自己看来极为重要然而可能不会被对方所接受">五，平等在自己看来极为重要，然而可能不会被对方所接受。</a></h3>
+<p>　　我曾经问过一些朋友，她们不少人的理念就是找一个“遮风挡雨”的人。</p>
+<p>　　“出了什么事情，最好都找他，不要找我。”</p>
+<p>　　“找一个阔少，生活无忧。”</p>
+<p>　　<u>富人家又不都是地主家的二傻子……</u></p>
+<p>　　这些也似乎都是社会对男性默认的规则和要求。然而 <strong>没有任何一个人生来世上就应该享福或者受苦</strong> ，人况且如此，性别更不应该凌驾于人性之上。</p>
+<p>　　而且平等，是最能削弱权力的形式。我想尽可能地平等，但许多人认为这种平等是一种懦弱的表现。似乎男性就该挡在别人身前。</p>
+<p>　　 <strong>我现在正努力让自己强大起来，自愿而主动这样做——但这并不是我的义务。我可以主动地承担起这样的责任，但对方不能要求我这样做。</strong> 在我看来，“一个男人，就该在外赚钱”这种要求很可笑，这跟“一个就该穿上裙子化个妆，乖乖待在家里做家务”有什么区别。</p>
+<p>　　说这种话时，我们并没有将对方当成人看。只当成了一个恣意审视的客体。</p>
+<p>　　为什么我们在被别人用随意的目光上下打量时，会感觉不舒服？因为这就是“物化”和“客体化”。我们的独立性和尊严受到了严重的侵犯。</p>
+<p>　　<span style="color:#0f4c81; font-weight:bold;">平等才是最有期望最有未来的地位关系。职场上的权力欺压不应该在亲密关系里面再现。</span></p>
+<p>　　当然，此处说的平等，是真正意义上的平等，权利与义务上的平等。</p>
+<p>　　“平等应该自己的钱自己花。”“我每个月工资就这么一点，房贷你背吧。”</p>
+<p>　　“我在外面赚钱都这么辛苦了，你就不能多做一点家务吗？”</p>
+<p>　　 <strong>这不是平等，是双标。</strong></p>
+<p>　　 <strong>爱情的双方都有责任为同一件事情做出自己的贡献。可以分工，不能占便宜。寒心的时间长了，会产生质变。</strong></p>
+<p>　　 <strong>平等造成了我和传统观念上的巨大鸿沟。传统家庭的“男主外，女主内”的家庭模式我完全不能接受。</strong> 任何人都应该享有自己的劳动报酬，否则将在漫长的时间旅程中缓慢丧失自己存在的意义。</p>
+<p>　　两方不能有任何一方为了爱情或家庭，放弃工作或收入来源。</p>
+<p>　　这不仅是为了双方平等，更是为了对抗风险。“一家之主”的模式，顶梁柱的意外或死亡将会带来灾难性的打击。“男主外，女主内”，在男女之前，首先两方都是人，不是神仙，意外不会在意性别。我希望没有家庭顶梁柱，对方也可以生活的很好，而非难以为继。既然踏入了这段关系，那么我希望我们都有更好的未来。</p>
+<p>　　<span style="color:#0f4c81; font-weight:bold; text-decoration: underline;">财务大权共有，不仅仅是平等，更为了活出意义和平衡风险。</span></p>
+<br />
+<h3 id="六长相不过关"><a class="header" href="#六长相不过关">六，长相不过关。</a></h3>
+<p>　　<u>这是最无关紧要的一个理由。此处的长相说的是我自己。</u></p>
+<p>　　我不太在意外貌，或许是因为我对性格的要求远高于长相。而且“东施”想找“西施”本就不现实。就算能找到，在其他方面也要付出相应的补偿或代价。</p>
+<p>　　<u> <strong>在漫长的爱情旅途中，长相也是最无关紧要的东西。（参见：“刺激——价值观——角色”亲密增长理论）</strong> </u></p>
+<p>　　我当然也喜欢漂亮的人，但此处的“喜欢”和爱情的“喜欢”是两种东西。爱美之心人皆有之，但是蛋糕总不能当饭吃。</p>
+<p>　　有时候，俊美的长相，反而会更让人生气。</p>
+<p>　　比如完美的长相和身材，配上恶劣的性格，或者歹毒的语言。亦或者对方做错事情，你只想要一个道歉，对方却想利用自己的长相优势让你消气——性质更加恶劣，本质是在逃避责任，犯错了就该道歉然后改正，而不是用其他方式回避问题。</p>
+<p>　　长相外貌完全拯救不了逃避责任等性格上的缺陷，大部分女性（准确地说，是大部分人）天然喜欢漂亮、帅气和可爱的东西，虽然自己在努力，但仍然够不到边。</p>
+<p>　　自己并不帅气，那么就这样吧。</p>
+<br />
+<p>　　<u>待人温和，追求平等，性格独立，长相一般，这些因素让人平易近人。同时，自己“去性别化”的交往方式，让我的很多女性朋友，没有感受到“想要追求”的威胁。所以我现在有很多异性好友。</u></p>
+<p>　　身为男性，同性朋友的基数自然要大得多。然而，我跟一些女性朋友的交往深度，远超我绝大多数（可能高达 95%）的同性朋友。</p>
+<p>　　<u> <strong>这是幸福，也是烦恼，更是我为了维持男性不易获得的高表达性，理应的结果。</strong> </u></p>
+<p>　　自己原来迷失在聊天频繁的幻觉中时，曾向其中两个人表白过。无一例外，都失败了。她们都说，从来没有这种想法，对我这种表现也很诧异。</p>
+<p>　　然而她们最后还是宽恕了自己，愿意继续同我做朋友。我们现在仍然在保持联系。</p>
+<p>　　 <strong>我觉得她们很温柔，也很了不起。更加证明了，这段关系值得。</strong></p>
+<p>　　庆幸之余，难免会觉得自己有些悲哀。</p>
+<p>　　这是自己的幸运，也是自己的业障。</p>
+<p>　　所有的理由构成了现在的恋爱观念。我不知道以后会不会天降一个恋爱对象，让我改观，起码现在不会。我也不知道以后的状况会不会有所改善，但对于自己这样胆小的人，在情感方面不具勇气的人，目前的现状就是最好的结果。</p>
+<p>　　<u> <strong>寻找恋爱对象，既然作为一个目标，就需要付出成本。</strong> </u> 目前自己并没有付出，所以造成了现在的现象也并不奇怪。而现在，自己早已经没有时间和精力去做这件事情了。加之自己对于对方的性格要求又很多，性格又只有交往一段时间之后才能看出来，所以就干脆单身了。</p>
+<p>　　单身也不是什么坏事。</p>
+<p>　　上面一些理由可能不会让人接受，不过受环境影响的人，本就有可能千奇百怪。自己本就是一个纠结又复杂的矛盾体。</p>
+<p>　　<u>如果所有理由都不能让人接受，那么权作是一个异性朋友多的渣男，所做出的自我狡辩吧。</u></p>
+<br />
+<p>　　南国微雪 Miyuki</p>
+<p>　　2024 年 3 月 17 日</p>
+<h2 id="写在后面"><a class="header" href="#写在后面">写在后面</a></h2>
+<p>　　因此篇文章自我表露程度过深，针对微信公众号，如日后流量过多，则可能转为付费文章以限制流量。</p>
+<p>　　Telegram 则一直为公开频道。</p>
+<h2 id="封面图"><a class="header" href="#封面图">封面图</a></h2>
+<p><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/ryan-holloway-CCQvy4C_WX4-unsplash.jpg" alt=""></p>
+<blockquote>
+<p>摄影师 | Ryan Holloway</p>
+<p>图源 | Unsplash</p>
+</blockquote>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../生活碎笔/文章与写作/专注或许不曾被你注意到.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../生活碎笔/文章与写作/时间不公平.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../生活碎笔/文章与写作/专注或许不曾被你注意到.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../生活碎笔/文章与写作/时间不公平.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/文章与写作/我的恋爱只能在梦里.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

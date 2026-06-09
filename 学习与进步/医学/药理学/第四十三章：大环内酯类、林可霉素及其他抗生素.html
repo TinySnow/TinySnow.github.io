@@ -1,0 +1,586 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第四十三章：大环内酯类、林可霉素及其他抗生素 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第四十三章大环内酯类林可霉素及其他抗生素"><a class="header" href="#第四十三章大环内酯类林可霉素及其他抗生素">第四十三章：大环内酯类、林可霉素及其他抗生素</a></h1>
+<h2 id="一大环内酯类"><a class="header" href="#一大环内酯类">一、大环内酯类</a></h2>
+<h3 id="一分类"><a class="header" href="#一分类">一）分类</a></h3>
+<h4 id="按化学结构"><a class="header" href="#按化学结构">按化学结构</a></h4>
+<h5 id="14-元环大环内酯类"><a class="header" href="#14-元环大环内酯类">14 元环大环内酯类</a></h5>
+<ul>
+<li>天然：红霉素</li>
+<li>半合成：克拉霉素、罗红霉素、地红霉素</li>
+</ul>
+<h5 id="15-元环大环内酯类"><a class="header" href="#15-元环大环内酯类">15 元环大环内酯类</a></h5>
+<ul>
+<li>半合成：阿奇霉素</li>
+</ul>
+<h5 id="16-元环大环内酯类"><a class="header" href="#16-元环大环内酯类">16 元环大环内酯类</a></h5>
+<ul>
+<li>天然：麦迪霉素、螺旋霉素、乙酰螺旋霉素</li>
+<li>半合成：罗他霉素、交沙霉素</li>
+</ul>
+<h4 id="代际"><a class="header" href="#代际">代际</a></h4>
+<h5 id="第一代"><a class="header" href="#第一代">第一代</a></h5>
+<ul>
+<li>红霉素、地红霉素、麦迪霉素、交沙霉素、乙酰螺旋霉素
+<ul>
+<li>主要用于：治疗对 β-内酰胺类抗生素过敏患者及耐青霉素金葡菌引起的严重感染</li>
+</ul>
+</li>
+</ul>
+<h5 id="第二代"><a class="header" href="#第二代">第二代</a></h5>
+<ul>
+<li>罗他霉素、罗红霉素、克拉霉素、阿奇霉素、米欧卡霉素
+<ul>
+<li>增强抗菌活性及抗生素后效应</li>
+<li>减少不良反应、延长 t<sub>1/2</sub> 、对酸稳定</li>
+</ul>
+</li>
+</ul>
+<h5 id="第三代"><a class="header" href="#第三代">第三代</a></h5>
+<ul>
+<li>泰利霉素
+<ul>
+<li>对大环内酯-林克霉素-链霉素耐药菌株有效</li>
+</ul>
+</li>
+</ul>
+<h3 id="二共同特点"><a class="header" href="#二共同特点">二）共同特点</a></h3>
+<h4 id="抗菌作用机制"><a class="header" href="#抗菌作用机制">抗菌作用机制</a></h4>
+<ul>
+<li>作用于细菌 50S 核糖体亚单位：抑制细菌蛋白质合成。</li>
+</ul>
+<h4 id="体内过程"><a class="header" href="#体内过程">体内过程</a></h4>
+<h5 id="天然大环内酯类抗生素"><a class="header" href="#天然大环内酯类抗生素">天然大环内酯类抗生素</a></h5>
+<ul>
+<li>吸收：碱性抗生素，不耐酸，口服多用肠溶片或酯化产物（如：依托红霉素，琥乙红霉素）</li>
+<li>分布：广泛分布于各种组织和体液中，血中药物浓度低</li>
+<li>肝脏代谢，胆汁排泄，胆汁中浓度高，可有肝肠循环</li>
+</ul>
+<h5 id="半合成大环内酯类抗生素"><a class="header" href="#半合成大环内酯类抗生素">半合成大环内酯类抗生素</a></h5>
+<ul>
+<li>对胃酸稳定，口服生物利用度高</li>
+<li>血浆 t<sub>1/2</sub> 长</li>
+<li>经胆汁和肾脏排泄</li>
+</ul>
+<h3 id="三常用代表药"><a class="header" href="#三常用代表药">三）常用代表药</a></h3>
+<h4 id="红霉素"><a class="header" href="#红霉素">红霉素</a></h4>
+<h5 id="抗菌谱"><a class="header" href="#抗菌谱">抗菌谱</a></h5>
+<ul>
+<li>与青霉素相比， <strong>相似而略广</strong> ，为抑菌药</li>
+<li>相似
+<ul>
+<li>G+球菌：溶血性链球菌、草绿色链球菌、肺炎链球菌、金黄色葡萄球菌</li>
+<li>G+杆菌：白喉棒状杆菌、炭疽芽孢杆菌</li>
+<li>G·球菌：脑膜炎奈瑟菌、淋病奈瑟菌</li>
+<li>螺旋体：苍白密螺旋体、钩端螺旋体</li>
+</ul>
+</li>
+<li>略广
+<ul>
+<li>四体（衣原体、支原体、立克次体、螺旋体）、军团菌、弯曲菌、弓形虫</li>
+</ul>
+</li>
+</ul>
+<h5 id="临床应用"><a class="header" href="#临床应用">临床应用</a></h5>
+<ul>
+<li><strong>白衣空军百支曲，青败红战是首选</strong></li>
+<li>主要用于治疗 <strong>耐青霉素</strong> 或对 <strong>青霉素过敏者</strong> 的金葡菌感染</li>
+<li>在下列治疗中红霉素列为首选
+<ul>
+<li><strong>军</strong> 团病、 <strong>白</strong> 喉带菌者、 <strong>百</strong> 日咳、 <strong>支</strong> 原体肺炎、沙眼 <strong>衣</strong> 原体所致婴儿肺炎及结肠炎、 <strong>空</strong> 肠弯 <strong>曲</strong> 杆菌所致败血症或肠炎</li>
+</ul>
+</li>
+<li>可用于妊娠期、婴儿、新生儿，是妊娠期治疗 <strong>泌尿生殖系统衣原体感染的一线药</strong></li>
+</ul>
+<h5 id="不良反应"><a class="header" href="#不良反应">不良反应</a></h5>
+<ul>
+<li>胃肠道反应：最常见，口服或静脉给药均可引起</li>
+<li>肝损害
+<ul>
+<li>酯化物（依托红霉素、琥乙红霉素）发生率高（40%）</li>
+<li>肝功能不良、胆道梗阻禁用！</li>
+</ul>
+</li>
+<li>耳毒性（肾功能不良者发生多）</li>
+<li>其它
+<ul>
+<li>心脏毒性（静滴速度过快，特殊致死反应）</li>
+<li>静脉注射给乳糖酸红霉素可发生血栓性静脉炎</li>
+</ul>
+</li>
+</ul>
+<h5 id="记忆口诀"><a class="header" href="#记忆口诀">记忆口诀</a></h5>
+<ul>
+<li>大环内酯红霉素，碱性环境增效果；</li>
+<li>青红合用不对路，盐析现象须记住，</li>
+<li>林红竞争结合点，四红合用增肝毒。</li>
+</ul>
+<h4 id="罗红霉素"><a class="header" href="#罗红霉素">罗红霉素</a></h4>
+<ul>
+<li>与红霉素相比，有强有弱
+<ul>
+<li>对革兰阳性菌和厌氧菌的作用与红霉素相仿</li>
+<li>对流感嗜血杆菌的作用较红霉素弱</li>
+<li><strong>对嗜肺支原体、衣原体、军团菌的作用略强于红霉素</strong></li>
+</ul>
+</li>
+<li>适用于敏感菌导致的上、下呼吸道感染及皮肤软组织感染</li>
+<li>也用于支原体、衣原体或不明原因导致的非淋球菌性尿道宫颈炎的治疗</li>
+<li>不良反应发生率低，少数患者出现肝功能异常</li>
+</ul>
+<h4 id="克拉霉素甲红霉素"><a class="header" href="#克拉霉素甲红霉素">克拉霉素（甲红霉素）</a></h4>
+<ul>
+<li>抗菌活性为大环内酯类中 <strong>最强者</strong></li>
+<li>对需氧 G<sup>+</sup> 球菌、嗜肺军团菌，肺炎衣原体抗菌活性 <strong>最强</strong></li>
+<li><strong>口服易吸收</strong> ，组织分布广，但首过消除明显（55%）</li>
+<li>在组织中浓度明显高于血浆浓度，尤其是肺和扁桃体</li>
+<li>临床应用
+<ul>
+<li>主要用于敏感菌……</li>
+<li><strong>防治幽门螺杆菌感染，治疗消化性溃疡</strong> （克林沙星也可治疗）</li>
+</ul>
+</li>
+<li>不良反应少，耐受性好</li>
+</ul>
+<h4 id="阿奇霉素"><a class="header" href="#阿奇霉素">阿奇霉素</a></h4>
+<ul>
+<li>半合成抗生素，抗菌谱 <strong>最广</strong></li>
+<li>对肺炎支原体的作用是大环内酯类中 <strong>最强</strong></li>
+<li>对金葡菌、肺炎球菌、链球菌属抗菌活性较红霉素略差</li>
+<li>具有明显的抗生素后效应</li>
+<li>组织穿透力强，t<sub>1/2</sub> 长</li>
+<li>用于敏感菌所致的….较严重的沙眼衣原体、脲原体引起感染和单纯淋病的治疗；</li>
+</ul>
+<h3 id="四记忆口诀"><a class="header" href="#四记忆口诀">四）记忆口诀</a></h3>
+<ul>
+<li>红霉阿奇和麦迪，大环内酯亲兄弟</li>
+<li>革兰阳菌革阴球，呼吸感染为首选</li>
+</ul>
+<h2 id="二林可霉素类"><a class="header" href="#二林可霉素类">二、林可霉素类</a></h2>
+<h3 id="一药物"><a class="header" href="#一药物">一）药物</a></h3>
+<ul>
+<li>林可霉素</li>
+<li>克林霉素（氯洁霉素）
+<ul>
+<li>林可霉素的半合成抗生素，比林可霉素口服吸收好，毒性小，抗菌作用强，已取代林可霉素。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二抗菌谱"><a class="header" href="#二抗菌谱">二）抗菌谱</a></h3>
+<ul>
+<li>抗厌氧菌效果好</li>
+<li>对 G<sup>+</sup> 菌，G<sup>-</sup> 厌氧菌均有效，对 G<sup>-</sup> 需氧菌无效；</li>
+<li>人型支原体、沙眼衣原体对两药敏感</li>
+</ul>
+<h3 id="三抗菌机制"><a class="header" href="#三抗菌机制">三）抗菌机制</a></h3>
+<ul>
+<li>与核糖体 50S 亚基结合，抑制细菌蛋白质合成；</li>
+</ul>
+<h3 id="四注意"><a class="header" href="#四注意">四）注意</a></h3>
+<ul>
+<li>与大环内酯类竞争结合部位，不宜合用。</li>
+</ul>
+<h3 id="五体内过程"><a class="header" href="#五体内过程">五）体内过程</a></h3>
+<ul>
+<li>口服吸收好，广泛分布于组织和体液</li>
+<li>不易透过血脑屏障</li>
+<li><strong>骨组织中浓度高</strong></li>
+<li><strong>抗厌氧</strong></li>
+</ul>
+<h3 id="六临床应用"><a class="header" href="#六临床应用">六）临床应用</a></h3>
+<ul>
+<li>主要用于厌氧菌及金葡菌等革兰阳性菌感染</li>
+<li>金黄色葡萄球菌感染引起的急慢性骨髓炎；</li>
+<li>厌氧菌感染引起的口腔、腹腔、盆腔感染（合用氨基糖苷类效果好）；</li>
+<li>外用治疗 G<sup>+</sup> 菌引起的化脓性感染。</li>
+</ul>
+<h3 id="七记忆口诀"><a class="header" href="#七记忆口诀">七）记忆口诀</a></h3>
+<ul>
+<li>林可克林出同门，抗菌族谱类红霉。</li>
+<li>优势针对厌氧菌，呼吸胆道有感染，口腔妇科骨髓炎。</li>
+</ul>
+<h2 id="三万古霉素类"><a class="header" href="#三万古霉素类">三、万古霉素类</a></h2>
+<h3 id="一药物-1"><a class="header" href="#一药物-1">一）药物</a></h3>
+<ul>
+<li>万古霉素、去甲万古霉素、替考拉宁</li>
+</ul>
+<h3 id="二抗菌机制"><a class="header" href="#二抗菌机制">二）抗菌机制</a></h3>
+<ul>
+<li>牢固地结合到细胞壁前体肽聚糖五肽末端</li>
+<li>阻断构成细菌细胞壁的高分子肽聚糖合成</li>
+<li>抑制细胞壁形成，速效杀菌剂</li>
+</ul>
+<h3 id="三抗菌作用"><a class="header" href="#三抗菌作用">三）抗菌作用</a></h3>
+<ul>
+<li>对 G<sup>+</sup> 菌，特别是 G<sup>+</sup> 球菌杀菌作用强大；</li>
+<li>对耐甲氧西林的金黄色葡萄球菌（MRSA）和耐甲氧西林的表皮葡萄球菌（MRSE），有强大的杀菌作用；</li>
+<li>去甲万古霉素，是抗脆弱拟杆菌作用最强的抗生素；</li>
+</ul>
+<h3 id="四临床应用"><a class="header" href="#四临床应用">四）临床应用</a></h3>
+<ul>
+<li>一般不作为一线药应用；</li>
+<li>仅用于严重耐药的G+菌感染，特别是 MRSA 和 MRSE 感染和耐青霉素的肺炎链球菌感染；</li>
+<li>对青霉素联合氨基糖苷类治疗失败的肠球菌、链球菌心内膜炎有效；</li>
+<li>口服治疗难辨性梭菌性伪膜性结肠炎，替考拉宁疗效最好</li>
+</ul>
+<h3 id="五体内过程-1"><a class="header" href="#五体内过程-1">五）体内过程</a></h3>
+<ul>
+<li>口服不易吸收、肌肉注射引起疼痛与组织坏死
+<ul>
+<li>多静脉给药</li>
+</ul>
+</li>
+<li>药物主要分布在各种体液中，可进入骨组织，脑膜炎时可进入脑脊液。</li>
+</ul>
+<h3 id="六不良反应"><a class="header" href="#六不良反应">六）不良反应</a></h3>
+<ul>
+<li>耳毒性、肾毒性
+<ul>
+<li>禁止与具有耳、肾毒性的药物合用。</li>
+</ul>
+</li>
+<li>“红人综合症”
+<ul>
+<li>快速静滴万古霉素时，出现极度皮肤潮红、红斑、荨麻疹、心动过速、低血压等特征性症状</li>
+</ul>
+</li>
+<li>过敏反应</li>
+<li><strong>禁止与碱性溶液配伍，禁止与重金属接触</strong></li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/医学/药理学/第四十二章：β-内酰胺类抗生素.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第四十四章：氨基糖苷类与多黏菌素类抗生素.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/医学/药理学/第四十二章：β-内酰胺类抗生素.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第四十四章：氨基糖苷类与多黏菌素类抗生素.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/药理学/第四十三章：大环内酯类、林可霉素及其他抗生素.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

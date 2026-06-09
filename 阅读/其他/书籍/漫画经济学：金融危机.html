@@ -1,0 +1,710 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>漫画经济学：金融危机 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="漫画经济学金融危机"><a class="header" href="#漫画经济学金融危机">漫画经济学：金融危机</a></h1>
+<h2 id="金融危机概述"><a class="header" href="#金融危机概述">金融危机概述</a></h2>
+<h3 id="危险和机遇"><a class="header" href="#危险和机遇">危险和机遇</a></h3>
+<h3 id="起因"><a class="header" href="#起因">起因</a></h3>
+<ul>
+<li>资源配置</li>
+<li>经济周期</li>
+</ul>
+<h3 id="几大事件"><a class="header" href="#几大事件">几大事件</a></h3>
+<ul>
+<li>美国大萧条</li>
+<li>郁金香泡沫</li>
+<li>南海泡沫</li>
+<li>密西西比泡沫</li>
+<li>亚洲金融风暴</li>
+<li>美国次贷危机</li>
+</ul>
+<h3 id="学习理由了解和规避"><a class="header" href="#学习理由了解和规避">学习理由：了解和规避</a></h3>
+<h2 id="明斯基时刻"><a class="header" href="#明斯基时刻">明斯基时刻</a></h2>
+<h3 id="经济危机通常由金融危机导致"><a class="header" href="#经济危机通常由金融危机导致">经济危机通常由金融危机导致</a></h3>
+<h3 id="金融不稳定假说"><a class="header" href="#金融不稳定假说">金融不稳定假说</a></h3>
+<ul>
+<li>提出人
+<ul>
+<li>海曼·明斯基</li>
+</ul>
+</li>
+<li>明斯基时刻
+<ul>
+<li>经济从好到坏的时间点</li>
+<li>大周期的转折点</li>
+</ul>
+</li>
+<li>原因
+<ul>
+<li>对冲性融资
+<ul>
+<li>基础：信贷</li>
+<li>典型表现：借的多赚的多，经济表现为增长</li>
+<li>特点：能还上本金和利息</li>
+<li>处在经济增长的初期</li>
+</ul>
+</li>
+<li>投机性融资
+<ul>
+<li>基础：信贷扩张</li>
+<li>典型表现：回报更大，但风险也更高</li>
+<li>特点：只还得起利息</li>
+<li>处在经济增长的中期</li>
+</ul>
+</li>
+<li>庞氏融资
+<ul>
+<li>基础：供过于求，通货膨胀</li>
+<li>典型表现：借钱还钱，类似庞氏骗局</li>
+<li>特点：本金利息都还不起，只能借钱还钱</li>
+<li>处在经济增长的后期</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="经济下行"><a class="header" href="#经济下行">经济下行</a></h3>
+<ul>
+<li>供过于求</li>
+<li>信贷紧缩</li>
+<li>公司倒闭</li>
+<li>员工失业</li>
+<li>股市大跌</li>
+</ul>
+<h3 id="缓解经济危机"><a class="header" href="#缓解经济危机">缓解经济危机</a></h3>
+<ul>
+<li>核心：去杠杆化（借的钱）</li>
+<li>债务违约重组</li>
+<li>财富再分配</li>
+<li>货币调节</li>
+</ul>
+<h2 id="郁金香泡沫"><a class="header" href="#郁金香泡沫">郁金香泡沫</a></h2>
+<h3 id="发源地"><a class="header" href="#发源地">发源地</a></h3>
+<ul>
+<li>荷兰，荷兰重商文化</li>
+</ul>
+<h3 id="尼德兰革命"><a class="header" href="#尼德兰革命">尼德兰革命</a></h3>
+<ul>
+<li>第一次资产阶级革命</li>
+<li>荷兰式第一个资本主义国家</li>
+</ul>
+<h3 id="资本主义"><a class="header" href="#资本主义">资本主义</a></h3>
+<ul>
+<li>自然经济</li>
+<li>资本主义萌芽</li>
+<li>私有制</li>
+</ul>
+<h3 id="开启股份"><a class="header" href="#开启股份">开启股份</a></h3>
+<ul>
+<li>荷兰东印度公司-&gt;阿姆斯特丹证券交易所</li>
+</ul>
+<h3 id="开启银行"><a class="header" href="#开启银行">开启银行</a></h3>
+<ul>
+<li>阿姆斯特丹银行</li>
+</ul>
+<h3 id="爆发原因"><a class="header" href="#爆发原因">爆发原因</a></h3>
+<ul>
+<li>太过富有，为炫耀资本，将郁金香价值推高到虚高地步，因为郁金香很难种，物以稀为贵</li>
+</ul>
+<h3 id="泡沫破裂"><a class="header" href="#泡沫破裂">泡沫破裂</a></h3>
+<ul>
+<li>英国一水手吃了郁金香球茎</li>
+</ul>
+<h2 id="南海泡沫"><a class="header" href="#南海泡沫">南海泡沫</a></h2>
+<h3 id="背景"><a class="header" href="#背景">背景</a></h3>
+<ul>
+<li>西班牙王位继承战争</li>
+<li>法国因亲缘关系派遣嫡系继承西班牙王位</li>
+<li>奥地利国王与西班牙国王同宗，不乐意法国举动</li>
+<li>打架，元气重伤</li>
+<li>英国怕法国获胜，帮奥地利打架，打出经济亏损</li>
+</ul>
+<h3 id="形成"><a class="header" href="#形成">形成</a></h3>
+<ul>
+<li>英国战后经济下滑，诞生国债，欺骗国内贵族下南美挖金矿，产生南海公司</li>
+</ul>
+<h3 id="发展"><a class="header" href="#发展">发展</a></h3>
+<ul>
+<li>南海公司下南美失败，回国发行股票，以国家担保的公司信用，用自家股票换取平民手里的国债，股票价格疯涨，实体业发展惨淡</li>
+</ul>
+<h3 id="泡沫破裂-1"><a class="header" href="#泡沫破裂-1">泡沫破裂</a></h3>
+<ul>
+<li>政府出台《泡沫法案》</li>
+</ul>
+<h3 id="影响"><a class="header" href="#影响">影响</a></h3>
+<ul>
+<li>股份阴影</li>
+<li>英国政局</li>
+</ul>
+<h2 id="密西西比泡沫"><a class="header" href="#密西西比泡沫">密西西比泡沫</a></h2>
+<h3 id="背景-1"><a class="header" href="#背景-1">背景</a></h3>
+<ul>
+<li>法国国王路易十四，喜欢发动战争，而且挥霍无度</li>
+</ul>
+<h3 id="形成-1"><a class="header" href="#形成-1">形成</a></h3>
+<ul>
+<li>法国发行国债，路易十四无力偿还，加上国内政治原因，爆发法国大革命，被推上断头台</li>
+</ul>
+<h3 id="发展-1"><a class="header" href="#发展-1">发展</a></h3>
+<ul>
+<li>约翰·劳摄政，建立通用银行，以金本位担保，发行纸币，成立密西西比公司伪装去北美挖金矿，欺骗民众信用</li>
+</ul>
+<h3 id="高潮"><a class="header" href="#高潮">高潮</a></h3>
+<ul>
+<li>密西西比公司发行股票，收取民众手中的国债</li>
+</ul>
+<h3 id="泡沫破裂-2"><a class="header" href="#泡沫破裂-2">泡沫破裂</a></h3>
+<ul>
+<li>有人想要拿钱换黄金</li>
+</ul>
+<h3 id="其他"><a class="header" href="#其他">其他</a></h3>
+<ul>
+<li>约翰·劳墓志铭</li>
+</ul>
+<blockquote>
+<p>这里长眠着那个著名的苏格兰人，
+他的计算技巧无人能敌：
+他用简单的代数规则，
+把法国变得一贫如洗。</p>
+</blockquote>
+<h2 id="美国大恐慌1837"><a class="header" href="#美国大恐慌1837">美国大恐慌（1837）</a></h2>
+<h3 id="本质"><a class="header" href="#本质">本质</a></h3>
+<ul>
+<li>一个美国人瞎炒房</li>
+</ul>
+<h3 id="背景-2"><a class="header" href="#背景-2">背景</a></h3>
+<ul>
+<li>美国独立战争和美国第二次独立战争，中央银行信贷紧缩</li>
+</ul>
+<h3 id="形成-2"><a class="header" href="#形成-2">形成</a></h3>
+<ul>
+<li>杰克逊关闭银行，分发黄金到各州银行，州银行印钞过多</li>
+</ul>
+<h3 id="发展-2"><a class="header" href="#发展-2">发展</a></h3>
+<ul>
+<li>西进运动，刷新房地产上限，但是没人买</li>
+</ul>
+<h3 id="泡沫破裂-3"><a class="header" href="#泡沫破裂-3">泡沫破裂</a></h3>
+<ul>
+<li>杰克逊宣布限制投机，房地产只能用黄金，银行被挤兑直至破产，此时英国加息，并且英国投资者撤资，造成经济一落千丈</li>
+</ul>
+<h2 id="美国银行危机1907"><a class="header" href="#美国银行危机1907">美国银行危机（1907）</a></h2>
+<h3 id="背景-3"><a class="header" href="#背景-3">背景</a></h3>
+<ul>
+<li>淘金热，南北战争（北工南农，北胜南败）</li>
+</ul>
+<h3 id="形成-3"><a class="header" href="#形成-3">形成</a></h3>
+<ul>
+<li>信托公司形成，部分民众从银行贷款给信托投资，此时欧洲战后元气大伤，集体加息，投资美国股市的欧洲投资者撤资，适逢旧金山大地震，股市的钱流入灾区</li>
+</ul>
+<h3 id="发展-3"><a class="header" href="#发展-3">发展</a></h3>
+<ul>
+<li>银行 -&gt; 股民 -&gt; 信托 -&gt; 股市，越来越多的银行储民怀疑自家资产安全，蜂拥而至挤兑银行</li>
+</ul>
+<h3 id="泡沫破裂-4"><a class="header" href="#泡沫破裂-4">泡沫破裂</a></h3>
+<ul>
+<li>银行拿不出资金，资金全在信托，信托倒闭破产</li>
+</ul>
+<h3 id="解决"><a class="header" href="#解决">解决</a></h3>
+<ul>
+<li>摩根救市</li>
+</ul>
+<h3 id="影响-1"><a class="header" href="#影响-1">影响</a></h3>
+<ul>
+<li>影响世界</li>
+<li>成立了美联储（美国联邦储备局）</li>
+</ul>
+<h2 id="美国大萧条1929-1933"><a class="header" href="#美国大萧条1929-1933">美国大萧条（1929-1933）</a></h2>
+<h3 id="过程"><a class="header" href="#过程">过程</a></h3>
+<ul>
+<li>柯立芝繁荣 -&gt; 大萧条 -&gt; 关税战 -&gt; 罗斯福新政</li>
+</ul>
+<h3 id="背景-4"><a class="header" href="#背景-4">背景</a></h3>
+<ul>
+<li>一战，美国倒卖军火，参战成为战胜国捞钱，升级设备提高生产力</li>
+</ul>
+<h3 id="形成-4"><a class="header" href="#形成-4">形成</a></h3>
+<ul>
+<li>欧洲一战战后一片狼藉，急需恢复经济，美趁虚而入占领市场，生产大量产品并提高关税，此为柯立芝繁荣</li>
+</ul>
+<h3 id="发展-4"><a class="header" href="#发展-4">发展</a></h3>
+<ul>
+<li>政府不干涉市场，采取自由放任主义，并且此时垄断形成，贫富差距过大。银行为刺激消费，降低贷款门槛，穷人过度消费导致企业过度生产，产能过剩。</li>
+</ul>
+<h3 id="泡沫破裂-5"><a class="header" href="#泡沫破裂-5">泡沫破裂</a></h3>
+<ul>
+<li>有人率先抛售股票，引起恐慌，股市大跌，股票贬值，穷人股民还不起贷款，银行收不了钱，一半银行被挤兑破产。企业产能过剩，产品卖不出，银行又不给贷款，大批中小企业破产。大量人失业。</li>
+</ul>
+<h3 id="主要原因"><a class="header" href="#主要原因">主要原因</a></h3>
+<ul>
+<li>企业产能过剩</li>
+</ul>
+<h3 id="影响-2"><a class="header" href="#影响-2">影响</a></h3>
+<ul>
+<li>范围广，从美国波及全世界</li>
+<li>时间长，爆发四年影响十年</li>
+<li>破坏大</li>
+</ul>
+<h3 id="解决-1"><a class="header" href="#解决-1">解决</a></h3>
+<ul>
+<li>胡佛救市失败
+<ul>
+<li>干预银行</li>
+<li>不准降工资 -&gt; 企业只能裁员 -&gt; 失业率飙升</li>
+<li>提高关税 -&gt; 引起欧洲关税大战</li>
+</ul>
+</li>
+<li>罗斯福新政
+<ul>
+<li>干预银行（废除金本位）</li>
+<li>调整工业，《全国工业复兴法》</li>
+<li>调整农业，《农业调整法》减产</li>
+<li>加强民生，以工代赈</li>
+</ul>
+</li>
+<li>二战开始，产能过剩问题解决，并且赚了军火费用</li>
+</ul>
+<h3 id="其他-1"><a class="header" href="#其他-1">其他</a></h3>
+<ul>
+<li>泰罗制（弗雷德里克·泰罗，科学管理之父）</li>
+<li>福特制</li>
+<li>诞生分期付款</li>
+<li>凯恩斯主义</li>
+</ul>
+<h2 id="第一次石油经济危机1973-1975"><a class="header" href="#第一次石油经济危机1973-1975">第一次石油经济危机（1973-1975）</a></h2>
+<h3 id="背景-5"><a class="header" href="#背景-5">背景</a></h3>
+<ul>
+<li>《红线协定》，石油输出国组织（OPEC），以色列阿拉伯战争</li>
+</ul>
+<h3 id="形成-5"><a class="header" href="#形成-5">形成</a></h3>
+<ul>
+<li>阿拉伯人打不过美国撑腰的以色列，宣布石油涨价甚至禁运，美国宣布支持沙特，从此美元与石油挂钩，形成石油美元回流</li>
+</ul>
+<h2 id="第二次石油经济危机1979-1981"><a class="header" href="#第二次石油经济危机1979-1981">第二次石油经济危机（1979-1981）</a></h2>
+<h3 id="背景-6"><a class="header" href="#背景-6">背景</a></h3>
+<ul>
+<li>两伊战争，互炸对方油田</li>
+</ul>
+<h3 id="重大意义"><a class="header" href="#重大意义">重大意义</a></h3>
+<ul>
+<li>是历史上第一次因为能源问题而产生的全球性经济危机</li>
+</ul>
+<h2 id="日本与广场协议"><a class="header" href="#日本与广场协议">日本与《广场协议》</a></h2>
+<h3 id="背景-7"><a class="header" href="#背景-7">背景</a></h3>
+<ul>
+<li>美苏冷战，美安插眼线，找上日本，把日本从战败国经济恢复起来，日本大搞生产，适逢朝鲜战争爆发，美军驻扎，消费也在日本 -&gt; 神武景气、岩户景气、伊奘诺景气</li>
+</ul>
+<h3 id="形成-6"><a class="header" href="#形成-6">形成</a></h3>
+<ul>
+<li>第一次石油危机，美国跌倒，日本石油进口受影响，于是产业结构高度化，在第二次石油危机中影响不大，带领亚洲四小龙和四小虎，美国产品受石油危机影响没有竞争力，于是美国与其他各国签订《广场协议》，协议内容：贬低美元，促进出口</li>
+</ul>
+<h3 id="发展-5"><a class="header" href="#发展-5">发展</a></h3>
+<ul>
+<li>日本出口红利消失，于是自产自销，央行降低利息，施行宽松货币政策，银行大量外贷，经济增长，吸引外国投资者投资</li>
+</ul>
+<h3 id="高潮-1"><a class="header" href="#高潮-1">高潮</a></h3>
+<ul>
+<li>第三次石油危机，各行业成本上涨，各行纷纷找银行借贷，银行没钱，更严重的是房地产市场乱象</li>
+</ul>
+<h3 id="泡沫破裂-6"><a class="header" href="#泡沫破裂-6">泡沫破裂</a></h3>
+<ul>
+<li>三重野康上台加息，收回市面货币，股市楼市没有投资者价格开始下跌，一落千丈，外国投资者撤资，经济下行</li>
+</ul>
+<h3 id="影响-3"><a class="header" href="#影响-3">影响</a></h3>
+<ul>
+<li>消失的十年</li>
+<li>平成废物</li>
+</ul>
+<h2 id="黑色星期一1987"><a class="header" href="#黑色星期一1987">黑色星期一（1987）</a></h2>
+<h3 id="背景-8"><a class="header" href="#背景-8">背景</a></h3>
+<ul>
+<li>美股和纽交所，梧桐树协议，程式交易</li>
+</ul>
+<h3 id="形成-7"><a class="header" href="#形成-7">形成</a></h3>
+<ul>
+<li>美联储加息，并购不优惠税费，大量人抛售股票，程式交易开始运作，爆发“羊群效应”，波及全世界</li>
+</ul>
+<h3 id="解决-2"><a class="header" href="#解决-2">解决</a></h3>
+<ul>
+<li>美国政府重整股市</li>
+</ul>
+<h2 id="索罗斯与亚洲金融风暴"><a class="header" href="#索罗斯与亚洲金融风暴">索罗斯与亚洲金融风暴</a></h2>
+<h3 id="背景-9"><a class="header" href="#背景-9">背景</a></h3>
+<ul>
+<li>亚洲金融崛起，华盛顿共识，固定汇率与浮动汇率</li>
+</ul>
+<h3 id="形成-8"><a class="header" href="#形成-8">形成</a></h3>
+<ul>
+<li>索罗斯侵入亚洲金融圈，做空泰铢（做空靠差价），泰国用外汇储备抵抗，败退，泰铢严重贬值，索罗斯携款跑路</li>
+</ul>
+<h3 id="发展-6"><a class="header" href="#发展-6">发展</a></h3>
+<ul>
+<li>索罗斯打算按这一套方式做空亚洲所有货币，遇上香港，爆发中国香港保卫战，香港加中国在外汇储备上世界第一，索罗斯败退</li>
+</ul>
+<h3 id="其他-2"><a class="header" href="#其他-2">其他</a></h3>
+<blockquote>
+<p>在金融上，说不上有没有道德，都只是一种操作。——乔治·索罗斯（许多人对他恨之入骨）</p>
+</blockquote>
+<h2 id="美国次贷危机"><a class="header" href="#美国次贷危机">美国次贷危机</a></h2>
+<h3 id="背景-10"><a class="header" href="#背景-10">背景</a></h3>
+<ul>
+<li>联邦住宅贷款抵押公司、联邦国民抵押贷款协会、房屋贷款合同资产证券化（贷款合同 -&gt; 债券）、投资银行包装（债务抵押证券，其实就是债券的债券）</li>
+</ul>
+<h3 id="形成-9"><a class="header" href="#形成-9">形成</a></h3>
+<ul>
+<li>投行买通评级机构忽悠投资者，一条链最终绑定到房价上，房价涨跌决定盈亏</li>
+</ul>
+<h3 id="发展-7"><a class="header" href="#发展-7">发展</a></h3>
+<ul>
+<li>美联储加息，浮动利率提高，银行收回房屋，房屋供过于求，开始跳水式下跌</li>
+</ul>
+<h3 id="泡沫破裂-7"><a class="header" href="#泡沫破裂-7">泡沫破裂</a></h3>
+<ul>
+<li>贷款者因为加息还不起 -&gt; 银行卖不了房 -&gt; 二房 -&gt; 保险合同倒卖，不赔偿 -&gt; 投行赔钱 -&gt; 投资者赔钱</li>
+</ul>
+<h3 id="解决-3"><a class="header" href="#解决-3">解决</a></h3>
+<ul>
+<li>国有化金融机构</li>
+<li>发钱</li>
+<li>降息</li>
+</ul>
+<h2 id="一切根源"><a class="header" href="#一切根源">一切根源</a></h2>
+<ul>
+<li>源于信任</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../阅读/其他/书籍/漫画经济学：生活常识.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../阅读/其他/书籍/我想要两颗西柚.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../阅读/其他/书籍/漫画经济学：生活常识.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../阅读/其他/书籍/我想要两颗西柚.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/其他/书籍/漫画经济学：金融危机.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

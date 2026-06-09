@@ -1,0 +1,1160 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>pwn.college writeup - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="pwncollege-writeup"><a class="header" href="#pwncollege-writeup">pwn.college writeup</a></h1>
+<h2 id="premise"><a class="header" href="#premise">Premise</a></h2>
+<ul>
+<li>Personal solutions, that is saying maybe not the best.</li>
+<li>The sequence number of each section is the challenge number. <strong>CORRESPONDING.</strong>
+<ul>
+<li><code>X.</code> =&gt; <code>section_name levelX</code></li>
+</ul>
+</li>
+<li><strong>Because the required random value of each user is different, so using <code>${random}</code> key word instead of detailed value.</strong>
+<ul>
+<li><code>${random_key}</code> is the key.</li>
+<li><code>${random_value}</code> is the corresponding value.</li>
+<li>etc.</li>
+</ul>
+</li>
+<li>When first enter a new challenge, maybe need to execute the level program purely to get the specifically random value before coding any solutions.</li>
+<li>The order number is the corresponding challenge number, however, in some certain semester, both are not same, readers should looking for the order number which locates in head of each line under solutions section.</li>
+</ul>
+<h2 id="fundamentals"><a class="header" href="#fundamentals">Fundamentals</a></h2>
+<h3 id="program-misuse"><a class="header" href="#program-misuse">Program Misuse</a></h3>
+<h4 id="solutions"><a class="header" href="#solutions">Solutions</a></h4>
+<ol>
+<li>
+<p><code>cat /flag</code></p>
+</li>
+<li>
+<p><code>more /flag</code></p>
+</li>
+<li>
+<p><code>less /flag</code></p>
+</li>
+<li>
+<p><code>tail /flag</code></p>
+</li>
+<li>
+<p><code>head /flag</code></p>
+</li>
+<li>
+<p><code>sort /flag</code></p>
+</li>
+<li>
+<p><code>vim /flag</code></p>
+</li>
+<li>
+<p><code>emacs /flag</code></p>
+</li>
+<li>
+<p><code>nano /flag</code></p>
+</li>
+<li>
+<p><code>rev /flag | rev</code></p>
+</li>
+<li>
+<p><code>od -c -w1024 /flag | awk -F" " -v OFS='' '{$1="";print $0}'</code> or <code>od -c -w1024 /flag | sed -Ee 's/[0-9]{7}//;s/ //g'</code></p>
+<ul>
+<li><code>man od</code> or <code>od --help</code> can peek the usage of <code>od</code>
+<ul>
+<li><code>-c</code> same as <code>-t c</code>,  select printable characters or backslash escapes</li>
+<li><code>-w[BYTES]</code>, <code>--width[=BYTES]</code>, output BYTES bytes per output line; 32 is implied when BYTES is not specified</li>
+</ul>
+</li>
+<li><code>awk</code> is a column based data filter
+<ul>
+<li><code>-F</code>, <code>--field-separator fs</code>, set the <code>FS</code> variable to <code>fs</code>, using <code>fs</code> to split input content, so here is <code>space</code></li>
+<li><code>-v var=val</code>, <code>--assign var=val</code>, set the variable <code>var</code> to the value <code>val</code> <em>before</em> execution of the program begins. <code>OFS</code> is output-field-separator, so here using <code>null</code> to reformat the output</li>
+<li><code>'{$1="";print $0}'</code> is the command
+<ul>
+<li>First, let the first column be <code>null</code></li>
+<li>Second, print all the columns</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>sed</code> is a stream editor
+<ul>
+<li><code>-E</code>, use extended regular expressions</li>
+<li><code>-e</code>, execute multiple <code>sed</code> commands</li>
+<li><code>'s/[0-9]{7}//;s/ //g'</code>
+<ul>
+<li><code>s/[0-9]{7}//</code> delete the offset address displayed number</li>
+<li><code>s/ //g</code> delete all the whitespaces</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>hd /flag | awk '{print $(NF)}' | tr -d '\n' | sed -Ee 's/\|//g;s/\.[0-9]{8}/\n/'</code></p>
+<ul>
+<li><code>awk</code> part
+<ul>
+<li>use the last column</li>
+</ul>
+</li>
+<li><code>tr</code>, translate, squeeze, and/or delete characters
+<ul>
+<li>remove all the <code>Enter(\n)</code></li>
+</ul>
+</li>
+<li><code>sed</code> part
+<ul>
+<li>delete all the <code>|</code> characters</li>
+<li>transform all <code>.XXXXXXXX</code> pattern (<code>X</code> is one number) into a <code>Enter(\n)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>xxd /flag | awk '{print $(NF)}' | tr -d '\n' | sed 's/\.$/\n/'</code></p>
+</li>
+<li>
+<p><code>base32 /flag | base32 -d</code></p>
+</li>
+<li>
+<p><code>base64 /flag | base64 -d</code></p>
+</li>
+<li>
+<p><code>split /flag | cat ./xaa</code></p>
+</li>
+<li>
+<p><code>gzip -c /flag | zcat</code></p>
+</li>
+<li>
+<p><code>bzip2 -c /flag | bzcat</code></p>
+</li>
+<li>
+<p><code>zip - /flag | zcat</code></p>
+</li>
+<li>
+<p><code>tar -cvf - /flag | cat</code></p>
+</li>
+<li>
+<pre><code class="language-bash">ar -rvs ~/tmp.a /flag; ar -x ~/tmp.a flag; cat flag
+# then remove files
+rm -rf tmp.a flag
+</code></pre>
+</li>
+<li>
+<p><code>echo "/flag" | cpio -ov &gt; flag.cpio &amp;&amp; cat flag.cpio</code></p>
+</li>
+<li>
+<p><strong>EXTREMELY HARD</strong> <code>genisoimage -sort /flag -o - /flag</code></p>
+</li>
+</ol>
+<ul>
+<li><code>genisoimage --help 2&gt;&amp;1 | grep FILE</code>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=14mIjpOXnrM&amp;t=733">https://www.youtube.com/watch?v=14mIjpOXnrM&amp;t=733</a></li>
+</ul>
+</li>
+</ul>
+<ol start="24">
+<li>
+<p><code>env -i cat /flag</code></p>
+</li>
+<li>
+<p><code>find / -maxdepth 1 -name flag -exec cat {} \;</code></p>
+</li>
+<li>
+<p><code>echo -e "ans: /flag\n\tcat /flag" &gt; Makefile &amp;&amp; make</code></p>
+</li>
+<li>
+<p><code>nice cat /flag</code></p>
+</li>
+<li>
+<p><code>timeout 1000 cat /flag</code></p>
+</li>
+<li>
+<p><code>stdbuf -o L cat /flag</code></p>
+</li>
+<li>
+<p><code>setarch x86_64 -v cat /flag</code></p>
+</li>
+<li>
+<p><code>watch -x cat /flag</code></p>
+</li>
+<li>
+<p><code>socat - /flag</code></p>
+</li>
+<li>
+<p><code>whiptail --textbox /flag 20 60</code></p>
+</li>
+<li>
+<p><code>awk '{print $0}' /flag</code></p>
+</li>
+<li>
+<p><code>sed -n 'p' /flag</code></p>
+</li>
+<li>
+<pre><code class="language-bash">ed /flag
+.
+q
+</code></pre>
+</li>
+<li>
+<p><code>chown -v hacker /flag &amp;&amp; cat /flag</code></p>
+</li>
+<li>
+<p><code>chmod 444 /flag &amp;&amp; cat /flag</code></p>
+</li>
+<li>
+<p><code>cp -v --no-preserve=all /flag ./flag &amp;&amp; cat ./flag &amp;&amp; rm -rf ./flag</code></p>
+</li>
+<li>
+<p><strong>HARD</strong> <code>/challenge/babysuid_level40 &amp;&amp; mv /usr/bin/cat /usr/bin/mv &amp;&amp; /challenge/babysuid_level40 &amp;&amp; mv /flag</code></p>
+<ul>
+<li>This level’s solution is pretty tricky</li>
+<li>The level said it had set the <code>suid</code> for <code>mv</code> after we executed it. So remember, it set the <code>suid</code> just for a program called <code>mv</code>. <code>mv</code> is just a name, no matter what it is in its core logic. That is saying we can replace it with others.</li>
+<li>Here we just rename <code>cat</code> to <code>mv</code>, and covered the original <code>mv</code> program, then execute level program to get the <code>suid</code> privilege for present <code>mv</code> program (However, in core logic, it’s <code>cat</code> program)</li>
+<li>Finally, ‘cat’ it, but our command should be <code>mv /flag</code></li>
+</ul>
+</li>
+<li>
+<p><code>perl -e 'open(FILE,"&lt;/flag");$line=&lt;FILE&gt;;foreach ($line){print $_;}'</code></p>
+</li>
+<li>
+<p><code>python -c 'print(open("/flag").read())'</code></p>
+</li>
+<li>
+<p><code>echo 'puts File.read("/flag")' &gt; test.rb &amp;&amp; /usr/bin/ruby test.rb &amp;&amp; rm -rf test.rb</code></p>
+</li>
+<li>
+<pre><code class="language-bash">bash -p
+cat /flag
+</code></pre>
+<ul>
+<li><strong>HARD</strong></li>
+<li>Recommend source: <a href="https://gtfobins.github.io/gtfobins/bash/#suid">bash suid</a></li>
+</ul>
+</li>
+<li>
+<p><code>date -f /flag</code></p>
+</li>
+<li>
+<p><code>dmesg -F /flag</code></p>
+</li>
+<li>
+<p><code>wc --files0-from=/flag</code></p>
+</li>
+<li>
+<p><strong>HARD</strong> <code>gcc -x assembler /flag</code></p>
+</li>
+<li>
+<p><code>as @/flag</code></p>
+</li>
+<li>
+<p><strong>HARD</strong> <code>wget -bv --post-file=/flag 127.0.0.1:3864 | nc -vl 127.0.0.1 3864</code></p>
+<ul>
+<li>DO NOT use the <code>-i</code> option, it turns all the <code>flag</code> letters to lowercase because of the <code>url</code> encoding rule.</li>
+</ul>
+</li>
+<li>
+<p>TODO</p>
+</li>
+</ol>
+<h4 id="confusing-question-numbers"><a class="header" href="#confusing-question-numbers">Confusing Question Numbers</a></h4>
+<ul>
+<li>17</li>
+<li><strong>20</strong> ( really confused )</li>
+</ul>
+<h3 id="program-interaction"><a class="header" href="#program-interaction">Program Interaction</a></h3>
+<h4 id="solutions-1"><a class="header" href="#solutions-1">Solutions</a></h4>
+<ol>
+<li>
+<p>Execute directly.</p>
+</li>
+<li>
+<p>Input <code>${random}</code>.</p>
+</li>
+<li>
+<p><code>/challenge/embryoio_level3 ${random}</code></p>
+</li>
+<li>
+<pre><code class="language-bash">export ${random_key}=${random_value}
+/challenge/embryoio_level4
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">vim /tmp/${random_filename}
+# input: ${random}
+# or
+# use sed/echo to input without interaction.
+/challenge/embryoio_level5 &lt; /tmp/${random_input_filename}
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">/challenge/embryoio_level6 &gt; /tmp/${random_output_filename}
+cat /tmp/${random_output_filename}
+</code></pre>
+</li>
+<li>
+<p><code>env -i /challenge/embryoio_level7</code></p>
+</li>
+<li>
+<pre><code class="language-bash">echo "/challenge/embryoio_level8" &gt; ./tmp.sh
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo "/challenge/embryoio_level9" &gt; ./tmp.sh
+bash tmp.sh
+# input: ${random}
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo "/challenge/embryoio_level10 ${random}" &gt; ./tmp.sh
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "export ${random_key}=${random_value}\n/challenge/embryoio_level11" &gt; ./tmp.sh
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "echo '${random}' &gt; /tmp/${random_input_filename}\n/challenge/embryoio_level12 &lt; /tmp/${random_input_filename}" &gt; ./tmp.sh
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "/challenge/embryoio_level13 &gt; /tmp/${random_output_filename}\ncat /tmp/${random_output_filename}" &gt; ./tmp.sh
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo "env -i /challenge/embryoio_level14" &gt; ./tmp.sh
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">ipython
+import subprocess
+subprocess.Popen("/challenge/embryoio_level15")
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">ipython
+import subprocess
+subprocess.run("/challenge/embryoio_level16")
+${random}
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">ipython
+import subprocess
+subprocess.run(["/challenge/embryoio_level17","${random}"])
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">ipython
+import os,subprocess
+os.environ["${random_key}"] = "${random_value}"
+subprocess.run("/challenge/embryoio_level18")
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo "${random}" &gt; /tmp/${random_input_filename}
+ipython
+import subprocess
+subprocess.run("/challenge/embryoio_level19",stdin=open("/tmp/${random_input_filename}"))
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">ipython
+import subprocess
+subprocess.run(["touch /tmp/${random_output_filename}"],shell=True)
+subprocess.run("/challenge/embryoio_level20",stdout=open("/tmp/${random_output_filename}","w"))
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">ipython
+import subprocess
+subprocess.run("/challenge/embryoio_level21",env=dict())
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "import subprocess\n\
+subprocess.run('/challenge/embryoio_level22')" &gt; tmp.py
+python tmp.py
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "import subprocess\n\
+subprocess.run('/challenge/embryoio_level23')" &gt; tmp.py
+python tmp.py
+${random}
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "import subprocess\n\
+subprocess.run(['/challenge/embryoio_level24','${random}'])" &gt; tmp.py
+python tmp.py
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "import os,subprocess\n\
+os.environ['${random_key}'] = '${random_value}'\n\
+subprocess.run('/challenge/embryoio_level25')\
+" &gt; tmp.py
+python tmp.py
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "import subprocess\n\
+subprocess.run(['echo edlmbfok &gt; \
+/tmp/${random_input_filename}'],shell=True)\n\
+subprocess.run('/challenge/embryoio_level26',\
+stdin=open('/tmp/${random_input_filename}'))\
+" &gt; tmp.py
+python tmp.py
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "import subprocess\n\
+subprocess.run(['touch /tmp/${random_output_filename}'],shell=True)\n\
+subprocess.run('/challenge/embryoio_level27',\
+stdout=open('/tmp/${random_output_filename}','w'))\
+" &gt; tmp.py
+python tmp.py
+cat /tmp/${random_output_filename}
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo -e "import subprocess\n\
+subprocess.run('/challenge/embryoio_level28',env=dict())\
+" &gt; tmp.py
+python tmp.py
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">vim tmp.c
+# input content
+vim tmp.sh
+# input content
+# or
+# using "echo -e 'gcc ~/tmp.c -o ~/tmp\n~/tmp' &gt; tmp.sh" instead.
+bash tmp.sh
+</code></pre>
+<ul>
+<li>tmp.c (Template for all levels about c below) :</li>
+</ul>
+<pre><code class="language-c">#include &lt;unistd.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/wait.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdio.h&gt;
+void pwncollege(){
+        return;
+}
+int main(int argc,char *argv[]){
+        pid_t pid = fork();
+        if(pid &lt; 0){
+            exit(-1);
+        }else if(pid == 0){
+        	execl("/challenge/embryoio_level29","embryoio_level29",NULL)
+        }else{
+            waitpid(pid,NULL,0);
+        }
+        return 0;
+}
+</code></pre>
+<ul>
+<li>tmp.sh</li>
+</ul>
+<pre><code class="language-bash">gcc ~/tmp.c -o ~/tmp
+~/tmp
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash"># the same as level29.
+# need to modify tmp.c to correct "level29" into "level30".
+# into vim, and input:
+:s/29/30/g
+# then execute the bash script:
+bash tmp.sh
+# input the specifically value
+${random}
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">:s/30/31/g
+# modify tmp.c:
+execl("/challenge/embryoio_level31","embryoio_level31",${random},NULL)
+# continue the flow
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">:s/31/32/g
+# modify tmp.c to add one line above the execl() funtion:
+putenv("${random_key}=${random_value}");
+# continue the flow
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">echo "${random}" &gt; /tmp/${random_input_filename}
+# modify tmp.c to add one line above the execl() funtion:
+freopen("/tmp/${random_input_filename}","r",stdin);
+# correct the level number
+:s/32/33/g
+# continue the flow
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash"># modify tmp.c to add one line above the execl() funtion:
+freopen("/tmp/${random_output_filename}","w",stdout);
+# correct the level number
+:s/33/34/g
+# continue the flow
+bash tmp.sh
+cat /tmp/${random_output_filename}
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash">:s/34/35/g
+# modify tmp.sh at second line to below:
+env -i ~/tmp
+# continue the flow
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<p><code>/challenge/embryoio_level36 | cat</code></p>
+</li>
+<li>
+<p><code>/challenge/embryoio_level37 | grep pwn</code></p>
+</li>
+<li>
+<p><code>/challenge/embryoio_level38 | sed b</code></p>
+</li>
+<li>
+<p><code>/challenge/embryoio_level39 | rev | rev</code></p>
+</li>
+<li>
+<p><code>cat | /challenge/embryoio_level40</code> then input <code>${random}</code></p>
+</li>
+<li>
+<p><code>for (( i=0; i&lt;90000; i=i+1 )); do echo -e "${random_reversed}" &gt;&gt; huge.txt; done &amp;&amp; rev huge.txt | /challenge/embryoio_level41</code></p>
+</li>
+<li>
+<pre><code class="language-bash">bash tmp.sh
+</code></pre>
+<ul>
+<li>tmp.sh</li>
+</ul>
+<pre><code class="language-bash">set -Eeuxo pipefail
+/challenge/embryoio_level42 | cat
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash"># tmp.sh
+/challenge/embryoio_level43 | grep pwn
+# execute
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash"># tmp.sh
+/challenge/embryoio_level44 | sed b
+# execute
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash"># tmp.sh
+/challenge/embryoio_level45 | rev | rev
+# execute
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash"># tmp.sh
+cat | /challenge/embryoio_level46
+# execute
+bash tmp.sh
+</code></pre>
+</li>
+<li>
+<pre><code class="language-bash"># tmp.sh
+for (( i=0; i&lt;20000; i=i+1 )); do
+       echo -e "${random_reversed}" &gt;&gt; huge.txt
+done
+rev huge.txt | /challenge/embryoio_level47
+# execute
+echo "${random_reversed}" &gt; huge.txt
+bash tmp.sh
+</code></pre>
+</li>
+<li></li>
+</ol>
+<h4 id="confusing-question-numbers-1"><a class="header" href="#confusing-question-numbers-1">Confusing Question Numbers</a></h4>
+<ul>
+<li>7</li>
+<li>15</li>
+<li>21</li>
+</ul>
+<h4 id="todo"><a class="header" href="#todo">TODO</a></h4>
+<ul>
+<li>Use <code>sed</code> to replace all the interaction steps ( <code>vim</code> etc. ).</li>
+</ul>
+<h3 id="assembly-crash-course"><a class="header" href="#assembly-crash-course">Assembly Crash Course</a></h3>
+<p><code>TODO</code></p>
+<h3 id="debugging-refresher"><a class="header" href="#debugging-refresher">Debugging Refresher</a></h3>
+<ol>
+<li>
+<pre><code class="language-bash">r
+c
+</code></pre>
+<ul>
+<li><code>run</code> to start a program, with no breakpoint set. <code>r</code> for short.</li>
+<li><code>start</code> to start a program, with a breakpoint set on <code>main</code>.</li>
+<li><code>starti</code> to start a program, with a breakpoint set on <code>_start</code>.</li>
+<li><code>attach &lt;PID&gt;</code> to attach to some other already running program.</li>
+<li><code>core &lt;PATH&gt;</code> to analyze the core dump of an already run program.</li>
+<li><code>continue</code> to continue program execution. <code>c</code> for short.</li>
+</ul>
+</li>
+<li>
+<pre><code class="language-bash">r
+p/x $r12
+# copy the value of $r12
+c
+</code></pre>
+<ul>
+<li><code>info registers</code> to see the values of all registers.</li>
+<li><code>print</code> to print a particular (register’s) value. <code>p</code> for short.
+<ul>
+<li><code>print $rdi</code> (in Decimal)</li>
+<li><code>p/x $rdi</code> (in Hexadecimal)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<pre><code class="language-bash">r
+x/8gx $rsp
+c
+x/8gx $rsp
+# copy the newer value which is different from the old one (most of the older one and the corresponding newer one above is the same)
+c
+# paste the value
+</code></pre>
+<ul>
+<li><code>x/&lt;n&gt;&lt;u&gt;&lt;f&gt; &lt;address&gt;</code> to examine the contents of memory.
+<ul>
+<li><code>&lt;n&gt;</code> is the number of elements to display.</li>
+<li><code>&lt;u&gt;</code> is the unit size to display.
+<ul>
+<li><code>b</code> (1 byte)</li>
+<li><code>h</code> (2 bytes)</li>
+<li><code>w</code> (4 bytes)</li>
+<li><code>g</code> (8 bytes)</li>
+</ul>
+</li>
+<li><code>&lt;f&gt;</code> is the format to display it in.
+<ul>
+<li><code>d</code> (decimal)</li>
+<li><code>x</code> (hexadecimal)</li>
+<li><code>s</code> (string)</li>
+<li><code>i</code> (instruction)</li>
+</ul>
+</li>
+<li><code>&lt;address&gt;</code> can be specified using a register name, symbol name, or absolute address.</li>
+<li>supply mathematical expressions when specifying the address.</li>
+</ul>
+</li>
+<li>examples
+<ul>
+<li><code>x/8i $rip</code> : print the next 8 instructions from the current instruction pointer.</li>
+<li><code>x/16i main</code> : print the first 16 instructions of main.</li>
+<li><code>disassemble main</code> : print all of the instructions of main. <code>disas main</code> for short.</li>
+<li><code>x/16gx $rsp</code> : print the first 16 values on the stack.</li>
+<li><code>x/gx $rbp-0x32</code> : print the local variable stored there on the stack.</li>
+</ul>
+</li>
+<li><code>set disassembly-flavor intel</code> : set INTEL assembly syntax.</li>
+</ul>
+</li>
+<li>
+<pre><code class="language-bash">r
+x/8gx $rsp
+ni 18
+x/8gx $rsp
+# copy the newer value which is different from the old one (most of the older one and the corresponding newer one above is the same)
+ni 36
+# paste
+x/8gx $rsp
+# copy the changed value
+ni 38
+# paste
+x/8gx $rsp
+# copy the changed value
+ni 38
+# paste
+x/8gx $rsp
+# copy the changed value
+ni 38
+# paste
+</code></pre>
+<ul>
+<li><code>stepi &lt;n&gt;</code> to step forward one instruction. <code>si &lt;n&gt;</code> for short.
+<code>nexti &lt;n&gt;</code> to step forward one instruction, while stepping over any function calls. <code>ni &lt;n&gt;</code> for short.
+<ul>
+<li><code>&lt;n&gt;</code> parameter is optional, but allows you to perform multiple steps at once.</li>
+<li><code>finish</code> command in order to finish the currently executing function.</li>
+</ul>
+</li>
+<li><code>break *&lt;address&gt;</code> to set a breakpoint at the specified-address.</li>
+<li><code>display/&lt;n&gt;&lt;u&gt;&lt;f&gt;</code> is the same as the <code>x/&lt;n&gt;&lt;u&gt;&lt;f&gt;</code>.</li>
+<li><code>layout regs</code> : puts gdb into its TUI mode and shows the contents of all of the registers, as well as nearby instructions.</li>
+</ul>
+</li>
+<li>
+<pre><code class="language-bash"># 1. Write a `gdb` script file, named ${filename}.gdb
+# 2. Run command `/challenge/embryogdb_level5 -x {filename}.gdb` (in home directory)
+# 3. Get the flag
+# NOTE: Some versions perhaps have corresponding explanation, which provide my thought of solving the challenge
+
+# latest version
+TODO
+</code></pre>
+<ul>
+<li>first version (it works)</li>
+</ul>
+<pre><code class="language-bash">start
+break scanf@plt
+continue
+break *main+818
+command
+    set $rdx = $rax
+end
+continue
+continue
+continue
+continue 
+continue
+continue
+continue 
+continue
+continue
+</code></pre>
+<ul>
+<li>example.gdb</li>
+</ul>
+<pre><code class="language-bash"> start
+ break *main+42
+ commands
+     silent
+     set $local_variable = *(unsigned long long*)($rbp-0x32)
+     printf "Current value: %llx\n", $local_variable
+     continue
+ end
+ continue 
+</code></pre>
+<ul>
+<li><code>-x &lt;PATH_TO_SCRIPT&gt;</code> : gdb will execute all of the gdb commands after gdb launches.
+<ul>
+<li>filename usually is <code>example_filename.gdb</code>.</li>
+</ul>
+</li>
+<li><code>-ex '&lt;COMMAND&gt;'</code> : execute individual commands, also can pass multiple commands with multiple <code>-ex</code> arguments.</li>
+<li><code>~/.gdbinit</code> : some commands that always executed for any gdb session.
+<ul>
+<li>In general, <code>set disassembly-flavor intel</code> can be in there.</li>
+</ul>
+</li>
+<li><code>silent</code> indicates that we want gdb to not report that we have hit a breakpoint, to make the output a bit cleaner.</li>
+</ul>
+</li>
+</ol>
+<h2 id="intro-to-cybersecurity"><a class="header" href="#intro-to-cybersecurity">Intro to Cybersecurity</a></h2>
+<h3 id="talking-web"><a class="header" href="#talking-web">Talking Web</a></h3>
+<h4 id="premise-1"><a class="header" href="#premise-1">Premise</a></h4>
+<p>In each level, before taking any operation, we must let the server run. However, after we run it, the current terminal can NOT type other commands. So we need a terminal multiplexer in order to input final command that can get the <code>flag</code> of each level.</p>
+<p>As for the terminal multiplexer, I use <code>tmux</code>, readers can also use others (<em>i.e.</em> <code>sceen</code>).</p>
+<p>So, follow these steps as precondition.</p>
+<pre><code class="language-bash">tmux new -s work
+/challenge/babyhttp
+</code></pre>
+<h4 id="solutions-2"><a class="header" href="#solutions-2">Solutions</a></h4>
+<ol>
+<li><code>curl 127.0.0.1</code></li>
+<li></li>
+</ol>
+<h3 id="building-a-web-server"><a class="header" href="#building-a-web-server">Building a Web Server</a></h3>
+<h3 id="intercepting-communication"><a class="header" href="#intercepting-communication">Intercepting Communication</a></h3>
+<h3 id="cryptography"><a class="header" href="#cryptography">Cryptography</a></h3>
+<h3 id="web-security"><a class="header" href="#web-security">Web Security</a></h3>
+<h2 id="program-security"><a class="header" href="#program-security">Program Security</a></h2>
+<h3 id="shellcode-injection"><a class="header" href="#shellcode-injection">Shellcode Injection</a></h3>
+<h3 id="reverse-engineering"><a class="header" href="#reverse-engineering">Reverse Engineering</a></h3>
+<h3 id="memory-errors"><a class="header" href="#memory-errors">Memory Errors</a></h3>
+<h3 id="program-exploitation"><a class="header" href="#program-exploitation">Program Exploitation</a></h3>
+<h2 id="system-security"><a class="header" href="#system-security">System Security</a></h2>
+<h3 id="introduction"><a class="header" href="#introduction">Introduction</a></h3>
+<p><strong>No challenges in this module.</strong></p>
+<h3 id="sandboxing"><a class="header" href="#sandboxing">Sandboxing</a></h3>
+<h3 id="race-conditions"><a class="header" href="#race-conditions">Race Conditions</a></h3>
+<h3 id="kernel-security"><a class="header" href="#kernel-security">Kernel Security</a></h3>
+<h3 id="system-exploitation"><a class="header" href="#system-exploitation">System Exploitation</a></h3>
+<h2 id="software-exploitation"><a class="header" href="#software-exploitation">Software Exploitation</a></h2>
+<h3 id="return-oriented-programming"><a class="header" href="#return-oriented-programming">Return Oriented Programming</a></h3>
+<h3 id="format-string-exploits"><a class="header" href="#format-string-exploits">Format String Exploits</a></h3>
+<h3 id="file-struct-exploits"><a class="header" href="#file-struct-exploits">File Struct Exploits</a></h3>
+<h3 id="dynamic-allocator-misuse"><a class="header" href="#dynamic-allocator-misuse">Dynamic Allocator Misuse</a></h3>
+<h3 id="exploitation-primitives-and-memory-mastery"><a class="header" href="#exploitation-primitives-and-memory-mastery">Exploitation Primitives and Memory Mastery</a></h3>
+<h3 id="dynamic-allocator-exploitation"><a class="header" href="#dynamic-allocator-exploitation">Dynamic Allocator Exploitation</a></h3>
+<h2 id="archived-modules"><a class="header" href="#archived-modules">Archived Modules</a></h2>
+<h3 id="memory-errors-1"><a class="header" href="#memory-errors-1">Memory Errors</a></h3>
+<h3 id="advanced-exploitation"><a class="header" href="#advanced-exploitation">Advanced Exploitation</a></h3>
+<h2 id="example-dojo"><a class="header" href="#example-dojo">Example Dojo</a></h2>
+<h3 id="hello"><a class="header" href="#hello">Hello</a></h3>
+<h3 id="world"><a class="header" href="#world">World</a></h3>
+<h2 id="example-import-dojo"><a class="header" href="#example-import-dojo">Example Import Dojo</a></h2>
+<h3 id="hello-1"><a class="header" href="#hello-1">Hello</a></h3>
+<h3 id="planet"><a class="header" href="#planet">Planet</a></h3>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/计算机/文章/Mdbook排版混乱.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/计算机/文章/DocSearch搜索集成.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/计算机/文章/Mdbook排版混乱.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/计算机/文章/DocSearch搜索集成.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/计算机/文章/pwn.college-writeup.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

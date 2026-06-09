@@ -1,0 +1,492 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>生日女郎 - 村上春树 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="生日女郎"><a class="header" href="#生日女郎">生日女郎</a></h1>
+<p><em>村上春树</em></p>
+<h2 id="一"><a class="header" href="#一">一</a></h2>
+<p>　　二十岁生日那天，她像平常一样在餐厅做服务生。她每个礼拜五都要上班，但如果按照原计划，在那个特别的礼拜五，她会休息一晚上。另一个兼职的女孩答应和她换班，原因显而易见：被愤怒的厨师呵斥着把南瓜丸子和意式炸海鲜一盘盘运送到顾客桌上——这实在不是过二十岁生日的好方法。但另外那个女孩突然感冒加重卧床不起：腹泻不止，体温高达四十度。因此最终她还是赶去上班了。</p>
+<p>　　当那个生病的女孩打电话来道歉时，她发觉自己正在试着安慰她。“不要紧，”她说，“虽然是我二十岁生日，但反正我也没什么特别的事要做。”</p>
+<p>　　事实上她也并没有太失望。原因之一是前几天她刚和男友狠狠吵了一架，而生日那天晚上他本来要陪她过的。他们从高中时就好上了。那次争吵起于微不足道的小事，但却出乎意料地越演越烈，直到最后变成了一场漫长而激烈的吼叫比赛——总之，一场糟糕的吵架，糟得足以一劳永逸地毁掉他们的长久关系，她确信。她内心的什么东西变硬了，死了。那次分手后他就没给她打过电话，她也不准备打给他。</p>
+<p>　　她工作的地方是位于东京时髦的六本木区的一家有名的意大利餐厅。它开于六十年代末，虽然菜式很难说得上新潮，但信誉却是有口皆碑。它拥有许多常客，它从未让他们失望过。店堂里总是洋溢着一派宁静、放松的气氛，感觉不到丝毫粗俗。它吸引的对象不是年轻人，而是年长一点的顾客，包括一些著名的演员和作家。</p>
+<p>　　店里有两名一周工作六天的全职服务生。她和另一个兼职的女孩每人轮流工作三天。此外还有一名领班经理，以及坐在收银台的一个瘦得皮包骨头的中年妇女，她显然从餐馆开张时就在那儿了——看上去似乎从那时起她就一直坐在同一个位置，活像《小多丽》里某个古老阴森的角色。她只有两项功能：收钱和接电话。她除非迫不得已决不说话，并且老穿着一套同样的黑衣服。她身上有某种冷酷的东西：要是让她在夜间的大海上航行，她很可能会把不巧撞到她的小船掀翻。</p>
+<p>　　那个领班经理大概五十岁不到一点。个高肩宽，他的体型表明他年轻时是名运动爱好者，不过如今多余的赘肉已经开始附上他的下巴和小腹。他那短短硬硬的头发从头顶处变得稀疏，全身散发出一股挥之不去的老单身汉味儿——就像和止咳药片一起放在抽屉里的过期报纸。她有个单身汉舅舅闻起来就是那样。</p>
+<p>　　这位经理总是穿着黑西装，白衬衫和蝴蝶领结——可不是那种揿钮式的，而是真正的领结，用手打的那种。他引以为豪的一点是可以不用看镜子就打出完美的领结。日复一日，他熟练地履行着自己的职责：迎来送往，接待订座，记住那些熟客的名字并向他们微笑致意，对可能发出的任何抱怨都洗耳恭听，提供有关酒类的专业建议，同时监督男女服务生的工作情况。他还有一个特别的任务：把晚饭送到店主的房间。</p>
+<h2 id="二"><a class="header" href="#二">二</a></h2>
+<p>　　“店主在同一幢大楼的第六层有个自己的房间。”她说，“一套公寓或是办公室什么的。”</p>
+<p>　　她和我不知怎么聊到了二十岁生日这个话题——我们各自是怎样度过那一天的。大部分人都记得他们二十岁生日的那一天。而她的那一天已经过去十多年了。</p>
+<p>　　“尽管如此，他却从未在餐厅露过面。惟一能见到他的就是那个经理。给店主送晚饭是他独有的工作。其他员工甚至连店主长什么样都一无所知。”</p>
+<p>　　“也就是说，实际上，你们店主是在从自己的餐厅叫外卖。”</p>
+<p>　　“没错，”她说，“每晚八点，领班经理都要把晚饭送到他的房间。那正是餐厅最忙的时段，所以经理偏偏要在那时候消失总是让我们很头痛，但没办法，一直以来都是那样。他们把饭菜装进宾馆送餐服务用的那种小推车，然后经理毕恭毕敬地把它推进电梯，十五分钟后，他空手回来，接着，一小时后，他再上去把放着空碟空杯的推车拿下来。每天如此，精确无误。第一次看到的时候，我觉得非常怪异。那就像某种宗教仪式，你明白吗？但很快我就习惯了，我并没有多想。”</p>
+<h2 id="三"><a class="header" href="#三">三</a></h2>
+<p>　　那个店主每顿都要吃鸡。做法和蔬菜配菜每天有细微的区别，但主菜总是鸡肉。有次一个年轻的厨师告诉她，他曾经试过连续一周每天都做烤鸡送上去，目的就是为了看看会有什么反应，但对方毫无怨言。当然，作为厨师总想尝试一些不同的菜式，而每个新来的厨师都会拿出自己能想到的所有鸡肉烧法来自我挑战一番。他们制作精美的酱料，尝试选择不同的鸡肉供应商，但他们的努力无一得到回应：简直就跟把小石子扔进空空如也的山洞差不多。最终，他们全都放弃了，只是每天为店主准备一份平平常常的鸡肉餐——对他们的要求仅此而已。</p>
+<p>　　在她的二十岁生日那天，十一月十七号，工作一如往常。从下午起就在断断续续地下雨，傍晚时成了倾盆大雨。下午五点，经理把员工召集到一起，向他们说明当天的特色菜。服务生要把那些特色菜一字不差地背下来，不能用笔记：米兰小牛肉，浇有沙丁鱼和卷心菜的意大利通心粉，栗子慕斯。有时经理会扮成顾客向他们提问。接下来是员工们的晚饭：这样一家餐厅的侍者可不能在给客人点菜时肚子饿得咕咕叫！</p>
+<p>　　餐厅六点钟开始营业，但由于暴雨，顾客到得很慢，有几桌订座干脆被取消了。女士们不想让雨水毁了她们的礼服。经理一言不发地走来走去，侍者们靠擦拭盐瓶和胡椒磨或跟厨师闲聊烹饪方面的事来打发时间。她耳听从天花板音箱小心翼翼流淌出的古钢琴音乐，巡视照看着只有一桌两个人的店堂。一股浓重的深秋雨的气味儿渗入餐厅。</p>
+<p>　　过了七点半，领班经理开始感到不舒服。他踉踉跄跄地走向一张椅子，在上面坐了一会儿，他捂着肚子，就像刚刚中了一枪。一颗油亮的汗珠挂在他的额头。“我想我最好去趟医院，”他低声嘟喃着。对他来说生病是件极为罕见的事：自从十多年前他开始在这家餐厅工作时起，他就从未误过一天工。这是他另一个引以为豪的地方，他从未因生病或受伤而缺勤。但如今他脸上痛苦扭曲的表情说明情况非常不妙。</p>
+<p>　　她撑把雨伞出门叫了辆出租车。一个侍者扶稳经理，陪他一起乘车前往附近的医院。在俯身钻进出租车之前，那个经理声音嘶哑地对她说：“我要你八点钟把晚饭送到604房间。你要做的就是按响门铃，说‘您的晚餐来了’，然后就离开。”</p>
+<p>　　“604 房间，对吗？”她说。</p>
+<p>　　“八点钟，”他重复道，“要准时。”他的脸再次痛得扭起来。他爬上车，出租车疾驰而去。</p>
+<p>　　经理走后，雨一点停的意思也没有，只有零星的顾客光临。餐厅里仅仅有一两桌客人，所以如果经理和其中一个侍者必须要走开的话，时机可谓刚好。本来这种情况很可能会忙得他们手忙脚乱，哪怕最出色的员工也难以应付。</p>
+<p>　　当八点钟店主的晚餐准备好了，她便把送餐服务的小推车推进电梯乘到六楼。那对他是很平常的一餐：瓶塞松开的半瓶红酒，一保温壶的咖啡，配蒸蔬菜的鸡肉，以及面包和黄油。浓郁的鸡肉香味迅速充满了整个电梯。它和雨的气味混在一起。电梯地板上点缀着一些水滴，说明刚刚有人带着湿雨伞乘过电梯。</p>
+<p>　　她沿着走廊推动小推车，在标有“604”的门前停下来。她重复核对了一下记忆：604。就是它。她清清喉咙，按下门铃。</p>
+<p>　　没有回答。她在那儿站了足足有二十秒。正当她想再按一次门铃的时候，门从里面开了，出现一个瘦小的老头。他比她大概矮四五英寸。穿一身黑西装，打着领带。在白衬衫的映衬下，那条领带显得格外醒目，领带的黄褐色就像是枯叶的颜色。他给人一种很整洁的感觉，衣服熨得无可挑剔，白发梳得一丝不乱：看上去就像正要出门参加某个晚间的正式聚会。他皱着眉毛的皱纹让她想起航拍照片里那些深邃的峡谷。</p>
+<p>　　“您的晚餐，先生。”她用沙哑的声音说，说完又轻声清了清喉咙。她只要一紧张声音就会变得沙哑。</p>
+<p>　　“晚餐？”</p>
+<p>　　“是的，先生。经理突然病了。今天我顶替他。您的晚饭，先生。”</p>
+<p>　　“哦，我明白了。”那个老头说，几乎像在自言自语，他的手仍然放在门把手上。“病了，呃？你没说什么病。”</p>
+<p>　　“他的肚子突然痛起来。他去医院了。他怀疑他得了阑尾炎。”</p>
+<p>　　“哦，那可不太好。”老头说，他的手指沿着额头的皱纹划来划去。“一点都不好。”</p>
+<p>　　她再次清清喉咙。“要我把你的饭拿进去吗，先生？”</p>
+<p>　　“啊，好的，当然，”老头说，“当然，如果你希望那样。没问题。”</p>
+<p>　　如果我希望那样？她不禁在心里反问。多么奇怪的说法。我能希望怎么样？</p>
+<p>　　那个老头把门完全打开，她把小推车推进去。整个地板都铺着一层薄薄的灰色地毯，没有地方换鞋。第一个房间像个大书房，这套公寓似乎更像个工作的地方，而不是居住的地方。窗口看出去是附近的东京塔，点点灯光勾勒出钢制的骨架。靠窗有一张大大的书桌，旁边是一张沙发和两张皮质的扶手椅。老头指指沙发前有福米加塑料贴面的咖啡茶几。她把他的晚饭摆在茶几上：白色的餐巾和银质餐具，咖啡壶和咖啡杯，酒和酒杯，面包、黄油和装着鸡跟蔬菜的盘子。</p>
+<p>　　“先生，如果您能劳驾把碗碟像平常一样放到走廊上，我会在一小时后来把它们取回去。”</p>
+<p>　　她的话似乎使他从对晚餐满怀欣赏的沉思中回过神来。“哦，好的，当然。我会把它们放到走廊。推车上。一小时后。如果你希望那样。”</p>
+<p>　　是的，她在心里回答说，那正是此刻她希望的。“还有什么事吗，先生？”</p>
+<p>　　“不，我想没有了。”他考虑了一会儿，然后说。他脚穿一双擦得铮亮的黑皮鞋。皮鞋小而别致。他是个穿着讲究的家伙，她想。而且，就他的年纪来说，他站得很直。</p>
+<p>　　“那么，先生，我回去工作了。”</p>
+<p>　　“不，稍等一下。”他说。</p>
+<p>　　“恩？”</p>
+<p>　　“你觉得有可能给我五分钟时间吗，小姐？我有些话想对你说。”</p>
+<p>　　他的请求如此礼貌，她的脸都红了。“我……想应该可以吧，”她说，“我是说，如果真的只有五分钟的话。”毕竟，他是她的老板。他按小时付她薪水。要她给他一点时间也好，他要占用她的时间也好，都不成问题。再说这个老头看上去也不像会对她做什么坏事。</p>
+<p>　　“对了，你今年多大？”老人问。他站在茶几边，抱着胳膊，直直地看着她的眼睛。</p>
+<p>　　“现在二十。”她说。</p>
+<p>　　“现在二十，”他重复道，他眯起眼睛，仿佛在透过某个缝隙看东西。“现在二十。从什么时候起？”</p>
+<p>　　“其实，我刚刚二十，”她说。犹豫一下，她又加了一句，“今天是我生日，先生。”</p>
+<p>　　“我明白了，”他说，他搓着下巴，似乎这说明了很多事情。“今天，对吗？今天是你的二十岁生日？”</p>
+<p>　　她点点头。</p>
+<p>　　“你的人生正好开始于二十年前的今天。”</p>
+<p>　　“是的，先生，”她说，“一点没错。”</p>
+<p>　　“是的，是的，”他说。“太奇妙了。那么，生日快乐。”</p>
+<p>　　“谢谢，”她说，她意识到这还是一天来第一次有人祝她生日快乐。当然，如果她父母从大分打过电话给她，下班回家她会在电话答录机上发现他们的留言。</p>
+<p>　　“啊，这当然要庆祝一下，”他说。“干一小杯怎么样？我们可以喝这瓶红酒。”</p>
+<p>　　“谢谢你，先生，但我不行，我正在上班。”</p>
+<p>　　“哦，喝一小口又有何妨？如果我说可以就没人会责怪你。只是象征性地喝一口以示庆祝。”</p>
+<p>　　老人从酒瓶上拔下瓶塞，滴了一点点酒到他的酒杯里给她。然后他从玻璃门的酒柜里拿了一只普通的酒杯，倒了些酒给自己。</p>
+<p>　　“生日快乐，”他说。“祝愿你拥有一个富足而丰美的人生，祝愿不会有任何东西在它上面投下黑暗的阴影。”</p>
+<p>　　他们碰了碰杯。</p>
+<p>　　祝愿不会有任何东西在它上面投下黑暗的阴影。她默默地对自己重复了一遍他的话。他为什么要选择这样不寻常的句子作她的生日祝酒辞呢？</p>
+<p>　　“你的二十岁生日在你一生中只此一次，小姐。这是个不可替代的日子。”</p>
+<p>　　“是的，先生，我知道，”她说，她小心地抿了一口酒。</p>
+<p>　　“而现在，在这个特别的日子，你却像个好心的仙女一样，不辞辛苦地给我送饭。”</p>
+<p>　　“我只是在做我的工作，先生。”</p>
+<p>　　“不，不只是，”老人说着头快速地摇了几下，“不只是，年轻可爱的小姐。”</p>
+<p>　　老人在他书桌后的皮椅上坐下，并示意她坐沙发。她小心翼翼地让自己落在座位的边沿，葡萄酒杯还拿在手里。她双膝并拢，拉拉自己的裙子，再次清了清喉咙。她看见雨点在窗上画出一条条线流下来。房间里静得出奇。</p>
+<p>　　“今天刚好是你的二十岁生日，而正是今天你给我带来了热乎乎的美味饭菜，”老人说，好像要再次确认这一事实。接着他把酒杯轻轻砰的一声放到桌面上。“这一定是某种特殊的巧合，你不觉得？”</p>
+<p>　　她挤出一个虚弱的微笑，她并不怎么觉得。</p>
+<p>　　“那就是为什么，”他摸着枯叶色领带的领带结说，“我觉得送你一件生日礼物对我来说很重要。一个特别的生日需要一件特别的纪念礼物。”</p>
+<p>　　她一阵慌乱，她摇摇头说，“不，请不要，先生，别多想了。我只是按指示把饭菜送到这里。”</p>
+<p>　　那个老人抬起两只手，手心朝向她。“不，小姐，是你别多想了。我所说的那种‘礼物’并非什么有形的东西，并非什么有价格标签的东西。简单地说，”他把双手放在桌子上，长长地，缓慢地呼吸一口，“对于你这样一个年轻可爱的仙女，我想做的是让你许个愿，而后让你的愿望成真。任何愿望。你想要实现的任何一个愿望——假如你确实有那样一个愿望。”</p>
+<p>　　“一个愿望？”她问道，她的嗓子有点发干。</p>
+<p>　　“某件你希望会发生的事情，小姐。如果你有某个愿望——某一个愿望，我会让你愿望成真。那就是我所能给你的生日礼物。但你最好非常仔细地想想，因为我只能满足你一个愿望。”他竖起一根手指。“只有一个。之后你不能反悔也不能收回。”</p>
+<p>　　她不知该说什么好。一个愿望？雨点被风裹挟着，不均匀地轻拍在玻璃窗上。在她保持沉默的时间里，老人看着她的眼睛，一言不发。时间在她耳中发出不规则的脉动。</p>
+<p>　　“我许下某个愿望，然后它就会实现？”</p>
+<p>　　老人没有回答她的问题，他——双手仍然并排摆在桌上——只是朝她展开微笑。他这样做的时候显得无比亲切和自然。</p>
+<p>　　“你有什么愿望吗，小姐，或者没有？”他柔声问道。</p>
+<h2 id="四"><a class="header" href="#四">四</a></h2>
+<p>　　“这的的确确发生过，”她说，她认真地看着我。“我不是在胡编乱造。”</p>
+<p>　　“当然不是，”我说。她不是那种会无中生有地编些无聊故事的人。“那么……你许愿了吗？”</p>
+<p>　　她又看了我一会儿，然后发出一声轻微的叹息。“别以为我傻，”她说。“我并没有拿他的话百分之百地当真。我是说，二十岁时你已经不可能还只生活在童话世界里。不过，如果他是想开个玩笑，我就得当场接过他的话头配合一下，不是吗？他是个衣冠楚楚、眼睛里闪着愉快光亮的小老头，所以我决定陪他玩下去。毕竟，那天是我的二十岁生日，我想应该有点不同寻常的什么发生在自己身上。那根本不是信不信的问题。”</p>
+<p>　　我点点头，没有吭声。</p>
+<p>　　“那种感受，我相信你能理解。我的二十岁生日正在走向尾声，没有任何特别的事情发生，也没有人为我庆贺生日，我所做的只是把一盘盘淋了凤尾鱼酱的意大利饺子端到客人桌子上。”</p>
+<p>　　“别担心，”我说，“我能理解。”</p>
+<p>　　“于是我许了个愿。”</p>
+<h2 id="五"><a class="header" href="#五">五</a></h2>
+<p>　　那个老人目不转睛地盯着她，一言不发。他的双手放在桌面上。桌上还有几个厚厚的大概是帐簿的文件夹，外加一些文具，一本台历和一盏绿灯罩的台灯。他那小小的双手放在它们中间，看上去就像桌面上的另一样摆设。雨继续敲打着窗户，东京塔的灯光穿透过雨的碎末。</p>
+<p>　　老人额头的皱纹稍稍加深了一点。“那就是你的愿望？”</p>
+<p>　　“是的，”她说。“那就是我的愿望。”</p>
+<p>　　“对于你这样年纪的女孩，有点儿非同寻常，”他说，“我以为会是另外的什么。”</p>
+<p>　　“要是这不行我可以许个其它什么愿，”她清清喉咙说。“我不介意。我再想个其它愿望好了。”</p>
+<p>　　“不，不，”老人说，他抬起双手，挥动得像旗子一样。“这个愿望没问题，毫无问题。只是有一点令人吃惊，小姐。你不想要点其它什么吗？比如说，你想更漂亮，或者更聪明，或者更有钱：你确定自己不要许个像那样的——一般女孩都会想许的那种——愿望吗？”</p>
+<p>　　她花了一会时间搜寻合适的字句。那个老人只是等着，什么也不说，他的两手又一起回到了桌上。</p>
+<p>　　“我当然也想更漂亮，更聪明，或者更有钱。但我实在无法想像如果这其中哪个愿望真的实现了，会有什么事情发生在我身上。那大概会超出我的控制之外。我还不太清楚人生到底是怎么一回事。我还不知道它是如何运转的。”</p>
+<p>　　“我明白，”那个老人说，他把手指交叉起来然后又分开。“我明白。”</p>
+<p>　　“那，我的愿望行吗？”</p>
+<p>　　“行，”他说，“当然行。这对我来说毫不费力。”</p>
+<p>　　那个老人突然把视线固定在空中的一点。他额头的皱纹更深了：它们俨然就是凝神思考时大脑本身的皱褶。他似乎正在凝视着漂浮在他面前的什么东西——也许是那些几乎看不见的降落的尘埃。他张大双臂，从椅子上轻轻起身，双掌拍击，发出干巴巴的“噼啪”一声。在椅子上重新坐好后，他用手指慢慢抚过额头的皱纹，仿佛要把它们抚平。他带着和蔼的微笑朝她转过身。</p>
+<p>　　“可以了。”他说，“你的愿望被接受了。”</p>
+<p>　　“好了？”</p>
+<p>　　“是的，不费吹灰之力。你的愿望已经被接受了，可爱的小姐。生日快乐。现在你可以回去工作了。别担心，我会把推车放到走廊上。”</p>
+<p>　　她乘电梯下楼回到餐厅。手上现在空荡荡的，让她觉得轻得几乎令人不安，就像自己正走在某种神秘的毛绒上。</p>
+<p>　　“你怎么了？看上去魂不守舍的。”年轻点的侍者对她说。</p>
+<p>　　她摇摇头，给了他一个含糊的微笑。“哦，真的？没有啊，我很好。”</p>
+<p>　　“跟我说说店主的事。他长什么样？”</p>
+<p>　　“不清楚，我没怎么好好看。”她切断了话头。</p>
+<p>　　一小时后她去把推车拿了下来。推车放在外面走廊上，上面的餐具摆得井井有条。她掀起盖子，鸡肉和蔬菜都不见了。酒瓶和咖啡壶也空了。604房间的房门关着，面无表情地站在那里。她盯着门看了一会儿，觉得它好像随时都会打开，但它没有。她把推车运下电梯，推到厨房洗碗机那儿。厨师用空洞的眼神看了看盘子：一如以往，里面吃得一点不剩。</p>
+<h2 id="六"><a class="header" href="#六">六</a></h2>
+<p>　　“我再也没见过那个店主，”她说，“一次也没有。领班经理最终诊断只是普通的胃痛，第二天便回来亲自给店主送饭了。元旦后我辞去了那份工作，再也没回过那个地方。我不知道，我只是觉得最好别再走近那里，类似某种预感。”</p>
+<p>　　她手里玩着一只纸船，思绪不知飘去了哪里。“有时我会有种感觉，在我二十岁生日那天所发生的一切都是某种幻觉。就好像碰巧有什么让我以为发生了那些其实根本没有真正发生过的事情。但我十分确定地知道，那真的发生过。我至今还能栩栩如生地回忆起604房间里的每一件家具和每一样摆设。在那个房间里发生在我身上的一切的确发生过，而且对我来说意义非凡。”</p>
+<p>　　我们俩沉默了一会儿，喝着各自的饮料，想着各自的心事。</p>
+<p>　　“问你件事情行吗？”我问。“或者，更确切地说，是两件事。”</p>
+<p>　　“问吧，”她说。“我猜你要问我那时许了什么愿。那是你想知道的第一件事。”</p>
+<p>　　“但看起来你似乎不想说。”</p>
+<p>　　“是吗？”</p>
+<p>　　我点点头。</p>
+<p>　　她放下手里的纸船，眯起眼睛，好像正在注视着什么遥远的东西。“你知道，许什么愿是不能告诉别人的。”</p>
+<p>　　“我并没有要你告诉我，”我说。“不过，我想知道它是否真的实现了。还有——不管那个愿望本身如何——你后来是否对自己选择的愿望感到后悔。你曾为当初没有许下其它的愿望而觉得遗憾吗？”</p>
+<p>　　“第一个问题的答案既是‘yes’又是‘no’。我剩下的人生还很长，大概。我还不清楚事情最终会变成什么样子。”</p>
+<p>　　“那么这是个要花时间去实现的愿望喽？”</p>
+<p>　　“可以那么说。时间在这里起的作用非常重要。”</p>
+<p>　　“就像做菜？”</p>
+<p>　　“就像做菜。”</p>
+<p>　　我就此想了一会儿，但惟一浮上脑海的是一块巨大的馅饼用低火在烤箱里慢慢烤熟的画面。</p>
+<p>　　“那第二个问题的答案呢？”</p>
+<p>　　“那是什么来着？”</p>
+<p>　　“你是否后悔过自己选择的愿望。”</p>
+<p>　　一阵沉默。她转向我的眼睛里似乎没有任何深度可言。一丝微笑的阴翳闪过她的嘴角，给人一种平静的顺从感。</p>
+<p>　　“我结婚了，”她说。“嫁给了一个大我三岁的会计师。我有两个孩子，一个男孩一个女孩。我们养了一条爱尔兰雪达犬。我开奥迪，每周和朋友打两次网球。那就是现在我过的生活。”</p>
+<p>　　“听上去很不错。”我说。</p>
+<p>　　“哪怕奥迪的保险杠上撞凹了两块？”</p>
+<p>　　“嗨，保险杠装了就是用来撞凹的。”</p>
+<p>　　“这可以做个很棒的保险杠贴纸哦，”她说。“‘保险杠就是用来撞凹的’。”</p>
+<p>　　她那样说的时候我看着她的嘴巴。</p>
+<p>　　“这就是我想要告诉你的，”她说，声音更加轻柔。她摸着自己的一只耳垂。那是只形状很美的耳垂。“无论许下什么愿望，无论走得多远，人们始终还是他们自己。如此而已。”</p>
+<p>　　“又一条很妙的保险杠贴纸，”我说。“‘无论走得多远，你始终还是你自己。’”</p>
+<p>　　她大声笑起来，真的很开心的样子，嘴角的阴翳不见了。</p>
+<p>　　她把胳膊肘支在吧台上看着我。“告诉我，”她说。“如果你处在我的位置，你会许什么愿？”</p>
+<p>　　“你的意思是，在我二十岁生日的晚上？”</p>
+<p>　　“恩哼。”</p>
+<p>　　我花了一点时间思考这个问题，但我想不出答案。</p>
+<p>　　“我什么也想不出，”我承认说。“我的二十岁生日过去太久了。”</p>
+<p>　　“你真的什么愿望都想不出？”</p>
+<p>　　我摇了摇头。</p>
+<p>　　“一个都没有？”</p>
+<p>　　“一个都没有。”</p>
+<p>　　她再一次看着我的眼睛——直接而深入——然后说，“那是因为你已经许过愿了。”</p>
+<h2 id="七"><a class="header" href="#七">七</a></h2>
+<p>　　“但你最好非常仔细地想想，因为我只能满足你一个愿望。”在黑暗中的某个地方，一个打着枯叶色领带的老头竖起一根手指。“只有一个。之后你不能反悔也不能收回。”</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/一种错觉-毛姆.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/花脸雀-李娟.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/一种错觉-毛姆.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/花脸雀-李娟.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/生日女郎-村上春树.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

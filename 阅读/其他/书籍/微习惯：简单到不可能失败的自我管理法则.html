@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>微习惯：简单到不可能失败的自我管理法则 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="微习惯简单到不可能失败的自我管理法则"><a class="header" href="#微习惯简单到不可能失败的自我管理法则">微习惯：简单到不可能失败的自我管理法则</a></h1>
+<h2 id="养成新习惯需要多长时间"><a class="header" href="#养成新习惯需要多长时间">养成新习惯需要多长时间？</a></h2>
+<p>　　视情况而定。如果有人给了你不一样的答案，肯定也是从别处听到的（而且是错的）。</p>
+<p>　　不是 21 天，也不是 30 天。天哪，我真想把这句话贴在所有广告牌上。“21 天”谬论可能源自一位整形外科医生麦克斯威尔·马尔茨（Maxwell Maltz）。据说，马尔茨医生发现接受截肢手术的患者需要大约 21 天来适应肢体残缺的事实，因此，他认为 21 天是人们适应任何生活变化所需的时间长度。医生，真的是这样吗？在我看来，习惯肢体残缺和努力多喝水可不是一回事，而且我还要补充一点：这两件事都和争取每天做 150 个俯卧撑大不相同。</p>
+<p>　　关于习惯形成所需时长，被引用最多的是发表于 2009 年的《欧洲社会心理学杂志》（European Journal of Social Psychology ）上的一项研究，研究的每位参与者选择“每天在同样的条件下（比如“早饭过后”）进食、饮水或做其他活动，总共 12 周”，他们有什么发现呢？</p>
+<p>　　一个行为变成习惯所需的时间平均为 66 天，但不同行为所需时间相差很大，从 18 天到 254 天不等，这表明人们将习惯自动化所需时间千差万别，在某些案例中，这个时间可能惊人地长。“21 天”和“30 天”挑战很流行，但很多类型的习惯完全不可能在这么短的时间内养成。每天喝一杯水可能属于 21 天就能养成的习惯，但是像每天 100 个仰卧起坐这样更具有挑战性的行为则要几百天甚至更长时间才能变成习惯。</p>
+<hr>
+<p>　　当一种行为成为一个习惯，你会变得没有刚开始时那么情绪高涨，这种行为甚至开始有些乏味无聊。事情当然会变成这样了。杰里米·迪安（Jeremy Dean）在《习惯：改变命运的关键力量》（Making Habits，Breaking Habits ）中写道：“习惯不仅无法被认知捕捉到，而且也不会掺杂情绪。……很奇怪，人们进行习惯行为时是不带有情绪的。”温迪·伍德博士及其同事们在德克萨斯农工大学进行的一项研究中记录了这样的情况：当参与者做出惯性行为时，毫无疑问，他们比平时更缺乏情绪变化。这就是“需要动力才能行动”的想法在培养习惯时反而会帮倒忙的原因。重复不会让我们兴奋地行动起来，反而会让我们趋于平静。习惯带来的好处在于抵触情绪少了，自发性多了。迪安表示：“惯性行为不会引发强烈情绪，这是它的一大优势。”的确是这样，因为任何依赖人类情感的东西都是完全不可靠的。</p>
+<h2 id="前额皮层对抗自动行为的防御武器"><a class="header" href="#前额皮层对抗自动行为的防御武器">前额皮层——对抗自动行为的防御武器</a></h2>
+<p>　　为了更好地了解前额皮层，我们先看看如果缺少了它会怎样。没有前额皮层，大脑会如何运转呢？不太乐观。下面的这项研究展现了前额皮层和大脑其他部分的功能。你去掉某个部件后，就会看到它的功能有多大影响，以及没有它存在时其他部分是如何运转的。</p>
+<p>　　法国神经学家弗朗索瓦·莱尔米特（Francois Lhermitte）对额叶受损的患者进行了测试。他在以下研究中证明，如果缺少了额叶的一部分、作为“管理者”的前额皮层，大脑的运转方式会发生极大的变化。</p>
+<p>　　莱尔米特的研究选取了两组人群做对比——额叶受损者和额叶正常者。实验中，被试坐在实验人员对面，问一些面试风格的问题。实验人员负责对被试的问题表现出冷漠，不回答他们的问题，偶尔随意做出一些让人疑惑不解的动作，比如摸一下鼻子、敬个军礼、折纸然后放到信封里、嚼纸、唱歌、拍腿和抽泣等。</p>
+<p>　　研究人员有如下发现。正如我们所料，额叶正常的被试觉得实验人员的行为很古怪，他们的反应是：“这家伙有什么毛病？”许多年轻的参与者甚至哈哈大笑。当被问到他们有没有想过模仿他时，他们说：“没有，根本没有。”</p>
+<p>　　接下来就更有意思了。几乎所有额叶受损的被试都模仿了实验人员的荒唐动作——而且相当精确和到位。比如，男人们会心甘情愿地当着其他人的面对着墙小便，没有表现出丝毫惊讶，也完全不在乎。他们无法准确模仿时（比如没有纸可以折或咀嚼），也会找到“完美的”弥补方法。</p>
+<p>　　以下内容摘自研究报告：“在实验过后的面谈中，所有额叶受损者都能记住实验人员的动作。当被问到为什么要模仿时，他们表示实验人员做了动作，他们就必须模仿。当被告知没有人让他们模仿这些动作时，他们的回答是既然动作已经做出，自己就必须模仿。在被告知不要模仿后，大多数患者还是表现出了同样的模仿行为。”</p>
+<p>　　那些额叶受损者忍不住要模仿实验人员的动作，哪怕有人要求他们不进行模仿。额叶受损者似乎无法做出某些决定来“抑制”潜意识。潜意识几乎就像另一个物体，或者一台机器一样。同样有趣的是，额叶正常的被试忘记了实验人员的一些动作，而额叶受损者能记住他们的每一个动作。这表明，正常额叶（包括前额皮层）削弱了我们对潜意识型认知的关注，而且能阻止或发起行为，这就是我们把它称作“管理者”的原因。它会监督自发行为，发现有能改进的地方时，它就会介入。现在我们来看看另一方面——如果基底神经节功能失常会怎样？</p>
+<h2 id="基底神经节模式探测器"><a class="header" href="#基底神经节模式探测器">基底神经节——模式探测器</a></h2>
+<p>　　大脑的基底神经节从生理角度看是一组神经核，它们形成一个整体，在习惯的形成和程序性学习中起核心作用。</p>
+<p>　　但研究也指出，大脑的许多系统以复杂的方式相互作用，基底神经节未必能被单独看作“大脑的习惯部分”。神经科学虽然有助于我们理解大脑，但也无法完全准确解释大脑的工作机制。这不是说它有误导性或不准确，而是说它只给了我们看到一个巨大谜团的冰山一角的机会。大脑的工作机制太过错综复杂，现代科学还需要在很多方面展开探索。即便如此，知道基底神经节在习惯形成中起主导作用还是有用的。结合经验、实验以及充分的了解，我们对大脑工作机制的有限认识就会成为个人成长的强大助力。</p>
+<p>　　莱尔米特对额叶功能有障碍或受损人群的研究体现了大脑执行功能的重要性，有了它，我们才不会机械地做一些我们不愿意做的事情。可如果基底神经节受损或功能失常会怎样呢？关于这个问题也有一项研究，研究认为基底神经节受损或功能障碍会导致你丧失形成习惯的能力。</p>
+<p>　　研究人员召集了 3 类人群——健康人群、帕金森综合征患者和有记忆障碍的人群。由于细胞坏死，帕金森综合征患者的大脑很难把神经递质多巴胺运送到基底神经节，从而导致基底神经节功能障碍。</p>
+<p>　　参与者会拿到 4 张卡片，卡片上的图形是随机的，他们被要求预测每张卡片代表的是雨水还是阳光。人们很难有意识地在卡片和结果之间建立联系，但可以在潜意识中掌握某种微妙的联系模式。这项研究总共进行了 50 次测试，大约 10 次之后，健康的参与者和有记忆障碍的参与者都能逐渐提高猜测的准确率，从 50% 提高到 65%~70%；他们在潜意识中掌握了暗示雨水或阳光的模式。而帕金森综合征患者的准确率最终也没有超过 50%。因为不具备正常的基底神经节，他们的大脑无法探测到模式（因此，他们很难养成新习惯）。</p>
+<p>　　如果用最简单的术语表述，我们能从这些研究中看出，大脑是由执行决策和进行自动行为模式识别的两部分组成的系统。前额皮层的管理功能相当活跃，反应灵敏，但同时也消耗了大量的精力（和意志力）。基底神经节的自动功能不仅强大，而且效率高。它们能节省精力，无须持续监督就能处理各种任务。</p>
+<h2 id="一周弹性计划推荐"><a class="header" href="#一周弹性计划推荐">一周弹性计划（推荐）</a></h2>
+<p>　　根据这个计划，你从一个习惯开始，使用微习惯策略一周时间，然后进行评估并选择一个长期计划。</p>
+<p>　　一周评估：你有没有感到筋疲力尽？是否发现自己每天都能轻松超额完成目标？完成这些目标是否不费吹灰之力，让你渴望培养更多好习惯呢？你可以继续专注于一个习惯或者增加更多习惯，这要看它对你来说有多大的挑战性。因为并不是所有习惯的难度都一样，所以确定一个适合所有人的固定时间长度显然不可能，这么做也不明智。同时，请记住：你的微习惯越多，超额完成的可能性就越低。</p>
+<h2 id="意志力的工作原理"><a class="header" href="#意志力的工作原理">意志力的工作原理</a></h2>
+<p>　　人们曾认为意志力能给我们提供取之不尽、用之不竭的意志。具体观点是：只要想得到某个东西的愿望足够强烈，你就一直会有足够的意志力促使自己得到它。鲍迈斯特在 1996 年进行了一项多少有些残酷的研究，纠正了这个观点。实验开始时，一个房间里有 67 个被试，很快，房间里就弥漫着现烤的巧克力曲奇诱人的香味，随后，有人把曲奇和其他巧克力做的点心拿了进来。接下来，残忍的折磨就开始了——只有一部分被试可以得到巧克力，其他人的零食只有萝卜！即使我很爱吃生萝卜，我也能感受到他们的痛苦。</p>
+<p>　　研究人员幽默地记录道，在吃萝卜的人中，有好几位对巧克力有明显的兴趣，他们渴望地看着巧克力，有几个人还拿起饼干使劲闻了闻。我说得没错吧？这真是个残酷的实验。</p>
+<p>　　之后，吃巧克力和吃萝卜的被试同样要解答一个难题。在尝试答题所花的时间方面，吃萝卜组连吃巧克力组的一半都不到，而且在最终放弃之前尝试的次数也更少。没吃到巧克力而只能吃萝卜似乎耗尽了他们继续努力解答难题的意志。鲍迈斯特把这种现象命名为“自我损耗”（ego depletion）。迄今已有多项研究验证了这项突破性研究的结论。</p>
+<h2 id="用多余精力超额完成任务而不是制定更大目标"><a class="header" href="#用多余精力超额完成任务而不是制定更大目标">用多余精力超额完成任务，而不是制定更大目标</a></h2>
+<p>　　如果你急于取得巨大进步，那就把精力投入超额完成任务中。大目标在纸面上看着漂亮，但只有行动才算数。目标渺小、结果丰硕的状态比反过来好多了。</p>
+<h2 id="其他"><a class="header" href="#其他">其他</a></h2>
+<p>　　刚开始做一件事的兴奋在最初会有很大帮助，可是等到这股劲头渐渐消失，你开始怀疑有什么地方出了什么问题的时候，它又会成为强大的敌人。如果最开始就选择不依赖动力和感受，就能有效降低这种风险。</p>
+<p>　　有热情是好事，但我们应该把这种思维模式看作一种额外奖励，而不是实施行动的信号。最好因为选择做一件事而做一件事，这样才能为成功打下坚实的基础，成效不会在之后出现剧烈波动。说句似乎有违常理的话：在一段时间过后出现热情不足的情况其实是个积极的信号，表明更稳定和自动的基底神经节正在慢慢夺取控制权。</p>
+<hr>
+<p>　　2012 年有一项针对 411 人的工作满意度调查，其中 65% 的美国和加拿大调查对象表示他们对工作不满意或多少有些不满意。我认为部分原因在于传统管理哲学的目标是控制雇员，而不是发挥他们的能力。其他研究发现：自主权或对自己拥有控制权和决定权的感觉是工作满意度的一个首要因素。一家欧洲工作环境调查机构在丹麦进行的一项调查发现，“在对工作决定权较高的雇员中，将近 90% 的男性和将近 85% 的女性满意度较高，而在工作决定权较低的雇员中只有大约 56% 反馈了较高的工作满意度”。这是一个普遍真理的具体案例——人一旦感觉受到控制，就会消极怠工。人们厌恶这种情况。也许这正是因为自主权和自由度有着紧密的联系。</p>
+<hr>
+<p>　　如果你阅读过关于行为科学的研究报告，应该对“自我效能感”一词并不陌生，它指对自己影响事件结果的能力的信念。一项进行了两年的随机试验显示，最低限度的自我效能感也对适应并维持锻炼活动有着关键的影响。这适用于想锻炼的人群，还有因为医疗目的需要而锻炼的人群（当然，为了保持健康，我们都应当锻炼）。研究人员在报告中记录道：“如果锻炼中的自我效能感得到评估和提升，那么按指定要求进行锻炼的病人更有可能成功。”</p>
+<p>　　自我效能感有助于实现目标和建立习惯，但心理学家阿尔伯特·班杜拉（Albert Bandura）明确指出，“如果缺乏基本能力，期待值本身不会产生想要的结果”。只靠相信自己是不够的。在受抑郁、意志力薄弱和反复失败困扰的人群中，缺乏成功所需最基本的自我效能感的现象是很常见的。如果你认为自己会失败，那么就很难有好结果了。</p>
+<p>　　微习惯策略是一个产出自我效能感的机器，重点是，你不需要任何自我效能感就能成功地开始行动，而你每天的成功会帮助你提升自我效能感。你怎么可能觉得自己不具备每天做 1 个俯卧撑的能力？在读两行字的时间里你就能把它完成，而且这就等同于通过练习强化自我效能感。微习惯策略还可以训练你相信自己。</p>
+<p>　　记住，大脑会抓住你扔给它的任何一种重复行为，所以，许多人都会慢慢遇到一个问题——预计自己无法实现目标。长期下去，这会击溃他们的自我效能感，因为他们很难相信下次会有不同的结果（尤其在采用的还是上次无效的策略时）。如果你曾经有过绝望的感觉，这就是当时发生在你身上的情况。但你其实是能成功的，我可不是在激励你，我只是在讲逻辑。你确实可以在生活中取得进步，认为自己不行是缺乏逻辑的谬论，它之所以出现，正是因为你让自己相信你什么都做不了。</p>
+<hr>
+<p>　　现在，你应该已经选好了一个习惯计划，你想养成的完整习惯可能包括健身、写作、阅读、喝水、感恩之心、冥想、编程等，接下来，我们就要缩小这些计划了。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../阅读/其他/书籍/把时间当作朋友.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../阅读/其他/书籍/杀死一只知更鸟.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../阅读/其他/书籍/把时间当作朋友.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../阅读/其他/书籍/杀死一只知更鸟.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/其他/书籍/微习惯：简单到不可能失败的自我管理法则.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

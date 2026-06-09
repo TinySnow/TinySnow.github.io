@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>隐身人 - 库佛 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-48a83065.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="隐身人"><a class="header" href="#隐身人">隐身人</a></h1>
+<p><em>库佛</em></p>
+<p>　　隐身人放弃了他侦缉罪犯的营生——这活儿既辛苦又没人在乎，现在他要干点有趣儿的事了。做个窥淫者、窃匪、妖孽、毛贼，做个四处惹麻烦的家伙。这一来就好玩多了，他让人开始频频注意到他的存在。他开始住赛马场、女人的衣厨、奢华的宴乐场所、银行的地窖，公园、学校操场、电站诸如此类的地方。他掏空人家钱柜，改人家选票，席卷人家钱包和地址本，走漏秘密，在地铁中或会议室里引发斗殴：飞机和火车上的任何空座他想坐就坐，还往裸体女人的脖颈上吹气，在牌桌和赌桌上移动人家筹码，在黑乎乎的寝室里发出怪声，让政治家和当红歌星在台上绊跟斗出丑，在虔诚的信徒耳边悄语放肆的妖言。</p>
+<p>　　行窃对他太容易了，只除去一个问题，他偷来了财宝派什么用场。还有为了隐身，他需得赤裸着，这一来他身上就没有什么可以藏东西的地方了——那些偷来的东西可不是隐形的。他身上的那些藏匿所（说来总不外是他的口腔和直肠），经常还被它们自己该放的东西占着，因此，除去那些能塞得进这种地方的小体积珠宝，他通常的窃物需是放得进手心、腋窝和夹得进两股之间的玩艺儿。因而，他的日常收获和一个普通的毛贼也差不多，碰到运气不好的日子，他甚至从毛贼那里偷东西。不过，他实在是动用不了多少花销的，因为他可以很方便地得到他想要的东西，可以到处不花钱旅行住宿，他很快就给自己攒下了一份家当。由于他能极容易地得到一切内部消息，因此还顺带做成了一个挺成功的炒股人。</p>
+<p>　　虽然就那么无怨无悔地沦为罪犯，并且象通常罪犯那样，有时也有杀个把人的诱惑，但是他身上没有藏匿杀人武器的地方。何况，他要是真干，也不无危险，因此他现在的这个新营生总是限制在重罪犯的界限以下。当然，他可以不被人察觉地对别人使坏，但事实上他总是尽量躲开那些有武装的人、狂野的驾驶者、繁忙的厨房、手术室等地方。他还是会被伤着的，流弹可以射中他，刀可以刺穿他，他只不过就是可以隐形而已，并不能刀枪不入。他的身体内部并不是隐形的，他的排泄物和他的血都不隐形。想想这个情形吧，看得见一个伤口，却看不见人！况且，要是受了伤，谁来医治他呢？也许他可以去找个瞎眼的大夫来治，这样的大夫兴许不会很多罢。假如他死了，谁来为他哀悼？谁能看见他倒毙并送他入土呢？到头来他免不了会成为路上的离奇障碍，呆上那么一到两个月的。他们这种人啊，不管多有钱，不管为自己能玩的暗中把戏多么扬扬自得，可一个隐身人还是有着种种不便不快之处啊。</p>
+<p>　　他还得躲开那些寒冷的地方，虽然他的赤身裸体对别人是无关的，他自己也习惯这样子，但他并不能完全无视这一点。冷风会把他赶到室内去，空调又把他赶到室外。有时候，他为了暖和自己，或者是要做点正事，或者是要把他偷来的东西安排一下，或者竟只是来自一种很深的渴望，他会戴上面具假发，穿上衣服，让自己可以被人看得见。为了免得老是要去窃取这些穿戴的行头，他就给自己买下了一栋房子，那样就可以存放这些东西了。他还在屋子里收集邮票和钱币，并在屋子边上种上了果树呢。他的衣服多得很，什么角色他都可以扮演，这倒加重了他存在的悲哀：他究竟算个什么呢？没有了衣饰，他连他自己都看不见自己。对着一面镜子，他看到的东西不会多过别人：一片模糊的空白，而那片空白实际上应该是立着个人物儿的。“你是个帅哥”他就这么地对自己说——听来不象是一句评论，更象是一道命令。</p>
+<p>　　当着衣显身时，他得让自己从头到脚仔细穿戴好才行。有那么一天，他忘记了穿袜子，当他坐上地铁之后，可不得了了，他只好对惊骇地瞪着他那段不翼而飞的脚髁的人解释道：“对不起，这是得了一种癌症”，说这话时他那面具上的嘴根本是不动的（他赶紧从下一站溜下去了）。另一天在一个挤满了人的电梯上，（当他显身时，他喜欢挤在人堆里，感受到身体的互相接触，这在他隐身时是必须避免的），他的围巾掉了，这简直糟糕到了家。一位女士顿时吓晕过去了，其它的乘客则吓得缩成一团。“这只是个魔术。”他在纹丝不动的面具后面吃吃干笑着说。没说的，没了脖子，他的脸对于别人根本成了浮在空中的一片东西。他忙用他戴了手套的手出神入化地洗着一付扑克牌来迷惑周围的人，单等电梯的门一开，他转过脸来，用他面具后面空洞洞的眼睛镇住那些乘客，好让自己有足够的时间溜出去。从此之后，他化装时总在身上裹一层紧身衣作底，每次穿上和脱掉这层衣服都令他痛恨不已。</p>
+<p>　　然而，他基本上是赤裸着——让自己隐形，这样可以从事偷窃和满足他的控制欲和窥淫欲。女人让他着迷，他喜欢看她们做女人的那些私密之事，而每次都为自己无法参与而痛心。即使当她们一丝不挂时，她们对他依然显得神秘莫测，这让他感到兴味无穷。有那么一天，在一个豪华酒店里正举行一个发型师交流会，他混进了女厕所。等厕所人少时，他走进其中一格，掀开抽水马桶的盖子，打算方便一下，这当儿他身后的门开了，马桶盖又自动合上了，他可明白了，他并不是唯一的一个隐身人啊。这是一个她（他设想中应该是“她”）把马桶圈放下坐上去了？或者这不过是女性专用马桶给非女性的一个提醒？他未敢造次，悄悄退出，希望自己并没有把小便一路滴出去，反正这个厕所间的门一开一合足以向她表明她需要知道的事儿了。</p>
+<p>　　此后，他开始感到自己被跟踪。也许她已经跟了他一些日子，可他没有察觉罢了。现在他似乎感觉到她存在或者不在，不管她是在还是不在，他不得不考虑顾虑起自己的一举一动来，仿佛她就在场一样。她也许正干着侦缉罪犯的活儿，等着逮他，或者要为他过去犯下的罪行来复仇。他因而不止一次地中止了他想干的盗窃，活活感到她就在他呆的屋里，有时他把手伸进人口袋偷钱包时，觉得那口袋里还有另一只手在。他开始仔细打量起街上的女人来——万一她像他一样穿戴了让自己也显形呢。而她们对他而言，全都象戴着面具的家伙。他觉得自己被某个空档推挤着，有热气吹到他脖子上。现在他的收入急剧下降，他甚至连获取生活的必须品都受到妨碍。她有可能处处接近着他的想象让他留意起自己的个人卫生来，他日常的窥淫行径也多少受到限制。他独自呆在屋里时觉得自己可能更容易落网，就越来越少地呆在家里，结果他冰箱里的食品发霉了，果树枯萎了。</p>
+<p>　　如果她看不见他怎么能知道他在哪儿呢？那么只能根据隐身人留下的蛛丝马迹来跟踪吧，比如地上的、雪上的（他可从没在雪上走过）、沙地上留下的脚印啊，身体的排泄物啊，指印啊，（他不能戴手套，他没有一次不把它们弄得一团糟）扔掉的衣服啊，牙刷啊，床垫上的凹陷啊，浮在空中的物体啊，旋转的灰尘啊，呵上气的窗玻璃啊。她还可以观察到下雨时有一块地方雨丝落不下来吧，还可以听到他身体弄出的声音吧。他走路一向会绊东绊西的，现在他寻思会不会是她把东西故意放在走道上，找他的晦气，结果他现在走起路来象在坑道中蜿行一般。他不得不更隐蔽地吃东西，不能再让食物在消失前到处漂浮了，结果因为吃得太快，让他的胃都不舒服了。可是，当他着手去偷一瓶胃苏打时，他觉得他分明看到那药瓶在他的手够着之前移动起来。</p>
+<p>　　然而，有那么一天他突然觉得她可能不是什么罪犯侦探，很可能是另一个孤独的隐身人，正在寻找伴侣。一旦他这么想时，她就消失了，或者说似乎消失了。他应该感到松一口气才是，然而他没有。他发现自己思念着她了，虽然她并不显得那么友好，但她却是最有可能成为他朋友的一个对象了。他回到最初他们相遇的地方，把洗手间的马桶盖子掀起来又合上去，可他没得到任何反应。那天他根本就该跟她说话的。眼下他倒开口了：“你在那儿吗？”他悄声发问。没有得到回答，倒是在另一格子里的女人回问道：“你在说什么呢？”“没说什么，不过是清清嗓子”他捏着嗓子沙声答道，然后飞快地冲了马桶，把门推开，再撞上，免得那个女人从她的格子里伸头一探究竟。实际上他并没有离开那个格子，在里面还待了一会儿，呆呆地想：普通如一个厕所的马桶上，怎么才能够突然间变出个美妙绝伦的尤物来。</p>
+<p>　　现在他在任何地方都留痕迹，作案比以前更加大胆。假如她是个罪犯侦探，他很乐意被她抓住才好。如果她不是，得，他们就可以成为同伙。这一来她可以有更多的房间来存放赃物，而他们可以连手干更大的事。他走路时，任意地甩动胳膊，希望能碰到什么肉眼看不见的东西，可惜只引起令人不快的意外和路人的火气。他在黑地里中过两次弹，他把这个视为当付的代价。兴许只要他受了伤，她会可怜他，因此而显形也说不定。甚至她隐着形他也开始能看见她了，惊人地美丽。这下他发现自己已不可救药地堕入了情网，他意识到他对她的满腔热爱是那么纯洁高贵，完全不同于他那种犯罪生涯，他甚至还想象和她疯狂而鲁莽地做爱，忘情地互相进入对方，抱在一起打滚。</p>
+<p>　　可对于他的满腔希望，她没有给出一点点存在的痕迹。在家里，他在镜子上留了话：“我是你的了！把我带走吧。”可这留言一直就那么呆着，没有回话，没有改变。他看着镜子，眼睛抚着那句留言，他看不见自己面颊，可是能看见从上面滚落的泪珠。他的爱情生活啊——有一阵子真是犯傻——却已经成为一个悲剧，这全是他自己的错。为什么他没有去碰她？傻瓜，大傻瓜啊！他沮丧透顶，比以前更多地沉溺于酒吧，喝别人杯中的酒。有一回他把自己喝倒了，在一个唱着歌正往墙角小便的醉汉旁边呕吐起来，顿时就把那家伙的酒给吓醒了。他清楚，关于他的谣言正往四处蔓延开来，可那又怎么样？没有她，他的生活意义全无。在她出现以前，他的生活就意思不大，可现在，他的生活根本就成为一片空白。甚至作案也不能刺激他，窥淫也一样——当他为一个无形的人梦牵魂萦，有形的肉体对他会有多少意思呢？</p>
+<p>　　他试图发现可以生活下去的动力。在很多年中，他一直从一个人家偷银餐具，一次拿上一件，打算凑齐一套。他决定把这个事做完。他其实并不需要这套银餐具，可这至少叫他有事可做。于是他接着又成功地从那家拿出了两件，就是在光天化日之下干的。当他去的次数多了，一次正好又是把一个银汤匙夹在两腿中，于是就被那家的狗在小腿上咬了一口，那狗专门买来就是要对付他这个偷餐具的贼。他倒是逃脱了，并让那狗也狠狠地吃苦头（他把那银汤匙杵进它嘴里了），可是他流了一路的血。他寻思那家人会顺着血迹找来，可他并不在乎，他豁出去了。然而他们竟没有找来，也许，他们庆幸银汤匙最终没有被偷走吧。</p>
+<p>　　伤口愈合很慢，使得他不能带着伤口出去，也不能扎着绷带出去，那会让人看见的，因此他穿戴成一个老人（他就是一个老人了！）到廉价的咖啡馆去消磨时光。他深深为自己难过，悲悼他失去的爱情。即使在他的咬伤好了之后，他还继续去那家咖啡馆，并被那家咖啡馆里播放的哀伤歌曲所吸引。他不再偷了，他需要日用品时就去买，反正也用不了许多，但现在他的日用品中增加了阅读物，他泡咖啡馆时用得着。他不看报刊和杂志，却喜欢过时的旧小说，那种小说多数是女人写的，他把她们都想象成美丽而隐身的。他有时会对着一页小说坐上整整一天，随自己思绪飘荡，轻柔地喃呢着所有那些她曾经出现在他生活中时他该对她说的话，或多或少这些话也是说给他自己听吧。</p>
+<p>　　结果有那么一天，他看见在另一张桌上坐着个老警官，也挺大年纪了，那警官他认识，过去他做侦探时就为他工作。他上去向警官打招呼，（警官看见他毫不吃惊，也许他正跟踪他吧。）他问警官警察局的事都还顺利吧，警官对他说，“隐身人，打你走后，事情变得越来越糟了，自从你干上了你的新行当，你对我们就成了一个麻烦。但那是你的决定，我们可以理解并容忍。可现在出现了一个隐身人帮派，干下许多恶事，威胁到我们文明社会的许多方面。”隐身人沉思地摸着自己的假胡子问，“自从我不干侦探了，你们有没有找到类似我的人干呢？”“直到这个新帮派出现，你一直是独一无二的，隐身人哪。”那么，隐身人想，她可能是置身于这个帮派中了。“这就是我们为什么现在要找你。想让你回来，隐身人，我们需要你打入那帮家伙中，帮助我们制止他们，不然就太晚了。”“你要我和自己人作对吗？”隐身人说，说时多少有些装模做样，实际上他可从没想到过他会有什么自己人。“他们可不是你的自己人，隐身人，这是个新团伙，他们会让一整块地方都隐形，因此他们的衣服、武器和所有那些偷来的东西只要进入这区域，就全都看不见了。而现在他们已经在做炸弹了。”这倒严重了，的确是严重了，但是他却想到了他的爱，他先头所爱的那一个对象。他现在可明白了，她也许想拉他入伙的，可是觉得他不配就罢了，这让他感到受了伤害。“他们把你看成老派人了，隐身人，还说了些对你不恭敬的话，特别是说到你的一些个人习惯，对此我当然是不知情的。可他们同时也把你作为前辈尊敬着。虽然他们的力量超过你，他们技术上却不见得过关。他们那个灾难性的系统已经在毁坏，我们想叫他们毁坏得更快才好。这事做起来挺危险，可隐身人，你是我们目前所知的唯一能干这事的人了。”</p>
+<p>　　结果他再次干上了他的侦探行当，不过他得用新罪行来掩盖这身份。他在那个隐身的皮囊里嘻笑怒骂地在城里穿街过巷，专去城里头面人物的家行窃，还四处破坏公物，写一些威胁扬言的字条，以期引起人的注意。他甚至在那位警官的怂恿下，把警官的私车炸毁了，警官说，反正这车的离合器和转换器已经需要修理替换，管它呢，旧的不去，新的不来——总之，他叫自己处处嚣张醒目，等着那伙帮派来找他接头。她属于那个帮派吗？他感到受了她的误解，受了她的轻视，居然不可思议到不肯来请他。他活脱成了个爱情的牺牲品，尽管已经不相信爱情，但他还处在爱情不可见的掌控之中。假如他能够再次发现她，他肯去摧毁她的系统吗？或者她会成功地勾引他加入那个帮派的作恶吗？谁知道呢？他决定对此保持高度警觉，而他的前景却如同他这个人一样是隐而不显的。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/逐臭之夫-蔡澜.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/捕快张三-汪曾祺.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/逐臭之夫-蔡澜.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/捕快张三-汪曾祺.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/隐身人-库佛.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>
