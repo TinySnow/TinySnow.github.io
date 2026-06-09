@@ -20,4 +20,7 @@
 - [https://tinysnow.netlify.app](https://tinysnow.netlify.app)
 - [https://tinysnow.vercel.app](https://tinysnow.vercel.app) / [https://tinysnowblog.vercel.app](https://tinysnowblog.vercel.app)
 - [https://tinysnow.pages.dev](https://tinysnow.pages.dev)
-- [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)
+- [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)（中国大陆用户推荐）
+- [https://blog.tinysnow.cn/](https://blog.tinysnow.cn/)
+- [http://tinysnow.dynv6.net:9264/](http://tinysnow.dynv6.net:9264/)（IPv6 用户推荐，不限国内和海外）
+- https://tiny-snow-blog.zh-cn.edgeone.cool
