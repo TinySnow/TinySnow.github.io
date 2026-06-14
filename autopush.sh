@@ -89,7 +89,6 @@ git commit -m "${commit_msg}"
 git push
 
 current_branch="$(git rev-parse --abbrev-ref HEAD)"
-git push gitee "${current_branch}"
 
 git push gitlink -f master
 
