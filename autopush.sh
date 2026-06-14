@@ -65,6 +65,13 @@
 # - 推送后若站点未更新，请优先查看 GitHub Actions 运行日志，而不是本地脚本。
 # ==============================================================================
 
+# 需要用到的 git remote
+# git remote add gitee git@gitee.com:TinySnow/TinySnow.github.io.git
+# git remote add gitlink git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git
+# origin（不需要添加，clone 即可） git@github.com:TinySnow/TinySnow.github.io.git
+# 其他 netlify vercel cloudflare edgeone 等平台，不需要添加远程，对应平台会直接拉取 github 的镜像，或者 CI 会通知
+# Macmini 上的 docker 镜像会每隔半个小时自动拉取一次
+
 set -Eeuo pipefail
 
 if [[ $# -lt 1 ]]; then
