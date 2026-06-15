@@ -711,6 +711,7 @@
     - [给计算机 202102 班的选修课建议](学习与进步/计算机/文章/给计算机202102班的选修课建议.md)
   - [备忘录 | Memo](学习与进步/计算机/备忘录/备忘录.md)
     - [常用命令 | Commands](学习与进步/计算机/备忘录/Commands.md)
+    - [Zeabur Wonder Mesh 服务器搭建踩坑教程](学习与进步/计算机/备忘录/Zeabur%20Wonder%20Mesh%20服务器搭建踩坑教程.md)
     - [使用 Macmini 当作家庭服务器的一系列问题](学习与进步/计算机/备忘录/使用Macmini当作家庭服务器的一系列问题.md)
     - [解决 Maccy 无法 Localsend 只能隔空投送的问题](学习与进步/计算机/备忘录/解决Maccy无法Localsend只能隔空投送的问题.md)
     - [安装 Beancount](学习与进步/计算机/备忘录/安装Beancount.md)
