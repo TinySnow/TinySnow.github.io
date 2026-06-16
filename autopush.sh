@@ -87,9 +87,6 @@ git pull
 git add .
 git commit -m "${commit_msg}"
 git push
-
-current_branch="$(git rev-parse --abbrev-ref HEAD)"
-
 git push gitlink -f master
 
 echo "Done. last-updated / sitemap / rss are generated in GitHub Actions."
