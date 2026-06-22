@@ -5,7 +5,7 @@
 1. - 报错信息：
      `fatal error: ld terminated with signal 11 [Segmentation fault], core dumped`
 
-     ![image2](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/other-docs/image2.5vyacexzff28.webp)
+     ![image2](https://img.tinysnow.cn/blog/technology/other-docs/image2.5vyacexzff28.webp)
 
    - 解决方案：
   进 `Makefile` 给 `CFLAGS` 加上 `-fPIC` 参数，然后重新 `Make clean && make && make install`。
@@ -27,7 +27,7 @@
      pgp –recv-keys 25F63C66245DFC60
      ```
 3. - 报错信息：
-     ![image5](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/other-docs/image5.5o2plhldfmyo.webp)
+     ![image5](https://img.tinysnow.cn/blog/technology/other-docs/image5.5o2plhldfmyo.webp)
 
    - 解决方案：
 

@@ -64,7 +64,7 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/谈一谈跟llm聊了一两周之后的感想.png)
+![](https://img.tinysnow.cn/blog/articles/literature/谈一谈跟llm聊了一两周之后的感想.png)
 
 > 摄影师・画师 | 南国微雪
 >

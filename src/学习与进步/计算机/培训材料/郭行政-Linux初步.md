@@ -80,7 +80,7 @@ public static void main(String[] args){
 
 ## 图像
 
-![img_name](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/Guide/paper_cut_off.61143jhbhvg.webp)
+![img_name](https://img.tinysnow.cn/Guide/paper_cut_off.61143jhbhvg.webp)
 
 ## 列表
 

@@ -45,7 +45,7 @@
 4. 试试搜索效果，一般来说会有结果，如果没有则说明 Algolia 的后台 Index 里没有记录，没有记录肯定没有搜索结果（就像数据库里没有数据一样）
 5. 登录 Algolia 的 Dashboard，查看相应站点的 Index，看看有没有 Records
    - 没有记录：
-   - ![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/practice-record/Snipaste_2023-10-22_17-24-18.png)
+   - ![](https://img.tinysnow.cn/blog/technology/practice-record/Snipaste_2023-10-22_17-24-18.png)
    - 有记录：
-   - ![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/practice-record/Snipaste_2023-10-22_17-26-02.png)
+   - ![](https://img.tinysnow.cn/blog/technology/practice-record/Snipaste_2023-10-22_17-26-02.png)
 6. 没有的话需要重新爬取网页，定制爬虫

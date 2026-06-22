@@ -16,7 +16,7 @@
 
 #### 图解
 
-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/pharmacology/%E9%98%BF%E6%89%98%E5%93%81.png)
+![](https://img.tinysnow.cn/blog/learning/medicine/pharmacology/%E9%98%BF%E6%89%98%E5%93%81.png)
 
 #### 简记
 
@@ -48,11 +48,11 @@
 
 #### 东莨菪碱：对中枢作用强
 
-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/pharmacology/%E4%B8%9C%E8%8E%A8%E8%8F%AA%E7%A2%B1%E5%92%8C%E5%B1%B1%E8%8E%A8%E8%8F%AA%E7%A2%B1.png)
+![](https://img.tinysnow.cn/blog/learning/medicine/pharmacology/%E4%B8%9C%E8%8E%A8%E8%8F%AA%E7%A2%B1%E5%92%8C%E5%B1%B1%E8%8E%A8%E8%8F%AA%E7%A2%B1.png)
 
 #### 山莨菪碱：对外周作用强
 
-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/pharmacology/%E4%B8%9C%E8%8E%A8%E8%8F%AA%E7%A2%B1%E5%92%8C%E5%B1%B1%E8%8E%A8%E8%8F%AA%E7%A2%B1.png)
+![](https://img.tinysnow.cn/blog/learning/medicine/pharmacology/%E4%B8%9C%E8%8E%A8%E8%8F%AA%E7%A2%B1%E5%92%8C%E5%B1%B1%E8%8E%A8%E8%8F%AA%E7%A2%B1.png)
 
 ## 三、阿托品合成代用品
 

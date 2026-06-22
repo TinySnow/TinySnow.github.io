@@ -74,7 +74,7 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/chris-hardy-jMILWeXY0fM-unsplash.jpg)
+![](https://img.tinysnow.cn/blog/articles/literature/chris-hardy-jMILWeXY0fM-unsplash.jpg)
 
 > 摄影师・画师 | Chris Hardy
 >

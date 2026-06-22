@@ -16,7 +16,7 @@
 
 ### 二）药理、临床应用和不良反应
 
-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/pharmacology/%E7%BE%8E%E5%8A%A0%E6%98%8E.png)
+![](https://img.tinysnow.cn/blog/learning/medicine/pharmacology/%E7%BE%8E%E5%8A%A0%E6%98%8E.png)
 
 ## 三、N<sub>2</sub> 受体阻断药：神经肌肉阻断药（肌松药）
 
@@ -24,7 +24,7 @@
 
 #### 概览
 
-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/pharmacology/%E7%90%A5%E7%8F%80%E8%83%86%E7%A2%B1.png)
+![](https://img.tinysnow.cn/blog/learning/medicine/pharmacology/%E7%90%A5%E7%8F%80%E8%83%86%E7%A2%B1.png)
 
 #### 药理作用
 
@@ -52,7 +52,7 @@
 
 #### 概览
 
-![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/pharmacology/%E7%AD%92%E7%AE%AD%E6%AF%92%E7%A2%B1.png)
+![](https://img.tinysnow.cn/blog/learning/medicine/pharmacology/%E7%AD%92%E7%AE%AD%E6%AF%92%E7%A2%B1.png)
 
 #### 药理作用
 
