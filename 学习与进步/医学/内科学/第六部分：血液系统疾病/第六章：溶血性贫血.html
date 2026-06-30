@@ -1,0 +1,911 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第六章：溶血性贫血 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第六章溶血性贫血"><a class="header" href="#第六章溶血性贫血">第六章：溶血性贫血</a></h1>
+<h2 id="一考试大纲"><a class="header" href="#一考试大纲">一、考试大纲</a></h2>
+<ol>
+<li>分类</li>
+<li>发病机制</li>
+<li>实验室检查</li>
+<li>诊断、鉴别诊断</li>
+<li>治疗</li>
+</ol>
+<h2 id="二概述"><a class="header" href="#二概述">二、概述</a></h2>
+<h3 id="一定义"><a class="header" href="#一定义">一）定义</a></h3>
+<ul>
+<li>溶血性贫血（<code>HA</code>）是由于各种原因引起红细胞（<code>RBC</code>）破坏增多，且超过骨髓（<code>BM</code>）造血代偿能力所引起的一类贫血</li>
+</ul>
+<h3 id="二特征"><a class="header" href="#二特征">二）特征</a></h3>
+<ol>
+<li>常见表现为贫血、黄疸、血红蛋白尿、肝脾肿大</li>
+<li>多有 <code>Hb</code> 下降、网织红细胞（<code>Ret</code>）升高</li>
+<li><code>WBC</code> 和 <code>PLT</code> 多正常</li>
+<li>外周血易见有核 <code>RBC</code>， <strong>红细胞可出现结构和染色异常</strong></li>
+<li>骨髓红系增生明显</li>
+<li>骨髓内幼红细胞在释放入血前即被破坏称为 <strong>原位溶血</strong></li>
+<li>原位溶血多见于 <strong><code>MDS</code>（骨髓增生异常综合症）、巨幼细胞性贫血</strong></li>
+</ol>
+<h2 id="三病理生理"><a class="header" href="#三病理生理">三、病理生理</a></h2>
+<h3 id="一胆红素代谢基本过程"><a class="header" href="#一胆红素代谢基本过程">一）胆红素代谢基本过程</a></h3>
+<ol>
+<li>衰老 <code>RBC</code> 被单核-巨噬细胞系统吞噬</li>
+<li>释放出的 <code>Hb</code> 分解为珠蛋白和血红素</li>
+<li>珠蛋白可再利用</li>
+<li>血红素转变为胆绿素，再转变为胆红素</li>
+<li>胆红素在肝内与葡萄糖醛酸结合形成结合胆红素</li>
+<li>结合胆红素经胆道排入十二指肠</li>
+<li>肠道内经细菌还原形成粪胆原等</li>
+<li>大部分随粪便排出，少量经肠黏膜重吸收入血</li>
+<li>一部分经肾排出形成尿胆原</li>
+<li><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20260619121952600.png" alt=""></li>
+</ol>
+<h3 id="二血管外溶血"><a class="header" href="#二血管外溶血">二）血管外溶血</a></h3>
+<ol>
+<li>主要发生于单核-巨噬细胞系统</li>
+<li>以胆红素生成增多为主</li>
+<li>常表现为间接胆红素升高</li>
+<li>粪胆原和尿胆原增多</li>
+<li>![image-20260619122911464](/Users/snow/Library/Application Support/typora-user-images/image-20260619122911464.png)</li>
+</ol>
+<h3 id="三血管内溶血"><a class="header" href="#三血管内溶血">三）血管内溶血</a></h3>
+<ol>
+<li><code>RBC</code> 在血管内直接破坏</li>
+<li>血浆游离血红蛋白升高</li>
+<li>结合珠蛋白（<code>HP</code>）降低或阴性</li>
+<li>高铁血红素白蛋白增高</li>
+<li>可出现血红蛋白尿</li>
+<li>可出现含铁血黄素尿</li>
+<li>![image-20260619122609574](/Users/snow/Library/Application Support/typora-user-images/image-20260619122609574.png)</li>
+</ol>
+<h2 id="四分类"><a class="header" href="#四分类">四、分类</a></h2>
+<h3 id="一按溶血部位分类"><a class="header" href="#一按溶血部位分类">一）按溶血部位分类</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>类型</th><th><code>RBC</code> 破坏地点</th><th>常见原因</th><th>临床特点</th></tr>
+</thead>
+<tbody>
+<tr><td>血管内溶血</td><td>血管内</td><td>多为 <code>RBC</code> 外在原因性疾病</td><td>病情较重，无明显脾肿大</td></tr>
+<tr><td>血管外溶血</td><td>单核-巨噬细胞系统</td><td>多为 <code>RBC</code> 内在原因性疾病</td><td>病情较轻，常伴明显脾肿大</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="二不同溶血部位的实验室特点"><a class="header" href="#二不同溶血部位的实验室特点">二）不同溶血部位的实验室特点</a></h3>
+<h4 id="共同指征"><a class="header" href="#共同指征">共同指征</a></h4>
+<ol>
+<li>间接胆红素升高</li>
+<li>尿胆原升高</li>
+<li>粪胆原升高</li>
+<li>尿胆红素阴性</li>
+</ol>
+<h4 id="血管内溶血特有指征"><a class="header" href="#血管内溶血特有指征">血管内溶血特有指征</a></h4>
+<ol>
+<li>血浆游离血红蛋白升高</li>
+<li>结合珠蛋白降低或阴性</li>
+<li>高铁血红素白蛋白升高</li>
+<li>血红蛋白尿</li>
+<li>尿含铁血黄素阳性</li>
+</ol>
+<h3 id="三按病因分类"><a class="header" href="#三按病因分类">三）按病因分类</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>大类</th><th>类型</th><th>常见疾病或提示</th><th>溶血特点/相关试验</th></tr>
+</thead>
+<tbody>
+<tr><td><code>RBC</code> 内在异常</td><td>遗传性膜缺陷</td><td>遗传性球形红细胞增多症等</td><td>多为血管外溶血，<code>RBC</code> 脆性增高</td></tr>
+<tr><td><code>RBC</code> 内在异常</td><td>酶缺陷</td><td><code>G-6-PD</code> 缺乏症、丙酮酸激酶（<code>PK</code>）缺乏症</td><td><code>G-6-PD</code> 缺乏可血管内或血管外溶血，高铁血红蛋白还原试验阳性；<code>PK</code> 缺乏多为血管外溶血</td></tr>
+<tr><td><code>RBC</code> 内在异常</td><td>珠蛋白合成障碍</td><td>地中海贫血</td><td>多为血管外溶血，靶形 <code>RBC &gt;10%</code>，<code>Hb</code> 电泳异常</td></tr>
+<tr><td><code>RBC</code> 内在异常</td><td><code>Hb</code> 质异常</td><td>不稳定 <code>Hb</code> 病</td><td>多为血管外溶血，<code>Heinz</code> 小体阳性</td></tr>
+<tr><td><code>RBC</code> 外在异常</td><td>获得性膜缺陷</td><td>阵发性睡眠性血红蛋白尿（<code>PNH</code>）</td><td>多为慢性血管内溶血，<code>Ham</code> 试验阳性</td></tr>
+<tr><td><code>RBC</code> 外在异常</td><td>免疫机制</td><td>自身免疫性溶血性贫血、输血性溶血病</td><td>多见血管内或血管外溶血</td></tr>
+<tr><td><code>RBC</code> 外在异常</td><td>理化、机械及感染因素</td><td>机械性心瓣膜、药物、疟疾、行军性血红蛋白尿等</td><td>多为血管内溶血</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="五临床表现"><a class="header" href="#五临床表现">五、临床表现</a></h2>
+<h3 id="一急性溶血"><a class="header" href="#一急性溶血">一）急性溶血</a></h3>
+<ol>
+<li>多为血管内溶血</li>
+<li>起病急</li>
+<li>可表现为寒战、高热、头痛、呕吐、腰背痛</li>
+<li>严重者可出现休克</li>
+<li>严重者可出现急性肾衰竭</li>
+</ol>
+<h3 id="二慢性溶血"><a class="header" href="#二慢性溶血">二）慢性溶血</a></h3>
+<ol>
+<li>多为血管外溶血</li>
+<li><strong>起病慢</strong></li>
+<li><strong>常见三大表现</strong>
+<ul>
+<li><strong>贫血</strong></li>
+<li><strong>黄疸</strong></li>
+<li><strong>肝脾肿大</strong></li>
+</ul>
+</li>
+<li>病程中常并发
+<ol>
+<li>胆石症</li>
+<li>溶血危象</li>
+<li>再障危象</li>
+</ol>
+</li>
+</ol>
+<h2 id="六实验室诊断"><a class="header" href="#六实验室诊断">六、实验室诊断</a></h2>
+<h3 id="一诊断思路"><a class="header" href="#一诊断思路">一）诊断思路</a></h3>
+<ol>
+<li>检查红细胞破坏增加的证据，为筛查试验，定性</li>
+<li>检查红系代偿性增生的证据，为筛查试验，定性</li>
+<li>针对红细胞自身缺陷和外部异常进行检查，以确立病因，定因</li>
+</ol>
+<h3 id="二红细胞破坏增加的检查"><a class="header" href="#二红细胞破坏增加的检查">二）红细胞破坏增加的检查</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>检查项目</th><th>结果或意义</th></tr>
+</thead>
+<tbody>
+<tr><td>胆红素代谢</td><td>血非结合胆红素升高</td></tr>
+<tr><td>尿胆原</td><td>升高</td></tr>
+<tr><td>尿胆红素</td><td>阴性</td></tr>
+<tr><td>血浆游离血红蛋白</td><td>升高</td></tr>
+<tr><td>血清结合珠蛋白</td><td>降低</td></tr>
+<tr><td>尿血红蛋白</td><td>阳性</td></tr>
+<tr><td>尿含铁血黄素</td><td>阳性</td></tr>
+<tr><td>外周血涂片</td><td>破碎和畸形红细胞增多</td></tr>
+<tr><td>红细胞寿命测定</td><td>缩短，临床较少应用</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="三红系代偿性增生的检查"><a class="header" href="#三红系代偿性增生的检查">三）红系代偿性增生的检查</a></h3>
+<ol>
+<li>网织红细胞计数升高</li>
+<li>外周血涂片可见有核红细胞</li>
+<li>骨髓红系增生旺盛</li>
+<li>粒红比例降低或倒置</li>
+</ol>
+<h3 id="四溶血的特殊试验"><a class="header" href="#四溶血的特殊试验">四）溶血的特殊试验</a></h3>
+<ol>
+<li>抗人球蛋白试验（<code>Coombs</code> 试验）
+<ul>
+<li>用于自身免疫性溶血性贫血</li>
+</ul>
+</li>
+<li>红细胞渗透脆性试验
+<ul>
+<li>用于遗传性球形红细胞增多症</li>
+</ul>
+</li>
+<li>高铁血红蛋白还原试验
+<ul>
+<li>用于葡萄糖-6-磷酸脱氢酶缺乏症（蚕豆病）</li>
+</ul>
+</li>
+<li>以下多用于阵发性睡眠性血红蛋白尿症
+<ul>
+<li>酸溶血试验（<code>Ham</code> 试验）</li>
+<li>蔗糖水溶血试验</li>
+<li>蛇毒因子溶血试验</li>
+</ul>
+</li>
+</ol>
+<h2 id="七诊断"><a class="header" href="#七诊断">七、诊断</a></h2>
+<h3 id="一诊断依据"><a class="header" href="#一诊断依据">一）诊断依据</a></h3>
+<ol>
+<li>有贫血、黄疸、血红蛋白尿、肝脾肿大等临床线索</li>
+<li>有红细胞破坏增加的实验室证据</li>
+<li>有红系代偿性增生的实验室证据</li>
+<li>结合特殊试验和病史明确溶血类型及病因</li>
+</ol>
+<h2 id="八治疗"><a class="header" href="#八治疗">八、治疗</a></h2>
+<h3 id="一一般原则"><a class="header" href="#一一般原则">一）一般原则</a></h3>
+<ol>
+<li>去除病因</li>
+<li>对症支持治疗</li>
+</ol>
+<h3 id="二常用治疗措施"><a class="header" href="#二常用治疗措施">二）常用治疗措施</a></h3>
+<ol>
+<li>糖皮质激素
+<ul>
+<li>为温抗体型自身免疫性溶血性贫血的主要药物</li>
+</ul>
+</li>
+<li>脾切除术
+<ul>
+<li>脾是产生抗体和破坏红细胞的重要器官</li>
+</ul>
+</li>
+<li>免疫抑制剂
+<ul>
+<li>适用于激素和脾切除术效果不佳者</li>
+</ul>
+</li>
+<li>输血或成分输血</li>
+</ol>
+<h2 id="九各论"><a class="header" href="#九各论">九、各论</a></h2>
+<h3 id="一遗传性球形rbc增多症"><a class="header" href="#一遗传性球形rbc增多症">一）遗传性球形RBC增多症</a></h3>
+<h4 id="定义及病机"><a class="header" href="#定义及病机">定义及病机</a></h4>
+<ul>
+<li>遗传性球形 <code>RBC</code> 增多症（<code>HS</code>）是由于红细胞膜某种骨架蛋白缺陷，引起 <code>RBC</code> 由双凹盘形变成球形</li>
+<li>其结果为 <code>RBC</code> 柔韧性减低、变形性差</li>
+<li>异常红细胞易在脾脏扣留、破坏</li>
+<li>本病属于 <strong>血管外溶血性贫血</strong></li>
+</ul>
+<h4 id="特点"><a class="header" href="#特点">特点</a></h4>
+<ol>
+<li>自幼发生的贫血</li>
+<li>间歇性黄疸</li>
+<li>脾大</li>
+</ol>
+<h4 id="临床表现"><a class="header" href="#临床表现">临床表现</a></h4>
+<ol>
+<li>可于任何年龄起病</li>
+<li>起病慢</li>
+<li>约半数有家族史</li>
+<li>反复发生溶血性贫血、间歇性黄疸、脾大</li>
+<li>常见并发症为胆石症（胆囊结石）</li>
+</ol>
+<h4 id="实验室检查"><a class="header" href="#实验室检查">实验室检查</a></h4>
+<ol>
+<li>符合血管外溶血的实验室表现</li>
+<li>外周血球形 <code>RBC &gt;10%</code></li>
+<li>特殊实验：红细胞渗透脆性增高</li>
+<li>结合阳性家族史有助诊断</li>
+</ol>
+<h4 id="五治疗"><a class="header" href="#五治疗">五）治疗</a></h4>
+<ul>
+<li>脾切除有效</li>
+<li>首选腹腔镜脾切除</li>
+</ul>
+<h3 id="二阵发性睡眠性血红蛋白尿症"><a class="header" href="#二阵发性睡眠性血红蛋白尿症">二）阵发性睡眠性血红蛋白尿症</a></h3>
+<h4 id="概述"><a class="header" href="#概述">概述</a></h4>
+<ul>
+<li>阵发性睡眠性血红蛋白尿症（<code>PNH</code>）是一种获得性膜缺陷性疾病</li>
+<li>引起慢性 <strong>血管内溶血</strong></li>
+<li>我国北方中青年男性较多见</li>
+<li>特征为与睡眠有关的 <strong>间歇性 <code>Hb</code> 尿</strong></li>
+</ul>
+<h4 id="发病机制"><a class="header" href="#发病机制">发病机制</a></h4>
+<ol>
+<li>造血干细胞 <code>PIGA</code> 基因突变，导致糖磷脂酰肌醇（<code>GPI</code>）锚磷脂合成障碍</li>
+<li>造血干细胞及所有子代细胞的膜蛋白合成障碍</li>
+<li><code>CD59</code> 缺失（反应性溶血膜抑制因子）
+<ul>
+<li>正常时可阻止膜攻击复合物的组装</li>
+</ul>
+</li>
+<li><code>CD55</code> 缺失（衰变加速因子）
+<ul>
+<li>正常时可抑制补体 <code>C3</code> 转化酶形成及稳定</li>
+</ul>
+</li>
+<li><strong><code>CD55</code>、<code>CD59</code> 缺失是 <code>PNH</code> 溶血发生的基础</strong></li>
+</ol>
+<h4 id="临床表现-1"><a class="header" href="#临床表现-1">临床表现</a></h4>
+<ol>
+<li>贫血</li>
+<li><code>Hb</code> 尿
+<ul>
+<li>晨起 <code>Hb</code> 尿为典型特点</li>
+<li>睡眠后加重</li>
+</ul>
+</li>
+<li>血细胞减少
+<ul>
+<li>可出现三系减低</li>
+</ul>
+</li>
+<li>血栓形成倾向
+<ul>
+<li>肝静脉血栓最常见</li>
+<li><strong>可引起 <code>Budd-Chiari</code> 综合征</strong></li>
+<li>是 <code>PNH</code> 最常见死亡原因</li>
+</ul>
+</li>
+<li><strong>平滑肌功能障碍</strong></li>
+</ol>
+<h4 id="实验室检查-1"><a class="header" href="#实验室检查-1">实验室检查</a></h4>
+<h5 id="外周血"><a class="header" href="#外周血">外周血</a></h5>
+<ol>
+<li>贫血常呈正细胞或大细胞性</li>
+<li>也可出现小细胞低色素性贫血</li>
+<li>约半数病人有全血细胞减少（三系减低）</li>
+<li>血涂片可见有核红细胞和红细胞碎片</li>
+</ol>
+<h5 id="骨髓"><a class="header" href="#骨髓">骨髓</a></h5>
+<ol>
+<li>骨髓多增生活跃，尤以红系为主</li>
+<li>以中、晚幼红细胞为主</li>
+<li>部分病例骨髓增生减低</li>
+</ol>
+<h4 id="诊断检查"><a class="header" href="#诊断检查">诊断检查</a></h4>
+<ol>
+<li>
+<p><strong>流式细胞术检测细胞表面 <code>CD55</code>、<code>CD59</code></strong></p>
+</li>
+<li>
+<p><strong>流式检测嗜水气单胞菌溶素变异体（<code>FLAER</code>）</strong></p>
+<ul>
+<li>可结合 <code>GPI</code> 蛋白</li>
+</ul>
+</li>
+<li>
+<p><strong>血清学试验</strong></p>
+<ul>
+<li><code>Ham</code> 试验</li>
+<li>蔗糖溶血试验</li>
+<li>蛇毒因子溶血试验阳性</li>
+</ul>
+</li>
+</ol>
+<h4 id="治疗"><a class="header" href="#治疗">治疗</a></h4>
+<ol>
+<li><strong>对症支持治疗</strong></li>
+<li><strong>控制溶血发作</strong>
+<ol>
+<li>激素对部分病人有效</li>
+<li>碳酸氢钠碱化血液</li>
+<li>抗补体单克隆抗体</li>
+<li>异基因造血干细胞移植为唯一治愈方法</li>
+</ol>
+</li>
+</ol>
+<h3 id="三g-6-pd-酶缺乏症蚕豆病及其他"><a class="header" href="#三g-6-pd-酶缺乏症蚕豆病及其他">三）G-6-PD 酶缺乏症（蚕豆病及其他）</a></h3>
+<h4 id="概述-1"><a class="header" href="#概述-1">概述</a></h4>
+<ul>
+<li><code>G-6-PD</code> 酶缺乏症是由于与 <code>RBC</code> 戊糖旁路代谢有关的 <code>G-6-PD</code> 酶基因遗传性缺陷而引起的溶血性贫血</li>
+<li>属于最常见的酶异常性溶血性疾病</li>
+</ul>
+<h4 id="特点-1"><a class="header" href="#特点-1">特点</a></h4>
+<ol>
+<li><strong>可表现为血管内溶血或血管外溶血</strong></li>
+<li>常有食用蚕豆或服药等诱因</li>
+<li>常有阳性家族史</li>
+<li>高铁 <code>Hb</code> 还原试验阳性</li>
+<li>红细胞 <code>G-6-PD</code> 活性定量测定异常</li>
+</ol>
+<h4 id="发病机制-1"><a class="header" href="#发病机制-1">发病机制</a></h4>
+<ol>
+<li><code>RBC</code> 戊糖旁路代谢异常</li>
+<li><code>G-6-PD</code> 缺乏时不能将氧化剂如 <code>H2O2</code> 及时分解为水</li>
+<li>氧化剂在红细胞内聚集</li>
+<li>使 <code>Hb</code> 氧化、变性并沉淀形成 <code>Heinz body</code> 小体</li>
+<li>红细胞变形性下降，易被单核-巨噬细胞破坏而发生 <strong>血管外溶血</strong></li>
+<li>细胞膜脂质的过氧化作用使 <strong>急性血管内溶血</strong> 的因素</li>
+<li><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20260622082649262.png" alt=""></li>
+</ol>
+<h4 id="临床表现-2"><a class="header" href="#临床表现-2">临床表现</a></h4>
+<ol>
+<li><strong>蚕豆病</strong>
+<ul>
+<li>多见于儿童，男多于女</li>
+<li>约 <code>40%</code> 有家族史</li>
+<li>突发血管内溶血</li>
+<li>与食用蚕豆量无关</li>
+<li>停止接触后可自行恢复</li>
+</ul>
+</li>
+<li><strong>药物致溶血</strong>
+<ul>
+<li>解热镇痛药</li>
+<li>磺胺药</li>
+<li><code>VitK</code></li>
+<li>抗疟药</li>
+</ul>
+</li>
+<li><strong>上述诱因多导致血管内溶血</strong></li>
+<li><strong>平时可表现为慢性血管外溶血</strong></li>
+</ol>
+<h4 id="实验室检查-2"><a class="header" href="#实验室检查-2">实验室检查</a></h4>
+<ol>
+<li><strong><code>G-6-PD</code> 活性筛选试验</strong>
+<ul>
+<li>高铁 <code>Hb</code> 还原试验</li>
+<li>荧光斑点试验</li>
+</ul>
+</li>
+<li><strong><code>G-6-PD</code> 活性定量测定</strong> ：确诊价值</li>
+<li><strong>红细胞海因小体（<code>Heinz-body</code>）生成试验</strong></li>
+</ol>
+<h4 id="治疗-1"><a class="header" href="#治疗-1">治疗</a></h4>
+<ol>
+<li>本病本身一般不需长期特殊治疗</li>
+<li>避免氧化剂摄入</li>
+<li>积极控制感染</li>
+<li>对症治疗</li>
+</ol>
+<h3 id="四血红蛋白病"><a class="header" href="#四血红蛋白病">四）血红蛋白病</a></h3>
+<h4 id="概述-2"><a class="header" href="#概述-2">概述</a></h4>
+<ul>
+<li><code>Hb</code> 肽链异常包括 <strong>量异常</strong> 和 <strong>质异常</strong></li>
+<li>珠蛋白肽链量异常：地中海贫血</li>
+<li>珠蛋白肽链质异常：异常 <code>Hb</code> 病</li>
+</ul>
+<h4 id="分类"><a class="header" href="#分类">分类</a></h4>
+<h5 id="地中海贫血"><a class="header" href="#地中海贫血">地中海贫血</a></h5>
+<ol>
+<li>由于控制某个多肽链合成的基因突变，使珠蛋白肽链合成减少而导致溶血性贫血</li>
+<li>特点
+<ol>
+<li>靶形 <code>RBC &gt;10%</code>，呈小细胞低色素性贫血</li>
+<li><code>RBC</code> 脆性降低</li>
+<li>属于血管外溶血</li>
+<li>常有贫血、黄疸、肝脾肿大</li>
+</ol>
+</li>
+</ol>
+<h5 id="异常-hb-病"><a class="header" href="#异常-hb-病">异常 Hb 病</a></h5>
+<ol>
+<li>由于控制某个多肽链的基因突变，引起珠蛋白肽链结构异常的溶血性疾病</li>
+<li>特点
+<ul>
+<li>常染色体显性遗传</li>
+<li>以溶血、发绀、血管阻塞为主要表现</li>
+<li>最常见的是不稳定 <code>Hb</code> 病和 <code>HbS</code> 病（镰状细胞综合征）</li>
+</ul>
+</li>
+</ol>
+<h3 id="五自身免疫性溶血性贫血"><a class="header" href="#五自身免疫性溶血性贫血">五）自身免疫性溶血性贫血</a></h3>
+<h4 id="概述-3"><a class="header" href="#概述-3">概述</a></h4>
+<h5 id="定义"><a class="header" href="#定义">定义</a></h5>
+<ul>
+<li>由于免疫功能紊乱产生抗自身红细胞抗体</li>
+<li>抗体与红细胞表面抗原结合并激活补体</li>
+<li>使红细胞被破坏或被单核-巨噬细胞系统吞噬</li>
+<li>从而导致溶血性贫血</li>
+</ul>
+<h5 id="特点-2"><a class="header" href="#特点-2">特点</a></h5>
+<ol>
+<li>
+<p>血常规有典型溶血改变</p>
+</li>
+<li>
+<p>血涂片可见</p>
+<ul>
+<li>球形 <code>RBC</code> 增多</li>
+<li><code>RBC</code> 可有自凝或被吞噬现象</li>
+</ul>
+</li>
+<li>
+<p><code>Coombs</code> 试验阳性</p>
+</li>
+<li>
+<p>血管内及血管外溶血均可存在</p>
+</li>
+</ol>
+<h4 id="分类-1"><a class="header" href="#分类-1">分类</a></h4>
+<ul>
+<li>
+<p>按机体产生的抗自身 <code>RBC</code> 抗体类型及作用于 <code>RBC</code> 的最适温度分类</p>
+</li>
+<li>
+<p>分为温抗体型和冷抗体型</p>
+<ul>
+<li>冷抗体型包括冷凝集素综合征（<code>CAS</code>）和阵发性冷性血红蛋白尿（<code>PCH</code>）</li>
+<li>温抗体型可用抗人球蛋白试验（<code>Coombs</code>）检测</li>
+</ul>
+</li>
+<li>
+<p><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20260622214829385.png" alt=""></p>
+</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>类型</th><th>发病率</th><th>年龄</th><th>抗体最适温度</th><th>抗体类型</th><th>特征试验</th><th>在血中存在形式</th><th>主要溶血部位</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>温抗体型</strong></td><td><strong>80%-90%</strong></td><td>成年女性</td><td><code>37℃</code></td><td>多为 <code>IgG</code></td><td><code>Coombs</code> 试验</td><td>多吸附于 <code>RBC</code> 表面，少量存在于血浆</td><td>血管外</td></tr>
+<tr><td><strong>冷抗体型</strong> ：<code>CAS</code></td><td>10%-20%</td><td>中老年女性</td><td>0-5℃</td><td>多为 <code>IgM</code></td><td>冷凝集素试验</td><td>多存在于血浆中</td><td>血管内及血管外</td></tr>
+<tr><td><strong>冷抗体型</strong> ：<code>PCH</code></td><td>10%-20%</td><td>青少年</td><td>&lt;20℃</td><td><code>IgG(D-L)</code></td><td>冷热溶血试验</td><td>多吸附于 <code>RBC</code> 表面</td><td>以血管内为主</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="临床表现-3"><a class="header" href="#临床表现-3">临床表现</a></h4>
+<h5 id="温抗体型"><a class="header" href="#温抗体型">温抗体型</a></h5>
+<ul>
+<li>多有典型慢性血管外溶血的症状和体征</li>
+<li>部分病人可伴血小板减少性紫癜，即 <code>Evens</code> 综合征</li>
+</ul>
+<h5 id="冷抗体型"><a class="header" href="#冷抗体型">冷抗体型</a></h5>
+<ol>
+<li>较温抗体型轻，一般不明显影响日常活动</li>
+<li><code>CAS</code>
+<ul>
+<li>除贫血、黄疸外，寒冷季节可有一过性 <code>Hb</code> 尿发作</li>
+<li>可有雷诺现象</li>
+</ul>
+</li>
+<li><code>PCH</code>
+<ul>
+<li>罕见</li>
+<li>经受寒冷数分钟至数小时后可发作</li>
+<li>可出现腰背及下肢酸痛</li>
+<li>可有高热、寒战</li>
+<li>可出现 <code>Hb</code> 尿</li>
+<li>伴贫血及黄疸</li>
+<li>部分病人可伴脾肿大或含铁血黄素尿</li>
+</ul>
+</li>
+</ol>
+<h4 id="治疗-2"><a class="header" href="#治疗-2">治疗</a></h4>
+<h5 id="温抗体型-1"><a class="header" href="#温抗体型-1">温抗体型</a></h5>
+<ol>
+<li>
+<p><strong>首选糖皮质激素</strong></p>
+<ul>
+<li><strong>有效率在 <code>80%</code> 以上</strong></li>
+</ul>
+</li>
+<li>
+<p>脾切除</p>
+<ul>
+<li>适用于激素无效、激素需求量大或不耐受者</li>
+</ul>
+</li>
+<li>
+<p>利妥昔单抗</p>
+<ul>
+<li>脾切无效可用</li>
+</ul>
+</li>
+<li>
+<p>免疫抑制剂</p>
+<ul>
+<li>适用于激素量大，或脾切除无效者，或脾切有禁忌证者</li>
+</ul>
+</li>
+<li>
+<p>输血</p>
+</li>
+</ol>
+<h5 id="冷抗体型-1"><a class="header" href="#冷抗体型-1">冷抗体型</a></h5>
+<ol>
+<li><strong>保暖最重要</strong></li>
+<li>激素欠佳，切牌无效</li>
+<li>利妥昔单抗或免疫抑制剂可用</li>
+</ol>
+<h3 id="六实战演练"><a class="header" href="#六实战演练">六）实战演练</a></h3>
+<h4 id="单题"><a class="header" href="#单题">单题</a></h4>
+<ol>
+<li>血管外溶血的表现有：<strong>起病较缓慢、脾脏常肿大、部分病人切脾可有效</strong></li>
+<li>可以引起原位溶血的疾病有：<strong>海洋性贫血、骨髓增生异常综合征</strong></li>
+<li>关于遗传性球形红细胞增多症正确的是：<strong>红细胞膜先天缺陷性疾病、主要涉及红细胞骨架蛋白异常、异常红细胞主要在脾脏被破坏、胆石症是常见并发症</strong></li>
+<li>溶血性贫血进行脾切除的适应症有：<strong>遗传性球形红细胞增多症、糖皮质激素治疗无效的原发性自身免疫性溶血性贫血、海洋性贫血溶血明显或脾肿大明显者</strong></li>
+</ol>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第六部分：血液系统疾病/第五章：再生障碍性贫血.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第六部分：血液系统疾病/第七章：白细胞减少和粒细胞缺乏症.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第六部分：血液系统疾病/第五章：再生障碍性贫血.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第六部分：血液系统疾病/第七章：白细胞减少和粒细胞缺乏症.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第六部分：血液系统疾病/第六章：溶血性贫血.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

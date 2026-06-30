@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>狼、盲视与西方经济学 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="狼盲视与西方经济学"><a class="header" href="#狼盲视与西方经济学">狼、盲视与西方经济学</a></h1>
+<h2 id="写在前面"><a class="header" href="#写在前面">写在前面</a></h2>
+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">4877 字 | 经济学 | 思考 | 暴言注意</p>
+
+<h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>　　引入正题之前，我想先介绍两个概念。</p>
+<p>　　一，加拿大科幻小说《盲视》里曾提过一种现象。</p>
+<p>　　“运动会吸引眼睛的注意。而眼睛总在抖动，医学上管这叫眼动。它让图像变得模糊，动作太快，大脑无法整合，于是眼睛干脆就在两次停顿之间关门歇业。它只能抓住独立的定格画面，由你的大脑把空白处编辑掉，再把所有的画面缝成连续不断的假象。</p>
+<p>　　“你知道最不可思议的是什么？如果某种东西只在空窗期运动，你的大脑就干脆对它视而不见。它就能隐形。”</p>
+<p>　　人眼有视觉暂留，并不连续，对更高帧率的东西无法反应。</p>
+<p>　　二，书名“盲视”本身，是一种神经学疾病：某些因为大脑损伤而失去视力的人，能在无意识中对他们视野范围内的物体做一定程度描述。</p>
+<p>　　眼睛可能完好，但大脑无法解析。或者这样说——大脑根本意识不到。</p>
+<p>　　这两种现象，都正符合我近期对于西方经济学的思考。</p>
+<p>　　现代经济学体系源自西方，天然带了前提。这种前提极为隐秘，不易察觉。就像那个在我们眼睛空窗期运动的罗夏攀爬者，或者更纯粹些——盲视患者。</p>
+<br />
+<p>　　<strong>一、底层文化造就的经济决策。</strong></p>
+<p>　　1. <strong>经济滑坡时，西方经济往往会选择大开国门，接收移民；东方国家，哪怕再艰难，如日本，也都很少这样做。</strong></p>
+<p>　　日本自签订广场协议后，采取了错误的货币政策，“失去了三十年”。即使如此日本也没有走上法国等一众欧洲国家的“黑化”道路。</p>
+<p>　　2. <strong>再如东西方人消费习惯及生活上的差异，造成了游戏史上迥然不同的两种风格。</strong></p>
+<p>　　西方强调个人娱乐和休闲体验，对于游戏与东方的重视程度不同——东方可能更多将其视为排列在下棋、钓鱼等娱乐活动之后的次要产品。同时由于计算机技术的先发后发差异，及移动游戏市场的兴起，造就了两种完全不同的风格。</p>
+<p>　　西方有着大量的游戏主机，数量庞大的买断制游戏、质量优异的 3A 游戏。与此同时，东方在手机等移动设备上的霸主地位不可撼动，同时推行游戏免费、道具付费的方式。</p>
+<p>　　毕竟要让东方人在游戏买断上付费实在太难了。</p>
+<p>　　<strong>二、思维模式导致的经济差异。</strong></p>
+<p>　　1. <strong>时至今日，东方的直接融资模式进度仍远落后于西方。</strong></p>
+<p>　　以国内为例，绝大多数的人民群众，极为厌恶风险，做出的最多理财决定，是将钱存在银行里。</p>
+<p>　　虽然谈不上西方人有多么喜欢风险，但在极限运动的参与人数上，与东方比起来仍然可见一斑。同时由于资本主义体制对于私有财产的保护、规范和成熟的市场等因素，直接融资模式加速成长。</p>
+<p>　　各种因素综合起来，导致东方具有极为壮大的间接融资平台体系，如银行、一众影子金融机构。而西方的代表则是：股市和债券。</p>
+<p>　　2. <strong>“东方的力来自于古老的故土，西方的力来自于新的疆域。”（刘慈欣《超新星纪元》）</strong></p>
+<p>　　东方人自食其力的天性，让他们更侧重于依赖自己，飞上月球也得先看看能不能种地。</p>
+<p>　　这是农耕文明几千年刻进骨子里的风险意识。</p>
+<p>　　土地会背叛你吗？不会。土地是死的。气候尚且都无法控制，更别提其他一切活的了，可能都靠不住。</p>
+<p>　　粮食种出来，起码自己不会饿死。先活下去。</p>
+<p>　　西方的扩张冲动，来自于“外面还有更多”的底层信念——新大陆、新市场、新殖民地，增长的边界永远可以向外推。失去了这片，还有下一片。</p>
+<p>　　东方没有“下一片”。这片土地就是全部，要在同一块地上，一代一代地活下去。</p>
+<p>　　于是西方经济学的“增长”叙事，在这里天然缺少一个地基——它假设空间是无限的，资源是可以不断发现的。</p>
+<p>　　而东方的经济直觉，从来都是另一个问题：</p>
+<p>　　我能不能用目前的这些资源、土地活下去？这些东西，还能不能传给下一代？</p>
+<p>　　<strong>三、结果不重要，维持当前的模式更重要。</strong></p>
+<p>　　西方经济学有一个潜藏的价值判断：增长即是最终目标，效率是美德。</p>
+<p>　　这背后有它的历史逻辑——从大航海到工业革命，西方文明的底色是“扩张”。新大陆、新市场、新殖民地，向外破局是刻在基因里的冲动。当增长停滞，就去寻找下一片疆域。</p>
+<p>　　“维持扩张”，比“扩张”本身更重要。失去“扩张”，意味着前路的茫然。</p>
+<p>　　这也是为什么西方经济学，几乎无法理解“失去的三十年”。</p>
+<p>　　在他们的框架里，日本应该早就崩溃，或者早就通过激进改革重焕生机。但日本没有。它选择了另一件事——维持。</p>
+<p>　　维持社会结构不崩。维持就业率不塌。维持老人能够体面地买到饭团，年轻人还勉强能找到工作。</p>
+<p>　　在一个最低薪资一万，人均薪资两万的社会里，人们被压成一个橄榄。而橄榄型社会是中庸之道的最佳体现——哑铃或者金字塔，都容易社会动荡，爆发骚乱或者革命。</p>
+<p>　　然而，在经济学的效用函数里，这是次优解，是效率低下的体现。但在日本人的社会价值里，这是最优解。</p>
+<p>　　国内同样如此。</p>
+<p>　　宏观调控的真实目标，从来不只是 GDP 增速。更深处藏着的，是另一组变量：社会稳定、就业规模、区域平衡、粮食安全。</p>
+<p>　　这些变量，在西方经济学的教科书里不是没有——但它们是脚注，是“外部性”，是需要被“内部化”的干扰项。</p>
+<p>　　而在这里，它们是主项。</p>
+<p>　　所以，当西方经济学家建议“放开管制，让市场出清”时，他们的前提是：出清之后的秩序，由市场重建。</p>
+<p>　　但没人告诉你——这个“重建”需要多少时间，需要什么样的配套制度，以及，在那段真空期里，原本维持秩序的那根线，能不能撑住。</p>
+<p>　　<strong>四、东西方的理性人亦有差异。</strong></p>
+<p>　　西方经济学的地基，叫“理性经济人”。</p>
+<p>　　它的预设是：每个人都在用完整的信息，做出使自身利益最大化的决策。</p>
+<p>　　这个假设在西方不算离谱——个体主义文化下，人和人之间的交换大多是陌生人之间的一次性博弈。你不认识对方，也不需要认识，只需要看价格。</p>
+<p>　　但在东方，这个假设从一开始就不成立。</p>
+<p>　　一个国内的老板，账上明明算得清楚：这个员工产出不足，裁掉合理。但他不裁。因为这个人跟了他十几年，裁了没法在老家的圈子里做人。</p>
+<p>　　而且，万一以后三十年河东三十年河西呢？</p>
+<p>　　西方的一次性博弈底色，在东方，摇身一变，变成重复博弈。无论最终现实会不会重复博弈，思想上，已经在根据重复博弈理念做决策了。</p>
+<p>　　西方经济学叫它“非理性”。然而，这个老板的决策函数里，本来就有一项叫“面子”，有一项叫“义气”，有一项叫“你我之间的关系”。</p>
+<p>　　但他并非不理性，而是有另一套决策系统。</p>
+<p>　　西方经济学假装这套函数不存在。</p>
+<p>　　<strong>五、货币政策的南墙。</strong></p>
+<p>　　教科书里的货币政策路径，大约是这样的：</p>
+<p>　　央行降息→贷款成本降低→企业扩大投资→居民增加消费→经济回暖。</p>
+<p>　　这条链条在西方运作尚可，因为它的每一个环节都有配套的基础设施：成熟的债券市场、灵活的信贷定价、居民有贷款消费的习惯。</p>
+<p>　　在国内，这条链条撞上了几堵墙。</p>
+<p>　　1. 国有银行的贷款决策，不完全由利率驱动。政策性任务、地方政府关系、窗口指导——这些变量根本不在利率方程里。</p>
+<p>　　2. 中小企业大量依赖民间融资，利率传导根本到不了它们那里。正规金融体系的水，流不进那片旱地。</p>
+<p>　　3. 居民储蓄率高达 30% 以上，在利率下调时，许多人不是“消费更多”，而是“存更多”——因为他们心里有一个数，是养老、是孩子的婚房、是备而不用的急救钱。利率降了，距离那个数更远了，得多存点。</p>
+<p>　　这不是凯恩斯的消费函数，也不是弗里德曼的永久收入假说。</p>
+<p>　　这是另一种理性。而只有这种理性，才能在这片土地上活下来。</p>
+<p>　　西方经济学高声疾呼：“冬天来了！大家快把柴都烧了取暖啊！烧得越多越暖和！”</p>
+<p>　　而同时另一边，西方经济学家们却在自己悄悄砍柴藏在灶炉间。</p>
+<p>　　<strong>六、土地，一个不存在的前提。</strong></p>
+<p>　　科斯定理说：只要产权清晰，交易成本为零，资源就会流向最有效率的使用者。</p>
+<p>　　这是西方产权经济学的核心。它干净，优雅，逻辑上无懈可击。</p>
+<p>　　它的前提是：产权清晰。</p>
+<p>　　国内的土地制度是：城市土地国有，农村土地集体所有，居民买卖的只是使用权，且有年限。</p>
+<p>　　这一条，就把科斯的推论在地基上整个架空了。</p>
+<p>　　开发商拿的是 70 年使用权，到期怎么续？没人说清楚。农民的宅基地，能不能抵押融资？不同地方答案不同。城中村的土地，归属权争议几十年，每一次改造都是一场谈判拉锯战。</p>
+<p>　　那能不能让产权清晰呢？事实上，“国有”、“集体所有”已经是一个明确的产权定义了。</p>
+<p>　　说太宽泛？要让产权更清晰？让最终使用者更有效率？要私有化？</p>
+<p>　　土地对东方人民来说，是最重要的东西。</p>
+<p>　　土地私有化又不是没干过，而纵观过去的历史——说这些话的人，是想干嘛呢？</p>
+<p>　　这些复杂性，在西方经济学的土地章节里，往往只是“制度背景”，一笔带过。</p>
+<p>　　但“制度背景”本身，才是这里的主角。</p>
+<p>　　西方的逻辑是：先有清晰的产权，才有市场。</p>
+<p>　　这里的现实是：市场在产权还模糊的时候，就已经在运转了，用另一套规则，在缝隙里运转了几十年。</p>
+<p>　　<strong>七、完全追求效率进行破产，真是好事吗？</strong></p>
+<p>　　西方有完善的破产法。企业经营不善，破产重组或清算，让资源流向更有效率的地方。这是“市场出清”的微观基础，也是熊彼特“创造性破坏”得以实现的制度前提。</p>
+<p>　　逻辑上无比正确。</p>
+<p>　　但在国内，大量亏损企业长期不破产。地方政府给补贴，给贷款展期，给各种隐性支持，让它们活下去。</p>
+<p>　　西方经济学把这些叫“僵尸企业”，言语之间颇有不屑。</p>
+<p>　　但没人问：这些企业承载了多少就业？背后是多少个家庭？那个县城，如果这家工厂倒了，还剩什么？</p>
+<p>　　“市场出清”是效率词汇。但出清之后的社会成本，由谁来承担？</p>
+<p>　　西方有完整的失业救济体系、社会保障网、职业再培训机制。那张网是真实存在的，人掉下去有东西接。</p>
+<p>　　如果那张网不够密，让市场去出清，不是优化，是人直接掉进去砸在地上。</p>
+<p>　　这不是反对市场经济。这是在说：同一个工具，在不同的地基上，效果和代价都不一样。</p>
+<p>　　而更重要的是，需要执行政策、执行国家战略的那批企业，要是短时间陷入低谷，都被“市场出清”嚯嚯完了，那么——又有谁来保护我们的长期利益呢？</p>
+<p>　　但这些事情，西方经济学不会说。教科书不说地基的问题。它只教你怎么用工具。</p>
+<p>　　也许，他不是不会说，而是像“盲视”一样，根本没有意识到。</p>
+<p>　　<strong>八、储蓄率，西方经济学难以理解的天堑。</strong></p>
+<p>　　西方经济学有一个长期困惑：为什么中国人这么能存钱？</p>
+<p>　　各种理论试图解释：收入不确定性、社会保障不足、文化因素……</p>
+<p>　　这些都对，但都只说了一半。</p>
+<p>　　另一半是：在某些社会里，储蓄不只是个人行为，是家庭战略。</p>
+<p>　　儿子要结婚，父母要出首付。这不是建议，这是默认条款。女儿生病，兄弟要凑钱。父母养老，子女要赡养。这些义务不写在合同里，但比合同更有约束力。</p>
+<p>　　它意味着每一个个体的资产负债表，其实挂着一整个家庭网络的或有负债。</p>
+<p>　　西方个体主义语境下，这种负债是不存在的——成年了就各自独立，父母养老靠养老金和护理院，儿女婚房靠自己贷款。</p>
+<p>　　你的贷款，跟我有什么关系？就算你是我儿子，我自己的贷款都没还完呢！</p>
+<p>　　所以西方人“敢”消费，不是因为他们天生豁达。是因为他们的家庭结构，实际上让个体承担的隐性负债，比东方人少得多。</p>
+<p>　　把西方消费模型搬到这里，号召大家“提升消费意愿”——</p>
+<p>　　这是在对一个人说：你轻装上阵吧。</p>
+<p>　　但没有人帮他卸下那些包袱。</p>
+<br />
+<p>　　现在可以说说“狼”了。</p>
+<p>　　狼是一种极度依赖群体协作的猎手。单独的狼，并不特别可怕；但狼群，有分工，有记忆，有对猎物习性的长期积累。</p>
+<p>　　西方经济学更像是豹——独立，迅猛，一击制胜。它的逻辑美学在于速度与精准。</p>
+<p>　　但在更复杂的地形里，在猎物更狡猾、环境更多变的地方，豹的打法往往代价极高。</p>
+<p>　　东方经济体的运行方式，更近于狼群。慢，但是稳；不追求单次效率最优，而是追求系统长期存续。</p>
+<p>　　<strong>问题在于：西方经济学从来没有研究过狼。</strong></p>
+<p>　　<strong>它用研究豹的方法来评估狼群，得出结论：你们的协调成本太高，分工不清晰，缺乏激励机制。</strong></p>
+<p>　　然后给出建议：去掉那些无效的协调，让每一匹狼都独立优化自己的收益。</p>
+<p>　　那些无用的协调，在他们眼里，就像图表中无用的箭头与边框，毫无意义。</p>
+<p>　　狼听了，也许能打到几只野兔。</p>
+<p>　　但它不再是狼群了。</p>
+<br />
+<p>　　《盲视》里，主角最终意识到：那些他以为在观察的东西，其实一直在观察他。</p>
+<p>　　一行人付出了血的代价。</p>
+<p>　　<strong>经济学是一门试图理解人类行为的学科，擅长解释，不能预测，所以不能算作科学。当它带着特定的文化基因，走进另一种文明，用自己的眼睛去“观察”时，它真正做到的，不过是把陌生的东西压缩成自己能看懂的形状。</strong></p>
+<p>　　它不是在理解。</p>
+<p>　　它是在盲视。</p>
+<p>　　<strong>如果说，对西方经济学，危险的是它从来不知道自己在盲视。</strong></p>
+<p>　　<strong>那么，对我们，最顶级的危险，是学习西方经济学的人，也干脆盲视：不知狼的习性，从一开始就不曾察觉，完全照搬，而不知鬼魅在眼睛的空窗期——悄然而至。</strong></p>
+<br />
+<p>　　南国微雪 Miyuki</p>
+<p>　　2026 年 3 月 5 日</p>
+<h2 id="写在后面"><a class="header" href="#写在后面">写在后面</a></h2>
+<p>　　本文源于一直以来对于西方经济学的系统性思考，因工作繁忙，迟未完成。如有勘误或思考，恳请斧正。</p>
+<h2 id="封面图"><a class="header" href="#封面图">封面图</a></h2>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/thomas-bonometti-dtfyRuKG7UY-unsplash.jpg" alt=""></p>
+<blockquote>
+<p>摄影师・画师 | Thomas Bonometti</p>
+<p>图源 | Unsplash</p>
+</blockquote>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../生活碎笔/文章与写作/可能是我唯一印象深刻的换装游戏.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../生活碎笔/文章与写作/母亲买的八条秋裤.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../生活碎笔/文章与写作/可能是我唯一印象深刻的换装游戏.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../生活碎笔/文章与写作/母亲买的八条秋裤.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/文章与写作/狼、盲视与西方经济学.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

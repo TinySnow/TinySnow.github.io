@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>浓雾号角 - 雷·布拉德伯里 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="浓雾号角"><a class="header" href="#浓雾号角">浓雾号角</a></h1>
+<p><em>雷·布拉德伯里</em></p>
+<p>　　在远离陆地的寒冷海面上，我们夜夜等候着浓雾的来临。雾来了。我和唐给黄铜的机械上好油，点亮了石塔顶端的雾灯。就像灰色天空下的两只鸟儿，我们把光束送出塔顶，让它触摸大海。红光，白光，又是红光，映入孤独船只的眼帘。即使他们看不到灯光，总还有我们的声音。我们的雾角那广阔深沉的呼喊，颤抖着穿透海雾的残片，让海鸥如撒向空中的纸牌一般惊散，让海浪高高掀起，飞花四溢。</p>
+<p>　　“这生活还真是寂寞啊，好在你现在已经习惯了，对吧？”唐问道。</p>
+<p>　　“是啊，”我说，“多亏还有你这么个碎嘴的人。”</p>
+<p>　　“对了，明天就轮到你回岸上啦，”他微微一笑，“和姑娘们跳个舞，再喝上几盅琴酒。”</p>
+<p>　　“唐，当你一个人留在这里时，你都在想些什么呢？”</p>
+<p>　　“我想大海的秘密。”唐点燃了他的烟斗。这是十一月的寒冷夜晚，时间是七点一刻。炉火正旺，塔灯向两百个方向交替射出它的光芒，雾角在石塔高高的咽喉中颤动，回响。沿岸一百英里之内没有一座城镇，只有一条路，孤独地穿越死寂的原野通向海滨，沿途几乎没有车辆；然后又是两英里冰冷的海水才抵达我们的小岛，沿途几乎没有船只。</p>
+<p>　　“大海的秘密。”唐若有所思，“你知道吗？大海是有史以来最大最大的一片雪花。波涛翻卷，浪花飞舞，变幻出千姿百态，永不重复。太离奇了。有一天晚上，那是很多年以前，我孤身一人在这里，就在那时大海里所有的鱼儿都浮出了海面。似乎有什么东西驱使它们游入海湾，仰在水面上，颤抖着凝视那高塔的灯光，红色，白色，红色，白色，扫过它们身上；因此我看到了它们奇异的眼睛。我感到浑身冰冷。它们就像一幅巨大的孔雀尾羽，在那里游动着直到午夜，然后，又无声无息地离开了。成千上万条鱼就这样不见了。我想也许，某种意义上，它们不远万里来到这儿，是为了朝圣。太离奇了。但是想想看，它们眼中的灯塔，高耸在海面七十英尺之上，闪现出神一样的光芒，用巨兽般的声音宣告着自己的存在。那些鱼，它们再也没有回来，但是你不觉得有那么一会儿它们感受到了上帝的临在吗？”</p>
+<p>　　我打了个哆嗦。望向窗外，大海如同一卷长长的灰色麻布，伸展出去，指向无有之乡和无在之野。</p>
+<p>　　“哦，大海包含着一切。”唐眨着眼睛，神经质地抽着烟斗。他这一整天都坐立不安，也不告诉我为什么。“哪怕我们有这一切的机器和所谓的潜水艇，还要再经历一千个世纪，我们才能踏入这片沉没大地的底部，见到那神话般的王国，并且知晓真正的恐惧。想想吧，海底那里仍然处在公元前三十万年的世界。我们在吹响喇叭列队行进，互相入侵对方的国家，砍掉对方的脑袋；而这时他们却生活在十二英里深的海底，深邃而寒冷，就像彗星的胡子一样古老。”</p>
+<p>　　“是的，那是个古老的世界。”</p>
+<p>　　“跟我来。有件特殊的事情我一直没跟你说。”</p>
+<p>　　我们攀上八十级的石阶，不紧不慢，边走边谈。在塔顶，唐关掉了屋子里的灯，玻璃上的反光随之消隐。只有塔灯的巨眼低声嗡鸣，在上过油的滑槽里轻轻转动；浓雾号角平稳地吹响，每十五秒钟一次。</p>
+<p>　　“听起来像野兽，你说是吗？”唐轻轻点了点头，仿佛在自言自语。“一只孤独的巨兽在黑夜里的呼喊。孑然坐在这里，在一百亿年时光的边缘上，向着深渊呼喊：我在这里，我在这里。而深渊也真的回答了，是的，它们回答了。小约翰啊，你已经在这里呆了三个月了，所以我应该让你做好心理准备。每年大概这个时候，”他说，凝视着阴霾和浓雾，“有个东西要来造访这座灯塔。”</p>
+<p>　　“是你说的那些鱼群吗？”</p>
+<p>　　“不，这是别的东西。我一直没告诉你，怕你会觉得我精神失常。但是到今晚我不能再拖下去了，因为假如我去年到现在的日历没标错的话，今晚就是它到来的日子。我不想再多说了，你得亲眼看看它。就坐在这里就行。只要你愿意，明天你就可以收拾行李走人，乘上摩托艇登陆，把你停在海角游艇码头那儿的车开出来，一路驶回某个内陆小镇，整夜让你的灯光亮着。我绝不会问你怎么回事，也不会怪罪你。已经三年了，只有这一次有别人和我在一起目睹这件事情。你就等着看吧。”</p>
+<p>　　半个小时过去了，我们只是低声细语地交谈了几句。当我们开始等得有点不耐烦的时候，唐开始给我讲述他的一些念头。他有些关于雾角的想法。</p>
+<p>　　“很多年前的一天，有一个人独自走在海边，在寒冷无光的海岸上静听海洋的低语。他说，‘我们需要一个声音，让呼喊穿越水面，警告船只；我会制作出这样一种声音。我要发出这种声音，就像亘古以来所有的时间和所有的浓雾；我要发出这种声音，就像彻夜陪伴着你的一张空床，就像推开一间空屋的房门，就像秋天里没有叶子的树木。这声音要像鸟儿飞往南方时的呼喊，要像十一月的寒风，要像大海拍击着坚硬、冰冷的海岸。我要发出这样孤独的声音，以致没有人会忽略它，每一个听到它的人都将在灵魂深处潸然泪下；在遥远的城镇里，每一个听到它的人都将觉得炉火愈发温暖，家中愈发美好。我要为我自己制作出一个声音和一件装置，人们将称它为浓雾号角，每一个听到它的人都将意识到生命的短促和面对永恒的悲哀。’”</p>
+<p>　　雾角吹响了。</p>
+<p>　　“这个故事是我编的，”唐轻轻地说，“是企图解释为什么这东西每年都会回到灯塔这儿。雾角在召唤，我想，它就来了……”</p>
+<p>　　“但是——”</p>
+<p>　　“嘘！”唐说，“那里！”他向外面的深渊点了点头。</p>
+<p>　　有什么东西正在朝灯塔游来。</p>
+<p>　　我说过，这是一个寒冷的夜晚；高塔阴森冰冷，灯光时隐时现，而雾角穿透纷乱的迷雾呼唤着，呼唤着。我们看不远也看不清，但是我知道在那里，深海在夜晚的地球上四处流淌，扁平而安静，带着泥土般的灰色；而在这里，只有我们两个人在高塔上。那儿，起初是在很远的地方，有一圈涟漪，然后是一阵波浪、起伏、汽泡和飞沫。再然后，从冰冷的大海中，伸出一个脑袋，一个大脑袋，颜色灰暗，有着硕大的眼睛；然后是脖子。再然后——不是身体——而是越来越长的脖子！那脑袋伸出水面高达四十英尺，下面是修长而美丽的深色脖颈。直到这时它的身体，宛如一座小小的黑珊瑚岛缀满了贝壳和虾蟹，才从海底升起，就像一颗水滴升出水面。它的尾巴扑动了一下。我估计这头巨兽从头顶到尾尖大概有九十或一百英尺。</p>
+<p>　　我不知道当时我说了什么话。但是我肯定说了些啥。</p>
+<p>　　“镇定，孩子，镇定。”唐在我耳边低语。</p>
+<p>　　“这不可能！”我说。</p>
+<p>　　“不，小约翰，我们才是不可能的。它在一千万年以前就一直是这样了。从未改变过。是我们和陆地改变了，成为了不可能的存在。我们！”</p>
+<p>　　它缓缓地在遥远的冰水间游动着，散发出一种伟大而灰暗的庄严。浓雾在它周围来回缭绕，时不时抹去它的轮廓。我们的灯光射向它的一只眼睛，被它拦截，捕获，又反射回来，红，白，红，白，如同高高举起的天线，用最原始的代码发送着讯息。它悄无声息地游动着，和裹挟着它的浓雾一样安静。</p>
+<p>　　“这是某种恐龙之类的东西——”我俯下身去，双手紧紧抓着楼梯的栏杆。</p>
+<p>　　“是的，是那个部族的一员。”</p>
+<p>　　“可是它们已经灭绝了！”</p>
+<p>　　“不，仅仅是藏在了深渊里。深深地藏在最深的深渊里。这真是个了不起的词啊，小约翰，一个真正的词，包含了如此之多的意义：‘深渊’。就这样一个词容纳了全世界所有的寒冷，所有的黑暗，和所有的深邃。”</p>
+<p>　　“那我们该怎么办？”</p>
+<p>　　“怎么办？这是咱的工作，不能离开这里。何况，我们呆在这儿，比任何一艘企图逃到岸上的船只都更安全。那家伙和一艘战舰一样大，而且几乎也一样快。”</p>
+<p>　　“但是这里，为什么它要来这里？”</p>
+<p>　　下一秒钟我就知道了答案。</p>
+<p>　　雾角吹响了。</p>
+<p>　　而巨兽回应了。</p>
+<p>　　一声呼喊，穿越了一百万年的海水和迷雾。一声呼喊，如此痛苦而孤独，让我的头颅和身躯都随之颤抖。巨兽向着灯塔吼叫。雾角吹响了。巨兽又一次咆哮。雾角吹响了。巨兽张开大嘴露出尖牙，发出的声音却正是雾角自己的声音。孤寂，寥廓，渺远。荒芜大海，凄冷寒夜，天各一方，与世隔绝。就是这样的声音。</p>
+<p>　　“现在，”唐轻声说，“你知道它为什么来到这里了吧。”</p>
+<p>　　我点了点头。</p>
+<p>　　“一年年过去，小约翰，这只可怜的巨兽远远潜藏在一千英里之外的大海，在水下二十英里的深处，等待着，等待着。这只动物说不定已经有一百万岁了。你想想，等待一百万年！你能等待那么长的时间吗？也许它是这类动物的最后一只了。我有这个预感。不管怎么说，人类来到这个岛上修起了这座灯塔，那是五年以前；又装上了他们的雾角，吹响它，向着遥远的海域吹响它。而在远方，你却把自己埋进沉睡，深深浸入对逝去世界的海之回忆；在那个世界里还有成千上万的你的同类。然而现在你孑然一身，孤独地生存在这个已经不属于你的世界上，在这个你必须藏匿起来的世界上。”</p>
+<p>　　“但是雾角的声音传来了，消逝了，传来了，消逝了。而你也从深渊那泥泞的海底中惊醒；你的眼睛睁开，如同两只巨大的相机镜头；你开始游动，慢慢地，慢慢地，因为大海压在你的肩膀上，很沉。但是雾角的声音穿越了一千英里的海水，微弱而熟悉。而你腹中的炉膛也燃起了火焰；你开始上浮，慢慢地，慢慢地。成群的水母汇成河流，大片的鳕鱼聚作湖泊，你以它们为食，整个秋天都在缓慢地上升。游过薄雾乍起的九月，游过雾气渐浓的十月，号角始终在呼唤着你；直到十一月的末尾，经过一天又一天的减压，一尺又一尺的上升，你终于接近了海面，而且还活着。必须慢慢来；一口气浮上去的话，巨大的压差会让你爆炸。因此你花了整整三个月的时间去浮上水面，然后又用掉许多时日去跨越冰冷的海水，游向灯塔。终于，你抵达了外面那里。小约翰啊，这可是创世以来最大的怪兽。这里的灯塔在召唤着你，有着像你一样的长脖子高挺出水面，有着像你一样的身躯，但是最重要的，有着像你一样的声音。你明白了吗，小约翰，你明白了吗？”</p>
+<p>　　雾角吹响了。</p>
+<p>　　巨兽回应了。</p>
+<p>　　我看到了这一切，我明白了这一切——百万年的独自等待，等待着一个一去不归之人的归来。百万年的与世隔绝，在海底忍受着时间的狂乱与荒谬，而在这期间，翼龙从天空中消失了，陆地上的沼泽也干涸了，地懒和剑齿虎风光一时然后沉入沥青坑中，而人类则像蚁丘上的白蚁般四处奔忙。</p>
+<p>　　雾角吹响了。</p>
+<p>　　“去年，”唐说，“这生物整晚上都在绕着灯塔游，一圈又一圈，一圈又一圈。始终没有靠得太近，我想它是觉得迷惑了。可能也有些害怕。还有一点点恼火，毕竟是游了这么远才过来。但是第二天，出人意料地，雾散了，艳阳高照，天空澄蓝如画。巨兽转身游走，躲开炎热和沉寂，再也没有回来。我想，这一年里它的心一定是始终挂念着这儿，辗转反侧，冥思苦想。”</p>
+<p>　　巨兽离我们只有一百码远了，它和雾角互相呼唤着，当灯光扫过时，巨兽的眼睛映出的是火与冰，火与冰。</p>
+<p>　　“这就是生活，”唐说。“永远是一个人在等待着另一个一去不归的人。永远是一个人爱某件东西胜过那东西爱他。到头来你就会想把那件东西毁掉，让它从此不再能伤害你。”</p>
+<p>　　巨兽向灯塔冲来。</p>
+<p>　　雾角吹响了。</p>
+<p>　　“我们试试看会发生什么，”唐说。</p>
+<p>　　他关上了雾角。</p>
+<p>　　接下来的一分钟是紧张的沉寂。我们能听到心脏在玻璃窗间的跳动回音，能听到雾灯在滑槽里的缓慢旋转。</p>
+<p>　　巨兽停住了，全身僵硬。它灯笼般的大眼睛眨了一下。它的大嘴张开着。它发出了一声低沉的咕隆，如同一座火山。它的头颅向两旁颤动，仿佛是在寻找那渐渐消逝在雾中的声音。它凝视着灯塔。它又咕哝了一声。然后，它的眼中燃起了烈火。它抬起身躯，前肢击打着水面，冲向石塔，双眼充斥着愤怒的苦难。</p>
+<p>　　“唐！”我喊道，“把号角打开！”</p>
+<p>　　唐颤抖地摸索着开关，但是就在他打开开关那一瞬间，巨兽已经高高立起。我瞥见了它硕大无朋的爪子，看到它趾间鱼皮似的网蹼闪闪发光，看到它扑向了石塔。它庞大的右眼缀在痛苦的头颅上，像一口坩埚一样在我面前闪烁着微光，让我觉得我仿佛就要尖叫着掉落进去。塔身颤动。雾角呼喊着；巨兽呼喊着。它紧紧抱住灯塔，啃咬着窗户，破碎的窗玻璃飞溅在我们身上。</p>
+<p>　　唐一把抓住我的胳膊。“下楼！”</p>
+<p>　　石塔摇晃着，颤抖着，即将支撑不住。雾角和巨兽一同咆哮着。我们跌跌绊绊地奔下台阶。“快！”</p>
+<p>　　就在我们到达塔底时，整座石塔向我们身上倾倒下来。我们俯身跑下石阶，躲进小小的石砌地窖。乱石纷飞如雨，震耳欲聋；雾角戛然而止。巨兽扑倒在灯塔上。塔塌了。我和唐两个人一起跪在地上，紧紧握住双手，任凭我们的世界灰飞烟灭。</p>
+<p>　　然后一切都结束了，只剩下黑暗，和海浪拍打着礁石的涛声。</p>
+<p>　　还有另一种声音。</p>
+<p>　　“听，”唐轻轻地说，“听。”</p>
+<p>　　我们等待了一会儿，然后我渐渐听到了。起初是巨大而空洞的吸气声音，接着是恸哭，迷茫，和孤独。巨兽蜷伏在我们上面，在我们躯体之上和灵魂之上；它身上难闻的气息弥散在空气中，和我们的地窖仅一墙之隔。它喘息着，哭喊着。塔不见了。灯光不见了。那穿越了一百万年向它呼唤的东西不见了。而巨兽张开了它的大嘴，发出辽远的巨大响声，雾角的响声，一遍又一遍。那天深夜，远方海上的船只，寻不到灯光，什么都看不见；但是驶过了，听到了，一定是这样想的：是它，就是那孤独的声音，寂寞湾的号角。一切顺利。我们已经绕过了海岬。</p>
+<p>　　这个夜晚就这样过去了。</p>
+<p>　　第二天下午，烈日高悬，搜救队把我们从埋在砾石堆底的地下室里挖了出来。</p>
+<p>　　“一句话，塔塌了，”唐沉重地说，“浪头狠狠地冲击了几次，然后它就粉身碎骨了。”他掐了一下我的胳膊。</p>
+<p>　　四周没有任何不寻常的景象。大海平静，天空蔚蓝。唯一的痕迹是一大片绿色的东西覆盖着坍塌的塔身和岸边的岩石，散发出浓烈的海藻腥臭。苍蝇在四周嗡嗡作响。海水冲刷着空无所有的海岸。</p>
+<p>　　第二年他们建起了一座新的灯塔，但是这时我已经在小镇里有了一份工作，还有了一位妻子和一座精致温暖的小房子。秋夜里，房间内散发出柔和的黄光，房门紧闭，烟囱喷出轻烟。至于唐，他掌管着新的灯塔，按照他的特别要求用钢筋混凝土建成。“以防万一，”他说。</p>
+<p>　　新灯塔在十一月竣工。一天夜里，我独自一人驾车来到海边，停好车，眺望着灰色的海水，聆听着新的号角，每分钟一次，两次，三次，四次，孤单地响彻远方。</p>
+<p>　　巨兽呢？</p>
+<p>　　它再也没有回来。</p>
+<p>　　“它远远地离开了，”唐说，“回到了深渊里。它明白了，在这个世界上爱任何东西都不能太痴心了。它将蛰伏在最深的深渊里再等上一百万年。啊，可怜的东西！人类在这个可悲可叹的小小星球上来去匆匆，而它却在那儿等待，等待……”</p>
+<p>　　我坐在车里，聆听着。我看不见寂寞湾里矗立的灯塔，也看不见灯光。我只能听到那号角，号角，号角。它听起来就像是巨兽的呼唤。</p>
+<p>　　我坐在那里希望我能够说点什么。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/一个孩子的星星梦-狄更斯.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/51路车上的星期五下午-席鲁迪·特克亚姆.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/一个孩子的星星梦-狄更斯.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/51路车上的星期五下午-席鲁迪·特克亚姆.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/浓雾号角-雷·布拉德伯里.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

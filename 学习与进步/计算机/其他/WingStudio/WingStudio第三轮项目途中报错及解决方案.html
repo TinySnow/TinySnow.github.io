@@ -1,0 +1,846 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>WingStudio 第三轮项目途中报错及解决方案 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="wingstudio第三轮项目途中报错及解决方案"><a class="header" href="#wingstudio第三轮项目途中报错及解决方案">WingStudio第三轮项目途中报错及解决方案</a></h1>
+<h1 id="请遵循一步一测试的原则否则后续定位错误极其麻烦"><a class="header" href="#请遵循一步一测试的原则否则后续定位错误极其麻烦">请遵循一步一测试的原则，否则后续定位错误极其麻烦！！！</a></h1>
+<h2 id="一sql-驱动连接不上抛出-classnotfoundexception"><a class="header" href="#一sql-驱动连接不上抛出-classnotfoundexception">一、sql 驱动连接不上，抛出 ClassNotFoundException</a></h2>
+<p>解决方案：</p>
+<p>检查 sql驱动版本与所装 sql 版本是否一致。</p>
+<h2 id="二-mybatis-加载全局配置文件时出错"><a class="header" href="#二-mybatis-加载全局配置文件时出错">二、 MyBatis 加载全局配置文件时出错</a></h2>
+<p>解决方案：</p>
+<p>全局配置文件的路径应使用 <code>com/tinysnow/easyvote/conf/xml/mybatis-config.xml</code> 这种斜杠方式而非 . 的方式。</p>
+<h2 id="三-mybatis-不能加载-properties-配置文件"><a class="header" href="#三-mybatis-不能加载-properties-配置文件">三、 MyBatis 不能加载 properties 配置文件</a></h2>
+<p>报错如下： <code>Cause: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. Cause: java.io.IOException: Could not find resource mysql-connection.properties</code></p>
+<p>解决方案：</p>
+<p>应使用全局的路径 <code>com/tinysnow/easyvote/conf/mysql-connection.properties</code> 结果正确。</p>
+<h2 id="四-mybatis-不能加载-mappers-中的-spl-映射配置文件"><a class="header" href="#四-mybatis-不能加载-mappers-中的-spl-映射配置文件">四、 MyBatis 不能加载 Mappers 中的 spl 映射配置文件</a></h2>
+<p>解决方案：</p>
+<p>路径错了，以及没有使用 / 表示法，而使用 . 的表示法。</p>
+<h2 id="五-绑定数据库两个异常的解决办法"><a class="header" href="#五-绑定数据库两个异常的解决办法">五、 绑定数据库两个异常的解决办法</a></h2>
+<p>第一个：<code>Type interface **** **** **** **** **** **** **** is not known to the MapperRegistry.</code></p>
+<p>译文：MapperRegistry不知道类型接口com.tinysnow.easyvote.dao.intrfc.JdbcMethods。</p>
+<p>第二个：<code>Invalid bound statement (not found): **** **** **** **** **** ***.</code></p>
+<p>译文：无效的绑定语句（未找到）：com.tinysnow.easyvote.dao.intrfc.JdbcMethods.insertUser。</p>
+<p>解决方案：</p>
+<p>映射文件里面的 namespace 路径应该用 . 号，而非 / 或 \ ，路径的最后也不要带上文件后缀名，否则将认为文件后缀名所带的 . 号认为是下一个目标路径。并且在配置诸如   等的标签的时候，里面不要配置 databaseId 。 虽说不清楚啥原理，但这么改就好了。</p>
+<h2 id="六关于使用-maven-管理依赖中-mybatis-报错问题"><a class="header" href="#六关于使用-maven-管理依赖中-mybatis-报错问题">六、关于使用 Maven 管理依赖中 Mybatis 报错问题</a></h2>
+<p>引入 properties 文件后在测试方法中测试最基础的 Mybatis 启动报错，两个异常如下：</p>
+<pre><code class="language-bash">Cause: java.lang.NullPointerException
+ at MyBatisStartTest.main(MyBatisStartTest.java:14)
+</code></pre>
+<pre><code class="language-bash">java.io.IOException: Could not find resource /mybatis-config.xml
+ at MyBatisStartTest.main(MyBatisStartTest.java:14)
+</code></pre>
+<p>解决方案：</p>
+<ol>
+<li>资源文件统一扔在 resources 目录下面；</li>
+<li>测试方法中的路径字符串 <code> String resource = "mybatis-config.xml";</code> 路径一定要正确，最保险的方法是使用 IDEA 的 copy -&gt; path from source root ；</li>
+<li>最重要的，报 NullPointerException 的原因是 mybatis-config.xml 文件中没有配置 environment 标签，一定要加上如下的代码，否则找死找不到，连接不到数据库。里面的数据库驱动标签什么的按实际情况配置。</li>
+</ol>
+<pre><code class="language-xml">    &lt;environments default="development"&gt;
+        &lt;environment id="development"&gt;
+            &lt;transactionManager type="JDBC"/&gt;
+            &lt;dataSource type="POOLED"&gt;
+                &lt;property name="driver" value="${jdbc.driver}"/&gt;
+                &lt;property name="url" value="${jdbc.url}"/&gt;
+                &lt;property name="username" value="${jdbc.username}"/&gt;
+                &lt;property name="password" value="${jdbc.password}"/&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+</code></pre>
+<p>另，数据库驱动是使用 properties 标签引进来的。</p>
+<pre><code class="language-xml">&lt;properties resource="database.properties"&gt;
+&lt;/properties&gt;
+</code></pre>
+<h2 id="七关于在-try-块中定义资源导致无法编译的问题"><a class="header" href="#七关于在-try-块中定义资源导致无法编译的问题">七、关于在 try 块中定义资源导致无法编译的问题</a></h2>
+<p>解决方案：</p>
+<ol>
+<li>进入 idea -&gt; File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Compiler -&gt; Java Compiler -&gt; 选择项目旁边的 Target bytecode version -&gt; 改成8</li>
+<li>进入  idea -&gt; File -&gt; Project Structure -&gt; Modules -&gt; Language Level -&gt; 改成 Project default</li>
+</ol>
+<h2 id="八注意数据库连接问题有坑"><a class="header" href="#八注意数据库连接问题有坑">八、注意：数据库连接问题，有坑</a></h2>
+<p>连接上数据库是没有指定数据库名的，所以在写 sql 语句的时候需要先指定数据库名，然后是表名，用句点连接。比如： select * from user.userinfo where id = #{id}</p>
+<h2 id="九关于-mybatis-中-mapper-文件中-sql-语句执行正确不报异常但是数据表中看不见执行结果的现象"><a class="header" href="#九关于-mybatis-中-mapper-文件中-sql-语句执行正确不报异常但是数据表中看不见执行结果的现象">九、关于 MyBatis 中 Mapper 文件中 sql 语句执行正确不报异常，但是数据表中看不见执行结果的现象</a></h2>
+<p>解决方案：</p>
+<p>在编写的测试方法里面 <code>SqlSession session = build.openSession()</code> session 更新完 sql 是不自动提交的，一定要切记。需要加上如下语句：</p>
+<pre><code class="language-java">session.commit();
+</code></pre>
+<h2 id="十关于-springboot-启动时的报错"><a class="header" href="#十关于-springboot-启动时的报错">十、关于 SpringBoot 启动时的报错</a></h2>
+<p>报错如下：</p>
+<pre><code class="language-bash">Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+ If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+ If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+</code></pre>
+<p>解决方案：</p>
+<p>在 application.yml / application.properties 中添加数据库的相关设置：</p>
+<pre><code class="language-yaml">spring:
+  datasource:
+    username: root
+    password: tinysnow;
+    url: jdbc:mysql://localhost:3306/?useUnicode=true
+      &amp;characterEncoding=utf-8&amp;allowPublicKeyRetrieval=true&amp;useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+</code></pre>
+<p>特别注意： url 下面第二行前面的空格一定不能省略。</p>
+<h2 id="十一关于-mybatis-在-springboot-中找不到绑定文件的错误"><a class="header" href="#十一关于-mybatis-在-springboot-中找不到绑定文件的错误">十一、关于 MyBatis 在 SpringBoot 中找不到绑定文件的错误</a></h2>
+<p>新建了一个 application-mybatis.yml 配置文件如下：（配置文件的文件名一定要是 application- .yml的形式）</p>
+<pre><code class="language-yaml">mybatis:
+  mapper-locations: classpath:mybatis/mappers/*.xml
+  type-aliases-package: com.tinysnow.bean
+</code></pre>
+<p>然后一定不要忘记去主 application.yml 配置文件中激活！</p>
+<pre><code class="language-yaml">spring: 
+  profiles:
+    active: druid,mybatis
+# 激活时只用写 application- 后面的单词
+</code></pre>
+<h2 id="十二-springboot-启动时报错"><a class="header" href="#十二-springboot-启动时报错">十二、 SpringBoot 启动时报错</a></h2>
+<p>异常如下：</p>
+<pre><code class="language-java">java.lang.IllegalStateException: dbType not support : null, url null
+</code></pre>
+<p>解决方案，在 druid 配置文件中的 prefix 后缀中去掉 druid ，只保留 spring.datasource 。启动正常。</p>
+<ul>
+<li>druid 配置文件与 spring 配置文件的双向绑定：</li>
+</ul>
+<pre><code class="language-java">@Configuration
+public class DruidConfig {
+
+    @ConfigurationProperties(prefix = "spring.datasource")
+    @Bean
+    public DataSource druidDataSource(){
+        return new DruidDataSource();
+    }
+
+    @Bean
+    public ServletRegistrationBean servletRegistrationBean(){
+        final ServletRegistrationBean bean =
+                new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
+        // 后台需要有人登录，配置账号和密码
+        final HashMap hashMap = new HashMap();
+        // 增加配置
+        hashMap.put("loginUsername","admin");
+        hashMap.put("loginPassword","123456");
+        // 允许谁可以访问, Value 不写就默认所有主机都可以访问
+        hashMap.put("allow","");
+        // 还可以禁止谁能访问，此时的 Key 就是自定义的， Value 指定 ip 地址
+        // 例如 hashMap.put("tinysnow","192.168.3.7");
+
+        // 设置初始化参数
+        bean.setInitParameters(hashMap);
+        return bean;
+    }
+}
+</code></pre>
+<p>注意：这些注解一个都不能少</p>
+<h2 id="十三关于每次启动项目总是跳出登陆页面的问题"><a class="header" href="#十三关于每次启动项目总是跳出登陆页面的问题">十三、关于每次启动项目总是跳出登陆页面的问题</a></h2>
+<p>如下图所示：</p>
+<p>解决方案：这是 SpringSecurity 的特性，登录的用户名默认是 user ，密码默认是控制台输出的一大串字符，也可以自己设置，凡是具体设置流程暂未关心。</p>
+<h2 id="十四关于-mybatis-查询返回结果过多的问题"><a class="header" href="#十四关于-mybatis-查询返回结果过多的问题">十四、关于 MyBatis 查询返回结果过多的问题</a></h2>
+<p>异常：</p>
+<pre><code class="language-java">TooManyResultsException: Expected one result (or null) to be returned by selectOne(), but found: *
+</code></pre>
+<p>解决方案：</p>
+<p>将接口中的返回值类型改为 List 即可。</p>
+<h2 id="十五关于-mybatis-查询结果为-null-的问题"><a class="header" href="#十五关于-mybatis-查询结果为-null-的问题">十五、关于 MyBatis 查询结果为 null 的问题</a></h2>
+<p>解决方案：</p>
+<p>实体类(pojo, bean, modal…)中的字段名一定要与数据库中的一一对应，否则查询不出结果。现有松耦合的方法可以使数据库中的名字不与实体类中的一一对应。通过以下方式开启：</p>
+<pre><code class="language-yaml">mybatis:
+  configuration:
+    # 自动开启数据库下划线命名 与 实体类中驼峰命名法的匹配
+    # 以达到双方命名均规范的目的
+    map-underscore-to-camel-case: true
+</code></pre>
+<h2 id="十六关于-git-各种命令都无效的问题"><a class="header" href="#十六关于-git-各种命令都无效的问题">十六、关于 git 各种命令都无效的问题</a></h2>
+<p>解决方案：</p>
+<p>看看自己是在哪个目录下进行操作的，千万不要 cd 错了目录。</p>
+<h2 id="十七关于修改-idea-中数据表的各项属性不能成功的问题"><a class="header" href="#十七关于修改-idea-中数据表的各项属性不能成功的问题">十七、关于修改 IDEA 中数据表的各项属性不能成功的问题</a></h2>
+<p>解决方案：</p>
+<p>在右侧栏 Database 中选中数据表右键 Modify Table 或者按下 Ctrl+F6 在该栏里面修改数据表才算成功。选中数据表点击最上面的笔，修改代码的结果是不能提交的，也就自然不能成功了。</p>
+<h2 id="十八关于新建项目-maven-导入慢的问题"><a class="header" href="#十八关于新建项目-maven-导入慢的问题">十八、关于新建项目 Maven 导入慢的问题</a></h2>
+<p>解决方案：</p>
+<p>在 C: \ Users \ [user] \ .m2 下建立一个文件 settings.xml 将下述代码拷贝进去。或者在 IDEA 的 Project 空白栏右键选择 Maven 然后创建 settings 。</p>
+<pre><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+    &lt;mirrors&gt;
+        &lt;!-- mirror
+         | Specifies a repository mirror site to use instead of a given repository. The repository that
+         | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+         | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+         |
+        &lt;mirror&gt;
+          &lt;id&gt;mirrorId&lt;/id&gt;
+          &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+          &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+          &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+        &lt;/mirror&gt;
+         --&gt;
+
+        &lt;mirror&gt;
+            &lt;id&gt;alimaven&lt;/id&gt;
+            &lt;name&gt;aliyun maven&lt;/name&gt;
+            &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;/mirror&gt;
+
+        &lt;mirror&gt;
+            &lt;id&gt;uk&lt;/id&gt;
+            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+            &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+            &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt;
+        &lt;/mirror&gt;
+
+        &lt;mirror&gt;
+            &lt;id&gt;CN&lt;/id&gt;
+            &lt;name&gt;OSChina Central&lt;/name&gt;
+            &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;
+            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;/mirror&gt;
+
+        &lt;mirror&gt;
+            &lt;id&gt;nexus&lt;/id&gt;
+            &lt;name&gt;internal nexus repository&lt;/name&gt;
+            &lt;!-- &lt;url&gt;http://192.168.1.100:8081/nexus/content/groups/public/&lt;/url&gt;--&gt;
+            &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt;
+            &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+        &lt;/mirror&gt;
+
+    &lt;/mirrors&gt;
+&lt;/settings&gt;
+</code></pre>
+<h2 id="十九-关于工程文件夹默认路径的修改"><a class="header" href="#十九-关于工程文件夹默认路径的修改">十九、 关于工程文件夹默认路径的修改</a></h2>
+<p>Settings &gt; Appearance &amp; Behavior &gt; System Settings &gt; Project &gt; Default project directory .</p>
+<h2 id="二十关于新建项目启动后报错-404-的问题"><a class="header" href="#二十关于新建项目启动后报错-404-的问题">二十、关于新建项目启动后报错 404 的问题</a></h2>
+<p>解决方案：</p>
+<p>其实是没有设置默认页面的问题，可以加一个 Controller 和页面，后面发现其实是正常的。可以加如下代码，记得加上 @ResponseBody ，否则还是报错。</p>
+<pre><code class="language-java">package com.tinysnow.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * @author TinySnow
+ */
+@Controller
+public class TestController {
+    
+    @RequestMapping("/")
+    @ResponseBody
+    public String test(){
+        return "HelloWorld";
+    }
+}
+</code></pre>
+<p>然后在 templates 目录下新建一个 HelloWorld.html  后，重新启动项目，发现是正常的。</p>
+<h2 id="二十一关于建立单元测试爆空指针异常的问题"><a class="header" href="#二十一关于建立单元测试爆空指针异常的问题">二十一、关于建立单元测试爆空指针异常的问题</a></h2>
+<p>解决方案：</p>
+<p>是因为此时的 candidateMapper 并没有被 Spring 托管，左侧都没有出现叶子的图标。在类上加上 @SpringBootTest。</p>
+<h2 id="二十二-关于对-mybatis-中-mapper-进行单元测试的报错问题"><a class="header" href="#二十二-关于对-mybatis-中-mapper-进行单元测试的报错问题">二十二、 关于对 Mybatis 中 Mapper 进行单元测试的报错问题</a></h2>
+<pre><code class="language-bash"> **** **** **** **** **** **** * **
+APPLICATION FAILED TO START
+** **** **** **** **** **** **** *
+
+Description:
+
+Parameter 0 of method setCandidateMapper in com.tinysnow.dao.impl.CandidateDaoImpl required a bean of type 'com.tinysnow.mappers.CandidateMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.tinysnow.mappers.CandidateMapper' in your configuration.
+
+</code></pre>
+<p>解决方案：</p>
+<p>是因为这个 com.tinysnow.mappers.CandidateMapper 压根儿就没找到。</p>
+<p>在主启动类上添加 @MapperScan(“com.tinysnow.mappers”) 注解，或者在每一个 Mapper 接口上定义 @Mapper 注解。这样才能被 MyBatis 找到。</p>
+<h2 id="二十三关于没有找到文件的问题"><a class="header" href="#二十三关于没有找到文件的问题">二十三、关于没有找到文件的问题</a></h2>
+<p>报错信息：</p>
+<pre><code class="language-java">F:\Projects\Java\Wing\src\test\java\com\tinysnow\mappers\JudgeMapperTest.java:11:5
+java: 找不到符号
+  符号: 类 JudgeMapper
+  位置: 类 com.tinysnow.mappers.JudgeMapperTest
+</code></pre>
+<p>解决方案：</p>
+<p>这个可能是由于 IDEA 抽疯，没有自动编译，直接复制文件就有可能出现这个问题。点击模块，右键，rebuild 一下就可以了。</p>
+<h2 id="二十四关于-git-拉不下来代码的问题"><a class="header" href="#二十四关于-git-拉不下来代码的问题">二十四、关于 git 拉不下来代码的问题</a></h2>
+<p>拒绝拉代码的提示性语句： <code>refusing to merge unrelated histories</code></p>
+<p>翻译：拒绝合并无关的历史</p>
+<p>解决方案：</p>
+<p>如果合并了两个不同的开始提交的仓库，在新的 git 会发现这两个仓库可能不是同一个，为了防止开发者上传错误，于是就给下面的提示</p>
+<pre><code class="language-bash">fatal: refusing to merge unrelated histories
+</code></pre>
+<p>如我在Github新建一个仓库，写了License，然后把本地一个写了很久仓库上传。这时会发现 github 的仓库和本地的没有一个共同的 commit 所以 git 不让提交，认为是写错了 <code>origin</code> ，如果开发者确定是这个 <code>origin</code> 就可以使用 <code>--allow-unrelated-histories</code>  告诉 git 自己确定</p>
+<p>遇到无法提交的问题，一般先pull 也就是使用 <code>git pull origin master</code> 这里的 <code>origin</code> 就是仓库，而 <code>master</code> 就是需要上传的分支，因为两个仓库不同，发现 git 输出 <code>refusing to merge unrelated histories</code> 无法 pull 内容</p>
+<p>因为他们是两个不同的项目，要把两个不同的项目合并，git需要添加一句代码，在 <code>git pull</code> 之后，这句代码是在git 2.9.2版本发生的，最新的版本需要添加  <code>--allow-unrelated-histories</code>  告诉 git 允许不相关历史合并</p>
+<p>假如我们的源是origin，分支是master，那么我们需要这样写<code>git pull origin master --allow-unrelated-histories</code> 如果有设置了默认上传分支就可以用下面代码</p>
+<pre><code class="language-bash">git pull --allow-unrelated-histories
+</code></pre>
+<p>参考链接：</p>
+<p>https://blog.csdn.net/lindexi_gd/article/details/52554159</p>
+<h2 id="二十五关于-git-更改提交代码的邮箱"><a class="header" href="#二十五关于-git-更改提交代码的邮箱">二十五、关于 git 更改提交代码的邮箱</a></h2>
+<p>查看本机用户下.gitconfig这个文件，打开之后查看对应的 name 和 email 是否和自己想要设置的一致，如果不一致，打开git bash ：</p>
+<pre><code class="language-bash">git config --global user.name "设置自己的名字"
+git config --global user.email "设置自己的邮箱"
+</code></pre>
+<p>这两条指令设置。idea 也中 git commit时有这一框可以选择。</p>
+<p>参考链接：</p>
+<p>https://blog.csdn.net/weixin_42257062/article/details/80509641</p>
+<h2 id="二十六git-合并分支"><a class="header" href="#二十六git-合并分支">二十六、git 合并分支</a></h2>
+<p>切换回主分支，然后</p>
+<pre><code class="language-bash">git merge [想要合并的分支名字]
+</code></pre>
+<p>注意：此命令只会合并分支上的文件到 master 分支，但不会删除分支。</p>
+<h2 id="二十七vue-主页进不去"><a class="header" href="#二十七vue-主页进不去">二十七、Vue 主页进不去</a></h2>
+<p>解决方案：</p>
+<pre><code class="language-javascript">  const routes = [
+    { path: '/', redirect: '/login' },
+    { path: '/login', components: LoginAndRegister },
+    { path: '/create', component: CreateProject },
+    { path: '/manage', component: ManageProject },
+    { path: '/result', component: ShowResult}
+  ]
+</code></pre>
+<p>components 改为 component</p>
+<h2 id="二十八关于通过-vuex-的-mutations-提交修改不起作用的问题"><a class="header" href="#二十八关于通过-vuex-的-mutations-提交修改不起作用的问题">二十八、关于通过 Vuex 的 mutations 提交修改不起作用的问题</a></h2>
+<p>解决方案：</p>
+<p>在自己的 mutations 业务代码里修改 state 里的属性时，引用是 <code>this.state.[property]</code> 而不是 <code>this.[property]</code></p>
+<p>在全局调用 mutation 的函数时不需要传入 state 相关的参数，因为这是一个内部的引用，只需要传入 username 就可以，如：</p>
+<pre><code class="language-javascript">this.$store.commit("changeUserLoginState", "114514")
+</code></pre>
+<h2 id="二十九mybatis数组参数传入报错"><a class="header" href="#二十九mybatis数组参数传入报错">二十九、MyBatis数组参数传入报错</a></h2>
+<p>报错信息：</p>
+<pre><code class="language-bash">org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: java.lang.UnsupportedOperationException
+### The error may exist in file [F:\Projects\Java\Wing\target\classes\mybatis\mappers\CandidateMapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into candidates (project_id, candidate_name, describe_msg, vote_number)         values (?,?,?,0);
+### Cause: java.lang.UnsupportedOperationException
+</code></pre>
+<p>报错代码：</p>
+<pre><code class="language-xml">&lt;insert id="insertCandidate" useGeneratedKeys="true"&gt;
+    insert into candidates (project_id, candidate_name, describe_msg, vote_number)
+    values (#{list.projectId},#{list.candidateName},#{list.describeMsg},0);
+&lt;/insert&gt;
+</code></pre>
+<p>解决方案：</p>
+<p>因为是数组形式插入的，所以这种写法是不对的，还要在 xml 文件中进行循环遍历取值才能够批量插入。代码如下：</p>
+<pre><code class="language-xml">    &lt;insert id="insertCandidate" useGeneratedKeys="true"&gt;
+        insert into candidates (project_id, candidate_name, describe_msg, vote_number) values
+        &lt;foreach item="list" collection="list" separator=","&gt;
+            (#{list.projectId},#{list.candidateName},#{list.describeMsg},0)
+        &lt;/foreach&gt;;
+    &lt;/insert&gt;
+        /* item 里面填入 Mapper 文件传过来的 list 参数， collection 则为集合的类型， set，list 之类的*/
+        /* separator 填入分隔符，需要符合 mysql 的语法规范，最后循环出来结果如下： */
+        /* insert into candidates (project_id, candidate_name, describe_msg, vote_number)
+           values (XXX,XXX,XXX,0),(XXX,XXX,XXX,0),(XXX,XXX,XXX,0),(XXX,XXX,XXX,0) */
+</code></pre>
+<h2 id="三十关于发出的请求总是404的问题"><a class="header" href="#三十关于发出的请求总是404的问题">三十、关于发出的请求总是404的问题</a></h2>
+<p>解决方案：</p>
+<p>一定要检查自己发出请求的时候，是不是完整的后台代码路径。后台代码里类上的路径很容易被忽略！</p>
+<h2 id="三十一关于在页面上进行增删改查后刷新数据表的方法"><a class="header" href="#三十一关于在页面上进行增删改查后刷新数据表的方法">三十一、关于在页面上进行增删改查后刷新数据表的方法</a></h2>
+<p>参考链接：https://juejin.im/entry/6844903798620553224</p>
+<p>采用的方法3</p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;div id="app"&gt;
+    &lt;router-view v-if="isRouterAlive"&gt;&lt;/router-view&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: "app",
+  provide () {
+    return {
+      reload: this.reload
+    }
+  },
+  data () {
+    return {
+      isRouterAlive: true
+    }
+  },
+  methods: {
+    reload () {
+      this.isRouterAlive = false
+      this.$nextTick(() =&gt; this.isRouterAlive = true)
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+&lt;/style&gt;
+</code></pre>
+<p>依据代码解析，大概应该是如果当前路由被激活（事实上是一定激活的，不然不可能看得到页面，也就是说，看到页面的时候 isRouterAlive 是一定为 true 的），然后将其赋值为 false 使页面短暂不可见，然后随即又赋值为 true ，期间 Vue 的组件被创建和销毁，以达到刷新的目的。但是 this.$nextTick 这个方法是个什么东西暂时不知道。</p>
+<h2 id="三十二关于前端页面数据表格中点击编辑数据传不到对话框中内嵌表单的输入框默认值的问题"><a class="header" href="#三十二关于前端页面数据表格中点击编辑数据传不到对话框中内嵌表单的输入框默认值的问题">三十二、关于前端页面数据表格中点击编辑，数据传不到对话框中内嵌表单的输入框默认值的问题</a></h2>
+<p>解决方案：</p>
+<p>有一个非常邪道的方法，点击编辑的时候会绑定一个事件，将所有的数据传入到此事件中，然后赋给表单的数据项中，再在对话框里采用表单的数据项就可以了。</p>
+<p>不能在 data 中直接赋值 table 里面的数据，因为 table 里面的每一项是不一样的，动态的，会变的，其中 Element-UI 更是有一个叫 index 和 row 的东西，直接限制了这种做法。代码如下：</p>
+<pre><code class="language-javascript">export default {
+  inject: ['reload'],
+  name: "ShowJudges",
+  data() {
+    return {
+      tableData: [{
+        judgeId: '',
+        judgeName: '',
+        judgePwd: '',
+        projectId: '',
+        hasVoted: ''
+      }],
+      dialogFormVisible: false,
+      form: {
+        judgeName: '',
+        judgePwd: '',
+        hasVoted: ''
+      },
+      formLabelWidth: '120px'
+    }
+  },
+  methods: {
+    handleEdit(index, row, boolean) {
+      this.dialogFormVisible = boolean
+      this.form.judgeName = row.judgeName
+      this.form.judgePwd = row.judgePwd
+      this.form.hasVoted = row.hasVoted
+      console.log(this.form.hasVoted);
+    }
+</code></pre>
+<h2 id="三十三关于-radio-中不能根据数据项自动默认选中选项的问题"><a class="header" href="#三十三关于-radio-中不能根据数据项自动默认选中选项的问题">三十三、关于 Radio 中不能根据数据项自动默认选中选项的问题</a></h2>
+<pre><code class="language-javascript">&lt;el-form-item label="投票权" :label-width="formLabelWidth"&gt;
+  &lt;el-radio v-model="form.hasVoted" label="false"&gt;有&lt;/el-radio&gt;
+  &lt;el-radio v-model="form.hasVoted" label="true"&gt;无&lt;/el-radio&gt;
+&lt;/el-form-item&gt;
+
+&lt;!--这里仅展示有关的代码段--&gt;
+
+form: {
+    judgeName: '',
+    judgePwd: '',
+    hasVoted: ''
+}
+        
+handleEdit(index, row, boolean) {
+      this.dialogFormVisible = boolean
+      this.form.judgeName = row.judgeName
+      this.form.judgePwd = row.judgePwd
+      this.form.hasVoted = row.hasVoted
+},
+</code></pre>
+<p>解决方案：</p>
+<p>记住，= 后面如果没有使用 v-bind 绑定属性，那么系统默认就是使用字符串！哪怕是 false 或者 true 这种东西，也只会当成字符串处理。所以一定要记得加上 v-bind ！</p>
+<p>在两个 label 前面加上 : 即可。</p>
+<h2 id="三十四关于使用-fastjson-时其自动过滤掉值为-null-的字段名的问题"><a class="header" href="#三十四关于使用-fastjson-时其自动过滤掉值为-null-的字段名的问题">三十四、关于使用 fastjson 时，其自动过滤掉值为 null 的字段名的问题</a></h2>
+<p>如题，如果想要其转成 JSON 时仍然保留值为 null 的字段，需要在 toJSONString(param1, param2) 的 param2 中添加一个配置： SerializerFeature.WriteMapNullValue 。示例如下：</p>
+<p><code>return JSON.toJSONString(judge, SerializerFeature.WriteMapNullValue)</code></p>
+<p>这样既可保留值为 null 的字段。</p>
+<p>参考链接：</p>
+<p>https://blog.csdn.net/SongSir001/article/details/84656579?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param</p>
+<h2 id="三十五-关于-post-请求爆-403-forbidden-的问题"><a class="header" href="#三十五-关于-post-请求爆-403-forbidden-的问题">三十五、 关于 POST 请求爆 403 Forbidden 的问题</a></h2>
+<p>这个问题困扰了我很久，最后请求哥哥帮助才解决。</p>
+<p>是 Spring Security 的问题， Security 在有客户端发起请求的时候会将这些请求先过滤一遍，如果遇到有不合理的请求（可能是没有经过授权或者其他什么原因，目前尚不清楚），会直接进行拦截，如发一个 403 打回去，后台根本拿不到这个请求进行处理。</p>
+<p>解决方案：</p>
+<p>注释 Spring Security 。当然这是最为极端的方法，可以在 Security 中添加白名单从而使 Security 通过这些请求。但是目前没有时间去了解怎样进行操作，暂时先注释掉了。以上情况只针对于前端和后端已经进行了跨域处理的情况，如果未进行跨域处理，则还会爆出其他异常情况。</p>
+<h2 id="三十六关于-requestbody--json-数组转为-java-对象-list-以及连带的-converter-和泛型擦除问题"><a class="header" href="#三十六关于-requestbody--json-数组转为-java-对象-list-以及连带的-converter-和泛型擦除问题">三十六、关于 @RequestBody ， JSON 数组转为 Java 对象 List ，以及连带的 Converter 和泛型擦除问题</a></h2>
+<p>@RequestBody 是 SpringBoot 中自带的一个将 JSON 转化为 Java 对象的一个注解，也就是说，当在 Controller 层的接收参数前加上 @RequestBody 时，这个参数在 SpringBoot 内部就已经由 JSON 转化为了 Java 对象，因此这个注解修饰的对象应该是，包含与 JSON 传过来的字段名相对应的后台实体类对象，所以不需要再进行 JSON 转对象处理。</p>
+<p>而这个注解有些对象是不能进行自动转化的，比较特殊。不能进行自动转化的条件：</p>
+<ul>
+<li>包含泛型</li>
+<li>实体类中含有 Date 诸如此类的必须使用的字段</li>
+</ul>
+<p>因为 JSON 数组转为 Java 对象 List 这个调用中，本身 List 是含有泛型的，所以需要实现一个接口，即 Converter ，以自己手动进行 JSON 转对象的正确处理，代码如下：</p>
+<pre><code class="language-java">import com.alibaba.fastjson.JSON;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.databind.util.Converter;
+import com.tinysnow.bean.Candidate;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+/**
+ * @author TinySnow
+ */
+@Component
+public class String2CandidateListConverter implements Converter {
+    @Override
+    public List convert(String s) {
+        return JSON.parseArray(s, Candidate.class);
+    }
+
+    @Override
+    public JavaType getInputType(TypeFactory typeFactory) {
+        return null;
+    }
+
+    @Override
+    public JavaType getOutputType(TypeFactory typeFactory) {
+        return null;
+    }
+}
+</code></pre>
+<p>后两个方法可以不要。这是 JSON 数组转为 Java 对象 List 最为正规和规范的写法。</p>
+<p>之所以不能包含泛型，是因为 Java 在设计之初的泛型擦除机制，即在源码阶段指定的泛型，在编译出来的字节码中被擦除了，不知道这个泛型到底是什么。而不能包含 Date 类型，是因为 Date 在转化时需要经过计算和格式确定。</p>
+<p>注意： Converter 转化成对象时，这个对象的实体类里不能有基础类型，即 int, boolean 等，需要用其对应的包装对象 Integer, Boolean 等。</p>
+<h2 id="三十七关于发起请求时参数传递的形式"><a class="header" href="#三十七关于发起请求时参数传递的形式">三十七、关于发起请求时参数传递的形式</a></h2>
+<p>搞清楚： x-www-form-urlencoded 的参数传递形式是 Key=Value&amp;Key=Value…</p>
+<p>所以在传递到后台时会报错，错误码是 415 ：不支持的媒体类型 (Unsupported media type) 。</p>
+<p>而传递到后台的参数形式应该为 JSON 形式，所以需要在请求时修改请求头 Content-Type 为 application/json 。</p>
+<p>示例：</p>
+<pre><code class="language-javascript">axios.post("http://localhost:8088/judge/update", data1, {
+  headers: { 'Content-Type': 'application/json'}
+}).then(resp =&gt; {}).catch(err =&gt; {})
+</code></pre>
+<h2 id="其他知识"><a class="header" href="#其他知识">其他知识</a></h2>
+<ol>
+<li>将两行合并为一行并移除多余空格，可以使用 Ctrl + Shift + J ；</li>
+</ol>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/计算机/其他/WingStudio/WingStudio第三轮考核说明文档.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/计算机/其他/发送软件清单及其作用解释.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/计算机/其他/WingStudio/WingStudio第三轮考核说明文档.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/计算机/其他/发送软件清单及其作用解释.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/计算机/其他/WingStudio/WingStudio第三轮项目途中报错及解决方案.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

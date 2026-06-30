@@ -1,0 +1,476 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>一次政变 - 莫泊桑 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="一次政变"><a class="header" href="#一次政变">一次政变</a></h1>
+<p><em>莫泊桑 著 / 赵少侯 译</em></p>
+<p>　　色当惨败的消息刚传到巴黎。共和国宣布成立。这次大混乱一直拖延到公社以后才结束，刚开始的时候，整个法国都感到喘不过气来。全国各地的人都在玩当兵的游戏。</p>
+<p>　　针织品商人们变成了代行将军职务的上校；喜爱和平的大肚子束上了红色腰带，神气活现地掖着手枪和短刀匕首；小市民们变成了临时的战士，指挥着成营的乱嚷乱叫的志愿兵，为了摆威风，跟赶大车的一样粗话脏字不离嘴。</p>
+<p>　　这些人以前只耍弄秤杆，现在手中拿了武器，操持上步枪，都高兴得几乎发狂；而且毫无理由地变成了使人望而生畏的人物。他们常常处决无辜的人，为的是证明他们会杀人；他们在普鲁士人还未光临过的乡间巡逻的时候，常用枪打死无主的狗，安安静静正在倒嚼的母牛和在草地里吃草的病马。</p>
+<p>　　每个人都认为自己被召来担任一个重要的军事任务。连最小的村镇里的咖啡馆看上去都像是营房或者军医院，里面挤满了穿军服的商人。</p>
+<p>　　卡纳维尔这个小镇还没有得到军队和巴黎方面令人发狂的消息；可是一个月来，镇上一直处在极端的动荡不安中，因为敌对的党派已面对面交起锋来。</p>
+<p>　　镇长是德·瓦尔涅托子爵，瘦小个子，已经上了年纪，原是正统派，前不多久由于野心勃发归顺了帝国。他看见突然冒出了一个死对头，那就是玛萨雷尔医生，一个血气很旺的大胖子，他是本区的共和派首领，共济会镇分会的会长，农业协会会长，救火会董事长，并且是旨在保卫家乡的农民保乡团的组织者。</p>
+<p>　　十五天的工夫，他居然设法说服了六十三名有老婆，有儿女的谨慎小心的农民和镇上的小商人志愿出来保卫家乡，他每天早晨就在镇政府门前的广场上训练这些志愿兵。</p>
+<p>　　每当镇长偶然走到镇政府来的时候，腰间掖着手枪，手里举着指挥刀的指挥官玛萨雷尔总要在队伍前面高傲地走着，让他的部下高声喊叫：“祖国万岁！”有人注意到，这声喊叫很使矮小的子爵惶惑不安，因为他毫无疑问从其中看到一种威吓，一种挑战行为，同时对他来说，也是对大革命时代的一种可怕的回忆。</p>
+<p>　　九月五日早晨，医生穿着军服，桌上放着他的手枪，正在替一对上了年纪的乡下人看病，男的七年前就得了静脉曲张症，一直等候着，等候到老婆也得了这种病，才一起来找医生看病。这时邮差送来了报纸。</p>
+<p>　　玛萨雷尔先生打开报纸一看，脸上突然变色，霍地站起来，高举双手，万分激昂，当着两个吓得发呆的乡下人，扯开了嗓子喊道：</p>
+<p>　　“共和国万岁！共和国万岁！共和国万岁！”</p>
+<p>　　然后他倒在他的靠背椅里，激动得差点儿昏过去。</p>
+<p>　　那个乡下人还在说：“刚一开头的时候，好像有不少蚂蚁顺着大腿爬，”玛萨雷尔医生叫起来了：</p>
+<p>　　“别打搅我！我哪有闲工夫来管你们这些蠢事。共和国宣布成立了，皇帝被俘了，法国得救了。共和国万岁！”他一面奔向门口，一面狂叫：“塞勒斯特！快来，塞勒斯特！”</p>
+<p>　　那女仆吓得急忙奔来，他心急慌忙，口齿不清，结结巴巴地说：</p>
+<p>　　“我的长统靴，我的指挥刀，我的子弹带，还有在我夜壶箱上的那把西班牙匕首，都快拿来！”</p>
+<p>　　那个死心眼的乡下人，抓着医生住口的那一小会儿，继续讲病情：</p>
+<p>　　“后来就变得像一只只小口袋，一走路就疼。”</p>
+<p>　　医生气极了，大声吼道：</p>
+<p>　　“别跟我捣蛋啦！他妈的！你们要是勤洗脚，就不会得这种病了。”</p>
+<p>　　接着，他一把抓住他的领口，冲着他的脸喊道：</p>
+<p>　　“你这个糊涂虫，难道你不明白，我们已经是共和国了吗？”</p>
+<p>　　可是他的职业感立刻使他安静下来，他于是把这对目瞪口呆的夫妇推向门外，嘴里不住地说：</p>
+<p>　　“明天再来一趟吧，明天再来一趟吧，我的朋友，今天我没工夫。”</p>
+<p>　　他一边从头到脚地装备自己，一边又向女仆下了一系列的紧急命令：</p>
+<p>　　“赶快到皮卡尔中尉和波梅尔少尉家里去一趟，告诉他们我要他们立刻到这儿来。你也去找一下托尔什博夫，叫他把铜鼓带来，快去，快去！”</p>
+<p>　　塞勒斯特走了以后，他静下来仔细思索，对如何克服目前形势的困难作好准备。</p>
+<p>　　那三个人一齐来到，却都穿着工作服。指挥官满以为他们会穿了军装来，惊奇得跳了起来。</p>
+<p>　　“真见鬼，你们一点消息也不知道？皇帝被俘，共和国宣布成立啦。现在必须采取行动。我的地位是微妙的，甚至可以说是危险的。”</p>
+<p>　　他面对部下那几张惊愕万状的脸，思索了几秒钟，接着说：</p>
+<p>　　“必须采取行动，不能犹豫；在这种时刻，一分钟就等于一点钟。一切都取决于能否迅速地做出决定。你，皮卡尔，去找神父，命令他敲警钟召集居民，我要对他们讲话。你，托尔什博夫，到全乡去打集合鼓，连热里泽和萨马尔那两个小村子都跑到，把武装的民兵召到广场上来。你，波梅尔，立刻穿上军装，有外套军帽就行了。咱们一起去占据镇政府，勒令德·瓦尔涅托先生把政权交给我。明白吗？”</p>
+<p>　　“明白了。”</p>
+<p>　　“那就执行，立即执行。波梅尔，我陪着你到你家里去，因为我们两人是一道行动的。”</p>
+<p>　　五分钟之后，指挥官和他的部下武装到牙齿，出现在广场。就在这时，矮小的德·瓦尔涅托子爵，好像是去打猎，套着护脚套，肩上扛着猎枪，从另一条街快步走了过来，身后跟着三个猎场看守人，都穿着绿色外套，腰间挎着刀，肩上斜背着枪。</p>
+<p>　　医生吃了一惊，听下脚步的时候，那四个人走进了镇政府，大门随即重新关上。</p>
+<p>　　“我们来晚了一步，”医生嘟囔着说，“现在只好等待增援。暂时什么事也做不成了。”</p>
+<p>　　皮卡尔中尉也来了。他说：</p>
+<p>　　“神父拒不服从；他甚至跟教堂执事和侍卫在教堂里把大门关上了。”</p>
+<p>　　在广场的另一面，和关上门的白色的镇政府遥遥相对的正是静悄悄的黑色教堂，特别显眼的是它那包着铁皮的大门。</p>
+<p>　　居民们感到惊奇，有的从窗口探出头来，有的走出门来，这时候鼓声忽然响了，托尔什博夫出现，他三下一停地打着急速的集合鼓，迈着正步穿过广场，然后消逝在田野的路上。</p>
+<p>　　指挥官拔出了军刀，独自一人前进到离这两座敌人据守着的房子各有一半距离的地方，举起刀在头上挥舞着，使足了劲吼道：</p>
+<p>　　“共和国万岁！处死卖国贼！”</p>
+<p>　　喊完他立即朝他的军官们撤退下来。</p>
+<p>　　肉店老板，面包店老板，药房老板有点不放心，放下护窗板，关了店门。只有食品杂货店还开着。</p>
+<p>　　这时民兵们逐渐地来到了，身上的衣服各式各样，头上却一律戴着一顶有红箍的黑色军帽，军帽代表了队伍的全部军服。他们的武器是生锈的老枪，这些枪悬挂在厨房的壁炉上方总有三十年了，他们看上去倒有点像一队护林的警丁。</p>
+<p>　　指挥官等身边聚集了三十多人，就用几句话把情况通知了他们；然后转过身来对他的参谋部说：“现在，咱们行动吧。”</p>
+<p>　　居民们又聚拢来，端详着，议论着。</p>
+<p>　　医生很快决定了他的作战计划：</p>
+<p>　　“皮卡尔中尉，你到镇政府的窗下去！以共和国的名义命令德·瓦尔涅托先生把镇政府交给我。”</p>
+<p>　　可是中尉，这个原来的瓦匠师傅，拒绝了：</p>
+<p>　　“你，你倒真聪明。让我去挨一枪，谢谢。里面的那些人枪法都很好，你不是不知道。这差事你自己去办吧。”</p>
+<p>　　指挥官脸红了。</p>
+<p>　　“我以法律的名义，命令你到那儿去。”</p>
+<p>　　中尉反抗：</p>
+<p>　　“糊里糊涂地把命送掉，我才不干呢。”</p>
+<p>　　近旁聚着的一堆绅士哈哈笑了起来。其中有一个人喊道：</p>
+<p>　　“你说得对，皮卡尔，这可不是时候。”</p>
+<p>　　医生于是喃喃自语：</p>
+<p>　　“一群懦夫！”</p>
+<p>　　他把军刀和手枪交给了一个兵，然后慢慢地迈步前进，眼睛不眨地望着窗口，时刻提防着，怕从窗口露出一支枪筒来瞄准他。</p>
+<p>　　他已走到离房子不过几步了，房子两头通两所小学的门忽然大开，孩子们从里面跟潮水似的涌了出来，这边是小男孩，那边是小姑娘，他们在空旷的广场上玩起来，围在医生的身边，叽叽喳喳好像一群小鹅，他说话也没法叫人听见了。</p>
+<p>　　最后的几个学生刚出来，那两扇大门重又关上。</p>
+<p>　　大部分儿童终于散开走了，司令官这才高声喊道：</p>
+<p>　　“德·瓦尔涅托先生？”</p>
+<p>　　二层楼的一扇窗开了，出现了德·瓦尔涅托先生。</p>
+<p>　　指挥官接着说：</p>
+<p>　　“先生，最近使得政府改变面貌的大事件，您当然已经知道。您代表的政府不存在了。我所代表的掌权了。在这种痛苦的，但是有决定性的情况下，我以新成立的共和国的名义，特来要求您把前政府委任您的职务交出来归我掌管。”</p>
+<p>　　德·瓦尔涅托先生回答：</p>
+<p>　　“医生先生，我是卡纳维尔的镇长，经主管机关正式任命，在没有接到上级命令将我免职并派人接替之前，我仍然是卡纳维尔的镇长。身为镇长，镇政府就是我的家，我一定要留在这里。想叫我出去，您就试试看吧。”</p>
+<p>　　他又关上了窗。</p>
+<p>　　指挥官朝他的队伍走回来。不过未对大家解释以前，他先把皮卡尔中尉从上到下打量了一下，然后说道：</p>
+<p>　　“你真有胆量，真勇敢，简直是军队的羞耻。我撤你的军职。”</p>
+<p>　　中尉回答：</p>
+<p>　　“我才不在乎呢。”</p>
+<p>　　说完，他就走过去和那些低声交谈的本地居民混在一起。</p>
+<p>　　这时，医生感到进退两难。怎么办呢？下令进攻？可是他的部下肯跟着干吗？还有一节，他有这个权柄吗？</p>
+<p>　　他灵机一动，想出了一个主意，连忙奔到镇政府对面，广场另一边的电报局。他发出了三份电报：</p>
+<p>　　一份致巴黎共和国政府各成员；</p>
+<p>　　一份致鲁昂，共和国新委的下塞纳省省长；</p>
+<p>　　一份致共和国新委的第厄普专区区长。</p>
+<p>　　在电文里，他陈述了情况，指出这个镇仍在君主主义者的旧镇长手中所遭受的危险，他说他愿意尽忠效劳，专等上级命令办事，他把所有的头衔都列在自己姓名的后面。</p>
+<p>　　然后他回到他的队伍跟前，从衣袋里摸出十个法郎说：“拿去吧，朋友们，你们先去吃点东西，喝上一杯；这儿只须留下十个人的一个小分队，别放一个人从镇政府出来就行了。”</p>
+<p>　　可是这番话让正跟钟表匠谈着话的前中尉皮卡尔听见了；他冷笑了一声，说道：“呸！他们要是出来，那倒正是进去的好机会。没有这一着，我看你是没法儿进去的。”</p>
+<p>　　医生不理睬他，吃午饭去了。</p>
+<p>　　到了下午，他在小镇周围布下岗哨，就好像有遭到突然袭击的危险似的。</p>
+<p>　　他好几次走过镇政府和教堂的门口，没有看出有任何可疑的地方；简直可以认为这两座房子是空无一人的。</p>
+<p>　　肉店老板，面包店老板和药房老板又把各自的店门打开。</p>
+<p>　　在一家家人家里，议论很多。如果皇帝真的被俘，内中一定有人暗中出卖了他。大家也弄不清究竟哪一个共和国回来了。</p>
+<p>　　天黑下来了。</p>
+<p>　　九点钟左右，医生相信他的对手已经回家睡觉去了，一个人悄悄地走到镇政府的门口；他正准备拿十字镐把门砸开，一个响亮的声音，是个卫兵的声音忽然问道：</p>
+<p>　　“什么人？”</p>
+<p>　　玛萨雷尔先生撒开腿连奔带跑撤了下来。</p>
+<p>　　天亮了，情况没有丝毫变化。</p>
+<p>　　武装的民兵们据守着广场。所有的居民都聚在这支队伍周围，等候结果。邻近那些村子的居民也赶来看热闹。</p>
+<p>　　医生这才明白他是拿了自己的名誉在冒险，于是决定无论如何也要结束这件事；他正准备采取一个办法，当然是强有力的办法，电报局的门忽然开了，女局长的年轻女仆人手里拿着两张纸出现了。</p>
+<p>　　她先朝指挥官走来，把两份电报中的一份交给了他；然后在众目注视之下，她心里发慌，低下头，迈着细小的步子迅速穿过空无一人的广场中心，走到紧闭的房子门口，轻轻敲门仿佛她根本不知道有一方全副武装地埋伏在里面似的。</p>
+<p>　　门开了一条缝，一只男人的手把电报接了进去，那个小姑娘就回来了，让全村的人这样从头到脚地看着，她的脸涨得通红，眼看要哭出来了。</p>
+<p>　　医生扯着震天动地的嗓子要求道：</p>
+<p>　　“请大家静一静，静一静。”</p>
+<p>　　大家果然静了下来，他于是得意洋洋地接着说：</p>
+<p>　　“这是政府给我的电报。”</p>
+<p>　　他举着电报读电文：</p>
+<p>　　解除旧镇长职务。请先考虑最紧急应办各事。训令即发出。——专区区长</p>
+<p>　　参议员萨班代签</p>
+<p>　　他胜利了；他高兴得心直跳；手也直哆嗦，可是他的那个老部下皮卡尔从附近的一堆人中间对他喊道：</p>
+<p>　　“一切都很不错；不过那些人如果还是不出来，你这张纸顶个屁用。”</p>
+<p>　　丽萨雷尔先生脸变了色。是的，如果那些人不出来，现在就得一直干下去了。这不仅是他的权利，也是他的责任了。</p>
+<p>　　他忧虑重重地看着镇政府，希望会看见大门打开，他的敌人自动退去。</p>
+<p>　　但是门还是关着。怎么办呢？看热闹的人越聚越多，紧紧围在民兵周围。大家都嘻嘻哈哈笑着。</p>
+<p>　　有一种想法特别使医生痛苦。他想到如果发动攻击，他必须走在他的兵士的前面打头阵；只要把他打死，所有的争执也就都可以随之解决了，因此德·瓦尔涅托先生和他的三个猎场看守一定瞄准他，只瞄准他一个人。而他们的枪法是准的，很准很准的；皮卡尔刚才还提起过。他忽然灵机一动，想起了一个好主意，转过身来吩咐波梅尔：</p>
+<p>　　“快去找药房老板，跟他借一块白餐巾，一根棍子。”</p>
+<p>　　少尉急忙奔了去。</p>
+<p>　　原来他想做一面要求谈判的旗子，一面白色的旗子，白颜色也许会使具有正统派心胸的旧镇长看着喜欢。</p>
+<p>　　波梅尔拿着白餐巾和一把笤帚柄回来了，用细绳子绑成一面旗子，玛萨雷尔先生双手接过来朝前举着又向镇政府走去。等走到门前的时候，他又叫道：“德·瓦尔涅托先生。”门突然打开，德·瓦尔涅托先生和他的三个卫兵出现在门口。</p>
+<p>　　医生不由自主地往后退了一步；然后很客气地朝他的敌人行礼，激动得连嗓音也变了，他说：“先生，我是来向您传达我所接到的训令的。”</p>
+<p>　　那个贵族并不回礼，只是回答说：“我正要离开，先生，但是我必须告诉您，决不是因为害怕，也不是为了服从篡夺政府的这个丑恶的政府。”然后他又一字一顿地声明：“我一天也不愿意让人看上去以为我是在为共和国效劳。我的话完了。”</p>
+<p>　　玛萨雷尔先生很难堪，什么话也没回答；德·瓦尔涅托先生说完就迈着急速的步子走了，后面还照旧跟着他的卫队，在广场的一个角落里消失。</p>
+<p>　　医生这时候骄傲得有点晕头转向，向人群走了回来。等到他走到可以让别人听见他的声音的地方，他大声喊了起来：“乌拉！乌拉！共和国全线获胜了。”</p>
+<p>　　群众没有任何激动的表示。</p>
+<p>　　医生又喊道：“人民自由了，你们自由了，自主了。你们应该引以自豪啊！”</p>
+<p>　　那些没精打采的乡下人望着他，眼睛里没有流露出丝毫的光荣感。</p>
+<p>　　他很气愤他们这种无动于中的神情，于是也睁着眼端详他们，心里琢磨着该怎么说，怎么做，才能大大震动他们一下，才能使这块毫无热情的地方振奋起来，才能完成自己启蒙者的使命。</p>
+<p>　　忽然灵机一动，他转过身来吩咐波梅尔：“少尉，快去把参议会会议大厅里的前皇帝半身像拿来，顺便带把椅子来。”</p>
+<p>　　一忽儿工夫，波梅尔右肩扛着石膏制的波拿巴，左手提着一把草垫椅子回来了。</p>
+<p>　　玛萨雷尔先生迎上前，接过椅子，放在地上，把白色的半身像放在椅子上，然后退后几步，提高了嗓门儿对半身像说起话来：</p>
+<p>　　“暴君，暴君，你终于倒下来了，倒在烂泥里，倒在臭泥塘里。垂危的祖国曾经在你长靴的践踏中奄奄一息。替祖国复仇的命运之神打击了你。溃败与耻辱抓住你不撒手；你惨败下来，当了普鲁士人的俘虏；在你的崩溃的帝国的废墟上，年轻的、光辉的共和国站起来了，拾起了你的破碎的宝剑⋯⋯”</p>
+<p>　　说到这里，他等了等，但是没有人喝彩，也没有人鼓掌。老乡们又惊又怕，一声也不吭。那座两撇尖尖的胡子向左右伸到脸颊以外去的半身像，那座静坐不动头发梳得光光，像理发馆招牌似的半身像，好像在注视玛萨雷尔先生，脸上还带着一种虚假的微笑，一种不可磨灭的、嘲弄的微笑。</p>
+<p>　　他们就这样面对面地看着，拿破仑坐在椅子上，医生站在地下，相距三步。指挥官勃然大怒。可是怎么办呢？怎么才能激发这堆人，才能彻底取得舆论上的胜利呢？</p>
+<p>　　他的手无意中放在自己的大肚子上，碰到了红色腰带下掖着的手枪和枪柄。</p>
+<p>　　他现在既谈不上什么灵感，也想不出什么可说的话了。于是抽出枪，向前迈了两步，枪口紧挨着旧日的君主开了枪。</p>
+<p>　　子弹在额头上打了一个小黑窟窿，就像是一个小小的污痕，几乎看不出来。预期的效果并没有发生。玛萨雷尔先生开第二枪，造成了第二个窟窿，然后开第三枪，然后把最后三发子弹一气打出。拿破仑的额头化作白灰飞散了，可是眼睛、鼻子和胡子的细尖儿一点也没有损坏。</p>
+<p>　　医生真是气恼极了，于是一拳把椅子打翻，一只脚踩在那个剩下来的半身像上，摆出了胜利者的姿势，转脸向着目瞪口呆的观众叫道：“让所有的卖国贼都这样毁灭！”</p>
+<p>　　可是观众们倒像是惊奇得愣住了，还是没有任何热情的表示，指挥官只好对民兵们吆喝：“现在你们可以各自回来了。”然后他好像有人追赶似的也迈开大步向自己的家走去。</p>
+<p>　　一走进门，他的女仆就告诉他有病人在诊室等他，已经等了三个钟头。他赶快奔了去。原来就是患静脉曲张症的那两个乡下人，他们又固执又耐心，天亮就来了。</p>
+<p>　　那个老人立刻就讲述起来：“刚一开头的时候，好象有不少蚂蚁顺着大腿爬⋯⋯”</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/自从我妈从台湾旅游回来-李娟.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/谈独立思考-茅盾.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/自从我妈从台湾旅游回来-李娟.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/谈独立思考-茅盾.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/一次政变-莫泊桑.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

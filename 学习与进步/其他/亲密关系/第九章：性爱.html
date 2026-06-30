@@ -1,0 +1,581 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第九章：性爱 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第九章性爱"><a class="header" href="#第九章性爱">第九章：性爱</a></h1>
+<h2 id="性态度"><a class="header" href="#性态度">性态度</a></h2>
+<h3 id="对随意性行为的态度"><a class="header" href="#对随意性行为的态度">对随意性行为的态度</a></h3>
+<ul>
+<li>依恋和情感被公认为是性行为最合理的前提</li>
+<li>男女两性在性观念上的最大差异是对待婚前随意性行为的态度
+<ul>
+<li>谈到随意性行为时，女性往往后悔自己的行为，而男性则后悔自己没有行动</li>
+</ul>
+</li>
+<li>性的双重标准
+<ul>
+<li>传统上，人们对女性性经历或性宽容的评价要比男性更为严厉</li>
+<li>如今认为挑逗别人并发生性关系的女性要比类似行为的男性所受到的评价更宽容（存疑）</li>
+<li>如果患有性病，人们对女性的评价则远比男性苛刻</li>
+<li>乱交中，女性得到的评价也更差</li>
+</ul>
+</li>
+</ul>
+<h3 id="对同性恋的态度"><a class="header" href="#对同性恋的态度">对同性恋的态度</a></h3>
+<ul>
+<li>美国心理学会作出决议：</li>
+</ul>
+<ol>
+<li>同性关系与异性的伴侣关系运转方式大抵相同</li>
+<li>性取向与个体能否成为富有爱心、善于养育的父母根本没有关系</li>
+<li>婚姻对人们（包括男同和女同）有益</li>
+</ol>
+<h3 id="性态度上的文化差异"><a class="header" href="#性态度上的文化差异">性态度上的文化差异</a></h3>
+<ul>
+<li>美国人的性态度与其他国家相比仍然保守</li>
+<li>性态度受到各种历史、宗教、政治及其他社会因素的影响，因国家和群体而千差万别</li>
+</ul>
+<h2 id="性行为"><a class="header" href="#性行为">性行为</a></h2>
+<h3 id="第一次性行为"><a class="header" href="#第一次性行为">第一次性行为</a></h3>
+<ul>
+<li>人际关系学科科学家坚决反对，性行为中“无知就是福”这一观点</li>
+<li>年轻的女性在发生第一次性行为时一般会有复杂的情感体验</li>
+<li>一旦伴侣之间发生性关系，其发生的背景会影响性行为的结果
+<ul>
+<li>如果遵守伴侣表达的爱意和承诺，则会增进关系，积极发展</li>
+<li>如果没有此表达，则通常导致不确定性和悔恨</li>
+<li>不仅如此，还会发生相对权力的变化</li>
+</ul>
+</li>
+</ul>
+<h3 id="忠诚关系中的性行为"><a class="header" href="#忠诚关系中的性行为">忠诚关系中的性行为</a></h3>
+<ul>
+<li>发生性行为的理由大致可分为四个方面
+<ul>
+<li>性的情感：沟通、传递爱意和忠诚的手段</li>
+<li>性的肉欲：获得感官享受和吸引力</li>
+<li>实用：实现某些长远目标或完成具体愿望，如生孩子或使伴侣嫉妒，范围极广</li>
+<li>不安全的理由：提高个体自尊或防止伴侣移情别恋</li>
+</ul>
+</li>
+<li>如果仅仅就女性而言，女性之间的性行为 <strong>远不及</strong> 有男人参与时那样频繁（以女同性恋为代表）</li>
+</ul>
+<h3 id="不贞"><a class="header" href="#不贞">不贞</a></h3>
+<ul>
+<li><strong>个体差异比起性别差异更重要，它使得男女两性都更可能发生伴侣外性行为</strong></li>
+<li>在性行为上存在值得注意的性别差异：
+<ul>
+<li>男性比女性希望拥有更多的性伙伴</li>
+<li>但很少有人希望与人乱交</li>
+</ul>
+</li>
+<li>男同性恋报告自己有伴侣外性行为的统计概率（80%）远高于其他任何一种亲密关系</li>
+<li>性开放的女性面部特征比保守的女性总显得有些男性化</li>
+<li>性开放的男性看上去很有阳刚之气，但女性更喜欢性保守男性的面孔，认为他们更适合做长期的伴侣</li>
+<li>演化学认为遥远的过去男性会碰到镜子竞争，因此男性阴茎进化出了“最完美的形状”</li>
+<li>如果女性渴望更多的性行为而伴侣做不到，她们就特别有可能会红杏出墙</li>
+</ul>
+<h3 id="性欲望"><a class="header" href="#性欲望">性欲望</a></h3>
+<ul>
+<li>平均而言，全世界男性整体上比女性有着更高的性驱力
+<ul>
+<li>请记住男性和女性之间存在着相当大的个体差异</li>
+<li>肯定有很多男性长期看来并不如某些女性那样好色</li>
+</ul>
+</li>
+<li>女性通常是新的亲密关系中决定何时开始性行为的“看门人”</li>
+<li>大多数女性在绝经期之后性欲望都会下降</li>
+<li>男性比女性期待更多的性行为，可能会引起严重的后果
+<ul>
+<li>性行为可能是“亲密关系市场中女性作为卖方，而男性作为买方的一件待价而沽的珍品”</li>
+<li>“女性并不认为免费的宴请就应该以性来报答，但承担所有约会开销的男性却认为女性对浪漫的、最终亲密的关系感兴趣，否则他们就会觉得被人利用并痛恨此事”
+<ul>
+<li><strong>这一现象的严重消极后果是：当男性感到女性“亏欠”他们时，会理直气壮的施压或强迫女性发生性行为</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="安全而明智的性行为"><a class="header" href="#安全而明智的性行为">安全而明智的性行为</a></h3>
+<ul>
+<li>恋爱关系中，只有一半的人会始终坚持使用避孕套</li>
+<li><strong>特殊安全错觉</strong> ：大多数人都认为不幸的事件更可能发生在别人身上，自己不会这么倒霉</li>
+<li><strong>酒精近视</strong> ：人们在醉酒后思考和加工信息的能力会降低
+<ul>
+<li>过量饮酒在性唤醒时尤其如此</li>
+</ul>
+</li>
+<li><strong>人众无知</strong> ：团体中的人们错误解读彼此真实的偏好，形成了大家一致遵从的规范，但几乎没有人私下支持
+<ul>
+<li>比女性认为男性对避孕套的态度更消极，但男性未必如此</li>
+<li>事实上，男女两性在使用避孕套的意愿上并无差别</li>
+</ul>
+</li>
+<li>一般而言，女方权力越大，越诚实和直率，她和伴侣在发生性行为时就越有可能使用避孕套</li>
+<li>当把避孕套当作性生活前戏的一部分时，避孕套不太可能会“大煞风景”</li>
+<li>使用避孕套比不使用避孕套更能给伴侣双方传递出更多的尊重、关心和关注</li>
+<li><strong>请理直气壮的要求（新）伴侣使用避孕套</strong></li>
+</ul>
+<h2 id="性满足"><a class="header" href="#性满足">性满足</a></h2>
+<h3 id="前注"><a class="header" href="#前注">前注</a></h3>
+<ul>
+<li><strong>怎样改善你的性生活：不要尽信你所接触到的性信息</strong>
+<ul>
+<li>电视节目容易把恋爱关系的发展描绘成愚昧的性角逐
+<ul>
+<li>谈对象的男性都好色</li>
+<li>只关注女性的长相，迫使女性发生性行为</li>
+</ul>
+</li>
+<li>被长时间浸染的人们倾向于支持性的双重标准</li>
+</ul>
+</li>
+<li><strong>性生活的频率对于男性比女性更重要</strong></li>
+<li><strong>性生活中将女性置于被动的地位会损害她们的自主性</strong>
+<ul>
+<li>剥夺女性的主动权和控制权会削弱她们的性欲望，降低他们的性唤醒，使她们更难获得性高潮</li>
+<li>所以她们对性生活没有多大兴趣</li>
+</ul>
+</li>
+<li>传统性别角色的规定同时剥夺了男女两方的某些性自由和性放任，使性互动达不到原本可能的满足程度
+<ul>
+<li><strong>允许彼此更多自主权和选择权的夫妻能享受到更为满足的性生活</strong></li>
+<li>许多男性希望他们自己是伴侣渴望的有吸引力的目标，期盼他们的爱人能不时居于主导地位</li>
+<li>女性能发起性行为并自信地表现自我而非消极被动时，大多数男性也会感到很兴奋</li>
+</ul>
+</li>
+<li>如果性行为有着积极的理由，人们对性生活会更满意、亲密和有趣，为了回避有害结果而进行性行为的伴侣更可能分手</li>
+</ul>
+<h3 id="性沟通"><a class="header" href="#性沟通">性沟通</a></h3>
+<ul>
+<li><strong>没有言语沟通的性行为一定会发生问题</strong></li>
+<li>异性恋者能诚实的告知对方自己喜好和讨厌的性方式，以及对方应该怎样做，其就更可能拥有和同性恋者一样高质量的性生活</li>
+<li><strong>“指导爱人怎样取悦自己”是性生活中的重要内容</strong></li>
+<li><strong>高焦虑的人不仅会无止境地渴望重复的保证，而且会发生更多的婚外情</strong></li>
+<li><strong>美满幸福的爱人往往是安全型依恋的爱人</strong></li>
+<li>具有大男子主义思想的男性对女性兴趣的错误判断非常普遍
+<ul>
+<li>他们把性行为视为逐利竞赛，<strong>并且喜欢支配女性</strong></li>
+<li>对他们最有效的拒绝是 <strong>自信果断、前后一致和坚持不懈</strong></li>
+</ul>
+</li>
+<li>当需要女性表明感受时， <strong>不要扭捏作态或者玩笑戏谑，请清楚的表明有没有兴趣，必要时还得重复表态</strong></li>
+</ul>
+<h3 id="性满足与关系满意度"><a class="header" href="#性满足与关系满意度">性满足与关系满意度</a></h3>
+<ul>
+<li>两者存在关联并且都受到类似影响因素的支配</li>
+<li>性满足能增加关系满意度，也能减弱关系满意度
+<ul>
+<li>与伴侣的性生活可以舒缓压力，是自慰所带来的性高潮所无法比拟的</li>
+<li>并且这一模式会持续终生</li>
+</ul>
+</li>
+<li>美妙的性行为似乎还依赖于
+<ul>
+<li>个体特殊的性欲望能得到伴侣的理解和尊重，如此需要才能得到满足</li>
+<li>重视伴侣并致力于维护好伴侣关系</li>
+<li>愉快地相处，无论是性生活还是日常生活</li>
+</ul>
+</li>
+</ul>
+<h2 id="性胁迫"><a class="header" href="#性胁迫">性胁迫</a></h2>
+<ul>
+<li>
+<p>逼迫他人发生性接触主要有以下 <strong>施压方式</strong></p>
+<ol>
+<li>言辞威逼利诱，包括
+<ul>
+<li>虚假许诺</li>
+<li><strong>制造内疚感</strong></li>
+<li><strong>威胁要结束伴侣关系</strong></li>
+<li>等等</li>
+</ul>
+</li>
+<li>削弱对方反抗
+<ul>
+<li>饮酒</li>
+<li>吸毒</li>
+<li>等等</li>
+</ul>
+</li>
+<li>暴力威胁</li>
+</ol>
+</li>
+<li>
+<p>整体来看，男性比女性更多使用暴力，但女性和男性一样有可能用言语胁迫不情愿的发生强迫的性交</p>
+<ul>
+<li>男性更可能是使用暴力强制的施暴者而非受害者</li>
+<li>大约有 25% 的男性和女性会制造此种恶行</li>
+</ul>
+</li>
+<li>
+<p>实施性侵犯的人往往会对异性持轻蔑、冷酷和粗暴的态度</p>
+</li>
+<li>
+<p><strong>减少性胁迫发生的建议</strong></p>
+<ol>
+<li>请当心那些把性行为看成角逐某种利益的恋爱对象</li>
+<li>请远离麻醉类物品（包括酒精）</li>
+<li>下决心坚定反抗任何性侵犯的苗头</li>
+<li><strong>在开始亲密交往前，直接和坦率地和伴侣说清楚性界限，这样可以避免不必要的危险</strong>
+<ul>
+<li>至少，请告诉伴侣：“如果我说‘不可以’，是真的在拒绝你，而不是欲迎还拒。”</li>
+<li>沟通不良和误解经常会引起性胁迫，如果提前表明行为的底线，错与对的界限就非常清楚</li>
+</ul>
+</li>
+<li>最后，把爱人视为和你平等的伴侣，对方的喜欢和快乐与你的一样重要</li>
+</ol>
+</li>
+</ul>
+<h2 id="一些重要的人际关系科学结论"><a class="header" href="#一些重要的人际关系科学结论"><font color="red">一些重要的人际关系科学结论</font></a></h2>
+<ul>
+<li>个体差异比起性别差异更重要，它使得男女两性都更可能发生伴侣外性行为</li>
+<li><strong>特殊安全错觉</strong> ：大多数人都认为不幸的事件更可能发生在别人身上，自己不会这么倒霉</li>
+<li><strong>酒精近视</strong> ：人们在醉酒后思考和加工信息的能力会降低</li>
+<li>人众无知 ：团体中的人们错误解读彼此真实的偏好，形成了大家一致遵从的规范，但几乎没有人私下支持</li>
+<li><strong>请理直气壮的要求（新）伴侣使用避孕套</strong></li>
+<li><strong>怎样改善你的性生活：不要尽信你所接触到的性信息</strong></li>
+<li><strong>性生活中将女性置于被动的地位会损害她们的自主性</strong></li>
+<li>允许彼此更多自主权和选择权的夫妻能享受到更为满足的性生活</li>
+<li><strong>没有言语沟通的性行为一定会发生问题</strong></li>
+<li><strong>“指导爱人怎样取悦自己”是性生活中的重要内容</strong></li>
+<li>高焦虑的人不仅会无止境地渴望重复的保证，而且会发生更多的婚外情</li>
+<li>当需要女性表明感受时， 不要扭捏作态或者玩笑戏谑，请清楚的表明有没有兴趣，必要时还得重复表态</li>
+<li><strong>在开始亲密交往前，直接和坦率地和伴侣说清楚性界限，这样可以避免不必要的危险</strong></li>
+<li>关于 <strong>减少性胁迫发生的建议</strong> （见性胁迫）</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/其他/亲密关系/第八章：爱情.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/其他/亲密关系/第十章：压力与紧张.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/其他/亲密关系/第八章：爱情.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/其他/亲密关系/第十章：压力与紧张.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/其他/亲密关系/第九章：性爱.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

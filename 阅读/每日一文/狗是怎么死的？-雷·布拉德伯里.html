@@ -1,0 +1,478 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>狗是怎么死的？ - 雷·布拉德伯里 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="狗是怎么死的"><a class="header" href="#狗是怎么死的">狗是怎么死的？</a></h1>
+<p><em>雷·布拉德伯里</em></p>
+<p>　　那是一个天崩地裂的日子，洪水、飓风、地震、停电、屠杀、火山喷发和各种灭世灾难交发并至，最终太阳吞噬了地球，繁星消逝不见，让这场浩劫到达了巅峰。</p>
+<p>　　简而言之，本特利家最受尊敬的成员暴毙了。</p>
+<p>　　这位成员名叫狗子，它也本就是条狗。</p>
+<p>　　周六早上，本特利一家睡了个懒觉，起床后就发现狗子僵直地躺在厨房里，头朝向圣城麦加的方位，爪子整齐地交叠着，尾巴没有乱甩而是安安静静地耷拉着，这可是二十年来的头一遭。</p>
+<p>　　二十年啊！老天，每个人都在心里默念，真有那么久了？而如今，狗子就一声不吭地这么走了，尸骨已寒。</p>
+<p>　　二女儿苏珊是第一个发现的，她大叫起来，把所有人都吵醒了。</p>
+<p>　　“快来！狗子不对劲！”</p>
+<p>　　罗杰·本特利一听，睡袍都没顾得上披，穿着内裤就直冲了出来，赶忙去看那安详地躺在厨房地砖上的大家伙。他太太鲁丝紧随其后，再后头是年仅十二岁的小儿子斯基普。罗德尼和塞尔已经各自成家立业，得晚点才能赶来。不论是谁，都不敢相信眼前的场景：</p>
+<p>　　“不可能！狗子才不会死。”</p>
+<p>　　狗子没有半点动静，就那么躺着，那画面如同二战刚结束时的疮痍。</p>
+<p>　　泪珠滚落苏珊的脸颊，随后鲁丝·本特利也泪流满面。不出所料，父亲大人的眼眶也逐渐湿润起来，最终轮到斯基普开始号啕大哭。</p>
+<p>　　他们本能地在狗子身边围成一个圈，跪在地上抚摸它，就好像这样能唤醒它，让它坐起来，和往常一样看到食物就高兴，能吠能闹，把一家人追得直逃。然而他们这般触碰除了徒增伤悲外，并没有什么用。</p>
+<p>　　他们终究还是站起身，相互拥抱，而后无头苍蝇一般到处找东西吃。鲁丝突然打了个冷战：“我们不能把它就这么丢在那儿啊。”</p>
+<p>　　罗杰·本特利温柔地抱起了狗子，把它挪到了院子里游泳池边上的树荫下。</p>
+<p>　　“接下来怎么办？”</p>
+<p>　　“不知道，”罗杰·本特利说，“这是咱们家多年来第一次有成员去世，而且——”他顿了顿，哼了一声摇了摇头，“我是说——”</p>
+<p>　　“你一点儿没说错。”鲁丝·本特利说道，“狗子当然是咱们家的一员。上帝啊，我爱它。”</p>
+<p>　　罗杰的泪水夺眶而出。他边落泪边抱来一卷毛毯想给狗子盖上，苏珊制止了他。</p>
+<p>　　“不，不要。我还想看看它，否则以后就再也见不到了。它长得真漂亮，它真的是——老了。”</p>
+<p>　　他们一个个端着早饭坐到了庭院里，围坐在狗子身旁，生怕在屋里吃饭冷落了它。</p>
+<p>　　罗杰·本特利打电话给另外两个孩子，话筒另一边的反应如出一辙：失声恸哭，随后立刻表示马上就赶回来，等着他们。</p>
+<p>　　二十一岁的长子罗德尼先到了，随后二十四的长女塞尔也回来了。他们的到来让每个人都触景生情，重新陷入巨大的悲痛中。大家静坐了好一会儿，看着狗子，期盼它能起死回生。</p>
+<p>　　“你有什么打算？”罗德尼终于开口问道。</p>
+<p>　　“我说出来你们别觉得可笑，”罗杰·本特利尴尬地停顿了下，接着道，“毕竟，它也只是条狗——”</p>
+<p>　　“只是！？”其余所有人立刻大叫起来。</p>
+<p>　　罗杰不得不向后缩了缩。“好了好了，我知道给它造个泰姬陵也不为过。不过，咱们就把它葬在伯班克那边的奥利安宠物墓园吧。”</p>
+<p>　　“宠物墓园？”大家叫了起来，腔调花样百出。</p>
+<p>　　“天啊，”罗德尼说，“这太可笑了！”</p>
+<p>　　“这有什么可笑的？”斯基普明显气得不行，脸蛋涨得通红，嘴唇哆哆嗦嗦。“狗子，呵，狗子可是无价之宝。”</p>
+<p>　　“就是！”苏珊不忘附和道。</p>
+<p>　　“好吧，我错了。”罗杰·本特利转过身去看着泳池、灌木和天空。“那或者我可以打电话给专门负责抬死尸的清洁工——”</p>
+<p>　　“清洁工？”鲁丝·本特利惊呼。</p>
+<p>　　“死尸？”苏珊抗议道，“狗子才不是什么死尸！”</p>
+<p>　　“哎，那它现在又是什么呢？”斯基普郁郁地问道。</p>
+<p>　　他们一齐望向静静躺在泳池边上的狗子。</p>
+<p>　　“它是，”苏珊脱口而出，“它是我的爱！”</p>
+<p>　　不等大家又哭成一团，罗杰·本特利抓起院子里的电话就给宠物公墓打了过去，交谈了几句然后放下了话筒。</p>
+<p>　　“两百块，”他告诉大家，“还不赖。”</p>
+<p>　　“对狗子？”斯基普说，“根本不够！”</p>
+<p>　　“你真要这么做？”鲁丝·本特利问他。</p>
+<p>　　“没错，”罗杰说道，“我以前一直取笑那种地方，但现如今，我们再也见不到狗子了——”他有那么一阵说不出话来。“中午会有人来把狗子带走，明天办葬礼。”</p>
+<p>　　“葬礼！”罗德尼嗤之以鼻，气冲冲地走向泳池边，甩着手臂，“打死我也不会去的！”</p>
+<p>　　所有人都看着他。罗德尼终于还是转过身，耷拉着肩膀。“好吧，我他妈去就是了。”</p>
+<p>　　“你要是真不去，狗子不会原谅你的。”苏珊吸了吸鼻子，又擦了擦。</p>
+<p>　　罗杰·本特利一个字都没听进去。他凝视着狗子，又看看家人，仰头望向天空。他闭起眼睛，低声感慨：“哦，上帝啊！”他双眼紧闭。“你们意识到了吗？这是我们家第一次遭遇如此变故。我们何曾生过病，去过医院？或者出过车祸？”</p>
+<p>　　他等着回应。</p>
+<p>　　“真没有。”大家异口同声。</p>
+<p>　　“天啊。”斯基普感叹道。</p>
+<p>　　“一点都没错啊！这世上本来哪天没有出车祸，生个病，送医院的。”</p>
+<p>　　“或许，”苏珊嗓子都破音了，不得不停下缓了缓，“或许狗子的死正是为了让我们意识到自己有多幸运。”</p>
+<p>　　“幸运？！”罗杰·本特利睁开眼睛，转过身来，“对！我们就是——”</p>
+<p>　　“科幻一代。”罗德尼接口道，顺手点了支烟。</p>
+<p>　　“你说什么？”</p>
+<p>　　“你不是痴迷于此吗？学校讲座也提，在家吃饭也说。开罐器？是科幻。汽车、收音机、电视、电影……一切的一切！全是科幻！”</p>
+<p>　　“好吧，该死的，确实是啊！”罗杰·本特利不由叫道。他盯着狗子，像是想从残存的那几只跳蚤身上看出些什么门道来。“见鬼，不久以前还没有汽车、开罐器、电视。总要有人去畅想，这是开端。要有人去付诸实践，这是过程。于是科幻梦便成了现实，完成！”</p>
+<p>　　“呵呵，一准没错。”罗德尼装模作样鼓了鼓掌。</p>
+<p>　　罗杰·本特利被儿子嘲讽得说不出话，只得去抚摸那已故的爱犬。</p>
+<p>　　“不好意思，刚刚一心想着狗子完全无法自已。千百年来，人都是难逃一死。如今，这一切都成了过去。总而言之就是，科幻的力量。”</p>
+<p>　　“扯谈吧。”罗德尼放声大笑，“别再读那些没用的东西了，爸。”</p>
+<p>　　“没用的东西？”罗杰摸着狗子的口鼻反问，“你知道李斯特￼、巴斯德￼、索尔克￼吗？他们都痛恨死亡，于是竭尽所能来阻止它。这就是科幻的意义所在。因为对事物现状的不满，想要改进。你说这没用？”</p>
+<p>　　“老皇历了，爹。”</p>
+<p>　　“老？”罗杰·本特利瞪了儿子一眼，“上帝啊，想想我 1920 年出生的时候，要是周末想探亲访友——”</p>
+<p>　　“得去墓地？”罗德尼插嘴道。</p>
+<p>　　“没错。我七岁的时候，弟弟和妹妹就死了。半个家族的人都去世了！亲爱的孩子们，你们倒是告诉我，长这么大你们的朋友死了几个？小学同学死了几个？中学同学死了几个？”</p>
+<p>　　他扫视全家，等着答案。</p>
+<p>　　“一个都没有。”罗德尼最终不得不开口。</p>
+<p>　　“一个都没有！你们可都听到了？一个都没有！上帝啊，要知道我十岁的时候就有六个好朋友去世了！等一下，我想起来了！”</p>
+<p>　　罗杰·本特利去客厅壁橱里一阵翻箱倒柜，找出一张尘封已久的 78 转唱片，拿到阳光下吹掉了上面的灰尘。他眯起眼看着标签念道：“没啥大事，就是，狗是怎么死的？”</p>
+<p>　　大家都跑过来围观这张上了年岁的唱片。</p>
+<p>　　“嘿，它放了得有多少年了？”</p>
+<p>　　“二十年代我才十岁不到，听了也有上百遍了。”罗杰答道。</p>
+<p>　　“没啥大事，就是，狗是怎么死的？”塞尔瞥了一眼父亲的神情。</p>
+<p>　　“狗子的葬礼上必须放这个。”他如是说。</p>
+<p>　　“你该不会是认真的吧？”鲁丝·本特利反问。</p>
+<p>　　正当此时，门铃响了。</p>
+<p>　　“不会是宠物公墓的人来了要带走狗子吧？”</p>
+<p>　　“不要！”苏珊喊道，“太快了吧！”</p>
+<p>　　大家自发地在狗子和门铃间形成一道人墙，似乎想要永远地推迟那一刻的到来。</p>
+<p>　　而后，他们再一次地大哭起来。</p>
+<p>　　狗子的葬礼上来了不少人，这点虽奇怪却也挺贴心。</p>
+<p>　　“我都不知道狗子有这么多朋友。”苏珊抽泣着说道。</p>
+<p>　　“这家伙在镇子上到处蹭吃蹭喝。”罗德尼不以为然。</p>
+<p>　　“积点口德吧你。”</p>
+<p>　　“哎，可我没瞎说啊。不然比尔·约翰逊、格特·斯凯尔或是对门那个吉姆怎么会来这儿？”</p>
+<p>　　“狗子，”罗杰·本特利说道，“真希望你能看到这么多人来为你送行。”</p>
+<p>　　“它看得到。”苏珊泪眼婆娑，“不论它在哪里，都会看到的。”</p>
+<p>　　“哟，我的苏小妹，”罗德尼嘀咕道，“对着电话本都能哭鼻子——”</p>
+<p>　　“闭嘴！”苏珊气得大叫。</p>
+<p>　　“你们统统给我消停点。”</p>
+<p>　　罗杰·本特利制止了他们，然后垂眼望着地面，走到了屋子前端。狗子头枕着爪子，躺在一个装饰得恰到好处的匣子里，既不过分奢华又不显得简陋。</p>
+<p>　　罗杰·本特利走到一台画着雪花图案的便携留声机前，将唱针放下。黑胶唱片吱呀呀地转，唱针在表面划过，不断发出尖锐的刮擦声。邻居们都俯身向前，竖起耳朵聆听。</p>
+<p>　　“悼词我们就不说了，”罗杰快速说道，“就放这个……”</p>
+<p>　　留声机里传来一个年代久远的声音，故事讲述的是一个男子度假归来后，向朋友询问他离开期间发生了什么。</p>
+<p>　　似乎什么都没发生。</p>
+<p>　　噢，对了，就一件事。狗死了。每个人都想知道它为什么死了。</p>
+<p>　　狗？度假男问道。我的狗死了？</p>
+<p>　　是啊，可能是因为吃了烧焦的马肉。</p>
+<p>　　烧焦的马肉？度假男惊叫道。</p>
+<p>　　呃，知情的那位友人说，马厩着火的时候，马也都烧焦了，所以狗就吃了马肉，然后就死了。</p>
+<p>　　马厩？度假男更震惊了。马厩怎么会着火？</p>
+<p>　　这个呀，因为房子里有火星飘出来，把马厩给点着了，烧焦了马，狗又吃了肉，就死了。</p>
+<p>　　房子里飘火星！？度假男大喊起来。怎么会？</p>
+<p>　　是窗帘，着火了。</p>
+<p>　　窗帘？着火了！？</p>
+<p>　　是棺材周围的蜡烛把窗帘点着了。</p>
+<p>　　棺材！？</p>
+<p>　　你姨妈葬礼的棺材，周围的蜡烛点燃了窗帘，房子烧塌了，火星溅到了马厩，把马厩烧没了，狗吃了烧焦的马肉——</p>
+<p>　　总结：没啥大事的话，狗是怎么死的！</p>
+<p>　　唱片嘶嘶地停了下来。</p>
+<p>　　一片寂静中传来声窃笑，尽管刚刚那个故事讲的是狗和人的死亡。</p>
+<p>　　“那么现在，我们是不是该听演讲了？”罗德尼问。</p>
+<p>　　“不，应该说是布道。”</p>
+<p>　　罗杰·本特利把手放到讲坛上，盯着并不存在的提纲看了很久。</p>
+<p>　　“我不知道今天我们汇聚一堂是为了狗子还是我们自己。我猜两者都有。我们都未曾经历过什么坏事，今天是第一次。并不是说我想要什么飞来横祸。上帝保佑，死亡，你来得慢些吧！”</p>
+<p>　　他把唱片放在手里转来转去，企图读出那一道道沟壑下隐藏的词句。</p>
+<p>　　“没啥大事。也就是姨妈去世了，葬礼上的蜡烛点燃了窗帘，火星飞溅害得狗也归西了。我们的生活则恰恰相反。好多年没什么变故了。肝脏正常，心脏健康，日子过得不错。那么——讲这些有什么意义呢？”</p>
+<p>　　罗杰·本特利扫了一眼罗德尼，发现儿子不时低头看表。</p>
+<p>　　“总有一天，我们将面对死亡。”罗杰·本特利加快了语速，“我知道对于安稳惯了的我们而言，这场景很难想象。但苏珊说得没错。狗子用自己的死向我们传达了这个意思，我们要学会接受，同时也要庆祝。庆祝什么？庆祝我们见证了一段美妙历史的开端，这是关于生存的变革，而且随着时日的推进，接下来的几百年间只会越来越顺。当然，你可能会说，来场战争我们就全死了。</p>
+<p>　　“我只能说我预感你们会活很久、很久。或许还能活个九十年，大部分人的心脏病、癌症和衰老问题都会得到有效的解决。感谢上帝，如此一来，世界就少了许多伤痛。这容易做到吗？并不。我们会成功吗？没错。当然不可能立刻在所有国家都实现，但终究在大部分地区能做到。</p>
+<p>　　“我昨天说过，五十年前，要想拜访姨妈叔叔、祖父祖母、兄弟姐妹，得去墓地。死亡占据了人们的话题，根本无法逃避。罗德尼，时间到了吗？”</p>
+<p>　　罗德尼示意他父亲还有一分钟。</p>
+<p>　　罗杰·本特利松了一口气，抓紧说道：“诚然，每天都还有儿童早夭，但不再是有几百万个了。老人们呢？在养老院安度晚年而不是早早驾鹤西游。”</p>
+<p>　　父亲打量了一番坐在下面的家人，他们一个个眼里都闪着泪光。</p>
+<p>　　“上帝啊，看看你们自己，再回顾一下过去。那是长达千百年的无尽黑暗与悲痛。一手拉扯大的孩子们死了一半，为人父母的要如何去面对？根本不敢想。尽管心都碎了，他们还是坚持了下来。那年代，有上百万人死于流感和鼠疫。</p>
+<p>　　“所以说，我们面前是一个崭新的时代，自己却意识不到，因为我们正身处平静的风暴眼中。</p>
+<p>　　“我就说这么多了，最后再对狗子说一句。我们傻傻地操办了这些，举行了葬礼，都是出于对狗子的爱。但是现在，我们再也不会为给它买了墓地或是为我讲了这番话而心生任何羞愧之情。我们没法保证将来一定去看它，这谁说得准呢？不过它起码有了个归宿。狗子，老伙计，保重。现在大家都擤擤鼻子吧。”</p>
+<p>　　每个人都擤了擤鼻子。</p>
+<p>　　“爸爸，”罗德尼突然开口道，“我们——能不能再听一次那故事？”</p>
+<p>　　大家一脸错愕地看着他。</p>
+<p>　　“刚好，”罗杰·本特利回答，“我正准备提议。”</p>
+<p>　　他放下唱针，留声机又开始嘶嘶作响。</p>
+<p>　　大约放了一分钟，正讲到火星溅到马厩上，把马都烧焦了，狗吃了马肉而死的时候，后门走道传来了声响。</p>
+<p>　　所有人都转过头寻声望去。</p>
+<p>　　一个陌生的男子手拿一只小柳条篮站在门口，里面传来熟悉的轻吠声。</p>
+<p>　　尽管此时故事说到了关键处，棺材旁的烛火点燃了窗帘，最末一颗火星随风飘去……</p>
+<p>　　全家人争相跑到室外，聚集在那陌生男子身边，等着父亲大人来掀开盖布，好伸手进去。</p>
+<p>　　苏珊后来回忆说，那一刻她潸然泪下。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/雨儿-龙应台.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/下雨天-林夕.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/雨儿-龙应台.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/下雨天-林夕.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/狗是怎么死的？-雷·布拉德伯里.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

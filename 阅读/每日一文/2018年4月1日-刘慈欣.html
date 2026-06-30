@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2018 年 4 月 1 日 - 刘慈欣 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="2018-年-4-月-1-日"><a class="header" href="#2018-年-4-月-1-日">2018 年 4 月 1 日</a></h1>
+<p><em>刘慈欣</em></p>
+<p>　　2018 年 4 月 1 日　　晴</p>
+<p>　　又是犹豫的一天，这之前我已经犹豫了两三个月，犹豫像一潭死滞的淤泥，我感觉自己的生命在其中正以几十倍于从前的速度消耗着，这里说的“从前”是我没产生那个想法的时候，是基延还没有商业化的时候。</p>
+<p>　　从写字楼顶层的窗子望出去，城市在下面扩展开来，像一片被剖开的集成电路，我不过是那密密麻麻的纳米线路中奔跑的一个电子，真的算不了什么，所以我做出的决定也算不了什么，所以决定就可以做出了……像以前多少次一样，决定还是做不出，犹豫还在继续。</p>
+<p>　　强子又迟到了，带着一股风闯进办公室，他脸上有淤青，脑门上还贴着一块创可贴，但他显得很自豪，扬着头，像贴着一枚勋章。他的办公桌就在我对面，他坐下后没开电脑，直勾勾地看着我，显然等我发问，但我没那个兴趣。</p>
+<p>　　“昨晚电视里看到了吧？”强子兴奋地说。</p>
+<p>　　他显然是指“生命水面”袭击市中心医院的事，那也是国内最大的基延中心。医院雪白的楼面上出现了两道长长的火烧的黑迹，像如玉的美人脸被脏手摸了一下，很惊心。“生命水面”是众多反基延组织中规模最大的一个，也是最极端的一个，强子就是其中的一员，但我没在电视中看到他，当时，医院外面的人群像愤怒的潮水。</p>
+<p>　　“刚开过会，你知道公司的警告，再这样你的饭碗就没了。”我说。</p>
+<p>　　基延是基因改造延长生命技术的简称，通过去掉除人类基因中产生衰老时钟的片断，可将人类的正常寿命延长至三百岁。这项技术在五年前开始商业应用，现在却演化为一场波及全世界的社会和政治灾难，原因是它太贵了，在这里，一个人的基延价格相当于一座豪华别墅，只有少数人能消费得起。</p>
+<p>　　“我不在乎，”强子说，“对于一个连一百岁都活不到的人来说，我在乎什么？”</p>
+<p>　　他说着点上一支烟，办公室里严禁吸烟，他看来是想表示自己真的不在乎。</p>
+<p>　　“嫉妒，嫉妒是一种有害健康的情绪。”我挥手驱散眼前的烟雾说，“以前也有很多人因为交不起医疗费而降低寿命的。”</p>
+<p>　　“那不一样，看不起病的人是少数，而现在，百分之九十九的人眼巴巴地看着那百分之一的有钱人活三百岁！我不怕承认嫉妒，是嫉妒在维护着社会公平。”他从办公桌上探身凑近我，“你敢拍胸脯说自己不嫉妒？加入我们吧。”</p>
+<p>　　强子的目光让我打了个寒战，一时间真怀疑他看透了我。是的，我就要成为一个他嫉妒的对象，我就要成为一个基延人了。</p>
+<p>　　其实我没有多少钱，三十多岁一事无成，还处于职场的最底层。但我是财务人员，有机会挪用资金。经过长期的策划，一切都已完成，现在我只要点一下鼠标，基延所需的那五百万新人民币就能进入我的秘密帐户，然后再转到基延中心的帐户上。这方面我是个很专业的人，在迷宫般的财务系统中我设置了层层掩护，至少要半年时间，这笔资金的缺口才有可能被发现，那时，我将丢掉工作，将被判刑、被没收全部财产，将承受无数鄙夷的目光……但那时的我已经是一个能活三百岁的人了。</p>
+<p>　　可我还在犹豫。</p>
+<p>　　我仔细研究过法律，按贪污罪量刑，五百万元最多判二十年。二十年后，我前面还有二百多年的诱人岁月。现在的问题是，这么简单的算术题，难道只有我会做吗？事实上只要能进入基延一族，现有法律中除死刑之外的所有罪行都值得一犯。</p>
+<p>　　那么，有多少人和我一样处于策划和犹豫中？这想法催我尽快行动，同时也使我畏缩。</p>
+<p>　　但最让我犹豫的还是简简，这已经是属于理性之外了。在遇到简简之前，我不相信世界上有爱情这回事；在遇到她之后，我不相信世界上除了爱情还有什么，离开她，我活两千年又有什么意思？现在，在人生的天平上，一边是两个半世纪的寿命，另一边是离开简简的痛苦，天平几乎是平的。</p>
+<p>　　部门主管召集开会。从他脸上的表情我就能猜出来，这个会不是安排工作，而是针对个人。果然，主管说他今天想谈谈某些员工的“不能被容忍的”社会行为。我没有转头看强子，但知道他要倒霉了，可主管说出的却是另一个人的名字。</p>
+<p>　　“刘伟，据可靠消息，你加入了 IT 共和国？”</p>
+<p>　　刘伟点点头，像走上断头台的路易十六般高傲，“这与工作无关，我不希望公司干涉个人自由。”</p>
+<p>　　主管严肃地摇摇头，冲他竖起一根手指：“很少有事情与工作无关的，不要把你们在大学中热衷的那一套带到职场上来，如果一个国家可以在大街上骂总统那叫民主，但要是都不服从老板，那这个国家肯定会崩溃的。”</p>
+<p>　　“虚拟国家就要被承认了。”</p>
+<p>　　“被谁承认？联合国？还是某个大国？别做梦了。”</p>
+<p>　　其实主管最后这句话中并没有多少自信。现在，人类社会拥有的领土分为两部分，一部分是地球各大陆和岛屿，另一部分则是互联网广阔的电子空间。后者以快百倍的速度重复着文明史，在那里，经历了几十年无序的石器时代之后，国家顺理成章地出现了。虚拟国家主要有两个起源，一是各种聚集了大量 ID 的 BBS，二是那些玩家已经上亿的大型游戏。虚拟国家有着与实体国家相似的元首和议会，甚至拥有只在网上出现的军队。与实体国家以地域和民族划分不同，虚拟国家主要以信仰、爱好和职业为基础组建，每个虚拟国家的成员都遍布全世界，多个虚拟国家构成了虚拟国际，现已拥有二十亿人口，并建立了与实体国际对等的虚拟联合国，成为叠加在传统国家之上的巨大的政治实体。</p>
+<p>　　IT 共和国就是虚拟国际中的一个超级大国，人口八千万，还在迅速增长中。这是一个主要由 IT 工程师组成的国家，有着咄咄逼人的政治诉求，也有着对实体国际产生作用的强大力量。我不知道刘伟在其中的公民身份是什么。据说 IT 共和国的元首是某个 IT 公司的普通小职员，相反，也有不止一个实体国家的元首被曝是某个虚拟国家的普通公民。</p>
+<p>　　主管对大家进行严重警告，不得拥有第二国籍，并阴沉地让刘伟到总经理办公室去一趟，然后宣布散会。我们还没有从座位上起身，一直呆在电脑屏幕前的郑丽丽让人头皮发炸地大叫起来，说出大事儿了，让大家看新闻。</p>
+<p>　　我回到办公桌前，把电脑切换到新闻频道，看到紧急插播的重要新闻，播音员一脸阴霾，他宣布，在联合国否决 IT 共和国要求获得承认的 3617 号决议被安理会通过后，IT 共和国向实体国际宣战，半个小时前已经开始对世界金融系统的攻击。</p>
+<p>　　我看看刘伟，他对这事好像也很意外。</p>
+<p>　　画面切换到某个大都市，鸟瞰着高楼间的街道，长长的车流拥堵着，人们从车中和两旁边的建筑物中纷纷拥出，像是发生了大地震一般。镜头又切换到一家大型超市，人群像黑色的潮水般拥入，疯狂地争抢货物，一排排货架摇摇欲附，像被潮水冲散的沙堤。</p>
+<p>　　“这是干什么？”我惊恐在问。</p>
+<p>　　“还不明白吗？！”郑丽丽继续尖叫道，“要均贫富了！所有的人都要一文不名了！快抢吃的呀！！”</p>
+<p>　　我当然明白，但不敢相信噩梦已成现实。传统的纸币和硬币已在三年前停止流通，现在即使在街边小货亭买盒烟也要刷卡。在这个全信息化时代，财富是什么？说到底不过是计算机存贮器中的一串串脉冲和磁印。以这座华丽宏伟的写字楼来说，如果相关部门中所有的电子记录都被删除，公司的总裁即使拿着房产证，也没有谁承认他的所有权。钱是什么？钱不再是王八蛋了，钱只是一串比细菌还小的电磁印记和转瞬即逝的脉冲，对于 IT 共和国来说，实体世界上近一半的 IT 从业者都是其公民，抹掉这些印记是很容易的。</p>
+<p>　　程序员、网络工程师、数据库管理员这类人构成了 IT 共和国的主体，这个阶层是十九世纪的产业大军在二十一世纪的再现，只不过劳作的部分由肢体变成大脑，繁重程度却有增无减。在渺如烟海的程序代码和迷宫般的网络软硬件中，他们如二百多年前的码头搬运工般背起重负，如妓女般彻夜赶工。信息技术的发展一日千里，除了部分爬到管理层的幸运儿，其他人的知识和技能很快过时，新的 IT 专业毕业生如饥饿的白蚁般成群涌来，老的人（其实不老，大多三十出头）被挤到一边，被代替和抛弃，但新来者没有丝毫得意，这也是他们中大多数人不算遥远的前景……这个阶层被称做技术无产阶级。</p>
+<p>　　不要说我们一无所有，我们要把世界格式化！这是被篡改的国际歌歌词。</p>
+<p>　　我突然像遭雷劈一样，天啊，我的钱，那些现在还不属于我，但即将为我买来两个多世纪生命和生活的钱，要被删除了吗？！但如果一切都格式化了，结果不是都一样吗？我的钱、我的基延，我的梦想……我眼前发黑，无头苍蝇般在办公室中来回走着。</p>
+<p>　　一阵狂笑使我停下脚步，笑声是郑丽丽发出的，她在那里笑得蹲下了。</p>
+<p>　　“愚人节快乐。”冷静的刘伟扫了一眼办公室一角的网络交换机说。</p>
+<p>　　我顺着他的目光看去，发现交换机被与公司网络断开了，郑丽丽的笔记本电脑接在上面，充当了服务器，这个婊子！为了这个愚人节笑话她肯定费了不少劲，主要是做那些新闻画面，但在这个一个人猫在屋里就能用 3D 软件做出一部大片的时代，这也算不了什么。</p>
+<p>　　别人显然并不觉得郑丽丽的玩笑过分了，强子又用那种眼光看着我说：“咋啦，你应该对他们发毛才对啊，你怕什么？”他指指高管们所在的上层。</p>
+<p>　　我又出了一身冷汗，怀疑他是不是真看透我了，但我最大的恐惧不在于此。</p>
+<p>　　世界格式化，真的只是 IT 共和国中极端分子的疯话？真的只是一个愚人节玩笑？吊着这把悬剑的那根头发还能支持多久？</p>
+<p>　　一瞬间，我的犹豫像突然打开的强光灯下的黑暗那样消失了，我决定了。</p>
+<p>　　晚上我约了简简，当我从城市灯海的背景上辩认出她的身影时，坚硬的心又软了下来，她那小小的剪影看上去那么娇弱，像一条随时都会被一阵微风吹灭的烛苗，我怎么能伤害她？！当她走近，我看到她的眼睛时，心中的天平已经完全倾向另一个方向，没有她，我要那两百多年有什么用？时间真会抚平创伤？那可能不过是两个多世纪漫长的刑罚而已。爱情使我这个极端自私的人又崇高起来。</p>
+<p>　　但简简先说话了，说出的居然是我原来准备向她说的话，一字不差：“我犹豫了好长时间，我们还是分手吧。”</p>
+<p>　　我茫然地问她为什么。</p>
+<p>　　“很长时间后，当我还年轻时，你已经老了。”</p>
+<p>　　我好半天才理解了她的意思，随即也读懂了她那刚才还令我心碎的哀怨目光，我本以为是她已经看透了我或猜到了些什么。我轻轻笑了起来，很快变成仰天大笑。我真是傻，傻的不透气，也不看看这是个什么时代，也不看看我们前面浮现出怎样的诱惑。笑过之后，我如释重负，浑身轻松的像要飘起来，不过在这同时，我还是真诚地为简简高兴。</p>
+<p>　　“你哪来那么多钱？”我问她。</p>
+<p>　　“只够我一个人的。”她低声说，眼睛不敢看我。</p>
+<p>　　“我知道，没关系，我是说你一个人也要不少钱的。”</p>
+<p>　　“父亲给了我一些，一百年时间是够的。我还存了一些钱，到那时利息应该不少了。”</p>
+<p>　　我知道自己又猜错了，她不是要做基延，而是要冬眠。这是另一项已经商业化的生命科学成果，在零下五十度左右的低温状态，通过药物和体外循环系统便人体的新陈代谢速度降至正常状态的百分之一，人在冬眠中渡过一百年时间，生理年龄仅长了一岁。</p>
+<p>　　“生活太累了，也无趣，我只是想逃避。”简简说。</p>
+<p>　　“到一个世纪后就能逃避吗？那时你的学历已经不被承认，也不适应当时的社会，能过的好吗？”</p>
+<p>　　“时代总是越来越好的，实在不行我到时候再接着冬眠，还可以做基延，到那时一定很便宜了。”</p>
+<p>　　我和简简默默地分别了。也许，一个世纪后我们还能再相会，但我没向她承诺什么，那时的她还是她，但我已经是一个经历了一百三十多年沧桑的人了。</p>
+<p>　　简简的背影消失后，我没再犹豫一刻，拿出手机登录到网银系统，立刻把那五百万元新人民币转到基延中心的帐户上。虽然已近午夜，我还是很快收到了中心主任的电话，他说明天就可以开始我的基因改良操作，顺利的话一周就能完成。他还郑重地重复了中心的保密承诺（身份暴露的基延族中，已经有三人被杀。）</p>
+<p>　　“你会为自己的决定庆幸的，”主任说，“因为你将得到的不只是两个多世纪寿命，可能是永生。”</p>
+<p>　　我明白这点，谁也不知道两个世纪后会出现什么样的技术，也许，到时可以把人的意识和记忆拷贝出来，做成永远不丢失的备份，随时可以灌注到一个新的身体中；也许根本不需要身体，我们的意识在网络中像神一般游荡，通过数量无限的传感器感受着世界和宇宙，这真的是永生了。</p>
+<p>　　主任接着说：“其实，有了时间就有了一切，只要时间足够，一只乱敲打字机的猴子都能打出莎士比亚全集，而你有的是时间。”</p>
+<p>　　“我？不是我们吗？”</p>
+<p>　　“我没有做基延。”</p>
+<p>　　“为什么？”</p>
+<p>　　对方沉默良久后说：“这世界变化太快了，太多的机会太多的诱惑太多的欲望太多的危险，我觉得头昏目眩的，毕竟岁数大了。不过你放心，”他接着说出了简简那句话，“时代总是越来越好的。”</p>
+<p>　　现在，我坐在自己狭小的单身公寓中写着这篇日记，这是我有生以来记的第一篇日记，以后要坚持记下去，因为我总要留下些东西。时间也会让人失去一切，我知道，长寿的并不是我，两个世纪后的我肯定是另一个陌生人了，其实仔细想想，自我的概念本来就很可疑，构成自我的身体、记忆和意识都是在不断的变化中，与简简分别之前的我，以犯罪的方式付款之前的我，与主任交谈之前的我，甚至在打出这个“甚至”之前的我，都已经不是同一个人了，想到这里我很释然。</p>
+<p>　　但我总是要留下些东西。</p>
+<p>　　窗外的夜空中，黎明前的星星在发出它们最后的寒光，与城市辉煌的灯海相比，星星如此黯淡，刚能被辩认出来，但它们是永恒的象征。就在这一夜，不知有多少与我一样的新新人类上路了，不管好坏，我们将是第一批真正触摸永恒的人。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/鸟叫-刘亮程.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/哪一段青春不荒唐-许冬林.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/鸟叫-刘亮程.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/哪一段青春不荒唐-许冬林.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/2018年4月1日-刘慈欣.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

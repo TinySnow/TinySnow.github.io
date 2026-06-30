@@ -1,0 +1,576 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第十章：感染性心内膜炎 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第十章感染性心内膜炎"><a class="header" href="#第十章感染性心内膜炎">第十章：感染性心内膜炎</a></h1>
+<h2 id="一定义及特点"><a class="header" href="#一定义及特点">一、定义及特点</a></h2>
+<ul>
+<li>为 <strong>心脏内膜表面</strong> 的微生物感染，伴赘生物形成。</li>
+<li>大小不等、形状不一的 <strong>血小板和纤维素团块，内含大量微生物和少量炎症细胞</strong> 。</li>
+<li><strong>瓣膜最易受累</strong> ，其次间隔缺损部位，腱索或心壁内膜。</li>
+<li>分为自体瓣膜、人工瓣膜和静脉药瘾者的心内膜炎。</li>
+</ul>
+<h2 id="二分类"><a class="header" href="#二分类">二、分类</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">感染性心内膜炎</th><th style="text-align: center">急性</th><th style="text-align: center">亚急性</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">中毒症状</td><td style="text-align: center">明显</td><td style="text-align: center">轻</td></tr>
+<tr><td style="text-align: center">病程</td><td style="text-align: center">进展迅速</td><td style="text-align: center">数周至数月</td></tr>
+<tr><td style="text-align: center">感染迁徙</td><td style="text-align: center">多见</td><td style="text-align: center">少见</td></tr>
+<tr><td style="text-align: center">受累瓣膜</td><td style="text-align: center">正常</td><td style="text-align: center">器质性心脏病</td></tr>
+<tr><td style="text-align: center">病原体</td><td style="text-align: center">金葡菌</td><td style="text-align: center">草绿色链球菌</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="三病因及发病机制"><a class="header" href="#三病因及发病机制">三、病因及发病机制</a></h2>
+<h3 id="一概述"><a class="header" href="#一概述">一）概述</a></h3>
+<ul>
+<li>链球菌和葡萄球菌为主要病原微生物</li>
+<li>急性者，主要为金黄色葡萄球菌</li>
+<li>亚急性者，草绿色链球菌最常见</li>
+</ul>
+<h3 id="二亚急性"><a class="header" href="#二亚急性">二）亚急性</a></h3>
+<ul>
+<li><strong>占病例 2/3</strong> ，与以下因素有关：</li>
+<li><strong>血流动力学因素</strong>
+<ul>
+<li>心脏瓣膜病，尤其是二尖瓣和主动脉瓣，其次先天性心血管病，如室缺、动脉导管未闭、法四和主动脉缩窄；</li>
+<li>赘生物常位于 <strong>异常血流下游的心内膜</strong> （压力下降和内膜灌注减少）；高速血流冲击心脏及大血管内膜处可致局部损伤，并易于感染；</li>
+</ul>
+</li>
+<li><strong>非细菌性血栓性心内膜病变</strong></li>
+<li><strong>短暂性菌血症</strong></li>
+<li><strong>细菌感染无菌性赘生物</strong></li>
+</ul>
+<h3 id="三急性"><a class="header" href="#三急性">三）急性</a></h3>
+<ul>
+<li>发病机制尚不清楚，主要 <strong>累及正常心内膜</strong> 。</li>
+<li>病原菌来自皮肤、肌肉、骨骼或肺等部位的活动性感染灶，循环中细菌量大，细菌毒力强。</li>
+<li><strong>主动脉瓣常受累。</strong></li>
+</ul>
+<h2 id="四临床表现"><a class="header" href="#四临床表现">四、临床表现</a></h2>
+<ol>
+<li>心脏杂音： <strong>85%</strong> 可出现心脏杂音。急性易发生杂音和强度的改变。</li>
+<li>发热： <strong>最常见，急性（高热）；亚急性（&lt;39.5℃，弛张热）</strong></li>
+<li>周围体征：
+<ul>
+<li><strong>瘀点</strong> ：以锁骨上皮肤、口腔粘膜和睑结膜；</li>
+<li><strong>指和趾甲下线状出血</strong> ；</li>
+<li><strong>Roth 斑</strong> ：视网膜卵圆形出血斑，多见于亚急性；</li>
+<li><strong>Osler 结节</strong> ：指和趾垫出现豌豆大的红或紫色痛性结节，亚急性；</li>
+<li><strong>Janeway 损害</strong> ：手掌和足底处直径 1~4mm 无痛性出血斑，急性。</li>
+</ul>
+</li>
+<li>动脉栓塞： <strong>占 20-40%</strong> ，脑、心、脾、肾、肠系膜和四肢为临床所见的体循环动脉栓塞部位。 <strong>脑栓塞为 15~20%。</strong></li>
+<li>感染的非特异性症状： <strong>脾大、贫血，亚急性多见。</strong></li>
+</ol>
+<h2 id="五并发症"><a class="header" href="#五并发症">五、并发症</a></h2>
+<h3 id="一心脏"><a class="header" href="#一心脏">一）心脏</a></h3>
+<ul>
+<li>
+<p><strong>心力衰竭</strong> ： <strong>最常见并发症</strong> ，主要由瓣膜关闭不全所致， <strong>主动脉瓣受损者最常发生（75%）</strong></p>
+</li>
+<li>
+<p>心肌脓肿：可发生于心脏任何部位，以 <strong>主动脉瓣环多见</strong></p>
+</li>
+<li>
+<p>急性心梗：多由冠状动脉栓塞引起以 <strong>主动脉瓣感染时多见</strong></p>
+</li>
+<li>
+<p>化脓性心包炎：不多见</p>
+</li>
+<li>
+<p>心肌炎</p>
+</li>
+</ul>
+<h3 id="二细菌性动脉瘤"><a class="header" href="#二细菌性动脉瘤">二）细菌性动脉瘤</a></h3>
+<ul>
+<li><strong>约占 3%~5%</strong> ，受累动脉依次为近端主动脉、脑、内脏和四肢，一般见于病程晚期，多无症状</li>
+<li><strong>常见于亚急性者</strong></li>
+</ul>
+<h3 id="三迁移性脓肿"><a class="header" href="#三迁移性脓肿">三）迁移性脓肿</a></h3>
+<ul>
+<li>多发生于肝、脾、骨髓和神经系统</li>
+<li><strong>常见于急性者</strong></li>
+</ul>
+<h3 id="四神经系统"><a class="header" href="#四神经系统">四）神经系统</a></h3>
+<ul>
+<li><strong>约 15-30% 受累，脑栓塞占其中 1/2；</strong></li>
+<li>脑细菌动脉瘤、脑出血、中毒性脑病、脑脓肿、化脓性脑膜炎；</li>
+<li><strong>常见于急性者</strong></li>
+</ul>
+<h3 id="五肾损害"><a class="header" href="#五肾损害">五）肾损害</a></h3>
+<ul>
+<li><strong>肾动脉栓塞和肾梗死</strong></li>
+<li>局灶性和弥漫性肾小球肾炎（后者可致肾衰竭）</li>
+<li>肾脓肿少见</li>
+<li><strong>常见于亚急性者和急性者</strong></li>
+</ul>
+<h2 id="六实验室及其他检查"><a class="header" href="#六实验室及其他检查">六、实验室及其他检查</a></h2>
+<h3 id="一血培养"><a class="header" href="#一血培养">一）血培养</a></h3>
+<h4 id="重要性"><a class="header" href="#重要性">重要性</a></h4>
+<ul>
+<li><strong>是诊断菌血症和感染性心内膜炎的最重要方法。</strong></li>
+<li>在近期未接受过抗生素治疗的患者血培养阳性率可高达 <strong>95% 以上</strong> ，其中 <strong>90%</strong> 获自第一日采取的标本。</li>
+</ul>
+<h4 id="注意事项"><a class="header" href="#注意事项">注意事项</a></h4>
+<h5 id="未用抗生素"><a class="header" href="#未用抗生素">未用抗生素</a></h5>
+<ul>
+<li>第 1 日，间隔 1 小时，共 3 次；</li>
+<li><strong>次日未见细菌生长</strong> ，重复采血 3 次后后应用抗菌素（亚急性）</li>
+</ul>
+<h5 id="已用抗生素"><a class="header" href="#已用抗生素">已用抗生素</a></h5>
+<ul>
+<li><strong>停药后 2-7 天后取血</strong></li>
+</ul>
+<h5 id="急性"><a class="header" href="#急性">急性</a></h5>
+<ul>
+<li>入院后 <strong>3 小时内</strong> ，每间隔 1 小时 1 次，共 3 次后 <strong>开始治疗</strong></li>
+<li><strong>无需在体温升高时采血</strong></li>
+<li>抽血 10-20ml，同需氧、厌氧和真菌， <strong>培养 3 周</strong></li>
+<li><strong>血培养阴性率 2.5-64%</strong></li>
+<li>念珠菌、曲霉菌、组织胞质菌、Q 热病原体、鹦鹉热衣原体， <strong>血培养常阴性</strong></li>
+</ul>
+<h3 id="二常规检验"><a class="header" href="#二常规检验">二）常规检验</a></h3>
+<ul>
+<li>亚急性者 <strong>正常色素型正常细胞性贫血常见</strong> ；</li>
+<li>常有显微镜下血尿和轻度蛋白尿，肉眼血尿提示肾梗死。</li>
+</ul>
+<h3 id="三免疫学检查"><a class="header" href="#三免疫学检查">三）免疫学检查</a></h3>
+<ul>
+<li><strong>25%</strong> 的患者有高丙种球蛋白血症；</li>
+<li><strong>80%</strong> 的患者出现循环中免疫复合物；</li>
+<li>病程 <strong>6 周以上</strong> 的亚急性患者中 <strong>50%</strong> 类风湿因子试验阳性。</li>
+<li>上述治愈后消失。</li>
+</ul>
+<h3 id="四x-线检查"><a class="header" href="#四x-线检查">四）X 线检查</a></h3>
+<ul>
+<li>肺部多处小片状浸润阴影提示脓毒性肺栓塞所致肺炎。</li>
+<li>左心衰竭时有肺淤血或肺水肿征。</li>
+</ul>
+<h3 id="五心电图"><a class="header" href="#五心电图">五）心电图</a></h3>
+<ul>
+<li>偶可见急性心肌梗死或房室、室内传导阻滞，后者提示主动脉瓣环或室间隔脓肿。</li>
+</ul>
+<h3 id="六超声心动图"><a class="header" href="#六超声心动图">六）超声心动图</a></h3>
+<ul>
+<li>如果 <strong>超声心动图发现赘生物、瓣周并发症</strong> 等支持心内膜炎的证据， <strong>可帮助明确诊断</strong> 。</li>
+<li>经 <strong>胸超声检查可检出 50%~75% 的赘生物</strong> ；</li>
+<li>经 <strong>食管超声可检出 &lt; 5mm 的赘生物，敏感性高达 95% 以上</strong> ；</li>
+<li>超声心动图未发现赘生物时并不能除外。</li>
+</ul>
+<h2 id="七治疗"><a class="header" href="#七治疗">七、治疗</a></h2>
+<h3 id="一抗微生物药物用药原则-最重要的治疗措施"><a class="header" href="#一抗微生物药物用药原则-最重要的治疗措施">一）抗微生物药物用药原则 <strong>（最重要的治疗措施）</strong></a></h3>
+<ul>
+<li>早期应用、充分用药、静脉用药；</li>
+<li>不明病原时， <strong>急性应用针对金黄色葡萄球菌、链球菌和革兰氏阴性杆菌有效的广谱抗生素；</strong></li>
+<li><strong>亚急性应用针对大多数链球菌的抗生素；</strong></li>
+<li>已分离出病原微生物时，根据药敏选择抗微生物药物。</li>
+</ul>
+<h3 id="二经验用药"><a class="header" href="#二经验用药">二）经验用药</a></h3>
+<ul>
+<li>抗生素使用原则
+<ul>
+<li><strong>杀菌剂</strong></li>
+<li><strong>联合应用，至少 2 种具有协同作用的抗菌药物</strong></li>
+<li><strong>大剂量</strong></li>
+<li><strong>静脉给药</strong></li>
+<li><strong>长疗程，一般为 4-6 周，人工瓣膜心内膜炎需 6-8 周或更长，以降低复发率</strong></li>
+</ul>
+</li>
+<li>自体瓣膜病轻症选用青霉素、阿莫西林或氨苄西林联合庆大霉素；</li>
+<li>青霉素过敏用头孢曲松；</li>
+<li>人工瓣膜未确诊且病情稳定，暂停抗生素、复查血培养；</li>
+<li>可能为金葡菌，宜选用万古霉素 + 庆大霉素 + 利福平。</li>
+</ul>
+<h3 id="三已知致病微生物的治疗"><a class="header" href="#三已知致病微生物的治疗">三）已知致病微生物的治疗</a></h3>
+<h4 id="葡萄球菌心内膜炎推荐治疗方案"><a class="header" href="#葡萄球菌心内膜炎推荐治疗方案">葡萄球菌心内膜炎推荐治疗方案</a></h4>
+<ul>
+<li>宜根据病原菌是否属甲氧西林耐药株而定</li>
+<li><strong>在获知细菌药敏前，宜首选耐酶青霉素类</strong> ，如苯唑西林或氯唑西林等联合氨基糖苷类。</li>
+<li><strong>甲氧西林敏感，首选苯唑西林</strong> ；青霉素过敏者头孢唑啉。</li>
+<li><strong>甲氧西林耐药，宜选用万古霉素联合利福平</strong> ，无效可用达托霉素。</li>
+</ul>
+<h4 id="链球菌心内膜炎推荐治疗方案"><a class="header" href="#链球菌心内膜炎推荐治疗方案">链球菌心内膜炎推荐治疗方案</a></h4>
+<ul>
+<li><strong>对青霉素敏感的细菌：首选青霉素</strong></li>
+<li>对青霉素耐药的链球菌，万古霉素或替考拉宁联合庆大霉素</li>
+</ul>
+<h4 id="肠球菌心内膜炎推荐治疗方案"><a class="header" href="#肠球菌心内膜炎推荐治疗方案">肠球菌心内膜炎推荐治疗方案</a></h4>
+<ul>
+<li><strong>青霉素联合氨苄西林或阿莫西林，联合氨基糖苷类抗生素</strong></li>
+<li>青霉素过敏：可选万古霉素或替考拉宁联合氨基糖苷类。</li>
+</ul>
+<h4 id="需氧革兰阴性杆菌心内膜炎"><a class="header" href="#需氧革兰阴性杆菌心内膜炎">需氧革兰阴性杆菌心内膜炎</a></h4>
+<ul>
+<li>
+<p>哌拉西林联合庆大霉素或妥布霉素，或头孢啶院联合氨基糖苷类</p>
+</li>
+<li>
+<p>备注：我国庆大霉素耐药率高，肾毒性大，选用其他氨基糖苷类药物</p>
+</li>
+</ul>
+<h3 id="四外科治疗"><a class="header" href="#四外科治疗">四）外科治疗</a></h3>
+<h4 id="紧急手术--24-小时"><a class="header" href="#紧急手术--24-小时">紧急手术（ &lt; 24 小时）</a></h4>
+<ul>
+<li><strong>主动脉瓣或二尖瓣伴急性重度反流、阻塞或瓣周瘘导致难治性肺水肿、心源性休克。</strong></li>
+</ul>
+<h4 id="外科手术--7-天"><a class="header" href="#外科手术--7-天">外科手术（ &lt; 7 天）</a></h4>
+<ol>
+<li>主动脉瓣或二尖瓣伴急性重度反流、阻塞引起有症状的心衰或血流动力学异常。</li>
+<li>未能控制的局灶性感染。</li>
+<li>真菌或多重耐药菌造成的感染。</li>
+<li>规范抗感染情况下，血培养阳性。</li>
+<li>正确抗感染下出现 &gt; 1 次栓塞，且赘生物 &gt; 10mm。</li>
+<li>赘生物 &gt; 10mm，严重瓣膜狭窄或反流。</li>
+<li>伴有单个巨大赘生物 &gt; 30mm。</li>
+<li>伴有单个巨大赘生物 &gt; 15mm，可考虑。</li>
+</ol>
+<h3 id="五人工瓣膜心内膜炎pve"><a class="header" href="#五人工瓣膜心内膜炎pve">五）人工瓣膜心内膜炎（PVE）</a></h3>
+<ol>
+<li>发生于人工瓣膜置换术后 1 年以内者为早期 PVE，1 年以后为晚期</li>
+<li><strong>早期为葡萄球菌、革兰氏阴性杆菌和真菌。</strong></li>
+<li><strong>晚期以链球菌、葡萄球菌和肠球菌。</strong></li>
+<li>PVE 葡萄球菌和真菌较 NVE 常见，链球菌反之。</li>
+<li>常累及主动脉瓣。</li>
+<li>治疗应在自体瓣膜心内膜炎用药基础之上， <strong>将疗程延长 6~8 周</strong> 。</li>
+<li>及早手术：因瓣膜关闭不全致重度心力衰竭、真菌感染、充分抗生素治疗持续菌血症、急性瓣膜阻塞、X 线透视发现人工瓣膜不稳定、新发生的心脏传导阻滞。</li>
+</ol>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第九章：心包疾病.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第十一章：心脏骤停与心脏性猝死.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第九章：心包疾病.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第十一章：心脏骤停与心脏性猝死.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第三部分：循环系统疾病/第十章：感染性心内膜炎.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

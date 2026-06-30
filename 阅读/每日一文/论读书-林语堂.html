@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>论读书 - 林语堂 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="论读书"><a class="header" href="#论读书">论读书</a></h1>
+<p><em>林语堂</em></p>
+<p>　　本篇演讲只是谈谈本人对于读书的意见，并不是要训勉青年，亦非敢指导青年。所以不敢训勉青年有两种理由：第一，因为近来常听见贪官污吏到学校致训词，叫学生须有志操，有气节，有廉耻；也有卖国官僚到大学演讲，劝学生要坚忍卓绝，做富贵不能淫，威武不能屈的大丈夫。暗讽时事。不幸的是这样的事如今也一样发生。孟子曰，人之患在好为人师，料想战国的土豪劣绅亦必好训勉当时的青年，所以激起孟子这样不平的话。第二，读书没有什么可以训勉。世上会读书的人，都是书拿起来自己会读。不会读书的人，亦不会因为指导而变为会读。譬如数学，出五个问题叫学生去做，会做的人是自己脑里做出来的，并非教员教他做出，不会做的人经教员指导，这一题虽然做出，下一题仍旧非指导不可，数学并不会因此高明起来。我所要讲的话于你们本会读书的人，没有什么补助，于你们不会读书的人，也不会使你们变为善读书。所以今日谈谈，亦只是谈谈而已。</p>
+<p>　　读书本是一种心灵的活动，向来算为清高。说破读书本质，“心灵”而已。“万般皆下品，惟有读书高。”所以读书向称为雅事乐事。但是现在雅事乐事已经不雅不乐了。今天读书，或为取资格，得学位，在男为娶美女，在女为嫁贤婿；或为做老爷，踢屁股；或为求爵禄，刮地皮；或为做走狗，拟宣言；或为写讣闻，做贺联；或为当文牍，抄账簿；或为做相士，占八卦；或为做塾师，骗小孩……诸如此类，都是借读书之名，取利禄之实，皆非读书本旨。亦有人拿父母的钱，上大学，跑百米，拿一块大银盾回家，在我是看不起的，因为这似乎亦非读书的本旨。读书本旨湮没于求名利之心中，可悲。可惜现在也一样。</p>
+<p>　　今日所谈，亦非指学堂中的读书，亦非指读教授所指定的功课，在学校读书有四不可。（一）所读非书。学校专读教科书，而教科书并不是真正的书。今日大学毕业的人所读的书极其有限。然而读一部小说概论，到底不如读《三国》、《水浒》；读一部历史教科书，不如读《史记》。（二）无书可读。因为图书馆存书不多，可读的书极有限。（三）不许读书。因为在课室看书，有犯校规，例所不许。倘是一人自晨至晚上课，则等于自晨至晚被监禁起来，不许读书。（四）书读不好。因为处处受训导处干涉，毛孔骨节，皆不爽快。且学校所教非慎思明辨之学，乃记问之学。记问之学不足为人师，礼记早已说过。书上怎样说，你便怎样答，一字不错，叫做记问之学。倘是你能猜中教员心中要你如何答法，照样答出，便得一百分，于是沾沾自喜，自以为西洋历史你知道一百分，其实西洋历史你何尝知道百分之一。学堂所以非注重记问之学不可，是因为便于考试。如拿破仑生卒年月，形容词共有几种，这些不必用头脑，只需强记，然学校考试极其便当，差一年可扣一分；然而事实上与学问无补，你们的教员，也都记不得。要用时自可在百科全书上去查。又如罗马帝国之亡，三大原因，书上这样讲，你们照样记，然而事实上问题极复杂。有人说罗马帝国之亡，是亡于蚊子（传布寒热疟），这是书上所无的。在学校读过书者，皆当会心而笑。然想到教科书规范头脑，湮塞性灵，却又堪哭。</p>
+<p>　　今日所谈的是自由的看书读书，无论是在校，离校，做教员，做学生，做商人，做政客有闲必读书。这种的读书，所以开茅塞，除鄙见，得新知，增学问，广识见，养性灵。人之初生，都是好学好问，及其长成，受种种的俗见俗闻所蔽，毛孔骨节，如有一层包膜，失了聪明，逐渐顽腐。读书便是将此层蔽塞聪明的包膜剥下。能将此层剥下，才是读书人。点明读书要能破俗见陋习，复人之灵性。对死读书本固持陈念之人一段讥讽，令人心惊警惕。盖我们也未尝不有鄙俗之时。并且要时时读书，不然便会鄙吝复萌，顽见俗见生满身上，一人的落伍、迂腐、冬烘，就是不肯时时读书所致。所以读书的意义，是使人较虚心，较通达，不固陋，不偏执。一人在世上，对于学问是这样的：幼时认为什么都不懂，大学时自认为什么都懂，毕业后才知道什么都不懂，中年又以为什么都懂，到晚年才觉悟一切都不懂。大学生自以为心理学他也念过，历史地理他亦念过，经济科学也都念过，世界文学艺术声光化电，他也念过，所以什么都懂，毕业以后，人家问他国际联盟在哪里，他说“我书上未念过”，人家又问法西斯蒂在意大利成绩如何，他也说“我书上未念过”，所以觉得什么都不懂。到了中年，许多人娶妻生子，造洋楼，有身分，做名流，戴眼镜，留胡子，拿洋棍，沾沾自喜，那时他的世界已经固定了：女子放胸是不道德，剪发亦不道德，社会主义就是共产党，读《马氏文通》是反动，节制生育是亡种逆天，提倡白话是亡国之先兆，《孝经》是孔子写的，大禹必有其人，……意见非常之多而且确定不移，所以又是什么都懂。其实是此种人久不读书，鄙吝复萌所致。此种人不可与深谈。但亦有常读书的人，老当益壮，其思想每每比青年急进，就是能时时读书所以心灵不曾化石，变为古董。</p>
+<p>　　读书的主旨在于排脱俗气。黄山谷谓人不读书便语言无味，面目可憎。须知世上语言无味面目可憎的人很多，不但商界政界如此，学府中亦颇多此种人。然语言无味，面目可憎在官僚商贾则无妨，在读书人是不合理的。所谓面目可憎，不可作面孔不漂亮解，因为并非不能奉承人家，排出笑脸，所以“可憎”；胁肩谄笑，面孔漂亮，便是“可爱”。若欲求美男子小白脸，尽可于跑狗场、跳舞场，及政府衙门中求之。有漂亮脸孔，说漂亮话的政客，未必便面目不可憎。读书与面孔漂亮没有关系，因为书籍并不是雪花膏，读了便会增加你的容辉。所以面目可憎不可憎，在你如何看法。有人看美人专看脸蛋，凡有鹅脸柳眉皓齿朱唇都叫做美人。但是识趣的人若李笠翁看美人专看风韵，笠翁所谓三分容貌有姿态等于六七分，六七分容貌乏姿态等于三四分。有人面目平常，然而谈起话来，使你觉得可爱；也有满脸脂粉的摩登伽，洋囡囡，做花瓶，做客厅装饰甚好，但一与交谈，风韵全无，便觉得索然无味。“风韵”二字读书而来。性灵可决定面目，此处也说的这个道理。黄山谷所谓面目可憎不可憎亦只是指读书人之议论风采说法。若浮生六记的芸，虽非西施面目，并且前齿微露，我却觉得是中国第一美人。男子也是如是看法。章太炎脸孔虽不漂亮，王国维虽有一条辫子，但是他们是有风韵的，不是语言无味面目可憎的。简直可认为可爱。亦有漂亮政客，做武人的兔子姨太太，说话虽漂亮，听了却令人作呕三日。</p>
+<p>　　至于语言无味（着重“味”字），都全看你所读是什么书及读书的方法。读书读出味来，语言自然有味，语言有味，做出文章亦必有味。有人读书读了半世，亦读不出什么味儿来，都是因为读不合的书，及不得其读法。读书须先知味。读书知味。世上多少强读人，听到此语否？这味字，是读书的关键。所谓味，是不可捉摸的，一人有一人胃口，各不相同，所好的味亦异，所以必先知其所好，始能读出味来。有人自幼嚼书本，老大不能通一经，便是食古不化勉强读书所致。袁中郎所谓读所好之书，所不好之书可让他人读之，这是知味的读法。若必强读，消化不来，必生疳积胃滞诸病。</p>
+<p>　　口之于味，不可强同，不能因我的所嗜好以强人。先生不能以其所好强学生去读。父亲亦不得以其所好强儿子去读。所以书不可强读，强读必无效，反而有害，这是读书之第一义。有愚人请人开一张必读书目，硬着头皮咬着牙根去读，殊不知读书须求气质相合。人之气质各有不同，英人俗语所谓“在一人吃来是补品，在他人吃来是毒质”。因为听说某书是名着，因为，要做通人，硬着头皮去读，结果必毫无所得。过后思之，如作一场恶梦。甚且终身视读书为畏途，提起书名来便头痛。小时候若非有随时扔掉不喜之书之权，亦几乎堕入此道矣！萧伯纳说许多英国人终身不看莎士比亚，就是因为幼年塾师强迫背诵种下的果。许多人离校以后，终身不再看诗，不看历史，亦是旨趣未到学校迫其必修所致。</p>
+<p>　　所以读书不可勉强，因为学问思想是慢慢胚胎滋长出来。其滋长自有滋长的道理，如草木之荣枯，河流之转向，各有其自然之势。逆势必无成就。树木的南枝遮荫，自会向北枝发展，否则枯槁以待毙。河流遇了矶石悬崖，也会转向，不是硬冲，只要顺势流下，总有流入东海之一日。世上无人人必读之书，只有在某时某地某种心境不得不读之书。警句。有你所应读，我所万不可读，有此时可读，彼时不可读，即使有必读之书，亦决非此时此刻所必读。见解未到，必不可读，思想发育程度未到，亦不可读。孔子说五十可以学易，便是说四十五岁时尚不可读《易经》。刘知几少读古文《尚书》，挨打亦读不来，后听同学读《左传》，甚好之，求授《左传》，乃易成诵。《庄子》本是必读之书，然假使读《庄子》觉得索然无味，只好放弃，过了几年再读。对庄子感觉兴味，然后读庄子，对马克思感觉兴味，然后读马克思。读书要等兴味来。若有不喜欢之书，搁下几年，未尝不变做喜欢，于我心有戚戚焉。</p>
+<p>　　且同一本书，同一读者，一时可读出一时之味道出来。其景况适如看一名人相片，或读名人文章，未见面时，是一种味道，见了面交谈之后，再看其相片，或读其文章，自有另外一层深切的理会。或是与其人绝交以后，看其照片，读其文章，亦另有一番味道。四十学《易》是一种味道，五十而学《易》，又是一种味道。所以凡是好书都值得重读的。自己见解愈深，学问愈进，愈读得出味道来。譬如我此时重读 Lamb 的论文，比幼时所读全然不同，幼时虽觉其文章有趣，没有真正魂灵的接触，未深知其文之佳境所在。一人背痈，再去读范增的传，始觉趣味。</p>
+<p>　　由是可知读书有二方面，一是作者，一是读者。程子谓《论语》读者有此等人与彼等人。有读了全然无事者；亦有读了不知手之舞足之蹈之者。所以读书必以气质相近，而凡人读书必找一位同调的先贤，一位气质与你相近的作家，作为老师，这是所谓读书必须得力一家。若单就读书，得力一家，失之于简率。然林语堂意思是要人找到师法对象，全心投入、气质浸润。此即读书以“情”读和以“智”读之区别。不可昏头昏脑，听人戏弄，庄子亦好，荀子亦好，苏东坡亦好，程伊川亦好。一人同时爱庄荀，或同时爱苏程是不可能的事。找到思想相近之作家，找到文学上之情人，心胸中感觉万分痛快，而魂灵上发生猛烈影响，如春雷一鸣，蚕卵孵出，得一新生命，入一新世界。GeorgeEliot 自叙读卢骚自传，如触电一般。尼采师叔本华、萧伯纳师易卜生，虽皆非及门弟子，而思想相承，影响极大。当二子读叔本华、易卜生时，思想上起了大影响，是其思想萌芽学问生根之始。因为气质性灵相近，所以乐此不疲，流连忘返，流连忘返，始可深入，深入后，如受春风化雨之赐，欣欣向荣，学业大进。</p>
+<p>　　谁是气质与你相近的先贤，只有你知道，也无需人家指导，更无人能勉强，你找到这样一位作家，自会一见如故，苏东坡初读庄子，如有胸中久积的话，被他说出，袁中郎夜读徐文长诗，叫唤起来，叫复读，读复叫，便是此理。这与“一见倾心”之性爱同一道理。你遇到这样作家，自会恨相见太晚。一人必有一人中意的作家，各人自己去找去，找到了文学上的爱人，“文学上的爱人”，奇语，但极有道理。读书若无爱情，如强迫婚姻，终究无效。他自会有魔力吸引你，而你也乐自为所吸，甚至声音相貌，一颦一笑，亦渐与相似，这样浸润其中，自然获益不少，将来年事渐长，厌此情人，再找别的情人，到了经过两三个情人，或是四五个情人，大概你自己也已受了熏陶不浅，思想已经成熟，自己也就成了一位作家。若找不到情人，东览西阅，所读的未必能沁入魂灵深处，便是逢场作戏，逢场作戏，不会有心得，学问不会有成就。</p>
+<p>　　知道情人滋味便知道苦学二字是骗人的话。苦学误人！警句。只可惜读教科书，却非苦学不可。然如能从浸润各色奇书来长己之才智，未必不能过考卷关。学者每为“苦学”或“困学”二字所误。读书成名的人，只有乐，没有苦。据说古人读书有追月法、刺股法、又丫头监读法。其实都是很笨。读书无兴味，昏昏欲睡，始拿锥子在股上刺一下，这是愚不可当。一人书本摆在面前，有中外贤人向你说极精彩的话，尚且想睡觉，便应当去睡觉，刺股亦无益。叫丫头陪读，等打盹时唤醒你，已是下流，亦应去睡觉，不应读书。而且此法极不卫生，不睡觉，只有读坏身体，不会读出书的精彩来。若已读出书的精彩来，便不想睡觉，故无丫头唤醒之必要。刻苦耐劳，淬励奋勉是应该的，但不应视读书为苦。视读书为苦，第一着已走了错路。天下读书成名的人皆以读书为乐；汝以为苦，彼却沉湎以为至乐。比如一人打麻将，或如人挟妓冶游，流连忘返，寝食俱废，始读出书来。以我所知国文好的学生，都是偷看几百万言的三国水浒而来，决不是一学年读五十六页文选，国文会读好的。试问在偷读三国水浒之人，读书有什么苦处？何尝算页数？好学的人，是书无所不窥，窥就是偷看。于书无所不偷看的人，大概学会成名。</p>
+<p>　　有人读书必装腔作势，或嫌板凳太硬，或嫌光线太弱，这都是读书未入门路，未觉兴味所致。有人做不出文章，怪房间冷，恐蚊子多，怪稿纸发光，怪马路上电车声音太嘈杂，其实都是因为文思不来，写一句，停一句。一人不好读书，总有种种理由。“春天不是读书天，夏日炎炎最好眠，等到秋来冬又至，不知等待到来年。”其实读书是四季咸宜。古所谓“书淫”之人，无论何时何地可读书皆手不释卷，这样才成读书人样子。读书要为书而读，不是为读而读。顾千里裸体读经，便是一例，即使暑气炎热，至非裸体不可，亦要读经。欧阳修在马上厕上皆可做文章，因为文思一来，非做不可，非必正襟危坐明窗净几才可做文章。一人要读书则澡堂、马路、洋车上、厕上、图书馆、理发室，皆可读。而且必办到洋车上、理发室都必读书，才可以读成书。</p>
+<p>　　读书须有胆识，有眼光，有毅力。说回前面论点，最后一点，也即读书全部之主旨，读出自己性灵来。胆识二字拆不开，要有识，必敢有自己意见，即使一时与前人不同亦不妨。前人能说得我服，是前人是，前人不能服我，是前人非。人心之不同如其面，要脚踏实地，不可舍己耘人。诗或好李，或好杜，文或好苏，或好韩，各人要凭良知，读其所好，然后所谓好，说得好的道理出来。或竟苏韩皆不好，亦不必惭愧，亦须说出不好的理由来，或某名人文集，众人所称而你独恶之，则或系汝自己学力见识未到，或果然汝是而人非。学力未到，等过几年再读，若学力已到而汝是人非，则将来必发现与汝同情之人。刘知几少时读前后汉书，怪前书不应有古今人表，后书宜为更始立纪，当时闻者责以童子轻议前哲，乃“赧然自失，无辞以对”，后来偏偏发见张衡、范晔等，持见与之相同，此乃刘知几之读书胆识。因其读书皆得之襟腑，非人云亦云，所以能着成《史通》一书。如此读书，处处有我的真知灼见，得一分见解是一分学问，除一种俗见，算一分进步，才不会落入圈套，满口烂调，一知半解，似是而非。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/读书有秘诀吗-邓拓.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/爱得过分的女人-罗宾·诺伍德.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/读书有秘诀吗-邓拓.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/爱得过分的女人-罗宾·诺伍德.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/论读书-林语堂.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

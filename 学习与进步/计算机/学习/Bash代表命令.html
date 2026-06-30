@@ -1,0 +1,748 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Bash 代表命令 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="bash-代表命令"><a class="header" href="#bash-代表命令">Bash 代表命令</a></h1>
+<h2 id="前注"><a class="header" href="#前注">前注</a></h2>
+<p>此笔记只用于回忆，不是教程。</p>
+<p>原教程：<a href="https://wangdoc.com/bash/index.html">阮一峰 Bash 脚本教程</a></p>
+<h2 id="代表命令"><a class="header" href="#代表命令">代表命令</a></h2>
+<pre><code class="language-bash">#!/bin/sh
+# 或者
+#! /bin/bash
+
+echo -n hello world
+
+echo -e "Hello\nWorld"
+
+mkdir foo || mkdir bar
+
+mkdir foo &amp;&amp; mkdir bar
+
+type echo
+
+set
+
+unset
+
+?
+
+~
+
+*
+
+ls ?[!a]?
+
+mkdir {2007..2009}-{01..12}
+
+echo {0..8..2}
+
+echo $(date)
+
+# 请注意，此命令默认关闭
+ls **/*.txt
+
+echo "$(cal)"
+
+&lt;&lt; token
+text
+token
+
+cat &lt;&lt;&lt; 'hi there'
+# 等同于
+echo 'hi there' | cat
+
+$?
+
+$$
+
+$_
+
+$!
+
+$0
+
+$-
+
+$#
+
+$#
+
+${#varname}
+
+${varname:offset:length}
+
+# 如果 pattern 匹配变量 variable 的开头，
+# 删除最短匹配（非贪婪匹配）的部分，返回剩余部分
+${variable#pattern}
+
+# 如果 pattern 匹配变量 variable 的开头，
+# 删除最长匹配（贪婪匹配）的部分，返回剩余部分
+${variable##pattern}
+
+# 如果 pattern 匹配变量 variable 的结尾，
+# 删除最短匹配（非贪婪匹配）的部分，返回剩余部分
+${variable%pattern}
+
+# 如果 pattern 匹配变量 variable 的结尾，
+# 删除最长匹配（贪婪匹配）的部分，返回剩余部分
+${variable%%pattern}
+
+# 如果 pattern 匹配变量 variable 的一部分，
+# 最长匹配（贪婪匹配）的那部分被 string 替换，但仅替换第一个匹配
+${variable/pattern/string}
+
+# 如果 pattern 匹配变量 variable 的一部分，
+# 最长匹配（贪婪匹配）的那部分被 string 替换，所有匹配都替换
+${variable//pattern/string}
+
+# 转为大写
+${varname^^}
+
+# 转为小写
+${varname,,}
+
+(( 2 + 2 ))
+
+expr 3 + 2
+
+!echo
+
+export HISTTIMEFORMAT='%F %T  '
+
+export HISTIGNORE='pwd:ls:exit'
+
+cd -
+
+pushd dirname
+
+popd [-n]
+
+dirs
+    -c：清空目录栈。
+    -l：用户主目录不显示波浪号前缀，而打印完整的目录。
+    -p：每行一个条目打印目录栈，默认是打印在一行。
+    -v：每行一个条目，每个条目之前显示位置编号（从0开始）。
+    +N：N为整数，表示显示堆顶算起的第 N 个目录，从零开始。
+    -N：N为整数，表示显示堆底算起的第 N 个目录，从零开始。
+
+grep -- "--hello" example.txt
+
+# 写法一
+if test -e /tmp/foo.txt ; then
+  echo "Found foo.txt"
+fi
+# 写法二
+if [ -e /tmp/foo.txt ] ; then
+  echo "Found foo.txt"
+fi
+# 写法三
+if [[ -e /tmp/foo.txt ]] ; then
+  echo "Found foo.txt"
+fi
+
+case expression in
+  pattern )
+    commands ;;
+  pattern )
+    commands ;;
+esac
+
+while condition; do
+  commands
+done
+
+for variable in list; do
+  commands
+done
+
+for (( i=0; i&lt;5; i=i+1 )); do
+  echo $i
+done
+
+select name
+[in list]
+do
+  commands
+done
+
+# 函数总是在当前 Shell 执行，这是跟脚本的一个重大区别，Bash 会新建一个子 Shell 执行脚本。如果函数与脚本同名，函数会优先执行。但是，函数的优先级不如别名，即如果函数与别名同名，那么别名优先执行。
+fn () {
+  foo=1
+  echo "fn: foo = $foo"
+}
+fn () {
+  local foo
+  foo=1
+  echo "fn: foo = $foo"
+}
+
+echo ${foo[@]}
+
+# @和*放不放在双引号之中，是有差别的。
+for i in "${names[@]}"; do
+  echo $i
+done
+
+echo ${#a[100]}
+
+echo ${#a[@]}
+# 或者
+echo ${#a[*]}
+
+# ${!array[@]}或${!array[*]}，可以返回数组的成员序号，即哪些位置是有值的。
+
+echo ${food[@]:0}
+
+foo+=(d e f)
+
+unset foo[2]
+
+# unset ArrayName可以清空整个数组。
+
+# 写法一
+command || { echo "command failed"; exit 1; }
+
+# 使用command || true，使得该命令即使执行失败，脚本也不会终止执行。
+command || true
+
+shopt
+
+# 为了保证脚本退出时临时文件被删除，可以使用trap命令指定退出时的清除操作。
+trap 'rm -f "$TMPFILE"' EXIT
+TMPFILE=$(mktemp) || exit 1
+echo "Our temp file is $TMPFILE"
+
+
+
+</code></pre>
+<h2 id="快捷键"><a class="header" href="#快捷键">快捷键</a></h2>
+<ul>
+<li><code>Ctrl + L</code>：清除屏幕并将当前行移到页面顶部。</li>
+<li><code>Ctrl + C</code>：中止当前正在执行的命令。</li>
+<li><code>Shift + PageUp</code>：向上滚动。</li>
+<li><code>Shift + PageDown</code>：向下滚动。</li>
+<li><code>Ctrl + U</code>：从光标位置删除到行首。</li>
+<li><code>Ctrl + K</code>：从光标位置删除到行尾。</li>
+<li><code>Ctrl + W</code>：删除光标位置前一个单词。</li>
+<li><code>Ctrl + D</code>：关闭 Shell 会话。</li>
+<li><code>↑</code>，<code>↓</code>：浏览已执行命令的历史记录。</li>
+<li><code>Ctrl + o</code>：执行历史文件里面的当前条目，并自动显示下一条命令。这对重复执行某个序列的命令很有帮助。</li>
+<li><code>!!</code>：执行上一个命令。</li>
+<li><code>!n</code>：<code>n</code>为数字，执行历史文件里面行号为<code>n</code>的命令。</li>
+<li><code>!-n</code>：执行当前命令之前<code>n</code>条的命令。</li>
+<li><code>!string</code>：执行最近一个以指定字符串<code>string</code>开头的命令。</li>
+<li><code>!?string</code>：执行最近一条包含字符串<code>string</code>的命令。</li>
+<li><code>!$</code>：代表上一个命令的最后一个参数。</li>
+<li><code>!*</code>：代表上一个命令的所有参数，即除了命令以外的所有部分。</li>
+<li><code>^string1^string2</code>：执行最近一条包含<code>string1</code>的命令，将其替换成<code>string2</code>。</li>
+<li><code>Alt + .</code>：插入上一个命令的最后一个词。
+<ul>
+<li>上面的<code>Alt + .</code>快捷键，对于很长的文件路径，有时会非常方便。因为 Unix 命令的最后一个参数通常是文件路径。</li>
+</ul>
+</li>
+</ul>
+<h2 id="其他"><a class="header" href="#其他">其他</a></h2>
+<h3 id="字符类"><a class="header" href="#字符类">字符类</a></h3>
+<ul>
+<li><code>[[:alnum:]]</code>：匹配任意英文字母与数字</li>
+<li><code>[[:alpha:]]</code>：匹配任意英文字母</li>
+<li><code>[[:blank:]]</code>：空格和 Tab 键。</li>
+<li><code>[[:cntrl:]]</code>：ASCII 码 0-31 的不可打印字符。</li>
+<li><code>[[:digit:]]</code>：匹配任意数字 0-9。</li>
+<li><code>[[:graph:]]</code>：A-Z、a-z、0-9 和标点符号。</li>
+<li><code>[[:lower:]]</code>：匹配任意小写字母 a-z。</li>
+<li><code>[[:print:]]</code>：ASCII 码 32-127 的可打印字符。</li>
+<li><code>[[:punct:]]</code>：标点符号（除了 A-Z、a-z、0-9 的可打印字符）。</li>
+<li><code>[[:space:]]</code>：空格、Tab、LF（10）、VT（11）、FF（12）、CR（13）。</li>
+<li><code>[[:upper:]]</code>：匹配任意大写字母 A-Z。</li>
+<li><code>[[:xdigit:]]</code>：16进制字符（A-F、a-f、0-9）。</li>
+</ul>
+<h3 id="量词语法"><a class="header" href="#量词语法">量词语法</a></h3>
+<ul>
+<li><code>?(pattern-list)</code>：模式匹配零次或一次。</li>
+<li><code>*(pattern-list)</code>：模式匹配零次或多次。</li>
+<li><code>+(pattern-list)</code>：模式匹配一次或多次。</li>
+<li><code>@(pattern-list)</code>：只匹配一次模式。</li>
+<li><code>!(pattern-list)</code>：匹配给定模式以外的任何内容。</li>
+</ul>
+<h3 id="常见环境变量"><a class="header" href="#常见环境变量">常见环境变量</a></h3>
+<ul>
+<li><code>BASHPID</code>：Bash 进程的进程 ID。</li>
+<li><code>BASHOPTS</code>：当前 Shell 的参数，可以用<code>shopt</code>命令修改。</li>
+<li><code>DISPLAY</code>：图形环境的显示器名字，通常是<code>:0</code>，表示 X Server 的第一个显示器。</li>
+<li><code>EDITOR</code>：默认的文本编辑器。</li>
+<li><code>HOME</code>：用户的主目录。</li>
+<li><code>HOST</code>：当前主机的名称。</li>
+<li><code>IFS</code>：词与词之间的分隔符，默认为空格。</li>
+<li><code>LANG</code>：字符集以及语言编码，比如<code>zh_CN.UTF-8</code>。</li>
+<li><code>PATH</code>：由冒号分开的目录列表，当输入可执行程序名后，会搜索这个目录列表。</li>
+<li><code>PS1</code>：Shell 提示符。</li>
+<li><code>PS2</code>： 输入多行命令时，次要的 Shell 提示符。</li>
+<li><code>PWD</code>：当前工作目录。</li>
+<li><code>RANDOM</code>：返回一个0到32767之间的随机数。</li>
+<li><code>SHELL</code>：Shell 的名字。</li>
+<li><code>SHELLOPTS</code>：启动当前 Shell 的<code>set</code>命令的参数，参见《set 命令》一章。</li>
+<li><code>TERM</code>：终端类型名，即终端仿真器所用的协议。</li>
+<li><code>UID</code>：当前用户的 ID 编号。</li>
+<li><code>USER</code>：当前用户的用户名。</li>
+</ul>
+<h3 id="进制"><a class="header" href="#进制">进制</a></h3>
+<ul>
+<li><code>number</code>：没有任何特殊表示法的数字是十进制数（以10为底）。</li>
+<li><code>0number</code>：八进制数。</li>
+<li><code>0xnumber</code>：十六进制数。</li>
+<li><code>base#number</code>：<code>base</code>进制的数。</li>
+</ul>
+<h3 id="文件判断"><a class="header" href="#文件判断">文件判断</a></h3>
+<ul>
+<li><code>[ -a file ]</code>：如果 file 存在，则为<code>true</code>。</li>
+<li><code>[ -b file ]</code>：如果 file 存在并且是一个块（设备）文件，则为<code>true</code>。</li>
+<li><code>[ -c file ]</code>：如果 file 存在并且是一个字符（设备）文件，则为<code>true</code>。</li>
+<li><code>[ -d file ]</code>：如果 file 存在并且是一个目录，则为<code>true</code>。</li>
+<li><code>[ -e file ]</code>：如果 file 存在，则为<code>true</code>。</li>
+<li><code>[ -f file ]</code>：如果 file 存在并且是一个普通文件，则为<code>true</code>。</li>
+<li><code>[ -g file ]</code>：如果 file 存在并且设置了组 ID，则为<code>true</code>。</li>
+<li><code>[ -G file ]</code>：如果 file 存在并且属于有效的组 ID，则为<code>true</code>。</li>
+<li><code>[ -h file ]</code>：如果 file 存在并且是符号链接，则为<code>true</code>。</li>
+<li><code>[ -k file ]</code>：如果 file 存在并且设置了它的“sticky bit”，则为<code>true</code>。</li>
+<li><code>[ -L file ]</code>：如果 file 存在并且是一个符号链接，则为<code>true</code>。</li>
+<li><code>[ -N file ]</code>：如果 file 存在并且自上次读取后已被修改，则为<code>true</code>。</li>
+<li><code>[ -O file ]</code>：如果 file 存在并且属于有效的用户 ID，则为<code>true</code>。</li>
+<li><code>[ -p file ]</code>：如果 file 存在并且是一个命名管道，则为<code>true</code>。</li>
+<li><code>[ -r file ]</code>：如果 file 存在并且可读（当前用户有可读权限），则为<code>true</code>。</li>
+<li><code>[ -s file ]</code>：如果 file 存在且其长度大于零，则为<code>true</code>。</li>
+<li><code>[ -S file ]</code>：如果 file 存在且是一个网络 socket，则为<code>true</code>。</li>
+<li><code>[ -t fd ]</code>：如果 fd 是一个文件描述符，并且重定向到终端，则为<code>true</code>。 这可以用来判断是否重定向了标准输入／输出／错误。</li>
+<li><code>[ -u file ]</code>：如果 file 存在并且设置了 setuid 位，则为<code>true</code>。</li>
+<li><code>[ -w file ]</code>：如果 file 存在并且可写（当前用户拥有可写权限），则为<code>true</code>。</li>
+<li><code>[ -x file ]</code>：如果 file 存在并且可执行（有效用户有执行／搜索权限），则为<code>true</code>。</li>
+<li><code>[ file1 -nt file2 ]</code>：如果 FILE1 比 FILE2 的更新时间最近，或者 FILE1 存在而 FILE2 不存在，则为<code>true</code>。</li>
+<li><code>[ file1 -ot file2 ]</code>：如果 FILE1 比 FILE2 的更新时间更旧，或者 FILE2 存在而 FILE1 不存在，则为<code>true</code>。</li>
+<li><code>[ FILE1 -ef FILE2 ]</code>：如果 FILE1 和 FILE2 引用相同的设备和 inode 编号，则为<code>true</code>。</li>
+</ul>
+<h3 id="字符串判断"><a class="header" href="#字符串判断">字符串判断</a></h3>
+<ul>
+<li><code>[ string ]</code>：如果<code>string</code>不为空（长度大于0），则判断为真。</li>
+<li><code>[ -n string ]</code>：如果字符串<code>string</code>的长度大于零，则判断为真。</li>
+<li><code>[ -z string ]</code>：如果字符串<code>string</code>的长度为零，则判断为真。</li>
+<li><code>[ string1 = string2 ]</code>：如果<code>string1</code>和<code>string2</code>相同，则判断为真。</li>
+<li><code>[ string1 == string2 ]</code> 等同于<code>[ string1 = string2 ]</code>。</li>
+<li><code>[ string1 != string2 ]</code>：如果<code>string1</code>和<code>string2</code>不相同，则判断为真。</li>
+<li><code>[ string1 '&gt;' string2 ]</code>：如果按照字典顺序<code>string1</code>排列在<code>string2</code>之后，则判断为真。</li>
+<li><code>[ string1 '&lt;' string2 ]</code>：如果按照字典顺序<code>string1</code>排列在<code>string2</code>之前，则判断为真。</li>
+</ul>
+<h3 id="整数判断"><a class="header" href="#整数判断">整数判断</a></h3>
+<ul>
+<li><code>[ integer1 -eq integer2 ]</code>：如果<code>integer1</code>等于<code>integer2</code>，则为<code>true</code>。</li>
+<li><code>[ integer1 -ne integer2 ]</code>：如果<code>integer1</code>不等于<code>integer2</code>，则为<code>true</code>。</li>
+<li><code>[ integer1 -le integer2 ]</code>：如果<code>integer1</code>小于或等于<code>integer2</code>，则为<code>true</code>。</li>
+<li><code>[ integer1 -lt integer2 ]</code>：如果<code>integer1</code>小于<code>integer2</code>，则为<code>true</code>。</li>
+<li><code>[ integer1 -ge integer2 ]</code>：如果<code>integer1</code>大于或等于<code>integer2</code>，则为<code>true</code>。</li>
+<li><code>[ integer1 -gt integer2 ]</code>：如果<code>integer1</code>大于<code>integer2</code>，则为<code>true</code>。</li>
+</ul>
+<h3 id="参数变量"><a class="header" href="#参数变量">参数变量</a></h3>
+<ul>
+<li><code>$1</code>~<code>$9</code>：函数的第一个到第9个的参数。</li>
+<li><code>$0</code>：函数所在的脚本名。</li>
+<li><code>$#</code>：函数的参数总数。</li>
+<li><code>$@</code>：函数的全部参数，参数之间使用空格分隔。</li>
+<li><code>$*</code>：函数的全部参数，参数之间使用变量<code>$IFS</code>值的第一个字符分隔，默认为空格，但是可以自定义。</li>
+</ul>
+<h3 id="set-命令"><a class="header" href="#set-命令">set 命令</a></h3>
+<ul>
+<li><code>set -u</code> 遇到不存在的变量就会报错，并停止执行。</li>
+<li><code>set -x</code> 用来在运行结果之前，先输出执行的那一行命令。</li>
+<li><code>set -e</code> 使得脚本只要发生错误，就终止执行。</li>
+<li><code>set -o pipefail</code> 只要一个子命令失败，整个管道命令就失败，脚本就会终止执行。</li>
+<li><code>set -n</code>：等同于<code>set -o noexec</code>，不运行命令，只检查语法是否正确。</li>
+<li><code>set -f</code>：等同于<code>set -o noglob</code>，表示不对通配符进行文件名扩展。</li>
+<li><code>set -v</code>：等同于<code>set -o verbose</code>，表示打印 Shell 接收到的每一行输入。</li>
+<li><code>set -o noclobber</code>：防止使用重定向运算符<code>&gt;</code>覆盖已经存在的文件。</li>
+<li><code>set -E</code> 参数可以纠正这个行为，使得函数也能继承<code>trap</code>命令。</li>
+<li><code>set -Eeuxo pipefail</code> 建议放在所有 Bash 脚本的头部。</li>
+</ul>
+<h3 id="环境变量"><a class="header" href="#环境变量">环境变量</a></h3>
+<ul>
+<li>变量<code>LINENO</code>返回它在脚本里面的行号。</li>
+</ul>
+<h3 id="登录-session"><a class="header" href="#登录-session">登录 session</a></h3>
+<p>登录 Session 是用户登录系统以后，系统为用户开启的原始 Session，通常需要用户输入用户名和密码进行登录。</p>
+<p>登录 Session 一般进行整个系统环境的初始化，启动的初始化脚本依次如下。</p>
+<ul>
+<li><code>/etc/profile</code>：所有用户的全局配置脚本。</li>
+<li><code>/etc/profile.d</code>目录里面所有<code>.sh</code>文件</li>
+<li><code>~/.bash_profile</code>：用户的个人配置脚本。如果该脚本存在，则执行完就不再往下执行。</li>
+<li><code>~/.bash_login</code>：如果<code>~/.bash_profile</code>没找到，则尝试执行这个脚本（C shell 的初始化脚本）。如果该脚本存在，则执行完就不再往下执行。</li>
+<li><code>~/.profile</code>：如果<code>~/.bash_profile</code>和<code>~/.bash_login</code>都没找到，则尝试读取这个脚本（Bourne shell 和 Korn shell 的初始化脚本）。</li>
+</ul>
+<p>Linux 发行版更新的时候，会更新<code>/etc</code>里面的文件，比如<code>/etc/profile</code>，因此不要直接修改这个文件。如果想修改所有用户的登陆环境，就在<code>/etc/profile.d</code>目录里面新建<code>.sh</code>脚本。</p>
+<h3 id="非登录-session"><a class="header" href="#非登录-session">非登录 session</a></h3>
+<p>非登录 Session 是用户进入系统以后，手动新建的 Session，这时不会进行环境初始化。比如，在命令行执行<code>bash</code>命令，就会新建一个非登录 Session。</p>
+<p>非登录 Session 的初始化脚本依次如下。</p>
+<ul>
+<li><code>/etc/bash.bashrc</code>：对全体用户有效。</li>
+<li><code>~/.bashrc</code>：仅对当前用户有效。</li>
+</ul>
+<p>对用户来说，<code>~/.bashrc</code>通常是最重要的脚本。非登录 Session 默认会执行它，而登录 Session 一般也会通过调用执行它。每次新建一个 Bash 窗口，就相当于新建一个非登录 Session，所以<code>~/.bashrc</code>每次都会执行。注意，执行脚本相当于新建一个非互动的 Bash 环境，但是这种情况不会调用<code>~/.bashrc</code>。</p>
+<h3 id="转义字符"><a class="header" href="#转义字符">转义字符</a></h3>
+<ul>
+<li><code>\a</code>：响铃，计算机发出一记声音。</li>
+<li><code>\d</code>：以星期、月、日格式表示当前日期，例如“Mon May 26”。</li>
+<li><code>\h</code>：本机的主机名。</li>
+<li><code>\H</code>：完整的主机名。</li>
+<li><code>\j</code>：运行在当前 Shell 会话的工作数。</li>
+<li><code>\l</code>：当前终端设备名。</li>
+<li><code>\n</code>：一个换行符。</li>
+<li><code>\r</code>：一个回车符。</li>
+<li><code>\s</code>：Shell 的名称。</li>
+<li><code>\t</code>：24小时制的<code>hours:minutes:seconds</code>格式表示当前时间。</li>
+<li><code>\T</code>：12小时制的当前时间。</li>
+<li><code>\@</code>：12小时制的<code>AM/PM</code>格式表示当前时间。</li>
+<li><code>\A</code>：24小时制的<code>hours:minutes</code>表示当前时间。</li>
+<li><code>\u</code>：当前用户名。</li>
+<li><code>\v</code>：Shell 的版本号。</li>
+<li><code>\V</code>：Shell 的版本号和发布号。</li>
+<li><code>\w</code>：当前的工作路径。</li>
+<li><code>\W</code>：当前目录名。</li>
+<li><code>\!</code>：当前命令在命令历史中的编号。</li>
+<li><code>\#</code>：当前 shell 会话中的命令数。</li>
+<li><code>\$</code>：普通用户显示为<code>$</code>字符，根用户显示为<code>#</code>字符。</li>
+<li><code>\[</code>：非打印字符序列的开始标志。</li>
+<li><code>\]</code>：非打印字符序列的结束标志。</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/计算机/学习/Git学习笔记.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/计算机/学习/设计模式极简笔记.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/计算机/学习/Git学习笔记.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/计算机/学习/设计模式极简笔记.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/计算机/学习/Bash代表命令.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

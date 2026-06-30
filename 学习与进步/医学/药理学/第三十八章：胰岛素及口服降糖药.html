@@ -1,0 +1,735 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第三十八章：胰岛素及口服降糖药 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第三十八章胰岛素及口服降糖药"><a class="header" href="#第三十八章胰岛素及口服降糖药">第三十八章：胰岛素及口服降糖药</a></h1>
+<h2 id="一概述"><a class="header" href="#一概述">一、概述</a></h2>
+<h3 id="一糖尿病分类"><a class="header" href="#一糖尿病分类">一）糖尿病分类</a></h3>
+<ul>
+<li>I 型糖尿病：胰岛 β 细胞凋亡，胰岛素绝对缺乏</li>
+<li>II 型糖尿病：胰岛素抵抗，导致胰岛素相对不足</li>
+</ul>
+<h3 id="二三阶梯疗法"><a class="header" href="#二三阶梯疗法">二）三阶梯疗法</a></h3>
+<ul>
+<li>II 型糖尿病的治疗原则</li>
+</ul>
+<ol>
+<li>饮食+运动</li>
+<li>口服降糖药</li>
+<li>胰岛素</li>
+</ol>
+<h2 id="二胰岛素"><a class="header" href="#二胰岛素">二、胰岛素</a></h2>
+<h3 id="一药理作用"><a class="header" href="#一药理作用">一）药理作用</a></h3>
+<ul>
+<li>降血糖</li>
+<li>促进 K<sup>+</sup> 进入细胞内</li>
+</ul>
+<h3 id="二降糖机制"><a class="header" href="#二降糖机制">二）降糖机制</a></h3>
+<p><img src="https://img.tinysnow.cn/blog/learning/medicine/pharmacology/胰岛素降糖机制.jpg" alt=""></p>
+<h3 id="三临床应用"><a class="header" href="#三临床应用">三）临床应用</a></h3>
+<h4 id="糖尿病"><a class="header" href="#糖尿病">糖尿病</a></h4>
+<ul>
+<li>对 I 型糖尿病是惟一有效的药物，首选</li>
+<li>II 型糖尿病：经饮食和口服降糖药物治疗无效</li>
+<li>糖尿病的危、重、急症或严重并发症，如酮症酸血症、高渗性昏迷、乳酸酸中毒</li>
+<li>糖尿病有合并症，如：重度感染、高热、妊娠、分娩及大手术等。</li>
+</ul>
+<h4 id="高钾血症"><a class="header" href="#高钾血症">高钾血症</a></h4>
+<ul>
+<li>给药方法：将胰岛素加入葡萄糖液内静脉滴注</li>
+<li>作用机制：胰岛素及葡萄糖进入细胞转变为糖原时，可将 K<sup>+</sup> 带入细胞内。</li>
+</ul>
+<h4 id="纠正细胞内缺钾"><a class="header" href="#纠正细胞内缺钾">纠正细胞内缺钾</a></h4>
+<ul>
+<li>方法：合用葡萄糖、胰岛素和氯化钾液（GIK 极化液）静脉滴注</li>
+<li>机制：促进 K<sup>+</sup> 进入细胞</li>
+<li>应用：用于心肌梗死早期，可防治心律失常，减少死亡率。</li>
+</ul>
+<h3 id="四不良反应"><a class="header" href="#四不良反应">四）不良反应</a></h3>
+<ul>
+<li>低血糖症：为最常见的不良反应</li>
+<li>耐受性：胰岛素抵抗</li>
+<li>变态反应：荨麻疹、血管神经性水肿、极个别可见过敏性休克</li>
+<li>注射局部：有红肿、硬结、脂肪萎缩</li>
+</ul>
+<h3 id="五低血糖反应的防治"><a class="header" href="#五低血糖反应的防治">五）低血糖反应的防治</a></h3>
+<ul>
+<li>发生原因：胰岛素剂量过大、未按时进餐、肝肾功能不全的升血糖反应有缺陷者。</li>
+<li>临床表现
+<ul>
+<li>短效制剂：饥饿感、心跳加快、出汗、焦虑、震颤等，严重者引起昏迷、惊厥及休克，甚至脑损伤及死亡</li>
+<li>长效胰岛素：以头痛和精神、运动障碍为主要表现</li>
+</ul>
+</li>
+<li>预防措施：应教会病人熟知反应症状，以便及早发现和进餐，或饮用糖水等。</li>
+<li>抢救措施：严重者应立即静脉注射 50% 葡萄糖</li>
+</ul>
+<h3 id="六耐受性产生的原因"><a class="header" href="#六耐受性产生的原因">六）耐受性产生的原因</a></h3>
+<ul>
+<li>产生机制：胰岛素抵抗，是指正常量的循环胰岛素产生低于正常的生物学反应；</li>
+<li>类型
+<ul>
+<li>快速耐受：因机体处于应激状态，产生大量对抗胰岛素的激素所致</li>
+<li>慢速耐受：体内产生了抗胰岛素的抗体，也可能是胰岛素受体数量减少。</li>
+</ul>
+</li>
+</ul>
+<h3 id="七胰岛素治疗的目的"><a class="header" href="#七胰岛素治疗的目的">七）胰岛素治疗的目的</a></h3>
+<h4 id="目的"><a class="header" href="#目的">目的</a></h4>
+<ul>
+<li>模拟生理性胰岛素分泌，维持血糖稳定。</li>
+</ul>
+<h4 id="生理性胰岛素分泌特点"><a class="header" href="#生理性胰岛素分泌特点">生理性胰岛素分泌特点</a></h4>
+<h5 id="餐时血糖"><a class="header" href="#餐时血糖">餐时血糖</a></h5>
+<ul>
+<li>进餐时胰岛素的分泌开始增加</li>
+<li>意义：对抗因进餐引起的血糖升高</li>
+</ul>
+<h5 id="基础血糖"><a class="header" href="#基础血糖">基础血糖</a></h5>
+<ul>
+<li>任何时候体内都会有少量的胰岛素分泌</li>
+<li>意义：调节代谢；</li>
+</ul>
+<h3 id="八胰岛素的类型"><a class="header" href="#八胰岛素的类型">八）胰岛素的类型</a></h3>
+<h4 id="超短效"><a class="header" href="#超短效">超短效</a></h4>
+<ul>
+<li>品种：门冬胰岛素、赖脯氨酸胰岛素</li>
+<li>作用：替代餐时胰岛素</li>
+<li>缺点：用药后 10 分钟必须进食，否则会出现低血糖</li>
+</ul>
+<h4 id="短效"><a class="header" href="#短效">短效</a></h4>
+<ul>
+<li>品种：一般常规胰岛素，属目前最常用剂型</li>
+<li>作用：替代餐时胰岛素，餐前半小时注射</li>
+<li>缺点：餐前 30min 不易把握，血糖波动大</li>
+</ul>
+<h4 id="中效能胰岛素"><a class="header" href="#中效能胰岛素">中效能胰岛素</a></h4>
+<ul>
+<li>品种： <strong>低</strong> 精蛋白锌胰岛素</li>
+<li>作用：替代基础血糖，睡前给药</li>
+<li>缺点：有峰值而易产生夜间低血糖，需睡前加餐</li>
+</ul>
+<h4 id="长效胰岛素"><a class="header" href="#长效胰岛素">长效胰岛素</a></h4>
+<ul>
+<li>品种：精蛋白锌胰岛素</li>
+<li>作用：替代基础胰岛素，可减少注射次数</li>
+<li>缺点：单独使用不稳定，临床应用较少</li>
+</ul>
+<h4 id="超长效胰岛素"><a class="header" href="#超长效胰岛素">超长效胰岛素</a></h4>
+<ul>
+<li>品种：甘精胰岛素</li>
+<li>作用：替代基础胰岛素，长效、平稳、无峰值，是胰岛素制剂中替代基础胰岛素最好的一种。</li>
+</ul>
+<h4 id="预混胰岛素"><a class="header" href="#预混胰岛素">预混胰岛素</a></h4>
+<ul>
+<li>品种
+<ul>
+<li>诺和灵 30R、诺和灵 50R
+<ul>
+<li>双时相低精蛋白锌胰岛素</li>
+<li>含有 30% 可溶性中性胰岛素和 70% 低精蛋白锌胰岛素混悬液</li>
+</ul>
+</li>
+<li>优泌林 70/30
+<ul>
+<li>精蛋白锌重组人胰岛素混合注射液</li>
+<li>30% 重组人胰岛素（常规人胰岛素）</li>
+<li>70% 精蛋白锌重组人胰岛素（中效人胰岛素）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>作用：长效 + 短效，使用方便，可减少注射次数</li>
+<li>缺点：不良反应多，必须配合更为固定的生活方式，否则易出现低血糖</li>
+</ul>
+<h2 id="三口服降糖药"><a class="header" href="#三口服降糖药">三、口服降糖药</a></h2>
+<h3 id="一促胰岛素分泌药"><a class="header" href="#一促胰岛素分泌药">一）促胰岛素分泌药</a></h3>
+<h4 id="磺酰脲类格列-xx"><a class="header" href="#磺酰脲类格列-xx">磺酰脲类（格列 XX）</a></h4>
+<h5 id="药物"><a class="header" href="#药物">药物</a></h5>
+<ul>
+<li>第一代
+<ul>
+<li>甲苯磺丁脲（甲糖宁，D-860，1954年）</li>
+<li>氯磺丙脲（P-607）</li>
+</ul>
+</li>
+<li>第二代
+<ul>
+<li>格列本脲（优降糖）</li>
+<li>格列喹酮（糖适平）</li>
+<li>格列吡嗪（吡磺环己脲，美吡达）</li>
+<li>格列齐特（甲磺吡脲，达美康）</li>
+</ul>
+</li>
+<li>第三代：格列美脲</li>
+</ul>
+<h5 id="机制"><a class="header" href="#机制">机制</a></h5>
+<ul>
+<li>药物与胰岛 β 细胞表面磺酰脲类受体结合</li>
+<li>引起胰岛素释放
+<ul>
+<li>对胰岛功能尚存（≥30%）的病人有效</li>
+<li>对 I 型糖尿病无效</li>
+</ul>
+</li>
+</ul>
+<h5 id="作用"><a class="header" href="#作用">作用</a></h5>
+<ul>
+<li>刺激：胰岛素释放
+<ul>
+<li>让体内胰岛素水平升高，导致低血糖的原因</li>
+</ul>
+</li>
+<li>降低：胰岛素的代谢
+<ul>
+<li>让体内胰岛素水平升高，导致低血糖的原因</li>
+</ul>
+</li>
+<li>增强：靶细胞对胰岛素的敏感性</li>
+<li>增加：胰岛素与其受体的结合能力</li>
+</ul>
+<h5 id="临床应用"><a class="header" href="#临床应用">临床应用</a></h5>
+<ul>
+<li>主要用于单用饮食治疗不能控制的 II 型糖尿病</li>
+<li>用于对胰岛素有耐受性的患者，可减少胰岛素用量</li>
+<li>氯磺丙脲可用于尿崩症</li>
+</ul>
+<h5 id="不良反应"><a class="header" href="#不良反应">不良反应</a></h5>
+<ul>
+<li>常见：胃肠不适、皮肤过敏、嗜睡、眩晕、神经痛</li>
+<li><strong>黄痘和肝损害</strong></li>
+<li><strong>白细胞、血小板减少及溶血性贫血</strong>
+<ul>
+<li>应注意定期检查血常规和肝功能</li>
+</ul>
+</li>
+<li><strong>持久性的低血糖症</strong>
+<ul>
+<li>胰岛素和“格列 XX”可导致低血糖</li>
+</ul>
+</li>
+<li>对磺胺类过敏者、孕妇禁用</li>
+</ul>
+<h5 id="药物相互作用"><a class="header" href="#药物相互作用">药物相互作用</a></h5>
+<ul>
+<li>合用可增强磺酰脲类药物作用，导致严重的低血糖的药物
+<ul>
+<li>水杨酸类、磺胺类、双香豆素类（“抢蛋白”）</li>
+<li>抗痛风药、乙醇（“影响排泄”）</li>
+<li>氯霉素、抗真菌药氟康唑、咪康唑、甲氨蝶呤、单胺氧化酶抑制剂（“影响代谢”）</li>
+</ul>
+</li>
+<li>合用可降低磺酰脲类药物作用的药物
+<ul>
+<li><strong>噻嗪类</strong> 、强利尿药、皮质激素（作用拮抗）</li>
+</ul>
+</li>
+</ul>
+<h4 id="非磺酰脲类x-格列奈餐时血糖调节剂"><a class="header" href="#非磺酰脲类x-格列奈餐时血糖调节剂">非磺酰脲类（X 格列奈，餐时血糖调节剂）</a></h4>
+<ul>
+<li>化学结构不属于磺酰脲类，但作用与磺酰脲类相似，通过促进胰岛素分泌而起作用</li>
+<li>临床用于 II 型糖尿患者</li>
+<li>口服吸收迅速</li>
+<li>特点是允许多次餐前用药，餐时血糖调节剂</li>
+<li>低血糖风险抵于磺酰脲类</li>
+</ul>
+<h3 id="二双胍类"><a class="header" href="#二双胍类">二）双胍类</a></h3>
+<h4 id="常用药物"><a class="header" href="#常用药物">常用药物</a></h4>
+<ul>
+<li>甲福明（二甲双胍，降糖片）
+<ul>
+<li>降血糖、降血脂、降体重</li>
+</ul>
+</li>
+<li>苯乙福明月（苯乙双胍，降糖灵）</li>
+</ul>
+<h4 id="药理作用"><a class="header" href="#药理作用">药理作用</a></h4>
+<ul>
+<li>增加：肌肉组织、脂肪组织、肝细胞等周围组织对葡萄糖的摄取和利用（无氧酵解，生成乳酸）</li>
+<li>减少：葡萄糖在肠道吸收</li>
+<li>改善：胰岛素与其受体的结合和受体后机制，增强胰岛素的作用（胰岛素抵抗）</li>
+<li>抑制：胰高血糖素释放</li>
+</ul>
+<h4 id="作用特点"><a class="header" href="#作用特点">作用特点</a></h4>
+<ul>
+<li>不依赖胰岛素 β 细胞功能</li>
+<li>不引起低血糖</li>
+<li>可用于 I 型、II 型糖尿病</li>
+<li>对正常人无降糖作用</li>
+</ul>
+<h4 id="临床应用-1"><a class="header" href="#临床应用-1">临床应用</a></h4>
+<ul>
+<li>肥胖的 II 型糖尿病或饮食控制未成功的患者，首选</li>
+<li>轻、中度 II 型糖尿病，可单用</li>
+<li>中、重度 II 型糖尿病及 I 型糖尿病，与胰岛素或磺酰脲类合用</li>
+</ul>
+<h4 id="不良反应-1"><a class="header" href="#不良反应-1">不良反应</a></h4>
+<ul>
+<li>胃肠道反应，口内金属味</li>
+<li>乳酸血症、酮血症</li>
+<li>叶酸、维生素 B<sub>12</sub> 缺乏：减少其在肠道内吸收</li>
+<li>苯乙双胍不良反应多，有致盲报道，现少用</li>
+</ul>
+<h3 id="三α-葡萄糖苷酶抑制剂"><a class="header" href="#三α-葡萄糖苷酶抑制剂">三）α-葡萄糖苷酶抑制剂</a></h3>
+<h4 id="常用药物-1"><a class="header" href="#常用药物-1">常用药物</a></h4>
+<ul>
+<li>阿卡波糖</li>
+<li>伏格列波糖</li>
+<li>米格列醇</li>
+</ul>
+<h4 id="机制-1"><a class="header" href="#机制-1">机制</a></h4>
+<ul>
+<li>在小肠竞争性抑制 α-葡萄糖苷酶</li>
+<li>减少淀粉、糊精、双糖在小肠的消化/吸收</li>
+<li>使正常和糖尿患者 <strong>餐后血糖降低</strong></li>
+<li>不刺激胰岛素分泌，故不导致低血糖</li>
+</ul>
+<h4 id="临床应用-2"><a class="header" href="#临床应用-2">临床应用</a></h4>
+<ul>
+<li>各型糖尿病</li>
+<li>可单用于老年患者或餐后明显高血糖患者</li>
+<li>通常与口服降糖药或胰岛素合用</li>
+</ul>
+<h4 id="不良反应-2"><a class="header" href="#不良反应-2">不良反应</a></h4>
+<ul>
+<li>多见：胃胀、腹胀、排气增加、腹痛、胃肠痉挛性疼痛、肠鸣响</li>
+<li>未消化的碳水化合物停滞于肠道，由于肠道细菌的酵解，使气体产生增多。用药期间需限制单糖的摄入量即可。</li>
+</ul>
+<h3 id="四噻唑烷二酮类xx-格列酮胰岛素增敏剂"><a class="header" href="#四噻唑烷二酮类xx-格列酮胰岛素增敏剂">四）噻唑烷二酮类（XX 格列酮，胰岛素增敏剂）</a></h3>
+<h4 id="常用药物-2"><a class="header" href="#常用药物-2">常用药物</a></h4>
+<ul>
+<li>罗格列酮、吡格列酮、曲格列酮、环格列酮、恩格列酮</li>
+</ul>
+<h4 id="作用机制"><a class="header" href="#作用机制">作用机制</a></h4>
+<ul>
+<li>特异性激活一种核受体</li>
+<li>过氧化物酶增殖物激活受体-γ 受体（PPARγ）</li>
+</ul>
+<h4 id="药理作用-1"><a class="header" href="#药理作用-1">药理作用</a></h4>
+<h5 id="降血糖作用"><a class="header" href="#降血糖作用">降血糖作用</a></h5>
+<ul>
+<li>该类药物对胰岛素分泌没有影响，但需要有胰岛素存在时才能产生效应</li>
+<li>主要通过增加肌肉及脂肪组织对胰岛素的敏感性而发挥降血糖作用</li>
+</ul>
+<h5 id="纠正脂质代谢紊乱"><a class="header" href="#纠正脂质代谢紊乱">纠正脂质代谢紊乱</a></h5>
+<ul>
+<li>纠正胰岛素抵抗患者的脂质代谢异常，降低血中非酯化脂肪酸和三酯酰甘油含量，增加高密度脂蛋白白（HDL）</li>
+</ul>
+<h4 id="临床应用-3"><a class="header" href="#临床应用-3">临床应用</a></h4>
+<ul>
+<li>对尚有一定胰岛功能、以胰岛素抵抗为主的患者，单独使用有效</li>
+<li>单独或与胰岛素及其他口服降血糖药物合用</li>
+<li>尤其适合于合并高血压、血脂异常的患者</li>
+<li>I 型糖尿病及 II 型糖尿病胰岛严重损害者，单独使用无效</li>
+</ul>
+<h4 id="不良反应-3"><a class="header" href="#不良反应-3">不良反应</a></h4>
+<ul>
+<li>常见：体重增加和水肿</li>
+<li>严重：心力衰竭</li>
+<li>骨关节系统：常见背痛、肌痛、肌磷酸激酶增高</li>
+<li>并可增加女性骨折的风险</li>
+</ul>
+<h4 id="禁忌症"><a class="header" href="#禁忌症">禁忌症</a></h4>
+<ul>
+<li>有心力衰竭、严重骨质疏松和骨折病史者</li>
+<li>18 岁以下</li>
+<li>有活动性肝脏疾患，AST 及 ALT 升高（转氨酶升高）者禁用</li>
+</ul>
+<h3 id="五二肽基肽酶-4-抑制剂dpp-4-抑制剂xx-汀类"><a class="header" href="#五二肽基肽酶-4-抑制剂dpp-4-抑制剂xx-汀类">五）二肽基肽酶-4 抑制剂（DPP-4 抑制剂，XX 汀类）</a></h3>
+<h4 id="药物-1"><a class="header" href="#药物-1">药物</a></h4>
+<ul>
+<li>西格列汀、阿格列汀、维格列汀、沙格列汀、利格列汀、吉格列汀</li>
+</ul>
+<h4 id="作用机制-1"><a class="header" href="#作用机制-1">作用机制</a></h4>
+<ul>
+<li>抑制胰高血糖素样肽-1（GLP-1）和葡萄糖依赖性促胰岛素分泌多肽（GIP）的灭活，提高内源性 GLP-1 和 GIP 的水平，促进胰岛 β 细胞释放胰岛素，同时抑制胰岛 α 细胞分泌胰高血糖素，从而提高胰岛素水平，降低血糖</li>
+</ul>
+<h4 id="特点"><a class="header" href="#特点">特点</a></h4>
+<ul>
+<li>不易诱发低血糖；</li>
+<li>不增加体重；</li>
+<li>不受进食与否影响。</li>
+</ul>
+<h3 id="六胰高糖素样肽-1-受体激动剂glp-1-受体激动剂xx-肽类"><a class="header" href="#六胰高糖素样肽-1-受体激动剂glp-1-受体激动剂xx-肽类">六）胰高糖素样肽-1 受体激动剂（GLP-1 受体激动剂，XX 肽类）</a></h3>
+<h4 id="药物-2"><a class="header" href="#药物-2">药物</a></h4>
+<ul>
+<li>艾塞那肽、利拉鲁肽</li>
+</ul>
+<h4 id="作用机制-2"><a class="header" href="#作用机制-2">作用机制</a></h4>
+<ul>
+<li>GLP-1 是回肠内分泌细胞分泌的一种脑肠肽</li>
+<li>GLP-1 可抑制胃排空减少肠蠕动，故有助于控制摄食，减轻体重</li>
+</ul>
+<h4 id="剂型"><a class="header" href="#剂型">剂型</a></h4>
+<ul>
+<li>3 毫升：18 毫克（预填充注射笔）</li>
+</ul>
+<h4 id="用法用量"><a class="header" href="#用法用量">用法用量</a></h4>
+<ul>
+<li>每日皮下注射一次，无需根据进餐时间给药</li>
+</ul>
+<h4 id="特点-1"><a class="header" href="#特点-1">特点</a></h4>
+<ul>
+<li>智能降血糖；</li>
+<li>保护 β 细胞；</li>
+<li>每天仅需用药一次；</li>
+<li>可用于与二甲双胍、磺酰脲类联合治疗；</li>
+<li>单独应用时不引起低血糖，无需监测血糖。</li>
+</ul>
+<h3 id="七口服降糖药对比"><a class="header" href="#七口服降糖药对比">七）口服降糖药对比</a></h3>
+<p><img src="https://img.tinysnow.cn/blog/learning/medicine/pharmacology/口服降糖药.jpg" alt=""></p>
+<h2 id="四糖尿病的药物治疗"><a class="header" href="#四糖尿病的药物治疗">四、糖尿病的药物治疗</a></h2>
+<h3 id="饮食干预体育锻炼和控制体重是血糖控制的基石"><a class="header" href="#饮食干预体育锻炼和控制体重是血糖控制的基石">饮食干预、体育锻炼和控制体重是血糖控制的基石</a></h3>
+<h3 id="i-型糖尿病的药物治疗"><a class="header" href="#i-型糖尿病的药物治疗">I 型糖尿病的药物治疗</a></h3>
+<ul>
+<li>首选胰岛素治疗；</li>
+<li>可与 α 糖苷酶抑制剂、双肌类降糖药联合</li>
+</ul>
+<h3 id="ii-型糖尿病的药物治疗"><a class="header" href="#ii-型糖尿病的药物治疗">II 型糖尿病的药物治疗</a></h3>
+<ul>
+<li><strong>选择口服降糖药</strong>
+<ul>
+<li>肥胖型糖尿病患者：首选二甲双胍</li>
+<li>II 型非肥胖型糖尿病患者：应用促胰岛素分泌剂（磺酰脲类降糖药和格列奈类）</li>
+<li>单纯餐后血糖高，而空腹和餐前血糖不高：首选 α-葡萄糖苷酶抑制剂</li>
+<li>餐后血糖升高为主，伴餐前血糖轻度升高：首选胰岛素增敏剂噻唑烷二酮类</li>
+<li>糖尿病合并肾病者：首选格列喹酮</li>
+<li>II 型糖尿病目前仅有二甲双胍被批准用于儿童</li>
+</ul>
+</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/医学/药理学/第三十七章：甲状腺激素和抗甲状腺药.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第三十九章：影响其他代谢的药物.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/医学/药理学/第三十七章：甲状腺激素和抗甲状腺药.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第三十九章：影响其他代谢的药物.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/药理学/第三十八章：胰岛素及口服降糖药.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-7059bd18.js"></script>
+        <script src="../../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

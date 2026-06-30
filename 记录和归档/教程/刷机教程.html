@@ -1,0 +1,808 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>刷机教程 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="刷机教程"><a class="header" href="#刷机教程">刷机教程</a></h1>
+<h2 id="tldr太长不看版"><a class="header" href="#tldr太长不看版">TL;DR（太长不看版）</a></h2>
+<ul>
+<li>大体上分为三步，所有的问题都可归结到这三步之内：</li>
+</ul>
+<ol>
+<li>解锁 BootLoader</li>
+<li>刷入 Recovery</li>
+<li>刷入 Rom（刷机包）</li>
+</ol>
+<ul>
+<li><strong><a href="#前提">前提</a> 和 <a href="#注意">注意</a> 极其重要！请一定阅读完毕再进行操作</strong></li>
+<li>后续详细步骤教程可以选择性阅读
+<ul>
+<li>但是知道得越多，数据丢失的可能性越小</li>
+</ul>
+</li>
+</ul>
+<h2 id="前提"><a class="header" href="#前提">前提</a></h2>
+<ul>
+<li>备份好数据
+<ul>
+<li><strong>极其重要</strong></li>
+<li>需要备份的常见数据详见
+<ul>
+<li><a href="#附录需要备份的常见数据">附录：需要备份的常见数据</a></li>
+</ul>
+</li>
+<li>一般需要将备份的数据复制到电脑上</li>
+</ul>
+</li>
+<li>Rom
+<ul>
+<li>需要与自己手机型号相对应</li>
+</ul>
+</li>
+<li>Recovery
+<ul>
+<li>支持的 Android 解密方式与 Rom 的 Android 版本号相同</li>
+<li><strong>Recovey 镜像支持的固件类型也需要与手机型号相同</strong></li>
+</ul>
+</li>
+<li><a href="https://developer.android.com/studio/releases/platform-tools?hl=zh-cn#downloads">下载的 ADB</a>（Android Debug Bridge，安卓调试桥接工具）
+<ul>
+<li>ADB 可以添加至环境变量（Windows 用户）</li>
+</ul>
+</li>
+<li>Magisk
+<ul>
+<li>如果需要 ROOT 权限可以带上</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意"><a class="header" href="#注意">注意</a></h2>
+<ul>
+<li>
+<p><strong>刷机之前请一定要确保手机电量充足</strong></p>
+</li>
+<li>
+<p><strong>每次刷机之前最好都备份一下数据，<u>部分情况下必须备份数据：</u></strong></p>
+<ol>
+<li>
+<p>如果刷入的 Android 版本与刷入之前的 Android 版本不同：</p>
+<ul>
+<li>Google 每次升级 Android 版本都会换一种加密方式，各版本不互通</li>
+<li>如果不备份数据，意味着数据无法解密，会全部丢失，包括相册，联系人，应用数据等</li>
+</ul>
+</li>
+<li>
+<p>厂商推送版本不同时：</p>
+<ul>
+<li>小米的 <u>稳定版</u> 和 <u>开发版</u> ，两者不可以混刷，必须要备份数据</li>
+</ul>
+</li>
+<li>
+<p>更换第三方 Rom</p>
+<ul>
+<li>如 PixelExperienceRom 和 LineageOSRom</li>
+<li>相当于两个系统，当然不能混刷</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>Rom 包一定要与自己手机型号对应</strong></p>
+<ul>
+<li>需要精确到
+<ul>
+<li>品牌（OnePlus, Redmi, etc.）</li>
+<li>型号（Note 7, Note 10, etc.）</li>
+<li>是否为专业版（Note 7, Note 7 Pro, etc.）</li>
+</ul>
+</li>
+<li>否则会因为固件冲突导致硬件不可逆地损坏，成为 Brick（砖头手机）</li>
+<li>不要抱有侥幸心理，到时候只能买新手机（因为不保修）</li>
+</ul>
+</li>
+<li>
+<p><strong>一般手机都会有个独一无二的代号，直接找代号最精确</strong>，下面是一些例子</p>
+</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">手机型号</th><th style="text-align: center">代号</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">Redmi Note 7 Pro</td><td style="text-align: center">violet（紫罗兰）</td></tr>
+<tr><td style="text-align: center">Redmi Note 7</td><td style="text-align: center">lavender（薰衣草）</td></tr>
+<tr><td style="text-align: center">Xiaomi 12S Pro</td><td style="text-align: center">unicorn（独角兽）</td></tr>
+<tr><td style="text-align: center">OnePlus 5T</td><td style="text-align: center">dumpling（饺子）</td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>如今市场上，对于刷机比较包容的品牌基本只有 <strong>小米（MI）和 一加（OnePlus）</strong> 了</li>
+<li>成功刷入 Rom 后请一定设置一个系统密码，然后重启到 Recovery 观察是否能解密
+<ul>
+<li>Android Version &gt;= 9，详细说明见<a href="#刷入Rom">刷入 Rom</a></li>
+<li>能解密，则可以开始恢复数据了</li>
+<li><strong>不能解密，最好另找 Rom 或者 Recovery</strong></li>
+<li>Recovery 是能救命的，请不要抱有不能解密也没关系的幻想</li>
+</ul>
+</li>
+<li><strong>解锁 BootLoader 会清空手机数据</strong></li>
+<li>一般来讲 BootLoader 解锁之后可以 Relock（回锁），但是不建议锁回去，容易出意外</li>
+</ul>
+<h2 id="详细步骤流程"><a class="header" href="#详细步骤流程">详细步骤流程</a></h2>
+<h3 id="解锁-bootloader"><a class="header" href="#解锁-bootloader">解锁 BootLoader</a></h3>
+<ul>
+<li>
+<p>手机厂商为了保护用户数据安全，禁止用户胡作非为，一般默认锁住 BootLoader</p>
+</li>
+<li>
+<p>BootLoader 如字面意思：引导加载器，无法加载引导就无法加载系统</p>
+</li>
+<li>
+<p>解锁 BootLoader 的两种方式</p>
+<ul>
+<li>9008 短接
+<ul>
+<li>一般需要短路主板，需要操作硬件</li>
+<li>不推荐</li>
+</ul>
+</li>
+<li>手机品牌的官方解锁工具
+<ul>
+<li>小米官方 <a href="https://www.miui.com/unlock/index.html">MiFlash Unlock</a></li>
+<li>一加开发者工具</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>如果需要解锁，各自按照品牌的提示去做就可以</p>
+</li>
+<li>
+<p>一般需要用到下面几条命令</p>
+<ul>
+<li>adb 需要加入 Path 环境变量，否则还需要带上 adb 的路径</li>
+<li>手机已经用数据线连接到电脑，并开启 usb 调试</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-bash"># 重启到 fastboot 模式
+# 或者
+# 重启同时按住 **音量下键** 和电源键，持续八秒以上
+# 两种方法都能重启到 fastboot 模式
+adb reboot bootloader
+
+# 确认手机连接到电脑并被 adb 识别
+fastboot devices
+
+# 解锁 bootloader
+# 如果有解锁码的话还需要再跟一个解锁码参数
+fastboot oem unlock
+
+# 查看当前锁状态
+fastboot oem get-bootinfo
+</code></pre>
+<ul>
+<li>如果出现 UNLOCKED 字样一般就成功了</li>
+<li>各个手机品牌不一样，具体解锁方法可以查看官网教程和其他教程</li>
+</ul>
+<h3 id="刷入-recovery"><a class="header" href="#刷入-recovery">刷入 Recovery</a></h3>
+<ul>
+<li>解锁 BootLoader 成功后，重启到 fastboot 模式</li>
+<li>一般需要输入下面这几条命令</li>
+</ul>
+<pre><code class="language-bash"># 刷入 Recovery
+# 其中 ${path_to_recovery_image} 需要替换为 Recovery 镜像的路径
+# 一般为当前目录即可：recovery.img
+fastboot flash recovery ${path_to_recovery_image}
+
+# 重启到 Recovery
+# 或者
+# 重启同时按住 **音量上键** 和电源键，持续八秒以上
+# 两种方法都能重启到 Recovery 模式
+adb reboot recovery
+</code></pre>
+<ul>
+<li>如果不能重启到 Recovery 模式，则该 Recovery 镜像有问题，需要换一个镜像</li>
+<li>可以设定一个时间（一般为三分钟），如果还不能重启，另找镜像重复刷入 Recovery 操作，直到能够正常进入 Recovery 模式为止</li>
+<li>一般常见权威 Recovery 镜像
+<ul>
+<li>TWRP</li>
+<li>Orange Fox</li>
+</ul>
+</li>
+<li>获取 ROOT 权限一般需要在成功刷入系统 Rom 之后</li>
+</ul>
+<h3 id="刷入-rom"><a class="header" href="#刷入-rom">刷入 Rom</a></h3>
+<ul>
+<li>进入 Recovery 模式之后先清除数据
+<ul>
+<li>清除类型根据需要进行选择</li>
+<li>相应说明参见
+<ul>
+<li><a href="#附录清除类型和分区说明">附录：清除类型和分区说明</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">清除类型</th><th style="text-align: center">需要勾选的分区</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">双清</td><td style="text-align: center">Dalvik/ART Cache，Cache</td></tr>
+<tr><td style="text-align: center">三清</td><td style="text-align: center">Dalvik/ART Cache，Cache，Data</td></tr>
+<tr><td style="text-align: center">四清</td><td style="text-align: center">Dalvik/ART Cache，Cache，Data，System</td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>刷入 Rom
+<ul>
+<li>找到拷贝到手机内存里的系统 Rom 包，刷入即可</li>
+</ul>
+</li>
+<li>关于 ROOT 和 Magisk
+<ul>
+<li>Magisk 不能和 Rom 一起刷，因为不起作用</li>
+<li>必须要等系统能够正常开机，然后再重启到 Recovery 刷入 Magisk 才起作用</li>
+<li>一般来讲刷入 Magisk.apk 之后就有 ROOT 权限了</li>
+<li>Magisk 更新之后安装包和线刷包合二为一了，都为 Magisk</li>
+</ul>
+</li>
+<li>设置系统密码后，重启到 Recovery 观察是否能解密
+<ul>
+<li>Android 9 以上，厂商会自动锁定 system 来防止用户进行危险操作</li>
+<li>低版本不会出现提示解密的窗口，<a href="#分区说明">Data 分区</a>不加密</li>
+</ul>
+</li>
+</ul>
+<h3 id="恢复数据"><a class="header" href="#恢复数据">恢复数据</a></h3>
+<ul>
+<li>将之前备份的数据复制到手机上，按照指引恢复数据即可</li>
+<li>Enjoy your new system!</li>
+</ul>
+<h2 id="补充"><a class="header" href="#补充">补充</a></h2>
+<ul>
+<li>其实刷机分两种
+<ul>
+<li>卡刷
+<ul>
+<li>将刷机包拷入到手机内存，使用 Recovey 直接刷入</li>
+<li>一般为相同系统更新，清除类型为双清
+<ul>
+<li>要不然系统和用户数据都没了</li>
+</ul>
+</li>
+<li>有限制，必须要把想要更新的 ROM（Android系统）拷贝到 SD 卡 或者通过 fastboot 拷贝到内部存储中</li>
+</ul>
+</li>
+<li>线刷
+<ul>
+<li>利用电脑使用 fastboot 刷入</li>
+<li>一般为升级 Android 版本和更换一个完全不同类型的系统
+<ul>
+<li>Android 10 -&gt; Android 13</li>
+<li>LineageOS -&gt; PixelExperienceOS</li>
+<li>或者兼而有之</li>
+</ul>
+</li>
+<li>清除类型一般为四清，毕竟都换系统了，也备份数据了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>手机文件存储结构
+<ul>
+<li>此处显示的为 Google 推出 A/B 分区之前的结构示意图</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-bash">             手机                                           电脑
++---------------------------+
+|        bootloader引导区    |                              BIOS
++---------------------------+--&gt; fastboot 线刷模式
+| boot启动区 | recovery恢复区 |                          MBR 硬盘引导区
++-----------+---------------+--&gt; recovery 恢复界面
+|         system系统区       |                系统文件(Windows, Program Files, etc.)
++---------------------------+--&gt; 手机界面                 用户图形界面
+</code></pre>
+<ul>
+<li>手机启动过程
+<ul>
+<li>流程
+<ul>
+<li>BootLoader 引导区代码
+<ul>
+<li>对硬件进行必要的初始化和检测错误</li>
+<li>若启动时没有参数则正常启动</li>
+<li>若启动时有相应的参数，则进入 fastboot 线刷模式或 Recovery 恢复界面</li>
+</ul>
+</li>
+<li>加载 Boot 启动区代码</li>
+<li>加载 system 系统区代码</li>
+<li>显示手机图形界面，正常使用</li>
+</ul>
+</li>
+<li>fastboot 手机上一般没有操作界面</li>
+</ul>
+</li>
+<li>刷机没有那么容易成砖，一般就几种情况
+<ul>
+<li>刷到一半没电了</li>
+<li>刷入了不兼容的固件（Rom, Recovery, etc.）</li>
+</ul>
+</li>
+</ul>
+<h2 id="附录需要备份的常见数据"><a class="header" href="#附录需要备份的常见数据">附录：需要备份的常见数据</a></h2>
+<ul>
+<li>ADB</li>
+<li>Rom
+<ul>
+<li>目前使用的 Rom</li>
+<li>即将刷入的 Rom</li>
+</ul>
+</li>
+<li>Recovery
+<ul>
+<li>目前使用的 Recovery</li>
+<li>即将刷入的 Recovery</li>
+</ul>
+</li>
+<li>应用程序备份
+<ul>
+<li>Android 高版本推荐 <a href="https://swiftapps.org">SwiftBackup</a></li>
+<li>Android 低版本推荐 <a href="https://www.titaniumtrack.com/titanium-backup.html">TitaniumBackup</a></li>
+<li>备份完毕之后，将文件从手机拷贝到电脑上</li>
+</ul>
+</li>
+<li>Magisk
+<ul>
+<li><a href="https://github.com/topjohnwu/Magisk/releases">应用程序</a></li>
+<li>Shamiko</li>
+<li>Gboard 词库</li>
+<li>Zygisk</li>
+</ul>
+</li>
+<li>图片，视频
+<ul>
+<li>如果有云备份就不用</li>
+<li>但是最好还是备份一下</li>
+</ul>
+</li>
+<li>电子书
+<ul>
+<li>建议专门建立一个文件夹</li>
+</ul>
+</li>
+<li>下载内容
+<ul>
+<li>建议配合存储空间隔离使用，只备份一个文件夹</li>
+</ul>
+</li>
+<li>各种应用程序的配置文件
+<ul>
+<li>存储空间隔离</li>
+<li>list 背单词</li>
+<li>App Ops</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+<h2 id="附录清除类型和分区说明"><a class="header" href="#附录清除类型和分区说明">附录：清除类型和分区说明</a></h2>
+<h3 id="双清"><a class="header" href="#双清">双清</a></h3>
+<ul>
+<li>Dalvik/ART Cache，Cache</li>
+<li>只清除缓存，不清除系统和用户数据</li>
+<li>双清一般用在相同系统版本进行 OTA 升级时
+<ul>
+<li>比如 LineageOS 16 的周更包，就可以使用双清刷入</li>
+</ul>
+</li>
+</ul>
+<h3 id="三清"><a class="header" href="#三清">三清</a></h3>
+<ul>
+<li>Dalvik/ART Cache，Cache，Data</li>
+<li>多了用户数据，三清后刷机失败，还可以进入系统</li>
+<li>刷机失败：Recovey 在输入检查时出现错误</li>
+<li>如果刷机进行中，手机突然没电，无论怎么清都没用，手机报废</li>
+</ul>
+<h3 id="四清"><a class="header" href="#四清">四清</a></h3>
+<ul>
+<li>Dalvik/ART Cache，Cache，Data，System</li>
+<li>系统、缓存、用户数据等全部清除</li>
+<li>清除了之后如果刷机失败，会进不去系统</li>
+</ul>
+<h3 id="分区说明"><a class="header" href="#分区说明">分区说明</a></h3>
+<ul>
+<li>Wipe Dalvik Cache
+<ul>
+<li>清空虚拟机缓存</li>
+<li>可以解决一些程序 FC 的问题</li>
+</ul>
+</li>
+<li>Wipe Cache
+<ul>
+<li>清除系统缓存</li>
+<li>刷机前执行</li>
+<li>系统出问题也可尝试此选项，一般能解决</li>
+</ul>
+</li>
+<li>Wipe System
+<ul>
+<li>清除操作系统数据</li>
+<li>想要干净的可以清除此项</li>
+</ul>
+</li>
+<li>Wipe Data
+<ul>
+<li>清除用户数据并恢复出厂设置</li>
+<li>刷机前必须执行的选项</li>
+</ul>
+</li>
+<li>Wipe Internal Storage
+<ul>
+<li>清除内置存储</li>
+</ul>
+</li>
+<li>Wipe USB OTG
+<ul>
+<li>清除挂载的 usb 设备，比如 U 盘等</li>
+</ul>
+</li>
+</ul>
+<h2 id="致谢"><a class="header" href="#致谢">致谢</a></h2>
+<ul>
+<li>技术支持：逐雪</li>
+<li>文案：南国微雪</li>
+<li>排版：南国微雪</li>
+<li>校对：
+<ul>
+<li><a href="https://t.me/nekopala">1 1</a></li>
+<li><a href="https://t.me/linusl0080">Linus L</a></li>
+<li><a href="https://t.me/Cafe2077">咖啡是Java</a></li>
+</ul>
+</li>
+<li>引用：少数派社区</li>
+</ul>
+<h2 id="协议"><a class="header" href="#协议">协议</a></h2>
+<ul>
+<li>本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../记录和归档/教程/Git笔记.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../记录和归档/教程/Basic Elements.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../记录和归档/教程/Git笔记.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../记录和归档/教程/Basic Elements.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "记录和归档/教程/刷机教程.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

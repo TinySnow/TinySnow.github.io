@@ -1,0 +1,520 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>西安之行 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-e1160447.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="西安之行"><a class="header" href="#西安之行">西安之行</a></h1>
+<h2 id="写在前面"><a class="header" href="#写在前面">写在前面</a></h2>
+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">5032 字 | 旅行 | 朋友 | 见面</p>
+
+<h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>　　在写这篇文章之前，我可能需要事先道个歉。这次的旅行计划，可以说相当懒惰。并且也没有执行好，不过计划执行，总是赶不上变化，倒也还好。</p>
+<p>　　发起人和组织者，总需要做一些额外的工作。就这一点来说，我不太合格。</p>
+<p>　　八月九月，前前后后都太过忙碌，我只能尽我所能详细记叙。</p>
+<br />
+<p>　　下班之后，我就直奔火车站。整趟旅行的火车都很平淡，除了两件事。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923182645.png" alt=""></p>
+<p>　　第一件事情发生在去成都的火车上。</p>
+<p>　　乘务员广播寻医。这种情况我遇见过很多次。我问过很多医生朋友，问他们这种情况会不会出手。几乎所有的回答都是不会。</p>
+<p>　　“一旦你出面就无法轻易收手了。”</p>
+<p>　　“你自己过站了，乘务员都可能不会放你走。”</p>
+<p>　　“有可能要查行医资格证。”</p>
+<p>　　这次，有人出手了，坐在我左后方两排的位置。一位四十来岁的女性。</p>
+<p>　　开始我没发现，直到后面她回来。站着的人问她什么情况，她说那孩子中暑了，很明显的症状。</p>
+<p>　　再过了一会儿，一个魁梧的男性乘务员走了过来，在她旁边俯身问她，能不能配合一下，说明一下症状和依据。她诧异地看着乘务员。乘务员面露苦色，说他们要写说明上报此次事件，这是规定。</p>
+<p>　　那个医务人员，叹了一口气，跟着他走了。</p>
+<p>　　我目视着他们远去。又闭上眼睛陷入沉睡。</p>
+<p>　　最近兄长进了事业单位医院药剂岗的面试。我陪他练。从网上翻了医疗岗的面试题，很少有药剂师的题目。</p>
+<p>　　曾在兄长的提议下，我自学了药理学。虽然至今已经忘得差不多了，但看见熟悉的名词总还能想起来。那题库里，大多数是我从未见过的名词。</p>
+<p>　　“组织坏死的末期表现”、“心脏瓣膜听诊区的位置”、“全腹膨隆的四类常见原因”……</p>
+<p>　　饶是药理学这类简单的科目，对我来说就已经够折磨了。更别提内科、外科、妇科、儿科四大天书了，还有生理、病理、病理生理等等基础课。</p>
+<p>　　我一直很敬畏医疗工作者，尤其是国内的外科医生。面临着行政、体制、工作时间、患者的四重施压。我不清楚他们为什么还能保持高度的热忱。</p>
+<p>　　我能做的，只有敬畏了。</p>
+<p>　　第二件事情发生在回程的火车上。</p>
+<p>　　一个孩子，约莫三四岁。一直嚷着 “我要吃辣条”，家长没有，于是哭得很大声。吵得全车厢不得安宁。</p>
+<p>　　我不太能理解这家人怎么教的孩子。这么小就知道辣条这种东西了。辣条添加剂太多，对孩子也不好吧。明明等六七岁上小学了再吃都可以。</p>
+<p>　　前面的乘客被吵得受不了，扶着座椅瞪了孩子一眼，然后把自己的薯条抛到了座位上。</p>
+<p>　　“辣条。吃吗？”</p>
+<p>　　小孩子不接招。</p>
+<p>　　我当时看了笑出声。</p>
+<p>　　这次去西安，一共坐了六班火车，几乎都有孩子哭闹。</p>
+<p>　　小孩子是一种不能用逻辑理解的生物。逗孩子开心、破涕为笑更是一种技能。</p>
+<p>　　每次都有乘客要求家长管一下自己的孩子，让他不要再哭，听家长的语气，我都能感觉出他们内心的焦急。</p>
+<p>　　什么时候，我感同身受的对象，变成了大人呢？</p>
+<br />
+<p>　　抵达西安北站，是 8.31 号中午 12:30。蓝言和 kit 比我早到。已经在南广场会合点 2 附近碰面了。我找不到他们，他们说，附近有家书亦烧仙草。</p>
+<p>　　这家书亦烧仙草，成了我们三次碰面的地方：他们找我，我们找 NUL，再找 Acolaen。</p>
+<p>　　原定计划碰面地点，是在永宁门。然而，现在只有 Hut 没有见到了，他也正在赶往西安北站的路上。最后，我们挑了一个中间站，行政中心，将所有人会合到了一起。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923182756.png" alt=""></p>
+<p>　　西安的地铁和杭州的地铁差不多，地铁站之间隔得很远。</p>
+<p>　　去见灵时，我要坐半个小时公交车才能抵达地铁口，这种经历让我记忆犹新。西安，可能也差不多。而这在成都难以想象。</p>
+<p>　　我们在等 NUL 的时候，三个人一起去最近的蜜雪冰城买饮料喝。地图上显示很近，但实际上我们走了有半个小时，走了很远。</p>
+<p>　　那时候正是下午一两点，正热的时候。远远望去，地面一片橙黄，所有的植物都蔫到没精打采。车流从未间断，似是永不疲倦。红绿灯的数字，让浮躁的人们更染上了一层焦虑。</p>
+<p>　　西安的路边有共享单车。城市主导的，企业主导的，都有。城市主导的共享单车，都被统一地锁在单车架上。不像哈啰这样企业主导的单车，四处散放着。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923182827.png" alt=""></p>
+<p>　　听 kit 说，城市主导的单车，要用的话很麻烦。要去办卡，还也不太好还，车子也不太行。所以几乎都变成了僵尸车。</p>
+<p>　　市场是人心和利益的体现。论这种情况，我也不会用。</p>
+<p>　　城市规模一大，给人的感觉几乎都差不多。四处高楼林立，鳞次栉比，穿插一些绿化。如果不是人们的口音和生活习惯，互相换个名字也不违和。</p>
+<p>　　钟楼地铁站，我将礼物给了他们。</p>
+<p>　　蓝言是一个护颈，Acolaen 是空洞骑士的小骑士模型，Hut 是一个烧烤团子挂件。考虑到不知道 NUL 的喜好，并且中法文化差异有些大，就送了一本中英法三语的《小王子》。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923182910.png" alt=""></p>
+<p>　　至于 kit 的礼物，需要单独说。我在他频道翻了很久，发现他玩过星露谷和天际线。上淘宝搜了一下，天际线没什么周边，星露谷的周边倒是有，只是有的东西非常…… 不好说……</p>
+<p>　　一个钥匙扣能卖我 25 块钱。觉得好奇怪。</p>
+<p>　　看钥匙扣的款式，里面有 “村长内裤钥匙扣”。年少的我大受震撼。我真不知道商家怎么想的，真的会有人买这种东西吗？</p>
+<p>　　最后给他选了 “举星星的祝尼魔”。看起来很是可爱。</p>
+<p>　　由于店家发货太晚，直到我抵达西安，都没能送到。所以 kit 成了这次旅行唯一一个没有现场收到礼物的人……</p>
+<p>　　西安之行之后，我迎来了疯忙期，直到写作的今天，才勉勉强强将礼物转寄给他。</p>
+<br />
+<p>　　永宁门看起来很气派。像所有影视剧里面的城墙那样，建得很高，正门宽广宏大，给人以压力。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183034.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183047.png" alt=""></p>
+<p>　　到达永宁门时，正是炎热的下午两点。</p>
+<p>　　钟楼地铁站之后，我们分别了 Acolaen。他去寄存行李，但最终没能成功，于是直奔学校。学校太远，他决定不再与我们会合。由于缺乏休息，另有事情压身，他只与我们待了差不多一个小时。</p>
+<p>　　我们一路上热烈地聊着，他看起来很不适应。觉得我们像一个 “犯罪团伙” 或“黑帮”，我们笑作一团。</p>
+<p>　　沉默寡言至此者，鲜见。不过换做以前的我，大概也如此吧。</p>
+<p>　　炎热过甚，永宁门附近鲜有人在。买票的喇叭声传得很广，像是和几千年前这片土地上的事情毫无关联。</p>
+<p>　　这样炎热的天，仍然有许多身袭汉服的女子拍下她们的青春。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183109.png" alt=""></p>
+<p>　　而她们青春的眼角旁，晶晶亮反射出耀眼的光芒。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183126.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183139.png" alt=""></p>
+<p>　　我们没有去大唐不夜城，但倘若一千三四百年前的今天，这城里都是这样形形色色的人。我想，我也能瞥见大唐盛世的一隅。</p>
+<p>　　我偷偷拍下了她们的形象，并鼓起勇气将相机给她们看，她们拒绝了。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183159.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183220.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183233.png" alt=""></p>
+<p>　　大概确实很不礼貌吧。</p>
+<p>　　晚上的钟楼，我曾经在路旁瞥见另一名女子。她保守有着四十岁，脸上有着显见的皱纹。但她仍然盛装打扮，穿着汉服，穿梭在人群之中，和旁边女儿一样的人顽笑。</p>
+<p>　　那时，我是第一次对于此事感慨万千。</p>
+<p>　　美的追求，不分年龄，也不分时代。</p>
+<p>　　遗憾的是，她们穿梭得太快，只一瞬间，就如鱼一般消失在人海。我举起相机时，已经太晚了。</p>
+<p>　　午后的永宁门太热，我们躲进了商场。</p>
+<p>　　随意撞进的商场，正在举行悠悠球公开赛。我头一次知道有这种比赛。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183301.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183314.png" alt=""></p>
+<p>　　路上，NUL 说他要去帮朋友调试 FPGA，之后与我们会合吃饭，但现在就有些饿了。于是我们五人在 Hut 的指引下前往小寨觅食。</p>
+<p>　　听人说，小寨是西安的秋叶原，动漫成分很高。以前的我或许会喜欢吧。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183339.png" alt=""></p>
+<p>　　出小寨地铁站，人头攒动。似乎来到了另一个异世界。</p>
+<p>　　Hut 左挤右拐，找到了一个非常偏僻的地方，里面小吃商家很多，地盘也大。想了一下来时的路，颇有 “初极狭，才通人，复行数十步，豁然开朗” 之感。</p>
+<p>　　kit 点了凉皮，我为 NUL 点了盘蒸饺。我问他知不知道韭菜和白菜，店家投来一丝诡异的目光。</p>
+<br />
+<p>　　NUL 是他最初的网名，名字里还有大括号。他后面换过许多号，我只记得了他最初那个奇怪的名字。现在昵称只是一个简单的猫头（🐱）。</p>
+<p>　　我第一次知道他是法国人非常震撼。因为汉语好到不像是外国人。</p>
+<p>　　这次因为工作缘故，在境内滞留时间过长，工作签证又有一大堆限制，他与我们见面，很是艰难。</p>
+<p>　　因为他的 “黑户” 状态，我做了非常多的工作。</p>
+<p>　　出发前一天打了十几个酒店电话，问这种情况能不能入住，全都被拒绝了。他说可以住民宿，我又另订民宿，瞒天过海规避身份证问题。</p>
+<p>　　他的手机在境内只能用国际漫游，所有地图软件又屏蔽非大陆 IP 地址，所以还得远程指导路怎么走。</p>
+<p>　　我头一次知道，国内的生活，对于没有身份证的人来说，简直是一场盛大的噩梦。</p>
+<p>　　没有身份证，就没办法办电话卡。身份证和电话号码，在日常服务中占据了 80% 的庞大地位。</p>
+<p>　　只有航空公司认护照。</p>
+<p>　　他的护照没有生物信息识别，航空公司又怕造假。于是流程容易卡。</p>
+<p>　　过两天，他又要出境，飞去另外一个国家工作。满世界跑。</p>
+<p>　　我曾问他是否具有典型的欧洲人长相，他模棱两可。说不典型，但一眼能看出来。</p>
+<p>　　但真到实际见面的时候，他除了吃饭，基本没有摘下过口罩。</p>
+<p>　　他吃饭时，我特意观察过，我自己的结论是：除非他开口，否则我看不出来。</p>
+<p>　　他汉语很好，但是说起来总有一种非 Native 的奇怪之感，我说不出这种感觉在哪里。</p>
+<p>　　最后我还是没能看到法国的护照长什么样。</p>
+<p>　　送他进入小寨地铁站，回想起和他的交流，觉得他是一个融世界文化于一身的怪人。</p>
+<p>　　在永宁门时，他看见包着头巾防止晒伤的少数民族，非常 PTSD，说他家乡那边经常被中东的伊斯兰人施压；在地铁上，他说广东一个老哥教的他日语，现在因为某些原因大概已经进去了；他曾做过高考语文卷子（对，高考语文，中文卷子）；吃饭时又有大和民族的礼仪；在底特律干活儿差点被干掉……</p>
+<p>　　我的眼界太过狭隘，很难想象他过着一种怎样的生活。</p>
+<p>　　我们所有人都买了西安地铁一日票，不需要身份证，任意坐，24 小时有效，15 块。</p>
+<p>　　送他进入地铁之后，我们就再没有碰面了。原本说一起吃饭，结果被搞 FPGA 的朋友拉着吃了火锅，最后因为饮食不习惯，拉肚子，很晚才抵达我给他定的机场附近民宿。</p>
+<p>　　所幸，民宿的老板已经被我说通，早早地将房卡放在了前台，去休息了。</p>
+<p>　　没有查身份证。</p>
+<br />
+<p>　　送完两个人之后，我们只剩了四个人。前往机厅玩了一下午，最后去吃饭。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183425.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183441.png" alt=""></p>
+<p>　　他们在玩的时候，我找了找附近的餐馆。开始预定今天的晚餐。</p>
+<p>　　我知道此行大多都是学生，不想去太贵的地方，而且看 kit 的频道，也几乎都是低消费人群一员。不过蓝言说有失礼仪，感觉也不太好，所以最终还是选了没有那么贵的地方。我打算付账单来着，最后输给了网络，蓝言抢先了。</p>
+<p>　　上菜之前，侍者过来问了一句：“咱们这桌没有点鱼是吧？” 我们说，是。然后他就把燃气灶拿走了。我们当时都在笑。</p>
+<p>　　举杯，碰冰红茶和雪碧。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183455.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183508.png" alt=""></p>
+<p>　　那家店里的免费饮料都有一种很奇怪的甜味，像是加了很多很多糖。</p>
+<p>　　我也不知道我们怎么聊起来了阴间的食物，总之，一聊就停不下来了。</p>
+<p>　　蓝言言不能接受炸香蕉，但我觉得炸香蕉还蛮好吃的。</p>
+<p>　　我跟他们说，我们学校曾经有人用吃完瓤后的半个西瓜，泡了一包方便面。他们差点翻出白眼。</p>
+<p>　　嗯，这事儿真发生过，而且他还请我们吃来着，只是没人敢吃。</p>
+<p>　　从食物聊到经历，再到学校。</p>
+<p>　　我很羡慕 Hut，学校里有许多女孩子，想必谈恋爱能容易一些。不过对我这种社恐的人来说，女生再多都不起什么作用吧。</p>
+<p>　　路中我们路过长安大学的研究生院。它坐落在小寨，繁华地带。这能研究个什么出来…… 要是我的话估计就天天想着出去玩儿了。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183528.png" alt=""></p>
+<p>　　步入社会参加工作之后，就很难再谈纯粹的恋爱了。</p>
+<p>　　吃过饭后，我们分开。我提议想去看看晚上的钟楼。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183546.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183607.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183620.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183633.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183648.png" alt=""></p>
+<p>　　钟楼附近身着汉服的人最多。很多专业拍照做营生的人。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183708.png" alt=""></p>
+<p>　　在地铁站，蓝言拿出了他的礼物：一瓶枫糖，和一包固体枫糖。我都懵了。加拿大的人不会得糖尿病吗（雾。虽然不应该我来说，但我确确实实觉得，蓝言应该好好管理一下自己的健康了。</p>
+<p>　　kit 将我送到了酒店。我不知道他对于四川话为什么这么感兴趣。在我看来，四川话脏词很多，不大适合用来生活。</p>
+<p>　　后面他说，他有一个重庆的室友，感觉他玩游戏的时候能骂个爽。</p>
+<p>　　草，原来是这样。</p>
+<p>　　Hut 的地铁站方向与我们相反，于是很早就分开了。</p>
+<p>　　NUL 经历过一番波折，也终于抵达了民宿，第二天一早还被房东接送机。没有查身份证。也不应该查身份证了吧。他找不到民宿的时候，刚开始准备睡机场，给我急得，差点坐地铁过去找他。虽然他说这很正常，他经常这么干，但我觉得这也太荒谬了些。明明都订好了。</p>
+<p>　　如果真过去找他的话，因为我改签了火车票，很早就要从西安北站出发。当时已经很晚了，回来估计地铁就停运了，我大概要打个车睡车站外面。不知道另一个世界线的我，会不会真的做这样的事。</p>
+<p>　　第二天坐了很长时间的火车。20 分钟，成都东站极限换乘。不过工作人员似乎忙不过来的样子，下一班火车的检票口很晚才开。</p>
+<p>　　骑共享电单车回去的途中，看到了几个人形成一队，在单向隧道里骑单车逆行。我不清楚她们有没有考虑过生命危险……</p>
+<p>　　回到单位，是下午 17:30 左右。非常非常累。</p>
+<p>　　我简单收拾了一下，犹豫着要先去吃饭做些事，还是直接睡觉。真的太累了。</p>
+<p>　　最后我选择了听从身体的意愿。</p>
+<p>　　睡时天还大亮，睡醒睁开眼睛，一片漆黑。那种感觉，颇为凄凉孤寂。</p>
+<p>　　我的西安之行，就这样结束了。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183728.png" alt=""></p>
+<p>　　接下来，几天之后，就是兑现许给珍的承诺了。</p>
+<p>　　我们，哈尔滨见。</p>
+<br />
+<p>　　南国微雪 Miyuki</p>
+<p>　　2024 年 9 月 4 日</p>
+<h2 id="写在后面"><a class="header" href="#写在后面">写在后面</a></h2>
+<p>　　还有一些不知道放在哪里的图，统一放在最后吧。</p>
+<p>　　所有参与会面的人员，因未获人像授权，故不放出影像。</p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183748.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183800.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183816.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183829.png" alt=""></p>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183844.png" alt=""></p>
+<h2 id="封面图"><a class="header" href="#封面图">封面图</a></h2>
+<p><img src="https://img.tinysnow.cn/blog/articles/literature/20240923183633.png" alt=""></p>
+<blockquote>
+<p>摄影师 | 南国微雪</p>
+<p>图源 | 生活</p>
+</blockquote>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../生活碎笔/文章与写作/哈尔滨的珍同学.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../生活碎笔/文章与写作/极限逼近法.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../生活碎笔/文章与写作/哈尔滨的珍同学.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../生活碎笔/文章与写作/极限逼近法.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/文章与写作/西安之行.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-7059bd18.js"></script>
+        <script src="../../assets/bigPicture-be03f9c8.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>
