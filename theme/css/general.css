@@ -111,6 +111,9 @@ html:not(.js) .page-wrapper,
 .content a { text-decoration: none; }
 .content a:hover { text-decoration: underline; }
 .content img, .content video { max-width: 100%; }
+/* When an image is inside an anchor, ensure the focus ring covers the entire
+   image instead of the anchor's line box. */
+.content a:has(img) { display: inline-block; }
 .content .header:link,
 .content .header:visited {
     color: var(--fg);
@@ -371,23 +374,23 @@ dd > p {
     border-inline-start-color: var(--blockquote-caution-color);
 }
 
-.blockquote-tag-note .blockquote-tag-title {
+.blockquote-tag-note > .blockquote-tag-title {
     color: var(--blockquote-note-color);
 }
 
-.blockquote-tag-tip .blockquote-tag-title {
+.blockquote-tag-tip > .blockquote-tag-title {
     color: var(--blockquote-tip-color);
 }
 
-.blockquote-tag-important .blockquote-tag-title {
+.blockquote-tag-important > .blockquote-tag-title {
     color: var(--blockquote-important-color);
 }
 
-.blockquote-tag-warning .blockquote-tag-title {
+.blockquote-tag-warning > .blockquote-tag-title {
     color: var(--blockquote-warning-color);
 }
 
-.blockquote-tag-caution .blockquote-tag-title {
+.blockquote-tag-caution > .blockquote-tag-title {
     color: var(--blockquote-caution-color);
 }
 
@@ -458,3 +461,4 @@ dd > p {
     cursor: zoom-out;
     max-width: calc(100% - (var(--img-padding) * 2));
     max-height: calc(100% - (var(--img-padding) * 2));
+}
