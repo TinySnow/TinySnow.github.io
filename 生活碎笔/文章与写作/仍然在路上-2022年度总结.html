@@ -1,0 +1,571 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>⭐️仍然在路上 - 2022年度总结 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="仍然在路上---2022年度总结"><a class="header" href="#仍然在路上---2022年度总结">仍然在路上 - 2022年度总结</a></h1>
+<h2 id="封面图"><a class="header" href="#封面图">封面图</a></h2>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/humphrey-muleba-dYqMMG6LdZs-unsplash.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/humphrey-muleba-dYqMMG6LdZs-unsplash.jpg" alt=""></span></label></p>
+<blockquote>
+<p>摄影师 | Humphrey Muleba</p>
+<p>图源 | Unsplash</p>
+</blockquote>
+<h2 id="写在前面"><a class="header" href="#写在前面">写在前面</a></h2>
+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">4375字 | 总结 | 朋友 | 生活</p>
+
+<h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>　　在写这篇文章之前，我认认真真地去相册里翻了一下，我今年的图片。</p>
+<p>　　全在跳舞。我自己都有些难以置信。但相册里，确确实实，大多数都是关于舞蹈的图片视频。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/show-of-sea-king.jpeg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/show-of-sea-king.jpeg" alt=""></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/performance-of-unmature-apple.jpeg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/performance-of-unmature-apple.jpeg" alt=""></span></label></p>
+<p>　　看着以前的证据，不知如何是好。</p>
+<br />
+<p>　　生活之彩，多因舞而生。</p>
+<p>　　我不觉得舞蹈代表了一切，但它带给我的东西——外出，礼物，人际关系等等和因此带来的成长，这随之而来的一切，让我无可否认。</p>
+<p>　　我早已分不清舞蹈和成长两者的关系了，大概兼而有之，相互促进吧。</p>
+<p>　　通过跳舞认识了很多的人，然后在交往之中又发现他们其他可爱的地方。让人很满足。</p>
+<p>　　为了节目和表演，我们一起出主意，编排，然后在舞台上绽放；为了回应，我看过他们受情所扰，也为情开怀，与人相恋最后又跟随内心；为了友谊，我们一起说些疯言疯语，也一起在凌晨的操场上吐露困扰与感触；为了学业，我们也能一大早跑去图书馆，占一两排桌子的座位；为了狂欢，我们能提前准备很久，也能在最后送人回家，清理场面……</p>
+<p>　　我实实在在地将他们看作异地之亲，也实实在在地在我们存亡危机之际，着急焦虑。而后者，我直到现在都觉得是个奇迹——面临除名到转危为安，只用了一周不到。背后是我们所有人的努力。</p>
+<p>　　如今我们不再式微，逐渐壮大。新来的后辈们真的很可爱，一个阳光开朗，笑声俊朗，一个善解人意，幽默大方，还有的，温和谨慎。每个人都有不同的性格，每个人都很可爱。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/new-members-of-kid.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/new-members-of-kid.jpg" alt=""></span></label></p>
+<p>　　我觉得这样就已经足够了。</p>
+<p>　　 <strong>我因舞蹈而喜欢他们，也因他们而更喜欢舞蹈。</strong></p>
+<br />
+<p>　　平淡如水之中绽放的盛大惊喜。</p>
+<p>　　一共两次。一次为我的生日，一次为如我一样将于六月离去的人准备的惊喜。也都是他们准备的。</p>
+<p>　　我的 TODO list 里面，有专门的列表，记录着很多人的生日，但上面，没有我的。 <u>我一直觉得自己的生日无所谓，过与不过，都没有区别。</u></p>
+<p>　　甚至于——在那场盛大的惊喜当天，我都不知道那天是自己的生日。我人也呆，还以为是为别人准备的。于是那天，成了至今而言，为数不多刻骨铭心的场面之一。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/birthday-of-21st.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/birthday-of-21st.jpg" alt=""></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/to-graduates.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/to-graduates.jpg" alt=""></span></label></p>
+<p>　　而为大四准备的惊喜，也完全意料之外。</p>
+<p>　　 <strong>我很难掉眼泪，除了刺激泪腺，再难过我都哭不出来。</strong> 自小时候起，便一个人独立忍受。</p>
+<p>　　 <strong>但那天我哭了。</strong> 时间太短，经历太长。想和你们再一起相处如今这么长的时间。</p>
+<br />
+<p>　　疫情转奏，猝不及防，所历人事，如梦如幻。</p>
+<p>　　这是一个很难阐述的话题。我写下的所有文字都不喜欢带上政治色彩，但它实在是对我们产生了太大的影响。</p>
+<p>　　我所经历的很多活动都在学校内展开，因为根本没法出去，而如今这种摆烂式放开带来的影响，仿佛三年不存在一般。这让从前委屈折中的所有东西显得很可笑，譬如活动方案，比如旅行，又或者只是简单的买车票或进场所。</p>
+<p>　　我的朋友在这几年时间里，走的走，散的散，丢的丢。如今已经不剩多少了。这是放开也挽回不了的珍贵事物。</p>
+<p>　　或许也正是如此，才更能辨别哪些人更值得珍惜。</p>
+<p>　　 <strong>回首过去，发现自己经历了很多假性亲密关系（Irrelationship），不过如此也好，说明自己仍在成长。</strong></p>
+<br />
+<p>　　经济未升，工作未成。</p>
+<p>　　我在十月份才开始投简历，找工作。九月份那个时候焦头烂额，而且那时的我还想着自己需要掌握一定的主动权，于是将这个事情一拖再拖。最后结果当然不是很好，但是我觉得也没有那么糟糕。</p>
+<p>　　身体健康，才是最大的幸福。</p>
+<p>　　我见过，也听过很多人壮志雄心，事业有成。他们固然令人羡慕，但我始终觉得，这些都是上层建筑，很高层的东西了。最底层的，就是健康。</p>
+<p>　　 <strong>其他人之所以对你有所期望，是因为他们默认了在接下来的旅途中，身体不会有太大问题，理应去追求更高阶的东西。而对绝症患者的家人或者朋友来说，他们仅仅是活着，存在于世间，就是持续的宽慰和盛大的救赎。</strong></p>
+<p>　　 <strong>我不否认这确实是一个很完美的逃避借口，但它也是一个事实。</strong> 抛弃健康会带来灾难性的后果。</p>
+<p>　　毕竟， <strong>越底层的的东西越致命</strong> ——地基坍塌，硬件损坏，电力短缺等等不一而足。</p>
+<p>　　注意身体的同时，努力去追求更好的东西，这才是最好的生活状态。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/part-of-contract.png" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/part-of-contract.png" alt=""></span></label></p>
+<p>　　说回工作本身，这一年我只找到了一个 PLCT 的实习。截至目前已经实习七个月了，它融入了我的生活，但是并没有断崖式地改变我的生活。这是一个好事情。但愿我在软件所能有所进步吧。</p>
+<p>　　全职工作仍然没有着落。秋招投递了将近 50 份简历，只有不到十家给了我回应。重点参与了：一家银行，终面挂；一家通信公司，一面挂；一家制造业公司，一面之后没有消息；一国企的技术中心，拿了 offer 但没打算去。</p>
+<p>　　参加了一次事业单位高校人才引进。随意的笔试，竟然进了面。最终面挂。说不灰心太假，但确乎也没有太在意。</p>
+<p>　　众生皆苦，尤其这三年。傲慢地说，如果为此焦虑致死，我想这是最坏的结果了。</p>
+<p>　　 <strong>慢慢来才最快。</strong></p>
+<p>　　也真诚希望，一直陪伴在我身边的，那位专注于工作的朋友，能有一个好的结果。他真的做到了，在一个阶段做这个阶段的事情，并不如我一般。该玩的时候玩得开心，面对生活的时候也丝毫没有退缩。我羡慕且敬佩，也诚挚希望他能有个圆满而美好的结束。</p>
+<br />
+<p>　　今年好像做了很多事情，又好像什么都没做。</p>
+<p>　　就像挂号信函收据已经涨到了四十张，却仍然觉得还少了谁，还有哪封信没有寄到。</p>
+<p>　　或许我们就像这些信件一样吧，也像让-保罗 · 萨特说的那个自我一样——我们一直为它奋斗，且多多少少获得了成功，但这种奋斗永远都不会完成，直到死亡那天，它才真正成型。</p>
+<p>　　未来不定，我们仍然在路上。</p>
+<br />
+<p>　　南国微雪 Miyuki</p>
+<p>　　2023 年 1 月 19 日</p>
+<h2 id="写在后面"><a class="header" href="#写在后面">写在后面</a></h2>
+<p>　　这篇文章想写很久了，但是一直没有思路，最后写出来也不太满意。形式大于了实际内容。或许正是这一年什么都没有做的最好证明吧。</p>
+<p>　　很多事情想说，但一来重复，二是别人未必想了解也不一定会懂。究竟作罢。若想了解，已将所有参考链接附于引用及附注之内。</p>
+<p>　　我不知道 2023 会怎么样，但是起码上半年我会很珍惜。</p>
+<p>　　我害怕工作，所以今年全然未知。但目前就这样慢慢走下去吧。</p>
+<p>　　最后，我劝诫自己的七条箴言，送与大家，共勉。</p>
+<p>　　1. 接受好意；2. 降低期待；3. 开心一点；4. 摆脱傲慢；
+　　5. 爱情并非全部；6. 永远有人更优秀；7. 努力生活。</p>
+<h2 id="梦想清单完成情况"><a class="header" href="#梦想清单完成情况">梦想清单完成情况</a></h2>
+<blockquote>
+<p>摘自 Telegram 频道 <a href="https://t.me/TinySnow4Yi/162">推送</a></p>
+<p>形成于高一，最后修正于大四</p>
+</blockquote>
+<ol>
+<li>去往同一所大学；
+（于 2019.9.1 失败）</li>
+<li>跑步公里数总计 300 公里；</li>
+<li>主厨或帮厨做成一次全宴；
+（于 2022.6.5 完成：轰趴馆）</li>
+<li>20 首以上原创诗歌；
+（于 2021.11.30 完成）</li>
+<li>30 篇小说；
+（于 2022.10.5 完成）</li>
+<li>日语 N3 等级；</li>
+<li>5 幅以上插画；</li>
+<li>10 件不同风格的衣服；</li>
+<li>无偿捐赠一次；
+（于 模糊时间 完成：忧郁的弟弟）
+（于 2021.10.8 完成：Zlib.org）</li>
+<li>每年阅读至少一本书；</li>
+<li>恋爱一次；
+（于 2021.9.16 - 2021.10.11 完成：佳芯小姐）</li>
+<li>作曲编曲一首；</li>
+<li>参加一次街舞比赛；</li>
+<li>编写一个自己的网站；
+（于 2022.7.23 完成：<a href="https://tinysnow.github.io/">博客</a>）</li>
+<li>游玩一款游戏 2 遍以上；
+（于 2022.7.30 完成：Terraria）</li>
+<li>用 PR 剪一次作品；</li>
+<li>洗牙一次；
+（于 2021.2.3 完成）</li>
+<li>去一次法国巴黎；</li>
+<li>去一次日本北海道周围或者东京都；</li>
+<li>拥有一台相机；</li>
+</ol>
+<h2 id="2022-年已读书目记录"><a class="header" href="#2022-年已读书目记录">2022 年已读书目记录</a></h2>
+<h3 id="格式"><a class="header" href="#格式">格式</a></h3>
+<p>⭐️(类别) 书名(原书名) - [作者国别]作者中文译名（作者原语言名）(备注) - &lt;阅读起始日期-阅读完成日期&gt;</p>
+<h3 id="备注"><a class="header" href="#备注">备注</a></h3>
+<ul>
+<li>省略书名号，节省字数；</li>
+<li>遗忘书目不计在内；</li>
+<li>星型 emoji 表示推荐阅读；</li>
+<li>部分组成依据书籍省略；</li>
+<li>日期部分残缺则一天之内阅读完毕；</li>
+<li>暂不添加译者信息。</li>
+</ul>
+<h3 id="名单"><a class="header" href="#名单">名单</a></h3>
+<blockquote>
+<p>摘自 Telegram 频道 <a href="https://t.me/TinySnow4Yi/2694">推送</a></p>
+</blockquote>
+<ol>
+<li>⭐️非暴力沟通 - [美]马歇尔·卢森堡（Marshall B.Rosenberg）- &lt;2021.12.20-2022.1.4&gt;</li>
+<li>狮子之家的点心日 - [日]小川糸 - &lt;2022.1.9-2022.1.13&gt;</li>
+<li>⭐️没事，一切都会好起来的 - [韩]Jedit - &lt;2022.1.16&gt;</li>
+<li>(漫画) 让人无法抱怨的爱情喜剧 - [日]铃木大辅 - &lt;2022.1.23&gt;</li>
+<li>通过例子学 Rust - Rust 语言团队及中文社区 - &lt;2022.1.15-2022.1.23&gt;</li>
+<li>⭐️亲密关系（第六版）(Intimate Relationships 6e) - [美]罗兰·米勒（Rowland S. Miller）(注：非常难啃) - &lt;2021.10.5-2022.2.2&gt;</li>
+<li>(漫画) Google Chrome comic - Google 团队 - &lt;2022.2.2&gt;</li>
+<li>(漫画) 我可以咬一口吗 - [美]莉兹·克里莫 - &lt;2022.2.7&gt;</li>
+<li>(漫画) 灯塔 - [法]克里斯多夫·夏布特 - &lt;2022.2.7&gt;</li>
+<li>(漫画) 回答不了 - 匡扶 - &lt;2022.2.7-2022.2.9&gt;</li>
+<li>(漫画) 半小时漫画理财课 - 八宝 - &lt;2022.2.11&gt;</li>
+<li>喜鹊的计谋 - [日]才羽乐 - &lt;2022.2.15&gt;</li>
+<li>人间失格 - [日]太宰治 - &lt;2022.2.16&gt;</li>
+<li>摆渡人 - [英]克莱尔·麦克福尔 - &lt;2022.2.18-2022.2.19&gt;</li>
+<li>(漫画) 半小时漫画经济学 1：生活常识 - 陈磊·半小时漫画团队 - &lt;2022.2.22-2022.2.24&gt;</li>
+<li>(漫画) 半小时漫画经济学 2：金融危机 - 陈磊·半小时漫画团队 - &lt;2022.2.25-2022.3.3&gt;</li>
+<li>(漫画) 半小时漫画经济学 3：金融危机（完结篇） - 陈磊·半小时漫画团队 - &lt;2022.3.3&gt;</li>
+<li>数学之美 - 吴军 - &lt;2021.11.5-2022.3.7&gt;</li>
+<li>Rust 程序设计语言 - Rust 语言团队及中文社区 - &lt;2022.1.1-2022.3.18&gt;</li>
+<li>呐喊 - 鲁迅 - &lt;2022.3.20-2022.3.22&gt;</li>
+<li>Node.js 项目实战 构建可扩展的 Web 应用 - [美]Azat Mardan - &lt;2022.3.22&gt;</li>
+<li>(漫画) 佐仓同学有你的指名哦 - [日]森みさき - &lt;2022.3.25-2022.3.31&gt;</li>
+<li>设计模式 - 刘伟（来自网络）- &lt;2022.1.14-2022.4.4&gt;</li>
+<li>2018 - 刘慈欣 - &lt;2022.3.9-2022.4.6&gt;</li>
+<li>明天，我要和昨天的你约会 - [日]七月隆文 - &lt;2022.4.6-2022.4.8&gt;</li>
+<li>如何阅读一本书 - 轻阅读编写组 - &lt;2022.4.14&gt;</li>
+<li>追风筝的人 - [美]卡勒德·胡赛尼 - &lt;2022.4.16-2022.4.18&gt;</li>
+<li>1984 - [英]乔治·奥威尔（George Orwell）- &lt;2022.4.27-2022.5.2&gt;</li>
+<li>他来了，请闭眼 - 丁墨 - &lt;2022.5.2-2022.5.5&gt;</li>
+<li>Vue 源码系列 - Vue 中文社区 - &lt;2022.5.6-2022.5.10&gt;</li>
+<li>霍乱时期的爱情 - [哥伦比亚]加西亚·马尔克斯（García Márquez）- &lt;2022.5.5-2022.5.30&gt;</li>
+<li>mdBook Documentation - Rust 语言团队 （Mozilla）- &lt;2022.5.31&gt;</li>
+<li>盲视 - [加拿大]彼得·沃茨 - &lt;2022.6.29-2022.7.18&gt;</li>
+<li>跟我写 Makefile - 陈皓 - &lt;2022.7.26-2022.7.27&gt;</li>
+<li>爱丽丝梦游仙境 - [英]路易斯·卡罗尔（Lewis Carroll）- &lt;2022.7.19-2022.8.5&gt;</li>
+<li>天堂旅行团 - 张嘉佳 - &lt;2022.8.11&gt;</li>
+<li>再次仰望星空 - [美]杰森·格林（Jayson Greene）- &lt;2022.9.3-2022.9.30&gt;</li>
+<li>计算机系统要素：从零开始构建现代计算机 - [美]Noam Nisan - &lt;2022.9.7-2022.10.1&gt;</li>
+<li>大型网站技术架构：核心原理与案例分析 - 李智慧 - &lt;2022.10.20-2022.10.26&gt;</li>
+<li>智齿 - 郑渊洁 - &lt;2022.10.31-2022.11.9&gt;</li>
+<li>童话大王讲经典：西游记 - 郑渊洁 - &lt;2022.11.20-2022.12.2&gt;</li>
+</ol>
+<h2 id="观影记录"><a class="header" href="#观影记录">观影记录</a></h2>
+<ol>
+<li>黑客帝国</li>
+<li>黑客帝国 2：重装上阵</li>
+<li>黑客帝国 3：矩阵革命</li>
+<li>名侦探柯南：绯红色的子弹</li>
+<li>银翼杀手 2049</li>
+<li>飞屋环游记（Up）</li>
+<li>爱丽丝梦游仙境 - 仙境奇遇记</li>
+<li>寻梦环游记</li>
+<li>盗梦空间</li>
+<li>爱丽丝梦游仙境 - 镜中奇遇记</li>
+<li>海上钢琴师</li>
+<li>舞出我人生之舞所不能【烂片】</li>
+<li>舞出我人生（Step Up 1）</li>
+<li>舞出我人生 2：街舞（Step Up 2: The Streets）</li>
+</ol>
+<h2 id="引用及附注"><a class="header" href="#引用及附注">引用及附注</a></h2>
+<h3 id="引用事件"><a class="header" href="#引用事件">引用事件</a></h3>
+<ol>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247484496&amp;idx=1&amp;sn=b212499265c89a52bf6cc9be6d8b14dd&amp;chksm=c00d72d8f77afbce38e8a09ecaa0cc79388a5596e17ed4cb14653da71d2e25bbe2c1054c526a&amp;token=1206502575&amp;lang=zh_CN#rd">生日惊喜</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247484703&amp;idx=1&amp;sn=1e6162888a3e7b799b8625e772bad41b&amp;chksm=c00d7397f77afa81213bb04c099e3a33ccc9c41b0ff95b701d9ff0c9fdb02a5d93766d753a76&amp;token=1206502575&amp;lang=zh_CN#rd">送给大四生的惊喜</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247485569&amp;idx=1&amp;sn=27f23f0aeb5d557999fa0cac20684926&amp;chksm=c00d7e09f77af71f19a6ef2f4ad86175943c5a3699a7078e78abdf2e6623c6796899491d1555&amp;token=1206502575&amp;lang=zh_CN#rd">除名危机</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247485403&amp;idx=1&amp;sn=80b2cf6e01b5c7ef8b8380dabbbf2e8c&amp;chksm=c00d7153f77af845e3fed5f5c01bace278b718a1e7a58fbb2360ea304fb31a34332c75c4df23&amp;token=1206502575&amp;lang=zh_CN#rd">身体健康</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247484646&amp;idx=1&amp;sn=7202852bc7b91e5df657d711807cc1b6&amp;chksm=c00d726ef77afb784e673e49200d34723e069d5432fe8ea8658cb4fda4bdd6eaf53308aedc91&amp;cur_album_id=2125155878529040386&amp;scene=189#wechat_redirect">实习能力测试通过</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247485383&amp;idx=1&amp;sn=3f21118e02f2aba5c4d4d8b6200a7bd3&amp;chksm=c00d714ff77af85900c3d17072eb7f86c4353c671a74b296e4748cbb8dec64db14e52b17da7e&amp;token=1206502575&amp;lang=zh_CN#rd">找工作的朋友的最终决定</a></li>
+</ol>
+<h3 id="附注"><a class="header" href="#附注">附注</a></h3>
+<p>　　附上一些年度图片，精挑细选。推荐理由附于其后。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/cat-religion.png" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/cat-religion.png" alt=""></span></label></p>
+<p>　　推荐理由：猫猫神教！！！</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/bright-sicau.jpeg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/bright-sicau.jpeg" alt=""></span></label></p>
+<p>　　推荐理由：明亮的校园，看起来很梦幻。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/two-girls-atmosphere.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/two-girls-atmosphere.jpg" alt=""></span></label></p>
+<p>　　推荐理由：非原创。很喜欢这种氛围和感觉。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/kirito.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/kirito.jpg" alt=""></span></label></p>
+<p>　　推荐理由：非原创。一直很喜欢桐人。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/birthdaycake-of-yi-ping.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/birthdaycake-of-yi-ping.jpg" alt=""></span></label></p>
+<p>　　推荐理由：朋友的十八岁生日蛋糕。最后没吃完，很可惜。也很心疼这个朋友。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/sky-watch-with-blue-red-white.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/sky-watch-with-blue-red-white.jpg" alt=""></span></label></p>
+<p>　　推荐理由：具有特殊意义。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/atogaki.png" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/atogaki.png" alt=""></span></label></p>
+<p>　　推荐理由：压轴。这张图当初给我带来了很大的震撼——这是一个漫画的后记。并且还是情色漫画的后记。我很希望能像这个画师一样，把生活、工作、学习和爱好平衡好。附翻译其后（因微雪个人日语能力有限，如有错误，还请海涵斧正）。</p>
+<blockquote>
+<p>后记</p>
+<p>首先，感谢您购买此书。</p>
+<p>这回</p>
+<p>11.30　毕业论文的第一个 deadline</p>
+<p>12.12　我的乐队的现场演出</p>
+<p>12.17　毕业论文的第二个 deadline</p>
+<p>12.21　这份手稿的截止日期</p>
+<p>因为我需要度过人生中这最艰难的两个月，所以我比平时更严格地要求自己，结果，毕业论文的字数竟然远远超过了规定的 2 万字，写了</p>
+<p><strong>5 万字</strong></p>
+<p>这么多。努力过头了。</p>
+<p>总共写了 60 页，按书的厚度算就是 120 页（因为论文是单面印刷的），写完之后感觉快死了。做完之后我能说的就是，毕业论文这种东西，适当随便点就行了。现在除了我之外的、其他的同级生，现在全部都在赶第一次和第二次的截止日期。在我看来毕业论文应该是更严肃的东西才对。</p>
+<p>过于认真是我的坏习惯呢。</p>
+<p>后记完全以抱怨毕业论文而告终。</p>
+<p>从下半年开始我就是新晋社会人了，但就算工作了，也打算继续商业作品或者漫画，如果可以的话，请继续支持我。</p>
+<p>（以下略）</p>
+<p>（最后一行）未满十八岁禁止购买 / 禁止阅览</p>
+</blockquote>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../生活碎笔/文章与写作/在一起，本身就是一种幸福.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../生活碎笔/文章与写作/微小痕迹.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../生活碎笔/文章与写作/在一起，本身就是一种幸福.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../生活碎笔/文章与写作/微小痕迹.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/文章与写作/仍然在路上-2022年度总结.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

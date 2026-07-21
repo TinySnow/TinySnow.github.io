@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>一桩自杀案 - 苏童 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="一桩自杀案"><a class="header" href="#一桩自杀案">一桩自杀案</a></h1>
+<p><em>苏童</em></p>
+<p>　　在市街的女工李抒君之死最初是作为自杀案处理的。一个老大不嫁性情孤僻的老处女，在一个愁雨绵绵的秋夜从六楼窗台坠地身亡，现场没有他杀的任何痕迹和证人，这样的不幸事件在我们的城市生活中就像一只黑马一掠而过，飞走就飞走了，飞走了就被人们遗忘了。人们对于形形色色的自杀事件已经练就了一整套推理和分析的方法，说到李抒君，人们脑海中就会浮现出一个从来不穿裙子的老处女，一个神色忧戚习惯于低头走路的纺织女工，多年来从来不与任何男子说话，因而人们都一针见血地指出李抒君的问题恰恰在这里，当李抒君的死讯传到纺织厂时，女工们在哀痛之余纷纷发表各自的看法，问题还是出在这里，男人、爱情，婚姻，她们认为李抒君表面上远离它们但心里是向往这些人伦之乐的，她肯定是想不开了，人想不开了就会走绝路。女工们当时对负责调查的警方人士说，我们早就担心李抒君有一天会走绝路，没想到真是这样。</p>
+<p>　　对李抒君家人调查的结果也平淡无奇，死者的姐姐李兰心哭得像个泪人儿。她向警方人士诉说着她们姐妹四十年相依为命的骨肉亲情，说到伤心处便昏厥过去。从李兰心嘴里根本无法弄清死者的死因，调查者便转向李兰心十岁的儿子，那个小男孩被家里的突变吓坏了，从他结结巴巴的叙述中唯一得到的信息是死者当天表现很寻常，小男孩说，姨妈给我削了苹果，她还跟我下了一盘跳棋。</p>
+<p>　　调查者注意到那是一个比较特殊的家庭组合，死者李抒君生前一直和姐姐李兰心一家住在一起，调查者很自然地追问起这个家庭最重要的成员尤平。但是李兰心说她丈夫前一天去北方出差了，这个细节当然不会被调查者遗漏过去，围绕着尤平在事发时的行踪，调查者曾作过最详尽的调查，结果却是平淡的，尤平确实在事发前一天去了北方，三个同事与他同行，都为他做了证明。</p>
+<p>　　李抒君之死作为本年度第十七起自杀案记录在册，曾经有人在布市街街头自作聪明地揣测李抒君事件的某些原因，那种揣测无非是圃于性暴力、男女私情等等方面，但法医报告足以堵住那些人的无稽之谈，法医的验尸报告证实李抒君死后仍然是个处女。</p>
+<p>　　卷宗里对所有死者的死亡描述都是冷静、客观而缺乏诗意的，但刑警马千里后来在翻阅李抒君一案的卷宗时眼睛却陡地亮了。</p>
+<p>　　人们都说李抒君生前从来不穿裙子，但卷宗纪录李抒君坠楼时恰恰穿着一条粉红色缀有花边的睡裙。</p>
+<p>　　打匿名电话的是一个声音嘶哑的男子，接线员把这个电话接到积案组的时候还在安抚他，慢慢说，你不要紧张，你反映的情况很有用，因此马千里拿起话筒说的第一句话也是这样：慢慢说，不要紧张，我们正需要了解你知道的情况。但那个男子只是对着电话大声喘气，过了好久，他突然说，我紧张？紧张什么？我肯定李抒君不是自杀！马千里没有立即追问，凭藉着经验他知道现在该让对方说下去，马千里耐心地等了一会儿，那个男子果然透露了一点底细，他说，那天夜里我听见了她家的声音，她跟什么人扭打过，她还骂了人，马千里问道，你听清楚她骂什么了吗？那男子说，没听清，但她肯定是在骂人。马千里刚想询问对方听见声音的时间，那男子却先堵注了他的问题，他说，你肯定要问时间了，几点钟几分几秒？你们就会这一套，告诉你我神经衰弱，夜里通宵失眠，我从来不看钟的！那男子就这样突然变得气势汹汹，你们是一群饭桶，问这问那从来问不到点子上，连自杀和他杀都分不清楚，你们不是在草菅人命吗？马千里被训得摸不着头脑，而那个男子这时突然挂断了电话。</p>
+<p>　　马千里从来没有遇到过这种举报者，他向记录员询问那男子的名字，但记录员说，他不肯透露姓名，他自称是一名群众，因此电话记录上便留下了“一群众”这个名字。</p>
+<p>　　马千里来到布市街时那条街道已经恢复了平静和洁净，当初李抒君坠搂留下的血迹和警方圈出的人形白线已经被秋风秋雨吹打而去，街上人来人往，人们匆忙地步过一个月前的事发现场，表情和步履一样地从容不迫，看来没有多少人记得那个不幸的女人了。</p>
+<p>　　死者的姐姐李兰心却沉浸在悲伤之中，那是毫无矫饰的悲伤，马千里注意到她薄施脂粉，有中年女人的风韵，但提到妹妹的死李兰心便张大嘴呜呜痛哭，毫不顾忌她的仪态。</p>
+<p>　　有人听见她在骂人，当时房间里好像有别人在场，你就住在隔壁房间，你听见什么了吗？</p>
+<p>　　别人？谁说还有别人？李兰心抹去眼泪，瞪大眼睛说，要是还有别人，我妹妹就不会跳下去，就不会自杀了。</p>
+<p>　　不，要是有别人在，你妹妹就不是自杀，你懂吗？你回忆一下，当时你听见她房间里有什么声音吗？</p>
+<p>　　怎么会有别人？就我们三个人在家，尤平他出差去了，什么声音？会有什么声音？等我听见声音她已经……李兰心又捂着脸哭起来，她说，你们目的什么问题呀？除了我还有谁会进她房间？难道我会把自己的亲妹妹推下去吗？</p>
+<p>　　不是那个意思，只是想让你确定有没有另一个人当时在场，会不会有人潜进她的房间？</p>
+<p>　　没有，李兰心摇着头，她说，你们怀疑她是谋杀？不是自杀？</p>
+<p>　　马千里不置可否地走到窗前，面向大街的窗户开着，窗台上现在放着一盆文竹，马千里端起文竹，看见的只是一圈圆形的污渍，死者在那个雨夜站立窗台的痕迹已无从找寻，但马千里眼前依稀飘过了李抒君身穿粉红色睡裙的身影，那个女人站在窗台上，那么惊恐，那么绝望。</p>
+<p>　　你妹妹很不喜欢穿裙子，但她在家里喜欢穿裙子，是这样吗？</p>
+<p>　　她不喜欢，她嫌自己小腿太粗。</p>
+<p>　　可你妹妹死时穿着睡裙。</p>
+<p>　　李兰心这时候用一种古怪的目光溜了马千里一眼，她说，这有什么？再怎么说她也是个女人呀，女人都爱美，那条睡裙是夏天时买的，今年她特别爱美。</p>
+<p>　　她是不是在恋爱？马千里又问。</p>
+<p>　　谁知道？有些事情她不肯跟我说，她要是肯对我说我会开导她，也许她也不会走那条绝路了。</p>
+<p>　　李兰心后来又啜泣起来，直到她丈夫尤平从外面回来，李兰心一看见尤平迅速地擦去泪迹，修整了一下衣饰，他们怀疑抒君是他杀呀，李兰心一边用手绢擦着眼角一边对尤平说，他们怀疑有人跑进了抒君的房间，我没法跟他们说，你来跟他们谈吧。</p>
+<p>　　我有什么好谈的，我又不在家。尤平有点不耐烦地把他的黑色风衣和黑色圆帽摘下，挂在衣钩上，他怀着些许敌意扫了马千里他们一眼，说，你们搜集到什么证据了吗？</p>
+<p>　　正在搜集。马千里说。</p>
+<p>　　马千里注意到尤平是个英俊而沉稳的男人，尤平对他们的到来似乎很反感，但尤平的不友好态度恰恰激起了马千里的某种好奇心，马千里微笑着对李兰心开了个玩笑，你丈夫一表人材，他在外面出差你放心吗？</p>
+<p>　　李兰心面露愠色，她看了丈夫一眼，低下头说，没什么不放心的，我了解他，外面的坏女人总在勾引他，但他从来不拈花惹草。</p>
+<p>　　那么在家里呢？你妹妹也喜欢他吗？</p>
+<p>　　你什么意思？李兰心猛地一惊，但很快便狂叫起来，你怎么敢这样说话？你要是再敢这么说我就掴你的耳光！</p>
+<p>　　我只是开个玩笑，别生气。马千里说着从李兰心身边躲开，他走到尤平身前朝他挤了挤眼睛，但尤平冷笑了一声走到厨房里去了。马千里觉得有点无趣，无意中朝尤平的那件风衣看了一眼，发现那件风衣的扣子是铜制的，衣领处的扣子少了一个。铜扣子或者少一个铜扣子对于任何一件风衣都是寻常的、所以马千里当时并没有特别在意。使他格外敏感的是那个玩笑之后李兰心的表现，李兰心突然变得异常凶悍暴烈，似乎是被触到了痛处，而那个女人在一阵狂叫过后所爆发的哭声变得凌厉而短促，那是受了委屈的孤立无援的哭声。</p>
+<p>　　马千里发现有个矮小的穿旧军装的男子在跟踪他，马千里觉得这事很滑稽，从来都是他跟踪别人，现在却被别人盯住了。路过布市街口的理发店时马千里闪了进去，没过多久那男子焦黄而忧郁的脸贴在了理发店的玻璃窗上，马千里冲出去，一把抓住了那男子的胳膊。</p>
+<p>　　你在跟踪我？马千里说。</p>
+<p>　　是，我就要跟踪你。那男子镇定自若地迎着马千里的目光说，我看你什么时候查到凶手。</p>
+<p>　　什么凶手？</p>
+<p>　　谋杀李抒君的凶手。那男子咧嘴一笑，他说，告诉你吧，我就是打电话的那个人。我就是“一群众”。</p>
+<p>　　“一群众”？你叫什么名字</p>
+<p>　　我就叫“一群众”，不骗你，就叫“一群众”。</p>
+<p>　　马千里很快就发现“一群众”的样子好像不正常，他的脑子里嗡地响了一下，假如李抒君一案的线索来源于此人之口，那他这几天的奔忙无疑将成为一个笑料了。</p>
+<p>　　从理发店里出来一个人，他粗暴地推开了“一群众”，嘴里嚷着，你他妈上这儿破案来啦？滚开，这里没有凶杀案。</p>
+<p>　　他的神经有问题？马千里问那个理发师。</p>
+<p>　　有问题，整天在街上窜来窜去地寻找凶手，理发师又推了“一群众”一把，他对马千里说，你千万别信他的，你要是信了他的话会累死的，凶手，哪来什么凶手？</p>
+<p>　　“你们这些饭桶，你们不取证不侦查怎么找得到凶手？“一群众愤然叫喊着，他的手攥成拳头在马千里面前摇动着，我有证据，谋杀李抒君的证据，告诉你们，凶手就在我手里。</p>
+<p>　　然后马千里看见“一群众”松开了手，一颗铜钮扣当啷一声掉在理发店门口的台阶上，马千里下意识地用手绢包起了那颗铜钮扣，他觉得它眼熟，很快便想起了尤平的那件风衣，那件凤衣上的铜钮扣。</p>
+<p>　　你在哪儿抢到的？马千里和颜悦色地拍了拍“一群众”的肩膀。</p>
+<p>　　在哪儿？当然在事发地点。“一群众”得意地说，案子已经可以破了，凶手把李抒君推下楼时，李抒君把他衣服上的钮扣扯下来了，这粒钮扣，嘿，谁也没有发现这粒钮扣，是我在水洼里找到的。</p>
+<p>　　你什么时候找到的这粒钮扣？</p>
+<p>　　李抒君死后三个小时，那时候你们都走了，你们以为是自杀，只有我还在取证，只有我知道李抒君是他杀，“一群众”好像患了感冒，他朝地上擤了一把鼻涕，很严肃地与马千里握了握手说，我已经给你提供了他杀的证据，下面的艰巨任务就交给你啦。</p>
+<p>　　马千里忍住笑，他觉得“一群众”现在看来可爱极了，不管这案子能不能破，马千里最后对“一群众”说，我要请求上级部门颁给你一个三等功勋章。</p>
+<p>　　后来的侦破工作确实就是从那铜钮扣上着手进行的。黑风衣的主人尤平不记得领口的铜钮扣是什么时候掉的，更重要的是他声称出差时没有带那件黑风衣，黑风衣留在家里了，与它相配的黑帽子也留在家里，马千里就此事再次讯问了与尤平同行的三个同事，三个同事都记得尤平穿的是一套浅灰色的西装。</p>
+<p>　　李兰心看见马千里手上的铜钮扣时脸上掠过一丝惊惶之色，但那丝异样的表情稍纵即逝，她说，我正在找这粒扣子呢，尤平那件风衣是他姐姐从日本买的，掉了扣子配不到，怎么让你捡到的？</p>
+<p>　　这钮扣不能给你了，马千里说，你妹妹坠楼时手里捏着这粒扣子，你懂了吗？</p>
+<p>　　怎么可能？李兰心说，你也知道尤平当时不在家，尤平不可能进她的房间。</p>
+<p>　　尤平不在家，但他的风衣留在家了，别人有可能穿着那件风衣进你妹妹的房间。马千里说，有一个人，你知道是谁吗？</p>
+<p>　　谁？李兰心冷笑道，总不会是我儿子吧，他才十岁，总不会是我吧，我干嘛要穿着尤平的风衣进她的房间？</p>
+<p>　　我不知道，所以要问你。</p>
+<p>　　你问我我问谁？李兰心沉着脸说，也许真的有人进我家了？他从窗户里爬进来的？</p>
+<p>　　这种可能已经排除。马千里说，现在的可能性只有一种，是你穿着尤平的风衣进了你妹妹的房间。</p>
+<p>　　我疯了？李兰心尖叫起来，抒君是我亲妹妹，我天天都要去她房间，深更半夜的我怎么会去吓唬她？我又不是疯子！</p>
+<p>　　你肯定有你的目的，只是你不肯说。马千里的目光落在门后的衣钩上，那件黑风衣那只黑圆帽还挂在那里，马千里过去摘下风衣和帽子，他对李兰心说，你能不能帮个忙，戴上这顶帽子，穿上这件风衣，让我们看看？</p>
+<p>　　不，李兰心的声音听上去已是歇斯底里，她的喊叫声也是混乱而恐惧的了，我又不是疯子，她是我亲妹妹，是我亲妹妹呀！</p>
+<p>　　马千里从李兰心的狂乱中窥出了某种端倪，他沉思了一会儿，换了个话题突然问，尤平和你妹妹有不正常关系吗？</p>
+<p>　　李兰心猛地抬眼怒视着马千里，她的嘴唇哆嗦着，你要再敢这么说，你要是再敢玷污我妹妹的清白，我也从窗户里跳下去，反正我也不想活了。</p>
+<p>　　我相信你妹妹是清白的，但尤平是不是对她有过什么不轨行为呢？马千里发现李兰心已经被击垮，李兰心真的想往窗边走，他赶紧上去按住了那个浑身颤抖的女人，他的语气变得温和而亲切起来，你千万别这样做，马千里说，假如你拒绝回答问题，那我们就不再往下查，你妹妹就算自杀处理，让凶手受一辈子的良心谴责，那本身也是一种惩罚。</p>
+<p>　　李兰心就是这时候软瘫在地的，李兰心哇地一声大哭起来，边哭边说，他们都是清白的，是我害了他们，是我着了魔害死了抒君，该死的不是抒君，是我呀！</p>
+<p>　　马千里耐心地等待着李兰心恢复平静，马千里对那个雨夜的案件仍然留着一些疑问，他说，你为什么要乔装改扮成尤平的模样去你妹妹的房间呢？</p>
+<p>　　我想考验她。李兰心说。</p>
+<p>　　你一直怀疑你妹妹与尤平有不正当关系？</p>
+<p>　　不，是从今年夏天开始的。李兰心仍然抽泣着说，抒君从来不穿裙子，但今年夏天她买了那条睡裙，我觉得不正常，我怀疑她是穿给尤平看的。今年夏天她总是穿着那条睡裙，我总是在怀疑，我忘了抒君也是女人，女人都是爱美的。</p>
+<p>　　你怎么想到用这办法考验她的？</p>
+<p>　　尤平那天去出差，抒君不知道。我把尤平的风衣帽子抱到洗衣机里想洗，突然就冒出了这个念头。我只是想考验她，她近视，夜里她会把我当成尤平的，我穿着尤平的风衣戴着尤平的帽子走到她床边，我摸她的脸，她一下子就醒了，她说，姐夫你干什么？我看见她伸手去枕边摸眼镜，我一下子就慌了，扑上去抓紧她的手，没想到她力气那么大，她甩开我的手跳下床，跑到窗边，她说，姐夫你干什么？快出去，你不出去我就喊了。我觉得她这样还不能说是经受住了考验，我着了魔似的走过去，去抓她的胳膊，这时候她像疯了似地和我扭打起来，风衣上的那粒钮扣被她扯掉了，我没想到她的性子会这么刚烈，她一边哭骂着一边爬上了窗台，她说，尤平你这个衣冠禽兽，你再不走我就从这窗台上跳下去。我急眼了，我大叫起来，别跳，是我，不是尤平！我真笨，这时候我不该出声，应该转身走掉的，我把抒君吓着了，我看着她身子往后一晃，她想抓住窗框，但没有抓住。别人都说抒君跳楼时的尖叫有多惨，不是她在叫，是我在叫呀！</p>
+<p>　　李兰心说到这里已泣不成声，她开始不停地扬手打自己的耳光。马千里没有阻止她，马千里想像着那个纺织女工从六楼窗台坠落的情景，心里有一种异常尖锐的刺痛的感觉。他经历了无数千奇百怪的案件，没有哪次比李抒君一案更出人意料了。</p>
+<p>　　布市街的李抒君案件后来在街头巷尾轰动一时，无疑此案的发生和侦破过程都有不可重复的特殊之处，包括那个提供了一粒铜钮扣的“一群众”，布市街的人们都把“一群众”视为精神病患者，他们不相信他在李抒君一案侦破中所充当的重要角色。马千里的同事也觉得他接受“一群众”的线索有种种不利之处，但马千里却坚持自己的观点，他认为侦破任何案子都要依靠群众的力量，群众中不能排除“一群众”那种人，一千种案件有一千种侦破方法，马千里说，假如一个精神病人提供了可信的线索，你有什么理由不相信他呢？</p>
+<p>　　第二年春天马千里兑现了他的诺言，他在布市街上找到了到处游荡的“一群众”，在“一群众”的脖子上挂了一枚黄澄澄的勋章，“一群众”起先显得很快活，他拿着那枚无名勋章对着太阳照了照，脸上的表情突然变得傲慢而严峻，他说，现在怎么能接受荣誉呢？这件案子还有疑点，我们还要继续往下查呢。</p>
+<p>　　马千里看着那个男子的背影停留在李兰心家的垃圾桶前，他迅速地从桶里拾起一件什么东西朝马千里晃了晃，马千里猜想那是一块染了血迹的手帕，马千里朝他竖起大拇指，但这次他并不想接受“一群众”提供的物证，毕竟“一群众”还没有资格充当马千里的助手。</p>
+<p>　　马千里看着“一群众”就想笑，他觉得这个人比许多正常人可爱多了，但马千里万万没想到就是这个人在李抒君一案里横插一杠，把那桩已经澄清的案子又复杂化了。</p>
+<p>　　“一群众”是被李兰心的丈夫尤平揪进积案组办公室来的。马千里看见尤平把“一群众”怒气冲冲地推进门来，嘴里喊着，什么积案组，你们积案组就可以私闯民宅随便偷人东西吗？</p>
+<p>　　马千里的两位同事老马和小马上去驱赶他们，小马愤怒地叫起来，你们是什么人，随随便便闯到局里来？谁偷你东西，抓到小偷送派出所去，别往这里送！</p>
+<p>　　马千里觉得事出蹊跷，他把尤平和和“一群众”带到走廊上询问了半天，终于弄清了事情的原委，原来“一群众”偷偷地潜进李抒君生前住的房间，被尤平当场抓住了，尤平要把“一群众”扭送到派出所，没想到“一群众”的口气比他更强硬，他一定要尤平跟他到局里走一趟。</p>
+<p>　　他说是你的助手，尤平指着“一群众”质问马千里道，哼，助手？难道你用一个神经病当你助手吗？</p>
+<p>　　马千里用严厉的眼光审视着“一群众”，“一群众”倚着墙，我没有冒充，“一群众”有点胆怯地嗫嚅着，群众都是公安人员的助手，我也是群众，为什么我不能是助手？</p>
+<p>　　你偷了我家的东西，尤平突然冲上去揪住“一群众”的衣服，伸手去掏他的口袋，你偷了什么东西？快给我拿出来。</p>
+<p>　　这是证据，不能给你。“一群众”护命捂紧他的口袋，一边往马千里身后躲，马千里正要劝阻那两人的荒唐行为，看见“一群众”从口袋里掏出一个蓝色塑料皮的小日记本，“一群众”朝尤平晃了晃那个日记本，嘴里发出一串自得的笑声，你是杀害李抒君的主谋，这就是证据。“一群众”高声说，你们说我是神经病，神经病能找到这么重要的证据吗？</p>
+<p>　　马千里接过了那个日记本，翻了几页就翻到了那页“证据”，那是死者李抒君在一年以前记下的一页日记。</p>
+<p>　　X 年 X 月 x 日晴</p>
+<p>　　一夜没睡觉。</p>
+<p>　　夜里发生的事情就像一场恶梦，我没想到他是一个下流的衣冠禽兽，他竟然在深更半夜闯到我房间里来，他把我看成什么人了？我就是一辈子嫁不出去也不会跟他发生关系。我气坏人，我把他赶了出去，幸亏没有惊动姐姐，否则事情就闹大了。</p>
+<p>　　不知道他以后还会不会来？他以为我软弱好欺那就错了，我就是死也不会答应他的无耻要求，他下次再敢来我就从窗户里跳下去，反正生活对于我本来就没有什么意义。</p>
+<p>　　马千里读完这页日记脸色就变了，他让小马送走了“一群众”，把站在一边神情局促的尤平带进了积案组办公室。</p>
+<p>　　日记里的“他”就是你吧？马千里问道。</p>
+<p>　　是我。尤平沉默了一会儿，他搔了搔头说，是我又怎么样？那是很早以前的事了，那天我喝醉了酒。我跟她的死一点关系也没有。你知道那是一场误会。</p>
+<p>　　一场误会？马千里冷笑了一声，他逼视尤平的目光充满了蔑视和愤怒，但他的心却像一块巨石般地沉重起来，可怜的女人，马千里抚摸着日记本叹了口气，就这么死了，把凶手都放走了。</p>
+<p>　　我不是凶手，我妻子也不是凶手。尤平瞪大眼睛叫起来。你们知道她是自己摔下去的！</p>
+<p>　　你们不是凶手。马千里沉默了一会儿说，可是谁敢说你们没有犯罪呢？你们不是凶手，可你们并不比凶手干净多少，你们的手上都沾着李抒君的血。</p>
+<p>　　尤平突然垂下头去，他的身子在木椅上轻轻抖动，但任何人都能看出那是为了掩饰他的颤抖，过了好久尤平抬起头观察着马千里的表情说，我们会被逮捕吗？</p>
+<p>　　马千里没有说话。马千里走过去把尤平从椅子上拉起来，然后用力把他推出门去，他看见尤平在走廊上打了个趔趄，尤平扶墙站住，回过头用乞求的目光询问着马千里，我们会被逮捕吗？马千里却无心回答这个问题，马千里呼地撞上门，站在门边重重地叹了口气，他对小马说了一句意味深长的话：形形色色的案件，形形色色的罪行，为什么有的罪行能够逃脱法律的制裁呢？</p>
+<p>　　按照正常的侦查程序，李抒君一案应该是可以结案的，但积案组长马千里却一直把李抒君案件的卷宗放在抽屉里。一件没有凶手的凶杀案，即使它已真相大白，马千里也并没有一丝快乐。</p>
+<p>　　马千里每次走过布市街便听见某种重物坠地的声音，他猜那是李抒君的亡魂在向他哭诉，死者仍然蒙冤，活人就无法安宁。马千里一直自认是个称职的刑警，但他知道许多案件最终只能束之高阁了。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/猫是极“出世”的动物-梁晓声.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/住在手机里的朋友-梅园.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/猫是极“出世”的动物-梁晓声.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/住在手机里的朋友-梅园.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/一桩自杀案-苏童.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

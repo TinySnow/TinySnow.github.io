@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>杰德·彼得斯的运气 - 詹姆斯·瑟伯 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="杰德彼得斯的运气"><a class="header" href="#杰德彼得斯的运气">杰德·彼得斯的运气</a></h1>
+<p><em>詹姆斯·瑟伯 著 / 孙仲旭 译</em></p>
+<p>　　爱玛·彼得斯姨妈八十三岁时——她是那年去世的——在她不用的前客厅里的桌子上，仍然摆着一块也许有二十磅重的粗糙的大石头，跟杰德·彼得斯的幸运纪念品在一起。那块石头放在中央，周围是摊开来的古里古怪的零碎东西：一片做帐篷的帆布，一片松木，一封发黄的电报，几份旧剪报，一个瓶塞，一位外科医生的账单。爱玛姨妈从来不谈论那些奇怪的藏品，除了有一次，那是在她去世前不久，当时有人问她如果扔掉那块石头，她会不会感觉好点。“莉斯贝丝放哪儿，就还放哪儿吧。”她说。我所知道的关于那些纪念品的事，都是从家族中其他人那儿听说的。他们中间有几位觉得那块石头成为藏品的一部分不“合适”，可是莉丝贝丝姨妈——爱玛的姐姐——坚持认为合适。事实上，是莉斯贝丝·班克斯姨妈请人把那块石头拖回家，和其他东西一起放到那张桌子上。“和别的一堆东西一样，这也是上帝的旨意。”她会说，她会表情严肃地坐在摇椅上前后摇晃。“你不可以嘲笑上帝。”她又说。她是个很虔诚的人，我以前时不时会在葬礼上看到她，高个子，削瘦，严肃，但是我能避免就会避免跟她说话。她喜欢葬礼，喜欢看尸体，那让我害怕她。</p>
+<p>　　再说回爱玛姨妈那张放纪念品的桌子吧。墙上挂着爱玛姨妈的丈夫杰德·彼得斯的全身照片，带着豪华相框，照片上的他戴着帽子，身穿大衣，拎着一个手提箱。我在本世纪初还是个小孩子时，经常给带到俄亥俄州舒格格罗夫附近的爱玛姨妈家，那张照片经常让我纳闷（那块石头和别的物品倒是没让我纳闷，因为很晚以后那些东西才放上去）。好像不管是谁，戴着帽子、身穿大衣、拎着一个手提箱照相都很滑稽，更滑稽的是让人把照片放大到几乎跟真人一般大小，放在一个很是精心制作的相框里。我们这些小孩子会溜进前客厅看那张照片，爱玛姨妈会忙不迭把我们赶出来。我们向她问起那张照片时，她会说：“不关你们的事。”可是我长大后，知道了那张大照片的事和杰德·彼得斯怎么会被人称为“幸运的杰德”。事实上，是杰德最早那样自称；有次他竞选县里的某个职位（落败了），他让人把“幸运的杰德”印在他的竞选卡片上。别人都只是嘲笑地提起这个名字。</p>
+<p>　　似乎是早在一八八八年，杰德·彼得斯三十五岁左右，他做某种生意做得很不错，让他很多时候东奔西走。有一个星期，他去了纽约，本来打算晚一点坐船去新港。但是家里出了什么事，他的一个雇员给他发了封电报：“别去新港，急需你回来。”杰德的说法，是他当时在船上，船准备开航，这时电报送到了；电报在他结账后几分钟送到了他住的旅馆，他说，一位负责的职员催着送电报的人去码头。那是杰德的说法。大部分人听了这个故事后，都相信杰德是在旅馆收到那封电报的，很可能在开船前好几个钟头，因为他这个人特别爱添油加醋讲故事。不管怎样，无论他是不是刚好在抽掉跳板时急急忙忙下了船，那条船开航了，船上没有他。开出港口后大约八九个钟头，那条船在暴风雨中沉没了，船上的人无一生还。所以他让人给他拍了张照片并且放大，照的正是他下船时的样子，他说。他就是那样开始收藏起幸运纪念品。有几年时间，他一直保存着那封电报、关于那次海难的剪报，夹在家里的一本《圣经》中，可是有一天，他把那些都取出来，放在客厅的那张桌子上，用玻璃钟型罩罩着。</p>
+<p>　　从一八八八年直到一九二零年，即杰德去世那年，他的日子都过得平淡无奇。人们所记得的晚年的他是个话多、招人厌的老头儿，他的生意江河日下，因为他不够勤劳。最后他定居在舒格格罗夫附近的一间农场上，几乎过得衣食无继。六十多岁时，他开始酗酒，让爱玛姨妈的日子过得苦不堪言。我不知道她怎样做到坚持付清了她的人寿险保费，但是不管怎样，她做到了。他的有些亲戚私下说过，要是杰德在他频繁反胃时死了倒是件好事。挺广为人知的是，她从来没有很喜欢他——之所以嫁给他，是因为有七年时间，他每星期都向她求婚两次，而且因为她谁都不喜欢。她一直没有跟他离婚，是考虑到他们的孩子，而且她的家族中没人离婚。不管杰德怎么样，随着岁月流逝，她成了一位安静而和气的老太太，不过在晚饭时候，她会绷紧嘴巴，那是杰德不管在哪儿待了一个白天后回家吃晚饭时。杰德通常是去村里普伦蒂斯的铺子里，他喜欢在那儿坐着，讲他一八八八年从纽约港那艘劫数已定的船上勉强下来的事，再加上一些比那次时间更近、多少有点异想天开的脱身之事。首先有他做阑尾炎手术那次，他会说正当他们已经放弃他时，他从麻醉中醒过来。主刀的本汉姆医生听说后不高兴，有次在街上遇到杰德，要他别再去讲那个荒唐的故事，但杰德还是把医生的账单添加到他的神奇物品收藏中。还有一次，他半夜起来想喝一口治胃病的苦药，好缓解一下严重的烧胃感觉，却错拿了石碳酸。他会说，有什么告诉他在拔开塞子前看一眼，他就拿到灯前，点着灯，那可不是石碳酸么！就是那次，他把瓶塞收入了藏品。</p>
+<p>　　老杰德发展到对舒格格罗夫一带发生的几乎每次灾难和不幸事件，都能为自己编排出侥幸躲过的故事。例如，有次在费厄菲尔德县展览会上，狂风把一座帐篷吹塌了，砸死两个人，伤了几十个。杰德连着去了九年或者十年，但是那年没去看展览会。他会说，有什么告诉他那年别去展览会。事实上，他去展览会，总是挑星期四去，而那座帐篷是星期六吹塌的，这一事实对杰德来说无关紧要。他没去那儿，帐篷吹塌了，两个人给砸死了。出事后，他去了展览会的场地，从那座帐篷上剪了块帆布，放到客厅桌子上石碳酸瓶塞的旁边。幸运的杰德·彼得斯！</p>
+<p>　　我觉得爱玛姨妈修炼到杰德说什么她都只当没听见，除了邻居来串门时，那时她就得掌握聊天，避免也许会给杰德有机会讲起某次他死里逃生之事的话头。可是他总能得逞。他会等待时机，坐在椅子上吱吱嘎嘎地前后摇动，把牙磕得咯咯响，没怎么听别人聊庄稼、秋海棠和斯宾塞家那个弱智孩子的事，后来，在较长时间大家都没说话时，他会清清喉咙，说那让他想到那次他去普伦木头堆场找几块木楔带回家加固鸡舍的事。好了，先生，他在家里晃悠了一会儿，正要出发去普伦木头堆场，有什么告诉他千万别去。就在那一天，木头堆场上的一堆木头倒了下来，把格兰特·普伦的腿砸得只能截肢。好了，先生，他会说——可是这时爱玛姨妈会打断他的话。“大家都听过那个老掉牙的故事了。”她会勉强笑了一下说，一边拿着把旧蒲扇很快给自己扇几下。杰德会变得愠怒，坐在椅子上前后摇晃，磕着牙齿。客人起身要走——这时他们总是会这样——他也不肯起身。他从普伦堆木场灾难死里逃生的纪念物，当然就是那片松木屑。</p>
+<p>　　我想我已经解释过我所记得的杰德的所有那些纪念品，除了那块粗糙的大石头。那块石头的故事说来稀奇。一九二零年八月时，县里的工程师在拓宽舒格格罗夫外面霍京河的河道，得把河床的石头好好炸一炸。我一直没听过克莱姆·沃登亲口讲这个故事，可是听过他讲故事的人给我讲过。好像是克莱姆当时正在舒格格罗夫的大街上走，大约是三点四十五分，这时他看到杰德向他走来。克莱姆是杰德的老朋友——两个人站在人行道上聊天。克莱姆后来估计他们聊了有五分钟左右，后来要么是他，要么是杰德说各忙各的事吧，他们就分开了，杰德向普伦蒂斯的铺子走去，克莱姆往另外一个方向走。克莱姆走了有十几步，突然听到杰德喊他。“哎，克莱姆！”杰德说。克莱姆站住了，转过身，看到杰德又向他走来。杰德走了六步左右，突然像克莱姆所说，“像袋盐巴一样”，给摔到马西尼挽具店门口。等到克莱姆赶到他跟前时，他已经不行了。他一直不知道是什么击中了他，克莱姆说。有好几分钟，别的人也都不知道是什么击中了他。后来围观的人群中有人发现阴沟旁边的路上，有一块带着泥巴的石头。分量特别大的一管炸药在河床上引爆，让一块石头势大力沉地飞上天空，像炮弹一样飞过四层高的杰克逊大楼，正中杰德的胸口。</p>
+<p>　　我想老杰德下葬后还没过两天，待在普伦蒂斯店里的男的就不再为这件事严肃地摇着头，而是开始拿这件事开玩笑，其中数凯尔·格莱格说得最滑稽。“好了，先生，”凯尔说，“我想现在我们没人知道是怎么回事，可是当时肯定有什么叫杰德转过身来。”</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/肚子里的战争-王小波.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/孤单是对你最好的惩罚-王朔.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/肚子里的战争-王小波.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/孤单是对你最好的惩罚-王朔.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/杰德·彼得斯的运气-詹姆斯·瑟伯.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

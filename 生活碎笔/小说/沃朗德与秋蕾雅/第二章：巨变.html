@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第二章：巨变 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第二章-巨变"><a class="header" href="#第二章-巨变">第二章 巨变</a></h1>
+<p>　　沃朗德紧盯着的那块屏幕上突然出现了一点蓝光。</p>
+<p>　　紧急避难室里的人们都紧紧地盯着那块屏幕，屏住呼吸，等待着那个不确定的未来。扬声器里，外面的人们也都停止了骚动与恐慌，齐齐地望着那个本应该是太阳的位置。那是那一点点蓝光的所在地。所有人都在等着，像是被按下了暂停键似的，落针可闻。</p>
+<p>　　一滴滴的汗水从沃朗德的手背流下来。</p>
+<p>　　那点蓝光佁然不动，像是在与人们僵持着。沃朗德的心中有一种不好的预感。</p>
+<p>　　汗，流得更加厉害了。</p>
+<p>　　忽然，那点蓝光后面像是出现了一大堆的手下。它们也都是统一的蓝色，不过光芒比他们的首领更加微弱。一点，一点，再一点。最后天空中竟密布着那些诡谲的蓝色光芒。</p>
+<p>　　人们没有看见过这样的景象，开始恐慌起来。有人从宕机的状态恢复过来，开始尖叫着朝自己的家中跑去。以这一声尖叫为信号，人们开始四散溃逃。目的地不明，只是逃着，凭借着对于未知的恐惧逃着。</p>
+<p>　　那点蓝光像是看见这番景象似的，开始狞笑。把自己撕裂开来，形成一个蓝色的光圈，光圈中间是无尽的黑暗，比起那夜似乎都还要黑一点。而且那黑暗朝里面涌动着，像是在吮吸着什么。</p>
+<p>　　简直像极了……黑洞。</p>
+<p>　　然后，有什么，开始从那“黑洞”里坠落。坠落到这片正在努力从第一次高等战争的阴影下面恢复的土地。</p>
+<p>　　那些手下的的蓝光纷纷效仿，开始撕裂自己，吐出些什么。</p>
+<p>　　不同的是，那些“黑洞”的尺径不大，不如说，远小于他们的首领。而且，有的不明物体刚从那“黑洞”里出来就爆裂开来，像一团四散的烟火，然而他们并不像烟火那样还有残渣掉下来，而是爆裂开来就散在大气里消失不见了，像是从未发生过一般。还有的，从那“黑洞”里掉出来就变成了一团火焰砸向大地。像是微型彗星落到地球上了一般。还有的，掉出来就发出炽热的白光，耀得人张不开眼睛。</p>
+<p>　　无数的未知物体，从天空往下掉，宛如瀑布一样。加上那些爆裂开来的，变成火焰的，发出耀眼白光的，一切的一切，像极了，上天赐予人类的一场黑色狂欢。</p>
+<p>　　人们从未这么绝望过，就连在死伤超过全球一半的第一次高等战争里面也没有这样绝望。</p>
+<p>　　人们见过核武器爆炸撼动板块的情形。</p>
+<p>　　人们见过生物武器下高等动物是如何的脆弱。</p>
+<p>　　人们见过海啸淹没城市的恐怖。</p>
+<p>　　但是没见过这般。对于未知的恐惧才是对于人们的最大绝望。</p>
+<p>　　沃朗德此时却没有那般陷入黑暗不可自拔，而是大脑飞速运转起来。拼命思考着这一切的原因和可能的对策。</p>
+<p>　　避难室里的那些研究员再怎么崇尚科学，终究也是一个个简简单单普普通通的人类。开始有人哭闹，有人叫喊，有人抱在一团。</p>
+<p>　　沃朗德没有管他们。只是运转着。眉头紧皱，双手抱臂，低头冥思。他此时已经听不见外界的一切声音了。</p>
+<p>　　黑色狂欢仍在继续。</p>
+<p>　　沃朗德旁边的一个心腹研究员见他这副样子，心里有了底。他的这个样子已经看过无数次了。于是他开始安抚一众研究员，并要求他们噤声。</p>
+<p>　　“凭什么！最后的时间了不能让我发泄吗？！谁知道未来会是什么鬼样子！”</p>
+<p>　　……</p>
+<p>　　但当那个心腹指向沃朗德时，每一个人都闭嘴了。</p>
+<p>　　那时的沃朗德仍只在低头静静冥思，身边没有任何人。但是气场无比强大。那才是一个真正探索未知道路的科学家的影子。</p>
+<p>　　有的人仿佛从他身上看见了斐波拉契，门捷列夫，凯库勒等一大众前辈科学家的影子，又想到了把科研当成糊口工具的自己，开始羞愧起来。</p>
+<p>　　其他人安静下来的原因不一而足。他们都在静静等待沃朗德的话语。</p>
+<p>　　此时的沃朗德有着让人安心无比的气场。</p>
+<p>　　那个心腹笑了笑，自己只能为他做这么多了。</p>
+<p>　　沃朗德飞速思考着。</p>
+<p>　　等等……</p>
+<p>　　沃朗德又一次看向了那块显示屏，正巧看见了有从黑洞里掉下去后形成一条带颜色轨迹的东西，那轨迹越来越小，直到最后还没落地时便已消失殆尽。</p>
+<p>　　“赌一把吧，如果没错的话，”他这样想道，然后转过身对所有研究员说道，“诸位，带上你们身边所有能防身的东西，接待那些到避难室里来的难民。最后，愿意跟我一起外出救别人的，带上所有剧毒，强腐蚀性，易燃易爆的东西。祝各位好运。”他的语气无比坚定与冷静。</p>
+<p>　　有研究员听到他后面的关键词，敏锐地看了一下显示屏。</p>
+<p>　　明白了。</p>
+<p>　　沃朗德说完就出去了，眼神如寒冰。</p>
+<p>　　然后有两三个研究员跟了出去，接着，一个又一个……快出去接近一半的时候，有人自发地阻止了接下来想要出去的人。然后发号施令，搜索防身的东西，接待难民。</p>
+<p>　　沃朗德拿上一把斧头就出去了，虽说他平时没有怎么锻炼，但身为男性，最基本的攻击性和力量型还是有的。出门后他就不知去向了。</p>
+<p>　　出去救人的一众研究员们在看见人们溃散而逃，根本没人听他们讲话的时候，心都凉了半截。更有甚者，一把把其中有的成员推搡在地上，然后继续夺路而逃。人性在此时表现得淋漓尽致。他们能做的，就只有将那些在地上哭闹，或是被疯狂逃亡的父母所遗弃的孩子们抱到研究所里了。</p>
+<p>　　有的人出去之后，看见没有人愿意接受救助，回来之后就再也没有去过。</p>
+<p>　　有的人回来之后，身上伤痕累累，那是踩踏之下的幸存者。</p>
+<p>　　有的人回来之后，身上沾满了血污，他身上发生了什么，没有人去问。</p>
+<p>　　“沃博士呢？”有人突然惊醒。回顾四周。</p>
+<p>　　“不知道啊，没有看见。”</p>
+<p>　　……</p>
+<p>　　这一干研究员们自己也慌了起来，没了沃博士他们根本就不知道接下来该怎么办。就算有人提出下一步行动计划，也没有威信力去实施。这时候就真的是群龙无首了。人群又开始骚动。有人开始想沃朗德那样强迫自己冷静下来去思考，但他们没有办法做到，那一丝丝恐慌和焦虑总还是在挥舞着，打断他们。</p>
+<p>　　有人注意到那显示屏中“黑洞”们的密度已经远远不如以前了。甚至有的地方被清除一小块，发出了微微的光芒，如往常一样由太阳光弥散在天空里。像是……乘凉时往上望去那被树叶划得斑驳的小块光线。</p>
+<p>　　“我回来了，情况怎么样？”沃朗德扶着一个女人出现了。他身上也是满身血污，像是被墨水泼过似的。而他身边的女人膝盖在微微颤抖像是马上快要坚持不住了一般。</p>
+<p>　　有人依稀认出来了，那是沃朗德的母亲。</p>
+<p>　　“还没有调查。”有人说。</p>
+<p>　　“看一下身边一起出去的，有多少人没有在场。”沃朗德安顿好他的母亲后，冷静地发出指令。</p>
+<p>　　“统计出来了，有两个人没有回来。出去的人当中有许多人轻伤，没有重伤。救回来的大多数是孩子和丧失行动力的人。”</p>
+<p>　　“嗯……”沃朗德又开始低头沉思。</p>
+<p>　　那个心腹打断了他，指了指显示屏：“或许对你有点帮助。”</p>
+<p>　　“谢谢。”他盯着显示屏，双手撑着桌面。一言不发。</p>
+<p>　　这时候有许多人陆陆续续到了研究所，他们并不是研究员们，而大多是他们的亲人。这些冲破一切阻拦来到他们身边的人，与他们哭着抱在了一起。</p>
+<p>　　“这里很安全。”有人上前同沃朗德的母亲搭话。他没有问发生了什么，只是说了这句话之后静静地坐在她身边。</p>
+<p>　　一切喧闹都屏蔽在沃朗德的思考之外。</p>
+<p>　　但是就算是他，现在也想不出来什么方法了。眼前情况太复杂，已经超出了他的认知范围。现在的他完全被他母亲之前面对的那头，四眼半人高的丑陋怪物所震撼。这一切已经无法用科学来解释了。</p>
+<p>　　他脑中想着这些，然后注意到了显示屏上也出现了那种怪物，走在大街上，大摇大摆，像是在炫耀一样。</p>
+<p>　　他忽然觉得有点恐惧。</p>
+<p>　　他的信仰现在已经命悬一线了吧。</p>
+<p>　　然后，他从显示屏里看见了黄绿交驳的逆行者。明明之前他之前在历史书上极其讨厌看见这种颜色，那是贪婪，暴力，武力的象征。但这个时候竟然有一种莫名的安心感。他现在很庆幸他出生在莱科伊这个帝国。估计现在旧桑弗斯和加特罕已经乱成一团了吧。</p>
+<p>　　果然对付这种情况还是交给他们比较合适啊。所以……就让我……先休息一下吧……</p>
+<p>　　沃朗德撑着桌面的双手一软，滑坐在地面上。</p>
+<p>　　他本来就不是这种适合当领袖的人。</p>
+<p>　　之后，所有的“黑洞”都消失了，时间又恢复了太阳照耀的日常。像梦境一样。但残留在地上的无数外来生物还是时时刻刻地在提醒着人们，这一切都不是梦境，人类已经回不去了，所有关于外星生物的谜题，憧憬都在一瞬间解开，如同变戏法的人将碗揭开那样，露出一颗红红的珠子。所有的人都在讨论着这个话题。互联网一时间爆炸。军队为了清除这些危险的外星生物死的死，残的残，元气大伤。但是仍有无数的生物留在了地上，那是连军队这种暴力机器都无可奈何的未知生物了。</p>
+<p>　　现在，原本就还在内战的旧桑弗斯和加特罕变得更加危险，那里的人们民不聊生。而第一大帝国德瑞维亚现状也不太好过。只有莱科伊，幸福度最高。</p>
+<br />
+<br />
+<p>　　南国微雪</p>
+<p>　　2020 年 2 月 29 日</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../生活碎笔/小说/沃朗德与秋蕾雅/沃朗德与秋蕾雅.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../生活碎笔/小说/沃朗德与秋蕾雅/第一章：冲击.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../生活碎笔/小说/沃朗德与秋蕾雅/沃朗德与秋蕾雅.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../生活碎笔/小说/沃朗德与秋蕾雅/第一章：冲击.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/小说/沃朗德与秋蕾雅/第二章：巨变.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

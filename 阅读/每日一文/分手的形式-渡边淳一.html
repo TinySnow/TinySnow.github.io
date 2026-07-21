@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>分手的形式 - 渡边淳一 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="分手的形式"><a class="header" href="#分手的形式">分手的形式</a></h1>
+<p><em>渡边淳一</em></p>
+<p>　　“离得漂亮”只不过是一种幻想，因为在离别之际双方理所当然地会暴露出自私和丑恶的面目。</p>
+<p>　　离别使人在悲伤和艰难的同时消耗掉许多能量，所以，不到万不得已，千万不要去尝试离别。</p>
+<p>　　人云：“相逢乃离别之始”，此言得之。有相逢也就会有离别。既然去爱别人，那么，“离别”也就成了不可避免的宿命。当然谁也不会从一开始爱对方就作好了离别的准备。</p>
+<p>　　相爱之初，人们都期望着自己的爱能够永久，但是，随着时间的推移，不知从何时起，离别的念头就会降临到两个人之间。</p>
+<p>　　对于离别，大多数认为：“既然一定要离，就要离得干净漂亮。”然而，“离得漂亮”这个字眼听起来容易，但是，有些言过其实而令人难以置信。尤其是具有密切的性关系、互相间真正相爱的男女，他们的离别决不是说些漂亮话便能草草了事的。说不定她们之间会发生感情纠葛或令人不快的争吵。</p>
+<p>　　如果说真能“离得漂亮”的话，那么它只能发生在以下场合：两人之间的交往不深，没有产生达到一定程度的爱；或者男女双方同时厌烦起对方，都想分手。尤其是在两个人都另有他人的场合，轻松分手的比率较高。</p>
+<p>　　然而，像这样双方同时厌倦对方的情形只占极少数，大多情况下是一方想分手，而另一方却恋恋不舍。</p>
+<p>　　可见，一般情况下的离别，男女双方就像在微妙的纤绳上较劲一样，只要一方强烈地眷恋着另一方，那么他们就不可能顺利地分手。即便最后能够离得成，也势必发生诸多麻烦，有时甚至会反复爆发激烈的争斗。</p>
+<p>　　因此，“离得漂亮”只不过是一种幻想，因为在离别之际双方理所当然地会暴露出自私和丑恶的面目。</p>
+<p>　　总而言之，离别使人在悲伤和艰难的同时消耗掉许多能量，所以，不到万不得已，千万不要去尝试离别。</p>
+<p>　　然而，既然要去爱别人，与人相知，那就不可避免地要与分手打交道。所以，如何逾越这一险阻就成了影响人的一生的重大问题。</p>
+<p>　　说到分手，人们接受它的方式会因年龄而异，而且分手的理由也各有不同。</p>
+<p>　　例如，十五至二十岁的年轻人，不论男性还是女性都还没有缔结姻缘的意识，所以他们只是单纯地凭借自己的好恶感决定与人交往或是分离。从这种意义上说，他们选择的余地很大，相互间接触的机会也较多，而与此同时，他们分离的比率也高。也就是说，由于他们眼下与谁交往都不用承负社会责任和负担，可以随心所欲地自由取舍。</p>
+<p>　　然而，当人到了意识到该结婚的年龄时，就会遇到尽管喜欢对方却因他（她）不适合作结婚对象而不得不与之分手的情况，而且双方分手的情况更为复杂。已婚男子因有家室而且与社会存在着千丝万缕的联系，因此，他们离别的理由与单身者有所不同。</p>
+<p>　　尽管如此，不同年龄段的男人却有着共通且独特的离别心理。而且，离别时他们所采取的行动方式与女性完全不同。</p>
+<p>　　首先，男人是一种孤独而懦弱的动物，他们不愿单身独处。因为他们从小就不习惯作家务，长大后一下子变成了一个人，生活会极不方便，基于这个原因他们是不肯离别的。</p>
+<p>　　其次，由于男人年轻时性欲较强，一旦失去保持稳定性关系的女人，对他们来说是相当致命的打击。因此，即便与现在的女人之间没有了感情，只要没有找到下一位情人，他们是不会下决心分手的。这是男人特有的行为模式。即使爱情已不在或早已淡漠，他们也常常会毫不在乎地求欢。</p>
+<p>　　如果是男人提出分手，首先肯定是他又有了其他女人。</p>
+<p>　　在这点上，女人与男人大相径庭。当性格不合或厌恶对方时，即使没有心仪其他男人，女人也会提前考虑分手的。</p>
+<p>　　除此之外，女人一旦决定分手，她就会十分明确地告诉男方，并且会一五一十他说明分手的理由。相形之下，男人通常则是采取暧昧态度，他们几乎不使用诸如“我讨厌你了”之类直接了当的语言。</p>
+<p>　　其原因是：男人在潜意识中认为“不能对女人说过份的话”，“应该保护女人”，等等；加之，男人本来就优柔寡断的性格，所以，他们倾向于采取不明朗的态度。</p>
+<p>　　这样一来女人们或许注意不到男人的真正用意而常常产生误解。</p>
+<p>　　男人打算分手时，首先表现为减少扫电话和约会的次数。这时，如果女方问他，“为什么最近不常打电话？”那么他就会回答说“工作很忙”，或者找出其它一些理由来搪塞。</p>
+<p>　　对之信以为真的女性的确也不少。无论多么忙碌也不至于连个电话都打不了。事实上，恋爱之初他们是勤于联系的，无论如何也会抽出时间跟女方见面。因此，以工作忙作推托之辞简直是岂有此理。</p>
+<p>　　缺乏温情也是即将分手的信号之一。比如说，以前女方一提出“想去某处”，男方便会欣然答应，然而，想分手时，听到这话，他就充耳不闻了。然而，在这方面容易搞错的是：由于双方过于亲呢产生了安心感，而这种安心感可以使双方不必刻意关注对方亦可达到关系融洽的效果，这时男方也会疏于理会女方。但是，这种“疏忽”与前述疏忽是似是而非的。</p>
+<p>　　以上两种信号可以说是男人发出的准备分手的黄色信号。一旦到了这个阶段，是否有恢复的可能性，就取决于女方的态度了。</p>
+<p>　　但是，如果男方妄自菲薄他说出诸如“我是一个不负责任的人配不上你这样规规矩矩的女人”或者“我并不是你想象中的男人”之类的话语，那么这就等于他在暗示：“已不能与你在一起”，这样就接近红色信号了。因为男人式的类似台词可以理解为“已经讨厌你了”。一旦势态演变到这种程度，恐怕他就难以回心转意了。</p>
+<p>　　不明真意的女人如果回答说：“不，你是个好男人”，那男人就会想：“真是个感觉迟钝的女人。”</p>
+<p>　　总之，到了这种阶段，男人对女人几乎不作任何辩解。</p>
+<p>　　比如说，即使被自己的女人逼问：“是不是与其他女人约会了？”他也不会反驳。或者只是生气地说声“讨厌！”，或者装出一副将错就错的样子说，“你爱怎么想就怎么想吧。”这已经是相当严重的红色信号了。</p>
+<p>　　然而，即使发展到这种地步，多数男人也不会亲口说“分手吧”。如果女方说：“你真是个绝情的男人”，那么他就愈发会将错就错他说：“你说对了，我就是那种人。”</p>
+<p>　　以这种暧昧的语言表达分手之意，目的是不想给女方造成打击，这也是男人温柔的一面，但是，如果以反面看，那么他们的用意是不想使自己成为恶人，不想承担抛弃他人的罪名。不能不说这是男人的狡猾之处。</p>
+<p>　　这种情况下，多数男性都希望自己能被女方所讨厌。他们自己不愿说出有决定性的话语，只是等待对方说：“再也无法忍受像你这样无情的人了。”</p>
+<p>　　如此看来，男人是种惯于装腔作势且又极其狡猾的动物。但是，如果换个角度看，为了不伤害对方，他们甚至不愿说出刻薄的话语，可见，他们又是懦弱的动物。</p>
+<p>　　那么，感情破裂到如此地步，男人还能够回到女方身边吗？其实，也并非没有这种可能性，这一点也是男人的奇怪之处。</p>
+<p>　　男人与女人交往并不是非此即彼的，他们常常与多个女子同时往来，目的是便于相互比较。</p>
+<p>　　比如说，在与 A 女交往时，B 女又出场了。这时如果他喜欢上了 B 女，那么就会移情于她，而从 A 女身边走开，并减少与之见面的次数。</p>
+<p>　　但是，他并不完全想与 A 女分手。虽然理所当然地减少了见面的机会，但是，偶尔仍想见见 A 女。尽管百分之八十的感情已经转移了，但是对 A 女仍有百分之二十的依恋难以割舍。因此，如果时间和经济条件都允许的话，尽管大部分情感都用到 B 女身上了，他仍想与 A 女适当地交往。</p>
+<p>　　这时如果又出现了 C 女的话，他也许会与这三个人同时交往。而且，在与 B 女交往的过程中如果发现还是 A 女好。</p>
+<p>　　他就会回到 A 女身边，同样如果与 C 女进展不顺他也有可能再次回归 A 女。就是这样，巧妙周旋于几位女性之间的男性也为数不少。</p>
+<p>　　这种情况就可称之为“脚踏两只船”或“脚踏三只船”。</p>
+<p>　　只要条件允许，男人就容易采取这种行动方式。之所以这样，是因为男人一方面对前面的女人难以割舍，另一方面他又并不觉得周旋于多位女性之间应该有负疚感。</p>
+<p>　　女人中也有同时与数位男性交往的人，但是多数女性都是一旦有了新的男友，就断然与前任分手。也许可以说这就是女人与男人的区别之处。</p>
+<p>　　总而言之，如果往好处说女人是光明磊落；如果往坏处说她们又太残酷，分手时她们会毫不在乎地说出“再也不想看到你”啦“再也不会爱你了”之类的刻薄话。</p>
+<p>　　然而，男人即使移情别恋，也会对前任女友依依不舍，只要没有特殊原因，他是不会张口伤人的。</p>
+<p>　　因为男人就算爱上了别人也不会完全淡忘故人，所以一旦情况有所变化，他极有可能重新回到旧情人身边。因此，对女方而言，哪怕觉察到男方最近似乎另有所爱了，只要他不是你想失去的人，你与其动辄发怒，早早绝望，毋宁多想想办法，修复关系为好。</p>
+<p>　　遗憾的是多数女性在男方移情别恋期间不能忍耐。她们去责备对方，有时因嫉妒而对对方冷嘲热讽。这样做反而会使双方关系尽早结束。</p>
+<p>　　女人们常说：“他一定是把我的爱视为负担了。”实际上男人们想分手，极少情况下是因为单纯的负担。之所以这样说，是因为就算男人们从女人的爱中感到一点负重感，也会认为那是对方爱已至深，全心全意为自己的表现，因而并不觉得沉重。如果对方感情过于激烈，男方会感到些许郁闷和不快，但是一想到为了自己她已尽心尽力到如此地步，也就觉得不好意思无端地拒人于千里之外了。在这方面女人也是同样，当男方全心全意把爱奉献给她时，她也会觉得：“他对我这样好，我怎能……”，于是心肠一下子就会软下来。</p>
+<p>　　如果女人想要结束两人之间的关系，那么只要不是过于迟钝的男人都会很快地感觉到的。因为女人对恋与爱非常诚实，心里想要分手，就会清楚明白地表现在言行上。女人的爱情不具有暧昧性。相形之下，男人的性格显得极其暖昧，敷衍了事。</p>
+<p>　　当女方萌生去意之时，男方会惊慌失措地试图让她回心转意。如果她正处于迷惘阶段，我们可以暂且不论，但是一旦她心意已决，男方就无法挽留住了。</p>
+<p>　　然而男人总是喜欢以己度人，以为即使女方离开自己也有回归的可能。但是到了这种份上，如果男方还在勉强，那么就有可能被女方抢白，什么“脸皮真厚”啦“不知害臊”啦，等等，反而被更加疏远。</p>
+<p>　　这样，透过“分别”现象观察男人和女人就能够发现男女对爱的认识上的差异。当爱情之火燃起时，女人的感情波动很激烈；而当她们决定分手时也会毅然决然地离去。与此相反，男人不像女人那样感情激荡，但是，一般情况下却能保持永久的爱意，对对方依依不舍。即相对于女人果断、坚决的性格特征，男人的性格显得极其粘糊、懦弱。</p>
+<p>　　总而言之，分手是件非常伤脑筋的事情。但是我们不能因此就把它仅仅看作是悲伤的事情，不好的事情。诚然，经历分手是痛苦的，不仅本人受到伤害，而且，很多时候还会暴露出自己丑恶的一面，让自己后悔良久。</p>
+<p>　　然而，男人与女人相逢相爱本身决不是坏事，就算最终他们会分手。他们互相撞击、争斗不仅可以加深做人的见识，而且与此同时他们会更加了解自己。除此之外，与没有经历过爱和离别的人相比，有这类体验者拥有更为丰富的人生记忆，他们能够把握住更多的机会养成宝贵的、洞察人心之微及人生的观察力。</p>
+<p>　　但是，爱并不是只带来恩惠。有的人也会因爱而受伤害，失落、厌世、与世间格格不入。不过，所有这些都因事，因人而异，不能一概而论孰好孰坏。</p>
+<p>　　这方面唯一值得一提的是：即使不幸受到了伤害，也要重新爬起来。</p>
+<p>　　由于日本的父母亲们过于期望孩子们安全成长，因此大多数日本母亲都杜绝孩子体验有伤害性的恋爱，不允许孩子们胡来。当然，她们的想法是出于对孩子的幸福的关心，但是，我总觉得那样太过于狭隘了。</p>
+<p>　　受伤害却能重新站起来，有了这种睿知，受伤害本身也会成为人生之宝。而且，经过时间的磨硕，分手肯定会为他（她）的人生增添光彩，使他（她）的人生更加浓郁芬芳。</p>
+<p>　　如果说相逢是离别之始的话，那么离别就会成为寻求新的自我的起点。我衷心希望有关诸君能够采取更为积极的态度，把握住光明的未来。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/写给母亲-贾平凹.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/人生拿趣味做根柢-梁启超.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/写给母亲-贾平凹.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/人生拿趣味做根柢-梁启超.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/分手的形式-渡边淳一.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

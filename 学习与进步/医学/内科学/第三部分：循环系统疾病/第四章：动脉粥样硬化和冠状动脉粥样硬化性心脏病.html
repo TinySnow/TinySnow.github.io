@@ -1,0 +1,634 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第四章：动脉粥样硬化和冠状动脉粥样硬化性心脏病 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第四章动脉粥样硬化和冠状动脉粥样硬化性心脏病"><a class="header" href="#第四章动脉粥样硬化和冠状动脉粥样硬化性心脏病">第四章：动脉粥样硬化和冠状动脉粥样硬化性心脏病</a></h1>
+<h2 id="一动脉粥样硬化"><a class="header" href="#一动脉粥样硬化">一、动脉粥样硬化</a></h2>
+<h3 id="一概述"><a class="header" href="#一概述">一）概述</a></h3>
+<ul>
+<li>受累动脉的病变从 <strong>内膜开始</strong> ，先后有 <strong>脂质积聚、纤维组织增生和钙质沉积</strong> ，并有动脉中层的逐渐退变和钙化，在此基础上继发 <strong>斑块内出血、斑块破裂及局部血栓形成</strong> 。</li>
+<li>由于在动脉内膜积聚的脂质外观呈黄色粥样，成为动脉粥样硬化。</li>
+</ul>
+<h3 id="二危险因素"><a class="header" href="#二危险因素">二）危险因素</a></h3>
+<ol>
+<li>年龄、性别：40 岁以上中老年人多见，女性发病率低，绝经后发病率增加。</li>
+<li>血脂异常 : TC、TG、LDL-C、VLDL-C 是危险因素，尤其 LDL-C 最肯定。</li>
+<li>高血压：60%-70% 的冠状动脉硬化患者有高血压，较血压正常者高 3-4 倍。</li>
+<li>吸烟：吸烟者与不吸烟者比较，发病率和死亡率增高2-6倍，被动吸烟也是危险因素。</li>
+<li>糖尿病和糖耐量异常</li>
+<li>肥胖</li>
+<li>家族史</li>
+</ol>
+<h3 id="三发病机制"><a class="header" href="#三发病机制">三）发病机制</a></h3>
+<ul>
+<li><strong>脂质浸润学说</strong></li>
+<li><strong>血小板聚集和血栓形成学说</strong></li>
+<li><strong>平滑肌细胞克隆学说</strong></li>
+<li><strong>内皮损伤反应学说</strong></li>
+</ul>
+<h3 id="四防治措施"><a class="header" href="#四防治措施">四）防治措施</a></h3>
+<ul>
+<li>一般防治措施：控制血压、血糖、血脂、肥胖等。</li>
+<li>药物治疗：
+<ul>
+<li>调整血脂：他汀降脂、贝特类、依折麦布等</li>
+<li>溶栓和抗凝：阿替普酶、肝素抗凝</li>
+<li>改善心肌重构</li>
+<li>针对缺血的对症治疗</li>
+<li>介入和手术</li>
+</ul>
+</li>
+</ul>
+<h2 id="二冠状动脉粥样硬化型心脏病"><a class="header" href="#二冠状动脉粥样硬化型心脏病">二、冠状动脉粥样硬化型心脏病</a></h2>
+<h3 id="一冠心病临床类型"><a class="header" href="#一冠心病临床类型">一）冠心病临床类型</a></h3>
+<h4 id="慢性心肌缺血综合症"><a class="header" href="#慢性心肌缺血综合症">慢性心肌缺血综合症</a></h4>
+<ul>
+<li>隐匿性冠心病</li>
+<li>稳定型心绞痛</li>
+<li>缺血性心肌病</li>
+</ul>
+<h4 id="急性冠状动脉综合症acs"><a class="header" href="#急性冠状动脉综合症acs">急性冠状动脉综合症（ACS）</a></h4>
+<ul>
+<li>不稳定型心绞痛</li>
+<li>急性心梗</li>
+<li>冠心病猝死</li>
+</ul>
+<h3 id="二发病机制"><a class="header" href="#二发病机制">二）发病机制</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20250801183705.png" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20250801183705.png" alt=""></span></label></p>
+<h3 id="三临床表现"><a class="header" href="#三临床表现">三）临床表现</a></h3>
+<h4 id="稳定型心绞痛"><a class="header" href="#稳定型心绞痛">稳定型心绞痛</a></h4>
+<ol>
+<li>诱因：常由体力劳动或情绪激动所诱发；疼痛发生于劳力或激动的当时。</li>
+<li>部位：胸骨体上段或中段之后，可波及心前区。可放射至左肩、左臂内侧或颈部。</li>
+<li>性质：压迫、发闷或紧缩性。</li>
+<li>持续时间：持续 3-5 分钟，不超过 30 分钟；</li>
+<li>缓解方式：休息或含服硝酸甘油几分钟内缓解；</li>
+<li>体征：一般无异常体征，心率快、血压高、奔马律、心尖收缩期杂音</li>
+</ol>
+<h4 id="不稳定性心绞痛治疗--nstemi非透壁型心肌梗死"><a class="header" href="#不稳定性心绞痛治疗--nstemi非透壁型心肌梗死">不稳定性心绞痛治疗 + NSTEMI（非透壁型心肌梗死）</a></h4>
+<ol>
+<li>发病机制：斑块内出血、斑块纤维裂隙、血小板聚集、冠脉痉挛等。</li>
+<li>分类</li>
+</ol>
+<ul>
+<li>静息型心绞痛：发作于休息时，时间 &gt;20 分钟。</li>
+<li>初发型心绞痛：1-2 月内新发生的心绞痛。</li>
+<li>恶化型心绞痛：稳定心绞痛基础上疼痛更剧烈、时间更长。</li>
+</ul>
+<ol start="3">
+<li>治疗</li>
+</ol>
+<ul>
+<li><strong>稳定性心绞痛的治疗 + 抗凝治疗</strong></li>
+<li>普通肝素、低分子肝素（安全，不需监测）</li>
+<li>比伐卢定：直接抑制凝血酶，用于 PCI 术中抗凝</li>
+<li><strong>变异性心绞痛——首选钙离子拮抗剂（慎用 β 受体拮抗剂）</strong></li>
+</ul>
+<h3 id="四辅助检查"><a class="header" href="#四辅助检查">四）辅助检查</a></h3>
+<ul>
+<li>ECG（最常用）： <strong>静息 ECG</strong></li>
+<li>心电图负荷试验
+<ul>
+<li><strong>阳性标准：ST 段压低 ≥0.1mV，持续 2 分钟</strong></li>
+<li><strong>禁忌症：心肌梗死急性期，有不稳定型心绞痛，明显心力衰竭，严重心律失常或急性疾病者</strong></li>
+</ul>
+</li>
+<li>Holter <strong>（负荷试验有禁忌）</strong></li>
+<li>冠脉 CT <strong>（银标准）：较高阴性预测价值</strong></li>
+<li>冠脉造影 <strong>（金标准）：70-75% 以上狭窄严重影响血供</strong></li>
+</ul>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20250806123441.png" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20250806123441.png" alt=""></span></label></p>
+<h3 id="五治疗"><a class="header" href="#五治疗">五）治疗</a></h3>
+<h4 id="两目的"><a class="header" href="#两目的">两目的</a></h4>
+<ul>
+<li><strong>预防</strong> 心梗和猝死，改善预后；</li>
+<li><strong>减轻症状</strong> 和缺血发作，提高生活质量。</li>
+</ul>
+<h4 id="三部曲"><a class="header" href="#三部曲">三部曲</a></h4>
+<ul>
+<li>保守药物治疗</li>
+<li>介入治疗：单支局限病变</li>
+<li>搭桥手术治疗：三支病变</li>
+</ul>
+<h4 id="药物治疗50-以内狭窄"><a class="header" href="#药物治疗50-以内狭窄">药物治疗（50% 以内狭窄）</a></h4>
+<h5 id="改善缺血治疗对症"><a class="header" href="#改善缺血治疗对症">改善缺血治疗（对症）</a></h5>
+<ul>
+<li><strong>硝酸酯类</strong> ：缓解胸痛首选，选择性扩张肺小动脉和冠状动脉，同时扩张全身的小静脉</li>
+<li><strong>β 受体阻滞剂</strong> ：减慢心率，降低心肌耗氧量</li>
+<li><strong>钙离子拮抗剂</strong> ：解除冠状动脉痉挛，抗血小板凝聚，改善冠脉供血和微循环灌注</li>
+<li>其他药物：曲美他嗪、尼克地尔、伊伐布雷定等</li>
+</ul>
+<h5 id="预防心梗预防"><a class="header" href="#预防心梗预防">预防心梗（预防）</a></h5>
+<ul>
+<li><strong>阿司匹林/吲哚布芬</strong> ：抑制血小板环氧化酶和 TXA2（血栓素 A2），抑制血小板聚集，防止血栓形成，同时抑制 TXA2 导致的血管痉挛</li>
+<li><strong>氯吡格雷/替格瑞洛</strong> ：通过二磷酸腺苷（ADP）受体抑制，抑制血小板聚集</li>
+<li><strong>他汀类降脂药</strong> ：降低TC、LDL-C、稳定斑块。目标&lt;1.8mmol/L</li>
+<li>ACEI/β 拮抗剂：能逆转左室肥厚</li>
+</ul>
+<h4 id="pci"><a class="header" href="#pci">PCI</a></h4>
+<ul>
+<li>PCI （经皮冠状动脉介入治疗）</li>
+<li>PTCA（经皮球囊冠状动脉成形术）</li>
+<li>支架植入后至少 1 年服用抗血小板药物（双联抗血小板药物，阿司匹林+氯吡格雷）</li>
+</ul>
+<h4 id="cabg冠脉搭桥术"><a class="header" href="#cabg冠脉搭桥术">CABG（冠脉搭桥术）</a></h4>
+<h5 id="适应症"><a class="header" href="#适应症">适应症</a></h5>
+<ul>
+<li>
+<p><strong>左主干合并两支病变以上</strong></p>
+</li>
+<li>
+<p><strong>多支血管病变合并糖尿病</strong></p>
+</li>
+<li>
+<p><strong>能耐受手术</strong></p>
+</li>
+</ul>
+<h2 id="三急性-st-段抬高型心肌梗死"><a class="header" href="#三急性-st-段抬高型心肌梗死">三、急性 ST 段抬高型心肌梗死</a></h2>
+<h3 id="一病因及发病机制"><a class="header" href="#一病因及发病机制">一）病因及发病机制</a></h3>
+<ul>
+<li>冠状动脉血供急剧减少或中断使得心肌严重而持久的缺血导致心肌坏死。</li>
+<li>冠脉 AS → 冠脉狭窄且侧枝循环尚未充分建立 → 急剧减少或中断 → <strong>心肌持久缺血达 20-30 min 以上</strong></li>
+<li>不稳定的粥样 <strong>斑块破溃、出血，急性血栓形成，或冠状动脉持续痉挛，使冠状动脉完全闭塞</strong> 。</li>
+</ul>
+<h3 id="二诱因"><a class="header" href="#二诱因">二）诱因</a></h3>
+<ul>
+<li>6Am~12Am 交感活性增加时</li>
+<li>饱餐</li>
+<li>重体力活动，情绪激动或用力大便时</li>
+<li>休克、脱水、出血等</li>
+<li>AMI 可发生在无心绞痛病史的患者</li>
+</ul>
+<h3 id="三病理"><a class="header" href="#三病理">三）病理</a></h3>
+<h4 id="血管闭塞及梗死部位的关系"><a class="header" href="#血管闭塞及梗死部位的关系">血管闭塞及梗死部位的关系</a></h4>
+<ul>
+<li><strong>左前降支闭塞</strong> ：左心室前壁、心尖部、下侧壁、前间隔和二尖瓣前乳头肌梗死。往往引起快速性心律失常。</li>
+<li><strong>右冠状动脉闭塞</strong> ：左心室膈面、后膈面、右心室梗死、窦房结、房室结。往往引起慢速性心律失常。</li>
+<li><strong>左回旋支闭塞</strong> ：左心室高侧壁、隔面、左心房梗死、房室结。</li>
+<li><strong>左主干闭塞</strong> ：左心室广泛梗死。</li>
+</ul>
+<h4 id="心肌病变"><a class="header" href="#心肌病变">心肌病变</a></h4>
+<ul>
+<li><strong>20~30min</strong> → 心肌开始坏死</li>
+<li><strong>1~2h</strong> → 心肌凝固性坏死</li>
+<li><strong>1~2w</strong> → 开始吸收、纤维化</li>
+<li><strong>6~8w</strong> → 瘢痕愈合（陈旧性心梗）</li>
+</ul>
+<h3 id="四临床表现"><a class="header" href="#四临床表现">四）临床表现</a></h3>
+<h4 id="先兆"><a class="header" href="#先兆">先兆</a></h4>
+<ul>
+<li><strong>50-81.2%</strong> 病前有乏力，胸部不适，活动时心悸、气急、烦躁、心绞痛等前驱症状。</li>
+</ul>
+<h4 id="症状"><a class="header" href="#症状">症状</a></h4>
+<ol>
+<li>初发型心绞痛或原有心绞痛加重，疼痛不缓解；</li>
+<li>发热、白细胞升高、血沉增快；</li>
+<li>胃肠道症状：频繁的恶心、呕吐；</li>
+<li><strong>心律失常：室性心律失常最多，室颤主要院前死亡原因；</strong></li>
+<li>低血压和休克；</li>
+<li>心力衰竭：主要是急性左心衰竭。</li>
+</ol>
+<h3 id="五急性心梗后心衰的-kilip-分级"><a class="header" href="#五急性心梗后心衰的-kilip-分级">五）急性心梗后心衰的 Kilip 分级</a></h3>
+<ul>
+<li>I 级：尚无明显心力衰竭</li>
+<li>II 级：有左心衰竭，肺部啰音 &lt;50% 肺野</li>
+<li>III 级：有急性肺水肿，全肺大、小、干、湿啰音</li>
+<li>IV 级：有心源性休克等不同程度或阶段的血流动力学变化</li>
+</ul>
+<h3 id="六辅助检查"><a class="header" href="#六辅助检查">六）辅助检查</a></h3>
+<h4 id="心电图特征性改变st-段抬高型心梗"><a class="header" href="#心电图特征性改变st-段抬高型心梗">心电图特征性改变（ST 段抬高型心梗）</a></h4>
+<ul>
+<li>宽而深的病理性 Q 波</li>
+<li>ST 段弓背向上抬高</li>
+<li>T 波倒置</li>
+</ul>
+<h4 id="心电图动态性改变"><a class="header" href="#心电图动态性改变">心电图动态性改变</a></h4>
+<ul>
+<li>起病数小时内，出现异常高大 T 波（缺血区）</li>
+<li>数小时后，ST 段弓背向上抬高（损伤区）</li>
+<li>数小时 ~ 2 日内出现病理性 Q 波，Q 波在 3~4 天内稳定不变（坏死区）</li>
+<li>数周至数月后，T 波呈倒置，可永久存在</li>
+</ul>
+<h4 id="心电图定位诊断"><a class="header" href="#心电图定位诊断">心电图定位诊断</a></h4>
+<ol>
+<li>心梗部位：导联改变</li>
+<li>前间壁：V1、 V2、 V3</li>
+<li>前壁：V3. V4、 V5</li>
+<li>前侧壁：V5、V6、V7、 aVL</li>
+<li>高侧壁：I、 aVL</li>
+<li>广泛前壁：V1-V5</li>
+<li>下壁：Ⅱ、Ⅲ、aVF</li>
+<li>后壁：V7、v8、 v9</li>
+</ol>
+<h4 id="心肌坏死标志物"><a class="header" href="#心肌坏死标志物">心肌坏死标志物</a></h4>
+<ol>
+<li><strong>肌红蛋白</strong> ：起病后 2 小时内升高，24-48 小时恢复；</li>
+<li><strong>肌钙蛋白 I（cTnI）</strong> ：起病 3~4 小时后升高，cTnI 于 11~24 小时达高峰，7~10 天降至正常；</li>
+<li><strong>肌钙蛋白 T（cTnT）</strong> ：起病 3~4 小时后升高，cTnT 于 24~48 小时达高峰；10~14 天降正常；</li>
+<li><strong>肌酸激酶同工酶 CK-MB</strong> ：在起病后 4 小时内增高，16~24 小时达高峰，3~4 天恢复正常。</li>
+</ol>
+<ul>
+<li><strong>cTnI、cTnT：是最特异和敏感的心肌坏死的指标</strong></li>
+<li><strong>CK-MB：增高的程度能较准确地反映梗死的范围，其高峰出现时间是否提前有助于判断溶栓治疗是否成功；</strong></li>
+<li>肌红蛋白：出现最早，恢复最快；</li>
+<li>cTnT：最后恢复。</li>
+</ul>
+<h3 id="七并发症"><a class="header" href="#七并发症">七）并发症</a></h3>
+<ol>
+<li><strong>乳头肌功能失调或断裂（最常见）</strong> ：心尖收缩中晚期喀喇音；</li>
+<li><strong>心脏破裂（少见，常在 7 天内发生）</strong> ：心室游离壁多发，胸左 3-4 肋间收缩期杂音，伴震颤。</li>
+<li><strong>栓塞（起病后 1-2w）</strong> ：体循环栓塞多见；</li>
+<li><strong>心室壁瘤（常见左心室，反常运动）</strong> ：可见心界扩大；</li>
+<li><strong>心肌梗死后综合征（数周或数月内）</strong> ：心包炎、胸膜炎、肺炎，系机体自身免疫反应引起。</li>
+</ol>
+<h3 id="八治疗"><a class="header" href="#八治疗">八）治疗</a></h3>
+<h4 id="概述"><a class="header" href="#概述">概述</a></h4>
+<ul>
+<li><strong>溶栓疗法：30 分钟内</strong></li>
+<li><strong>紧急 PCI 术：90 分钟内</strong></li>
+<li>心肌再灌注治疗开通梗死相关血管、恢复缺血心肌的供血最有效的是解除疼痛。吗啡/哌替叮治疗。</li>
+</ul>
+<h4 id="pci-直接适应症"><a class="header" href="#pci-直接适应症">PCI 直接适应症</a></h4>
+<ul>
+<li>发病 12 小时以内并有持续新发的 ST 抬高或新发左束支阻滞；</li>
+<li>24-48 小时内仍有心肌缺血证据；</li>
+</ul>
+<h4 id="pci-补救适应症"><a class="header" href="#pci-补救适应症">PCI 补救适应症</a></h4>
+<ul>
+<li>溶栓后仍有胸痛，抬高 ST 无明显减低。</li>
+</ul>
+<h4 id="溶栓治疗再通的-pci"><a class="header" href="#溶栓治疗再通的-pci">溶栓治疗再通的 PCI</a></h4>
+<ul>
+<li>再通后有指征的，最佳时间 2-24 小时。</li>
+</ul>
+<h4 id="溶栓疗法适应症"><a class="header" href="#溶栓疗法适应症">溶栓疗法适应症</a></h4>
+<ul>
+<li>两个或两个以上相邻导联 ST 段抬高，或病史提示 AMI 伴左束支传导阻滞， <strong>起病时间 &lt; 12 小时（最好 3-6 小时），患者年龄 &lt; 75 岁</strong> 。</li>
+<li>ST 段显著抬高的 AMI 患者年龄 &gt; 75 岁，可慎重进行。</li>
+<li>ST 段抬高性 AMI，发病时间已达 12~24 小时，但如仍有进行性缺血性胸痛，广泛 ST 段抬高者也可考虑。</li>
+</ul>
+<h4 id="溶栓疗法禁忌症"><a class="header" href="#溶栓疗法禁忌症">溶栓疗法禁忌症</a></h4>
+<ul>
+<li>出血性脑卒中史；</li>
+<li>颅内肿瘤；</li>
+<li>可疑为主动脉夹层；</li>
+<li>近期有活动性内脏出血、外科大手术、创伤史。</li>
+</ul>
+<h4 id="溶栓疗法再通指标"><a class="header" href="#溶栓疗法再通指标">溶栓疗法再通指标</a></h4>
+<ul>
+<li>胸痛 2h 内缓解</li>
+<li>抬高的 ST 段于 2h 内回降 &gt;50%</li>
+<li>2h 出现再灌注性心律失常（下壁心梗出现一过性窦缓、窦房阻滞等）</li>
+<li>血清 CK-MB 峰值提前出现（发病 14h 之内）</li>
+<li><strong>紧急 CABG</strong> ：介入失败或溶栓无效，6-8 小时内</li>
+</ul>
+<h3 id="九心律失常治疗"><a class="header" href="#九心律失常治疗">九）心律失常治疗</a></h3>
+<ol>
+<li>室颤或持续多形性室速：非同步直流电除颤或同步直流电复律</li>
+<li>室早或室速：立即用利多卡因</li>
+<li>缓慢性心律失常：阿托品</li>
+<li>第二度或第三度房室传导阻滞，伴血流动力学障碍者：人工起搏器</li>
+<li>室上速用维拉帕米、洋地黄无效时：同步直流电复律治疗</li>
+</ol>
+<h3 id="十右心室梗死"><a class="header" href="#十右心室梗死">十）右心室梗死</a></h3>
+<ol>
+<li><strong>维持右心室前负荷：补充血容量</strong></li>
+<li>降低后负荷</li>
+<li>增加右室收缩力</li>
+<li>早期再灌注</li>
+<li><strong>不宜用利尿剂</strong></li>
+</ol>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第三章：心律失常.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第五章：高血压.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第三章：心律失常.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第三部分：循环系统疾病/第五章：高血压.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第三部分：循环系统疾病/第四章：动脉粥样硬化和冠状动脉粥样硬化性心脏病.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>⭐️毕业旅行第三天 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="毕业旅行第三天2023-年-5-月-20-日"><a class="header" href="#毕业旅行第三天2023-年-5-月-20-日">毕业旅行第三天（2023 年 5 月 20 日）</a></h1>
+<h2 id="封面图"><a class="header" href="#封面图">封面图</a></h2>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/samuel-regan-asante-QHKcOjOc8rU-unsplash.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/samuel-regan-asante-QHKcOjOc8rU-unsplash.jpg" alt=""></span></label></p>
+<blockquote>
+<p>摄影师 | Samuel Regan-Asante</p>
+<p>图源 | Unsplash</p>
+</blockquote>
+<h2 id="写在前面"><a class="header" href="#写在前面">写在前面</a></h2>
+<p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;">3917 字 | 旅行 | 性别话题注意</p>
+
+<h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>　　九点起床，等慧到十一点。其间忙些修图的工作。慧要去调理师那调理身体，半个小时多点，再赶过来。</p>
+<p>　　后来她在后座上，话里满是笑意地跟我说：“早上被调理师问昨天是不是吃凉的了。”我想了想，好像她昨天是吃了根冰淇凌。“他怎么知道的？”“他说排出来的毒都是寒气。”我有些诧异：“还有这么玄学的事情？”“对呀。”然后呢？”“然后被骂了呗，骂得可惨了。”</p>
+<p>　　听她在背后开始笑，我也跟着笑。</p>
+<p>　　而知道她今天处在生理期，也是在这不久之前才知道的。</p>
+<p>　　挂断她的视频通话后一个小时左右，她如约地骑了电动车来，我差点还没认出她，戴了个头盔。</p>
+<p>　　电动车小，看起来精致，不是大号犷野的那种，把手车头都有挡风保暖被，但因为是夏天，看起来就很奇怪。问才知道是懒得取……</p>
+<p>　　开始时我坐后座，但见她开得不是很稳，一路心惊胆战，便在一个十字路口提议让我来开。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02360-2023-05-20%20-%201-640%20%E7%A7%92-3200-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02360-2023-05-20%20-%201-640%20%E7%A7%92-3200-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　“你会吗？”“我都这么问了，你觉得呢？”“那正好，我今早起来手臂有些酸痛，还在生理期，肚子也有些不舒服，你来吧。”</p>
+<p>　　我听闻之后有些难过。<em>本来帮她骑车心里还有些忐忑</em> ，毕竟挺长一段时间没骑过车了，得有一两个月了。但这下一听，再怎么也不能让她开了。</p>
+<p>　　“那书包你帮我拿一下？”</p>
+<p>　　我背了个书包，旅行用，挺重。什么东西都有，衣服牙刷充电线之类。书包便宜，质量不好，布料廉价，不透气。昨天太阳大，背包的 T 恤背面，全部汗湿了。</p>
+<p>　　“行啊。”她答应下来，我看她把书包背上，坐上后座。</p>
+<p>　　“要不你把包换到前面来？”我感觉后座后面空间不够，有挡板，很挤。</p>
+<p>　　她想了一下，点点头。我看她把包换到前面，然后我便跨上前座准备骑车。</p>
+<p>　　 <strong>“好温暖。”</strong></p>
+<p>　　 <strong>她在背后忽然说。</strong></p>
+<p>　　我一愣，然后瞬间明白了原因。</p>
+<p>　　 <strong>那一刹那，我真的特别特别难过，难过的同时泛出无尽的心酸。</strong> 像是自己经历了无数的辛苦，终于为别人做了一件好事却被误会为不怀好意那样，心境类似。</p>
+<p>　　那个书包真的很重，背起来很热很不透气。<u>所有我认为的、令人讨厌的缺点在此刻都变为了勉强的优点，而只是因为她是女性。</u></p>
+<p>　　 <strong>我觉得世界不公平到了极致。</strong></p>
+<p>　　所有人都讨厌时间碎片化，但女性在最美好的那些年纪，时间天然便是碎片化的。一个月要分为两个部分：生理期和非生理期。在前者的时间里要小心和忌讳各种东西；在后者的时间，生理疼痛的女性还会谨小慎微地计算下一次酷刑什么时候来临。像小学时老师让依次读课文一样忐忑又焦虑。</p>
+<p>　　不是所有的女性都如此，但肯定有女性如此，并且数量不少。</p>
+<p>　　而男性不用。男性的一个月就是完整的，可以自由安排，不必胆怯与忌讳什么。</p>
+<p>　　幸运地遇到浪漫的爱情之后，大概还会有不少的女性去计算“前七后八”此类完全不可靠的数据与日期。如果提前或推迟了又会担心是不是哪里出现了问题。</p>
+<p>　　而男性也不用。</p>
+<p>　　 <strong>觉得这个世界很可笑。</strong></p>
+<p>　　“绿灯了哦，你在发什么呆？”</p>
+<p>　　“哦……”我竟发愣到没注意到红绿灯。</p>
+<p>　　“我觉得你们好辛苦。”过了十字路口，我边骑边对身后的慧说。</p>
+<p>　　“什么？”</p>
+<p>　　“生理期。”</p>
+<p>　　“我还好吧，没有特别辛苦，还好我不痛经。”慧说。语气里满是得意。</p>
+<p>　　<u>听着这种得意，我的心酸又加一层。其实这样的痛苦可以完全不用体验的，却只是因为天生，就注定了。</u></p>
+<p>　　随后她说，她的一个朋友痛经，每个月都是。那几晚上暖宝宝不敢离开身体，恳求她接热水时万次强调一点冷水都不要接，然后在三分钟后说水凉了。</p>
+<p>　　说实话，我真的不知道说什么好，于是沉默了很长一段时间。</p>
+<p>　　“我希望你好好的。”沉默良久后，我只这样说。</p>
+<p>　　 <strong>我的性格注定了我不能成为一个十足的男性，而只能是一个在男性世界和女性世界之间游荡的人。每每听到生理期、化妆品、內衣、男性凝视等等话题时，我总觉得它们离我十分近，却同时也遥远得望尘莫及。总想开口说点什么，又因为自己是男儿身而觉得不配参与话题，也同时害怕被觉得傲慢、趾高气昂或者居心叵测、别有用心。于是每次都缄默不言。一直到现在。</strong></p>
+<p>　　我其实知道自己一直找不到爱情的问题出在哪里。这便是其中之一。 <strong>我太习惯于去性别化，害怕触及这个结界，于是便处成了朋友。</strong> 最后又会因为确实性别不同，难免被要求避嫌等等而断开联系。 <u>哪怕我从来没有这种意思。</u> 我知道的，我有没有这种想法，别人又看不出来。所以很正常。</p>
+<p>　　但我珍视的，恰好也正是这些关系。<u>男性之间很难找到这样高表达性的、令人舒适的关系。而这，也是天生所注定的。</u></p>
+<p>　　 <strong>所以这个世界真的很可笑。</strong></p>
+<p>　　我没把这些思绪同慧讲，只是听她的导航，载她一起到面馆吃午饭。同时听她说些乱七八糟的事情。</p>
+<p>　　 <strong>“在我的观念里，除了生与死，都是小事，”</strong> 我说， <strong>“于是推衍出来就是活着，所以安全和健康永远是第一位的。”</strong></p>
+<p>　　我听慧说，她骑车喜欢开快的，便这样跟她说。</p>
+<p>　　“一定，一定要注意安全。”</p>
+<p>　　慧说她骑车算很安全的，不像她父亲。</p>
+<p>　　<em>慧的父亲路怒，她坐副驾驶上系安全带都要随时握紧门把手。</em> 一路开车一路超车。也因此赔了不少钱，每次从几百到几万不等。然而死性不改。</p>
+<p>　　我叹息一声。 <u>从小我便坐在父亲的摩托车后座，我知道驾驶安全对于一个人有多重要。</u> 我那时坐上去可以什么都不用管，一路到家，困了甚至还能睡着。虽然父亲总是骂我——要是不小心掉下去怎么办。</p>
+<p>　　“我骑车没有让你害怕吧？”</p>
+<p>　　“还好吧，你都这样说了，我再害怕又能害怕到哪儿去，又不会出事儿。”</p>
+<p>　　我听后只是笑。</p>
+<p>　　“看来我来山东是专职当司机来了。”我笑笑说。</p>
+<p>　　到点，下车，吃面。吃的途中聊些乱七八糟的话题，高中的人，见闻，趣事，观点，经历等等很多。</p>
+<p>　　吃完之后她去了一趟洗手间。我当时并没有多想。</p>
+<p>　　 <strong><u>我还是太笨了。</u></strong></p>
+<p>　　“刚才跟你吃饭最后，就感觉它一直在往下流，”慧回来之后，一边用纸巾擦干手一边说，“去了才知道多恐怖，弄得满手都是血。回家又要换裤子了。”</p>
+<p>　　<u>语气消沉。</u>我听后也有些难过。</p>
+<p>　　上车，回车站。提前改签到青岛，三点多的动车。</p>
+<p>　　“身体真的没问题了吗？”“没有了，现在。““真的吗？骗我没有棒棒糖哦。”“我骗你干嘛……”</p>
+<p>　　“我尽量开快点到车站，如果中途身体出现了任何问题，有任何不舒服，一定一定要给我说哦。”我十分担心。上路之前，千次万次地跟她说。</p>
+<p>　　“知道啦，啰嗦死了。”</p>
+<p>　　我哭笑不得。</p>
+<p>　　 <strong><u>回程的路上，慧仍旧全程抱着书包。</u></strong></p>
+<p>　　离发车还有很长一段时间。我一直想为她拍张照，但她却与我说她不上镜，我很诧异。因为平时她发给我的自拍照，数量都是自己的好几倍了。</p>
+<p>　　就算如此，她还是答应了。庆幸，同时也感谢。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02365-2023-05-20%20-%201-640%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02365-2023-05-20%20-%201-640%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　我们一路聊，一路拍。最后想起，她以前似乎就挺想看我跳舞，于是就在她面前稍微试了一下。聊到舞蹈，我总是很开心也很有动力。能让一个人多了解了解总是不亏的。</p>
+<p>　　最终离别时，要了一个拥抱。</p>
+<p>　　下次见面，不知道是什么时候了。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/IMG_20230520_151200.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/IMG_20230520_151200.jpg" alt=""></span></label></p>
+<p>　　千叮万嘱她骑车注意安全后，又独身一人，踏上了去青岛的旅途。</p>
+<br />
+<p>　　复兴号上的充电口救了我手机一命。出青岛站时，青岛阴冷潮湿，体感甚至有些寒意。<u>远处的暗绿色墙体大厦，在二十分钟内被雾遮了又遮，蔽了又蔽。</u></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02374-2023-05-20-5.6-1-100%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02374-2023-05-20-5.6-1-100%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02369-2023-05-20%20-%201-400%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02369-2023-05-20%20-%201-400%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02371-2023-05-20%20-%201-100%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02371-2023-05-20%20-%201-100%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　天气如此，且长途旅行，手上黏糊糊的，有些不舒服。这种情况下，拖着两包一袋的东西还找了半个多小时住处，实在找不到才给房东打了电话。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02391-2023-05-20%20-%201-320%20%E7%A7%92-200-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02391-2023-05-20%20-%201-320%20%E7%A7%92-200-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　住处在 24 楼。准备放下行李去见柚子。</p>
+<p>　　房东核对信息，办理手续，此过程中，还签了一份租赁合同。当她拿出那一沓类收据本的长条型短租协议时，我一愣。民宿现在都这么正规了吗？我想。</p>
+<p>　　好奇一问，房东才用她沧桑的声音说：“现在都要求这么搞，跟宾馆酒店的手续是一样的，只是不是酒店。公安那边要查，挺麻烦的。”</p>
+<p>　　原来如此。我仔细看了一遍协议，确认没有问题。</p>
+<p>　　正抬起头，听到房东说：“我这有个相机包，我儿子出去了用不到，一直丢家里。我们也用不上，放着也占柜子，都准备扔了，看你有个相机，就送你吧。”</p>
+<p>　　 <strong>我一怔，抬头看，房东慈祥的脸上，眼角泛着深深的笑意。</strong></p>
+<p>　　相机包比我的那个要大。佳能。收下了。那刻起，行李变成三包一袋。青岛，也在我心中，稍微改观了些。</p>
+<p>　　而这，才刚刚开始。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02392-2023-05-20%20-%201-320%20%E7%A7%92-2500-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02392-2023-05-20%20-%201-320%20%E7%A7%92-2500-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02393-2023-05-20%20-%201-320%20%E7%A7%92-2000-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02393-2023-05-20%20-%201-320%20%E7%A7%92-2000-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　 <strong>青岛本来给我的感觉没有烟台好，但这后面一天半的时间，青岛和青岛的人们，对我抱以了无限的好意与温柔。</strong></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02379-2023-05-20%20-%201-320%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02379-2023-05-20%20-%201-320%20%E7%A7%92-100-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02394-2023-05-20%20-%201-320%20%E7%A7%92-2000-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02394-2023-05-20%20-%201-320%20%E7%A7%92-2000-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　房间很小，大约正方形，边长仅臂展多一点，塞进一架床一个独卫。床大约也刚好睡下我，但我不在意。丢下行李，见柚子。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/IMG_20230520_171436.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/IMG_20230520_171436.jpg" alt=""></span></label></p>
+<p>　　青岛站外见到他时，我很意外。因为与我想象中的他，差距极大。起码外表上是这样。不过我大约也习惯了。</p>
+<p>　　他思考时，给我一种喵喵的冷静。</p>
+<p>　　他素食，而且几乎所有香辛料都不吃，所以很难搞。他反复强调了没关系之后，我便只好点一个人的菜了。面条侠今天变回去了，晚饭吃的饭。</p>
+<p>　　那家川菜馆里的回锅肉应该改名叫豆瓣酱炒肉。一点都不好吃，还卖那么贵。哼。</p>
+<p>　　我一路上只专注地与他聊天，从青岛站走到栈桥，又走回来。我以为当时只是一个随便的公园，不知道名字，也没想过那竟是风景区。</p>
+<p>　　海关大楼很霸气。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02376-2023-05-20%20-%201-320%20%E7%A7%92-3200-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02376-2023-05-20%20-%201-320%20%E7%A7%92-3200-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02386-2023-05-20%20-%201-250%20%E7%A7%92-125-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02386-2023-05-20%20-%201-250%20%E7%A7%92-125-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　我们聊了很多话题，关于摄影，关于健康，关于他的抑郁症等等。他的摄像头似乎从来只用作备忘，拍些实验结果，组织样本和解剖图之类。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02387-2023-05-20%20-%201-320%20%E7%A7%92-640-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02387-2023-05-20%20-%201-320%20%E7%A7%92-640-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　一路上几乎都是我说，他听。这样的形式以前也发生过，所以并不多想。而且，他说很多话题都很新鲜，听听没什么坏处。</p>
+<p>　　他有疑问的地方自会打断我。</p>
+<p>　　<u>我衷心地希望他能缓慢却有效地与自己的抑郁和解，所以我给出了我的分析与建议。希望他不会觉得傲慢。</u></p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02385-2023-05-20%20-%201-250%20%E7%A7%92-160-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02385-2023-05-20%20-%201-250%20%E7%A7%92-160-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　见面之前，是他说想要一个拥抱，分别时，他却自己都忘掉了，还是我提起。</p>
+<p>　　回到住处，父母打了电话。出去旅行这几天，几乎一天一通，有时甚至更多。</p>
+<p>　　晚上看到开源说他六月有旅行，一问，发现也打算来青岛。青岛和云南。而且也打算一个人。“带几个兄弟，也不是不可以。”他发消息过来。“不带女孩子吗？你这么有人缘。”我问。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02381-2023-05-20%20-%201-320%20%E7%A7%92-400-SONY-ILCE-6000.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/articles/literature/DSC02381-2023-05-20%20-%201-320%20%E7%A7%92-400-SONY-ILCE-6000.jpg" alt=""></span></label></p>
+<p>　　“虽然确实分人，但大多数女生出去旅游都很难伺候，”他说，“尤其是那些长得好看的，我不习惯惯着她们。跟兄弟出去多自在。”</p>
+<p>　　我没经历过，不知道，所以只是笑笑。</p>
+<p>　　关掉手机，睡觉。</p>
+<p>　　 <strong>那时我还不知道，第四天将是多么温柔的一天。</strong></p>
+<h2 id="写在后面"><a class="header" href="#写在后面">写在后面</a></h2>
+<p>　　第三天开始清理 CMOS 上的异物，所以没有了污点。图片如果需要保存，敬请随意。</p>
+<p>　　性别话题并非笔者所意愿，第三天印象如此。望请原谅。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../生活碎笔/文章与写作/毕业旅行第四天.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../生活碎笔/文章与写作/毕业旅行第二天.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../生活碎笔/文章与写作/毕业旅行第四天.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../生活碎笔/文章与写作/毕业旅行第二天.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "生活碎笔/文章与写作/毕业旅行第三天.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

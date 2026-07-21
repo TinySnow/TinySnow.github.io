@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>我所认识的李敖 - 林清玄 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="我所认识的李敖"><a class="header" href="#我所认识的李敖">我所认识的李敖</a></h1>
+<p><em>林清玄</em></p>
+<p>　　今年八月十日下午三点，李敖带着简单的行李到台北地检处报到，接受为期六个月的徒刑，他仍然维持了自己的风骨，不要朋友去送他，孤单而又强悍地走进监牢里去。不了解李敖的人会认为李敖失败了，但是了解李敖的人知道，这些俗世的监牢对李敖无损，因为思想的光芒，是任何铁窗所不能隔断的。</p>
+<p>　　我也没有去送李敖，虽然李敖是我最尊敬的朋友，也是我最尊敬的长辈。</p>
+<p>　　第二天，与刘会云一起进晚餐的时候，我们谈起了李敖第二次坐监的一些事情，我们本来想安慰她，她显得十分开朗，反而安慰我们：“李敖去坐牢的时候还是笑着去的。”虽然李敖去坐牢的时候显得那么镇定坚强，丝毫不露出一点伤心的样子，却总让我心里觉得一股凉意。</p>
+<p>　　我想，在这个世界上没有人真正了解李敖，我们这些自命为他朋友的人，也只能看到他的一部分，然而有三点是可以肯定的，一：李敖是个少见的才子，他的力学深思，博览今古，光耀的灵感不时闪射，真如万斛喷泉，不择地皆可自出，读书之广，思考之深，是在这个社会中难得一见的。二：他是个少见的真人，他常说的一句话是：“宁可做真小人，也不要做伪君子。”他爱恨分明，不肯怂恿乡愿和无知，文章如利剑，下笔不留情，但对于朋友和弱者却格外地宽厚。三：他是个少见的细致的人，他的细致不仅仅是表现于他做学问时的博大精深，巨细靡遗，也表现在他的生活之中，举凡他身边的每一个物件，都是经过精心的挑选，他对人的体贴几乎到无微不至的地步。</p>
+<p>　　我常想，李敖真像一篇好文章，里面有智慧、有精心、有近景、有远景，还能没有废词废句。</p>
+<p>　　李敖复出以后，在他的《传统下的独白》的扉页上写下几行字：</p>
+<p>　　五十年来和五百年内，中国人写白话文的前三名：是李敖，李敖，李敖。嘴巴上骂我吹牛的人，心里都为我供了牌位。</p>
+<p>　　这段话引起了很多批评，尤其是卖文章的人更大为不满，但这在李敖只是开了一个小小的玩笑，他的文章常喜欢夸张，喜欢嬉笑怒骂（生活上也是如此），可是就在这些夸张的笑骂里，他传达了他的观念，也布达了他深思后的讯息。读他的文章，就像服食一颗裹了粮衣的苦药，因为他的夸张和玩笑，使那些治病的良方显得不苦；又像在沙中有金，必须慢慢拨开沙子才能找到黄金，过程之中就是一种乐趣。</p>
+<p>　　读李敖的人也是一样，一般人眼中的李敖是个顽皮的思想家，也是个玩世不恭的才子，他的四十六年几乎都表现了非常人的行径，做出了许多轰轰烈烈的事迹，其中有许多别人不能谅解的。他的生活简直变动太大，但是如果知道李敖，就会了解到他变中有常，有一个不变的理想。这个理想是“得志与民由之，不得志独行其道。……此之谓大丈夫”。但是我们只看到了独行其道的李敖，而没有看到与民由之的李敖。</p>
+<p>　　李敖的独行其道，有一首他喜欢的王安石的诗可以形容：</p>
+<p>　　飞来山上寻千塔，闻说鸡鸣见日升。</p>
+<p>　　不畏浮云遮望眼，自缘身在最高层。</p>
+<p>　　李敖的与民由之，我们可以在他十六年前《上下古今谈》的开场白里看到，他自称是自由中国最的“浪子”，然后说：</p>
+<p>　　“所谓’浪子’(Bohemia)，我的意思是指十九世纪三十年代以后的巴黎文人。他们从穷困中开创新境界，对恶劣的环境不满意、不屈服、任凭社会对他排挤，让他’浪’迹天涯，他仍是要把他的热情和抱负投向社会。他不在乎人们要跟他’相忘于江湖’，人们可以忘掉他，让他流浪，但他去不忘掉人们。他要振聋发聩，要追吉不舍。最后他要成功，要把社会改造，把人们叫醒。这是他的真精神。”</p>
+<p>　　事实上，浪子李敖有精神上冲突，他好几次说要到山上去隐居，好好写几部大作，可是当他看到人间不平的世相，又忍不住要横刀亮出他的肝胆，做“理在情不在”的批评。他一方面心中想着出世，做小乘；一方面又忍不住要入世，做大乘；其实他的理想是“以出世精神，做入世事业”——他所有的事端，所有的横逆都是因此而闯，他当然也有怨忿的时候，但是他很少后悔。在长夜的孤灯下念起李敖，我总觉得他或许说得有道理，他本应是五十年后才降世的人，却不幸早到了人间。</p>
+<p>　　认识李敖是两年前的事，知道李敖却很早，十五年前我在一个民智未开的乡下读初中二年级，每天都被呆板的功课烦得不知如何是好。那时我有一个堂哥在中兴大学读企业管理，他是李敖最早期的崇拜者，每次放寒暑假回乡，行囊里总是带了几本《文星杂志》，闲暇的时候我就的拿出来翻翻，意深深被李敖的文章吸引，那时的小脑袋瓜子里就认为李敖是个言人所不敢言，怒人所不敢怒的人。</p>
+<p>　　那是 1955 年左右，也是李敖的黄金时代，他几乎每写一篇文章就惹火了一些人，也唤起了更多的掌声，已经是个家喻户晓的人物了。后来他进了监狱，广义地说，差不多坐了七年牢，这是我到台北读书，有机会读到昔日的著作，更加深我能从他文章的表面，看到内部对整个民族文化的危言和忧心，当时只恨吾生也晚，不能认识李敖，甚至连他们有力的文化风潮都沾不上一点边。</p>
+<p>　　直到李敖与胡茵梦谈恋爱，因为我的采访工作才认识了李敖，他的人和他的谈话都使我吃惊，因为第一次见面就长谈了四小时的李敖，竟不是过去我所知道的李敖。正如他写的《自画像的一章——文章·讲话·人》中说的：</p>
+<p>　　不认识我的人，喜欢看我的文章。</p>
+<p>　　认识我的人，喜欢听我的讲话。</p>
+<p>　　了解我的人，喜欢我这个人。</p>
+<p>　　我的做人比讲话好，我的讲话比我的文章好。光看我的文章，你一定以为我是一个穷凶极恶的家伙；可是听到我的讲话，你便会觉得我比文章可爱；等你对我有更深一层的了解，你更会惊讶：在李敖那张能说善道的刻薄嘴下三十二厘米处，还有着一颗多情而善良的心。</p>
+<p>　　他说，在李敖的家门口应该钉一块牌子，上面写“内有恶犬，但不咬人”。</p>
+<p>　　他从恋爱、结婚、打官司，一直到第二次入狱，我们几乎每星期都见面聊天，有时谈到天亮，一起窝着吃生力面。李敖本来没有理由浪费时间结交我这个后生小辈，但是他那样有耐心，总是告诉我一些为人处事和做学问的方法，而我从他那里学到最可贵的一点是勇气。这两年来，他要处理的事情太多了，遭遇的波折与打击也太多了，但是他总是保持着冷静，以极冷静、极精密的态度来处理许多琐琐碎碎的事情，他面对极大的压力，但从来没有退缩的神情，总是坦荡荡地迎上前去。</p>
+<p>　　经过这么多事情的李敖，声名当然更响，虽然不一定是好的声名，本来敬佩他的人也纷纷动摇或误解。我就遇过许多这样的情形，在文艺界的聚会里，茶余饭后有许多人破口大骂李敖，这些人本来一提到李敖都会竖起大拇指的，后来竟也变成李敖压力的一部分，我若极力为他辩解，最后总是闹得不欢而散的下场——这些从未见过李敖的人，编出许多神话来侮蔑他。对于许多更年轻的人，李敖更不知道变成一个什么样的面目了？</p>
+<p>　　因此，我觉得有必要翻开李敖的底牌，让我们看看李敖的样子，让我们通过时光的隧道，回到十六年前，看李敖为他自己写的简介：</p>
+<p>　　李敖：</p>
+<p>　　吉林省扶余县人，祖籍山东省潍县，远籍云南省。1935 年生于哈尔滨。</p>
+<p>　　在北平读小学和初一（没念完），又在台中读初二到高三（没念完），又在台北读台大法学院（没念完），又读文学研究所（没念完）。</p>
+<p>　　喜欢买书、抽烟、看电影、看女人（有时候不止于“看”）</p>
+<p>　　著书七种：《传统下的独白》、《历史与人像》、《胡适研究》、《胡适评传》（第一册）、《为中国思想趋向求答案》、《文化论战丹火录》、《教育与脸谱》，皆台北文星书店出版。</p>
+<p>　　现在身上一身是债、两眼近视、三餐很饱、四个官司。</p>
+<p>　　本人面目：平凡；特征：没有；脾气：欠佳。</p>
+<p>　　喜说笑话。</p>
+<p>　　勾勒出这个简介时，李敖才三十岁，已经写出许多惊天动地、掷地有声的作品，这张脸谱是忠实的，从这里我们可以看出李敖在二十年前，虽因他的叛逆精神，没有拿过一张文凭，但已粗具了他成为思想家的雏形，也奠定了他对社会的理想。他认为世界上没有一个天生的理想社会，理想社会必须通过实验与改革，问题是中国背负了五千年的包袱，所以实验与改革更难，必须下猛药。</p>
+<p>　　今年一月，李敖因工作过度，犯了胃出血的毛病，住在中心诊所一一○六号病房，我提水果去看他，他仍然精神焕发，笑着说：“没想到你也不能免俗，提水果干什么？”我看他精神好，自然很高兴，他拉开病床旁的抽屉给我看，说：“医生警告我不能工作，我还是偷偷地做剪报。”我们谈到十六年前他的简介，他开玩笑地说：“现在不一样了，现在是一身官司，两眼发直，三餐点滴，四面楚歌。”</p>
+<p>　　后来又谈了很多生活琐事，他说刘会云又回到他身边来照顾他，显得很快活，谈到文章写作，他只把文章归为三个层次：</p>
+<p>　　一、一时一地的层次</p>
+<p>　　二、中国的层次</p>
+<p>　　三、世界的层次</p>
+<p>　　他说：“现在台湾的作家眼光均放在第二层次，实在眼光太小了，我们要创作出我们自己的，到世界去搞——光在小地方搞，又算什么！”</p>
+<p>　　第二天我随美国国家地理杂志编辑到南部去采访，一路上都想着这个层次的问题，想到“眼光放远”，二十年前主张全盘西化的李敖，眼光确有独到之处，那时不知有多少人围攻他，骂他太保、流氓，甚至疯狗！可是二十年后的今天，形势比人强，李敖的许多论点都不幸应验！但是他为了坚持，也付出了不少代价，可见看得远和看得巧，都会使人变成孤独的强者，不免要忍受强者的孤独。</p>
+<p>　　李敖确是个强者，他办到了许多我们在想象里都办不到的事。</p>
+<p>　　他第一次坐牢的时候，就要求把自己关在“黑牢”里，所谓“黑牢”，是只有两坪大的房间，用来处罚那些在监狱里惹是生非的人，一般囚犯都怕去，因为在“黑牢”里没有同伴，没有光，没有谈话的对象，只能一个人孤单地沉思，李敖却自愿进去，并且一坐就是五年十个月。</p>
+<p>　　在“黑牢”里的李敖什么都不做，他每天在牢内散步，因为牢实在太小，他只好走对角线，每天走两小时来维持身体健康。其余的时间，他只好沉思，思考中国政治、社会、经济、文化的许多问题，大大小小，前前后后都想过了。有时闷得无聊，一个茶杯就可以思考一天——这就是为什么他出狱后的文章写得比他入狱前更成熟、周延的原因。</p>
+<p>　　后来有人问他怎么样保持青春（他看起来比实际年龄少十几岁），他常开玩笑说：“上帝很公平，坐牢的时间他没有算在内。”</p>
+<p>　　牢里的后半期，他可以看书了，他在狱中读完了两套百科全书（大英、大美），还重读了一次二十五史，他不只是读，而是研究，有一次我翻他的大英百科全书，发现每一页都用蝇头小字写了密密麻麻的眉批和感想，这样的志注恐怕是人间少见。</p>
+<p>　　今年二月二十六日，李敖刚被判了六个月徒刑定谳，他来我家吃晚餐，说到他怎么度过五年十个月的军法牢，他把自己的生活条件放在生物的最低层次，以维持一点点快乐的心情，他说：“在牢里，每星期一、三、五都是’放风’的时间，可以出来见阳光十分钟。每星期二理发，星期四会客，都可以出来一下，这是快乐的事。有时候坐着没事，突然从窗外飞进来一小片报纸，里面的字一看再看，觉得文字真可爱，都可以乐半天。我觉得我最快乐的时候不全在出狱后，有一些是在狱中。”</p>
+<p>　　在牢里他还研究城市，伦敦、巴黎、纽约的街道结构，文化、艺术、社会、经济都能了如指掌，卧游天下，也是一乐。他说：“我这一次坐六个月，比起以前是小儿科。”</p>
+<p>　　李敖的强不只表现在牢里，他出狱后住在金兰大厦，把自己封闭起来，在门旁边开了一个小洞，报纸、杂志、食物全从小洞里塞进来，他在里面工作，整理书籍和文稿，六个月不出门一步，不见任何访客，他称为“闭关”，企图弥补他和社会长久的隔离，他终于做到了。</p>
+<p>　　他的意志和精神力之强，很少人可以做到，他本来抽烟、喝酒、喝咖啡，可是说戒就戒，一日就办到。他长期每天工作十六小时，从未间断，饿了只吃冷冻水饺和生力面，依靠的全是超强的意志力。</p>
+<p>　　入狱前，他又闭关一次，不听电话，不见访客，自己锁在房间里一个月，为的是写他的《千秋评论丛书》，预计在牢里的半年，每个月出一本《千秋评论》集，他在一个月内写完了六本，并且自己设计、编排、做校对。这种超凡的力量，真是叫人吃惊。</p>
+<p>　　他的强更表现在他不怕被误解，他说：“一个人只要知道他自己就好，别人了不了解都不重要。”</p>
+<p>　　他是拼命在工作着，拼命地思考中国文化思想的问题，但是仍觉得时间不够。他早年爱看电影，现在也不看了，他说：“我不看现代小说和电影，觉得太浪费时间，我喜欢直接的东西，不爱拐弯抹角。”</p>
+<p>　　去年十月二十七日，我们聊天到天亮，李敖谈到两个问题，显得有点激动，一个是伟大的人格典型已经没落。他说：“这年头缺少伟大的人格典型，像胡适、蔡元培、殷海光、傅斯年等人在中国已不可再得。也看不到有血有肉的好文章，到处充满蛋头学者。现代学者成名以后常常杂务太多，浪费许多时间，胡适晚年就受了杂务太多这害，而且胡适在写日记上花费太多的时间，写文章就少了，思想未能阐扬出来。因此，要现代中国有思想前途，必须产生几个伟大的人格典型，学者还需减少杂务，多写好文章。”</p>
+<p>　　一个是只要维持自我人格就好，不管别人。他说：“印度圣雄甘地的太太偷人家东西；儿子叛教，从印度教叛到回教。林肯的儿子把母亲送进疯人院……许多圣人都有类似的事，可是不影响到他的人格。”</p>
+<p>　　我想，少年时代的李敖，是曾经想建立一个伟大的人格典型，他也努力过，可惜社会和环境没有让他朝这条路走，反而逼他成为文化的顽童。他用美国劳工领袖戴布兹的话说：只要有下层阶级，我就同俦；只要有犯罪成分，我就同流；只要狱底有游魂，我就不自由。</p>
+<p>　　我又想，历来中外古今伟大的人格典型都是出于不合作主义者，李敖二十年来惹了很多是非，但是到今天他还没有放弃伟大人格典型的理想，这是他真正强的地方。</p>
+<p>　　许多人和我一样，都非常关心李敖的近况，关心他的第二次牢狱之灾，虽然甘地在牢里坐了两千三百三十八天，戴布兹被判了十年徒刑，最后才得洗刷。李敖也说：“有冤屈的人，必须有赖于’时间的因素’来辨冤白谤，当时没有反击能力的人，他必须设法长寿，练得比他的’敌人’活得更长久。这些话，说来好像笑谈，但笑谈之中，往往有不少白发和眼泪。”</p>
+<p>　　李敖第二次坐监已经两个月了，可是没见过一个访客，连写《胡适杂忆》年高德劭的唐德刚先生远从美国到土城去看他，他都不见，我四处打听，没有人确知他到底过得怎么样。只知道他关在一个电梯大的小房子里，伙食还可以，每天还有书看。让我忍不住想到强者李敖理平头在那里来回走对角线的情景。</p>
+<p>　　李敖是我尊敬的朋友，我觉得这样的朋友不可多得，总像在黑暗里点着一盏灯，让我们在受到挫折时想到他，就有勇气期待更好的天光。李敖曾在谈到坐牢的哲学时，引用过甘地的一句话：“朋友们不需要掂挂我。我觉得自己像一只快乐的小鸟，在这儿所能做的并不比外间少。我留居在此，对我有如入校。”他认为心灵自由的人，在牢里也能像快乐的小鸟，而在牢狱外的人，是很难想象的。让我们不必掂挂牢中的李敖，让我们欢迎他回来，为我们写几本巨著。</p>
+<p>　　写到这里，我想起 1957 年李敖写的一首诗《我将归来开放》：</p>
+<p>　　因为我从来是那样，</p>
+<p>　　所以你以为我永远是那样。</p>
+<p>　　可是这一回你错了，</p>
+<p>　　我改变得令你难以想象。</p>
+<p>　　坏的终能变得好，</p>
+<p>　　弱的总会变得壮。</p>
+<p>　　谁能想到丑陋的一个蛹，</p>
+<p>　　却会变成翩翩的蝴蝶模样？</p>
+<p>　　像一朵入夜的荷花，</p>
+<p>　　像一只归巢的宿鸟，</p>
+<p>　　或像一个隐居的老哲人，</p>
+<p>　　我消逝了我所有锋芒与光亮。</p>
+<p>　　漆黑的隧道终会凿穿，</p>
+<p>　　千仞的高岗必被爬上，</p>
+<p>　　当百花凋谢的日子，</p>
+<p>　　我将归来开放！</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/第十三个轮到谁-格雷·拉威西.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/不要中了愤怒的计-王玉红.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/第十三个轮到谁-格雷·拉威西.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/不要中了愤怒的计-王玉红.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/我所认识的李敖-林清玄.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

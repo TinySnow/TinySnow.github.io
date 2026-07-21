@@ -1,0 +1,1113 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第九章：白血病 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第九章白血病"><a class="header" href="#第九章白血病">第九章：白血病</a></h1>
+<h2 id="一白血病概述"><a class="header" href="#一白血病概述">一、白血病概述</a></h2>
+<h3 id="一考试大纲"><a class="header" href="#一考试大纲">一）考试大纲</a></h3>
+<ol>
+<li>临床表现</li>
+<li>实验室检查</li>
+<li>诊断、鉴别诊断</li>
+<li>治疗</li>
+</ol>
+<h3 id="二概述"><a class="header" href="#二概述">二）概述</a></h3>
+<h4 id="定义"><a class="header" href="#定义">定义</a></h4>
+<ul>
+<li>白血病是一类 <strong>造血干祖细胞的恶性克隆性疾病</strong></li>
+<li>因白血病细胞 <strong>自我更新增强、增殖失控、分化障碍、凋亡受阻</strong> ，而停滞在细胞发育的不同阶段</li>
+<li>在骨髓和其他造血组织中，白血病细胞大量增生、累积</li>
+<li>使正常造血受抑制，并浸润其他器官和组织</li>
+</ul>
+<h3 id="三分类"><a class="header" href="#三分类">三）分类</a></h3>
+<h4 id="按病程和细胞系分类"><a class="header" href="#按病程和细胞系分类">按病程和细胞系分类</a></h4>
+<ul>
+<li><strong>急性白血病</strong>
+<ul>
+<li>髓系：<code>AML</code></li>
+<li>淋巴系：<code>ALL</code></li>
+</ul>
+</li>
+<li><strong>慢性白血病</strong>
+<ul>
+<li>髓系：<code>CML</code></li>
+<li>淋巴系：<code>CLL</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="造血分化示意"><a class="header" href="#造血分化示意">造血分化示意</a></h4>
+<ul>
+<li><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260710125728780.png" alt=""><span class="img-wrapper"><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260710125728780.png" alt=""></span></label></li>
+</ul>
+<h3 id="四病因"><a class="header" href="#四病因">四）病因</a></h3>
+<h4 id="相关因素"><a class="header" href="#相关因素">相关因素</a></h4>
+<ol>
+<li>物理因素
+<ul>
+<li><code>X</code> 射线</li>
+<li><code>γ</code> 射线</li>
+<li>多见于 <code>AL（急性白血病）</code>、<code>CML（慢性髓系白血病）</code></li>
+</ul>
+</li>
+<li>化学因素
+<ul>
+<li>苯及含苯有机溶剂</li>
+<li>烷化剂</li>
+<li>多见于 <code>AML（急性髓系白血病）</code></li>
+</ul>
+</li>
+<li>生物因素
+<ul>
+<li><code>HTLV-I（人类 T 淋巴细胞病毒）</code></li>
+<li>传播方式包括垂直传播、横向传播</li>
+</ul>
+</li>
+<li>遗传因素
+<ul>
+<li>占比约 <code>0.7%</code></li>
+</ul>
+</li>
+<li>其他血液疾病
+<ul>
+<li><code>MDS（骨髓增生异常综合征）</code></li>
+<li>淋巴瘤</li>
+<li>多发性骨髓瘤</li>
+<li><code>PNH</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="五发病机制"><a class="header" href="#五发病机制">五）发病机制</a></h3>
+<h4 id="机制要点"><a class="header" href="#机制要点">机制要点</a></h4>
+<ol>
+<li>各种原因可作用于单个细胞</li>
+<li>形成异常造血细胞克隆</li>
+<li>出现强势增殖和凋亡受抑</li>
+<li>机制基础包括
+<ul>
+<li>遗传学异常</li>
+<li>转录因子基因决定性突变</li>
+<li>多种信号通路激活</li>
+</ul>
+</li>
+<li>最终导致分化阻滞和分化紊乱</li>
+<li>形成白血病</li>
+</ol>
+<h4 id="机制示意"><a class="header" href="#机制示意">机制示意</a></h4>
+<ul>
+<li><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260710125913326.png" alt=""><span class="img-wrapper"><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260710125913326.png" alt=""></span></label></li>
+</ul>
+<h2 id="二急性白血病"><a class="header" href="#二急性白血病">二、急性白血病</a></h2>
+<h3 id="一定义"><a class="header" href="#一定义">一）定义</a></h3>
+<ul>
+<li>急性白血病（<code>AL</code>）是一组起源于造血细胞的 <strong>恶性克隆性疾病</strong></li>
+<li>不成熟造血细胞大量增殖并蓄积于骨髓和外周血</li>
+<li>导致正常造血受抑</li>
+<li>同时可浸润肝、脾、淋巴结等组织器官</li>
+</ul>
+<h3 id="二分型总则"><a class="header" href="#二分型总则">二）分型总则</a></h3>
+<h4 id="fab-分型"><a class="header" href="#fab-分型">FAB 分型</a></h4>
+<ul>
+<li><code>FAB</code> 分型基于 <strong>骨髓涂片细胞形态学</strong> 和 <strong>细胞化学染色</strong> 的观察与计数</li>
+<li>是 <strong>最基本的诊断学依据</strong></li>
+</ul>
+<h4 id="who-分型"><a class="header" href="#who-分型">WHO 分型</a></h4>
+<ul>
+<li><code>WHO</code> 分型整合了白血病细胞的 <code>MICM</code> 特征</li>
+<li><code>MICM</code> 包括
+<ul>
+<li><strong>形态学（<code>morphology</code>）</strong></li>
+<li><strong>免疫学（<code>immunology</code>）</strong></li>
+<li><strong>细胞遗传学（<code>cytogenetics</code>）</strong></li>
+<li><strong>分子生物学（<code>molecular biology</code>）</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="三急性髓系白血病分型"><a class="header" href="#三急性髓系白血病分型">三）急性髓系白血病分型</a></h3>
+<h4 id="aml-的-fab-分型"><a class="header" href="#aml-的-fab-分型">AML 的 FAB 分型</a></h4>
+<ol>
+<li><code>M0</code>：急性髓系白血病微分化型</li>
+<li><code>M1</code>：急性粒细胞白血病未分化型</li>
+<li><code>M2</code>：急性粒细胞白血病部分分化型</li>
+<li><code>M3</code>：急性早幼粒细胞白血病</li>
+<li><code>M4</code>：急性粒-单核细胞白血病</li>
+<li><code>M5</code>：急性单核细胞白血病</li>
+<li><code>M6</code>：红白血病</li>
+<li><code>M7</code>：急性巨核细胞白血病</li>
+</ol>
+<h4 id="aml-的-fab-诊断要点"><a class="header" href="#aml-的-fab-诊断要点">AML 的 FAB 诊断要点</a></h4>
+<h5 id="m0"><a class="header" href="#m0"><code>M0</code></a></h5>
+<ul>
+<li>骨髓原始细胞 <code>&gt;30%</code></li>
+<li>光镜下髓过氧化物酶（<code>MPO</code>）及苏丹黑 <code>B</code> 阳性细胞 <code>&lt;3%</code></li>
+<li>电镜下 <code>MPO</code> 阳性</li>
+<li><strong><code>CD33</code> 或 <code>CD13</code></strong> 等髓系抗原可呈阳性</li>
+</ul>
+<h5 id="m1"><a class="header" href="#m1"><code>M1</code></a></h5>
+<ul>
+<li>原粒细胞占骨髓非红系有核细胞（<code>NEC</code>）的 <strong><code>≥90%</code></strong></li>
+<li>其中 <strong>至少 <code>3%</code></strong> 以上细胞为 <code>MPO</code> 阳性</li>
+<li><code>NEC</code> 指不包括浆细胞、淋巴细胞、嗜碱细胞、巨噬细胞及所有红系有核细胞的骨髓有核细胞计数</li>
+</ul>
+<h5 id="m2"><a class="header" href="#m2"><code>M2</code></a></h5>
+<ul>
+<li>原粒细胞占骨髓 <code>NEC</code> 的 <strong><code>30%~89%</code></strong></li>
+<li>其他粒细胞 <code>&gt;10%</code></li>
+<li>单核细胞 <code>&lt;20%</code></li>
+</ul>
+<h5 id="m3"><a class="header" href="#m3"><code>M3</code></a></h5>
+<ul>
+<li>骨髓中以颗粒增多的 <strong>早幼粒细胞</strong> 为主</li>
+<li>此类细胞在 <code>NEC</code> 中 <strong><code>&gt;30%</code></strong></li>
+</ul>
+<h5 id="m4"><a class="header" href="#m4"><code>M4</code></a></h5>
+<ul>
+<li>骨髓中原始细胞占 <strong><code>NEC &gt;30%</code></strong></li>
+<li><strong>各阶段粒细胞 <code>&gt;20%</code></strong></li>
+<li><strong>各阶段单核细胞 <code>&gt;20%</code></strong></li>
+</ul>
+<h5 id="m4eo"><a class="header" href="#m4eo"><code>M4Eo</code></a></h5>
+<ul>
+<li>除具备 <code>M4</code> 特点外</li>
+<li><strong>嗜酸性粒细胞在 <code>NEC</code> 中 <code>&gt;5%</code></strong></li>
+</ul>
+<h5 id="m5"><a class="header" href="#m5"><code>M5</code></a></h5>
+<ul>
+<li><strong>骨髓 <code>NEC</code> 中原单核、幼单核 <code>&gt;30%</code></strong></li>
+<li>原单核、幼单核及单核细胞合计 <code>&gt;80%</code></li>
+<li>原单核细胞 <code>&gt;80%</code> 为 <code>M5a</code></li>
+<li>原单核细胞 <code>&lt;80%</code> 为 <code>M5b</code></li>
+</ul>
+<h5 id="m6"><a class="header" href="#m6"><code>M6</code></a></h5>
+<ul>
+<li><strong>骨髓中幼红细胞 <code>&gt;50%</code></strong></li>
+<li><strong><code>NEC</code> 中原始细胞 <code>&gt;30%</code></strong></li>
+</ul>
+<h5 id="m7"><a class="header" href="#m7"><code>M7</code></a></h5>
+<ul>
+<li><strong>骨髓中原始巨核细胞 <code>&gt;30%</code></strong></li>
+<li>血小板相关标志可呈阳性</li>
+<li>血小板过氧化酶阳性</li>
+</ul>
+<h4 id="aml-的-who-2016-分型"><a class="header" href="#aml-的-who-2016-分型">AML 的 WHO 2016 分型</a></h4>
+<h5 id="伴重现性遗传学异常的-aml"><a class="header" href="#伴重现性遗传学异常的-aml">伴重现性遗传学异常的 <code>AML</code></a></h5>
+<ol>
+<li><code>AML</code> 伴 <code>t(8;21)(q22;q22.1)</code>，<code>RUNX1-RUNX1T1</code>
+<ul>
+<li>t 表示易位 t(8;21) 表示 8 号染色体和 21 号染色体易位</li>
+<li>p 为染色体短臂，q 为染色体长臂，q22.1 意思为染色体长臂第二区第二条带的第一亚带</li>
+<li>RUNX1-RUNX1T1 是基因名字</li>
+</ul>
+</li>
+<li><code>AML</code> 伴 <code>inv(16)(p13.1q22)</code> 或 <code>t(16;16)(p13.1;q22)</code>，<code>CBFB-MYH11</code>
+<ul>
+<li>inv 表示倒位</li>
+</ul>
+</li>
+<li>急性早幼粒细胞白血病伴 <code>PML-RARA</code></li>
+<li><code>AML</code> 伴 <code>t(9;11)(p21.3;q23.3)</code>，<code>MLLT3-KMT2A</code></li>
+<li><code>AML</code> 伴 <code>t(6;9)(p23;q34.1)</code>，<code>DEK-NUP214</code></li>
+<li><code>AML</code> 伴 <code>inv(3)(q21.3q26.2)</code> 或 <code>t(3;3)(q21.3;q26.2)</code>，<code>GATA2</code>、<code>MECOM</code></li>
+<li><code>AML</code>（原始巨核细胞性）伴 <code>t(1;22)</code>，<code>RBM15-MKL1</code></li>
+<li>暂命名：<code>AML</code> 伴 <code>BCR-ABL1</code></li>
+<li><code>AML</code> 伴 <code>NPM1</code> 突变</li>
+<li><code>AML</code> 伴 <code>CEBPA</code> 双等位基因突变</li>
+<li>暂命名：<code>AML</code> 伴 <code>RUNX1</code> 突变</li>
+</ol>
+<h5 id="aml-伴骨髓增生异常相关改变"><a class="header" href="#aml-伴骨髓增生异常相关改变"><code>AML</code> 伴骨髓增生异常相关改变</a></h5>
+<h5 id="治疗相关-aml"><a class="header" href="#治疗相关-aml">治疗相关 <code>AML</code></a></h5>
+<h5 id="髓系肉瘤"><a class="header" href="#髓系肉瘤">髓系肉瘤</a></h5>
+<h5 id="down-综合征相关的髓系增殖"><a class="header" href="#down-综合征相关的髓系增殖"><code>Down</code> 综合征相关的髓系增殖</a></h5>
+<ul>
+<li>短暂性异常骨髓增殖（<code>TAM</code>）</li>
+<li><code>Down</code> 综合征相关的髓系白血病</li>
+</ul>
+<h5 id="非特殊类型-amlaml-nos"><a class="header" href="#非特殊类型-amlaml-nos">非特殊类型 <code>AML</code>（<code>AML, NOS</code>）</a></h5>
+<ol>
+<li><code>AML</code> 微分化型</li>
+<li><code>AML</code> 未分化型</li>
+<li><code>AML</code> 部分分化型</li>
+<li>急性粒-单核细胞白血病</li>
+<li>急性单核细胞白血病</li>
+<li>纯红系白血病</li>
+<li>急性巨核细胞白血病</li>
+<li>急性嗜碱性粒细胞白血病</li>
+<li>急性全髓增生伴骨髓纤维化</li>
+</ol>
+<h3 id="四急性淋巴细胞白血病分型"><a class="header" href="#四急性淋巴细胞白血病分型">四）急性淋巴细胞白血病分型</a></h3>
+<h4 id="all-的-fab-分型"><a class="header" href="#all-的-fab-分型">ALL 的 FAB 分型</a></h4>
+<ul>
+<li><code>L1</code>
+<ul>
+<li>原始和幼淋巴细胞以小细胞为主</li>
+<li>直径多 <code>&lt;12 μm</code></li>
+</ul>
+</li>
+<li><code>L2</code>
+<ul>
+<li>原始和幼淋巴细胞以大细胞为主</li>
+<li>直径多 <code>&gt;12 μm</code></li>
+</ul>
+</li>
+<li><code>L3</code>（<code>Burkitt</code> 型）
+<ul>
+<li>原始和幼淋巴细胞以大细胞为主</li>
+<li>大小较一致</li>
+<li>细胞内有明显空泡</li>
+<li>胞质嗜碱性</li>
+<li>染色深</li>
+</ul>
+</li>
+</ul>
+<h4 id="b-all-的-who-分型要点"><a class="header" href="#b-all-的-who-分型要点">B-ALL 的 WHO 分型要点</a></h4>
+<h5 id="非特殊类型-b-allb-all-nos"><a class="header" href="#非特殊类型-b-allb-all-nos">非特殊类型 <code>B-ALL</code>（<code>B-ALL, NOS</code>）</a></h5>
+<h5 id="伴重现性遗传学异常的-b-all"><a class="header" href="#伴重现性遗传学异常的-b-all">伴重现性遗传学异常的 <code>B-ALL</code></a></h5>
+<ol>
+<li>伴 <code>t(9;22)(q34.1;q11.2)</code>，<code>BCR-ABL1</code></li>
+<li>伴 <code>t(v;11q23.3)</code>，<code>KMT2A</code> 重排</li>
+<li>伴 <code>t(12;21)(p13.2;q22.1)</code>，<code>ETV6-RUNX1</code></li>
+<li>伴超二倍体</li>
+<li>伴亚二倍体</li>
+<li>伴 <code>t(5;14)(q31.1;q32.3)</code>，<code>IL3-IGH</code></li>
+<li>伴 <code>t(1;19)(q23;p13.3)</code>，<code>TCF3-PBX1</code></li>
+</ol>
+<h3 id="五临床表现"><a class="header" href="#五临床表现">五）临床表现</a></h3>
+<h4 id="正常造血功能受抑制"><a class="header" href="#正常造血功能受抑制">正常造血功能受抑制</a></h4>
+<h5 id="发热"><a class="header" href="#发热">发热</a></h5>
+<ul>
+<li>多由粒细胞缺乏所致感染引起</li>
+<li>部分病人以发热为早期表现</li>
+</ul>
+<h5 id="出血"><a class="header" href="#出血">出血</a></h5>
+<ul>
+<li>与大量白血病细胞在血管中淤滞和浸润有关</li>
+<li>也与血小板减少、凝血异常及感染有关</li>
+<li><code>APL</code> 易并发凝血异常，可出现全身广泛性出血</li>
+</ul>
+<h5 id="贫血"><a class="header" href="#贫血">贫血</a></h5>
+<ul>
+<li>半数病人就诊时已有重度贫血</li>
+<li>继发于 <code>MDS</code> 者更明显</li>
+</ul>
+<h4 id="白血病细胞增殖浸润"><a class="header" href="#白血病细胞增殖浸润">白血病细胞增殖浸润</a></h4>
+<h5 id="淋巴结及肝脾肿大"><a class="header" href="#淋巴结及肝脾肿大">淋巴结及肝脾肿大</a></h5>
+<ul>
+<li><code>ALL</code> 多见</li>
+<li>纵隔淋巴结肿大多见于 <code>T</code> 细胞急淋</li>
+<li>巨脾可见于慢粒急变</li>
+</ul>
+<h5 id="骨骼和关节"><a class="header" href="#骨骼和关节">骨骼和关节</a></h5>
+<ul>
+<li>胸骨下段局部压痛</li>
+</ul>
+<h5 id="眼部"><a class="header" href="#眼部">眼部</a></h5>
+<ul>
+<li>眼眶绿色瘤</li>
+<li>多见于粒细胞白血病（粒细胞肉瘤）</li>
+</ul>
+<h5 id="口腔及皮肤"><a class="header" href="#口腔及皮肤">口腔及皮肤</a></h5>
+<ul>
+<li>牙龈增生</li>
+<li>皮肤紫蓝色结节</li>
+<li>多见于 <code>M4</code>、<code>M5</code></li>
+</ul>
+<h5 id="中枢神经系统"><a class="header" href="#中枢神经系统">中枢神经系统</a></h5>
+<ul>
+<li><code>ALL</code> 最常见的髓外受累部位</li>
+<li>可引起中枢神经系统白血病（<code>CNSL</code>）</li>
+<li>儿童更常见</li>
+</ul>
+<h5 id="睾丸"><a class="header" href="#睾丸">睾丸</a></h5>
+<ul>
+<li>单侧无痛性肿大</li>
+<li>见于 <code>ALL</code> 化疗缓解后的儿童和青年</li>
+</ul>
+<h3 id="六辅助检查"><a class="header" href="#六辅助检查">六）辅助检查</a></h3>
+<h4 id="血象"><a class="header" href="#血象">血象</a></h4>
+<ul>
+<li>
+<p><strong><code>WBC</code> 可增高、正常或降低</strong></p>
+<ul>
+<li>
+<p><code>WBC &gt;10×10^9/L</code></p>
+<ul>
+<li>为白细胞增多性白血病</li>
+<li>外周血可见原始及幼稚细胞</li>
+</ul>
+</li>
+<li>
+<p><code>WBC &lt;10×10^9/L</code></p>
+<ul>
+<li>为白细胞不增多性白血病</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>可有不同程度贫血</strong></p>
+</li>
+<li>
+<p><strong>约 <code>50%</code> 病人血小板明显减少</strong></p>
+</li>
+</ul>
+<h4 id="骨髓象"><a class="header" href="#骨髓象">骨髓象</a></h4>
+<ul>
+<li><code>AL</code> 的诊断标准
+<ul>
+<li><code>FAB</code>：原始细胞 <code>&gt;30%</code></li>
+<li><code>WHO</code>：原始细胞 <code>&gt;20%</code></li>
+</ul>
+</li>
+<li><code>WHO</code> 原始细胞比例 <code>&lt;20%</code>，但伴以下异常者仍可诊断 <code>AML</code>
+<ul>
+<li><code>t(15;17)</code> / <code>PML-RARA</code>（M3）</li>
+<li><code>t(8;21)</code> / <code>RUNX1-RUNX1T1</code>（M2）</li>
+<li><code>inv(16)</code> 或 <code>t(16;16)</code> / <code>CBFB-MYH11</code>（M4）</li>
+</ul>
+</li>
+<li>多数急性白血病骨髓有核细胞显著增生，以原始细胞为主</li>
+<li>少数病例骨髓增生低下，称低增生性 <code>AL</code></li>
+</ul>
+<h4 id="细胞化学染色"><a class="header" href="#细胞化学染色">细胞化学染色</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>类型</th><th><code>POX（过氧化物酶染色）/SBB</code></th><th><code>PAS</code></th><th><code>NSE（非特异性酯酶染色）</code></th><th>提示</th></tr>
+</thead>
+<tbody>
+<tr><td><code>ALL</code></td><td>多阴性</td><td><strong>常阳性，呈块状或颗粒状</strong></td><td>多阴性</td><td>支持急淋诊断</td></tr>
+<tr><td>急性粒细胞白血病</td><td>多阳性，且与分化程度相关<br />分化差 - ~ +<br />分化好 + ~ +++</td><td>阴性或可阳性，弥漫性淡红色</td><td>- ~ +，<code>NaF</code> 抑制 <code>&lt;50%</code></td><td>分化越好阳性越明显</td></tr>
+<tr><td>急性单核细胞白血病</td><td>可阴或弱阳性</td><td>阴性或可阳性，弥漫性淡红色或颗粒状</td><td>阳性， <strong>且可被 <code>NaF</code> 抑制 <code>&gt;50%</code></strong></td><td>支持单核系来源</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="免疫学检查"><a class="header" href="#免疫学检查">免疫学检查</a></h4>
+<ul>
+<li>造血干/祖细胞可表达 <code>CD34</code></li>
+<li><code>APL</code> 细胞通常表达
+<ul>
+<li><code>CD13</code></li>
+<li><code>CD33</code></li>
+<li><code>CD117</code></li>
+</ul>
+</li>
+<li><code>APL</code> 细胞通常不表达
+<ul>
+<li><code>HLA-DR</code></li>
+<li><code>CD34</code></li>
+</ul>
+</li>
+<li><code>B</code> 系相关抗原可见
+<ul>
+<li><code>CD19</code></li>
+<li><code>CD20</code></li>
+<li><code>CD22</code></li>
+<li><code>CD79a</code></li>
+<li><code>CD10</code></li>
+</ul>
+</li>
+<li>髓系相关抗原可见
+<ul>
+<li><code>CD13</code></li>
+<li><code>CD33</code></li>
+<li><code>CD117</code></li>
+<li><code>CD14</code></li>
+</ul>
+</li>
+</ul>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260717130447454.png" alt=""><span class="img-wrapper"><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260717130447454.png" alt=""></span></label></p>
+<h4 id="遗传学及分子生物学检查"><a class="header" href="#遗传学及分子生物学检查">遗传学及分子生物学检查</a></h4>
+<ul>
+<li>用于诊断、分型、预后判断和危险分层</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>疾病或亚型</th><th>常见染色体改变</th><th>常见基因改变</th></tr>
+</thead>
+<tbody>
+<tr><td><code>M2</code></td><td><code>t(8;21)(q22;q22)</code></td><td><code>RUNX1-RUNX1T1</code></td></tr>
+<tr><td><code>M3</code></td><td><code>t(15;17)(q22;q21)</code></td><td><code>PML-RARA</code></td></tr>
+<tr><td><code>M4Eo</code></td><td><code>inv(16)</code> / <code>del(16)(q22)</code></td><td><code>CBFB-MYH11</code></td></tr>
+<tr><td><code>M5</code></td><td><code>t/del(11)(q23)</code></td><td><code>KMT2A</code> 相关重排</td></tr>
+<tr><td><code>Burkitt</code> 型 <code>ALL</code></td><td><code>t(8;14)(q24;q32)</code></td><td><code>MYC-IGH</code></td></tr>
+<tr><td>部分 <code>ALL</code></td><td><code>t(9;22)(q34;q11)</code></td><td><code>BCR-ABL</code></td></tr>
+</tbody>
+</table>
+</div>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260717130542945.png" alt=""><span class="img-wrapper"><img src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/learning/medicine/internal-medicine/20260717130542945.png" alt=""></span></label></p>
+<h4 id="血液生化检查"><a class="header" href="#血液生化检查">血液生化检查</a></h4>
+<ol>
+<li>
+<p><strong>血清尿酸浓度增高</strong></p>
+<ul>
+<li>尤其在化疗期间更明显</li>
+<li>尿酸排泄量增加，甚至可出现尿酸结晶</li>
+</ul>
+</li>
+<li>
+<p><strong>并发 <code>DIC</code> 时可见凝血象异常</strong></p>
+<ul>
+<li>血清乳酸脱氢酶（<code>LDH</code>）可增高</li>
+</ul>
+</li>
+<li>
+<p>出现 <code>CNSL</code> 时脑脊液可见</p>
+<ul>
+<li>压力升高</li>
+<li>白细胞数增多</li>
+<li>蛋白质增多</li>
+<li>糖定量减少</li>
+<li>涂片可找到白血病细胞</li>
+</ul>
+</li>
+</ol>
+<h3 id="七鉴别诊断"><a class="header" href="#七鉴别诊断">七）鉴别诊断</a></h3>
+<ol>
+<li><strong><code>MDS</code></strong>
+<ul>
+<li>骨髓中原始细胞 <code>&lt;20%</code></li>
+</ul>
+</li>
+<li><strong>传染性单核细胞增多症</strong>
+<ul>
+<li>可见异形淋巴细胞</li>
+<li>嗜异性抗体阳性</li>
+</ul>
+</li>
+<li><strong>巨幼细胞贫血</strong>
+<ul>
+<li>骨髓中原始细胞不增多</li>
+<li>幼红细胞 <code>PAS</code> 反应阴性</li>
+<li>叶酸、维生素 <code>B12</code> 治疗有效</li>
+</ul>
+</li>
+<li><strong>急性粒细胞缺乏症恢复期</strong>
+<ul>
+<li>药物或某些感染引起的粒细胞缺乏症的恢复期可见骨髓原、幼粒细胞增多</li>
+</ul>
+</li>
+</ol>
+<h3 id="八治疗"><a class="header" href="#八治疗">八）治疗</a></h3>
+<h4 id="一般及支持治疗"><a class="header" href="#一般及支持治疗">一般及支持治疗</a></h4>
+<ol>
+<li>处理高白细胞血症</li>
+<li>防治感染</li>
+<li>成分输血支持</li>
+<li>防治高尿酸血症和尿酸性肾病</li>
+<li>维持营养及水电解质平衡</li>
+</ol>
+<h4 id="紧急处理高白细胞血症"><a class="header" href="#紧急处理高白细胞血症">紧急处理高白细胞血症</a></h4>
+<h5 id="诊断提示"><a class="header" href="#诊断提示">诊断提示</a></h5>
+<ul>
+<li><code>WBC &gt;100×10^9/L</code></li>
+</ul>
+<h5 id="常见表现"><a class="header" href="#常见表现">常见表现</a></h5>
+<ul>
+<li>呼吸困难，甚至呼吸窘迫和低氧血症</li>
+<li>白血病细胞栓塞并出血</li>
+<li>反应迟钝、言语不清，严重者可颅内出血</li>
+</ul>
+<h5 id="主要处理"><a class="header" href="#主要处理">主要处理</a></h5>
+<ul>
+<li>白细胞单采</li>
+<li>尽快启动化疗</li>
+<li>积极水化</li>
+<li>预防高尿酸血症、酸中毒、电解质紊乱和凝血异常等并发症</li>
+</ul>
+<h5 id="药物减瘤"><a class="header" href="#药物减瘤">药物减瘤</a></h5>
+<ul>
+<li><code>ALL</code> 可先用地塞米松</li>
+<li><code>AML</code> 可用羟基脲 <code>1.5~2.5 g/q6h</code>，口服，约 <code>36 h</code></li>
+</ul>
+<h4 id="防治感染与支持治疗细节"><a class="header" href="#防治感染与支持治疗细节">防治感染与支持治疗细节</a></h4>
+<h5 id="防治感染"><a class="header" href="#防治感染">防治感染</a></h5>
+<ul>
+<li>入住层流病房或消毒隔离病房</li>
+<li><code>G-CSF</code> 适用于 <code>ALL</code>、老年患者、强化疗后或伴感染的 <code>AML</code></li>
+<li>及时进行微生物培养并尽快经验性抗感染治疗</li>
+</ul>
+<h5 id="成分输血"><a class="header" href="#成分输血">成分输血</a></h5>
+<ul>
+<li>严重贫血时吸氧并输浓缩红细胞</li>
+<li>目标血红蛋白 <code>&gt;80 g/L</code></li>
+<li>血小板明显减少时输注单采血小板悬液</li>
+<li>去除白细胞可减少发热反应</li>
+<li>灭活淋巴细胞可预防 <code>TA-GVHD</code></li>
+</ul>
+<h5 id="防治尿酸性肾病"><a class="header" href="#防治尿酸性肾病">防治尿酸性肾病</a></h5>
+<ul>
+<li>多饮水，持续静脉补液</li>
+<li>碱化尿液</li>
+<li>别嘌醇 <code>100 mg</code>，<code>tid</code>，口服</li>
+<li>少尿或无尿按急性肾衰竭处理</li>
+</ul>
+<h5 id="营养支持"><a class="header" href="#营养支持">营养支持</a></h5>
+<ul>
+<li>维持水、电解质平衡</li>
+<li>高蛋白、高热量、易消化饮食</li>
+<li>必要时静脉营养支持</li>
+</ul>
+<h4 id="抗白血病治疗总策略"><a class="header" href="#抗白血病治疗总策略">抗白血病治疗总策略</a></h4>
+<ol>
+<li>诱导缓解治疗
+<ul>
+<li>第一阶段目标是获得完全缓解（<code>CR</code>）</li>
+</ul>
+</li>
+<li>缓解后治疗
+<ul>
+<li>目标是长期无病生存和痊愈</li>
+<li>包括巩固强化治疗和维持治疗</li>
+</ul>
+</li>
+<li>复发后治疗
+<ul>
+<li>进行挽救治疗</li>
+</ul>
+</li>
+</ol>
+<h4 id="完全缓解标准"><a class="header" href="#完全缓解标准">完全缓解标准</a></h4>
+<ul>
+<li>白血病症状和体征消失</li>
+<li>外周血无原始细胞</li>
+<li>无髓外白血病</li>
+<li>骨髓三系造血恢复，原始细胞 <code>&lt;5%</code></li>
+<li>外周血中性粒细胞 <code>&gt;1.0×10^9/L</code></li>
+<li>血小板 <code>&gt;100×10^9/L</code></li>
+</ul>
+<h4 id="all的治疗"><a class="header" href="#all的治疗">ALL的治疗</a></h4>
+<ol>
+<li>诱导缓解治疗
+<ul>
+<li><code>VP</code> 方案
+<ul>
+<li>长春新碱（<code>VCR</code>）+ 泼尼松（<code>P</code>）</li>
+<li>为 <code>ALL</code> 基本方案</li>
+</ul>
+</li>
+<li><code>DVLP</code> 方案
+<ul>
+<li>在 <code>VP</code> 基础上加用柔红霉素（<code>DNR</code>）和门冬酰胺酶（<code>L-ASP</code>）</li>
+<li>为目前常用诱导方案</li>
+</ul>
+</li>
+<li>其他强化
+<ul>
+<li>可加环磷酰胺（<code>CTX</code>）或阿糖胞苷（<code>Ara-C</code>）</li>
+<li>可提高部分 <code>ALL</code> 的 <code>CR</code> 率和 <code>DFS</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缓解后治疗
+<ul>
+<li>强化巩固
+<ul>
+<li>化疗或联合 <code>HSCT</code></li>
+<li>可重复原诱导方案</li>
+<li>常用高剂量甲氨蝶呤（<code>HDMTX</code>）、<code>Ara-C</code>、<code>6-MP</code>、<code>L-ASP</code></li>
+</ul>
+</li>
+<li>维持治疗
+<ul>
+<li>口服 <code>6-MP</code> 和 <code>MTX</code></li>
+<li>间断给予 <code>VP</code> 方案化疗</li>
+</ul>
+</li>
+<li><code>Ph+ ALL</code>
+<ul>
+<li>治疗期间加用酪氨酸激酶抑制剂（<code>TKIs</code>）</li>
+<li>常用伊马替尼、达沙替尼</li>
+<li><code>CR</code> 率可提高至 <code>90%~95%</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>髓外复发处理
+<ul>
+<li><code>CNSL</code>
+<ul>
+<li>鞘内注射 <code>MTX</code>、<code>Ara-C</code>、糖皮质激素</li>
+<li>可配合全身化疗如 <code>HDMTX</code>、<code>Ara-C</code></li>
+<li>颅脊照射因副作用大，现已基本弃用</li>
+</ul>
+</li>
+<li>睾丸白血病
+<ul>
+<li>单侧病变也多行双侧照射</li>
+<li>联合全身化疗</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>复发判定
+<ul>
+<li><code>CR</code> 后外周血再次出现白血病细胞</li>
+<li>或骨髓原始细胞 <code>&gt;5%</code></li>
+<li>或出现髓外白血病细胞浸润</li>
+</ul>
+</li>
+<li><code>HSCT</code> 适应证
+<ul>
+<li>复发难治性 <code>ALL</code></li>
+<li><code>CR2</code> 的 <code>ALL</code></li>
+<li><code>CR1</code> 的高危 <code>ALL</code>
+<ul>
+<li><code>Ph+</code></li>
+<li>亚二倍体</li>
+<li><code>MLL/KMT2A</code> 基因重排</li>
+<li>前 <code>B-ALL</code> 初诊 <code>WBC &gt;30×10^9/L</code></li>
+<li><code>T-ALL</code> 初诊 <code>WBC &gt;100×10^9/L</code></li>
+<li>获得 <code>CR</code> 时间 <code>&gt;4~6</code> 周</li>
+<li>巩固维持期 <code>MRD</code> 持续存在或不断增加</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="all常用联合化疗方案"><a class="header" href="#all常用联合化疗方案">ALL常用联合化疗方案</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>方案</th><th>药物组成</th><th>主要不良反应</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td><code>VP</code></td><td><code>VCR + P</code></td><td>神经炎、便秘等</td><td>基本方案，可使约 <code>50%</code> 成人 <code>ALL</code> 获 <code>CR</code>，但易复发，<code>CR</code> 期约 <code>3~8</code> 个月</td></tr>
+<tr><td><code>DVP</code></td><td><code>VP + DNR</code></td><td>蒽环类心脏毒性</td><td><code>CR</code> 率约 <code>70%</code></td></tr>
+<tr><td><code>DVLP</code></td><td><code>DVP + L-ASP</code></td><td>肝功能损害、胰腺炎、凝血因子及白蛋白合成减少、过敏反应</td><td>目前推荐的 <code>ALL</code> 诱导方案</td></tr>
+<tr><td><code>DVLP+C</code></td><td><code>DVLP + CTX</code></td><td>出血性膀胱炎、脱发，偶有心肌损害</td><td>可进一步提高部分 <code>ALL</code> 的缓解率和 <code>DFS</code></td></tr>
+<tr><td><code>HD-MTX/Ara-C</code></td><td>高剂量甲氨蝶呤或阿糖胞苷</td><td>骨髓抑制、黏膜炎、肝肾损伤、高尿酸肾病</td><td>多用于诱导后巩固治疗及 <code>CNSL</code> 预防</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="aml的治疗"><a class="header" href="#aml的治疗">AML的治疗</a></h4>
+<ol>
+<li>诱导缓解治疗
+<ul>
+<li>非 <code>APL</code>
+<ul>
+<li>最常用 <code>IA/DA</code> 方案
+<ul>
+<li><code>IA</code>：去甲氧柔红霉素（<code>IDA</code>）+ 阿糖胞苷</li>
+<li><code>DA</code>：柔红霉素（<code>DNR</code>）+ 阿糖胞苷</li>
+</ul>
+</li>
+<li><code>HA</code> 方案
+<ul>
+<li>高三尖杉酯碱（<code>HHT</code>）+ 阿糖胞苷</li>
+<li><code>CR</code> 率约 <code>60%~65%</code></li>
+</ul>
+</li>
+<li><code>HAD/HAA</code>
+<ul>
+<li>在 <code>HA</code> 基础上加阿柔比星等</li>
+<li>可进一步提高 <code>CR</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>APL</code>
+<ul>
+<li>全反式维甲酸（<code>ATRA</code>）+ 蒽环类药物</li>
+<li>在此基础上加三氧化二砷（<code>ATO</code>）可缩短达到 <code>CR</code> 的时间</li>
+<li>低危、中危组及不能耐受蒽环类者可采用 <code>ATRA + ATO</code> 双诱导</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缓解后治疗
+<ul>
+<li><code>AML</code> 的 <code>CNSL</code> 发生率不到 <code>3%</code></li>
+<li>以下患者在 <code>CR</code> 后应进行脑脊液检查并至少鞘内预防用药 <code>1</code> 次
+<ul>
+<li>初诊 <code>WBC &gt;40×10^9/L</code></li>
+<li>伴髓外病变</li>
+<li><code>M4/M5</code></li>
+<li><code>t(8;21)</code> 或 <code>inv(16)</code></li>
+</ul>
+</li>
+<li><code>APL</code> 在 <code>CR</code> 后至少预防性鞘内用药 <code>3</code> 次</li>
+<li>非 <code>APL</code> 的治疗时间明显短于 <code>ALL</code></li>
+<li><code>APL</code> 获得分子学缓解后可用化疗、维甲酸及砷剂维持近 <code>2</code> 年</li>
+<li>维持期间应定期监测并维持 <code>PML-RARA</code> 融合基因阴性</li>
+</ul>
+</li>
+<li>根据危险分层选择方案
+<ul>
+<li>预后不良组首选 <code>HSCT</code></li>
+<li>预后良好组（非 <code>APL</code>）首选大剂量 <code>Ara-C</code> 为基础的化疗</li>
+<li>预后中等组可选择配型相合的异基因 <code>HSCT</code> 或大剂量 <code>Ara-C</code> 化疗</li>
+</ul>
+</li>
+<li>复发和难治 <code>AML</code>
+<ul>
+<li>采用无交叉耐药的新药联合方案</li>
+<li>采用中、大剂量阿糖胞苷联合方案</li>
+<li>可行 <code>HSCT</code></li>
+<li>可参加临床试验
+<ul>
+<li>耐药逆转剂</li>
+<li><code>FLT3</code> 抑制剂等靶向药</li>
+<li>生物治疗</li>
+</ul>
+</li>
+<li>再诱导达 <code>CR</code> 后应尽快行异基因 <code>HSCT</code></li>
+<li>复发 <code>APL</code>
+<ul>
+<li>可用 <code>ATO ± ATRA</code> 诱导</li>
+<li>若 <code>CR</code> 后融合基因转阴，可选择自体 <code>HSCT</code> 或砷剂巩固</li>
+<li>若融合基因仍阳性，考虑异基因 <code>HSCT</code> 或临床试验</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="aml常用联合化疗方案"><a class="header" href="#aml常用联合化疗方案">AML常用联合化疗方案</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>方案</th><th>药物组成</th><th>主要不良反应</th><th>备注</th></tr>
+</thead>
+<tbody>
+<tr><td><code>IA/DA</code></td><td><code>IDA/DNR + Ara-C</code></td><td>心脏毒性</td><td>最常用，尤其适用于 <code>60</code> 岁以下患者，<code>CR</code> 率约 <code>50%~80%</code></td></tr>
+<tr><td><code>HA</code></td><td><code>HHT + Ara-C</code></td><td>骨髓抑制、消化道反应</td><td><code>CR</code> 率约 <code>60%~65%</code></td></tr>
+<tr><td><code>HAD/HAA</code></td><td><code>HA</code> 基础上加阿柔比星等</td><td>消化道反应、骨髓抑制</td><td>可进一步提高 <code>CR</code></td></tr>
+<tr><td><code>ATRA + 蒽环</code></td><td>全反式维甲酸 + 蒽环类</td><td>分化综合征、头痛、颅压增高、肝损伤</td><td>作用于 <code>RARA</code>，诱导 <code>PML-RARA</code> 细胞成熟</td></tr>
+<tr><td><code>ATRA + ATO</code></td><td>全反式维甲酸 + 砷剂</td><td>肝损伤、<code>QT</code> 间期延长</td><td>砷剂作用于 <code>PML</code>，小剂量诱导分化，大剂量诱导凋亡，可缩短达 <code>CR</code> 时间</td></tr>
+</tbody>
+</table>
+</div>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第六部分：血液系统疾病/第八章：骨髓增生异常综合征.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第六部分：血液系统疾病/第十章：淋巴瘤.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第六部分：血液系统疾病/第八章：骨髓增生异常综合征.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第六部分：血液系统疾病/第十章：淋巴瘤.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第六部分：血液系统疾病/第九章：白血病.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

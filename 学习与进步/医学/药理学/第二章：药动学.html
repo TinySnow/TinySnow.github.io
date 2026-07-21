@@ -1,0 +1,967 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第二章：药动学 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第二章药动学"><a class="header" href="#第二章药动学">第二章：药动学</a></h1>
+<h2 id="一药物的体内过程"><a class="header" href="#一药物的体内过程">一、药物的体内过程</a></h2>
+<h3 id="一概述"><a class="header" href="#一概述">一）概述</a></h3>
+<ul>
+<li>药物从进入机体至离开机体，可分为四个过程，简称 ADME 系统，与膜的转运有关。
+<ul>
+<li>吸收（<u>a</u> bsorption）</li>
+<li>分布（<u>d</u> istribution）</li>
+<li>代谢（<u>m</u> etabolism）</li>
+<li>排泄（<u>e</u> xcretion）</li>
+</ul>
+</li>
+<li>转运：药物在体内通过各种生物膜的过程 -&gt; 吸收，分布，排泄</li>
+<li>转化：药物分子结构发生变化的过程 -&gt; 代谢</li>
+<li>消除：血药浓度下降 -&gt; 代谢，排泄</li>
+</ul>
+<h3 id="二药物的跨膜转运"><a class="header" href="#二药物的跨膜转运">二）药物的跨膜转运</a></h3>
+<h4 id="转运方式"><a class="header" href="#转运方式">转运方式</a></h4>
+<ul>
+<li>被动转运
+<ul>
+<li>简单扩散（脂溶性扩散）：药物在体内的主要转运方式</li>
+<li>膜孔滤过</li>
+<li>易化扩散</li>
+</ul>
+</li>
+<li>主动转运</li>
+<li>膜动转运：出胞和入胞</li>
+</ul>
+<h4 id="被动转运"><a class="header" href="#被动转运">被动转运</a></h4>
+<h5 id="简单扩散"><a class="header" href="#简单扩散">简单扩散</a></h5>
+<h6 id="概念"><a class="header" href="#概念">概念</a></h6>
+<ul>
+<li>指药物由浓度高的一侧向浓度低的一侧扩散，以浓度梯度为动力</li>
+</ul>
+<h6 id="特点"><a class="header" href="#特点">特点</a></h6>
+<ul>
+<li>不消耗能量</li>
+<li>不需要载体</li>
+<li>转运时无饱和现象</li>
+<li>不同药物同时转运时无竞争性抑制现象</li>
+<li>当膜两侧浓度达到平衡时转运即停止</li>
+</ul>
+<h6 id="影响简单扩散的药物理化性质影响跨膜转运的因素"><a class="header" href="#影响简单扩散的药物理化性质影响跨膜转运的因素">影响简单扩散的药物理化性质（影响跨膜转运的因素）</a></h6>
+<ul>
+<li>分子量：分子量小的药物易扩散</li>
+<li>溶解性：脂溶性大，极性小的物质易扩散</li>
+<li>解离性：非离子型药物可以自由穿透</li>
+<li>离子障是指离子型药物被限制在膜的一侧的现象</li>
+<li>药物的解离程度受体液 pH 值的影响
+<ul>
+<li>离子型 &lt;===&gt; 非离子型</li>
+</ul>
+</li>
+</ul>
+<h6 id="体液-ph-值对弱酸或弱碱药物的解离的影响"><a class="header" href="#体液-ph-值对弱酸或弱碱药物的解离的影响">体液 pH 值对弱酸或弱碱药物的解离的影响</a></h6>
+<ul>
+<li>pKa（解离常数）：是指解离和不解离的药物相等时，即药物解离一半时，溶液的 pH 值</li>
+<li>每一种药物都有自己的 pKa</li>
+<li>若为弱酸性药物，则：10<sup>pH-pKa</sup> = [A<sup>-</sup>] / [HA] = 解离型 / 非解离型</li>
+<li>若为弱碱性药物，则：10<sup>pKa-pH</sup> = [A<sup>-</sup>] / [HA] = 解离型 / 非解离型</li>
+<li>从公式可见，体液 pH 算数级的变化，会导致解离与不解离药物浓度差的指数级的变化，所以，pH 值微小的变动将显著影响药物的解离和转运</li>
+</ul>
+<h6 id="体液-ph-值对药物解离度的影响规律"><a class="header" href="#体液-ph-值对药物解离度的影响规律">体液 pH 值对药物解离度的影响规律</a></h6>
+<ul>
+<li>酸性药物
+<ul>
+<li>在酸性环境中解离少，容易跨膜转运。</li>
+<li>达到扩散平衡时，主要分布在碱侧。</li>
+</ul>
+</li>
+<li>碱性药物
+<ul>
+<li>在碱性环境中解离少，容易跨膜转运。</li>
+<li>达到扩散平衡时，主要分布在酸侧。</li>
+</ul>
+</li>
+<li>同性相斥，异性相吸</li>
+<li>酸酸碱碱促吸收，酸碱碱酸促排泄</li>
+</ul>
+<h5 id="主动转运"><a class="header" href="#主动转运">主动转运</a></h5>
+<ul>
+<li>需要载体，有特性和选择性</li>
+<li>消耗能量</li>
+<li>有饱和现象</li>
+<li>不同药物经同一载体转运时，有竞争性抑制现象
+<ul>
+<li>如：青霉素与丙磺舒</li>
+</ul>
+</li>
+<li>与膜两侧的浓度无关
+<ul>
+<li>主动转运可使药物集中于某一器官或组织</li>
+</ul>
+</li>
+</ul>
+<h5 id="膜动转运"><a class="header" href="#膜动转运">膜动转运</a></h5>
+<ul>
+<li>胞饮</li>
+<li>胞吐</li>
+</ul>
+<h5 id="易于跨膜转运的要求易于穿过血脑屏障胎盘屏障乳汁"><a class="header" href="#易于跨膜转运的要求易于穿过血脑屏障胎盘屏障乳汁">易于跨膜转运的要求（易于穿过血脑屏障/胎盘屏障/乳汁）</a></h5>
+<ul>
+<li>分子小</li>
+<li>脂溶性高（极性小）</li>
+<li>非离子型药物</li>
+<li>血浆蛋白结合率低</li>
+</ul>
+<h3 id="三药物的吸收和影响因素"><a class="header" href="#三药物的吸收和影响因素">三）药物的吸收和影响因素</a></h3>
+<h4 id="概述"><a class="header" href="#概述">概述</a></h4>
+<h5 id="概念-1"><a class="header" href="#概念-1">概念</a></h5>
+<ul>
+<li>药物从用药部位进入血液循环的过程</li>
+</ul>
+<h5 id="方式"><a class="header" href="#方式">方式</a></h5>
+<ul>
+<li>多数药物的吸收属于被动转运过程</li>
+</ul>
+<h5 id="意义"><a class="header" href="#意义">意义</a></h5>
+<ul>
+<li>吸收快：显效快</li>
+<li>吸收多：作用强</li>
+</ul>
+<h5 id="注意"><a class="header" href="#注意">注意</a></h5>
+<ul>
+<li>iV—不存在吸收过程</li>
+</ul>
+<h4 id="影响吸收的因素"><a class="header" href="#影响吸收的因素">影响吸收的因素</a></h4>
+<ul>
+<li>理化因素如：脂溶性、分子量</li>
+<li>给药途径（吸收途径）：吸入&gt;舌下&gt;直肠&gt;肌注&gt;皮下&gt;口服&gt;皮肤</li>
+<li>吸收环境：pH 值（酸酸碱碱促吸收）</li>
+<li>剂型：溶剂&gt;散剂&gt;片剂</li>
+</ul>
+<h4 id="消化道吸收"><a class="header" href="#消化道吸收">消化道吸收</a></h4>
+<h5 id="吸收方式"><a class="header" href="#吸收方式">吸收方式</a></h5>
+<ul>
+<li>被动转运（脂溶扩散）</li>
+</ul>
+<h5 id="口服给药"><a class="header" href="#口服给药">口服给药</a></h5>
+<ul>
+<li>主要吸收部位：小肠（面积大、血流量大、肠腔内 pH 4.8~8.2）</li>
+<li>吸收途径：肠粘膜 -&gt; 毛细血管 -&gt; 肝门静脉 -&gt; 肝静脉 -&gt; 体循环</li>
+<li>首过效应（首关效应）：口服药物在胃肠道吸收后首先进入肝门静脉系统，某些药物在通过肠黏膜及肝脏时，部分可被代谢灭活而使进入体循环的药量减少，药效降低
+<ul>
+<li>如：硝酸甘油</li>
+</ul>
+</li>
+</ul>
+<h5 id="舌下给药"><a class="header" href="#舌下给药">舌下给药</a></h5>
+<ul>
+<li>吸收途径：经口腔黏膜吸收</li>
+<li>特点：速度快，无首过效应</li>
+</ul>
+<h5 id="直肠给药"><a class="header" href="#直肠给药">直肠给药</a></h5>
+<ul>
+<li>吸收途径：经痔（上、中、下）静脉吸收入血</li>
+<li>优点
+<ul>
+<li>血流丰富，吸收快；</li>
+<li>首过消除&lt;口服（痔上静脉经肝脏入血，有首过消除）</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>吸收不规则、不完全；</li>
+<li>药物可对直肠黏膜有刺激。</li>
+</ul>
+</li>
+</ul>
+<h5 id="影响吸收的因素-1"><a class="header" href="#影响吸收的因素-1">影响吸收的因素</a></h5>
+<ul>
+<li>胃内的 pH 值（影响药物的解离，酸性药物在胃内易吸收）</li>
+<li>肠内容物多少（影响吸收面积，餐前空腹吸收好）</li>
+<li>胃排空、肠蠕动速度（影响吸收的时间）</li>
+<li>合用多潘立酮，莫沙必利等药物，吸收少；</li>
+<li>合用颠茄、6542、甲氧氯普安等，吸收多</li>
+</ul>
+<h4 id="注射给药吸收"><a class="header" href="#注射给药吸收">注射给药吸收</a></h4>
+<ul>
+<li>特点：吸收迅速、完全</li>
+<li>吸收方式：简单扩散，滤过</li>
+<li>影响因素
+<ul>
+<li>注射部位血流量越丰富吸收越快且完全；</li>
+<li>疾病状态影响注射部位血流，影响药物吸收（例子：休克）；</li>
+<li>药物剂型：水溶液吸收迅速；</li>
+<li>油剂、混悬剂等可在局部滞留，吸收慢。</li>
+</ul>
+</li>
+</ul>
+<h4 id="呼吸道吸收"><a class="header" href="#呼吸道吸收">呼吸道吸收</a></h4>
+<ul>
+<li>概念：经肺泡上皮细胞或呼吸道黏膜吸收</li>
+<li>特点：速度快（似静脉给药），无首过效应</li>
+<li>缺点：剂量难控制，药物可能对肺泡上皮有刺激性</li>
+<li>适用的物质：小分子脂溶性、挥发性药物或气体
+<ul>
+<li>如：异丙肾上腺素气雾剂、有机磷酸酯类等</li>
+</ul>
+</li>
+</ul>
+<h4 id="皮肤和黏膜吸收"><a class="header" href="#皮肤和黏膜吸收">皮肤和黏膜吸收</a></h4>
+<ul>
+<li>吸收速度：破损皮肤&gt;完整皮肤，黏膜&gt;皮肤</li>
+<li>作用：局部作用与吸收作用（透皮吸收）</li>
+<li>如：硝苯地平贴皮剂、硝酸甘油缓释贴皮剂等</li>
+<li>鼻腔给药：吸收面积大，血管丰富，吸收迅速，无首过效应，分子量 &lt;1000 吸收迅速。</li>
+</ul>
+<h3 id="四药物的分布及影响因素"><a class="header" href="#四药物的分布及影响因素">四）药物的分布及影响因素</a></h3>
+<h4 id="分布"><a class="header" href="#分布">分布</a></h4>
+<h5 id="概念-2"><a class="header" href="#概念-2">概念</a></h5>
+<ul>
+<li>药物吸收后从血液向组织器官转运的过程</li>
+<li>是药物自血浆消除的方式之一</li>
+</ul>
+<h5 id="特点-1"><a class="header" href="#特点-1">特点</a></h5>
+<ul>
+<li>药物分布不均匀，不同步</li>
+</ul>
+<h5 id="方式-1"><a class="header" href="#方式-1">方式</a></h5>
+<ul>
+<li>大多数以被动转运方式分布，如果以主动转运方式转运，则药物可集中于某一组织器官。</li>
+</ul>
+<h4 id="影响分布的因素"><a class="header" href="#影响分布的因素">影响分布的因素</a></h4>
+<ol>
+<li>与血浆蛋白结合</li>
+<li>体内特殊屏障</li>
+<li>组织亲和力</li>
+<li>局部器官血流量</li>
+<li>体液的 pH 值和药物的理化性质</li>
+</ol>
+<h4 id="与血浆蛋白结合"><a class="header" href="#与血浆蛋白结合">与血浆蛋白结合</a></h4>
+<pre><code class="language-log">       +Pr
+游离型 &lt;===&gt; 结合型
+       -Pr 
+</code></pre>
+<ul>
+<li>
+<p>游离型</p>
+<ul>
+<li>发挥药理作用</li>
+<li>跨膜转运</li>
+<li>代谢排泄</li>
+</ul>
+</li>
+<li>
+<p>结合型</p>
+<ul>
+<li>没有活性</li>
+<li>暂时的贮库</li>
+</ul>
+</li>
+<li>
+<p>血浆蛋白有</p>
+<ul>
+<li>清蛋白（白蛋白）</li>
+<li>β-球蛋白</li>
+<li>酸性白蛋白等；</li>
+</ul>
+</li>
+<li>
+<p>一般规律</p>
+<ul>
+<li>酸性药物多与白蛋白结合</li>
+<li>碱性药物多与α-糖蛋白结合；</li>
+</ul>
+</li>
+<li>
+<p>特点</p>
+<ul>
+<li>可逆性</li>
+<li>饱和性</li>
+<li>竞争性（竞争排挤，浓度增加）</li>
+</ul>
+</li>
+<li>
+<p>例子</p>
+<ul>
+<li>华法林</li>
+<li>非甾体类抗炎药</li>
+<li>磺胺类药物</li>
+<li>氯丙嗪主要与白蛋白结合</li>
+</ul>
+</li>
+</ul>
+<h4 id="体内特殊屏障"><a class="header" href="#体内特殊屏障">体内特殊屏障</a></h4>
+<h5 id="血脑屏障"><a class="header" href="#血脑屏障">血脑屏障</a></h5>
+<h6 id="概念-3"><a class="header" href="#概念-3">概念</a></h6>
+<ul>
+<li>一种选择性阻止各种物质由血液进入脑的屏障，有利于维持中枢内环境相对稳定</li>
+</ul>
+<h6 id="特点-2"><a class="header" href="#特点-2">特点</a></h6>
+<ul>
+<li>致密，通透性差</li>
+<li>分子小，脂溶性高（极性小）的物质易于通过</li>
+<li>病理状态下通透性可增加
+<ul>
+<li>例子：脑膜炎</li>
+</ul>
+</li>
+</ul>
+<h5 id="胎盘屏障"><a class="header" href="#胎盘屏障">胎盘屏障</a></h5>
+<ul>
+<li>通透性高</li>
+<li>妊娠用药禁忌</li>
+</ul>
+<h5 id="血眼屏障"><a class="header" href="#血眼屏障">血眼屏障</a></h5>
+<ul>
+<li>意义：局部给药</li>
+</ul>
+<h4 id="组织亲和力"><a class="header" href="#组织亲和力">组织亲和力</a></h4>
+<h5 id="例子"><a class="header" href="#例子">例子</a></h5>
+<ul>
+<li>碘：甲状腺</li>
+<li>四环素与钙：络合沉积于骨骼及牙齿中</li>
+<li>硫喷妥钠：脂肪组织</li>
+</ul>
+<h5 id="注意-1"><a class="header" href="#注意-1">注意</a></h5>
+<ul>
+<li>药物浓积器官不一定是作用的靶器官</li>
+</ul>
+<h4 id="局部器官血流量"><a class="header" href="#局部器官血流量">局部器官血流量</a></h4>
+<ul>
+<li>肝、肾、脑、心，这些器官血流丰富、血流量大，药物吸收后往往在这些器官迅速达到较高浓度</li>
+<li>再分布：药物从血流丰富的器官到其他组织器官的过程
+<ul>
+<li>如：硫喷妥钠</li>
+</ul>
+</li>
+</ul>
+<h4 id="体液的-ph-值和药物的理化性质"><a class="header" href="#体液的-ph-值和药物的理化性质">体液的 pH 值和药物的理化性质</a></h4>
+<ul>
+<li>弱酸性药物：主要分布在细胞外液（pH 约 7.4）</li>
+<li>弱碱性药物：在细胞内（pH 约 7.0）浓度较高
+<ul>
+<li>例子：口服碳酸氢钠抢救巴比妥类药物中毒</li>
+</ul>
+</li>
+<li>同性相斥、异性相吸</li>
+</ul>
+<h3 id="五药物的代谢"><a class="header" href="#五药物的代谢">五）药物的代谢</a></h3>
+<h4 id="基本概念"><a class="header" href="#基本概念">基本概念</a></h4>
+<ul>
+<li>代谢：是指药物在体内发生的结构变化或称生物转化</li>
+<li>代谢部位：主要是肝脏</li>
+</ul>
+<h4 id="药物代谢过程"><a class="header" href="#药物代谢过程">药物代谢过程</a></h4>
+<ul>
+<li>I 相反应：氧化、还原、水解</li>
+<li>II 相反应：结合（与葡萄糖醛酸、乙酰基、甘氨酸、硫酸等结合）</li>
+</ul>
+<h4 id="代谢的转归"><a class="header" href="#代谢的转归">代谢的转归</a></h4>
+<ul>
+<li>失活：药理活性下降或消失，极性增加，易于排出</li>
+<li>活化
+<ul>
+<li>前体激活（无活性 -&gt;有活性）</li>
+<li>代谢激活（母体和转化物均有活性）</li>
+</ul>
+</li>
+<li>仍保持活性：强度改变</li>
+</ul>
+<h4 id="药物代谢酶"><a class="header" href="#药物代谢酶">药物代谢酶</a></h4>
+<h5 id="专一性酶"><a class="header" href="#专一性酶">专一性酶</a></h5>
+<ul>
+<li>AChE</li>
+<li>COMT</li>
+<li>MAO</li>
+</ul>
+<h5 id="非专一性酶"><a class="header" href="#非专一性酶">非专一性酶</a></h5>
+<ul>
+<li>肝药酶：肝脏微粒体混合功能酶系统，主要为细胞色素 P450(CYP450)</li>
+</ul>
+<h4 id="肝药酶的特性"><a class="header" href="#肝药酶的特性">肝药酶的特性</a></h4>
+<ul>
+<li>选择性低：针对各种药物均有作用</li>
+<li>变异性较大：个体差异大、先天年龄、营养状态、机体功能状态、疾病等均可影响其含量及活性；</li>
+<li>易受外界因素影响：被“诱导”或“抑制”
+<ul>
+<li>肝药酶诱导剂：能使肝药酶数量增加，或活性提高的药物
+<ul>
+<li>例子： <strong>苯巴比妥、苯妥英钠、利福平、地塞米松、卡马西平等</strong></li>
+<li>举例：孕妇在产前两周服用苯巴比妥 60mg/天，可诱导新生儿肝微粒体酶，促进血中游离胆红素与葡萄糖醛酸结合后从胆汁排出，可用于预防新生儿的核黄痘</li>
+</ul>
+</li>
+<li>肝药酶抑制剂：能使肝药酶数量减少，或活性降低的药物
+<ul>
+<li>例子： <strong>氯霉素、红霉素、异烟肼、保泰松、西咪替丁等</strong></li>
+<li>举例：氯霉素与苯妥英钠合用，可使苯妥英钠在肝内的生物转化减慢，血药浓度升高，甚至可引起毒性反应</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>总结
+<ul>
+<li>肝药酶诱导剂（促使其它药物代谢加快）
+<ul>
+<li>酶诱导剂： <strong>二苯卡马利</strong></li>
+</ul>
+</li>
+<li>肝药酶抑制剂（促使其它药物代谢变慢 -&gt; 蓄积、中毒）
+<ul>
+<li>酶抑制剂： <strong>红绿环抱夕阳美，异乡独坐葡萄醉</strong></li>
+<li>红：红霉素（大环内酯类）</li>
+<li>绿：氯霉素</li>
+<li>环抱：环孢素（一种免疫抑制剂）</li>
+<li>夕：西米替丁</li>
+<li>异：异烟肼</li>
+<li>坐：唑类抗真菌药</li>
+<li>葡萄：葡萄柚汁</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="六药物的排泄"><a class="header" href="#六药物的排泄">六）药物的排泄</a></h3>
+<h4 id="概念-4"><a class="header" href="#概念-4">概念</a></h4>
+<ul>
+<li>排泄是指药物以原形或代谢产物经不同排泄器官排出体外的过程，是药物作用彻底清除的过程</li>
+</ul>
+<h4 id="排泄器官"><a class="header" href="#排泄器官">排泄器官</a></h4>
+<ul>
+<li>肾脏（主要）</li>
+<li>肺（挥发性药物及气体）</li>
+<li>胆汁</li>
+<li>腺体（乳腺，汗腺，唾液腺汁）</li>
+</ul>
+<h4 id="肾排泄"><a class="header" href="#肾排泄">肾排泄</a></h4>
+<h5 id="过程及影响因素"><a class="header" href="#过程及影响因素">过程及影响因素</a></h5>
+<ul>
+<li>肾小球滤过：受肾功能的影响，肾功能下降使药物排泄减慢，易引起蓄积中毒</li>
+<li>肾小管分泌（主动转运）：药物相互竞争分泌通道
+<ul>
+<li>例子：丙磺舒与青霉素</li>
+</ul>
+</li>
+<li>肾小管重吸收（被动转运）
+<ul>
+<li>受尿液 pH 与药物解离度的的影响</li>
+<li>酸酸碱碱促吸收，酸碱碱酸促排泄</li>
+</ul>
+</li>
+</ul>
+<h5 id="一些由肾小管主动分泌排泄的弱酸性药物和弱碱性药物"><a class="header" href="#一些由肾小管主动分泌排泄的弱酸性药物和弱碱性药物">一些由肾小管主动分泌排泄的弱酸性药物和弱碱性药物</a></h5>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>弱酸性药物</th><th>弱碱性药物</th></tr>
+</thead>
+<tbody>
+<tr><td>阿司匹林</td><td>吗啡</td></tr>
+<tr><td>头孢噻啶</td><td>哌替啶</td></tr>
+<tr><td>呋塞米</td><td>氨苯蝶啶</td></tr>
+<tr><td>青霉素</td><td>多巴胺</td></tr>
+<tr><td>噻嗪类利尿药</td><td></td></tr>
+<tr><td>丙磺舒</td><td></td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="胆汁排泄"><a class="header" href="#胆汁排泄">胆汁排泄</a></h4>
+<h5 id="途径"><a class="header" href="#途径">途径</a></h5>
+<ul>
+<li>肝脏 -&gt; 胆汁 -&gt; 肠腔 -&gt; 粪便</li>
+</ul>
+<h5 id="肝肠循环"><a class="header" href="#肝肠循环">肝肠循环</a></h5>
+<ul>
+<li>自胆汁排进十二指肠的结和型药物在肠中经水解后再吸收，形成肝肠循环，使药物作用时间延长</li>
+<li>药时曲线有双峰现象</li>
+<li>例子：洋地黄毒苷的肝肠循环比例 25%，T<sub>1/2</sub>：5~7 天，作用消失需 2～3 周</li>
+</ul>
+<h2 id="二药动学的基本概念及相关参数"><a class="header" href="#二药动学的基本概念及相关参数">二、药动学的基本概念及相关参数</a></h2>
+<h3 id="药物时量关系和时效关系"><a class="header" href="#药物时量关系和时效关系">药物时量关系和时效关系</a></h3>
+<h4 id="概念-5"><a class="header" href="#概念-5">概念</a></h4>
+<ul>
+<li>药物时量关系和时效关系以时间为横坐标，以药物浓度（或对数浓度）为纵坐标绘出的曲线图，为时-量曲线</li>
+</ul>
+<h4 id="峰浓度cmax和达峰时间tmax"><a class="header" href="#峰浓度cmax和达峰时间tmax">峰浓度（C<sub>max</sub>）和达峰时间（T<sub>max</sub>）</a></h4>
+<ul>
+<li>指血管外给药后药物在血浆中的最高浓度值（C<sub>max</sub>）及其出现的时间（T<sub>max</sub>）</li>
+</ul>
+<h4 id="血管外途径给药的-3-期"><a class="header" href="#血管外途径给药的-3-期">血管外途径给药的 3 期</a></h4>
+<ul>
+<li>潜伏期：用药后到开始出现疗效的一段时间</li>
+<li>持续期：药物维持有效浓度的时间，其长短与药物的吸收及消除速率有关</li>
+<li>残留期：药物降到有效浓度以下至完全清除的时间</li>
+</ul>
+<h3 id="药动学参数计算及其临床意义"><a class="header" href="#药动学参数计算及其临床意义">药动学参数计算及其临床意义</a></h3>
+<h4 id="表观分布容积vd"><a class="header" href="#表观分布容积vd">表观分布容积（V<sub>d</sub>）</a></h4>
+<h5 id="概念-6"><a class="header" href="#概念-6">概念</a></h5>
+<ul>
+<li>理论上或计算所得的表示药物占有体液容积（单位：L 或 L/kg）</li>
+</ul>
+<h5 id="公式"><a class="header" href="#公式">公式</a></h5>
+<pre><code class="language-log">       D (体内药物总量，mg)
+Vd = ---------------------
+      C0 (血浆药物浓度，mg/L)
+</code></pre>
+<h5 id="注意-2"><a class="header" href="#注意-2">注意</a></h5>
+<ul>
+<li>V<sub>d</sub> 并非药物在体内真正占有的体液容积，故称“表观”分布容积</li>
+</ul>
+<h5 id="意义-1"><a class="header" href="#意义-1">意义</a></h5>
+<ol>
+<li>可以进行血药浓度与药量的换算</li>
+<li>可以推测药物在体内的分布情况</li>
+<li>可以判断药物排泄速度</li>
+</ol>
+<h6 id="血药浓度与药量的换算"><a class="header" href="#血药浓度与药量的换算">血药浓度与药量的换算</a></h6>
+<ul>
+<li>例 1：药物 A 注射给药，已知药量为 D<sub>A</sub> 已知 Vd<sub>A</sub> ，则血药浓度 C<sub>A</sub> = D<sub>A</sub> / Vd<sub>A</sub></li>
+<li>例 2：患者药物 B 中毒，测得血药浓度为 C<sub>B</sub> ，已知 Vd<sub>B</sub> ，则药量 D<sub>B</sub> = C<sub>B</sub> x Vd<sub>B</sub></li>
+</ul>
+<h6 id="推测药物在体内的分布情况"><a class="header" href="#推测药物在体内的分布情况">推测药物在体内的分布情况</a></h6>
+<ul>
+<li>例：一体重 60kg 的人，体液总量约 42L</li>
+<li>若 V<sub>d</sub> 为 5L：药物分布于血浆中</li>
+<li>若 V<sub>d</sub> 为 10~20L：药物分布于细胞外液</li>
+<li>若 V<sub>d</sub> 为 40L：全身体液</li>
+<li>若 V<sub>d</sub> 为 100L：全身 + 于某一器官或组织中蓄积</li>
+</ul>
+<h6 id="判断药物排泄速度"><a class="header" href="#判断药物排泄速度">判断药物排泄速度</a></h6>
+<ul>
+<li>V<sub>d</sub> 越大，药物体内分布越广，排泄越慢</li>
+<li>V<sub>d</sub> 越小，药物体内分布越小，排泄越快</li>
+</ul>
+<h4 id="曲线下面积auc"><a class="header" href="#曲线下面积auc">曲线下面积（AUC）</a></h4>
+<h5 id="概念-7"><a class="header" href="#概念-7">概念</a></h5>
+<ul>
+<li>反应一次给药后一段时间药物在体内的总量</li>
+</ul>
+<h5 id="意义-2"><a class="header" href="#意义-2">意义</a></h5>
+<ul>
+<li>一次给药的 AUC 与剂量成正比</li>
+<li>剂量越大，体内药量越多，AUC 越大</li>
+<li>可反应药物吸收的程度</li>
+</ul>
+<h4 id="生物利用度f"><a class="header" href="#生物利用度f">生物利用度（F）</a></h4>
+<h5 id="概念-8"><a class="header" href="#概念-8">概念</a></h5>
+<ul>
+<li>血管外给药后其中能被吸收进入体循环的药物相对分量及速度</li>
+</ul>
+<h5 id="公式-1"><a class="header" href="#公式-1">公式</a></h5>
+<pre><code>     A (吸收入血的药量)
+F = ----------------- x 100%   【公式中的药量可以用 AUC 来表示】
+         D（给药量）
+</code></pre>
+<pre><code class="language-log">     A (吸收入血的药量)                           口服给药的 AUC
+F = ------------------ x 100%     =&gt;     F = ------------------ x 100%
+        D (给药量)                               注射给药的 AUC
+</code></pre>
+<h5 id="绝对生物利用度"><a class="header" href="#绝对生物利用度">绝对生物利用度</a></h5>
+<pre><code class="language-log">       AUC (血管外给药)
+F = -------------------- x 100%
+       AUC (血管内给药)
+</code></pre>
+<ul>
+<li>意义：评价药物吸收程度和速度</li>
+</ul>
+<h5 id="相对生物利用度"><a class="header" href="#相对生物利用度">相对生物利用度</a></h5>
+<pre><code class="language-log">       AUC (供试药)
+F' = --------------- x 100%
+       AUC (对照药)
+</code></pre>
+<ul>
+<li>意义：比较 2 种制剂的吸收情况，评价制剂质量</li>
+</ul>
+<h4 id="消除速率常数k"><a class="header" href="#消除速率常数k">消除速率常数（K）</a></h4>
+<ul>
+<li>单位时间内消除药物的分数</li>
+<li>某药物的 K 值为 0.17h<sup>-1</sup>，即每小时消除剩余量的 17%</li>
+</ul>
+<h4 id="半衰期t12"><a class="header" href="#半衰期t12">半衰期（t<sub>1/2</sub>）</a></h4>
+<ul>
+<li>血药浓度降低一半所需要的时间</li>
+</ul>
+<h4 id="清除率ci"><a class="header" href="#清除率ci">清除率（CI）</a></h4>
+<ul>
+<li>单位时间内机体能将多少容积血浆中的药物清除</li>
+<li>CI = Cl<sub>肾脏</sub> + Cl<sub>肝脏</sub> + Cl<sub>其他</sub></li>
+<li>单位：L/h 或 ml/min</li>
+<li>意义：反映肝肾功能</li>
+</ul>
+<h3 id="药物消除动力学"><a class="header" href="#药物消除动力学">药物消除动力学</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th>一级动力学消除</th><th>零级动力学消除</th></tr>
+</thead>
+<tbody>
+<tr><td>别称</td><td>线性消除，恒比消除</td><td>非线性消除，恒量消除</td></tr>
+<tr><td>定义</td><td>消除速度（单位时间消除定义药量）与当时药量成正比<br />单次给药后，经 5t<sub>1/2</sub>，药物基本消除</td><td>消除速率与血药浓度无关，而是一个固定的值</td></tr>
+<tr><td>t<sub>1/2</sub> （半衰期）</td><td>恒定，t<sub>1/2</sub> = 0.693 / K</td><td>没有固定的半衰期</td></tr>
+<tr><td>重要性</td><td>多见，是绝大多数药物在治疗量时的消除方式</td><td>少见，只有极少数药物、或当机体消除功能低下、或用药量超过机体最大消除能力的时候</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="多次给药血药浓度的特点"><a class="header" href="#多次给药血药浓度的特点">多次给药血药浓度的特点</a></h3>
+<ol>
+<li>连续给药 5 个 t<sub>1/2</sub> 后，血浆中药物浓度达到稳态浓度（C<sub>ss</sub>），又称坪值</li>
+<li>达到 C<sub>ss</sub> 时，给药速度与消除速度相等</li>
+<li>坪值（C<sub>ss</sub>）高低与单位时间内（每日）药量成正比
+<ul>
+<li>药量越大，坪值越高</li>
+<li>药量越小，坪值越低</li>
+</ul>
+</li>
+<li>血药浓度的波动幅度取决于给药间隔
+<ul>
+<li>给药间隔越小，波动越小</li>
+<li>间隔越大，波动越大</li>
+<li>如：静脉给药的血药浓度波动最小</li>
+</ul>
+</li>
+<li>单位时间内（每日）给药量不变，则坪值不变
+<ul>
+<li>给药间隔小，波动小</li>
+<li>间隔大，波动大</li>
+</ul>
+</li>
+<li>首剂加倍：是指第一次用药量是常规剂量的两倍（200%）
+<ul>
+<li>特点：可使血药浓度迅速达到坪值；</li>
+<li>例如：洋地黄毒苷半衰期为 36 个小时，达坪需一周时间</li>
+</ul>
+</li>
+</ol>
+<h3 id="房-室模型"><a class="header" href="#房-室模型">房-室模型</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/learning/medicine/pharmacology/%E6%88%BF%E5%AE%A4%E6%A8%A1%E5%9E%8B.png" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/learning/medicine/pharmacology/%E6%88%BF%E5%AE%A4%E6%A8%A1%E5%9E%8B.png" alt=""></span></label></p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/医学/药理学/第一章：绪言.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第三章：药效学.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/医学/药理学/第一章：绪言.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第三章：药效学.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/药理学/第二章：药动学.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第八章：肺癌 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第八章肺癌"><a class="header" href="#第八章肺癌">第八章：肺癌</a></h1>
+<h2 id="一概述"><a class="header" href="#一概述">一、概述</a></h2>
+<ul>
+<li>原发性支气管肺癌简称为肺癌（lung cancer），为起源于支气管粘膜或腺体的恶性肿瘤。</li>
+<li>近 30 年来发病率明显增高；</li>
+<li>死亡率为恶性肿瘤的首位。</li>
+</ul>
+<h2 id="二病因和发病机制"><a class="header" href="#二病因和发病机制">二、病因和发病机制</a></h2>
+<h3 id="一吸烟"><a class="header" href="#一吸烟">一）吸烟</a></h3>
+<ol>
+<li><strong>肺癌死亡率进行性增加的首要原因</strong></li>
+<li>烟雾易导致鳞状细胞癌与未分化小细胞癌</li>
+<li>吸烟比不吸烟患癌风险高 9-10 倍</li>
+<li>吸烟量越多、吸烟年龄越早、肺癌病死率越高。</li>
+<li>吸二手烟比正常危险 2 倍</li>
+<li>戒烟 2-15 年，危险性进行性减少</li>
+</ol>
+<h3 id="二职业致癌因子"><a class="header" href="#二职业致癌因子">二）职业致癌因子</a></h3>
+<ul>
+<li>包括石棉、砷、铬、镍、烟煤、烟草等。</li>
+<li>患癌危险性为3-30倍。</li>
+</ul>
+<h3 id="三空气污染"><a class="header" href="#三空气污染">三）空气污染</a></h3>
+<ul>
+<li>包括室内小环境和室外大环境污染</li>
+</ul>
+<h3 id="四电离辐射"><a class="header" href="#四电离辐射">四）电离辐射</a></h3>
+<h3 id="五饮食与营养"><a class="header" href="#五饮食与营养">五）饮食与营养</a></h3>
+<ul>
+<li><strong>β-胡萝卜素要多食</strong></li>
+</ul>
+<h3 id="六其他诱发因素"><a class="header" href="#六其他诱发因素">六）其他诱发因素</a></h3>
+<ul>
+<li>结核、真菌、病毒感染</li>
+</ul>
+<h3 id="七遗传和基因改变"><a class="header" href="#七遗传和基因改变">七）遗传和基因改变</a></h3>
+<ul>
+<li>相关基因有 ras 和 myc 基因家族、抑癌基因 P53、Rb、FHIT， <strong>hPMS1、hMSH2（为错配修复基因异常表达）</strong></li>
+</ul>
+<h2 id="三病理和分类"><a class="header" href="#三病理和分类">三、病理和分类</a></h2>
+<h3 id="一按解剖学分类"><a class="header" href="#一按解剖学分类">一）按解剖学分类</a></h3>
+<ul>
+<li><strong>中央型肺癌</strong> ：生长在段以上的较大支气管，靠近肺门约 <strong>占 3/4，以鳞癌和小细胞肺癌</strong> 为主。</li>
+<li><strong>周围型肺癌</strong> ：生长在段和段以下支气管，约占 <strong>1/4，以腺癌多见。</strong></li>
+</ul>
+<h3 id="二按组织病理学分类"><a class="header" href="#二按组织病理学分类">二）按组织病理学分类</a></h3>
+<ul>
+<li><strong>非小细胞肺癌（NSCLC）</strong>
+<ul>
+<li>鳞状上皮细胞癌：包括乳头状型、透明细胞型、小细胞型和基地细胞样型。</li>
+<li>腺癌：包括腺泡状腺癌、乳头状腺癌、支气管肺泡癌（或称肺泡细胞癌）、伴黏液产生的实性腺癌即 <strong>腺癌混合亚型</strong> 。</li>
+<li>大细胞癌：一种未分化癌。</li>
+<li>其他：腺鳞癌、类癌、肉瘤样癌、唾液腺型癌（腺样囊性癌、黏液表皮样癌）</li>
+</ul>
+</li>
+<li>小细胞肺癌（SCLC）：类癌、非典型类癌、小细胞癌、大细胞神经内分泌癌——（九版
+更新）</li>
+</ul>
+<h2 id="四临床表现及分期"><a class="header" href="#四临床表现及分期">四、临床表现及分期</a></h2>
+<h3 id="一原发肿瘤引起的症状"><a class="header" href="#一原发肿瘤引起的症状">一）原发肿瘤引起的症状</a></h3>
+<ol>
+<li><strong>咳嗽（早期症状）</strong> 常出现刺激性咳嗽，大多有阵发性干咳。</li>
+<li>痰血或咯血：多为中央型肺癌，可引起大咯血。</li>
+<li>气短或喘鸣：支气管狭窄、阻塞所致，中央型多见。</li>
+<li>发热：癌肿坏死——癌性发热，不受抗菌素治疗的影响。</li>
+<li>体重下降：感染、疼痛、肿瘤毒素引起消耗体质——晚期。</li>
+</ol>
+<h3 id="二肺外胸内扩展引起的症状和体征"><a class="header" href="#二肺外胸内扩展引起的症状和体征">二）肺外胸内扩展引起的症状和体征</a></h3>
+<ol>
+<li>胸痛：肿瘤侵犯胸膜或胸壁，模糊或难以描述的胸痛或钝痛。</li>
+<li>声音嘶哑：压迫或侵犯喉返神经 <strong>（多见左侧）</strong> 。</li>
+<li>吞咽困难：侵犯纵隔、压迫食管。</li>
+<li>胸水：约 10%，侵犯胸膜或阻塞肺淋巴回流。</li>
+<li>上腔静脉阻塞综合征：压迫上腔静脉，头面及上半身淤血。</li>
+<li><strong>Horner 综合征：肺上沟癌（Pancoast 癌，或肺尖癌）</strong>
+<ul>
+<li>压迫交感神经： <strong>同侧瞳孔缩小，上脸下垂，眼球内陷，额部少汗。</strong></li>
+<li>压迫臂丛神经：同侧肩关节，上肢内侧剧痛和感觉异常。</li>
+</ul>
+</li>
+</ol>
+<h3 id="三胸外转移引起的症状和体征小细胞肺癌居多"><a class="header" href="#三胸外转移引起的症状和体征小细胞肺癌居多">三）胸外转移引起的症状和体征（小细胞肺癌居多）</a></h3>
+<ul>
+<li>转移中枢神经系统：引发颅内压升高。 少数癫痫发作。</li>
+<li>转移骨骼：引起骨痛和病理性骨折。</li>
+<li>转移腹部：转移胰腺引发胰腺炎或阻塞性黄疽。也可转移到胃肠道、肾上腺和腹膜后淋巴结。</li>
+<li>转移至淋巴结： <strong>锁骨上淋巴结是常见转移部位，可毫无症状。</strong> 坚硬固定，逐渐增大、增多，可融合，无痛感。</li>
+</ul>
+<h3 id="四胸外表现指肺癌非转移性胸外表现副癌综合症"><a class="header" href="#四胸外表现指肺癌非转移性胸外表现副癌综合症">四）胸外表现：指肺癌非转移性胸外表现（副癌综合症）</a></h3>
+<ol>
+<li>肥大性肺性骨关节病：常侵犯上下肢长骨远端，表现为状指与肥大性骨关节病。</li>
+<li>异位促性腺激素：大部分是大细胞肺癌，主要表现男性乳房发育和增生性骨关节病。</li>
+<li>分泌促肾上腺皮质激素样物：小细胞肺癌引发库欣综合征。</li>
+<li>分泌抗利尿激素：引起厌食、恶心、呕吐等症状，尤其是低钠血症。</li>
+<li>神经肌肉综合征：重症肌无力、小脑性运动失调、眼球震颤以及精神改变。多见于小细胞未分化癌。</li>
+<li>高钙血症：常见于鳞癌。</li>
+<li><strong>类癌综合征</strong> ：典型特征是皮肤、心血管、胃肠道和呼吸功能异常。 <strong>与 5-羟色胺、缓激肽、儿茶酚胺等有关。</strong></li>
+</ol>
+<h3 id="五分期"><a class="header" href="#五分期">五）分期</a></h3>
+<h4 id="原发肿瘤t"><a class="header" href="#原发肿瘤t">原发肿瘤（T）</a></h4>
+<h5 id="tx"><a class="header" href="#tx">Tx</a></h5>
+<ul>
+<li>隐性癌在支气管肺分泌物中找到癌细胞，但在 X 线或纤支镜检查未发现肿瘤</li>
+</ul>
+<h5 id="t0"><a class="header" href="#t0">T0</a></h5>
+<ul>
+<li>无原发癌的证据</li>
+</ul>
+<h5 id="tis"><a class="header" href="#tis">Tis</a></h5>
+<ul>
+<li>原位癌</li>
+</ul>
+<h5 id="t1"><a class="header" href="#t1">T1</a></h5>
+<ul>
+<li>肿瘤最大直径 ≤3cm；</li>
+<li>周围包绕肺组织及脏层膜，支气管镜见肿瘤侵及叶支气管，未侵及主支气管；</li>
+<li>T1a 原发肿瘤最大径 ≤1cm；</li>
+<li>T1b 原发肿瘤最大径1-2cm；</li>
+<li>T1c &gt; 2cm-3cm</li>
+</ul>
+<h5 id="t2"><a class="header" href="#t2">T2</a></h5>
+<ul>
+<li>肿瘤直径大于 3-5cm；</li>
+<li>侵犯主支气管，但未侵及隆突；</li>
+<li>侵及脏层胸膜；</li>
+<li>有阻塞性肺炎或肺不张；</li>
+<li>T2a：直径 &gt; 3-4cm；</li>
+<li>T2b：直径 &gt;4-5cm</li>
+</ul>
+<h5 id="t3"><a class="header" href="#t3">T3</a></h5>
+<ul>
+<li>原发肿瘤最大径 &gt;5-7cm；</li>
+<li>任何大小的肿瘤侵犯下列组织：胸壁（包括肺上沟瘤）、隔肌、纵隔胸膜、心包；</li>
+<li>或合并全肺不张或阻塞性肺炎；</li>
+<li>同一肺叶出现孤立癌结节</li>
+</ul>
+<h5 id="t4"><a class="header" href="#t4">T4</a></h5>
+<ul>
+<li>原发肿瘤最大径 &gt;7cm；</li>
+<li>任何大小的肿瘤侵犯下列组织：纵隔、心脏、大血管、气管、食道、椎体、隆突；</li>
+<li>或在同侧不同肺叶中有卫星灶</li>
+</ul>
+<h4 id="淋巴结n"><a class="header" href="#淋巴结n">淋巴结（N）</a></h4>
+<ol>
+<li>Nx：无法证实区域性淋巴结的转移情况</li>
+<li>N0：无区域性淋巴结转移</li>
+<li>N1：支气管周围和（或）同侧肺门淋巴结转移或由原发瘤直接侵犯</li>
+<li>N2：同侧纵隔或隆突下淋巴结转移</li>
+<li>N3： 对侧纵隔、对侧肺门、同侧或对侧前斜角肌或锁骨上淋巴结转移</li>
+</ol>
+<h4 id="转移m"><a class="header" href="#转移m">转移（M）</a></h4>
+<ul>
+<li>Mx：无法证实是否有远处转移</li>
+<li>M0：无远处转移</li>
+<li>M1
+<ul>
+<li>M1a
+<ul>
+<li>胸膜播散（恶性胸腔积液、心包积液、胸膜结节）；</li>
+<li>原发肿瘤对侧肺叶出现卫星结节；</li>
+</ul>
+</li>
+<li>M1b
+<ul>
+<li>有远处转移（肺/胸膜外）；</li>
+</ul>
+</li>
+<li>M1c
+<ul>
+<li>多个或单个器官多处转移</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五影像学及其他检查"><a class="header" href="#五影像学及其他检查">五、影像学及其他检查</a></h2>
+<h3 id="一x-线检查"><a class="header" href="#一x-线检查">一）X 线检查</a></h3>
+<ul>
+<li><strong>中心型肺癌</strong>
+<ul>
+<li>肿瘤向外生长时——肺门不规则肿块（ <strong>肿块由癌肿及肺门淋巴结融合成</strong> ）</li>
+<li>肿瘤阻塞支气管——引流不畅致阻塞性肺炎——完全阻塞致阻塞性肺不张
+<ul>
+<li>典型征象： <strong>肺不张下缘呈倒 S 状</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>周围型肺癌</strong>
+<ul>
+<li>肺周围孤立性圆形块影。 块影常不规则呈小的分叶，边缘毛糙常有细、短的毛刺影。</li>
+<li>CT：肿瘤中心部分液化坏死，呈厚壁偏心空洞，内壁凹凸不平。</li>
+</ul>
+</li>
+<li>肺泡细胞癌：弥漫性为两肺大小不等的结节状播散病灶，边界清楚，密度较高。</li>
+</ul>
+<h3 id="二磁共振显像"><a class="header" href="#二磁共振显像">二）磁共振显像</a></h3>
+<ul>
+<li>了解小病灶较CT差，了解血管与肿瘤关系较CT好</li>
+</ul>
+<h3 id="三正电子发射计算机体层显像-pet-ct"><a class="header" href="#三正电子发射计算机体层显像-pet-ct">三）正电子发射计算机体层显像 PET-CT</a></h3>
+<ul>
+<li>对肺癌的敏感型可达95%，特异性可达90%，对于转移灶也很敏感，但对肺泡细胞癌的敏感性较差。</li>
+<li>可以反应肿瘤细胞的侵袭性及生长速度，用于肺癌及淋巴结转移的定性诊断。</li>
+</ul>
+<h3 id="四痰脱落细胞检查"><a class="header" href="#四痰脱落细胞检查">四）痰脱落细胞检查</a></h3>
+<ul>
+<li>如果收集标本的方法得当， <strong>3 次以上的系列痰标本可使中央型肺癌诊断率提高到 80%</strong> ，周围型肺癌的诊断率达 <strong>50%</strong> 。</li>
+<li>但很多因素影响其准确性，痰中混有脓性分泌物可引起恶性细胞液化，还需要病理学家的经验和细心，要尽可能仔细的对痰涂片进行全视野检查。</li>
+</ul>
+<h3 id="五支气管镜检查"><a class="header" href="#五支气管镜检查">五）支气管镜检查</a></h3>
+<ul>
+<li>可直视到支气管内新生物</li>
+<li>可明确肿瘤部位；</li>
+<li>可病理活检率达 93% 和刷检可达 92%；</li>
+<li>大于 4cm 阳性率高达 50-80%。</li>
+</ul>
+<h3 id="六针吸细胞学活检"><a class="header" href="#六针吸细胞学活检">六）针吸细胞学活检</a></h3>
+<ul>
+<li>浅表淋巴结针吸活检：主要是锁骨上淋巴结及腋窝下淋巴结活检，一般超声引导下更为准确安全。</li>
+<li><strong>经支气管镜针吸活检</strong></li>
+<li><strong>经皮针吸活检</strong></li>
+</ul>
+<h3 id="七纵隔镜检查"><a class="header" href="#七纵隔镜检查">七）纵隔镜检查</a></h3>
+<ul>
+<li>有利于肿瘤的诊断及 TNM 分期</li>
+</ul>
+<h3 id="八肿瘤标记物检查"><a class="header" href="#八肿瘤标记物检查">八）肿瘤标记物检查</a></h3>
+<ul>
+<li>目前表明癌胚抗原（CEA）、神经特异性烯醇化酶（NSE）、cyfra21-1（细胞角蛋白 19 片段）和胃泌素释放肽前体（ProGRP）联合检查时，对肺癌的诊断和某些肺癌的病情监测有一定的参考价值。</li>
+</ul>
+<h3 id="九胸腔镜检查"><a class="header" href="#九胸腔镜检查">九）胸腔镜检查</a></h3>
+<h3 id="十开胸肺活检"><a class="header" href="#十开胸肺活检">十）开胸肺活检</a></h3>
+<h2 id="六治疗"><a class="header" href="#六治疗">六、治疗</a></h2>
+<h3 id="一概述-1"><a class="header" href="#一概述-1">一）概述</a></h3>
+<ul>
+<li>治疗方案的选择主要根据肿瘤的组织学决定。</li>
+<li><strong>SCLC</strong> 发现时已转移，难以通过外科手术根治，主要依赖 化 <strong>疗或放化疗综合治疗</strong> 。</li>
+<li><strong>NSCLC</strong> 可为局限性， <strong>外科手术或放疗可根治</strong> ，但对化疗的反应较 SCLC 差。</li>
+</ul>
+<h3 id="二方案"><a class="header" href="#二方案">二）方案</a></h3>
+<h4 id="非小细胞癌"><a class="header" href="#非小细胞癌">非小细胞癌</a></h4>
+<ul>
+<li>I - IIb 期：手术为主的综合治疗；</li>
+<li>Ⅲa：如年龄、心肺功能和解剖位置合适可手术；</li>
+<li>Ⅲb：新辅助化疗+放疗的综合治疗；</li>
+<li>IV ：化疗+放疗+靶向治疗的综合治疗；</li>
+<li>常用化疗方案
+<ul>
+<li>紫杉醇+卡铂</li>
+<li>长春瑞宾+顺铂</li>
+<li>吉西他滨+顺铂</li>
+</ul>
+</li>
+</ul>
+<h4 id="小细胞癌"><a class="header" href="#小细胞癌">小细胞癌</a></h4>
+<ul>
+<li>化疗为主，辅以手术、放疗</li>
+<li>常用化疗方案：足叶乙苷+顺铂/卡铂</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第七章：肺结核.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第九章：间质性肺疾病.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第七章：肺结核.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第二部分：呼吸系统疾病/第九章：间质性肺疾病.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第二部分：呼吸系统疾病/第八章：肺癌.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

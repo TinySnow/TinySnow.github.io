@@ -1,0 +1,793 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第十章：压力与紧张 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第十章压力与紧张"><a class="header" href="#第十章压力与紧张">第十章：压力与紧张</a></h1>
+<h2 id="感知到的关系价值"><a class="header" href="#感知到的关系价值">感知到的关系价值</a></h2>
+<ul>
+<li>本章提及的压力与紧张的主要内容
+<ul>
+<li>感情创伤</li>
+<li>伴侣排斥</li>
+<li>嫉妒</li>
+<li>说谎</li>
+<li>背叛</li>
+</ul>
+</li>
+<li>负面事件的出现，表明我们得不到伴侣的爱慕和尊敬</li>
+<li>人们在感知到自己的关系价值低于期望值时就会感到苦恼和受伤</li>
+</ul>
+<h2 id="感情创伤"><a class="header" href="#感情创伤">感情创伤</a></h2>
+<ul>
+<li>当他人表现出对一个人任何程度的拒绝时，这个人对自我价值的即时评价都会降到最低点</li>
+<li>他人温和的拒绝带来的感受通常和更大程度的拒绝一样糟糕，但他人对人们接纳的减少可能影响更大</li>
+<li><strong>关系贬值</strong> 带给人的感受尤为可怕，会引起多种痛苦的情绪反应
+<ul>
+<li>关系贬值：我们感知到的关系价值减少或者他人对我们的尊重明显下降</li>
+<li>当伴侣背叛我们，我们就会感到悲哀、愤怒和受伤</li>
+<li>受伤感是一种独特的感受，与关系价值的减少有关</li>
+<li>感情创伤非常类似于身体的伤痛</li>
+<li>我们的身体反应是类似的，应对感情创伤的生理系统与应对身体疼痛的系统一样</li>
+<li>当关系贬值发生时，某些人更容易受伤</li>
+</ul>
+</li>
+<li><strong>低自尊的人比起高自尊的人更容易受到感情的伤害</strong></li>
+</ul>
+<h2 id="伴侣排斥"><a class="header" href="#伴侣排斥">伴侣排斥</a></h2>
+<ul>
+<li>此处的排斥指亲密关系中的 <strong>人际拒绝</strong></li>
+<li>排斥对人的伤害是深刻而又痛苦的
+<ul>
+<li>它威胁到人类最基本的社会需要， 使人感到屈辱</li>
+<li>面对人际拒绝，人们的情感会变得迟钝，并开始做出愚笨、自我挫败的选择</li>
+<li>一般而言，拒绝似乎会使人进入心理的倦怠状态，理性计划和缜密思考减少</li>
+<li>人们具体的反应取决于个体的哪种需要受到威胁</li>
+<li>排斥他人的行为就如同侮辱或者训斥一样使人受挫和愤怒</li>
+</ul>
+</li>
+<li>人类似乎对最轻微的社会拒绝都十分敏感</li>
+<li>排斥是非常令人讨厌的体验，<strong>其引起敌对和顺从的几率是一样的</strong>
+<ul>
+<li>高自尊的人相对不太可能容忍排斥
+<ul>
+<li>如果遭遇冷遇，高自尊的人比低自尊的人更有可能结束与排斥者的人际关系</li>
+<li>寻找能更友好相处的新伴侣</li>
+<li>可能正是因为这个原因，他们不太会遭遇沉默对待</li>
+</ul>
+</li>
+<li>低自尊的人会经历更多的排斥
+<ul>
+<li>更可能心怀怨隙、对他人报以排斥</li>
+<li>不会离开那些排斥他们的人，而会继续接近却心存恨意</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="嫉妒"><a class="header" href="#嫉妒">嫉妒</a></h2>
+<h3 id="定义"><a class="header" href="#定义">定义</a></h3>
+<ul>
+<li>嫉妒包含多种情感体验，既有悲观失落也有因伴侣具有吸引力而产生的自豪感</li>
+<li>界定妒忌最恰当的三种情感是
+<ul>
+<li>伤害</li>
+<li>愤怒</li>
+<li>恐惧</li>
+</ul>
+</li>
+</ul>
+<h3 id="嫉妒的两种类型"><a class="header" href="#嫉妒的两种类型">嫉妒的两种类型</a></h3>
+<h4 id="反应性嫉妒"><a class="header" href="#反应性嫉妒">反应性嫉妒</a></h4>
+<ul>
+<li>人们在觉察到自己所珍视的亲密关系面临实际的威胁时产生的嫉妒心理</li>
+<li>反应性嫉妒始终是针对现实的危险而产生的</li>
+</ul>
+<h4 id="怀疑性嫉妒"><a class="header" href="#怀疑性嫉妒">怀疑性嫉妒</a></h4>
+<ul>
+<li>伴侣并没有不端行为，个体只是由猜疑所引起的嫉妒</li>
+<li>产生怀疑性嫉妒的伴侣要确证自己的猜忌，就会引起疑惧不安的警惕和窥探
+<ul>
+<li>这种行为既可表现为稍微过激的臆想，又可表现为彻头彻尾的偏执</li>
+</ul>
+</li>
+</ul>
+<h4 id="注意"><a class="header" href="#注意">注意</a></h4>
+<ul>
+<li><strong>反应性嫉妒会引起以前从未出现过的怀疑性嫉妒</strong></li>
+</ul>
+<h3 id="容易嫉妒的人"><a class="header" href="#容易嫉妒的人">容易嫉妒的人</a></h3>
+<ul>
+<li>整体而言， <strong><u>男性和女性在嫉妒的倾向性上不分轩轾</u></strong></li>
+<li>在亲密关系中如果感到自身能力不足，则嫉妒会增强</li>
+<li>当前亲密关系中既感到能力不足，又依赖于亲密关系的人会面临这样一种险恶处境
+<ul>
+<li>他们需要自己的伴侣，却又担心自己不够优秀而无法留住伴侣</li>
+</ul>
+</li>
+<li>痴迷型的人比其他三种依恋类型的人会体验到更多的嫉妒</li>
+<li>人格特质也会影响嫉妒
+<ul>
+<li>高神经质的人经常会忧心忡忡，特别容易发生嫉妒</li>
+<li>随和的人倾向于与人合作、信任别人，因而不太可能会嫉妒别人</li>
+</ul>
+</li>
+<li><strong><u>传统的性别角色也使嫉妒更可能发生</u></strong></li>
+</ul>
+<h3 id="让人嫉妒的人"><a class="header" href="#让人嫉妒的人">让人嫉妒的人</a></h3>
+<ul>
+<li>有较高适配价值和使我们相形见绌的情敌对人们的亲密关系最有威胁作用、最让人担忧
+<ul>
+<li>与那些竞争力弱的人相比，他们更让我们嫉妒</li>
+</ul>
+</li>
+<li>然而，情敌通常并不如我们认为的那般吸引我们的伴侣，所以这类忧惧往往被过分夸大
+<ul>
+<li>但人们的确会犯这样的错误，夸大对手的优势，因而陷入没有根据的烦恼之中</li>
+</ul>
+</li>
+</ul>
+<h3 id="让人嫉妒的事物"><a class="header" href="#让人嫉妒的事物">让人嫉妒的事物</a></h3>
+<ul>
+<li>无法察觉伴侣不贞行为的演化成本非常之高，所以自然选择会偏利于那些对伴侣的忠贞
+特别敏感的男性</li>
+<li><strong>父系不确定</strong> 使如今男性比女性有着更多的婚外情，但在觉察伴侣欺骗的不贞问题上，男性比女性更准确</li>
+<li>自然选择可能会偏利于那些经常怀疑男性真爱表白的女性
+<ul>
+<li>坚持考证男性是否忠贞的女子繁殖得更成功</li>
+<li>因此，现代女性或许都是“极端谨慎的远古母系的后裔”，她们一般会慎重地低估其男伴的忠诚度</li>
+</ul>
+</li>
+<li>这一切的结果是，男性一想到伴侣在性事上的不贞就会激起最强烈的嫉妒，而女性对伴侣感情上的不贞反应更强烈</li>
+<li>如果不贞的配偶是女方而非男方，人们一般会认为出轨一方更可能在感情上依恋第三者</li>
+<li>当存在可能的不贞时，男性相比女性更迅速地想到正在发生的性事不贞，而女性相比男性更快速地判断正在发生的感情不贞</li>
+<li>如果出轨没有怀孕的风险则存在较大的性别差异
+<ul>
+<li>男性认为女伴与另外的男人私通比与女人私通更糟糕</li>
+<li>女性则认为自己的男人与女性或者男性私通同样可怕</li>
+</ul>
+</li>
+</ul>
+<h3 id="对嫉妒的反应"><a class="header" href="#对嫉妒的反应">对嫉妒的反应</a></h3>
+<ul>
+<li>依恋类型能决定人们应对嫉妒的行为</li>
+<li><u>男性和女性在对嫉妒的反应上通常也存在差异，这使得异性恋关系变得更加复杂</u>
+<ul>
+<li><strong>女性表示他们会设法改善亲密关系以应对情敌的侵扰</strong></li>
+<li><strong>相反，男性表示他们会努力维护自我形象</strong></li>
+<li><strong>希望通过激起自己男人的嫉妒之心来设法改善亲密关系的女性，只能事与愿违，把伴侣从身边赶跑</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="积极有效地应对嫉妒"><a class="header" href="#积极有效地应对嫉妒">积极有效地应对嫉妒</a></h3>
+<ul>
+<li>如果容易嫉妒，请考虑在社交网站（如Facebook）上少花点时间
+<ul>
+<li>人们在社交网站上花的时间越多，由此导致的嫉妒越多</li>
+</ul>
+</li>
+<li>如果嫉妒有道理，情敌也真实存在， <strong>人际专家建议我们要努力降低亲密关系排他性和自我价值观之间的关联</strong></li>
+<li>当人们成功地克服了不受欢迎的嫉妒影响时，一般会采用两个策略帮助他们保持独立和自尊
+<ul>
+<li>第一个策略是 <strong>依靠自己</strong>
+<ul>
+<li>指伴侣拒绝沉溺于不公平的情境，而努力保持“清醒”的头脑，避免产生愤怒或尴尬的情绪体验</li>
+</ul>
+</li>
+<li>第二个策略是 <strong>增强自己</strong>
+<ul>
+<li>指伴侣为自己做一些美好的事情，思考自己的优秀品质，从而提升个体的自尊</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>大多数人都不需要通过治疗来应对嫉妒</strong>
+<ul>
+<li><strong>但如果爱情关系出现下面的警示情况，则治疗对你们克服嫉妒有帮助作用：</strong></li>
+<li>
+<blockquote>
+<p><strong>警示</strong></p>
+<p><strong>不论你是否拥有自己伴侣的爱恋，如果你不能确信自己是个有价值的人，那么这很可能危及你和伴侣的健康。</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="其他"><a class="header" href="#其他">其他</a></h3>
+<ul>
+<li>美国 13% 的谋杀案都发生在配偶之间，而嫉妒是最普遍的犯罪动机</li>
+<li>羡慕和嫉妒
+<ul>
+<li>美慕的特点是谦卑地渴望得到他人所拥有的</li>
+<li>嫉妒则相反，它是一种由伤害、愤怒和恐惧交织在一起的复杂心态
+<ul>
+<li>源于担心失去自己已经拥有的事物</li>
+<li>或者自己不想放弃的亲密关系</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在全世界，大多数男性（54%）和一部分女性（34%）都曾暗中勾引过其他人的伴侣
+<ul>
+<li>五分之四的人曾至少得手过一次</li>
+<li>约有 70% 的人都曾遇到过意欲把伴侣从自己身边勾引走（最少的是一夜情）的第三者</li>
+<li>大多数男性（60%）和一半的女性都曾被第三者的甜言蜜语所打动</li>
+</ul>
+</li>
+<li>一般而言，这样的人会追求别人的伴侣
+<ul>
+<li>好色、外向</li>
+<li>随和性和尽责性都较低</li>
+<li>赞成不贞的乱交行为</li>
+<li>还往往比较自恋和操纵他人</li>
+</ul>
+</li>
+<li><strong>被第三者勾引走的人往往性感、好色和外向，开放性较高，并且不太珍视性忠贞</strong></li>
+<li>不同性别的第三者用到的勾引手段一般并不相同</li>
+<li>建立在勾引别人伴侣基础上的亲密关系一开始就不可避免地带有背叛的原罪</li>
+<li><strong><u>一旦有过不贞，人们往往会再次出轨</u></strong></li>
+</ul>
+<h2 id="欺骗和说谎"><a class="header" href="#欺骗和说谎">欺骗和说谎</a></h2>
+<h3 id="定义-1"><a class="header" href="#定义-1">定义</a></h3>
+<ul>
+<li>欺骗（deception）是故意给人造成一种印象而欺骗者知其不实的行为
+<ul>
+<li>隐瞒信息</li>
+<li>不提及能够表明真相的细节</li>
+<li>转移注意力从而忽略关键事实</li>
+<li>等等</li>
+</ul>
+</li>
+</ul>
+<h3 id="亲密关系及其说谎行为"><a class="header" href="#亲密关系及其说谎行为">亲密关系及其说谎行为</a></h3>
+<ul>
+<li>男性更可能不如实地报告他们的抱负和收入，谎称自己对感情忠诚</li>
+<li>女性更可能做出性事的许诺却不兑现，在性生活中假装愉悦而喊叫，或者假装性高潮</li>
+<li>男女两性都会为了一己之私而说谎，他们为了吸引异性尤其如此</li>
+<li>如果双方谈论的议题有一方投人巨大，残酷的坦诚会伤害对方的感情，那么人们尤其有可能歪曲事实</li>
+<li>在亲密关系中我们期望伴侣慷慨、诚实，伴侣间的谎言大多数都是这类善意的小谎</li>
+<li>一旦谈到可能损害自己名誉或亲密关系的话题，人们会说较严重的谎言，这类谎言更经常地指向自己最亲密的伴侣，而不是其他任何人
+<ul>
+<li><strong>我们更多地在亲密关系里对伴侣撒下弥天大谎，而在普通的人际关系之中则不会这样</strong></li>
+</ul>
+</li>
+<li><strong>欺骗者猜疑</strong> ：在亲密关系中说谎会损害说谎者对被欺骗伴侣的信任</li>
+<li>说谎都有损于亲密关系，即使只有说谎者一人知道自己在说谎</li>
+<li>说谎者自己认为的一个小谎在被戳穿后，在其他人看来却更具有危害性和欺骗性</li>
+</ul>
+<h3 id="谎言与说谎者"><a class="header" href="#谎言与说谎者">谎言与说谎者</a></h3>
+<ul>
+<li>常常说谎的人并不一定就是成功的说谎者</li>
+<li>非常渴望谎言能成功的人一般比对谎言成败不太在乎的人更容易让人察觉
+<ul>
+<li>尤其在人们想通过说谎给自己心仪的异性留下好印象时，往往最容易被人识破，谎言的接受者和任何旁观的人都了然于胸</li>
+<li>人们对不吸引人的对象，或者同性别的人说谎就很难察觉</li>
+</ul>
+</li>
+<li><strong><u>一般来讲，说谎者的非言语行为会出卖他们</u></strong></li>
+</ul>
+<h3 id="对伴侣欺骗行为的察觉"><a class="header" href="#对伴侣欺骗行为的察觉">对伴侣欺骗行为的察觉</a></h3>
+<ul>
+<li><strong><u>如果个体日常的行为方式发生变化，那显然说谎了</u></strong></li>
+<li><strong>事实偏见</strong> ：他们一般信任彼此（否则他们的关系就可能不太亲密），认为伴侣一般都在讲真话
+<ul>
+<li>亲密的伴侣彼此有着私人的、独特的了解，这能让他们敏感地判断彼此的行为</li>
+<li>但事实上，随着亲密关系变得更加亲密，信任也在增加，伴侣们察觉彼此欺骗的准确性却 <strong>有减无增</strong></li>
+</ul>
+</li>
+<li>每当言论要记录下来并且之后能很容易核查时，人们更不愿意说谎</li>
+<li>如果当你正在说谎时，有人总能识别你，那么他/她就很可能是你的伴侣
+<ul>
+<li><strong>但我们通常并不像自己认为的那般高明</strong> ，能正确地分辨出伴侣言语中的事实和谎言</li>
+<li>事实上，在亲密关系中许多谎言并未被当场觉察</li>
+<li>大多数人都认为自己欺骗伴侣的能力要强于伴侣识破他们的能力</li>
+</ul>
+</li>
+<li>在人们认为最有奖赏价值的亲密关系中，伴侣很少说谎，部分原因是说谎侵犯了共同期望的诚实和信任</li>
+</ul>
+<h2 id="背叛"><a class="header" href="#背叛">背叛</a></h2>
+<h3 id="定义-2"><a class="header" href="#定义-2">定义</a></h3>
+<ul>
+<li>我们信任的人做出的讨厌的、伤害人的行为，并且在情理上我们根本预期不到这种背信弃义的不端行为</li>
+</ul>
+<h3 id="注意-1"><a class="header" href="#注意-1">注意</a></h3>
+<ul>
+<li>性事不贞、感情不贞和说谎都是常见的背叛行为</li>
+<li>任何违反仁爱、忠诚、尊重和信赖等维系亲密关系准则的行为都可以视为某种程度的背叛</li>
+<li><strong>通常意义上的严重背叛行为</strong>
+<ul>
+<li><strong>揭露伴侣的秘密</strong></li>
+<li><strong>在伴侣背后说长道短</strong></li>
+<li><strong>伤人感情地冷嘲热讽</strong></li>
+<li><strong>违背重要的许诺</strong></li>
+<li><strong>不支持自己的伴侣</strong></li>
+<li><strong>在别处花费太多的时间</strong></li>
+<li><strong>完全抛弃亲密关系</strong></li>
+<li>等等</li>
+</ul>
+</li>
+<li>如今的亲密关系约有一半会发生背叛，背叛是亲密关系中经常发生的事件</li>
+<li>大多数人都会和一人以上保持亲近，当人们试图同时忠诚于数个不同的亲密关系时，竞争性需求就不可避免
+<ul>
+<li>当义务出现交叉重叠，偶尔违背某一特定的亲密关系就不可避免</li>
+</ul>
+</li>
+<li>即使人们意图良善，也完全无法承担由于亲密和相互依赖所产生的交错而又竞争的需求，这时感知到的背叛就会发生</li>
+</ul>
+<h3 id="背叛的个体差异"><a class="header" href="#背叛的个体差异">背叛的个体差异</a></h3>
+<ul>
+<li><strong><u>主修社会科学、教育学、商务和人文学科的大学生比主修物理、工程和其他理工专业的学生更多地背叛伴侣</u></strong></li>
+<li>屡次背叛别人的人一般生活悲惨、适应不良
+<ul>
+<li>背叛者倾向于愤恨不满、报复心强和猜忌多疑</li>
+<li>更容易变得心生嫉妒、愤世嫉俗</li>
+<li>有更高的几率罹患精神障碍</li>
+<li>更可能来自单亲家庭</li>
+</ul>
+</li>
+<li><strong><u>男性和女性在背叛他人的倾向性上没有差别，但在他们最经常背叛的对象上存在差异</u></strong>
+<ul>
+<li><strong><u>男性更可能背叛自己的爱侣和生意伙伴</u></strong></li>
+<li><strong><u>女性更可能背叛她们的朋友和家人</u></strong></li>
+</ul>
+</li>
+<li>个体是否特别容易背叛他人似乎取决于其在生活中扮演的角色</li>
+</ul>
+<h3 id="背叛的两面性"><a class="header" href="#背叛的两面性">背叛的两面性</a></h3>
+<ul>
+<li>人们在考虑自己的行为时很容易发生 <strong>自我服务偏差</strong></li>
+<li>背叛者认为偶尔的背叛是相对善意的表现，固然让他们感觉好受一点， 但勇敢地面对事实或许更明智：
+<ul>
+<li><strong>背叛几乎总是会给亲密关系带来负面、有时甚至是持久的影响</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="应对背叛"><a class="header" href="#应对背叛">应对背叛</a></h3>
+<ul>
+<li>
+<p>减少焦虑和更好地应对背叛</p>
+<ol>
+<li>勇敢地正视背叛而不否认它的存在</li>
+<li>以积极的眼光重新解释背叛，并把它作为促进个人成长的动力</li>
+<li>依靠朋友，寻求支持</li>
+</ol>
+</li>
+<li>
+<p><strong><u>报复心理对亲密关系特别有害</u></strong></p>
+</li>
+<li>
+<p>有时被背叛的伴侣会采取令人受到伤害的行动</p>
+<ul>
+<li>不与人交往</li>
+<li>毁坏过去的信件和礼物</li>
+<li>追求其他的亲密关系</li>
+<li>毁谤中伤自己的伴侣</li>
+</ul>
+</li>
+<li>
+<p>避免背叛恶果的实用指导</p>
+<ol>
+<li>主动承认错误比抓个现行要好得多
+<ul>
+<li>如果事情败露，厚颜无耻的谎言会加重罪行</li>
+</ul>
+</li>
+<li>应该含糊其辞，做出尽可能真实的反应，不要与事实真相抵触</li>
+<li>要巧妙地运用策略，承认那些不太严重的过错
+<ul>
+<li>这比声称自己完全清白看起来更值得相信</li>
+<li>同时又避免了承认更严重的过错可能引起的后果</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="宽恕"><a class="header" href="#宽恕">宽恕</a></h2>
+<h3 id="定义-3"><a class="header" href="#定义-3">定义</a></h3>
+<ul>
+<li>一种针对曾不公平对待你的人，放弃你的报复的决定</li>
+<li>“双方都确认了有害的行为”并且“受害的伴侣给予行为不端的对方以不应得到的宽容”</li>
+</ul>
+<h3 id="要素"><a class="header" href="#要素">要素</a></h3>
+<ol>
+<li>谦卑、真诚的道歉
+<ul>
+<li>只有诚心实意地道歉才有效</li>
+<li>最好能认识到背叛行为造成的伤害并道歉</li>
+</ul>
+</li>
+<li>受害者一方的同理心</li>
+</ol>
+<h3 id="注意-2"><a class="header" href="#注意-2">注意</a></h3>
+<ul>
+<li>如果受害者对伴侣的越轨行为总是耿耿于怀、沉思默想，沉溺于伤害，宽恕就不太可能发生</li>
+<li>置身于亲近、承诺的亲密关系中的人比起那些缺乏承诺的人更可能宽恕自己的伴侣
+<ul>
+<li>既是因为同理心更容易出现</li>
+<li>又是因为背叛者更可能道歉</li>
+</ul>
+</li>
+<li>能宽恕亲密伴侣的人能享受到更多的幸福，这是那些没有宽恕之心的人所无法企及的
+<ul>
+<li>更高的自尊</li>
+<li>更少的敌意</li>
+<li>更少的苦恼和紧张</li>
+<li>更满意的生活</li>
+</ul>
+</li>
+<li>宽恕有其局限性
+<ul>
+<li>如果伴侣偶尔有不良行为并且值得原谅，那么宽恕有益</li>
+<li><strong><u>但如果伴侣没有悔意，宽恕实际上有害，会削弱你的自尊，延缓任何问题的解决</u></strong></li>
+</ul>
+</li>
+<li><strong>在不能肯定伴侣和亲密关系是否值得维系时，请选择宽恕</strong>
+<ul>
+<li>在亲密的伴侣关系中这样做风险更大</li>
+<li>但它也可能给我们带来极为珍贵、不可替代的奖赏</li>
+</ul>
+</li>
+</ul>
+<h2 id="一些重要的人际关系科学结论"><a class="header" href="#一些重要的人际关系科学结论"><font color="red">一些重要的人际关系科学结论</font></a></h2>
+<ul>
+<li>关系贬值会引起多种痛苦的情绪反应</li>
+<li>低自尊的人比起高自尊的人更容易受到感情的伤害</li>
+<li>排斥引起敌对和顺从的几率是一样的</li>
+<li><strong>嫉妒的两种类型</strong></li>
+<li>男性和女性在嫉妒的倾向性上不分轩轾</li>
+<li><strong>传统的性别角色也使嫉妒更可能发生</strong></li>
+<li><strong>男性和女性在对嫉妒的反应上存在差异</strong>
+<ul>
+<li><strong>女性表示他们会设法改善亲密关系以应对情敌的侵扰</strong></li>
+<li><strong>相反，男性表示他们会努力维护自我形象</strong></li>
+<li><strong>希望通过激起自己男人的嫉妒之心来设法改善亲密关系的女性，只能事与愿违，把伴侣从身边赶跑</strong></li>
+</ul>
+</li>
+<li><strong>一旦有过不贞，人们往往会再次出轨</strong></li>
+<li>一般来讲，说谎者的非言语行为会出卖他们</li>
+<li>如果个体日常的行为方式发生变化，那显然说谎了</li>
+<li>我们通常并不像自己认为的那般高明，能正确地分辨出伴侣言语中的事实和谎言</li>
+<li>背叛的定义</li>
+<li><strong>男性和女性在背叛他人的倾向性上没有差别，但在他们最经常背叛的对象存上在差异</strong>
+<ul>
+<li><strong>男性更可能背叛自己的爱侣和生意伙伴</strong></li>
+<li><strong>女性更可能背叛她们的朋友和家人</strong></li>
+</ul>
+</li>
+<li><strong>报复心理对亲密关系特别有害</strong></li>
+<li><strong>但如果伴侣没有悔意，宽恕实际上有害，会削弱你的自尊，延缓任何问题的解决</strong></li>
+<li>在不能肯定伴侣和亲密关系是否值得维系时，请选择宽恕</li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/其他/亲密关系/第九章：性爱.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/其他/亲密关系/第十一章：冲突.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/其他/亲密关系/第九章：性爱.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/其他/亲密关系/第十一章：冲突.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/其他/亲密关系/第十章：压力与紧张.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

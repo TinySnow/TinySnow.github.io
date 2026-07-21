@@ -1,0 +1,544 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第八章：爱情 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第八章爱情"><a class="header" href="#第八章爱情">第八章：爱情</a></h1>
+<h2 id="爱情类型"><a class="header" href="#爱情类型">爱情类型</a></h2>
+<h3 id="爱情三角理论"><a class="header" href="#爱情三角理论">爱情三角理论</a></h3>
+<h4 id="要素"><a class="header" href="#要素">要素</a></h4>
+<ul>
+<li>亲密
+<ul>
+<li>热情、理解、沟通、支持和分享等等</li>
+</ul>
+</li>
+<li>激情
+<ul>
+<li>性的唤醒和欲望</li>
+</ul>
+</li>
+<li>承诺
+<ul>
+<li>投身于爱情和努力维护爱情的决心</li>
+</ul>
+</li>
+</ul>
+<h4 id="类型"><a class="header" href="#类型">类型</a></h4>
+<h5 id="无爱nonlove"><a class="header" href="#无爱nonlove">无爱（nonlove）</a></h5>
+<ul>
+<li>三者均缺失</li>
+<li>泛泛之交，不是朋友</li>
+</ul>
+<h5 id="喜欢liking"><a class="header" href="#喜欢liking">喜欢（liking）</a></h5>
+<ul>
+<li>只有亲密，没有激情和承诺</li>
+<li>友谊常见，不会唤起激情和共度余生的期望</li>
+</ul>
+<h5 id="迷恋infatuation"><a class="header" href="#迷恋infatuation">迷恋（infatuation）</a></h5>
+<ul>
+<li>激情强烈，没有亲密和承诺</li>
+<li>被几乎不认识的人唤起欲望</li>
+</ul>
+<h5 id="空爱empty-love"><a class="header" href="#空爱empty-love">空爱（empty love）</a></h5>
+<ul>
+<li>只有承诺，没有亲密和激情</li>
+<li>常见于激情燃尽的爱情，仅仅在一起过日子</li>
+<li>包办婚姻的第一个阶段</li>
+</ul>
+<h5 id="浪漫之爱romantic-love"><a class="header" href="#浪漫之爱romantic-love">浪漫之爱（romantic love）</a></h5>
+<ul>
+<li>强烈的亲密和激情，喜欢和迷恋的结合，承诺并不关键</li>
+</ul>
+<h5 id="相伴之爱companionate-love"><a class="header" href="#相伴之爱companionate-love">相伴之爱（companionate love）</a></h5>
+<ul>
+<li>亲密和承诺的结合</li>
+<li>双方会努力维持深刻、长期的友谊，表现出亲近、沟通、分享以及对爱情关系的巨大投入</li>
+<li>典型例子：虽然年轻的激情已经逐渐消失，但是长久而幸福的婚姻</li>
+</ul>
+<h5 id="愚昧之爱fatuous-love"><a class="header" href="#愚昧之爱fatuous-love">愚昧之爱（fatuous love）</a></h5>
+<ul>
+<li>激情和承诺的结合，但是缺失亲密</li>
+<li>常见于压倒一切的激情基础上的闪婚，彼此并不十分了解或喜欢对方</li>
+<li>很可能得不偿失</li>
+</ul>
+<h5 id="完美之爱consummate-love"><a class="header" href="#完美之爱consummate-love">完美之爱（consummate love）</a></h5>
+<ul>
+<li>三者的完美结合</li>
+<li>短时间里容易做到，但很难长久坚持（类似于减肥）</li>
+</ul>
+<h4 id="生理学的视角"><a class="header" href="#生理学的视角">生理学的视角</a></h4>
+<ul>
+<li>激情和亲密是完全不同的体验
+<ul>
+<li>调控性欲望的脑区与支配依恋情感和对爱人承诺的脑区截然不同</li>
+</ul>
+</li>
+<li>浪漫的爱情会激活止疼药影响的脑区</li>
+<li>依恋驱动的是相伴之爱，由神经肽催产素调节</li>
+</ul>
+<h4 id="注意"><a class="header" href="#注意">注意</a></h4>
+<ul>
+<li>三个组成部分会随时间发生变化</li>
+<li>最容易变化的，是激情</li>
+</ul>
+<h3 id="浪漫狂热之爱"><a class="header" href="#浪漫狂热之爱">浪漫狂热之爱</a></h3>
+<h4 id="唤醒"><a class="header" href="#唤醒">唤醒</a></h4>
+<h4 id="思维"><a class="header" href="#思维">思维</a></h4>
+<ul>
+<li>“爱情是盲目的”：人们会低估或忽视爱侣的缺点</li>
+<li>爱情能帮助人们把注意力集中在自己爱恋的伴侣身上，从而排斥其他人</li>
+<li><strong>自我延伸模型</strong>
+<ul>
+<li>伴侣给人们带来新的体验和新的社会角色</li>
+<li>爱情会使人们的自我概念得到扩展和变化</li>
+<li>人们会渐渐了解以前所不认识的自己</li>
+</ul>
+</li>
+</ul>
+<h3 id="相伴之爱"><a class="header" href="#相伴之爱">相伴之爱</a></h3>
+<ul>
+<li>相伴之爱中更容易察觉友谊的重要性，此时亲密是伴随承诺一起出现的
+<ul>
+<li>浪漫爱情下也能产生深厚的友谊</li>
+<li>但是不容易被人们察觉，此时亲密是和激情同时出现的</li>
+</ul>
+</li>
+<li>催产素或许是相伴之爱产生的生物基础
+<ul>
+<li>性高潮时会释放大量的催产素，其可能是夫妻在做爱之后会感到放松和嗜睡的原因之一</li>
+<li>血液中催产素含量高的人在与配偶讨论棘手问题时往往显得更温和和善良</li>
+<li>催产素能产生令人安宁的宽慰作用</li>
+</ul>
+</li>
+</ul>
+<h3 id="同情之爱"><a class="header" href="#同情之爱">同情之爱</a></h3>
+<ul>
+<li>定义：对伴侣的幸福进行利他主义的关心和关注</li>
+<li>同情之爱结合了亲密中的信任及理解与同情及关爱，关爱中包含同理心、无私和为爱人牺牲的意愿</li>
+<li><strong>具有同情之爱的人往往会与爱人同甘共苦，宁愿自己受苦，也不让自己亲近的人受到伤害</strong></li>
+<li>浪漫之爱是“盲目的”，但同情之爱却根源于对伴侣优点和缺点更准确的理解之上</li>
+<li>同情之爱中无私关照的核心特征可能 <strong>无价的</strong></li>
+</ul>
+<h3 id="爱恋风格"><a class="header" href="#爱恋风格">爱恋风格</a></h3>
+<h4 id="提出者"><a class="header" href="#提出者">提出者</a></h4>
+<ul>
+<li>社会学家：约翰 · 艾伦 · 李</li>
+<li>用希腊和拉丁词语描述</li>
+</ul>
+<h4 id="分类"><a class="header" href="#分类">分类</a></h4>
+<ul>
+<li>情欲之爱（eros）：强烈的肉欲色彩</li>
+<li>游戏之爱（ludus）：视爱情为没有约束的游戏，这类人反复无常，试图拥有几个伴侣</li>
+<li>友谊之爱（storge）：寻求真正的友谊</li>
+<li>狂热之爱（mania）：难以满足、占有欲强，充斥着生动的幻想和沉迷</li>
+<li>利他之爱（agape）：无偿付出、利他、无私，把爱情视为一种职责</li>
+<li>现实之爱（pragma）：冷静寻找理论上和自己最般配的伴侣</li>
+</ul>
+<h4 id="其他"><a class="header" href="#其他">其他</a></h4>
+<ul>
+<li>人们存在一种倾向性，即对爱情持有相似态度的人更容易成双配对</li>
+</ul>
+<h2 id="爱情的个体和文化差异"><a class="header" href="#爱情的个体和文化差异">爱情的个体和文化差异</a></h2>
+<h3 id="文化"><a class="header" href="#文化">文化</a></h3>
+<ul>
+<li>美国人描述坠入爱河的体验时，比中国人更强调恋人的俊美容貌和共同点</li>
+<li>中国人比美国人更提及温和的性格、别人的看法和自己的生理唤醒</li>
+</ul>
+<h3 id="依恋类型"><a class="header" href="#依恋类型">依恋类型</a></h3>
+<ul>
+<li>安全型的人性生活的次数更多，有更多的唤醒、更大的愉悦、更多次数的高潮以及更大的满足</li>
+<li>依恋类型强烈而持久的影响表明人们不仅会拥有不同类型的爱情，而且还会拥有不同类型的爱人</li>
+</ul>
+<h3 id="年龄"><a class="header" href="#年龄">年龄</a></h3>
+<h3 id="性别"><a class="header" href="#性别">性别</a></h3>
+<ul>
+<li><strong>男性和女性在爱情方面的共同点多于不同点</strong>
+<ul>
+<li>男性一般比女性更为疏离，但差异相当小</li>
+<li>女性体验到的情感比男性更强烈、更多变</li>
+<li>认为男性和女性来自不同的星球，<strong>是十分愚蠢的</strong></li>
+</ul>
+</li>
+<li>女性在爱情方面比男性更为谨慎</li>
+<li>女性对爱恋的对象更为挑剔，更迟缓地感受到激情，她们将爱慕之情限制在适配价值更高的伴侣身上</li>
+<li>激情与男性关系的满意程度有着很高的关联</li>
+<li>承诺是预测女性满意度的最好成分</li>
+</ul>
+<h2 id="关于爱情的持久性"><a class="header" href="#关于爱情的持久性">关于爱情的持久性</a></h2>
+<h3 id="浪漫爱情为何难以持久"><a class="header" href="#浪漫爱情为何难以持久">浪漫爱情为何难以持久</a></h3>
+<ul>
+<li>浪漫爱情很难一直持续下去，至少达不到伴侣们所期望的程度</li>
+<li>从全世界范围来看，<strong>婚姻后的第四年是离婚最频繁的时间段</strong></li>
+<li>柯立芝效应
+<ul>
+<li>新奇对性唤醒的影响</li>
+<li>新奇能为新确立的爱情注入兴奋和能量</li>
+</ul>
+</li>
+<li>可以认为，“浪漫因新奇、神秘和危险而繁盛；因了解熟识而消亡，持久的浪漫只不过是自相矛盾的说辞”</li>
+<li>爱情的激情成分会比亲密和承诺更快地发生变化</li>
+</ul>
+<h3 id="爱情的未来"><a class="header" href="#爱情的未来">爱情的未来</a></h3>
+<ul>
+<li>通常，促使人们结婚的爱情和使人们数十年厮守在一起的爱情并不一样</li>
+<li>虽然相伴之爱并不依赖于激情，但深处相伴之爱的人仍会感到非常满足</li>
+<li>厌倦是爱恋和满意的对立面，所以厌倦的出现是非常糟糕的信号</li>
+<li>如果不再有新奇，就去创造更多的新奇</li>
+<li>不要停止寻找新颖、吸引人的共同娱乐的好方法</li>
+</ul>
+<h3 id="最好的爱情策略"><a class="header" href="#最好的爱情策略"><font color="red">最好的爱情策略</font></a></h3>
+<ul>
+<li>享受激情，但不要把它作为维持爱情关系的基础</li>
+<li>培养与爱人之间的友谊</li>
+<li>努力保持新鲜感，把握每一个与配偶共同进行新奇探索的机会</li>
+<li>如果对爱人急迫的欲望渐渐演变为平静而深厚的情感，请不要觉得奇怪或者失望</li>
+<li>这种幸福的结果可能会使你成为幸运的爱人</li>
+</ul>
+<h2 id="一些重要的人际关系科学结论"><a class="header" href="#一些重要的人际关系科学结论"><font color="red">一些重要的人际关系科学结论</font></a></h2>
+<ul>
+<li><strong>爱情三角理论</strong></li>
+<li>浪漫的爱情会激活止疼药影响的脑区</li>
+<li>激情很容易随时间消退</li>
+<li><strong>自我延伸模型</strong></li>
+<li>对爱情持有相似态度的人更容易成双配对</li>
+<li><strong>男性和女性在爱情方面的共同点多于不同点</strong></li>
+<li>浪漫爱情很难一直持续下去，至少达不到伴侣们所期望的程度</li>
+<li>从全世界范围来看，<strong>婚姻后的第四年是离婚最频繁的时间段</strong></li>
+<li>“浪漫因新奇、神秘和危险而繁盛；因了解熟识而消亡，持久的浪漫只不过是自相矛盾的说辞”</li>
+<li>厌倦是爱恋和满意的对立面，所以厌倦的出现是非常糟糕的信号</li>
+<li><strong>最好的爱情策略</strong></li>
+</ul>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/其他/亲密关系/第七章：友谊.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/其他/亲密关系/第九章：性爱.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/其他/亲密关系/第七章：友谊.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/其他/亲密关系/第九章：性爱.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/其他/亲密关系/第八章：爱情.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

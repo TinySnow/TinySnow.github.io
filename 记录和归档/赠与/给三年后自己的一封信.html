@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>给三年后自己的一封信 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="给三年后自己的一封信"><a class="header" href="#给三年后自己的一封信">给三年后自己的一封信</a></h1>
+<p>　　敬南国微雪：</p>
+<p>　　贵安。别来无恙。</p>
+<p>　　其实我不知道是两年还是三年，因为我初衷，是写给大学毕业后，即将步入社会的你。掐指一算，好像是三年。遂撕掉了原来那个错误的标题。</p>
+<p>　　到目前， 2020 年已经只剩一个月了。不知道你是否还能回忆起 2020 年那些让人惊心动魄的事情。这一年山山海海的事情是真的数不清。为了避免将这封信写成年度总结一样的东西，我想可以直接告诉你结论：到目前为止，短短一年多的时间，大学生活已经造成了许多的影响，有好有坏，其范围和深度远超离于高中和初中之和。我不知道这是否是正常的，是很普通的人生轨迹，还是说有些影响已经一生镌在性格之中了，只是我不知道。所以我很好奇，三年之后，这样漫长的一个时间，你又会变得怎样。我猜那时候你已经开始工作了，那时候的你又会开始一段新的征程，再对自己的性格造成一些影响，甚至说重塑吗？很好奇，渴望知道，但又有些害怕。至于为什么会害怕，我稍后会说给你听。</p>
+<p>　　现在，我只是，将我可能并不会实现的期待、对自己模模糊糊的认知、一些闪闪发光的重要之物，和值得敛进抽屉的大事，尽我能做到的全部力气，说给你。以便于你日后将这几页纸翻出来查看时，能有个确凿的证据。证明你自己，或是我自己，确实发生了某些改变，抑或没有。至于是喜是忧，权交予你自己评判，我无需关心。毕竟，当你再看时，这都已是过去而无关紧要了。</p>
+<p>　　大学里的变化，首先无论怎样都绕不开眼的，就是性格。</p>
+<p>　　这一部分我可能会以很长的篇幅叙述。语气可能也会类似于之前那封一样，比较严肃，还请做好心理准备。</p>
+<p>　　第一就是变得更加敏感多虑。</p>
+<p>　　我隐隐地记得，我高中时都不会有这么多的想法，但却可以察觉到，那时候已经慢慢形成了自己的价值观和思维定势（虽说这是一个贬义词）。大学相比高中考虑得更多，也常常因此会把自己困扰住，迈不出去那一步。臻至此，我甚至可以称其为庸人自扰。而这个现象导致了我常常与焦虑捆绑在一起。脑内经常做出各种对于前程的夸张而糟糕的妄想，却迟迟迈不出行动，跟被迫害妄想症有得一拼。最严重，尤为记得是在疫情期间，上网课那时候，又适逢工作室考核，身边又没有同级或同等水平的人供我做一个努力参考。每天都过得身心俱疲。明明在家里什么事情都没干，却被夺了一身活力。那时候坐在电脑前，二倍速，每天看三到四个小时的 Vue.js 网课，却仍觉得自己不够努力。现在想来，难怪疲倦，勉强自己却还不自知。可能资本家比较喜欢我这样的人吧。</p>
+<p>　　说实在的，这敏感而焦虑的头号个性，曾给我带来很多困扰。我会比别人多出一些常人以外的感性、看法和结论。诚然，它有时会给予更独到或是更宽广的视野，但更多的，赠予我的大多是一些没有什么意义的感受，并且有概率使自己陷入情感漩涡而不能自拔。我至今都不知道怎样与它相处。或许你会有答案，或许我一辈子都找不到答案。谁知道呢。我无数次地想要强压这种感觉，比如深夜自责白天哪句话有没有对别人造成不舒服的感觉这种白痴的无聊想法，但最终发现我做不到。也就慢慢地妥协和好了。我还可以改变自己的想法。毕竟，我也不是没有受到过它的恩惠。</p>
+<p>　　温柔，大概算是其中之一吧。因为有更敏感的内心，所以能注意到更微小的情绪波动。在语气不对劲的时候，及时调整方向或改变措辞。我并不讨厌自己的这种性格，甚至可以说，很喜欢。其实往坏里发展和想象，可以说是圆滑世故八面玲珑。但我并不想这样。我想要的只是将这种被人温柔对待和温柔待人的温暖，分享和传递出去。假使有一个人受到我的影响也好，足以证明我没有白走这一遭。愿景很美好，但问题也依然严峻。更多的人似乎将我的温和，签上日常和好欺负的贴条，得寸进尺是常有之事。或许这就是人性吧。我一直很犹豫要不要将这份温和继续保持下去。不过可能这份踌躇并没有用，因为并没有习惯处理保持尖锐所带来的感觉和后事，就姑且维持下去，这种可能性对自己来讲会更大一些；二来可能是自己观点的偏激。动漫上有许多男主角除了温柔一无是处，害怕自己也成为那样。毕竟，每个人都想要自己是被优待的那一个。温柔多了，也就不值钱了。每个人都会觉得那是理应且理所当然的，自己应得。久而久之就带来了第一点的问题，并且使自己沦为工具人的境地：无限制地被索取好意，到头来却无人理睬。现在的动漫对于温柔的定义，多半带有负面的评价或是嘲弄的语意。是世界变了，还是我变了？我想我永远也找不到答案；最后便是限度的问题。我总把握不好温柔与懦弱的界限。可能有时候对外是温柔，却只有自己深知只是自己懦弱无能罢了。所以我时常怀疑自己是否真的具有温柔这种能力，还是说自己已经迷失到了没了棱角的平庸和懦弱，只会自己压抑和欺负自己而已。</p>
+<p>　　第二，该解决的缺陷依然留在那里：自信力、自爱、解压和放过自己。</p>
+<p>　　现在深知自爱也是一种能力，这一年多，我觉得自己从来就没有真正意义上地放过自己。后两者在很多时候都是相伴而行，我却从未理睬过它们。哪怕一眼。我不知道自己总结的这些缺陷，是否有过分解读的倾向，但我敢保证，这些是绝对存在的。至于自信力，我觉得还是在部分方面，对于自己的认知不足所导致的。或许也有一些多虑的原因——总是尽可能地考虑后果，并竭尽全力想齐，却总是出现意外情况，导致自己不敢打包票。在一次一次的重演中，开始自闭并怀疑自己的能力。以上综合导致了这个局面。自己对于自己的认知，在某些奇怪的方面超乎寻常的多，却在有些方面知之寥寥。觉得自己很搞笑。</p>
+<p>　　第三，是很早察觉到，却最近才弄清楚的诡异之处——害怕深交。</p>
+<p>　　越是亲密的关系，越是害怕。并不是害怕社交和与人接近，而是害怕离去。随着交往的时间增长，深交之人在心里的重要程度，会随之水涨船高。我觉得和我这样奇怪且麻烦的人交往这么长时间，本就是一件很辛苦的事情。并且时间越长，这份花时间去了解一个人的成本会逐渐增值并且闪闪发光。包括一起经历的事情，聊过的天，都会使它变得愈加晶莹透亮。让离去的成本变得更加高昂。我经不起在感情世界这样昂贵的打击。交往越深，不安越明显。强烈的不安会使自己不停向对方确认自己的重要性，以使自己获得别人也经不起自己离开这种打击所折射出的虚假安全感。我自己也知道交往这么深了，没有谁会抽身离开。但万一自己哪天踩了无法挽回的雷区呢？明白是一回事，但终归还是会怕的。</p>
+<p>　　第四，我似乎……变得更色情了……</p>
+<p>　　讲真的，高中及以前没有现在这么色情的。现在我觉得自己色到，担心未来的女朋友能不能经得起自己折磨了。但是现在这种程度也不是不能忍受，万一遇到一个比我还色的女孩子，那可能我就要遭殃了。毕竟我还只是嘴上说说比较多，只要到上的时候指不定自己有多怂呢。依我这改不了的性子，真要比较激烈的时候，估计自己又会担心起女孩子的疼痛感和身体状况，然后主观或被迫中止了。改不了了。认命吧。</p>
+<p>　　但上述这一切，都建立在我有女朋友的情况下。但其实自己觉得，不会有女孩儿喜欢我这种性格的男孩子的。自己呢，能跟她们做好朋友就已经很满足了。也就不奢望什么了。一直觉得自己这种容易满足，有时是一个优点，有时又显得有些可怜。</p>
+<p>　　性格这个东西，初中是有意识，高中也了解，大学了依旧是这样，差不多是已经定型了。真要改可能会狠下一番苦力气。我不知道你那时候有没有这样的勇气。但大学里可能并不会对性格造成多大影响，工作了倒有可能，毕竟那时候新阶段，且时间长。但那时候又会有新的信了，一切等那时候再说吧。现在论这些没有意义。</p>
+<p>　　性格之下，接踵而来的，便是未来，也即工作。</p>
+<p>　　前封信里，那时候的自己坚定地说要考计算机。现在如愿以偿了。算是一大喜事。然而事到如今了，自己却开始反思自己是否真的喜欢计算机了。对于它，我确实保持有好奇心，但总感觉不太够用，因为这是对所有未知的常态体验。而真正热爱所达到的驱动力，却远比这个要高。到了大学仍不知道自己想要什么，听起来似乎很滑稽。想来那时候会有这种笃定的信念，约莫是受哥哥影响以及自己把它抽象成一个符号了之故。不过也还好自己仍保有好奇，并且这行业迭代快，总有新事物去了解，倒也还过得滋润。暂且就这样，一步一步地走下去吧。你都已经工作了，不知道你对此又会怎么想呢？真是好生期待啊。</p>
+<p>　　对于继工作之后的闲暇之谈，我总觉得有些难以言尽。</p>
+<p>　　我想，原因大抵是有的：一是我正在慢慢丧失对生活的感召力；二是自己对于某些事物的热爱，正在逐渐消褪而趋于平常。其中最典型的，大概就是舞蹈了。现在仍会去跳舞，并且依旧会很开心，但时间是不如以往多了。像是过了热恋期而进入平淡期的恋人。对于那种对待伴侣不好的自己，自己也很难接受，却是可能会发生的事情，虽说直到现在我都无法想象。我想自己应该还是喜欢舞蹈的，但可能没有以前那么热爱了。然而我能感受到身体内还残有一丝火苗，只等它再次被点燃后疯狂。至于对生活的感召力，可能是在慢慢缩小了。有时候生活中的小美好，自己可能有些已经习以为常了。但不想要这样。我还是想要一点点地观察那些在微小跃动着的瞬间。一轮夕阳、花朵上的露水、奔跑的人影、收到的小零食，这些都值得被记录和记住。或许传播这些，才是我的意义。作为一个创作者，真正想做且应该做的意义。</p>
+<p>　　我不知道你闲余时间还会不会去学习和创作，至少对于我现在，我是什么都想学。创作类的技能，想多领悟一些，以期更好表达我预期表达的想法。希望那时候你仍有这份精力，想法而保有好奇。如是这样，我便再开心不过了。至于学没学会，工作年限那么长，相信缓慢的进步终究会绽开漂亮的作品。有趣的灵魂是永远不会老的，我一直这样坚信着。</p>
+<p>　　我一路上都受了很多人的帮助。不知怎么去言说，也不知道要说些什么。只能吞吞吐吐地写一些宝贵珍重之物。虽说写在这里可能有些晚了，但细一想并没有经过多久，却觉得像陈年旧情。这大概也算是一大幸事吧。</p>
+<p>　　而那些令我害怕的深交之人，大概就是我最珍贵的东西了。珍，一直交流就没有断过；骆，虽然平时不怎么说话，但能看见他欠打的脸就很安稳了；昆和庠他们，虽然有时会给人造成很多困扰，但室友一起打闹的气氛让人非常安心；以及在 TG 上认识的某傻、变态蓝、芋頭、卖弱喵、二货穗、枫喵等等很多人，都是我重要生活组成的一部分。每当我情绪崩溃的时候，总能看见他们还在我身边。</p>
+<p>　　很温暖。</p>
+<p>　　我至今不知道自己对他们的意义，或许在他们眼里，我只是他们不小心闯入的某个小世界的主人，根本不重要，亦或我影响了他们的生活，对他们很重要，但这时候显得并不关键。我只用知道，他们对我很重要。我想要回馈他们。</p>
+<p>　　这一年也发生了许多。进了工作室，遭遇诈骗，收到了许多信，很多很多。有好有坏。不可否认，坏的那些也构筑了我的生活，让我体验了以前不会去体验的事情。有好就会有坏，所以我并不后悔。</p>
+<p>　　我只希望在这时候，这三年后的你，带上我未知而你拥有的后半大学体验，连带我感受过的前半经历，好好清点下这不长也不短的人生四年。然后扔进回忆箱子里封存。头也不回地轻装上阵，去感受下一阶段的人生体验。</p>
+<p>　　等到你也需要封存新一片回忆的时候，再把这四年拿出来，掸去灰尘，洗净，放在太阳下，看它缓缓地闪闪发光，散出七彩的芒。如此这般，我也就心满意足了。</p>
+<p>　　对于前路一片未知的我，也作为过去的你，只能虔诚地祝愿你在接下来的时光里，慢慢长成一个温柔的大男孩。历经百态却依旧热爱生活，温和待人。</p>
+<p>　　然后，</p>
+<p>　　祝你一路顺风。</p>
+<br />
+<p>　　此致</p>
+<br />
+<p>祝：</p>
+<p>　　怜花惜落</p>
+<p>　　笑容常绽</p>
+<p>　　百态尽愿</p>
+<p>　　温柔如水</p>
+<br />
+<p>　　南国微雪</p>
+<p>　　2020 年 12 月 1 日</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../记录和归档/赠与/频道千人感谢祭.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../记录和归档/赠与/致两年前自己的回信.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../记录和归档/赠与/频道千人感谢祭.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../记录和归档/赠与/致两年前自己的回信.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "记录和归档/赠与/给三年后自己的一封信.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

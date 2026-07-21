@@ -1,0 +1,605 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第五章：尿路感染 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第五章尿路感染"><a class="header" href="#第五章尿路感染">第五章：尿路感染</a></h1>
+<h2 id="一考试大纲"><a class="header" href="#一考试大纲">一、考试大纲</a></h2>
+<ol>
+<li>病因和发病机制</li>
+<li>临床表现</li>
+<li>实验室和其他检查</li>
+<li>诊断</li>
+<li>鉴别诊断</li>
+<li>治疗</li>
+</ol>
+<h2 id="二概述"><a class="header" href="#二概述">二、概述</a></h2>
+<h3 id="一定义"><a class="header" href="#一定义">一）定义</a></h3>
+<ul>
+<li>尿路感染是指病原体在尿路中 <strong>生长、繁殖</strong> 而引起的感染性疾病</li>
+<li>病原体可包括细菌、真菌、支原体、衣原体、病毒等</li>
+</ul>
+<h3 id="二按感染部位分类"><a class="header" href="#二按感染部位分类">二）按感染部位分类</a></h3>
+<ul>
+<li>上尿路感染：<strong>肾盂肾炎</strong></li>
+<li>下尿路感染：<strong>膀胱炎</strong></li>
+</ul>
+<h3 id="三按基础疾病分类"><a class="header" href="#三按基础疾病分类">三）按基础疾病分类</a></h3>
+<ul>
+<li>复杂性尿路感染：有尿路功能性或结构性异常，或存在免疫低下</li>
+<li>非复杂性（单纯性）尿路感染：以膀胱炎多见，女性多见</li>
+<li>反复发作性尿感：指 <code>1</code> 年内发作至少 <code>3</code> 次，或 <code>6</code> 个月内发作至少 <code>2</code> 次</li>
+</ul>
+<h3 id="四复杂性尿路感染常见原因"><a class="header" href="#四复杂性尿路感染常见原因">四）复杂性尿路感染常见原因</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20260531132914495.png" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/learning/medicine/internal-medicine/20260531132914495.png" alt=""></span></label></p>
+<h2 id="三病因及发病机制"><a class="header" href="#三病因及发病机制">三、病因及发病机制</a></h2>
+<h3 id="一常见致病菌"><a class="header" href="#一常见致病菌">一）常见致病菌</a></h3>
+<ul>
+<li>最常见为 <strong>G-杆菌</strong></li>
+<li><strong>大肠杆菌最常见，约占非复杂性尿路感染的 <code>75%~90%</code></strong></li>
+</ul>
+<h3 id="二不同致病菌特点"><a class="header" href="#二不同致病菌特点">二）不同致病菌特点</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>致病菌</th><th>常见情况或特点</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>大肠埃希菌</strong></td><td><strong>无症状性细菌尿、非复杂性尿路感染或首次发生的尿路感染最常见</strong></td></tr>
+<tr><td>肠球菌、克雷伯杆菌</td><td>多见于医院内感染、复杂性或复发性尿路感染</td></tr>
+<tr><td><strong>变形杆菌</strong></td><td><strong>常见于伴有尿路结石者</strong></td></tr>
+<tr><td><strong>金黄色葡萄球菌</strong></td><td><strong>多见于血源性尿路感染</strong></td></tr>
+<tr><td><strong>铜绿假单胞菌</strong></td><td><strong>多见于尿路器械检查或介入后发生的尿路感染</strong></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="三感染途径"><a class="header" href="#三感染途径">三）感染途径</a></h3>
+<ul>
+<li>上行感染（逆行感染）：<strong>最常见</strong>，约占 <code>95%</code></li>
+<li>血行感染：见于慢性疾病、免疫抑制治疗等情况</li>
+<li>淋巴管感染</li>
+<li>直接感染</li>
+</ul>
+<h3 id="四尿路防御功能"><a class="header" href="#四尿路防御功能">四）尿路防御功能</a></h3>
+<ol>
+<li>排尿的冲刷作用</li>
+<li>尿道和膀胱黏膜的抗菌能力</li>
+<li>尿液中高浓度尿素、高渗透压和低 <code>pH</code> 等抑菌作用</li>
+<li>前列腺分泌物中含有抗菌成分</li>
+<li>感染后白细胞在膀胱上皮和尿液中清除细菌</li>
+<li>输尿管膀胱连接处活瓣可防止尿液和细菌逆流进入输尿管</li>
+<li>女性阴道乳酸杆菌菌群可限制致病病原体繁殖</li>
+</ol>
+<h3 id="五易感因素"><a class="header" href="#五易感因素">五）易感因素</a></h3>
+<ol>
+<li>尿路梗阻</li>
+<li>膀胱输尿管返流</li>
+<li>机体免疫力低下</li>
+<li>神经源性膀胱</li>
+<li>妊娠</li>
+<li>性别和性生活</li>
+<li>泌尿系统结构异常</li>
+<li>遗传因素</li>
+<li>医源性因素：导尿管留置 <code>1</code> 天感染发生率约 <code>50%</code>，<code>3</code> 天可达 <code>90%</code> 以上</li>
+</ol>
+<h3 id="六细菌的致病力"><a class="header" href="#六细菌的致病力">六）细菌的致病力</a></h3>
+<ol>
+<li>细菌致病力是 <strong>决定能否引起尿感</strong> ，以及形成 <strong>症状性尿感</strong> 、无症状性尿感、 <strong>膀胱炎或肾盂肾炎</strong> 的重要因素</li>
+<li>并非所有大肠埃希菌都能引起症状性尿路感染</li>
+<li>致病性大肠埃希菌可产生溶血素、铁载体等物质，从而抵抗机体杀菌作用</li>
+</ol>
+<h2 id="四临床表现"><a class="header" href="#四临床表现">四、临床表现</a></h2>
+<h3 id="一不同类型尿路感染临床特点"><a class="header" href="#一不同类型尿路感染临床特点">一）不同类型尿路感染临床特点</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>项目</th><th>膀胱炎</th><th>急性肾盂肾炎</th><th>慢性肾盂肾炎</th><th>无症状菌尿</th><th>复杂性尿感</th></tr>
+</thead>
+<tbody>
+<tr><td>起病或病程</td><td>急性</td><td>急性</td><td>迁延，可急性发作</td><td>无症状</td><td>多样</td></tr>
+<tr><td>尿路刺激征</td><td><strong>明显</strong></td><td>部分不典型</td><td>不典型</td><td>无</td><td>轻到重</td></tr>
+<tr><td>全身症状</td><td><strong>一般无</strong></td><td><strong>常有</strong></td><td>不典型</td><td>无</td><td>可出现</td></tr>
+<tr><td>常见致病菌</td><td>大肠杆菌</td><td>大肠杆菌</td><td>大肠杆菌</td><td>大肠杆菌</td><td>根据病因不同而异</td></tr>
+<tr><td>肾脏损害</td><td><strong>无</strong></td><td><strong>先小管后小球</strong></td><td>小管持续损害</td><td>无</td><td>可有</td></tr>
+<tr><td>尿液变化</td><td>尿液浑浊， <strong>可有约 <code>30%</code> 血尿</strong></td><td><strong>白细胞管型血尿、尿蛋白（小管性）</strong></td><td>夜尿多、<strong>低比重尿</strong></td><td>无或白细胞增多，<strong>培养示真性菌尿</strong></td><td>多样</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="五并发症"><a class="header" href="#五并发症">五、并发症</a></h2>
+<h3 id="一肾乳头坏死"><a class="header" href="#一肾乳头坏死">一）肾乳头坏死</a></h3>
+<ul>
+<li>多发生于伴有糖尿病或尿路梗阻的肾盂肾炎</li>
+<li>临床可表现为 <strong>高热、剧烈腰痛、血尿，甚至败血症和急性肾衰竭</strong></li>
+</ul>
+<h3 id="二肾周围脓肿"><a class="header" href="#二肾周围脓肿"><strong>二）肾周围脓肿</strong></a></h3>
+<ul>
+<li>表现为原有症状加重</li>
+<li><strong>单侧腰痛明显</strong></li>
+<li><strong>向健侧弯腰时疼痛加剧</strong></li>
+</ul>
+<h2 id="六辅助检查"><a class="header" href="#六辅助检查">六、辅助检查</a></h2>
+<h3 id="一尿液检查"><a class="header" href="#一尿液检查">一）尿液检查</a></h3>
+<h4 id="常规检查"><a class="header" href="#常规检查">常规检查</a></h4>
+<ul>
+<li>血尿：镜下血尿每高倍视野红细胞 <code>&gt;3</code> 个，或 <code>&gt;10万/h</code>，或 <code>&gt;50万/12h</code></li>
+<li>白细胞尿：每高倍视野白细胞 <code>&gt;5</code> 个，或 <code>&gt;40万/h</code>，或 <code>&gt;100万/12h</code></li>
+<li>白细胞管型：提示 <strong>肾盂肾炎</strong></li>
+<li>白细胞排泄率：留取 <code>3</code> 小时尿液，正常人计数 <code>&lt;2×10^5/h</code>，<code>&gt;3×10^5/h</code> 为阳性</li>
+</ul>
+<h3 id="二细菌性检查"><a class="header" href="#二细菌性检查">二）细菌性检查</a></h3>
+<ol>
+<li>涂片细菌检查：平均每个视野 <code>1</code> 个或以上细菌，检出率可达 <code>80%~90%</code></li>
+<li>细菌培养：清洁中段尿、导尿尿及膀胱穿刺尿培养，菌落数 <code>&gt;10^5 CFU/ml</code></li>
+<li>无尿感症状者：两次中段尿培养菌落数均 <code>&gt;10^5 CFU/ml</code>，且为同一菌种</li>
+<li>典型膀胱炎症状妇女：中段尿培养菌数 <code>&gt;10^2 CFU/ml</code></li>
+<li>真性菌尿：耻骨上膀胱穿刺尿细菌定性培养有细菌生长</li>
+</ol>
+<h3 id="三尿细菌定量培养的干扰因素"><a class="header" href="#三尿细菌定量培养的干扰因素">三）尿细菌定量培养的干扰因素</a></h3>
+<h4 id="假阳性"><a class="header" href="#假阳性">假阳性</a></h4>
+<ul>
+<li>中段尿收集不规范，标本被污染</li>
+<li>尿标本在室温下存放超过 <code>1</code> 小时才进行接种</li>
+<li>检验技术错误</li>
+</ul>
+<h4 id="假阴性"><a class="header" href="#假阴性">假阴性</a></h4>
+<ol>
+<li>近 <code>7</code> 天内使用抗生素</li>
+<li>尿液在膀胱内停留时间不足</li>
+<li>收集中段尿时消毒药混入尿标本</li>
+<li>饮水过多，尿液被稀释</li>
+<li>感染灶排菌呈间歇性</li>
+</ol>
+<h3 id="二筛查试验"><a class="header" href="#二筛查试验">二）筛查试验</a></h3>
+<h4 id="硝酸盐还原试验"><a class="header" href="#硝酸盐还原试验">硝酸盐还原试验</a></h4>
+<ol>
+<li>大肠埃希菌等革兰阴性细菌含硝酸盐还原酶，可使尿中的硝酸盐还原为亚硝酸盐</li>
+<li>该法对尿路感染诊断的 <strong>特异性高</strong> ，但 <strong>敏感性较差</strong></li>
+<li>革兰 <strong>阳性菌不含硝酸盐还原酶</strong> ，故可出现假阴性</li>
+<li>可作为尿感的过筛试验</li>
+</ol>
+<h4 id="白细胞酯酶试验"><a class="header" href="#白细胞酯酶试验">白细胞酯酶试验</a></h4>
+<ul>
+<li>中性粒细胞可产生白细胞酯酶</li>
+<li>该试验用于检测尿中是否存在中性粒细胞</li>
+<li>包括已经被破坏的中性粒细胞</li>
+</ul>
+<h3 id="三影像学检查"><a class="header" href="#三影像学检查">三）影像学检查</a></h3>
+<ul>
+<li><code>IVP</code>（静脉肾盂造影）：用于寻找易感因素，急性期不宜做，检查前 <strong>需要充分水化</strong></li>
+<li><code>B</code> 超：用于确定肾周积液、肾脏大小，急性期可做</li>
+<li><code>CT</code>：用于判断占位性病变</li>
+</ul>
+<h2 id="七诊断"><a class="header" href="#七诊断">七、诊断</a></h2>
+<h3 id="一尿路感染诊断标准"><a class="header" href="#一尿路感染诊断标准">一）尿路感染诊断标准</a></h3>
+<ol>
+<li><strong>有尿路感染的症状和体征</strong> ，如尿路刺激征、耻骨上方疼痛和压痛、发热、腰痛或叩击痛等， <strong>同时尿细菌培养菌落数 <code>&gt;10^5/ml</code>，即可诊断</strong></li>
+<li>如菌落数未达到上述指标，满足下列任一项时也可诊断
+<ul>
+<li>硝酸盐还原试验和（或）白细胞酯酶阳性</li>
+<li>白细胞尿（脓尿）</li>
+<li>未离心新鲜尿液革兰染色发现病原体，且一次尿培养菌落数 <code>&gt;10^3/ml</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="二尿感定位诊断"><a class="header" href="#二尿感定位诊断">二）尿感定位诊断</a></h3>
+<h4 id="临床表现定位"><a class="header" href="#临床表现定位">临床表现定位</a></h4>
+<ul>
+<li>上尿路感染：发热、寒战，伴明显腰痛、输尿管点和（或）肋脊点压痛、肾区叩痛</li>
+<li>下尿路感染：以尿路刺激征为主，少有发热和腰痛</li>
+</ul>
+<h4 id="实验室检查定位"><a class="header" href="#实验室检查定位">实验室检查定位</a></h4>
+<ul>
+<li>上尿路感染可见膀胱冲洗后尿培养阳性</li>
+<li>尿沉渣镜检有白细胞管型时，提示上尿路感染，但应排除间质性肾炎、狼疮肾炎</li>
+<li>上尿路感染可伴肾小管功能不全表现</li>
+</ul>
+<h4 id="慢性肾盂肾炎定位"><a class="header" href="#慢性肾盂肾炎定位">慢性肾盂肾炎定位</a></h4>
+<ol>
+<li>有反复尿感病史</li>
+<li>外形凹凸不平，双肾大小不一</li>
+<li><code>IVP</code> 可见肾盂、肾盏变形</li>
+<li>持续性肾小管功能损害</li>
+<li>判断时通常需结合前 <code>3</code> 项中的影像学改变与持续性肾小管功能损害综合分析</li>
+</ol>
+<h2 id="八治疗"><a class="header" href="#八治疗">八、治疗</a></h2>
+<h3 id="一一般治疗"><a class="header" href="#一一般治疗">一）一般治疗</a></h3>
+<ul>
+<li>注意休息</li>
+<li>多饮水</li>
+<li>勤排尿</li>
+</ul>
+<h3 id="二抗感染治疗用药原则"><a class="header" href="#二抗感染治疗用药原则">二）抗感染治疗用药原则</a></h3>
+<ol>
+<li>根据 <strong>尿路感染位置</strong> 及是否存在复杂性尿感因素，选择抗生素种类、剂量及疗程</li>
+<li>选用 <strong>致病菌敏感的抗生素</strong> ；无病原学结果前，一般 <strong>首选对革兰阴性杆菌有效的抗生素</strong> ，尤其适用于首发尿路感染</li>
+<li>治疗 <code>3</code> 天症状仍无改善时，应根据药敏结果调整用药</li>
+<li>选择在尿和 <strong>肾内浓度高的抗生素</strong> ，并尽量选用 <strong>肾毒性小、副作用少</strong> 的药物</li>
+<li>单药治疗失败、严重感染、混合感染或出现耐药菌株时，应 <strong>联合用药</strong></li>
+</ol>
+<h3 id="三不同类型治疗"><a class="header" href="#三不同类型治疗">三）不同类型治疗</a></h3>
+<h4 id="急性膀胱炎"><a class="header" href="#急性膀胱炎">急性膀胱炎</a></h4>
+<ul>
+<li><strong>疗程一般为 <code>3~7</code> 天</strong></li>
+<li>一线药物包括磺胺类、呋喃妥因等</li>
+<li>停药 <code>1</code> 周后复查；若 <code>2</code> 次尿培养定量阴性，可视为治愈</li>
+<li>若复查仍阳性，应继续抗生素治疗 <code>2</code> 周</li>
+</ul>
+<h4 id="急性肾盂肾炎"><a class="header" href="#急性肾盂肾炎">急性肾盂肾炎</a></h4>
+<ul>
+<li>疗程一般 <code>10-14</code> 天</li>
+<li>一线药物包括喹诺酮类、头孢菌素类、半合成广谱青霉素等</li>
+<li>一般治疗 <code>14</code> 天后，通常约 <code>90%</code> 可治愈</li>
+<li>如尿菌仍阳性，应参考药敏结果继续治疗 <code>4~6</code> 周</li>
+<li>严重感染且全身中毒症状重者，应静脉联合用药，热退 <code>3</code> 天后改口服，完成 <code>2</code> 周疗程</li>
+</ul>
+<h4 id="再感染复发与无症状细菌尿处理"><a class="header" href="#再感染复发与无症状细菌尿处理">再感染、复发与无症状细菌尿处理</a></h4>
+<ul>
+<li>再感染：若半年内发作 <code>2</code> 次以上，可给予 <code>6</code> 个月长程低剂量抑菌治疗</li>
+<li>复发：若菌种与上次相同，应按药敏选用杀菌性抗生素，疗程不少于 <code>6</code> 周</li>
+<li>老年人及一般妇女的无症状细菌尿：<strong>无须治疗</strong></li>
+<li><strong>儿童、妊娠、肾移植、尿路梗阻及其他复杂情况的无症状细菌尿：需治疗</strong></li>
+</ul>
+<h3 id="四疗效判定"><a class="header" href="#四疗效判定">四）疗效判定</a></h3>
+<ol>
+<li>再感染：治疗后症状消失、尿菌阴性，停药后再次出现真性细菌尿，且菌株与前次不同</li>
+<li>治愈：症状消失、尿菌阴性，疗程结束后 <strong><code>2</code> 周及 <code>6</code> 周</strong> 复查尿菌仍阴性</li>
+<li>治疗失败：治疗后尿菌仍阳性，或治疗后尿菌转阴但在 <strong><code>2</code> 周或 <code>6</code> 周复查时又转阳性，且为同一菌株</strong></li>
+</ol>
+<h2 id="九实战演练"><a class="header" href="#九实战演练">九、实战演练</a></h2>
+<h3 id="一单题"><a class="header" href="#一单题">一）单题</a></h3>
+<ol>
+<li>关于尿路感染感染途径的错误说法：<strong>血行感染多见于大肠埃希菌</strong></li>
+<li>尿路感染诊断的最重要依据：<strong>真性细菌尿</strong></li>
+<li>做尿细菌学检查时，尿标本最好在 <code>1</code> 小时内送检</li>
+<li>与尿路感染相关的机体抗病功能中错误的说法：<strong>Tamm-Horsfall 蛋白促进细菌黏附于尿路上皮</strong></li>
+<li>关于白细胞尿不正确的说法：<strong>白细胞尿均提示尿路感染</strong></li>
+<li>女性 <code>22</code> 岁，尿频、尿急、尿痛伴腰痛、高热、畏寒 <code>1</code> 天，最可能诊断：<strong>急性肾盂肾炎</strong></li>
+<li>有关慢性肾盂肾炎的错误说法：<strong>尿细菌培养阳性是确诊的唯一根据</strong></li>
+<li>伴肾结石、发热、肾区叩击痛及白细胞管型的病例最可能诊断：<strong>复杂性急性肾盂肾炎</strong></li>
+<li>需要治疗的无症状细菌尿：<strong>妊娠妇女</strong></li>
+<li>下列无症状细菌尿患者中不需要治疗的是：<strong>老年人</strong></li>
+<li>判断肾盂肾炎病人是复发还是重新感染，通常以停药后 <strong><code>6</code> 周</strong> 再发为主要参考点</li>
+</ol>
+<h3 id="二病例题"><a class="header" href="#二病例题">二）病例题</a></h3>
+<ol>
+<li>共用题干：患者 <code>7</code> 岁，<code>1</code> 周来发热、尿频、尿急、尿痛并伴腰痛，既往无类似病史；体温 <code>38.3℃</code>，双肾区有叩击痛；尿白细胞 <code>30~50/HP</code>，可见白细胞管型
+<ul>
+<li>最可能的诊断：<strong>急性肾盂肾炎</strong></li>
+</ul>
+</li>
+<li>上述病例中，不宜作为首选的治疗药物：<strong>红霉素</strong></li>
+<li>上述病例一般用药疗程：<strong>14 天</strong></li>
+</ol>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../../学习与进步/医学/内科学/第五部分：泌尿系统疾病/第四章：间质性肾炎.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第五部分：泌尿系统疾病/第六章：肾小管疾病.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../../学习与进步/医学/内科学/第五部分：泌尿系统疾病/第四章：间质性肾炎.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../../学习与进步/医学/内科学/第五部分：泌尿系统疾病/第六章：肾小管疾病.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../../highlight-abc7f01d.js"></script>
+        <script src="../../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/内科学/第五部分：泌尿系统疾病/第五章：尿路感染.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

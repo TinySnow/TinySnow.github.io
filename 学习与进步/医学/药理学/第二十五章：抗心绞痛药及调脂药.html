@@ -1,0 +1,900 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第二十五章：抗心绞痛药及调脂药 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="第二十五章抗心绞痛药及调脂药"><a class="header" href="#第二十五章抗心绞痛药及调脂药">第二十五章：抗心绞痛药及调脂药</a></h1>
+<h2 id="一概述"><a class="header" href="#一概述">一、概述</a></h2>
+<h3 id="一前置知识"><a class="header" href="#一前置知识">一）前置知识</a></h3>
+<ul>
+<li>冠心病（CHD）：全称冠状动脉粥样硬化型心脏病</li>
+<li>高血脂会导致动脉粥样硬化</li>
+<li>动脉粥样硬化 + 冠状动脉 = 心绞痛（程度轻）、心肌梗死（程度重，致命）</li>
+<li>冠状动脉发生粥样硬化引起管腔狭窄或闭塞，导致心肌缺血缺氧或坏死而引I起的心脏病，简称冠心病（CHD），也称缺血性心脏病。</li>
+</ul>
+<h3 id="二心绞痛类型"><a class="header" href="#二心绞痛类型">二）心绞痛类型</a></h3>
+<ul>
+<li>劳动、激动、天耗氧量大时疼：稳定型心绞痛（劳力性心绞痛）</li>
+<li>冠脉痉挛、导致心肌缺血加重：变异型心绞痛</li>
+<li>斑块破溃、表面暂时形成血栓：不稳定型心绞痛</li>
+<li>血栓形成、堵死了：心肌梗死</li>
+</ul>
+<h2 id="二抗心绞痛药"><a class="header" href="#二抗心绞痛药">二、抗心绞痛药</a></h2>
+<h3 id="一概述-1"><a class="header" href="#一概述-1">一）概述</a></h3>
+<ul>
+<li>一普二硝</li>
+<li>硝酸酯类：扩血管</li>
+<li>β 受体阻断药（洛尔）：对抗交感</li>
+<li>钙通道阻滞药：扩血管 + 抑制心脏</li>
+<li>抗血小板药和抗血栓形成药：防血栓</li>
+</ul>
+<h3 id="二硝酸酯类"><a class="header" href="#二硝酸酯类">二）硝酸酯类</a></h3>
+<h4 id="药物"><a class="header" href="#药物">药物</a></h4>
+<ul>
+<li>硝酸甘油</li>
+<li>硝酸异山梨酯</li>
+<li>单硝酸异山梨酯</li>
+</ul>
+<h4 id="硝酸甘油"><a class="header" href="#硝酸甘油">硝酸甘油</a></h4>
+<h5 id="药动学"><a class="header" href="#药动学">药动学</a></h5>
+<ul>
+<li>口服首过效应明显，生物利用度低，常舌下含服，生物利用度为 80%；</li>
+<li>2～5 分钟出现作用，约半小时后作用消失</li>
+</ul>
+<h5 id="作用机制"><a class="header" href="#作用机制">作用机制</a></h5>
+<ul>
+<li>
+<p>作用靶点：血管平滑肌细胞</p>
+</li>
+<li>
+<p>作用机制：释放的 NO，舒张血管</p>
+</li>
+</ul>
+<h5 id="药理作用"><a class="header" href="#药理作用">药理作用</a></h5>
+<ul>
+<li>
+<p>所有血管：“全，扩”</p>
+</li>
+<li>
+<p>扩静脉：减少回心血量，降低前负荷</p>
+</li>
+<li>
+<p>扩动脉：降低外周阻力，降低后负荷</p>
+</li>
+<li>
+<p>扩冠脉：增加心脏供血量，改善缺血区血供</p>
+</li>
+<li>
+<p>扩张外周血管的利与弊</p>
+<ul>
+<li>优点
+<ul>
+<li>耗氧量下降</li>
+<li>心室容积缩小</li>
+<li>心室壁张力下降</li>
+<li>增加心内膜血流量</li>
+</ul>
+</li>
+<li>缺点
+<ul>
+<li>血压下降</li>
+<li>反射性兴奋交感神经</li>
+<li>心率加快、收缩力增强</li>
+<li>耗氧量增加</li>
+</ul>
+</li>
+<li>对抗缺点
+<ul>
+<li>合用 β 受体阻断剂（洛尔）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>扩张冠脉，增加缺血区血供的机制：侧支循环开放（扩张）</p>
+</li>
+<li>
+<p>扩张外周血管，降低心脏负担，减少耗氧量</p>
+</li>
+<li>
+<p>扩冠脉，改变心脏血液分布，增加缺血区血液供应</p>
+</li>
+<li>
+<p>增加心内膜血流量（降低心室舒张末期压力）</p>
+</li>
+<li>
+<p>保护缺血心肌细胞</p>
+</li>
+</ul>
+<h5 id="临床应用"><a class="header" href="#临床应用">临床应用</a></h5>
+<ul>
+<li>
+<p>心绞痛：稳定型首选</p>
+</li>
+<li>
+<p>急性心肌梗死：减小梗死面积</p>
+</li>
+<li>
+<p>心功能不全：降低心脏负担</p>
+</li>
+</ul>
+<h5 id="优点"><a class="header" href="#优点">优点</a></h5>
+<ul>
+<li>
+<p>与 β 受体阻断药比较：无加重心衰和诱发哮喘的危险；</p>
+</li>
+<li>
+<p>与钙通道阻滞剂比较：无心脏抑制的危险。</p>
+</li>
+</ul>
+<h5 id="不良反应"><a class="header" href="#不良反应">不良反应</a></h5>
+<ul>
+<li>血管扩张导致
+<ul>
+<li>面颈部皮肤发红、头痛、升高眼内压；</li>
+<li>反射性心率上升，心肌耗氧量上升，加重病情。</li>
+<li>首次含用硝酸甘油时，应注意可能发生直立性低血压</li>
+</ul>
+</li>
+<li>高铁血红蛋白血症：头痛、头晕、口唇发绀、休克、昏迷。</li>
+<li>久用机体产生耐受性：应间歇给药。</li>
+</ul>
+<h5 id="硝酸酯类使用注意事项"><a class="header" href="#硝酸酯类使用注意事项">硝酸酯类使用注意事项</a></h5>
+<ul>
+<li>快速耐受现象
+<ul>
+<li>由于硝酸酯类药物连续使用 48～72 小时，机体即可产生耐受性，此时患者即便 24 小时都有硝酸酯类药保护，还会发作心绞痛。</li>
+</ul>
+</li>
+<li>解决方法
+<ul>
+<li>为了避免机体对硝酸酯类药物的耐受性的发生，必须保证每 24 小时设置一个 12 小时的无硝酸盐或低硝酸盐间歇期这就是为预防耐药的“偏心给药”方法。</li>
+</ul>
+</li>
+<li>总之：不要每 12h 一次
+<ul>
+<li>硝酸异山梨酯片作用时间 2～4h，一日 2～3 次</li>
+<li>单硝酸异山梨酯片作用时间 4～5h，一日 2 次</li>
+<li>单硝酸异山梨酯缓释片作用时间 12h，一日一次。</li>
+</ul>
+</li>
+</ul>
+<h5 id="禁忌症"><a class="header" href="#禁忌症">禁忌症</a></h5>
+<ul>
+<li>青光眼</li>
+<li>颅内高压</li>
+</ul>
+<h3 id="三β-受体阻断药"><a class="header" href="#三β-受体阻断药">三）β 受体阻断药</a></h3>
+<h4 id="药物-1"><a class="header" href="#药物-1">药物</a></h4>
+<ul>
+<li>普萘洛尔</li>
+<li>美托洛尔</li>
+<li>阿替洛尔</li>
+<li>拉贝洛尔</li>
+</ul>
+<h4 id="药理作用与机制"><a class="header" href="#药理作用与机制">药理作用与机制</a></h4>
+<ul>
+<li>降低心肌耗氧量（共有）</li>
+<li>改善缺血区血供（共有）</li>
+<li>改善心肌代谢</li>
+<li>增加组织供血</li>
+</ul>
+<h4 id="降低心肌耗氧量的机制"><a class="header" href="#降低心肌耗氧量的机制">降低心肌耗氧量的机制</a></h4>
+<ul>
+<li>阻断 β<sub>1</sub> 受体</li>
+<li>优点：对抗交感，降低心脏耗氧量</li>
+<li>缺点
+<ul>
+<li>心室排空不足，心室容积加大，增加室壁张力；</li>
+<li>阻断冠脉 β<sub>2</sub> 受体，诱发冠脉收缩，易诱发变异型心绞痛（硝酸甘油可抵消此缺点）；</li>
+</ul>
+</li>
+<li>总体效应是：减少心肌耗氧量</li>
+</ul>
+<h3 id="临床应用-1"><a class="header" href="#临床应用-1">临床应用</a></h3>
+<ul>
+<li>稳定型心绞痛</li>
+<li>不稳定型心绞痛</li>
+<li>特别适用于伴有心率快和高血压的心绞痛患者（一箭三雕）</li>
+<li>禁用于变异型心绞痛
+<ul>
+<li>诱发冠脉痉挛，诱发变异型心绞痛</li>
+</ul>
+</li>
+</ul>
+<h3 id="不良反应-1"><a class="header" href="#不良反应-1">不良反应</a></h3>
+<ul>
+<li>久用骤停引起心绞痛加剧或心梗</li>
+<li>诱发和加重哮喘</li>
+<li>禁用于血脂异常者</li>
+</ul>
+<h4 id="普萘洛尔与硝酸酯类合用的合理性"><a class="header" href="#普萘洛尔与硝酸酯类合用的合理性">普萘洛尔与硝酸酯类合用的合理性</a></h4>
+<ul>
+<li>优势互补，缺点互抵</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">药物</th><th style="text-align: center">抗心绞痛机制</th><th style="text-align: center">心率</th><th style="text-align: center">心收缩性</th><th style="text-align: center">心室容积</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">硝酸酯类</td><td style="text-align: center">生成 NO，扩张血管</td><td style="text-align: center">加快</td><td style="text-align: center">增加</td><td style="text-align: center">缩小</td></tr>
+<tr><td style="text-align: center">β 受体阻断药</td><td style="text-align: center">阻断心脏 β<sub>1</sub> 受体，对抗交感神经</td><td style="text-align: center">减慢</td><td style="text-align: center">减弱</td><td style="text-align: center">增大</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="四钙通道阻滞药"><a class="header" href="#四钙通道阻滞药">四）钙通道阻滞药</a></h3>
+<h4 id="药物-2"><a class="header" href="#药物-2">药物</a></h4>
+<ul>
+<li>硝苯地平（心痛定）
+<ul>
+<li>起效快</li>
+<li>扩血管作用强</li>
+<li>抑制心肌作用弱，不易诱发心衰</li>
+<li>主要用于变异型心绞痛</li>
+</ul>
+</li>
+<li>维拉帕米（异搏定）</li>
+<li>地尔硫卓（硫氮酮）</li>
+<li>普尼拉明（心可定）</li>
+<li>哌克昔林（心舒宁）</li>
+</ul>
+<h4 id="药理作用与机制-1"><a class="header" href="#药理作用与机制-1">药理作用与机制</a></h4>
+<ul>
+<li>降低心肌耗氧量（共有）</li>
+<li>改善缺血区血供（共有）</li>
+<li>保护缺血心肌（独有）</li>
+<li>抑制血小板聚集（独有）</li>
+<li>阻断Ca²+通道，抑制Ca²+内流
+<ul>
+<li>心肌内Ca²+减少
+<ul>
+<li>降低心肌收缩力 -&gt; 耗氧量下降</li>
+<li>保护缺血心肌细胞</li>
+</ul>
+</li>
+<li>外周血管扩张
+<ul>
+<li>外周阻力减低，心负荷降低</li>
+<li>耗氧量下降</li>
+</ul>
+</li>
+<li>抗血小板聚集
+<ul>
+<li>稳定斑块，防血栓形成</li>
+<li>适用于不稳定型心绞痛</li>
+</ul>
+</li>
+<li>扩张冠脉
+<ul>
+<li>供氧量增加</li>
+<li>首选用于变异型心绞痛</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="临床应用-2"><a class="header" href="#临床应用-2">临床应用</a></h4>
+<ul>
+<li>首选用于
+<ul>
+<li>变异型心绞痛</li>
+<li>也可用于稳定型及不稳定型心绞痛</li>
+</ul>
+</li>
+<li>适用于：伴有哮喘和阻塞性肺疾病患者（气管狭窄）</li>
+<li>适用于：伴有外周血管痉挛性疾病的心绞痛者</li>
+<li>其他：急性心肌梗死，高血压，心律失常</li>
+</ul>
+<h2 id="二调血脂药"><a class="header" href="#二调血脂药">二、调血脂药</a></h2>
+<h3 id="一概述-2"><a class="header" href="#一概述-2">一）概述</a></h3>
+<ul>
+<li>血脂：
+<ul>
+<li>甘油三脂(TG)</li>
+<li>胆固醇(TC)</li>
+<li>游离脂肪酸(FFA)</li>
+<li>磷脂(PL)</li>
+</ul>
+</li>
+<li>血浆脂蛋白：
+<ul>
+<li>乳糜微粒(CM)</li>
+<li>极低密度脂蛋白(VLDL)：甘油三脂运输形式</li>
+<li>低密度脂蛋白(LDL)：胆固醇运输形式</li>
+<li>高密度脂蛋白(HDL)</li>
+</ul>
+</li>
+</ul>
+<h3 id="二他汀类"><a class="header" href="#二他汀类">二）他汀类</a></h3>
+<h4 id="常用的药物"><a class="header" href="#常用的药物">常用的药物</a></h4>
+<ul>
+<li>洛伐他汀</li>
+<li>辛伐他汀</li>
+<li>普伐他汀</li>
+<li>阿托伐他汀</li>
+</ul>
+<h4 id="机制"><a class="header" href="#机制">机制</a></h4>
+<ul>
+<li>他汀类抑制 HMG-CoA 还原酶（他汀类也称 HMG-CoA 还原酶抑制剂）</li>
+<li>乙酰辅酶 A ————HMG-CoA 还原酶————&gt;胆固醇</li>
+<li>合成胆固醇的上述反应，一般在夜间进行</li>
+</ul>
+<h4 id="药理作用与作用机制"><a class="header" href="#药理作用与作用机制">药理作用与作用机制</a></h4>
+<h5 id="调血脂作用"><a class="header" href="#调血脂作用">调血脂作用</a></h5>
+<ul>
+<li>主要降低 LDL 和 TC，降 TG 作用很小</li>
+<li>HDL 略有升高</li>
+</ul>
+<h5 id="非调血脂作用"><a class="header" href="#非调血脂作用">非调血脂作用</a></h5>
+<ol>
+<li>改善血管内皮功能；</li>
+<li>抑制血管平滑肌细胞的增殖和迁移；</li>
+<li>抗氧化作用；</li>
+<li>抗炎作用；</li>
+<li>抑制血小板聚集和抗血栓作用等；</li>
+<li>防止动脉硬化形成、稳定和缩小斑块。</li>
+<li><strong>一句话：有利于动脉粥样硬化的作用</strong></li>
+</ol>
+<h4 id="临床应用-3"><a class="header" href="#临床应用-3">临床应用</a></h4>
+<ul>
+<li>调血脂：高胆固醇血症</li>
+<li>肾病综合征（体现为胆固醇病理性升高）</li>
+<li>血管成形术后再狭窄</li>
+<li>预防心脑血管急性事件</li>
+<li>还可用于缓解器官移植后的排厅反应和治疗骨质疏松症</li>
+</ul>
+<h4 id="不良反应-2"><a class="header" href="#不良反应-2">不良反应</a></h4>
+<ul>
+<li>横纹肌溶解（肌炎、肌痛、CPK 升高）</li>
+<li>肝损害（AST/ALT升高）</li>
+</ul>
+<h4 id="禁忌症-1"><a class="header" href="#禁忌症-1">禁忌症</a></h4>
+<ul>
+<li>孕妇</li>
+<li>有活动性肝病（或转氨酶持续升高）者禁用</li>
+<li>原有肝病史者慎用</li>
+</ul>
+<h3 id="三胆汁酸结合树脂考来类"><a class="header" href="#三胆汁酸结合树脂考来类">三）胆汁酸结合树脂（考来类）</a></h3>
+<h4 id="代表药物"><a class="header" href="#代表药物">代表药物</a></h4>
+<ul>
+<li>考来烯胺（消胆胺）</li>
+<li>考来替泊（降胆宁）</li>
+</ul>
+<h4 id="机制-1"><a class="header" href="#机制-1">机制</a></h4>
+<ul>
+<li>
+<p>口服后在肠道内与胆汁酸结合形成不易被肠吸收的络合物</p>
+</li>
+<li>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://img.tinysnow.cn/blog/learning/medicine/pharmacology/考来机制.jpg" alt=""><span class="img-wrapper"><img src="https://img.tinysnow.cn/blog/learning/medicine/pharmacology/考来机制.jpg" alt=""></span></label></p>
+</li>
+</ul>
+<h4 id="药理作用-1"><a class="header" href="#药理作用-1">药理作用</a></h4>
+<ul>
+<li>
+<p>能明显降低血浆 TC 和 LDL 浓度，强度与剂量有关</p>
+</li>
+<li>
+<p>HDL 几乎无改变；</p>
+</li>
+<li>
+<p>对 TG 和 VLDL 的影响轻微而不恒定。</p>
+</li>
+</ul>
+<h4 id="临床应用-4"><a class="header" href="#临床应用-4">临床应用</a></h4>
+<ul>
+<li>
+<p>以胆固醇升高为主的高脂血症；</p>
+</li>
+<li>
+<p>合用 HMG-CoA 还原酶抑制剂（他汀）-&gt; 降脂作用增强。</p>
+</li>
+</ul>
+<h4 id="不良反应-3"><a class="header" href="#不良反应-3">不良反应</a></h4>
+<ul>
+<li>
+<p>肠道</p>
+</li>
+<li>
+<p>消化道反应：恶心、腹胀、便秘等</p>
+</li>
+<li>
+<p>长期应用：可引起脂肪痢、脂溶性维生素缺乏、高氯酸血症</p>
+</li>
+</ul>
+<h3 id="四贝特类苯氧酸类"><a class="header" href="#四贝特类苯氧酸类">四）贝特类（苯氧酸类）</a></h3>
+<h4 id="药物-3"><a class="header" href="#药物-3">药物</a></h4>
+<ul>
+<li>贝特类，又称苯氧酸类</li>
+<li>氯贝特（氯贝丁酯）：不良反应多，已少用</li>
+<li>吉非贝齐</li>
+<li>苯扎贝特</li>
+<li>非诺贝特</li>
+<li>环丙贝特</li>
+</ul>
+<h4 id="药理作用-2"><a class="header" href="#药理作用-2">药理作用</a></h4>
+<h5 id="调血脂作用-1"><a class="header" href="#调血脂作用-1">调血脂作用</a></h5>
+<ul>
+<li>主要降低血浆——TG、VLDL</li>
+<li>对 TC 和 LDL 也有一定降低作用</li>
+<li>升高 HDL</li>
+<li>机制：激活 LPL（脂蛋白脂肪酶）</li>
+</ul>
+<h5 id="非调血脂作用-1"><a class="header" href="#非调血脂作用-1">非调血脂作用</a></h5>
+<ul>
+<li>抗凝血、加强纤溶，降低血液粘度</li>
+<li>抗血栓和抗炎性作用</li>
+<li>共同发挥抗动脉粥样硬化效应</li>
+</ul>
+<h4 id="临床应用-5"><a class="header" href="#临床应用-5">临床应用</a></h4>
+<ul>
+<li>主要用于高 TG 血症</li>
+<li>非诺贝特：可降低尿酸水平，用于伴高尿酸血症者</li>
+<li>苯扎贝特：改善糖代谢，用于糖尿病伴有 TG 血症者</li>
+</ul>
+<h4 id="不良反应-4"><a class="header" href="#不良反应-4">不良反应</a></h4>
+<ul>
+<li>较轻，一般耐受良好。</li>
+<li>消化道反应</li>
+<li>横纹肌溶解</li>
+<li>注意：与他汀类药物合用，可增加肌病的发生</li>
+</ul>
+<h4 id="禁忌症-2"><a class="header" href="#禁忌症-2">禁忌症</a></h4>
+<ul>
+<li>有肝胆疾病、肾功能不全者禁用；</li>
+<li>孕妇、哺乳妇女、儿童禁用。</li>
+</ul>
+<h3 id="五烟酸尼克酸b-族维生素之一"><a class="header" href="#五烟酸尼克酸b-族维生素之一">五）烟酸（尼克酸，B 族维生素之一）</a></h3>
+<h4 id="药理作用-3"><a class="header" href="#药理作用-3">药理作用</a></h4>
+<ul>
+<li>
+<p>降低 TG、VLDL；降低 LDL-C；升高 HDL-C；</p>
+</li>
+<li>
+<p>抑制血小板和扩张血管</p>
+</li>
+<li>
+<p>（可用于治疗冻伤冻疮）</p>
+</li>
+</ul>
+<h4 id="应用"><a class="header" href="#应用">应用</a></h4>
+<ul>
+<li>为广谱调血脂药，对多种高脂血症均有效；</li>
+</ul>
+<h4 id="不良反应-5"><a class="header" href="#不良反应-5">不良反应</a></h4>
+<ul>
+<li>
+<p>治疗剂量可产生显著的副作用。</p>
+</li>
+<li>
+<p>血管舒张反应：皮肤潮红、瘙痒、血管性头痛、低血压</p>
+<ul>
+<li>可能与释放前列腺素有关，服用阿司匹林可明显减轻。</li>
+</ul>
+</li>
+<li>
+<p>胃肠刺激症状：如恶心、呕吐、腹泻较常见，也可引起或加重消化道溃疡</p>
+<ul>
+<li>餐时或餐后服可减轻。</li>
+</ul>
+</li>
+<li>
+<p>大剂量：可引|起血糖升高、尿酸增加、肝功异常。</p>
+</li>
+</ul>
+<h2 id="三多烯脂肪酸类"><a class="header" href="#三多烯脂肪酸类">三、多烯脂肪酸类</a></h2>
+<h3 id="一n-3-型多烯脂肪酸"><a class="header" href="#一n-3-型多烯脂肪酸">一）n-3 型多烯脂肪酸</a></h3>
+<ul>
+<li>
+<p>二十碳五烯酸（EPA）</p>
+</li>
+<li>
+<p>二十二碳六烯酸（DHA）</p>
+</li>
+<li>
+<p>α-亚麻酸（α-LNA）</p>
+<ul>
+<li>含于海洋生物藻、鱼及贝壳类中。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二n-6-型多烯脂肪酸"><a class="header" href="#二n-6-型多烯脂肪酸">二）n-6 型多烯脂肪酸</a></h3>
+<ul>
+<li>
+<p>亚油酸（LA）</p>
+</li>
+<li>
+<p>γ-亚麻油酸（γ-LNA）</p>
+</li>
+<li>
+<p>含于玉米油、葵花子油、红花油、亚麻子油等植物油中，降脂作用较弱，临床应用疗效不定。</p>
+</li>
+</ul>
+<h2 id="四保护动脉内皮药"><a class="header" href="#四保护动脉内皮药">四、保护动脉内皮药</a></h2>
+<h3 id="一低分子量肝素"><a class="header" href="#一低分子量肝素">一）低分子量肝素</a></h3>
+<h3 id="二天然类肝素"><a class="header" href="#二天然类肝素">二）天然类肝素</a></h3>
+<ul>
+<li>如：冠心舒（脑心舒）</li>
+</ul>
+<h2 id="五调脂药小结不良反应"><a class="header" href="#五调脂药小结不良反应">五、调脂药小结（不良反应）</a></h2>
+<ul>
+<li>
+<p>他汀类：横纹肌溶解（肌炎、肌痛、CPK 升高）、肝损害（AST/ALT 升高）</p>
+</li>
+<li>
+<p>贝丁酸类：消化道反应、横纹肌溶解</p>
+</li>
+<li>
+<p>烟酸：低血压、面部潮红、高尿酸血症、恶心呕吐</p>
+</li>
+<li>
+<p>考来类：便秘、胆石症、消化不良、脂肪泻</p>
+</li>
+</ul>
+<h2 id="六调脂药小结药物选择"><a class="header" href="#六调脂药小结药物选择">六、调脂药小结（药物选择）</a></h2>
+<h3 id="一高胆固醇血症"><a class="header" href="#一高胆固醇血症">一）高胆固醇血症</a></h3>
+<ul>
+<li>
+<p>首选 -&gt; 他汀类</p>
+</li>
+<li>
+<p>搞不定 -&gt; 加用依折麦布或胆酸鳌合剂（考来类）</p>
+</li>
+</ul>
+<h3 id="二高三酰甘油血症"><a class="header" href="#二高三酰甘油血症">二）高三酰甘油血症</a></h3>
+<ul>
+<li>
+<p>首选 -&gt; 贝特类</p>
+</li>
+<li>
+<p>搞不定 -&gt; 选用或加用烟酸类和 w-3 脂肪酸制剂。</p>
+</li>
+</ul>
+<h2 id="七调脂药小结机制和作用"><a class="header" href="#七调脂药小结机制和作用">七、调脂药小结（机制和作用）</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>药物</th><th>调血脂主要机制</th><th>临床主要应用</th></tr>
+</thead>
+<tbody>
+<tr><td>他汀类</td><td>抑制 HMG-CoA 还原酶阻滞胆固醇合成，主要降低 LDL-C、TC</td><td>高胆固醇血症、杂合子家族性和非家族性 IIa、IIb 和 III 型高脂蛋白血症</td></tr>
+<tr><td>考来烯胺</td><td>与胆汁酸结合，阻滞胆汁酸肝肠循环和反复利用，降低 TC、LDL-C</td><td>IIa 及 IIb 型高脂蛋白血症、家族性杂合子高脂蛋白血症</td></tr>
+<tr><td>贝特类</td><td>激活 LPL，主要降低 TG、VLDL</td><td>高 TG 血症、III 型高脂蛋白血症和混合型高脂蛋白血症</td></tr>
+<tr><td>烟酸</td><td>广谱调血脂药</td><td>除 I 型以外的各型原发性高脂蛋白血症</td></tr>
+</tbody>
+</table>
+</div>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../学习与进步/医学/药理学/第二十四章：抗慢性心功能不全药.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第二十六章：抗高血压药.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../学习与进步/医学/药理学/第二十四章：抗慢性心功能不全药.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../学习与进步/医学/药理学/第二十六章：抗高血压药.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "学习与进步/医学/药理学/第二十五章：抗心绞痛药及调脂药.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

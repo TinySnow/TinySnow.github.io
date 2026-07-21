@@ -1,0 +1,949 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>当下经济的十个重大问题 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="当下经济的十个重大问题"><a class="header" href="#当下经济的十个重大问题">当下经济的十个重大问题</a></h1>
+<p><em>碧树西风 2024-07-18</em></p>
+<p>　　下半年了，我们聊一期经济话题。</p>
+<p>　　有些敏感，但这个时间节点，我想，还是要起好天气预报的作用。</p>
+<p>　　这一期，覆盖了大家关心的全部经济类话题，美联储以及我们未来可能的各种推演，国内外各自的利率，房价，证券市场，美国大选，双边贸易，出口，投资，就业，高科技，全都给安排上。</p>
+<p>　　在这样一个敏感的时刻，我们需要把接下来的思路捋一捋。</p>
+<p>　　全文两万一千字，一共十个部分，五个国际，五个国内。文中多处有链接，俗称画中画，文中文，阅读时请留心莫错过，在本文下面的留言，每一条，我都会看到。</p>
+<p>　　以下进入正文：</p>
+<h2 id="第一个问题美联储利率"><a class="header" href="#第一个问题美联储利率">第一个问题，美联储利率。</a></h2>
+<p>　　为什么把它放在第一呢，因为这是全世界最重要的话题。</p>
+<p>　　俗称钱的价格。</p>
+<p>　　钱的价格决定了一切事物的底层逻辑。</p>
+<p>　　如果钱的价格低，美联储的利率低，不仅美国国内贷款便宜，而且美元会流向全世界。</p>
+<p>　　俗称大家会借入美元，投资全世界，从而拉高全世界任何一个有投资价值的地方的资产价格。</p>
+<p>　　同样，如果钱的价格低，国际风险投资市场就会十分活跃。</p>
+<p>　　你今天看到的那些著名的互联网大厂，就是动辄能够给员工提供高薪的企业名单，他们在早期，基本上拿的都是风险投资的钱。</p>
+<p>　　而全世界的风险投资基地，就是美国，也就是说，咱们的互联网大佬们，基本上拿的都是美元，来开启自己的事业之春。</p>
+<p>　　这就是为什么钱的价格如此重要，这就是为什么全世界都在盯着美联储的利率动向。</p>
+<p>　　美联储的利率这件事，一年前各路自媒体就开始成天炒作，要降息了，要降息，结果他们回回落空。</p>
+<p>　　反倒是我，回回说且等着，没那么快的，等着等着，很多人把我当章鱼帝，预言家了。</p>
+<p>　　因为我回回押中嘛。</p>
+<p>　　其实这部分人没有完全理解我的意思， <strong>我和那些自媒体不是结论分歧，而是本质分歧。</strong></p>
+<p>　　 <strong>我们的分歧不是哪天降息，而是此降息非彼降息。</strong></p>
+<p>　　美联储曾经有一个很长的周期是低利率周期，持续了几十年，持续了一代人。</p>
+<p>　　那些自媒体讨论的降息，是说又会回到过去，回到那个长期低利率的周期里面去。</p>
+<p>　　 <strong>他们认为侏罗纪并没有结束，只是天气变两天，还是侏罗纪。</strong></p>
+<p>　　 <strong>而我表达的是，白垩纪到了。</strong></p>
+<p>　　我认为降息当然是会降息的，但是，重点来了： <strong>我更加强调的是，即便降息，这个降息之后很长的周期里，利息相对于上一个大周期，依然属于高位运行。</strong></p>
+<p>　　明白这意思么？ <strong>白垩纪的利息也会升升落落，但整体上，要比侏罗纪高了一个台阶。</strong></p>
+<p>　　打个比方，好比侏罗纪的利率接近 1，中间有各种高高低低，但最后是围绕 1；而到了白垩纪，也会高高低低，但最后围绕的是 3。</p>
+<p>　　这个数据不准，我随口打的比方， <strong>我只是让你学会拉平了看，去看那个长时间下的基准。</strong></p>
+<p>　　那么当这两个台阶不同的时候，虽然短时间有高高低低，比如你可以从 0 拉到 5，从 5 降到 3，这个过程也叫加息降息，但是你这个最后的基准太高了，台阶太高了。</p>
+<p>　　 <strong>长时间的钱的价格，就贵了。</strong></p>
+<p>　　实际上，大气候就从侏罗纪，到白垩纪了。</p>
+<p>　　开门见山，我上来直接给到你结论。但是你一定很好奇，这个结论是怎么推导的，或者说，到底有什么值得信服的理由，使得它成立呢？</p>
+<p>　　别急，我给你展开分析。</p>
+<h2 id="第二个问题双边贸易"><a class="header" href="#第二个问题双边贸易">第二个问题，双边贸易。</a></h2>
+<p>　　有句话讲， <strong>我们的商品，是为全世界准备的，美国的美元，也是为全世界准备的。</strong></p>
+<p>　　难道你就不好奇，美国上一个周期，那个低利率低通胀低增长的周期是怎么形成的？</p>
+<p>　　 <strong>答案非常简单，我替你增长，我卖你商品。</strong></p>
+<p>　　如果这个地球上只有美国，你想象一下，美联储长期维持低利率，会是怎样的？</p>
+<p>　　很简单，他们的商人借到钱，只能投本国，增加本国就业。当劳动力供不应求时，工资必然上涨，那么随之，商品价格必然上涨。</p>
+<p>　　所以他会进入到高增长高通胀的这么一个时期。</p>
+<p>　　但实际上，你看到的是，过去几十年，美国一直都是低增长低通胀，说明什么？</p>
+<p>　　 <strong>说明他们的投资人低成本拿到美元，并没有投在美国，而是投向了全世界。</strong></p>
+<p>　　这里面很大一部分，就投向了我们，这就是 WTO，这就是全球化进程。</p>
+<p>　　他把钱投在我们这里，我们物美价廉的商品出口到大洋彼岸，试问他怎么通胀？</p>
+<p>　　他通胀不起来的。</p>
+<p>　　因为我们的商品越来越多，越来越好，还越来越便宜， <strong>无论你印多少美元，我都能给你提供更便宜的商品去冲抵。</strong></p>
+<p>　　 <strong>俗称我们的生产能力，熨平了美国的物价。</strong></p>
+<p>　　但是与此同时，美国的工人也就没有了工作机会，因为我们替他们生产了，他们只需要印美元就可以了。</p>
+<p>　　你站在美国工人的视角下，站在红脖子的视角下，他们是不满的。 <strong>就像懂王的副手万斯，所写的《乡下人的悲歌》里展现的那样。</strong></p>
+<p>　　这个道理非常简单， <strong>因为美元印了之后，是通过借贷的方式流出去的，谁有能力借贷？</strong></p>
+<p>　　美国的商人，投资人，他们有能力借贷。他们用低成本借入美元，投资我们的市场，赚取利润。</p>
+<p>　　 <strong>美国的红脖子，是给人打工的，他们没有借贷投资的能力，他们只能依赖工作机会，而低利息低增长的环境，工作机会不在他们本土。</strong></p>
+<p>　　所以 8 年前，懂王的口号是拿回制造业。</p>
+<p>　　他想要把制造业拿回去，他们自己印钱，投资本土市场，他们自己制造，从而给本土提供就业岗位，赢得红脖子支持。</p>
+<p>　　好，咱们换个视角，站在我们的角度。</p>
+<p>　　曾经有很长一段时间，热议一种观点，就是说，美国用一张纸，换取了我们大量的商品，这背后是劳动力。</p>
+<p>　　咱们亏了。</p>
+<p>　　其实不亏的， <strong>你觉得亏了，是因为你站在农耕视角。</strong></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=MzU3NDc5Nzc0NQ==&amp;mid=2247527910&amp;idx=1&amp;sn=b562a305ba7d4baca67536684aae446d&amp;chksm=fd2ecf38ca59462ef107a1721a5488c91ffcdc65e8f8345ca6a57d1c56779e1b615c8c89ddd4&amp;token=1898796352&amp;lang=zh_CN&amp;scene=21#wechat_redirect">站在农耕视角下，没有经济运行效率的概念，只有资源占有的概念。</a></p>
+<p>　　俗称你吃了张老汉家一口馍，张老汉就亏了。</p>
+<p>　　但是回到商业社会视角下，你那个资源能不能有效调动起来，是取决于需求端的。</p>
+<p>　　你这么想想看，在没有全球化的那些岁月里，在美国没有用一张纸来换取我们商品的岁月里，难道我们劳动力不充沛么？</p>
+<p>　　我们不还是有很多劳动力么？</p>
+<p>　　可是这些劳动力，实际上处于闲置状态，并没有变成商品呀。</p>
+<p>　　你回忆下《天道》里面丁元英第一次去王庙村的场景，村民怎么说？</p>
+<p>　　村民一边诉苦说穷，一边也告诉丁元英，我们都闲着呢。</p>
+<p>　　发现问题了么？</p>
+<p>　　 <strong>你有劳动力，和你能够把劳动力组织起来，是两码事。</strong></p>
+<p>　　你可以不用钱，你可以说出于理想把大家组织起来干活，但是，这就很难发挥主观能动性。</p>
+<p>　　 <strong>你组织大家起来干的那个活儿，可能是你拍脑袋想出来的，并不一定是市场的真实需求，此其一。</strong></p>
+<p>　　 <strong>这种拍脑袋的活干多了，干久了，人可能变得并没有竞争力，并没有锻炼出市场真实需要的能力，此其二。</strong></p>
+<p>　　 <strong>没有钱的引入，分配就是个问题，吃大锅饭会让很多人偷懒，摸鱼，而那些有积极性的人，会因为分配对自己不利，而懈怠，此其三。</strong></p>
+<p>　　但是你引入钱就没有这些问题。</p>
+<p>　　劳动力觉得是给自己家挣钱，他就很有积极性，你是真金白银买他东西，这个需求是真的，他就会琢磨怎么改进产品质量，从而满足你。</p>
+<p>　　回到几十年前，这个钱，还真就只能来自外部。</p>
+<p>　　 <strong>因为钱的本质是什么？是一张借条。</strong></p>
+<p>　　你拿着一张纸币，就等于你相信发行者的一张借据，未来你可以用这张借据换取自己想要的东西。</p>
+<p>　　几十年前，我们发展的初期，你自己发借条是很难取信于那些劳动力的。</p>
+<p>　　因为你不是后来的你，你当时还不是全产业链齐备的你。</p>
+<p>　　你自己都刚开始创业，你打个借条，谁信？所以这个时候，当时的一哥美国来当这个采购方，掏出他的借条，才真的能够取信于你的劳动力。</p>
+<p>　　更何况，这是民间的采购行为。</p>
+<p>　　是老美的千家万户，一个个家庭掏出这张纸，来采购你的商品，换句话说，人家的市场是真的，需求是真的，不是拍脑袋的。</p>
+<p>　　 <strong>真的需求是可持续的，拍脑袋的需求，是不可持续的。</strong></p>
+<p>　　你想想《人世间》里周秉义管的那类厂子为啥难？因为需求是拍脑袋的，不是 C 端真实的。一旦不拍了，厂子就适应不了 C 端了。</p>
+<p>　　回到几十年前，我们的民间，跟王庙村一样，家家户户只有劳动力，哪儿有来自 C 端的借条？</p>
+<p>　　看懂问题了么？ <strong>你的 C 端要有需求，还得有钱，才能构成一个真实市场。</strong></p>
+<p>　　回到当时，这事儿只能这么干，对他们来说，是划算，因为我们的劳动力便宜，我们生产的东西也便宜。</p>
+<p>　　对我们来说，是必经之路。你不拿自己的劳动力去换它一堆纸条，你也没法点燃你后来的全产业链齐备，也没有办法使得你的企业具备国际竞争力。</p>
+<p>　　明白这意思么？ <strong>咱是真实市场里打出来的，练出来的，而这个真实市场，最初，是人家提供的。</strong></p>
+<p>　　这就是交易，双方各取所需。</p>
+<p>　　对于这场交易，我们有一些质疑的声音，但不是主流，俗称我们只是说说，发发牢骚，也只是想加钱。</p>
+<p>　　但对他们而言，就不只是质疑这个层面了，否则，懂王也不会上。</p>
+<p>　　站在他们的角度，有两个大问题。</p>
+<p>　　 <strong>一个就是前面讲的，红脖子们没了工作，不满意，影响了美国大选，进而推出懂王这么个人。</strong></p>
+<p>　　 <strong>还有一个问题，就是只靠印美元，会不断地积累债务。</strong></p>
+<p>　　你以为买东西不要钱啊，这些掏出去的美元，都得挂账上呀。</p>
+<p>　　所以你发现，即便懂王下去了，睡王上去了， <strong>他们想要结束过去那种合作的意愿，并未改变。</strong></p>
+<p>　　 <strong>因为无法改变。</strong></p>
+<p>　　对我们而言，发两句牢骚，也只是要加钱。</p>
+<p>　　对他们而言，其实是没得选。因为他实际上已经加不起了。这个模式，他持续不下去。</p>
+<p>　　这个模式，就是低通胀低增长低利率，然后指望我们的商品去熨平他们的物价。</p>
+<p>　　所以接下来的日子里，你看到他们采取了很多行动。</p>
+<p>　　懂王当年的做法是指望在美国重启制造业，他想要把中高端制造业，都拉回来。</p>
+<p>　　甚至指望把苹果这种高科技企业的制造业也本土化。</p>
+<p>　　但后来我们看到，这就是搞笑。</p>
+<p>　　长时间指望海外采购，美国本土很多产业链的供需环节已经出现了问题。否则特斯拉也不会来我们这里。</p>
+<p>　　 <strong>他想做，不等于他能做。</strong></p>
+<p>　　做一个终端产品可能需要 360 个厂家做配套，如果你那些配套的厂家都已经迁去了海外，懂王光把最终组装的厂家强行拉回来，有什么用？</p>
+<p>　　何况一代人都过去了，相关的技术工人，没有了呀。</p>
+<p>　　那么到了睡王，不再指望懂王那种本土重建制造业的奇葩想法，但是，对我们的针对，丝毫未减。</p>
+<p>　　 <strong>由此，转口贸易开始兴盛。</strong></p>
+<p>　　说白了就是他不允许他们本土买我们东西，如果买，要增加关税。</p>
+<p>　　可他们的需求还在呀，需求怎么满足呢？就只能借由第三个国家进行转口贸易。</p>
+<p>　　其实还是我们的商品，只不过经过墨西哥之类的地方，重新组装一下，贴个老墨的牌子，再卖到美国去。</p>
+<p>　　那么对于美国来说，这就是掩耳盗铃，他们所谓卓有成效的用墨西哥取代了我们供应商的位置。</p>
+<p>　　 <strong>实际上，东西还是我们的东西，只不过，让墨西哥赚了中间商的差价。</strong></p>
+<p>　　这个差价，最后都是成本。都是美国消费者的成本。</p>
+<p>　　于是你就看到了下面这个问题。</p>
+<h2 id="第三个问题美国久治不愈的通胀"><a class="header" href="#第三个问题美国久治不愈的通胀">第三个问题，美国久治不愈的通胀。</a></h2>
+<p>　　美国通胀这件事，最初的起因，只是疫情。</p>
+<p>　　疫情引起全球停工，供应链发生了紊乱。</p>
+<p>　　等恢复之后，又出现了很多新问题。</p>
+<p>　　比如大毛熊揍了二毛熊，引起全球能源价格上涨。</p>
+<p>　　再后来，因为他们不买我们的商品，要从墨西哥之类的地方转口，要被中间商挣一道差价。</p>
+<p>　　这些都导致通胀的持续。</p>
+<p>　　其实还包括他们自己人工费用的上升。</p>
+<p>　　你想想看，过去的几十年，你都习惯了用某个供应商物美价廉的商品。</p>
+<p>　　你忽然说不用了，你本土的需求又没有消失。</p>
+<p>　　你不能用外部劳动力来满足你的市场需求，除了转口贸易，从墨西哥加价买之外的部分， <strong>你就只能用你本土的劳动力了呀。</strong></p>
+<p>　　 <strong>那么当你本土劳动力的需求增加，人又没有增加，美国人是不是会坐地起价？</strong></p>
+<p>　　劳动力供应少呀，需求大呀。</p>
+<p>　　更何况，这些需求基本上都是蓝领的领域。</p>
+<p>　　蓝领这活儿又不像程序员，写程序可以一个人顶一万个，服务员一个就只能当一个用。</p>
+<p>　　 <strong>那么伴随美国普通劳动者的价格攀升，通胀是不是更难治愈？</strong></p>
+<p>　　当然难，因为通胀里面很大一部分就是劳动力价格上涨。</p>
+<p>　　 <strong>劳动力的价格上去容易下来难，你要下来，除非失业。</strong></p>
+<p>　　美国有这么多需求，原来都是交给外包的，交给我们的，原来都是对外采购的， <strong>现在相当一部分需要本国人自己去干活了，他还怎么失业？</strong></p>
+<p>　　但是这里我们一定要注意。</p>
+<p>　　 <strong>我说的这句话，是问题的实质，它跟非农就业数据，是两码事。</strong></p>
+<p>　　美国那个靓丽到晃人眼睛的非农就业数据是很扯淡的，不是哪一期很扯，是每一期，最近的十几期都很扯。</p>
+<p>　　因为他们那个数据，在公布的时候，都是远超市场预期。</p>
+<p>　　然后过段时间，他们又向下修正。</p>
+<p>　　能听懂这个笑话么？听不懂我给你打个比方。</p>
+<p>　　你儿子明明考了 59，公布成绩的那天，他拿给你看的卷子上面被改成了 95，你看了大喜。</p>
+<p>　　因为超出你预期了呀，你觉得他能考个 80 就谢天谢地，祖坟冒烟了。</p>
+<p>　　结果人家交给你一张卷子，上面明晃晃写着 95，这不是祖坟着火了么？</p>
+<p>　　市场预期就是这么被管理了，于是每次非农丢出数据，都是利好，重大利好。</p>
+<p>　　 <strong>但是，过一段时间，等下次考试成绩要出来了，你儿子就告诉你，爸爸，上次成绩写错了，其实是 59，这就叫向下修正。</strong></p>
+<p>　　你是不是很生气，是不是想揍他？</p>
+<p>　　 <strong>是，但是来不及，因为这次成绩又要出来了。</strong></p>
+<p>　　他又故伎重演，他这次明明又只考了 59，但是给你看 95， <strong>你看到这次的 95，已经不去思考他上次 95 向下修正的 59 了，因为你的目标，被转移了……</strong></p>
+<p>　　 <strong>这个爸爸，就是市场投资人，这个儿子，就是美联储。</strong></p>
+<p>　　这个游戏，已经玩了十几轮了。</p>
+<p>　　美国人，真会玩。跟他们比预期管理的套路，我们只能算是乡下人，我们终究还是太老实。</p>
+<p>　　所以美国的就业数据并不真实，与此同时，很多增加的就业，是因为从业者，打了多份工。</p>
+<p>　　也就是说，相当一部分美国家庭劳动力价格增加的收入，并没有覆盖物价上涨的开支，这个差值，是需要他们下班后，继续找一份工作来弥补的。</p>
+<p>　　结果，这种下班后的找工作，也被统计进入了新增就业，于是你就看到靓丽的美国非农就业数据。</p>
+<p>　　所以综合起来，我说他们的非农就业这事儿不可信。</p>
+<p>　　 <strong>但是，你注意，这一切并不影响我前面的分析。</strong></p>
+<p>　　你甭管怎么说，他们的数据我觉得假是一回事，他们的劳动力要打多份工是一回事，但是他们的市场需求，尤其是对蓝领劳动力需求旺盛，这是铁定的。</p>
+<p>　　原因我前面分析过，他们的需求明摆着，当他们要缩减外包的工作量时，一定会增加本土的工作量。</p>
+<p>　　这是一个小学数学问题。</p>
+<p>　　所以在这样一个前提下，美国会因为加息，导致风险情绪下降，导致风险投资市场对于创业公司的投入降低，导致资本都去吃利息，进而导致部分白领失去工作，但 <strong>除非美国经济出现衰退</strong> ，否则反映不到蓝领就业市场。</p>
+<p>　　 <strong>因为没有哪个快餐店，是靠风险投资活着，人家都是现金流企业。</strong></p>
+<p>　　这就是为什么我告诉你，他们的蓝领劳动力价格一旦攀升，就很难降下去，因为真的有工作要做。</p>
+<p>　　 <strong>可是我们要知道，劳动力价格上升，就是通胀难以抑制最主要的原因。</strong></p>
+<p>　　把这一切叠加起来，你就会发现，美国的通胀会如此顽固的原因。</p>
+<p>　　 <strong>而当通胀下不去的时候，美联储当然可以根据就业数据决定是否短期降息，但是，他们怎么能降到昔日侏罗纪的那个利率水准呢？</strong></p>
+<p>　　 <strong>你现在回忆下第一个问题，发现是不是联系起来了？</strong></p>
+<p>　　这就是白垩纪。 <strong>这不是加息降息的问题，这是长期看，侏罗纪与白垩纪围绕的那个利率台阶的根本性问题啊。</strong></p>
+<p>　　 <strong>如果说侏罗纪是低通胀低利息，那么白垩纪是高通胀高利息。</strong></p>
+<p>　　 <strong>你注意，我讲的通胀与利息始终是基准台阶，你在高台阶上可以上上下下，你在低台阶上也可以上上下下，但是台阶与台阶，是不一样的。</strong></p>
+<p>　　我前面说过，低通胀低利息低增长，那么高通胀高利息如果低增长，可持续么？</p>
+<p>　　当然不可持续。</p>
+<p>　　 <strong>所以高通胀高利息就只能高增长，用高增长来平抑高通胀高利息对于经济的影响。</strong></p>
+<p>　　试问，庞大体量的美国，靠什么实现高增长？</p>
+<h2 id="第四个问题人工智能带来的第四次科技爆炸"><a class="header" href="#第四个问题人工智能带来的第四次科技爆炸">第四个问题，人工智能带来的第四次科技爆炸。</a></h2>
+<p>　　1978 年的时候，英特尔的创始人之一提出一个规律，处理器的性能，每两年增加一倍。</p>
+<p>　　这个被后世称作摩尔定律。</p>
+<p>　　这件事，就是第三次科技爆炸。</p>
+<p>　　你后面看到的计算机行业，电子通信行业，包括互联网行业，都是这场科技爆炸的余波。</p>
+<p>　　俗称人类的算力，进入了一个快速增长的阶段。</p>
+<p>　　但是，这个定律，被打破了，打破的人，叫做黄仁勋。</p>
+<p>　　他和他的英伟达团队，告诉大家，未来的 10 年，他们将把算力提升 100 万倍。</p>
+<p>　　那意味着，每半年，就得翻倍。这可比摩尔定律魔幻多了。</p>
+<p>　　所以我们把它看作第四次科技爆炸。</p>
+<p>　　这件事本身是将信将疑的。</p>
+<p>　　所以我去年跟读者讲这个话题时，我的说法还是，你们有没有想过，如果第四次科技爆炸发生了，如果美国长期维持在高增长高利率高通胀的轨道上，对世界的影响会是什么？</p>
+<p>　　我用的还是如果。</p>
+<p>　　因为黄仁勋的这些话是需要经过验证的，不是你说 10 年 100 万倍就如何，你先跑个半年数据给市场看看。</p>
+<p>　　如果你半年能提升一倍，市场可以通过你半年的进展来预判十年。</p>
+<p>　　就目前来看，就半年的数据来看，人家的算力确实翻倍了，摩尔定律已经被打破了。</p>
+<p>　　于是你看到一个非常神奇的现象，美国的股市，变成了几家大型科技公司的秀场，其中以英伟达为龙头。</p>
+<p>　　大象在起舞，剩下所有人呆呆的看着你跳舞。</p>
+<p>　　所以美国如果要高利率高通胀高增长，那么最后这个高增长，只能指望第四次科技爆炸。</p>
+<p>　　懂王那条路是走不通的，别说门没有，窗户都没有。这次大选如果他上了，继续老路，同样走不通。</p>
+<p>　　因为制造业是一种整齐划一的配合工作，不是高科技这种奇兵突进。</p>
+<p>　　美国想要高增长，指望打配合，是不现实的，太多年没有在本土做了，尤其是非高端的那些产业。</p>
+<p>　　他们要指望，只能指望第四次科技这场爆炸。</p>
+<p>　　从半年数据看，他们已经出现了突破。只不过这场突破能多久，能多大，尚存疑虑。</p>
+<p>　　尤其是站在经济学的角度，存疑。</p>
+<p>　　因为你这个单兵突击的科技爆炸，要拉动的美国经济基本面，是非常复杂的。</p>
+<h2 id="第五个问题美国的股市与楼市"><a class="header" href="#第五个问题美国的股市与楼市">第五个问题，美国的股市与楼市。</a></h2>
+<p>　　无论从任何角度看，美国的股市都处在高位。</p>
+<p>　　你站在标普 500 席勒市盈率的角度，美国的股市处于 100 多年来的前几高。</p>
+<p>　　指数本身可以无止境上涨，但是标普 500 席勒市盈率，这种反应人性的标的，就像奥运记录，是有极限的。</p>
+<p>　　好比我开了家公司，你一次性把未来 50 年的收益都给我，我不肯卖，难道你把未来 100 年的收益都给我，我也不肯卖么？</p>
+<p>　　我不卖，难道是指望向天再借 500 年么？</p>
+<p>　　人的寿命终究是有限的，你这场科技爆炸又不是说搞出了长生不老。</p>
+<p>　　那么你站在巴菲特估值的视角下，也是如此。</p>
+<p>　　就是市值占 GDP 的比率，用全美的股市市值，除以全美的生产总值。</p>
+<p>　　这个数据低于 100%，就是买入的好时候，巴菲特就要抄底了，那么当下这个数据，超过了 180%。</p>
+<p>　　<a href="http://mp.weixin.qq.com/s?__biz=MzU3NDc5Nzc0NQ==&amp;mid=2247527981&amp;idx=1&amp;sn=63cf14de12d8484dd7feca8ec16b4582&amp;chksm=fd2eccf3ca5945e56c737d4e692de2b27efd0690805a5efdb660e3e33cc2ceed755cba8df4b0&amp;scene=21#wechat_redirect">所以巴菲特在减持，减持苹果公司 1.16 亿股，而且在最近一次股东大会上说明了减持的理由。</a></p>
+<p>　　<a href="http://mp.weixin.qq.com/s?__biz=MzU3NDc5Nzc0NQ==&amp;mid=2247527981&amp;idx=1&amp;sn=63cf14de12d8484dd7feca8ec16b4582&amp;chksm=fd2eccf3ca5945e56c737d4e692de2b27efd0690805a5efdb660e3e33cc2ceed755cba8df4b0&amp;scene=21#wechat_redirect">减持的不只有他，还包括</a><a href="http://mp.weixin.qq.com/s?__biz=MzU3NDc5Nzc0NQ==&amp;mid=2247527981&amp;idx=1&amp;sn=63cf14de12d8484dd7feca8ec16b4582&amp;chksm=fd2eccf3ca5945e56c737d4e692de2b27efd0690805a5efdb660e3e33cc2ceed755cba8df4b0&amp;scene=21#wechat_redirect">资本市场“破烂王”，大卫·泰珀，前几个月集中减持了英伟达，亚马逊，微软，等等。</a></p>
+<p>　　<a href="http://mp.weixin.qq.com/s?__biz=MzU3NDc5Nzc0NQ==&amp;mid=2247527981&amp;idx=1&amp;sn=63cf14de12d8484dd7feca8ec16b4582&amp;chksm=fd2eccf3ca5945e56c737d4e692de2b27efd0690805a5efdb660e3e33cc2ceed755cba8df4b0&amp;scene=21#wechat_redirect">还有，传奇宏观对冲之神，斯坦利·德鲁肯米勒，几个月前就减持了英伟达，完美错过后面的上涨。</a></p>
+<p>　　但是，如果我们换个角度呢？</p>
+<p>　　单纯的讲美国股市只有泡沫是不对的，因为你去掉科技七巨头，剩下的那些公司的估值，并不夸张，他们实际上是被七巨头平均高的。</p>
+<p>　　而那七巨头，他们的股价虽然很高，但是盈利能力也很强。这一点和 2000 年泡沫那次，那帮互联网公司当年只有估值根本没有盈利，是完全不一样的。</p>
+<p>　　这就是美国市场上很多投资人做多的理由，他们觉得这一轮科技爆炸和 2000 年不一样，盈利能力强，股价高一些，未尝不合理。</p>
+<p>　　看到了么？市场上同时存在两种看似矛盾的观点。</p>
+<p>　　 <strong>我们去理解美股市场，就是要把这两种看似矛盾的观点，同时吸收，同时采纳，同时分析，以供判断。</strong></p>
+<p>　　第一等的智慧，本就是能够在脑子里同时运行两种看似矛盾的观点，还能自行其是。</p>
+<p>　　 <strong>因为这个世界不是白色，也不是黑色的，是灰色的。</strong></p>
+<p>　　这两个角度可能就是拧巴的，<a href="http://mp.weixin.qq.com/s?__biz=MzU0MjYwNDU2Mw==&amp;mid=2247515165&amp;idx=1&amp;sn=4d8dc3d919ae455e578341baa872b06a&amp;chksm=fb1ad061cc6d5977c51656eabacffba7d540d20b20186f5434e0c7ef12916e5959f2475b816d&amp;scene=21#wechat_redirect">所以人生是曲线，投资也是曲线，它不是一条直线往前走。</a></p>
+<p>　　这就是为什么你去看市场，尤其是成熟的国际市场，永远都是多空博弈。</p>
+<p>　　总是有人做多，有人做空。</p>
+<p>　　谁傻？谁都不傻。</p>
+<p>　　因为职业投资人他不是我们国内散户的那种玩法，他不是说一刀穷，一刀富，除了会所就是麻布，我要多就满仓跟他干，我要空就脱了裤子跳下去。</p>
+<p>　　他做的每张单子背后都是有对冲方案的。</p>
+<p>　　俗称人家是背着降落伞去跳伞，不是背着雨伞。</p>
+<p>　　<a href="http://mp.weixin.qq.com/s?__biz=MzU3NDc5Nzc0NQ==&amp;mid=2247527234&amp;idx=1&amp;sn=fe568e1aa5aab5983b8a1c493072623f&amp;chksm=fd2ec99cca59408a22de9e3b99d3bb86449f22f3e32404e2ebf8790d626833dba8db3df89758&amp;scene=21#wechat_redirect">这个笑话我曾经调侃过，空市盈率和空指数是两个概念。</a></p>
+<p>　　 <strong>所以你不要用散户方式去理解市场，人家看多做空完全可能，看空做多完全可能，因为人家是多张复杂的对冲交易单构成的交易系统，不是你那样看多做多，看空做空，除了抄底就是逃顶。</strong></p>
+<p>　　如果你不能够理解这句话， <strong>如果你是一个没有构建交易系统的散户。</strong></p>
+<p>　　那你只要记住巴菲特的半句话，在别人贪婪的时候恐惧。</p>
+<p>　　因为对你而言，赔了就真赔了，所以巴菲特另外半句都不用对你讲，俗称赚了也早晚赔进去。</p>
+<p>　　散户就这个水平，没办法的，除非你能够构建自己的交易系统。</p>
+<p>　　那么我们去看美国的楼市，也有很多不正常的地方。</p>
+<p>　　有钱人看得上的那种房子，反而涨不过没钱人看得上的那种房子。</p>
+<p>　　你用我们的话说，就是核心城市核心地段高产品力的房子，反而跑不赢那种非核心城市非核心地段低产品力的房子。</p>
+<p>　　稀缺的跑不赢大路货。</p>
+<p>　　另一方面，美国这一次房价上涨的年化涨幅，已经超越了上一轮。</p>
+<p>　　 <strong>就是你从美国上一轮房价上涨的起点，从 1991 年开始到 2007 年的高位。你去计算那个年化涨幅。大概不到 5.8%。</strong></p>
+<p>　　 <strong>然后这一轮，就是美国房价后来跌到谷底，从谷底 2012 年开始，涨到去年，你再去计算这一轮的年化涨幅。高达 7.9%。</strong></p>
+<p>　　 <strong>绝对数据会骗人，相对数据怎么骗人？</strong></p>
+<p>　　这个相对数据摆在这里，如果这一轮没有泡沫，那你只能认为 08 年那次的泡沫是假的？</p>
+<p>　　我讲的这些东西，别人不知道，鲍威尔是绝对清楚的。</p>
+<p>　　当然，人家清楚是一码事，说不说是另一码事。</p>
+<p>　　人都是嘴上一套心里一套，尤其他那个位置，要管理全球投资人的预期。</p>
+<p>　　你从美国历史上历次类似状况的前值数据来看。</p>
+<p>　　如果美联储选择提前降息，你注意，我第一个问题时就说过了，降息和回到上一个周期是两码事。</p>
+<p>　　白垩纪就是白垩纪，很可能这一代人，都回不去侏罗纪了。</p>
+<p>　　但是，这不意味着降息不可以有。当下国外市场里热议的提前降息，就是指这个。</p>
+<p>　　从 5 点多到 3 点多，也叫降息，不是只有降到零才叫降。</p>
+<p>　　那么这个白垩纪范围内的降息，如果来的早一点，对美国的股市和楼市，是有相当大的托市作用的。</p>
+<p>　　这事儿没法计算，只能看历史数据。</p>
+<p>　　 <strong>历史数据显示，凡是市场还没有回调，就是你赶在市场回调前就选择降息，那么降息之后的一段时间，往往都是上涨的。</strong></p>
+<p>　　 <strong>反过来，如果是等到市场回调了之后，美联储才滞后的去降息，那么市场接下来一段时间，往往都是跌的，而且跌幅都比较深。</strong></p>
+<p>　　我相信没有人比鲍威尔更难以抉择。</p>
+<p>　　提前降呢？还是滞后降呢？</p>
+<p>　　滞后的问题很明显，就是躲不过那场传闻已久的阶段性衰退，类似 2000 年互联网泡沫破灭式的出清。</p>
+<p>　　 <strong>提前降？那通胀怎么办？</strong></p>
+<p>　　我们前面分析过，那个通胀横竖都按不下去。</p>
+<p>　　你美国本来就只能走高通胀高利率高增长的路，但是，你这个高利率，就当下来看，维持起来，是非常艰难的。</p>
+<p>　　鲍威尔选择不维持，你这个游戏就玩不下去，你维持，那么当下这一关怎么过？</p>
+<p>　　如果因为滞后降息引起了类似于 2000 年的衰退，或者叫泡沫出清， <strong>会不会打断美国高增长的势头？</strong></p>
+<p>　　如果会，如果高增长不再，那么高利率高通胀，同样也维持不下去呀。</p>
+<p>　　所以结论很简单，就是 1566 里面那句话，难，都难，鲍威尔也难，尽管他成天忽悠，欺负，收割全球投资人。</p>
+<p>　　但他自己的日子，也没有那么好过。</p>
+<p>　　五个问题，国际市场聊完了，我们转向国内话题。</p>
+<h2 id="第六个问题出口"><a class="header" href="#第六个问题出口">第六个问题，出口。</a></h2>
+<p>　　其实这一切问题都是打出口起，当初我们负责出口，美国负责进口，我们负责高增长高通胀高利率，他们负责低增长低通胀低利率。</p>
+<p>　　这个配合是完美的，除了我们有些辛苦，成天加班，他们的红脖子找不到工作机会，以及他们的债务越积越多。</p>
+<p>　　也没别的毛病了。</p>
+<p>　　但是，当他们要换个供应商时，我们就不得不寻找更多的买家，来填补这部分空白。</p>
+<p>　　 <strong>如果你把全球看作一个市场，要知道，数量和质量，是两码事。</strong></p>
+<p>　　就像我们开家店做生意，也许 80% 的销售额都集中在于 20% 的客户，美国当初就是那个大客户之一。</p>
+<p>　　所以美国要换供应商，空出来的那部分，你指望亚非拉的小兄弟们填补，是填不上的。</p>
+<p>　　我们还要指望很多其他大客户来增加销量，比如欧洲。</p>
+<p>　　但是近期我们和欧洲之间有些问题，他们步美国后尘，要加税，尤其是针对我们的新能源车。</p>
+<p>　　这个事情从表象上看，和大毛熊二毛熊有关系。</p>
+<p>　　公平地讲，这其实是熊大熊二家的私事。</p>
+<p>　　但是站在欧洲的视角下，是大毛熊揍了他们的好朋友，二毛熊。</p>
+<p>　　所以他们停止了与大毛熊之间的贸易，很多商品不卖了，很多能源也不买了，宁愿买美国的高价能源。</p>
+<p>　　希望借此给大毛熊施加压力，让他停手。</p>
+<p>　　问题是，我们看到，大毛熊毫无影响。</p>
+<p>　　那么在欧洲看来，就只有一种可能，就是我们这个巨无霸，在买大毛熊家的能源，在卖商品给大毛熊。</p>
+<p>　　因为大毛熊的经济体量并不大，只相当于我们一个省，类似于广东这种。</p>
+<p>　　说穿了，他们哪怕只剩我们这一个买家，这一个客户，这一个供应商，也不影响他的生活。</p>
+<p>　　那欧洲肯定有意见，目标落空了嘛。</p>
+<p>　　那这个意见，就会通过贸易，通过针对我们的出口表现出来。</p>
+<p>　　但是，我告诉你，这只是表象。</p>
+<p>　　 <strong>其实你拉不拉大毛熊一把，欧洲都会这么对你。</strong></p>
+<p>　　 <strong>因为新能源汽车不是鞋子袜子纺织业，这种高端产业，就如同芯片，是他们无法接受被你占据的。</strong></p>
+<p>　　 <strong>所以你要看清楚本质，本质就是无论如何，他都要针对你。</strong></p>
+<p>　　 <strong>因为你涉足高端了。</strong></p>
+<p>　　反过来，我们也没得选，我们有这么多人要养活，而且连年扩招，积累了这么多大学生。</p>
+<p>　　这些大学生，他们要高端工作岗位，你说咱们能不进军高端么？</p>
+<p>　　你答应，大学生们也不答应呀，他们也不乐意去生产鞋子袜子。</p>
+<p>　　所以这些磨擦，都是无可避免的。</p>
+<p>　　我们的出口，只能想办法，俗称你有张良计，我有过桥梯。</p>
+<p>　　事实上，论鸡贼，中国商人是数一数二的，我要是做不出来，那可能没法子，比如英伟达那种，我就是没法子。</p>
+<p>　　但只要我能做出来的，你有这种贸易限制，我也有很多反限制的措施。</p>
+<p>　　你就比如我前面提到的，转口贸易。</p>
+<p>　　 <strong>我们卖个阳澄湖大闸蟹，都能过水，放到阳澄湖里泡一泡，就可以打上阳澄湖的标签了。</strong></p>
+<p>　　 <strong>难道我们出口的时候，不会找个湖，过个水么？</strong></p>
+<p>　　你限制，我们就找个第三方国家，贴他们的牌，无非让中间商赚个差价。</p>
+<p>　　 <strong>很多时候，这个中间商，依然是我们的商人。</strong></p>
+<p>　　明白这意思么？</p>
+<p>　　其实那个第三方国家的做转口贸易的公司，背后的老板，还是中国商人。</p>
+<p>　　说不定多倒腾几手，更挣钱。</p>
+<p>　　所以你千万不要幼稚到误以为这是欧美和我们之间在博弈，不是的， <strong>两只鳄鱼打了一架，也许谁都没赢，一群小鱼赢了。</strong></p>
+<p>　　因为鳄鱼撕扯掉的对方身上的肉，最后都掉进水塘里，被小鱼们吃了个饱。</p>
+<p>　　欧美，他们沾光了么？没有。你加那么多关税，最后都转嫁到他们本国的消费者头上，你要加价买。</p>
+<p>　　我们，沾光了么？也没有。</p>
+<p>　　谁沾光了？那些商人。</p>
+<p>　　他们不吃亏的， <strong>你中间的手续越多，他们赚钱的门道越多。</strong></p>
+<p>　　在商人看来，工作机会给谁都是给，留给本国人也是给，给了墨西哥人也是给。</p>
+<p>　　他关心只是他的资本回报率。</p>
+<p>　　所以我说，作为生产国，我们吃亏了，作为消费国，他们也吃亏了，但是那些商人，可未必。</p>
+<p>　　人家有得是办法浑水摸鱼。</p>
+<p>　　那我们吃的亏，远不止这些，远不止工作机会上的问题。</p>
+<p>　　你要想到一件事情，就是两国利差。</p>
+<p>　　美国的利息处在高位，5 个多点，我们的利息处在低位，2 个点。</p>
+<p>　　我们没有办法让利率高，我们要拉动消费，要促进生产，就得把利率降下来。</p>
+<p>　　 <strong>可是你想一想，如果你是那个出口商人，当你看到两国利率差的时候，你会怎么做？</strong></p>
+<p>　　你会选择延迟结汇。</p>
+<p>　　过去，美国低利率低通胀低增长，我们高利率高通胀高增长，你赚了美元，会立刻结汇，然后投入再生产。</p>
+<p>　　因为市场需求在扩大，你的客户在催单，你需要赶紧把美元换成本国货币，赶紧投入生产接着赚呀。</p>
+<p>　　但是，当双边贸易出现磨擦，当你的客户潜在订单下降，与此同时，对方的利率很高，你本国的利率较低， <strong>你还会不会急于结汇呢？</strong></p>
+<p>　　结汇了之后，你也不会去扩大生产线，你也不会去买房，因为楼市高回报的周期也结束了。</p>
+<p>　　那你拿着钱，难道就只为了不到 2 个点的利息？</p>
+<p>　　 <strong>所以，这些出口商人，他们挣的钱，就会趴在对方的账户上。哪怕不投资，也可以享受 5 个点多的利息呀。</strong></p>
+<p>　　看清楚这个人性的漏洞，我问你，谁沾光了？贸易磨擦的两条巨鳄，谁沾光了？</p>
+<p>　　美国也没有沾光的。</p>
+<p>　　 <strong>你以为他愿意支付给你的出口商人以 5 个点多的利息？</strong></p>
+<p>　　 <strong>那是人家抑制本国通胀用的，不是让你来薅羊毛的。</strong></p>
+<p>　　 <strong>我们也是擎等着你拿钱回来，提供就业的呀。</strong></p>
+<p>　　 <strong>两条大鳄没人希望是这个结果，但事实就是这个结果。</strong></p>
+<p>　　 <strong>鳄鱼撕咬，这些出口商人从中牟利。</strong></p>
+<p>　　 <strong>他们既不给本国提供就业，也不会投资美国，他们就趴在账上吃美国的利息。</strong></p>
+<p>　　所以我很早就说过， <strong>国际格局是一回事，商人经商是另一回事。</strong></p>
+<p>　　作为打工的，遇到磨擦，你各种不容易，各种被迫卷，但是作为经商的，真的是权游里面布兰对小指头说的那句话，混乱是阶梯。</p>
+<p>　　你两边磨擦你的，生产者被影响就业，消费者被加价，但是中间商，吃了这头吃那头。</p>
+<p>　　就像拼刀刀的原理。</p>
+<p>　　<a href="http://mp.weixin.qq.com/s?__biz=MzU0MjYwNDU2Mw==&amp;mid=2247515007&amp;idx=1&amp;sn=7da4c88808369d0bb10b13946b8a9b72&amp;chksm=fb1ad703cc6d5e1568dfeb7f3524da531451dd0b238b47c532eab2dfc69d80c8113923384f27&amp;scene=21#wechat_redirect">借着消费逆升级，刻意制造爆款，拿着天量的订单，迫使厂家以低于成本价出售。</a></p>
+<p>　　<a href="http://mp.weixin.qq.com/s?__biz=MzU0MjYwNDU2Mw==&amp;mid=2247515007&amp;idx=1&amp;sn=7da4c88808369d0bb10b13946b8a9b72&amp;chksm=fb1ad703cc6d5e1568dfeb7f3524da531451dd0b238b47c532eab2dfc69d80c8113923384f27&amp;scene=21#wechat_redirect">消费者拿到了有安全隐患的商品，厂家不得已裁员或者转嫁成本压力给员工，作为中间商的平台，反而业绩越发靓丽。</a></p>
+<p>　　你把这件事，放大到全球，也是一样的。</p>
+<p>　　跨国贸易中也有无数的拼刀刀们，吃了这头吃那头。</p>
+<p>　　欧美人花更多钱，我们的人难就业，而他们，吃了这头吃那头，最后连高息，都不放过。</p>
+<p>　　美国正在大选，种种迹象表明，懂王好像又要上位了。</p>
+<p>　　 <strong>如果这哥们上位，上面这种情况，只会愈演愈烈。</strong></p>
+<p>　　因为这老兄真的是一言难尽，用老罗的话讲，彪悍的人生不需要解释。</p>
+<p>　　以他的那种彪呼呼的风格，肯定又是各种制裁升级，一通胡搞。</p>
+<p>　　这种违背经济规律的玩法，你搞得越嗨，那些中间商越是发财，而生产国和消费国，其实都没有好处的。</p>
+<p>　　所以我常说，一件事摆出来，要看你怎么自我定位。</p>
+<p>　　如果你选择的生态位就是中间商，那真就是《创世纪》里面，霍景良和叶孝礼神仙打架，荣添三兄弟趁机过三关，从屌丝，变成上市公司老板了。</p>
+<h2 id="第七个问题利率"><a class="header" href="#第七个问题利率">第七个问题，利率。</a></h2>
+<p>　　这里的利率是咱们自己的利率，不是第一个问题当中国际市场上美联储的利率。</p>
+<p>　　那么我们的利率往下走，长时间来看，是符合国际规律的。</p>
+<p>　　你去看欧洲，看日本，经过经济高速期之后，利率都是长期向下的。</p>
+<p>　　因为这里面有三个好处。</p>
+<p>　　 <strong>第一个好处，可以拉动内需，提升居民消费。</strong></p>
+<p>　　当你的对外出口，达到一个相对高的位置，好比全球出口饼图里面，你已经切走了很大一部分蛋糕，你已经占据了很大比例之后。</p>
+<p>　　那么你更能指望的，或者说，预期上，你更能指望的，是你的内需部分。</p>
+<p>　　你要拉动这个，就只能降低利息。</p>
+<p>　　我们过去说买套房子，30 年的贷款，实际上你要多还一倍。</p>
+<p>　　就是 300 万的房子，你要还 600 万。这就是利率高的结果。</p>
+<p>　　那么如果利率低，像日本那样，300 万的房子，还 30 年，还是 300 万多一点点。</p>
+<p>　　那这个压力，对于买房的人来说，就一下子降低好多啊。</p>
+<p>　　房价并不需要改变，利息负担的大幅度减轻，就等于房价相对于购房者，压力小了好多。因为大部分自住者，包括改善群体，都是贷款买房的。</p>
+<p>　　 <strong>第二个好处，可以减轻企业压力。</strong></p>
+<p>　　这个道理非常简单，买东西也许全款，企业经营你见过谁是靠自有资金的？</p>
+<p>　　还不都是贷款么？</p>
+<p>　　既然是贷款，那么贷款利率越低，企业压力越小。</p>
+<p>　　 <strong>第三个好处，也减轻了城市运营的压力和发债的难度。</strong></p>
+<p>　　城市要运营，需要资金，除了卖地，就是借钱。</p>
+<p>　　如果地卖不动，那借钱这个渠道就至关紧要。</p>
+<p>　　借钱这件事里面最重要的就是利息。</p>
+<p>　　日本的负债率，接近 GDP 的百分之两百大几十，吓不吓人？</p>
+<p>　　不吓人。</p>
+<p>　　因为人家利率低呀， <strong>如果借钱不要还利息的，那么杠杆上多少，还重要么？</strong></p>
+<p>　　日本就是用这种借新还旧，避开利息的方式，维持了许多年。</p>
+<p>　　日本是发达国家里面这个数据最高的一档，远比美国的负债率 GDP 占比高得多。</p>
+<p>　　所以我说，这是国际规律。</p>
+<p>　　除了美国之外的发达国家，从高速增长切换进入中速增长之后，几乎都走了一个长期利率向下的路。</p>
+<p>　　因为好处实在太多，太香，挡不住。</p>
+<p>　　 <strong>美国之所以没有那么做，是因为他是霸权货币，美元不仅仅是全球贸易的主要结算货币，他也是全球投资市场里的计价货币。</strong></p>
+<p>　　也就是说，全球投资市场的主要财富，是用美元来体现的。</p>
+<p>　　那么如果美国学日本，长期零利率，是会破坏他这个全球投资市场主要货币职能的。</p>
+<p>　　所以我说，发达国家里，只有这一个例外。</p>
+<h2 id="第八个问题消费与就业"><a class="header" href="#第八个问题消费与就业">第八个问题，消费与就业。</a></h2>
+<p>　　当下我们内部最主要的问题，就是消费与就业。</p>
+<p>　　站在出口的角度，如果我们的出口占据全球出口饼图的份额已经相当大，如果未来，那些有钱的客户，例如美国之类，和我们的贸易磨擦会长期持续。</p>
+<p>　　那么内需，或者说自己人的消费，站在未来增量的视角下，就非常重要。</p>
+<p>　　但是，现在有一个问题。</p>
+<p>　　什么问题？</p>
+<p>　　居民部门的资产负债表，处于高位，要修复。</p>
+<p>　　简单说，就是花钱花超了，过去买房，掏六个钱包，掏狠了，且得缓缓。</p>
+<p>　　这个缓缓很长的，你要把之前的债给填上，需要很长的一段时间。</p>
+<p>　　 <strong>究竟要多长，要看你的就业情况了。</strong></p>
+<p>　　如果你能够快速找到工作，如果你年年加薪，那么这个修复居民部门资产负债表的周期就会缩短。</p>
+<p>　　反过来，如果你不太容易找到高薪工作，那这事儿就麻烦了。</p>
+<p>　　有可能你的账就是挂着，因为你的新进收支不足，你还要吃喝拉撒要消费，你哪儿来更多的钱，去还旧账呢？</p>
+<p>　　你想想看老美的大学贷款，为什么动辄还了 20 多年？</p>
+<p>　　因为他们要衣食住行，要买车要买房要旅游，还有得剩，才能拿去还那个当年的大学贷款。</p>
+<p>　　 <strong>所以消费这件事，直接挂钩的是就业。</strong></p>
+<p>　　那我们来看下雇主们，企业部门的资产负债表，O 不 OK？</p>
+<p>　　也不 OK，也处在高位。</p>
+<p>　　换句话说，企业部门前些年也扩张，也掏空六个钱包，也扩了一堆的产能，也欠了一屁股债。</p>
+<p>　　所以我开头就讲，美国的美元是印给全球用的，我们的产能也是为全球配套设计的。</p>
+<p>　　那么现在的问题来了，企业要把这些扩张的产能里的一部分，卖给咱们自己的消费者。</p>
+<p>　　就需要怎么样？</p>
+<p>　　就需要居民部门加杠杆，扩表。</p>
+<p>　　你先不要去修复你的资产负债表了，你先去花钱，你多花钱，多买东西，才能把我捞出来。</p>
+<p>　　那么居民部门是同样的问题。</p>
+<p>　　大哥，我这会儿没钱，我要忙着修复我的资产负债表，我还指望你先去扩表，你先去借钱，继续扩大产能，多招聘些岗位，给我加薪，让我多赚点钱，等我把资产负债表修复完了，我好消费升级，再来捞你。</p>
+<p>　　看懂了么？</p>
+<p>　　卡住了。</p>
+<p>　　 <strong>兄弟俩的资产负债表都处在高位，大眼瞪小眼，都指望对方先出手。</strong></p>
+<p>　　 <strong>一个说你优先，另一个说还是你优先，都非常有绅士风度。</strong></p>
+<p>　　这不是个事儿，明白不？</p>
+<p>　　甭管谁优先，咱都得把这个结，给解开。</p>
+<p>　　那么我们过去的时间里做了什么事情呢？</p>
+<p>　　主要是降息，这个是对的，有效减轻了居民部门和企业部门的偿债压力。</p>
+<p>　　另一方面就是放水，这个也非常正确。</p>
+<p>　　 <strong>但是，水，灌入了生产部门。</strong></p>
+<p>　　这个思路搁在过去，是非常有效的，因为那些年，我们都是高增长高利率高通胀，只要你把水灌入生产部门，就会扩大产能，出口会给你足够的回报，扩大的产能会拉动你本国的就业，进而让居民部门也赚到钱。</p>
+<p>　　但现在的问题你也看到了。</p>
+<p>　　 <strong>前面分析过，你不能完全指望出口了，何况就算出口数据不错，那个出口商人，他们的美元，到底是回流了，还是趴在对方的账上吃高利息呢？</strong></p>
+<p>　　 <strong>如果是后者，那么这个闭环，就没有打通呀。</strong></p>
+<p>　　所以咱们去看国际惯例，通常遇到这种情况，那些发达国家是怎么做的？</p>
+<p>　　是由第三张表来承接债务。</p>
+<p>　　俗称由第三张表直接发债，我以我的信誉去借钱，然后直接开启直升机撒钱，就像美国疫情期间那样，直接发到居民部门，人头每月几千美金。</p>
+<p>　　你拿了钱，你去消费，去把企业部门捞出来。</p>
+<p>　　 <strong>这条路径就是第三张表扩表，发债，去捞居民部门，直接注入钱到消费端，而不再是生产端。</strong></p>
+<p>　　然后由居民部门去捞企业部门，进而完成内部消费循环。</p>
+<p>　　这个逻辑没有任何问题，发达国家干过无数回，被证明是有效的。</p>
+<p>　　 <strong>问题是，咱们没干过，大姑娘上轿，头一遭。</strong></p>
+<p>　　美国人拿了钱，你放心，他绝对会花。</p>
+<p>　　所以你去看美国市场，很容易过热，尤其是美国房地产市场，那些非核心城市非核心地段低产品力的房子，房价涨幅居然跑赢了核心城市核心地段高产品力的房子。</p>
+<p>　　答案只有一个，老美的消费，完全是拍脑袋的。</p>
+<p>　　 <strong>人家就没有理智过，人家就没有考虑过以后卖给谁，只要美联储敢直升机撒钱，他们绝对不会替你省钱。</strong></p>
+<p>　　 <strong>人家是想买啥就买啥，丝毫不带犹豫的。</strong></p>
+<p>　　 <strong>咱们的消费者，太精巴，明白不？</strong></p>
+<p>　　电商平台搞个仅退款，最初是认为从南京到北京，买家没有卖家精，买家终归是善良的，是这么去想问题的。</p>
+<p>　　结果，今年 618，有商家卖了 1000 万的货，有 500 万都是仅退款。</p>
+<p>　　那些货，也许涉及几十万个买家，打官司怎么打？估计都得哭晕在厕所里。</p>
+<p>　　人家开店是一炮打响，他们是一炮打完，就关门了。</p>
+<p>　　所以我们鼓励消费，一直以来的方式都是发优惠券。</p>
+<p>　　买 100，减 10 块，你自己还要付 90 块。不是我不能给你 100，而是我不信任你，我怕我给了你 100，你没花。</p>
+<p>　　那这个效果肯定不好，消费者每每想到自己还要付 90，就会犹豫。</p>
+<p>　　但是，你说这事儿怪谁呢？</p>
+<p>　　咱们的消费者，本身就难以被信任啊。</p>
+<p>　　用小沈阳的话说，大叔你也太抠了，你进了饭店一个菜不点，你还要饶一个？</p>
+<p>　　你这么抠，就不怕眼睛一闭，钱没花了？</p>
+<p>　　本山大叔告诉他，你叔我不怕这个，我只怕眼还没闭，钱已经花光了。</p>
+<p>　　看到了么？千病万病，心病难医。</p>
+<p>　　遇到这么一群有心病的消费者，你想要照搬发达国家的方法，也有很多疑虑的。</p>
+<p>　　那么其实，我们还有另一种方式，是我们尝试过的，这个留待下一个问题说，作为专项问题。</p>
+<h2 id="第九个问题楼市"><a class="header" href="#第九个问题楼市">第九个问题，楼市。</a></h2>
+<p>　　我们一直以来，最大的内部消费是什么？</p>
+<p>　　就是楼市。</p>
+<p>　　买房子是中国人的大事，结婚买房，是我们中国家庭的重大主题。</p>
+<p>　　作为父母，给子女把房买了，把婚结了，就算自己这辈子的义务，尽到了，否则，老了都不安心。</p>
+<p>　　这一点，和老外是有很大差别的。</p>
+<p>　　日本家庭，美国家庭也有给娃买房的，但占比很低，没有我们这样形成习俗。</p>
+<p>　　也就是说，人家是家里有钱，资助孩子也就资助了， <strong>我们是哪怕家里没钱，父母去城里当民工，当保姆，也一定要资助孩子买房。</strong></p>
+<p>　　 <strong>所以在这样一个民风民俗下，我们最主要的内需，就是楼市。</strong></p>
+<p>　　你包括买车，那也是配套买房之后的行为，你包括家具家电，装修，全都是围绕着房子展开的。</p>
+<p>　　 <strong>也就是说，你基本上可以把房地产消费等同视之内需。</strong></p>
+<p>　　所以咱们过去一直以来拉动内需的方式就是打好楼市这张牌。</p>
+<p>　　你比如 08 年，再比如 15 年。</p>
+<p>　　只要我们放开限制，只要我们贷款利息上给以优惠，居民部门就会主动加杠杆，买楼，从而把建筑，装修，家电，一系列下游产业，统统拉起来。</p>
+<p>　　但现在有个问题，就是我们的人均住房面积，已经不是几十年前的十几平米，而是接近四十平米了。</p>
+<p>　　这个数据跟发达国家是一样的。</p>
+<p>　　 <strong>人均住房面积一旦达到 40 平米，就很难往上突破了，因为需求被满足了。</strong></p>
+<p>　　 <strong>这里面只剩局部机会，不再有全局机会。</strong></p>
+<p>　　因为那个 40 平，是全局统计，如果你单看核心城市核心地段，也许没有达到， <strong>那么这个没到的区域，人们是有改善需求的。</strong></p>
+<p>　　明白这意思么？特别大的城市，特别核心的地段，人们可能住的比较拥挤，还想再改善下，但具体能不能，也是受制于兜里的钱包的。</p>
+<p>　　至于外围，人少房多的那些地方，其实人们的居住，已经被充分满足了。</p>
+<p>　　 <strong>你从租房就能看出来。</strong></p>
+<p>　　如果一个地方，房子挂出去出租，长期没人来租，就说明这个片区，房多人少，根本没需求。</p>
+<p>　　 <strong>如果房子一挂出去，马上租掉，而且租售比也还不错，就说明人们还是住得太拥挤，还是有住房需求的。</strong></p>
+<p>　　当你把这个问题弄清楚，你就会发现，想要像 08 年那样，像 15 年那样，全局范围内，想要有那么强烈的购房需求，是很难的。</p>
+<p>　　 <strong>所以当下，我们更多的是采用掀开盖子的做法。</strong></p>
+<p>　　就是核心城市核心地段，逐步放开，一方面是放开购买限制，另一方面，未来也会逐步放开新房价格限制。</p>
+<p>　　因为新房价格限制实际上等同于补贴本地富人，补贴那些社保巨子。</p>
+<p>　　你把这个放开了之后，如果局部的成交能够拉起来，核心城市核心地段的成交能够拉起来。</p>
+<p>　　就可以看看，核心城市核心地段高产品力的房子，能不能涨一点。</p>
+<p>　　 <strong>这个涨，也是指，通过数年的时间，渐渐涨回 2021 年的高点的过程，并不是什么快速出新高。</strong></p>
+<p>　　如果能够，那么，多余的资金，有没有力量去外溢，去覆盖核心城市核心地段那些低产品力的房子，能否让他们止跌，或者小幅度回升。</p>
+<p>　　 <strong>在钱的购买力未发生大的变化的前提下（注意我这个前提）</strong> ，行情能走到这里就已经很好了，能把核心城市核心地段稳住，让其中一部分高产品力的房子回到过去的高位，已经非常好了。</p>
+<p>　　 <strong>这已经足够拉动相当规模的内需了。</strong></p>
+<p>　　你只有把盖子揭开，你才能怎么样？才能让下面的房子产生流动性。</p>
+<p>　　 <strong>因为我们的房价是一个逐步对标的定价体系。</strong></p>
+<p>　　核心城市核心地段高产品力的房子，是真实购买出来的价格。</p>
+<p>　　那些动辄 8 位数及以上的房子，很多都是富人全款购买的，说明它的价格是真的。</p>
+<p>　　次一等，核心城市核心地段低产品力的房子，实际上是对标定价的。</p>
+<p>　　好比你山姆卖 10 块，我盒马就卖 8 块，我是参考你定价的，因为我认为我是你的平替。</p>
+<p>　　那么核心城市非核心地段，包括非核心城市核心地段，非核心城市非核心地段， <strong>都是这么依次向前对标，来定的价格。</strong></p>
+<p>　　 <strong>所以说那不是真实价格，那只是参考价格。</strong></p>
+<p>　　当最前面那个价格，核心城市核心地段高产品力房子的价格，那个盖子，被新房限价定死了，后面都只能跌。</p>
+<p>　　 <strong>就像火山，你把口子堵住了，它没法向上流，就只能向下流。</strong></p>
+<p>　　 <strong>因为贷款是要成本的，利息是要付钱的，一旦涨不动，只能往下走，没有横盘这件事。</strong></p>
+<p>　　所以我说，把盖子拿开看看，看看能否给下面的房子提供流动性。</p>
+<p>　　你注意，只是提供流动性。</p>
+<p>　　你想要普涨，那需要非常多的资金， <strong>或者说，干脆钱的购买力本质发生了变化。</strong></p>
+<p>　　 <strong>如果是前者</strong> ，那就好比核心城市核心地段高产品力的房子，要涨无可涨，才轮到核心城市核心地段低产品力的房子，再涨无可涨，才轮到核心城市非核心地段，要这么一路涨无可涨下去，最后才轮到那个非核心城市非核心地段。</p>
+<p>　　 <strong>所以排在后面的那些人，你不用急，你急了也没用。</strong></p>
+<p>　　 <strong>前面的人没有涨完，就没你啥事儿。</strong></p>
+<p>　　你想买，不用急，它不动你不动，你想卖，你也卖不出去，那个盖子没打开，你下面的流动性没有的。</p>
+<p>　　 <strong>俗称上面涨了下面才有流动性，上面涨无可涨，下面才能涨。</strong></p>
+<p>　　 <strong>上面要是都不涨，那下面只能跌。</strong></p>
+<p>　　我们是一个秩序井然的社会，就像一棵树上的猴子，每个猴子向上都只能看到红屁股，向下都会看到笑脸。</p>
+<p>　　咱们这里不存在老美那种核心城市核心地段高产品力的房子的涨幅，反而跑不赢非核心城市非核心地段低产品力的房子的涨幅的咄咄怪事。</p>
+<p>　　 <strong>因为他们的消费者没有那么秩序井然，他们的消费理念很多时候都不考虑将来怎么卖掉，他们就是随心情，我喜欢，我就买了。</strong></p>
+<p>　　就这么任性，你不服不行。</p>
+<p>　　 <strong>所以，回到我们的宏观话题。如果我们用第三张表来解决前两张表的问题，那么最可能的方式不是美国那种直升机撒钱，而是消费领域里的定向。</strong></p>
+<p>　　具体就是指楼市。</p>
+<p>　　只要能让楼市恢复一部分流动性，居民部门资产负债表的压力，就会减轻。</p>
+<p>　　而且这里面还有更重要的一层，你们应该能够想到。</p>
+<p>　　 <strong>就是咱们这个楼市，如果你把它看作一个商品，你消费这个商品，最大的回款，不是进入企业部门的，是进入城市运营部门的。</strong></p>
+<p>　　大头的钱，是直接给到城市里了。</p>
+<p>　　企业只能赚小钱，包括拉动建筑，装修，家电，那都是小钱。</p>
+<p>　　那么城市也急需钱。</p>
+<p>　　你日常用的那些设施，快速的高铁，便捷的地铁，高大上的机场，畅通的高速路，到处覆盖的信号，包括水电燃气，还有教育，医疗，都是卖地的钱补贴着运营的。</p>
+<p>　　 <strong>如果没有卖地的这个大头的钱，那么你擎等着涨价吧。</strong></p>
+<p>　　 <strong>涨价是好事，别反驳，反驳就是你还没想明白。</strong></p>
+<p>　　涨价说明你所在的这个城市，是非常优秀的，住着的都是有消费能力的市民，比如广州这种，之前涨价上热搜。</p>
+<p>　　你放到一个小地方，怎么涨？年轻人都走了，留下的都是领退休金的大爷大妈。</p>
+<p>　　 <strong>你非但没得指望从他们身上挣钱，你还得发钱养活他们呢。</strong></p>
+<p>　　所以你就只能等着转移支付，等着那些收入良好的城市，行行好，给你点。</p>
+<p>　　人家钱多的时候，可以拉兄弟一把，人家自己收支困难的时候，也就顾不得道友了。</p>
+<p>　　那么你面临的问题，可就不是涨价，而是只能降低服务了。</p>
+<p>　　俗称你这种小城市，没钱运营呀。那你是不是只能裁减医疗教育交通，把各种服务的等级都往下降呢？</p>
+<p>　　那么各种服务都降低的城市，它的房子就会更难卖，但凡有钱的，就更不愿意留了。</p>
+<p>　　所以这个问题归根结底是什么？</p>
+<h2 id="第十个问题人的年龄"><a class="header" href="#第十个问题人的年龄">第十个问题，人的年龄。</a></h2>
+<p>　　这个世界是人构成的世界，所有问题到最后都是人的问题。</p>
+<p>　　就像如果人都很年轻，像印度阿三那么年轻，即便人均住房面积达到 40 平米，也是有进一步扩张的欲望的。</p>
+<p>　　年轻嘛，干嘛不多生几个，住的更宽敞些呢。</p>
+<p>　　人的年龄一旦老去，管你有钱没钱，欲望都会下降。纵然你有钱，孩子去读大学了，老两口看着空荡荡的别墅，你都想搬走。</p>
+<p>　　而咱们当下的年龄趋势就是增加的，老人越来越多，年轻人出生的很少。</p>
+<p>　　同样，咱们的企业扩张意愿下降，不完全是外部因素，很大一部分原因，也是人老了。</p>
+<p>　　如果你是一个还年富力强的企业家，遇到外部出口的问题，遇到内需不足的问题，你更多的是什么看法？</p>
+<p>　　是机会。</p>
+<p>　　有问题才有机会嘛。就是布兰说的，混乱是阶梯。</p>
+<p>　　人未老之前，是不会成天想着我去做出口贸易挣来的钱，趴在对方账上吃 5 个点多的利息。</p>
+<p>　　不会干这种没出息的事儿，有这种想法，生意就做不大。</p>
+<p>　　你像王校长他爹，十年前就是动辄我要干到多少个小目标，千亿万亿都是这样的追求。</p>
+<p>　　会当水击三千里，自信人生二百年。</p>
+<p>　　当年坑了王校长他爹的老孙，是怎么跟手下几个大将说的？</p>
+<p>　　咱们哥几个，这辈子钱也赚够了，每个人留几个小目标养老，剩下的钱，全都推到牌桌上，要赌，就赌一把大的。</p>
+<p>　　看到了么，都是这样想的。</p>
+<p>　　所以如果人还年轻，遇到问题，第一想法都是，问题是机会，解决问题，我才能更上一个台阶。</p>
+<p>　　<a href="http://mp.weixin.qq.com/s?__biz=MzU0MjYwNDU2Mw==&amp;mid=2247515193&amp;idx=1&amp;sn=310d85efaf67f1a4cdc670380d6d2597&amp;chksm=fb1ad045cc6d5953a1bc911843a7cf5f4fd1952c31d2604b25715eccee278170487b0dd292e8&amp;scene=21#wechat_redirect">我之前聊过消费螺旋向下这个问题，其实是问题也是机遇，早二十年，我们的企业家肯定愿意在食品分级，消费分级的领域里搏一搏。</a></p>
+<p>　　但是人老了，风险情绪就会大幅度下降。</p>
+<p>　　他更多的是想要企业平稳，和子女的交接这些事儿，而不是乘风破浪，迎涛头立。</p>
+<p>　　这个过程，从六十多岁，到八十多去世，可能要持续几十年。</p>
+<p>　　 <strong>这个过程中，老富一代们本身的风险投资偏好就极低。</strong></p>
+<p>　　富老头们也不乐意投资初创企业，也不乐意转型突破。他们很多人就是宁愿趴在账面上，慢慢吃无风险的利息。</p>
+<p>　　所以你去看咱们的证券市场。</p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">去年我分析巴菲特投资日本的逻辑的那一期，非常详尽的阐述了现金奶牛的定义。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">高护城河，就是垄断，愿意分红，就是高股息，等等。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">搁在咱们的市场里，是什么？就是那什么什么估，三个字。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">这个话题我去年九月就写了，于是你去看市场就很有意思，其他的，原先那种赌成长性的，跌得一塌糊涂。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">反倒是这种高股息高分红，人家企业本身又有高护城河的，不仅分红很不错，而且怎么样？而且居然涨的也不错。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">想想看为什么？难道是我有预测能力？</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">并不是，答案很简单，因为观点是趋同的。我这么给你们分析，那些国内的大的投资人，人家也是这么分析。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">于是就扎堆了。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">资金抱团，都把这类的企业当方舟，当大额存单去买了，结果怎么样？结果抬轿子效应出现了，价格越抬越高。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">所以千万不要把高帽子扣我头上，我没有预测能力。后面这部分钱，不是我帮你赚的，我没这本事。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">我只是告诉你，前面那部分钱，是那个市场里能赚到的，至于大家都这么做，把价格抬起来了，你坐了一轮轿子，挣了两部分钱，后面的那个被人家大资金抬轿子的钱，是你自己进入得早，赚到的。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">我去年一说，你就那么执行了，你赚了两部分钱，我说了一年，你才去做，你只赚了一部分钱。</a></p>
+<p>　　<a href="https://mp.weixin.qq.com/s?__biz=Mzg4MTg2MzU3Mg==&amp;mid=2247484193&amp;idx=1&amp;sn=e76e2b96be37489a0854568ac84dd5e0&amp;chksm=cf5e3ddaf829b4cc7a28ef0fc52fe8b2f77b6c202918c7011445946a4cbf654a138ab048b1f4&amp;payreadticket=HA1dj_2wg-Iqp9NDjZ0zJN2pfE8rCoaRPdQxOBQ9Xga-Zv4qtjF4fgvI9lJcthkcaTxJlS4&amp;scene=21#wechat_redirect">看懂了么？就这么个逻辑。</a></p>
+<p>　　 <strong>说到底，是整个市场，风险情绪下降，才会做出如此趋同的投资现金奶牛的判断。</strong></p>
+<p>　　金融行业也是一样，前段时间，什么降薪，一个 30 岁的女生，这了那了的。</p>
+<p>　　你想想本质原因是什么？</p>
+<p>　　答案很简单，因为金融行业是不创造财富的，咱这个金融行业又不是美国金融行业那种国际市场。</p>
+<p>　　他们是可以收割全球投资人的，咱没这功能。</p>
+<p>　　 <strong>所以我们的金融行业，本质上挣的还是一个服务费。</strong></p>
+<p>　　谁给你的服务费？企业家给你的服务费。</p>
+<p>　　企业家风险情绪高涨，愿意借钱创业，愿意投资，那金融行业就容易赚钱。</p>
+<p>　　反之，你收上来一堆的存款，你贷不出去。最后都变成你的压力，成本压力。</p>
+<p>　　存款你要支付利息的，贷款你又贷不出去。不降本增效，还能做什么？</p>
+<p>　　所以甭管你喜不喜欢马老师这个人，他有句话是真的。</p>
+<p>　　 <strong>企业家是一个社会财富的来源。</strong></p>
+<p>　　你想想看，假如黄仁勋是我们的人，那么英伟达就是我们的企业，那么第四次科技爆炸，就是在我们这里启动的。</p>
+<p>　　这是一连串的，你先得有那个企业家本人。</p>
+<p>　　所以当企业家不支付贷款利息的时候，金融行业自己是没有能力生钱出来的。</p>
+<p>　　那么存贷差就只能无限逼近，于是就会非常难，就得降本增效。</p>
+<p>　　说穿了就是降薪，裁员，加班。</p>
+<p>　　这整个过程，你都得依赖企业家，他们是创新的起点，是财富的发动机。</p>
+<p>　　有句话没说错，财富最终是员工们生产出来的，但是，那个起点，那个引爆点，是企业家。</p>
+<p>　　任何财富都是做出来的这没错，但是没有他，你不知道要做啥。</p>
+<p>　　 <strong>知道做什么，永远比知道怎么做值钱得多。</strong></p>
+<p>　　 <strong>有了那个企业家，你做了才有挣钱的可能，没他，你活干了，就是不来钱。</strong></p>
+<p>　　但没法子，企业家们的年龄到了，风险情绪下降了。</p>
+<p>　　这个问题要解决，只能等，等上一代企业家去世。</p>
+<p>　　等他们 80 多，领盒饭了，他们的孩子当了董事长，风险情绪就会改观。</p>
+<p>　　有人可能会想，这么多年过去，等他们孩子接班，不也 5，60 了么？</p>
+<p>　　 <strong>是的，也老了，但不一样。</strong></p>
+<p>　　你要知道，那个富一代，他是牌桌上玩过的，现在老了，风险偏好低了。</p>
+<p>　　 <strong>那个富二代，他可是啥都没玩过呢。</strong></p>
+<p>　　你想想赢礽。</p>
+<p>　　 <strong>什么才叫滋味？你拿着钱你得上牌桌玩两把才叫滋味，否则，熬了这么多年，好容易熬到老爹挂了，自己还是只能低风险吃利息，那有什么滋味？那这辈子怎么算体验过有钱的感觉？</strong></p>
+<p>　　你想通了就这么点事，人性而已。</p>
+<p>　　十个问题讲完了，感谢大家看到文章的结尾。希望对诸位理清思路，有帮助。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../阅读/其他/文章/美国大选的重大影响以及未来我们的经济预判分析.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../阅读/其他/文章/十年后的终局是什么？.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../阅读/其他/文章/美国大选的重大影响以及未来我们的经济预判分析.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../阅读/其他/文章/十年后的终局是什么？.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../../clipboard-1626706a.min.js"></script>
+        <script src="../../../highlight-abc7f01d.js"></script>
+        <script src="../../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/其他/文章/当下经济的十个重大问题.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

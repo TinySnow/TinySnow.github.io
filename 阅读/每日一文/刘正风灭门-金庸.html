@@ -1,0 +1,425 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>刘正风灭门 - 金庸 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="刘正风灭门"><a class="header" href="#刘正风灭门">刘正风灭门</a></h1>
+<blockquote>
+<p>节选自《笑傲江湖》</p>
+</blockquote>
+<p><em>金庸</em></p>
+<p>　　刘正风道：“在下一生之中，从未见过魔教教主东方不败一面，所谓勾结，所谓阴谋，却是从何说起？”</p>
+<p>　　费彬侧头瞧着三师兄陆柏，等他说话。陆柏细声细语的道：“刘师兄，这话恐怕有些不尽不实了。魔教中有一位护法长老，名字叫作曲洋的，不知刘师兄是否相识？”</p>
+<p>　　刘正风本来十分镇定，但听到他提起“曲洋”二字，登时变色，口唇紧闭，并不答话。</p>
+<p>　　那胖子丁勉自进厅后从未出过一句声，这时突然厉声问道：“你识不识得曲洋？”他话声洪亮之极，这七个字吐出口来，人人耳中嗡嗡作响。他站在那里一动不动，身材本已魁梧奇伟，在各人眼中看来，似乎更突然高了尺许，显得威猛无比。</p>
+<p>　　刘正风仍不置答，数千对眼光都集中在他脸上。各人都觉刘正风答与不答，都是一样，他既然答不出来，便等于默认了。过了良久，刘正风点头道：“不错！曲洋曲大哥，我不但识得，而且是我生平唯一知己，最要好的朋友。”</p>
+<p>　　霎时之间，大厅中嘈杂一片，群雄纷纷议论。刘正风这几句话大出众人意料之外，各人猜到他若非抵赖不认，也不过承认和这曲洋曾有一面之缘，万没想到他竟然会说这魔教长老是他的知交朋友。</p>
+<p>　　费彬脸上现出微笑，道：“你自己承认，那是再好也没有，大丈夫一人作事一身当。刘正风，左盟主定下两条路，凭你抉择。”</p>
+<p>　　刘正风宛如没听到费彬的说话，神色木然，缓缓坐了下来，右手提起酒壶，斟了一杯，举杯就唇，慢慢喝了下去。群雄见他绸衫衣袖笔直下垂，不起半分波动，足见他定力奇高，在这紧急关头居然仍能丝毫不动声色，那是胆色与武功两者俱臻上乘，方克如此，两者缺一不可，各人无不暗暗佩服。</p>
+<p>　　费彬朗声说道：“左盟主言道：刘正风乃衡山派中不可多得的人才，一时误交匪人，入了歧途，倘若能深自悔悟，我辈均是侠义道中的好朋友，岂可不与人为善，给他一条自新之路？左盟主吩咐兄弟转告刘师兄：你若选择这条路，限你一个月之内，杀了魔教长老曲洋，提头来见，那么过往一概不究，今后大家仍是好朋友、好兄弟。”</p>
+<p>　　群雄均想：正邪不两立，魔教的旁门左道之士，和侠义道人物一见面就拚你死我活，左盟主要刘正风杀了曲洋自明心迹，那也不算是过分的要求。</p>
+<p>　　刘正风脸上突然闪过一丝凄凉的笑容，说道：“曲大哥和我一见如故，倾盖相交。他和我十余次联床夜话，偶然涉及门户宗派的异见，他总是深自叹息，认为双方如此争斗，殊属无谓。我和曲大哥相交，只是研讨音律。他是七弦琴的高手，我喜欢吹箫，二人相见，大多时候总是琴箫相和，武功一道，从来不谈。”他说到这里，微微一笑，续道：“各位或者并不相信，然当今之世，刘正风以为抚琴奏乐，无人及得上曲大哥，而按孔吹箫，在下也不作第二人想。曲大哥虽是魔教中人，但自他琴音之中，我深知他性行高洁，大有光风霁月的襟怀。刘正风不但对他钦佩，抑且仰慕。刘某虽是一介鄙夫，却决计不肯加害这位君子。”</p>
+<p>　　群雄越听越奇，万料不到他和曲洋相交，竟然由于音乐，欲待不信，又见他说得十分诚恳，实无半分作伪之态，均想江湖上奇行特立之士甚多，自来声色迷人，刘正风耽于音乐，也非异事。知道衡山派底细的人又想：衡山派历代高手都喜音乐，当今掌门人莫大先生外号“潇湘夜雨”，一把胡琴不离手，有“琴中藏剑，剑发琴音”八字外号，刘正风由吹萧而和曲洋相结交，自也大有可能。</p>
+<p>　　费彬道：“你与曲魔头由音律而结交，此事左盟主早已查得清清楚楚。左盟主言道：魔教包藏祸心，知道我五岳剑派近年来好生兴旺，魔教难以对抗，便千方百计的想从中破坏，挑拨离间，无所不用其极。或动以财帛，或诱以美色。刘师兄素来操守谨严，那便设法投你所好，派曲洋来从音律入手。刘师兄，你脑子须得清醒些，魔教过去害死过咱们多少人，怎地你受了人家鬼蜮伎俩的迷惑，竟然毫不醒悟？”</p>
+<p>　　定逸师太道：“是啊，费师弟此言不错。魔教的可怕，倒不在武功阴毒，还在种种诡计令人防不胜防。刘师弟，你是正人君子，上了卑鄙小人的当，那有甚么关系？你尽快把曲洋这魔头一剑杀了，干净爽快之极。我五岳剑派同气连枝，千万不可受魔教中歹人的挑拨，伤了同道的义气。”天门道人点头道：“刘师弟，君子之过，如日月之食，人所共知，知过能改，善莫大焉。你只须杀了那姓曲的魔头，侠义道中人，谁都会翘起大拇指，说一声‘衡山派刘正风果然是个善恶分明的好汉子。’我们做你朋友的，也都面上有光。”</p>
+<p>　　刘正风并不置答，目光射到岳不群脸上，道：“岳师兄，你是位明辨是非的君子，这里许多位武林高人都逼我出卖朋友，你却怎么说？”</p>
+<p>　　岳不群道：“刘贤弟，倘若真是朋友，我辈武林中人，就为朋友两胁插刀，也不会皱一皱眉头。但魔教中那姓曲的，显然是笑里藏刀，口蜜腹剑，设法来投你所好，那是最最阴毒的敌人。他旨在害得刘贤弟身败名裂，家破人亡，包藏祸心之毒，不可言喻。这种人倘若也算是朋友，岂不是污辱了‘朋友’二字？古人大义灭亲，亲尚可灭，何况这种算不得朋友的大魔头、大奸贼？”</p>
+<p>　　群雄听他侃侃而谈，都喝起彩来，纷纷说道：“岳先生这话说得再也明白不过。对朋友自然要讲义气，对敌人却是诛恶务尽，哪有甚么义气好讲？”</p>
+<p>　　刘正风叹了口气，待人声稍静，缓缓说道：“在下与曲大哥结交之初，早就料到有今日之事。最近默察情势，猜想过不多时，我五岳剑派和魔教便有一场大火拚。一边是同盟的师兄弟，一边是知交好友，刘某无法相助那一边，因此才出此下策，今日金盆洗手，想要遍告天下同道，刘某从此退出武林，再也不与闻江湖上的恩怨仇杀，只盼置身事外，免受牵连。去捐了这个芝麻绿豆大的武官来做做，原是自污，以求掩人耳目。哪想到左盟主神通广大，刘某这一步棋，毕竟瞒不过他。”</p>
+<p>　　群雄一听，这才恍然大悟，心中均道：“原来他金盆洗手，暗中含有这等深意，我本来说嘛，这样一位衡山派高手，怎么会甘心去做这等芝麻绿豆小官。”刘正风一加解释，人人都发觉自己果然早有先见之明。</p>
+<p>　　费彬和丁勉、陆柏三人对视一眼，均感得意：“若不是左师兄识破了你的奸计，及时拦阻，便给你得逞了。”</p>
+<p>　　刘正风续道：“魔教和我侠义道百余年来争斗仇杀，是是非非，一时也说之不尽。刘某只盼退出这腥风血雨的斗殴，从此归老林泉，吹箫课子，做一个安分守己的良民，自忖这份心愿，并不违犯本门门规和五岳剑派的盟约。”</p>
+<p>　　费彬冷笑道：“如果人人都如你一般，危难之际，临阵脱逃，岂不是便任由魔教横行江湖，为害人间？你要置身事外，那姓曲的魔头却又如何不置身事外？”</p>
+<p>　　刘正风微微一笑，道：“曲大哥早已当着我的面，向他魔教祖师爷立下重誓，今后不论魔教和白道如何争斗，他一定置身事外，决不插手，人不犯我，我不犯人！”</p>
+<p>　　费彬冷笑道：“好一个‘人不犯我，我不犯人’！倘若我们白道中人去犯了他呢？”</p>
+<p>　　刘正风道：“曲大哥言道：他当尽力忍让，决不与人争强斗胜，而且竭力弥缝双方的误会嫌隙。曲大哥今日早晨还派人来跟我说，华山派弟子令狐冲为人所伤，命在垂危，是他出手给救活了的。”</p>
+<p>　　此言一出，群雄又群相耸动，尤其华山派、恒山派以及青城派诸人，更交头接耳的议论了起来。华山派的岳灵珊忍不住问道：“刘师叔，我大师哥在哪里？真的是……是那位姓曲的……姓曲的前辈救了他性命么？”</p>
+<p>　　刘正风道：“曲大哥既这般说，自非虚假。日后见到令狐贤侄，你可亲自问他。”</p>
+<p>　　费彬冷笑道：“那有甚么奇怪？魔教中人拉拢离间，甚么手段不会用？他能千方百计的来拉拢你，自然也会千方百计的去拉拢华山派弟子。说不定令狐冲也会由此感激，要报答他的救命之恩，咱们五岳剑派之中，又多一个叛徒了。”转头向岳不群道：“岳师兄，小弟这话只是打个比方，请勿见怪。”岳不群微微一笑，说道：“不怪！”</p>
+<p>　　刘正风双眉一轩，昂然问道：“费师兄，你说又多一个叛徒，这个‘又’字，是甚么用意？”费彬冷笑道：“哑子吃馄饨，心里有数，又何必言明。”刘正风道：“哼，你直指刘某是本派叛徒了。刘某结交朋友，乃是私事，旁人却也管不着。刘正风不敢欺师灭祖，背叛衡山派本门，‘叛徒’二字，原封奉还。”他本来恂恂有礼，便如一个财主乡绅，有些小小的富贵之气，又有些土气，但这时突然显出勃勃英气，与先前大不相同。群雄眼见他处境十分不利，却仍与费彬针锋相对的论辩，丝毫不让，都不禁佩服他的胆量。</p>
+<p>　　费彬道：“如此说来，刘师兄第一条路是不肯走的了，决计不愿诛妖灭邪，杀那大魔头曲洋了？”</p>
+<p>　　刘正风道：“左盟主若有号令，费师兄不妨就此动手，杀了刘某的全家！”</p>
+<p>　　费彬道：“你不须有恃无恐，只道天下的英雄好汉在你家里作客，我五岳剑派便有所顾忌，不能清理门户。”伸手向史登达一招，说道：“过来！”史登达应道：“是！”走上三步。费彬从他手中接过五色令旗，高高举起，说道：“刘正风听者：左盟主有令，你若不应允在一个月内杀了曲洋，则五岳剑派只好立时清理门户，以免后患，斩草除根，决不容情。你再想想罢！”</p>
+<p>　　刘正风惨然一笑，道：“刘某结交朋友，贵在肝胆相照，岂能杀害朋友，以求自保？左盟主既不肯见谅，刘正风势孤力单，又怎么与左盟主相抗？你嵩山派早就布置好一切，只怕连刘某的棺材也给买好了，要动手便即动手，又等何时？”</p>
+<p>　　费彬将令旗一展，朗声道：“泰山派天门师兄，华山派岳师兄，恒山派定逸师太，衡山派诸位师兄师侄，左盟主有言吩咐：自来正邪不两立，魔教和我五岳剑派仇深似海，不共戴天。刘正风结交匪人，归附仇敌。凡我五岳同门，出手共诛之。接令者请站到左首。”</p>
+<p>　　天门道人站起身来，大踏步走到左首，更不向刘正风瞧上一眼。天门道人的师父当年命丧魔教一名女长老之手，是以他对魔教恨之入骨。他一走到左首，门下众弟子都跟了过去。</p>
+<p>　　岳不群起身说道：“刘贤弟，你只须点一点头，岳不群负责为你料理曲洋如何？你说大丈夫不能对不起朋友，难道天下便只曲洋一人才是你朋友，我们五岳剑派和这里许多英雄好汉，便都不是你朋友了？这里千余位武林同道，一听到你要金盆洗手，都千里迢迢的赶来，满腔诚意的向你祝贺，总算够交情了罢？难道你全家老幼的性命，五岳剑派师友的恩谊，这里千百位同道的交情，一并加将起来，还及不上曲洋一人？”</p>
+<p>　　刘正风缓缓摇了摇头，说道：“岳师兄，你是读书人，当知道大丈夫有所不为，你这番良言相劝，刘某甚是感激。人家逼我害曲洋，此事万万不能。正如若是有人逼我杀害你岳师兄，或是要我加害这里任何哪一位好朋友，刘某纵然全家遭难，却也决计不会点一点头。曲大哥是我至交好友，那是不错，但岳师兄何尝不是刘某的好友？曲大哥倘若有一句提到，要暗害五岳剑派中刘某那一位朋友，刘某便鄙视他的为人，再也不当他是朋友了。”他这番话说得极是诚恳，群雄不由得为之动容，武林中义气为重，刘正风这般顾全与曲洋的交情，这些江湖汉子虽不以为然，却禁不住暗自赞叹。</p>
+<p>　　岳不群摇头道：“刘贤弟，你这话可不对了。刘贤弟顾全朋友义气，原是令人佩服，却未免不分正邪，不问是非。魔教作恶多端，残害江湖上的正人君子、无辜百姓。刘贤弟只因一时琴箫投缘，便将全副身家性命都交给了他，可将‘义气’二字误解了。”</p>
+<p>　　刘正风淡淡一笑，说道：“岳师兄，你不喜音律，不明白小弟的意思。言语文字可以撒谎作伪，琴箫之音却是心声，万万装不得假。小弟和曲大哥相交，以琴箫唱和，心意互通。小弟愿意以全副身家性命担保，曲大哥是魔教中人，却无一点一毫魔教的邪恶之气。”</p>
+<p>　　岳不群长叹一声，走到了天门道人身侧。劳德诺、岳灵珊、陆大有等也都随着过去。</p>
+<p>　　定逸师太望着刘正风，问道：“从今而后，我叫你刘贤弟，还是刘正风？”刘正风脸露苦笑，道：“刘正风命在顷刻，师太以后也不会再叫我了。”定逸师太合十念道：“阿弥陀佛！”缓缓走到岳不群之侧，说道：“魔深孽重，罪过，罪过。”座下弟子也都跟了过去。</p>
+<p>　　费彬道：“这是刘正风一人之事，跟旁人并不相干。衡山派的众弟子只要不甘附逆，都站到左首去。”</p>
+<p>　　大厅中寂静片刻，一名年轻汉子说道：“刘师伯，弟子们得罪了。”便有三十余名衡山派弟子走到恒山派群尼身侧，这些都是刘正风的师侄辈，衡山派第一代的人物都没到来。</p>
+<p>　　费彬又道：“刘门亲传弟子，也都站到左首去。”</p>
+<p>　　向大年朗声道：“我们受师门重恩，义不相负，刘门弟子，和恩师同生共死。”</p>
+<p>　　刘正风热泪盈眶，道：“好，好，大年！你说这番话，已很对得起师父了。你们都过去罢。师父自己结交朋友，和你们可没干系。”</p>
+<p>　　米为义刷的一声，拔出长剑，说道：“刘门一系，自非五岳剑派之敌，今日之事，有死而已。哪一个要害我恩师，先杀了姓米的。”说着便在刘正风身前一站，挡住了他。</p>
+<p>　　丁勉左手一扬，嗤的一声轻响，一丝银光电射而出。刘正风一惊，伸手在米为义右膀上一推，内力到处，米为义向左撞出，那银光便向刘正风胸口射来。向大年护师心切，纵身而上，只听他大叫一声，那银针正好射中心脏，立时气绝身亡。</p>
+<p>　　刘正风左手将他尸体抄起，探了探他鼻息，回头向丁勉道：“丁老二，是你嵩山派先杀了我弟子！”丁勉森然道：“不错，是我们先动手，却又怎样？”</p>
+<p>　　刘正风提起向大年的尸身，运力便要向丁勉掷去。丁勉见他运劲的姿式，素知衡山派的内功大有独到之处，刘正风是衡山派中的一等高手，这一掷之势非同小可，当即暗提内力，准备接过尸身，立即再向他反掷回去。哪知刘正风提起尸身，明明是要向前掷出，突然间身子往斜里窜出，双手微举，却将向大年的尸身送到费彬胸前。这一下来得好快，费彬出其不意，只得双掌竖立，运劲挡住尸身，便在此时，双胁之下一麻，已被刘正风点了穴道。</p>
+<p>　　刘正风一招得手，左手抢过他手中令旗，右手拔剑，横架在他咽喉，左肘连撞，封了他背心三处穴道，任由向太年的尸身落在地下。这几下兔起鹘落，变化快极，待得费彬受制，五岳令旗被夺，众人这才醒悟，刘正风所使的，正是衡山派绝技，叫做“百变千幻衡山云雾十三式”。众人久闻其名，这一次算是大开眼界。</p>
+<p>　　岳不群当年曾听师父说过，这一套“百变千幻衡山云雾十三式”乃衡山派上代一位高手所创。这位高手以走江湖变戏法卖艺为生。那走江湖变戏法，仗的是声东击西，虚虚实实，幻人耳目。到得晚年，他武功愈高，变戏法的技能也是日增，竟然将内家功夫使用到戏法之中，街头观众一见，无不称赏，后来更是一变，反将变戏法的本领渗入了武功，五花八门，层出不穷。这位高手生性滑稽，当时创下这套武功游戏自娱，不料传到后世，竟成为衡山派的三大绝技之一。只是这套功夫变化虽然古怪，但临敌之际，却也并无太大的用处，高手过招，人人严加戒备，全身门户，无不守备綦谨，这些幻人耳目的花招多半使用不上，因此衡山派对这套功夫也并不如何着重，如见徒弟是飞扬佻脱之人，便不传授，以免他专务虚幻，于扎正根基的踏实功夫反而欠缺了。</p>
+<p>　　刘正风是个深沉寡言之人，在师父手上学了这套功夫，平生从未一用，此刻临急而使，一击奏功，竟将嵩山派中这个大名鼎鼎、真实功夫决不在他之下的“大嵩阳手”费彬制服。他右手举着五岳剑派的盟旗，左手长剑架在费彬的咽喉之中，沉声道：“丁师兄、陆师兄，刘某斗胆夺了五岳令旗，也不敢向两位要胁，只是向两位求情。”</p>
+<p>　　丁勉与陆伯对望了一眼，均想：“费师弟受了他的暗算，只好且听他有何话说。”丁勉道：“求甚么情？”刘正风道：“求两位转告左盟主，准许刘某全家归隐，从此不干预武林中的任何事务。刘某与曲洋曲大哥从此不再相见，与众位师兄朋友，也……也就此分手。刘某携带家人弟子，远走高飞，隐居海外，有生之日，绝足不履中原一寸土地。”</p>
+<p>　　丁勉微一踌躇，道：“此事我和陆师弟可做不得主，须得归告左师哥，请他示下。”</p>
+<p>　　刘正风道：“这里泰山、华山两派掌门在此，恒山派有定逸师太，也可代她掌门师姊作主，此外，众位英雄好汉，俱可作个见证。”他眼光向众人脸上扫过，沉声道：“刘某向众位朋友求这个情，让我顾全朋友义气，也得保家人弟子的周全。”</p>
+<p>　　定逸师太外刚内和，脾气虽然暴躁，心地却极慈祥，首先说道：“如此甚好，也免得伤了大家的和气。丁师兄、陆师兄，咱们答应了刘贤弟罢。他既不再和魔教中人结交，又远离中原，等如是世上没了这人，又何必定要多造杀业？”天门道人点头道：“这样也好，岳贤弟，你以为如何？”岳不群道：“刘贤弟言出如山，他既这般说，大家都是信得过的。来来来，咱们化干戈为玉帛，刘贤弟，你放了费贤弟，大伙儿喝一杯解和酒，明儿一早，你带了家人子弟，便离开衡山城罢！”</p>
+<p>　　陆柏却道：“泰山、华山两派掌门都这么说，定逸师太更竭力为刘正风开脱，我们又怎敢违抗众意？但费师弟刻下遭受刘正风的暗算，我们倘若就此答允，江湖上势必人人言道，嵩山派是受了刘正风的胁持，不得不低头服输，如此传扬开去，嵩山派脸面何存？”</p>
+<p>　　定逸师太道：“刘贤弟是在向嵩山派求情，又不是威胁逼迫，要说‘低头服输’，低头服输的是刘正风，不是嵩山派。何况你们又已杀了一名刘门弟子。”</p>
+<p>　　陆柏哼了一声，说道：“狄修，预备着。”嵩山派弟子狄修应道：“是！”手中短剑轻送，抵进刘正风长子背心的肌肉。陆柏道：“刘正风，你要求情，便跟我们上嵩山去见左盟主，亲口向他求情。我们奉命差遣，可作不得主。你立刻把令旗交还，放了我费师弟。”</p>
+<p>　　刘正风惨然一笑，向儿子道：“孩儿，你怕不怕死？”刘公子道：“孩儿听爹爹的话，孩儿不怕！”刘正风道：“好孩子！”陆柏喝道：“杀了！”狄修短剑往前一送，自刘公子的背心直刺入他心窝，短剑跟着拔出。刘公子俯身倒地，背心创口中鲜血泉涌。</p>
+<p>　　刘夫人大叫一声，扑向儿子尸身。陆柏又喝道：“杀了！”狄修手起剑落，又是一剑刺入刘夫人背心。</p>
+<p>　　定逸师太大怒，呼的一掌，向狄修击了过去，骂道：“禽兽！”丁勉抢上前来，也击出一掌。双掌相交，定逸师太退了三步，胸口一甜，一口鲜血涌到了嘴中，她要强好胜，硬生生将这口血咽入口腹中。丁勉微微一笑，道：“承让！”</p>
+<p>　　定逸师太本来不以掌力见长，何况适才这一掌击向狄修，以长攻幼，本就未使全力，也不拟这一掌击死了他，不料丁勉突然出手，他那一掌却是凝聚了十成功力。双掌陡然相交，定逸师太欲待再催内力，已然不及，丁勉的掌力如排山倒海般压到，定逸师太受伤呕血，大怒之下，第二掌待再击出，一运力间，只觉丹田中痛如刀割，知道受伤已然不轻，眼前无法与抗，一挥手，怒道：“咱们走！”大踏步向门外走去，门下群尼都跟了出去。</p>
+<p>　　陆柏喝道：“再杀！”两名嵩山弟子推出短剑，又杀了两名刘门弟子。陆柏道：“刘门弟子听了，若要活命，此刻跪地求饶，指斥刘正风之非，便可免死。”</p>
+<p>　　刘正风的女儿刘菁怒骂：“奸贼，你嵩山派比魔教奸恶万倍！”陆柏喝道：“杀了！”万大平提起长剑，一剑劈下，从刘菁右肩直劈至腰。史登达等嵩山弟子一剑一个，将早已点了穴道制住的刘门亲传弟子都杀了。</p>
+<p>　　大厅上群雄虽然都是毕生在刀枪头上打滚之辈，见到这等屠杀惨状，也不禁心惊肉跳。有些前辈英雄本想出言阻止，但嵩山派动手实在太快，稍一犹豫之际，厅上已然尸横遍地。各人又想：自来邪正不两立，嵩山派此举并非出于对刘正风的私怨，而是为了对付魔教，虽然出手未免残忍，却也未可厚非。再者，其时嵩山派已然控制全局，连恒山派的定逸师太亦已铩羽而去，眼见天门道人、岳不群等高手都不作声，这是他五岳剑派之事，旁人倘若多管闲事，强行出头，势不免惹下杀身之祸，自以明哲保身的为是。</p>
+<p>　　杀到这时，刘门徒弟子女已只剩下刘正风最心爱的十五岁幼子刘芹。陆柏向史登达道：“问这小子求不求饶？若不求饶，先割了他的鼻子，再割耳朵，再挖眼珠，叫他零零碎碎的受苦。”史登达道：“是！”转向刘芹，问道：“你求不求饶？”</p>
+<p>　　刘芹脸色惨白，全身发抖。刘正风道：“好孩子，你哥哥姊姊何等硬气，死就死了，怕甚么？”刘芹颤声道：“可是……爹，他们要……要割我鼻子，挖……挖我眼睛……”刘正风哈哈一笑，道：“到这地步，难道你还想他们放过咱们么？”刘芹道：“爹爹，你……你就答允杀了曲……曲伯伯……”刘正风大怒，喝道：“放屁！小畜生，你说甚么？”</p>
+<p>　　史登达举起长剑，剑尖在刘芹鼻子前晃来晃去，道：“小子，你再不跪下求饶，我一剑削下来了。一……二……”他那“三”字还没说出口，刘芹身子战抖，跪倒在地，哀求道：“别……别杀我……我……”陆柏笑道：“很好，饶你不难。但你须得向天下英雄指斥刘正风的不是。”刘芹双眼望着父亲，目光中尽是哀求之意。</p>
+<p>　　刘正风一直甚是镇定，虽见妻子儿女死在他的眼前，脸上肌肉亦毫不牵动，这时却愤怒难以遏制，大声喝道：“小畜生，你对得起你娘么？”</p>
+<p>　　刘芹眼见母亲、哥哥、姊姊的尸身躺在血泊之中，又见史登达的长剑不断在脸前晃来晃去，已吓得心胆俱裂，向陆柏道：“求求你饶了我，饶了……饶了我爹爹。”陆柏道：“你爹爹勾结魔教中的恶人，你说对不对？”刘芹低声道：“不……不对！”陆柏道：“这样的人，该不该杀？”刘芹低下了头，不敢答话。陆柏道：“这小子不说话，一剑把他杀了。”</p>
+<p>　　史登达道：“是！”知道陆柏这句话意在恫吓，举起了剑，作势砍下。</p>
+<p>　　刘芹忙道：“该……该杀！”陆柏道：“很好！从今而后，你不是衡山派的人了，也不是刘正风的儿子，我饶了你的性命。”刘芹跪在地下，吓得双腿都软了，竟然站不起来。</p>
+<p>　　群雄瞧着这等模样，忍不住为他羞惭，有的转过了头，不去看他。</p>
+<p>　　刘正风长叹一声，道：“姓陆的，是你赢了！”右手一挥，将五岳令旗向他掷去，左足一抬，把费彬踢开，朗声道：“刘某自求了断，也不须多伤人命了。”左手横过长剑，便往自己颈中刎去。</p>
+<p>　　便在这时，檐头突然掠下一个黑衣人影，行动如风，一伸臂便抓住了刘正风的左腕，喝道：“君子报仇，十年未晚，去！”右手向后舞了一个圈子，拉着刘正风向外急奔。</p>
+<p>　　刘正风惊道：“曲大哥……你……”</p>
+<p>　　群雄听他叫出“曲大哥”三字，知道这黑衣人便是魔教长老曲洋，尽皆心头一惊。</p>
+<p>　　曲洋叫道：“不用多说！”足下加劲，只奔得三步，丁勉、陆柏二人四掌齐出，分向他二人后心拍来。曲洋向刘正风喝道：“快走！”出掌在刘正风背上一推，同时运劲于背，硬生生受了丁勉、陆柏两大高手的并力一击。砰的一声响，曲洋身子向外飞出去，跟着一口鲜血急喷而出，回手连挥，一丛黑针如雨般散出。</p>
+<p>　　丁勉叫道：“黑血神针，快避！”急忙向旁闪开。群雄见到这丛黑针，久闻魔教黑血神针的大名，无不惊心，你退我闪，乱成一团，只听得“哎唷！”“不好！”十余人齐声叫了起来。厅上人众密集，黑血神针又多又快，毕竟还是有不少人中了毒针。</p>
+<p>　　混乱之中，曲洋与刘正风已逃得远了。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/未婚妻-玛·奥克罗克斯.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/花未眠-川端康成.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/未婚妻-玛·奥克罗克斯.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/花未眠-川端康成.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/刘正风灭门-金庸.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>

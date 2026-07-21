@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>信使 - 刘慈欣 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-299e6720.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="信使"><a class="header" href="#信使">信使</a></h1>
+<p><em>刘慈欣</em></p>
+<p>　　老人是昨天才发现楼下那个听众的。这些天他的心绪很不好，除了拉琴，很少向窗外看。他想用窗帘和音乐把自己同外部世界隔开，但做不到。早年，在大西洋的那一边，当他在狭窄的阁楼上摇着婴儿车，在专利局喧闹的办公室中翻着那些枯燥的专利申请书时，他的思想却是沉浸在另一个美妙的世界，在那个世界中，他以光速奔跑……现在，普林斯顿是一个幽静的小城，早年的超脱却离他而去，外部世界在时时困扰着他。有两件事使他不安：其中一件是量子理论，这个由普朗克开始、现在有许多年轻的物理学家热衷的东西，让他觉得很不舒服，他不喜欢那个理论中的不确定性，“上帝不掷骰子。”他最近常常自言自语。而他后半生所致力的统一场论却没有什么进展，他所构筑的理论只有数学内容而缺少物理内容。另一件事是原子弹。广岛和长崎的事已过去很长时间了，甚至战争也过去很长时间了，但他的痛苦在这之前只是麻木的伤口，现在才痛起来。那只是一个很小的、很简单的公式，只是说明了质量和能量的关系，事实上，在费米的反应堆建成之前，他自己也认为人类在原子级别把质量转化为能量是异想天开……海伦·杜卡斯最近常这么安慰他。但她不知道，老人并不是在想自己的功过荣辱，他的忧虑要深远得多。最近的睡梦中，他常常听到一种可怕的声音，像洪水，像火山，终于有一夜他被这声音从梦中惊醒，发现那不过是门廊中一只小狗的酣声。以后，那声音再没在他梦中出现。他梦见了一片荒原，上面有被残阳映照着的残雪。他试图跑出这荒原，但它太大了，无边无际。后来他看到了海，残阳中呈血色的海，才明白整个世界都是盖着残雪的荒原……他再次从梦中惊醒，这时，一个问题，像退潮时黑色的礁石一样突然出现在他的脑海中：人类还有未来吗？这问题像烈火一样煎熬着他，他几乎无法忍受了。</p>
+<p>　　楼下的那人是个年轻人，穿着现在很流行的尼龙夹克。老人一眼就看出他是在听他的音乐。后来的三天，每当老人在傍晚开始拉琴时，那人总是准时到来，静静地站在普林斯顿渐渐消失的晚霞中，一直到夜里九点左右老人放下琴要休息时，他才慢慢地离去。这人可能是普林斯顿大学的一个学生，也许听过老人的讲课或某次演讲。老人早已厌倦了从国王到家庭主妇的数不清的崇拜者，但楼下这个陌生的知音却给了他一种安慰。</p>
+<p>　　第四天傍晚，老人的琴声刚刚响起，外面下起雨来。从窗口看下去，年轻人站到了这里惟一能避雨的一棵梧桐树下。后来雨大了，那棵在秋天枝叶已很稀疏的树挡不住雨了。老人停下了琴，想让他早些走，但年轻人似乎知道这不是音乐结束的时间，仍一动不动地站在那儿，浸透了雨水的夹克在路灯下发亮。老人放下提琴，迈着不灵便的步子走下楼，穿过雨雾走到年轻人面前。</p>
+<p>　　“你如果，哦，喜欢听，就到楼上去听吧。”</p>
+<p>　　没等年轻人回答，老人转身走回去。年轻人呆呆地站在那儿，双眼望着雨中的夜景，仿佛刚才发生的是一场梦。后来，音乐又在楼上响了起来，他慢慢转过身，恍惚地走进门，走上楼去，好像被那乐声牵着魂一样。楼上老人房间的门半开着，他走了进去。老人面对着窗外的雨夜拉琴，没有回头，但感觉到了年轻人的到来。对于如此迷恋于自己琴声的这个人，老人心中有一丝歉意。他拉得不好，特别是今天这首他最喜欢的莫扎特的回族曲，拉得常常走调。有时，他忘记了一个段落，就用自己的想象来补上。还有那把价格低廉的小提琴，很旧了，音也不准。但年轻人在静静地听着，他们俩很快就沉浸在这不完美但充满想象力的琴声中。</p>
+<p>　　这是二十世纪中叶一个普通的夜晚，这时，东西方的铁幕已经落下，在刚刚出现的核阴影下，人类的未来就像这秋天的夜雨一样明暗而迷蒙。就在这夜。这雨中，莫扎特的回族曲从普林斯顿这座小楼的窗口飘出……时间过得似乎比往常快，又到九点了。老人停下了琴，想起了那个年轻人，抬头见他正向自己鞠躬，然后转身向门口走去。</p>
+<p>　　“哦，你明天还来听吧。”老人说。</p>
+<p>　　年轻人站住，但没有转身，“会的，教授，但明天您有客人。”他拉开门，又像想起了什么，“哦对，客人八点十分就会走的，那时我还会来的。”</p>
+<p>　　老人并没有仔细领会这话的含义。</p>
+<p>　　第二天雨没停，但晚上真有客人来，是以色列大使。老人一直在祝福那个遥远的新生的自己民族的国家，并用出卖手稿的钱支援过它。但这次大使带来的请求让他哭笑不得，他们想让他担任以色列总统！他坚决拒绝了。他送大使到外面的雨中，大使上车前掏出怀表看，路灯下老人看到表上的时间是八点十分。他突然想起了什么。</p>
+<p>　　“您，哦，您来的事情还有人知道吗？”他问大使。</p>
+<p>　　“请放心教授，这是严格保密的，没有任何人知道。”</p>
+<p>　　也许那个年轻人知道，但他还知道……老人又问了一个很奇怪的问题，“那么，您来之前就打算八点十分离开吗？”</p>
+<p>　　“嗯……不，我想同您谈很长时间的，但既然您柜绝了，我就不想再打扰了，我们都会理解的，教授。”</p>
+<p>　　老人困惑地回到楼上，但当他拿起小提琴时，就把这困惑忘记了。琴声刚刚响起，年轻人就出现了。</p>
+<p>　　十点钟，两个人的音乐会结束了。老人又对将要离去的年轻人说了昨天的话：“你明天还来听吧。”他想了想又说，“我觉得这很好。”</p>
+<p>　　“不，明天我还在下面听。”</p>
+<p>　　“明天好像还会下雨，这是连阴天。”</p>
+<p>　　“是的，明天会下雨，但在您拉琴的时候不下；后来还会下一天，您拉琴时也下，我会上来听；雨要一直下到大后天上午十一点才会停。”</p>
+<p>　　老人笑了，觉得年轻人很幽默，但看着他离去的背影，他突然预感到这未必是幽默。</p>
+<p>　　老人的预感是对的。以后的天气精确地证实着年轻人的预言：第二天晚上没雨，他在楼下听琴；第三天外面下雨，他上来听；普林斯顿的雨准确地在第四天的上午十一点停了。</p>
+<p>　　雨后初晴的这天晚上，年轻人却没有在楼下听琴，他来到老人的房间里，拿着一把小提琴。他没说什么，用双手把琴递给老人。</p>
+<p>　　“不，不，我用不着别的琴了。”老人摆摆手说。有很多人送给他提琴，其中有很名贵的意大利著名制琴师的制品，他都谢绝了，认为自己的技巧配不上这么好的琴。</p>
+<p>　　“这是借给您的，过一段时间您再还给我。对不起教授，我只能借给您。”</p>
+<p>　　老人接过琴来，这是一把看上去很普通的小提琴，没有弦！再仔细一看，弦是有的，但是极细，如蛛丝一般。老人不敢把手指按到弦上，那蛛丝似乎一口气就可吹断。他抬头看了看年轻人，后者微笑着向他点点头，于是他轻轻地把手指按到弦上，弦没断，他的手指却感到了那极细的蛛丝所不可能具有的强劲的张力。他把弓放上去，就是放弓时这不经意的一点滑动，那弦便发出了它的声音。这时，老人知道了什么叫天籁之音！</p>
+<p>　　那是太阳的声音，那是声音的太阳！</p>
+<p>　　老人拉起了回族曲，立刻把自己溶入了无边的宇宙。他看到光波在太空中行进，慢得像晨风吹动的薄雾；无限宽广的时空薄膜在引力的巨浪中轻柔地波动着，浮在膜上的无数恒星如晶莹的露珠；能量之风浩荡吹过，在时空之膜上激起梦幻般的霓光……当老人从这神奇的音乐中醒来时，年轻人不知什么时候已经走了。</p>
+<p>　　以后，老人被那把小提琴迷住了，每天都拉琴到深夜。杜卡斯和医生都劝他注意身体，但他们也知道，每当琴声响起时，老人就感到一种从未有过的生命活力在血管中涌动。</p>
+<p>　　年轻人却再也没来。</p>
+<p>　　这样过了十多天，老人的琴突然拉得少了起来，而且有时又拉起了他原来那把旧提琴。这是因为他突然产生了一种忧虑，怕过多的演奏会磨断那蛛丝般的弦。但那把琴所发出的声音的魔力让他无法抗拒，特别是想到年轻人在某一天还会来耍回那把琴，他又像开始时那样整夜地拉那把琴了。每天深夜，当他依依不舍地停止演奏时，总要细细地察看琴弦，老眼昏花，他就让杜卡斯找了一个放大镜，而放大镜下的琴弦丝毫没有防损的痕迹，它的表面如宝石一样光滑晶莹，在黑暗中，它还会发出蓝色的荧光。</p>
+<p>　　这样又过了十多天。</p>
+<p>　　这天深夜，入睡前，老人像往常那样最后看了看那把琴，突然发现琴弦有些异样。他拿起放大镜仔细察看，肯定了自己的判断。其实这迹象在几天前就出现了，只是到了现在，它才明显到能轻易察觉的程度。</p>
+<p>　　琴弦越磨越粗。</p>
+<p>　　第二天晚上，当老人刚把弓放到琴弦上时，年轻人突然出现了。</p>
+<p>　　“你来要琴吗？”老人不安地问。</p>
+<p>　　年轻人点点头。</p>
+<p>　　“哦……如果能把它送给我的话……”</p>
+<p>　　“绝对不行，真对不起教授，绝对不行。我不能在现在留下任何东西。”</p>
+<p>　　老人沉思起来，他有些明白了。双手托起那把琴，他问：“那么这个，不是现在的东西了？”年轻人点点头。他现在站在窗前，窗外，银河横贯长空，群星灿烂，在这壮丽的背景前他呈现出一个黑色的剪影。</p>
+<p>　　老人现在明白了更多的事。他想起了年轻人神奇的预测能力，其实很简单，他不是在预测，是在回忆。</p>
+<p>　　“我是信使，我们的时代不想看到您太忧虑，所以派我来。”</p>
+<p>　　“那么你给我带来什么呢，这把琴吗？”老人并没有表现出任何惊奇，在他的一生中，整个宇宙对他就是一个大惊奇，正因为如此，他才超越别人之上，首先窥见了它最深的奥秘。</p>
+<p>　　“不是的，这把琴只是一个证明，证明我来自未来。”</p>
+<p>　　“怎么证明呢？”</p>
+<p>　　“在您的时代，人们能够把质量转化为能量：原子弹，还有很快将出现的核聚变炸弹。在我们的时代，已可以把能量转化成质量，您看”，他指着那把提琴的琴弦，“它变粗了，所增加的质量是由您拉琴时产生的声波能量转化的。”老人仍然困惑地摇摇头。“我知道，这两件事不符合您的理论：——，我不可能逆时间而行；二，按照您的公式，要增加琴弦上已增加的那么多的质量，需要大得多的能量。”</p>
+<p>　　老人沉默了一会儿，宽容地笑了，“哦，理论是灰色的，”他微微叹息，“生命之树也是灰色的了。好吧，孩子，你给我带来了什么信息？”</p>
+<p>　　“两个信息。”</p>
+<p>　　“那么第一？”</p>
+<p>　　“人类有未来。”</p>
+<p>　　老人宽慰地仰躺到扶手椅上，像每一个了却了人生最后夙愿的老者一样，一种舒适感涌遍了全身，他可以真正休息了。“孩子，见到你我就应该知道这一点的。”</p>
+<p>　　“投在日本的两颗原子弹是人类最后两颗用于实战的核弹。本世纪九十年代末，大部分国家签署了禁止核试验和防止核扩散国际公约，又过了五十年，人类的最后一颗核弹被销毁。我是在那二百年后出生的。”</p>
+<p>　　年轻人拿起了那把他要收回的小提琴。“我该走了，为了听您的音乐，我已耽误了很多行程，我还要去三个时代，见五个人，其中有统一场论的创立者，那是距您百年以后的事了。”</p>
+<p>　　他没说的还有：他在每个时代拜见伟人都选在其不久于人世的时候，这样可把对未来的影响减到最小。</p>
+<p>　　“还有你带来的第二条信息呢？”</p>
+<p>　　年轻人已拉开房门，他转过身来微笑着，似乎带着歉意。</p>
+<p>　　“教授，上帝确实掷骰子。”</p>
+<p>　　老人从窗口看着年轻人来到楼下，已是深夜，街上没什么人。年轻人开始脱下衣服，他也不想带走这个时代的东西。他的紧身内衣在夜色中发着荧光，那显然是他所处的时代的衣服。他没有像老人想像的那样化作一道白光离去，而是沿一条斜线急速向上升去。几秒钟后，他就消失在群星灿烂的夜空之中。他上升的速度很恒定，没有加速过程。很明显，不是他在上升，而是地球在移动，他是绝对静止的，至少在这个时空中是绝对静止的。老人猜测，他可能使自己处于一个绝对时空坐标的原点，他站在时间长河的河岸上，看着时间急流滚滚而过，愿意的话，他可以走到上下游的任何一处。</p>
+<p>　　爱因斯坦默默站了一会儿，慢慢地转身，又拿起了他那把旧小提琴。</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/吃酒-丰子恺.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/婴儿的观念-唐纳德·巴塞尔姆.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/吃酒-丰子恺.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/婴儿的观念-唐纳德·巴塞尔姆.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/信使-刘慈欣.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>
