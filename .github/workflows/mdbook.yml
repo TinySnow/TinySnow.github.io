@@ -248,6 +248,12 @@ jobs:
       - name: Install Node dependencies
         run: npm install -g static-sitemap-cli
 
+      - name: Replace image URLs (raw.githubusercontent.com → img.tinysnow.cn)
+        run: |
+          find src/ -name "*.md" -type f -exec sed -i \
+            's|https://raw\.githubusercontent\.com/TinySnow/GithubImageHosting/main/|https://img.tinysnow.cn/|g' \
+            {} +
+
       - name: Build with mdBook
         run: mdbook build
 
