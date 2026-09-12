@@ -1,0 +1,1524 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>微雪博客 RSS</title><link>https://tinysnow.github.io</link><description>包含本次 Git 提交中的所有文章更新</description><atom:link href="https://tinysnow.github.io" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>zh-CN</language><lastBuildDate>Sat, 12 Sep 2026 14:58:50 +0000</lastBuildDate><item><title>[更新] 并行计算基础.md</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E9%99%84%E5%8A%A0%E7%AB%A0/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80.html</link><description>更新: 并行计算基础.md - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;并行计算基础&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU 按周期执行指令，并可用流水线提高吞吐&lt;/li&gt;
+&lt;li&gt;多核之间需要处理缓存一致性问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;并行就是“让多个人同时干活”，但协调和通信本身也有成本&lt;/li&gt;
+&lt;li&gt;并行分好几个层次：位级、指令级、数据级、任务级&lt;/li&gt;
+&lt;li&gt;阿姆达尔定律告诉我们：串行部分决定了并行加速的上限&lt;/li&gt;
+&lt;li&gt;共享内存和分布式内存是两种主要的并行系统架构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;前几章里，我们一直想方设法让&lt;strong&gt;一个&lt;/strong&gt; CPU 更快：流水线、缓存、乱序执行……但再快也有物理极限，怎么办？&lt;/p&gt;
+&lt;p&gt;计算机科学的老办法又来了：既然一个人干不快，那就多叫几个人——&lt;strong&gt;并行计算&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;并行的几个层次&lt;/h3&gt;
+&lt;p&gt;“并行”这个词很宽泛，从最底层到最高层，至少有四层：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;位级并行&lt;/strong&gt;：一次处理更多位。8 位加法器一次算 8 位，32 位一次算 32 位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;指令级并行&lt;/strong&gt;：多条指令同时执行，比如指令流水线、超标量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据级并行&lt;/strong&gt;：同样的操作，作用在一大批数据上。比如向量加法，一次算 8 个元素&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;任务级并行&lt;/strong&gt;：不同的任务分给不同核心。比如一个核心处理图像、一个处理音频&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;越往上，粒度越粗，软件要操心的协调也越多。&lt;/p&gt;
+&lt;h3&gt;两种系统架构&lt;/h3&gt;
+&lt;p&gt;多个人一起干活，得先决定“东西放哪”。并行系统主要分两种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;共享内存&lt;/strong&gt;：所有 CPU 共用一块内存，谁都能访问同一份数据。编程方便，但人多了容易抢，还要处理缓存一致性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分布式内存&lt;/strong&gt;：每个 CPU 有自己的内存，彼此靠网络通信。扩展性好，但传数据要走网络，开销大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以把共享内存想象成一间公共办公室，大家随手就能拿到资料；分布式内存则像几间独立办公室，要资料得打电话让对方送过来。&lt;/p&gt;
+&lt;h3&gt;阿姆达尔定律&lt;/h3&gt;
+&lt;p&gt;多叫几个人，活儿就能快几倍吗？不一定。这就引出了&lt;strong&gt;阿姆达尔定律&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;加速比 = 1 / (串行部分比例 + 并行部分比例 / 处理器数)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;举个例子：一个程序 95% 的部分可以并行，5% 必须串行。哪怕你用 4 个处理器：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;加速比 = 1 / (0.05 + 0.95/4) ≈ 3.48&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;就算处理器增加到无穷多个，那 5% 的串行部分仍然会把加速比死死压在 20 倍以内。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;结论很朴素：一个人必须自己干的那部分，决定了团队能快多少。&lt;/strong&gt; 想真正提速，往往得先想办法减少“串行部分”。&lt;/p&gt;
+&lt;h3&gt;粒度的权衡&lt;/h3&gt;
+&lt;p&gt;并行还有个绕不开的取舍——&lt;strong&gt;粒度&lt;/strong&gt;，也就是“一次分多大的任务”：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分得太细：每个子任务很快干完，但协调、通信的开销反而占了大头&lt;/li&gt;
+&lt;li&gt;分得太粗：通信少了，但容易出现“有人累死、有人闲着”的负载不均&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最好的粒度，是让每个处理器分到的工作量差不多，同时通信开销又不太高。这没有标准答案，得看具体问题。&lt;/p&gt;
+&lt;h3&gt;别忘了缓存一致性&lt;/h3&gt;
+&lt;p&gt;还记得前面提过的缓存一致性问题吗？在多核并行里，它变得更关键。缓存一致性协议负责协调同一内存位置在不同核心缓存中的副本，让各核心对这个位置的写入顺序形成一致认识。但这并不自动保证多次内存操作的先后关系，也不能把“读取、计算、写回”这样的复合操作变成不可分割的一步。&lt;/p&gt;
+&lt;p&gt;因此，并行程序除了“分任务”，还要处理&lt;strong&gt;同步和内存顺序&lt;/strong&gt;。多个线程在没有同步的情况下同时读写同一变量，可能形成数据竞争；常见办法包括用互斥锁保护临界区、用原子操作更新简单状态、用屏障协调阶段。信号量主要用于计数或协调资源，只有二元信号量在特定用法下才类似互斥锁。同步用得好能保证正确性，用得不好则会拖慢程序，甚至引发死锁（这会在操作系统部分细讲）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你写了一个程序，其中 90% 的代码可以并行，10% 必须串行。即使你有 100 个核心，加速比最多能到多少？为什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;并行的四个层次&lt;/li&gt;
+&lt;li&gt;共享内存与分布式内存&lt;/li&gt;
+&lt;li&gt;阿姆达尔定律&lt;/li&gt;
+&lt;li&gt;并行粒度的权衡&lt;/li&gt;
+&lt;li&gt;并行中的同步与缓存一致性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97"&gt;Wikipedia(zh)：并行计算&lt;/a&gt;：并行计算的基本概念&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E9%98%BF%E5%A7%86%E8%BE%BE%E5%B0%94%E5%AE%9A%E5%BE%8B"&gt;Wikipedia(zh)：阿姆达尔定律&lt;/a&gt;：并行加速的理论上限&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/OpenMP"&gt;Wikipedia(zh)：OpenMP&lt;/a&gt;：共享内存并行编程模型&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E8%A8%8A%E6%81%AF%E5%82%B3%E9%81%9E%E4%BB%8B%E9%9D%A2"&gt;Wikipedia(zh)：消息传递接口&lt;/a&gt;：分布式内存并行编程模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;最多约 10 倍。把公式里的并行部分拉到无穷，只剩串行部分：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;加速比上限 = 1 / 0.1 = 10&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;所以即使核心无限多，那 10% 的串行代码也会把整体速度死死限制在 10 倍。这也说明：优化的重点往往是那部分“怎么也快不起来”的串行逻辑，而不只是增加核心数。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/并行计算基础.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/附加章/并行计算基础.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第四十四章：术语表</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%9B%9B%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9A%E6%9C%AF%E8%AF%AD%E8%A1%A8.html</link><description>更新: 第四十四章：术语表 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;术语表&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;输入输出系统：I/O 接口连接计算机与外设，支持查询、中断和 DMA 三种方式&lt;/li&gt;
+&lt;li&gt;中断系统：中断让 CPU 响应外设请求，并在保存和恢复现场后继续执行程序&lt;/li&gt;
+&lt;li&gt;第一次呼吸：把 CPU、存储器、总线和外设合在一起，让完整计算机自动运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;本章按主题汇总全书出现过的术语，供随时回查&lt;/li&gt;
+&lt;li&gt;每条只给一句话解释，想细看请回到对应章节&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;数据与编码&lt;/h3&gt;
+&lt;p&gt;| 术语 | 一句话解释 |
+| :--- | :--- |
+| bit（比特） | 一个二进制位，0 或 1 |
+| Byte（字节） | 8 个 bit，常用大写 B 表示 |
+| 二进制 / 八进制 / 十六进制 | 分别逢 2、8、16 进一的计数法，后两者是二进制的简写 |
+| 原码 | 最高位当符号位，其余位是数值绝对值 |
+| 反码 | 负数在原码基础上，除符号位外按位取反 |
+| 补码 | 负数的反码加一，计算机表示有符号数的标准 |
+| 浮点数 | 用“符号 + 阶码 + 尾数”表示小数，范围大但精度有限 |
+| ASCII | 给 128 个常用字符编号的编码 |
+| Unicode | 给全世界文字编号的字符集 |
+| UTF-8 | Unicode 的一种变长存储方案，英文 1 字节、汉字常 3 字节 |&lt;/p&gt;
+&lt;h3&gt;逻辑门&lt;/h3&gt;
+&lt;p&gt;| 术语 | 一句话解释 |
+| :--- | :--- |
+| 逻辑门 | 处理 0/1 信号的最基本电路单元 |
+| 与门 / 或门 / 非门 | 全 1 才 1 / 有 1 就 1 / 取反 |
+| 异或门 | 两输入不同时输出 1 |
+| 多路选择器（MUX） | 多个输入里选一个输出 |
+| 译码器 | 把二进制码翻译成“选中某一路”的信号 |
+| 真值表 | 列出所有输入组合及其输出的表格 |&lt;/p&gt;
+&lt;h3&gt;运算器&lt;/h3&gt;
+&lt;p&gt;| 术语 | 一句话解释 |
+| :--- | :--- |
+| 半加器 / 全加器 | 算两个一位的和 / 再考虑低位进位的加法器 |
+| 进位 | 本位相加产生的、要送给高位的信号 |
+| 算术逻辑单元（ALU） | 集成了加减乘除和逻辑运算的运算部件 |
+| ALU 控制码 | 告诉 ALU“做哪种运算”的控制信号编码 |
+| 累加器 | 能保存“当前和”、不断累加的寄存器 |
+| 状态标志（ZF/SF/CF/OF） | 结果的特征位：零 / 负 / 进位 / 溢出 |&lt;/p&gt;
+&lt;h3&gt;时序与存储&lt;/h3&gt;
+&lt;p&gt;| 术语 | 一句话解释 |
+| :--- | :--- |
+| 锁存器 | 最简单的 1 位记忆单元 |
+| 触发器 | 在指定时钟边沿采样并保存一位数据的记忆单元 |
+| 时钟 | 全局节拍，规定各部件何时更新 |
+| 上升沿 / 下降沿 | 信号从 0 跳 1 / 从 1 跳 0 的瞬间 |
+| 寄存器 | 多个触发器并排，暂存一个字的数据 |
+| 存储器 | 按地址存取的大量存储单元 |
+| RAM / ROM | 可读可写、断电丢失 / 只读、断电保留 |
+| SRAM / DRAM | 用触发器保存（快而贵）/ 用电容保存（慢而便宜） |
+| 缓存（Cache） | CPU 旁的小而快的存储 |
+| 命中 / 缺失 | 数据在不在缓存里 |
+| LRU | 替换时优先淘汰最久未用的数据 |
+| 缓存一致性 | 多核下保证各缓存看到同一份数据 |
+| MESI | 一种缓存一致性协议 |&lt;/p&gt;
+&lt;h3&gt;处理器&lt;/h3&gt;
+&lt;p&gt;| 术语 | 一句话解释 |
+| :--- | :--- |
+| 指令 | “做什么 + 对谁做”的一条命令 |
+| 操作码 | 指令中表示要执行哪类操作的字段 |
+| 操作数 | 指令里参与运算的数据或它的位置 |
+| 程序 | 一串按顺序排列的指令 |
+| 程序计数器（PC） | 保存下一条指令地址的寄存器 |
+| 指令寄存器（IR） | 保存当前正在执行的指令 |
+| 控制器 | 按节拍产生并分发控制信号的部件 |
+| 数据通路 | 数据在各部件间流动的路径 |
+| 硬布线 / 微程序控制 | 用固定电路 / 用查表实现控制器 |
+| 流水线 | 让多条指令的不同阶段重叠执行 |
+| 冒险 | 让流水线卡壳的冲突，分数据/控制/结构三类 |
+| 超标量 | 一拍发射多条指令的处理器技术 |&lt;/p&gt;
+&lt;h3&gt;系统与外设&lt;/h3&gt;
+&lt;p&gt;| 术语 | 一句话解释 |
+| :--- | :--- |
+| 总线 | 各部件共享的公共传输通道 |
+| 地址 / 数据 / 控制总线 | 分别传地址、数据、控制信号 |
+| 中断 | 外设“打断”CPU、让它先处理紧急事件 |
+| 中断向量表 | 中断号到处理程序入口的对照表 |
+| I/O | 输入输出，计算机与外界交换数据 |
+| DMA | 外设与内存直接传数据，不经 CPU |&lt;/p&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;全书核心术语的速查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/术语表.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第四十四章：术语表.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第四十二章：中断系统</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%BA%8C%E7%AB%A0%EF%BC%9A%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F.html</link><description>更新: 第四十二章：中断系统 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;中断系统&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;指令流水线技术：指令流水线让多条指令的不同阶段重叠执行以提高吞吐率&lt;/li&gt;
+&lt;li&gt;计算机总线：总线用共享通道传递地址、数据和控制信号，并靠仲裁处理争用&lt;/li&gt;
+&lt;li&gt;输入输出系统：I/O 接口连接计算机与外设，支持查询、中断和 DMA 三种方式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;中断让 CPU 不必傻等外设，外设准备好了主动“打断”CPU&lt;/li&gt;
+&lt;li&gt;处理中断需要：保存现场 → 执行中断服务程序 → 恢复现场 → 返回&lt;/li&gt;
+&lt;li&gt;中断有优先级，高优先级可以打断低优先级&lt;/li&gt;
+&lt;li&gt;中断是操作系统进行进程调度、响应外设的基础&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;傻等的代价&lt;/h3&gt;
+&lt;p&gt;前面讲输入输出时提到，CPU 和外设打交道有一种“程序查询”方式：CPU 不停地问“好了没？好了没？”&lt;/p&gt;
+&lt;p&gt;这太亏了。外设（比如硬盘）慢得很，CPU 问一次、等半天，宝贵的算力全浪费在等待上。&lt;/p&gt;
+&lt;p&gt;那能不能反过来——&lt;strong&gt;外设准备好了，主动来通知 CPU&lt;/strong&gt;？当然可以。这就是&lt;strong&gt;中断（Interrupt）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;什么是中断&lt;/h3&gt;
+&lt;p&gt;“中断”就是字面意思：打断 CPU 正在做的事，让它先去处理一件更紧急的事，处理完再回来接着做。&lt;/p&gt;
+&lt;p&gt;生活里到处是中断：你正在写代码（主程序），快递小哥按门铃（中断请求），你下楼取快递（中断服务），回来后接着写代码（返回主程序）。关键是你得记住刚才写到哪一行——这就是“保存现场”。&lt;/p&gt;
+&lt;h3&gt;处理一次中断&lt;/h3&gt;
+&lt;p&gt;一次完整的中断处理，大致分这几步：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;中断请求&lt;/strong&gt;：外设拉一根中断信号线，通知 CPU&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;响应&lt;/strong&gt;：CPU 执行完当前这条指令，暂停主程序&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保存现场&lt;/strong&gt;：把 PC、状态寄存器等当前状态存起来&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;执行中断服务程序&lt;/strong&gt;：跳到外设对应的处理程序，把活干完&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;恢复现场&lt;/strong&gt;：把之前存的 PC、状态恢复回去&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;返回&lt;/strong&gt;：继续执行被打断的主程序&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;第 4 步“跳到哪个处理程序”，靠一张&lt;strong&gt;中断向量表&lt;/strong&gt;：每种中断对应一个入口地址，CPU 拿到中断号一查表就知道该往哪跳。这和前面讲更大存储时的地址译码是一个思路。&lt;/p&gt;
+&lt;h3&gt;优先级与嵌套&lt;/h3&gt;
+&lt;p&gt;如果同时来了好几个中断怎么办？这就用到&lt;strong&gt;优先级&lt;/strong&gt;：CPU 先处理优先级高的。&lt;/p&gt;
+&lt;p&gt;更棘手的是，处理中断时可能又来一个更紧急的中断。如果允许它打断当前的中断处理程序，就叫&lt;strong&gt;中断嵌套&lt;/strong&gt;。像医院的急诊分级：正在处理普通病人，突然来了个危重病人，得先抢救危重的。&lt;/p&gt;
+&lt;p&gt;也有的中断“屏蔽不得”，比如系统崩溃类的，必须马上响应，这类叫&lt;strong&gt;不可屏蔽中断（NMI）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;中断从哪来&lt;/h3&gt;
+&lt;p&gt;在不同体系结构和教材中，“中断”一词的分类略有差异。先按“是否由当前指令引起”来分，可以得到两大类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;外部硬件中断&lt;/strong&gt;：由当前指令之外的硬件事件异步触发，比如键盘按下、网卡收到数据、时钟到点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;同步事件&lt;/strong&gt;：由当前指令触发，并且总能对应到这条指令。它还可以继续分成两种：&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;异常&lt;/strong&gt;：CPU 执行指令时检测到的情况，比如除零、非法指令或缺页&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;软件陷阱&lt;/strong&gt;：程序显式执行系统调用或 trap 指令，请求操作系统提供服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，除零是同步异常，不是程序主动发出的软件陷阱。具体名称和边界会因指令集与教材而异，但“外部异步到来”和“由当前指令同步引起”这一区别最重要。&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;时钟中断&lt;/strong&gt;特别重要。它每隔固定时间就响一次，操作系统借此“抢回”控制权，给不同程序分配运行时间——这就是进程调度的心跳。没有它，一个死循环程序就能把电脑卡死。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果 CPU 在处理一个中断时又来了一个新中断，应该怎么处理？把新中断保存起来晚点处理，还是立刻切换过去？两种做法各有什么代价？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;中断的作用：让 CPU 不再傻等&lt;/li&gt;
+&lt;li&gt;中断处理的完整流程&lt;/li&gt;
+&lt;li&gt;保存现场与恢复现场&lt;/li&gt;
+&lt;li&gt;中断向量表&lt;/li&gt;
+&lt;li&gt;中断优先级与嵌套&lt;/li&gt;
+&lt;li&gt;外部硬件中断，以及同步事件中的异常与软件陷阱&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%96%B7_(%E8%A8%88%E7%AE%97%E6%A9%9F)"&gt;Wikipedia(zh)：中断&lt;/a&gt;：中断的基本概念&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E6%96%B7%E5%90%91%E9%87%8F%E8%A1%A8"&gt;Wikipedia(zh)：中断向量表&lt;/a&gt;：中断向量表的原理&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%AE%9E%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"&gt;Wikipedia(zh)：实时操作系统&lt;/a&gt;：实时系统中的中断处理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;取决于新中断的优先级。如果它比当前处理的中断更紧急，就应该立刻切换过去（中断嵌套），代价是现场要一层层保存，稍微复杂；如果优先级不高于当前，就先把请求挂起（记录在等待队列里），等当前中断处理完再响应，这样简单可靠，但紧急事件可能要等一会儿。实时系统尤其要在“及时响应”和“实现简单”之间权衡。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/中断系统.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第四十二章：中断系统.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第四十三章：第一次呼吸</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%9B%9B%E5%8D%81%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%91%BC%E5%90%B8.html</link><description>更新: 第四十三章：第一次呼吸 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;第一次呼吸&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;计算机总线：总线用共享通道传递地址、数据和控制信号，并靠仲裁处理争用&lt;/li&gt;
+&lt;li&gt;输入输出系统：I/O 接口连接计算机与外设，支持查询、中断和 DMA 三种方式&lt;/li&gt;
+&lt;li&gt;中断系统：中断让 CPU 响应外设请求，并在保存和恢复现场后继续执行程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;这一章把最后的所有系统合到一起，让一台完整的计算机跑起来&lt;/li&gt;
+&lt;li&gt;我们放一段程序进内存，看它从取指到输出，全程自动完成&lt;/li&gt;
+&lt;li&gt;至此，从晶体管到整机，这台机器第一次“活”了过来&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;零件的时代结束了。运算器、存储器、CPU、总线、外设、中断，全都造好了。今天，我们让它们一起呼吸。&lt;/p&gt;
+&lt;h3&gt;全家福&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;┌──────────────────────────────────────┐
+        │              CPU                     │
+        │  ┌──────────┐      ┌────────────┐    │
+        │  │  控制器   │◀────▶│   运算器    │    │
+        │  └──────────┘      └────────────┘    │
+        │        ▲   ┌──────────────────┐      │
+        │        └───│ 寄存器 / PC / IR  │      │
+        │            └──────────────────┘      │
+        └────────────────┬─────────────────────┘
+                         │
+                    ┌────┴────┐
+                    │  总线   │
+                    └────┬────┘
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+      ┌────────┐    ┌─────────┐    ┌──────────┐
+      │  内存   │    │ 缓存     │    │ 输入输出  │
+      │(存储器) │    └─────────┘    │  设备     │
+      └────────┘                    └──────────┘&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这张图里的每一个方块，都对应前面某一章。它们不再是孤立的零件，而是一个系统。&lt;/p&gt;
+&lt;h3&gt;放一段程序进去&lt;/h3&gt;
+&lt;p&gt;我们在内存里放一段很小的程序，它做一件事：把两个数加起来，再把结果输出到由 4 个 LED 组成的二进制显示灯组上。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;地址     指令
+100     LOAD R1, [200]   ; 把内存 200 处的数取到 R1
+104     LOAD R2, [201]   ; 把内存 201 处的数取到 R2
+108     ADD  R3, R1, R2  ; R3 = R1 + R2
+112     STORE [202], R3  ; 把 R3 写回内存 202
+116     OUT  [202]       ; 把内存 202 的低 4 位输出到 LED 灯组
+...
+200     3
+201     5
+202     0&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;看它自己跑起来&lt;/h3&gt;
+&lt;p&gt;接下来，没有任何人干预。时钟开始跳动，CPU 开始工作：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;第 1 个周期   取指令：PC=100，把 "LOAD R1,[200]" 取进 IR
+第 2 个周期   译码：控制器认出这是一条"加载"指令
+             执行：从内存 200 取出 3，送进 R1
+第 3~5 周期   同理，R2 取到 5
+第 6 个周期   取指、译码 "ADD R3,R1,R2"
+             执行：运算器算出 8，写进 R3
+第 7 个周期   把 8 写回内存 202
+第 8 个周期   取指、译码 "OUT [202]"
+             执行：通过总线，把 8 送到输出设备&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;4 个 LED 按照二进制 &lt;code&gt;1000&lt;/code&gt; 的模式亮灭——这表示数字 8。单个灯只能表示 0 或 1，多个灯组合起来才能表示更大的数。&lt;/p&gt;
+&lt;p&gt;整个过程，没有一只手拨开关，没有一个数被人抄写。机器自己取指令、自己译码、自己运算、自己输出。&lt;strong&gt;它活了。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;它还会被打断&lt;/h3&gt;
+&lt;p&gt;就在这时，键盘（一个输入设备）被按下了。它拉响中断信号。CPU 不慌不忙：先把当前的程序现场保存下来，去处理键盘中断，处理完再恢复现场，从刚才断掉的地方继续。程序仿佛什么都没发生过。&lt;/p&gt;
+&lt;p&gt;这就是中断系统在起作用。机器不仅能自动跑，还能&lt;strong&gt;同时应付外界的突发状况&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;回过头看&lt;/h3&gt;
+&lt;p&gt;从最开始“因为懒，想要一台会算数的机器”，到现在，我们亲手走过了：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;晶体管 → 逻辑门 → 加法器 → 运算器
+       → 锁存器 → 触发器 → 寄存器 → 存储器
+       → 指令 → 控制器 → CPU → 总线 → 外设 → 中断
+       → 一台会呼吸的计算机&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这就是计算机组成原理的全貌。它不是一堆孤立零件的堆砌，而是一层层搭起来、彼此咬合的整体。&lt;/p&gt;
+&lt;p&gt;再回头看总览里那四句话，现在应该句句都能体会了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;懒是人类进步的第一动力&lt;/strong&gt;——整台机器，就是“想把活儿交给机器”的产物&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;没有什么问题是加一层解决不了的&lt;/strong&gt;——从门到 ALU，从寄存器到缓存，处处如此&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;人类所有知识都来源于好奇心和解决问题&lt;/strong&gt;——每个部件，都是被一个具体问题逼出来的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;所有庞大学科知识体量均由积累而成&lt;/strong&gt;——四十多章，也是一小步一小步垒起来的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到这里，组成原理这条线就走完了。但计算机科学远不止于此，远处还有更辽阔的世界：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;操作系统：怎样管理 CPU、内存、文件和设备&lt;/li&gt;
+&lt;li&gt;编译原理：高级语言如何一步步变成机器能懂的 0 和 1&lt;/li&gt;
+&lt;li&gt;计算机网络：多台计算机怎样连成一张网&lt;/li&gt;
+&lt;li&gt;数据结构与算法：怎样把问题解得更快更好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本站的《计算机科学极简入门指南》还会有更多分册，欢迎继续同行。&lt;/p&gt;
+&lt;p&gt;如果你想亲手把这些电路搭出来，可以试试 &lt;strong&gt;Logisim&lt;/strong&gt; 这类数字电路模拟器，或者直接玩一遍 &lt;strong&gt;nand2tetris&lt;/strong&gt; 项目——你会发现，这一路学的东西，都能亲手拼一遍。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在上面那段程序里，如果内存里存的不是指令，而是一串普通数据，CPU 会怎么样？冯·诺依曼体系结构“把程序和数据处理成一样”的优点和风险，分别是什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU、内存、总线、外设、中断如何协同&lt;/li&gt;
+&lt;li&gt;一条程序从取指到输出的完整流程&lt;/li&gt;
+&lt;li&gt;中断如何在程序运行中插入处理&lt;/li&gt;
+&lt;li&gt;从晶体管到整机的完整脉络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%84"&gt;Wikipedia(zh)：冯·诺依曼结构&lt;/a&gt;：存储程序思想&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F"&gt;Wikipedia(zh)：指令周期&lt;/a&gt;：CPU 执行指令的过程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;CPU 并不知道哪块内存是“指令”、哪块是“数据”，它只会照着 PC 指的地址去取、去译码、去执行。如果那里正好是数据，它也会当成指令去执行，结果往往是一团乱麻。&lt;/p&gt;
+&lt;p&gt;好处是极大的灵活性：程序可以像数据一样被加载、修改、复制，一台通用机器能跑无数种程序。风险也在于此：一旦指针出错、程序跳到数据区，或者恶意代码把数据伪装成指令，机器就会执行本不该执行的东西——缓冲区溢出攻击就是利用这一点。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/第一次呼吸.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第四十三章：第一次呼吸.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第十八章：算术逻辑单元</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0%EF%BC%9A%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83.html</link><description>更新: 第十八章：算术逻辑单元 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;算术逻辑单元&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;乘法器：乘法器通过逐位相乘、移位和相加实现二进制乘法&lt;/li&gt;
+&lt;li&gt;除法器：除法器通过逐位试减、移位和控制电路实现二进制除法&lt;/li&gt;
+&lt;li&gt;乘除法的优化：Booth 算法、华莱士树和不恢复余数法能加快乘除法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;算术逻辑单元（ALU）是计算机的核心运算部件&lt;/li&gt;
+&lt;li&gt;它把加减乘除和与或非等运算都集成在一起&lt;/li&gt;
+&lt;li&gt;用一组 ALU 控制码选择当前要做哪种运算，再由译码器和多路选择器送出对应结果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;引言&lt;/h3&gt;
+&lt;p&gt;到这里，我们手里已经有加法、减法、乘法、除法，还有与、或、非、异或、移位等逻辑操作。它们个个都能独立工作，但要真正用来算题，我们总不能让数据在十几个部件之间手动转来转去吧？&lt;/p&gt;
+&lt;p&gt;我们需要一个统一的地方，&lt;strong&gt;把这些运算装在一起，需要哪个就用哪个&lt;/strong&gt;。它就叫 &lt;strong&gt;ALU（Arithmetic Logic Unit，算术逻辑单元）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;特别说明：乘法器和除法器不太懂也没关系，因为在简单的 ALU 中，压根儿就没有这种东西。乘法就是多次加法，除法就是多次减法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意，花十秒钟想一下，上面那些东西是怎么来的。如果不能清楚明白地了解其组成和原理，说明还没有学懂，建议回头再看一次。&lt;/strong&gt; 这里简单提示一下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;晶体管组成逻辑门（与，或，非，异或等）；&lt;/li&gt;
+&lt;li&gt;部分逻辑门的计算逻辑与加法一致，所以组成加法器；&lt;/li&gt;
+&lt;li&gt;分出一位作为符号，在逻辑上弥补二进制减法的问题，使用 &lt;em&gt;模&lt;/em&gt; 诱骗加法器在形式上做减法，形成减法器；&lt;/li&gt;
+&lt;li&gt;用加法器和减法器，组成乘法器和除法器，如果愿意，其中可以有移位器。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;设计简单 ALU&lt;/h3&gt;
+&lt;p&gt;我们试着设计一个 4 位 ALU，它支持 12 种功能：加、减、乘、除、取余、与、或、非、与非、或非、异或、同或。&lt;/p&gt;
+&lt;h4&gt;准备基本部件&lt;/h4&gt;
+&lt;p&gt;先列出需要的部件，同时列出各自的输入和输出。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/alu-列出部件.png" /&gt;&lt;/p&gt;
+&lt;p&gt;注意：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;因为非门只有一个输入，所以此处硬编码为 A 引脚，需要取反的数值应该永远连接到 A 输入上。&lt;/li&gt;
+&lt;li&gt;加法器、减法器等等运算部件，还有一个额外的输出：溢出，所以我们也需要将它连接到输出。但因为连接这些溢出输出会使电路变得复杂，所以我们暂时不考虑连接（溢出标志会在下一章细讲）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;连接运算电路&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/alu-连接电路.png" /&gt;&lt;/p&gt;
+&lt;p&gt;很快，两个问题冒了出来：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;这些运算的输出，都接到哪里去？&lt;/li&gt;
+&lt;li&gt;所有部件都在同时运算，我们怎么控制 ALU 只输出我们需要的那一个？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5&gt;第一个问题：输出接哪儿&lt;/h5&gt;
+&lt;p&gt;普通逻辑门的输出不能直接接到同一根线上：即使某一路没有被选中，它也会主动输出 0；另一条被选中的线路若输出 1，两者就会冲突。&lt;/p&gt;
+&lt;p&gt;正确做法是使用一个&lt;strong&gt;多路选择器&lt;/strong&gt;：把每种运算的结果接到它的输入，由控制信号选出其中一路送到输出。它的内部可以理解为“控制开关 + 或门”：先由 Enable 信号决定“这个结果要不要参与”，再把所有参与的结果用或门合并。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/enable.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;它的构造简单到可爱——画个真值表就会发现，它就是一个&lt;strong&gt;与门&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;| 输入 Data | 控制信号 Enable | 输出 |
+| :--: | :--: | :--: |
+|  0   |   0   |   0  |
+|  0   |   1   |   0  |
+|  1   |   0   |   0  |
+|  1   |   1   |   1  |&lt;/p&gt;
+&lt;p&gt;对多位数据，就是位宽个与门并排（4 位 4 个，8 位 8 个），每个与门管一位；各路对应位的输出还要再接进或门。只要保证同一时刻只启用一路，这个组合就等价于多路选择器。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/enable-多位.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;加上控制开关和或门合并，ALU 的输出选择部分大概是这样：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/alu-连接电路-加上控制开关.png" /&gt;&lt;/p&gt;
+&lt;h5&gt;第二个问题：怎么选择运算&lt;/h5&gt;
+&lt;p&gt;最直接的办法：每种运算单独连一根线，线的通断决定做哪种运算——加法一根、减法一根……但这样，12 种运算就要 12 根线。功能一多，线的数量就爆炸。&lt;/p&gt;
+&lt;p&gt;停一下。每根线只有“通/断”两种状态，这……不就是二进制吗？&lt;/p&gt;
+&lt;p&gt;如果我们把这些线的通断&lt;strong&gt;编码成二进制数&lt;/strong&gt;，线的数量就能大幅压缩。12 种运算，只需要 4 根线就够了：&lt;code&gt;2³(8) &amp;lt; 12 &amp;lt; 2⁴(16)&lt;/code&gt;。&lt;/p&gt;
+&lt;h4&gt;添加选择逻辑&lt;/h4&gt;
+&lt;p&gt;用 4 根线表示 12 种运算，我们这样规定：&lt;/p&gt;
+&lt;p&gt;| 控制信号 | 功能 |
+|:------:|:------:|
+|  0000  |   加法   |
+|  0001  |   减法   |
+|  0010  |   乘法   |
+|  0011  |   除法   |
+|  0100  |   取余   |
+|  0101  |   与     |
+|  0110  |   或     |
+|  0111  |   非     |
+|  1000  |   与非    |
+|  1001  |   或非    |
+|  1010  |   异或    |
+|  1011  |   同或    |&lt;/p&gt;
+&lt;p&gt;上面这串控制信号叫 &lt;strong&gt;ALU 控制码&lt;/strong&gt;，它只负责告诉 ALU“做什么运算”，还不是一条完整的指令。真正的指令通常还要说明操作数来自哪里、结果写到哪里等；后面学习指令系统时会把这些字段组合起来。&lt;/p&gt;
+&lt;p&gt;那么，怎么把 ALU 控制码翻译成“选中某一根线”呢？用一个&lt;strong&gt;译码器（Decoder）&lt;/strong&gt;。它的作用，就是把输入的二进制码翻译成特定的信号。看图就懂：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/decoder.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;把 ALU 控制码送进译码器，译码器就选中多路选择器对应的那一路结果，其余结果不会送到输出。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/alu.png" /&gt;&lt;/p&gt;
+&lt;p&gt;ALU 就完成了。&lt;/p&gt;
+&lt;h3&gt;验证 ALU&lt;/h3&gt;
+&lt;p&gt;来验证一下：设 A = 4(0100)，B = 2(0010)，按 ALU 控制码依次计算结果（加法对应 0000，减法对应 0001……）：&lt;/p&gt;
+&lt;p&gt;| 加法 | 减法 | 乘法 | 除法 | 取余 | 与 | 或 | 非 | 与非 | 或非 | 异或 | 同或 |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 0110 | 0010 | 1000 | 0010 | 0000 | 0000 | 0110 | 1011 | 1111 | 1001 | 0110 | 1001 |&lt;/p&gt;
+&lt;p&gt;把这个电路改造一下，让 ALU 控制码自增，依次观察结果：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/alu-验证结果.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;结果正确。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们用“ALU 控制码 + 译码器”来选择运算。如果有一天 ALU 要支持的功能从 12 种增加到 20 种，控制码需要几根线？如果增加到 40 种呢？这说明了什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ALU 的组成&lt;/li&gt;
+&lt;li&gt;用多路选择器从多个运算结果中选出一个输出&lt;/li&gt;
+&lt;li&gt;用 ALU 控制码 + 译码器选择运算&lt;/li&gt;
+&lt;li&gt;ALU 控制码与完整指令的区别&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83"&gt;Wikipedia(zh)：算术逻辑单元&lt;/a&gt;：详细的算术逻辑单元介绍&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;推荐&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1xKcmeMERF/"&gt;Bilibili：解密 CPU 核心逻辑：从逻辑门到算术逻辑单元&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/av21376839?p=5"&gt;Bilibili：【计算机科学速成课】[40集全/精校] - Crash Course Computer Science&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;20 种功能需要 5 根线（&lt;code&gt;2⁴=16 &amp;lt; 20 &amp;lt; 32=2⁵&lt;/code&gt;），40 种需要 6 根线。功能数量每次翻倍，只需要多加一根线——这就是二进制编码的威力。反过来说，如果不用编码、一种运算一根线，线数会跟着功能数线性、甚至爆炸式增长。&lt;strong&gt;用编码换线数，是数字设计里非常典型的一招。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/算术逻辑单元.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：算术逻辑单元.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第十五章：乘法器</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0%EF%BC%9A%E4%B9%98%E6%B3%95%E5%99%A8.html</link><description>更新: 第十五章：乘法器 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;乘法器&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;有符号数与原码：原码用符号位表示正负；反码需要回卷进位参与运算，且仍有两个零&lt;/li&gt;
+&lt;li&gt;补码：补码是反码加 1，能统一加减法且只有一个零&lt;/li&gt;
+&lt;li&gt;减法器：减法器用加法器加上负数的补码来完成减法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;乘法本质是多次加法&lt;/li&gt;
+&lt;li&gt;二进制乘法更简单：只需要“逐位相乘 + 移位 + 相加”&lt;/li&gt;
+&lt;li&gt;乘法器由与门阵列、移位器和加法器组成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;本质&lt;/h3&gt;
+&lt;p&gt;加减法有了，乘除法呢？有了乘法，而除法是乘法的逆运算，问题应该也不大。&lt;/p&gt;
+&lt;p&gt;回忆小学怎样算乘法。列竖式，相加：&lt;/p&gt;
+&lt;p&gt;```
+  23
+×  5&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;115
+```&lt;/p&gt;
+&lt;p&gt;而乘法本质是反复加法，所以这实际上是：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;23 × 5 = 23 + 23 + 23 + 23 + 23&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;十进制可以这样算，二进制呢？&lt;/p&gt;
+&lt;h3&gt;逐位相乘&lt;/h3&gt;
+&lt;p&gt;不妨来试试： &lt;code&gt;3 × 5 = 15&lt;/code&gt;。简单起见，使用无符号数，没有符号位。&lt;/p&gt;
+&lt;p&gt;```
+    0011   （3 的无符号二进制）
+×   0101   （5 的无符号二进制）
+--------    &amp;lt;-- # 表示占位符，没有意义
+    0011    (被乘数 × 1)
+   0000#    (被乘数 × 0，左移一位)
++ 0011##    (被乘数 × 1，左移两位)
+ 0000###    (被乘数 × 0，左移三位)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;pre&gt;&lt;code&gt;1111   （15 的无符号二进制）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;竖式也能得出正确结果：&lt;code&gt;0011&lt;/code&gt; × &lt;code&gt;0101&lt;/code&gt; = &lt;code&gt;1111₂&lt;/code&gt;（无符号），也即 &lt;code&gt;15₁₀&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;那就好办了：让一个二进制数，与另一个二进制数的&lt;strong&gt;每一位&lt;/strong&gt;相乘，然后做竖式一样的&lt;strong&gt;移位&lt;/strong&gt;，最后加在一起。&lt;/p&gt;
+&lt;p&gt;上面的竖式默认两个数都是无符号数。有符号数（尤其是负数）的乘法要复杂一些，不能直接把补码按上面的方法乘。不过别担心，先把无符号乘法学明白，减法器和补码我们已经有了，符号问题总有办法处理。&lt;/p&gt;
+&lt;p&gt;相乘这一步，仔细观察可以用 and（与门）解决，那—— &lt;strong&gt;移位&lt;/strong&gt; 呢？&lt;/p&gt;
+&lt;h3&gt;移位&lt;/h3&gt;
+&lt;p&gt;上面逐位相乘的左移，就是在低位一侧补零：&lt;code&gt;0011&lt;/code&gt; 不补零，&lt;code&gt;0000&lt;/code&gt; 补一个，&lt;code&gt;0011&lt;/code&gt; 补两个。这里不能随意丢掉最高位：两个 n 位无符号数相乘，完整结果最多需要 2n 位，因此部分积和结果通常要放在足够宽的寄存器中。只有明确只保留固定宽度结果时，才截掉超出该宽度的高位。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;而对有符号数进行移位时，特别是右移，最高位需要补上符号位&lt;/strong&gt;，不然负数就变成正数了。也就是说：对 &lt;code&gt;1010&lt;/code&gt; 进行右移，结果应该为 &lt;code&gt;1101&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题 1&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们现在只有加法器，应该怎样移位和补位？以及， &lt;strong&gt;设计一个最简单的乘法器，真的需要移位吗？&lt;/strong&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;乘法器的构成&lt;/h3&gt;
+&lt;p&gt;根据上面的分析，乘法器需要以下部件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;与门阵列&lt;/strong&gt;：&lt;/li&gt;
+&lt;li&gt;判断乘数的每一位是否为 1&lt;/li&gt;
+&lt;li&gt;为 1 就输出被乘数，为 0 就输出全 0&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;移位器&lt;/strong&gt;：对每一步的结果左移，移几位取决于当前处理的是乘数的第几位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;加法器&lt;/strong&gt;：累加每一步的结果，可以复用之前设计的加法器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;具体实现&lt;/h4&gt;
+&lt;p&gt;以 3(0011) × 5(0101) 为例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;乘数最低位为 1：&lt;code&gt;0011 × 1 = 0011&lt;/code&gt;，不移位&lt;/li&gt;
+&lt;li&gt;乘数次低位为 0：&lt;code&gt;0011 × 0 &amp;lt;&amp;lt; 1 = 0000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;乘数第三位为 1：&lt;code&gt;0011 × 1 &amp;lt;&amp;lt; 2 = 1100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;乘数最高位为 0：&lt;code&gt;0011 × 0 &amp;lt;&amp;lt; 3 = 0000&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;最后全部相加：&lt;/p&gt;
+&lt;p&gt;```
+   0011
++ 0000
++ 1100
++ 0000&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;1111 (15)
+```&lt;/p&gt;
+&lt;p&gt;一个能用的乘法器就出来了。&lt;/p&gt;
+&lt;p&gt;不过，这种“老老实实逐位加”的办法在乘数有很多连续 1 的时候会非常慢（比如 64 位全 1，就要加 64 次）。针对它的优化（Booth 算法、华莱士树）属于进阶内容，我们放到《乘除法的优化》一章。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题 2&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果要计算带符号数的乘法，需要注意什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;乘法的本质是多次加法&lt;/li&gt;
+&lt;li&gt;二进制乘法的基本步骤：逐位相乘、移位、相加&lt;/li&gt;
+&lt;li&gt;乘法器的基本构成：与门阵列、移位器、加法器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E4%B9%98%E6%B3%95%E5%99%A8"&gt;Wikipedia(zh)：乘法器&lt;/a&gt;：乘法器的工作原理&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/位操作#移位"&gt;Wikipedia(zh)：位操作#移位&lt;/a&gt;：二进制移位&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1AB4y1p7ax/"&gt;BiliBili：计算机怎样计算乘法&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;推荐&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/BV1Jb4y1x7Dw/"&gt;Bilibili：计算机如何计算乘法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;h4&gt;思考题 1&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;移位可以使用 or 和 xor 门，最简化的做法是把输入直接与输出错位相连。错位直接相连比用逻辑门效率更高、速度更快。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/shift.png" /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;其实最简单的乘法器不需要移位，只需要错位相加，把低位直接输出即可。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/simplest-multiplicator.png" /&gt;&lt;/p&gt;
+&lt;h4&gt;思考题 2&lt;/h4&gt;
+&lt;p&gt;带符号数乘法需要注意：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;结果的符号由两个操作数的符号决定&lt;/li&gt;
+&lt;li&gt;可以先把操作数转换为绝对值做乘法&lt;/li&gt;
+&lt;li&gt;再根据“同号得正、异号得负”确定符号&lt;/li&gt;
+&lt;li&gt;若结果为负，转回补码表示&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/乘法器.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十五章：乘法器.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第十九章：ALU 的状态标志</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%EF%BC%9AALU%E7%8A%B6%E6%80%81%E6%A0%87%E5%BF%97.html</link><description>更新: 第十九章：ALU 的状态标志 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;ALU 的状态标志&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;除法器：除法器通过逐位试减、移位和控制电路实现二进制除法&lt;/li&gt;
+&lt;li&gt;乘除法的优化：Booth 算法、华莱士树和不恢复余数法能加快乘除法&lt;/li&gt;
+&lt;li&gt;算术逻辑单元：ALU 把算术和逻辑运算集成起来，用 ALU 控制码选择当前运算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;运算结果本身之外，ALU 还会“顺手”记下几个特征，叫状态标志&lt;/li&gt;
+&lt;li&gt;常见的四个：零标志 ZF、符号标志 SF、进位标志 CF、溢出标志 OF&lt;/li&gt;
+&lt;li&gt;CF 管无符号数，OF 管有符号数，这是最容易混淆、也最关键的一点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;为什么还需要标志&lt;/h3&gt;
+&lt;p&gt;ALU 算完 &lt;code&gt;7 + 1 = ?&lt;/code&gt;，输出一个 4 位结果 &lt;code&gt;1000&lt;/code&gt;。可这到底是 8，还是 -8？&lt;/p&gt;
+&lt;p&gt;光看结果说不清——&lt;strong&gt;同一个二进制串，可能表示不同的值，取决于把它当有符号数还是无符号数&lt;/strong&gt;。而且运算有没有“越界”、结果是不是零，这些信息后续（比如条件跳转）都要用。&lt;/p&gt;
+&lt;p&gt;所以 ALU 除了给出结果，还会顺便输出几个 &lt;strong&gt;状态标志（Flag）&lt;/strong&gt;，记录这次运算的特征。&lt;/p&gt;
+&lt;h3&gt;四个常见标志&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;零标志（Zero Flag，ZF）&lt;/strong&gt;：结果为 0 时置 1&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;符号标志（Sign Flag，SF）&lt;/strong&gt;：结果为负时置 1（其实就是结果的最高位）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进位标志（Carry Flag，CF）&lt;/strong&gt;：产生进位时置 1&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;溢出标志（Overflow Flag，OF）&lt;/strong&gt;：结果超出表示范围时置 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中 ZF 和 SF 很好懂，真正绕的是 CF 和 OF。&lt;/p&gt;
+&lt;h3&gt;CF 与 OF：一个管无符号，一个管有符号&lt;/h3&gt;
+&lt;p&gt;记住一句话：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;CF 对无符号数运算有意义，OF 对有符号数运算有意义。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为什么？因为“越界”的定义，取决于你怎么看那串二进制：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4 位无符号数的范围是 0 ~ 15&lt;/li&gt;
+&lt;li&gt;4 位有符号数的范围是 -8 ~ 7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;看三个例子就清楚了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例一：&lt;code&gt;0111 + 0001 = 1000&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当作无符号数：7 + 1 = 8，在 0~15 内，没越界 → CF = 0&lt;/li&gt;
+&lt;li&gt;当作有符号数：7 + 1 = 8，超出 -8~7 → OF = 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;例二：&lt;code&gt;0111 + 1001 = (1)0000&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无符号看：7 + 9 = 16，最高位进位丢失，变成 0 → CF = 1&lt;/li&gt;
+&lt;li&gt;有符号看：7 + (-7) = 0，完全正常 → OF = 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;例三：&lt;code&gt;1000 + 1111 = (1)0111&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无符号看：8 + 15 = 23，进位丢失，剩下 7 → CF = 1&lt;/li&gt;
+&lt;li&gt;有符号看：(-8) + (-1) = -9，超出 -8~7 → OF = 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以看到：&lt;strong&gt;同一串结果，无符号和有符号读出来的“是否越界”可以完全不同，所以必须用两个标志分开表示。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;标志是怎么生成的&lt;/h3&gt;
+&lt;p&gt;要生成这些标志，只需在 ALU 上再加几个逻辑门：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;零标志&lt;/strong&gt;：把结果每一位都“或”起来，若为 0，说明结果全 0（再用非门取反即可）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;符号标志&lt;/strong&gt;：直接用结果的最高位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进位标志&lt;/strong&gt;：直接用加法器的进位输出&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;溢出标志&lt;/strong&gt;：当两个操作数&lt;strong&gt;符号相同&lt;/strong&gt;、但结果符号却和它们&lt;strong&gt;不同&lt;/strong&gt;时，置 1（两个操作数符号相反时，永远不会溢出）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;加上这些逻辑，ALU 就完整了：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/alu-with-flags.png" /&gt;&lt;/p&gt;
+&lt;p&gt;现代 ALU 还有一些别的标志，比如奇偶标志（Parity Flag，PF），这里就不展开了。这些标志会被送进状态寄存器（PSW），成为后续“条件跳转”的依据——那是讲 CPU 时的事了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;计算 &lt;code&gt;1010 + 1010&lt;/code&gt;（4 位）。分别从无符号和有符号两个角度，判断 CF 和 OF 各是多少。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么需要状态标志&lt;/li&gt;
+&lt;li&gt;ZF、SF、CF、OF 的含义&lt;/li&gt;
+&lt;li&gt;CF 与 OF 的区别：无符号 vs 有符号&lt;/li&gt;
+&lt;li&gt;状态标志的生成方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%8B%80%E6%85%8B%E5%AD%97"&gt;Wikipedia(zh)：状态寄存器&lt;/a&gt;：状态标志位的详细介绍&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%AE%97%E8%A1%93%E6%BA%A2%E5%87%BA"&gt;Wikipedia(zh)：算术溢出&lt;/a&gt;：溢出与进位&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;1010 + 1010 = (1)0100&lt;/code&gt;，丢掉最高进位后结果为 &lt;code&gt;0100&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无符号看：10 + 10 = 20，超出 0~15，最高位产生进位 → &lt;strong&gt;CF = 1&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;有符号看：(-6) + (-6) = -12，超出 -8~7，且两个操作数同为负、结果却变成正的 → &lt;strong&gt;OF = 1&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;两个数符号相同，所以确实可能溢出；这里结果符号与原符号相反，OF 置 1。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/ALU的状态标志.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十九章：ALU状态标志.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第十七章：乘除法的优化</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0%EF%BC%9A%E4%B9%98%E9%99%A4%E6%B3%95%E7%9A%84%E4%BC%98%E5%8C%96.html</link><description>更新: 第十七章：乘除法的优化 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;乘除法的优化&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;减法器：减法器用加法器加上负数的补码来完成减法&lt;/li&gt;
+&lt;li&gt;乘法器：乘法器通过逐位相乘、移位和相加实现二进制乘法&lt;/li&gt;
+&lt;li&gt;除法器：除法器通过逐位试减、移位和控制电路实现二进制除法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本章为进阶内容，零基础读者可以跳过，不影响后续阅读。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;朴素的乘除法在位数多、数据“刚好最坏”时会很慢&lt;/li&gt;
+&lt;li&gt;乘法优化：Booth 算法（把连续 1 变成减法）、华莱士树（并行压缩部分积）&lt;/li&gt;
+&lt;li&gt;除法优化：不恢复余数法（用加法修正，省去恢复步骤）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;慢在哪里&lt;/h3&gt;
+&lt;p&gt;第十五、十六章里那套乘除法，原理都对，但都很“老实”：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;乘法：乘数每一位为 1，就要加一次。如果一个 64 位乘数的 64 位全是 1，就得加 64 次&lt;/li&gt;
+&lt;li&gt;除法：每次试商都要真减一次；不够减，还得把余数恢复回去&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;位数一多，这些“老实”的做法就拖后腿了。这一章看看工程师们怎么优化它们。&lt;/p&gt;
+&lt;h3&gt;乘法的优化一：Booth 算法&lt;/h3&gt;
+&lt;p&gt;Booth 算法的聪明之处在于：&lt;strong&gt;把一串连续的 1，换成发生在两端边界的加减法。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;比如正数 15 至少要写成 5 位补码 &lt;code&gt;01111&lt;/code&gt;，它可以看成 &lt;code&gt;10000 - 1&lt;/code&gt;（16 - 1）。这样，原本要加 4 次的连加，变成“加一次、减一次”，只动两步。不能直接把 4 位补码 &lt;code&gt;1111&lt;/code&gt; 当成 15，因为它表示的是 -1。&lt;/p&gt;
+&lt;p&gt;推广开来，一段连续的 1 可以用“在低位边界减一次、在高位边界加一次”来表示，中间不必逐位相加。&lt;/p&gt;
+&lt;p&gt;标准的基 2 Booth 算法会准备三个量：初始为 0 的累加器 A、乘数 Q，以及附加位 Q₋₁（初始为 0）。如果操作数是 n 位补码，为了覆盖“最小负数取反后无法用 n 位表示”的边界，A 和被乘数通常要增加一位保护位并进行符号扩展。每一轮检查乘数最低位 Q₀ 和 Q₋₁：&lt;/p&gt;
+&lt;p&gt;| Q₀ | Q₋₁ | 运算 |
+| :---: | :---: | :--- |
+| 0 | 0 | A 不变 |
+| 0 | 1 | A = A + 被乘数 |
+| 1 | 0 | A = A − 被乘数 |
+| 1 | 1 | A 不变 |&lt;/p&gt;
+&lt;p&gt;完成表中的运算后，不是只移动“部分积”，而是把 &lt;code&gt;{A, Q, Q₋₁}&lt;/code&gt; 当成一个整体做一次&lt;strong&gt;算术右移&lt;/strong&gt;：最高位补符号位，A 的最低位移入 Q 的最高位，Q 的最低位移入 Q₋₁。重复 n 轮后，去掉多余的保护符号位，A 和 Q 的有效部分合在一起就是 2n 位乘积。减被乘数时，可以用前面学过的补码加法完成。&lt;/p&gt;
+&lt;p&gt;Booth 算法对&lt;strong&gt;补码&lt;/strong&gt;特别友好：它天然就能处理带符号数，不需要额外把操作数转成绝对值。&lt;/p&gt;
+&lt;h3&gt;乘法的优化二：华莱士树&lt;/h3&gt;
+&lt;p&gt;普通做法是“一个部分积、一个部分积地累加”，加法器一级一级串起来，延迟很大。&lt;/p&gt;
+&lt;p&gt;华莱士树换了个思路：把一大堆部分积用&lt;strong&gt;进位保存加法器&lt;/strong&gt;并行压缩。每个 3:2 压缩器把三个同宽操作数压成“和”与“进位”两个操作数，其中进位要左移一位再参与下一层，即 &lt;code&gt;X + Y + Z = Sum + (Carry &amp;lt;&amp;lt; 1)&lt;/code&gt;。各层不断重复，直到只剩两个操作数，再做一次普通加法。这样压缩层数近似按对数增长，级联深度大幅减小。它比较复杂，本指南不展开。&lt;/p&gt;
+&lt;h3&gt;除法的优化：恢复余数法 vs 不恢复余数法&lt;/h3&gt;
+&lt;p&gt;前面除法器那种“减了发现不够、再恢复”的做法，叫&lt;strong&gt;恢复余数法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每次试商后，如果不能减，就把余数恢复原样&lt;/li&gt;
+&lt;li&gt;实现简单，但多做了一次“恢复”，效率较低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;改进的办法叫&lt;strong&gt;不恢复余数法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;试商时先减了再说。如果结果是负的（说明其实不够减），下一步不去恢复，而是在后续用&lt;strong&gt;加法&lt;/strong&gt;把它“补”回来&lt;/li&gt;
+&lt;li&gt;省掉了恢复步骤，速度更快，代价是控制电路更复杂一点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一句话总结：&lt;strong&gt;恢复余数法是“做错了就撤回”，不恢复余数法是“将错就错，下一步再修正”。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Booth 算法对乘数里的 &lt;code&gt;01111&lt;/code&gt;（正数 15）很有优势，那它对 &lt;code&gt;00101&lt;/code&gt;（正数 5）这样的乘数有优势吗？为什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;朴素乘除法在位数多时变慢的原因&lt;/li&gt;
+&lt;li&gt;Booth 算法：连续 1 化为减法&lt;/li&gt;
+&lt;li&gt;华莱士树：并行压缩部分积&lt;/li&gt;
+&lt;li&gt;恢复余数法与不恢复余数法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%B8%83%E6%96%AF%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95"&gt;Wikipedia(zh)：Booth 算法&lt;/a&gt;：一种优化的乘法算法&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%8D%8E%E8%8E%B1%E5%A3%AB%E6%A0%91"&gt;Wikipedia(zh)：华莱士树&lt;/a&gt;：用于快速计算部分积的方法&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E9%95%B7%E9%99%A4%E6%B3%95"&gt;Wikipedia(zh)：长除法&lt;/a&gt;：恢复余数法与非恢复余数法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;没有优势，甚至可能更差。&lt;code&gt;00101&lt;/code&gt; 中两个 1 彼此分开，基 2 Booth 重编码会在每个孤立 1 的两侧各做一次边界运算，共触发 4 次加减；朴素方法只需生成 2 个非零部分积。Booth 真正的收益出现在乘数里有较长连续 1 的场合。这也说明：&lt;strong&gt;没有万能的优化，工具要挑场合用。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/乘除法的优化.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十七章：乘除法的优化.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第二十章：运算器总装</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%EF%BC%9A%E8%BF%90%E7%AE%97%E5%99%A8%E6%80%BB%E8%A3%85.html</link><description>更新: 第二十章：运算器总装 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;运算器总装&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;乘除法的优化：Booth 算法、华莱士树和不恢复余数法能加快乘除法&lt;/li&gt;
+&lt;li&gt;算术逻辑单元：ALU 把算术和逻辑运算集成起来，用 ALU 控制码选择当前运算&lt;/li&gt;
+&lt;li&gt;ALU 的状态标志：ALU 用零、符号、进位和溢出标志记录运算结果的特征&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;这一章不学新东西，只把前面造好的零件拼成一个“运算器”&lt;/li&gt;
+&lt;li&gt;我们会看到：从几个晶体管，到一台能算加减乘除的机器&lt;/li&gt;
+&lt;li&gt;它算得很快，但它很“健忘”——这正好引出下一段路&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;连续造了十几章的零件，是时候停下来，抬头看看我们手里到底有什么了。&lt;/p&gt;
+&lt;p&gt;这一章不引入任何新符号、新部件。我们只做一件事：&lt;strong&gt;把散落的零件，组装成一个完整的“运算器”。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;先清点零件&lt;/h3&gt;
+&lt;p&gt;从最底层往上数，我们走过的路是这样的：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;transistor（晶体管）
+   │  与、或、非
+   ▼
+ 逻辑门 ──▶ 异或门、多路选择器
+   │
+   ▼
+ 半加器 ──▶ 全加器 ──▶ 多位加法器
+   │
+   ▼
+ 补码 ──▶ 减法器 ──▶ 乘法器 ──▶ 除法器
+   │
+   ▼
+ 算术逻辑单元（ALU）＋ 状态标志&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;每一层都建立在下层之上，又向下层隐藏细节。这个过程，正是全书的主题——&lt;strong&gt;抽象&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;把它们拼起来&lt;/h3&gt;
+&lt;p&gt;现在把这些零件接到一起。一个最简单的运算器，需要这些东西：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ALU&lt;/strong&gt;：负责算，加、减、乘、除、与、或、非都在里面&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ALU 控制码输入&lt;/strong&gt;：告诉 ALU“这一步算什么”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据输入&lt;/strong&gt;：参与运算的两个数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;结果输出&lt;/strong&gt;：算出来的数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;状态标志输出&lt;/strong&gt;：零、符号、进位、溢出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接好的样子：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ALU 控制码 ──┐
+            ▼
+   数据 A ──▶[ 算术逻辑单元 ALU ]──▶ 结果
+   数据 B ──▶        │
+                     ▼
+                 状态标志&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;对，就一个方框。&lt;strong&gt;但请记住，这个方框里面，是这十几章的全部内容。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;让它算一道题&lt;/h3&gt;
+&lt;p&gt;来试一个多步的式子：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(3 + 5) × 2 = ?&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;ALU 不会一次算完，要一步步来：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ALU 控制码设为“加法”，数据 A 送 3、数据 B 送 5 → 输出 8&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;把 8 记下来&lt;/strong&gt;（怎么记？先按下不表）&lt;/li&gt;
+&lt;li&gt;ALU 控制码设为“乘法”，数据 A 送 8、数据 B 送 2 → 输出 16&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;结果是 16，正确。&lt;/p&gt;
+&lt;h3&gt;然后，问题来了&lt;/h3&gt;
+&lt;p&gt;停在这个例子的第 2 步想一想：&lt;strong&gt;那个“8”，我们把它放哪儿了？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我们造的 ALU，只能在某个瞬间输出一个结果。它没有“记忆”，运算一结束，结果就像沙子从指缝里流走了。要想继续下一步，我们只得用手把 8 抄下来，再重新输进去。&lt;/p&gt;
+&lt;p&gt;这显然不行。一个只会算、不会记的机器，连“先加后乘”这么简单的两步都做不了。&lt;/p&gt;
+&lt;p&gt;所以，运算器虽然装好了，我们却卡在了一个新问题上：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;算出来的东西，往哪里放？&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这，就是下一段路要解决的事——&lt;strong&gt;记忆&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;从这里开始，我们的机器要长出“记性”了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果只有 ALU，没有记忆，能不能算 &lt;code&gt;1 + 2 + 3&lt;/code&gt;？你打算怎么用“手动抄写”的方式实现它？这样做在数字很大的时候会有什么麻烦？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;从晶体管到 ALU 的完整层级&lt;/li&gt;
+&lt;li&gt;运算器的组成：ALU + ALU 控制码 + 数据输入 + 结果/标志输出&lt;/li&gt;
+&lt;li&gt;运算器的局限：能算不能记&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E8%BF%90%E7%AE%97%E5%99%A8"&gt;Wikipedia(zh)：运算器&lt;/a&gt;：运算器的基本概念&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83"&gt;Wikipedia(zh)：算术逻辑单元&lt;/a&gt;：ALU 的详细介绍&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;能，但全靠手动：先算 1+2=3，把 3 抄在纸上；再把 3 和 3 送进 ALU 算得 6。数一多（比如加到 1000），就要抄 999 次，既慢又容易错。这正是“记忆”存在的意义——&lt;strong&gt;把中间结果交给机器保管，人只负责下指令。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/运算器总装.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十章：运算器总装.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第二十六章：寄存器</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0%EF%BC%9A%E5%AF%84%E5%AD%98%E5%99%A8.html</link><description>更新: 第二十六章：寄存器 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;寄存器&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;时钟：时钟以周期性方波统一各部件更新的节拍&lt;/li&gt;
+&lt;li&gt;如何读时序图：时序图记录信号随时间的高低电平变化&lt;/li&gt;
+&lt;li&gt;触发器：触发器在指定时钟边沿保存一位数据，远离采样边沿的输入变化不会直接改变输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;多个触发器相连接，形成寄存器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;引言&lt;/h3&gt;
+&lt;p&gt;还记得我们怎样做出 ALU（算数逻辑单元）吗？我们利用与或非基础三门，造出复杂逻辑门，进而造出加法器、减法器、乘法器、除法器，配上一些组合逻辑，让逻辑门识别我们需要做的特定运算，ALU 就完成了。&lt;/p&gt;
+&lt;p&gt;寄存器也是如此，甚至更简单。我们造出了只在指定时钟边沿采样的 1 位触发器，完全可以把它当作新的存储元件使用。&lt;/p&gt;
+&lt;p&gt;恭喜你！我们的抽象能力上升了一级。&lt;/p&gt;
+&lt;h3&gt;触发器与寄存器&lt;/h3&gt;
+&lt;p&gt;触发器只能保存 1 位信息，我们在前面讲数据表示时谈到，仅仅表示 0-9 这十个数，都需要 4 位。&lt;/p&gt;
+&lt;p&gt;所以，我们需要更多的位数，用来表示更多的信息。&lt;/p&gt;
+&lt;p&gt;用多个 1 位触发器，并排连接成 8 位，寄存器就完成了。&lt;/p&gt;
+&lt;p&gt;对，就这么简单。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/寄存器.png" /&gt;&lt;/p&gt;
+&lt;p&gt;当然，现代的家用微型计算机一般都是 64 位了，所以如果要跟上现代计算机的脚步，就需要 64 位的寄存器了，需要并排连接 64 个 1 位触发器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;仅仅有 8 位或者 64 位的寄存器就够了吗？我们会不会需要更大量的存储呢？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;寄存器的用处&lt;/h3&gt;
+&lt;p&gt;8 位或者 64 位的寄存器有什么用呢？&lt;/p&gt;
+&lt;p&gt;回想一下，在前面造 ALU 时，我们初步接触了控制码的概念。比如按第十八章的约定，&lt;code&gt;0000&lt;/code&gt; 不表示数字 0，而是告诉 ALU“做加法”运算。&lt;/p&gt;
+&lt;p&gt;“指令”不能和“数据”混为一谈，所以我们需要更多的寄存器，分开保存信息。&lt;/p&gt;
+&lt;p&gt;我们暂时使用 1 个寄存器，用来保存指令，把它叫做指令寄存器（Instruction Register，IR）。另外，再预留出其他寄存器，用来分别保存数据和中间结果。&lt;/p&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;寄存器的构成及作用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;肯定需要，保存 1-100 这 100 个数，总不可能拿 100 个寄存器来保存吧？&lt;/p&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%AF%84%E5%AD%98%E5%99%A8"&gt;Wikipedia(zh)：寄存器&lt;/a&gt;：寄存器的详细介绍&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E8%A8%98%E6%86%B6%E9%AB%94%E9%9A%8E%E5%B1%A4"&gt;Wikipedia(zh)：存储器层次结构&lt;/a&gt;：存储层次的基本概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;推荐&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/av21376839?p=6"&gt;Bilibili：【计算机科学速成课】[40集全/精校] - Crash Course Computer Science&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/寄存器.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十六章：寄存器.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第二十八章：时序逻辑电路</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AB%A0%EF%BC%9A%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF.html</link><description>更新: 第二十八章：时序逻辑电路 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;时序逻辑电路&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;触发器：触发器在指定时钟边沿保存一位数据，远离采样边沿的输入变化不会直接改变输出&lt;/li&gt;
+&lt;li&gt;寄存器：多个触发器并排连接，形成能保存多位数据的寄存器&lt;/li&gt;
+&lt;li&gt;尝试加法自动化：加法器、寄存器和多路选择器接成回路，构成自动累加器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;组合逻辑电路的输出只取决于当前输入；时序逻辑电路还取决于“过去的状态”&lt;/li&gt;
+&lt;li&gt;时序逻辑 = 组合逻辑 + 存储元件 + 时钟&lt;/li&gt;
+&lt;li&gt;常见例子：计数器、移位寄存器、状态机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;两类电路&lt;/h3&gt;
+&lt;p&gt;到目前为止，我们造的电路可以分成两拨：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;组合逻辑电路&lt;/strong&gt;：加法器、减法器、ALU。给定输入，输出立马确定，和“过去”没有任何关系&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时序逻辑电路&lt;/strong&gt;：锁存器、触发器、寄存器、累加器。它们的输出不仅看当前输入，还要看自己记住的状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一句话概括时序逻辑：&lt;strong&gt;它的输出，是“当前输入”和“历史状态”共同作用的结果。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;时序逻辑的组成&lt;/h3&gt;
+&lt;p&gt;把前面学的东西归归类，时序逻辑电路无非就是三块：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;存储元件：锁存器或触发器，用来保存状态&lt;/li&gt;
+&lt;li&gt;组合逻辑：根据输入和当前状态，算出“下一状态”和输出&lt;/li&gt;
+&lt;li&gt;时钟：规定什么时候把“下一状态”写进存储元件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;前面那个累加器就是一个标准例子：寄存器存状态，加法器是组合逻辑，时钟控制更新。&lt;/p&gt;
+&lt;h3&gt;计数器&lt;/h3&gt;
+&lt;p&gt;最直观的时序电路是计数器。它每个时钟脉冲就往上数一个数。&lt;/p&gt;
+&lt;p&gt;怎么造？回忆&lt;a href="./第二十五章：触发器.md"&gt;前面讲过的 T 触发器&lt;/a&gt;：只要 T = 1，每来一个时钟边沿，输出就翻转一次。把它串起来，就能数数了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第 1 个 T 触发器：每来一个脉冲翻转一次，相当于最低位&lt;/li&gt;
+&lt;li&gt;第 2 个：每当第 1 个从 1 变回 0（也就是进位）时翻转，相当于次低位&lt;/li&gt;
+&lt;li&gt;以此类推&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这和十进制里“个位逢十进一、十位再往上进”是一个道理。程序计数器（PC）就是这样一个部件，它记录着下一条指令的地址（后面会讲）。&lt;/p&gt;
+&lt;h3&gt;状态机&lt;/h3&gt;
+&lt;p&gt;比计数器更一般的时序电路，叫有限状态机。它有一组“状态”，根据输入在不同状态之间跳转，就像一台自动售货机：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;收到硬币，进入“已付款”状态&lt;/li&gt;
+&lt;li&gt;按下按钮，从“已付款”转到“出货”状态&lt;/li&gt;
+&lt;li&gt;出货完毕，回到初始状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;只要有明确的状态和跳转规则，任何复杂的控制流程都能用状态机描述。后面要讲的控制器，本质上就是一个状态机。&lt;/p&gt;
+&lt;h3&gt;建立时间与保持时间&lt;/h3&gt;
+&lt;p&gt;时序电路有一个绕不开的物理限制：数据必须在时钟边沿前后稳定一小段时间，触发器才能正确采样。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;建立时间：边沿到来&lt;strong&gt;之前&lt;/strong&gt;，数据需要提前稳定的时间&lt;/li&gt;
+&lt;li&gt;保持时间：边沿到来&lt;strong&gt;之后&lt;/strong&gt;，数据还需要继续保持的时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这就像拍照：快门按下的前后，人都得站着别动，照片才清晰。时钟频率之所以不能无限提高，很大程度上就是被这两个时间卡住了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在前面那个累加器里，如何用一个状态机来管理“输入第一个数 → 输入第二个数 → 计算 → 输出结果”这整个流程？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;组合逻辑与时序逻辑的区别&lt;/li&gt;
+&lt;li&gt;时序逻辑电路的三个组成部分&lt;/li&gt;
+&lt;li&gt;计数器&lt;/li&gt;
+&lt;li&gt;有限状态机&lt;/li&gt;
+&lt;li&gt;建立时间与保持时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91"&gt;Wikipedia(zh)：时序逻辑&lt;/a&gt;：时序逻辑的基本概念&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA"&gt;Wikipedia(zh)：有限状态机&lt;/a&gt;：状态机的工作原理&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%A7%BB%E4%BD%8D%E5%AF%84%E5%AD%98%E5%99%A8"&gt;Wikipedia(zh)：移位寄存器&lt;/a&gt;：移位寄存器的基本概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;推荐&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/av21376839?p=6"&gt;Bilibili：【计算机科学速成课】[40集全/精校] - Crash Course Computer Science&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;定义一个状态机，大致有这些状态：初始状态 → 接收第一个数 → 接收第二个数 → 计算 → 存储结果 → 回到初始状态。每个状态在时钟驱动下跳转，并用控制信号去开关寄存器、多路选择器的读写。处理器的控制器，做的就是这件事。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/时序逻辑电路.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十八章：时序逻辑电路.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第二十五章：触发器</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0%EF%BC%9A%E8%A7%A6%E5%8F%91%E5%99%A8.html</link><description>更新: 第二十五章：触发器 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;触发器&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;锁存器：锁存器利用逻辑门的反馈保存一位二进制数据&lt;/li&gt;
+&lt;li&gt;时钟：时钟以周期性方波统一各部件更新的节拍&lt;/li&gt;
+&lt;li&gt;如何读时序图：时序图记录信号随时间的高低电平变化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;触发器是计算机中最基本的记忆单元&lt;/li&gt;
+&lt;li&gt;触发器同锁存器一样，可以存储一位二进制数据（0 或 1）&lt;/li&gt;
+&lt;li&gt;不同的是，边沿触发器只在指定时钟边沿采样输入，远离采样边沿的输入变化不会直接改变输出&lt;/li&gt;
+&lt;li&gt;触发器是实现时序逻辑电路的基础&lt;/li&gt;
+&lt;li&gt;触发器是构建寄存器和存储器的基本单元&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;引言&lt;/h3&gt;
+&lt;p&gt;上一章介绍的锁存器，其实也可以叫做触发器。但很多时候，我们说的触发器，其实是边沿触发的锁存器。&lt;/p&gt;
+&lt;p&gt;上一章我们最后也提到过，如果输入当中有噪声信号（错误信号），那么这些触发器很有可能会给出一个错误输出。对于 D 触发器而言，如果错误信号出现在 D(Data) 端口，输出还有可能不会改变，但一旦出现在 WE(Write_Enable) 端口，情况可能会很严重。&lt;/p&gt;
+&lt;p&gt;来看一个例子。这个例子中，我们假设 D 端口需要存储的数据在 0 和 1 之间不断跳变，那么：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果没有噪声信号， WE 端口始终为 1，则输出应该会和 D 端口一样，跟着 D 端口同步变化。&lt;/li&gt;
+&lt;li&gt;如果没有噪声信号， WE 端口始终为 0，则输出应该会一直保持上一个时刻的值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;无噪声信号时序图&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/无噪声.png" /&gt;&lt;/p&gt;
+&lt;p&gt;这张图就是上一章学的时序图，不再重复解释。横向看时间，纵向看每条信号的高低电平即可。&lt;/p&gt;
+&lt;h3&gt;噪声信号为低电平&lt;/h3&gt;
+&lt;p&gt;如果突然出现一些低电平的噪声信号（因为 WE 端口始终为 1 才是预期结果，所以噪声信号肯定是低电平的 0）：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/噪声信号为低电平.png" /&gt;&lt;/p&gt;
+&lt;p&gt;我们看见，输出 Q 从画箭头的地方开始，不再跳变，直到噪声信号被纠正。&lt;/p&gt;
+&lt;h3&gt;噪声信号为高电平&lt;/h3&gt;
+&lt;p&gt;同理，如果没有噪声信号， WE 端口始终为 0，则输出应该一直保持不变。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/无噪声-WE一直为0.png" /&gt;&lt;/p&gt;
+&lt;p&gt;如果突然出现一些高电平的噪声信号，我们可以看见，输出本应一直保持为 0，但有一段时间跟随 D 端口同步变化。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/噪声信号为高电平.png" /&gt;&lt;/p&gt;
+&lt;p&gt;上述噪声信号引起的输出变化，有时被称为“空翻现象”。&lt;/p&gt;
+&lt;p&gt;而上面这种观察输入与输出的波形图，叫做时序图。&lt;/p&gt;
+&lt;h3&gt;边沿触发&lt;/h3&gt;
+&lt;p&gt;有什么办法能够防止这种情况出现呢？&lt;/p&gt;
+&lt;p&gt;信号有两种，一种高电平，一种低电平。信号来回变化的时候，总会有一瞬间的变化吧？我们以这个变化的瞬间为标准，不以信号的具体值，而是信号的变化。这样可以避免输出在整个电平期间持续跟随输入；但输入仍要在边沿前后保持稳定，不能把边沿触发当成自动消除噪声的办法。&lt;/p&gt;
+&lt;p&gt;我们可以来试一下。上一章已经认识了&lt;strong&gt;上升沿&lt;/strong&gt;（0 跳变到 1）和&lt;strong&gt;下降沿&lt;/strong&gt;（1 跳变到 0），这里刚好派上用场。&lt;/p&gt;
+&lt;h3&gt;边沿 D 触发器&lt;/h3&gt;
+&lt;p&gt;实现边沿敏感触发器的一种经典方法，是把两个电平敏感锁存器串联起来。第一级称为“主锁存器”，第二级称为“从锁存器”，两级由相反的时钟电平控制。&lt;/p&gt;
+&lt;p&gt;以图中的&lt;strong&gt;上升沿触发&lt;/strong&gt;结构为例：主锁存器接反相后的 WE，因此在 WE = 0 时接收并暂存 D，从锁存器此时关闭；WE 从 0 变为 1 的瞬间，主锁存器关闭并锁住边沿前的 D，从锁存器同时打开，把主级保存的值送到 Q。WE 保持为 1 时，D 的后续变化进不了主级；WE 下降时，从级关闭，Q 也不会更新。因此这个结构只在 &lt;strong&gt;WE 上升沿&lt;/strong&gt;采样。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/上升沿敏感边沿D触发器.png" /&gt;&lt;/p&gt;
+&lt;p&gt;为了方便我们看中间结果，我们加一个 Q_Middle 输出端口，观察其变化。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/添加Q_Middle.png" /&gt;&lt;/p&gt;
+&lt;p&gt;这是一个上升沿敏感 D 触发器：第一个锁存器前的非门让它在 WE = 0 时跟随 D，而第二个锁存器在 WE = 1 时才接收主级锁住的值。时序图长这样：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/上升沿敏感边沿D触发器时序图.png" /&gt;&lt;/p&gt;
+&lt;p&gt;可以看到 Q_Middle 达到了我们理想中的效果。如果忽略 Q_Middle 这个中间结果，直接观察最终结果 Q、WE 和 D，可以发现 Q 只会在 WE 上升沿采样并更新。&lt;/p&gt;
+&lt;p&gt;注意观察图中的噪声信号：它发生在采样边沿之外，所以没有导致最终结果 Q 的更新。在 35μs 的时刻还有一次上升沿，D 信号为 0，触发器会把 0 写入 Q；图上看不到变化，只是因为 Q 此前已经是 0。&lt;/p&gt;
+&lt;p&gt;现在可以更新边沿 D 触发器的真值表了。&lt;/p&gt;
+&lt;p&gt;| D | WE | Q(下一状态) | 说明 |
+|:-:|:-:|:----------:|:-----|
+| X(无关) | 非上升沿 | Q(保持) | 保持当前状态 |
+| 0 | ↑(上升沿) | 0 | 采样并保存 0 |
+| 1 | ↑(上升沿) | 1 | 采样并保存 1 |&lt;/p&gt;
+&lt;p&gt;把两级锁存器的时钟极性反过来，也可以做出下降沿触发器。↑（上升沿触发）和 ↓（下降沿触发）是两种不同器件行为，画图时的表示也不一样；一个具体的边沿 D 触发器只采用其中一种。&lt;/p&gt;
+&lt;h3&gt;其他触发器&lt;/h3&gt;
+&lt;p&gt;为了方便，电路中还设计了其他基本触发器，例如 JK 触发器，T 触发器等等。为保持简洁，此处不展开。只在最后的补充模块贴出其表示符号、原理图、真值表和输出公式。感兴趣的读者可以自行阅读。&lt;/p&gt;
+&lt;p&gt;不阅读其他触发器也不影响后续学习。&lt;/p&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;边沿触发原理&lt;/li&gt;
+&lt;li&gt;D 触发器结构&lt;/li&gt;
+&lt;li&gt;主从式触发器&lt;/li&gt;
+&lt;li&gt;JK/T 触发器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E8%A7%A6%E5%8F%91%E5%99%A8"&gt;Wikipedia(zh)：触发器&lt;/a&gt;：触发器的详细介绍&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91"&gt;Wikipedia(zh)：时序逻辑&lt;/a&gt;：时序逻辑的基本概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;推荐&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/av21376839?p=6"&gt;Bilibili：【计算机科学速成课】[40集全/精校] - Crash Course Computer Science&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/触发器.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;补充&lt;/h2&gt;
+&lt;p&gt;以下内容为选修，不读也不影响后续学习。&lt;/p&gt;
+&lt;h3&gt;JK 触发器&lt;/h3&gt;
+&lt;p&gt;JK 触发器有两个控制输入 J、K，可以看作 SR 触发器的改进版：它允许 J、K 同时为 1，此时不再是禁止状态，而是让输出“翻转”。&lt;/p&gt;
+&lt;p&gt;| J | K | Q(下一状态) | 说明 |
+|:-:|:-:|:----------:|:-----|
+| 0 | 0 | Q(保持) | 保持当前状态 |
+| 0 | 1 | 0 | 复位 |
+| 1 | 0 | 1 | 置位 |
+| 1 | 1 | 翻转 | 输出取反 |&lt;/p&gt;
+&lt;p&gt;可以看出，JK 触发器把 SR 触发器的“禁止”修正成了“翻转”，因此更实用。&lt;/p&gt;
+&lt;h3&gt;T 触发器&lt;/h3&gt;
+&lt;p&gt;T 触发器（Toggle，翻转）只有一个输入 T，本质上是把 JK 触发器的 J 和 K 接到一起：&lt;/p&gt;
+&lt;p&gt;| T | Q(下一状态) | 说明 |
+|:-:|:----------:|:-----|
+| 0 | Q(保持) | 保持当前状态 |
+| 1 | 翻转 | 输出取反 |&lt;/p&gt;
+&lt;p&gt;T 触发器常用于计数器：每来一个时钟脉冲，输出就翻转一次，多个 T 触发器串联就能实现计数。&lt;/p&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十五章：触发器.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第二十九章：更大存储</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%AB%A0%EF%BC%9A%E6%9B%B4%E5%A4%A7%E5%AD%98%E5%82%A8.html</link><description>更新: 第二十九章：更大存储 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;更大的存储&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;寄存器：多个触发器并排连接，形成能保存多位数据的寄存器&lt;/li&gt;
+&lt;li&gt;尝试加法自动化：加法器、寄存器和多路选择器接成回路，构成自动累加器&lt;/li&gt;
+&lt;li&gt;时序逻辑电路：时序逻辑电路由组合逻辑、存储元件和时钟构成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;想要更大存储，最直接的办法是把很多寄存器并排连起来&lt;/li&gt;
+&lt;li&gt;但并排的线会随容量爆炸式增长&lt;/li&gt;
+&lt;li&gt;解决办法：给每个存储单元编号（地址），用地址译码器按需选中，再把单元排成矩阵&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;引言&lt;/h3&gt;
+&lt;p&gt;前面我们用一排触发器做出了寄存器，能存 8 位、16 位或 32 位数据。可这远远不够用——现在随便一个文件就有一两 MB（忘了 MB 是什么？回前面讲数据单位的地方看看）。&lt;/p&gt;
+&lt;p&gt;想要更大的存储，怎么办呢？&lt;/p&gt;
+&lt;h3&gt;先试试最直接的办法&lt;/h3&gt;
+&lt;p&gt;最容易想到的办法：把所有寄存器并排连在一起。大概长这样：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/1位寄存器并排.png" /&gt;&lt;/p&gt;
+&lt;p&gt;看起来没问题，只是线有点多。多到什么程度呢？以 8 位寄存器为例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;8 根数据输入线&lt;/li&gt;
+&lt;li&gt;8 根数据输出线&lt;/li&gt;
+&lt;li&gt;1 根写入控制线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一共 17 根。如果真的给 1000 个寄存器都保留一套彼此独立的外部接口，就会出现 17000 根信号线，还需要庞大的选择和连接电路。&lt;strong&gt;芯片上的引脚和走线是极其宝贵的资源&lt;/strong&gt;，这种“每个寄存器单独接出全部信号”的办法并不现实。&lt;/p&gt;
+&lt;h3&gt;换个角度想&lt;/h3&gt;
+&lt;p&gt;为什么刚才会画出那么多线？因为那个最直接的方案默认每个寄存器都有独立接口，仿佛随时都要同时读写所有数据。&lt;/p&gt;
+&lt;p&gt;可实际使用中，我们绝大多数时候&lt;strong&gt;只需要读写其中一个数据&lt;/strong&gt;。比如查数组的某个元素、取一条指令，都只关心某一块，而不是全部。&lt;/p&gt;
+&lt;p&gt;既然如此，何必给每个人都修一条专用通道？修一条公共通道，再给每个存储单元发一个门牌号，需要谁就叫谁出来不就行了？&lt;/p&gt;
+&lt;h3&gt;地址与译码器&lt;/h3&gt;
+&lt;p&gt;这个“门牌号”，就叫&lt;strong&gt;地址（Address）&lt;/strong&gt;。存放数据的每一个小格子，叫一个&lt;strong&gt;存储单元&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;于是电路的形态变成了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;所有存储单元共享一组数据线&lt;/li&gt;
+&lt;li&gt;每个单元有自己的地址&lt;/li&gt;
+&lt;li&gt;想读/写谁，就把谁的地址送上地址线&lt;/li&gt;
+&lt;li&gt;用一个&lt;strong&gt;地址译码器&lt;/strong&gt;，把地址翻译成“选中某某单元”的控制信号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;译码器我们在造 ALU 时已经见过：它把一串二进制码，翻译成“选中其中一根线”的信号。比如 2 位地址能区分 4 个单元，3 位能区分 8 个。&lt;/p&gt;
+&lt;h3&gt;排成矩阵&lt;/h3&gt;
+&lt;p&gt;光有地址还不够。如果只并排成一长排，走线依然很长。工程师们的办法是&lt;strong&gt;排成二维矩阵&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;把单元摆成若干行、若干列&lt;/li&gt;
+&lt;li&gt;地址分成两部分，分别选中“第几行”和“第几列”&lt;/li&gt;
+&lt;li&gt;行列交叉处的那一个单元才被激活&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样一来，n 个单元只需要大约 √n 行 + √n 列的控制线，线数量大大减少。这和“图书馆用楼层+书架号定位一本书，比给每本书编一个长编号再一字排开”是一个思路。&lt;/p&gt;
+&lt;p&gt;有了地址、译码器和矩阵，一个能存放大量数据、又能按需取用的部件就成型了。它有一个我们熟悉的名字——&lt;strong&gt;存储器&lt;/strong&gt;（Memory）。下一章我们就专门来看它。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CPU 的寄存器文件其实也可以排成阵列并共用部分线路。既然如此，它为什么仍然不能像大容量存储器一样，只设计一个读写端口、每次只访问一个位置？提示：想想一条指令可能同时需要几个操作数和结果。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;并排寄存器的“线爆炸”问题&lt;/li&gt;
+&lt;li&gt;地址与存储单元&lt;/li&gt;
+&lt;li&gt;地址译码器&lt;/li&gt;
+&lt;li&gt;存储矩阵&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%9C%B0%E5%9D%80%E8%A7%A3%E7%A0%81%E5%99%A8"&gt;Wikipedia(zh)：地址译码器&lt;/a&gt;：地址译码的基本原理&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%AD%98%E5%82%A8%E5%99%A8"&gt;Wikipedia(zh)：存储器&lt;/a&gt;：存储器的一般概念&lt;/li&gt;
+&lt;li&gt;《编码：隐匿在计算机软硬件背后的语言》第 16 章：存储器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;CPU 的&lt;strong&gt;寄存器文件通常本身就是一个小型阵列&lt;/strong&gt;，也会使用地址译码器、位线和多路选择器，并不是每个寄存器都直接拉一套线路到芯片外。它与大容量存储器的关键差别在于端口和设计目标：一条指令常常要同时读取两个寄存器并写回一个寄存器，所以寄存器文件会提供多个读写端口，并为低延迟付出更大的面积和功耗。大容量存储器更重视容量和成本，端口通常更少、访问也更慢。&lt;strong&gt;速度、端口数、面积和容量需要彼此权衡，这正是存储层次结构存在的原因。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/更大的存储.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十九章：更大存储.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第二十七章：尝试加法自动化</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AB%A0%EF%BC%9A%E5%B0%9D%E8%AF%95%E5%8A%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%8C%96.html</link><description>更新: 第二十七章：尝试加法自动化 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;尝试加法自动化&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如何读时序图：时序图记录信号随时间的高低电平变化&lt;/li&gt;
+&lt;li&gt;触发器：触发器在指定时钟边沿保存一位数据，远离采样边沿的输入变化不会直接改变输出&lt;/li&gt;
+&lt;li&gt;寄存器：多个触发器并排连接，形成能保存多位数据的寄存器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;把加法器、寄存器和反馈线路接成一个回路，就能自动累加&lt;/li&gt;
+&lt;li&gt;寄存器保存“目前的累加和”，外部输入提供每一轮要加的新数&lt;/li&gt;
+&lt;li&gt;多路选择器可以在初始化时选择 0，之后选择寄存器反馈的当前和&lt;/li&gt;
+&lt;li&gt;这个电路就叫累加器，是 CPU 运算部件的雏形&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;我们已经造出了不少零件：会算加法的全加器，会记数据的寄存器，会统一节拍的时钟，还有会“多选一”的多路选择器。现在，是时候把它们拼起来，做点真正有用的东西了。&lt;/p&gt;
+&lt;h3&gt;目标&lt;/h3&gt;
+&lt;p&gt;试着让机器自动完成这样的计算：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1 + 2 + 3 + 4 = 10&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;人算的时候，是先算出 1+2=3，再算 3+3=6，再算 6+4=10。每一步都要把“目前的和”记在心里，再和下一个数相加。&lt;/p&gt;
+&lt;p&gt;机器要自动化这件事，就得解决两个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;谁来记住“目前的和”？——用寄存器。&lt;/li&gt;
+&lt;li&gt;怎样把“目前的和”与每轮“新来的数”同时送进加法器？——让它们分别连接加法器的两个输入。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;搭出电路&lt;/h3&gt;
+&lt;p&gt;思路其实很朴素：让加法器的输出经过寄存器保存下来，再绕回到加法器的一个输入；外部的新数则接到另一个输入。这样每一轮计算的都是“当前和 + 新数”，不是让当前和与自己相加。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;加法器：两个输入，一个来自外部的新数，一个来自寄存器里存着的“当前和”；输出新的和&lt;/li&gt;
+&lt;li&gt;寄存器：把加法器算出来的新和存起来&lt;/li&gt;
+&lt;li&gt;多路选择器：在初始化时为加法器的第一个输入选择 0，开始累加后改选寄存器反馈的当前和&lt;/li&gt;
+&lt;li&gt;时钟：告诉寄存器什么时候把新结果存进去&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接好之后大概是这样一条回路：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;常数 0 ───┐
+             ├──[多路选择器]──────┐
+   寄存器 ───┘                    │
+                                 ├──[加法器]──[寄存器]──&amp;gt; 输出
+   外部新数 ──────────────────────┘                │
+                                                  └──反馈到多路选择器&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;它是怎么工作的&lt;/h3&gt;
+&lt;p&gt;假设初始时寄存器里是 0。我们依次送入 1、2、3、4：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;送入 1：多路选择器先选择 0，外部输入提供新数 1；加法器算出 1，存进寄存器&lt;/li&gt;
+&lt;li&gt;送入 2：把“当前和 1”和“新数 2”相加，得 3，存进寄存器&lt;/li&gt;
+&lt;li&gt;送入 3：把“当前和 3”和“新数 3”相加，得 6，存进寄存器&lt;/li&gt;
+&lt;li&gt;送入 4：6、4 相加得 10，存进寄存器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;每来一个数、每来一个时钟脉冲，寄存器就更新一次。四个数送完，寄存器里就躺着答案 10。&lt;/p&gt;
+&lt;p&gt;这个专门用来“累加”的寄存器，就叫&lt;strong&gt;累加器（Accumulator）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;别忘了时钟&lt;/h3&gt;
+&lt;p&gt;整件事能有序进行，全靠时钟。如果没有时钟，加法器还没算稳，寄存器就抢先存了，结果就错了。时钟保证了：&lt;strong&gt;先算完，再存；存完，再算下一个&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们已经做出了能自动累加的电路。但注意，它只会“加”。&lt;/p&gt;
+&lt;p&gt;如果想让它先算 1+2，再算 ×3，最后算 -4，应该怎么改？换句话说，我们能不能让它按人的意愿，做不同的运算？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;用加法器 + 寄存器 + 反馈线路构造累加器&lt;/li&gt;
+&lt;li&gt;多路选择器在回路中的作用：初始化时选择 0，之后选择反馈值&lt;/li&gt;
+&lt;li&gt;时钟在其中的作用：决定何时写入&lt;/li&gt;
+&lt;li&gt;累加器的意义：运算部件的雏形&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%8A%A0%E6%B3%95%E5%99%A8"&gt;Wikipedia(zh)：加法器&lt;/a&gt;：加法器的详细工作原理&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%B4%AF%E5%8A%A0%E5%99%A8"&gt;Wikipedia(zh)：累加器&lt;/a&gt;：累加器的基本概念&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%A4%9A%E8%B7%AF%E9%80%89%E6%8B%A9%E5%99%A8"&gt;Wikipedia(zh)：数据选择器&lt;/a&gt;：数据选择器的工作原理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;推荐&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/av21376839?p=6"&gt;Bilibili：【计算机科学速成课】[40集全/精校] - Crash Course Computer Science&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;让它“听命令”运算。具体做法是：在加法器之外，再放上减法器、乘法器等功能部件，然后用多路选择器在它们的输出之间选择，用一个信号告诉多路选择器“这一轮选哪个运算”。这个信号就是前面见过的 &lt;strong&gt;ALU 控制码&lt;/strong&gt;。以后，完整指令中的操作码会由控制器译码，产生 ALU 控制码以及其他控制信号。把这些控制信号、累加器和数据通路组合起来，就离真正的 CPU 很近了。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/尝试加法自动化.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十七章：尝试加法自动化.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第二十一章：与或非门首尾相连</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E4%B8%8E%E6%88%96%E9%9D%9E%E9%97%A8%E9%A6%96%E5%B0%BE%E7%9B%B8%E8%BF%9E.html</link><description>更新: 第二十一章：与或非门首尾相连 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;与或非门首尾相连&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;算术逻辑单元：ALU 把算术和逻辑运算集成起来，用 ALU 控制码选择当前运算&lt;/li&gt;
+&lt;li&gt;ALU 的状态标志：ALU 用零、符号、进位和溢出标志记录运算结果的特征&lt;/li&gt;
+&lt;li&gt;运算器总装：把前面造好的零件组装成了能算加减乘除的运算器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;反馈让电路的输出影响后续输入，但不同连接方式的结果不同&lt;/li&gt;
+&lt;li&gt;合理的交叉耦合可以形成稳定的记忆；不合适的组合反馈可能没有稳定状态或产生振荡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;引言&lt;/h3&gt;
+&lt;p&gt;到目前为止，我们已经了解了计算机如何进行运算：通过 ALU 执行各种算术和逻辑操作。ALU 是 CPU 中负责计算的部件；CPU 里的控制器和寄存器还需要后面的知识才能造出来。接下来，我们先将目光瞄向存储中间结果的存储器。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/technology/computer-science-guide/content/von_neumann-architecture.webp" /&gt;&lt;/p&gt;
+&lt;h3&gt;需要存储的理由&lt;/h3&gt;
+&lt;p&gt;想象一下，如果计算机只有 ALU 而没有存储功能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不能保存中间结果&lt;/li&gt;
+&lt;li&gt;不能记住程序状态&lt;/li&gt;
+&lt;li&gt;不能存储用户数据&lt;/li&gt;
+&lt;li&gt;每次都要重新输入数据&lt;/li&gt;
+&lt;li&gt;一旦输入错误就完蛋了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以，存储功能和运算功能一样重要。&lt;/p&gt;
+&lt;h3&gt;首尾相连？&lt;/h3&gt;
+&lt;p&gt;之前制造的所有部件，数据都是向前流动的，为什么没有人想到将它首尾相连呢？&lt;/p&gt;
+&lt;h3&gt;非门首尾相连&lt;/h3&gt;
+&lt;p&gt;让我们看一个最简单的例子：一个非门的输出连接到它自己的输入。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/not-gate-feedback.png" /&gt;&lt;/p&gt;
+&lt;p&gt;在理想的数字逻辑里，这条反馈写成 &lt;code&gt;Q = Q̅&lt;/code&gt;，没有任何一个稳定的 0 或 1 能满足它。真实电路还会受到传播延迟和模拟特性的影响，输出行为并不受控，不能把这个单门回路当成可靠的振荡器或时钟。&lt;/p&gt;
+&lt;p&gt;真正的环形振荡器至少会使用奇数个非门，并利用传播延迟产生翻转；实际计算机时钟通常还要用晶体、RC 电路或锁相环来获得稳定频率。这里先记住：&lt;strong&gt;组合逻辑形成反馈时，必须格外小心。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;与门和或门首尾相连&lt;/h3&gt;
+&lt;p&gt;我们再看与门和或门。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/trigger-and.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/content/trigger-or.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;与门回路可以写成 &lt;code&gt;Q = Q AND X&lt;/code&gt;：当 X 为 0 时，它把 Q 清成 0；当 X 为 1 时，它保持 Q。或门回路则相反：当 X 为 1 时，它把 Q 置成 1；当 X 为 0 时，它保持 Q。&lt;/p&gt;
+&lt;p&gt;它们只能朝一个方向改变状态，不能自由地写入 0 和 1，因此还不是实用的存储单元。与非门、或非门等反馈组合也不能一概而论，有些输入组合没有稳定状态。&lt;/p&gt;
+&lt;p&gt;要做出真正可控的“记忆”，需要把两个门交叉耦合，并为写入 0、写入 1 和保持状态分别设计规则。&lt;/p&gt;
+&lt;h3&gt;记忆？&lt;/h3&gt;
+&lt;p&gt;如果我们能够控制这种“自己的输出又变成输入”的反馈，让电路保持在某个稳定状态，同时又能按需要写入 0 或 1，会不会更好一些？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把两个与非门交叉耦合，可以稳稳地记住一位数据；而单个非门首尾相连，却一直停不下来。同样是“反馈”，差别在哪里？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;反馈：把输出又接回输入&lt;/li&gt;
+&lt;li&gt;组合逻辑的反馈不一定稳定，可能没有稳定状态或产生振荡&lt;/li&gt;
+&lt;li&gt;交叉耦合的反馈可以形成稳定的“记忆”&lt;/li&gt;
+&lt;li&gt;可控的记忆，还需要能按需要写入 0、写入 1 和保持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;关键在于“有没有可以稳定停住的状态”。单个非门反馈写成 &lt;code&gt;Q = Q̅&lt;/code&gt;，无论 Q 是 0 还是 1 都不满足，所以它停不下来。交叉耦合则不同：当两个输入都为 1（保持）时，&lt;code&gt;Q&lt;/code&gt; 和它的反相输出可以各自稳定地停在“一个 0、一个 1”上，也就是存在两个能维持的稳定状态。反馈要成为记忆，既要有这样稳定的状态，又要有办法在两个状态之间切换。&lt;/p&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E8%A7%A6%E5%8F%91%E5%99%A8"&gt;Wikipedia(zh)：触发器&lt;/a&gt;：反馈电路的一个重要应用&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E6%8C%AF%E8%8D%A1%E5%99%A8"&gt;Wikipedia(zh)：振荡器&lt;/a&gt;：利用反馈产生周期信号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;推荐&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.bilibili.com/video/av21376839?p=6"&gt;Bilibili：【计算机科学速成课】[40集全/精校] - Crash Course Computer Science&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/与或非门首尾相连.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十一章：与或非门首尾相连.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第三十六章：程序与程序计数器</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%B8%89%E5%8D%81%E5%85%AD%E7%AB%A0%EF%BC%9A%E7%A8%8B%E5%BA%8F%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8.html</link><description>更新: 第三十六章：程序与程序计数器 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;程序与程序计数器&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;缓存一致性：多核缓存通过一致性协议保持同一数据副本正确&lt;/li&gt;
+&lt;li&gt;一台会记事的小计算机：把运算器和存储器组装成能连续计算并保存结果的小计算机&lt;/li&gt;
+&lt;li&gt;指令系统基础：指令由操作码和操作数组成，可完成传送、运算和控制转移&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;程序就是一串按顺序排列的指令&lt;/li&gt;
+&lt;li&gt;程序计数器（PC）记住“下一条指令的地址”：顺序执行靠它自增，跳转靠改它&lt;/li&gt;
+&lt;li&gt;PC 用“寄存器 + 加法器 + 多路选择器”就能搭出来&lt;/li&gt;
+&lt;li&gt;取回指令后，由指令译码器把机器码翻译成控制信号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h3&gt;从一条指令到一个程序&lt;/h3&gt;
+&lt;p&gt;前面我们看的是“一条”指令。但现实任务几乎没有一条指令就能干完的——就像做菜不可能只有一个动作。&lt;/p&gt;
+&lt;p&gt;把一串指令按先后顺序排好，让计算机依次执行，这就是&lt;strong&gt;程序（Program）&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;谁来记住下一条&lt;/h3&gt;
+&lt;p&gt;问题来了：计算机执行完一条指令，怎么知道下一条在哪里？&lt;/p&gt;
+&lt;p&gt;靠一个专门的寄存器——&lt;strong&gt;程序计数器（PC，Program Counter）&lt;/strong&gt;。它保存着“下一条要执行的指令”在内存中的地址。每执行完一条，PC 就自动加上这条指令的长度，指向下一条。&lt;/p&gt;
+&lt;p&gt;所以，“顺序执行”的硬件实现其实特别简单：&lt;strong&gt;取指时按 PC 的地址去取，取完让 PC 加上一个固定值。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;拐弯：跳转&lt;/h3&gt;
+&lt;p&gt;如果程序永远只能顺着往下走，那它连 &lt;code&gt;if&lt;/code&gt; 和循环都写不了。好在，只要&lt;strong&gt;修改 PC 的值&lt;/strong&gt;，就能让程序“跳”到别处。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;assembly
+CMP R1, #0     ; 比较 R1 和 0，设置标志位
+BEQ ZERO       ; 若相等，把 PC 改成 ZERO 的地址
+ADD R2, R1, #1 ; 否则继续往下
+JMP NEXT
+ZERO:
+MOV R2, #0     ; R1 为 0 时执行这里
+NEXT:&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;BEQ&lt;/code&gt;（Branch if Equal）会根据标志位决定要不要改 PC：条件成立就跳，不成立就照常往下。&lt;code&gt;JMP&lt;/code&gt; 则是无条件改 PC。&lt;/p&gt;
+&lt;h3&gt;一个完整的程序&lt;/h3&gt;
+&lt;p&gt;来写一个小程序：计算 1 到 N 的和。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;assembly
+    MOV R1, #5     ; N = 5
+    MOV R2, #0     ; sum = 0
+    MOV R3, #1     ; i = 1
+LOOP:
+    CMP R3, R1     ; 比较 i 和 N
+    BGT END        ; 若 i &amp;gt; N，跳出循环
+    ADD R2, R2, R3 ; sum = sum + i
+    ADD R3, R3, #1 ; i = i + 1
+    JMP LOOP       ; 回到循环开头
+END:
+    ; 此时 R2 里就是 1+2+3+4+5 = 15&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;注意 &lt;code&gt;JMP LOOP&lt;/code&gt;——它把 PC 改回循环开头的地址，于是这几条指令被反复执行，直到条件不满足。&lt;strong&gt;循环，本质上就是“往回跳”。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;无论程序多复杂，拆开来都逃不出三种结构：顺序、选择（&lt;code&gt;if&lt;/code&gt;）、循环（&lt;code&gt;while&lt;/code&gt;、&lt;code&gt;for&lt;/code&gt;）。它们全都靠“条件跳转”实现，这正是结构化编程的基石。&lt;/p&gt;
+&lt;h3&gt;把 PC 造出来&lt;/h3&gt;
+&lt;p&gt;PC 听起来玄乎，其实用我们手里的零件就能搭：一个寄存器存当前地址，一个加法器专门做“加 4”（32 位系统里一条指令占 4 字节），一个多路选择器决定下一个地址从哪来。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;+--------+       +----------+
+   | 加法器  | &amp;lt;---- | 常数 +4   |
+   +--------+       +----------+
+        |
+        v
+   +--------+       +----------+
+   |   PC   | &amp;lt;---- | 多路选择器 |
+   +--------+       +----------+
+                        ^
+                        |
+                   跳转目标地址&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;正常执行：多路选择器选“PC + 4”，PC 就指向下一条&lt;/li&gt;
+&lt;li&gt;遇到跳转：多路选择器改选“跳转目标地址”，PC 被直接改写&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;就这么点东西，却撑起了整个程序的“顺序”。&lt;/p&gt;
+&lt;h3&gt;取指令与译码&lt;/h3&gt;
+&lt;p&gt;有了 PC，取指令的流程就很自然了：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把 PC 的值送到存储器当地址&lt;/li&gt;
+&lt;li&gt;存储器把那个地址里的内容吐出来，这就是一条指令&lt;/li&gt;
+&lt;li&gt;指令送进&lt;strong&gt;指令寄存器（IR）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;PC 加上 4，为取下一条做准备&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可取回来的指令，对 CPU 来说只是一串 0 和 1，比如 &lt;code&gt;0001 0010 0011&lt;/code&gt;。它怎么知道这是“加法”还是“跳转”？&lt;/p&gt;
+&lt;p&gt;这就要靠&lt;strong&gt;指令译码器（Decoder）&lt;/strong&gt;：它把操作码翻译成一组具体的控制信号——让 ALU 做什么运算、读哪几个寄存器、结果写回哪里、PC 要不要跳转。&lt;/p&gt;
+&lt;p&gt;还记得造 ALU 时，用一个译码器把 ALU 控制码翻译成“选中哪一种运算”吗？指令译码是同样的套路，只不过它要把指令操作码翻译成控制整条数据通路的“一整套动作”。&lt;/p&gt;
+&lt;p&gt;于是，一条指令的执行被拆成清晰的几步：&lt;strong&gt;取指 → 译码 → 执行 → 写回&lt;/strong&gt;。这也是后面流水线的基础。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上面算 1 到 N 和的程序，如果还想顺便算出平均值（和 ÷ N），应该怎么改？注意区分保存 N 的 R1 和在循环中不断自增的 R3。&lt;/p&gt;
+&lt;p&gt;另外想一想：如果 PC 只会无脑加 4，它怎么处理长度不固定的指令？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;程序是指令的有序序列&lt;/li&gt;
+&lt;li&gt;程序计数器（PC）：顺序执行与跳转&lt;/li&gt;
+&lt;li&gt;顺序、选择、循环三种基本结构&lt;/li&gt;
+&lt;li&gt;PC 的硬件构成&lt;/li&gt;
+&lt;li&gt;取指令与指令译码器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%A8%8B%E5%BC%8F%E8%A8%88%E6%95%B8%E5%99%A8"&gt;Wikipedia(zh)：程序计数器&lt;/a&gt;：程序计数器的基本概念&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E8%AF%91%E7%A0%81%E5%99%A8"&gt;Wikipedia(zh)：指令译码器&lt;/a&gt;：指令译码的基本原理&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%BB%93%E6%9E%84%E5%8C%96%E7%BC%96%E7%A8%8B"&gt;Wikipedia(zh)：结构化编程&lt;/a&gt;：结构化编程的原理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;循环只修改了 R3，保存 N 的 R1 没有改变，所以可以直接用 R2 除以 R1：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;assembly
+    DIV R4, R2, R1   ; R4 = sum / N，即平均值&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;循环结束时 R3 的确已经变成 N+1，但它只是循环变量 i。这个例子也提醒我们：使用寄存器时，要分清每个寄存器保存的含义，以及它是否被前面的指令改动过。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;变长指令的 PC 不能无脑加 4，而要加“当前这条指令的实际长度”。译码阶段顺便算出指令长度，再让 PC 加上它。定长指令之所以受欢迎，就是因为 PC 更新特别简单、流水线也好设计。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/程序与程序计数器.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第三十六章：程序与程序计数器.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item><item><title>[更新] 第一章：计算机的历史</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%8E%86%E5%8F%B2.html</link><description>更新: 第一章：计算机的历史 - 2026-09-12 22:58:01</description><content:encoded>&lt;h1&gt;计算机的历史&lt;/h1&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;计算机不是凭空出现的，它是被“繁琐计算”一步步逼出来的&lt;/li&gt;
+&lt;li&gt;算盘 → 机械计算机 → 电子计算机，每一步都是想让机器替人算&lt;/li&gt;
+&lt;li&gt;懒是动力，好奇心和方法是实现的路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;摒弃教材，来站在发明计算机的人的视角，考察为什么计算机会诞生。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你是一个工程师，接到了一个任务：要求在两天之内计算十万个形如 2x+3=7 这样的方程，并返回结果，让上级进行下一步数据处理。你此时会有什么愿望？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当我们进行冗余繁琐的计算操作，我们迫切希望有一个东西，来帮助我们快速解决这些计算，将自己从枯燥的工作中解放出来。&lt;/p&gt;
+&lt;p&gt;于是计算机诞生。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;懒是人类进步的第一动力。&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;不过，这话说起来轻巧。人类为了“偷这个懒”，其实摸索了几千年。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/为什么需要计算机.png" /&gt;&lt;/p&gt;
+&lt;h3&gt;最早的算工具：算盘&lt;/h3&gt;
+&lt;p&gt;在古代，商会算账、官府收税，靠的都是人手一颗一颗拨珠子。中国的&lt;strong&gt;算盘&lt;/strong&gt;，大概是“把计算交给工具”最早的成熟实践之一——它把抽象的加减乘除，变成了看得见、摸得着的动作。&lt;/p&gt;
+&lt;p&gt;但算盘还得靠人操作，人一累就会出错，人一停就算不动。&lt;/p&gt;
+&lt;h3&gt;让机器自己转&lt;/h3&gt;
+&lt;p&gt;于是有人想：能不能让机器自己算？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1642 年，法国人&lt;strong&gt;帕斯卡&lt;/strong&gt;造出了能做加减法的&lt;strong&gt;加法机&lt;/strong&gt;，齿轮咬合、自动进位&lt;/li&gt;
+&lt;li&gt;后来&lt;strong&gt;莱布尼茨&lt;/strong&gt;改进了它，让它还能做乘除&lt;/li&gt;
+&lt;li&gt;19 世纪，英国人&lt;strong&gt;巴贝奇&lt;/strong&gt;设计了&lt;strong&gt;差分机&lt;/strong&gt;和更超前的&lt;strong&gt;分析机&lt;/strong&gt;——后者已经包含了“输入、运算、存储、控制”的雏形，被看作现代计算机的先声&lt;/li&gt;
+&lt;li&gt;诗人拜伦的女儿&lt;strong&gt;爱达·勒芙蕾丝&lt;/strong&gt;为分析机写下了算法，被认为是世界上第一位程序员&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可惜，这些机器有的没造完，有的受限于当时的机械工艺，没能真正普及。但它们指出了一个方向：&lt;strong&gt;计算可以自动化。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;电子的登场&lt;/h3&gt;
+&lt;p&gt;真正的转折发生在电子技术成熟之后。20 世纪中叶，第一代电子计算机问世（比如著名的 &lt;strong&gt;ENIAC&lt;/strong&gt;），它用成千上万个电子管代替齿轮，速度比机械机器快了不知多少倍。&lt;/p&gt;
+&lt;p&gt;而真正奠定现代计算机形态的，是&lt;strong&gt;冯·诺依曼&lt;/strong&gt;提出的一个想法：&lt;strong&gt;把程序和数据一起存进存储器里&lt;/strong&gt;。从此，计算机不再需要为每一道新题重新接线，只要换一段程序，就能做一件新事——这就是“通用计算机”的诞生。&lt;/p&gt;
+&lt;p&gt;从算盘到 ENIAC，人类的“懒”没有变，只是工具从珠子换成了齿轮，又换成了电子管。&lt;/p&gt;
+&lt;h3&gt;接下来&lt;/h3&gt;
+&lt;p&gt;计算机诞生了，但它究竟是怎么组成的？要做一台计算机，又需要哪些部件？这是我们下一章要探索的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;巴贝奇的分析机和 ENIAC 都能“自动计算”，但“存储程序”这个想法为什么如此关键？它到底解决了什么老问题？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/懒是人类进步的第一动力.png" /&gt;&lt;/p&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;计算机诞生的原因：把人从繁琐计算中解放出来&lt;/li&gt;
+&lt;li&gt;计算工具的发展：算盘 → 机械计算机 → 电子计算机&lt;/li&gt;
+&lt;li&gt;冯·诺依曼“存储程序”思想&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;参考资料&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E7%AE%97%E7%9B%A4"&gt;Wikipedia(zh)：算盘&lt;/a&gt;：最早的计算工具之一&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E6%9F%A5%E5%B0%94%E6%96%AF%C2%B7%E5%B7%B4%E8%B4%9D%E5%A5%87"&gt;Wikipedia(zh)：查尔斯·巴贝奇&lt;/a&gt;：分析机的设计者&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/ENIAC"&gt;Wikipedia(zh)：ENIAC&lt;/a&gt;：第一代电子计算机&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zh.wikipedia.org/wiki/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%84"&gt;Wikipedia(zh)：冯·诺依曼结构&lt;/a&gt;：存储程序思想&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;p&gt;在“存储程序”出现之前，计算机要为每一道新题重新接线、重新布置，机器本身“不会变”。把程序和数据一起存在存储器里之后，计算机的硬件不用改，只换一段程序就能做全新的事——&lt;strong&gt;一台机器，能跑无数种任务&lt;/strong&gt;。这正是“通用计算机”与“专用计算器”的分水岭，也是“硬件不变、软件千变”这一整套现代计算模式的起点。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/computer-science-guide/cover/计算机的历史.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第一章：计算机的历史.md#modified#2026-09-12T22:58:01+08:00</guid><pubDate>Sat, 12 Sep 2026 22:58:01 +0800</pubDate></item></channel></rss>
