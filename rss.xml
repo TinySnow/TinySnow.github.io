@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>微雪博客 RSS</title><link>https://tinysnow.github.io</link><description>包含本次 Git 提交中的所有文章更新</description><atom:link href="https://tinysnow.github.io" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>zh-CN</language><lastBuildDate>Sat, 19 Sep 2026 05:11:47 +0000</lastBuildDate><item><title>[更新] 第十四章：减法器</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%87%8F%E6%B3%95%E5%99%A8.html</link><description>更新: 第十四章：减法器 - 2026-09-19 05:11:10</description><content:encoded>&lt;h1&gt;减法器&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;全加器：全加器能处理低位进位，可串联构成多位加法器&lt;/li&gt;
+&lt;li&gt;有符号数与原码：原码用符号位表示正负；反码需要回卷进位参与运算，且仍有两个零&lt;/li&gt;
+&lt;li&gt;补码：补码是反码加 1，能统一加减法且只有一个零&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;A - B&lt;/code&gt; 就是 &lt;code&gt;A + (-B)&lt;/code&gt;，减去一个数，等于加上它的相反数&lt;/li&gt;
+&lt;li&gt;让 B 按位取反，再把最低位进位设为 1，加法器就能完成减法&lt;/li&gt;
+&lt;li&gt;一根控制线，就能让同一套电路在加法和减法之间来回切换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;我们已经绕了两章的远路，先去认识负数，又折腾出补码。现在终于可以回过头，回答当初那个问题：&lt;strong&gt;加法器到底能不能做减法？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;先别急着另造一套减法电路。回忆上一章的结论：&lt;code&gt;5 - 2&lt;/code&gt; 和 &lt;code&gt;5 + (-2)&lt;/code&gt; 其实是一回事。而在补码里，&lt;code&gt;-2&lt;/code&gt; 已经被表示成 &lt;code&gt;1110&lt;/code&gt;。那就不妨直接把两个数交给加法器试试：&lt;/p&gt;
+&lt;p&gt;```text
+  0101   (+5)
++ 1110   (-2)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;1 0011
+```&lt;/p&gt;
+&lt;p&gt;4 位机器只保留低 4 位，结果是 &lt;code&gt;0011&lt;/code&gt;，也就是 3。原来的加法器一根线都不用改，减法已经算出来了。&lt;/p&gt;
+&lt;p&gt;所以，&lt;strong&gt;减法器并不需要从头另造，它只是加法器的一种用法。&lt;/strong&gt; 前面花两章理解补码，回报就在这里。&lt;/p&gt;
+&lt;h3&gt;把“先变负数”也交给电路&lt;/h3&gt;
+&lt;p&gt;不过，现在还留着一个尾巴：得由人先把 &lt;code&gt;2&lt;/code&gt; 改写成 &lt;code&gt;-2&lt;/code&gt; 的补码，也就是"按位取反再加 1"。这活儿机器理应自己干。&lt;/p&gt;
+&lt;p&gt;我们先做两件小事，再让它们合体：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;取反&lt;/strong&gt;：把 B 的每一位反过来。异或门正好能充当一个"受控制的取反器"——&lt;code&gt;B XOR 0 = B&lt;/code&gt;，&lt;code&gt;B XOR 1 = NOT B&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;加一&lt;/strong&gt;：加法器本来就有一个最低位进位输入，把它设成 1，就等于加一。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;于是给电路加一根控制线，叫作 &lt;code&gt;SUB&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SUB = 0&lt;/code&gt;：做加法。B 原样进入加法器，最低位进位也是 0。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SUB = 1&lt;/code&gt;：做减法。B 的每一位与 1 异或，从而取反；最低位进位设为 1。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样，真正送进加法器的其实是：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text
+A + (B XOR SUB) + SUB&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代进去看看：&lt;code&gt;SUB = 0&lt;/code&gt; 时，它是 &lt;code&gt;A + B&lt;/code&gt;；&lt;code&gt;SUB = 1&lt;/code&gt; 时，它是 &lt;code&gt;A + NOT B + 1&lt;/code&gt;，也就是 &lt;code&gt;A + (-B)&lt;/code&gt;，也就是 &lt;code&gt;A - B&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;一根控制线，就让同一台机器学会了两种运算。比起另造一整套减法电路，这省事得多。&lt;/p&gt;
+&lt;h3&gt;跟着一个例子走一遍&lt;/h3&gt;
+&lt;p&gt;令 &lt;code&gt;A = 0110&lt;/code&gt;（6），&lt;code&gt;B = 0011&lt;/code&gt;（3），来算一次减法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SUB = 1&lt;/code&gt;，所以 B 先按位取反：&lt;code&gt;0011 → 1100&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;最低位进位也设为 1&lt;/li&gt;
+&lt;li&gt;加法器计算 &lt;code&gt;0110 + 1100 + 1 = 1 0011&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;丢掉最高位，得到 &lt;code&gt;0011&lt;/code&gt;，也就是 3。6 - 3 = 3，正确。要是把 &lt;code&gt;SUB&lt;/code&gt; 拨回 0，同一套电路立刻又变回加法器。&lt;/p&gt;
+&lt;h3&gt;顺便说说“装不下”&lt;/h3&gt;
+&lt;p&gt;你大概已经注意到那个被丢掉的最高位进位。当结果超出当前位宽时，就会发生这种"绕出去"的情况，我们称为溢出。它什么时候可以忽略、什么时候意味着出错，取决于把数看作无符号数还是有符号数——这正好是 ALU 状态标志要处理的问题。&lt;/p&gt;
+&lt;h3&gt;把运算装进一个盒子&lt;/h3&gt;
+&lt;p&gt;现在，机器会加，也会减。更早造出的与门、或门、异或门还能完成逻辑运算，但它们仍然散落在桌面上。每换一种运算就重新接线，显然还不够像一台真正的计算机。&lt;/p&gt;
+&lt;p&gt;下一章，我们把这些常用运算统统装进同一个盒子，再用控制信号决定这一次到底算哪一种。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题 1&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 4 位电路中，若 &lt;code&gt;A = 0110&lt;/code&gt;、&lt;code&gt;B = 0011&lt;/code&gt;，做减法时真正送进加法器的第二个数和最低位进位分别是什么？结果是多少？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;思考题 2&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;减法器复用了加法器。如果反过来，让你只用减法器去实现加法，可行吗？大概要怎么做？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;减法可以转化为补码加法&lt;/li&gt;
+&lt;li&gt;异或门可以受控制地决定是否取反&lt;/li&gt;
+&lt;li&gt;加减法器的统一表达式是 &lt;code&gt;A + (B XOR SUB) + SUB&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;超出位宽的进位就是溢出，含义随无符号／有符号而定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;h4&gt;思考题 1&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;SUB = 1&lt;/code&gt;，所以 B 先按位取反为 &lt;code&gt;1100&lt;/code&gt;，最低位进位为 1。加法器计算 &lt;code&gt;0110 + 1100 + 1 = 1 0011&lt;/code&gt;，丢掉最高位后得到 &lt;code&gt;0011&lt;/code&gt;，即 3。&lt;/p&gt;
+&lt;h4&gt;思考题 2&lt;/h4&gt;
+&lt;p&gt;可行。加法和减法本就靠 &lt;code&gt;SUB&lt;/code&gt; 这根线切换，把逻辑反过来即可：默认 &lt;code&gt;SUB = 1&lt;/code&gt;（做减法），需要加法时再把它拨到 0。本质上加减是同一个电路的两面，并没有谁更"基础"。谁作为默认，只是设计上的方便问题。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/减法器.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十四章：减法器.md#modified#2026-09-19T05:11:10+00:00</guid><pubDate>Sat, 19 Sep 2026 05:11:10 +0000</pubDate></item><item><title>[更新] 第十六章：ALU 的状态标志</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0%EF%BC%9AALU%E7%8A%B6%E6%80%81%E6%A0%87%E5%BF%97.html</link><description>更新: 第十六章：ALU 的状态标志 - 2026-09-19 05:11:10</description><content:encoded>&lt;h1&gt;ALU 的状态标志&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;补码：补码是反码加 1，能统一加减法且只有一个零&lt;/li&gt;
+&lt;li&gt;减法器：减法器复用加法器，把减数取反再加一&lt;/li&gt;
+&lt;li&gt;算术逻辑单元：ALU 把算术与逻辑运算集成起来，用控制码选择运算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;状态标志是 ALU 对本次结果的简短备注&lt;/li&gt;
+&lt;li&gt;Z、N、C、V 分别描述零、负数、进位和有符号溢出&lt;/li&gt;
+&lt;li&gt;进位和溢出不是一回事&lt;/li&gt;
+&lt;li&gt;标志是机器以后"看结果做判断"的依据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;假设 ALU 算出一个 &lt;code&gt;0000&lt;/code&gt;。这可能是普通的 0，也可能是数在固定宽度里绕了一圈才回到 0。只看结果这一串 0，机器并不知道刚才究竟发生了什么。&lt;/p&gt;
+&lt;p&gt;所以，ALU 除了交出答案，还会顺手亮起几盏"指示灯"。它们是关于这次运算的简短备注，叫作&lt;strong&gt;状态标志&lt;/strong&gt;（status flag）。&lt;/p&gt;
+&lt;h3&gt;四盏常用的灯&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Z，零标志&lt;/strong&gt;：结果是不是全 0&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;N，负数标志&lt;/strong&gt;：把结果看作补码时，最高位是不是 1&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;C，进位标志&lt;/strong&gt;：无符号加法有没有从最高位产生进位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;V，溢出标志&lt;/strong&gt;：有符号结果是否超出当前位宽能表示的范围&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;名字不必死记，先建立一组直觉：Z 关心"是不是 0"，N 关心"符号位是几"，C 关心"有没有从最高位冒出去"，V 关心"有符号数算崩了没有"。&lt;/p&gt;
+&lt;p&gt;拿一个例子感受一下。4 位 ALU 计算 &lt;code&gt;0011 - 0011 = 0000&lt;/code&gt;，这时 Z 变成 1。以后机器要判断"两个数是否相等"，只要做一次减法、再看 Z 就行，不必另造一套比较机器——&lt;strong&gt;比较，本质上就是减完看标志。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;进位不等于溢出&lt;/h3&gt;
+&lt;p&gt;C 和 V 最容易混淆，因为它们都和"装不下"有关，却站在两套不同的解释里。&lt;/p&gt;
+&lt;p&gt;先看 4 位&lt;strong&gt;无符号数&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text
+1111 + 0001 = 1 0000&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;低 4 位是 &lt;code&gt;0000&lt;/code&gt;，最高位外面多出一个进位，于是 C = 1。把输入看作无符号数，这就是 &lt;code&gt;15 + 1&lt;/code&gt; 超出了 0～15 的范围，多出来的那位被顶了出去。&lt;/p&gt;
+&lt;p&gt;再看 4 位&lt;strong&gt;有符号补码&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text
+0111 + 0001 = 1000&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;+7 + 1&lt;/code&gt; 本该等于 +8，可 4 位补码最多只能表示 +7。结果串 &lt;code&gt;1000&lt;/code&gt; 若按补码解释，反而成了 -8。这就是溢出，V = 1。注意这次最高位外面并没有多余进位，所以 C 可以是 0。&lt;/p&gt;
+&lt;p&gt;把两者并排看，区别就清楚了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;C 关心无符号数有没有向位宽之外进位&lt;/li&gt;
+&lt;li&gt;V 关心有符号数的数学答案是否超出范围&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;同一串比特，用无符号和有符号去看，结论可能完全不同——所以机器必须用两个标志分别记录，不能只留一个。&lt;/p&gt;
+&lt;h3&gt;标志有什么用&lt;/h3&gt;
+&lt;p&gt;状态标志不会替我们决定下一步，但它们给了机器决定的依据：结果为零就停下，结果为负就拐到另一条路，发生溢出就报告错误。&lt;/p&gt;
+&lt;p&gt;可以说，标志是"运算"通往"判断"的桥梁。前面讲条件跳转时，机器就是先做减法、再看这些标志，才决定要不要改变 PC。&lt;/p&gt;
+&lt;p&gt;现在，运算结果和对结果的备注都有了。下一章，我们把输入、ALU、控制码和这些标志正式装进一个运算器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题 1&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 4 位 ALU 中计算 &lt;code&gt;1111 + 0001&lt;/code&gt;。把输入看作无符号数和有符号补码时，各发生了什么？C 和 V 应分别是多少？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;思考题 2&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么判断"两个数相等"可以靠减法加 Z 标志，而判断"谁大谁小"却有时还要多看一个 V（或 N）？只靠 Z 够吗？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Z、N、C、V 四种常见状态标志&lt;/li&gt;
+&lt;li&gt;C 服务于无符号运算&lt;/li&gt;
+&lt;li&gt;V 服务于有符号补码运算&lt;/li&gt;
+&lt;li&gt;比较可以借助减法结果和状态标志完成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;h4&gt;思考题 1&lt;/h4&gt;
+&lt;p&gt;结果低 4 位为 &lt;code&gt;0000&lt;/code&gt;，并产生最高位进位，所以 C = 1。若按有符号补码解释，&lt;code&gt;1111&lt;/code&gt; 是 -1，&lt;code&gt;-1 + 1 = 0&lt;/code&gt; 完全在范围内，所以 V = 0；此时结果为零，Z = 1。&lt;/p&gt;
+&lt;h4&gt;思考题 2&lt;/h4&gt;
+&lt;p&gt;不够。相等只有一个含义：差为零，所以看 Z 就够了。但"谁大谁小"取决于你把数看作无符号还是有符号：同样一串位模式，无符号解释下的比较结果，可能和有符号解释下相反。所以比较大小不能只看零标志，还要结合符号标志，或者按无符号／有符号分别看待。这也再次说明：&lt;strong&gt;同一串比特的含义，取决于你打算怎么解读它。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/ALU的状态标志.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十六章：ALU状态标志.md#modified#2026-09-19T05:11:10+00:00</guid><pubDate>Sat, 19 Sep 2026 05:11:10 +0000</pubDate></item><item><title>[更新] 第十八章：让电路记住一个比特</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0%EF%BC%9A%E8%AE%A9%E7%94%B5%E8%B7%AF%E8%AE%B0%E4%BD%8F%E4%B8%80%E4%B8%AA%E6%AF%94%E7%89%B9.html</link><description>更新: 第十八章：让电路记住一个比特 - 2026-09-19 05:11:10</description><content:encoded>&lt;h1&gt;让电路记住一个比特&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;算术逻辑单元：ALU 把算术与逻辑运算集成起来，用控制码选择运算&lt;/li&gt;
+&lt;li&gt;ALU状态标志：ALU 用零、负数、进位和溢出标志记录结果特征&lt;/li&gt;
+&lt;li&gt;运算器总装：把运算部件组装成一个能算加减乘除的运算器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;把输出反馈到输入，过去就能影响现在&lt;/li&gt;
+&lt;li&gt;交叉连接的逻辑门可以维持 0 或 1&lt;/li&gt;
+&lt;li&gt;增加控制输入后，就得到能写入和保持的锁存器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;组合逻辑像一面镜子：面前是什么，它就照出什么；输入一撤，刚才的结果也不复存在。&lt;/p&gt;
+&lt;p&gt;想让电路记住过去，一个很自然的念头是：&lt;strong&gt;把输出绕回来，重新接到输入。&lt;/strong&gt; 这样，即便外部信号离开了，电路也能用自己的旧输出撑住下一刻。&lt;/p&gt;
+&lt;p&gt;听起来像在耍赖——电路凭什么"自己撑住自己"？往下看就会发现，这个念头不仅可行，而且正是所有记忆单元的起点。&lt;/p&gt;
+&lt;h3&gt;先试一个会打架的接法&lt;/h3&gt;
+&lt;p&gt;最省事的接法，是把非门的输出直接接回自己的输入。写成一个式子：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text
+Q = NOT Q&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;可这式子根本无解。Q 是 0，非门就要求它变成 1；Q 是 1，非门又要求它变回 0。电路找不到一个安稳的位置，只会受传播延迟的影响不停地翻转。它能产生振荡，却不能可靠地记住某一个确定值。&lt;/p&gt;
+&lt;p&gt;所以，"首尾相连"是个好方向，但方式不对。&lt;/p&gt;
+&lt;h3&gt;两个门互相照看&lt;/h3&gt;
+&lt;p&gt;换成两个或非门，让每个门的输出接到另一个门的输入。先忽略外部控制，会发现它有两个稳定状态：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text
+Q = 1，Q̅ = 0
+Q = 0，Q̅ = 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;为什么稳得住？因为此时一个门的输出，恰好是另一个门所需要的输入。两者互相"扶持"，谁也不需要外力维持。外部信号可以把它推到其中一个状态；信号撤走后，交叉反馈仍会把它保持下去。&lt;/p&gt;
+&lt;p&gt;两个稳定状态，正好代表一个比特的 0 和 1。&lt;strong&gt;记忆并不是某个逻辑门突然学会的新本领，而是来自连接方式&lt;/strong&gt;：旧输出绕回来，成了新输入的一部分。&lt;/p&gt;
+&lt;h3&gt;给记忆装上两个按钮&lt;/h3&gt;
+&lt;p&gt;光有稳定的两个状态还不够，我们还得能"写"进去。为此再引入两个输入：S（Set，置位）和 R（Reset，复位），告诉电路是要写 1、写 0，还是保持原值。&lt;/p&gt;
+&lt;p&gt;它现在有了一个名字：&lt;strong&gt;SR 锁存器&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;| S | R | Q 的下一状态 | 含义 |
+| :---: | :---: | :---: | :--- |
+| 0 | 0 | 保持原值 | 不写入 |
+| 1 | 0 | 1 | 写入 1 |
+| 0 | 1 | 0 | 写入 0 |
+| 1 | 1 | 不使用 | 两边同时发号施令 |&lt;/p&gt;
+&lt;p&gt;关键是第一行：S、R 都回到 0 之后，Q 仍然留在刚才写入的状态。一个比特，真的被记住了。&lt;/p&gt;
+&lt;h3&gt;把危险组合藏起来&lt;/h3&gt;
+&lt;p&gt;不过，最后一行是个麻烦：S、R 同时为 1，等于同时喊"置位"和"复位"，破坏了两个输出本该互为相反数的关系。&lt;/p&gt;
+&lt;p&gt;既然"写 0"和"写 1"本就不该同时发生，不如干脆只提供一根数据线 D，再用一根使能线 E 决定这一拍要不要写入：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;E = 0：保持原值&lt;/li&gt;
+&lt;li&gt;E = 1：Q 跟随 D&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;电路内部把 D 原样送往一路、取反后送往另一路，所以无论如何都不会同时要求写 0 和写 1。这就是 &lt;strong&gt;D 锁存器&lt;/strong&gt;，它用一个巧妙的小设计，把那个危险组合从接口上"藏"了起来。&lt;/p&gt;
+&lt;p&gt;不过，D 锁存器仍有它的软肋：E 为 1 的整段时间里，门一直开着，D 一变，Q 就跟着变。许多部件若同时敞开大门，数据就会一路向前乱跑。下一章，我们给全机安排同一个交代节拍。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题 1&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么完全切断反馈后，外部写入信号一撤，电路就无法继续保存旧状态？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;思考题 2&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SR 锁存器为什么要禁止 S = 1、R = 1？D 锁存器又是怎样使这种输入"根本不会出现"的？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;反馈让旧输出参与决定新输出&lt;/li&gt;
+&lt;li&gt;两个稳定状态可以表示一个比特&lt;/li&gt;
+&lt;li&gt;SR 锁存器能够置位、复位与保持&lt;/li&gt;
+&lt;li&gt;D 锁存器用一根数据线避开冲突输入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;h4&gt;思考题 1&lt;/h4&gt;
+&lt;p&gt;没有反馈时，输出只取决于当前外部输入。写入信号一撤，就没有任何信号继续支撑旧输出；有反馈时，旧输出会绕回输入端，参与维持自身，所以能"记住"。&lt;/p&gt;
+&lt;h4&gt;思考题 2&lt;/h4&gt;
+&lt;p&gt;因为 S = R = 1 意味着同时要求输出为 1 和 0，两个输出无法再保持互为相反数，解开这个输入后结果还可能不确定。D 锁存器通过内部布线，让 D 的"原值"和"反值"分别接到置位与复位端：写 1 时只碰置位端，写 0 时只碰复位端，两边永远不会同时为 1，从源头上避开了这个禁止组合。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/锁存器.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md#modified#2026-09-19T05:11:10+00:00</guid><pubDate>Sat, 19 Sep 2026 05:11:10 +0000</pubDate></item><item><title>[更新] 第十五章：算术逻辑单元</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0%EF%BC%9A%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83.html</link><description>更新: 第十五章：算术逻辑单元 - 2026-09-19 05:11:10</description><content:encoded>&lt;h1&gt;算术逻辑单元&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;有符号数与原码：原码用符号位表示正负；反码需要回卷进位参与运算，且仍有两个零&lt;/li&gt;
+&lt;li&gt;补码：补码是反码加 1，能统一加减法且只有一个零&lt;/li&gt;
+&lt;li&gt;减法器：减法器复用加法器，把减数取反再加一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ALU 把常用算术和逻辑电路装进同一个盒子&lt;/li&gt;
+&lt;li&gt;控制码决定 ALU 此刻做哪一种运算&lt;/li&gt;
+&lt;li&gt;ALU 只负责算，不负责保存结果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;桌面上的电路越来越多了：这边是加减法器，那边是与门、或门和异或门。每换一种运算都要重新接线，这和早期计算机"换一道题就重插一次线缆"有什么分别？&lt;/p&gt;
+&lt;p&gt;好在，这些电路有一个共同点：它们都拿同样的输入 A、B，也都吐出一个结果。既然如此，为什么不把它们并排接在一起，再用一个多路选择器，挑其中一个结果送出去？&lt;/p&gt;
+&lt;p&gt;这只把许多运算装在一起的大盒子，就是&lt;strong&gt;算术逻辑单元&lt;/strong&gt;，简称 &lt;strong&gt;ALU&lt;/strong&gt;（Arithmetic Logic Unit）。&lt;/p&gt;
+&lt;h3&gt;给运算编号&lt;/h3&gt;
+&lt;p&gt;假设我们的极简 ALU 先支持四种运算，那么用两位控制码就够了：&lt;/p&gt;
+&lt;p&gt;| 控制码 | 运算 | 输出 |
+| :---: | :--- | :--- |
+| &lt;code&gt;00&lt;/code&gt; | 加法 | &lt;code&gt;A + B&lt;/code&gt; |
+| &lt;code&gt;01&lt;/code&gt; | 减法 | &lt;code&gt;A - B&lt;/code&gt; |
+| &lt;code&gt;10&lt;/code&gt; | 按位与 | &lt;code&gt;A AND B&lt;/code&gt; |
+| &lt;code&gt;11&lt;/code&gt; | 按位或 | &lt;code&gt;A OR B&lt;/code&gt; |&lt;/p&gt;
+&lt;p&gt;注意：盒子里所有电路是&lt;strong&gt;同时&lt;/strong&gt;在算的，加法器、减法器、与门、或门各自都得到了自己的答案。出口处的多路选择器，只放行我们此刻想要的那一个。这就像四条流水线一起运转，最后用一个道岔决定让哪条线的成品出来。&lt;/p&gt;
+&lt;p&gt;控制码从哪来？它不必由人手拨，机器可以自己给出——事实上，回忆更早造 ALU 的做法，我们还用过译码器把控制码"翻译"成"点亮某一路"的信号。无论盒子里放进多少种运算，办法都一样：&lt;strong&gt;运算电路负责算，选择器负责选。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;跟着一个输入走一遍&lt;/h3&gt;
+&lt;p&gt;令 &lt;code&gt;A = 0101&lt;/code&gt;（5）、&lt;code&gt;B = 0011&lt;/code&gt;（3），看看控制码一变，出口的答案怎么跟着变：&lt;/p&gt;
+&lt;p&gt;| 控制码 | 运算过程 | 输出 |
+| :---: | :--- | :---: |
+| &lt;code&gt;00&lt;/code&gt; | 5 + 3 | &lt;code&gt;1000&lt;/code&gt; |
+| &lt;code&gt;01&lt;/code&gt; | 5 - 3 | &lt;code&gt;0010&lt;/code&gt; |
+| &lt;code&gt;10&lt;/code&gt; | &lt;code&gt;0101 AND 0011&lt;/code&gt; | &lt;code&gt;0001&lt;/code&gt; |
+| &lt;code&gt;11&lt;/code&gt; | &lt;code&gt;0101 OR 0011&lt;/code&gt; | &lt;code&gt;0111&lt;/code&gt; |&lt;/p&gt;
+&lt;p&gt;A 和 B 从头到尾没有变，只是控制码换了，出口的答案就跟着换。这是我们第一次造出一个真正"可选功能"的部件——它标志着机器从"只会做一件事"迈向了"听命令做事"。&lt;/p&gt;
+&lt;h3&gt;ALU 不会记事&lt;/h3&gt;
+&lt;p&gt;这里要特别留意一件事：输入一撤走，输出也会随之消失。&lt;/p&gt;
+&lt;p&gt;ALU 像草稿纸上的心算，算得快，却不会把刚才的结果记下来。你让它算 &lt;code&gt;2 + 3&lt;/code&gt;，它给你 5；可你一转手去算别的，那个 5 就没了。想算 &lt;code&gt;2 + 3 + 4&lt;/code&gt;，中间的结果 5 无处安放。&lt;/p&gt;
+&lt;p&gt;这说明 ALU 是典型的&lt;strong&gt;组合逻辑&lt;/strong&gt;：输出只取决于此刻的输入，与"过去"无关。&lt;/p&gt;
+&lt;p&gt;除此之外，还差一句话没说完。有时结果本身不够——结果是 0、结果是负、无符号数产生了进位、有符号数发生了溢出，这些情况以后都会影响机器下一步该做什么。所以 ALU 还需要多"说"几句，把自己的判断一并报出来。&lt;/p&gt;
+&lt;p&gt;下一章，我们给 ALU 装几盏小小的指示灯。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题 1&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若 ALU 想支持 8 种运算，控制码至少需要几位？为什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;思考题 2&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;盒子里所有电路都在同时运算，这是不是浪费？如果只想省电，有没有办法让没被选中的电路也停下来？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ALU 将多种运算封装成一个部件&lt;/li&gt;
+&lt;li&gt;控制码与多路选择器决定输出哪种结果&lt;/li&gt;
+&lt;li&gt;ALU 是组合逻辑，本身不保存结果&lt;/li&gt;
+&lt;li&gt;运算可以并行进行，再由选择器挑出结果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;h4&gt;思考题 1&lt;/h4&gt;
+&lt;p&gt;至少需要 3 位。因为 3 位控制码有 &lt;code&gt;2³ = 8&lt;/code&gt; 种组合，刚好能为 8 种运算各分配一个编号。每多一位控制码，可表示的运算种类就翻一倍。&lt;/p&gt;
+&lt;h4&gt;思考题 2&lt;/h4&gt;
+&lt;p&gt;确实有浪费：没被选中的那些电路也在耗电。想省电，可以在每路运算的出口再串一个"使能开关"（本质上还是与门），只让被选中的那一路真正输出、翻转，其余保持安静。这既省电，也避免了多路结果同时挤上输出线。不过代价是电路更复杂，所以简单的时候可以不管它。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/算术逻辑单元.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十五章：算术逻辑单元.md#modified#2026-09-19T05:11:10+00:00</guid><pubDate>Sat, 19 Sep 2026 05:11:10 +0000</pubDate></item><item><title>[更新] 第十九章：给电路一个共同节拍</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%EF%BC%9A%E7%BB%99%E7%94%B5%E8%B7%AF%E4%B8%80%E4%B8%AA%E5%85%B1%E5%90%8C%E8%8A%82%E6%8B%8D.html</link><description>更新: 第十九章：给电路一个共同节拍 - 2026-09-19 05:11:10</description><content:encoded>&lt;h1&gt;给电路一个共同节拍&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ALU状态标志：ALU 用零、负数、进位和溢出标志记录结果特征&lt;/li&gt;
+&lt;li&gt;运算器总装：把运算部件组装成一个能算加减乘除的运算器&lt;/li&gt;
+&lt;li&gt;让电路记住一个比特：用交叉耦合的反馈做出能保存一个比特的锁存器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;时钟是一根周期性地在 0 和 1 之间变化的信号线&lt;/li&gt;
+&lt;li&gt;全机用共同边沿约定何时交接数据&lt;/li&gt;
+&lt;li&gt;时序图把多根信号的变化画在同一条时间轴上&lt;/li&gt;
+&lt;li&gt;数据必须在采样边沿附近保持稳定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;想象几十个人一起搬箱子。有人还没把箱子放稳，下一个人已经伸手来拿，结果只会乱成一团。&lt;/p&gt;
+&lt;p&gt;电路也一样。运算需要传播时间，存储需要明确的写入时刻。要是"什么时候算""什么时候存"全凭各自性子，数据就会乱跑。于是我们给整台机器放一个节拍器：滴答，准备；滴答，交接。&lt;/p&gt;
+&lt;p&gt;这个节拍器就是&lt;strong&gt;时钟&lt;/strong&gt;（clock）。&lt;/p&gt;
+&lt;h3&gt;一根反复跳变的线&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;text
+      ┌───┐   ┌───┐   ┌───┐
+CLK ──┘   └───┘   └───┘   └──
+      ↑       ↑       ↑
+    上升沿  上升沿  上升沿&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;从 0 跳到 1 的瞬间叫&lt;strong&gt;上升沿&lt;/strong&gt;，从 1 跳到 0 叫&lt;strong&gt;下降沿&lt;/strong&gt;。我们约定："所有存储部件都只在上升沿收下新数据。"这样一来，全机便有了共同的交接时刻。&lt;/p&gt;
+&lt;p&gt;一高一低走完一轮，叫一个&lt;strong&gt;时钟周期&lt;/strong&gt;；每秒完成多少个周期，叫作&lt;strong&gt;频率&lt;/strong&gt;，单位是赫兹（Hz）。&lt;/p&gt;
+&lt;p&gt;频率可不能无限提高。组合逻辑需要时间让结果传播并稳定下来；下一次边沿来得太早，存储部件就可能收下一个还没算完的值。&lt;strong&gt;时钟快慢，本质上是在"多快"和"多稳"之间取平衡。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;把先后画出来&lt;/h3&gt;
+&lt;p&gt;电路图擅长说明"线接到哪里"，却不擅长说明"谁先变、谁后变"。于是我们换一种画法：让横轴表示时间，每一行画一根信号。&lt;/p&gt;
+&lt;p&gt;```text
+CLK  ──┐   ┌───┐   ┌───┐
+       └───┘   └───┘   └──&lt;/p&gt;
+&lt;p&gt;D    ──────┐       ┌────────
+           └───────┘&lt;/p&gt;
+&lt;p&gt;Q    ──────────────┐
+                   └────────
+```&lt;/p&gt;
+&lt;p&gt;这种图叫作&lt;strong&gt;时序图&lt;/strong&gt;（timing diagram）。高线表示 1，低线表示 0，竖直变化表示信号发生跳变。多行波形共用一条时间轴，所以能直接比较变化的先后。&lt;/p&gt;
+&lt;h3&gt;读图先找边沿&lt;/h3&gt;
+&lt;p&gt;假设存储部件只在上升沿读取 D。读图时，只需依次检查每个上升沿：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;找到上升沿&lt;/li&gt;
+&lt;li&gt;看边沿到来前 D 是多少&lt;/li&gt;
+&lt;li&gt;Q 稍后更新为这个值，并保持到下一次采样&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;D 在两个边沿之间即使变化多次，也不会立刻改写 Q——这正是上一章想解决的问题：只在"一瞬间"采样，而不是整段时间都跟着输入跑。&lt;/p&gt;
+&lt;p&gt;现实里，D 还要在边沿前后各稳定一小段时间，分别满足&lt;strong&gt;建立时间&lt;/strong&gt;和&lt;strong&gt;保持时间&lt;/strong&gt;。这里不计算具体数值，只记一句：&lt;strong&gt;铃响时，数据必须已经站稳。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;时钟和读图方法都有了。下一章，我们把"一段时间内开门"的锁存器，正式改成"只在边沿拍照"的触发器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题 1&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果一段组合逻辑要 8 ns 才能稳定，时钟周期却只有 5 ns，会有什么风险？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;思考题 2&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么存储部件选"边沿"来更新，而不是盯着高电平或低电平的整段时间？这样能避开什么麻烦？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;时钟周期、频率、上升沿与下降沿&lt;/li&gt;
+&lt;li&gt;时钟让全机按共同节拍交接数据&lt;/li&gt;
+&lt;li&gt;时序图用共同时间轴展示多根信号&lt;/li&gt;
+&lt;li&gt;数据必须在采样边沿附近保持稳定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;h4&gt;思考题 1&lt;/h4&gt;
+&lt;p&gt;下一次采样发生时，结果可能仍在传播和变化，存储部件会收下一个错误或不稳定的值。所以时钟周期必须给最慢的那条数据通路留出足够时间，频率也因此不能无限提高。&lt;/p&gt;
+&lt;h4&gt;思考题 2&lt;/h4&gt;
+&lt;p&gt;因为电平会持续一段时间，期间输入的任何抖动都可能被"看进去"；而边沿只是一个极短的瞬间，只要数据在边沿前后稳定，就能干净地采到。这样一来，运算的扰动不会在半途被误存，全机的交接也更容易对齐。这正是要区分"电平"和"边沿"的原因。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/时钟.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十九章：给电路一个共同节拍.md#modified#2026-09-19T05:11:10+00:00</guid><pubDate>Sat, 19 Sep 2026 05:11:10 +0000</pubDate></item><item><title>[更新] 第十七章：运算器总装</title><link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E6%9E%81%E7%AE%80%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0%EF%BC%9A%E8%BF%90%E7%AE%97%E5%99%A8%E6%80%BB%E8%A3%85.html</link><description>更新: 第十七章：运算器总装 - 2026-09-19 05:11:10</description><content:encoded>&lt;h1&gt;运算器总装&lt;/h1&gt;
+&lt;h2&gt;复习&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;减法器：减法器复用加法器，把减数取反再加一&lt;/li&gt;
+&lt;li&gt;算术逻辑单元：ALU 把算术与逻辑运算集成起来，用控制码选择运算&lt;/li&gt;
+&lt;li&gt;ALU状态标志：ALU 用零、负数、进位和溢出标志记录结果特征&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;运算器把输入、ALU、结果和状态标志连成一条数据通路&lt;/li&gt;
+&lt;li&gt;控制线决定数据走向和运算种类&lt;/li&gt;
+&lt;li&gt;我们已经造出"会算"的部分，接下来要让它"记住"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;正文&lt;/h2&gt;
+&lt;p&gt;桌上的零件终于攒够了。这一章，把它们拼成第一件真正像计算机部件的东西。&lt;/p&gt;
+&lt;h3&gt;两个入口，一个出口&lt;/h3&gt;
+&lt;p&gt;运算器最核心的路线，其实简单得出奇：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text
+输入 A ─┐
+        ├─&amp;gt; ALU ─&amp;gt; 结果
+输入 B ─┘          └─&amp;gt; 状态标志
+             ▲
+           控制码&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;把 A、B 送进去，再给一组控制码，ALU 就给出结果和几盏标志灯。比如控制码设成加法，输入 &lt;code&gt;00000101&lt;/code&gt;（5）与 &lt;code&gt;00000011&lt;/code&gt;（3），出口得到 &lt;code&gt;00001000&lt;/code&gt;（8）；把控制码改成按位与，同样的输入，出口就变成 &lt;code&gt;00000001&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;数据走过的这条路线，叫作&lt;strong&gt;数据通路&lt;/strong&gt;（datapath）。要留意的是：控制码并不直接搬运数据，它只负责打开正确的门，让数据流向正确的电路。数据是车，控制信号是红绿灯——车走哪条路，由灯说了算。&lt;/p&gt;
+&lt;h3&gt;回过头看看，我们造出了什么&lt;/h3&gt;
+&lt;p&gt;从第七章的与、或、非门开始，我们一路搭出了：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;text
+逻辑门
+  ↓
+半加器与全加器
+  ↓
+多位加法器
+  ↓
+加减法与逻辑运算
+  ↓
+ALU
+  ↓
+运算器&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;还记得第二章那张计算机的草图吗？它由运算器、存储器、控制器、输入和输出组成。现在，第一大块——运算器——终于完成了。这种感觉，就像拼图拼好了最中心的一片。&lt;/p&gt;
+&lt;h3&gt;但它仍然只有一瞬间&lt;/h3&gt;
+&lt;p&gt;别高兴太早。这台运算器有一个致命短板：它记不住任何东西。&lt;/p&gt;
+&lt;p&gt;试着用它算 &lt;code&gt;2 + 3 + 4&lt;/code&gt;。第一步算出 5，没问题；可当你想进行第二步时，输入已经变了，那个 5 也随输入一起消失了。第二步没有地方把 5 取回来。&lt;/p&gt;
+&lt;p&gt;这不是运算规则的问题，而是&lt;strong&gt;组合逻辑的天性&lt;/strong&gt;：它只关心此刻的输入，"过去"对它来说从未存在。所以接下来目标非常明确：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;让电路记住一个 0 或 1。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;听起来有点离谱的办法是：把逻辑门的输出绕回来，再接到自己的输入。下一章，我们试试让电路首尾相连。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考题 1&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么仅有 ALU 还算不了 &lt;code&gt;2 + 3 + 4&lt;/code&gt;？缺少的是新的运算规则，还是保存中间结果的能力？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;思考题 2&lt;/strong&gt; &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数据通路和控制通路各走什么信号？如果把它们画在同一张图里，你能指出哪几条线属于控制吗？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;h3&gt;知识点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;运算器的基本数据通路&lt;/li&gt;
+&lt;li&gt;运算数据与控制信号承担不同职责&lt;/li&gt;
+&lt;li&gt;组合逻辑不能保存中间结果&lt;/li&gt;
+&lt;li&gt;计算机的下一块拼图是存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;思考题答案（仅供参考）&lt;/h3&gt;
+&lt;h4&gt;思考题 1&lt;/h4&gt;
+&lt;p&gt;ALU 已经会加法，缺的只是保存中间结果 5 的能力。没有存储，第一步的输出在输入改变后就会消失，第二步无法继续使用它。所以这里缺的不是新运算，而是"记忆"。&lt;/p&gt;
+&lt;h4&gt;思考题 2&lt;/h4&gt;
+&lt;p&gt;数据通路上走的是参与运算的数据，比如 A、B 和结果；控制通路上走的是控制信号，比如"选加法还是减法""要不要写回"。在图上，从控制码那一侧进来、箭头指向 ALU 或各个开关的，都属于控制通路。分清这两类线，是理解后面 CPU 内部结构的关键。&lt;/p&gt;
+&lt;h2&gt;协议&lt;/h2&gt;
+&lt;p&gt;本作品采用&lt;a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。&lt;/p&gt;
+&lt;h2&gt;封面图&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/运算器总装.png" /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设计师 | 南国微雪&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded><guid isPermaLink="false">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十七章：运算器总装.md#modified#2026-09-19T05:11:10+00:00</guid><pubDate>Sat, 19 Sep 2026 05:11:10 +0000</pubDate></item></channel></rss>
