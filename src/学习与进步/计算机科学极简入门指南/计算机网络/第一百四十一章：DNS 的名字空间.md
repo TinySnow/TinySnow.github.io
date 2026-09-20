@@ -80,6 +80,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/DNS的名字空间.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/DNS 的名字空间.png)
 
 > 设计师 | 南国微雪

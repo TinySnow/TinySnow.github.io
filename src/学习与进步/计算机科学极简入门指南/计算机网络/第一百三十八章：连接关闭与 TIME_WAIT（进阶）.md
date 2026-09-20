@@ -86,6 +86,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/连接关闭与 TIME_WAIT.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/连接关闭与 TIME_WAIT（进阶）.png)
 
 > 设计师 | 南国微雪

@@ -87,6 +87,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/自治系统与 BGP.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/自治系统与 BGP（进阶）.png)
 
 > 设计师 | 南国微雪

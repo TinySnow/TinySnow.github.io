@@ -82,6 +82,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/数据结构与算法/负权边与Bellman-Ford.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/数据结构与算法/负权边与 Bellman–Ford（进阶）.png)
 
 > 设计师 | 南国微雪

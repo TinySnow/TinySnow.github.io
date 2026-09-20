@@ -86,6 +86,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/数据结构与算法/Dijkstra算法.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/数据结构与算法/Dijkstra 算法.png)
 
 > 设计师 | 南国微雪

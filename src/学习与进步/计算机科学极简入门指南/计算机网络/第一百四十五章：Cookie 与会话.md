@@ -90,6 +90,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/Cookie与会话.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/Cookie 与会话.png)
 
 > 设计师 | 南国微雪

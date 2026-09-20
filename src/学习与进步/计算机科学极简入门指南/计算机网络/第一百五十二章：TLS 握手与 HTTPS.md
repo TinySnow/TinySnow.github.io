@@ -91,6 +91,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/TLS握手与HTTPS.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机网络/TLS 握手与 HTTPS.png)
 
 > 设计师 | 南国微雪

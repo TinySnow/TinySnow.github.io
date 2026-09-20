@@ -85,6 +85,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/数据结构与算法/大O记号.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/数据结构与算法/大 O 记号.png)
 
 > 设计师 | 南国微雪
