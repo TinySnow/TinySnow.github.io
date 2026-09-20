@@ -88,6 +88,6 @@ DMA 控制器：设备 ←→ 内存，批量搬……
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/查询、中断与DMA.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/操作系统/查询、中断与DMA.png)
 
 > 设计师 | 南国微雪

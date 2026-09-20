@@ -98,6 +98,6 @@
 
 ## 封面图
 
-![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/ALU的状态标志.png)
+![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/计算机组成原理/ALU的状态标志.png)
 
 > 设计师 | 南国微雪
