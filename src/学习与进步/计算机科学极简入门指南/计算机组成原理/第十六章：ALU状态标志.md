@@ -38,6 +38,8 @@
 
 　　举个例子：4 位 ALU 计算 `0011 - 0011 = 0000`，这时 Z 变成 1。以后机器要判断“两个数是否相等”，只要做一次减法、再看 Z 就行，不用再造一套用来比较的东西。
 
+![ALU 除了输出运算结果，也输出 Z、N、C、V 四种状态标志](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/ALU%E7%9A%84%E7%BB%93%E6%9E%9C%E4%B8%8E%E7%8A%B6%E6%80%81%E6%A0%87%E5%BF%97.png)
+
 ### 进位不等于溢出
 
 　　C 和 V 很容易搞混，但是非常非常关键！
@@ -66,6 +68,8 @@
 - **V 关心有符号数的数学答案是否超出范围**
 
 　　同一串比特，用无符号和有符号去看，结论可能完全不同——所以机器必须用两个标志分别记录，不能只留一个。
+
+![4 位运算中，进位标志 C 与有符号溢出标志 V 分别记录不同的信息](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/%E8%BF%9B%E4%BD%8DC%E4%B8%8D%E7%AD%89%E4%BA%8E%E6%BA%A2%E5%87%BAV.png)
 
  **思考题 1** 
 
