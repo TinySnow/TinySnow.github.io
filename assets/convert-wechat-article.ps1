@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [Parameter(Position = 0)]
     [string]$InputPath = "assets/wechat-origin.md",
@@ -12,18 +12,42 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+# "Run with PowerShell" starts the script from the assets directory (and closes
+# the transient console immediately). Keep all default paths rooted at the
+# repository, and leave Explorer-launched windows open so errors are visible.
+$projectRoot = Split-Path -Parent $PSScriptRoot
+$launchedFromExplorer = $false
+try {
+    $parentProcessId = (Get-CimInstance Win32_Process -Filter "ProcessId=$PID").ParentProcessId
+    $launchedFromExplorer = (Get-Process -Id $parentProcessId).ProcessName -eq 'explorer'
+}
+catch {
+}
+
+function Wait-ForDirectLaunch {
+    if ($launchedFromExplorer) {
+        Read-Host '按 Enter 关闭此窗口' | Out-Null
+    }
+}
+
+trap {
+    Write-Host "转换失败：$($_.Exception.Message)" -ForegroundColor Red
+    Wait-ForDirectLaunch
+    exit 1
+}
+
 function Resolve-ProjectPath {
-    param([Parameter(Mandatory)][string]$Path)
+    param([Parameter(Mandatory = $true)][string]$Path)
 
     if ([System.IO.Path]::IsPathRooted($Path)) {
         return [System.IO.Path]::GetFullPath($Path)
     }
 
-    return [System.IO.Path]::GetFullPath((Join-Path (Get-Location) $Path))
+    return [System.IO.Path]::GetFullPath((Join-Path $projectRoot $Path))
 }
 
 function Normalize-Body {
-    param([Parameter(Mandatory)][string]$Body)
+    param([Parameter(Mandatory = $true)][string]$Body)
 
     $normalized = $Body.Trim("`n")
 
@@ -157,3 +181,4 @@ if ((Test-Path -LiteralPath $outputPath) -and -not $Force) {
 
 [System.IO.File]::WriteAllText($outputPath, $content, $utf8NoBom)
 Write-Output $outputPath
+Wait-ForDirectLaunch
