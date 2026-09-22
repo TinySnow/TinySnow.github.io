@@ -212,6 +212,20 @@ stat_to_display() {
   fi
 }
 
+format_cmt_timestamp() {
+  # 将 GitHub Actions 常见的 UTC 时间和旧记录统一显示为中国时区。
+  # CMT 在页面中明确标注为 UTC+8，避免读者自行换算。
+  local timestamp="$1"
+
+  if [[ "${timestamp}" == *'CMT (UTC+8)'* ]]; then
+    printf '%s' "${timestamp}"
+    return
+  fi
+
+  TZ=Asia/Shanghai date -d "${timestamp}" '+%Y-%m-%d %H:%M:%S CMT (UTC+8)' 2>/dev/null \
+    || printf '%s' "${timestamp}"
+}
+
 collect_numstat() {
   # 收集单文件的增删行数统计（added/deleted）。
   # staged 与 range 模式分别走不同 git 命令，但输出格式统一为:
@@ -321,6 +335,8 @@ extract_old_entries() {
   # 这意味着调用方需要提供“上一轮已生成文件”作为输入基线。
   local source_file="$1"
   local line in_entry=0 entry_file="" idx=0
+  local generated_pattern='^- Generated at: `([^`]+)`$'
+  local title_pattern='^## 更新记录（(.+) \| (.+)）$'
 
   OLD_ENTRY_FILES=()
 
@@ -338,6 +354,13 @@ extract_old_entries() {
     fi
 
     if [[ "${in_entry}" -eq 1 ]]; then
+      # 历史 artifact 可能仍使用 UTC；读取时转换，保证保留下来的记录也统一为 CMT。
+      if [[ "${line}" =~ ${generated_pattern} ]]; then
+        line="- Generated at: \`$(format_cmt_timestamp "${BASH_REMATCH[1]}")\`"
+      elif [[ "${line}" =~ ${title_pattern} ]]; then
+        line="## 更新记录（$(format_cmt_timestamp "${BASH_REMATCH[1]}") | ${BASH_REMATCH[2]}）"
+      fi
+
       printf '%s\n' "${line}" >> "${entry_file}"
       if [[ "${line}" == "${ENTRY_END_MARK}" ]]; then
         OLD_ENTRY_FILES+=("${entry_file}")
@@ -371,7 +394,7 @@ else
   DIFF_SOURCE="${GIT_RANGE}"
 fi
 
-GENERATED_AT="$(date '+%Y-%m-%d %H:%M:%S %z')"
+GENERATED_AT="$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S CMT (UTC+8)')"
 ENTRY_KEY="$(printf '%s|%s|%s' "${GENERATED_AT}" "${BASE_REF}" "${DIFF_SOURCE}" | cksum | awk '{print $1}')"
 ENTRY_TITLE="更新记录（${GENERATED_AT} | ${BASE_REF}）"
 

@@ -217,7 +217,7 @@ CI 使用 `assets/generate-last-updated-md.sh` 生成最近更新页面，并使
 
 ## 博客元数据生成工具
 
-- `assets/generate-last-updated-md.sh` 根据暂存区或 Git 提交范围生成 `src/last-updated.md`，并保留最近若干次更新记录。
+- `assets/generate-last-updated-md.sh` 根据暂存区或 Git 提交范围生成 `src/last-updated.md`，并保留最近若干次更新记录；时间统一显示为 `CMT (UTC+8)`，历史 UTC 记录会在保留时自动换算。
 - `assets/generate-rss.py` 根据 `RSS_GIT_RANGE` 或最近一次提交生成仓库根目录的 `rss.xml`。
 - RSS 生成器只使用 Python 标准库，不需要安装项目级 Python 依赖。
 - GitHub Actions 直接调用上述两个脚本；调整文件名、参数或输出位置时，必须同步修改 `.github/workflows/mdbook.yml` 和 `autopush.sh` 中的说明。
