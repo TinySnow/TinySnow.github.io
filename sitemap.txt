@@ -579,6 +579,7 @@ https://tinysnow.github.io/阅读/每日一文/亲爱的小孩-陈晓霞
 https://tinysnow.github.io/阅读/每日一文/人为什么不肯死-贾平凹
 https://tinysnow.github.io/阅读/每日一文/人人想做他人-塞缪尔·麦科德·克罗瑟斯
 https://tinysnow.github.io/阅读/每日一文/人们杀死了我的阿尔贝蒂娜-米兰·昆德拉
+https://tinysnow.github.io/阅读/每日一文/人性的光华-许知远
 https://tinysnow.github.io/阅读/每日一文/人生实苦-杨绛
 https://tinysnow.github.io/阅读/每日一文/人生拿趣味做根柢-梁启超
 https://tinysnow.github.io/阅读/每日一文/人生的意义与价值-季羡林
@@ -1436,7 +1437,6 @@ https://tinysnow.github.io/阅读/没事，一切都会好起来的/门
 https://tinysnow.github.io/阅读/没事，一切都会好起来的/阳光
 https://tinysnow.github.io/阅读/没事，一切都会好起来的/音乐
 https://tinysnow.github.io/阅读/没事，一切都会好起来的/飞吧
-https://tinysnow.github.io/src/阅读/每日一文/人性的光华-许知远
 https://tinysnow.github.io/学习与进步/其他/亲密关系/亲密关系
 https://tinysnow.github.io/学习与进步/其他/亲密关系/第一章：人际关系的构成
 https://tinysnow.github.io/学习与进步/其他/亲密关系/第七章：友谊
