@@ -166,11 +166,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Python dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install -r requirements.txt
-
       # 使用 commit range 与 CI 事件保持一致，避免本地 staged 语义差异。
       - name: Generate Last Updated
         shell: bash
@@ -178,16 +173,13 @@ jobs:
           BLOG_GIT_RANGE: ${{ needs.preflight.outputs.git_range }}
         run: |
           set -Eeuo pipefail
-          chmod +x ./generate-last-updated-md.sh
-          ./generate-last-updated-md.sh --range "${BLOG_GIT_RANGE}"
+          bash ./assets/generate-last-updated-md.sh --range "${BLOG_GIT_RANGE}"
 
       # RSS_GIT_RANGE 与 Last Updated 使用同一 range，保证两者变更来源一致。
       - name: Generate RSS feed
         env:
           RSS_GIT_RANGE: ${{ needs.preflight.outputs.git_range }}
-        run: |
-          inv ver
-          inv gen
+        run: python3 ./assets/generate-rss.py
 
       # upload-artifact@v4 默认不上传隐藏目录，使用非隐藏目录避免静默跳过。
       - name: Pack metadata artifact

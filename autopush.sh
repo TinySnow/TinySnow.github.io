@@ -9,10 +9,11 @@
 #   Actions 自动生成与校验，避免不同环境下的脚本行为漂移。
 #
 # 当前脚本职责（本地）
-# 1. 暂存改动：git add .
-# 2. 创建提交：git commit -m "<message>"
-# 3. 推送到 GitHub origin 当前分支
-# 4. 推送到 gitee 当前分支（备份）
+# 1. 拉取当前分支：git pull
+# 2. 暂存改动：git add .
+# 3. 创建提交：git commit -m "<message>"
+# 4. 推送到 GitHub origin 当前分支
+# 5. 强制推送 master 到 GitLink（备份）
 #
 # CI 职责（远程）
 # - preflight：快速失败检查（敏感文件/临时文件/大文件等）
@@ -33,11 +34,11 @@
 # 运行前依赖（本地）
 # - 必需：
 #   - git（可用）
-#   - 已配置并可访问两个远程：origin 与 gitee
+#   - 已配置并可访问两个远程：origin 与 gitlink
 #   - 如果需要解除 git diff 对于中文的编码，请确保 git 的配置：
 #     git config --global core.quotepath false
 # - 不必安装（由 CI 负责）：
-#   - Python/invoke/feedgen/markdown
+#   - Python 第三方包（RSS 生成器仅使用标准库）
 #   - mdbook
 #   - static-sitemap-cli / Node.js
 #
@@ -48,9 +49,9 @@
 #
 # 2) 本地验证 last-updated 脚本（可选）
 #   - 按暂存区生成：
-#       ./generate-last-updated-md.sh --staged
+#       bash ./assets/generate-last-updated-md.sh --staged
 #   - 按提交范围生成（模拟 CI）：
-#       ./generate-last-updated-md.sh --range "HEAD^..HEAD"
+#       bash ./assets/generate-last-updated-md.sh --range "HEAD^..HEAD"
 #
 # 3) 检查最近一次提交信息
 #   git log -1 --stat

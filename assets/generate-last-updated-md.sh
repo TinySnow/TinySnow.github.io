@@ -72,7 +72,7 @@ usage() {
   # 打印脚本帮助信息。
   cat <<'USAGE'
 Usage:
-  ./generate-last-updated-md.sh [--staged] [--range <git-range>] [--history-limit <n>] [--output <path>]
+  bash ./assets/generate-last-updated-md.sh [--staged] [--range <git-range>] [--history-limit <n>] [--output <path>]
 
 Options:
   --staged               Use staged diff (default).

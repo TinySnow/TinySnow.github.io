@@ -199,6 +199,20 @@
 
 当前工具不会自动下载或迁移微信图片，不会自动更新 `src/SUMMARY.md`，也不会修改文章内容和标签。这些操作如有需要，应在用户明确要求后另行实现。
 
+## 博客元数据生成工具
+
+- `assets/generate-last-updated-md.sh` 根据暂存区或 Git 提交范围生成 `src/last-updated.md`，并保留最近若干次更新记录。
+- `assets/generate-rss.py` 根据 `RSS_GIT_RANGE` 或最近一次提交生成仓库根目录的 `rss.xml`。
+- RSS 生成器只使用 Python 标准库，不需要安装项目级 Python 依赖。
+- GitHub Actions 直接调用上述两个脚本；调整文件名、参数或输出位置时，必须同步修改 `.github/workflows/mdbook.yml` 和 `autopush.sh` 中的说明。
+
+本地按提交范围验证时，可在仓库根目录运行：
+
+```bash
+bash ./assets/generate-last-updated-md.sh --range "HEAD^..HEAD"
+python3 ./assets/generate-rss.py --git-range "HEAD^..HEAD"
+```
+
 ## 尚待微信样本确认的事项
 
 在看到用户提供的真实文件之前，不要预先锁定以下实现：
