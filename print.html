@@ -353,8 +353,134 @@
 <p>NOTICE: This content is presented as <code>git diff</code>.</p>
 </blockquote>
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-22-064249-0000--742b8a69"><a class="header" href="#更新记录2026-09-22-064249-0000--742b8a69">更新记录（2026-09-22 06:42:49 +0000 | 742b8a69）</a></h2>
+<h2 id="更新记录2026-09-22-075600-0000--3bb62922"><a class="header" href="#更新记录2026-09-22-075600-0000--3bb62922">更新记录（2026-09-22 07:56:00 +0000 | 3bb62922）</a></h2>
 <h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-09-22 07:56:00 +0000</code></li>
+<li>Base commit: <code>3bb62922</code></li>
+<li>Diff source: <code>fc629a390b3b33eaa1c2d86d8c8a71b45712d1c3..3bb629223b0f8cabc220f135d155d1fc77c445ed</code></li>
+<li>Changed files: <code>2</code></li>
+<li>Total lines: <code>+26 / -25</code></li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-2961559391-github-workflows-mdbook-yml-863419811">.github/workflows/mdbook.yml</a> <code>+20 / -23</code></li>
+<li><a href="#f-2961559391-autopush-sh-3850809378">autopush.sh</a> <code>+6 / -2</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-2961559391-github-workflows-mdbook-yml-863419811"></a></p>
+<h4 id="githubworkflowsmdbookyml"><a class="header" href="#githubworkflowsmdbookyml">.github/workflows/mdbook.yml</a></h4>
+<details>
+<summary><code>+20 / -23</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/.github/workflows/mdbook.yml b/.github/workflows/mdbook.yml
+index 00eaf638..c942f86b 100644
+--- a/.github/workflows/mdbook.yml
++++ b/.github/workflows/mdbook.yml
+@@ -260,12 +260,22 @@ jobs:
+         run: |
+           git config --global user.email "ci@github"
+           git config --global user.name "CI"
+-          cd book
+-          git init &amp;&amp; git add .
+-          git commit -m "deploy"
+-          git push --force \
++
++          # 保留 gh-pages-mirror 的提交链：以后两端均可按对象增量同步，
++          # 而不必每次创建孤儿提交并重新传输整个 book 目录。
++          git clone --depth 1 --branch gh-pages-mirror \
+             https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/TinySnow/TinySnow.github.io.git \
+-            HEAD:gh-pages-mirror
++            book-mirror
++          rsync -a --delete --exclude='.git' book/ book-mirror/
++
++          cd book-mirror
++          git add --all
++          if git diff --cached --quiet; then
++            echo "Mirror content is unchanged; skipping GitHub mirror push."
++          else
++            git commit -m "deploy"
++            git push origin HEAD:gh-pages-mirror
++          fi
+ 
+       - name: Setup Pages
+         id: pages
+@@ -298,7 +308,6 @@ jobs:
+   mirror_gitlink:
+     runs-on: ubuntu-latest
+     needs: deploy
+-    timeout-minutes: 15
+ 
+     steps:
+       # build_site 已将最终站点推送到 gh-pages-mirror；这里直接复用该分支，
+@@ -327,20 +336,8 @@ jobs:
+           set -Eeuo pipefail
+           cd book-mirror
+ 
+-          for attempt in 1 2 3; do
+-            echo "GitLink push attempt ${attempt}/3"
+-
+-            if GIT_SSH_COMMAND="ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=4" \
+-              timeout 180s git push --force \
+-                git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git \
+-                HEAD:gh-pages-mirror; then
+-              exit 0
+-            fi
+-
+-            if (( attempt == 3 )); then
+-              echo "GitLink push failed after 3 attempts." &gt;&amp;2
+-              exit 1
+-            fi
+-
+-            sleep "$((attempt * 15))"
+-          done
++          # 不设脚本或 job 超时，避免 GitLink 的慢速接收被人为中断。
++          # --progress 与 TRACE2_PERF 会将压缩、写入及远端处理等阶段输出到 Actions 日志。
++          GIT_TRACE2_PERF=1 git push --force --porcelain --progress \
++            git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git \
++            HEAD:gh-pages-mirror
+
+</code></pre>
+</details>
+<p><a id="f-2961559391-autopush-sh-3850809378"></a></p>
+<h4 id="autopushsh"><a class="header" href="#autopushsh">autopush.sh</a></h4>
+<details>
+<summary><code>+6 / -2</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/autopush.sh b/autopush.sh
+index 27ffc4f6..14080483 100755
+--- a/autopush.sh
++++ b/autopush.sh
+@@ -76,6 +76,10 @@
+ 
+ set -Eeuo pipefail
+ 
++# 本机 SSH 配置中的 ProxyCommand 在 PowerShell 环境下不可用；GitHub 改走
++# 官方 SSH 443 入口。该覆盖仅用于 origin，GitLink 仍使用其正常 SSH 地址。
++github_ssh_command='ssh -F /dev/null -o HostName=ssh.github.com -p 443'
++
+ if [[ $# -lt 1 ]]; then
+   echo "请提供提交信息。用法: ./autopush.sh \"commit message\"" &gt;&amp;2
+   exit 1
+@@ -83,11 +87,11 @@ fi
+ 
+ commit_msg="$1"
+ 
+-git pull
++git -c core.sshCommand="${github_ssh_command}" pull
+ 
+ git add .
+ git commit -m "${commit_msg}"
+-git push
++git -c core.sshCommand="${github_ssh_command}" push
+ git push gitlink -f master
+ 
+ echo "Done. last-updated / sitemap / rss are generated in GitHub Actions."
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-09-22-064249-0000--742b8a69"><a class="header" href="#更新记录2026-09-22-064249-0000--742b8a69">更新记录（2026-09-22 06:42:49 +0000 | 742b8a69）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-22 06:42:49 +0000</code></li>
 <li>Base commit: <code>742b8a69</code></li>
@@ -362,7 +488,7 @@
 <li>Changed files: <code>9</code></li>
 <li>Total lines: <code>+754 / -474</code></li>
 </ul>
-<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
 <ol>
 <li><a href="#f-2222693764-github-workflows-mdbook-yml-863419811">.github/workflows/mdbook.yml</a> <code>+2 / -10</code></li>
 <li><a href="#f-2222693764-readme-md-4140682621">README.md</a> <code>+2 / -0</code></li>
@@ -374,9 +500,9 @@
 <li><a href="#f-2222693764-src-学习与进步-计算机-文章-博客历史演进-md-1897282589">src/学习与进步/计算机/文章/博客历史演进.md</a> <code>+3 / -3</code></li>
 <li><a href="#f-2222693764-tasks-py-1062433356">tasks.py</a> <code>+0 / -443</code></li>
 </ol>
-<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
 <p><a id="f-2222693764-github-workflows-mdbook-yml-863419811"></a></p>
-<h4 id="githubworkflowsmdbookyml"><a class="header" href="#githubworkflowsmdbookyml">.github/workflows/mdbook.yml</a></h4>
+<h4 id="githubworkflowsmdbookyml-1"><a class="header" href="#githubworkflowsmdbookyml-1">.github/workflows/mdbook.yml</a></h4>
 <details>
 <summary><code>+2 / -10</code> Click to expand diff</summary>
 <pre><code class="language-diff">diff --git a/.github/workflows/mdbook.yml b/.github/workflows/mdbook.yml
@@ -1220,7 +1346,7 @@ index 00000000..c68afcd4
 </code></pre>
 </details>
 <p><a id="f-2222693764-autopush-sh-3850809378"></a></p>
-<h4 id="autopushsh"><a class="header" href="#autopushsh">autopush.sh</a></h4>
+<h4 id="autopushsh-1"><a class="header" href="#autopushsh-1">autopush.sh</a></h4>
 <details>
 <summary><code>+9 / -8</code> Click to expand diff</summary>
 <pre><code class="language-diff">diff --git a/autopush.sh b/autopush.sh
@@ -1790,7 +1916,7 @@ index af5afc58..00000000
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-22-050708-0000--47351556"><a class="header" href="#更新记录2026-09-22-050708-0000--47351556">更新记录（2026-09-22 05:07:08 +0000 | 47351556）</a></h2>
-<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-22 05:07:08 +0000</code></li>
 <li>Base commit: <code>47351556</code></li>
@@ -1798,7 +1924,7 @@ index af5afc58..00000000
 <li>Changed files: <code>9</code></li>
 <li>Total lines: <code>+1193 / -3</code></li>
 </ul>
-<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
 <ol>
 <li><a href="#f-1191663602-readme-md-4140682621">README.md</a> <code>+14 / -3</code></li>
 <li><a href="#f-1191663602-assets-agents-md-3942825076">assets/AGENTS.md</a> <code>+221 / -0</code></li>
@@ -1810,7 +1936,7 @@ index af5afc58..00000000
 <li><a href="#f-1191663602-src-生活碎笔-文章与写作-我可能也染上了男人的不良嗜好-md-340803151">src/生活碎笔/文章与写作/我可能也染上了男人的不良嗜好.md</a> <code>+75 / -0</code></li>
 <li><a href="#f-1191663602-src-生活碎笔-文章与写作-比不听更可恶的是假装听了-比不懂更危险的是以为懂了-md-431629254">src/生活碎笔/文章与写作/比不听更可恶的是假装听了，比不懂更危险的是以为懂了.md</a> <code>+51 / -0</code></li>
 </ol>
-<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
 <p><a id="f-1191663602-readme-md-4140682621"></a></p>
 <h4 id="readmemd-1"><a class="header" href="#readmemd-1">README.md</a></h4>
 <details>
@@ -3127,157 +3253,6 @@ index 00000000..970067fe
 +&gt; 摄影师・画师 | Siora Photography
 +&gt;
 +&gt; 图源 | Unsplash
-
-</code></pre>
-</details>
-<!-- LAST_UPDATED_ENTRY_END -->
-<!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-21-091920-0000--3232bc93"><a class="header" href="#更新记录2026-09-21-091920-0000--3232bc93">更新记录（2026-09-21 09:19:20 +0000 | 3232bc93）</a></h2>
-<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
-<ul>
-<li>Generated at: <code>2026-09-21 09:19:20 +0000</code></li>
-<li>Base commit: <code>3232bc93</code></li>
-<li>Diff source: <code>f57183e796d9bae0809ef2bceab437930c1ffd08..3232bc93e96a1d056d9fcd60c1fec1c33034453c</code></li>
-<li>Changed files: <code>2</code></li>
-<li>Total lines: <code>+26 / -20</code></li>
-</ul>
-<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
-<ol>
-<li><a href="#f-4066514618-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十七章-运算器总装-md-3428988036">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十七章：运算器总装.md</a> <code>+1 / -3</code></li>
-<li><a href="#f-4066514618-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a> <code>+25 / -17</code></li>
-</ol>
-<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
-<p><a id="f-4066514618-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十七章-运算器总装-md-3428988036"></a></p>
-<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十七章运算器总装md"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十七章运算器总装md">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十七章：运算器总装.md</a></h4>
-<details>
-<summary><code>+1 / -3</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\344\270\203\347\253\240\357\274\232\350\277\220\347\256\227\345\231\250\346\200\273\350\243\205.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\344\270\203\347\253\240\357\274\232\350\277\220\347\256\227\345\231\250\346\200\273\350\243\205.md"
-index 4297fd83..ce069b65 100644
---- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\344\270\203\347\253\240\357\274\232\350\277\220\347\256\227\345\231\250\346\200\273\350\243\205.md"
-+++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\344\270\203\347\253\240\357\274\232\350\277\220\347\256\227\345\231\250\346\200\273\350\243\205.md"
-@@ -69,9 +69,7 @@ ALU
- 
- &gt; 　　为什么仅有 ALU 还算不了 `2 + 3 + 4`？缺少的是新的运算规则，还是保存中间结果的能力？
- 
--　　所以，所以接下来目标非常明确：
--
--&gt; **让电路记住一个 0 或 1。**
-+　　所以，所以接下来目标非常明确： **让电路记住一个 0 或 1。**
- 
- 　　虽然听起来有点离谱，但我们好像从来没有试过让逻辑门绕回来连接自己（像条衔尾蛇那样）。也许会有些有趣的事情发生也说不定。
- 
-
-</code></pre>
-</details>
-<p><a id="f-4066514618-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049"></a></p>
-<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a></h4>
-<details>
-<summary><code>+25 / -17</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md"
-index 8ff83c7f..16a0065e 100644
---- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md"
-+++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md"
-@@ -16,9 +16,13 @@
- 
- 　　组合逻辑像一面镜子：面前是什么，它就照出什么；输入一撤，刚才的结果也不复存在。
- 
--　　想让电路记住过去，一个很自然的念头是：**把输出绕回来，重新接到输入。** 这样，即便外部信号离开了，电路也能用自己的旧输出撑住下一刻。
-+ **思考题 1** 
-+
-+&gt; 　　为什么完全切断反馈后，外部写入信号一撤，电路就无法继续保存旧状态？
- 
--　　听起来像在耍赖——电路凭什么“自己撑住自己”？往下看就会发现，这个念头不仅可行，而且正是所有记忆单元的起点。
-+　　那…… **把输出绕回来，重新接到输入呢？** 这样，即便外部信号离开了，电路也能用自己的旧输出撑住下一刻。
-+
-+　　感觉会很有意思，试一试吧。
- 
- ### 先试一个会打架的接法
- 
-@@ -28,28 +32,28 @@
- Q = NOT Q
- ```
- 
--　　可这式子根本无解。Q 是 0，非门就要求它变成 1；Q 是 1，非门又要求它变回 0。电路找不到一个安稳的位置，只会受传播延迟的影响不停地翻转。它能产生振荡，却不能可靠地记住某一个确定值。
-+　　但这种连接好像有问题：Q 是 0，非门就要求它变成 1；Q 是 1，非门又要求它变回 0。
- 
--　　所以，“首尾相连”是个好方向，但方式不对。
-+　　电路找不到一个安稳的位置，只会受传播延迟的影响不停地翻转。它能产生振荡，但没法可靠地记住某一个确定值。
- 
- ### 两个门互相照看
- 
--　　换成两个或非门，让每个门的输出接到另一个门的输入。先忽略外部控制，会发现它有两个稳定状态：
-+　　换两个门试试。换成两个或非门，让每个门的输出接到另一个门的输入。忽略外部控制，会发现它有两个神奇的稳定状态：
- 
- ```text
- Q = 1，Q̅ = 0
- Q = 0，Q̅ = 1
- ```
- 
--　　为什么稳得住？因为此时一个门的输出，恰好是另一个门所需要的输入。两者互相“扶持”，谁也不需要外力维持。外部信号可以把它推到其中一个状态；信号撤走后，交叉反馈仍会把它保持下去。
-+　　一个门的输出，恰好是另一个门所需要的输入。两者互相“扶持”，谁也不需要外力维持。外部信号可以把它推到其中一个状态；信号撤走后，交叉反馈仍会把它保持下去。
- 
--　　两个稳定状态，正好代表一个比特的 0 和 1。**记忆并不是某个逻辑门突然学会的新本领，而是来自连接方式**：旧输出绕回来，成了新输入的一部分。
-+　　两个稳定状态，正好代表一个比特的 0 和 1。
- 
- ### 给记忆装上两个按钮
- 
--　　光有稳定的两个状态还不够，我们还得能“写”进去。为此再引入两个输入：S（Set，置位）和 R（Reset，复位），告诉电路是要写 1、写 0，还是保持原值。
-+　　光稳定还不够，能“写”才行。为此再引入两个输入：S（Set，置位）和 R（Reset，复位），告诉电路是要写 1、写 0，还是保持原值。
- 
--　　它现在有了一个名字：**SR 锁存器**。
-+　　它现在有了一个名字： **SR 锁存器** 。
- 
- | S | R | Q 的下一状态 | 含义 |
- | :---: | :---: | :---: | :--- |
-@@ -58,28 +62,30 @@ Q = 0，Q̅ = 1
- | 0 | 1 | 0 | 写入 0 |
- | 1 | 1 | 不使用 | 两边同时发号施令 |
- 
--　　关键是第一行：S、R 都回到 0 之后，Q 仍然留在刚才写入的状态。一个比特，真的被记住了。
-+　　关键是第一行：S、R 都回到 0 之后，Q 仍然留在刚才写入的状态。
-+
-+　　就这样，我们天马行空的想法，真的让电路记住了一个 bit。
- 
- ### 把危险组合藏起来
- 
- 　　不过，最后一行是个麻烦：S、R 同时为 1，等于同时喊“置位”和“复位”，破坏了两个输出本该互为相反数的关系。
- 
--　　既然“写 0”和“写 1”本就不该同时发生，不如干脆只提供一根数据线 D，再用一根使能线 E 决定这一拍要不要写入：
-+　　既然“写 0”和“写 1”本就不该同时发生，不如干脆只提供一根数据线 D（Data，数据），再用一根使能线 E（Enable，是否启用）决定这一拍要不要写入：
- 
- - E = 0：保持原值
- - E = 1：Q 跟随 D
- 
- 　　电路内部把 D 原样送往一路、取反后送往另一路，所以无论如何都不会同时要求写 0 和写 1。这就是 **D 锁存器**，它用一个巧妙的小设计，把那个危险组合从接口上“藏”了起来。
- 
--　　不过，D 锁存器仍有它的软肋：E 为 1 的整段时间里，门一直开着，D 一变，Q 就跟着变。许多部件若同时敞开大门，数据就会一路向前乱跑。下一章，我们给全机安排同一个交代节拍。
-+ **思考题 2** 
- 
-- **思考题 1** 
-+&gt; 　　SR 锁存器为什么要禁止 S = 1、R = 1？D 锁存器又是怎样使这种输入“根本不会出现”的？
- 
--&gt; 　　为什么完全切断反馈后，外部写入信号一撤，电路就无法继续保存旧状态？
-+　　不过，D 锁存器仍有它的软肋：E 为 1 的整段时间里，门一直开着，D 一变，Q 就跟着变。
- 
-- **思考题 2** 
-+　　许多部件若同时敞开大门，数据就会全乱套，就像一个古典乐团，每个声部都各自演唱，不管其他，演奏出来的结果肯定不能叫音乐了。
- 
--&gt; 　　SR 锁存器为什么要禁止 S = 1、R = 1？D 锁存器又是怎样使这种输入“根本不会出现”的？
-+　　所以，下一章，我们给全机安排同一个总指挥。
- 
- ## 小结
- 
-@@ -103,7 +109,9 @@ Q = 0，Q̅ = 1
- 
- #### 思考题 2
- 
--　　因为 S = R = 1 意味着同时要求输出为 1 和 0，两个输出无法再保持互为相反数，解开这个输入后结果还可能不确定。D 锁存器通过内部布线，让 D 的“原值”和“反值”分别接到置位与复位端：写 1 时只碰置位端，写 0 时只碰复位端，两边永远不会同时为 1，从源头上避开了这个禁止组合。
-+　　因为 S = R = 1 意味着同时要求输出为 1 和 0，两个输出无法再保持互为相反数，解开这个输入后结果还可能不确定（看哪边跑得比较快）。
-+
-+　　D 锁存器通过内部布线，让 D 的“原值”和“反值”分别接到置位与复位端：写 1 时只碰置位端，写 0 时只碰复位端，两边永远不会同时为 1，从源头上避开了这个禁止组合。
- 
- ## 协议
- 
 
 </code></pre>
 </details>
