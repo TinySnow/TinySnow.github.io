@@ -263,7 +263,8 @@ jobs:
 
           # 保留 gh-pages-mirror 的提交链：以后两端均可按对象增量同步，
           # 而不必每次创建孤儿提交并重新传输整个 book 目录。
-          git clone --depth 1 --branch gh-pages-mirror \
+          # 不使用浅克隆：GitLink 会拒绝由 shallow repository 发出的分支更新。
+          git clone --branch gh-pages-mirror \
             https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/TinySnow/TinySnow.github.io.git \
             book-mirror
           rsync -a --delete --exclude='.git' book/ book-mirror/
@@ -316,7 +317,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: gh-pages-mirror
-          fetch-depth: 1
+          # 必须取得完整祖先链；GitLink 不接受 shallow update。
+          fetch-depth: 0
           path: book-mirror
           persist-credentials: false
 
@@ -338,6 +340,6 @@ jobs:
 
           # 不设脚本或 job 超时，避免 GitLink 的慢速接收被人为中断。
           # --progress 与 TRACE2_PERF 会将压缩、写入及远端处理等阶段输出到 Actions 日志。
-          GIT_TRACE2_PERF=1 git push --force --porcelain --progress \
+          GIT_TRACE2_PERF=1 git push --porcelain --progress \
             git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git \
             HEAD:gh-pages-mirror
