@@ -267,23 +267,6 @@ jobs:
             https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/TinySnow/TinySnow.github.io.git \
             HEAD:gh-pages-mirror
 
-      - name: Setup SSH for GitLink
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.GITLINK_DEPLOY_KEY }}
-
-      - name: Add GitLink host key
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H code.gitlink.org.cn >> ~/.ssh/known_hosts
-
-      - name: Push mirror branch to GitLink
-        run: |
-          cd book
-          git push --force \
-            git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git \
-            HEAD:gh-pages-mirror
-
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -309,3 +292,55 @@ jobs:
       # - name: Notify Mini
       #   run: |
       #     curl -X POST http://tinysnow.dynv6.net:9000/hooks/deploy-blog
+
+  # GitLink 镜像在 GitHub Pages 发布完成后再同步。
+  # 即使 GitLink 网络缓慢，用户也能先看到已经发布的 GitHub Pages。
+  mirror_gitlink:
+    runs-on: ubuntu-latest
+    needs: deploy
+    timeout-minutes: 15
+
+    steps:
+      # build_site 已将最终站点推送到 gh-pages-mirror；这里直接复用该分支，
+      # 避免再次安装工具和构建站点。
+      - name: Check out built mirror branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages-mirror
+          fetch-depth: 1
+          path: book-mirror
+          persist-credentials: false
+
+      - name: Setup SSH for GitLink
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GITLINK_DEPLOY_KEY }}
+
+      - name: Add GitLink host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H code.gitlink.org.cn >> ~/.ssh/known_hosts
+
+      - name: Push mirror branch to GitLink
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          cd book-mirror
+
+          for attempt in 1 2 3; do
+            echo "GitLink push attempt ${attempt}/3"
+
+            if GIT_SSH_COMMAND="ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=4" \
+              timeout 180s git push --force \
+                git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git \
+                HEAD:gh-pages-mirror; then
+              exit 0
+            fi
+
+            if (( attempt == 3 )); then
+              echo "GitLink push failed after 3 attempts." >&2
+              exit 1
+            fi
+
+            sleep "$((attempt * 15))"
+          done
