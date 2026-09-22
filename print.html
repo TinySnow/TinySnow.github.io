@@ -353,8 +353,115 @@
 <p>NOTICE: This content is presented as <code>git diff</code>.</p>
 </blockquote>
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-22-075600-0000--3bb62922"><a class="header" href="#更新记录2026-09-22-075600-0000--3bb62922">更新记录（2026-09-22 07:56:00 +0000 | 3bb62922）</a></h2>
+<h2 id="更新记录2026-09-22-112949-0000--eb3179e1"><a class="header" href="#更新记录2026-09-22-112949-0000--eb3179e1">更新记录（2026-09-22 11:29:49 +0000 | eb3179e1）</a></h2>
 <h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-09-22 11:29:49 +0000</code></li>
+<li>Base commit: <code>eb3179e1</code></li>
+<li>Diff source: <code>3bb629223b0f8cabc220f135d155d1fc77c445ed..eb3179e1e6efc468488ce8917f13d2c115865c99</code></li>
+<li>Changed files: <code>2</code></li>
+<li>Total lines: <code>+33 / -4</code></li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-3011319159-assets-agents-md-3942825076">assets/AGENTS.md</a> <code>+4 / -0</code></li>
+<li><a href="#f-3011319159-assets-convert-wechat-article-ps1-688062784">assets/convert-wechat-article.ps1</a> <code>+29 / -4</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-3011319159-assets-agents-md-3942825076"></a></p>
+<h4 id="assetsagentsmd"><a class="header" href="#assetsagentsmd">assets/AGENTS.md</a></h4>
+<details>
+<summary><code>+4 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/assets/AGENTS.md b/assets/AGENTS.md
+index 60ae9609..648d1327 100644
+--- a/assets/AGENTS.md
++++ b/assets/AGENTS.md
+@@ -169,6 +169,10 @@
+ .\assets\convert-wechat-article.ps1
+ ```
+ 
++也可在资源管理器中右键 `convert-wechat-article.ps1` 并选择“使用 PowerShell 运行”。脚本的默认输入、输出路径始终相对于仓库根目录解析；从资源管理器启动时，成功或失败信息会保留在窗口中，按 Enter 才会关闭。
++
++该 `.ps1` 文件必须保存为 **UTF-8 with BOM**。资源管理器右键运行使用 Windows PowerShell 5.1，它不能可靠解析带中文的 UTF-8 无 BOM 脚本；修改脚本编码时不得移除 BOM。
++
+ 输入文件可以没有一级标题。无标题时，先在微信公众号中复制文章标题，再运行上述命令；工具会读取剪贴板中的单行文本，将其补为一级标题，并用它生成文件名。标题不需要粘贴进 `assets/wechat-origin.md`。
+ 
+ 如果不希望读取剪贴板，也可以显式传入标题：
+
+</code></pre>
+</details>
+<p><a id="f-3011319159-assets-convert-wechat-article-ps1-688062784"></a></p>
+<h4 id="assetsconvert-wechat-articleps1"><a class="header" href="#assetsconvert-wechat-articleps1">assets/convert-wechat-article.ps1</a></h4>
+<details>
+<summary><code>+29 / -4</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/assets/convert-wechat-article.ps1 b/assets/convert-wechat-article.ps1
+index 912789ab..6c4580ec 100644
+--- a/assets/convert-wechat-article.ps1
++++ b/assets/convert-wechat-article.ps1
+@@ -1,4 +1,4 @@
+-[CmdletBinding()]
++﻿[CmdletBinding()]
+ param(
+     [Parameter(Position = 0)]
+     [string]$InputPath = "assets/wechat-origin.md",
+@@ -12,18 +12,42 @@ param(
+ 
+ $ErrorActionPreference = "Stop"
+ 
++# "Run with PowerShell" starts the script from the assets directory (and closes
++# the transient console immediately). Keep all default paths rooted at the
++# repository, and leave Explorer-launched windows open so errors are visible.
++$projectRoot = Split-Path -Parent $PSScriptRoot
++$launchedFromExplorer = $false
++try {
++    $parentProcessId = (Get-CimInstance Win32_Process -Filter "ProcessId=$PID").ParentProcessId
++    $launchedFromExplorer = (Get-Process -Id $parentProcessId).ProcessName -eq 'explorer'
++}
++catch {
++}
++
++function Wait-ForDirectLaunch {
++    if ($launchedFromExplorer) {
++        Read-Host '按 Enter 关闭此窗口' | Out-Null
++    }
++}
++
++trap {
++    Write-Host "转换失败：$($_.Exception.Message)" -ForegroundColor Red
++    Wait-ForDirectLaunch
++    exit 1
++}
++
+ function Resolve-ProjectPath {
+-    param([Parameter(Mandatory)][string]$Path)
++    param([Parameter(Mandatory = $true)][string]$Path)
+ 
+     if ([System.IO.Path]::IsPathRooted($Path)) {
+         return [System.IO.Path]::GetFullPath($Path)
+     }
+ 
+-    return [System.IO.Path]::GetFullPath((Join-Path (Get-Location) $Path))
++    return [System.IO.Path]::GetFullPath((Join-Path $projectRoot $Path))
+ }
+ 
+ function Normalize-Body {
+-    param([Parameter(Mandatory)][string]$Body)
++    param([Parameter(Mandatory = $true)][string]$Body)
+ 
+     $normalized = $Body.Trim("`n")
+ 
+@@ -157,3 +181,4 @@ if ((Test-Path -LiteralPath $outputPath) -and -not $Force) {
+ 
+ [System.IO.File]::WriteAllText($outputPath, $content, $utf8NoBom)
+ Write-Output $outputPath
++Wait-ForDirectLaunch
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-09-22-075600-0000--3bb62922"><a class="header" href="#更新记录2026-09-22-075600-0000--3bb62922">更新记录（2026-09-22 07:56:00 +0000 | 3bb62922）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-22 07:56:00 +0000</code></li>
 <li>Base commit: <code>3bb62922</code></li>
@@ -362,12 +469,12 @@
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+26 / -25</code></li>
 </ul>
-<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
 <ol>
 <li><a href="#f-2961559391-github-workflows-mdbook-yml-863419811">.github/workflows/mdbook.yml</a> <code>+20 / -23</code></li>
 <li><a href="#f-2961559391-autopush-sh-3850809378">autopush.sh</a> <code>+6 / -2</code></li>
 </ol>
-<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
 <p><a id="f-2961559391-github-workflows-mdbook-yml-863419811"></a></p>
 <h4 id="githubworkflowsmdbookyml"><a class="header" href="#githubworkflowsmdbookyml">.github/workflows/mdbook.yml</a></h4>
 <details>
@@ -480,7 +587,7 @@ index 27ffc4f6..14080483 100755
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-22-064249-0000--742b8a69"><a class="header" href="#更新记录2026-09-22-064249-0000--742b8a69">更新记录（2026-09-22 06:42:49 +0000 | 742b8a69）</a></h2>
-<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-22 06:42:49 +0000</code></li>
 <li>Base commit: <code>742b8a69</code></li>
@@ -488,7 +595,7 @@ index 27ffc4f6..14080483 100755
 <li>Changed files: <code>9</code></li>
 <li>Total lines: <code>+754 / -474</code></li>
 </ul>
-<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
 <ol>
 <li><a href="#f-2222693764-github-workflows-mdbook-yml-863419811">.github/workflows/mdbook.yml</a> <code>+2 / -10</code></li>
 <li><a href="#f-2222693764-readme-md-4140682621">README.md</a> <code>+2 / -0</code></li>
@@ -500,7 +607,7 @@ index 27ffc4f6..14080483 100755
 <li><a href="#f-2222693764-src-学习与进步-计算机-文章-博客历史演进-md-1897282589">src/学习与进步/计算机/文章/博客历史演进.md</a> <code>+3 / -3</code></li>
 <li><a href="#f-2222693764-tasks-py-1062433356">tasks.py</a> <code>+0 / -443</code></li>
 </ol>
-<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
 <p><a id="f-2222693764-github-workflows-mdbook-yml-863419811"></a></p>
 <h4 id="githubworkflowsmdbookyml-1"><a class="header" href="#githubworkflowsmdbookyml-1">.github/workflows/mdbook.yml</a></h4>
 <details>
@@ -564,7 +671,7 @@ index 018ecc55..266d37ac 100644
 </code></pre>
 </details>
 <p><a id="f-2222693764-assets-agents-md-3942825076"></a></p>
-<h4 id="assetsagentsmd"><a class="header" href="#assetsagentsmd">assets/AGENTS.md</a></h4>
+<h4 id="assetsagentsmd-1"><a class="header" href="#assetsagentsmd-1">assets/AGENTS.md</a></h4>
 <details>
 <summary><code>+14 / -0</code> Click to expand diff</summary>
 <pre><code class="language-diff">diff --git a/assets/AGENTS.md b/assets/AGENTS.md
@@ -1910,1349 +2017,6 @@ index af5afc58..00000000
 -    # 显示处理的文件信息
 -    for entry in sorted_entries:
 -        LOG.info(f"  {entry['title']} - {entry['published'].strftime('%Y-%m-%d %H:%M:%S')}")
-
-</code></pre>
-</details>
-<!-- LAST_UPDATED_ENTRY_END -->
-<!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-22-050708-0000--47351556"><a class="header" href="#更新记录2026-09-22-050708-0000--47351556">更新记录（2026-09-22 05:07:08 +0000 | 47351556）</a></h2>
-<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
-<ul>
-<li>Generated at: <code>2026-09-22 05:07:08 +0000</code></li>
-<li>Base commit: <code>47351556</code></li>
-<li>Diff source: <code>3232bc93e96a1d056d9fcd60c1fec1c33034453c..47351556a5119c50477a949f25e511d810c36eae</code></li>
-<li>Changed files: <code>9</code></li>
-<li>Total lines: <code>+1193 / -3</code></li>
-</ul>
-<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
-<ol>
-<li><a href="#f-1191663602-readme-md-4140682621">README.md</a> <code>+14 / -3</code></li>
-<li><a href="#f-1191663602-assets-agents-md-3942825076">assets/AGENTS.md</a> <code>+221 / -0</code></li>
-<li><a href="#f-1191663602-assets-convert-wechat-article-ps1-688062784">assets/convert-wechat-article.ps1</a> <code>+159 / -0</code></li>
-<li><a href="#f-1191663602-assets-wechat-origin-md-2464248456">assets/wechat-origin.md</a> <code>+43 / -0</code></li>
-<li><a href="#f-1191663602-assets-计算机科学极简入门指南后续章节规划-md-2400583330">assets/计算机科学极简入门指南后续章节规划.md</a> <code>+532 / -0</code></li>
-<li><a href="#f-1191663602-src-生活碎笔-文章与写作-对某些人来说-表白其实是宣战-md-2257976028">src/生活碎笔/文章与写作/对某些人来说，表白其实是宣战.md</a> <code>+45 / -0</code></li>
-<li><a href="#f-1191663602-src-生活碎笔-文章与写作-我们以为的严肃样貌-可能实质上是在各种维度吵架-md-2676028882">src/生活碎笔/文章与写作/我们以为的严肃样貌，可能实质上是在各种维度吵架.md</a> <code>+53 / -0</code></li>
-<li><a href="#f-1191663602-src-生活碎笔-文章与写作-我可能也染上了男人的不良嗜好-md-340803151">src/生活碎笔/文章与写作/我可能也染上了男人的不良嗜好.md</a> <code>+75 / -0</code></li>
-<li><a href="#f-1191663602-src-生活碎笔-文章与写作-比不听更可恶的是假装听了-比不懂更危险的是以为懂了-md-431629254">src/生活碎笔/文章与写作/比不听更可恶的是假装听了，比不懂更危险的是以为懂了.md</a> <code>+51 / -0</code></li>
-</ol>
-<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
-<p><a id="f-1191663602-readme-md-4140682621"></a></p>
-<h4 id="readmemd-1"><a class="header" href="#readmemd-1">README.md</a></h4>
-<details>
-<summary><code>+14 / -3</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/README.md b/README.md
-index 0518ab80..018ecc55 100644
---- a/README.md
-+++ b/README.md
-@@ -10,9 +10,20 @@
- - \&gt;&gt;[Click Here/点击此处](https://tinysnow.github.io/)&lt;&lt;
- 
- 
--## Engine/引擎
--
--- Powered by [mdBook](https://rust-lang.github.io/mdBook/)./由 [mdBook](https://rust-lang.github.io/mdBook/) 驱动。
-+## Engine/引擎
-+
-+- Powered by [mdBook](https://rust-lang.github.io/mdBook/)./由 [mdBook](https://rust-lang.github.io/mdBook/) 驱动。
-+
-+
-+## 微信公众号文章转换
-+
-+将微信公众号文本编辑器中的文章粘贴到 `assets/wechat-origin.md`，复制文章标题后，在仓库根目录运行：
-+
-+```powershell
-+.\assets\convert-wechat-article.ps1
-+```
-+
-+脚本会读取剪贴板标题，按博客格式转换文章，并输出到 `src/生活碎笔/文章与写作/`。详细格式与其他标题输入方式见 `assets/AGENTS.md`。
- 
- 
- ## Mirrors/镜像网站
-
-</code></pre>
-</details>
-<p><a id="f-1191663602-assets-agents-md-3942825076"></a></p>
-<h4 id="assetsagentsmd-1"><a class="header" href="#assetsagentsmd-1">assets/AGENTS.md</a></h4>
-<details>
-<summary><code>+221 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/assets/AGENTS.md b/assets/AGENTS.md
-new file mode 100644
-index 00000000..76f149fa
---- /dev/null
-+++ b/assets/AGENTS.md
-@@ -0,0 +1,221 @@
-+# 微信公众号文章转博客格式：工作约定
-+
-+## 目的与适用范围
-+
-+本文件记录从现有博客文章中归纳出的稳定格式，供后续开发“微信公众号文本转博客 Markdown”工具时使用，避免在多轮工作中遗漏或擅自改变既有写作样式。
-+
-+本文件适用于 `assets/` 目录及其子目录。转换脚本如放在此处，应遵守以下约定。若后来改为在仓库根目录新建 `scripts/`，应把本文件中的相关规则同步到该目录的 `AGENTS.md`。
-+
-+## 已参考的文章
-+
-+标准样式归纳自 `src/生活碎笔/文章与写作/` 下列文章：
-+
-+- `企业、总裁、锤子与工人.md`
-+- `剪发之后.md`
-+- `谈一谈跟llm聊了一两周之后的感想.md`
-+- `风险只有在未发生时才叫风险，发生之后，它叫损失——致我的25岁.md`
-+- `可能是我唯一印象深刻的换装游戏.md`
-+- `狼、盲视与西方经济学.md`
-+- `母亲买的八条秋裤.md`
-+- `只是随手写下了想你.md`
-+- `当下的价值.md`
-+- `突然长大.md`
-+
-+这些文章在 `src/SUMMARY.md` 中连续列示。文章文件的实际根目录是 `src/`，`SUMMARY.md` 内的链接相对于 `src/SUMMARY.md` 解析。
-+
-+## 博客文章的标准骨架
-+
-+文章通常采用以下顺序：
-+
-+```markdown
-+# 文章标题
-+
-+## 写在前面
-+
-+&lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&gt;字数 字 | 标签一 | 标签二&lt;/p&gt;
-+
-+## 正文
-+
-+　　正文第一段。
-+
-+　　正文第二段。
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　YYYY 年 M 月 D 日
-+
-+## 写在后面
-+
-+　　可选内容。
-+
-+## 封面图
-+
-+![](封面图地址)
-+
-+&gt; 摄影师・画师 | 作者或来源
-+&gt;
-+&gt; 图源 | 平台或来源
-+```
-+
-+其中 `## 写在后面` 是可选章节，其余部分在参考文章中均存在。
-+
-+## 各部分格式规则
-+
-+### 标题与文件名
-+
-+- 正文第一行使用一级标题：`# 文章标题`。
-+- 文件名通常取文章标题并以 `.md` 结尾，但会为了路径简洁而省略标题中的部分空格。例如标题中的 `llm` 或年龄前后可能有空格，文件名中没有。
-+- 不要擅自把英文缩写改成大写；参考文章使用 `llm`。
-+- `src/SUMMARY.md` 中展示的标题可以包含额外的视觉标记，例如重点文章前的 `⭐️`；该标记不一定属于正文标题或文件名。
-+
-+### “写在前面”
-+
-+- 固定标题为 `## 写在前面`。
-+- 第一项通常是单行 HTML 段落，样式字符串应保持为：
-+
-+  ```html
-+  &lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&gt;……&lt;/p&gt;
-+  ```
-+
-+- 内容格式通常是 `字数 字 | 标签一 | 标签二 | …`。
-+- 字数与标签之间、标签彼此之间使用半角空格包围的竖线：` | `。
-+- 字数应以最终正文为准计算，不能直接照搬微信公众号可能显示的旧字数。具体计数口径需要结合待提供的微信导出样本和用户期望再确定。
-+- 如果文章另有阅读提示，可在标签行后增加普通居中 HTML 段落，例如：
-+
-+  ```html
-+  &lt;p style="text-align:center;"&gt;阅读提示。&lt;/p&gt;
-+  ```
-+
-+### 正文
-+
-+- 固定标题为 `## 正文`。
-+- 普通中文正文段落以两个全角空格开头，即两个 U+3000 字符：`　　`。
-+- Markdown 源码中，各段之间保留一个空行。
-+- 不要把两个全角空格替换为四个半角空格、制表符或 HTML `&amp;emsp;`。
-+- 场景转换、较强的语义停顿或文末署名前，使用独占一行的 `&lt;br /&gt;`；其前后各空一行。
-+- 保留有意义的 Markdown 行内格式，包括：
-+  - 加粗：`**文字**`
-+  - 下划线：`&lt;u&gt;文字&lt;/u&gt;`
-+  - 加粗与下划线组合：`&lt;u&gt;**文字**&lt;/u&gt;`
-+  - 链接：`[文字](URL)`
-+- 正文可以出现编号、引用内容和强调段，不应为了统一外观而删除原有语义格式。
-+- 中文与英文缩写、阿拉伯数字之间的空格，应尽量沿用作者在现有文章中的写法，不做激进的自动排版或内容润色。
-+- 转换工具的职责是格式迁移，不应未经要求改写措辞、修正观点或重组文章结构。
-+
-+### 署名与日期
-+
-+- 正文结束后通常先放一行 `&lt;br /&gt;`。
-+- 署名固定为：`　　南国微雪 Miyuki`。
-+- 日期单独成段，格式通常为：`　　YYYY 年 M 月 D 日`。
-+- 署名和日期均以两个全角空格开头，二者之间空一行。
-+- 个别文章在日期之后还有地点或情境说明，应作为独立段落保留，并同样使用两个全角空格缩进。
-+
-+### “写在后面”
-+
-+- 此章节可省略。
-+- 存在时固定标题为 `## 写在后面`，位置在署名日期之后、`## 封面图` 之前。
-+- 内容可能是补充说明，也可能是正文配图；不得假设它一定是文字。
-+
-+### 封面图
-+
-+- 固定标题为 `## 封面图`。
-+- 封面图片使用 Markdown 图片语法：`![](URL)`。
-+- 当前文章的图片一般托管在 `https://img.tinysnow.cn/blog/articles/literature/` 下，但转换工具不应凭空生成文件名或 URL。
-+- 图片后使用 Markdown 引用块记录署名：
-+
-+  ```markdown
-+  &gt; 摄影师・画师 | 作者或来源
-+  &gt;
-+  &gt; 图源 | 平台或来源
-+  ```
-+
-+- `摄影师・画师` 中间使用的是日文间隔号 `・`。
-+- 作者和图源必须来自用户提供的信息或可验证的现有数据；缺失时应保留待填写项或明确提示，不能猜测。
-+
-+### SUMMARY 条目
-+
-+- 新文章最终应加入 `src/SUMMARY.md` 的“文章与写作”对应列表。
-+- 链接路径相对于 `src/SUMMARY.md`，通常形如：
-+
-+  ```markdown
-+  - [展示标题](生活碎笔/文章与写作/文件名.md)
-+  ```
-+
-+- 必须保持所在列表的现有缩进。是否添加 `⭐️` 由用户决定，不应由脚本根据内容自行判断。
-+- 更新前应检查是否已有同名标题或同一路径，避免重复条目。
-+
-+## 转换工具的预期职责
-+
-+收到微信公众号文本编辑器复制出的真实样本后，再确定输入解析方案。理想工具至少应做到：
-+
-+1. 接收复制出来的文本或保存后的输入文件。
-+2. 清理微信公众号引入、但博客不需要的排版噪声。
-+3. 尽量保留段落、粗体、链接、引用和必要的换行语义。
-+4. 按上述骨架生成博客 Markdown。
-+5. 补齐或提示填写标题、标签、日期、封面图地址、图片作者和图源。
-+6. 计算正文的字数，并生成“写在前面”的居中标签行。
-+7. 生成安全的目标文件名，并可选地更新 `src/SUMMARY.md`。
-+8. 写入前展示或输出转换结果，避免静默覆盖已有文章。
-+
-+## 当前转换工具
-+
-+当前实现为 `assets/convert-wechat-article.ps1`，默认把 `assets/wechat-origin.md` 转换到 `src/生活碎笔/文章与写作/`，并从一级标题、文章末尾标题、显式参数或剪贴板取得标题。
-+
-+在仓库根目录运行：
-+
-+```powershell
-+.\assets\convert-wechat-article.ps1
-+```
-+
-+输入文件可以没有一级标题。无标题时，先在微信公众号中复制文章标题，再运行上述命令；工具会读取剪贴板中的单行文本，将其补为一级标题，并用它生成文件名。标题不需要粘贴进 `assets/wechat-origin.md`。
-+
-+如果不希望读取剪贴板，也可以显式传入标题：
-+
-+```powershell
-+.\assets\convert-wechat-article.ps1 -Title "文章标题"
-+```
-+
-+也可以把未经 Markdown 格式化的标题粘贴为整篇输入的最后一个独立文本行。工具会把该行从末尾移走，自动补成开头的一级标题。不要把标题无分隔地直接拼在图源行之后，例如 `&gt; 图源 | Unsplash文章标题`；这种文本没有可靠的标题边界，无法安全自动拆分。总体上，推荐使用剪贴板方案，因为复制标题后无需再次粘贴。
-+
-+也可以指定其他输入文件或输出目录：
-+
-+```powershell
-+.\assets\convert-wechat-article.ps1 -InputPath .\其他输入.md
-+.\assets\convert-wechat-article.ps1 -InputPath .\其他输入.md -OutputDirectory .\converted
-+```
-+
-+工具执行以下规范化操作：
-+
-+- 从首个一级标题读取文章标题，并用完整标题作为 Markdown 文件名。
-+- 输入没有一级标题时，依次尝试 `-Title`、文章末尾的独立标题行、剪贴板中的单行标题，并自动补齐一级标题。
-+- 如果封面图源信息之后还有一个独立的普通文本行，则把该行视为末尾标题；标题不需要带 `#`。
-+- 把 `&gt; 字数 字 | 标签` 转换为博客所用的居中蓝色加粗 HTML。
-+- 把正文中两个以上连续空白行表示的场景分隔转换为 `&lt;br /&gt;`。
-+- 在 `南国微雪 Miyuki` 署名前补充缺失的 `&lt;br /&gt;`。
-+- 把微信导出的封面语法 `![img](URL)` 规范化为 `![](URL)`，保留原 URL。
-+- 默认拒绝覆盖同名文章；只有明确传入 `-Force` 才会覆盖。
-+
-+当前工具不会自动下载或迁移微信图片，不会自动更新 `src/SUMMARY.md`，也不会修改文章内容和标签。这些操作如有需要，应在用户明确要求后另行实现。
-+
-+## 尚待微信样本确认的事项
-+
-+在看到用户提供的真实文件之前，不要预先锁定以下实现：
-+
-+- 输入究竟是纯文本、HTML、富文本片段、Markdown，还是其他格式。
-+- 微信编辑器复制时如何表达粗体、链接、图片、引用、空段和软换行。
-+- 前言、封面图和图源信息在输入中是否存在，以及它们能否可靠识别。
-+- 字数的统计口径是否包含标点、数字、英文、标题、署名或“写在后面”。
-+- 工具采用 PowerShell、Python、Node.js，还是剪贴板快捷方式。
-+- 是否自动写入文章文件与 `SUMMARY.md`，或只生成待审核的 Markdown。
-+
-+应先检查样本的真实结构，再选择依赖最少、在当前 Windows 环境中最方便重复使用的实现方式。
-+
-+## 验证要求
-+
-+- 至少用用户提供的原始微信样本完成一次端到端转换。
-+- 将结果与上述参考文章逐项对照：章节顺序、空行、全角缩进、HTML 样式、署名日期、封面信息和 SUMMARY 路径。
-+- 检查生成文件的 UTF-8 编码和中文文件名。
-+- 如工具会修改 `src/SUMMARY.md` 或覆盖目标文件，必须提供预览、确认或防覆盖机制。
-+- 不以肉眼浏览代替必要的脚本测试；同时也要人工检查生成 Markdown 的可读性。
-
-</code></pre>
-</details>
-<p><a id="f-1191663602-assets-convert-wechat-article-ps1-688062784"></a></p>
-<h4 id="assetsconvert-wechat-articleps1"><a class="header" href="#assetsconvert-wechat-articleps1">assets/convert-wechat-article.ps1</a></h4>
-<details>
-<summary><code>+159 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/assets/convert-wechat-article.ps1 b/assets/convert-wechat-article.ps1
-new file mode 100644
-index 00000000..912789ab
---- /dev/null
-+++ b/assets/convert-wechat-article.ps1
-@@ -0,0 +1,159 @@
-+[CmdletBinding()]
-+param(
-+    [Parameter(Position = 0)]
-+    [string]$InputPath = "assets/wechat-origin.md",
-+
-+    [string]$OutputDirectory = "src/生活碎笔/文章与写作",
-+
-+    [string]$Title,
-+
-+    [switch]$Force
-+)
-+
-+$ErrorActionPreference = "Stop"
-+
-+function Resolve-ProjectPath {
-+    param([Parameter(Mandatory)][string]$Path)
-+
-+    if ([System.IO.Path]::IsPathRooted($Path)) {
-+        return [System.IO.Path]::GetFullPath($Path)
-+    }
-+
-+    return [System.IO.Path]::GetFullPath((Join-Path (Get-Location) $Path))
-+}
-+
-+function Normalize-Body {
-+    param([Parameter(Mandatory)][string]$Body)
-+
-+    $normalized = $Body.Trim("`n")
-+
-+    # A normal Markdown paragraph has one blank line. Two or more consecutive
-+    # blank lines in the WeChat export represent a deliberate section break.
-+    $normalized = [regex]::Replace(
-+        $normalized,
-+        "`n(?:[ `t]*`n){2,}",
-+        "`n`n&lt;br /&gt;`n`n"
-+    )
-+
-+    # Existing articles always put a visual break before the author signature.
-+    $signature = [regex]::Match(
-+        $normalized,
-+        '(?m)^　　南国微雪 Miyuki[ \t]*$'
-+    )
-+    if ($signature.Success) {
-+        $beforeSignature = $normalized.Substring(0, $signature.Index).TrimEnd()
-+        if (-not $beforeSignature.EndsWith('&lt;br /&gt;')) {
-+            $afterSignature = $normalized.Substring($signature.Index)
-+            $normalized = "$beforeSignature`n`n&lt;br /&gt;`n`n$afterSignature"
-+        }
-+    }
-+
-+    return $normalized.Trim("`n")
-+}
-+
-+$inputFullPath = Resolve-ProjectPath -Path $InputPath
-+if (-not (Test-Path -LiteralPath $inputFullPath -PathType Leaf)) {
-+    throw "Input file does not exist: $inputFullPath"
-+}
-+
-+$utf8NoBom = [System.Text.UTF8Encoding]::new($false)
-+$content = [System.IO.File]::ReadAllText($inputFullPath, $utf8NoBom)
-+$content = $content.TrimStart([char]0xFEFF) -replace "`r`n?", "`n"
-+
-+$titleMatch = [regex]::Match($content, '(?m)^# (?!#)(.+?)[ \t]*$')
-+if ($titleMatch.Success) {
-+    $title = $titleMatch.Groups[1].Value.Trim()
-+}
-+else {
-+    # A plain title may optionally be pasted as the last standalone line after
-+    # the cover credit. Remove it from there before adding the canonical H1.
-+    $trailingTitleMatch = [regex]::Match(
-+        $content,
-+        '(?ms)(^&gt; 图源 \| [^\n]+[ \t]*\n+)([^#&gt;!&lt;\n][^\n]*?)[ \t]*\n*\z'
-+    )
-+    $trailingTitle = ''
-+    if ($trailingTitleMatch.Success) {
-+        $trailingTitle = $trailingTitleMatch.Groups[2].Value.Trim()
-+        $content = $content.Substring(0, $trailingTitleMatch.Groups[2].Index).TrimEnd() + "`n"
-+    }
-+
-+    $title = ([string]$Title).Trim()
-+
-+    if ([string]::IsNullOrWhiteSpace($title) -and -not [string]::IsNullOrWhiteSpace($trailingTitle)) {
-+        $title = $trailingTitle
-+    }
-+
-+    if ([string]::IsNullOrWhiteSpace($title)) {
-+        try {
-+            $title = ([string](Get-Clipboard -Raw -ErrorAction Stop)).Trim()
-+        }
-+        catch {
-+        throw "The input has no level-one title and the clipboard could not be read. Copy the title before running, paste it as the final standalone line, or pass -Title '文章标题'."
-+        }
-+    }
-+
-+    if ([string]::IsNullOrWhiteSpace($title)) {
-+        throw "The input has no level-one title and the clipboard is empty. Copy the title before running, paste it as the final standalone line, or pass -Title '文章标题'."
-+    }
-+
-+    if ($title -match "`r|`n") {
-+        throw "The input has no level-one title, but the clipboard contains multiple lines. Copy only the article title, or pass -Title '文章标题'."
-+    }
-+
-+    # The rest of the converter can now use one canonical input shape.
-+    $content = "# $title`n`n" + $content.TrimStart("`n")
-+}
-+
-+$invalidCharacters = [System.IO.Path]::GetInvalidFileNameChars() |
-+    Where-Object { $title.Contains([string]$_) }
-+if ($invalidCharacters.Count -gt 0) {
-+    $displayCharacters = ($invalidCharacters | ForEach-Object { "[$_]" }) -join ' '
-+    throw "The article title contains characters that Windows cannot use in a filename: $displayCharacters"
-+}
-+
-+# Convert the word-count/tag line under 写在前面 from a WeChat-style quote
-+# into the exact centered HTML used by the existing blog articles.
-+$metadataPattern = '(?m)^&gt;?[ \t]*(\d+[ \t]*字(?:[ \t]*\|[ \t]*[^\r\n]+)*)[ \t]*$'
-+$metadataMatch = [regex]::Match($content, $metadataPattern)
-+if (-not $metadataMatch.Success) {
-+    throw 'No word-count/tag line was found (expected a line such as "&gt; 935 字 | 标签").'
-+}
-+
-+$metadata = $metadataMatch.Groups[1].Value.Trim()
-+$metadataHtml = '&lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&gt;' +
-+    $metadata + '&lt;/p&gt;'
-+$content = $content.Substring(0, $metadataMatch.Index) +
-+    $metadataHtml +
-+    $content.Substring($metadataMatch.Index + $metadataMatch.Length)
-+
-+$bodyMatch = [regex]::Match(
-+    $content,
-+    '(?ms)(^## 正文[ \t]*\n+)(.*?)(?=^## |\z)'
-+)
-+if (-not $bodyMatch.Success) {
-+    throw 'No "## 正文" section was found.'
-+}
-+
-+$normalizedBody = Normalize-Body -Body $bodyMatch.Groups[2].Value
-+$content = $content.Substring(0, $bodyMatch.Groups[2].Index) +
-+    $normalizedBody + "`n`n" +
-+    $content.Substring($bodyMatch.Groups[2].Index + $bodyMatch.Groups[2].Length).TrimStart("`n")
-+
-+# The copied WeChat Markdown uses a generic alt label. Existing cover images use
-+# an intentionally empty alt label, so only normalize this exact generic form.
-+$content = [regex]::Replace($content, '(?m)^!\[img\](\([^\r\n]+\))[ \t]*$', '![]$1')
-+
-+# Normalize excessive whitespace introduced by reconstruction while preserving
-+# single blank lines between Markdown blocks.
-+$content = $content.Trim() + "`n"
-+
-+$outputFullDirectory = Resolve-ProjectPath -Path $OutputDirectory
-+[System.IO.Directory]::CreateDirectory($outputFullDirectory) | Out-Null
-+$outputPath = Join-Path $outputFullDirectory ($title + '.md')
-+
-+if ((Test-Path -LiteralPath $outputPath) -and -not $Force) {
-+    throw "Output already exists: $outputPath`nRun again with -Force only if replacing it is intentional."
-+}
-+
-+[System.IO.File]::WriteAllText($outputPath, $content, $utf8NoBom)
-+Write-Output $outputPath
-
-</code></pre>
-</details>
-<p><a id="f-1191663602-assets-wechat-origin-md-2464248456"></a></p>
-<h4 id="assetswechat-originmd"><a class="header" href="#assetswechat-originmd">assets/wechat-origin.md</a></h4>
-<details>
-<summary><code>+43 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/assets/wechat-origin.md b/assets/wechat-origin.md
-new file mode 100644
-index 00000000..76494bf8
---- /dev/null
-+++ b/assets/wechat-origin.md
-@@ -0,0 +1,43 @@
-+## 写在前面
-+
-+&gt; 602 字 | 想法 | 感触 | 表白 | 恋爱 | 思考 | 人际关系 | 性格
-+
-+## 正文
-+
-+　　我自己是这个理念的亲历者。
-+
-+　　有些人直来直去，很讨厌猜来猜去、阴晴不定的暧昧阶段。但是暧昧阶段也就这一点有意思了。两个人之间相互拉扯、相互抱有爱恋的猜忌。因为在乎对方，因为喜欢对方，才会不断内耗。
-+
-+　　然而，对有些人来说，在这个阶段体验到的内耗，远大于其体验到的幸福。
-+
-+　　无法忍受，干脆一手捅破窗户纸。在这种程度上，表白无异于宣战。当表白开始的那一刻，就已经没有退路了。
-+
-+　　我说这件事，不是因为我们成为了死敌，而是因为我在乎你、想知道你的看法，不希望我们的关系继续在中间地带沉沦。
-+
-+　　在客观上，这也确实将恋爱中的两方分隔开，隔着一条名为“心意”的楚河汉界。一方终于停止等待与试探。
-+
-+　　暧昧是缓冲区，双方都可以假装“我只是路过”，哪怕我绕远路天天路过。只要双方都拖下去，这件事就可以一直持续。而表白，会直接把缓冲区炸穿：接受、拒绝、或者拖延（而拖延本身也是一种回应）。
-+
-+　　就像战争，必须有一方胜利、败退或投降，这件事才会有个结束一样。
-+
-+　　不是所有的表白都是宣战。
-+
-+　　但对于某些人来说，表白无异于宣战——必须做好直面结果的准备、需要巨大的勇气，以及“必须要有个结果”的执拗。
-+
-+　　表白的人，无可避免地会将选择权与审判权递交给对方，这是博弈溃败的必然结果。
-+
-+　　但对他们来说，比起继续在未知的迷雾里等死，更愿意站到开阔地，哪怕迎面飞来的是子弹。
-+
-+
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 7 月 26 日
-+
-+## 封面图
-+
-+![img](https://mmbiz.qpic.cn/mmbiz_jpg/hcnZjo7bq6Oj7K55Xt4f7goRow5J0r9uNknAWkUDksj8ic7LHq3gLhEcGrQaCTPpscmCYrjicNiaDhWTbcfUXiaz63QnGsyQ9NzlAPb5QKicsX6A/640?wx_fmt=jpeg&amp;from=appmsg)
-+
-+&gt; 摄影师・画师 | Elijah Macleod
-+&gt;
-+&gt; 图源 | Unsplash
-\ No newline at end of file
-
-</code></pre>
-</details>
-<p><a id="f-1191663602-assets-计算机科学极简入门指南后续章节规划-md-2400583330"></a></p>
-<h4 id="assets计算机科学极简入门指南后续章节规划md"><a class="header" href="#assets计算机科学极简入门指南后续章节规划md">assets/计算机科学极简入门指南后续章节规划.md</a></h4>
-<details>
-<summary><code>+532 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/assets/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227\345\220\216\347\273\255\347\253\240\350\212\202\350\247\204\345\210\222.md" "b/assets/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227\345\220\216\347\273\255\347\253\240\350\212\202\350\247\204\345\210\222.md"
-new file mode 100644
-index 00000000..6d5b1686
---- /dev/null
-+++ "b/assets/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227\345\220\216\347\273\255\347\253\240\350\212\202\350\247\204\345\210\222.md"
-@@ -0,0 +1,532 @@
-+# 《计算机科学极简入门指南》后续章节规划（定稿）
-+
-+## 规划范围
-+
-+- 计算机组成原理第 1～35 章保持不动；其两篇《补充》（指令流水线技术、缓存与存储层次）一并保留，不计入正章编号。
-+- 后续章节从第 36 章连续编号，规划至第 297 章。
-+- 本目录已经完成节奏审查，作为后续写作定稿。
-+- 本文件是写作路线图，不直接参与博客发布。
-+- 原有操作系统、计算机网络、数据结构与算法、编译原理目录中的空模板已移除。正式写作某章时，再按本规划建立对应文章文件。
-+
-+## 编排原则
-+
-+1. 每章只解决一个主要问题，只引入一个主要机制。
-+2. 每个复杂主题组成一个连续的“章组”，不强行压缩进单章。
-+3. 未标记章节属于主线；标记“进阶”的章节允许零基础读者跳过；标记“总装”的章节负责串联此前知识。
-+4. 每章应包含一个能够完整走通的例子，并在结尾留下下一章要解决的问题。
-+5. 前面可以先把某个机制当作黑箱使用，等先修知识齐备后再回来打开黑箱。
-+
-+## 总体路线
-+
-+计算机组成原理（1～35，另有两篇补充：指令流水线技术、缓存与存储层次）→ 程序与编程基础（36～47）→ 操作系统（48～100）→ 计算机网络（101～155）→ 数据结构与算法（156～219）→ 编译原理（220～281）→ 软件构造（282～297）
-+
-+---
-+
-+## 第二部分：程序与编程基础（第 36～47 章）
-+
-+本部分不承担完整的编程语言教学，只负责把“能够执行指令的计算机”过渡到“能够运行人类编写的程序”。示例统一采用简单伪代码和前文已经出现过的假想指令，避免读者先被某门具体语言绊住。
-+
-+### 从机器码到汇编
-+
-+- **第 36 章：用汇编语言指挥计算机**：用助记符替代难读的二进制机器指令。
-+- **第 37 章：名字、标签与地址**：让程序用名字引用数据和跳转目标。
-+- **第 38 章：汇编器**：通过两遍扫描，把符号汇编成机器码。
-+
-+### 从指令到高级语言
-+
-+- **第 39 章：高级语言：再加一层**：从“控制机器”转向“描述问题”。
-+- **第 40 章：变量、类型与表达式**：名字如何代表数据，表达式如何变成运算。
-+- **第 41 章：分支与循环**：高级语言结构如何落到比较和跳转指令。
-+- **第 42 章：函数**：把一段工作命名、传入参数并获得结果。
-+- **第 43 章：函数调用与运行栈**：保存参数、局部变量和返回地址。
-+- **第 44 章：程序在内存里的样子**：代码区、数据区、栈和堆的初步全景。
-+
-+### 翻译与运行
-+
-+- **第 45 章：从源代码到可执行文件**：第一次看见编译、汇编和链接的完整流水线，内部暂作黑箱。
-+- **第 46 章：编译与解释**：程序变成机器指令的两条基本道路。
-+- **第 47 章：没有操作系统的程序**：裸机程序在装载、设备使用和多程序共存上遇到的困难。
-+
-+### 过渡
-+
-+程序已经能够写出来，也能够变成机器指令。但是，谁把程序放进内存，谁决定它何时运行，多个程序又该怎样共享 CPU、内存和设备？
-+
-+---
-+
-+## 第三部分：操作系统（第 48～100 章）
-+
-+本部分围绕四条主线展开：启动、虚拟化、并发、持久化。保护和隔离贯穿其中。
-+
-+### 启动与边界
-+
-+- **第 48 章：按下电源：复位与固件**：CPU 从约定位置开始执行，第一段软件接过控制权。
-+- **第 49 章：引导程序与内核加载**：操作系统如何被一步步装入内存。
-+- **第 50 章：操作系统是什么**：把操作系统理解为资源管理者和抽象提供者。
-+- **第 51 章：内核态与用户态**：为什么普通程序不能随意执行危险操作。
-+- **第 52 章：系统调用**：用户程序怎样安全地请求内核服务。
-+
-+### 进程模型
-+
-+- **第 53 章：程序如何变成进程**：区分静态的程序文件和运行中的进程。
-+- **第 54 章：进程的创建与结束**：父子进程、程序替换、退出状态和资源回收。
-+- **第 55 章：进程控制块与进程状态**：内核在哪里记录进程，以及运行、就绪、阻塞意味着什么。
-+- **第 56 章：上下文切换**：保存一个进程，再恢复另一个进程。
-+
-+### CPU 调度
-+
-+- **第 57 章：调度要解决什么**：响应时间、吞吐量、公平性和优先级之间的矛盾。
-+- **第 58 章：先来先服务与最短任务优先**：简单调度为何会出现等待和饥饿。
-+- **第 59 章：时间片与优先级调度**：让多个交互程序都感觉自己在运行。
-+- **第 60 章：多级反馈队列（进阶）**：不知道任务长短时怎样边运行边调整优先级。
-+- **第 61 章：多核调度（进阶）**：任务分到多个 CPU 后还要处理负载和缓存亲和性。
-+
-+### 线程与进程间协作
-+
-+- **第 62 章：线程与并发**：在一个进程中安排多条执行线，并区分并发与并行。
-+- **第 63 章：进程间通信**：管道、消息、信号和共享内存分别适合传递什么。
-+
-+### 并发与同步
-+
-+- **第 64 章：程序竞争**：一次“读取—修改—写回”为何会丢失更新。
-+- **第 65 章：临界区与原子操作**：哪些代码必须表现得像不可分割的一步。
-+- **第 66 章：互斥锁**：让同一时刻只有一个线程进入临界区。
-+- **第 67 章：自旋锁与睡眠锁**：等待锁时应该原地重试还是让出 CPU。
-+- **第 68 章：等待与通知**：条件变量如何让线程在条件不满足时睡眠。
-+- **第 69 章：生产者与消费者**：用一个完整例子连接互斥、等待和通知。
-+- **第 70 章：信号量（进阶）**：用计数管理有限资源和线程协作。
-+- **第 71 章：读者与写者（进阶）**：允许并发读取时怎样协调写入和公平性。
-+- **第 72 章：死锁是怎样形成的**：四个必要条件与环形等待。
-+- **第 73 章：怎样处理死锁**：预防、避免、检测和恢复的取舍。
-+
-+### 地址空间与地址转换
-+
-+- **第 74 章：地址空间**：为什么每个进程都以为自己独占一片连续内存。
-+- **第 75 章：地址重定位与内存保护**：程序不知道实际装在哪里时怎样访问自己的数据。
-+- **第 76 章：分段**：按代码、数据和栈划分内存，以及外部碎片从何而来。
-+- **第 77 章：页与分页**：把虚拟内存和物理内存都切成固定大小的块。
-+- **第 78 章：页表**：记录虚拟页与物理页的对应关系。
-+- **第 79 章：地址转换**：沿着一个虚拟地址得到最终的物理地址。
-+- **第 80 章：TLB**：给频繁的地址转换加一层缓存。
-+- **第 81 章：多级页表（进阶）**：页表本身太大时如何按需展开。
-+
-+### 按需分页与内存使用
-+
-+- **第 82 章：缺页异常**：访问的页面不在内存时 CPU 和内核怎样配合。
-+- **第 83 章：按需加载与交换空间**：只把眼下需要的页面放进内存。
-+- **第 84 章：页面置换**：内存装满后应该换出哪一页。
-+- **第 85 章：工作集与内存抖动（进阶）**：程序频繁缺页时为什么会忙着换页却不再做事。
-+- **第 86 章：写时复制（进阶）**：先共享页面，真正修改时再复制。
-+- **第 87 章：内存分配与碎片**：操作系统怎样切分、回收和整理内存。
-+
-+### 设备与持久化
-+
-+- **第 88 章：设备控制器与驱动程序**：用统一接口隐藏硬件差异。
-+- **第 89 章：查询、中断与 DMA**：CPU 参与设备传输的程度怎样逐步降低。
-+- **第 90 章：文件与文件描述符**：把设备和持久数据变成可读写的字节流。
-+- **第 91 章：目录与路径**：用树形名字组织大量文件。
-+- **第 92 章：文件怎样落到磁盘**：数据块、元数据和索引节点的基本关系。
-+- **第 93 章：文件分配与空闲空间**：数据块怎样找到、占用和回收。
-+- **第 94 章：缓冲与页面缓存**：内存怎样减少缓慢的设备访问。
-+- **第 95 章：共享内存与内存映射**：在文件和页面都已出现以后，把文件访问与共享页面统一起来。
-+- **第 96 章：断电时写到一半怎么办**：先理解崩溃一致性和写入顺序问题。
-+- **第 97 章：日志文件系统（进阶）**：先记下修改意图，再安全地更新真实结构。
-+
-+### 保护与总装
-+
-+- **第 98 章：用户、权限与访问控制**：操作系统怎样判断谁能读取文件、操作进程和使用设备。
-+- **第 99 章：隔离的边界：虚拟机与容器（进阶）**：只比较两种隔离边界各自包含什么，内部实现留给附加内容。
-+- **第 100 章：操作系统总装**：串起启动、进程、内存、文件、设备、权限与隔离，让一个程序从磁盘真正运行起来。
-+
-+### 过渡
-+
-+一台计算机已经能同时运行许多程序，并安全地管理自己的资源。如果程序需要的数据位于另一台计算机，操作系统又该怎样把“远方”接进来？
-+
-+---
-+
-+## 第四部分：计算机网络（第 101～155 章）
-+
-+本部分始终跟随同一份数据：它从一台计算机上的应用出发，经过操作系统、网卡、交换机和路由器，最终抵达另一台计算机上的应用。分层在局域网之后立即出现，先给后续协议建立地图；套接字放在应用协议之前，让读者先知道应用怎样进入网络。
-+
-+### 从信号到数据帧
-+
-+- **第 101 章：尝试连接两台计算机**：先用一根线传送最简单的 0 和 1。
-+- **第 102 章：信号与传输介质**：比特怎样借助电、光或无线电传播。
-+- **第 103 章：带宽、时延与吞吐量**：一条链路的“快”究竟有几种含义。
-+- **第 104 章：编码、时钟与噪声**：接收方怎样从连续信号中恢复离散比特。
-+- **第 105 章：数据帧的边界**：接收方怎样认出一段数据从哪里开始、在哪里结束。
-+- **第 106 章：发现传输出错**：奇偶校验、校验和与循环冗余校验的直觉。
-+
-+### 组成局域网
-+
-+- **第 107 章：MAC 地址**：同一网络中的设备怎样表明自己是谁。
-+- **第 108 章：共享信道与冲突**：许多设备共用介质时为什么会彼此干扰。
-+- **第 109 章：以太网**：有线局域网怎样组织帧和设备接入。
-+- **第 110 章：交换机**：交换机怎样学习设备位置并只向必要方向转发。
-+- **第 111 章：无线网络（进阶）**：共享空气时怎样减少冲突并接入网络。
-+
-+### 先建立网络地图
-+
-+- **第 112 章：协议分层与封装**：把通信问题拆成彼此协作的层，并观察数据怎样逐层穿上和脱下外壳。
-+
-+### IP 地址与本地交付
-+
-+- **第 113 章：为什么还需要 IP**：MAC 地址为何不足以连接许多独立网络。
-+- **第 114 章：IPv4 数据包**：建立跨网络传送的统一格式。
-+- **第 115 章：IP 地址**：怎样用分层地址标识网络和网络中的设备。
-+- **第 116 章：子网与 CIDR**：怎样划分地址范围并判断目标在本地还是远方。
-+- **第 117 章：地址怎样自动获得**：DHCP 如何为新设备提供地址、网关和 DNS。
-+- **第 118 章：从 IP 地址找到 MAC 地址**：ARP 如何完成本地交付前的最后一步。
-+
-+### 逐跳转发与网络控制
-+
-+- **第 119 章：路由器与逐跳转发**：每台路由器只决定下一步往哪里走。
-+- **第 120 章：路由表与最长前缀匹配**：多个方向都能匹配时怎样选择下一跳。
-+- **第 121 章：MTU 与分片**：一个数据包比链路能承载的帧更大时怎么办。
-+- **第 122 章：ICMP**：网络怎样报告不可达、超时和其他转发问题。
-+- **第 123 章：IPv6（进阶）**：扩大地址空间时还顺便改变了什么。
-+
-+### 选择网络路径
-+
-+- **第 124 章：路径选择问题**：把路由抽象成带代价的图。
-+- **第 125 章：距离向量路由**：只和邻居交换距离能否找到全网路径。
-+- **第 126 章：链路状态路由**：知道完整拓扑后怎样计算路径。
-+- **第 127 章：自治系统与 BGP（进阶）**：互联网为何还要在不同管理者之间交换可达信息。
-+
-+### 端到端传输
-+
-+- **第 128 章：端口**：数据到达主机以后应该交给哪个程序。
-+- **第 129 章：UDP**：只做最少工作的传输协议。
-+- **第 130 章：TCP 为什么需要连接**：通信前先建立双方共同维护的状态。
-+- **第 131 章：三次握手**：双方怎样确认彼此的收发能力和初始序号。
-+- **第 132 章：序号与确认**：接收方怎样发现丢失、重复和乱序。
-+- **第 133 章：超时与重传**：确认迟迟不到时，发送方应该等多久再重发。
-+- **第 134 章：滑动窗口**：不必每发一段都停下来等待确认。
-+- **第 135 章：流量控制**：发送方怎样避免压垮接收方。
-+
-+### 拥塞、关闭与地址转换
-+
-+- **第 136 章：网络为什么会拥塞**：太多发送者为何让整体吞吐量下降。
-+- **第 137 章：拥塞控制（进阶）**：发送方怎样试探并分享有限的网络容量。
-+- **第 138 章：连接关闭与 TIME_WAIT（进阶）**：通信结束为什么也需要约定步骤。
-+- **第 139 章：NAT**：利用地址和端口映射，让许多内部设备共享少量公网地址。
-+
-+### 应用如何使用网络
-+
-+- **第 140 章：套接字**：应用程序怎样通过操作系统收发网络数据。
-+- **第 141 章：DNS 的名字空间**：域名为什么是一棵由许多机构共同管理的树。
-+- **第 142 章：DNS 查询与缓存**：解析器怎样逐步找到地址，又怎样避免每次从头查询。
-+- **第 143 章：HTTP 请求与响应**：浏览器和服务器怎样交换资源。
-+- **第 144 章：HTTP 连接与版本演进**：复用连接、多路传输为何能够减少等待。
-+- **第 145 章：Cookie 与会话**：无状态协议上的登录状态怎样延续。
-+- **第 146 章：缓存、代理与 CDN**：怎样把常用内容放到离读者更近的地方。
-+
-+### 可信而安全地通信
-+
-+- **第 147 章：窃听与对称加密**：通信双方共享同一把密钥时，怎样高效保护传输内容。
-+- **第 148 章：篡改与消息认证**：保密为什么还不够，以及怎样发现消息被人改动。
-+- **第 149 章：公钥、私钥与数字签名**：怎样公开一把钥匙，同时证明消息确实来自自己。
-+- **第 150 章：密钥交换**：没有预先共享秘密时，双方怎样建立会话密钥。
-+- **第 151 章：证书与信任链**：浏览器凭什么相信公钥确实属于目标网站。
-+- **第 152 章：TLS 握手与 HTTPS**：把认证、密钥协商和加密传输组装起来。
-+- **第 153 章：防火墙**：在网络边界按照地址、端口和连接状态限制通信。
-+- **第 154 章：网络故障诊断**：用地址配置、DNS、ping 和路径跟踪逐层定位问题。
-+- **第 155 章：一次网络请求的完整旅程（总装）**：从输入网址到页面出现，串起全部网络层次。
-+
-+### 过渡
-+
-+操作系统在挑选下一个进程，缓存需要挑选要淘汰的数据，路由器需要挑选下一条路径。它们表面上各不相同，背后却都在回答两个问题：数据应该怎样组织，步骤应该怎样安排？
-+
-+---
-+
-+## 第五部分：数据结构与算法（第 156～219 章）
-+
-+本部分先回收前文已经遇到的实际问题，再从这些问题中抽象出结构和算法。示例优先，定义和分析紧随其后。复杂度、递归、贪心、动态规划和回溯都需要完成一次推导，不能只介绍名词。
-+
-+### 衡量程序的方法
-+
-+- **第 156 章：数据为什么需要组织**：同一批数据采用不同组织方式，操作成本为何不同。
-+- **第 157 章：抽象数据类型**：先规定可以做什么，再决定内部怎样做。
-+- **第 158 章：算法与正确性**：有限、明确、可执行的步骤怎样解决一类问题。
-+- **第 159 章：输入规模与增长速度**：不要只测一次运行时间，要看数据变大后怎样变化。
-+- **第 160 章：大 O 记号**：忽略机器和常数差异，比较规模增长后的主要趋势。
-+- **第 161 章：常见增长速度**：从常数、对数、线性一路看到指数，并建立数量级直觉。
-+- **第 162 章：最好、最坏与平均情况**：同一个算法为什么会有不止一个时间界限。
-+- **第 163 章：时间与空间的交换**：保存更多中间结果为什么能够减少重复计算。
-+- **第 164 章：摊还分析（进阶）**：偶尔一次昂贵操作，为什么不代表每次操作都很贵。
-+
-+### 线性结构
-+
-+- **第 165 章：数组**：连续存储带来的随机访问和移动成本。
-+- **第 166 章：动态数组**：容量不够时怎样扩展，以及扩容成本怎样被摊平。
-+- **第 167 章：字符串**：在已有字符编码知识之上，理解字符串的存储、遍历、切分与不可变性。
-+- **第 168 章：顺序查找与二分查找**：二分查找为什么必须依赖有序数据和随机访问。
-+- **第 169 章：引用与指针**：怎样找到另一块数据，以及悬空引用为何危险。
-+- **第 170 章：单向链表**：用指针把分散的数据连接起来。
-+- **第 171 章：双向链表与循环链表（进阶）**：多保存链接能够换来哪些操作优势。
-+- **第 172 章：栈**：后进先出与函数调用、表达式求值和撤销操作。
-+- **第 173 章：队列与双端队列**：先进先出与调度、缓冲和广度优先搜索。
-+
-+### 递归工具箱
-+
-+- **第 174 章：读懂递归**：沿调用栈追踪基本情况、递归情况和返回过程。
-+- **第 175 章：设计递归**：怎样缩小问题并确保递归最终停止，为树、图和排序准备工具。
-+
-+### 哈希与映射
-+
-+- **第 176 章：哈希函数与哈希表**：根据键计算存放位置，接近一步找到数据。
-+- **第 177 章：拉链法处理冲突**：让落到同一位置的元素组成小集合。
-+- **第 178 章：开放寻址处理冲突**：位置被占用后，怎样在表内继续寻找空位。
-+- **第 179 章：负载因子与扩容**：表越来越满时为什么会变慢，又怎样重新散列。
-+- **第 180 章：集合与映射**：在哈希表之上提供两种常见抽象。
-+
-+### 树与优先级
-+
-+- **第 181 章：树**：用父子关系表示层次结构。
-+- **第 182 章：二叉树与递归遍历**：前序、中序、后序分别在什么时候访问节点。
-+- **第 183 章：二叉搜索树**：利用有序性缩小查找范围。
-+- **第 184 章：删除节点与树的退化**：二叉搜索树最麻烦的修改如何完成，性能又怎样失去保证。
-+- **第 185 章：平衡树（进阶）**：树长歪以后怎样通过旋转恢复高度优势。
-+- **第 186 章：堆**：怎样用近似完全二叉树维护局部顺序。
-+- **第 187 章：优先队列**：把堆封装成“总能取出最重要元素”的接口。
-+- **第 188 章：字典树（进阶）**：利用公共前缀组织字符串。
-+
-+### 图的表示与遍历
-+
-+- **第 189 章：图**：把网络、依赖和道路统一表示成节点与边。
-+- **第 190 章：图的表示**：邻接矩阵与邻接表怎样交换时间和空间。
-+- **第 191 章：广度优先搜索**：一层一层探索，以及它与队列的关系。
-+- **第 192 章：深度优先搜索**：沿一条路走到底，以及它与栈和递归的关系。
-+- **第 193 章：连通分量与环**：怎样判断节点能否互达，以及依赖是否绕回原点。
-+- **第 194 章：拓扑排序**：有依赖关系的任务应该按什么顺序完成。
-+
-+### 路径与连接
-+
-+- **第 195 章：无权图的最短路径**：为什么广度优先搜索第一次到达就是最短。
-+- **第 196 章：Dijkstra 算法**：边权非负时，怎样逐步确定当前最近的节点。
-+- **第 197 章：负权边与 Bellman–Ford（进阶）**：贪心选择失效后怎样反复松弛所有边。
-+- **第 198 章：并查集（进阶）**：用按秩合并和路径压缩快速维护节点的连通关系。
-+- **第 199 章：最小生成树（进阶）**：怎样借助优先队列或并查集，以最低总代价连接所有节点。
-+
-+### 排序
-+
-+- **第 200 章：排序问题与稳定性**：排序如何帮助查找、去重和统计，稳定又意味着什么。
-+- **第 201 章：冒泡排序与选择排序**：最直观的方法怎样反复比较和交换。
-+- **第 202 章：插入排序**：数据接近有序时，简单算法为什么可能更合适。
-+- **第 203 章：分治**：拆分子问题、分别解决，再把答案合起来。
-+- **第 204 章：归并排序**：第一次完整使用分治，先排序两半，再合并结果。
-+- **第 205 章：快速排序**：选择基准并原地划分。
-+- **第 206 章：堆排序**：反复取出堆顶，并把堆恢复正确。
-+- **第 207 章：计数排序与基数排序（进阶）**：已知键的结构时怎样绕过逐个比较。
-+- **第 208 章：比较排序的下限（进阶）**：为什么只靠比较无法普遍突破 `O(n log n)`。
-+- **第 209 章：外部排序（进阶）**：数据大到放不进内存时怎样借助磁盘完成排序。
-+
-+### 设计算法的方法
-+
-+- **第 210 章：贪心选择**：每一步只选当前最好，能够省去哪些搜索。
-+- **第 211 章：证明或推翻贪心策略**：用交换论证确认正确性，也用反例识别错误直觉。
-+- **第 212 章：动态规划从哪里来**：识别重复子问题和最优子结构，并选定状态。
-+- **第 213 章：从递归到记忆化搜索**：缓存已经求过的子问题，先得到自顶向下的解法。
-+- **第 214 章：自底向上的状态转移**：确定初始状态、转移关系和正确的计算顺序。
-+- **第 215 章：完整设计一个动态规划**：从问题建模到恢复答案，走通一个无法靠套模板解决的例子。
-+- **第 216 章：回溯与搜索树**：把每一次选择展开成树，并在失败时撤销选择。
-+- **第 217 章：剪枝**：利用约束和上下界，避免探索不可能产生答案的分支。
-+- **第 218 章：从暴力搜索到更好算法**：比较回溯、记忆化、贪心和动态规划之间的演变。
-+- **第 219 章：没有万能的数据结构和算法（总装）**：根据操作、规模、时间、空间和可读性进行选择。
-+
-+### 过渡
-+
-+现在已经有了数组、栈、树、哈希表和图，也学会了搜索、递归与动态规划。终于可以打开第 45 章留下的编译黑箱，看看它怎样把一串普通字符变成能够运行的程序。
-+
-+---
-+
-+## 第六部分：编译原理（第 220～281 章）
-+
-+本部分始终跟随一段很小的源代码。每经过一个阶段，就展示代码在编译器内部变成了什么形态，最终落回前文构造的机器指令。寄存器分配、链接、运行时和垃圾回收各自都有独立的困难，因此不再压缩成单章。
-+
-+### 前端：从字符得到词
-+
-+- **第 220 章：从字符串变为程序**：总览编译器的输入、输出和主要阶段。
-+- **第 221 章：语言与文法**：用规则描述哪些字符串属于一门语言。
-+- **第 222 章：字符怎样组成词**：关键字、标识符、数字和符号的边界。
-+- **第 223 章：手写词法分析器**：逐个读取字符并生成词法单元。
-+- **第 224 章：正则表达式**：用组合规则描述一类词法模式。
-+- **第 225 章：有限自动机（进阶）**：把词法模式变成逐字符改变状态的识别机器。
-+
-+### 前端：从词得到语法结构
-+
-+- **第 226 章：语法分析要解决什么**：同一串词法单元为何可能拥有不同结构。
-+- **第 227 章：上下文无关文法**：用递归规则描述程序的嵌套结构。
-+- **第 228 章：递归下降分析**：让函数与文法规则一一对应。
-+- **第 229 章：表达式的优先级与结合性**：为什么 `1 + 2 * 3` 不能直接从左到右解析。
-+- **第 230 章：歧义文法**：一串输入得到多棵语法树时，怎样发现并消除歧义。
-+- **第 231 章：预测分析（进阶）**：只看少量后续词法单元，怎样选出应该展开的规则。
-+- **第 232 章：移进归约分析（进阶）**：怎样从输入片段逐步归约出完整结构。
-+- **第 233 章：语法错误与恢复**：发现错误后怎样继续寻找更多错误。
-+- **第 234 章：语法树与抽象语法树**：去掉只服务于文法的节点，保留真正的程序结构。
-+
-+### 语义：弄清程序的含义
-+
-+- **第 235 章：符号表**：编译器怎样记录名字及其属性。
-+- **第 236 章：作用域**：一个名字在程序的哪些位置可见。
-+- **第 237 章：名字解析**：一次变量使用到底指向哪次定义。
-+- **第 238 章：类型系统**：用规则描述哪些值能够参与哪些操作。
-+- **第 239 章：表达式的类型检查**：沿着语法树判断每个运算能否成立。
-+- **第 240 章：函数与控制流的语义检查**：参数、返回值、跳转和所有路径是否满足规则。
-+- **第 241 章：类型转换**：类型不完全相同时，哪些转换安全，哪些会丢失信息。
-+- **第 242 章：类型推断（进阶）**：没有写出全部类型时，编译器怎样从约束中推导。
-+- **第 243 章：语义分析总装**：把名字、作用域、类型和控制规则合成一次完整检查。
-+
-+### 中间表示与程序分析
-+
-+- **第 244 章：为什么需要中间表示**：避免每种源语言都直接面对每种机器。
-+- **第 245 章：从抽象语法树降低表示**：把高级结构逐步改写成更接近执行的操作。
-+- **第 246 章：三地址码**：把复杂表达式拆成简单步骤。
-+- **第 247 章：基本块**：把一定会顺序执行的指令切成一段。
-+- **第 248 章：控制流图**：用图表示基本块之间可能的执行道路。
-+- **第 249 章：数据流分析（进阶）**：追踪一个值在哪里产生、传播和失效。
-+- **第 250 章：静态单赋值形式（进阶）**：在控制流汇合处明确值的来源，让每个名字只被赋值一次。
-+
-+### 优化
-+
-+- **第 251 章：优化为什么必须保留行为**：先划清“变得更快”不能跨越的边界。
-+- **第 252 章：常量折叠与常量传播**：能在编译时算出的结果就不留到运行时。
-+- **第 253 章：无用代码删除**：移除永远不会运行或结果无人使用的代码。
-+- **第 254 章：公共子表达式消除**：相同计算只做一次。
-+- **第 255 章：循环优化**：把循环中不变的工作移到外面，并减少循环内开销。
-+- **第 256 章：函数内联（进阶）**：用代码体积换取调用开销和更多优化机会。
-+- **第 257 章：跨过程分析（进阶）**：优化越过函数边界后，信息和成本怎样增加。
-+- **第 258 章：优化流水线总装**：让几种优化在同一段中间代码上依次发生，并检查结果仍然等价。
-+
-+### 后端：落到机器指令
-+
-+- **第 259 章：目标代码生成**：后端需要把中间表示变成哪些机器相关结果。
-+- **第 260 章：指令选择**：同一个中间操作怎样匹配不同成本的机器指令组合。
-+- **第 261 章：调用约定**：函数之间怎样就参数、返回值与寄存器达成约定。
-+- **第 262 章：活跃变量分析**：一个值在程序的哪些位置仍可能被使用。
-+- **第 263 章：冲突图**：哪些同时存活的值不能占用同一个寄存器。
-+- **第 264 章：寄存器着色与溢出**：寄存器不够时怎样分配，并把一部分值暂存到内存。
-+- **第 265 章：栈帧**：一次函数调用怎样保存局部变量、旧寄存器和返回地址。
-+- **第 266 章：生成汇编代码**：把已经选好并分配资源的指令写成汇编文本。
-+
-+### 目标文件与链接
-+
-+- **第 267 章：目标文件格式**：机器码之外为什么还需要符号、分段和其他元数据。
-+- **第 268 章：重定位**：编译时不知道最终地址的引用，怎样在之后补齐。
-+- **第 269 章：静态链接**：多个目标文件怎样合成一个可执行文件。
-+- **第 270 章：动态链接与装载**：操作系统怎样在运行前后补齐共享库和地址。
-+
-+### 语言运行时
-+
-+- **第 271 章：语言运行时**：高级语言需要哪些隐藏服务才能工作。
-+- **第 272 章：闭包**：函数离开定义位置后，怎样继续携带并使用外部变量。
-+- **第 273 章：对象布局与方法调用（进阶）**：对象的数据和类型信息怎样放进内存，动态方法又怎样找到。
-+- **第 274 章：异常处理（进阶）**：控制流突然跨越多层调用时，运行时怎样展开栈。
-+- **第 275 章：引用计数**：记录对象被引用的次数，优势和循环引用问题分别是什么。
-+- **第 276 章：追踪式垃圾回收**：从根出发找出仍能到达的对象。
-+- **第 277 章：分代垃圾回收（进阶）**：利用大多数对象很快消亡的规律减少扫描成本。
-+
-+### 解释、虚拟机与即时编译
-+
-+- **第 278 章：解释器**：直接读取程序结构并执行。
-+- **第 279 章：字节码与虚拟机**：先翻译成与具体机器无关的简化指令。
-+- **第 280 章：即时编译（进阶）**：运行过程中把热点代码继续编译成本地机器码。
-+- **第 281 章：编译器总装**：让一段高级语言源码最终在第 1～35 章组成的计算机上运行。
-+
-+### 过渡
-+
-+机器已经能执行高级语言写成的软件，算法也能让它跑得更快。但真正的软件还要被人阅读、修改、测试和长期维护。正确而高效的算法，距离可靠好用的软件仍有最后一段路。
-+
-+---
-+
-+## 第七部分：软件构造（第 282～297 章）
-+
-+本部分不展开成完整的软件工程教材，只补齐“算法”与“可长期使用的软件”之间最重要的距离。
-+
-+### 从问题到设计
-+
-+- **第 282 章：从算法到软件**：能算出答案为什么不等于软件已经完成。
-+- **第 283 章：需求与边界**：先弄清要解决什么，以及明确不解决什么。
-+- **第 284 章：分解、模块与接口**：把大型程序切成可以独立理解和替换的部分。
-+- **第 285 章：契约、错误与异常**：输入不符合预期时怎样明确地失败。
-+
-+### 找错与验证
-+
-+- **第 286 章：日志与调试**：从现象、记录、假设和证据中逐步缩小错误范围。
-+- **第 287 章：单元测试**：用小而可重复的例子保护一个模块的行为。
-+- **第 288 章：集成测试与系统测试**：模块组合以后怎样验证真实流程。
-+
-+### 协作、构建与数据
-+
-+- **第 289 章：版本控制**：保存软件变化的历史，并安全地尝试修改。
-+- **第 290 章：协作与代码审查**：多人怎样理解、讨论并合并同一份代码。
-+- **第 291 章：构建与依赖**：源文件、库和配置怎样稳定地组成可发布产物。
-+- **第 292 章：数据持久化：何时文件已经不够**：先把数据库作为外部服务，只理解保存、查询和更新数据的基本责任。
-+
-+### 运行、维护与总装
-+
-+- **第 293 章：性能分析**：先测量真正的瓶颈，再决定优化哪里。
-+- **第 294 章：可靠性与故障处理**：超时、重试、降级和恢复。
-+- **第 295 章：安全是共同责任**：输入验证、最小权限和纵深防御。
-+- **第 296 章：维护与演化**：软件怎样在需求变化中继续保持可理解。
-+- **第 297 章：从一个问题到一个软件系统（全系列总装）**：串起需求、程序、编译器、操作系统、网络、算法和硬件，完成全系列闭环。
-+
-+---
-+
-+## 本轮审阅结论
-+
-+章数是拆分结果，不是拆分目标。各部分最终长度如下：
-+
-+| 部分 | 章节范围 | 总章数 | 主线 | 进阶 | 节奏依据 |
-+| --- | --- | ---: | ---: | ---: | --- |
-+| 程序与编程基础 | 36～47 | 12 | 12 | 0 | 只承担硬件到操作系统的桥梁，避免提前重讲完整编程语言与编译器 |
-+| 操作系统 | 48～100 | 53 | 44 | 9 | 并发、虚拟内存、崩溃一致性需要连续推导和完整例子 |
-+| 计算机网络 | 101～155 | 55 | 50 | 5 | TCP、路由、DNS、HTTP、TLS 各自形成章组，并按真实依赖排序 |
-+| 数据结构与算法 | 156～219 | 64 | 54 | 10 | 复杂度和算法设计方法不能只给结论；动态规划拆为四个递进步骤 |
-+| 编译原理 | 220～281 | 62 | 50 | 12 | 解析、优化、寄存器分配、链接和运行时的认知任务彼此独立 |
-+| 软件构造 | 282～297 | 16 | 16 | 0 | 仅负责把单个算法接到可维护的软件，不扩展成完整软件工程课程 |
-+
-+主线章数接近是审阅后的结果，不是预设指标。操作系统、网络、算法和编译器分别保留 44、50、54、50 个主线章节；难度增加的部分通过进阶章向外展开，不会迫使零基础读者在主线上突然加速。程序基础与软件构造只承担前后桥梁，因此有意保持较短。
-+
-+### 板块边界检查
-+
-+| 边界 | 前一部分留下的问题 | 后一部分的第一步 | 结论 |
-+| --- | --- | --- | --- |
-+| 计算机组成原理 → 程序基础 | 机器已经能够执行指令，但二进制程序难以编写 | 用汇编助记符替代机器码 | 平稳；术语表保留为附录，叙事从第 35 章自然接到第 36 章 |
-+| 组成原理 33～34 ↔ 操作系统 88～89 | 组成原理已讲 I/O 接口、中断、DMA 的硬件机制 | 操作系统从内核管理角度重讲设备控制器/驱动与查询、中断、DMA | 螺旋复现；前者讲“硬件如何交接”，后者讲“内核如何管理”，避免简单重复 |
-+| 程序基础 → 操作系统 | 裸机程序无法自己解决装载、设备和多程序共享 | 从复位、引导到内核加载，亲眼看见管理者出现 | 平稳；不是突然先给操作系统定义 |
-+| 操作系统 → 计算机网络 | 单机资源已经得到管理，远端数据仍然不可达 | 从连接两台计算机和传送一个比特开始 | 平稳；网络继续沿用设备、驱动和系统调用知识 |
-+| 计算机网络 → 数据结构与算法 | 调度、缓存、路由反复出现“怎样组织和选择” | 回收这些实例，再抽象出结构、复杂度和算法 | 平稳；网络中的图算法先作为黑箱，随后再打开 |
-+| 数据结构与算法 → 编译原理 | 已经具备栈、树、图、哈希表、递归和搜索工具 | 重新打开第 45 章留下的编译黑箱 | 平稳；编译器需要的主要数据结构已有来源 |
-+| 编译原理 → 软件构造 | 一段源码已经能够运行，但还不能长期维护 | 从“算法为什么不等于软件”进入需求与模块 | 平稳；关注点从机器能否运行转向人能否维护 |
-+
-+本轮主要合并了几类过缓内容：操作系统开机后的固件细节收束在一章；网络分层与封装放在同一个完整例子中；基础排序中原理相近的冒泡与选择排序共用一章。也限制了两个容易无限扩展的出口：数据库只作为持久化服务引入，分布式系统留在附加章。
-+
-+本轮重点拆开了原先过急的内容：操作系统中的进程生命周期、同步案例、内存抖动、文件缓存和崩溃一致性；网络中的地址与子网、MTU 与 ICMP、DNS、HTTP 和 TLS；算法中的复杂度、哈希冲突、最短路径、递归、贪心、动态规划和回溯；编译器中的词法自动机、解析策略、中间表示、寄存器分配、重定位、运行时和垃圾回收。递归已经移动到树遍历和深度优先搜索之前；基本块、控制流图和数据流分析也已经移动到 SSA 之前。
-+
-+“进阶”章节可以跳过，但主线不能依赖读者已经掌握其内部细节。总装章不引入新概念，只让同一个例子完整走过此前的所有层次。
-+
-+---
-+
-+## 写作时的拆章判断
-+
-+出现以下任一情况时，应优先拆章：
-+
-+- 一章引入了两个以上此前从未出现的核心机制。
-+- 一个完整例子需要跳过关键步骤才能在正文中放下。
-+- 思考题必须依赖正文没有解释的概念。
-+- TL;DR 超过四个彼此独立的结论。
-+- 章节结尾无法用一个自然问题引出下一章。
-+
-+反过来，如果两个相邻章节必须反复重复相同背景，而且各自没有独立的认知目标，可以考虑合并。
-+
-+## 暂不纳入主线的内容
-+
-+人工智能、大数据、区块链、量子计算、密码学的数学与算法细节、漏洞与攻防、分布式系统等继续保留为附加章。网络主线只保留理解 TLS 所必需的密码学直觉。数学知识不集中设置一道高墙，而是在首次需要时以“小工具箱”形式引入，例如：
-+
-+- 布尔代数随逻辑门引入。
-+- 集合与映射随数据结构引入。
-+- 图论随网络和图结构引入。
-+- 递推与归纳随递归、分治和动态规划引入。
-+- 概率随哈希、随机算法和可靠性分析引入。
-+
-+安全、测试和社会责任不只在末尾出现；各板块遇到相应问题时先就地说明，最后再进行系统汇总。
-
-</code></pre>
-</details>
-<p><a id="f-1191663602-src-生活碎笔-文章与写作-对某些人来说-表白其实是宣战-md-2257976028"></a></p>
-<h4 id="src生活碎笔文章与写作对某些人来说表白其实是宣战md"><a class="header" href="#src生活碎笔文章与写作对某些人来说表白其实是宣战md">src/生活碎笔/文章与写作/对某些人来说，表白其实是宣战.md</a></h4>
-<details>
-<summary><code>+45 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\345\257\271\346\237\220\344\272\233\344\272\272\346\235\245\350\257\264\357\274\214\350\241\250\347\231\275\345\205\266\345\256\236\346\230\257\345\256\243\346\210\230.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\345\257\271\346\237\220\344\272\233\344\272\272\346\235\245\350\257\264\357\274\214\350\241\250\347\231\275\345\205\266\345\256\236\346\230\257\345\256\243\346\210\230.md"
-new file mode 100644
-index 00000000..a97bba8c
---- /dev/null
-+++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\345\257\271\346\237\220\344\272\233\344\272\272\346\235\245\350\257\264\357\274\214\350\241\250\347\231\275\345\205\266\345\256\236\346\230\257\345\256\243\346\210\230.md"
-@@ -0,0 +1,45 @@
-+# 对某些人来说，表白其实是宣战
-+
-+## 写在前面
-+
-+&lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&gt;602 字 | 想法 | 感触 | 表白 | 恋爱 | 思考 | 人际关系 | 性格&lt;/p&gt;
-+
-+## 正文
-+
-+　　我自己是这个理念的亲历者。
-+
-+　　有些人直来直去，很讨厌猜来猜去、阴晴不定的暧昧阶段。但是暧昧阶段也就这一点有意思了。两个人之间相互拉扯、相互抱有爱恋的猜忌。因为在乎对方，因为喜欢对方，才会不断内耗。
-+
-+　　然而，对有些人来说，在这个阶段体验到的内耗，远大于其体验到的幸福。
-+
-+　　无法忍受，干脆一手捅破窗户纸。在这种程度上，表白无异于宣战。当表白开始的那一刻，就已经没有退路了。
-+
-+　　我说这件事，不是因为我们成为了死敌，而是因为我在乎你、想知道你的看法，不希望我们的关系继续在中间地带沉沦。
-+
-+　　在客观上，这也确实将恋爱中的两方分隔开，隔着一条名为“心意”的楚河汉界。一方终于停止等待与试探。
-+
-+　　暧昧是缓冲区，双方都可以假装“我只是路过”，哪怕我绕远路天天路过。只要双方都拖下去，这件事就可以一直持续。而表白，会直接把缓冲区炸穿：接受、拒绝、或者拖延（而拖延本身也是一种回应）。
-+
-+　　就像战争，必须有一方胜利、败退或投降，这件事才会有个结束一样。
-+
-+　　不是所有的表白都是宣战。
-+
-+　　但对于某些人来说，表白无异于宣战——必须做好直面结果的准备、需要巨大的勇气，以及“必须要有个结果”的执拗。
-+
-+　　表白的人，无可避免地会将选择权与审判权递交给对方，这是博弈溃败的必然结果。
-+
-+　　但对他们来说，比起继续在未知的迷雾里等死，更愿意站到开阔地，哪怕迎面飞来的是子弹。
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 7 月 26 日
-+
-+## 封面图
-+
-+![](https://mmbiz.qpic.cn/mmbiz_jpg/hcnZjo7bq6Oj7K55Xt4f7goRow5J0r9uNknAWkUDksj8ic7LHq3gLhEcGrQaCTPpscmCYrjicNiaDhWTbcfUXiaz63QnGsyQ9NzlAPb5QKicsX6A/640?wx_fmt=jpeg&amp;from=appmsg)
-+
-+&gt; 摄影师・画师 | Elijah Macleod
-+&gt;
-+&gt; 图源 | Unsplash
-
-</code></pre>
-</details>
-<p><a id="f-1191663602-src-生活碎笔-文章与写作-我们以为的严肃样貌-可能实质上是在各种维度吵架-md-2676028882"></a></p>
-<h4 id="src生活碎笔文章与写作我们以为的严肃样貌可能实质上是在各种维度吵架md"><a class="header" href="#src生活碎笔文章与写作我们以为的严肃样貌可能实质上是在各种维度吵架md">src/生活碎笔/文章与写作/我们以为的严肃样貌，可能实质上是在各种维度吵架.md</a></h4>
-<details>
-<summary><code>+53 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\210\221\344\273\254\344\273\245\344\270\272\347\232\204\344\270\245\350\202\203\346\240\267\350\262\214\357\274\214\345\217\257\350\203\275\345\256\236\350\264\250\344\270\212\346\230\257\345\234\250\345\220\204\347\247\215\347\273\264\345\272\246\345\220\265\346\236\266.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\210\221\344\273\254\344\273\245\344\270\272\347\232\204\344\270\245\350\202\203\346\240\267\350\262\214\357\274\214\345\217\257\350\203\275\345\256\236\350\264\250\344\270\212\346\230\257\345\234\250\345\220\204\347\247\215\347\273\264\345\272\246\345\220\265\346\236\266.md"
-new file mode 100644
-index 00000000..d920f20c
---- /dev/null
-+++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\210\221\344\273\254\344\273\245\344\270\272\347\232\204\344\270\245\350\202\203\346\240\267\350\262\214\357\274\214\345\217\257\350\203\275\345\256\236\350\264\250\344\270\212\346\230\257\345\234\250\345\220\204\347\247\215\347\273\264\345\272\246\345\220\265\346\236\266.md"
-@@ -0,0 +1,53 @@
-+# 我们以为的严肃样貌，可能实质上是在各种维度吵架
-+
-+## 写在前面
-+
-+&lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&gt;726 字 | 思考 | 感触&lt;/p&gt;
-+
-+## 正文
-+
-+　　我最开始以为法律神圣，将公平放在最前列，判罚象征着最高的平衡与指示——最后发现是在法庭上吵架；
-+
-+　　我最开始以为哲学神圣，站在人类思想的最前沿，从无数角度阐明和验证人类的思想和社会真理——最后发现，每个学说逻辑都能咬合，于是论战变成选边站队，吵架；
-+
-+　　我最开始以为爱情神圣，人类感情的最高峰，象征无数甜蜜与美好——最后发现每个人定义的爱情都不一样，甚至大相径庭，相互否决，于是吵架。
-+
-+　　在接触很多领域之后，我都有这样的发现：
-+
-+　　原来我们秉持着美好的幻想，只是因为我们不了解它。因为不了解，所以那些认知显得美丽而梦幻。
-+
-+　　而真的接触之后，发现这种幻觉脆弱而致命，落差极大。
-+
-+　　吵架像是一件俗不可耐的事情，怎么会跟这些严肃、了不起的上层建筑搭上关系呢？
-+
-+　　医学、法学、哲学、社会学、心理学、甚至数学……几乎每个领域都能见到这种影子。
-+
-+　　只是他们吵架的内容，因为太过深入与细节，我们听不懂。
-+
-+　　但无论怎样，都应该对这种现象“祛魅”。
-+
-+　　那些看起来高端的东西，之所以看起来高端，也许只是因为我们看不懂而已。
-+
-+　　我们总以为，在我们的水平之上，一定有一个全知全能的神明。它神圣、尊严、完美、不可侵犯。毕竟，我们自己的水平我们最清楚，而同一时间，总是山外有山，有人的水平总远超我们，看起来就像那个神明。
-+
-+　　但他们终究不是。无论懂得再多，也还是人类，会犯错，也绝对会因为观念不合引起各种各样的争吵。
-+
-+　　「最痛苦的是什么呢，你恰巧有那么一点天赋，够你去觊觎天才们那片殿堂，却不够你进入。
-+
-+　　「你在门前徘徊，隐隐约约看到殿堂内透出的光，却敲不开那扇门。
-+
-+　　「你颓然而坐，以为这就是人世间最大的遗憾，却隐隐约约听到殿堂内传来一声叹息：“我好菜啊。”」
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 7 月 31 日
-+
-+## 封面图
-+
-+![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/hcnZjo7bq6NRMSv8PIRo3s9QMeHiba9eHv2xIDYPtryE0AicficpHsZLT3IGHG4O32RJPRFy30tZYHibUibKXhESBHCSiaSHdMgP1j3deTPz5OWvw/640?wx_fmt=jpeg&amp;from=appmsg)
-+
-+&gt; 摄影师・画师 | Tingey Injury Law Firm
-+&gt;
-+&gt; 图源 | Unsplash
-
-</code></pre>
-</details>
-<p><a id="f-1191663602-src-生活碎笔-文章与写作-我可能也染上了男人的不良嗜好-md-340803151"></a></p>
-<h4 id="src生活碎笔文章与写作我可能也染上了男人的不良嗜好md"><a class="header" href="#src生活碎笔文章与写作我可能也染上了男人的不良嗜好md">src/生活碎笔/文章与写作/我可能也染上了男人的不良嗜好.md</a></h4>
-<details>
-<summary><code>+75 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\210\221\345\217\257\350\203\275\344\271\237\346\237\223\344\270\212\344\272\206\347\224\267\344\272\272\347\232\204\344\270\215\350\211\257\345\227\234\345\245\275.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\210\221\345\217\257\350\203\275\344\271\237\346\237\223\344\270\212\344\272\206\347\224\267\344\272\272\347\232\204\344\270\215\350\211\257\345\227\234\345\245\275.md"
-new file mode 100644
-index 00000000..113103ca
---- /dev/null
-+++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\210\221\345\217\257\350\203\275\344\271\237\346\237\223\344\270\212\344\272\206\347\224\267\344\272\272\347\232\204\344\270\215\350\211\257\345\227\234\345\245\275.md"
-@@ -0,0 +1,75 @@
-+# 我可能也染上了男人的不良嗜好
-+
-+## 写在前面
-+
-+&lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&gt;935 字 | 工业美学 | 感想 | 电影&lt;/p&gt;
-+
-+## 正文
-+
-+　　赛车真帅吧。
-+
-+　　这是我在看完《飞驰人生 3》之后的第一感想。然后我就发现——我可能也染上了男人的不良嗜好。
-+
-+&lt;br /&gt;
-+
-+　　原来和一个关系比较好的群友聊天，当时对飞机比较痴迷。他是飞行员，现实中的那种。
-+
-+　　讨论飞机。我对飞机型号也不太懂，然后他就跟我举了个例子，说我现在开这架飞机，有一种新手司机开 GT 赛车的美感。
-+
-+　　那……GT 赛车又是啥？
-+
-+　　严格来说，他这个比喻很失败，毕竟比喻之后也不让人明白。但我知道了一点：他好像除了开飞机之外，对赛车也有些了解。
-+
-+　　我当时对赛车不感兴趣。
-+
-+　　后来，我开始玩《极限竞速：地平线 5》。早听说了地平线 4 的大名，但是一直没上手过。等我配了高端台式电脑，发现地平线 4 早就已经下架了。也算是种遗憾吧。
-+
-+　　所以，地平线 5 是我的第一款地平线。
-+
-+　　我玩儿了开场，看到自己开车，从天而降，一路穿越公路、沙漠、雨林、草地。那种感觉简直让人头皮发麻。而我本来对飞机也感兴趣，所以那个时候，看到自己开车，从飞机后仓乘降落伞从天而降，脑子里只有震撼。
-+
-+　　再然后，我看到我自己开车极速冲线，飞机就在我头顶高速略过，两个工业巨物用各自的姿态与景色同框，高解析度耳机里传来飞机的音爆和汽车发动机的轰鸣声，脑子里完全一片空白。
-+
-+　　我也许再也忘不了那个画面。
-+
-+　　他们都说地平线 4 的开场，其实比地平线 5 要好。
-+
-+　　但我后来也下了地平线 4 的盗版，玩了开场，并没有想象中那么惊艳。
-+
-+　　也许最惊艳的，永远是自己的第一款地平线，而不关乎是几代。
-+
-+　　我原来跟群友说，几百吨重得要死的庞然大物，借助一根跑道就能在天上高速巡航，谁能抗拒这种极致的工业美学呢？
-+
-+&lt;br /&gt;
-+
-+　　如果说，飞机离普通人太远，赛车也完全没必要，那我想汽车应该是最亲民的了。
-+
-+　　我以为，我玩地平线，会像其他任何 RPG 游戏一样，追求顶级性能、顶级技能、顶级赛车。什么东西都往最高的数值上追。
-+
-+　　但没有。
-+
-+　　这是第一次。
-+
-+　　第一次有游戏，让我觉得：也许顶级的东西并不是最好的，那些只是滤镜。
-+
-+　　真正上手过一次之后，我真的不喜欢那些难获得的、顶级的 S2 赛车。
-+
-+　　我还是喜欢开着我那辆蓝色的 A 级福特老爷车，听着引擎的轰鸣，在夕阳下漫无目的地驶过任何一条景色迷人的道路。
-+
-+　　也是在这个时候，我发现，我可能无可救药地染上了男人的不良嗜好。
-+
-+　　不止飞机，还有赛车。
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 7 月 18 日
-+
-+## 封面图
-+
-+![](https://mmbiz.qpic.cn/mmbiz_jpg/hcnZjo7bq6N4EACCVHJK0umHw2CfCIyTl1gCEYcPTkiawQMiccvVmq4svupdbk5D3RFM18zGYsOt5omSxcVf8ia4crTrb2ibiceSicksFdpCfOtXo/640?wx_fmt=jpeg&amp;from=appmsg)
-+
-+&gt; 摄影师・画师 | Paul Krüger
-+&gt;
-+&gt; 图源 | Unsplash
-
-</code></pre>
-</details>
-<p><a id="f-1191663602-src-生活碎笔-文章与写作-比不听更可恶的是假装听了-比不懂更危险的是以为懂了-md-431629254"></a></p>
-<h4 id="src生活碎笔文章与写作比不听更可恶的是假装听了比不懂更危险的是以为懂了md"><a class="header" href="#src生活碎笔文章与写作比不听更可恶的是假装听了比不懂更危险的是以为懂了md">src/生活碎笔/文章与写作/比不听更可恶的是假装听了，比不懂更危险的是以为懂了.md</a></h4>
-<details>
-<summary><code>+51 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\257\224\344\270\215\345\220\254\346\233\264\345\217\257\346\201\266\347\232\204\346\230\257\345\201\207\350\243\205\345\220\254\344\272\206\357\274\214\346\257\224\344\270\215\346\207\202\346\233\264\345\215\261\351\231\251\347\232\204\346\230\257\344\273\245\344\270\272\346\207\202\344\272\206.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\257\224\344\270\215\345\220\254\346\233\264\345\217\257\346\201\266\347\232\204\346\230\257\345\201\207\350\243\205\345\220\254\344\272\206\357\274\214\346\257\224\344\270\215\346\207\202\346\233\264\345\215\261\351\231\251\347\232\204\346\230\257\344\273\245\344\270\272\346\207\202\344\272\206.md"
-new file mode 100644
-index 00000000..970067fe
---- /dev/null
-+++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\346\257\224\344\270\215\345\220\254\346\233\264\345\217\257\346\201\266\347\232\204\346\230\257\345\201\207\350\243\205\345\220\254\344\272\206\357\274\214\346\257\224\344\270\215\346\207\202\346\233\264\345\215\261\351\231\251\347\232\204\346\230\257\344\273\245\344\270\272\346\207\202\344\272\206.md"
-@@ -0,0 +1,51 @@
-+# 比不听更可恶的是假装听了，比不懂更危险的是以为懂了
-+
-+## 写在前面
-+
-+&lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&gt;723 字 | 思考 | 感触&lt;/p&gt;
-+
-+## 正文
-+
-+　　“你永远无法叫醒一个装睡的人。”
-+
-+　　这句话其核心是因为，对方“睡觉”是出于选择。而人的主观能动性，一旦下定决心，很难改变。
-+
-+　　所以，当我们开始劝有些人的时候，比起不听，“假装听了”显得更加可恶。
-+
-+　　因为对方是主动选择了欺骗。
-+
-+　　“不听”在这种程度上居然会显得更加可爱一些，起码它诚实。
-+
-+　　“欺骗”与“诚实”看似只是一个选择，但并非是天平的两方。“欺骗”天生就意味着更高的辨别成本，而“诚实”则不涉及。为什么人们天生喜欢诚实的人，因为许多人天生怕麻烦。
-+
-+　　这也是为什么，那些“碟中谍”看起来要比“两个人互相表白心意”烧脑得多。这两种片子就是两个极端，一个无限猜忌和怀疑，套中套辨别成本指数爆炸，飞出天际，而一个只需要观察和祝福就好。
-+
-+　　如果非要对这种情形定性，这种应该是“坏”，是一种主观恶意。
-+
-+　　而另一种叫“蠢”。这种情况多半发生在“我以为我懂了”上面。
-+
-+　　“不懂”是一种诚实的客观情况，只要意识到了就有救，可以去学，可以求助，不至于误判情况。最起码，我们知道“我们需要审慎地观察当前的情况”。
-+
-+　　“以为懂了”危险就危险在，我们以为我们没有选择，于是朝着错误的道路上狂飙，但其实我们有选择，只是我们不知道。
-+
-+　　而这种“不知道”可以被修正，贵在“无意识”。它相比上面的“坏”，也就有救在这种地方——经过提点，能够挽救。
-+
-+　　但如果当“我以为我懂了”和“我不听”相互叠加的话，那就另说了，对方几乎已经主动关闭了所有纠错的可能。
-+
-+　　对于这种人，我们能选择的，大概只有“远离”、“审判”或“惩罚”了——放弃助人情结，尊重他人命运；做好风险隔离，静待现实审判。
-+
-+　　因为人最危险的时候，不是犯错的时候，而是失去了发现错误的能力的时候。
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 7 月 26 日
-+
-+## 封面图
-+
-+![](https://mmbiz.qpic.cn/sz_mmbiz_jpg/hcnZjo7bq6OsA001bZsuUVHZPDfW7ElibYiaUV3Xz8ZrG1LF8s23XYvV7zhia6p8BL4G0TRErCmcGnqymjg1qN7xjY6wC8n7F5pdUYib9ADcUKg/640?wx_fmt=jpeg&amp;from=appmsg)
-+
-+&gt; 摄影师・画师 | Siora Photography
-+&gt;
-+&gt; 图源 | Unsplash
 
 </code></pre>
 </details>
