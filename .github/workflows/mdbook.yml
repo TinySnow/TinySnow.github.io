@@ -260,12 +260,22 @@ jobs:
         run: |
           git config --global user.email "ci@github"
           git config --global user.name "CI"
-          cd book
-          git init && git add .
-          git commit -m "deploy"
-          git push --force \
+
+          # 保留 gh-pages-mirror 的提交链：以后两端均可按对象增量同步，
+          # 而不必每次创建孤儿提交并重新传输整个 book 目录。
+          git clone --depth 1 --branch gh-pages-mirror \
             https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/TinySnow/TinySnow.github.io.git \
-            HEAD:gh-pages-mirror
+            book-mirror
+          rsync -a --delete --exclude='.git' book/ book-mirror/
+
+          cd book-mirror
+          git add --all
+          if git diff --cached --quiet; then
+            echo "Mirror content is unchanged; skipping GitHub mirror push."
+          else
+            git commit -m "deploy"
+            git push origin HEAD:gh-pages-mirror
+          fi
 
       - name: Setup Pages
         id: pages
@@ -298,7 +308,6 @@ jobs:
   mirror_gitlink:
     runs-on: ubuntu-latest
     needs: deploy
-    timeout-minutes: 15
 
     steps:
       # build_site 已将最终站点推送到 gh-pages-mirror；这里直接复用该分支，
@@ -327,20 +336,8 @@ jobs:
           set -Eeuo pipefail
           cd book-mirror
 
-          for attempt in 1 2 3; do
-            echo "GitLink push attempt ${attempt}/3"
-
-            if GIT_SSH_COMMAND="ssh -o ServerAliveInterval=15 -o ServerAliveCountMax=4" \
-              timeout 180s git push --force \
-                git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git \
-                HEAD:gh-pages-mirror; then
-              exit 0
-            fi
-
-            if (( attempt == 3 )); then
-              echo "GitLink push failed after 3 attempts." >&2
-              exit 1
-            fi
-
-            sleep "$((attempt * 15))"
-          done
+          # 不设脚本或 job 超时，避免 GitLink 的慢速接收被人为中断。
+          # --progress 与 TRACE2_PERF 会将压缩、写入及远端处理等阶段输出到 Actions 日志。
+          GIT_TRACE2_PERF=1 git push --force --porcelain --progress \
+            git@code.gitlink.org.cn:TinySnow/TinySnow.gitlink.net.git \
+            HEAD:gh-pages-mirror

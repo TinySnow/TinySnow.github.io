@@ -76,6 +76,10 @@
 
 set -Eeuo pipefail
 
+# 本机 SSH 配置中的 ProxyCommand 在 PowerShell 环境下不可用；GitHub 改走
+# 官方 SSH 443 入口。该覆盖仅用于 origin，GitLink 仍使用其正常 SSH 地址。
+github_ssh_command='ssh -F /dev/null -o HostName=ssh.github.com -p 443'
+
 if [[ $# -lt 1 ]]; then
   echo "请提供提交信息。用法: ./autopush.sh \"commit message\"" >&2
   exit 1
@@ -83,11 +87,11 @@ fi
 
 commit_msg="$1"
 
-git pull
+git -c core.sshCommand="${github_ssh_command}" pull
 
 git add .
 git commit -m "${commit_msg}"
-git push
+git -c core.sshCommand="${github_ssh_command}" push
 git push gitlink -f master
 
 echo "Done. last-updated / sitemap / rss are generated in GitHub Actions."
