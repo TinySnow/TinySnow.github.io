@@ -15,19 +15,6 @@
 - Powered by [mdBook](https://rust-lang.github.io/mdBook/)./由 [mdBook](https://rust-lang.github.io/mdBook/) 驱动。
 
 
-## 微信公众号文章转换
-
-将微信公众号文本编辑器中的文章粘贴到 `assets/wechat-origin.md`，复制文章标题后，在仓库根目录运行：
-
-```powershell
-.\assets\convert-wechat-article.ps1
-```
-
-脚本会读取剪贴板标题，按博客格式转换文章，并输出到 `src/生活碎笔/文章与写作/`。详细格式与其他标题输入方式见 `assets/AGENTS.md`。
-
-CI 使用 `assets/generate-last-updated-md.sh` 生成最近更新页面，并使用无需第三方依赖的 `assets/generate-rss.py` 生成 RSS。
-
-
 ## Mirrors/镜像网站
 
 - [https://tinysnow.netlify.app](https://tinysnow.netlify.app)

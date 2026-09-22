@@ -203,6 +203,18 @@
 
 当前工具不会自动下载或迁移微信图片，不会自动更新 `src/SUMMARY.md`，也不会修改文章内容和标签。这些操作如有需要，应在用户明确要求后另行实现。
 
+## 微信公众号文章转换
+
+将微信公众号文本编辑器中的文章粘贴到 `assets/wechat-origin.md`，复制文章标题后，在仓库根目录运行：
+
+```powershell
+.\assets\convert-wechat-article.ps1
+```
+
+脚本会读取剪贴板标题，按博客格式转换文章，并输出到 `src/生活碎笔/文章与写作/`。详细格式与其他标题输入方式见 `assets/AGENTS.md`。
+
+CI 使用 `assets/generate-last-updated-md.sh` 生成最近更新页面，并使用无需第三方依赖的 `assets/generate-rss.py` 生成 RSS。
+
 ## 博客元数据生成工具
 
 - `assets/generate-last-updated-md.sh` 根据暂存区或 Git 提交范围生成 `src/last-updated.md`，并保留最近若干次更新记录。

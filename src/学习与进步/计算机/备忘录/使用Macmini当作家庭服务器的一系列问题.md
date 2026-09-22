@@ -267,8 +267,8 @@ mv /app/mod/* /root/.local/share/Terraria/tModLoader/Mods/ # 复制 mod 文件�
 3. ddns-go 里面需要做的工作：
    - DNS Provider
      - RequestBody：注册好域名后，填入 dynv6 里面 zone 下 instructions 里 ddclient 的 password 值
-     - URL：https://dynv6.com/api/update?zone=<domain>&token=<token>&ipv6=#{ip}
-       - 里面的 <domain> 和 <token> 都需要替换
+     - URL：https://dynv6.com/api/update?zone=\<domain\>&token=\<token\>&ipv6=#{ip}
+       - 里面的 \<domain\> 和 \<token\> 都需要替换
        - #{ip} 不需要替换
        - 详见 ddns-go 里面的提示，以及 dynv6 的官方文档
 
@@ -277,7 +277,7 @@ mv /app/mod/* /root/.local/share/Terraria/tModLoader/Mods/ # 复制 mod 文件�
    - 启用 ipv6，然后选择网卡获取 ip，Domains 填自己的域名，其他不管
    - Webhook
      - 可填可不填，个人是填了一个通知 TGBOT 往一个私人群里发消息 “DDNS Updated”
-       - Webhook URL：https://api.telegram.org/bot<bot_token>/sendMessage?chat_id=<chat_id>&text=DDNS%20Updated
+       - Webhook URL：https://api.telegram.org/bot\<bot_token\>/sendMessage?chat_id=\<chat_id\>&text=DDNS%20Updated
        - RequestBody 和 Headers 都可以不用填
 
 ### Rust Desk
@@ -365,7 +365,7 @@ networks:
 #### 概述
 
 - 其实本质上还是用的 Github 的仓库，但是有了个冗余备份
-- 博客所有图片链接全部换成了 https://img.tinysnow.cn，不再是 https://raw.githubusercontent.com/TinySnow/<repo_name>/main 了
+- 博客所有图片链接全部换成了 https://img.tinysnow.cn，不再是 https://raw.githubusercontent.com/TinySnow/\<repo_name\>/main 了
 - 读者阅读博客时，页面会请求 https://img.tinysnow.cn
   - 第一步，这个域名将会通过 Cloudflare DNS 解析到 Macmini 上
   - 第二步，通过 Cloudflare Tunnel 访问内网服务，将这个流量转发到 Docker 容器的总 Nginx 网关
