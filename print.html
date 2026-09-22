@@ -353,16 +353,117 @@
 <p>NOTICE: This content is presented as <code>git diff</code>.</p>
 </blockquote>
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-22-121613-0000--c3b92b76"><a class="header" href="#更新记录2026-09-22-121613-0000--c3b92b76">更新记录（2026-09-22 12:16:13 +0000 | c3b92b76）</a></h2>
+<h2 id="更新记录2026-09-22-203326-cmt-utc8--cf590dce"><a class="header" href="#更新记录2026-09-22-203326-cmt-utc8--cf590dce">更新记录（2026-09-22 20:33:26 CMT (UTC+8) | cf590dce）</a></h2>
 <h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
 <ul>
-<li>Generated at: <code>2026-09-22 12:16:13 +0000</code></li>
+<li>Generated at: <code>2026-09-22 20:33:26 CMT (UTC+8)</code></li>
+<li>Base commit: <code>cf590dce</code></li>
+<li>Diff source: <code>c3b92b760e3f6c8b2c3c9cb72fd368173b1e8df3..cf590dce3d44dd802dcb8936e6fd84c6cad8ab52</code></li>
+<li>Changed files: <code>2</code></li>
+<li>Total lines: <code>+25 / -2</code></li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-1892632931-assets-agents-md-3942825076">assets/AGENTS.md</a> <code>+1 / -1</code></li>
+<li><a href="#f-1892632931-assets-generate-last-updated-md-sh-2945781916">assets/generate-last-updated-md.sh</a> <code>+24 / -1</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-1892632931-assets-agents-md-3942825076"></a></p>
+<h4 id="assetsagentsmd"><a class="header" href="#assetsagentsmd">assets/AGENTS.md</a></h4>
+<details>
+<summary><code>+1 / -1</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/assets/AGENTS.md b/assets/AGENTS.md
+index 6b0c382e..017add88 100644
+--- a/assets/AGENTS.md
++++ b/assets/AGENTS.md
+@@ -217,7 +217,7 @@ CI 使用 `assets/generate-last-updated-md.sh` 生成最近更新页面，并使
+ 
+ ## 博客元数据生成工具
+ 
+-- `assets/generate-last-updated-md.sh` 根据暂存区或 Git 提交范围生成 `src/last-updated.md`，并保留最近若干次更新记录。
++- `assets/generate-last-updated-md.sh` 根据暂存区或 Git 提交范围生成 `src/last-updated.md`，并保留最近若干次更新记录；时间统一显示为 `CMT (UTC+8)`，历史 UTC 记录会在保留时自动换算。
+ - `assets/generate-rss.py` 根据 `RSS_GIT_RANGE` 或最近一次提交生成仓库根目录的 `rss.xml`。
+ - RSS 生成器只使用 Python 标准库，不需要安装项目级 Python 依赖。
+ - GitHub Actions 直接调用上述两个脚本；调整文件名、参数或输出位置时，必须同步修改 `.github/workflows/mdbook.yml` 和 `autopush.sh` 中的说明。
+
+</code></pre>
+</details>
+<p><a id="f-1892632931-assets-generate-last-updated-md-sh-2945781916"></a></p>
+<h4 id="assetsgenerate-last-updated-mdsh"><a class="header" href="#assetsgenerate-last-updated-mdsh">assets/generate-last-updated-md.sh</a></h4>
+<details>
+<summary><code>+24 / -1</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/assets/generate-last-updated-md.sh b/assets/generate-last-updated-md.sh
+index becdfb52..abc1556b 100644
+--- a/assets/generate-last-updated-md.sh
++++ b/assets/generate-last-updated-md.sh
+@@ -212,6 +212,20 @@ stat_to_display() {
+   fi
+ }
+ 
++format_cmt_timestamp() {
++  # 将 GitHub Actions 常见的 UTC 时间和旧记录统一显示为中国时区。
++  # CMT 在页面中明确标注为 UTC+8，避免读者自行换算。
++  local timestamp="$1"
++
++  if [[ "${timestamp}" == *'CMT (UTC+8)'* ]]; then
++    printf '%s' "${timestamp}"
++    return
++  fi
++
++  TZ=Asia/Shanghai date -d "${timestamp}" '+%Y-%m-%d %H:%M:%S CMT (UTC+8)' 2&gt;/dev/null \
++    || printf '%s' "${timestamp}"
++}
++
+ collect_numstat() {
+   # 收集单文件的增删行数统计（added/deleted）。
+   # staged 与 range 模式分别走不同 git 命令，但输出格式统一为:
+@@ -321,6 +335,8 @@ extract_old_entries() {
+   # 这意味着调用方需要提供“上一轮已生成文件”作为输入基线。
+   local source_file="$1"
+   local line in_entry=0 entry_file="" idx=0
++  local generated_pattern='^- Generated at: `([^`]+)`$'
++  local title_pattern='^## 更新记录（(.+) \| (.+)）$'
+ 
+   OLD_ENTRY_FILES=()
+ 
+@@ -338,6 +354,13 @@ extract_old_entries() {
+     fi
+ 
+     if [[ "${in_entry}" -eq 1 ]]; then
++      # 历史 artifact 可能仍使用 UTC；读取时转换，保证保留下来的记录也统一为 CMT。
++      if [[ "${line}" =~ ${generated_pattern} ]]; then
++        line="- Generated at: \`$(format_cmt_timestamp "${BASH_REMATCH[1]}")\`"
++      elif [[ "${line}" =~ ${title_pattern} ]]; then
++        line="## 更新记录（$(format_cmt_timestamp "${BASH_REMATCH[1]}") | ${BASH_REMATCH[2]}）"
++      fi
++
+       printf '%s\n' "${line}" &gt;&gt; "${entry_file}"
+       if [[ "${line}" == "${ENTRY_END_MARK}" ]]; then
+         OLD_ENTRY_FILES+=("${entry_file}")
+@@ -371,7 +394,7 @@ else
+   DIFF_SOURCE="${GIT_RANGE}"
+ fi
+ 
+-GENERATED_AT="$(date '+%Y-%m-%d %H:%M:%S %z')"
++GENERATED_AT="$(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S CMT (UTC+8)')"
+ ENTRY_KEY="$(printf '%s|%s|%s' "${GENERATED_AT}" "${BASE_REF}" "${DIFF_SOURCE}" | cksum | awk '{print $1}')"
+ ENTRY_TITLE="更新记录（${GENERATED_AT} | ${BASE_REF}）"
+ 
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-09-22-201613-cmt-utc8--c3b92b76"><a class="header" href="#更新记录2026-09-22-201613-cmt-utc8--c3b92b76">更新记录（2026-09-22 20:16:13 CMT (UTC+8) | c3b92b76）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-09-22 20:16:13 CMT (UTC+8)</code></li>
 <li>Base commit: <code>c3b92b76</code></li>
 <li>Diff source: <code>d83a80ca603f7640fbf404f2c00eb4dc1d41fc9a..c3b92b760e3f6c8b2c3c9cb72fd368173b1e8df3</code></li>
 <li>Changed files: <code>6</code></li>
 <li>Total lines: <code>+125 / -46</code></li>
 </ul>
-<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
 <ol>
 <li><a href="#f-1603448325-readme-md-4140682621">README.md</a> <code>+3 / -16</code></li>
 <li><a href="#f-1603448325-assets-agents-md-3942825076">assets/AGENTS.md</a> <code>+12 / -0</code></li>
@@ -371,7 +472,7 @@
 <li><a href="#f-1603448325-src-学习与进步-计算机-备忘录-使用macmini当作家庭服务器的一系列问题-md-3224999888">src/学习与进步/计算机/备忘录/使用Macmini当作家庭服务器的一系列问题.md</a> <code>+4 / -4</code></li>
 <li><a href="#f-1603448325-src-生活碎笔-文章与写作-她在某种程度上-确乎完成了梦想-md-3211887342">src/生活碎笔/文章与写作/她在某种程度上，确乎完成了梦想.md</a> <code>+73 / -0</code></li>
 </ol>
-<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
 <p><a id="f-1603448325-readme-md-4140682621"></a></p>
 <h4 id="readmemd"><a class="header" href="#readmemd">README.md</a></h4>
 <details>
@@ -410,7 +511,7 @@ index 266d37ac..0518ab80 100644
 </code></pre>
 </details>
 <p><a id="f-1603448325-assets-agents-md-3942825076"></a></p>
-<h4 id="assetsagentsmd"><a class="header" href="#assetsagentsmd">assets/AGENTS.md</a></h4>
+<h4 id="assetsagentsmd-1"><a class="header" href="#assetsagentsmd-1">assets/AGENTS.md</a></h4>
 <details>
 <summary><code>+12 / -0</code> Click to expand diff</summary>
 <pre><code class="language-diff">diff --git a/assets/AGENTS.md b/assets/AGENTS.md
@@ -697,16 +798,16 @@ index 00000000..d358690d
 </details>
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-19-051146-0000--b1fdd230"><a class="header" href="#更新记录2026-09-19-051146-0000--b1fdd230">更新记录（2026-09-19 05:11:46 +0000 | b1fdd230）</a></h2>
-<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<h2 id="更新记录2026-09-19-131146-cmt-utc8--b1fdd230"><a class="header" href="#更新记录2026-09-19-131146-cmt-utc8--b1fdd230">更新记录（2026-09-19 13:11:46 CMT (UTC+8) | b1fdd230）</a></h2>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
 <ul>
-<li>Generated at: <code>2026-09-19 05:11:46 +0000</code></li>
+<li>Generated at: <code>2026-09-19 13:11:46 CMT (UTC+8)</code></li>
 <li>Base commit: <code>b1fdd230</code></li>
 <li>Diff source: <code>0b89080887e2966d77b9b097754450dc971e78b0..b1fdd23018b70a14e4bdbf985b2bc21e6c21ded6</code></li>
 <li>Changed files: <code>6</code></li>
 <li>Total lines: <code>+188 / -86</code></li>
 </ul>
-<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
 <ol>
 <li><a href="#f-4091225936-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十七章-运算器总装-md-3428988036">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十七章：运算器总装.md</a> <code>+26 / -12</code></li>
 <li><a href="#f-4091225936-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十九章-给电路一个共同节拍-md-1148113103">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十九章：给电路一个共同节拍.md</a> <code>+26 / -11</code></li>
@@ -715,7 +816,7 @@ index 00000000..d358690d
 <li><a href="#f-4091225936-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十六章-alu状态标志-md-2664485419">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十六章：ALU状态标志.md</a> <code>+30 / -13</code></li>
 <li><a href="#f-4091225936-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十四章-减法器-md-3032456309">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十四章：减法器.md</a> <code>+47 / -24</code></li>
 </ol>
-<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
 <p><a id="f-4091225936-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十七章-运算器总装-md-3428988036"></a></p>
 <h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十七章运算器总装md"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十七章运算器总装md">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十七章：运算器总装.md</a></h4>
 <details>
@@ -1368,42 +1469,6 @@ index 48736dca..1c5d529b 100644
 +![](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/cover/减法器.png)
  
  &gt; 设计师 | 南国微雪
-
-</code></pre>
-</details>
-<!-- LAST_UPDATED_ENTRY_END -->
-<!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-19-045336-0000--0b890808"><a class="header" href="#更新记录2026-09-19-045336-0000--0b890808">更新记录（2026-09-19 04:53:36 +0000 | 0b890808）</a></h2>
-<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
-<ul>
-<li>Generated at: <code>2026-09-19 04:53:36 +0000</code></li>
-<li>Base commit: <code>0b890808</code></li>
-<li>Diff source: <code>de27401ee2e8a906849da16ce84e6bcb4f16a888..0b89080887e2966d77b9b097754450dc971e78b0</code></li>
-<li>Changed files: <code>1</code></li>
-<li>Total lines: <code>+1 / -1</code></li>
-</ul>
-<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
-<ol>
-<li><a href="#f-261795242-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第五章-文字与编码-md-2075903892">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第五章：文字与编码.md</a> <code>+1 / -1</code></li>
-</ol>
-<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
-<p><a id="f-261795242-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第五章-文字与编码-md-2075903892"></a></p>
-<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第五章文字与编码md"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第五章文字与编码md">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第五章：文字与编码.md</a></h4>
-<details>
-<summary><code>+1 / -1</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\344\272\224\347\253\240\357\274\232\346\226\207\345\255\227\344\270\216\347\274\226\347\240\201.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\344\272\224\347\253\240\357\274\232\346\226\207\345\255\227\344\270\216\347\274\226\347\240\201.md"
-index 33a27002..4235caf8 100644
---- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\344\272\224\347\253\240\357\274\232\346\226\207\345\255\227\344\270\216\347\274\226\347\240\201.md"
-+++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\344\272\224\347\253\240\357\274\232\346\226\207\345\255\227\344\270\216\347\274\226\347\240\201.md"
-@@ -4,7 +4,7 @@
- 
- - 计算机的构成：计算机需要输入、输出、存储和处理功能；CPU 内的 ALU、控制器和寄存器共同处理指令和数据
- - 计算机的数据表示：计算机用二进制表示数据，八进制和十六进制是二进制的简写
--- 数据的大小与单位：认识了 bit、Byte 及更大的数据单位，以及了解了 1024 与 1000 的差异
-+- 数据的大小与单位：认识了 bit、Byte 及更大的数据单位，知道 1024 与 1000 的差异
- 
- ## TL;DR
- 
 
 </code></pre>
 </details>
