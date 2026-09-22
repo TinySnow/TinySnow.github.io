@@ -92,6 +92,6 @@ git -c core.sshCommand="${github_ssh_command}" pull
 git add .
 git commit -m "${commit_msg}"
 git -c core.sshCommand="${github_ssh_command}" push
-git push gitlink -f master
+git push gitlink master
 
 echo "Done. last-updated / sitemap / rss are generated in GitHub Actions."
