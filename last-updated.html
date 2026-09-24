@@ -242,8 +242,73 @@
 <p>NOTICE: This content is presented as <code>git diff</code>.</p>
 </blockquote>
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-24-094247-cmt-utc8--d8dab53c"><a class="header" href="#更新记录2026-09-24-094247-cmt-utc8--d8dab53c">更新记录（2026-09-24 09:42:47 CMT (UTC+8) | d8dab53c）</a></h2>
+<h2 id="更新记录2026-09-24-100740-cmt-utc8--bd90ab2f"><a class="header" href="#更新记录2026-09-24-100740-cmt-utc8--bd90ab2f">更新记录（2026-09-24 10:07:40 CMT (UTC+8) | bd90ab2f）</a></h2>
 <h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-09-24 10:07:40 CMT (UTC+8)</code></li>
+<li>Base commit: <code>bd90ab2f</code></li>
+<li>Diff source: <code>d8dab53c5118ba96fd9a51f5e281b4380d803428..bd90ab2f66613eb385a43f247323af801dabd910</code></li>
+<li>Changed files: <code>1</code></li>
+<li>Total lines: <code>+6 / -4</code></li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-1233842669-assets-generate-last-updated-md-sh-2945781916">assets/generate-last-updated-md.sh</a> <code>+6 / -4</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-1233842669-assets-generate-last-updated-md-sh-2945781916"></a></p>
+<h4 id="assetsgenerate-last-updated-mdsh"><a class="header" href="#assetsgenerate-last-updated-mdsh">assets/generate-last-updated-md.sh</a></h4>
+<details>
+<summary><code>+6 / -4</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/assets/generate-last-updated-md.sh b/assets/generate-last-updated-md.sh
+index abc1556b..47a6f70f 100644
+--- a/assets/generate-last-updated-md.sh
++++ b/assets/generate-last-updated-md.sh
+@@ -6,7 +6,7 @@
+ # 该脚本是 “最近更新” 页面生成器，输出结构固定为：
+ # - H1 标题
+ # - Prenote 提示
+-# - 最近 N 次变更记录（默认 3 次，先进先出）
++# - 最近 N 次变更记录（默认 10 次，先进先出）
+ #
+ # 每条“变更记录”包含：
+ # - 记录标题（本次变更总标题）
+@@ -26,7 +26,9 @@
+ # - 保留 sitemap.txt（文章新增时具有信息价值）
+ #
+ # 历史保留策略：
+-# - 默认最多保留 3 条记录（可通过 --history-limit 调整）
++# - 默认最多保留 10 条记录（可通过 --history-limit 调整）
++#   每日一文每天产生一条提交，10 条可覆盖约一周到十天的常规追更周期；
++#   既比 3 条更不易遗漏，也避免完整 Git 历史让页面过长。
+ # - 新记录始终在最上方
+ # - 超出数量时淘汰最旧记录（FIFO）
+ # - 前提：输出文件需要先包含“上一轮生成结果”（例如 CI 先恢复上一次 artifact）
+@@ -57,7 +59,7 @@ FENCE="~~~~~"
+ 
+ MODE="staged"
+ GIT_RANGE=""
+-HISTORY_LIMIT=3
++HISTORY_LIMIT=10
+ 
+ ENTRY_START_MARK="&lt;!-- LAST_UPDATED_ENTRY_START --&gt;"
+ ENTRY_END_MARK="&lt;!-- LAST_UPDATED_ENTRY_END --&gt;"
+@@ -77,7 +79,7 @@ Usage:
+ Options:
+   --staged               Use staged diff (default).
+   --range &lt;range&gt;        Use git range diff, e.g. abc123..def456.
+-  --history-limit &lt;n&gt;    Keep latest n records (FIFO), default: 3.
++  --history-limit &lt;n&gt;    Keep latest n records (FIFO), default: 10.
+   --output &lt;path&gt;        Output markdown file path.
+   -h, --help             Show this help.
+ USAGE
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-09-24-094247-cmt-utc8--d8dab53c"><a class="header" href="#更新记录2026-09-24-094247-cmt-utc8--d8dab53c">更新记录（2026-09-24 09:42:47 CMT (UTC+8) | d8dab53c）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-24 09:42:47 CMT (UTC+8)</code></li>
 <li>Base commit: <code>d8dab53c</code></li>
@@ -251,11 +316,11 @@
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+1 / -1</code></li>
 </ul>
-<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
 <ol>
 <li><a href="#f-803749966-github-workflows-mdbook-yml-863419811">.github/workflows/mdbook.yml</a> <code>+1 / -1</code></li>
 </ol>
-<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
 <p><a id="f-803749966-github-workflows-mdbook-yml-863419811"></a></p>
 <h4 id="githubworkflowsmdbookyml"><a class="header" href="#githubworkflowsmdbookyml">.github/workflows/mdbook.yml</a></h4>
 <details>
@@ -279,7 +344,7 @@ index 2cf1504a..4cc720a3 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-24-093659-cmt-utc8--572ccd3c"><a class="header" href="#更新记录2026-09-24-093659-cmt-utc8--572ccd3c">更新记录（2026-09-24 09:36:59 CMT (UTC+8) | 572ccd3c）</a></h2>
-<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-24 09:36:59 CMT (UTC+8)</code></li>
 <li>Base commit: <code>572ccd3c</code></li>
@@ -287,11 +352,11 @@ index 2cf1504a..4cc720a3 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+19 / -4</code></li>
 </ul>
-<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
 <ol>
 <li><a href="#f-430391340-github-workflows-mdbook-yml-863419811">.github/workflows/mdbook.yml</a> <code>+19 / -4</code></li>
 </ol>
-<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
 <p><a id="f-430391340-github-workflows-mdbook-yml-863419811"></a></p>
 <h4 id="githubworkflowsmdbookyml-1"><a class="header" href="#githubworkflowsmdbookyml-1">.github/workflows/mdbook.yml</a></h4>
 <details>
@@ -358,7 +423,7 @@ index 094b1cb4..2cf1504a 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-24-060052-cmt-utc8--f1b578da"><a class="header" href="#更新记录2026-09-24-060052-cmt-utc8--f1b578da">更新记录（2026-09-24 06:00:52 CMT (UTC+8) | f1b578da）</a></h2>
-<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
+<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-24 06:00:52 CMT (UTC+8)</code></li>
 <li>Base commit: <code>f1b578da</code></li>
@@ -366,12 +431,12 @@ index 094b1cb4..2cf1504a 100644
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+42 / -0</code></li>
 </ul>
-<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
+<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
 <ol>
 <li><a href="#f-3390406930-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-3390406930-src-阅读-每日一文-母难月-吴念真-md-3450361211">src/阅读/每日一文/母难月-吴念真.md</a> <code>+41 / -0</code></li>
 </ol>
-<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
+<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
 <p><a id="f-3390406930-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd"><a class="header" href="#srcsummarymd">src/SUMMARY.md</a></h4>
 <details>

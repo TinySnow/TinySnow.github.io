@@ -5,6 +5,80 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-09-24 10:07:40 CMT (UTC+8) | bd90ab2f）
+
+### Summary
+
+- Generated at: `2026-09-24 10:07:40 CMT (UTC+8)`
+- Base commit: `bd90ab2f`
+- Diff source: `d8dab53c5118ba96fd9a51f5e281b4380d803428..bd90ab2f66613eb385a43f247323af801dabd910`
+- Changed files: `1`
+- Total lines: `+6 / -4`
+
+### Index
+
+1. [assets/generate-last-updated-md.sh](#f-1233842669-assets-generate-last-updated-md-sh-2945781916) `+6 / -4`
+
+### Diffs
+
+<a id="f-1233842669-assets-generate-last-updated-md-sh-2945781916"></a>
+#### assets/generate-last-updated-md.sh
+
+<details>
+<summary><code>+6 / -4</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/assets/generate-last-updated-md.sh b/assets/generate-last-updated-md.sh
+index abc1556b..47a6f70f 100644
+--- a/assets/generate-last-updated-md.sh
++++ b/assets/generate-last-updated-md.sh
+@@ -6,7 +6,7 @@
+ # 该脚本是 “最近更新” 页面生成器，输出结构固定为：
+ # - H1 标题
+ # - Prenote 提示
+-# - 最近 N 次变更记录（默认 3 次，先进先出）
++# - 最近 N 次变更记录（默认 10 次，先进先出）
+ #
+ # 每条“变更记录”包含：
+ # - 记录标题（本次变更总标题）
+@@ -26,7 +26,9 @@
+ # - 保留 sitemap.txt（文章新增时具有信息价值）
+ #
+ # 历史保留策略：
+-# - 默认最多保留 3 条记录（可通过 --history-limit 调整）
++# - 默认最多保留 10 条记录（可通过 --history-limit 调整）
++#   每日一文每天产生一条提交，10 条可覆盖约一周到十天的常规追更周期；
++#   既比 3 条更不易遗漏，也避免完整 Git 历史让页面过长。
+ # - 新记录始终在最上方
+ # - 超出数量时淘汰最旧记录（FIFO）
+ # - 前提：输出文件需要先包含“上一轮生成结果”（例如 CI 先恢复上一次 artifact）
+@@ -57,7 +59,7 @@ FENCE="~~~~~"
+ 
+ MODE="staged"
+ GIT_RANGE=""
+-HISTORY_LIMIT=3
++HISTORY_LIMIT=10
+ 
+ ENTRY_START_MARK="<!-- LAST_UPDATED_ENTRY_START -->"
+ ENTRY_END_MARK="<!-- LAST_UPDATED_ENTRY_END -->"
+@@ -77,7 +79,7 @@ Usage:
+ Options:
+   --staged               Use staged diff (default).
+   --range <range>        Use git range diff, e.g. abc123..def456.
+-  --history-limit <n>    Keep latest n records (FIFO), default: 3.
++  --history-limit <n>    Keep latest n records (FIFO), default: 10.
+   --output <path>        Output markdown file path.
+   -h, --help             Show this help.
+ USAGE
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-09-24 09:42:47 CMT (UTC+8) | d8dab53c）
 
 ### Summary
@@ -47,7 +121,6 @@ index 2cf1504a..4cc720a3 100644
 </details>
 
 <!-- LAST_UPDATED_ENTRY_END -->
-
 
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-09-24 09:36:59 CMT (UTC+8) | 572ccd3c）
