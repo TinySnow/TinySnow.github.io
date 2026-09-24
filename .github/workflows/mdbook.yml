@@ -124,7 +124,7 @@ jobs:
         shell: bash
         run: |
           set -Eeuo pipefail
-          git fetch origin gh-pages-mirror
+          git fetch origin gh-pages-mirror:refs/remotes/origin/gh-pages-mirror
           git show origin/gh-pages-mirror:last-updated.md > src/last-updated.md
 
       # 首次迁移到镜像基线前，artifact 仍作为兼容性回退。
