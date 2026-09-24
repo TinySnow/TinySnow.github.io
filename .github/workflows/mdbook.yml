@@ -116,9 +116,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 关键：last-updated 的“历史保留”依赖上一轮生成结果。
-      # 若每次都从仓库原始文件起步（不恢复上一轮 artifact），就只能看到 1 条最新记录。
+      # 优先从发布镜像恢复上一轮生成结果。该分支随站点内容持久化，
+      # 不受 GitHub Actions artifact 下载失败或过期的影响。
+      - name: Restore last-updated baseline from gh-pages mirror
+        id: restore_mirror
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git fetch origin gh-pages-mirror
+          git show origin/gh-pages-mirror:last-updated.md > src/last-updated.md
+
+      # 首次迁移到镜像基线前，artifact 仍作为兼容性回退。
       - name: Resolve previous successful workflow run
+        if: steps.restore_mirror.outcome != 'success'
         id: prev_run
         uses: actions/github-script@v7
         with:
@@ -144,7 +155,7 @@ jobs:
       # 从上一轮成功运行下载 metadata，作为本轮生成输入基线。
       # continue-on-error 保证首次运行或历史 artifact 过期时仍可继续构建。
       - name: Download previous metadata artifact
-        if: steps.prev_run.outputs.run_id != ''
+        if: steps.restore_mirror.outcome != 'success' && steps.prev_run.outputs.run_id != ''
         continue-on-error: true
         uses: actions/download-artifact@v4
         with:
@@ -155,7 +166,7 @@ jobs:
 
       # 若成功拿到上一轮 last-updated，则先恢复它，再追加本轮变更记录。
       - name: Restore previous last-updated baseline
-        if: hashFiles('ci-prev-artifact/src/last-updated.md') != ''
+        if: steps.restore_mirror.outcome != 'success' && hashFiles('ci-prev-artifact/src/last-updated.md') != ''
         shell: bash
         run: |
           set -Eeuo pipefail
@@ -248,6 +259,10 @@ jobs:
 
       - name: Build with mdBook
         run: mdbook build
+
+      # 将原始 Markdown 一并写入镜像分支，供下一轮生成稳定恢复历史。
+      - name: Preserve last-updated baseline in mirror
+        run: cp -v src/last-updated.md book/last-updated.md
 
       # sitemap 直接从构建后的 book 目录生成，不再本地提交 src/sitemap*.*
       - name: Generate sitemap
