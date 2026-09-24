@@ -5,6 +5,51 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-09-24 09:42:47 CMT (UTC+8) | d8dab53c）
+
+### Summary
+
+- Generated at: `2026-09-24 09:42:47 CMT (UTC+8)`
+- Base commit: `d8dab53c`
+- Diff source: `572ccd3c03f20bcaf94e5383100d9d2200143892..d8dab53c5118ba96fd9a51f5e281b4380d803428`
+- Changed files: `1`
+- Total lines: `+1 / -1`
+
+### Index
+
+1. [.github/workflows/mdbook.yml](#f-803749966-github-workflows-mdbook-yml-863419811) `+1 / -1`
+
+### Diffs
+
+<a id="f-803749966-github-workflows-mdbook-yml-863419811"></a>
+#### .github/workflows/mdbook.yml
+
+<details>
+<summary><code>+1 / -1</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/.github/workflows/mdbook.yml b/.github/workflows/mdbook.yml
+index 2cf1504a..4cc720a3 100644
+--- a/.github/workflows/mdbook.yml
++++ b/.github/workflows/mdbook.yml
+@@ -124,7 +124,7 @@ jobs:
+         shell: bash
+         run: |
+           set -Eeuo pipefail
+-          git fetch origin gh-pages-mirror
++          git fetch origin gh-pages-mirror:refs/remotes/origin/gh-pages-mirror
+           git show origin/gh-pages-mirror:last-updated.md > src/last-updated.md
+ 
+       # 首次迁移到镜像基线前，artifact 仍作为兼容性回退。
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-09-24 09:36:59 CMT (UTC+8) | 572ccd3c）
 
 ### Summary
@@ -90,7 +135,6 @@ index 094b1cb4..2cf1504a 100644
 </details>
 
 <!-- LAST_UPDATED_ENTRY_END -->
-
 
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-09-24 06:00:52 CMT (UTC+8) | f1b578da）
@@ -188,85 +232,6 @@ index 00000000..a84f97fb
 +　　生养我们五个（如果连夭折的那个也算的话，就是六个）小孩的过程，其忧烦与苦难远远多于欣喜与安慰。
 +
 +　　我曾想过，妈妈会得骨癌，到了末期全身的骨头甚至一碰即碎，是不是就因为这辈子的身、心都一直承担着过量的负荷？
-
-~~~~~
-
-</details>
-
-<!-- LAST_UPDATED_ENTRY_END -->
-
-<!-- LAST_UPDATED_ENTRY_START -->
-## 更新记录（2026-09-23 06:00:43 CMT (UTC+8) | 75470a6e）
-
-### Summary
-
-- Generated at: `2026-09-23 06:00:43 CMT (UTC+8)`
-- Base commit: `75470a6e`
-- Diff source: `c9707cb553fac44589a919e1cf66c4236b94e8b9..75470a6ee43da8c46d8b453b72edb5d938cca3f5`
-- Changed files: `2`
-- Total lines: `+18 / -0`
-
-### Index
-
-1. [src/SUMMARY.md](#f-1502915588-src-summary-md-3501257646) `+1 / -0`
-2. [src/阅读/每日一文/不完美的完美-刘墉.md](#f-1502915588-src-阅读-每日一文-不完美的完美-刘墉-md-298491175) `+17 / -0`
-
-### Diffs
-
-<a id="f-1502915588-src-summary-md-3501257646"></a>
-#### src/SUMMARY.md
-
-<details>
-<summary><code>+1 / -0</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/src/SUMMARY.md b/src/SUMMARY.md
-index b2b5ab78..3da2197d 100644
---- a/src/SUMMARY.md
-+++ b/src/SUMMARY.md
-@@ -1437,6 +1437,7 @@
-     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
-     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
- - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
-+  - [不完美的完美 - 刘墉](阅读/每日一文/不完美的完美-刘墉.md)
-   - [人性的光华 - 许知远](阅读/每日一文/人性的光华-许知远.md)
-   - [不买房，买梦想 - 高晓松](阅读/每日一文/不买房，买梦想-高晓松.md)
-   - [陪他一段 - 苏伟贞](阅读/每日一文/陪他一段-苏伟贞.md)
-
-~~~~~
-
-</details>
-
-<a id="f-1502915588-src-阅读-每日一文-不完美的完美-刘墉-md-298491175"></a>
-#### src/阅读/每日一文/不完美的完美-刘墉.md
-
-<details>
-<summary><code>+17 / -0</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git "a/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\344\270\215\345\256\214\347\276\216\347\232\204\345\256\214\347\276\216-\345\210\230\345\242\211.md" "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\344\270\215\345\256\214\347\276\216\347\232\204\345\256\214\347\276\216-\345\210\230\345\242\211.md"
-new file mode 100644
-index 00000000..c5f3e8c1
---- /dev/null
-+++ "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\344\270\215\345\256\214\347\276\216\347\232\204\345\256\214\347\276\216-\345\210\230\345\242\211.md"
-@@ -0,0 +1,17 @@
-+# 不完美的完美
-+
-+*刘墉*
-+
-+　　我有一个朋友，单身半辈子，快五十岁时突然结了婚。新娘跟他的年龄差不多，徐娘半老，风韵犹存，只是知道的朋友都窃窃私语：“那女人以前是个演员，嫁了两任丈夫，都离了，现在不红了，由他捡了个剩货。”
-+
-+　　不知道是不是话传到了他耳里。有一天，他跟我出去，一边开车，一边笑道：“我这个人，年轻的时候就盼开奔驰车，没钱，买不起。现在呀，还是买不起，买了辆三手车。”
-+
-+　　他开的确实是辆老奔驰。我左右看看说：“三手？看来很好哇！马力也足。”
-+
-+　　“是啊！”他大笑了起来，“旧车有什么不好？就好像我太太，前面嫁个四川人，又嫁个上海人，还在演艺圈二十多年，大大小小的场面见多了，现在老了，收了心，没了以前的娇气、浮华气，却做得一手四川菜、上海菜，又懂得布置家。讲句实在话，她真正最完美的时候反而被我遇上了。”
-+
-+　　我说：“别人不说，我真看不出她竟然是当年的那位艳星。”
-+
-+　　“是啊！”他拍着方向盘，“其实想想我自己，我又完美吗？我还不是千疮百孔，有过许多往事，许多荒唐。正因为我们都经历了这些，所以都成熟，都知道让，都知道忍。这不完美？这正是一种完美啊！”
-+
-+　　不完美正是一种完美！我们老了，锈了，千疮百孔，隔一阵子就需要去看医生，来修补我们残破的身躯，我们又何必要求自己拥有的人、事、物都完美无瑕，没有缺点呢？看得惯残破，也是历练，是豁达，是成熟，是一种人生的境界啊！
 
 ~~~~~
 
