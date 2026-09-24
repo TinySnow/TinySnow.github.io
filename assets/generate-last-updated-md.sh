@@ -6,7 +6,7 @@
 # 该脚本是 “最近更新” 页面生成器，输出结构固定为：
 # - H1 标题
 # - Prenote 提示
-# - 最近 N 次变更记录（默认 3 次，先进先出）
+# - 最近 N 次变更记录（默认 10 次，先进先出）
 #
 # 每条“变更记录”包含：
 # - 记录标题（本次变更总标题）
@@ -26,7 +26,9 @@
 # - 保留 sitemap.txt（文章新增时具有信息价值）
 #
 # 历史保留策略：
-# - 默认最多保留 3 条记录（可通过 --history-limit 调整）
+# - 默认最多保留 10 条记录（可通过 --history-limit 调整）
+#   每日一文每天产生一条提交，10 条可覆盖约一周到十天的常规追更周期；
+#   既比 3 条更不易遗漏，也避免完整 Git 历史让页面过长。
 # - 新记录始终在最上方
 # - 超出数量时淘汰最旧记录（FIFO）
 # - 前提：输出文件需要先包含“上一轮生成结果”（例如 CI 先恢复上一次 artifact）
@@ -57,7 +59,7 @@ FENCE="~~~~~"
 
 MODE="staged"
 GIT_RANGE=""
-HISTORY_LIMIT=3
+HISTORY_LIMIT=10
 
 ENTRY_START_MARK="<!-- LAST_UPDATED_ENTRY_START -->"
 ENTRY_END_MARK="<!-- LAST_UPDATED_ENTRY_END -->"
@@ -77,7 +79,7 @@ Usage:
 Options:
   --staged               Use staged diff (default).
   --range <range>        Use git range diff, e.g. abc123..def456.
-  --history-limit <n>    Keep latest n records (FIFO), default: 3.
+  --history-limit <n>    Keep latest n records (FIFO), default: 10.
   --output <path>        Output markdown file path.
   -h, --help             Show this help.
 USAGE
