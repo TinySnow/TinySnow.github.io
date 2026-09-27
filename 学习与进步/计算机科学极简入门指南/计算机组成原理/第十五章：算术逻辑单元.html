@@ -276,6 +276,7 @@
 <p>　　若 ALU 想支持 8 种运算，控制码至少需要几位？为什么？</p>
 </blockquote>
 <p>　　注意：盒子里所有电路 <strong>同时</strong> 在进行计算。加法器、减法器、与门、或门各自都得到了自己的答案。出口处的多路选择器，只放行我们此刻想要的那一个。这就像四条流水线一起运转，最后用一个道岔决定让哪条线的成品出来。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/ALU四路并行运算与控制码选择.gif" alt="A、B 同时进入四条运算路径，控制码依次选择加法、减法、按位与和按位或的结果"><span class="img-wrapper"><img src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/ALU四路并行运算与控制码选择.gif" alt="A、B 同时进入四条运算路径，控制码依次选择加法、减法、按位与和按位或的结果"></span></label></p>
 <p>　　控制码从哪来？机器可以自己给出，但目前的话，为了避免把我们自己绕晕了，我们还是人工吧，后面可以让它自动化。</p>
 <p>　　不过注意，这里提到了“控制码”的概念，它是一种控制信号。所以，我们已经在逐渐开始接触“控制单元”了，它也是一种信号，只是不参与运算。</p>
 <ul>
@@ -297,6 +298,7 @@
 </table>
 </div>
 <p>　　A 和 B 从头到尾没有变，只是控制码换了，出口的答案就跟着换。这是我们第一次造出一个真正“可选功能”的部件。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/控制码一变出口的答案就变.png" alt="输入 A、B 保持不变时，两位控制码与四种运算结果的对应关系"><span class="img-wrapper"><img src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/控制码一变出口的答案就变.png" alt="输入 A、B 保持不变时，两位控制码与四种运算结果的对应关系"></span></label></p>
 <p>　　虽然很简陋，但这是一个巨大的成功：机器从“只会做一件事”迈向了“听命令做事”。</p>
 <p><strong>思考题 2</strong></p>
 <blockquote>
@@ -305,6 +307,7 @@
 <h3 id="alu-不会记事"><a class="header" href="#alu-不会记事">ALU 不会记事</a></h3>
 <p>　　这里要特别留意一件事：输入一撤走，输出也会随之消失。</p>
 <p>　　ALU 像草稿纸上的心算，算得快，却不会把刚才的结果记下来。你让它算 <code>2 + 3</code>，它给你 5；可你一转手去算别的，那个 5 就没了。想算 <code>2 + 3 + 4</code>，中间的结果 5 无处安放。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/ALU会算但不会记事.png" alt="ALU 的输出只由当前输入决定，输入变化后原来的中间结果没有地方保存"><span class="img-wrapper"><img src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/ALU会算但不会记事.png" alt="ALU 的输出只由当前输入决定，输入变化后原来的中间结果没有地方保存"></span></label></p>
 <p>　　这是典型的 <strong>组合逻辑</strong>：输出只取决于此刻的输入，与“过去”无关。没有一点点关系的那种，算完了转头就忘。</p>
 <p>　　而且有时结果本身不够——结果是不是 0、结果是不是负数等等。</p>
 <p>　　听起来很傻，结果我们不会自己看吗？</p>
