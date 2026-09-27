@@ -5,6 +5,236 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-09-28 06:00:45 CMT (UTC+8) | 5fae137b）
+
+### Summary
+
+- Generated at: `2026-09-28 06:00:45 CMT (UTC+8)`
+- Base commit: `5fae137b`
+- Diff source: `9d2b8dca249fa0e9f9826e36967c352905061ad0..5fae137b79480a753c30c2eb2543347617f8da77`
+- Changed files: `2`
+- Total lines: `+168 / -0`
+
+### Index
+
+1. [src/SUMMARY.md](#f-3973297148-src-summary-md-3501257646) `+1 / -0`
+2. [src/阅读/每日一文/他是谁-希区柯克.md](#f-3973297148-src-阅读-每日一文-他是谁-希区柯克-md-2833638356) `+167 / -0`
+
+### Diffs
+
+<a id="f-3973297148-src-summary-md-3501257646"></a>
+#### src/SUMMARY.md
+
+<details>
+<summary><code>+1 / -0</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/src/SUMMARY.md b/src/SUMMARY.md
+index 2cf6b3e1..5421ad36 100644
+--- a/src/SUMMARY.md
++++ b/src/SUMMARY.md
+@@ -1438,6 +1438,7 @@
+     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
+     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
+ - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
++  - [他是谁 - 希区柯克](阅读/每日一文/他是谁-希区柯克.md)
+   - [往事一页 - 卡夫卡](阅读/每日一文/往事一页-卡夫卡.md)
+   - [抻面 - 阿城](阅读/每日一文/抻面-阿城.md)
+   - [盆栽动物 - 巩高峰](阅读/每日一文/盆栽动物-巩高峰.md)
+
+~~~~~
+
+</details>
+
+<a id="f-3973297148-src-阅读-每日一文-他是谁-希区柯克-md-2833638356"></a>
+#### src/阅读/每日一文/他是谁-希区柯克.md
+
+<details>
+<summary><code>+167 / -0</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git "a/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\344\273\226\346\230\257\350\260\201-\345\270\214\345\214\272\346\237\257\345\205\213.md" "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\344\273\226\346\230\257\350\260\201-\345\270\214\345\214\272\346\237\257\345\205\213.md"
+new file mode 100644
+index 00000000..014ceff9
+--- /dev/null
++++ "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\344\273\226\346\230\257\350\260\201-\345\270\214\345\214\272\346\237\257\345\205\213.md"
+@@ -0,0 +1,167 @@
++# 他是谁
++
++*希区柯克*
++
++　　数月前，当我在医院疗养心脏病时，经历了一次古怪而可怖的事情，那件事我困恼得无法解释。
++
++　　现在，我要趁记忆还有一点，赶快把它记下来。
++
++　　病情有起色之后，院方把我从一个照顾周到的病房转到一个普通单人房，它位置在心脏病房的末端。
++
++　　这个房间长而窄，灯光照明不十分好。病房两边大约还有十余间单人病房。
++
++　　头一两天，我经常紧闭房门以阻挡其他房间传来的收音机声和电视声，我喜欢静静地看书。
++
++　　有一天，我正在阅读时，房门轻轻开启。我没有听到开门声，不过不用抬头，我能感觉到有人站在门边。
++
++　　我希望来者是位访客，但是很失望，也烦躁，来者居然是医院的理发师。他穿一件薄薄的，看来褴楼的羊驼呢夹克，手提一只难看的黑色袋子。
++
++　　他没有开口说话，只抬起浓厚的眉毛，做无言的问语。
++
++　　我摇摇头。“现在不理，或许晚些时候。”
++
++　　他露出没有掩饰的失望神色，在门边逗留一会儿。最后转身，悄然掩上门。
++
++　　不知为什么，我无法再静下心来看书。我自己承认，他吓我一跳，他的打扰令我生气。我也明白，对一位心脏病患者，这种情况是不适合的。
++
++　　我服下镇静剂，想休息——但没有成功。虽然如此，那天晚上我睡得不坏（在安眠药的帮助下），第二天上午，在一连串洗澡、换床单、量体温与各种事情之后，我坐下来准备再看书。
++
++　　我发现我仍不能集中精神看书，虽然前一天那本书很吸引我。
++
++　　最后，当我环顾四周时，我懊恼地皱眉，因为我明白烦恼是什么啦。
++
++　　在我的请求下，门再次关上。但是现在，说不出为什么，我发觉自己居然不想它关上。因为我仍不能起床行走。所以，我按铃找护士。
++
++　　一位活泼、浅黄头发的瑞典籍女护士进来。她说：“已经厌倦隐士的生活啦？
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++　　我的余生里，将永远有一个问题：他是谁？
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-09-27 20:32:47 CMT (UTC+8) | 9d2b8dca）
 
 ### Summary
@@ -65,7 +295,6 @@ index 60b83486..5deee618 100644
 </details>
 
 <!-- LAST_UPDATED_ENTRY_END -->
-
 
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-09-27 19:35:24 CMT (UTC+8) | fdbdee6a）
@@ -1084,93 +1313,6 @@ index 2cf1504a..4cc720a3 100644
            git show origin/gh-pages-mirror:last-updated.md > src/last-updated.md
  
        # 首次迁移到镜像基线前，artifact 仍作为兼容性回退。
-
-~~~~~
-
-</details>
-
-<!-- LAST_UPDATED_ENTRY_END -->
-
-<!-- LAST_UPDATED_ENTRY_START -->
-## 更新记录（2026-09-24 09:36:59 CMT (UTC+8) | 572ccd3c）
-
-### Summary
-
-- Generated at: `2026-09-24 09:36:59 CMT (UTC+8)`
-- Base commit: `572ccd3c`
-- Diff source: `f1b578da48b5ad160b691fdf3a19b2d849a6a233..572ccd3c03f20bcaf94e5383100d9d2200143892`
-- Changed files: `1`
-- Total lines: `+19 / -4`
-
-### Index
-
-1. [.github/workflows/mdbook.yml](#f-430391340-github-workflows-mdbook-yml-863419811) `+19 / -4`
-
-### Diffs
-
-<a id="f-430391340-github-workflows-mdbook-yml-863419811"></a>
-#### .github/workflows/mdbook.yml
-
-<details>
-<summary><code>+19 / -4</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/.github/workflows/mdbook.yml b/.github/workflows/mdbook.yml
-index 094b1cb4..2cf1504a 100644
---- a/.github/workflows/mdbook.yml
-+++ b/.github/workflows/mdbook.yml
-@@ -116,9 +116,20 @@ jobs:
-         with:
-           fetch-depth: 0
- 
--      # 关键：last-updated 的“历史保留”依赖上一轮生成结果。
--      # 若每次都从仓库原始文件起步（不恢复上一轮 artifact），就只能看到 1 条最新记录。
-+      # 优先从发布镜像恢复上一轮生成结果。该分支随站点内容持久化，
-+      # 不受 GitHub Actions artifact 下载失败或过期的影响。
-+      - name: Restore last-updated baseline from gh-pages mirror
-+        id: restore_mirror
-+        continue-on-error: true
-+        shell: bash
-+        run: |
-+          set -Eeuo pipefail
-+          git fetch origin gh-pages-mirror
-+          git show origin/gh-pages-mirror:last-updated.md > src/last-updated.md
-+
-+      # 首次迁移到镜像基线前，artifact 仍作为兼容性回退。
-       - name: Resolve previous successful workflow run
-+        if: steps.restore_mirror.outcome != 'success'
-         id: prev_run
-         uses: actions/github-script@v7
-         with:
-@@ -144,7 +155,7 @@ jobs:
-       # 从上一轮成功运行下载 metadata，作为本轮生成输入基线。
-       # continue-on-error 保证首次运行或历史 artifact 过期时仍可继续构建。
-       - name: Download previous metadata artifact
--        if: steps.prev_run.outputs.run_id != ''
-+        if: steps.restore_mirror.outcome != 'success' && steps.prev_run.outputs.run_id != ''
-         continue-on-error: true
-         uses: actions/download-artifact@v4
-         with:
-@@ -155,7 +166,7 @@ jobs:
- 
-       # 若成功拿到上一轮 last-updated，则先恢复它，再追加本轮变更记录。
-       - name: Restore previous last-updated baseline
--        if: hashFiles('ci-prev-artifact/src/last-updated.md') != ''
-+        if: steps.restore_mirror.outcome != 'success' && hashFiles('ci-prev-artifact/src/last-updated.md') != ''
-         shell: bash
-         run: |
-           set -Eeuo pipefail
-@@ -249,6 +260,10 @@ jobs:
-       - name: Build with mdBook
-         run: mdbook build
- 
-+      # 将原始 Markdown 一并写入镜像分支，供下一轮生成稳定恢复历史。
-+      - name: Preserve last-updated baseline in mirror
-+        run: cp -v src/last-updated.md book/last-updated.md
-+
-       # sitemap 直接从构建后的 book 目录生成，不再本地提交 src/sitemap*.*
-       - name: Generate sitemap
-         run: sscli -b https://tinysnow.github.io -r ./book
 
 ~~~~~
 
