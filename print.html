@@ -353,8 +353,44 @@
 <p>NOTICE: This content is presented as <code>git diff</code>.</p>
 </blockquote>
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-28-060045-cmt-utc8--5fae137b"><a class="header" href="#更新记录2026-09-28-060045-cmt-utc8--5fae137b">更新记录（2026-09-28 06:00:45 CMT (UTC+8) | 5fae137b）</a></h2>
+<h2 id="更新记录2026-09-28-093152-cmt-utc8--88582960"><a class="header" href="#更新记录2026-09-28-093152-cmt-utc8--88582960">更新记录（2026-09-28 09:31:52 CMT (UTC+8) | 88582960）</a></h2>
 <h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-09-28 09:31:52 CMT (UTC+8)</code></li>
+<li>Base commit: <code>88582960</code></li>
+<li>Diff source: <code>5fae137b79480a753c30c2eb2543347617f8da77..88582960a91f1e1e8283f254d5320bb5ab8ad2d4</code></li>
+<li>Changed files: <code>1</code></li>
+<li>Total lines: <code>+2 / -0</code></li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-2325037630-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a> <code>+2 / -0</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-2325037630-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049"></a></p>
+<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a></h4>
+<details>
+<summary><code>+2 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md"
+index 5deee618..69c00f2f 100644
+--- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md"
++++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md"
+@@ -57,6 +57,8 @@ Q = 0，Q̅ = 1
+ 
+ 　　它现在有了一个名字： **SR 锁存器** 。
+ 
++![SR 锁存器由两个交叉反馈的或非门组成，R 和 S 从左侧输入，Q 与反相输出从右侧引出](https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/SR锁存器两个NOR门交叉反馈.png)
++
+ | S | R | Q 的下一状态 | 含义 |
+ | :---: | :---: | :---: | :--- |
+ | 0 | 0 | 保持原值 | 不写入 |
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-09-28-060045-cmt-utc8--5fae137b"><a class="header" href="#更新记录2026-09-28-060045-cmt-utc8--5fae137b">更新记录（2026-09-28 06:00:45 CMT (UTC+8) | 5fae137b）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-28 06:00:45 CMT (UTC+8)</code></li>
 <li>Base commit: <code>5fae137b</code></li>
@@ -362,12 +398,12 @@
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+168 / -0</code></li>
 </ul>
-<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
 <ol>
 <li><a href="#f-3973297148-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-3973297148-src-阅读-每日一文-他是谁-希区柯克-md-2833638356">src/阅读/每日一文/他是谁-希区柯克.md</a> <code>+167 / -0</code></li>
 </ol>
-<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
 <p><a id="f-3973297148-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd"><a class="header" href="#srcsummarymd">src/SUMMARY.md</a></h4>
 <details>
@@ -570,7 +606,7 @@ index 00000000..014ceff9
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-27-203247-cmt-utc8--9d2b8dca"><a class="header" href="#更新记录2026-09-27-203247-cmt-utc8--9d2b8dca">更新记录（2026-09-27 20:32:47 CMT (UTC+8) | 9d2b8dca）</a></h2>
-<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-27 20:32:47 CMT (UTC+8)</code></li>
 <li>Base commit: <code>9d2b8dca</code></li>
@@ -578,13 +614,13 @@ index 00000000..014ceff9
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+6 / -0</code></li>
 </ul>
-<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
 <ol>
 <li><a href="#f-2638430525-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a> <code>+6 / -0</code></li>
 </ol>
-<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
 <p><a id="f-2638430525-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049"></a></p>
-<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a></h4>
+<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md-1"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md-1">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a></h4>
 <details>
 <summary><code>+6 / -0</code> Click to expand diff</summary>
 <pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md"
@@ -624,7 +660,7 @@ index 60b83486..5deee618 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-27-193524-cmt-utc8--fdbdee6a"><a class="header" href="#更新记录2026-09-27-193524-cmt-utc8--fdbdee6a">更新记录（2026-09-27 19:35:24 CMT (UTC+8) | fdbdee6a）</a></h2>
-<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
+<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-27 19:35:24 CMT (UTC+8)</code></li>
 <li>Base commit: <code>fdbdee6a</code></li>
@@ -632,11 +668,11 @@ index 60b83486..5deee618 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+6 / -0</code></li>
 </ul>
-<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
+<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
 <ol>
 <li><a href="#f-1971418245-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十五章-算术逻辑单元-md-759758461">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十五章：算术逻辑单元.md</a> <code>+6 / -0</code></li>
 </ol>
-<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
+<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
 <p><a id="f-1971418245-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十五章-算术逻辑单元-md-759758461"></a></p>
 <h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十五章算术逻辑单元md"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十五章算术逻辑单元md">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十五章：算术逻辑单元.md</a></h4>
 <details>
@@ -678,7 +714,7 @@ index 342eef50..e06b1d0b 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-27-060043-cmt-utc8--8b3d4ba7"><a class="header" href="#更新记录2026-09-27-060043-cmt-utc8--8b3d4ba7">更新记录（2026-09-27 06:00:43 CMT (UTC+8) | 8b3d4ba7）</a></h2>
-<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
+<h3 id="summary-4"><a class="header" href="#summary-4">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-27 06:00:43 CMT (UTC+8)</code></li>
 <li>Base commit: <code>8b3d4ba7</code></li>
@@ -686,12 +722,12 @@ index 342eef50..e06b1d0b 100644
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+20 / -0</code></li>
 </ul>
-<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
+<h3 id="index-4"><a class="header" href="#index-4">Index</a></h3>
 <ol>
 <li><a href="#f-335405191-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-335405191-src-阅读-每日一文-往事一页-卡夫卡-md-927804924">src/阅读/每日一文/往事一页-卡夫卡.md</a> <code>+19 / -0</code></li>
 </ol>
-<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
+<h3 id="diffs-4"><a class="header" href="#diffs-4">Diffs</a></h3>
 <p><a id="f-335405191-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-1"><a class="header" href="#srcsummarymd-1">src/SUMMARY.md</a></h4>
 <details>
@@ -746,7 +782,7 @@ index 00000000..a77a7bfa
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-26-060052-cmt-utc8--a82792f8"><a class="header" href="#更新记录2026-09-26-060052-cmt-utc8--a82792f8">更新记录（2026-09-26 06:00:52 CMT (UTC+8) | a82792f8）</a></h2>
-<h3 id="summary-4"><a class="header" href="#summary-4">Summary</a></h3>
+<h3 id="summary-5"><a class="header" href="#summary-5">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-26 06:00:52 CMT (UTC+8)</code></li>
 <li>Base commit: <code>a82792f8</code></li>
@@ -754,12 +790,12 @@ index 00000000..a77a7bfa
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+30 / -0</code></li>
 </ul>
-<h3 id="index-4"><a class="header" href="#index-4">Index</a></h3>
+<h3 id="index-5"><a class="header" href="#index-5">Index</a></h3>
 <ol>
 <li><a href="#f-1446363535-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-1446363535-src-阅读-每日一文-抻面-阿城-md-2900585614">src/阅读/每日一文/抻面-阿城.md</a> <code>+29 / -0</code></li>
 </ol>
-<h3 id="diffs-4"><a class="header" href="#diffs-4">Diffs</a></h3>
+<h3 id="diffs-5"><a class="header" href="#diffs-5">Diffs</a></h3>
 <p><a id="f-1446363535-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-2"><a class="header" href="#srcsummarymd-2">src/SUMMARY.md</a></h4>
 <details>
@@ -824,7 +860,7 @@ index 00000000..63f48e91
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-25-142124-cmt-utc8--d94e48ca"><a class="header" href="#更新记录2026-09-25-142124-cmt-utc8--d94e48ca">更新记录（2026-09-25 14:21:24 CMT (UTC+8) | d94e48ca）</a></h2>
-<h3 id="summary-5"><a class="header" href="#summary-5">Summary</a></h3>
+<h3 id="summary-6"><a class="header" href="#summary-6">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-25 14:21:24 CMT (UTC+8)</code></li>
 <li>Base commit: <code>d94e48ca</code></li>
@@ -832,7 +868,7 @@ index 00000000..63f48e91
 <li>Changed files: <code>5</code></li>
 <li>Total lines: <code>+10 / -3</code></li>
 </ul>
-<h3 id="index-5"><a class="header" href="#index-5">Index</a></h3>
+<h3 id="index-6"><a class="header" href="#index-6">Index</a></h3>
 <ol>
 <li><a href="#f-3357117905-src-学习与进步-计算机科学极简入门指南-todo-md-1194328834">src/学习与进步/计算机科学极简入门指南/TODO.md</a> <code>+6 / -0</code></li>
 <li><a href="#f-3357117905-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十七章-运算器总装-md-3428988036">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十七章：运算器总装.md</a> <code>+1 / -1</code></li>
@@ -840,7 +876,7 @@ index 00000000..63f48e91
 <li><a href="#f-3357117905-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a> <code>+1 / -1</code></li>
 <li><a href="#f-3357117905-src-记录和归档-记录-个人记录-已读书目记录-md-1411435726">src/记录和归档/记录/个人记录/已读书目记录.md</a> <code>+1 / -0</code></li>
 </ol>
-<h3 id="diffs-5"><a class="header" href="#diffs-5">Diffs</a></h3>
+<h3 id="diffs-6"><a class="header" href="#diffs-6">Diffs</a></h3>
 <p><a id="f-3357117905-src-学习与进步-计算机科学极简入门指南-todo-md-1194328834"></a></p>
 <h4 id="src学习与进步计算机科学极简入门指南todomd"><a class="header" href="#src学习与进步计算机科学极简入门指南todomd">src/学习与进步/计算机科学极简入门指南/TODO.md</a></h4>
 <details>
@@ -902,7 +938,7 @@ index eb80aaf7..59150c1c 100644
 </code></pre>
 </details>
 <p><a id="f-3357117905-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049"></a></p>
-<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md-1"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md-1">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a></h4>
+<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md-2"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第十八章让电路记住一个比特md-2">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md</a></h4>
 <details>
 <summary><code>+1 / -1</code> Click to expand diff</summary>
 <pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\345\215\201\345\205\253\347\253\240\357\274\232\350\256\251\347\224\265\350\267\257\350\256\260\344\275\217\344\270\200\344\270\252\346\257\224\347\211\271.md"
@@ -940,7 +976,7 @@ index 8377b8e6..b07f25ec 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-25-060055-cmt-utc8--9a68e42b"><a class="header" href="#更新记录2026-09-25-060055-cmt-utc8--9a68e42b">更新记录（2026-09-25 06:00:55 CMT (UTC+8) | 9a68e42b）</a></h2>
-<h3 id="summary-6"><a class="header" href="#summary-6">Summary</a></h3>
+<h3 id="summary-7"><a class="header" href="#summary-7">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-25 06:00:55 CMT (UTC+8)</code></li>
 <li>Base commit: <code>9a68e42b</code></li>
@@ -948,12 +984,12 @@ index 8377b8e6..b07f25ec 100644
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+24 / -0</code></li>
 </ul>
-<h3 id="index-6"><a class="header" href="#index-6">Index</a></h3>
+<h3 id="index-7"><a class="header" href="#index-7">Index</a></h3>
 <ol>
 <li><a href="#f-3781137630-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-3781137630-src-阅读-每日一文-盆栽动物-巩高峰-md-1340318082">src/阅读/每日一文/盆栽动物-巩高峰.md</a> <code>+23 / -0</code></li>
 </ol>
-<h3 id="diffs-6"><a class="header" href="#diffs-6">Diffs</a></h3>
+<h3 id="diffs-7"><a class="header" href="#diffs-7">Diffs</a></h3>
 <p><a id="f-3781137630-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-3"><a class="header" href="#srcsummarymd-3">src/SUMMARY.md</a></h4>
 <details>
@@ -1012,7 +1048,7 @@ index 00000000..3852a034
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-24-190535-cmt-utc8--46e9433b"><a class="header" href="#更新记录2026-09-24-190535-cmt-utc8--46e9433b">更新记录（2026-09-24 19:05:35 CMT (UTC+8) | 46e9433b）</a></h2>
-<h3 id="summary-7"><a class="header" href="#summary-7">Summary</a></h3>
+<h3 id="summary-8"><a class="header" href="#summary-8">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-24 19:05:35 CMT (UTC+8)</code></li>
 <li>Base commit: <code>46e9433b</code></li>
@@ -1020,13 +1056,13 @@ index 00000000..3852a034
 <li>Changed files: <code>3</code></li>
 <li>Total lines: <code>+292 / -30</code></li>
 </ul>
-<h3 id="index-7"><a class="header" href="#index-7">Index</a></h3>
+<h3 id="index-8"><a class="header" href="#index-8">Index</a></h3>
 <ol>
 <li><a href="#f-3334775564-assets-wechat-origin-md-2464248456">assets/wechat-origin.md</a> <code>+124 / -30</code></li>
 <li><a href="#f-3334775564-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-3334775564-src-生活碎笔-文章与写作-那位小姐-md-2663796813">src/生活碎笔/文章与写作/那位小姐.md</a> <code>+167 / -0</code></li>
 </ol>
-<h3 id="diffs-7"><a class="header" href="#diffs-7">Diffs</a></h3>
+<h3 id="diffs-8"><a class="header" href="#diffs-8">Diffs</a></h3>
 <p><a id="f-3334775564-assets-wechat-origin-md-2464248456"></a></p>
 <h4 id="assetswechat-originmd"><a class="header" href="#assetswechat-originmd">assets/wechat-origin.md</a></h4>
 <details>
@@ -1438,7 +1474,7 @@ index 00000000..5e30e40e
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-09-24-100740-cmt-utc8--bd90ab2f"><a class="header" href="#更新记录2026-09-24-100740-cmt-utc8--bd90ab2f">更新记录（2026-09-24 10:07:40 CMT (UTC+8) | bd90ab2f）</a></h2>
-<h3 id="summary-8"><a class="header" href="#summary-8">Summary</a></h3>
+<h3 id="summary-9"><a class="header" href="#summary-9">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-09-24 10:07:40 CMT (UTC+8)</code></li>
 <li>Base commit: <code>bd90ab2f</code></li>
@@ -1446,11 +1482,11 @@ index 00000000..5e30e40e
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+6 / -4</code></li>
 </ul>
-<h3 id="index-8"><a class="header" href="#index-8">Index</a></h3>
+<h3 id="index-9"><a class="header" href="#index-9">Index</a></h3>
 <ol>
 <li><a href="#f-1233842669-assets-generate-last-updated-md-sh-2945781916">assets/generate-last-updated-md.sh</a> <code>+6 / -4</code></li>
 </ol>
-<h3 id="diffs-8"><a class="header" href="#diffs-8">Diffs</a></h3>
+<h3 id="diffs-9"><a class="header" href="#diffs-9">Diffs</a></h3>
 <p><a id="f-1233842669-assets-generate-last-updated-md-sh-2945781916"></a></p>
 <h4 id="assetsgenerate-last-updated-mdsh"><a class="header" href="#assetsgenerate-last-updated-mdsh">assets/generate-last-updated-md.sh</a></h4>
 <details>
@@ -1497,42 +1533,6 @@ index abc1556b..47a6f70f 100644
    --output &lt;path&gt;        Output markdown file path.
    -h, --help             Show this help.
  USAGE
-
-</code></pre>
-</details>
-<!-- LAST_UPDATED_ENTRY_END -->
-<!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-09-24-094247-cmt-utc8--d8dab53c"><a class="header" href="#更新记录2026-09-24-094247-cmt-utc8--d8dab53c">更新记录（2026-09-24 09:42:47 CMT (UTC+8) | d8dab53c）</a></h2>
-<h3 id="summary-9"><a class="header" href="#summary-9">Summary</a></h3>
-<ul>
-<li>Generated at: <code>2026-09-24 09:42:47 CMT (UTC+8)</code></li>
-<li>Base commit: <code>d8dab53c</code></li>
-<li>Diff source: <code>572ccd3c03f20bcaf94e5383100d9d2200143892..d8dab53c5118ba96fd9a51f5e281b4380d803428</code></li>
-<li>Changed files: <code>1</code></li>
-<li>Total lines: <code>+1 / -1</code></li>
-</ul>
-<h3 id="index-9"><a class="header" href="#index-9">Index</a></h3>
-<ol>
-<li><a href="#f-803749966-github-workflows-mdbook-yml-863419811">.github/workflows/mdbook.yml</a> <code>+1 / -1</code></li>
-</ol>
-<h3 id="diffs-9"><a class="header" href="#diffs-9">Diffs</a></h3>
-<p><a id="f-803749966-github-workflows-mdbook-yml-863419811"></a></p>
-<h4 id="githubworkflowsmdbookyml"><a class="header" href="#githubworkflowsmdbookyml">.github/workflows/mdbook.yml</a></h4>
-<details>
-<summary><code>+1 / -1</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/.github/workflows/mdbook.yml b/.github/workflows/mdbook.yml
-index 2cf1504a..4cc720a3 100644
---- a/.github/workflows/mdbook.yml
-+++ b/.github/workflows/mdbook.yml
-@@ -124,7 +124,7 @@ jobs:
-         shell: bash
-         run: |
-           set -Eeuo pipefail
--          git fetch origin gh-pages-mirror
-+          git fetch origin gh-pages-mirror:refs/remotes/origin/gh-pages-mirror
-           git show origin/gh-pages-mirror:last-updated.md &gt; src/last-updated.md
- 
-       # 首次迁移到镜像基线前，artifact 仍作为兼容性回退。
 
 </code></pre>
 </details>
@@ -33007,6 +33007,7 @@ Q = 0，Q̅ = 1
 <h3 id="给记忆装上两个按钮"><a class="header" href="#给记忆装上两个按钮">给记忆装上两个按钮</a></h3>
 <p>　　光稳定还不够，能“写”才行。为此再引入两个输入：S（Set，置位）和 R（Reset，复位），告诉电路是要写 1、写 0，还是保持原值。</p>
 <p>　　它现在有了一个名字： <strong>SR 锁存器</strong> 。</p>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/SR锁存器两个NOR门交叉反馈.png" alt="SR 锁存器由两个交叉反馈的或非门组成，R 和 S 从左侧输入，Q 与反相输出从右侧引出"><span class="img-wrapper"><img src="https://raw.githubusercontent.com/TinySnow/computer-science-guide-resources/master/computer-science-guide/content/SR锁存器两个NOR门交叉反馈.png" alt="SR 锁存器由两个交叉反馈的或非门组成，R 和 S 从左侧输入，Q 与反相输出从右侧引出"></span></label></p>
 <div class="table-wrapper">
 <table>
 <thead>
