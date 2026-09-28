@@ -5,6 +5,163 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-09-28 19:25:08 CMT (UTC+8) | 87962a1e）
+
+### Summary
+
+- Generated at: `2026-09-28 19:25:08 CMT (UTC+8)`
+- Base commit: `87962a1e`
+- Diff source: `e582cf04d6a4519136c1256e4b6391d39187d1f5..87962a1ee60430bedb29b83afd55ad741981fd2f`
+- Changed files: `1`
+- Total lines: `+80 / -1`
+
+### Commit Messages
+
+- `87962a1e` feat: 最近更新展示提交信息
+
+### Index
+
+1. [assets/generate-last-updated-md.sh](#f-1866868302-assets-generate-last-updated-md-sh-2945781916) `+80 / -1`
+
+### Diffs
+
+<a id="f-1866868302-assets-generate-last-updated-md-sh-2945781916"></a>
+#### assets/generate-last-updated-md.sh
+
+<details>
+<summary><code>+80 / -1</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/assets/generate-last-updated-md.sh b/assets/generate-last-updated-md.sh
+index 47a6f70f..4160c924 100644
+--- a/assets/generate-last-updated-md.sh
++++ b/assets/generate-last-updated-md.sh
+@@ -11,6 +11,7 @@
+ # 每条“变更记录”包含：
+ # - 记录标题（本次变更总标题）
+ # - Summary（生成时间、基准提交、diff 来源、统计）
++# - Commit Messages（该次推送包含的提交标题和正文）
+ # - Index（文件索引 + +/-）
+ # - 每个文件一个可折叠 diff 区块
+ #
+@@ -267,8 +268,51 @@ write_document_header() {
+ EOF_HEADER
+ }
+ 
++write_commit_messages() {
++  # 一次 push 可能含多个 commit，因此按范围列出全部提交，而非仅展示 HEAD。
++  # 旧记录也通过其 Diff source 范围补写这一节；无法解析的旧范围显示说明，
++  # 不影响整个最近更新页面的生成。
++  local diff_source="$1"
++  local commits_file="${TMP_DIR}/commit-message-revisions.txt"
++  local commit subject body line
++
++  printf '### Commit Messages\n\n'
++  if [[ "${diff_source}" == "staged" ]]; then
++    printf '暂存区变更尚未提交，没有 commit message。\n\n'
++    return
++  fi
++
++  if ! git -C "${PROOT}" rev-list "${diff_source}" > "${commits_file}" 2>/dev/null; then
++    printf '无法读取这条历史记录对应的提交信息。\n\n'
++    return
++  fi
++  if [[ ! -s "${commits_file}" ]]; then
++    printf '该范围内没有提交。\n\n'
++    return
++  fi
++
++  while IFS= read -r commit; do
++    subject="$(git -C "${PROOT}" log -1 --format=%s "${commit}")"
++    body="$(git -C "${PROOT}" log -1 --format=%b "${commit}")"
++    printf -- '- `%s` %s\n' "${commit:0:8}" "${subject}"
++    if [[ -n "${body}" ]]; then
++      printf '\n'
++      while IFS= read -r line; do
++        # 缩进后的引用块保留多段提交说明，也不会将其中的标题误当成页面小节。
++        if [[ -n "${line}" ]]; then
++          printf '  > %s\n' "${line}"
++        else
++          printf '  >\n'
++        fi
++      done <<< "${body}"
++      printf '\n'
++    fi
++  done < "${commits_file}"
++  printf '\n'
++}
++
+ write_current_entry() {
+-  # 写入“本次变更记录块”，包含标题、Summary、Index 与 diff 详情。
++  # 写入“本次变更记录块”，包含标题、Summary、Commit Messages、Index 与 diff 详情。
+   local target_file="$1"
+   local entry_title="$2"
+   local generated_at="$3"
+@@ -296,6 +340,8 @@ write_current_entry() {
+     fi
+     printf '\n'
+ 
++    write_commit_messages "${diff_source}"
++
+     if [[ "${file_count}" -eq 0 ]]; then
+       printf '### No Changes\n\n'
+       printf 'No file changes found for the selected diff source.\n\n'
+@@ -331,6 +377,38 @@ write_current_entry() {
+   } > "${target_file}"
+ }
+ 
++upgrade_old_entry() {
++  # 已保存的历史块不会随脚本更新而重新生成。首次启用 Commit Messages 时，
++  # 从旧块的 Diff source 补写一次，并保持其余内容（包括原始 diff）原样。
++  local entry_file="$1"
++  local upgraded_file="${entry_file}.upgraded"
++  local diff_source="" line inserted=0
++  local source_pattern='^- Diff source: `([^`]+)`$'
++
++  if grep -Fxq '### Commit Messages' "${entry_file}"; then
++    return
++  fi
++
++  while IFS= read -r line; do
++    if [[ "${line}" =~ ${source_pattern} ]]; then
++      diff_source="${BASH_REMATCH[1]}"
++      break
++    fi
++  done < "${entry_file}"
++
++  : > "${upgraded_file}"
++  while IFS= read -r line || [[ -n "${line}" ]]; do
++    if [[ "${inserted}" -eq 0 && ( "${line}" == '### Index' || "${line}" == '### No Changes' ) ]]; then
++      write_commit_messages "${diff_source}" >> "${upgraded_file}"
++      inserted=1
++    fi
++    printf '%s\n' "${line}" >> "${upgraded_file}"
++  done < "${entry_file}"
++  if [[ "${inserted}" -eq 1 ]]; then
++    mv "${upgraded_file}" "${entry_file}"
++  fi
++}
++
+ extract_old_entries() {
+   # 从旧版 last-updated.md 中提取历史记录块（按出现顺序：新 -> 旧）。
+   # 仅识别被 ENTRY_START/ENTRY_END 包裹的块，旧格式（无标记）会被自动忽略。
+@@ -365,6 +443,7 @@ extract_old_entries() {
+ 
+       printf '%s\n' "${line}" >> "${entry_file}"
+       if [[ "${line}" == "${ENTRY_END_MARK}" ]]; then
++        upgrade_old_entry "${entry_file}"
+         OLD_ENTRY_FILES+=("${entry_file}")
+         idx=$((idx + 1))
+         in_entry=0
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-09-28 18:52:11 CMT (UTC+8) | e582cf04）
 
 ### Summary
@@ -14,6 +171,13 @@
 - Diff source: `e44eb41ca4c60aa2eb05b899ab91e92fe65bf42f..e582cf04d6a4519136c1256e4b6391d39187d1f5`
 - Changed files: `1`
 - Total lines: `+94 / -26`
+
+### Commit Messages
+
+- `e582cf04` 重写第二十章《触发器》：补足动机、构成与原理
+
+  > 原章偏简略。改写后依次讲清：锁存器电平敏感为何顶替不了边沿敏感（我们缺什么）；主从结构如何用两级锁存器加反相时钟拼出边沿敏感，并按时钟四阶段逐拍走一遍（怎么构成、能做什么）；与锁存器的对比、相机类比例子；为什么必须边沿敏感（穿透 race-through 与多步计算的分拍）；触发器家族与向寄存器过渡。复习保持紧邻前三章（17/18/19）窗口。
+
 
 ### Index
 
@@ -209,7 +373,6 @@ index cf9d0db4..e3d48799 100644
 
 <!-- LAST_UPDATED_ENTRY_END -->
 
-
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-09-28 15:57:25 CMT (UTC+8) | e44eb41c）
 
@@ -220,6 +383,17 @@ index cf9d0db4..e3d48799 100644
 - Diff source: `aaf025800aa4e1fbe7221de29253dd5526753f2f..e44eb41ca4c60aa2eb05b899ab91e92fe65bf42f`
 - Changed files: `1`
 - Total lines: `+24 / -57`
+
+### Commit Messages
+
+- `e44eb41c` 校正时钟采样说明并加入第十九章配图
+
+  > 修正 D 在采样边沿附近跳变时必然采到旧值的错误表述，改为建立时间、保持时间和采样不确定性的准确说明。
+  >
+  > 补充 Q 在有效边沿后经过传播延迟再更新的过程，并同步调整时序图示例、读图步骤及思考题答案。
+  >
+  > 在时钟定义、周期限制和边沿读图三处分别加入共同节拍图、计算时间对照图与动态采样时序图。
+
 
 ### Index
 
@@ -389,6 +563,10 @@ index 8f9d7927..e26aeee4 100644
 - Changed files: `1`
 - Total lines: `+67 / -13`
 
+### Commit Messages
+
+- `aaf02580` 指南第19章文本审校完成。
+
 ### Index
 
 1. [src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十九章：给电路一个共同节拍.md](#f-541424622-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十九章-给电路一个共同节拍-md-1148113103) `+67 / -13`
@@ -552,6 +730,10 @@ index 59150c1c..8f9d7927 100644
 - Diff source: `88582960a91f1e1e8283f254d5320bb5ab8ad2d4..5afa4117c31fc69c753a625cdca9c7fd3a3a27d6`
 - Changed files: `1`
 - Total lines: `+94 / -70`
+
+### Commit Messages
+
+- `5afa4117` 修改了2026.9.28早上api损坏的每日一文。
 
 ### Index
 
@@ -849,6 +1031,17 @@ index 014ceff9..37f7ea00 100644
 - Changed files: `1`
 - Total lines: `+2 / -0`
 
+### Commit Messages
+
+- `88582960` 在第十八章补入 SR 锁存器结构图
+
+  > 在正式引入 SR 锁存器之后、真值表之前加入资源仓库中的结构图链接，让读者先辨认 S、R、Q 与反相输出的端口和交叉反馈路径。
+  >
+  > 沿用本章已有的动态图讲解状态变化，静态图专注解释两只 NOR 门的连接方式；未改动其它章节。
+  >
+  > 已检查 Markdown 图片路径与资源仓库中的文件名一致，并在博客仓库运行 mdbook build，构建通过。
+
+
 ### Index
 
 1. [src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md](#f-2325037630-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049) `+2 / -0`
@@ -892,6 +1085,10 @@ index 5deee618..69c00f2f 100644
 - Diff source: `9d2b8dca249fa0e9f9826e36967c352905061ad0..5fae137b79480a753c30c2eb2543347617f8da77`
 - Changed files: `2`
 - Total lines: `+168 / -0`
+
+### Commit Messages
+
+- `5fae137b` 每日一文：他是谁 - 希区柯克
 
 ### Index
 
@@ -1122,6 +1319,17 @@ index 00000000..014ceff9
 - Changed files: `1`
 - Total lines: `+6 / -0`
 
+### Commit Messages
+
+- `9d2b8dca` 为锁存器章节补充三张机制配图
+
+  > 在单非门反馈段落后加入振荡动画，帮助读者观察传播延迟造成的循环翻转。
+  >
+  > 在 SR 锁存器真值表后加入写入与保持动画，突出输入撤去后由交叉反馈接手维持状态。
+  >
+  > 在 D 锁存器说明后加入数据通路图，直观呈现互斥写入请求与危险组合的规避方式。
+
+
 ### Index
 
 1. [src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十八章：让电路记住一个比特.md](#f-2638430525-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十八章-让电路记住一个比特-md-851004049) `+6 / -0`
@@ -1184,6 +1392,19 @@ index 60b83486..5deee618 100644
 - Changed files: `1`
 - Total lines: `+6 / -0`
 
+### Commit Messages
+
+- `fdbdee6a` 第十五章：补充算术逻辑单元正文配图
+
+  > 在四路并行运算的说明后加入控制码切换 GIF，直观展示相同输入下多路选择器依次放行四种结果。
+  >
+  > 在具体示例后加入控制码、运算类型与输出值的静态对应图，帮助读者对照正文表格。
+  >
+  > 在组合逻辑说明处加入 ALU 不保存中间结果的示意图，为后续状态标志和存储电路章节建立过渡。
+  >
+  > 为三张图片补充描述性替代文本，并保持正文原有结构与表述不变。
+
+
 ### Index
 
 1. [src/学习与进步/计算机科学极简入门指南/计算机组成原理/第十五章：算术逻辑单元.md](#f-1971418245-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第十五章-算术逻辑单元-md-759758461) `+6 / -0`
@@ -1245,6 +1466,10 @@ index 342eef50..e06b1d0b 100644
 - Diff source: `a82792f8e46fa517ab93b422dcac07e1353a079d..8b3d4ba7636e63e086ba1c156de741a7b449b1af`
 - Changed files: `2`
 - Total lines: `+20 / -0`
+
+### Commit Messages
+
+- `8b3d4ba7` 每日一文：往事一页 - 卡夫卡
 
 ### Index
 
@@ -1309,97 +1534,6 @@ index 00000000..a77a7bfa
 +　　恰在这时，我相信我看见了国王本人站在皇宫的一扇窗户边。平常他从不到这外间来，而总是深居内院，但这次至少我相信他站在窗户边，低头看着自己皇宫前发生的这一幕惨剧。
 +
 +　　“事情将会怎样呢？”大家你问我，我问你，“这种重负和折磨我们还要忍受多久呢？惹来了游牧民，但却没有办法将他们退去。宫门仍旧紧闭着，以往那些总是盛气凌人地进出皇宫的卫兵这时却被锁在铁窗之中。于是，我们这些工匠和商人就肩负了拯救祖国的使命，然而这样的使命我们却担负不起。我们也从来没有夸过口，说自己有这般能力。这是一场误会，而我们却要毁于这场误会。
-
-~~~~~
-
-</details>
-
-<!-- LAST_UPDATED_ENTRY_END -->
-
-<!-- LAST_UPDATED_ENTRY_START -->
-## 更新记录（2026-09-26 06:00:52 CMT (UTC+8) | a82792f8）
-
-### Summary
-
-- Generated at: `2026-09-26 06:00:52 CMT (UTC+8)`
-- Base commit: `a82792f8`
-- Diff source: `d94e48ca07a5d97d6622c3870e10ea90f4498c1a..a82792f8e46fa517ab93b422dcac07e1353a079d`
-- Changed files: `2`
-- Total lines: `+30 / -0`
-
-### Index
-
-1. [src/SUMMARY.md](#f-1446363535-src-summary-md-3501257646) `+1 / -0`
-2. [src/阅读/每日一文/抻面-阿城.md](#f-1446363535-src-阅读-每日一文-抻面-阿城-md-2900585614) `+29 / -0`
-
-### Diffs
-
-<a id="f-1446363535-src-summary-md-3501257646"></a>
-#### src/SUMMARY.md
-
-<details>
-<summary><code>+1 / -0</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/src/SUMMARY.md b/src/SUMMARY.md
-index 3c30d140..bea040de 100644
---- a/src/SUMMARY.md
-+++ b/src/SUMMARY.md
-@@ -1438,6 +1438,7 @@
-     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
-     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
- - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
-+  - [抻面 - 阿城](阅读/每日一文/抻面-阿城.md)
-   - [盆栽动物 - 巩高峰](阅读/每日一文/盆栽动物-巩高峰.md)
-   - [母难月 - 吴念真](阅读/每日一文/母难月-吴念真.md)
-   - [不完美的完美 - 刘墉](阅读/每日一文/不完美的完美-刘墉.md)
-
-~~~~~
-
-</details>
-
-<a id="f-1446363535-src-阅读-每日一文-抻面-阿城-md-2900585614"></a>
-#### src/阅读/每日一文/抻面-阿城.md
-
-<details>
-<summary><code>+29 / -0</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git "a/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\346\212\273\351\235\242-\351\230\277\345\237\216.md" "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\346\212\273\351\235\242-\351\230\277\345\237\216.md"
-new file mode 100644
-index 00000000..63f48e91
---- /dev/null
-+++ "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\346\212\273\351\235\242-\351\230\277\345\237\216.md"
-@@ -0,0 +1,29 @@
-+# 抻面
-+
-+*阿城*
-+
-+　　铁良是满族人。问他祖上是哪个旗的的，他说不知道，管它哪个旗的，还不都是干活儿吃饭。
-+
-+　　铁良在北京是个小有名气的人，名气是抻得一手好面。铁良有个要好的弟兄，也是个有名气的人，名气是和馅儿。大饭庄，有名的饭庄，凡要蒸包子煮饺子烙馅儿饼，总之凡要用到馅儿的，都是铁良这个弟兄去和。天还没亮就起身，和完一个店的再去和另外一个店的，天亮的时候，一天的活儿干完了。肉，菜，料，和在一起，掺高汤打匀。打匀是个力气活儿，而且还不能上午打好的馅儿下午变稀汤儿了，其中有分寸。
-+
-+　　铁良呢，专在一家做。面是随时有客要吃就得煮的。
-+
-+　　铁良原来有几股钱在店里，后来店叫政府公私合营了，铁良有些不太愿意，在公家人面前说了几句。公家人也是以前常来店里吃铁良抻的面的主儿，劝了铁良几句。几年以后，铁良知道害怕了，心理感激着那个公家人。
-+
-+　　抻面最讲究的是和面。和面先和个大概齐，之后放在案子上沾块湿布“省”着。后来运动多了，铁良说，这反省就是咱们的省面。省好了面，愿意怎么揉掐捏拉，随您便。
-+
-+　　省好了的面，内里没有疙瘩。面粉一掺了水，放不多时就会发酸，所以要下碱。下了碱的面，就可以抻了。
-+
-+　　有人用舌头试碱放多了还是少了，舔舔，有一股苦甜香，就是合适了。铁良试碱不用舌头，一半儿的原因是抻面是个露脸的活儿，是公开的，客人看着，当面的。铁良用鼻子，闻闻，碱多了，就再放放，“省”碱。
-+
-+　　跑堂的数了客人要的数儿，拉长声儿喊给铁良。客人出到街上，靠在铺面窗口儿看铁良抻面，好像是买了一张看戏的站票。
-+
-+　　铁良不含糊，当当一手揪出一拳头面，啪，和在一起，搓成粗条儿，掐着两头儿，上下一悠，就一个人长了。人伸开胳膊的长度等于这个人的身高。铁良两手往当中一合，就是两股，再抻再合，就是四股，再抻再合，八股，十六股，三十二股，六十四股，一百二十八股。之后掐去两头，朝脑后一甩，好像是大闺女的辫子飞落到灶上的锅里，客人就笑了，转身回去店里座位上。
-+
-+　　锅边儿的伙计用双长筷子搅两下，大笊篱捞出盛到海碗里，海碗里有牛骨高汤，入好面，撒几片芫荽，葱丝儿，带红根儿的嫩菠菜，满天星辣椒油花儿，红，绿，白，啪哒，放在了客人面前。客人挑起一箸子面，撑开嘴吃，热气蒸得额头有点儿亮。铁良呢，和街上的熟人聊了有一会儿了。
-+
-+　　五 O 年代初，镇压反革命，押去刑场的时候还许犯人点路边的馆子，吃最后一口人间食。有个老头子被押在车上，路过铁良的店，说是去阴间的路上得吃口抻面。于是押进去，老头子张口要龙须面，铁良也不说话，开始抻。
-+
-+　　铁良几下就抻好了，亲自放面下锅，瞬时捞起，入在汤里双手捧了碗放在老头儿面前。围观的人都伸头去看，说不出话来。老头儿挑起面迎光看看，手上的铐哗啦啦响，吃了一口，说，是这个意思，就招呼上路了。
-+
-+　　铁良后来跟人说，这就是当初借钱给我学手艺的恩人，他就是要我抻头发丝儿面，我也得抻出来。
 
 ~~~~~
 
