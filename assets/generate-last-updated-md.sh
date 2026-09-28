@@ -11,6 +11,7 @@
 # 每条“变更记录”包含：
 # - 记录标题（本次变更总标题）
 # - Summary（生成时间、基准提交、diff 来源、统计）
+# - Commit Messages（该次推送包含的提交标题和正文）
 # - Index（文件索引 + +/-）
 # - 每个文件一个可折叠 diff 区块
 #
@@ -267,8 +268,51 @@ write_document_header() {
 EOF_HEADER
 }
 
+write_commit_messages() {
+  # 一次 push 可能含多个 commit，因此按范围列出全部提交，而非仅展示 HEAD。
+  # 旧记录也通过其 Diff source 范围补写这一节；无法解析的旧范围显示说明，
+  # 不影响整个最近更新页面的生成。
+  local diff_source="$1"
+  local commits_file="${TMP_DIR}/commit-message-revisions.txt"
+  local commit subject body line
+
+  printf '### Commit Messages\n\n'
+  if [[ "${diff_source}" == "staged" ]]; then
+    printf '暂存区变更尚未提交，没有 commit message。\n\n'
+    return
+  fi
+
+  if ! git -C "${PROOT}" rev-list "${diff_source}" > "${commits_file}" 2>/dev/null; then
+    printf '无法读取这条历史记录对应的提交信息。\n\n'
+    return
+  fi
+  if [[ ! -s "${commits_file}" ]]; then
+    printf '该范围内没有提交。\n\n'
+    return
+  fi
+
+  while IFS= read -r commit; do
+    subject="$(git -C "${PROOT}" log -1 --format=%s "${commit}")"
+    body="$(git -C "${PROOT}" log -1 --format=%b "${commit}")"
+    printf -- '- `%s` %s\n' "${commit:0:8}" "${subject}"
+    if [[ -n "${body}" ]]; then
+      printf '\n'
+      while IFS= read -r line; do
+        # 缩进后的引用块保留多段提交说明，也不会将其中的标题误当成页面小节。
+        if [[ -n "${line}" ]]; then
+          printf '  > %s\n' "${line}"
+        else
+          printf '  >\n'
+        fi
+      done <<< "${body}"
+      printf '\n'
+    fi
+  done < "${commits_file}"
+  printf '\n'
+}
+
 write_current_entry() {
-  # 写入“本次变更记录块”，包含标题、Summary、Index 与 diff 详情。
+  # 写入“本次变更记录块”，包含标题、Summary、Commit Messages、Index 与 diff 详情。
   local target_file="$1"
   local entry_title="$2"
   local generated_at="$3"
@@ -295,6 +339,8 @@ write_current_entry() {
       printf -- '- Binary-like diffs: `%s`\n' "${binary_count}"
     fi
     printf '\n'
+
+    write_commit_messages "${diff_source}"
 
     if [[ "${file_count}" -eq 0 ]]; then
       printf '### No Changes\n\n'
@@ -331,6 +377,38 @@ write_current_entry() {
   } > "${target_file}"
 }
 
+upgrade_old_entry() {
+  # 已保存的历史块不会随脚本更新而重新生成。首次启用 Commit Messages 时，
+  # 从旧块的 Diff source 补写一次，并保持其余内容（包括原始 diff）原样。
+  local entry_file="$1"
+  local upgraded_file="${entry_file}.upgraded"
+  local diff_source="" line inserted=0
+  local source_pattern='^- Diff source: `([^`]+)`$'
+
+  if grep -Fxq '### Commit Messages' "${entry_file}"; then
+    return
+  fi
+
+  while IFS= read -r line; do
+    if [[ "${line}" =~ ${source_pattern} ]]; then
+      diff_source="${BASH_REMATCH[1]}"
+      break
+    fi
+  done < "${entry_file}"
+
+  : > "${upgraded_file}"
+  while IFS= read -r line || [[ -n "${line}" ]]; do
+    if [[ "${inserted}" -eq 0 && ( "${line}" == '### Index' || "${line}" == '### No Changes' ) ]]; then
+      write_commit_messages "${diff_source}" >> "${upgraded_file}"
+      inserted=1
+    fi
+    printf '%s\n' "${line}" >> "${upgraded_file}"
+  done < "${entry_file}"
+  if [[ "${inserted}" -eq 1 ]]; then
+    mv "${upgraded_file}" "${entry_file}"
+  fi
+}
+
 extract_old_entries() {
   # 从旧版 last-updated.md 中提取历史记录块（按出现顺序：新 -> 旧）。
   # 仅识别被 ENTRY_START/ENTRY_END 包裹的块，旧格式（无标记）会被自动忽略。
@@ -365,6 +443,7 @@ extract_old_entries() {
 
       printf '%s\n' "${line}" >> "${entry_file}"
       if [[ "${line}" == "${ENTRY_END_MARK}" ]]; then
+        upgrade_old_entry "${entry_file}"
         OLD_ENTRY_FILES+=("${entry_file}")
         idx=$((idx + 1))
         in_entry=0
