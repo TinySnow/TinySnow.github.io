@@ -245,20 +245,76 @@
 </ul>
 <h2 id="tldr"><a class="header" href="#tldr">TL;DR</a></h2>
 <ul>
-<li>D 触发器只在指定的时钟边沿接收输入</li>
-<li>边沿之间，无论 D 怎样变化，Q 都保持不动</li>
-<li>触发器是同步计算机最常用的一位记忆单元</li>
+<li>触发器是一种“只在时钟边沿更新”的一位记忆单元</li>
+<li>它由两级锁存器（主从结构）串联而成，两级用相反相位的时钟控制</li>
+<li>边沿之间，D 怎么变，Q 都不动；只有边沿那一刻才把 D 搬进 Q</li>
+<li>触发器让同步电路“一拍一个动作”成为可能，是寄存器与 CPU 的基础</li>
 </ul>
 <h2 id="正文"><a class="header" href="#正文">正文</a></h2>
-<p>　　D 锁存器像一扇门：使能为 1 时，门一直开着，门外的数据随时可以溜进来。可我们真正想要的，是只在铃响的一瞬间开门，把门口的数据拉进来，然后立刻关上。</p>
-<p>　　把“开一段时间”改成“只开一瞬间”，这个新部件就是 <strong>D 触发器</strong>（D flip-flop）。</p>
-<h3 id="只在边沿拍一张照片"><a class="header" href="#只在边沿拍一张照片">只在边沿拍一张照片</a></h3>
-<p>　　假设它在时钟上升沿工作，行为可以浓缩成两行：</p>
-<pre><code class="language-text">时钟上升沿到来：Q ← D
-其他所有时间：  Q 保持原值
+<p>　　上一章我们拿到了时钟，更早已经造出了锁存器。可真把两者配到一起，会发现一个尴尬：<strong>锁存器“开门”的是一整段时间，而时钟的边沿只是一个瞬间。</strong> 两者根本对不上。</p>
+<p>　　锁存器在使能为 1 的整段时间里都是透明的——D 一变，Q 就跟着变。时钟明明给了我们“大家统一交接”的时刻，锁存器却根本不听“时刻”，它只听“电平”。所以我们缺的，是一个全新的记忆单元：<strong>平时关着门，只在时钟边沿那一瞬间开门，把门口的 D 拉进来，然后立刻关上。</strong></p>
+<p>　　这个部件，就是<strong>触发器</strong>（flip-flop）。</p>
+<h3 id="为什么不能直接拿锁存器顶替"><a class="header" href="#为什么不能直接拿锁存器顶替">为什么不能直接拿锁存器顶替</a></h3>
+<p>　　先看一把锁存器的脾气：</p>
+<ul>
+<li><code>E = 1</code>：透明，Q 跟随 D</li>
+<li><code>E = 0</code>：保持，Q 不动</li>
+</ul>
+<p>　　那么，直接把时钟接到 <code>E</code> 上会怎样？<code>CLK = 1</code> 的半个周期里，锁存器一直透明，D 在这段时间里的任何变化都会一路传到 Q。<strong>我们想躲开的“整段时间都开放”，原封不动地又回来了。</strong></p>
+<p>　　问题的根子在于：锁存器是<strong>电平敏感</strong>的——它看的是“使能是高还是低”；而我们想要的是<strong>边沿敏感</strong>——只看“时钟有没有跳变”这一瞬间。电平敏感和边沿敏感，是两种截然不同的脾气，<strong>单靠一个锁存器，改不出来。</strong></p>
+<p><strong>思考题 1</strong></p>
+<blockquote>
+<p>　　如果只是把时钟接到 D 锁存器的使能端，能得到“只在边沿更新”的效果吗？为什么？</p>
+</blockquote>
+<h3 id="一个锁存器做不到那就用两个"><a class="header" href="#一个锁存器做不到那就用两个">一个锁存器做不到，那就用两个</a></h3>
+<p>　　回头想想：锁存器之所以“透明”，是因为在使能期间，它一直把输入放行到输出。那么换一个思路——<strong>在它放行的时候，把后面死死挡住；等它挡住的时候，再把后面放开。</strong> 从外面看，是不是就只剩下“交接的那一瞬间”了？</p>
+<p>　　为了做到“轮流开合”，我们把<strong>两个锁存器一前一后串起来</strong>，并用<strong>相反相位的时钟</strong>分别控制它们：</p>
+<pre><code class="language-text">D ──&gt; [ 主锁存器 ] ──&gt; [ 从锁存器 ] ──&gt; Q
+       使能：时钟取反      使能：时钟
 </code></pre>
-<p>　　可以把它想成一台相机。D 是镜头前不断变化的景物，时钟上升沿是快门。Q 保存的，是按下快门那一刻的画面，而不是整段过程。快门之外，景物怎么变都无所谓。</p>
-<p>　　看一个具体例子：</p>
+<ul>
+<li><strong>主锁存器</strong>：时钟为 0 时透明（跟随 D），为 1 时保持</li>
+<li><strong>从锁存器</strong>：时钟为 1 时透明，为 0 时保持</li>
+</ul>
+<p>　　注意两者的使能正好相反：<strong>一个开门时，另一个必定关门。</strong> 这样串起来的两级，整体上就不再是“电平敏感”的了。</p>
+<h3 id="跟着时钟走一遍"><a class="header" href="#跟着时钟走一遍">跟着时钟走一遍</a></h3>
+<p>　　把时钟从低到高再走一圈，看看 Q 到底在什么时候变：</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left">阶段</th><th style="text-align: left">主锁存器</th><th style="text-align: left">从锁存器</th><th style="text-align: left">结果</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left"><code>CLK = 0</code></td><td style="text-align: left">透明（悄悄跟随 D）</td><td style="text-align: left">保持</td><td style="text-align: left">Q 不动</td></tr>
+<tr><td style="text-align: left"><code>CLK</code> 上升沿</td><td style="text-align: left">转为保持</td><td style="text-align: left">转为透明</td><td style="text-align: left">主把边沿前的 D 冻结下来交给从，<strong>Q 更新</strong></td></tr>
+<tr><td style="text-align: left"><code>CLK = 1</code></td><td style="text-align: left">保持</td><td style="text-align: left">透明</td><td style="text-align: left">Q 保持，主不再看 D</td></tr>
+<tr><td style="text-align: left"><code>CLK</code> 下降沿</td><td style="text-align: left">转为透明</td><td style="text-align: left">转为保持</td><td style="text-align: left">Q 冻结，主重新开始跟随 D</td></tr>
+</tbody>
+</table>
+</div>
+<p>　　看第一行：<code>CLK = 0</code> 时，从锁存器关着门，所以 Q 不动；与此同时，主锁存器正偷偷跟着 D。到了<strong>上升沿</strong>，主锁存器“啪”地一下闭上——它把刚刚（边沿前一刻）D 的值锁住，而从锁存器这时打开，把这个值送到 Q。<strong>于是 Q 只在上升沿更新，且更新的正是边沿前站稳的那个 D。</strong></p>
+<p>　　这正好接上上一章的结论：<strong>D 必须在边沿前稳定一小段时间（建立时间），再在边沿后稳定一小段时间（保持时间）。</strong> 主锁存器锁住的，就是这个早已站稳的 D；如果 D 恰好在边沿附近跳变，主锁存器锁到的就是“没站稳”的值，结果便不可靠。</p>
+<p>　　一句话概括：<strong>主锁存器负责在边沿“拍照”，从锁存器负责把这张照片一直举在 Q 上。</strong> 这里并没有发明新的记忆原理，反馈依旧负责“记住”；两级反相开合，只是把“开门的时间”从一整段，收窄成了一个点。</p>
+<p><strong>思考题 2</strong></p>
+<blockquote>
+<p>　　主从结构里，两级锁存器为什么要用相反相位的时钟？如果两级用同一个时钟，会怎样？</p>
+</blockquote>
+<h3 id="它和锁存器差在哪里"><a class="header" href="#它和锁存器差在哪里">它和锁存器差在哪里</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: left"></th><th style="text-align: left">锁存器</th><th style="text-align: left">触发器</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: left">敏感对象</td><td style="text-align: left">电平</td><td style="text-align: left">边沿</td></tr>
+<tr><td style="text-align: left">使能期间</td><td style="text-align: left">输入一变，输出跟着变</td><td style="text-align: left">与输入无关</td></tr>
+<tr><td style="text-align: left">边沿之间</td><td style="text-align: left">输出可能被输入带动</td><td style="text-align: left">输出纹丝不动</td></tr>
+<tr><td style="text-align: left">一句话</td><td style="text-align: left">“门一直开着”</td><td style="text-align: left">“只按一次快门”</td></tr>
+</tbody>
+</table>
+</div>
+<p>　　触发器可以想成一台相机：D 是镜头前不断变化的景物，时钟上升沿是快门。Q 保存的，是按下快门那一刻的画面，而不是整段过程。快门之外，景物怎么变都无所谓。</p>
+<p>　　看一个具体例子（上升沿采样）：</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -271,29 +327,32 @@
 </tbody>
 </table>
 </div>
-<p>　　注意第 1 次与第 2 次之间：这段时间里 D 即使来回变化，Q 也一直稳稳地停在 1。这正是触发器与锁存器最本质的差别。</p>
-<h3 id="它和锁存器差在哪里"><a class="header" href="#它和锁存器差在哪里">它和锁存器差在哪里</a></h3>
+<p>　　第 1 次与第 2 次之间，D 即使来回变化，Q 也一直稳稳停在 1。<strong>这正是触发器与锁存器最本质的差别。</strong></p>
+<h3 id="为什么非要边沿敏感"><a class="header" href="#为什么非要边沿敏感">为什么非要边沿敏感</a></h3>
+<p>　　到这一步，值得停下来想一想：多花一级锁存器，换来“不透明”，到底值不值？</p>
+<p>　　设想我们要做多步计算。如果用的是锁存器：在一个周期内，信号可能从第一级穿透到第二级、第三级……<strong>半拍之间，一个结果还没定，后面已经被它带着变了</strong>，我们根本说不清“这一拍算出来的到底是什么”。这叫穿透（race-through），是同步电路的大忌。</p>
+<p>　　换成触发器，一切就清楚了：</p>
 <ul>
-<li>锁存器在使能的一段时间内开放，输入一变输出就跟着变</li>
-<li>触发器只在时钟边沿采样，其余时间输入根本“递不进来”</li>
+<li><strong>周期内</strong>：组合逻辑慢慢算，触发器一律关着门，谁也不许动</li>
+<li><strong>边沿一到</strong>：所有触发器同时开门，把各自算好的结果一起收下，然后立刻关门</li>
 </ul>
-<p>　　“开放一段时间”和“只开一瞬间”看似差别不大，却让整台机器容易安排得多。所有触发器同时在边沿收下旧结果，随后组合逻辑在这一个周期内慢慢计算新结果；等下一次边沿，再一起交接。<strong>一拍一个动作，先后清清楚楚。</strong></p>
-<p>　　如果换成锁存器，信号可能在半个周期里从这一级一路穿透到下一级，几步计算搅在一起，时序就难以把握了。</p>
-<p>　　一只触发器只能记一个比特。要保存一个 8 位数，只要把 8 只并排放好就行——这正是下一章要做的事。</p>
-<p><strong>思考题 1</strong></p>
+<p>　　<strong>“算”发生在周期里，“交”发生在边沿上。</strong> 时间被整齐地切成一拍一拍，每一步都踩在点子上，这正是时钟想要的效果。而触发器，就是把时钟的意图真正落实下去的那个部件。<strong>没有触发器，时钟只是一个滴答作响的节拍器，指挥不动任何人。</strong></p>
+<p>　　换个角度看，触发器其实做了一件很了不起的事：<strong>它把“连续流逝的时间”，变成了“离散的步骤”。</strong> 有了它，机器才能说“第一拍做这个、第二拍做那个”。</p>
+<p><strong>思考题 3</strong></p>
 <blockquote>
 <p>　　为什么边沿触发比“整段时间都开放”的锁存方式更容易组织多步计算？</p>
 </blockquote>
-<p><strong>思考题 2</strong></p>
-<blockquote>
-<p>　　触发器和锁存器的电路里都有反馈，都能记住一个比特。那么触发器究竟多做了什么，才获得了“只在边沿改变”的特性？</p>
-</blockquote>
+<h3 id="触发器不止一种"><a class="header" href="#触发器不止一种">触发器不止一种</a></h3>
+<p>　　按功能分，触发器还有 JK、T、SR 等多种；但它们的共同点，都是“在边沿更新”。其中 <strong>D 触发器</strong>只需要一根数据线，用起来最省事，也最常用。本指南之后提到的触发器，一律默认为 D 触发器。</p>
+<h3 id="一只触发器一个比特"><a class="header" href="#一只触发器一个比特">一只触发器，一个比特</a></h3>
+<p>　　触发器只记一个比特。这听起来很少，但已经足够当积木了：<strong>要保存一个 8 位数，把 8 只触发器并排放好、共用一个时钟就行。</strong> 这，正是下一章要做的事。</p>
 <h2 id="小结"><a class="header" href="#小结">小结</a></h2>
 <h3 id="知识点"><a class="header" href="#知识点">知识点</a></h3>
 <ul>
-<li>D 触发器在时钟边沿采样</li>
-<li>Q 在两个采样边沿之间保持不变</li>
-<li>同步电路在边沿交接、在周期内计算</li>
+<li>触发器是“边沿敏感”的一位记忆单元</li>
+<li>主从结构：两级锁存器加相反相位的时钟</li>
+<li>上升沿采样，边沿之间保持</li>
+<li>触发器让同步电路“一拍一个动作”</li>
 </ul>
 <h3 id="参考资料"><a class="header" href="#参考资料">参考资料</a></h3>
 <ol>
@@ -302,9 +361,11 @@
 </ol>
 <h3 id="思考题答案仅供参考"><a class="header" href="#思考题答案仅供参考">思考题答案（仅供参考）</a></h3>
 <h4 id="思考题-1"><a class="header" href="#思考题-1">思考题 1</a></h4>
-<p>　　因为数据只在统一边沿进入下一阶段，各级不会在同一周期里一路穿透。一个周期用来计算，下一个边沿再收下结果，步骤的先后因此清楚可控。</p>
+<p>　　不能。锁存器是电平敏感的：把时钟接到使能端后，<code>CLK = 1</code> 的整个半周期它都透明，D 的变化照样传到 Q，“边沿那一刻”对它没有意义。要得到边沿敏感，必须在结构上改变（例如下一节的主从两级）。</p>
 <h4 id="思考题-2"><a class="header" href="#思考题-2">思考题 2</a></h4>
-<p>　　触发器是在锁存器的基础上“加了一层”：它常常由两级锁存器串联而成，两级用相反相位的时钟控制，使输入只在边沿那一瞬间才被真正锁进输出。反馈负责“记住”，而这两级结构负责“只在边沿更新”。所以触发器并没有发明新的记忆原理，只是把锁存器的开门时间收窄成了一个点。</p>
+<p>　　如果两级用同一个时钟，它们会同时透明或同时保持：同时透明时，D 直接穿透两级到达 Q，等于一个“加长的锁存器”，边沿敏感无从谈起；同时保持时，值又传不下去。只有让两级反相，才能做到“一级开门时另一级关门”，把交接压缩到边沿那么短。</p>
+<h4 id="思考题-3"><a class="header" href="#思考题-3">思考题 3</a></h4>
+<p>　　因为多步计算要求“这一步的结果定下来之后，才进行下一步”。边沿触发把每一拍的交接固定在同一个时刻，级与级之间不会在同一拍里互相穿透，先后关系明确；锁存器则可能在半拍内把变化一级级传下去，几步计算搅在一起，无法可靠地分步。</p>
 <h2 id="协议"><a class="header" href="#协议">协议</a></h2>
 <p>　　本作品采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
 <h2 id="封面图"><a class="header" href="#封面图">封面图</a></h2>
