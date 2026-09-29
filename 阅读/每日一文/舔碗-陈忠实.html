@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>舔碗 - 陈忠实 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-5f93df08.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-c7c5cc52.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="舔碗"><a class="header" href="#舔碗">舔碗</a></h1>
+<p><em>陈忠实</em></p>
+<p>　　黑娃在主家吃头一顿饭时有点拘束。黄灿灿的小米粥里下着细匀如丝的白面条儿，调着清油爆炒的葱花，喷香喷香的，黑娃刻意节制自己不敢吃得太快太猛，免得给主家留下馋极饿狼的第一印象。倒是主家黄掌柜真诚地催促他说：“快吃！小伙子吃饭斯斯文文的弄啥？快吃吃快！”黑娃吃完一老碗又要了半碗，本来完全可以再吃下一满碗这种银丝面的，同样是出于第一印象的考虑只要了半碗。在两碗饭之间，黑娃从桌子上的竹篮里掂起一个馍来。馍是淡黄色的豌豆仁馍馍，茬口很硬也很耐得咀嚼，嚼半天满嘴里仍然是细小的沙粒似的疙瘩，唾液急忙把紧硬的馍块浸润不软。这样，黑娃吃饭的速度就是真实地而不是做作地慢了下来，直到主家黄掌柜连着吃完两老碗饭，他还有半个豌豆面儿馍馍掂在手里。这样，黑娃就瞅见了主家黄掌柜的舔碗的动作。</p>
+<p>　　黄掌柜放下竹筷子右手撑着小饭桌的边沿，左手四指勾着碗底儿大拇指掐着碗沿儿，仰起脸伸出舌头，先沿着黄釉粗瓷大老碗的碗沿舔了一圈，左手粗壮如算盘珠儿的指关节却灵便自如地转动着碗。吧唧一声脆响，舌头在碗的内壁舔过去，那一坨儿碗壁上残留的小米粒儿葱花屑儿全部扫荡净尽，比水洗过比抹布擦过还要干净。吧唧吧唧的脆响连住响着，大老碗在左手间均匀地转过一周，碗内壁所有的残滞物尽皆舔光，只留下碗底儿上的残汤米屑。舔除碗底的滞留物才显出黄掌柜有一只出众出色的舌头，在碗底儿只旋转了一下便一览无余，鼻尖和脸颊并不挨碗沿儿，一般人的舌头不可能有那么长也没有那么灵巧。黄掌柜放下碗在口袋里摸烟袋时，那只奇妙的舌头伸出来从下唇到左嘴角再到上唇和右嘴角齐齐儿扫荡了一圈，嘴唇嘴角干干净净湿润润的柔和起来。黑娃的眼光瞅着黄掌柜缩进口腔的舌头最后落在下唇上，那个下唇又厚又长，一合拢就把上唇严严地包裹起来几乎挨着鼻头，这种地包天式的嘴唇成为黄掌柜面部器官最突出的特征，见一面隔十年八年肯定还能认出他来，因为世界上恐怕再不会有这样出众的地包天式的嘴唇了。黑娃吃完了手里的豌豆麦馍也吃光刮净了碗里的面，放下碗再放下筷子，用手掌抹抹嘴唇站起身来准备去喂牛。黄掌柜从地包天嘴唇里拔出短杆儿烟袋说：“你把碗舔了。”</p>
+<p>　　黑娃停住脚转过身迟疑一下说：“我不会舔碗。”</p>
+<p>　　黄掌柜说：“不会就学嘛！”</p>
+<p>　　黑娃仍迟迟畏畏说：“我怕学不会。”</p>
+<p>　　黄掌柜说：“这活儿不难一学就会了。”</p>
+<p>　　黑娃找出一条理由：“我舌头太短舔不上碗底儿，连碗壁儿也够不着。”</p>
+<p>　　黄掌柜耐心地教导说：“舌头这东西跟橡皮松紧带儿一样，越抻越长不神它就缩短了。你学着舔吧越舔舌头就越长。”</p>
+<p>　　黑娃愣愣地站着不动，再找不出什么理由来拒绝舔碗。</p>
+<p>　　黄掌柜说：“你坐下。”</p>
+<p>　　黑娃在小马扎上又坐下来。</p>
+<p>　　黄掌柜说：“快舔，这不算啥难为事嘛！”</p>
+<p>　　黑娃垂着手低着头不动。</p>
+<p>　　黄掌柜笑呵呵地说：“舔个碗比上轿还难吗？”</p>
+<p>　　黑娃终于下定决心说：“掌柜的，任啥活儿你咋指派我咋做，做不完做不好你打你骂我都受哩！舔碗么……我不……”</p>
+<p>　　黄掌柜短粗的胳膊一抡，短小的指掌里攥着的短杆烟袋在饭桌上空抡成一个半圆，站起身来说：“今日这回不舔了算了，碗也凉了难舔了，下顿饭我教你舔……好学着咧！”</p>
+<p>　　黄掌柜在第二天早饭时对长工黑娃进行舔碗的启蒙教育。这种启蒙本该在昨晚的第二顿饭进行，无奈晚饭一般都是吃馍喝开水，碗是无物可舔的。早饭是黄澄澄的包谷糁子熬烧的稠粥，碗壁儿上残滞的糁子粒密度很大。黄掌柜突兀地问：“你知道不知道我这家业是咋么着发起来的？”</p>
+<p>　　黑娃摇摇头说：“不知道。”</p>
+<p>　　黄掌柜神秘地说：“你估、你猜——”</p>
+<p>　　黑娃说：“是你勤勤谨谨发起来的。”</p>
+<p>　　黄掌柜眯着小眼珠儿撇撇厚厚的下唇：</p>
+<p>　　“不对”</p>
+<p>　　黑娃说：“掌柜的你德行好积下的。”</p>
+<p>　　黄掌柜依然摇摇头。</p>
+<p>　　黑娃说：“你祖上厚实留下的？”</p>
+<p>　　黄掌柜喝着糁子粥头也没抬。</p>
+<p>　　黑娃便大胆问：“你发过一回横财？”</p>
+<p>　　黄掌柜笑着摆了摆头，用筷子指定端在左手里的黄釉粗瓷大老碗说：“舔碗舔下的。”</p>
+<p>　　黑娃眨眨眼没有吱声儿。</p>
+<p>　　黄掌柜咚地一声把碗放到矮腿饭桌上，扬起右手里的竹筷子指着头顶的高大厅房，又指着院子两边对峙的四间屋说：“我这个三合院是舔出来的。一瓦一砖一页土坯一根椽一根檩条一根柱子都是我一口一口从碗壁儿上舔下来的！”黑娃瞅着黄掌柜凛凛然神圣的脸色，不敢贸然乱问乱说。黄掌柜也没有让黑娃插话添言的意思，继续着刚刚引出的话题，站起来用手里的筷子指着街门外头：“圈里的键牛母牛是我从碗里舔下来的，坡上的旱地川里的水地一块一块一亩一分都是我舔下来的。你明白吗？”黑娃勉强点点头不敢说不明白。黄掌柜缓和一下情绪说：“当然，也不是我一个人舔下来的，我爸我妈我爷我婆我老爷和老太人老五辈就舔碗，才舔出来这份家业……这下你信了吧？”黑娃连忙点点头。黄掌柜接住说：“这下你明白我为啥叫你舔碗的道理了吗？”黑娃说：“明白。”黄掌柜却摇摇头说：“你娃子还没明白。”</p>
+<p>　　黄掌柜对黑娃讲解：“庄稼人过日月就凭俩字，一个是勤，一个是俭。勤开财源，俭聚少成多积小到大。一般人做到勤容易，俭字上就分开了彼此。钱挣得再多花掉了等于没挣，粮食打得再多糟踏光了跟没打粮一样。你打下八石麦吃光吃净你明年还得受穷，我打下八石俭省下一石我明年就比你好过了。一家大小一顿从碗里舔下一两，一天按两顿算就俭省二两，十天俭省二斤一月六斤一年就有七十斤正好二斗，十年两石一百年二十石。二十石粮食能置买多少地多少砖瓦木料？再甭算从其它路途省下的粮款。你家人老几辈要是养成舔碗的好习性，你娃子而今就不会出门给人熬活了，倒是要雇旁人给你熬长工哩！这下你明白了吧？”</p>
+<p>　　黑娃反倒不服气这笔账：“洗了碗洗了锅，稠泔水喂牛喂猪还是没糟践嘛！反正喂牛喂猪还得搭配精料喀！”</p>
+<p>　　黄掌柜说：“你说的恰好是一般庄稼汉们的想法儿，可见你还是不明白。该给牲畜搭配的鼓料不能减，可人吃的饭食还是应该舔进人肚里。人一日舔两三回碗，人就一天从早到晚都记着俭省，这跟孔老先生说‘吾日三省吾身’是一样道理。你娃子不信就试试舔一回，舔一回碗该花俩钱你就只花一个或是不花，舔过一月你手里攥钱攥得比死人的手还紧，一个麻钱都舍不得花了。你不信先试着舔一回……”</p>
+<p>　　黑娃说：“我情愿受穷情愿出门给人熬活儿，我压根儿没敢想雇旁人给我熬长工的事，掌柜的我不试那舔碗，”</p>
+<p>　　黄掌柜问：“我刚才说下一河滩话儿，你听进耳朵没？”</p>
+<p>　　“听进去了。”</p>
+<p>　　“你说我说的话有道理没？”</p>
+<p>　　“有有”</p>
+<p>　　“我说的道理是教你学好还是学坏？”</p>
+<p>　　“是为我好。”</p>
+<p>　　“对呀！既是为你好你为啥不听不做？”</p>
+<p>　　黑娃被追逼得无言以对，沉默半晌才想出一个办法：“黄掌柜……这样吧！我每顿少吃半个馍或者少吃半碗饭，算是赔了我不舔碗糟践的粮食，你甭让我舔碗了……”</p>
+<p>　　“啥话嘛你倒胡吣的啥话！”黄掌柜打断他的话，“我是为你好盼你能过上滋润日子，才教给你娃娃这个诀窍，哪里是要你少吃欠喝？你不吃饱咋推得动车子咋抡得起撅头？”</p>
+<p>　　黑娃再想不出搪塞的主意，便硬着头皮说：“掌柜的反正我不想舔碗。就是能舔出金能舔出银我也不舔。再说当初议定工价时你也没说舔碗这家法……”</p>
+<p>　　“话说到哪儿去了哇？”黄掌柜摊开两手委屈地说，“我为你好倒惹你恼了！你今儿不舔算咧！可你得弄清我是好心不是恶意。”</p>
+<p>　　“我知道你是好心没有恶意，我领受不了这个好心。”黑娃说，“要不你另换个会舔碗的来，反正长工多的是喀！”</p>
+<p>　　“算咧算咧不说咧！”黄掌柜看看黑娃弓已拉硬，便暂且妥协，“日后你兴许会明白舔碗的好习性……”</p>
+<p>　　连着三天，黄掌柜再没提舔碗的要求，黑娃以为这件事也就过去了不再成为一个矛盾的事，抗争虽然取得了胜利，心里总有一缕违拗主家伤了主家脸皮的歉疚，于是便更用心地经管牲畜，更主动更卖力地干活儿，企图以此弥补那件事上的缺憾。黄掌柜似乎也没有苛待和报复的举动，只是不和他说话，饭桌上默默地吃馍喝粥，然后扛着工具到田地里去。一路上无话，整晌整晌俩人都自顾干活儿不说一句话，只是屁声连绵不断。自离开家门从村庄走向田头，主仆二人一前一后此起彼伏着屁声，谁不奇怪谁谁也不笑话谁，豌豆仁馍馍吃下以后尤爱生屁，这是无法抗拒的。黑娃双手攥着刨耙给棉田打圪梁，心里逐渐有了对主家的初步评判，黄掌柜人不错，活儿尽着做饭馍尽着吃，偶尔某项农话做得不合辙，也是和和顺顺地指出来让黑娃重新做好，没有打没有骂甚至连呵斥也很少有过，黑娃猜忖，黄掌柜确实是几辈人靠吃苦耐劳节俭省用积攒下一份家业，不是为官发财也不是挖土挖出金条银锞发的横财。黄掌柜没有大财东家严厉的家法也没有大财主人的架子，一天三晌出工干活不避重不图轻，黑娃推车翻地挑担他也推车翻地挑担，尚无完全指靠长工做务庄稼自己抽水烟品香片茶叶的架子。头两天黄掌柜和黑娃一边干着活儿一边扯闲话，近三天来却抿着厚厚的地包天嘴唇一句不吭，脸上的气色愈来愈不柔顺，说不上是憋气还是忧郁难受。到第四天晌午，黄掌柜躺下起不来了，说是心口疼得厉害。</p>
+<p>　　午饭前，黑娃走进三合院上房东屋去问候黄掌柜，屋里光线晦暗，飘浮着一股苦冽冽的中草药气味。黄掌柜侧身躺在炕上，轻声呻唤着，下唇愈加显得更厚更长地咧开着。黑娃问：“掌柜的你那儿害难受？”</p>
+<p>　　“心口憋，还疼。”</p>
+<p>　　“服药后好点吗？”</p>
+<p>　　“药不顶啥。”</p>
+<p>　　“你甭急，药吃三遍就显效了。”</p>
+<p>　　“啥药也不顶用，我的病我知底儿。”</p>
+<p>　　“那你就说嘛！该咋治就咋治嘛！”</p>
+<p>　　“我的病除非你治——”</p>
+<p>　　“我？我能帮上忙的话，你只管说。”</p>
+<p>　　“你把碗舔了。”</p>
+<p>　　“这跟舔碗有啥关系？”</p>
+<p>　　“你不舔碗糟践粮食，我顿顿饭后看见你那碗心里就难受，整日整夜都难受，夜间睡不稳，白天胸口憋得闷得出不来气儿。你不舔碗我可受不了哇……”</p>
+<p>　　黑娃大为惊诧，想不到自己不舔碗竟然把主家气下病了，却又信不下去这个事实，便支支吾吾说：“要是舔了碗能除你的病，那我就……舔。”</p>
+<p>　　黄掌柜一骨碌翻身坐起来，双手抓住站在炕边的黑娃的胳膊，抖颤着厚长的下嘴唇说：“黑娃你要是舔碗就把我救下了！”说着溜下炕来，呼唤女人上饭。女人端上来的是麻食，这是春三月里的好饭食了。</p>
+<p>　　吃罢以后，黑娃放下筷子，照着黄掌柜的姿式右手扶住桌沿，左手掐着黄色釉子的粗瓷老碗，先沿着碗沿舔了一圈，舌头磨擦瓷碗时浑身一阵痉挛，差点把碗掉到地上。黑娃舔碗壁儿时才觉得舌头太短，鼻头倒先舌头一步蹭到了碗壁，粘上了麻食饭的残汁，他用手擦了擦鼻子，低头再舔，又是先给鼻尖碰上了，便索性子不擦了，待舔完后再擦。</p>
+<p>　　黄掌柜鼓励说：“对着哩对着哩就这样舔法儿，一回生二回熟喀！”</p>
+<p>　　黑娃舔完碗壁，虽不及黄掌柜舔得净，总是舔出了个大致干净的效果，碗上还留着一绺一道残痕，像是没扫干净的地面。黑娃觉得腹腔里开始翻搅，有点恶心，想到只剩下一个碗底儿，便低下头伸长舌头去舔，舌头触及到碗底儿已经冰凉的残汤，即告第一次舔碗成功。</p>
+<p>　　黄掌柜双手一拍说：“好！舔得还好！”</p>
+<p>　　黑娃从碗底仰起头来，呜哇一声从喉腔里暴发出来，连忙放下刚刚舔过的碗，三两步抢到台阶上，嘴里便喷发出一股浊流，肚腹里翻江倒海似地扭结翻搅，连续喷浅出一股又一股浊流，刚刚吃进肚里的麻食全部呕吐出来，在院庭的湿地上滑动蠕流。黑娃停止呕吐心腹平静之后，用手掌抹擦了噎出的眼泪，没有说话。他想，这下黄掌柜亲眼看见了，他的舌头是不能适应舔碗的良好习性的，这下再不会强逼他接受舔碗的习性了。不料，黄掌柜对他的呕吐无动于衷，更不惊奇，缓缓地从地包天嘴唇里拔出石头烟嘴儿，平淡无奇地说：“吐不要紧，再舔几回就习惯了，习惯了自然也就不吐了。”</p>
+<p>　　连着两三天，早饭和午饭，黑娃默不做声地吃饭，默不做声地舔碗，舔着舔着就呕吐起来，头一天尚可舔到碗底，一天比一天一顿比一顿舔的面积更小，就吐，直到最近一次舌头刚挨着碗沿儿，腹腔里便猛烈一震，把吃下的饭馍反弹出来。黑娃想，舔碗不仅没有进步，反而一天比一天退步，再一次对自己修炼这个良好习性产生了动摇，求饶似地对黄掌柜说：“我怕是学不会舔碗了。”</p>
+<p>　　黄掌柜毫不动摇继续鼓励他说，“能学会。我能学会你也就能学会，人都能学会，因为人的舌头都是肉长的。”</p>
+<p>　　黑娃说：“我一舔就吐，舌头一挨着碗沿就恶心……”</p>
+<p>　　黄掌柜说：“吐到不吐得有个过程，这跟修炼功夫一样。我娃他妈刚过门时也不会舔碗，也是一舔就吐，舔了半年吐了半年，后来就不吐了，而今舔得比我还老到。”</p>
+<p>　　黑娃心里猛地一沉，要是舔半年碗吐半年饭，自己还能活不能活？</p>
+<p>　　吃了舔舔了吐的日子强撑硬挣着又过了半月，黑娃的身体彻底垮下来。吐了以后他就重新吃个豌豆面馍，吃馍无需再舔碗，自然不会再吐。这种豌豆面馍不单爱生屁，石头一样硬的茬口令人望而生畏，一天三顿嚼食的结果是口腔糜烂，坚硬的馍茬子蹭得口腔内皮脱落出血溃烂，连舌头都被感染生出一层密密麻麻的小脓泡儿，他无法进食了。他空着肚子扛着工具到了地头，已经强烈的日光晒得头脑发昏，眼睛一阵阵发黑，浑身酸软无力心慌气短，满脸虚汗涌流不止，强撑到吃午饭时收工回家，他没有去吃饭，径直走进牛圈撂下工具躺到炕上一动不动。</p>
+<p>　　黄掌柜走进牛圈来叫他吃饭，见状哈哈大笑：“撑不住了哇？哈呀这是一道关，撑过这道难关就没事了。走！吃饭去，越吐越吃越吐越舔，人就把自己的坏毛病改掉了，就把好习性养成咧！”</p>
+<p>　　黑娃有气无力地坐起来：“掌柜的你快吃饭吧！我嘴里生疮了吃不成饭。”</p>
+<p>　　黄掌柜说：“把饭晾凉就能吃。”</p>
+<p>　　黑娃又重新提出最初的打算：“黄掌柜你甭让我舔碗，我情愿年底少开二斗。工钱粮，全当我不舔碗糟践的粮食……”</p>
+<p>　　“不不不不不！”黄掌柜说，“我跟你想的正好相反，只要你舔碗，我不光不扣你二斗，年底给你再加上二斗。你这下明白我的好心了吧？”</p>
+<p>　　外加二斗粮食的奖赏已不能使黑娃动心，而是担忧这种日子难以为继，终于再次说出自己只好离去的打算，态度坚决而话语却很委婉：“黄掌柜你是个好主家。你让我舔碗也是为我好。我试着舔了学不会这好习惯，我硬撑了一月时光还是学不会。我而今弄成这病恹恹的式子给你干不动活儿，我白吃饭不干活儿咋能成？”</p>
+<p>　　黄掌柜说：“抗两天没啥事咧！”</p>
+<p>　　黑娃依然诚恳地说：“我不舔碗你受不了，你都难受得憋下病了。硬叫我舔碗我也受不住，吃了舔舔了吐我身子撑不住，给你干不动活我心里难为情。我想来想去，你另找个舔碗的长工，我另找个不叫长工舔碗的主家，都好受些。”</p>
+<p>　　黄掌柜短胳膊一挥：“算咧算咧！从今日起你甭舔碗了。”</p>
+<p>　　黑娃尚不知道，去年黄掌柜雇下一个长工，因为无法学成舔碗的好习惯而中途辞职。黄掌柜半路上不好再雇长工，只好临时叫短工帮忙做务庄稼。如果黑娃今年再辞职，下一年雇工都可能困难。黄掌柜便妥协了。</p>
+<p>　　黑娃便感激地说：“黄掌柜你看见，我不是不学好不舔碗，确确实实是我生下一只贱舌头，学不会这好习性。而今你不要我舔碗，我就按我刚才说过的少拿二斗粮……”</p>
+<p>　　黄掌拒绝然说：“不行。年初说下多少我年底还给你多少，一颗粮食也不少。”</p>
+<p>　　黑娃说：“那我拼死拼活给你干，报答你的好处恩情……”</p>
+<p>　　主仆二人终于得到了和解。</p>
+<p>　　得到黄掌柜的宽容和关怀，黑娃在家歇息了两天，不到田地里去做活儿，只在家里喂牛垫圈，这使他很感动。口疮稍为收敛之后，他强迫自己多吃饭，以期尽快恢复体力尽早到田间去干活儿，吃人家熟的挣人家生的不给人家干活算什么长工呢！好在黑娃并没有其它毛病，进食以后身体恢复很快，三五天后就又是浑身抖擞生龙活虎的原姿原样了，捉犁扯耙挖土翻地起圈推土全部能够承担起来。不过几天，却又发生了一件意料不到的不大美妙的事——</p>
+<p>　　这天早饭桌上，黄掌柜给黑娃吩咐下来几天内的几项重大农事活路的安排，先干什么后干什么中间穿插捎带着再干什么，安排得井井有条纹丝不乱，可以看出主家完全是一位精明细致的庄稼人。黑娃一一应诺一再表示遵从吩咐保证按时按质做完做好，绝对不会迟误农时耽搁时机，而且主动大胆到甚至不无讨好地向主家提出建议，给棉田压施的底肥应该从每亩 50 车增加到 80 车——100 车，因为棉花施足底肥比追施明肥的效果要显著得多。主家黄掌柜全面谋算过自家有限的粪肥，指令他每亩压施 50 车，留下一部分给麦收后的包谷追施。黑娃说：“你甭愁给包谷没粪上，我给牛圈每天多垫一两回上就有了。我抽空打几摞土坯给你把三个火炕换了，炕土烤上包谷再美不过了。”且不说黑娃的主意的合理性与可行性究竟如何，单是这种主动精神就使黄掌柜深为感动，最难得长工和主家合成一股的心劲儿。黄掌柜咧开厚厚的下嘴唇只是嗯嗯嗯地点头笑着，没有当即表示行与否，仰起脸舔起碗来。黑娃进一步解释自己的意见，企图证明这意见属于万无一失而不必担心什么。这时候，黑娃突然看见，黄掌柜放下自己的已经舔净了的碗，伸手又把他的饭碗抓起来，伸出黄牛一样的长舌头舔起来。黑娃愣呆了，哑然闭口说不出话了，几乎闭了气，看到黄掌柜舔他吃过饭的碗，似乎比自个舔它更难以忍受，胃里头猛然痉挛了一下，呜哇一声又呕吐起来，整个腹部像簸箕簸着又像筛子旋着，直到把吃进去的饭食吐光吐净。</p>
+<p>　　黄掌柜问：“咋的又吐？”</p>
+<p>　　黑娃嗫嚅说：“你舔我的碗……”</p>
+<p>　　黄掌柜更奇怪了：“你舔你的碗，吐。我不叫你舔了，我舔你的碗与你屁不相干嘛，你咋的还吐？”</p>
+<p>　　黑娃依然歉疚地嗫嚅着：“我也说不上来这究竟咋的了，看见你舔我的碗就吐了……”</p>
+<p>　　黄掌柜不满地撇撇嘴，忍了忍说：“那好……下回我舔碗时你先离开。”</p>
+<p>　　黑娃点点头。</p>
+<p>　　然而糟糕的是，晌午饭时情况更加恶化，不说舔不舔碗，也不说避不避开黄掌柜舔碗，黑娃瞧见黄掌柜吃饭时伸出唇来的舌头就反胃就恶心就发潮就想吐。黄掌柜吃饭时与众不同，筷子挑起碗里的面条儿时，嘴里的舌头同时就伸出嘴来，迎接送到口边的食物，而一般人只张嘴不伸舌头的。黑娃看见那长舌头接到筷头上的食物便卷进嘴去，舌头的边沿赤红而舌心里有一片黄斑。他低下头不敢扬起来闷着头吃饭，仍然抑止不住阵阵恶心，一口饭也咽不下去，便悄然离开了饭桌。</p>
+<p>　　随后发展到更为严重的程度，黑娃一瞅见饭碗就恶心，他想到这碗也是黄掌柜的舌头舔过的，舌心里有一片尿垢似的黄斑。</p>
+<p>　　及至后来，黑娃瞧见主家黄掌柜又厚又长的下唇也忍不住恶心反胃。</p>
+<p>　　黑娃又犯了口疮，身体迅即垮下来。</p>
+<p>　　黄掌柜终于火了：“我说舔碗舔下家当，是想让你小伙往后学下好习性过好日子哩！你舔了吐我舔你也吐，我再没法容让你了嘛！我说干脆还是你再舔碗，舔了吐吐了再舔，直到把你这坏毛病舔掉吐掉，像我娃他妈一样学会舔碗。这叫以毒攻毒！”</p>
+<p>　　黑娃根本谈不上实施以毒攻毒的新方案，因为他看见黄掌柜说话时闪动的下唇就又作起呕来。黄掌柜觉得受了侮辱，骂道：“穷小子穷命鬼贱毛病倒不少！”</p>
+<p>　　是夜，黑娃给牲畜添过最后一槽草料，便逃走了，俩月的工价粮食自然是不敢索要的。</p>
+<p>　　摘自《白鹿原》</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/每日一文.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/婚姻中没有天堂-周国平.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/每日一文.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/婚姻中没有天堂-周国平.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/舔碗-陈忠实.md"
+        </script>
+
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
+        <!-- <script> -->
+            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
+        <!-- </script> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+        <script type="text/javascript">
+            docsearch({
+                appId: 'GX9RTL51BH',
+                apiKey: 'c4caea4202132489213a6c5366c9952d',
+                indexName: 'tinysnowio',
+                container: '#docsearch',
+                debug: false // Set debug to true if you want to inspect the modal
+            });
+            // autocomplete({
+            //   container: '#docsearch',
+            //   placeholder: '搜索 / Search',
+            //   getSources() {
+            //     return [];
+            //   },
+            // });
+        </script>
+    </div>
+    </body>
+</html>
