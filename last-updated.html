@@ -242,8 +242,132 @@
 <p>NOTICE: This content is presented as <code>git diff</code>.</p>
 </blockquote>
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-10-09-205634-cmt-utc8--5102d3854"><a class="header" href="#更新记录2026-10-09-205634-cmt-utc8--5102d3854">更新记录（2026-10-09 20:56:34 CMT (UTC+8) | 5102d3854）</a></h2>
+<h2 id="更新记录2026-10-09-210407-cmt-utc8--e2f5f7ae9"><a class="header" href="#更新记录2026-10-09-210407-cmt-utc8--e2f5f7ae9">更新记录（2026-10-09 21:04:07 CMT (UTC+8) | e2f5f7ae9）</a></h2>
 <h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-10-09 21:04:07 CMT (UTC+8)</code></li>
+<li>Base commit: <code>e2f5f7ae9</code></li>
+<li>Diff source: <code>5102d3854f004cfdf59c4651fe1c208efb266a2c..e2f5f7ae9a1b6657ea1d01eab9f247e6d8204592</code></li>
+<li>Changed files: <code>1</code></li>
+<li>Total lines: <code>+24 / -30</code></li>
+</ul>
+<h3 id="commit-messages"><a class="header" href="#commit-messages">Commit Messages</a></h3>
+<ul>
+<li>
+<p><code>e2f5f7ae</code> refactor(学海计划/哲学): 重写哲学的方法 1 篇, 去除 AIGC 模板并压缩重复</p>
+<blockquote>
+<ul>
+<li>按新版规范重写为四个编号单元，沿具体例子逐步解释方法。</li>
+<li>删除重复限定和无关计算，压缩为 1217 字正文。</li>
+<li>保留正文以外的内容，检查段落衔接、禁用表达及格式。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-3068027653-src-学习与进步-学海计划-哲学-总论-哲学的方法-新增-哲学的方法-md-1715354674">src/学习与进步/学海计划/哲学/总论/哲学的方法/【新增】哲学的方法.md</a> <code>+24 / -30</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-3068027653-src-学习与进步-学海计划-哲学-总论-哲学的方法-新增-哲学的方法-md-1715354674"></a></p>
+<h4 id="src学习与进步学海计划哲学总论哲学的方法新增哲学的方法md"><a class="header" href="#src学习与进步学海计划哲学总论哲学的方法新增哲学的方法md">src/学习与进步/学海计划/哲学/总论/哲学的方法/【新增】哲学的方法.md</a></h4>
+<details>
+<summary><code>+24 / -30</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225/\343\200\220\346\226\260\345\242\236\343\200\221\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225/\343\200\220\346\226\260\345\242\236\343\200\221\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225.md"
+index 503d947f8..22ecb5ba6 100644
+--- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225/\343\200\220\346\226\260\345\242\236\343\200\221\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225.md"
++++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225/\343\200\220\346\226\260\345\242\236\343\200\221\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225.md"
+@@ -12,59 +12,53 @@
+ 
+ 　　本文讨论：哲学-总论-哲学的方法。
+ 
+-　　 **哲学有多种研究方法，采用哪一种，取决于具体问题和研究传统。** 本目录会介绍概念分析、论证与反驳、思想实验、现象学方法。这是本栏目的选题安排，哲学研究还有其他方法。
++　　 **哲学讨论，要把思考的过程交代清楚，别人才有办法检查。** 这篇从一次报名争论开始：先弄清词义，再检查理由，接着换个条件检验原来的说法。末段转到等车，介绍怎样研究人的亲身体验。
+ 
+-　　这些名称容易背，具体怎么用，需要放进问题里看。
++　　1. 先说清“自愿”是什么意思。
+ 
+-　　假设一个社团组织周末出游，10 名成员中有 8 人提交了报名表。组织者说，报名率为 80%，而且报名表都是本人提交，所以大家都是自愿参加。
++　　假设一个社团组织出游，8 人亲手填写了报名表。组织者认为，既然表是本人填的，这 8 人自然都是自愿参加。
+ 
+-　　这里有两项判断。8 ÷ 10 = 80%，计算没有问题；但从“本人提交”走到“自愿参加”，还需要说明“自愿”的含义，以及报名过程中的实际条件。
++　　有人对行程没什么兴趣，但朋友邀请，他也乐意作陪。这样的报名，可以出于自愿。**自愿参加，不要求一个人特别喜欢这项活动。** 陪朋友本身就可以成为理由。
+ 
+-　　假如有人很想去，有人虽然兴趣不大，但愿意陪朋友去，还有人是受到“不报名就退社”的威胁才提交表格，这几种情况是否都符合“自愿”，就值得区分。
++　　再看另一种情况。有人明确说了不想去，却被告知“不报名就退社”。他担心失去社团的资格，才填下名字。若把这种情形也算作自愿，组织者就得解释，为什么这项威胁可以忽略。
+ 
+-　　检查一个概念的含义、适用条件，以及它与相近概念的区别，便是在做 **概念分析**。在这个例子里，需要辨清“本人操作”“内心愿意”“没有受到胁迫”分别说明什么，它们是否总是一起出现。
++　　像这样，检查一个词指什么、适用于哪些情况，就是 **概念分析**。在这个例子里，“自愿”需要考察作决定时受到的限制。本人填表，只交代了动作是谁做的。
+ 
+-　　这一步也不能只靠查词典结束。词典可以提供常见用法，但面对边界情况，还要说明采用某种理解的理由。人受到朋友的影响，不一定就失去自愿性；受到威胁时，仅凭他亲手填写表格，也不足以认定自愿。
++　　词典能帮助了解常见用法，遇到具体争议，还得说明划分的理由。朋友的劝说和退社的威胁，影响人的方式不同；**影响到了什么程度**，可能正是双方接下来要讨论的地方。
+ 
+-　　所以，概念分析会使分歧更具体，却未必让分歧消失。双方可能都理解了彼此的用法，仍然不同意应把边界划在哪里。
++　　2. 词义清楚了，再把理由展开。
+ 
+-　　再把组织者的理由完整写出来：所有本人提交报名表的人，都是自愿参加；这 8 人本人提交了报名表；所以，这 8 人都是自愿参加。
++　　组织者的话省略了一步。补全以后是：凡本人填表，都是自愿参加；这 8 人本人填了表；所以，这 8 人都是自愿参加。
+ 
+-　　前两句是用来支持结论的 **前提**。把前提与结论的关系交代出来，是在构造 **论证**。这里如果接受前两句，结论就能跟着推出；接下来需要检查的，是第一句是否成立，以及第二句是否属实。
++　　前两句拿来支持结论，叫作 **前提**。用前提说明结论为什么成立，就是在 **论证**。这里的推理接得上：如果前两句都真，结论也就成立。
+ 
+-　　如果有人在胁迫下亲手提交了表格，就会对第一句构成挑战。这种指出前提、推理或结论存在问题的工作，属于 **反驳**。它需要针对对方实际提出的理由，不能仅仅说一句“你这个人不可信”。
++　　现在回头检查第一句。只要找到一个受胁迫填表的人，“凡本人填表，都是自愿参加”就站不住了。这个例子推翻了原来的概括，构成了 **反驳**。
+ 
+-　　不过，第一句有问题，也不能直接推出“这 8 人都不是自愿的”。**一个理由不足以支持结论，不等于相反的结论已经成立。** 这 8 人的实际情况，仍需分别了解。
++　　&lt;u&gt; **反驳要说清，问题出在哪一步。** &lt;/u&gt; 这里有问题的是第一句。至于报名的 8 人究竟怎么想，得去了解各人的情况；前提被推翻，并不能证明所有人都不愿意去。
+ 
+-　　&lt;u&gt; **检查论证时，把前提是否可信、结论是否由前提推出，分开来看。** &lt;/u&gt; 否则，既可能接受推不出来的结论，也可能因为不喜欢结论，就忽略一段本来成立的推理。
++　　3. 再换一个条件，检查有没有漏掉的情况。
+ 
+-&lt;br /&gt;
+-
+-　　假如没有现成的胁迫案例，也可以设想两个情境：两人都亲手提交同样的表格，其他相关条件相同，一人没有收到威胁，另一人被告知“不报名就退社”。比较这种变化是否影响“自愿”的判断，可以检查原先那个概括是否过宽。
+-
+-　　用设定的情境来考察概念、原则或理论，会用到 **思想实验**。设想的作用是把某些条件单独拿出来考察，使人看清它们对判断有什么影响。（可参考[斯坦福哲学百科的思想实验条目](https://plato.stanford.edu/entries/thought-experiment/)。）
++　　组织者于是修改说法：只要本人填表，又没有受到威胁，就算自愿参加。这次似乎周全了，可以继续试。
+ 
+-　　但设想中的情况，要交代得足够清楚。如果把一方写得处处可怜、另一方写得处处可恶，读者可能只是受故事措辞影响。原本想检查的条件，反而被其他差别盖住了。
++　　设想组织者明知徒步路程是 30 公里，却在报名表上写了 3 公里。有人相信表上的说明，毫无压力地报了名。欺骗促成的报名，足不足以说明他愿意参加真正的行程？修改后的规则排除了威胁，却还没处理隐瞒。
+ 
+-　　 **思想实验能检验一种说法在设定情境下是否站得住，不能证明现实中发生过这件事。** 判断那 8 人有没有受到威胁，需要了解真实的报名过程。脑中构造出的反例，不能直接当成指控某个人的证据。
++　　 **用设定的情境检验一个主张**，是思想实验的一种用法。这个设想帮助人发现，讨论自愿，还需要考虑当事人知道些什么。（参见[斯坦福哲学百科的思想实验条目](https://plato.stanford.edu/entries/thought-experiment/)。）
+ 
+-　　方法之间因此可以衔接：概念分析指出“本人操作”与“自愿”可能有别，论证分析找到两者之间的推理，思想实验再帮助检查这一推理依赖的条件。过程中若发现新问题，也可以回头修改概念或前提。
++　　设定要围绕待检验的那句话。这里交代路程被隐瞒就够了，若再添上一大段组织者如何讨厌，读者的判断可能被人物好恶带走。至于现实中的出游有没有隐瞒行程，需要另外查证，设想本身不能充当证据。
+ 
+-　　还有一些研究，关注事情怎样被人经验到。比如等车时，人会留意驶来的车辆，期待目标线路出现，并把刚过去的等待与接下来的行程联系起来。单独记录等了 10 分钟，还没有描述这些经验之间的联系。
+-
+-　　从亲身经历的角度，描述、分析事物如何呈现，以及感知、期待、时间意识等怎样组织起来，是 **现象学方法** 所关注的方向。这里的“经验结构”，可以先理解为这些经验要素如何相互联系。（可参考[斯坦福哲学百科的现象学条目](https://plato.stanford.edu/entries/phenomenology/)。）
++&lt;br /&gt;
+ 
+-　　一些现象学路径会暂缓对外部事物的惯常判断，以便集中考察经验如何发生、对象如何显现。这种暂缓并不等于宣布外部世界不存在，也不等于只要记录一句“觉得等车很烦”，研究就完成了。
++　　4. 回到体验本身，看事情怎样被人经历。
+ 
+-　　因此，它与前面的论证检查有不同的侧重。前面主要检查理由怎样支持判断，这里还要仔细描述判断和行动所处的经验。不同现象学传统对具体做法也有分歧，后文会另作介绍。
++　　前面的讨论一直围绕一句话检查理由。现在换个问题：一个人等车时，究竟在经历什么？
+ 
+-　　这几种方法都需要材料和练习。**方法的名称，不能替代实际的分析过程。** 提出一个反例，需要说明它反驳了哪一句；描述一种经验，需要让读者看清描述的对象和联系，而不只是表达个人感想。
++　　比如，他听见发动机声便抬头，看到驶来的车不是目标线路，又转回头继续等。声音在这里成了“车可能来了”的信号，因为他正盼着那班车。期待影响了他的注意，也带出了抬头张望的动作。
+ 
+-　　结论与方法也都值得检查。同一个结论可以由不同理由支持，不同理由未必同样可靠；同一种分析方法，也可能因为前提错误、材料不足而得到错误判断。过程写得清楚，是为了便于检验和修正。
++　　只记录“等了 10 分钟”，还看不到这段经历。仔细描述人怎样感知、期待和行动，进而分析这些体验如何联系，是 **现象学方法** 关注的工作。（参见[斯坦福哲学百科的现象学条目](https://plato.stanford.edu/entries/phenomenology/)。）
+ 
+-　　本文只是对本目录几种方法的入门介绍，具体用法与限度会在后续篇章展开，仅供参考。
++　　读者也可以据此检查描述：抬头是在辨认车辆，还是在看路边的熟人？同一个动作放进不同经历，含义会变。交代当事人正在做什么，才有可能理解他眼中的场景。
+ 
+-　　&lt;u&gt; **阅读哲学文章时，可以挑出一项具体主张，标明它的含义、理由和可能的反例，再看作者怎样回应。** &lt;/u&gt; 遇到经验描述，则留意作者描述了什么、解释了哪些联系。这样才看得到方法在文章里做了什么。
++　　这四种方法会在后文分别展开，此处仅作入门介绍。&lt;u&gt; **判断一种方法有没有用，看它是否把原先含糊的问题说清，是否让理由变得可以检查。** &lt;/u&gt;
+ 
+ &lt;br /&gt;
+ 
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-10-09-205634-cmt-utc8--5102d3854"><a class="header" href="#更新记录2026-10-09-205634-cmt-utc8--5102d3854">更新记录（2026-10-09 20:56:34 CMT (UTC+8) | 5102d3854）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 20:56:34 CMT (UTC+8)</code></li>
 <li>Base commit: <code>5102d3854</code></li>
@@ -251,7 +375,7 @@
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+22 / -1</code></li>
 </ul>
-<h3 id="commit-messages"><a class="header" href="#commit-messages">Commit Messages</a></h3>
+<h3 id="commit-messages-1"><a class="header" href="#commit-messages-1">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>5102d385</code> docs(学海计划): 新增「推进方式：一条线走到底」硬性规范</p>
@@ -267,11 +391,11 @@
 </blockquote>
 </li>
 </ul>
-<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
 <ol>
 <li><a href="#f-3286787407-src-学习与进步-学海计划-agents-md-2114406525">src/学习与进步/学海计划/AGENTS.md</a> <code>+22 / -1</code></li>
 </ol>
-<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
 <p><a id="f-3286787407-src-学习与进步-学海计划-agents-md-2114406525"></a></p>
 <h4 id="src学习与进步学海计划agentsmd"><a class="header" href="#src学习与进步学海计划agentsmd">src/学习与进步/学海计划/AGENTS.md</a></h4>
 <details>
@@ -328,7 +452,7 @@ index b1cd11201..98c201df9 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-09-204032-cmt-utc8--15b0bd73d"><a class="header" href="#更新记录2026-10-09-204032-cmt-utc8--15b0bd73d">更新记录（2026-10-09 20:40:32 CMT (UTC+8) | 15b0bd73d）</a></h2>
-<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 20:40:32 CMT (UTC+8)</code></li>
 <li>Base commit: <code>15b0bd73d</code></li>
@@ -336,7 +460,7 @@ index b1cd11201..98c201df9 100644
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+0 / -42</code></li>
 </ul>
-<h3 id="commit-messages-1"><a class="header" href="#commit-messages-1">Commit Messages</a></h3>
+<h3 id="commit-messages-2"><a class="header" href="#commit-messages-2">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>15b0bd73</code> chore: 移除流程测试文章及其目录条目</p>
@@ -349,12 +473,12 @@ index b1cd11201..98c201df9 100644
 </blockquote>
 </li>
 </ul>
-<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
 <ol>
 <li><a href="#f-152645477-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+0 / -1</code></li>
 <li><a href="#f-152645477-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-流程测试-临时起意-不该变成别人的紧急任务-md-1457062298">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】【流程测试】临时起意，不该变成别人的紧急任务.md</a> <code>+0 / -41</code></li>
 </ol>
-<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
 <p><a id="f-152645477-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd"><a class="header" href="#srcsummarymd">src/SUMMARY.md</a></h4>
 <details>
@@ -431,7 +555,7 @@ index fbcfd617e..000000000
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-09-203540-cmt-utc8--8361c83fd"><a class="header" href="#更新记录2026-10-09-203540-cmt-utc8--8361c83fd">更新记录（2026-10-09 20:35:40 CMT (UTC+8) | 8361c83fd）</a></h2>
-<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
+<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 20:35:40 CMT (UTC+8)</code></li>
 <li>Base commit: <code>8361c83fd</code></li>
@@ -439,7 +563,7 @@ index fbcfd617e..000000000
 <li>Changed files: <code>6</code></li>
 <li>Total lines: <code>+245 / -138</code></li>
 </ul>
-<h3 id="commit-messages-2"><a class="header" href="#commit-messages-2">Commit Messages</a></h3>
+<h3 id="commit-messages-3"><a class="header" href="#commit-messages-3">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>8361c83f</code> docs(学海计划): 补 AGENTS 篇幅/结构/禁表/节奏规范; 审校哲学总论 5 篇</p>
@@ -464,7 +588,7 @@ index fbcfd617e..000000000
 </blockquote>
 </li>
 </ul>
-<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
+<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
 <ol>
 <li><a href="#f-3235963705-src-学习与进步-学海计划-agents-md-2114406525">src/学习与进步/学海计划/AGENTS.md</a> <code>+119 / -22</code></li>
 <li><a href="#f-3235963705-src-学习与进步-学海计划-哲学-总论-新增-哲学的意义-md-2483414172">src/学习与进步/学海计划/哲学/总论/【新增】哲学的意义.md</a> <code>+23 / -19</code></li>
@@ -473,7 +597,7 @@ index fbcfd617e..000000000
 <li><a href="#f-3235963705-src-学习与进步-学海计划-哲学-总论-新增-总论-md-1083514546">src/学习与进步/学海计划/哲学/总论/【新增】总论.md</a> <code>+21 / -23</code></li>
 <li><a href="#f-3235963705-src-学习与进步-学海计划-哲学-总论-哲学的定义-md-3456421386">src/学习与进步/学海计划/哲学/总论/哲学的定义.md</a> <code>+23 / -25</code></li>
 </ol>
-<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
+<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
 <p><a id="f-3235963705-src-学习与进步-学海计划-agents-md-2114406525"></a></p>
 <h4 id="src学习与进步学海计划agentsmd-1"><a class="header" href="#src学习与进步学海计划agentsmd-1">src/学习与进步/学海计划/AGENTS.md</a></h4>
 <details>
@@ -1202,7 +1326,7 @@ index d2d404faf..eff195b22 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-09-165937-cmt-utc8--827f82206"><a class="header" href="#更新记录2026-10-09-165937-cmt-utc8--827f82206">更新记录（2026-10-09 16:59:37 CMT (UTC+8) | 827f82206）</a></h2>
-<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
+<h3 id="summary-4"><a class="header" href="#summary-4">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 16:59:37 CMT (UTC+8)</code></li>
 <li>Base commit: <code>827f82206</code></li>
@@ -1210,7 +1334,7 @@ index d2d404faf..eff195b22 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+32 / -22</code></li>
 </ul>
-<h3 id="commit-messages-3"><a class="header" href="#commit-messages-3">Commit Messages</a></h3>
+<h3 id="commit-messages-4"><a class="header" href="#commit-messages-4">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>827f8220</code> refactor(学海计划/哲学): 重写哲学的方法 1 篇, 去除 AIGC 模板并补足篇幅</p>
@@ -1229,13 +1353,13 @@ index d2d404faf..eff195b22 100644
 </blockquote>
 </li>
 </ul>
-<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
+<h3 id="index-4"><a class="header" href="#index-4">Index</a></h3>
 <ol>
 <li><a href="#f-563479174-src-学习与进步-学海计划-哲学-总论-哲学的方法-新增-哲学的方法-md-1715354674">src/学习与进步/学海计划/哲学/总论/哲学的方法/【新增】哲学的方法.md</a> <code>+32 / -22</code></li>
 </ol>
-<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
+<h3 id="diffs-4"><a class="header" href="#diffs-4">Diffs</a></h3>
 <p><a id="f-563479174-src-学习与进步-学海计划-哲学-总论-哲学的方法-新增-哲学的方法-md-1715354674"></a></p>
-<h4 id="src学习与进步学海计划哲学总论哲学的方法新增哲学的方法md"><a class="header" href="#src学习与进步学海计划哲学总论哲学的方法新增哲学的方法md">src/学习与进步/学海计划/哲学/总论/哲学的方法/【新增】哲学的方法.md</a></h4>
+<h4 id="src学习与进步学海计划哲学总论哲学的方法新增哲学的方法md-1"><a class="header" href="#src学习与进步学海计划哲学总论哲学的方法新增哲学的方法md-1">src/学习与进步/学海计划/哲学/总论/哲学的方法/【新增】哲学的方法.md</a></h4>
 <details>
 <summary><code>+32 / -22</code> Click to expand diff</summary>
 <pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225/\343\200\220\346\226\260\345\242\236\343\200\221\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\345\255\246\346\265\267\350\256\241\345\210\222/\345\223\262\345\255\246/\346\200\273\350\256\272/\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225/\343\200\220\346\226\260\345\242\236\343\200\221\345\223\262\345\255\246\347\232\204\346\226\271\346\263\225.md"
@@ -1336,7 +1460,7 @@ index 48cf4b4b4..503d947f8 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-09-161619-cmt-utc8--77110c84f"><a class="header" href="#更新记录2026-10-09-161619-cmt-utc8--77110c84f">更新记录（2026-10-09 16:16:19 CMT (UTC+8) | 77110c84f）</a></h2>
-<h3 id="summary-4"><a class="header" href="#summary-4">Summary</a></h3>
+<h3 id="summary-5"><a class="header" href="#summary-5">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 16:16:19 CMT (UTC+8)</code></li>
 <li>Base commit: <code>77110c84f</code></li>
@@ -1344,7 +1468,7 @@ index 48cf4b4b4..503d947f8 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+30 / -22</code></li>
 </ul>
-<h3 id="commit-messages-4"><a class="header" href="#commit-messages-4">Commit Messages</a></h3>
+<h3 id="commit-messages-5"><a class="header" href="#commit-messages-5">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>77110c84</code> refactor(学海计划/哲学): 重写哲学第一性问题 1 篇, 去除 AIGC 模板并补足篇幅</p>
@@ -1363,11 +1487,11 @@ index 48cf4b4b4..503d947f8 100644
 </blockquote>
 </li>
 </ul>
-<h3 id="index-4"><a class="header" href="#index-4">Index</a></h3>
+<h3 id="index-5"><a class="header" href="#index-5">Index</a></h3>
 <ol>
 <li><a href="#f-2462986964-src-学习与进步-学海计划-哲学-总论-新增-哲学第一性问题-md-152759845">src/学习与进步/学海计划/哲学/总论/【新增】哲学第一性问题.md</a> <code>+30 / -22</code></li>
 </ol>
-<h3 id="diffs-4"><a class="header" href="#diffs-4">Diffs</a></h3>
+<h3 id="diffs-5"><a class="header" href="#diffs-5">Diffs</a></h3>
 <p><a id="f-2462986964-src-学习与进步-学海计划-哲学-总论-新增-哲学第一性问题-md-152759845"></a></p>
 <h4 id="src学习与进步学海计划哲学总论新增哲学第一性问题md-1"><a class="header" href="#src学习与进步学海计划哲学总论新增哲学第一性问题md-1">src/学习与进步/学海计划/哲学/总论/【新增】哲学第一性问题.md</a></h4>
 <details>
@@ -1468,7 +1592,7 @@ index d39c64e59..2bc425aa9 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-09-160744-cmt-utc8--1d7dcbe50"><a class="header" href="#更新记录2026-10-09-160744-cmt-utc8--1d7dcbe50">更新记录（2026-10-09 16:07:44 CMT (UTC+8) | 1d7dcbe50）</a></h2>
-<h3 id="summary-5"><a class="header" href="#summary-5">Summary</a></h3>
+<h3 id="summary-6"><a class="header" href="#summary-6">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 16:07:44 CMT (UTC+8)</code></li>
 <li>Base commit: <code>1d7dcbe50</code></li>
@@ -1476,7 +1600,7 @@ index d39c64e59..2bc425aa9 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+30 / -22</code></li>
 </ul>
-<h3 id="commit-messages-5"><a class="header" href="#commit-messages-5">Commit Messages</a></h3>
+<h3 id="commit-messages-6"><a class="header" href="#commit-messages-6">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>1d7dcbe5</code> refactor(学海计划/哲学): 重写哲学的问题 1 篇, 去除 AIGC 模板并补足篇幅</p>
@@ -1495,11 +1619,11 @@ index d39c64e59..2bc425aa9 100644
 </blockquote>
 </li>
 </ul>
-<h3 id="index-5"><a class="header" href="#index-5">Index</a></h3>
+<h3 id="index-6"><a class="header" href="#index-6">Index</a></h3>
 <ol>
 <li><a href="#f-3293078763-src-学习与进步-学海计划-哲学-总论-新增-哲学的问题-md-2385826117">src/学习与进步/学海计划/哲学/总论/【新增】哲学的问题.md</a> <code>+30 / -22</code></li>
 </ol>
-<h3 id="diffs-5"><a class="header" href="#diffs-5">Diffs</a></h3>
+<h3 id="diffs-6"><a class="header" href="#diffs-6">Diffs</a></h3>
 <p><a id="f-3293078763-src-学习与进步-学海计划-哲学-总论-新增-哲学的问题-md-2385826117"></a></p>
 <h4 id="src学习与进步学海计划哲学总论新增哲学的问题md-1"><a class="header" href="#src学习与进步学海计划哲学总论新增哲学的问题md-1">src/学习与进步/学海计划/哲学/总论/【新增】哲学的问题.md</a></h4>
 <details>
@@ -1600,7 +1724,7 @@ index 96f20eeea..d85949511 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-09-160055-cmt-utc8--1b4672d2e"><a class="header" href="#更新记录2026-10-09-160055-cmt-utc8--1b4672d2e">更新记录（2026-10-09 16:00:55 CMT (UTC+8) | 1b4672d2e）</a></h2>
-<h3 id="summary-6"><a class="header" href="#summary-6">Summary</a></h3>
+<h3 id="summary-7"><a class="header" href="#summary-7">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 16:00:55 CMT (UTC+8)</code></li>
 <li>Base commit: <code>1b4672d2e</code></li>
@@ -1608,7 +1732,7 @@ index 96f20eeea..d85949511 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+30 / -22</code></li>
 </ul>
-<h3 id="commit-messages-6"><a class="header" href="#commit-messages-6">Commit Messages</a></h3>
+<h3 id="commit-messages-7"><a class="header" href="#commit-messages-7">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>1b4672d2</code> refactor(学海计划/哲学): 重写哲学的意义 1 篇, 去除 AIGC 模板并补足篇幅</p>
@@ -1627,11 +1751,11 @@ index 96f20eeea..d85949511 100644
 </blockquote>
 </li>
 </ul>
-<h3 id="index-6"><a class="header" href="#index-6">Index</a></h3>
+<h3 id="index-7"><a class="header" href="#index-7">Index</a></h3>
 <ol>
 <li><a href="#f-3767902668-src-学习与进步-学海计划-哲学-总论-新增-哲学的意义-md-2483414172">src/学习与进步/学海计划/哲学/总论/【新增】哲学的意义.md</a> <code>+30 / -22</code></li>
 </ol>
-<h3 id="diffs-6"><a class="header" href="#diffs-6">Diffs</a></h3>
+<h3 id="diffs-7"><a class="header" href="#diffs-7">Diffs</a></h3>
 <p><a id="f-3767902668-src-学习与进步-学海计划-哲学-总论-新增-哲学的意义-md-2483414172"></a></p>
 <h4 id="src学习与进步学海计划哲学总论新增哲学的意义md-1"><a class="header" href="#src学习与进步学海计划哲学总论新增哲学的意义md-1">src/学习与进步/学海计划/哲学/总论/【新增】哲学的意义.md</a></h4>
 <details>
@@ -1732,7 +1856,7 @@ index cf4a02a99..1bf5fbf0a 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-09-154718-cmt-utc8--c7a47b5ed"><a class="header" href="#更新记录2026-10-09-154718-cmt-utc8--c7a47b5ed">更新记录（2026-10-09 15:47:18 CMT (UTC+8) | c7a47b5ed）</a></h2>
-<h3 id="summary-7"><a class="header" href="#summary-7">Summary</a></h3>
+<h3 id="summary-8"><a class="header" href="#summary-8">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 15:47:18 CMT (UTC+8)</code></li>
 <li>Base commit: <code>c7a47b5ed</code></li>
@@ -1740,7 +1864,7 @@ index cf4a02a99..1bf5fbf0a 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+36 / -18</code></li>
 </ul>
-<h3 id="commit-messages-7"><a class="header" href="#commit-messages-7">Commit Messages</a></h3>
+<h3 id="commit-messages-8"><a class="header" href="#commit-messages-8">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>c7a47b5e</code> refactor(学海计划/哲学): 重写总论 1 篇, 去除 AIGC 模板并补足篇幅</p>
@@ -1751,11 +1875,11 @@ index cf4a02a99..1bf5fbf0a 100644
 </blockquote>
 </li>
 </ul>
-<h3 id="index-7"><a class="header" href="#index-7">Index</a></h3>
+<h3 id="index-8"><a class="header" href="#index-8">Index</a></h3>
 <ol>
 <li><a href="#f-2929623677-src-学习与进步-学海计划-哲学-总论-新增-总论-md-1083514546">src/学习与进步/学海计划/哲学/总论/【新增】总论.md</a> <code>+36 / -18</code></li>
 </ol>
-<h3 id="diffs-7"><a class="header" href="#diffs-7">Diffs</a></h3>
+<h3 id="diffs-8"><a class="header" href="#diffs-8">Diffs</a></h3>
 <p><a id="f-2929623677-src-学习与进步-学海计划-哲学-总论-新增-总论-md-1083514546"></a></p>
 <h4 id="src学习与进步学海计划哲学总论新增总论md-1"><a class="header" href="#src学习与进步学海计划哲学总论新增总论md-1">src/学习与进步/学海计划/哲学/总论/【新增】总论.md</a></h4>
 <details>
@@ -1856,7 +1980,7 @@ index 93292c513..f9084cfdc 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-09-125753-cmt-utc8--082f3a9dd"><a class="header" href="#更新记录2026-10-09-125753-cmt-utc8--082f3a9dd">更新记录（2026-10-09 12:57:53 CMT (UTC+8) | 082f3a9dd）</a></h2>
-<h3 id="summary-8"><a class="header" href="#summary-8">Summary</a></h3>
+<h3 id="summary-9"><a class="header" href="#summary-9">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-09 12:57:53 CMT (UTC+8)</code></li>
 <li>Base commit: <code>082f3a9dd</code></li>
@@ -1864,15 +1988,15 @@ index 93292c513..f9084cfdc 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+1 / -1</code></li>
 </ul>
-<h3 id="commit-messages-8"><a class="header" href="#commit-messages-8">Commit Messages</a></h3>
+<h3 id="commit-messages-9"><a class="header" href="#commit-messages-9">Commit Messages</a></h3>
 <ul>
 <li><code>082f3a9d</code> 随笔校对目录：2026-10-09</li>
 </ul>
-<h3 id="index-8"><a class="header" href="#index-8">Index</a></h3>
+<h3 id="index-9"><a class="header" href="#index-9">Index</a></h3>
 <ol>
 <li><a href="#f-738413843-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -1</code></li>
 </ol>
-<h3 id="diffs-8"><a class="header" href="#diffs-8">Diffs</a></h3>
+<h3 id="diffs-9"><a class="header" href="#diffs-9">Diffs</a></h3>
 <p><a id="f-738413843-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-1"><a class="header" href="#srcsummarymd-1">src/SUMMARY.md</a></h4>
 <details>
@@ -1890,106 +2014,6 @@ index c380f9179..cd7411c37 100644
      - [【AIGC人工校对】道歉之后，先把给别人添的麻烦处理掉](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】道歉之后，先把给别人添的麻烦处理掉.md)
      - [【AIGC人工校对】听得进意见，不等于每条意见都要照着改](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】听得进意见，不等于每条意见都要照着改.md)
      - [【AIGC人工校对】经验里最值得问的，是对方省略了什么条件](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】经验里最值得问的，是对方省略了什么条件.md)
-
-</code></pre>
-</details>
-<!-- LAST_UPDATED_ENTRY_END -->
-<!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-10-09-125319-cmt-utc8--abdf145be"><a class="header" href="#更新记录2026-10-09-125319-cmt-utc8--abdf145be">更新记录（2026-10-09 12:53:19 CMT (UTC+8) | abdf145be）</a></h2>
-<h3 id="summary-9"><a class="header" href="#summary-9">Summary</a></h3>
-<ul>
-<li>Generated at: <code>2026-10-09 12:53:19 CMT (UTC+8)</code></li>
-<li>Base commit: <code>abdf145be</code></li>
-<li>Diff source: <code>27216a60ac1cd2f904950997436a3423fc208427..abdf145be3582fc4f9214143b1a947fee8282e39</code></li>
-<li>Changed files: <code>1</code></li>
-<li>Total lines: <code>+67 / -0</code></li>
-</ul>
-<h3 id="commit-messages-9"><a class="header" href="#commit-messages-9">Commit Messages</a></h3>
-<ul>
-<li><code>abdf145b</code> 每日实用类随记校对：2026.10.9。</li>
-</ul>
-<h3 id="index-9"><a class="header" href="#index-9">Index</a></h3>
-<ol>
-<li><a href="#f-3223289807-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-留着备用的东西-也在占用你现在的生活-md-1230494231">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】留着备用的东西，也在占用你现在的生活.md</a> <code>+67 / -0</code></li>
-</ol>
-<h3 id="diffs-9"><a class="header" href="#diffs-9">Diffs</a></h3>
-<p><a id="f-3223289807-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-留着备用的东西-也在占用你现在的生活-md-1230494231"></a></p>
-<h4 id="src生活碎笔随笔随记实用类随记aigc人工校对留着备用的东西也在占用你现在的生活md"><a class="header" href="#src生活碎笔随笔随记实用类随记aigc人工校对留着备用的东西也在占用你现在的生活md">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】留着备用的东西，也在占用你现在的生活.md</a></h4>
-<details>
-<summary><code>+67 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\347\225\231\347\235\200\345\244\207\347\224\250\347\232\204\344\270\234\350\245\277\357\274\214\344\271\237\345\234\250\345\215\240\347\224\250\344\275\240\347\216\260\345\234\250\347\232\204\347\224\237\346\264\273.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\347\225\231\347\235\200\345\244\207\347\224\250\347\232\204\344\270\234\350\245\277\357\274\214\344\271\237\345\234\250\345\215\240\347\224\250\344\275\240\347\216\260\345\234\250\347\232\204\347\224\237\346\264\273.md"
-new file mode 100644
-index 000000000..974c90249
---- /dev/null
-+++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\347\225\231\347\235\200\345\244\207\347\224\250\347\232\204\344\270\234\350\245\277\357\274\214\344\271\237\345\234\250\345\215\240\347\224\250\344\275\240\347\216\260\345\234\250\347\232\204\347\224\237\346\264\273.md"
-@@ -0,0 +1,67 @@
-+# 留着备用的东西，也在占用你现在的生活
-+
-+&lt;!-- daily-essay-id: 2026-10-09 --&gt;
-+
-+&lt;!-- wechat-digest: 留下备用物品，既要看将来能不能用，也要看现在为它付出了多少空间和精力；把用途和取用条件想清楚，才能决定哪些值得留。 --&gt;
-+
-+　　“以后可能用得上”这句话，几乎没办法帮你决定一件东西该不该留。
-+
-+　　因为绝大多数东西，都能想出一种用得上的场景。空纸盒可以装杂物，旧衣服可以干脏活时穿，缺了盖子的杯子可以插花。只要愿意想，一间房都能留下来。
-+
-+　　问题是，你还要住在里面。
-+
-+　　假设家里有个抽屉，放着旧手机的数据线、几把用途不明的钥匙、买东西送的小配件，还有几根确定能用的充电线。哪天手机没电，你拉开抽屉，先拎起一团互相缠着的线，再挨个看接口。
-+
-+　　备用品当然有价值。但当它们多到挡住正在用的东西，你每次取东西，就得替这些“可能”付一次账。
-+
-+　　这笔账不一定是钱。可能是翻找的时间，可能是挪动箱子的力气，也可能是本来能空出来的那张桌子。东西放在那里不动，人却得不断绕着它动。
-+
-+　　**保留一件东西的成本，要算上它妨碍了什么。**
-+
-+　　同样一个纸箱，放在空着的储物间，和放在狭窄过道里，代价就不一样。前者可能只是随手一留，后者却要求你每天侧身走过去。
-+
-+　　所以我不太赞成只问“这东西还有没有用”。这个问题太容易得到肯定答案，还会顺便让丢东西的人觉得自己很浪费。
-+
-+　　可以问得具体一点：下次准备拿它做什么？放在哪里？真要用的时候，找不找得到？
-+
-+　　比如留下两件旧衣服，准备下次刷墙时穿，放在明确的位置，这个用途就很清楚。留下十几件不再合身的衣服，理由都是以后干活穿，那也得想想，自己到底准备刷多少面墙，笑死。
-+
-+　　衣服还没坏，同时，衣柜里的衣服也可以爆满。要都留着吗？我看未必，不然爆满上再加爆满，更麻烦。也不一定全要仍，可以出二手，也可以捐了，送给亲戚朋友穿，不必要非得留着才是唯一的用途。
-+
-+　　有些东西看似在备用，连能不能用都没确认过。坏了一边的耳机、找不到配套设备的遥控器、很久没开过机的小电器，只要没有处理，它们就一直以“也许还能用”的身份待着。
-+
-+　　等到真需要的那一天，你仍然得从头检查。所谓准备充分，到时候才发现，只是提前存了一批待处理的事情。
-+
-+　　愿意留，就试一次，整理好，让它在需要时能被拿出来。连这一步都始终不愿意做，也值得问问，自己到底有多想用它。
-+
-+　　**还有一种更难处理：东西本身没什么用途，但一碰它，就想起当初花的钱。**
-+
-+　　买回来只用过一次的器具，放着碍事，送人又舍不得。于是继续收着，仿佛只要还在家里，那次购买就不算买错。
-+
-+　　可原来的钱已经花了。今天能决定的，是要不要继续给它留地方。让它再占一年柜子，也不会自动多出几次使用记录。
-+
-+　　承认买来没怎么用，那当然不好受。但有时处理掉一件这种闲置，未必是坏事：这东西很好，我用不上，下次看到类似的，可以少买一件。
-+
-+　　当然，这不意味着东西都该扔，更不意味着房间空才叫会生活。
-+
-+　　有的人离商店很远，有的人手头不宽裕，临时再买一件确实困难；有的配件很少用，缺了却不好找。这些情况下，留着备用是在省麻烦。使用频率低，不能单独成为清理的理由。
-+
-+　　纪念品也是一样。它让你想起某个人、某段生活，这就是它的用途，不需要硬说以后还能拿来装东西。
-+
-+　　也别为了清理得痛快，把判断不清的证件、资料和别人的物品一股脑丢掉。误丢之后的麻烦不一定补得回来。
-+
-+　　真正需要商量的还有数量和位置。家里愿意拿出一个盒子放纪念品，那就好好留着；愿意拿出一层柜子存备用品，也没问题。地方满了，再决定给哪件腾位置，或者自己是否愿意多让出一点空间。
-+
-+　　这个决定会有代价。处理掉的东西，某天也许真的又想用了。那时候重新借、重新找，可能要费一点事。留着也有代价，就是在这之前的每一天，都得接受它占在那里。
-+
-+　　两边都算进去，再选自己更愿意承担的。没必要为了防住一次可能的后悔，让眼前的日子一直不方便。
-+
-+　　下次整理抽屉，可以先把每天要用的几样东西放顺手。剩下的位置，再看看愿意留给哪些“以后”。
-+
-+　　如果那团旧线终于不用每次都拎出来，那今天就已经得到了点实在的好处。
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 10 月 9 日
 
 </code></pre>
 </details>
