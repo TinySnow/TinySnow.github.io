@@ -7,32 +7,94 @@ param(
 
     [string]$Title,
 
-    [switch]$Force
+    [switch]$Force,
+
+    [switch]$NoPause
 )
 
 $ErrorActionPreference = "Stop"
 
-# "Run with PowerShell" starts the script from the assets directory (and closes
-# the transient console immediately). Keep all default paths rooted at the
-# repository, and leave Explorer-launched windows open so errors are visible.
+# A shell-launched script gets a console window of its own, and that window
+# closes the moment the script ends. Keep all default paths rooted at the
+# repository, and keep such a window open so the result stays readable.
 $projectRoot = Split-Path -Parent $PSScriptRoot
-$launchedFromExplorer = $false
-try {
-    $parentProcessId = (Get-CimInstance Win32_Process -Filter "ProcessId=$PID").ParentProcessId
-    $launchedFromExplorer = (Get-Process -Id $parentProcessId).ProcessName -eq 'explorer'
-}
-catch {
+
+function Test-ShellLaunched {
+    # Walk up the process tree: a double-click, "Open with" or "Run with
+    # PowerShell" launch ends at a shell host, an ordinary console run does not.
+    $shellHosts = @(
+        'explorer.exe'
+        'dllhost.exe'
+        'shellexperiencehost.exe'
+        'startmenuexperiencehost.exe'
+        'runtimebroker.exe'
+        'applicationframehost.exe'
+    )
+
+    $currentProcessId = $PID
+    for ($depth = 0; $depth -lt 6; $depth++) {
+        $process = Get-CimInstance Win32_Process -Filter "ProcessId=$currentProcessId" -ErrorAction SilentlyContinue
+        if (-not $process) { return $false }
+
+        $parentProcessId = [int]$process.ParentProcessId
+        if ($parentProcessId -le 0 -or $parentProcessId -eq $currentProcessId) { return $false }
+
+        $parent = Get-CimInstance Win32_Process -Filter "ProcessId=$parentProcessId" -ErrorAction SilentlyContinue
+        if (-not $parent) { return $false }
+
+        if ($shellHosts -contains $parent.Name.ToLowerInvariant()) { return $true }
+
+        $currentProcessId = $parentProcessId
+    }
+
+    return $false
 }
 
-function Wait-ForDirectLaunch {
-    if ($launchedFromExplorer) {
-        Read-Host '按 Enter 关闭此窗口' | Out-Null
+function Test-InteractiveConsole {
+    # A windowed console (double-click, "Run with PowerShell", a terminal tab)
+    # redirects neither stdin nor stdout; a piped run does.
+    if ($Host.Name -ne 'ConsoleHost') { return $false }
+    if ([Console]::IsInputRedirected) { return $false }
+    if ([Console]::IsOutputRedirected) { return $false }
+
+    return $true
+}
+
+$shellLaunched = $false
+try { $shellLaunched = Test-ShellLaunched } catch { }
+
+# Pause rules, most explicit first:
+#   1. -NoPause              never pause;
+#   2. CONVERT_WECHAT_PAUSE  0 = never, 1 = always;
+#   3. redirected stdin      never pause, so a piped or agent-driven run cannot
+#      block on Read-Host even if the process tree ends at a shell host;
+#   4. shell launch, or an interactive console  pause, because a human is
+#      looking at this window (double-click, "Open with", terminal tab).
+$pauseBeforeExit = $false
+if (-not $NoPause) {
+    if ($env:CONVERT_WECHAT_PAUSE -eq '0') {
+        $pauseBeforeExit = $false
     }
+    elseif ($env:CONVERT_WECHAT_PAUSE -eq '1') {
+        $pauseBeforeExit = $true
+    }
+    elseif ([Console]::IsInputRedirected) {
+        $pauseBeforeExit = $false
+    }
+    elseif ($shellLaunched -or (Test-InteractiveConsole)) {
+        $pauseBeforeExit = $true
+    }
+}
+
+function Wait-BeforeExit {
+    if (-not $pauseBeforeExit) { return }
+
+    Read-Host '按 Enter 关闭此窗口' | Out-Null
 }
 
 trap {
     Write-Host "转换失败：$($_.Exception.Message)" -ForegroundColor Red
-    Wait-ForDirectLaunch
+    Wait-BeforeExit
     exit 1
 }
 
@@ -75,6 +137,64 @@ function Normalize-Body {
     return $normalized.Trim("`n")
 }
 
+function Test-UsableTitle {
+    param([Parameter(Mandatory = $true)][string]$Candidate)
+
+    if ([string]::IsNullOrWhiteSpace($Candidate)) { return $false }
+    if ($Candidate -match "`r|`n") { return $false }
+
+    foreach ($invalidCharacter in [System.IO.Path]::GetInvalidFileNameChars()) {
+        if ($Candidate.Contains([string]$invalidCharacter)) { return $false }
+    }
+
+    return $true
+}
+
+function Resolve-ArticleTitle {
+    param([string]$ExplicitTitle, [string]$TrailingTitle)
+
+    $candidates = @()
+    if (-not [string]::IsNullOrWhiteSpace($ExplicitTitle)) {
+        $candidates += [pscustomobject]@{ Source = '-Title 参数'; Value = $ExplicitTitle.Trim() }
+    }
+    if (-not [string]::IsNullOrWhiteSpace($TrailingTitle)) {
+        $candidates += [pscustomobject]@{ Source = '输入末尾的标题行'; Value = $TrailingTitle.Trim() }
+    }
+
+    try {
+        $clipboardText = ([string](Get-Clipboard -Raw -ErrorAction Stop)).Trim()
+        if (-not [string]::IsNullOrWhiteSpace($clipboardText)) {
+            $candidates += [pscustomobject]@{ Source = '剪贴板'; Value = $clipboardText }
+        }
+    }
+    catch {
+    }
+
+    # A stale clipboard (a copied path, a whole paragraph) must not abort the
+    # run: report why the candidate was skipped and keep looking.
+    foreach ($candidate in $candidates) {
+        if (Test-UsableTitle -Candidate $candidate.Value) { return $candidate.Value }
+
+        $preview = $candidate.Value -replace "`r?`n", ' / '
+        Write-Host "已忽略$($candidate.Source)中的标题（含换行或 Windows 文件名非法字符）：$preview" -ForegroundColor Yellow
+    }
+
+    if (Test-InteractiveConsole) {
+        Write-Host '输入里没有一级标题，剪贴板里也没有可用的单行标题。' -ForegroundColor Yellow
+        for ($attempt = 0; $attempt -lt 5; $attempt++) {
+            $answer = [string](Read-Host '请输入文章标题（直接回车取消）')
+            if ([string]::IsNullOrWhiteSpace($answer)) { break }
+
+            $answer = $answer.Trim()
+            if (Test-UsableTitle -Candidate $answer) { return $answer }
+
+            Write-Host '标题不能含换行，也不能含 \ / : * ? " < > | 等字符，请重试。' -ForegroundColor Yellow
+        }
+    }
+
+    throw '输入没有一级标题，且未能从 -Title、末尾标题行、剪贴板或手动输入得到可用标题。请复制标题后重试，或把标题粘成输入的最后一行，或使用 -Title "文章标题"。'
+}
+
 $inputFullPath = Resolve-ProjectPath -Path $InputPath
 if (-not (Test-Path -LiteralPath $inputFullPath -PathType Leaf)) {
     throw "Input file does not exist: $inputFullPath"
@@ -101,28 +221,7 @@ else {
         $content = $content.Substring(0, $trailingTitleMatch.Groups[2].Index).TrimEnd() + "`n"
     }
 
-    $title = ([string]$Title).Trim()
-
-    if ([string]::IsNullOrWhiteSpace($title) -and -not [string]::IsNullOrWhiteSpace($trailingTitle)) {
-        $title = $trailingTitle
-    }
-
-    if ([string]::IsNullOrWhiteSpace($title)) {
-        try {
-            $title = ([string](Get-Clipboard -Raw -ErrorAction Stop)).Trim()
-        }
-        catch {
-        throw "The input has no level-one title and the clipboard could not be read. Copy the title before running, paste it as the final standalone line, or pass -Title '文章标题'."
-        }
-    }
-
-    if ([string]::IsNullOrWhiteSpace($title)) {
-        throw "The input has no level-one title and the clipboard is empty. Copy the title before running, paste it as the final standalone line, or pass -Title '文章标题'."
-    }
-
-    if ($title -match "`r|`n") {
-        throw "The input has no level-one title, but the clipboard contains multiple lines. Copy only the article title, or pass -Title '文章标题'."
-    }
+    $title = Resolve-ArticleTitle -ExplicitTitle ([string]$Title) -TrailingTitle $trailingTitle
 
     # The rest of the converter can now use one canonical input shape.
     $content = "# $title`n`n" + $content.TrimStart("`n")
@@ -181,4 +280,4 @@ if ((Test-Path -LiteralPath $outputPath) -and -not $Force) {
 
 [System.IO.File]::WriteAllText($outputPath, $content, $utf8NoBom)
 Write-Output $outputPath
-Wait-ForDirectLaunch
+Wait-BeforeExit

@@ -161,39 +161,76 @@
 
 ## 当前转换工具
 
-当前实现为 `assets/convert-wechat-article.ps1`，默认把 `assets/wechat-origin.md` 转换到 `src/生活碎笔/文章与写作/`，并从一级标题、文章末尾标题、显式参数或剪贴板取得标题。
+当前实现为 `assets/convert-wechat-article.ps1`，双击入口为 `assets/convert-wechat-article.cmd`。默认把 `assets/wechat-origin.md` 转换到 `src/生活碎笔/文章与写作/`，并从一级标题、显式参数、文章末尾标题、剪贴板或手动输入取得标题。
 
-在仓库根目录运行：
+### 推荐方式：双击 `.cmd`
+
+1. 在微信公众号里复制文章标题（`Ctrl+C` 即可，不必粘进任何文件）。
+2. 把正文粘贴到 `assets/wechat-origin.md`，**不需要**给标题留位置，也**不需要**写 `# 一级标题`。
+3. 双击 `assets/convert-wechat-article.cmd`。标题直接取自剪贴板，窗口输出目标路径，并停留到按 Enter。
+
+只有剪贴板里没有可用的单行标题时（空剪贴板、复制的是路径或整段文字），才会提示手动输入标题；此时直接回车可取消。
+
+之所以不直接双击 `.ps1`：
+
+- 本机没有注册 `Microsoft.PowerShellScript.1` 类，资源管理器右键菜单里没有“使用 PowerShell 运行”（`HKLM\SOFTWARE\Classes\.ps1` 也不存在）。
+- `.ps1` 的默认打开方式可能被关联到记事本，双击只会打开源码而不执行。
+- 直接 `& .\assets\convert-wechat-article.ps1` 调用未签名脚本时，可能被执行策略拒绝（`RemoteSigned` 下提示“未对文件进行数字签名”）。
+- `.cmd` 以进程级 `-ExecutionPolicy Bypass` 调用 Windows PowerShell 5.1，并原样透传参数与退出码；是否停留由 `.ps1` 判断，因此不会再“闪退”。
+
+### 在终端运行
 
 ```powershell
-.\assets\convert-wechat-article.ps1
+.\assets\convert-wechat-article.cmd
+.\assets\convert-wechat-article.cmd -Title "文章标题"
+.\assets\convert-wechat-article.cmd -InputPath .\其他输入.md -OutputDirectory .\converted
 ```
 
-也可在资源管理器中右键 `convert-wechat-article.ps1` 并选择“使用 PowerShell 运行”。脚本的默认输入、输出路径始终相对于仓库根目录解析；从资源管理器启动时，成功或失败信息会保留在窗口中，按 Enter 才会关闭。
-
-该 `.ps1` 文件必须保存为 **UTF-8 with BOM**。资源管理器右键运行使用 Windows PowerShell 5.1，它不能可靠解析带中文的 UTF-8 无 BOM 脚本；修改脚本编码时不得移除 BOM。
-
-输入文件可以没有一级标题。无标题时，先在微信公众号中复制文章标题，再运行上述命令；工具会读取剪贴板中的单行文本，将其补为一级标题，并用它生成文件名。标题不需要粘贴进 `assets/wechat-origin.md`。
-
-如果不希望读取剪贴板，也可以显式传入标题：
+不经过 `.cmd` 调用时，必须显式绕过执行策略：
 
 ```powershell
-.\assets\convert-wechat-article.ps1 -Title "文章标题"
+powershell -NoProfile -ExecutionPolicy Bypass -File .\assets\convert-wechat-article.ps1
 ```
 
-也可以把未经 Markdown 格式化的标题粘贴为整篇输入的最后一个独立文本行。工具会把该行从末尾移走，自动补成开头的一级标题。不要把标题无分隔地直接拼在图源行之后，例如 `> 图源 | Unsplash文章标题`；这种文本没有可靠的标题边界，无法安全自动拆分。总体上，推荐使用剪贴板方案，因为复制标题后无需再次粘贴。
+脚本的默认输入、输出路径始终相对于仓库根目录（`assets` 的上一级）解析，因此在任何工作目录下运行结果一致。
 
-也可以指定其他输入文件或输出目录：
+### 窗口是否停留
+
+- 输入被重定向时（管道、CI、自动化）从不停留，避免 `Read-Host` 阻塞；这一条优先于下面两条。
+- 双击 `.cmd`、用“打开方式”运行 `.ps1`，或在交互式终端里运行时停留，成功和失败都要按 Enter。
+- 显式控制：传 `-NoPause`，或设置环境变量 `CONVERT_WECHAT_PAUSE=0`（从不暂停）／`CONVERT_WECHAT_PAUSE=1`（总是暂停）。
+
+### 编码要求
+
+- `.ps1` 必须保存为 **UTF-8 with BOM**。Windows PowerShell 5.1 不能可靠解析带中文的 UTF-8 无 BOM 脚本，会报 `缺少“)”` 一类语法错误；用编辑器或脚本改写后务必确认 BOM 仍在。
+- `.cmd` 必须保持 **纯 ASCII**。cmd.exe 按 OEM 代码页读取批处理文件，中文会变成乱码；中文输出由 `.ps1` 负责。
+
+### 标题来源
+
+常规流程是**剪贴板**：复制文章标题，双击 `.cmd`，工具读取剪贴板里的单行文本作为标题，并自动补成开头的 `# 一级标题`。不需要把标题粘进 `assets/wechat-origin.md`，也不需要手动写 `#`。
+
+无一级标题时按以下顺序取标题，取到即用（`-Title` 用于终端批量转换；末尾标题行与手动输入都只是可选兜底）：
+
+1. `-Title "文章标题"` 参数；
+2. 输入末尾的独立标题行（可选做法：会自动从末尾移到开头，标题不必带 `#`）；
+3. 剪贴板中的单行文本（双击流程的常规来源）；
+4. 兜底：在真实控制台里运行时提示手动输入（最多 5 次，直接回车取消）；四条都没有则报错退出。
+
+候选标题含换行或 `\ / : * ? " < > |` 等 Windows 文件名非法字符时会被跳过并说明原因，不会直接中断。
+
+可选做法：把未经 Markdown 格式化的标题粘贴为整篇输入的最后一个独立文本行，工具会把该行从末尾移走并用它做标题。不要把标题无分隔地直接拼在图源行之后，例如 `> 图源 | Unsplash文章标题`；这种文本没有可靠的标题边界，无法安全自动拆分。
+
+指定其他输入文件或输出目录：
 
 ```powershell
-.\assets\convert-wechat-article.ps1 -InputPath .\其他输入.md
-.\assets\convert-wechat-article.ps1 -InputPath .\其他输入.md -OutputDirectory .\converted
+.\assets\convert-wechat-article.cmd -InputPath .\其他输入.md
+.\assets\convert-wechat-article.cmd -InputPath .\其他输入.md -OutputDirectory .\converted
 ```
 
 工具执行以下规范化操作：
 
 - 从首个一级标题读取文章标题，并用完整标题作为 Markdown 文件名。
-- 输入没有一级标题时，依次尝试 `-Title`、文章末尾的独立标题行、剪贴板中的单行标题，并自动补齐一级标题。
+- 输入没有一级标题时，依次尝试 `-Title`、文章末尾的独立标题行、剪贴板中的单行标题、控制台手动输入，并自动补齐一级标题；含换行或 Windows 文件名非法字符的候选会被跳过并说明原因。
 - 如果封面图源信息之后还有一个独立的普通文本行，则把该行视为末尾标题；标题不需要带 `#`。
 - 把 `> 字数 字 | 标签` 转换为博客所用的居中蓝色加粗 HTML。
 - 把正文中两个以上连续空白行表示的场景分隔转换为 `<br />`。
@@ -205,13 +242,9 @@
 
 ## 微信公众号文章转换
 
-将微信公众号文本编辑器中的文章粘贴到 `assets/wechat-origin.md`，复制文章标题后，在仓库根目录运行：
+将微信公众号文本编辑器中的文章粘贴到 `assets/wechat-origin.md`，然后双击 `assets/convert-wechat-article.cmd`（或在仓库根目录运行 `.\assets\convert-wechat-article.cmd`）。复制过标题时脚本直接使用剪贴板标题，否则会提示输入标题。
 
-```powershell
-.\assets\convert-wechat-article.ps1
-```
-
-脚本会读取剪贴板标题，按博客格式转换文章，并输出到 `src/生活碎笔/文章与写作/`。详细格式与其他标题输入方式见 `assets/AGENTS.md`。
+脚本按博客格式转换文章，并输出到 `src/生活碎笔/文章与写作/`。详细格式与其他标题输入方式见 `assets/AGENTS.md`。
 
 CI 使用 `assets/generate-last-updated-md.sh` 生成最近更新页面，并使用无需第三方依赖的 `assets/generate-rss.py` 生成 RSS。
 
