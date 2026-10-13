@@ -1,0 +1,13 @@
+# GitGuardian 配置：https://docs.gitguardian.com/ggshield-docs/reference/ggshield-configuration
+#
+# 背景：Algolia 的 search-only key 按设计**必须**出现在浏览器端 JS 里
+# （DocSearch 官方文档自己也是这么发布的），它只能读、不能写（实测删索引返回 403），
+# 所以出现在 theme/customized/search.js 里不是泄露。
+# 这里按**路径**放行，而不是按具体值——这样以后轮换 key 也不用改这个文件。
+version: 2
+
+secret:
+  ignored_paths:
+    - "theme/customized/search.js"
+    # mdbook build 产出的带哈希文件名（gh-pages-mirror 分支上的构建产物）
+    - "theme/customized/search-*.js"
