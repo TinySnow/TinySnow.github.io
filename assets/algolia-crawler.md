@@ -1,0 +1,140 @@
+# Algolia DocSearch（tinysnowio）：中文分词与爬虫配置
+
+这两份文件放在 `assets/` 下，不参与 mdBook 构建，也不会部署到站点：
+
+- [`algolia-crawler-config.js`](./algolia-crawler-config.js)：替换 Algolia Crawler Editor 里的全部内容。
+
+---
+
+## 一、结论：不是「没爬到」，是「按字索引」
+
+我直接用线上索引（`GX9RTL51BH` / `tinysnowio`，`index.hbs` 里的 search-only key）做了实测，可以确定问题出在分词，而不是爬虫漏抓：
+
+| 实测 | 结果 | 说明 |
+| --- | --- | --- |
+| 索引规模 | 42,148 条记录 / 21,072 个 url / 约 2,360 个页面 | 覆盖率没问题，内容都在 |
+| 索引设置 | **没有 `indexLanguages`，也没有 `queryLanguages`** | 中文语种支持从未打开 |
+| `重装系统` 的查询分词 | `_rankingInfo.words = 4`，`matchedWords: ["重","装","系","统"]` | 查询被切成 **4 个单字**，不是「重装 / 系统」两个词 |
+| 查询时临时加 `queryLanguages: ["zh"]` | 仍然是 `words = 4`，高亮结果完全一样 | 现索引下加这一项**不生效** |
+| 顺序敏感性 | `重装` 172 条 vs `装重` 472 条 | 引擎是按**单字顺序**匹配，不是词级匹配 |
+| 精确短语排名 | 取 52 个页面正文里 12 个连续汉字做查询：**14 个排第 1，37 个进前 20，15 个连前 20 都进不去**（其中有的 `nbHits` 高达 221） | 这就是你体感「搜不出来」的真实形态 |
+| 召回 | 44/44 个随机短语至少有命中 | 召回没问题，**是相关性和排序崩了** |
+
+一句话：中文被拆成单字后，"词"这个概念在索引里根本不存在——所以既没有词级匹配，`words` 排序准则也变成了「命中多少个字」，一个页面命中 4 个字和另一个页面命中 4 个字几乎同分，真正该排前面的页面就被淹了。
+
+顺带实测到的其它问题：
+
+- **抽取范围不对**：原配置删的是 `#sidebar` / `#menu-bar`，而你这套主题实际用的是 `#mdbook-sidebar` / `#mdbook-menu-bar`——删了个寂寞（不过静态 HTML 里侧边栏是空的，靠 JS 填充，所以没造成大灾难）。
+- **重复抽取**：正文选择器把 `span` / `a` / `em` / `strong` / `ul` / `ol` 和 `p` / `li` 混在一起，同一句话会被抽 3～4 遍。
+- **漏内容**：2,360 个页面里有 **114 个含 `<table>`**，`td` / `th` 完全不在选择器里，表格内容一个字都搜不到；另有 30 个页面有带 `alt` 的图片，也搜不到。
+- **`print.html` 有 19MB**（整本书合订本），虽然实测没进索引，但每次爬取都要白抓一遍，且随时可能把 `maxUrls` / 记录大小撑爆。
+
+## 二、这次的改动（`algolia-crawler-config.js`）
+
+1. **打开中文语种**：`indexLanguages` / `queryLanguages` 都设为 `["zh", "en"]`——这是 Algolia 在 CJK 文本里启用**词典分词**的开关。
+2. **额外写一份「按词」的可搜索属性**：`hierarchy_words` / `content_words`，用 `Intl.Segmenter`（ICU 中文词典，与 Algolia 引擎声称使用的 CJK 词典是同一套 ICU 数据）分词，例如
+   `重装系统 8->7` → `重装 系统 8 7`。
+   **原来的 `hierarchy` / `content` 继续保留可搜索**，所以在「引擎自己按词切分」和「引擎仍然按字切分」两种情况下都不会把搜索改坏，只是多占一点索引存储。
+3. **抽取范围收窄到 `<main>`**：删除选择器修正为 `main ...` / `#mdbook-content ...`，正文选择器改为 `p, li, td, th, code, dd, dt`（去掉会重复的内联元素，补上表格），标题改为 `main h1..h6`，并跳过图片 `alt` 里无信息量的文件名。
+4. **跳过** `print.html` / `toc.html` / `404.html`，以及超过 4MB 的页面。
+5. 索引设置里**只加不动**：新增 `indexLanguages` / `queryLanguages` 与按词属性，其余（ranking、customRanking、weights、distinct 等）保持你原来的值。
+
+## 三、怎么用（第 2 步千万别省）
+
+> ⚠️ **`initialIndexSettings` 只在索引「第一次」爬取时生效**（[官方文档](https://www.algolia.com/doc/tools/crawler/apis/configuration/initial-index-settings/)："only applied during the first crawl of an index"）。`tinysnowio` 已经存在，所以**光换 Editor 配置，线上设置一点都不会变**，`indexLanguages` 不会生效，预设的中文分词也就白写了。
+
+**第 1 步**：Algolia Crawler Dashboard → 你的 Crawler → **Editor** → 用 [`algolia-crawler-config.js`](./algolia-crawler-config.js) 整体替换 → 末尾的 `apiKey` 改回你原来的值（文件里是 `PlaceHolder`，避免把可写 key 提交进公开仓库）→ Save。
+
+**第 2 步：应用索引设置**，两种选一种：
+
+- **A（推荐，不丢数据）**：Algolia Dashboard → **Search** → 索引 `tinysnowio` → **Configuration** → JSON 编辑器，粘贴下面这段并保存（部分更新即可）：
+
+  ```json
+  {
+    "indexLanguages": ["zh", "en"],
+    "queryLanguages": ["zh", "en"],
+    "searchableAttributes": [
+      "unordered(hierarchy_words.lvl0)",
+      "unordered(hierarchy_words.lvl1)",
+      "unordered(hierarchy_words.lvl2)",
+      "unordered(hierarchy_words.lvl3)",
+      "unordered(hierarchy_words.lvl4)",
+      "unordered(hierarchy_words.lvl5)",
+      "unordered(hierarchy_words.lvl6)",
+      "content_words",
+      "unordered(hierarchy.lvl0)",
+      "unordered(hierarchy.lvl1)",
+      "unordered(hierarchy.lvl2)",
+      "unordered(hierarchy.lvl3)",
+      "unordered(hierarchy.lvl4)",
+      "unordered(hierarchy.lvl5)",
+      "unordered(hierarchy.lvl6)",
+      "content"
+    ]
+  }
+  ```
+
+- **B（省事）**：在 Dashboard 里删掉 `tinysnowio` 索引，再让爬虫跑一次——索引被重新创建时会自动套用 `initialIndexSettings`（爬完之前站内搜索会是空的）。
+
+**第 3 步**：Restart crawl（建议先看一次完整爬取日志，确认没有大面积报错再确认发布）。
+
+## 四、怎么验证分词真的生效了
+
+爬完之后，用同一个 search-only key 分别查这两个词，看 `_rankingInfo.words`（数字 = 查询被切成了几个 token）：
+
+| 查询 | 分词生效（按词） | 分词没生效（按字，即现状） |
+| --- | --- | --- |
+| `重装系统` | `words = 2`（重装 / 系统） | `words = 4` |
+| `重装 系统`（中间一个空格） | `words = 2`，`nbHits > 0` | `nbHits` 与不空格时明显不同 / 为 0 |
+
+- 如果 `重装系统` 的 `words` 变成 2：引擎自己就能按词切分，问题在这一层已经解决，后续只需要做第二阶段的展示/分页。
+- 如果仍然是 4，但 `重装 系统`（带空格）能命中：说明**索引里的按词属性是活的**，只是查询侧还没分词——这正好是第二阶段客户端要补的一环（把用户输入也按词切开再发给 Algolia）。
+
+要的话把爬取结果告诉我，我可以直接用你现在这个 key 跑一遍上面的对照，给出结论。
+
+## 五、回退
+
+- 只想去掉预分词：把配置顶部 `OPTIONS.preSegment` 改成 `false`，`searchableAttributes` 会自动退回原来那 8 项（其余不受影响）。
+- 只想恢复原行为：把本目录文件换回旧配置；索引设置按第 2 步把 `indexLanguages` / `queryLanguages` 删掉即可。
+
+## 六、第二阶段：结果展示与分页（已实现）
+
+### 之前的问题（实测 `@docsearch/js@3.9.0` 源码）
+
+- `docsearch()` **每次查询只发 1 个请求**，且写死 `hitsPerPage: 20` → 第 21 条以后的命中根本没从 Algolia 取回来；界面上那个 `nbHits` 是全库统计，不是能看到的条数。
+- 取回后客户端再按 `maxResultsPerGroup`（**默认 5**）切片，而且外层按 lvl0、内层按 lvl1 各切一次 → 「只展示前几个」。
+- 它**没有任何分页 / 加载更多**，`docsearch()` 返回 `void`，拿不到内部实例，无法从外部驱动翻页。
+
+### 现在的实现
+
+| 文件 | 改动 |
+| --- | --- |
+| `theme/customized/search.js` | **新增**。用 `@algolia/autocomplete-js@1.19.12` 自建下拉面板 |
+| `theme/index.hbs` | CDN 依赖固定版本，并在 `additional-js` **之前**同步加载；删掉旧的 `docsearch({...})` 初始化 |
+| `book.toml` | `additional-js` 增加 `theme/customized/search.js` |
+| `theme/customized/style.css` | 面板样式，以及 ayu/navy/coal 暗色主题下的配色 |
+
+面板行为：
+
+- **每页 20 条，底部「加载更多（已显示 X / 共 Y 条）」逐页追加**，可以一直翻到最后一页（`search.js` 顶部的 `perPage` 可调）。
+- 顶部显示「共 N 条命中」，不再出现「明明很多命中却只看到 5 条」。
+- 每条命中展示：页面标题 + 层级路径（lvl2 › lvl3 …）+ 带 `<mark>` 高亮的正文摘要，点按/回车直接跳到对应锚点。
+- 查询直接走 Algolia 的 `POST /1/indexes/{index}/query`，**不引入 `algoliasearch` 客户端**，因此没有 v4（返回 `{results}`）与 v5（返回数组）的版本差异问题。
+- `search.js` 顶部 `segmentQuery`（默认 `false`）：改成 `true` 后，查询会先按词切开再发给 Algolia，用于配合本次爬虫新写的 `content_words` / `hierarchy_words`。**等第四节验证完再打开**。
+- 自建面板初始化失败时，会自动退回 DocSearch 弹窗（并把抓取条数从 20 提到 40、每组从 5 提到 20）。要强制用回 DocSearch，把 `search.js` 里的 `fallbackToDocSearch` 保持 `true` 并临时让 `window['@algolia/autocomplete-js']` 不可用即可；要彻底移除自建面板，从 `book.toml` 的 `additional-js` 里去掉 `theme/customized/search.js` 并恢复 `index.hbs` 里的 `docsearch({...})` 调用。
+
+### 怎么验证（本地）
+
+```bash
+mdbook build          # 或 mdbook serve
+```
+
+然后打开任意页面，在菜单栏搜索框里输入中文，检查：
+
+1. 面板顶部有「共 N 条命中」；
+2. 列表一次 20 条，底部有「加载更多」，点它（或键盘上下选中后回车）会继续追加，且前面的结果不重复；
+3. 中文词有黄色高亮标记；
+4. 切换 mdBook 主题（Auto/Light/Rust/Coal/Navy/Ayu）后面板配色仍然正常。
+
+改动只涉及主题文件，`mdbook build` 之后 `book/` 下会生成带哈希的新文件名（`search-xxxxxxxx.js`、`style-xxxxxxxx.css`），部署走原有的 GitHub Actions 流程即可。
+
