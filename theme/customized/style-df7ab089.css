@@ -1,0 +1,224 @@
+@media only screen and (max-width:1080px) {
+    .sidetoc {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width:1080px) {
+    main {
+        position: relative;
+        padding-right: 170px;
+    }
+    .sidetoc {
+        margin-left: auto;
+        margin-right: auto;
+        /*left: calc(100% + (var(--content-max-width))/4 - 180px);*/
+        left: calc(100% - 200px);
+        position: absolute;
+    }
+    .pagetoc {
+        position: fixed;
+        width: 200px;
+        height: calc(100vh - var(--menu-bar-height) - 10rem);
+        overflow: auto;
+        z-index: 1000;
+    }
+    .pagetoc a {
+        border-left: 1px solid var(--sidebar-bg);
+        color: var(--fg) !important;
+        display: block;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-left: 10px;
+        text-align: left;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+    .pagetoc a:hover,
+    .pagetoc a.active {
+        background: var(--sidebar-bg);
+        color: var(--sidebar-fg) !important;
+    }
+    .pagetoc .active {
+        background: var(--sidebar-bg);
+        color: var(--sidebar-fg);
+    }
+}
+
+.page-footer {
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+    padding: 10px 0;
+    color: gray;
+}
+
+/* 修改章节目录的间距 */
+.chapter li.chapter-item {
+    /* 没有文件时的文字颜色 */
+    color: #939da3;
+    margin-top: 1rem;
+}
+
+/* 修改滚动条宽度 */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* 表格靠左对齐 */
+table {
+    margin-left: 0 !important;
+}
+
+/* 只使用底部的页面跳转，因为左右两边的宽跳转会被 page-toc 遮盖 */
+@media only screen and (max-width: 2560px) {
+    .nav-wide-wrapper { display: none; }
+    .nav-wrapper { display: block; }
+}
+@media only screen and (max-width: 2560px) {
+    .sidebar-visible .nav-wide-wrapper { display: none; }
+    .sidebar-visible .nav-wrapper { display: block; }
+}
+
+/* Fix on mobile device */
+code {
+    word-break: break-word;
+}
+
+/* 修复可编辑代码框顶部过窄的问题 */
+code.editable, .ace_scroller {
+    top: 10px;
+}
+
+/* 修改书侧边目录的区域分隔行样式 */
+
+.chapter .spacer {
+    background-color: #99CCFF;
+    height: 2px;
+    margin-top: 8px;
+}
+
+.chapter li .md-viewed {
+    color: #777;
+}
+
+/* ===========================================================================
+ * 自建搜索面板（逻辑见 theme/customized/search.js）
+ * 搜索框占据菜单栏原有的 #docsearch 容器，下拉面板比搜索框宽，所以容器需要
+ * position: relative 作为定位参照。
+ * =========================================================================== */
+#docsearch {
+    position: relative;
+    align-self: center;
+    width: 210px;
+    margin-right: 6px;
+    z-index: 120;
+    /* classic 主题变量：面板高度、字号、层级 */
+    --aa-panel-max-height: min(70vh, 620px);
+    --aa-font-size: 1.4rem;
+    --aa-search-input-height: 30px;
+    --aa-base-z-index: 300;
+}
+
+#docsearch .aa-Autocomplete,
+#docsearch .aa-Form {
+    width: 100%;
+}
+
+#docsearch .aa-Form {
+    border-radius: 6px;
+    min-height: 30px;
+}
+
+#docsearch .aa-Input {
+    padding: 3px 6px;
+    height: 28px;
+}
+
+/* 面板贴合容器左边缘展开，并限制宽度避免在小屏溢出 */
+#docsearch .aa-Panel {
+    left: 0;
+    width: min(680px, calc(100vw - 32px));
+    border-radius: 8px;
+}
+
+#docsearch .md-search-count {
+    padding: 2px 4px 6px;
+    font-size: 1.2rem;
+    opacity: .65;
+}
+
+#docsearch .aa-ItemContentTitle {
+    font-size: 1.45rem;
+    line-height: 1.45;
+}
+
+#docsearch .md-search-path {
+    font-size: 1.2rem;
+    opacity: .7;
+}
+
+#docsearch .md-search-snippet {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+#docsearch .md-search-snippet mark,
+#docsearch .md-search-path mark,
+#docsearch .aa-ItemContentTitle mark {
+    background: rgba(255, 214, 0, .45);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+#docsearch .md-search-icon {
+    background: none;
+    box-shadow: none;
+}
+
+#docsearch .md-search-more,
+#docsearch .md-search-notice {
+    justify-content: center;
+    text-align: center;
+    color: var(--icons-hover, #7272ff);
+}
+
+#docsearch .md-search-more .aa-ItemContentTitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* 暗色主题：mdBook 用 html 上的 class 切主题，不是 prefers-color-scheme */
+html.ayu #docsearch,
+html.navy #docsearch,
+html.coal #docsearch {
+    --aa-text-color-rgb: 208, 208, 214;
+    --aa-background-color-rgb: 28, 31, 40;
+    --aa-input-background-color-rgb: 20, 22, 29;
+    --aa-primary-color-rgb: 158, 151, 255;
+    --aa-muted-color-rgb: 150, 150, 170;
+    --aa-icon-color-rgb: 170, 170, 200;
+    --aa-selected-color-rgb: 158, 151, 255;
+    --aa-selected-color-alpha: .28;
+    --aa-panel-border-color-rgb: 90, 94, 115;
+    --aa-input-border-color-rgb: 100, 104, 128;
+    --aa-description-highlight-background-color-rgb: 0, 255, 255;
+    --aa-description-highlight-background-color-alpha: .22;
+    --aa-scrollbar-track-background-color-rgb: 44, 46, 64;
+    --aa-panel-shadow: 0 0 0 1px rgba(120, 124, 150, .25), 0 8px 24px -6px rgba(0, 0, 0, .6);
+}
+
+@media only screen and (max-width: 700px) {
+    #docsearch {
+        width: 140px;
+    }
+    #docsearch .aa-Input {
+        font-size: 1.2rem;
+    }
+}

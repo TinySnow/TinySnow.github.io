@@ -29,7 +29,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../../../theme/customized/style-5f93df08.css">
+        <link rel="stylesheet" href="../../../theme/customized/style-df7ab089.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -49,12 +49,14 @@
         </script>
 
         <!-- Doc Search -->
+        <!-- 自建搜索面板用的 classic 主题，版本与下方 autocomplete-js 保持一致 -->
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.19.12/dist/theme.min.css"
         />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        <!-- 仅在自建搜索面板初始化失败时，给 DocSearch 弹窗兜底用 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.9.0/dist/style.css" />
+        <link rel="preconnect" href="https://GX9RTL51BH-dsn.algolia.net" crossorigin />
         
 
         <!-- Provide site root to javascript -->
@@ -438,115 +440,293 @@
 <h2 id="附录"><a class="header" href="#附录">附录</a></h2>
 <h3 id="algolia-crawer-配置"><a class="header" href="#algolia-crawer-配置">Algolia Crawer 配置</a></h3>
 <pre><code class="language-javascript">new Crawler({
+  // ⚠️ 三条硬性兼容要求（改动前请先看 assets/algolia-crawler.md 第三节）：
+  //   1. 第 1 行必须就是 new Crawler({，前面不能有注释或代码（algolia/docsearch#2190）
+  //   2. 不用模板字符串
+  //   3. 配置内部不写嵌套函数/回调：编辑器的静态检查解析不了嵌套作用域里的
+  //      参数绑定，会把回调参数报成未定义标识符（曾把 .each((_, el) =&gt; ...) 的
+  //      el 标红）。所以下面全部用普通下标循环 + 直筒代码，没有闭包。
+  appId: 'GX9RTL51BH',
+  // 保持你现有 Crawler 的 apiKey（不要把这个可写 key 提交进公开仓库）
+  apiKey: 'PlaceHolder',
   rateLimit: 8,
   maxDepth: 10,
   maxUrls: 5000,
-  startUrls: ["https://tinysnow.github.io"],
+  startUrls: [
+    'https://tinysnow.github.io',
+    // ⚠️ toc.html 必须留在 startUrls 里：站点静态 HTML 里首页只有
+    // print.html / last-updated.html 两个站内链接、没有任何 prev/next，
+    // 而 toc.html 里有 2359 条站内链接，是全站唯一的「发现入口」。
+    // 少了它，实测覆盖率会从 2360 个页面掉到 297 个（只剩「生活碎笔」那条章节链）。
+    // 它自己不会进索引：见下面的 pathsToMatch 排除 + recordExtractor 里的 SKIP_PATHS。
+    'https://tinysnow.github.io/toc.html',
+  ],
   renderJavaScript: false,
+  // 故意不用站点的 sitemap：它的 2360 条 URL 全部不带 .html（如 /个人简介），
+  // 而 GitHub Pages 对 /个人简介 和 /个人简介.html 都直接返回 200（不是 301 跳转），
+  // 用它会变成每个页面被索引两份。全站覆盖靠 toc.html 这个入口 + 站内链接。
   sitemaps: [],
   ignoreCanonicalTo: false,
-  discoveryPatterns: ["https://tinysnow.github.io/ **"],
-  schedule: "at 13:14 on Tuesday",
+  // 排除不需要下载的页面：print.html 是整本书合订本（19MB），404.html 没有内容。
+  // ⚠️ 千万不要把 toc.html 放进来——它是发现入口，排除它等于掐掉全站链接。
+  exclusionPatterns: [
+    'https://tinysnow.github.io/print.html',
+    'https://tinysnow.github.io/404.html',
+  ],
+  discoveryPatterns: ['https://tinysnow.github.io/**'],
+  schedule: 'at 13:14 on Tuesday',
   actions: [
     {
-      indexName: "tinysnowio",
-      pathsToMatch: ["https://tinysnow.github.io/** "],
-      recordExtractor: ({ $, helpers }) =&gt; {
-        // 去除不想要的 DOM
-        $("#sidebar").remove();
-        $("#menu-bar").remove();
-        $("#menu-bar").remove();
+      indexName: 'tinysnowio',
+      // 抓但不建索引的三个页面：toc.html 只用来发现链接，print/404 不是内容
+      pathsToMatch: [
+        'https://tinysnow.github.io/**',
+        '!https://tinysnow.github.io/toc.html',
+        '!https://tinysnow.github.io/print.html',
+        '!https://tinysnow.github.io/404.html',
+      ],
+      recordExtractor: ({ url, $, contentLength, helpers }) =&gt; {
+        /* ============================ 开关 ============================ */
+        const SKIP_PATHS = ['/print.html', '/toc.html', '/404.html'];
+        const MAX_PAGE_BYTES = 4 * 1024 * 1024;    // 超过这个体积的页面跳过
+        const INDEX_IMAGE_ALT = true;              // 把图片 alt 并入正文
+        const PAGE_TITLE_FALLBACK = true;          // 没有 h1 的页面用 &lt;title&gt; 补 lvl1
+        const PRE_SEGMENT = true;                  // 额外写一份「按词」的属性
+        const SEGMENT_MAX_CHARS = 3000;            // 分词副本截断长度
+        const MAX_RECORDS_PER_PAGE = 700;          // 爬虫单页硬上限是 750
+        const MERGE_MAX_CHARS = 1200;
+        const LEVELS = ['lvl0', 'lvl1', 'lvl2', 'lvl3', 'lvl4', 'lvl5', 'lvl6'];
+        const HAS_CJK = /[\u3400-\u9FFF\uF900-\uFAFF]/;
 
+        // 中文分词器：ICU 词典，与 Algolia 引擎声称使用的 CJK 词典同源。
+        // 环境不支持 Intl.Segmenter 时退化为不分词，不影响爬取。
+        let segmenter = null;
+        try {
+          if (typeof Intl !== 'undefined' &amp;&amp; typeof Intl.Segmenter === 'function') {
+            segmenter = new Intl.Segmenter('zh-Hans', { granularity: 'word' });
+          }
+        } catch (e) { /* 忽略：走不分词分支 */ }
+
+        /* ========================== 跳过规则 ========================== */
+        if (SKIP_PATHS.indexOf(url.pathname) !== -1) return [];
+        if (contentLength &amp;&amp; contentLength &gt; MAX_PAGE_BYTES) return [];
+        // 抽取主体不存在就直接跳过，避免抽出菜单栏之类的垃圾
+        if ($('main').length === 0 &amp;&amp; $('#mdbook-content').length === 0) return [];
+
+        /* ======================= 图片 alt 并入正文 ======================= */
+        // 用下标循环，不用回调，避免嵌套作用域
+        if (INDEX_IMAGE_ALT) {
+          const images = $('main img[alt]');
+          for (let i = 0; i &lt; images.length; i++) {
+            const image = images[i];
+            const alt = ($(image).attr('alt') || '').trim();
+            // 只保留有信息量的 alt：含连续中文，或含连续英文且不像文件名。
+            // 实测本站 114 个去重 alt 里有 21 个是 image-20260531144550242、
+            // Snipaste_2023-10-22 这类文件名，靠下面这行挡掉。
+            const meaningful =
+              /[\u4e00-\u9fff]{2,}/.test(alt) ||
+              (/[A-Za-z]{2,}/.test(alt) &amp;&amp; !/[_0-9]/.test(alt));
+            if (!meaningful) continue;
+            const safe = alt.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;');
+            $(image).after('&lt;p&gt;' + safe + '&lt;/p&gt;');
+          }
+        }
+
+        /* =========================== 抽取记录 =========================== */
         const records = helpers.docsearch({
           recordProps: {
+            // 故意不用站点标题 h1.menu-title：否则「微雪」会命中每一个页面
             lvl0: {
-              selectors: "",
-              defaultValue: "博客",
+              selectors: '',
+              defaultValue: '博客',
             },
-            lvl1: ["h1"],
-            lvl2: ["h2"],
-            lvl3: ["h3"],
-            lvl4: ["h4"],
-            lvl5: ["h5"],
-            lvl6: ["h6"],
+            // 页面标题 = &lt;main&gt; 里的 h1。
+            // ⚠️ 千万不要把 'head &gt; title' 之类交给 helper 当兜底：它会在所有候选
+            //    选择器里取「文档顺序最靠前」的那个，&lt;title&gt; 在 &lt;head&gt; 里永远排第一，
+            //    结果 lvl1 全变成「重装系统 - 微雪博客」——标题带上站点名，而且
+            //    「微雪」「博客」会命中每一个页面（实测 2342/2342）。
+            //    没有 h1 的那 23 个页面改在下面用 &lt;title&gt; 补，见 PAGE_TITLE_FALLBACK。
+            lvl1: ['main h1', '#mdbook-content h1'],
+            lvl2: ['main h2', '#mdbook-content h2'],
+            lvl3: ['main h3', '#mdbook-content h3'],
+            lvl4: ['main h4', '#mdbook-content h4'],
+            lvl5: ['main h5', '#mdbook-content h5'],
+            lvl6: ['main h6', '#mdbook-content h6'],
+            // 正文：只取 &lt;main&gt; 里的块级元素。去掉了 span/a/em/strong/ul/ol
+            // （同一句话会被抽 3~4 遍），补上 td/th（表格）与 dd/dt，
+            // code 同时覆盖块级和行内代码。
             content: [
-              "p",
-              "li",
-              "ul",
-              "ol",
-              "code",
-              "span",
-              "strong",
-              "a",
-              "em",
+              'main p, main li, main td, main th, main code, main dd, main dt',
+              '#mdbook-content p, #mdbook-content li, #mdbook-content td, #mdbook-content th, #mdbook-content code, #mdbook-content dd, #mdbook-content dt',
             ],
+            // 语言交给 helper 写进每条记录
+            lang: { defaultValue: 'zh-CN' },
           },
           aggregateContent: true,
-          recordVersion: "v3",
+          indexHeadings: true,
+          recordVersion: 'v3',
         });
-        // 添加语言
-        records.forEach((record) =&gt; {
-          record.lang = "zh-CN";
-        });
-        return records;
+
+        /* ================== 单页记录数保护（内联，无函数）================== */
+        // 爬虫单页超过 750 条记录会直接报 Extractors returned too many records。
+        // 超过阈值时把「同一锚点、类型为 content」的相邻记录合并，标题原样保留；
+        // 在副本上合并，不改动 helper 返回的原对象。
+        let finalRecords = records;
+        if (records.length &gt; MAX_RECORDS_PER_PAGE) {
+          const packed = [];
+          let pending = null;
+          for (let i = 0; i &lt; records.length; i++) {
+            const record = records[i];
+            const isContent = record.type === 'content' &amp;&amp; typeof record.content === 'string';
+            const canMerge =
+              pending &amp;&amp;
+              isContent &amp;&amp;
+              pending.url === record.url &amp;&amp;
+              pending.content.length + record.content.length &lt; MERGE_MAX_CHARS;
+            if (canMerge) {
+              pending.content += '\n' + record.content;
+              continue;
+            }
+            if (pending) packed.push(pending);
+            if (isContent) {
+              pending = Object.assign({}, record);
+            } else {
+              pending = null;
+              packed.push(record);
+            }
+          }
+          if (pending) packed.push(pending);
+          finalRecords = packed;
+        }
+
+        /* ================ 写一份按词切分的副本（内联，无函数）================ */
+        // 先给没有标题的记录补 lvl1：这类页面 &lt;main&gt; 里没有 h1（实测 23 个），
+        // 只能用 &lt;title&gt; 兜底，并去掉「 - 微雪博客」这个站点名后缀。
+        // 放在分词之前，这样 hierarchy_words.lvl1 也会一起生成。
+        if (PAGE_TITLE_FALLBACK) {
+          const pageTitle = ($('head &gt; title').text() || '').replace(/ - 微雪博客$/, '').trim();
+          if (pageTitle) {
+            for (let i = 0; i &lt; finalRecords.length; i++) {
+              const titleHierarchy = finalRecords[i].hierarchy;
+              if (titleHierarchy &amp;&amp; !titleHierarchy.lvl1) {
+                titleHierarchy.lvl1 = pageTitle;
+              }
+            }
+          }
+        }
+
+        // 把所有要分词的文本收集起来，统一分词后再写回，
+        // 这样正文和各级标题共用同一段逻辑，且不需要定义函数。
+        if (PRE_SEGMENT) {
+          const texts = [];
+          const targets = [];
+          for (let i = 0; i &lt; finalRecords.length; i++) {
+            const record = finalRecords[i];
+            if (record.content) {
+              texts.push(String(record.content));
+              targets.push([i, '']);
+            }
+            const hierarchy = record.hierarchy || {};
+            for (let j = 0; j &lt; LEVELS.length; j++) {
+              if (hierarchy[LEVELS[j]]) {
+                texts.push(String(hierarchy[LEVELS[j]]));
+                targets.push([i, LEVELS[j]]);
+              }
+            }
+          }
+
+          const segmented = [];
+          for (let i = 0; i &lt; texts.length; i++) {
+            const text = texts[i];
+            let result = text;
+            if (segmenter &amp;&amp; HAS_CJK.test(text)) {
+              // 只保留词元，用空格连接：重装系统 8-&gt;7 → 重装 系统 8 7
+              const parts = Array.from(segmenter.segment(text));
+              const words = [];
+              for (let k = 0; k &lt; parts.length; k++) {
+                if (parts[k].isWordLike) words.push(parts[k].segment);
+              }
+              result = words.join(' ');
+              if (result.length &gt; SEGMENT_MAX_CHARS) result = result.slice(0, SEGMENT_MAX_CHARS);
+            }
+            segmented.push(result);
+          }
+
+          for (let i = 0; i &lt; finalRecords.length; i++) {
+            finalRecords[i].hierarchy_words = {};
+          }
+          for (let i = 0; i &lt; targets.length; i++) {
+            const record = finalRecords[targets[i][0]];
+            const level = targets[i][1];
+            if (level) {
+              record.hierarchy_words[level] = segmented[i];
+            } else {
+              record.content_words = segmented[i];
+            }
+          }
+        }
+
+        return finalRecords;
       },
     },
   ],
   safetyChecks: { beforeIndexPublishing: { maxLostRecordsPercentage: 100 } },
   initialIndexSettings: {
     tinysnowio: {
-      attributesForFaceting: ["type", "lang"],
+      attributesForFaceting: ['type', 'lang'],
       attributesToRetrieve: [
-        "hierarchy",
-        "content",
-        "anchor",
-        "url",
-        "url_without_anchor",
-        "type",
+        'hierarchy',
+        'content',
+        'anchor',
+        'url',
+        'url_without_anchor',
+        'type',
+        'lang',
       ],
-      attributesToHighlight: ["hierarchy", "content"],
-      attributesToSnippet: ["content:10"],
-      camelCaseAttributes: ["hierarchy", "content"],
+      attributesToHighlight: ['hierarchy', 'content'],
+      attributesToSnippet: ['content:10'],
+      camelCaseAttributes: ['hierarchy', 'content'],
+      // 前 8 项是按词切分的副本（优先命中），后 8 项是按字的原文（兜底）。
+      // 若把上面的 PRE_SEGMENT 改成 false，请删掉前 8 项。
       searchableAttributes: [
-        "unordered(hierarchy.lvl0)",
-        "unordered(hierarchy.lvl1)",
-        "unordered(hierarchy.lvl2)",
-        "unordered(hierarchy.lvl3)",
-        "unordered(hierarchy.lvl4)",
-        "unordered(hierarchy.lvl5)",
-        "unordered(hierarchy.lvl6)",
-        "content",
+        'unordered(hierarchy_words.lvl0)',
+        'unordered(hierarchy_words.lvl1)',
+        'unordered(hierarchy_words.lvl2)',
+        'unordered(hierarchy_words.lvl3)',
+        'unordered(hierarchy_words.lvl4)',
+        'unordered(hierarchy_words.lvl5)',
+        'unordered(hierarchy_words.lvl6)',
+        'content_words',
+        'unordered(hierarchy.lvl0)',
+        'unordered(hierarchy.lvl1)',
+        'unordered(hierarchy.lvl2)',
+        'unordered(hierarchy.lvl3)',
+        'unordered(hierarchy.lvl4)',
+        'unordered(hierarchy.lvl5)',
+        'unordered(hierarchy.lvl6)',
+        'content',
       ],
       distinct: true,
-      attributeForDistinct: "url",
-      customRanking: [
-        "desc(weight.pageRank)",
-        "desc(weight.level)",
-        "asc(weight.position)",
-      ],
-      ranking: [
-        "words",
-        "filters",
-        "typo",
-        "attribute",
-        "proximity",
-        "exact",
-        "custom",
-      ],
+      // 按「页面」去重：同一篇文章只出一条命中，避免单页刷屏
+      // （原配置是 'url'，含锚点，等于按段落去重）
+      attributeForDistinct: 'url_without_anchor',
+      customRanking: ['desc(weight.pageRank)', 'desc(weight.level)', 'asc(weight.position)'],
+      ranking: ['words', 'filters', 'typo', 'attribute', 'proximity', 'exact', 'custom'],
       highlightPreTag: '&lt;span class="algolia-docsearch-suggestion--highlight"&gt;',
-      highlightPostTag: "&lt;/span&gt;",
+      highlightPostTag: '&lt;/span&gt;',
       minWordSizefor1Typo: 3,
       minWordSizefor2Typos: 7,
       allowTyposOnNumericTokens: false,
       minProximity: 1,
       ignorePlurals: true,
+      // 中文按词切分的开关（原配置完全没有这两项）
+      indexLanguages: ['zh', 'en'],
+      queryLanguages: ['zh', 'en'],
       advancedSyntax: true,
       attributeCriteriaComputedByMinProximity: true,
-      removeWordsIfNoResults: "allOptional",
+      removeWordsIfNoResults: 'allOptional',
     },
   },
-  appId: "GX9RTL51BH",
-  apiKey: "PlaceHolder",
 });
 </code></pre>
 <h3 id="cloudflare-pages-构建日志"><a class="header" href="#cloudflare-pages-构建日志">Cloudflare Pages 构建日志</a></h3>
@@ -657,32 +837,16 @@
         </script>
 
 
+        <!-- 搜索面板依赖：必须在 additional-js（theme/customized/search.js）之前同步加载 -->
+        <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.19.12/dist/umd/index.production.js"></script>
+        <!-- 仅作为自建面板初始化失败时的兜底 -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js"></script>
+
         <!-- Custom JS scripts -->
         <script src="../../../assets/custom-d0d8e44b.js"></script>
+        <script src="../../../theme/customized/search-c3a94c36.js"></script>
 
 
-        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
-        <!-- <script> -->
-            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
-        <!-- </script> -->
-        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-
-        <script type="text/javascript">
-            docsearch({
-                appId: 'GX9RTL51BH',
-                apiKey: 'c4caea4202132489213a6c5366c9952d',
-                indexName: 'tinysnowio',
-                container: '#docsearch',
-                debug: false // Set debug to true if you want to inspect the modal
-            });
-            // autocomplete({
-            //   container: '#docsearch',
-            //   placeholder: '搜索 / Search',
-            //   getSources() {
-            //     return [];
-            //   },
-            // });
-        </script>
     </div>
     </body>
 </html>

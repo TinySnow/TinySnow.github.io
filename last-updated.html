@@ -29,7 +29,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="theme/customized/style-5f93df08.css">
+        <link rel="stylesheet" href="theme/customized/style-df7ab089.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -49,12 +49,14 @@
         </script>
 
         <!-- Doc Search -->
+        <!-- 自建搜索面板用的 classic 主题，版本与下方 autocomplete-js 保持一致 -->
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
+            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.19.12/dist/theme.min.css"
         />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-        <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin />
+        <!-- 仅在自建搜索面板初始化失败时，给 DocSearch 弹窗兜底用 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.9.0/dist/style.css" />
+        <link rel="preconnect" href="https://GX9RTL51BH-dsn.algolia.net" crossorigin />
         
 
         <!-- Provide site root to javascript -->
@@ -242,8 +244,1855 @@
 <p>NOTICE: This content is presented as <code>git diff</code>.</p>
 </blockquote>
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-10-13-125845-cmt-utc8--59ca20519"><a class="header" href="#更新记录2026-10-13-125845-cmt-utc8--59ca20519">更新记录（2026-10-13 12:58:45 CMT (UTC+8) | 59ca20519）</a></h2>
+<h2 id="更新记录2026-10-13-174946-cmt-utc8--cd8a93c3d"><a class="header" href="#更新记录2026-10-13-174946-cmt-utc8--cd8a93c3d">更新记录（2026-10-13 17:49:46 CMT (UTC+8) | cd8a93c3d）</a></h2>
 <h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-10-13 17:49:46 CMT (UTC+8)</code></li>
+<li>Base commit: <code>cd8a93c3d</code></li>
+<li>Diff source: <code>59ca20519465f6023a60a0bc305e8539611ecd16..cd8a93c3df320e6f57b56fd2ac7d0d809298b098</code></li>
+<li>Changed files: <code>8</code></li>
+<li>Total lines: <code>+1386 / -97</code></li>
+</ul>
+<h3 id="commit-messages"><a class="header" href="#commit-messages">Commit Messages</a></h3>
+<ul>
+<li>
+<p><code>cd8a93c3</code> 搜索：没有 h1 的 23 个页面改由代码补标题，不再把 head &gt; title 交给 helper</p>
+</li>
+<li>
+<p><code>9b26f4e0</code> 搜索：查询侧改造（清虚词＋优先按词属性），并修掉 lvl1 被 head &gt; title 污染</p>
+<blockquote>
+<p>全量重爬后（2342 页 / 31,959 条记录）的实测结论：</p>
+<ul>
+<li>引擎侧中文分词无解：indexLanguages/queryLanguages 设好并重建索引后，查「重装系统」的
+_rankingInfo.words 仍是 4、matchedWords 仍是单个汉字，查询中间加空格也一样；
+removeStopWords:[“zh”] 同样没用（多字查询无影响，单字查询反而变成命中全部）</li>
+<li>爬虫写的「按词」属性才是胜负手：52 条精确短语只搜按字属性 top1=15（=基线），
+只搜按词属性 top1=33、进不了前 20 的从 14 降到 5</li>
+<li>自然语言查询被按字 AND 毁掉：把「怎么重装系统」清洗成「重装系统」后，
+前三条正好是三篇重装系统文章</li>
+</ul>
+<p>前端 theme/customized/search.js：</p>
+<ul>
+<li>cleanQuery：用 Intl.Segmenter 分词后丢掉中文虚词（词级 + 单字级两份表，
+不直接用正则替换字符，避免误伤「上海」里的「上」）</li>
+<li>preferWordAttributes：默认只搜 hierarchy_words / content_words 这 8 项，
+0 命中时自动退回「原查询 + 全部属性」</li>
+<li>走真实客户端逻辑重跑那 52 条短语：top1=32 top5=43 top20=48 未进=4
+（改造前 15/25/38/14）</li>
+<li>分页、回退分支、空查询、高亮都已用 Node 驱动真实 search.js 验证</li>
+</ul>
+<p>爬虫配置 assets/algolia-crawler-config.js：</p>
+<ul>
+<li>lvl1 去掉 ‘head &gt; title’：DocSearch helper 会在所有候选选择器里取文档顺序最靠前的
+那个，<title> 永远排第一，导致 lvl1 全变成「重装系统 - 微雪博客」，
+连「微雪」「博客」都命中 2342/2342 个页面</title></li>
+</ul>
+<p>文档 assets/algolia-crawler.md：第四节改为本轮实测结果，第七节更正对
+head &gt; title 与 toc.html 的两处误判，并记录按词属性、截断限制等已知事项</p>
+</blockquote>
+</li>
+<li>
+<p><code>5f74165d</code> 搜索：修掉覆盖率塌陷（把 toc.html 当普通页面排除，掐掉了全站发现入口）</p>
+<blockquote>
+<ul>
+<li>实测：站点静态 HTML 的首页只有 print.html / last-updated.html 两个站内链接、
+没有任何 prev/next；toc.html 里有 2359 条站内链接，是全站唯一的链接中枢</li>
+<li>上一版把 toc.html 放进 exclusionPatterns，爬虫只能从 last-updated.html 进
+「生活碎笔」再顺着 prev/next 走完该章节：索引从 2360 个页面掉到 297 个
+（其中 290 个属于生活碎笔，与推断完全吻合）</li>
+<li>修复：toc.html 进 startUrls（保证一定被发现）＋ pathsToMatch 用 ! 把它排除
+出索引（只发现链接、不产生记录）；exclusionPatterns 只保留 print.html / 404.html</li>
+<li>明确不加站点 sitemap：sitemap.xml / sitemap.txt 的 2360 条 URL 全不带 .html，
+而 GitHub Pages 对 /个人简介 与 /个人简介.html 都直接返回 200（不是 301 跳转），
+加进去会让每个页面被索引两份</li>
+<li>README：更正第七节里对 GPT「toc.html 进 startUrls」的误判（那条其实是对的），
+第二节补上发现入口与 sitemap 的说明，第四节加覆盖率自检</li>
+<li>已验证：第 1 行合规、无模板字符串、recordExtractor 内零嵌套函数/回调、
+单独序列化后仍能独立运行；附录代码块与配置文件逐字一致</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>192a207e</code> 搜索：补上直接应用索引设置的脚本，并更正「JSON 编辑器」的说法</p>
+<blockquote>
+<ul>
+<li>Algolia Dashboard 的索引设置页是分区表单，没有给索引设置用的 JSON 编辑器；
+之前 README 让用户去「Configuration → JSON 编辑器」粘贴，是错的</li>
+<li>新增 assets/apply-algolia-settings.mjs：从 algolia-crawler-config.js 读出
+initialIndexSettings 再 PUT 到索引（设置只有一份来源，不会两边不一致）；
+支持 –dry-run 先看 JSON，写入后等 task 并回读核对</li>
+<li>踩到并处理了两个坑：写操作必须走 {appId}.algolia.net（-dsn 是只读主机，
+用错会报 “This host is read-only”）；key 缺 editSettings 时 403，
+提示里给出「删索引重爬」这条退路</li>
+<li>README 第三节改成四步：URL Tester 先验配置 → 应用设置（A 删索引重爬 /
+B Dashboard 手动改三处 / C 脚本）→ Restart crawl，并补充「配置改动后爬虫
+不再发条件请求、会自动全量重抓」这一依据</li>
+<li>实测：–dry-run 正常输出；用只读 search key 试写得到 403 与明确提示，
+未对线上索引做任何写操作</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>5ba72787</code> 搜索：Crawler 配置改为零嵌套函数（编辑器会把回调参数 el 报成未定义）</p>
+<blockquote>
+<ul>
+<li>上一条提交只解决了 new Crawler 必须在第 1 行；编辑器仍把
+$(‘main img[alt]’).each((_, el) =&gt; {…}) 里的 el 标红：它的静态检查
+解析不了嵌套作用域里的参数绑定</li>
+<li>因此把 segmentField / packLargePage / .each() 回调 / forEach 回调全部拆掉，
+改成 recordExtractor 内部的直筒代码 + 下标循环；配置里只剩 recordExtractor
+一个函数，没有闭包、没有回调、没有模板字符串</li>
+<li>分词逻辑改为「先收集待分词文本 → 统一分词 → 写回」，不定义函数也保持 DRY</li>
+<li>图片 alt 过滤按实测收紧：本站 114 个去重 alt 里有 21 个是
+image-20260531144550242 / Snipaste_2023-10-22 这类文件名，原来会被放行</li>
+<li>实测：第 1 行合规；无反引号；recordExtractor 内 =&gt; 仅 1 处、function 0 处、
+.each/.forEach 0 处；单独序列化后仍能独立运行；跳过规则命中；
+800 → 478 条合并、192552 字符零丢失、原对象未被改写</li>
+<li>assets/algolia-crawler.md 与《博客历史演进》附录同步</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>2d638b7e</code> 搜索：修掉 Crawler 编辑器的 invalid configuration（new Crawler 必须在第 1 行）</p>
+<blockquote>
+<ul>
+<li>配置改成一条自包含的 new Crawler({…}) 表达式：第 1 行就是 new Crawler(，
+所有常量与函数移入 recordExtractor 内部。此前文件前面有 95 行注释与顶层声明，
+编辑器直接报 invalid configuration（见 algolia/docsearch#2190），标红位置
+恰好是它放弃解析处的第一个模板字符串</li>
+<li>去掉全部模板字符串，改用字符串拼接</li>
+<li>改用官方 exclusionPatterns 排除 print/toc/404：能拦掉下载，
+19MB 的 print.html 不会再被抓</li>
+<li>故意不采纳编辑器的 add a sitemap 提示：线上 sitemap 的 2360 条 URL 全是不带
+.html 的（如 /个人简介），而爬虫顺着链接发现的是 .html 版本，加进去会让
+每个页面以两种 URL 各索引一份</li>
+<li>实测：recordExtractor 单独序列化后仍可独立运行（无闭包依赖）；
+跳过规则、800 → 478 条合并、192552 字符零丢失、原对象未被改写 全部通过</li>
+<li>assets/algolia-crawler.md 与《博客历史演进》附录同步</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>aa799d6e</code> 搜索：吸收另一份配置的优点，distinct 改为按页面去重</p>
+<blockquote>
+<ul>
+<li>attributeForDistinct 从 url（含锚点）改为 url_without_anchor（按页面去重）：
+实测「数据结构」前 20 条命中原本只落在 5 个页面上，而 distinct:false 会让
+20/20 条全来自同一篇文章；页面级去重后最多能覆盖 20 个页面</li>
+<li>lang 改由 recordProps.lang 交给 helper 写入，lvl1 增加 head &gt; title 兜底</li>
+<li>增加「main / #mdbook-content 都不存在就跳过」判断</li>
+<li>增加单页记录数保护网：超过 700 条时合并同锚点正文块（爬虫硬上限 750），
+合并在副本上进行，合并后重新计算按词副本；实测 800 → 480 条、字符零丢失</li>
+<li>保留 aggregateContent: true、removeWordsIfNoResults: allOptional、advancedSyntax</li>
+<li>assets/algolia-crawler.md 增加与另一份 AI 生成配置的对比留档（含实测数据）</li>
+<li>《博客历史演进》附录同步</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>9c5d98da</code> 搜索：Algolia 爬虫按词分词 + 自建结果面板支持加载更多</p>
+<blockquote>
+<p>爬虫（assets/algolia-crawler-config.js）：</p>
+<ul>
+<li>打开中文语种 indexLanguages/queryLanguages，这是 Algolia 在 CJK 文本里启用词典分词的开关</li>
+<li>额外写入按词切分的 content_words/hierarchy_words，原来的按字属性保留兜底</li>
+<li>抽取范围收窄到 <main>，修正失效的 #sidebar/#menu-bar 选择器，补上表格 td/th</main></li>
+<li>跳过 print.html（整本书合订本，19MB）/toc.html/404.html</li>
+</ul>
+<p>前端（theme/customized/search.js）：</p>
+<ul>
+<li>用 @algolia/autocomplete-js 自建下拉，每页 20 条 + 「加载更多」，顶部显示命中总数</li>
+<li>查询直连 Algolia REST 接口，不引入 algoliasearch 客户端（避开 v4/v5 返回结构差异）</li>
+<li>DocSearch 退化为初始化失败时的兜底，并把每页条数从 20/5 提到 40/20</li>
+</ul>
+<p>文档：assets/algolia-crawler.md 记录诊断数据与操作步骤；《博客历史演进》附录同步新配置</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-383127424-assets-algolia-crawler-config-js-1386373420">assets/algolia-crawler-config.js</a> <code>+289 / -0</code></li>
+<li><a href="#f-383127424-assets-algolia-crawler-md-203506374">assets/algolia-crawler.md</a> <code>+215 / -0</code></li>
+<li><a href="#f-383127424-assets-apply-algolia-settings-mjs-2738715084">assets/apply-algolia-settings.mjs</a> <code>+120 / -0</code></li>
+<li><a href="#f-383127424-book-toml-124843185">book.toml</a> <code>+1 / -1</code></li>
+<li><a href="#f-383127424-src-学习与进步-计算机-文章-博客历史演进-md-1897282589">src/学习与进步/计算机/文章/博客历史演进.md</a> <code>+249 / -71</code></li>
+<li><a href="#f-383127424-theme-customized-search-js-2827483100">theme/customized/search.js</a> <code>+382 / -0</code></li>
+<li><a href="#f-383127424-theme-customized-style-css-2110612380">theme/customized/style.css</a> <code>+120 / -0</code></li>
+<li><a href="#f-383127424-theme-index-hbs-1765250716">theme/index.hbs</a> <code>+10 / -25</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-383127424-assets-algolia-crawler-config-js-1386373420"></a></p>
+<h4 id="assetsalgolia-crawler-configjs"><a class="header" href="#assetsalgolia-crawler-configjs">assets/algolia-crawler-config.js</a></h4>
+<details>
+<summary><code>+289 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/assets/algolia-crawler-config.js b/assets/algolia-crawler-config.js
+new file mode 100644
+index 000000000..bbbea050d
+--- /dev/null
++++ b/assets/algolia-crawler-config.js
+@@ -0,0 +1,289 @@
++new Crawler({
++  // ⚠️ 三条硬性兼容要求（改动前请先看 assets/algolia-crawler.md 第三节）：
++  //   1. 第 1 行必须就是 new Crawler({，前面不能有注释或代码（algolia/docsearch#2190）
++  //   2. 不用模板字符串
++  //   3. 配置内部不写嵌套函数/回调：编辑器的静态检查解析不了嵌套作用域里的
++  //      参数绑定，会把回调参数报成未定义标识符（曾把 .each((_, el) =&gt; ...) 的
++  //      el 标红）。所以下面全部用普通下标循环 + 直筒代码，没有闭包。
++  appId: 'GX9RTL51BH',
++  // 保持你现有 Crawler 的 apiKey（不要把这个可写 key 提交进公开仓库）
++  apiKey: 'PlaceHolder',
++  rateLimit: 8,
++  maxDepth: 10,
++  maxUrls: 5000,
++  startUrls: [
++    'https://tinysnow.github.io',
++    // ⚠️ toc.html 必须留在 startUrls 里：站点静态 HTML 里首页只有
++    // print.html / last-updated.html 两个站内链接、没有任何 prev/next，
++    // 而 toc.html 里有 2359 条站内链接，是全站唯一的「发现入口」。
++    // 少了它，实测覆盖率会从 2360 个页面掉到 297 个（只剩「生活碎笔」那条章节链）。
++    // 它自己不会进索引：见下面的 pathsToMatch 排除 + recordExtractor 里的 SKIP_PATHS。
++    'https://tinysnow.github.io/toc.html',
++  ],
++  renderJavaScript: false,
++  // 故意不用站点的 sitemap：它的 2360 条 URL 全部不带 .html（如 /个人简介），
++  // 而 GitHub Pages 对 /个人简介 和 /个人简介.html 都直接返回 200（不是 301 跳转），
++  // 用它会变成每个页面被索引两份。全站覆盖靠 toc.html 这个入口 + 站内链接。
++  sitemaps: [],
++  ignoreCanonicalTo: false,
++  // 排除不需要下载的页面：print.html 是整本书合订本（19MB），404.html 没有内容。
++  // ⚠️ 千万不要把 toc.html 放进来——它是发现入口，排除它等于掐掉全站链接。
++  exclusionPatterns: [
++    'https://tinysnow.github.io/print.html',
++    'https://tinysnow.github.io/404.html',
++  ],
++  discoveryPatterns: ['https://tinysnow.github.io/**'],
++  schedule: 'at 13:14 on Tuesday',
++  actions: [
++    {
++      indexName: 'tinysnowio',
++      // 抓但不建索引的三个页面：toc.html 只用来发现链接，print/404 不是内容
++      pathsToMatch: [
++        'https://tinysnow.github.io/**',
++        '!https://tinysnow.github.io/toc.html',
++        '!https://tinysnow.github.io/print.html',
++        '!https://tinysnow.github.io/404.html',
++      ],
++      recordExtractor: ({ url, $, contentLength, helpers }) =&gt; {
++        /* ============================ 开关 ============================ */
++        const SKIP_PATHS = ['/print.html', '/toc.html', '/404.html'];
++        const MAX_PAGE_BYTES = 4 * 1024 * 1024;    // 超过这个体积的页面跳过
++        const INDEX_IMAGE_ALT = true;              // 把图片 alt 并入正文
++        const PAGE_TITLE_FALLBACK = true;          // 没有 h1 的页面用 &lt;title&gt; 补 lvl1
++        const PRE_SEGMENT = true;                  // 额外写一份「按词」的属性
++        const SEGMENT_MAX_CHARS = 3000;            // 分词副本截断长度
++        const MAX_RECORDS_PER_PAGE = 700;          // 爬虫单页硬上限是 750
++        const MERGE_MAX_CHARS = 1200;
++        const LEVELS = ['lvl0', 'lvl1', 'lvl2', 'lvl3', 'lvl4', 'lvl5', 'lvl6'];
++        const HAS_CJK = /[\u3400-\u9FFF\uF900-\uFAFF]/;
++
++        // 中文分词器：ICU 词典，与 Algolia 引擎声称使用的 CJK 词典同源。
++        // 环境不支持 Intl.Segmenter 时退化为不分词，不影响爬取。
++        let segmenter = null;
++        try {
++          if (typeof Intl !== 'undefined' &amp;&amp; typeof Intl.Segmenter === 'function') {
++            segmenter = new Intl.Segmenter('zh-Hans', { granularity: 'word' });
++          }
++        } catch (e) { /* 忽略：走不分词分支 */ }
++
++        /* ========================== 跳过规则 ========================== */
++        if (SKIP_PATHS.indexOf(url.pathname) !== -1) return [];
++        if (contentLength &amp;&amp; contentLength &gt; MAX_PAGE_BYTES) return [];
++        // 抽取主体不存在就直接跳过，避免抽出菜单栏之类的垃圾
++        if ($('main').length === 0 &amp;&amp; $('#mdbook-content').length === 0) return [];
++
++        /* ======================= 图片 alt 并入正文 ======================= */
++        // 用下标循环，不用回调，避免嵌套作用域
++        if (INDEX_IMAGE_ALT) {
++          const images = $('main img[alt]');
++          for (let i = 0; i &lt; images.length; i++) {
++            const image = images[i];
++            const alt = ($(image).attr('alt') || '').trim();
++            // 只保留有信息量的 alt：含连续中文，或含连续英文且不像文件名。
++            // 实测本站 114 个去重 alt 里有 21 个是 image-20260531144550242、
++            // Snipaste_2023-10-22 这类文件名，靠下面这行挡掉。
++            const meaningful =
++              /[\u4e00-\u9fff]{2,}/.test(alt) ||
++              (/[A-Za-z]{2,}/.test(alt) &amp;&amp; !/[_0-9]/.test(alt));
++            if (!meaningful) continue;
++            const safe = alt.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;');
++            $(image).after('&lt;p&gt;' + safe + '&lt;/p&gt;');
++          }
++        }
++
++        /* =========================== 抽取记录 =========================== */
++        const records = helpers.docsearch({
++          recordProps: {
++            // 故意不用站点标题 h1.menu-title：否则「微雪」会命中每一个页面
++            lvl0: {
++              selectors: '',
++              defaultValue: '博客',
++            },
++            // 页面标题 = &lt;main&gt; 里的 h1。
++            // ⚠️ 千万不要把 'head &gt; title' 之类交给 helper 当兜底：它会在所有候选
++            //    选择器里取「文档顺序最靠前」的那个，&lt;title&gt; 在 &lt;head&gt; 里永远排第一，
++            //    结果 lvl1 全变成「重装系统 - 微雪博客」——标题带上站点名，而且
++            //    「微雪」「博客」会命中每一个页面（实测 2342/2342）。
++            //    没有 h1 的那 23 个页面改在下面用 &lt;title&gt; 补，见 PAGE_TITLE_FALLBACK。
++            lvl1: ['main h1', '#mdbook-content h1'],
++            lvl2: ['main h2', '#mdbook-content h2'],
++            lvl3: ['main h3', '#mdbook-content h3'],
++            lvl4: ['main h4', '#mdbook-content h4'],
++            lvl5: ['main h5', '#mdbook-content h5'],
++            lvl6: ['main h6', '#mdbook-content h6'],
++            // 正文：只取 &lt;main&gt; 里的块级元素。去掉了 span/a/em/strong/ul/ol
++            // （同一句话会被抽 3~4 遍），补上 td/th（表格）与 dd/dt，
++            // code 同时覆盖块级和行内代码。
++            content: [
++              'main p, main li, main td, main th, main code, main dd, main dt',
++              '#mdbook-content p, #mdbook-content li, #mdbook-content td, #mdbook-content th, #mdbook-content code, #mdbook-content dd, #mdbook-content dt',
++            ],
++            // 语言交给 helper 写进每条记录
++            lang: { defaultValue: 'zh-CN' },
++          },
++          aggregateContent: true,
++          indexHeadings: true,
++          recordVersion: 'v3',
++        });
++
++        /* ================== 单页记录数保护（内联，无函数）================== */
++        // 爬虫单页超过 750 条记录会直接报 Extractors returned too many records。
++        // 超过阈值时把「同一锚点、类型为 content」的相邻记录合并，标题原样保留；
++        // 在副本上合并，不改动 helper 返回的原对象。
++        let finalRecords = records;
++        if (records.length &gt; MAX_RECORDS_PER_PAGE) {
++          const packed = [];
++          let pending = null;
++          for (let i = 0; i &lt; records.length; i++) {
++            const record = records[i];
++            const isContent = record.type === 'content' &amp;&amp; typeof record.content === 'string';
++            const canMerge =
++              pending &amp;&amp;
++              isContent &amp;&amp;
++              pending.url === record.url &amp;&amp;
++              pending.content.length + record.content.length &lt; MERGE_MAX_CHARS;
++            if (canMerge) {
++              pending.content += '\n' + record.content;
++              continue;
++            }
++            if (pending) packed.push(pending);
++            if (isContent) {
++              pending = Object.assign({}, record);
++            } else {
++              pending = null;
++              packed.push(record);
++            }
++          }
++          if (pending) packed.push(pending);
++          finalRecords = packed;
++        }
++
++        /* ================ 写一份按词切分的副本（内联，无函数）================ */
++        // 先给没有标题的记录补 lvl1：这类页面 &lt;main&gt; 里没有 h1（实测 23 个），
++        // 只能用 &lt;title&gt; 兜底，并去掉「 - 微雪博客」这个站点名后缀。
++        // 放在分词之前，这样 hierarchy_words.lvl1 也会一起生成。
++        if (PAGE_TITLE_FALLBACK) {
++          const pageTitle = ($('head &gt; title').text() || '').replace(/ - 微雪博客$/, '').trim();
++          if (pageTitle) {
++            for (let i = 0; i &lt; finalRecords.length; i++) {
++              const titleHierarchy = finalRecords[i].hierarchy;
++              if (titleHierarchy &amp;&amp; !titleHierarchy.lvl1) {
++                titleHierarchy.lvl1 = pageTitle;
++              }
++            }
++          }
++        }
++
++        // 把所有要分词的文本收集起来，统一分词后再写回，
++        // 这样正文和各级标题共用同一段逻辑，且不需要定义函数。
++        if (PRE_SEGMENT) {
++          const texts = [];
++          const targets = [];
++          for (let i = 0; i &lt; finalRecords.length; i++) {
++            const record = finalRecords[i];
++            if (record.content) {
++              texts.push(String(record.content));
++              targets.push([i, '']);
++            }
++            const hierarchy = record.hierarchy || {};
++            for (let j = 0; j &lt; LEVELS.length; j++) {
++              if (hierarchy[LEVELS[j]]) {
++                texts.push(String(hierarchy[LEVELS[j]]));
++                targets.push([i, LEVELS[j]]);
++              }
++            }
++          }
++
++          const segmented = [];
++          for (let i = 0; i &lt; texts.length; i++) {
++            const text = texts[i];
++            let result = text;
++            if (segmenter &amp;&amp; HAS_CJK.test(text)) {
++              // 只保留词元，用空格连接：重装系统 8-&gt;7 → 重装 系统 8 7
++              const parts = Array.from(segmenter.segment(text));
++              const words = [];
++              for (let k = 0; k &lt; parts.length; k++) {
++                if (parts[k].isWordLike) words.push(parts[k].segment);
++              }
++              result = words.join(' ');
++              if (result.length &gt; SEGMENT_MAX_CHARS) result = result.slice(0, SEGMENT_MAX_CHARS);
++            }
++            segmented.push(result);
++          }
++
++          for (let i = 0; i &lt; finalRecords.length; i++) {
++            finalRecords[i].hierarchy_words = {};
++          }
++          for (let i = 0; i &lt; targets.length; i++) {
++            const record = finalRecords[targets[i][0]];
++            const level = targets[i][1];
++            if (level) {
++              record.hierarchy_words[level] = segmented[i];
++            } else {
++              record.content_words = segmented[i];
++            }
++          }
++        }
++
++        return finalRecords;
++      },
++    },
++  ],
++  safetyChecks: { beforeIndexPublishing: { maxLostRecordsPercentage: 100 } },
++  initialIndexSettings: {
++    tinysnowio: {
++      attributesForFaceting: ['type', 'lang'],
++      attributesToRetrieve: [
++        'hierarchy',
++        'content',
++        'anchor',
++        'url',
++        'url_without_anchor',
++        'type',
++        'lang',
++      ],
++      attributesToHighlight: ['hierarchy', 'content'],
++      attributesToSnippet: ['content:10'],
++      camelCaseAttributes: ['hierarchy', 'content'],
++      // 前 8 项是按词切分的副本（优先命中），后 8 项是按字的原文（兜底）。
++      // 若把上面的 PRE_SEGMENT 改成 false，请删掉前 8 项。
++      searchableAttributes: [
++        'unordered(hierarchy_words.lvl0)',
++        'unordered(hierarchy_words.lvl1)',
++        'unordered(hierarchy_words.lvl2)',
++        'unordered(hierarchy_words.lvl3)',
++        'unordered(hierarchy_words.lvl4)',
++        'unordered(hierarchy_words.lvl5)',
++        'unordered(hierarchy_words.lvl6)',
++        'content_words',
++        'unordered(hierarchy.lvl0)',
++        'unordered(hierarchy.lvl1)',
++        'unordered(hierarchy.lvl2)',
++        'unordered(hierarchy.lvl3)',
++        'unordered(hierarchy.lvl4)',
++        'unordered(hierarchy.lvl5)',
++        'unordered(hierarchy.lvl6)',
++        'content',
++      ],
++      distinct: true,
++      // 按「页面」去重：同一篇文章只出一条命中，避免单页刷屏
++      // （原配置是 'url'，含锚点，等于按段落去重）
++      attributeForDistinct: 'url_without_anchor',
++      customRanking: ['desc(weight.pageRank)', 'desc(weight.level)', 'asc(weight.position)'],
++      ranking: ['words', 'filters', 'typo', 'attribute', 'proximity', 'exact', 'custom'],
++      highlightPreTag: '&lt;span class="algolia-docsearch-suggestion--highlight"&gt;',
++      highlightPostTag: '&lt;/span&gt;',
++      minWordSizefor1Typo: 3,
++      minWordSizefor2Typos: 7,
++      allowTyposOnNumericTokens: false,
++      minProximity: 1,
++      ignorePlurals: true,
++      // 中文按词切分的开关（原配置完全没有这两项）
++      indexLanguages: ['zh', 'en'],
++      queryLanguages: ['zh', 'en'],
++      advancedSyntax: true,
++      attributeCriteriaComputedByMinProximity: true,
++      removeWordsIfNoResults: 'allOptional',
++    },
++  },
++});
+
+</code></pre>
+</details>
+<p><a id="f-383127424-assets-algolia-crawler-md-203506374"></a></p>
+<h4 id="assetsalgolia-crawlermd"><a class="header" href="#assetsalgolia-crawlermd">assets/algolia-crawler.md</a></h4>
+<details>
+<summary><code>+215 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/assets/algolia-crawler.md b/assets/algolia-crawler.md
+new file mode 100644
+index 000000000..99509bce7
+--- /dev/null
++++ b/assets/algolia-crawler.md
+@@ -0,0 +1,215 @@
++# Algolia DocSearch（tinysnowio）：中文分词与爬虫配置
++
++这两份文件放在 `assets/` 下，不参与 mdBook 构建，也不会部署到站点：
++
++- [`algolia-crawler-config.js`](./algolia-crawler-config.js)：替换 Algolia Crawler Editor 里的全部内容。
++
++---
++
++## 一、结论：不是「没爬到」，是「按字索引」
++
++我直接用线上索引（`GX9RTL51BH` / `tinysnowio`，`index.hbs` 里的 search-only key）做了实测，可以确定问题出在分词，而不是爬虫漏抓：
++
++| 实测 | 结果 | 说明 |
++| --- | --- | --- |
++| 索引规模 | 42,148 条记录 / 21,072 个 url / 约 2,360 个页面 | 覆盖率没问题，内容都在 |
++| 索引设置 | **没有 `indexLanguages`，也没有 `queryLanguages`** | 中文语种支持从未打开 |
++| `重装系统` 的查询分词 | `_rankingInfo.words = 4`，`matchedWords: ["重","装","系","统"]` | 查询被切成 **4 个单字**，不是「重装 / 系统」两个词 |
++| 查询时临时加 `queryLanguages: ["zh"]` | 仍然是 `words = 4`，高亮结果完全一样 | 现索引下加这一项**不生效** |
++| 顺序敏感性 | `重装` 172 条 vs `装重` 472 条 | 引擎是按**单字顺序**匹配，不是词级匹配 |
++| 精确短语排名 | 取 52 个页面正文里 12 个连续汉字做查询：**14 个排第 1，37 个进前 20，15 个连前 20 都进不去**（其中有的 `nbHits` 高达 221） | 这就是你体感「搜不出来」的真实形态 |
++| 召回 | 44/44 个随机短语至少有命中 | 召回没问题，**是相关性和排序崩了** |
++
++一句话：中文被拆成单字后，"词"这个概念在索引里根本不存在——所以既没有词级匹配，`words` 排序准则也变成了「命中多少个字」，一个页面命中 4 个字和另一个页面命中 4 个字几乎同分，真正该排前面的页面就被淹了。
++
++顺带实测到的其它问题：
++
++- **抽取范围不对**：原配置删的是 `#sidebar` / `#menu-bar`，而你这套主题实际用的是 `#mdbook-sidebar` / `#mdbook-menu-bar`——删了个寂寞（不过静态 HTML 里侧边栏是空的，靠 JS 填充，所以没造成大灾难）。
++- **重复抽取**：正文选择器把 `span` / `a` / `em` / `strong` / `ul` / `ol` 和 `p` / `li` 混在一起，同一句话会被抽 3～4 遍。
++- **漏内容**：2,360 个页面里有 **114 个含 `&lt;table&gt;`**，`td` / `th` 完全不在选择器里，表格内容一个字都搜不到；另有 30 个页面有带 `alt` 的图片，也搜不到。
++- **`print.html` 有 19MB**（整本书合订本），虽然实测没进索引，但每次爬取都要白抓一遍，且随时可能把 `maxUrls` / 记录大小撑爆。
++
++## 二、这次的改动（`algolia-crawler-config.js`）
++
++1. **打开中文语种**：`indexLanguages` / `queryLanguages` 都设为 `["zh", "en"]`——这是 Algolia 在 CJK 文本里启用**词典分词**的开关。
++2. **额外写一份「按词」的可搜索属性**：`hierarchy_words` / `content_words`，用 `Intl.Segmenter`（ICU 中文词典，与 Algolia 引擎声称使用的 CJK 词典是同一套 ICU 数据）分词，例如
++   `重装系统 8-&gt;7` → `重装 系统 8 7`。
++   **原来的 `hierarchy` / `content` 继续保留可搜索**，所以在「引擎自己按词切分」和「引擎仍然按字切分」两种情况下都不会把搜索改坏，只是多占一点索引存储。
++3. **抽取范围收窄到 `&lt;main&gt;`**：删除选择器修正为 `main ...` / `#mdbook-content ...`，正文选择器改为 `p, li, td, th, code, dd, dt`（去掉会重复的内联元素，补上表格），标题改为 `main h1..h6`，并跳过图片 `alt` 里无信息量的文件名。**标题兜底必须自己写、不能交给 helper**：`main` 里没有 `h1` 的页面（实测 23 个，内科学那批）由代码用 `&lt;title&gt;` 补 `lvl1` 并去掉「 - 微雪博客」后缀；如果把 `head &gt; title` 交给 helper 当兜底，它会取文档顺序最靠前的候选，**所有页面**的 lvl1 都会变成 `&lt;title&gt;`（见第七节）。
++4. **保留 `toc.html` 作为全站发现入口**：站点静态 HTML 的首页只有 `print.html` / `last-updated.html` 两个站内链接、**没有任何 prev/next**，而 `toc.html` 里有 **2359 条站内链接**——它是全站唯一的「链接中枢」。所以 `toc.html` 列进 `startUrls` 保证一定被抓到（不依赖 iframe 能否被识别），再用 `pathsToMatch` 的 `!` 把它排除出索引：只发现链接、不产生记录。**实测教训：把它和另外两页一起丢进 `exclusionPatterns`，覆盖率会从 2360 个页面掉到 297 个**（只剩「生活碎笔」那条章节链，因为只有它的页面能从 `last-updated.html` 顺着 prev/next 走到）。
++5. **不抓** `print.html`（19MB 合订本）/ `404.html`，用 `exclusionPatterns` 拦掉下载；页面体积再由 `recordExtractor` 里的 `contentLength` 兜底。
++6. **故意不加站点的 sitemap**：`sitemap.xml` / `sitemap.txt` 的 2360 条 URL **全部不带 `.html`**（如 `/个人简介`），而 GitHub Pages 对 `/个人简介` 和 `/个人简介.html` **都直接返回 200、不是 301 跳转**（实测），加进去只会让每个页面被索引两份，配合按页面去重就是成对的重复结果。全站覆盖本来就能靠 `toc.html` + 站内链接拿满（改造前的旧索引就是这个覆盖率）。
++7. **`attributeForDistinct` 从 `url` 改成 `url_without_anchor`**（按页面而不是按锚点去重）：同一篇文章只出一条命中，避免单页刷屏。实测「数据结构」这类词，前 20 条命中原本只落在 3~11 个页面上，改成页面级去重后最多能覆盖 20 个页面。这项**只能写进索引设置**（不能作为查询参数传，传了会 400）。
++8. 其余设置（ranking、customRanking、weights、`removeWordsIfNoResults: allOptional`、`advancedSyntax`、`aggregateContent: true`）保持你原来的值。
++9. **单页记录数保护网**：爬虫单页超过 750 条记录会直接报 `Extractors returned too many records`；超过 700 条时把同一锚点的正文块合并（先在副本上合并，不改动原记录；合并后重新计算按词副本）。按当前的段落级聚合抽取方式几乎不会触发，属于保险。
++
++## 三、怎么用（第 2 步千万别省）
++
++&gt; ⚠️ **`initialIndexSettings` 只在索引「第一次」爬取时生效**（[官方文档](https://www.algolia.com/doc/tools/crawler/apis/configuration/initial-index-settings/)："only applied during the first crawl of an index"）。`tinysnowio` 已经存在，所以**光换 Editor 配置，线上设置一点都不会变**，`indexLanguages` 不会生效，预设的中文分词也就白写了。
++
++&gt; ⚠️ **Crawler 编辑器对配置有 3 条硬性要求**（都是实测踩出来的，改配置时请一并遵守）：
++&gt; 1. **`new Crawler(` 必须出现在第 1 行**，前面不能有任何注释或代码，否则报 `invalid configuration`（[algolia/docsearch#2190](https://github.com/algolia/docsearch/issues/2190)）。
++&gt; 2. **不要用模板字符串**（反引号），改用 `'&lt;p&gt;' + safe + '&lt;/p&gt;'` 这样的拼接。
++&gt; 3. **配置里不要出现嵌套函数 / 回调**。编辑器的静态检查解析不了嵌套作用域里的参数绑定，会把回调参数报成未定义标识符——实测就是对 `$('main img[alt]').each((_, el) =&gt; {...})` 里的 **`el`** 标红。
++&gt;
++&gt; 因此 `algolia-crawler-config.js` 里所有逻辑都写成 `recordExtractor` 内部的**直筒代码 + 下标循环**：没有闭包，没有 `.each()` / `.forEach()` 回调，也没有抽出来的公共函数（这就是它看起来有点长、有点重复的原因）。**整份文件就是一条 `new Crawler({...})` 表达式，请从第 1 行开始原样粘贴**，不要在前面加注释头。
++
++&gt; 💡 编辑器有时会提示「add a sitemap」，**这里故意不采纳**：你线上的 `sitemap.xml` 有 2360 条 URL，但**全部是不带 `.html` 的**（如 `/个人简介`），而爬虫顺着页面链接发现的是 `.html` 版本。加进去会让每个页面以两种 URL 各索引一份，配合按页面去重就是成对的重复结果。站点的 2360 个页面本来就能通过链接全部覆盖（实测抽样 60 个页面的标题，索引里都有记录）。
++
++**第 1 步**：Algolia Crawler Dashboard → 你的 Crawler → **Editor** → 用 [`algolia-crawler-config.js`](./algolia-crawler-config.js) 整体替换（从第 1 行开始，不要在前面加东西）→ 末尾的 `apiKey` 改回你原来的值（文件里是 `PlaceHolder`，避免把可写 key 提交进公开仓库）→ Save。
++
++**第 2 步（建议先做，不碰索引）：用编辑器里的 URL Tester 验一次新配置**。Crawler → Editor 页面自带 URL Tester，填 1~2 个真实页面 URL 跑一下，确认：没有报错、抽出来的记录里有 `content_words` / `hierarchy_words`、`content` 里不再有重复句子。
++
++**第 3 步：应用索引设置。** 注意：**Algolia Dashboard 的索引设置页是分区表单，没有给索引设置用的 JSON 编辑器**（找不到是正常的）。三条路任选一条：
++
++- **A（最省事，推荐）：删掉索引再重爬。** Dashboard → **Search** → 选索引 `tinysnowio` → **Manage index &gt; Delete**（输入 `DELETE` 确认）→ 回到 Crawler 点 **Restart crawl**。索引被重新创建时就算它的「第一次爬取」，`initialIndexSettings` 会整套自动套用，不必手改任何一项。代价是爬完之前站内搜索是空的；不用担心旧记录残留——官方文档写明[配置改动之后爬虫不再发条件请求](https://www.algolia.com/doc/tools/crawler/apis/configuration/cache/)，会自动全量重抓、重新抽取。
++- **B（不想删索引，手动改）**：Dashboard → **Search** → 索引 `tinysnowio` → **Configuration**，改这三处后 Save：
++  1. **Language** → Query Languages（有 Index Languages 就一并）选上 Chinese / English；
++  2. **Searchable attributes** → 按顺序加下面 JSON 里那 16 项（顺序不能乱，attribute 排序准则按先后顺序：前 8 项是按词副本，后 8 项是原文），每项都开 `unordered`；
++  3. **Distinct** → 开启，Attribute for distinct 填 `url_without_anchor`（这项在 Configuration 里通常归在 ranking 相关分区，实在找不到就走 A 或 C）。
++- **C（用脚本直接调 API）**：本目录已备好 [`apply-algolia-settings.mjs`](./apply-algolia-settings.mjs)，它从爬虫配置里读出设置再 `PUT` 到索引（设置只有一份来源，不会两边不一致）：
++
++  ```bash
++  node assets/apply-algolia-settings.mjs --dry-run                       # 先看要写入的 JSON
++  node assets/apply-algolia-settings.mjs --key &lt;带 editSettings 的 Key&gt;   # 真正写入
++  ```
++
++  需要 `editSettings` 权限的 key（Dashboard → API Keys）。写操作必须走 `{appId}.algolia.net`，`-dsn` 那个主机是只读的——脚本已经处理好了。
++
++  下面就是脚本会写入的内容（`--dry-run` 打印的同一份）：
++
++  ```json
++  {
++    "indexLanguages": ["zh", "en"],
++    "queryLanguages": ["zh", "en"],
++    "distinct": true,
++    "attributeForDistinct": "url_without_anchor",
++    "searchableAttributes": [
++      "unordered(hierarchy_words.lvl0)",
++      "unordered(hierarchy_words.lvl1)",
++      "unordered(hierarchy_words.lvl2)",
++      "unordered(hierarchy_words.lvl3)",
++      "unordered(hierarchy_words.lvl4)",
++      "unordered(hierarchy_words.lvl5)",
++      "unordered(hierarchy_words.lvl6)",
++      "content_words",
++      "unordered(hierarchy.lvl0)",
++      "unordered(hierarchy.lvl1)",
++      "unordered(hierarchy.lvl2)",
++      "unordered(hierarchy.lvl3)",
++      "unordered(hierarchy.lvl4)",
++      "unordered(hierarchy.lvl5)",
++      "unordered(hierarchy.lvl6)",
++      "content"
++    ]
++  }
++  ```
++
++**第 4 步**：Restart crawl（建议先看一次完整爬取日志，确认没有大面积报错再确认发布）。
++
++## 四、验证结果（2026-10-13 全量重爬后实测）
++
++**覆盖率**：2342 个页面 / 31,959 条记录（改造前 2360 个页面），✓ 恢复正常。
++
++**结论一：引擎侧的中文词切分没戏。** 索引按 `indexLanguages` / `queryLanguages = ["zh","en"]` 全量重建后：
++
++| 查询 | `_rankingInfo.words` | `matchedWords` |
++| --- | --- | --- |
++| `重装系统` | 4 | `["重","装","系","统"]` |
++| `数据结构` | 4 | `["数","据","结","构"]` |
++| `重装 系统`（中间加空格） | 4 | —— 加空格也一样 |
++
++也就是说：**这个索引就是按单字处理的**，查询侧和索引侧都是，设置里怎么写都改不动。顺带实测 `removeStopWords: ["zh"]` 也没用——对多字查询毫无影响，对单字查询反而把词删干净变成"命中全部"（查 `的` 从 2209 条变成 2342 条），所以设置里**不要开**它。
++
++**结论二：爬虫写的"按词"属性才是胜负手。** 用 52 条精确短语（每个页面正文取中间 12 个连续汉字）测排序：
++
++| 搜索范围 | top1 | top5 | top20 | 进不了前 20 |
++| --- | --- | --- | --- | --- |
++| 全部 16 项 | 15 | 25 | 38 | 14 |
++| 只搜按字原文 8 项 | 15 | 25 | 38 | 14 |
++| **只搜按词副本 8 项** | **33** | **44** | **47** | **5** |
++
++→ 只搜按字属性 == 基线，说明**拖后腿的就是它**；客户端因此改成默认只搜按词属性（`preferWordAttributes`），一条都没命中才退回全部属性。
++
++**结论三：自然语言查询要靠客户端清洗。** 按单字 AND 时「怎么重装系统」= 6 个字全都要出现，正确页面因为没有「怎么」反而不满足，前三条全是无关文章。客户端去掉中文虚词后：
++
++| 用户输入 | 实际发出 | 前三条 |
++| --- | --- | --- |
++| 怎么重装系统 | `重装 系统` | 重装系统 / 重装系统 8-&gt;7 / 重装系统知识 |
++| 如何配置 docsearch | `配置 docsearch` | 博客历史演进 |
++| 保险合同怎么看 | `保险 合同 看` | 你的第一本保险指南 / 一小时搞定全家保险 / 不可不知的保险常识 |
++
++走真实客户端逻辑重跑那 52 条短语：**top1 = 32、top5 = 43、top20 = 48、进不了前 20 = 4**（改造前 15/25/38/14）。
++
++**已知限制**：正文超过 3000 字符的记录（约占 content 记录的 7.7%，p99 约 8000、最大 11008），其按词副本会被 `SEGMENT_MAX_CHARS` 截断，尾部只有在退回全部属性时才能命中。想放宽就调大这个值，但要留意单条记录大小（免费计划 10KB，爬虫侧对应 `Records extracted are too big`；目前索引里已有约 1.1 万字符正文的记录，实际额度比 10KB 宽）。
++
++## 五、回退
++
++- 只想去掉预分词：把配置顶部 `OPTIONS.preSegment` 改成 `false`，`searchableAttributes` 会自动退回原来那 8 项（其余不受影响）。
++- 想让同一篇文章的多个小节都出现在结果里：把索引设置里的 `attributeForDistinct` 改回 `url`（含锚点，等于按段落去重）。
++- 只想恢复原行为：把本目录文件换回旧配置；索引设置按第 2 步把 `indexLanguages` / `queryLanguages` 删掉即可。
++
++## 六、第二阶段：结果展示与分页（已实现）
++
++### 之前的问题（实测 `@docsearch/js@3.9.0` 源码）
++
++- `docsearch()` **每次查询只发 1 个请求**，且写死 `hitsPerPage: 20` → 第 21 条以后的命中根本没从 Algolia 取回来；界面上那个 `nbHits` 是全库统计，不是能看到的条数。
++- 取回后客户端再按 `maxResultsPerGroup`（**默认 5**）切片，而且外层按 lvl0、内层按 lvl1 各切一次 → 「只展示前几个」。
++- 它**没有任何分页 / 加载更多**，`docsearch()` 返回 `void`，拿不到内部实例，无法从外部驱动翻页。
++
++### 现在的实现
++
++| 文件 | 改动 |
++| --- | --- |
++| `theme/customized/search.js` | **新增**。用 `@algolia/autocomplete-js@1.19.12` 自建下拉面板 |
++| `theme/index.hbs` | CDN 依赖固定版本，并在 `additional-js` **之前**同步加载；删掉旧的 `docsearch({...})` 初始化 |
++| `book.toml` | `additional-js` 增加 `theme/customized/search.js` |
++| `theme/customized/style.css` | 面板样式，以及 ayu/navy/coal 暗色主题下的配色 |
++
++面板行为：
++
++- **每页 20 条，底部「加载更多（已显示 X / 共 Y 条）」逐页追加**，可以一直翻到最后一页（`search.js` 顶部的 `perPage` 可调）。
++- 顶部显示「共 N 条命中」，不再出现「明明很多命中却只看到 5 条」。
++- 每条命中展示：页面标题 + 层级路径（lvl2 › lvl3 …）+ 带 `&lt;mark&gt;` 高亮的正文摘要，点按/回车直接跳到对应锚点。
++- 查询直接走 Algolia 的 `POST /1/indexes/{index}/query`，**不引入 `algoliasearch` 客户端**，因此没有 v4（返回 `{results}`）与 v5（返回数组）的版本差异问题。
++- `search.js` 顶部 `segmentQuery`（默认 `false`）：改成 `true` 后，查询会先按词切开再发给 Algolia，用于配合本次爬虫新写的 `content_words` / `hierarchy_words`。**等第四节验证完再打开**。
++- 自建面板初始化失败时，会自动退回 DocSearch 弹窗（并把抓取条数从 20 提到 40、每组从 5 提到 20）。要强制用回 DocSearch，把 `search.js` 里的 `fallbackToDocSearch` 保持 `true` 并临时让 `window['@algolia/autocomplete-js']` 不可用即可；要彻底移除自建面板，从 `book.toml` 的 `additional-js` 里去掉 `theme/customized/search.js` 并恢复 `index.hbs` 里的 `docsearch({...})` 调用。
++
++### 怎么验证（本地）
++
++```bash
++mdbook build          # 或 mdbook serve
++```
++
++然后打开任意页面，在菜单栏搜索框里输入中文，检查：
++
++1. 面板顶部有「共 N 条命中」；
++2. 列表一次 20 条，底部有「加载更多」，点它（或键盘上下选中后回车）会继续追加，且前面的结果不重复；
++3. 中文词有黄色高亮标记；
++4. 切换 mdBook 主题（Auto/Light/Rust/Coal/Navy/Ayu）后面板配色仍然正常。
++
++改动只涉及主题文件，`mdbook build` 之后 `book/` 下会生成带哈希的新文件名（`search-xxxxxxxx.js`、`style-xxxxxxxx.css`），部署走原有的 GitHub Actions 流程即可。
++
++## 七、与另一份 AI 生成配置的对比（留档）
++
++后来另有一份 GPT 生成的爬虫配置。两边**核心诊断一致**——都要求打开 `indexLanguages` / `queryLanguages`、把抽取范围收窄到 `&lt;main&gt;`、补上 `td/th/dt/dd`、跳过 `print.html` / `toc.html` / `404.html`。其中有 3 处细节更好，已经吸收进本配置：
++
++1. `lang` 改用 `recordProps.lang = { defaultValue: "zh-CN" }` 交给 helper 写入（比抽完再手写 `record.lang` 更正统），并把 `lang` 加进 `attributesToRetrieve`。
++2. 增加「`main` / `#mdbook-content` 都不存在就直接跳过」的判断。
++3. 知道爬虫「单页 &gt;750 条记录会报错」的硬上限，据此加了单页记录数保护网。
++
++没有采纳的部分，以及对应的实测依据：
++
++| GPT 配置的写法 | 实测 / 文档依据 | 结论 |
++| --- | --- | --- |
++| `lvl1` 加 `head &gt; title` 兜底 | **这条采纳之后翻车了**：DocSearch helper 会在所有候选选择器里取「文档顺序最靠前」的那个，`&lt;title&gt;` 在 `&lt;head&gt;` 里永远排第一，于是 lvl1 全变成「重装系统 - 微雪博客」，连 `微雪` / `博客` 都命中 **2342/2342** 个页面（实测） | **已撤销**：helper 只给 `['main h1', '#mdbook-content h1']`；23 个没有 `h1` 的页面改由代码在抽取后用 `&lt;title&gt;` 补（去掉站点名后缀） |
++| `distinct: false`，且删掉 `attributeForDistinct` | 在线上索引模拟该设置：`数据结构` 前 20 条命中 **20/20 全来自同一篇文章**，`读书` 10/20，`Docker` 7/20 | 不采纳，改为页面级去重（`url_without_anchor`） |
++| `aggregateContent: false` + 自写打包逻辑 | 统计 2,360 个页面 `&lt;main&gt;` 下的 `p/li/td/th/pre/dt/dd` 共 13.6 万个，加 1.6 万条标题 ≈ 15 万条记录（现状索引 4.2 万条）；它那段 700 条阈值的打包代码只有 **5 个**页面会触发 | 不采纳，保留官方默认的 `aggregateContent: true`（文档明确推荐用它来减少记录数） |
++| `removeWordsIfNoResults: "none"` | 长中文查询更容易变成 0 结果 | 不采纳，保留 `allOptional` |
++| 把 `toc.html` 加进 `startUrls` | **这一条我当时判断错了**：站点静态 HTML 的首页只有 `print.html` / `last-updated.html` 两个站内链接、没有任何 prev/next，而 `toc.html` 有 2359 条站内链接，是全站唯一的发现入口。实测不抓它，覆盖率从 2360 个页面掉到 297 个 | **已改正并采纳**：`toc.html` 进 `startUrls`，再用 `pathsToMatch` 的 `!` 把它排除出索引（只发现链接、不产生记录） |
++| `print.html` 只在校验层跳过 | 19MB 的合订本每次爬取仍会被下载 | 不采纳它的做法，改用 `exclusionPatterns` 拦掉下载 |
++| 删掉 `advancedSyntax` / `attributeCriteriaComputedByMinProximity` / `ignorePlurals` | 无说明的行为变更 | 不采纳，保持原值 |
++| 没有「按词」兜底属性 | 两份配置都还没验证 `indexLanguages` 是否真能让索引按词切分；只有本配置额外写了 `content_words` / `hierarchy_words` 这第二条路 | 保留兜底 |
++
++**那个"共同待验证的关键点"已经有结论了**：全量重建后 `_rankingInfo.words` 仍然是 4，这个引擎就是按单字处理（见第四节）。所以改进全部落在客户端：清洗中文虚词 + 优先搜「按词」属性，也就是 `theme/customized/search.js` 里的 `cleanQuery` / `preferWordAttributes` 两个开关（默认都开）。
++
+
+</code></pre>
+</details>
+<p><a id="f-383127424-assets-apply-algolia-settings-mjs-2738715084"></a></p>
+<h4 id="assetsapply-algolia-settingsmjs"><a class="header" href="#assetsapply-algolia-settingsmjs">assets/apply-algolia-settings.mjs</a></h4>
+<details>
+<summary><code>+120 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/assets/apply-algolia-settings.mjs b/assets/apply-algolia-settings.mjs
+new file mode 100644
+index 000000000..5dbb2d96d
+--- /dev/null
++++ b/assets/apply-algolia-settings.mjs
+@@ -0,0 +1,120 @@
++#!/usr/bin/env node
++/**
++ * 把 assets/algolia-crawler-config.js 里的 initialIndexSettings 直接应用到线上索引。
++ * ---------------------------------------------------------------------------
++ * 为什么需要它：Algolia Dashboard 的索引设置页是分区表单，没有给索引设置用的
++ * JSON 编辑器；而 initialIndexSettings 只在索引「第一次」爬取时生效，所以索引
++ * 已存在时它不会自动应用。这个脚本用官方 REST 接口 PUT /1/indexes/{index}/settings
++ * 把同一份设置写进去（设置以爬虫配置为唯一来源，不会两边不一致）。
++ *
++ * 用法：
++ *   node assets/apply-algolia-settings.mjs --dry-run          # 只打印设置，不写入
++ *   node assets/apply-algolia-settings.mjs --key &lt;API_KEY&gt;    # 实际写入
++ *   ALGOLIA_API_KEY=&lt;API_KEY&gt; node assets/apply-algolia-settings.mjs
++ *
++ * 需要的 key 权限：editSettings（以及 settings 读权限会更方便排查）。
++ * ⚠️ 不要把 key 写进这个文件或提交到仓库；用参数或环境变量传。
++ */
++import fs from 'node:fs';
++import path from 'node:path';
++import { fileURLToPath } from 'node:url';
++
++const here = path.dirname(fileURLToPath(import.meta.url));
++const configPath = path.join(here, 'algolia-crawler-config.js');
++
++const args = process.argv.slice(2);
++const dryRun = args.includes('--dry-run');
++const keyIndex = args.indexOf('--key');
++const apiKey = keyIndex &gt;= 0 ? args[keyIndex + 1] : process.env.ALGOLIA_API_KEY;
++
++/* ---- 以爬虫配置为唯一来源，取出 initialIndexSettings ---- */
++const source = fs.readFileSync(configPath, 'utf8');
++let crawlerConfig = null;
++globalThis.Crawler = function Crawler(config) { crawlerConfig = config; };
++(0, eval)(source);
++
++if (!crawlerConfig) {
++  console.error('没能从 algolia-crawler-config.js 里读到配置');
++  process.exit(1);
++}
++
++const appId = crawlerConfig.appId;
++const indexNames = Object.keys(crawlerConfig.initialIndexSettings || {});
++if (indexNames.length !== 1) {
++  console.error('期望 initialIndexSettings 里只有一个索引，实际：' + JSON.stringify(indexNames));
++  process.exit(1);
++}
++const indexName = indexNames[0];
++const settings = crawlerConfig.initialIndexSettings[indexName];
++
++if (dryRun) {
++  console.log('# 索引：' + indexName + '  （appId: ' + appId + '）');
++  console.log('# 下面这段就是会被写入的 JSON：');
++  console.log(JSON.stringify(settings, null, 2));
++  process.exit(0);
++}
++
++if (!apiKey) {
++  console.error('缺少 API Key。用法：node assets/apply-algolia-settings.mjs --key &lt;API_KEY&gt;');
++  console.error('（也可以设置环境变量 ALGOLIA_API_KEY；先用 --dry-run 可以不传 key）');
++  process.exit(1);
++}
++
++// ⚠️ 写操作必须走 {appId}.algolia.net；{appId}-dsn.algolia.net 是只读主机
++//    （用错会返回 "This host is read-only (ie. this is a DSN)"）
++const base = 'https://' + appId + '.algolia.net/1/indexes/' + encodeURIComponent(indexName);
++const headers = {
++  'X-Algolia-Application-Id': appId,
++  'X-Algolia-API-Key': apiKey,
++  'Content-Type': 'application/json',
++};
++
++console.log('→ PUT ' + base + '/settings');
++const res = await fetch(base + '/settings', {
++  method: 'PUT',
++  headers,
++  body: JSON.stringify(settings),
++});
++const text = await res.text();
++let payload = null;
++try { payload = JSON.parse(text); } catch (e) { /* 保留原始文本 */ }
++
++if (!res.ok) {
++  console.error('✗ HTTP ' + res.status + '：' + text.slice(0, 500));
++  if (res.status === 403 || /403|read-only|not authorized|not allowed|invalid api key/i.test(text)) {
++    console.error('');
++    console.error('  这个 key 没有 editSettings 权限（或不是写权限的 key）。两条路：');
++    console.error('  A. 换一个带 editSettings 的 key：Algolia Dashboard → API Keys；');
++    console.error('  B. 干脆走「删掉索引再重爬」：爬虫会在索引的第一次爬取时自动套用 initialIndexSettings，');
++    console.error('     Dashboard → Search → 选索引 tinysnowio → Manage index &gt; Delete（输入 DELETE）→ 然后 Restart crawl。');
++  }
++  process.exit(1);
++}
++
++console.log('✓ 设置已提交' + (payload &amp;&amp; payload.taskID !== undefined ? '（taskID ' + payload.taskID + '）' : ''));
++
++/* ---- 等任务完成，确认设置真的生效 ---- */
++if (payload &amp;&amp; payload.taskID !== undefined) {
++  const taskUrl = base + '/task/' + payload.taskID;
++  for (let i = 0; i &lt; 30; i++) {
++    const t = await fetch(taskUrl, { headers });
++    const tj = await t.json().catch(() =&gt; null);
++    if (tj &amp;&amp; tj.status === 'published') {
++      console.log('✓ 索引已更新（status: published）');
++      break;
++    }
++    await new Promise((r) =&gt; setTimeout(r, 1000));
++  }
++}
++
++/* ---- 回读核对 ---- */
++const check = await fetch(base + '/settings', { headers });
++if (check.ok) {
++  const now = await check.json();
++  const keys = ['indexLanguages', 'queryLanguages', 'distinct', 'attributeForDistinct'];
++  console.log('\n回读核对：');
++  for (const k of keys) {
++    console.log('  ' + k + ' = ' + JSON.stringify(now[k]));
++  }
++  console.log('  searchableAttributes = ' + JSON.stringify(now.searchableAttributes));
++}
+
+</code></pre>
+</details>
+<p><a id="f-383127424-book-toml-124843185"></a></p>
+<h4 id="booktoml"><a class="header" href="#booktoml">book.toml</a></h4>
+<details>
+<summary><code>+1 / -1</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/book.toml b/book.toml
+index f6aa2d6b0..88f152ca9 100644
+--- a/book.toml
++++ b/book.toml
+@@ -11,7 +11,7 @@ preferred-dark-theme = "Ayu"
+ # google-analytics = "GTM-5VTTZ9C"
+ # no-section-label = true
+ additional-css = ["theme/customized/style.css"]
+-additional-js = ["assets/custom.js"]
++additional-js = ["assets/custom.js", "theme/customized/search.js"]
+ git-repository-url = "https://github.com/TinySnow/TinySnow.github.io"
+ git-repository-icon = "fab-github"
+ input-404 = "404.md"
+
+</code></pre>
+</details>
+<p><a id="f-383127424-src-学习与进步-计算机-文章-博客历史演进-md-1897282589"></a></p>
+<h4 id="src学习与进步计算机文章博客历史演进md"><a class="header" href="#src学习与进步计算机文章博客历史演进md">src/学习与进步/计算机/文章/博客历史演进.md</a></h4>
+<details>
+<summary><code>+249 / -71</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272/\346\226\207\347\253\240/\345\215\232\345\256\242\345\216\206\345\217\262\346\274\224\350\277\233.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272/\346\226\207\347\253\240/\345\215\232\345\256\242\345\216\206\345\217\262\346\274\224\350\277\233.md"
+index c4779e5e8..de6d10498 100644
+--- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272/\346\226\207\347\253\240/\345\215\232\345\256\242\345\216\206\345\217\262\346\274\224\350\277\233.md"
++++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272/\346\226\207\347\253\240/\345\215\232\345\256\242\345\216\206\345\217\262\346\274\224\350\277\233.md"
+@@ -146,115 +146,293 @@
+ 
+ ```javascript
+ new Crawler({
++  // ⚠️ 三条硬性兼容要求（改动前请先看 assets/algolia-crawler.md 第三节）：
++  //   1. 第 1 行必须就是 new Crawler({，前面不能有注释或代码（algolia/docsearch#2190）
++  //   2. 不用模板字符串
++  //   3. 配置内部不写嵌套函数/回调：编辑器的静态检查解析不了嵌套作用域里的
++  //      参数绑定，会把回调参数报成未定义标识符（曾把 .each((_, el) =&gt; ...) 的
++  //      el 标红）。所以下面全部用普通下标循环 + 直筒代码，没有闭包。
++  appId: 'GX9RTL51BH',
++  // 保持你现有 Crawler 的 apiKey（不要把这个可写 key 提交进公开仓库）
++  apiKey: 'PlaceHolder',
+   rateLimit: 8,
+   maxDepth: 10,
+   maxUrls: 5000,
+-  startUrls: ["https://tinysnow.github.io"],
++  startUrls: [
++    'https://tinysnow.github.io',
++    // ⚠️ toc.html 必须留在 startUrls 里：站点静态 HTML 里首页只有
++    // print.html / last-updated.html 两个站内链接、没有任何 prev/next，
++    // 而 toc.html 里有 2359 条站内链接，是全站唯一的「发现入口」。
++    // 少了它，实测覆盖率会从 2360 个页面掉到 297 个（只剩「生活碎笔」那条章节链）。
++    // 它自己不会进索引：见下面的 pathsToMatch 排除 + recordExtractor 里的 SKIP_PATHS。
++    'https://tinysnow.github.io/toc.html',
++  ],
+   renderJavaScript: false,
++  // 故意不用站点的 sitemap：它的 2360 条 URL 全部不带 .html（如 /个人简介），
++  // 而 GitHub Pages 对 /个人简介 和 /个人简介.html 都直接返回 200（不是 301 跳转），
++  // 用它会变成每个页面被索引两份。全站覆盖靠 toc.html 这个入口 + 站内链接。
+   sitemaps: [],
+   ignoreCanonicalTo: false,
+-  discoveryPatterns: ["https://tinysnow.github.io/ **"],
+-  schedule: "at 13:14 on Tuesday",
++  // 排除不需要下载的页面：print.html 是整本书合订本（19MB），404.html 没有内容。
++  // ⚠️ 千万不要把 toc.html 放进来——它是发现入口，排除它等于掐掉全站链接。
++  exclusionPatterns: [
++    'https://tinysnow.github.io/print.html',
++    'https://tinysnow.github.io/404.html',
++  ],
++  discoveryPatterns: ['https://tinysnow.github.io/**'],
++  schedule: 'at 13:14 on Tuesday',
+   actions: [
+     {
+-      indexName: "tinysnowio",
+-      pathsToMatch: ["https://tinysnow.github.io/** "],
+-      recordExtractor: ({ $, helpers }) =&gt; {
+-        // 去除不想要的 DOM
+-        $("#sidebar").remove();
+-        $("#menu-bar").remove();
+-        $("#menu-bar").remove();
+-
++      indexName: 'tinysnowio',
++      // 抓但不建索引的三个页面：toc.html 只用来发现链接，print/404 不是内容
++      pathsToMatch: [
++        'https://tinysnow.github.io/**',
++        '!https://tinysnow.github.io/toc.html',
++        '!https://tinysnow.github.io/print.html',
++        '!https://tinysnow.github.io/404.html',
++      ],
++      recordExtractor: ({ url, $, contentLength, helpers }) =&gt; {
++        /* ============================ 开关 ============================ */
++        const SKIP_PATHS = ['/print.html', '/toc.html', '/404.html'];
++        const MAX_PAGE_BYTES = 4 * 1024 * 1024;    // 超过这个体积的页面跳过
++        const INDEX_IMAGE_ALT = true;              // 把图片 alt 并入正文
++        const PAGE_TITLE_FALLBACK = true;          // 没有 h1 的页面用 &lt;title&gt; 补 lvl1
++        const PRE_SEGMENT = true;                  // 额外写一份「按词」的属性
++        const SEGMENT_MAX_CHARS = 3000;            // 分词副本截断长度
++        const MAX_RECORDS_PER_PAGE = 700;          // 爬虫单页硬上限是 750
++        const MERGE_MAX_CHARS = 1200;
++        const LEVELS = ['lvl0', 'lvl1', 'lvl2', 'lvl3', 'lvl4', 'lvl5', 'lvl6'];
++        const HAS_CJK = /[\u3400-\u9FFF\uF900-\uFAFF]/;
++
++        // 中文分词器：ICU 词典，与 Algolia 引擎声称使用的 CJK 词典同源。
++        // 环境不支持 Intl.Segmenter 时退化为不分词，不影响爬取。
++        let segmenter = null;
++        try {
++          if (typeof Intl !== 'undefined' &amp;&amp; typeof Intl.Segmenter === 'function') {
++            segmenter = new Intl.Segmenter('zh-Hans', { granularity: 'word' });
++          }
++        } catch (e) { /* 忽略：走不分词分支 */ }
++
++        /* ========================== 跳过规则 ========================== */
++        if (SKIP_PATHS.indexOf(url.pathname) !== -1) return [];
++        if (contentLength &amp;&amp; contentLength &gt; MAX_PAGE_BYTES) return [];
++        // 抽取主体不存在就直接跳过，避免抽出菜单栏之类的垃圾
++        if ($('main').length === 0 &amp;&amp; $('#mdbook-content').length === 0) return [];
++
++        /* ======================= 图片 alt 并入正文 ======================= */
++        // 用下标循环，不用回调，避免嵌套作用域
++        if (INDEX_IMAGE_ALT) {
++          const images = $('main img[alt]');
++          for (let i = 0; i &lt; images.length; i++) {
++            const image = images[i];
++            const alt = ($(image).attr('alt') || '').trim();
++            // 只保留有信息量的 alt：含连续中文，或含连续英文且不像文件名。
++            // 实测本站 114 个去重 alt 里有 21 个是 image-20260531144550242、
++            // Snipaste_2023-10-22 这类文件名，靠下面这行挡掉。
++            const meaningful =
++              /[\u4e00-\u9fff]{2,}/.test(alt) ||
++              (/[A-Za-z]{2,}/.test(alt) &amp;&amp; !/[_0-9]/.test(alt));
++            if (!meaningful) continue;
++            const safe = alt.replace(/&amp;/g, '&amp;amp;').replace(/&lt;/g, '&amp;lt;').replace(/&gt;/g, '&amp;gt;');
++            $(image).after('&lt;p&gt;' + safe + '&lt;/p&gt;');
++          }
++        }
++
++        /* =========================== 抽取记录 =========================== */
+         const records = helpers.docsearch({
+           recordProps: {
++            // 故意不用站点标题 h1.menu-title：否则「微雪」会命中每一个页面
+             lvl0: {
+-              selectors: "",
+-              defaultValue: "博客",
++              selectors: '',
++              defaultValue: '博客',
+             },
+-            lvl1: ["h1"],
+-            lvl2: ["h2"],
+-            lvl3: ["h3"],
+-            lvl4: ["h4"],
+-            lvl5: ["h5"],
+-            lvl6: ["h6"],
++            // 页面标题 = &lt;main&gt; 里的 h1。
++            // ⚠️ 千万不要把 'head &gt; title' 之类交给 helper 当兜底：它会在所有候选
++            //    选择器里取「文档顺序最靠前」的那个，&lt;title&gt; 在 &lt;head&gt; 里永远排第一，
++            //    结果 lvl1 全变成「重装系统 - 微雪博客」——标题带上站点名，而且
++            //    「微雪」「博客」会命中每一个页面（实测 2342/2342）。
++            //    没有 h1 的那 23 个页面改在下面用 &lt;title&gt; 补，见 PAGE_TITLE_FALLBACK。
++            lvl1: ['main h1', '#mdbook-content h1'],
++            lvl2: ['main h2', '#mdbook-content h2'],
++            lvl3: ['main h3', '#mdbook-content h3'],
++            lvl4: ['main h4', '#mdbook-content h4'],
++            lvl5: ['main h5', '#mdbook-content h5'],
++            lvl6: ['main h6', '#mdbook-content h6'],
++            // 正文：只取 &lt;main&gt; 里的块级元素。去掉了 span/a/em/strong/ul/ol
++            // （同一句话会被抽 3~4 遍），补上 td/th（表格）与 dd/dt，
++            // code 同时覆盖块级和行内代码。
+             content: [
+-              "p",
+-              "li",
+-              "ul",
+-              "ol",
+-              "code",
+-              "span",
+-              "strong",
+-              "a",
+-              "em",
++              'main p, main li, main td, main th, main code, main dd, main dt',
++              '#mdbook-content p, #mdbook-content li, #mdbook-content td, #mdbook-content th, #mdbook-content code, #mdbook-content dd, #mdbook-content dt',
+             ],
++            // 语言交给 helper 写进每条记录
++            lang: { defaultValue: 'zh-CN' },
+           },
+           aggregateContent: true,
+-          recordVersion: "v3",
++          indexHeadings: true,
++          recordVersion: 'v3',
+         });
+-        // 添加语言
+-        records.forEach((record) =&gt; {
+-          record.lang = "zh-CN";
+-        });
+-        return records;
++
++        /* ================== 单页记录数保护（内联，无函数）================== */
++        // 爬虫单页超过 750 条记录会直接报 Extractors returned too many records。
++        // 超过阈值时把「同一锚点、类型为 content」的相邻记录合并，标题原样保留；
++        // 在副本上合并，不改动 helper 返回的原对象。
++        let finalRecords = records;
++        if (records.length &gt; MAX_RECORDS_PER_PAGE) {
++          const packed = [];
++          let pending = null;
++          for (let i = 0; i &lt; records.length; i++) {
++            const record = records[i];
++            const isContent = record.type === 'content' &amp;&amp; typeof record.content === 'string';
++            const canMerge =
++              pending &amp;&amp;
++              isContent &amp;&amp;
++              pending.url === record.url &amp;&amp;
++              pending.content.length + record.content.length &lt; MERGE_MAX_CHARS;
++            if (canMerge) {
++              pending.content += '\n' + record.content;
++              continue;
++            }
++            if (pending) packed.push(pending);
++            if (isContent) {
++              pending = Object.assign({}, record);
++            } else {
++              pending = null;
++              packed.push(record);
++            }
++          }
++          if (pending) packed.push(pending);
++          finalRecords = packed;
++        }
++
++        /* ================ 写一份按词切分的副本（内联，无函数）================ */
++        // 先给没有标题的记录补 lvl1：这类页面 &lt;main&gt; 里没有 h1（实测 23 个），
++        // 只能用 &lt;title&gt; 兜底，并去掉「 - 微雪博客」这个站点名后缀。
++        // 放在分词之前，这样 hierarchy_words.lvl1 也会一起生成。
++        if (PAGE_TITLE_FALLBACK) {
++          const pageTitle = ($('head &gt; title').text() || '').replace(/ - 微雪博客$/, '').trim();
++          if (pageTitle) {
++            for (let i = 0; i &lt; finalRecords.length; i++) {
++              const titleHierarchy = finalRecords[i].hierarchy;
++              if (titleHierarchy &amp;&amp; !titleHierarchy.lvl1) {
++                titleHierarchy.lvl1 = pageTitle;
++              }
++            }
++          }
++        }
++
++        // 把所有要分词的文本收集起来，统一分词后再写回，
++        // 这样正文和各级标题共用同一段逻辑，且不需要定义函数。
++        if (PRE_SEGMENT) {
++          const texts = [];
++          const targets = [];
++          for (let i = 0; i &lt; finalRecords.length; i++) {
++            const record = finalRecords[i];
++            if (record.content) {
++              texts.push(String(record.content));
++              targets.push([i, '']);
++            }
++            const hierarchy = record.hierarchy || {};
++            for (let j = 0; j &lt; LEVELS.length; j++) {
++              if (hierarchy[LEVELS[j]]) {
++                texts.push(String(hierarchy[LEVELS[j]]));
++                targets.push([i, LEVELS[j]]);
++              }
++            }
++          }
++
++          const segmented = [];
++          for (let i = 0; i &lt; texts.length; i++) {
++            const text = texts[i];
++            let result = text;
++            if (segmenter &amp;&amp; HAS_CJK.test(text)) {
++              // 只保留词元，用空格连接：重装系统 8-&gt;7 → 重装 系统 8 7
++              const parts = Array.from(segmenter.segment(text));
++              const words = [];
++              for (let k = 0; k &lt; parts.length; k++) {
++                if (parts[k].isWordLike) words.push(parts[k].segment);
++              }
++              result = words.join(' ');
++              if (result.length &gt; SEGMENT_MAX_CHARS) result = result.slice(0, SEGMENT_MAX_CHARS);
++            }
++            segmented.push(result);
++          }
++
++          for (let i = 0; i &lt; finalRecords.length; i++) {
++            finalRecords[i].hierarchy_words = {};
++          }
++          for (let i = 0; i &lt; targets.length; i++) {
++            const record = finalRecords[targets[i][0]];
++            const level = targets[i][1];
++            if (level) {
++              record.hierarchy_words[level] = segmented[i];
++            } else {
++              record.content_words = segmented[i];
++            }
++          }
++        }
++
++        return finalRecords;
+       },
+     },
+   ],
+   safetyChecks: { beforeIndexPublishing: { maxLostRecordsPercentage: 100 } },
+   initialIndexSettings: {
+     tinysnowio: {
+-      attributesForFaceting: ["type", "lang"],
++      attributesForFaceting: ['type', 'lang'],
+       attributesToRetrieve: [
+-        "hierarchy",
+-        "content",
+-        "anchor",
+-        "url",
+-        "url_without_anchor",
+-        "type",
++        'hierarchy',
++        'content',
++        'anchor',
++        'url',
++        'url_without_anchor',
++        'type',
++        'lang',
+       ],
+-      attributesToHighlight: ["hierarchy", "content"],
+-      attributesToSnippet: ["content:10"],
+-      camelCaseAttributes: ["hierarchy", "content"],
++      attributesToHighlight: ['hierarchy', 'content'],
++      attributesToSnippet: ['content:10'],
++      camelCaseAttributes: ['hierarchy', 'content'],
++      // 前 8 项是按词切分的副本（优先命中），后 8 项是按字的原文（兜底）。
++      // 若把上面的 PRE_SEGMENT 改成 false，请删掉前 8 项。
+       searchableAttributes: [
+-        "unordered(hierarchy.lvl0)",
+-        "unordered(hierarchy.lvl1)",
+-        "unordered(hierarchy.lvl2)",
+-        "unordered(hierarchy.lvl3)",
+-        "unordered(hierarchy.lvl4)",
+-        "unordered(hierarchy.lvl5)",
+-        "unordered(hierarchy.lvl6)",
+-        "content",
++        'unordered(hierarchy_words.lvl0)',
++        'unordered(hierarchy_words.lvl1)',
++        'unordered(hierarchy_words.lvl2)',
++        'unordered(hierarchy_words.lvl3)',
++        'unordered(hierarchy_words.lvl4)',
++        'unordered(hierarchy_words.lvl5)',
++        'unordered(hierarchy_words.lvl6)',
++        'content_words',
++        'unordered(hierarchy.lvl0)',
++        'unordered(hierarchy.lvl1)',
++        'unordered(hierarchy.lvl2)',
++        'unordered(hierarchy.lvl3)',
++        'unordered(hierarchy.lvl4)',
++        'unordered(hierarchy.lvl5)',
++        'unordered(hierarchy.lvl6)',
++        'content',
+       ],
+       distinct: true,
+-      attributeForDistinct: "url",
+-      customRanking: [
+-        "desc(weight.pageRank)",
+-        "desc(weight.level)",
+-        "asc(weight.position)",
+-      ],
+-      ranking: [
+-        "words",
+-        "filters",
+-        "typo",
+-        "attribute",
+-        "proximity",
+-        "exact",
+-        "custom",
+-      ],
++      // 按「页面」去重：同一篇文章只出一条命中，避免单页刷屏
++      // （原配置是 'url'，含锚点，等于按段落去重）
++      attributeForDistinct: 'url_without_anchor',
++      customRanking: ['desc(weight.pageRank)', 'desc(weight.level)', 'asc(weight.position)'],
++      ranking: ['words', 'filters', 'typo', 'attribute', 'proximity', 'exact', 'custom'],
+       highlightPreTag: '&lt;span class="algolia-docsearch-suggestion--highlight"&gt;',
+-      highlightPostTag: "&lt;/span&gt;",
++      highlightPostTag: '&lt;/span&gt;',
+       minWordSizefor1Typo: 3,
+       minWordSizefor2Typos: 7,
+       allowTyposOnNumericTokens: false,
+       minProximity: 1,
+       ignorePlurals: true,
++      // 中文按词切分的开关（原配置完全没有这两项）
++      indexLanguages: ['zh', 'en'],
++      queryLanguages: ['zh', 'en'],
+       advancedSyntax: true,
+       attributeCriteriaComputedByMinProximity: true,
+-      removeWordsIfNoResults: "allOptional",
++      removeWordsIfNoResults: 'allOptional',
+     },
+   },
+-  appId: "GX9RTL51BH",
+-  apiKey: "PlaceHolder",
+ });
+ ```
+ 
+
+</code></pre>
+</details>
+<p><a id="f-383127424-theme-customized-search-js-2827483100"></a></p>
+<h4 id="themecustomizedsearchjs"><a class="header" href="#themecustomizedsearchjs">theme/customized/search.js</a></h4>
+<details>
+<summary><code>+382 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/theme/customized/search.js b/theme/customized/search.js
+new file mode 100644
+index 000000000..c078aa98e
+--- /dev/null
++++ b/theme/customized/search.js
+@@ -0,0 +1,382 @@
++/* ===========================================================================
++ * 微雪博客 · 自建 Algolia 搜索下拉面板
++ * ---------------------------------------------------------------------------
++ * 为什么不用 @docsearch/js：
++ *   DocSearch v3 每次查询只请求 hitsPerPage: 20 条，再在客户端按
++ *   maxResultsPerGroup（默认 5）切片，且没有任何分页；命中再多也看不到后面。
++ *   这里用 @algolia/autocomplete-js 自建下拉，支持「加载更多」逐页追加，
++ *   可以一直翻到最后一页。
++ *
++ * 依赖（见 theme/index.hbs，必须在 additional-js 之前引入）：
++ *   https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.19.12/dist/umd/index.production.js
++ *   → window['@algolia/autocomplete-js']
++ * 查询直接走 Algolia 的 POST /1/indexes/{index}/query，所以不需要再引入
++ * algoliasearch 客户端，也就没有 v4（返回 {results}）与 v5（返回数组）的歧义。
++ * =========================================================================== */
++(function () {
++    'use strict';
++
++    var CONFIG = {
++        appId: 'GX9RTL51BH',
++        apiKey: 'c4caea4202132489213a6c5366c9952d',
++        indexName: 'tinysnowio',
++        container: '#docsearch',
++        placeholder: '搜索 / Search',
++
++        /* 每次「加载更多」追加多少条 */
++        perPage: 20,
++
++        /* ---- 查询处理（都在客户端做）----
++         * 引擎对中文是「按单字」切分的：实测把 indexLanguages/queryLanguages 设成
++         * ["zh","en"] 并重建索引后依旧如此——查「重装系统」的 _rankingInfo.words
++         * 恒为 4（重/装/系/统），查询中间加空格也一样。于是：
++         *   1. cleanQuery：先把中文虚词去掉，否则「怎么重装系统」会变成 6 个单字的
++         *      AND，正确页面因为没有「怎么」反而不满足，前几条全是无关文章；
++         *      清洗成「重装系统」后前三名正好是三篇重装系统文章（实测）。
++         *   2. preferWordAttributes：优先只搜爬虫写的「按词」属性
++         *      （content_words / hierarchy_words）。实测 52 条精确短语：top1 从 15
++         *      涨到 33、进不了前 20 的从 14 降到 5；而只搜按字原文属性的成绩与基线
++         *      完全相同（拖后腿的是它）。若一条都没命中，会自动退回「原查询 + 全部属性」。 */
++        cleanQuery: true,
++        preferWordAttributes: true,
++        wordAttributes: [
++            'hierarchy_words.lvl0', 'hierarchy_words.lvl1', 'hierarchy_words.lvl2',
++            'hierarchy_words.lvl3', 'hierarchy_words.lvl4', 'hierarchy_words.lvl5',
++            'hierarchy_words.lvl6', 'content_words'
++        ],
++
++        /* 自建面板初始化失败时，退回 DocSearch 弹窗（每页条数已提高） */
++        fallbackToDocSearch: true
++    };
++
++    /* ===================== 中文查询分词 ===================== */
++    /* 与爬虫端 assets/algolia-crawler-config.js 使用同一套 ICU 规则，
++     * 保证查询和索引切出来的词一致。 */
++    var segmenter = (function () {
++        try {
++            if (typeof Intl !== 'undefined' &amp;&amp; typeof Intl.Segmenter === 'function') {
++                return new Intl.Segmenter('zh-Hans', { granularity: 'word' });
++            }
++        } catch (e) { /* 环境不支持就不分词 */ }
++        return null;
++    })();
++    var HAS_CJK = /[\u3400-\u9FFF\uF900-\uFAFF]/;
++
++    /* 单字虚词：作为独立词出现时丢掉（不用正则，避免误伤「上海」里的「上」） */
++    var STOP_CHARS = '的了是在和与及也就都很更最又还只把被给对从到向着并而或但如果因为所以之其此该等';
++    /* 多字虚词：ICU 会把它们切成一个词，按词整体丢掉 */
++    var STOP_WORDS = {
++        '怎么': 1, '怎样': 1, '如何': 1, '什么': 1, '为什么': 1, '哪个': 1, '哪些': 1,
++        '可以': 1, '能否': 1, '是否': 1, '这个': 1, '那个': 1, '这些': 1, '那些': 1,
++        '我们': 1, '你们': 1, '他们': 1, '就是': 1, '还是': 1, '只是': 1, '不是': 1,
++        '因为': 1, '所以': 1, '但是': 1, '不过': 1, '如果': 1, '需要': 1, '应该': 1,
++        '一个': 1, '一种': 1, '一下': 1, '一些': 1, '一直': 1, '已经': 1, '正在': 1,
++        '以及': 1, '并且': 1, '或者': 1, '然后': 1, '这样': 1, '那样': 1, '多少': 1,
++        '时候': 1, '现在': 1, '开始': 1, '进行': 1, '关于': 1, '对于': 1, '由于': 1
++    };
++
++    /* 把用户输入变成更容易命中的查询；不需要清洗时返回 null（表示按原样发送） */
++    function analyzeQuery(text) {
++        if (!CONFIG.cleanQuery || !segmenter || !HAS_CJK.test(text)) {
++            return null;
++        }
++        var parts = Array.from(segmenter.segment(text));
++        var words = [];
++        for (var i = 0; i &lt; parts.length; i++) {
++            var part = parts[i];
++            if (!part.isWordLike) {
++                continue;
++            }
++            var word = part.segment;
++            if (STOP_WORDS[word]) {
++                continue;
++            }
++            if (word.length === 1 &amp;&amp; STOP_CHARS.indexOf(word) !== -1) {
++                continue;
++            }
++            words.push(word);
++        }
++        if (!words.length) {
++            return null;      // 全是虚词，别清洗，直接按原样查
++        }
++        var out = words.join(' ');
++        return out === text ? null : out;
++    }
++
++    /* ===================== Algolia 查询 ===================== */
++    function searchUrl() {
++        return 'https://' + CONFIG.appId + '-dsn.algolia.net/1/indexes/'
++            + encodeURIComponent(CONFIG.indexName) + '/query';
++    }
++
++    function fetchPage(query, page, useWordAttributes) {
++        var payload = {
++            query: query,
++            hitsPerPage: CONFIG.perPage,
++            page: page,
++            attributesToRetrieve: ['hierarchy', 'content', 'url', 'url_without_anchor', 'anchor', 'type'],
++            attributesToHighlight: ['hierarchy'],
++            attributesToSnippet: ['content:24'],
++            highlightPreTag: '&lt;mark&gt;',
++            highlightPostTag: '&lt;/mark&gt;',
++            snippetEllipsisText: '…'
++        };
++        if (useWordAttributes &amp;&amp; CONFIG.preferWordAttributes) {
++            payload.restrictSearchableAttributes = CONFIG.wordAttributes;
++        }
++        var init = {
++            method: 'POST',
++            headers: {
++                'X-Algolia-Application-Id': CONFIG.appId,
++                'X-Algolia-API-Key': CONFIG.apiKey,
++                'Content-Type': 'application/json'
++            },
++            body: JSON.stringify(payload)
++        };
++        if (typeof AbortSignal !== 'undefined' &amp;&amp; typeof AbortSignal.timeout === 'function') {
++            init.signal = AbortSignal.timeout(15000);
++        }
++        return fetch(searchUrl(), init).then(function (res) {
++            if (!res.ok) {
++                throw new Error('Algolia 返回 HTTP ' + res.status);
++            }
++            return res.json();
++        });
++    }
++
++    /* ===================== 分页状态 ===================== */
++    /* sent：实际发给 Algolia 的查询（可能是清洗过的）
++     * mode：'words' = 只搜按词属性；'all' = 搜全部属性 */
++    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
++
++    function resetStore(query) {
++        store = { query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
++    }
++
++    function mergeHits(list) {
++        var seen = Object.create(null);
++        var merged = [];
++        list.forEach(function (hit) {
++            if (!hit || !hit.objectID || seen[hit.objectID]) {
++                return;
++            }
++            seen[hit.objectID] = true;
++            merged.push(hit);
++        });
++        return merged;
++    }
++
++    /* ===================== 渲染 ===================== */
++    /* 优先用 Algolia 的高亮结果：它已经做过 HTML 转义，只额外插入 &lt;mark&gt;；
++     * 爬虫存进索引的层级文本本身也是实体转义过的，所以可以安全地当 HTML 用。 */
++    function levelHtml(item, level) {
++        var hl = item._highlightResult &amp;&amp; item._highlightResult.hierarchy;
++        if (hl &amp;&amp; hl[level] &amp;&amp; hl[level].value) {
++            return hl[level].value;
++        }
++        var raw = item.hierarchy &amp;&amp; item.hierarchy[level];
++        return raw ? String(raw) : '';
++    }
++
++    function renderLoadMore(item, html) {
++        return html`&lt;div class="aa-ItemContent md-search-more"&gt;
++            &lt;div class="aa-ItemContentBody"&gt;
++                &lt;div class="aa-ItemContentTitle"&gt;加载更多（已显示 ${String(item.shown)} / 共 ${String(item.total)} 条）&lt;/div&gt;
++            &lt;/div&gt;
++        &lt;/div&gt;`;
++    }
++
++    function renderNotice(text, html) {
++        return html`&lt;div class="aa-ItemContent md-search-notice"&gt;
++            &lt;div class="aa-ItemContentBody"&gt;
++                &lt;div class="aa-ItemContentTitle"&gt;${text}&lt;/div&gt;
++            &lt;/div&gt;
++        &lt;/div&gt;`;
++    }
++
++    function renderHit(item, html) {
++        var title = levelHtml(item, 'lvl1') || levelHtml(item, 'lvl0') || '(无标题)';
++        var path = [];
++        ['lvl2', 'lvl3', 'lvl4', 'lvl5', 'lvl6'].forEach(function (level) {
++            var value = levelHtml(item, level);
++            if (value) {
++                path.push(value);
++            }
++        });
++        var snippet = item._snippetResult &amp;&amp; item._snippetResult.content
++            &amp;&amp; item._snippetResult.content.value;
++        var pathText = path.join(' › ');
++
++        return html`&lt;a class="aa-ItemLink" href="${item.url}"&gt;
++            &lt;div class="aa-ItemContent"&gt;
++                &lt;div class="aa-ItemIcon aa-ItemIcon--noBorder md-search-icon"&gt;
++                    &lt;svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/&gt;&lt;path d="M14 2v6h6"/&gt;&lt;/svg&gt;
++                &lt;/div&gt;
++                &lt;div class="aa-ItemContentBody"&gt;
++                    &lt;div class="aa-ItemContentTitle" dangerouslySetInnerHTML=${ { __html: title } }&gt;&lt;/div&gt;
++                    ${pathText ? html`&lt;div class="aa-ItemContentDescription md-search-path" dangerouslySetInnerHTML=${ { __html: pathText } }&gt;&lt;/div&gt;` : null}
++                    ${snippet ? html`&lt;div class="aa-ItemContentDescription md-search-snippet" dangerouslySetInnerHTML=${ { __html: snippet } }&gt;&lt;/div&gt;` : null}
++                &lt;/div&gt;
++            &lt;/div&gt;
++        &lt;/a&gt;`;
++    }
++
++    /* ===================== 数据源 ===================== */
++    function buildSources(params) {
++        var query = (params.query || '').trim();
++        if (!query) {
++            return [];
++        }
++        return [{
++            sourceId: 'tinysnowio',
++            getItems: function () {
++                if (store.query !== query) {
++                    resetStore(query);
++                }
++                if (!store.sent) {
++                    store.sent = analyzeQuery(query) || query;   // 清洗虚词，返回 null 就用原查询
++                    store.mode = 'words';
++                }
++                var page = store.page;
++
++                function collect(data) {
++                    store.hits = mergeHits(store.hits.concat((data &amp;&amp; data.hits) || []));
++                    if (data &amp;&amp; typeof data.nbHits === 'number') {
++                        store.nbHits = data.nbHits;
++                    }
++                    var items = store.hits.slice();
++                    if (items.length &gt; 0 &amp;&amp; items.length &lt; store.nbHits) {
++                        items.push({
++                            __loadMore: true,
++                            objectID: '__load_more__',
++                            shown: items.length,
++                            total: store.nbHits
++                        });
++                    }
++                    return items;
++                }
++
++                return fetchPage(store.sent, page, store.mode === 'words').then(function (data) {
++                    /* 查询已经变了，丢掉过期结果 */
++                    if (store.query !== query) {
++                        return [];
++                    }
++                    /* 只搜「按词」属性一条都没命中 → 退回「原查询 + 全部属性」再试一次 */
++                    if (page === 0 &amp;&amp; store.mode === 'words' &amp;&amp; data &amp;&amp; data.nbHits === 0) {
++                        store.mode = 'all';
++                        store.sent = query;
++                        return fetchPage(query, 0, false).then(function (fallback) {
++                            if (store.query !== query) {
++                                return [];
++                            }
++                            return collect(fallback);
++                        });
++                    }
++                    return collect(data);
++                }).catch(function (err) {
++                    if (window.console &amp;&amp; console.warn) {
++                        console.warn('[search] 查询失败：', err);
++                    }
++                    return [{ __notice: true, objectID: '__search_error__', text: '搜索服务暂时不可用，请稍后再试' }];
++                });
++            },
++            templates: {
++                header: function (props) {
++                    if (!store.nbHits) {
++                        return null;
++                    }
++                    return props.html`&lt;div class="md-search-count"&gt;共 ${String(store.nbHits)} 条命中&lt;/div&gt;`;
++                },
++                item: function (props) {
++                    var item = props.item;
++                    if (!item) {
++                        return null;
++                    }
++                    if (item.__loadMore) {
++                        return renderLoadMore(item, props.html);
++                    }
++                    if (item.__notice) {
++                        return renderNotice(item.text, props.html);
++                    }
++                    return renderHit(item, props.html);
++                },
++                noResults: function () {
++                    return '没有找到结果';
++                }
++            },
++            onSelect: function (p) {
++                var item = p.item || {};
++                if (p.event &amp;&amp; typeof p.event.preventDefault === 'function') {
++                    p.event.preventDefault();
++                }
++                if (item.__loadMore) {
++                    store.page = store.page + 1;
++                    if (typeof p.refresh === 'function') {
++                        p.refresh();
++                    }
++                    return;
++                }
++                if (item.__notice) {
++                    return;
++                }
++                if (item.url) {
++                    window.location.href = item.url;
++                }
++            }
++        }];
++    }
++
++    /* ===================== 启动 ===================== */
++    function mountDocSearchFallback() {
++        if (!CONFIG.fallbackToDocSearch || typeof window.docsearch !== 'function') {
++            return;
++        }
++        try {
++            window.docsearch({
++                appId: CONFIG.appId,
++                apiKey: CONFIG.apiKey,
++                indexName: CONFIG.indexName,
++                container: CONFIG.container,
++                debug: false,
++                /* DocSearch 的默认值：抓 20 条、每组只渲染 5 条。这里都提高。 */
++                searchParameters: { hitsPerPage: 40 },
++                maxResultsPerGroup: 20
++            });
++        } catch (e) {
++            if (window.console &amp;&amp; console.error) {
++                console.error('[search] DocSearch 兜底也失败了：', e);
++            }
++        }
++    }
++
++    function boot() {
++        var container = document.querySelector(CONFIG.container);
++        if (!container) {
++            return;
++        }
++        var AC = window['@algolia/autocomplete-js'];
++        if (!AC || typeof AC.autocomplete !== 'function' || typeof window.fetch !== 'function') {
++            mountDocSearchFallback();
++            return;
++        }
++        try {
++            AC.autocomplete({
++                container: container,
++                placeholder: CONFIG.placeholder,
++                openOnFocus: false,
++                getSources: buildSources
++            });
++        } catch (e) {
++            if (window.console &amp;&amp; console.error) {
++                console.error('[search] 自建面板初始化失败，退回 DocSearch：', e);
++            }
++            mountDocSearchFallback();
++        }
++    }
++
++    if (document.readyState === 'loading') {
++        document.addEventListener('DOMContentLoaded', boot);
++    } else {
++        boot();
++    }
++})();
+
+</code></pre>
+</details>
+<p><a id="f-383127424-theme-customized-style-css-2110612380"></a></p>
+<h4 id="themecustomizedstylecss"><a class="header" href="#themecustomizedstylecss">theme/customized/style.css</a></h4>
+<details>
+<summary><code>+120 / -0</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/theme/customized/style.css b/theme/customized/style.css
+index 1034b2f97..2edd368d9 100644
+--- a/theme/customized/style.css
++++ b/theme/customized/style.css
+@@ -101,4 +101,124 @@ code.editable, .ace_scroller {
+ 
+ .chapter li .md-viewed {
+     color: #777;
++}
++
++/* ===========================================================================
++ * 自建搜索面板（逻辑见 theme/customized/search.js）
++ * 搜索框占据菜单栏原有的 #docsearch 容器，下拉面板比搜索框宽，所以容器需要
++ * position: relative 作为定位参照。
++ * =========================================================================== */
++#docsearch {
++    position: relative;
++    align-self: center;
++    width: 210px;
++    margin-right: 6px;
++    z-index: 120;
++    /* classic 主题变量：面板高度、字号、层级 */
++    --aa-panel-max-height: min(70vh, 620px);
++    --aa-font-size: 1.4rem;
++    --aa-search-input-height: 30px;
++    --aa-base-z-index: 300;
++}
++
++#docsearch .aa-Autocomplete,
++#docsearch .aa-Form {
++    width: 100%;
++}
++
++#docsearch .aa-Form {
++    border-radius: 6px;
++    min-height: 30px;
++}
++
++#docsearch .aa-Input {
++    padding: 3px 6px;
++    height: 28px;
++}
++
++/* 面板贴合容器左边缘展开，并限制宽度避免在小屏溢出 */
++#docsearch .aa-Panel {
++    left: 0;
++    width: min(680px, calc(100vw - 32px));
++    border-radius: 8px;
++}
++
++#docsearch .md-search-count {
++    padding: 2px 4px 6px;
++    font-size: 1.2rem;
++    opacity: .65;
++}
++
++#docsearch .aa-ItemContentTitle {
++    font-size: 1.45rem;
++    line-height: 1.45;
++}
++
++#docsearch .md-search-path {
++    font-size: 1.2rem;
++    opacity: .7;
++}
++
++#docsearch .md-search-snippet {
++    display: -webkit-box;
++    -webkit-line-clamp: 2;
++    -webkit-box-orient: vertical;
++    overflow: hidden;
++    font-size: 1.25rem;
++    line-height: 1.5;
++}
++
++#docsearch .md-search-snippet mark,
++#docsearch .md-search-path mark,
++#docsearch .aa-ItemContentTitle mark {
++    background: rgba(255, 214, 0, .45);
++    color: inherit;
++    border-radius: 2px;
++    padding: 0 1px;
++}
++
++#docsearch .md-search-icon {
++    background: none;
++    box-shadow: none;
++}
++
++#docsearch .md-search-more,
++#docsearch .md-search-notice {
++    justify-content: center;
++    text-align: center;
++    color: var(--icons-hover, #7272ff);
++}
++
++#docsearch .md-search-more .aa-ItemContentTitle {
++    font-size: 1.3rem;
++    font-weight: 500;
++}
++
++/* 暗色主题：mdBook 用 html 上的 class 切主题，不是 prefers-color-scheme */
++html.ayu #docsearch,
++html.navy #docsearch,
++html.coal #docsearch {
++    --aa-text-color-rgb: 208, 208, 214;
++    --aa-background-color-rgb: 28, 31, 40;
++    --aa-input-background-color-rgb: 20, 22, 29;
++    --aa-primary-color-rgb: 158, 151, 255;
++    --aa-muted-color-rgb: 150, 150, 170;
++    --aa-icon-color-rgb: 170, 170, 200;
++    --aa-selected-color-rgb: 158, 151, 255;
++    --aa-selected-color-alpha: .28;
++    --aa-panel-border-color-rgb: 90, 94, 115;
++    --aa-input-border-color-rgb: 100, 104, 128;
++    --aa-description-highlight-background-color-rgb: 0, 255, 255;
++    --aa-description-highlight-background-color-alpha: .22;
++    --aa-scrollbar-track-background-color-rgb: 44, 46, 64;
++    --aa-panel-shadow: 0 0 0 1px rgba(120, 124, 150, .25), 0 8px 24px -6px rgba(0, 0, 0, .6);
++}
++
++@media only screen and (max-width: 700px) {
++    #docsearch {
++        width: 140px;
++    }
++    #docsearch .aa-Input {
++        font-size: 1.2rem;
++    }
+ }
+\ No newline at end of file
+
+</code></pre>
+</details>
+<p><a id="f-383127424-theme-index-hbs-1765250716"></a></p>
+<h4 id="themeindexhbs"><a class="header" href="#themeindexhbs">theme/index.hbs</a></h4>
+<details>
+<summary><code>+10 / -25</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/theme/index.hbs b/theme/index.hbs
+index 25183d11e..3ec4b8b5d 100644
+--- a/theme/index.hbs
++++ b/theme/index.hbs
+@@ -68,12 +68,14 @@
+         &lt;/script&gt;
+ 
+         &lt;!-- Doc Search --&gt;
++        &lt;!-- 自建搜索面板用的 classic 主题，版本与下方 autocomplete-js 保持一致 --&gt;
+         &lt;link
+             rel="stylesheet"
+-            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"
++            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.19.12/dist/theme.min.css"
+         /&gt;
+-        &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" /&gt;
+-        &lt;link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin /&gt;
++        &lt;!-- 仅在自建搜索面板初始化失败时，给 DocSearch 弹窗兜底用 --&gt;
++        &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.9.0/dist/style.css" /&gt;
++        &lt;link rel="preconnect" href="https://GX9RTL51BH-dsn.algolia.net" crossorigin /&gt;
+         
+ 
+         &lt;!-- Provide site root to javascript --&gt;
+@@ -441,6 +443,11 @@
+         &lt;/script&gt;
+ 
+ 
++        &lt;!-- 搜索面板依赖：必须在 additional-js（theme/customized/search.js）之前同步加载 --&gt;
++        &lt;script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.19.12/dist/umd/index.production.js"&gt;&lt;/script&gt;
++        &lt;!-- 仅作为自建面板初始化失败时的兜底 --&gt;
++        &lt;script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js"&gt;&lt;/script&gt;
++
+         &lt;!-- Custom JS scripts --&gt;
+         {{#each additional_js}}
+         &lt;script src="{{ resource this}}"&gt;&lt;/script&gt;
+@@ -464,10 +471,6 @@
+         {{/if}}
+         {{/if}}
+ 
+-        &lt;!-- &lt;script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"&gt;&lt;/script&gt; --&gt;
+-        &lt;!-- &lt;script&gt; --&gt;
+-            &lt;!-- const { autocomplete } = window['@algolia/autocomplete-js']; --&gt;
+-        &lt;!-- &lt;/script&gt; --&gt;
+         {{#if fragment_map}}
+         &lt;script&gt;
+             document.addEventListener('DOMContentLoaded', function() {
+@@ -482,24 +485,6 @@
+             });
+         &lt;/script&gt;
+         {{/if}}
+-        &lt;script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"&gt;&lt;/script&gt;
+-
+-        &lt;script type="text/javascript"&gt;
+-            docsearch({
+-                appId: 'GX9RTL51BH',
+-                apiKey: 'c4caea4202132489213a6c5366c9952d',
+-                indexName: 'tinysnowio',
+-                container: '#docsearch',
+-                debug: false // Set debug to true if you want to inspect the modal
+-            });
+-            // autocomplete({
+-            //   container: '#docsearch',
+-            //   placeholder: '搜索 / Search',
+-            //   getSources() {
+-            //     return [];
+-            //   },
+-            // });
+-        &lt;/script&gt;
+     &lt;/div&gt;
+     &lt;/body&gt;
+ &lt;/html&gt;
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-10-13-125845-cmt-utc8--59ca20519"><a class="header" href="#更新记录2026-10-13-125845-cmt-utc8--59ca20519">更新记录（2026-10-13 12:58:45 CMT (UTC+8) | 59ca20519）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 12:58:45 CMT (UTC+8)</code></li>
 <li>Base commit: <code>59ca20519</code></li>
@@ -251,12 +2100,12 @@
 <li>Changed files: <code>85</code></li>
 <li>Total lines: <code>+6018 / -84</code></li>
 </ul>
-<h3 id="commit-messages"><a class="header" href="#commit-messages">Commit Messages</a></h3>
+<h3 id="commit-messages-1"><a class="header" href="#commit-messages-1">Commit Messages</a></h3>
 <ul>
 <li><code>59ca2051</code> 情感类随记：一级标题同步改为短标题</li>
 <li><code>16562c19</code> 情感类随记：文件名由日期改为短标题，并同步 SUMMARY 目录</li>
 </ul>
-<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
 <ol>
 <li><a href="#f-3737320117-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+84 / -84</code></li>
 <li><a href="#f-3737320117-src-生活碎笔-随笔随记-情感类随记-随记-一句别理他-md-2835464952">src/生活碎笔/随笔随记/情感类随记/随记-一句别理他.md</a> <code>+78 / -0</code></li>
@@ -344,7 +2193,7 @@
 <li><a href="#f-3737320117-src-生活碎笔-随笔随记-情感类随记-随记-黑白格子-md-2814159259">src/生活碎笔/随笔随记/情感类随记/随记-黑白格子.md</a> <code>+51 / -0</code></li>
 <li><a href="#f-3737320117-src-生活碎笔-随笔随记-情感类随记-随记-鼎下的空气墙-md-4145229456">src/生活碎笔/随笔随记/情感类随记/随记-鼎下的空气墙.md</a> <code>+93 / -0</code></li>
 </ol>
-<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
 <p><a id="f-3737320117-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd"><a class="header" href="#srcsummarymd">src/SUMMARY.md</a></h4>
 <details>
@@ -7643,7 +9492,7 @@ index 000000000..b0bdd5f13
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-13-122812-cmt-utc8--2eef0b4eb"><a class="header" href="#更新记录2026-10-13-122812-cmt-utc8--2eef0b4eb">更新记录（2026-10-13 12:28:12 CMT (UTC+8) | 2eef0b4eb）</a></h2>
-<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 12:28:12 CMT (UTC+8)</code></li>
 <li>Base commit: <code>2eef0b4eb</code></li>
@@ -7651,15 +9500,15 @@ index 000000000..b0bdd5f13
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+1 / -1</code></li>
 </ul>
-<h3 id="commit-messages-1"><a class="header" href="#commit-messages-1">Commit Messages</a></h3>
+<h3 id="commit-messages-2"><a class="header" href="#commit-messages-2">Commit Messages</a></h3>
 <ul>
 <li><code>2eef0b4e</code> 随笔校对目录：2026-10-13</li>
 </ul>
-<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
 <ol>
 <li><a href="#f-987945327-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -1</code></li>
 </ol>
-<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
 <p><a id="f-987945327-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-1"><a class="header" href="#srcsummarymd-1">src/SUMMARY.md</a></h4>
 <details>
@@ -7683,7 +9532,7 @@ index 5a0e5d194..2ab1f7b7a 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-13-122407-cmt-utc8--9c942e6f2"><a class="header" href="#更新记录2026-10-13-122407-cmt-utc8--9c942e6f2">更新记录（2026-10-13 12:24:07 CMT (UTC+8) | 9c942e6f2）</a></h2>
-<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
+<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 12:24:07 CMT (UTC+8)</code></li>
 <li>Base commit: <code>9c942e6f2</code></li>
@@ -7691,15 +9540,15 @@ index 5a0e5d194..2ab1f7b7a 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+69 / -0</code></li>
 </ul>
-<h3 id="commit-messages-2"><a class="header" href="#commit-messages-2">Commit Messages</a></h3>
+<h3 id="commit-messages-3"><a class="header" href="#commit-messages-3">Commit Messages</a></h3>
 <ul>
 <li><code>9c942e6f</code> 每日实用类随记校对：2026.10.13</li>
 </ul>
-<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
+<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
 <ol>
 <li><a href="#f-1416328560-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-别拿状态最好的一天-给以后的每一天定任务-md-1689770614">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】别拿状态最好的一天，给以后的每一天定任务.md</a> <code>+69 / -0</code></li>
 </ol>
-<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
+<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
 <p><a id="f-1416328560-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-别拿状态最好的一天-给以后的每一天定任务-md-1689770614"></a></p>
 <h4 id="src生活碎笔随笔随记实用类随记aigc人工校对别拿状态最好的一天给以后的每一天定任务md"><a class="header" href="#src生活碎笔随笔随记实用类随记aigc人工校对别拿状态最好的一天给以后的每一天定任务md">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】别拿状态最好的一天，给以后的每一天定任务.md</a></h4>
 <details>
@@ -7785,7 +9634,7 @@ index 000000000..eb07acabc
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-13-063118-cmt-utc8--95b3d389b"><a class="header" href="#更新记录2026-10-13-063118-cmt-utc8--95b3d389b">更新记录（2026-10-13 06:31:18 CMT (UTC+8) | 95b3d389b）</a></h2>
-<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
+<h3 id="summary-4"><a class="header" href="#summary-4">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 06:31:18 CMT (UTC+8)</code></li>
 <li>Base commit: <code>95b3d389b</code></li>
@@ -7793,16 +9642,16 @@ index 000000000..eb07acabc
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+68 / -0</code></li>
 </ul>
-<h3 id="commit-messages-3"><a class="header" href="#commit-messages-3">Commit Messages</a></h3>
+<h3 id="commit-messages-4"><a class="header" href="#commit-messages-4">Commit Messages</a></h3>
 <ul>
 <li><code>95b3d389</code> 随笔初稿：别拿状态最好的一天，给以后的每一天定任务</li>
 </ul>
-<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
+<h3 id="index-4"><a class="header" href="#index-4">Index</a></h3>
 <ol>
 <li><a href="#f-406773431-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-406773431-src-生活碎笔-随笔随记-实用类随记-aigc待校对-别拿状态最好的一天-给以后的每一天定任务-md-714042844">src/生活碎笔/随笔随记/实用类随记/【AIGC待校对】别拿状态最好的一天，给以后的每一天定任务.md</a> <code>+67 / -0</code></li>
 </ol>
-<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
+<h3 id="diffs-4"><a class="header" href="#diffs-4">Diffs</a></h3>
 <p><a id="f-406773431-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-2"><a class="header" href="#srcsummarymd-2">src/SUMMARY.md</a></h4>
 <details>
@@ -7905,7 +9754,7 @@ index 000000000..d9f301fee
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-12-125050-cmt-utc8--f82ce2aa4"><a class="header" href="#更新记录2026-10-12-125050-cmt-utc8--f82ce2aa4">更新记录（2026-10-12 12:50:50 CMT (UTC+8) | f82ce2aa4）</a></h2>
-<h3 id="summary-4"><a class="header" href="#summary-4">Summary</a></h3>
+<h3 id="summary-5"><a class="header" href="#summary-5">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-12 12:50:50 CMT (UTC+8)</code></li>
 <li>Base commit: <code>f82ce2aa4</code></li>
@@ -7913,15 +9762,15 @@ index 000000000..d9f301fee
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+1 / -1</code></li>
 </ul>
-<h3 id="commit-messages-4"><a class="header" href="#commit-messages-4">Commit Messages</a></h3>
+<h3 id="commit-messages-5"><a class="header" href="#commit-messages-5">Commit Messages</a></h3>
 <ul>
 <li><code>f82ce2aa</code> 随笔校对目录：2026-10-12</li>
 </ul>
-<h3 id="index-4"><a class="header" href="#index-4">Index</a></h3>
+<h3 id="index-5"><a class="header" href="#index-5">Index</a></h3>
 <ol>
 <li><a href="#f-3055637888-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -1</code></li>
 </ol>
-<h3 id="diffs-4"><a class="header" href="#diffs-4">Diffs</a></h3>
+<h3 id="diffs-5"><a class="header" href="#diffs-5">Diffs</a></h3>
 <p><a id="f-3055637888-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-3"><a class="header" href="#srcsummarymd-3">src/SUMMARY.md</a></h4>
 <details>
@@ -7945,7 +9794,7 @@ index 3c609d5b4..be0fa03a5 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-12-124630-cmt-utc8--78fea4fb0"><a class="header" href="#更新记录2026-10-12-124630-cmt-utc8--78fea4fb0">更新记录（2026-10-12 12:46:30 CMT (UTC+8) | 78fea4fb0）</a></h2>
-<h3 id="summary-5"><a class="header" href="#summary-5">Summary</a></h3>
+<h3 id="summary-6"><a class="header" href="#summary-6">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-12 12:46:30 CMT (UTC+8)</code></li>
 <li>Base commit: <code>78fea4fb0</code></li>
@@ -7953,15 +9802,15 @@ index 3c609d5b4..be0fa03a5 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+63 / -0</code></li>
 </ul>
-<h3 id="commit-messages-5"><a class="header" href="#commit-messages-5">Commit Messages</a></h3>
+<h3 id="commit-messages-6"><a class="header" href="#commit-messages-6">Commit Messages</a></h3>
 <ul>
 <li><code>78fea4fb</code> 每日实用类随记校对：2026.10.12</li>
 </ul>
-<h3 id="index-5"><a class="header" href="#index-5">Index</a></h3>
+<h3 id="index-6"><a class="header" href="#index-6">Index</a></h3>
 <ol>
 <li><a href="#f-3581593091-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-接受一次帮助-不必立刻还成等价交换-md-3540879356">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】接受一次帮助，不必立刻还成等价交换.md</a> <code>+63 / -0</code></li>
 </ol>
-<h3 id="diffs-5"><a class="header" href="#diffs-5">Diffs</a></h3>
+<h3 id="diffs-6"><a class="header" href="#diffs-6">Diffs</a></h3>
 <p><a id="f-3581593091-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-接受一次帮助-不必立刻还成等价交换-md-3540879356"></a></p>
 <h4 id="src生活碎笔随笔随记实用类随记aigc人工校对接受一次帮助不必立刻还成等价交换md"><a class="header" href="#src生活碎笔随笔随记实用类随记aigc人工校对接受一次帮助不必立刻还成等价交换md">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】接受一次帮助，不必立刻还成等价交换.md</a></h4>
 <details>
@@ -8041,7 +9890,7 @@ index 000000000..bb1e8d413
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-12-063215-cmt-utc8--8186e6b40"><a class="header" href="#更新记录2026-10-12-063215-cmt-utc8--8186e6b40">更新记录（2026-10-12 06:32:15 CMT (UTC+8) | 8186e6b40）</a></h2>
-<h3 id="summary-6"><a class="header" href="#summary-6">Summary</a></h3>
+<h3 id="summary-7"><a class="header" href="#summary-7">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-12 06:32:15 CMT (UTC+8)</code></li>
 <li>Base commit: <code>8186e6b40</code></li>
@@ -8049,16 +9898,16 @@ index 000000000..bb1e8d413
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+62 / -0</code></li>
 </ul>
-<h3 id="commit-messages-6"><a class="header" href="#commit-messages-6">Commit Messages</a></h3>
+<h3 id="commit-messages-7"><a class="header" href="#commit-messages-7">Commit Messages</a></h3>
 <ul>
 <li><code>8186e6b4</code> 随笔初稿：接受一次帮助，不必立刻还成等价交换</li>
 </ul>
-<h3 id="index-6"><a class="header" href="#index-6">Index</a></h3>
+<h3 id="index-7"><a class="header" href="#index-7">Index</a></h3>
 <ol>
 <li><a href="#f-3365849202-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-3365849202-src-生活碎笔-随笔随记-实用类随记-aigc待校对-接受一次帮助-不必立刻还成等价交换-md-1940635491">src/生活碎笔/随笔随记/实用类随记/【AIGC待校对】接受一次帮助，不必立刻还成等价交换.md</a> <code>+61 / -0</code></li>
 </ol>
-<h3 id="diffs-6"><a class="header" href="#diffs-6">Diffs</a></h3>
+<h3 id="diffs-7"><a class="header" href="#diffs-7">Diffs</a></h3>
 <p><a id="f-3365849202-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-4"><a class="header" href="#srcsummarymd-4">src/SUMMARY.md</a></h4>
 <details>
@@ -8155,7 +10004,7 @@ index 000000000..55ec5192d
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-12-060114-cmt-utc8--5e991f3eb"><a class="header" href="#更新记录2026-10-12-060114-cmt-utc8--5e991f3eb">更新记录（2026-10-12 06:01:14 CMT (UTC+8) | 5e991f3eb）</a></h2>
-<h3 id="summary-7"><a class="header" href="#summary-7">Summary</a></h3>
+<h3 id="summary-8"><a class="header" href="#summary-8">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-12 06:01:14 CMT (UTC+8)</code></li>
 <li>Base commit: <code>5e991f3eb</code></li>
@@ -8163,16 +10012,16 @@ index 000000000..55ec5192d
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+28 / -0</code></li>
 </ul>
-<h3 id="commit-messages-7"><a class="header" href="#commit-messages-7">Commit Messages</a></h3>
+<h3 id="commit-messages-8"><a class="header" href="#commit-messages-8">Commit Messages</a></h3>
 <ul>
 <li><code>5e991f3e</code> 每日一文：叙述爱的无穷种方式 - 维维阿娜</li>
 </ul>
-<h3 id="index-7"><a class="header" href="#index-7">Index</a></h3>
+<h3 id="index-8"><a class="header" href="#index-8">Index</a></h3>
 <ol>
 <li><a href="#f-1601757752-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-1601757752-src-阅读-每日一文-叙述爱的无穷种方式-维维阿娜-md-1907933038">src/阅读/每日一文/叙述爱的无穷种方式-维维阿娜.md</a> <code>+27 / -0</code></li>
 </ol>
-<h3 id="diffs-7"><a class="header" href="#diffs-7">Diffs</a></h3>
+<h3 id="diffs-8"><a class="header" href="#diffs-8">Diffs</a></h3>
 <p><a id="f-1601757752-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-5"><a class="header" href="#srcsummarymd-5">src/SUMMARY.md</a></h4>
 <details>
@@ -8235,7 +10084,7 @@ index 000000000..5405afc15
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-11-152838-cmt-utc8--2ad238315"><a class="header" href="#更新记录2026-10-11-152838-cmt-utc8--2ad238315">更新记录（2026-10-11 15:28:38 CMT (UTC+8) | 2ad238315）</a></h2>
-<h3 id="summary-8"><a class="header" href="#summary-8">Summary</a></h3>
+<h3 id="summary-9"><a class="header" href="#summary-9">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-11 15:28:38 CMT (UTC+8)</code></li>
 <li>Base commit: <code>2ad238315</code></li>
@@ -8243,15 +10092,15 @@ index 000000000..5405afc15
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+1 / -1</code></li>
 </ul>
-<h3 id="commit-messages-8"><a class="header" href="#commit-messages-8">Commit Messages</a></h3>
+<h3 id="commit-messages-9"><a class="header" href="#commit-messages-9">Commit Messages</a></h3>
 <ul>
 <li><code>2ad23831</code> 随笔校对目录：2026-10-11</li>
 </ul>
-<h3 id="index-8"><a class="header" href="#index-8">Index</a></h3>
+<h3 id="index-9"><a class="header" href="#index-9">Index</a></h3>
 <ol>
 <li><a href="#f-3620673164-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -1</code></li>
 </ol>
-<h3 id="diffs-8"><a class="header" href="#diffs-8">Diffs</a></h3>
+<h3 id="diffs-9"><a class="header" href="#diffs-9">Diffs</a></h3>
 <p><a id="f-3620673164-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-6"><a class="header" href="#srcsummarymd-6">src/SUMMARY.md</a></h4>
 <details>
@@ -8269,1254 +10118,6 @@ index 2b946b99c..1154d855b 100644
      - [【AIGC人工校对】复盘的时候，别假装自己当时就知道结局](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】复盘的时候，别假装自己当时就知道结局.md)
      - [【AIGC人工校对】留着备用的东西，也在占用你现在的生活](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】留着备用的东西，也在占用你现在的生活.md)
      - [【AIGC人工校对】道歉之后，先把给别人添的麻烦处理掉](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】道歉之后，先把给别人添的麻烦处理掉.md)
-
-</code></pre>
-</details>
-<!-- LAST_UPDATED_ENTRY_END -->
-<!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-10-11-152356-cmt-utc8--ec1fa4465"><a class="header" href="#更新记录2026-10-11-152356-cmt-utc8--ec1fa4465">更新记录（2026-10-11 15:23:56 CMT (UTC+8) | ec1fa4465）</a></h2>
-<h3 id="summary-9"><a class="header" href="#summary-9">Summary</a></h3>
-<ul>
-<li>Generated at: <code>2026-10-11 15:23:56 CMT (UTC+8)</code></li>
-<li>Base commit: <code>ec1fa4465</code></li>
-<li>Diff source: <code>3131cd7aacff176be1f85ce5c5c484291563c533..ec1fa446514d271252dbd58ee3ff181129371d8b</code></li>
-<li>Changed files: <code>10</code></li>
-<li>Total lines: <code>+602 / -208</code></li>
-</ul>
-<h3 id="commit-messages-9"><a class="header" href="#commit-messages-9">Commit Messages</a></h3>
-<ul>
-<li>
-<p><code>ec1fa446</code> feat(转换工具): 新增 .cmd 双击入口并加固标题获取；改写「触发器」一章；改名两篇随笔并收录《猪草》</p>
-<blockquote>
-<p>一、微信公众号转换工具（assets/）</p>
-<p>新增 assets/convert-wechat-article.cmd：纯 ASCII 的批处理启动器，以进程级
--ExecutionPolicy Bypass 调用 Windows PowerShell 5.1，原样透传参数与退出码。原因是本机
-没有注册 Microsoft.PowerShellScript.1，资源管理器右键没有「使用 PowerShell 运行」，
-.ps1 又可能被关联到记事本，直接 &amp; 调用还会被执行策略拒绝。</p>
-<p>convert-wechat-article.ps1 的改动：</p>
-<ul>
-<li>暂停判断重写。原来只看父进程是不是 explorer；现在沿进程树上溯最多 6 层识别
-explorer、dllhost 等外壳宿主，并新增 Test-InteractiveConsole 判断 stdin/stdout 是否被
-重定向。规则按明确程度排序：-NoPause 优先，其次是环境变量 CONVERT_WECHAT_PAUSE
-（0 从不暂停／1 总是暂停），再是重定向输入一律不暂停（保证管道、CI、自动化不会卡在
-Read-Host），最后才在双击或交互式终端里停留。成功与失败路径都会停留。</li>
-<li>标题获取抽成 Resolve-ArticleTitle，顺序定为 -Title 参数、输入末尾的独立标题行、剪贴板
-单行文本、真实控制台手动输入（最多 5 次，直接回车取消），四条都拿不到才报错退出。</li>
-<li>新增 Test-UsableTitle：候选标题含换行或 Windows 文件名非法字符时跳过并说明原因，
-不再像以前那样直接中断转换。剪贴板里是路径或整段文字时也不再让整次运行失败。</li>
-<li>错误信息改为中文，去掉原来把英文异常直接抛给双击用户的写法。</li>
-</ul>
-<p>assets/AGENTS.md 同步重写「当前转换工具」一节：双击 .cmd 的推荐流程、终端用法、窗口是否
-停留的三条规则、.ps1 必须保留 UTF-8 BOM 与 .cmd 必须纯 ASCII 的编码要求、四步标题来源、
-非法字符跳过规则。</p>
-<p>二、计算机科学极简入门指南</p>
-<p>重写「第二十章：触发器」全文：收紧口语化表述与破折号堆叠，把锁存器的「电平敏感」与
-触发器的「边沿敏感」对比讲透，主从结构「一级开门时另一级必定关门」的推导补全；思考题
-由 3 题并为 2 题，原第 1 题并入正文，参考答案同步调整，正文与答案不再重复设问。</p>
-<p>三、随笔</p>
-<p>《复盘的时候，别假装自己当时就知道结局》《爱好接了单，连不想做的部分也要交付》两篇由
-「【AIGC待校对】」改名为「【AIGC人工校对】」，表示已完成人工校对。文件名之外还做了两处
-人工润色：署名统一为「<br /> + 两个全角空格缩进」的博客格式（此前是顶格裸行）；《复盘》
-一篇改掉「这当然都对」这类绝对化表述，给两处关键结论补上 mdBook 加粗。</p>
-<p>新增文章《猪草》：写回乡时母亲用猪草（红薯叶、红薯藤）炒菜一事，由农村与城市的落差谈到
-童年经历如何变成生命韧性的一部分，含封面图与图源署名。已按惯例在 src/SUMMARY.md 的
-「文章与写作」列表顶部补上条目。</p>
-<p>四、其他</p>
-<p>assets/wechat-origin.md 换成《猪草》的微信原始粘贴稿，供转换工具作为当前输入样本。</p>
-</blockquote>
-</li>
-<li>
-<p><code>22d12728</code> Merge branch ‘master’ of github.com:TinySnow/TinySnow.github.io</p>
-</li>
-<li>
-<p><code>a7e6e2a4</code> Merge branch ‘master’ of github.com:TinySnow/TinySnow.github.io</p>
-</li>
-<li>
-<p><code>0023285b</code> docs(计算机科学极简入门指南): AGENTS 新增「去 AIGC 味」规范</p>
-<blockquote>
-<ul>
-<li>新增第六节「去 AIGC 味（硬性，写完必查）」，与《学海计划》规范同源，已按本系列文体改写。</li>
-<li>收录五条：推进方式「一条线走到底」、AI 腔硬性禁表、结构清晰、多样性与节奏、收尾不升华。</li>
-<li>「底层逻辑」按本系列语境放宽：底层的门电路、底层实现照写，禁的是修辞化用法。</li>
-<li>禁表作用范围含正文、小标题、TL;DR 与小结；禁表之外的套话登记在提交信息里。</li>
-<li>原第六至第八节顺延为第七至第九节，文末自检清单同步补入去 AIGC 三项检查。</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h3 id="index-9"><a class="header" href="#index-9">Index</a></h3>
-<ol>
-<li><a href="#f-520419096-assets-agents-md-3942825076">assets/AGENTS.md</a> <code>+54 / -21</code></li>
-<li><a href="#f-520419096-assets-convert-wechat-article-cmd-1876348669">assets/convert-wechat-article.cmd</a> <code>+38 / -0</code></li>
-<li><a href="#f-520419096-assets-convert-wechat-article-ps1-688062784">assets/convert-wechat-article.ps1</a> <code>+135 / -36</code></li>
-<li><a href="#f-520419096-assets-wechat-origin-md-2464248456">assets/wechat-origin.md</a> <code>+37 / -113</code></li>
-<li><a href="#f-520419096-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
-<li><a href="#f-520419096-src-学习与进步-计算机科学极简入门指南-agents-md-3318719775">src/学习与进步/计算机科学极简入门指南/AGENTS.md</a> <code>+88 / -4</code></li>
-<li><a href="#f-520419096-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第二十章-触发器-md-145588725">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十章：触发器.md</a> <code>+26 / -34</code></li>
-<li><a href="#f-520419096-src-生活碎笔-文章与写作-猪草-md-1693121996">src/生活碎笔/文章与写作/猪草.md</a> <code>+91 / -0</code></li>
-<li><a href="#f-520419096-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-复盘的时候-别假装自己当时就知道结局-md-2990626526">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】复盘的时候，别假装自己当时就知道结局.md</a> <code>+67 / -0</code></li>
-<li><a href="#f-520419096-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-爱好接了单-连不想做的部分也要交付-md-2448431962">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】爱好接了单，连不想做的部分也要交付.md</a> <code>+65 / -0</code></li>
-</ol>
-<h3 id="diffs-9"><a class="header" href="#diffs-9">Diffs</a></h3>
-<p><a id="f-520419096-assets-agents-md-3942825076"></a></p>
-<h4 id="assetsagentsmd"><a class="header" href="#assetsagentsmd">assets/AGENTS.md</a></h4>
-<details>
-<summary><code>+54 / -21</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/assets/AGENTS.md b/assets/AGENTS.md
-index 017add88f..4826e6ad8 100644
---- a/assets/AGENTS.md
-+++ b/assets/AGENTS.md
-@@ -161,39 +161,76 @@
- 
- ## 当前转换工具
- 
--当前实现为 `assets/convert-wechat-article.ps1`，默认把 `assets/wechat-origin.md` 转换到 `src/生活碎笔/文章与写作/`，并从一级标题、文章末尾标题、显式参数或剪贴板取得标题。
-+当前实现为 `assets/convert-wechat-article.ps1`，双击入口为 `assets/convert-wechat-article.cmd`。默认把 `assets/wechat-origin.md` 转换到 `src/生活碎笔/文章与写作/`，并从一级标题、显式参数、文章末尾标题、剪贴板或手动输入取得标题。
- 
--在仓库根目录运行：
-+### 推荐方式：双击 `.cmd`
- 
--```powershell
--.\assets\convert-wechat-article.ps1
--```
-+1. 在微信公众号里复制文章标题（`Ctrl+C` 即可，不必粘进任何文件）。
-+2. 把正文粘贴到 `assets/wechat-origin.md`，**不需要**给标题留位置，也**不需要**写 `# 一级标题`。
-+3. 双击 `assets/convert-wechat-article.cmd`。标题直接取自剪贴板，窗口输出目标路径，并停留到按 Enter。
-+
-+只有剪贴板里没有可用的单行标题时（空剪贴板、复制的是路径或整段文字），才会提示手动输入标题；此时直接回车可取消。
- 
--也可在资源管理器中右键 `convert-wechat-article.ps1` 并选择“使用 PowerShell 运行”。脚本的默认输入、输出路径始终相对于仓库根目录解析；从资源管理器启动时，成功或失败信息会保留在窗口中，按 Enter 才会关闭。
-+之所以不直接双击 `.ps1`：
- 
--该 `.ps1` 文件必须保存为 **UTF-8 with BOM**。资源管理器右键运行使用 Windows PowerShell 5.1，它不能可靠解析带中文的 UTF-8 无 BOM 脚本；修改脚本编码时不得移除 BOM。
-+- 本机没有注册 `Microsoft.PowerShellScript.1` 类，资源管理器右键菜单里没有“使用 PowerShell 运行”（`HKLM\SOFTWARE\Classes\.ps1` 也不存在）。
-+- `.ps1` 的默认打开方式可能被关联到记事本，双击只会打开源码而不执行。
-+- 直接 `&amp; .\assets\convert-wechat-article.ps1` 调用未签名脚本时，可能被执行策略拒绝（`RemoteSigned` 下提示“未对文件进行数字签名”）。
-+- `.cmd` 以进程级 `-ExecutionPolicy Bypass` 调用 Windows PowerShell 5.1，并原样透传参数与退出码；是否停留由 `.ps1` 判断，因此不会再“闪退”。
- 
--输入文件可以没有一级标题。无标题时，先在微信公众号中复制文章标题，再运行上述命令；工具会读取剪贴板中的单行文本，将其补为一级标题，并用它生成文件名。标题不需要粘贴进 `assets/wechat-origin.md`。
-+### 在终端运行
-+
-+```powershell
-+.\assets\convert-wechat-article.cmd
-+.\assets\convert-wechat-article.cmd -Title "文章标题"
-+.\assets\convert-wechat-article.cmd -InputPath .\其他输入.md -OutputDirectory .\converted
-+```
- 
--如果不希望读取剪贴板，也可以显式传入标题：
-+不经过 `.cmd` 调用时，必须显式绕过执行策略：
- 
- ```powershell
--.\assets\convert-wechat-article.ps1 -Title "文章标题"
-+powershell -NoProfile -ExecutionPolicy Bypass -File .\assets\convert-wechat-article.ps1
- ```
- 
--也可以把未经 Markdown 格式化的标题粘贴为整篇输入的最后一个独立文本行。工具会把该行从末尾移走，自动补成开头的一级标题。不要把标题无分隔地直接拼在图源行之后，例如 `&gt; 图源 | Unsplash文章标题`；这种文本没有可靠的标题边界，无法安全自动拆分。总体上，推荐使用剪贴板方案，因为复制标题后无需再次粘贴。
-+脚本的默认输入、输出路径始终相对于仓库根目录（`assets` 的上一级）解析，因此在任何工作目录下运行结果一致。
-+
-+### 窗口是否停留
-+
-+- 输入被重定向时（管道、CI、自动化）从不停留，避免 `Read-Host` 阻塞；这一条优先于下面两条。
-+- 双击 `.cmd`、用“打开方式”运行 `.ps1`，或在交互式终端里运行时停留，成功和失败都要按 Enter。
-+- 显式控制：传 `-NoPause`，或设置环境变量 `CONVERT_WECHAT_PAUSE=0`（从不暂停）／`CONVERT_WECHAT_PAUSE=1`（总是暂停）。
-+
-+### 编码要求
-+
-+- `.ps1` 必须保存为 **UTF-8 with BOM**。Windows PowerShell 5.1 不能可靠解析带中文的 UTF-8 无 BOM 脚本，会报 `缺少“)”` 一类语法错误；用编辑器或脚本改写后务必确认 BOM 仍在。
-+- `.cmd` 必须保持 **纯 ASCII**。cmd.exe 按 OEM 代码页读取批处理文件，中文会变成乱码；中文输出由 `.ps1` 负责。
- 
--也可以指定其他输入文件或输出目录：
-+### 标题来源
-+
-+常规流程是**剪贴板**：复制文章标题，双击 `.cmd`，工具读取剪贴板里的单行文本作为标题，并自动补成开头的 `# 一级标题`。不需要把标题粘进 `assets/wechat-origin.md`，也不需要手动写 `#`。
-+
-+无一级标题时按以下顺序取标题，取到即用（`-Title` 用于终端批量转换；末尾标题行与手动输入都只是可选兜底）：
-+
-+1. `-Title "文章标题"` 参数；
-+2. 输入末尾的独立标题行（可选做法：会自动从末尾移到开头，标题不必带 `#`）；
-+3. 剪贴板中的单行文本（双击流程的常规来源）；
-+4. 兜底：在真实控制台里运行时提示手动输入（最多 5 次，直接回车取消）；四条都没有则报错退出。
-+
-+候选标题含换行或 `\ / : * ? " &lt; &gt; |` 等 Windows 文件名非法字符时会被跳过并说明原因，不会直接中断。
-+
-+可选做法：把未经 Markdown 格式化的标题粘贴为整篇输入的最后一个独立文本行，工具会把该行从末尾移走并用它做标题。不要把标题无分隔地直接拼在图源行之后，例如 `&gt; 图源 | Unsplash文章标题`；这种文本没有可靠的标题边界，无法安全自动拆分。
-+
-+指定其他输入文件或输出目录：
- 
- ```powershell
--.\assets\convert-wechat-article.ps1 -InputPath .\其他输入.md
--.\assets\convert-wechat-article.ps1 -InputPath .\其他输入.md -OutputDirectory .\converted
-+.\assets\convert-wechat-article.cmd -InputPath .\其他输入.md
-+.\assets\convert-wechat-article.cmd -InputPath .\其他输入.md -OutputDirectory .\converted
- ```
- 
- 工具执行以下规范化操作：
- 
- - 从首个一级标题读取文章标题，并用完整标题作为 Markdown 文件名。
--- 输入没有一级标题时，依次尝试 `-Title`、文章末尾的独立标题行、剪贴板中的单行标题，并自动补齐一级标题。
-+- 输入没有一级标题时，依次尝试 `-Title`、文章末尾的独立标题行、剪贴板中的单行标题、控制台手动输入，并自动补齐一级标题；含换行或 Windows 文件名非法字符的候选会被跳过并说明原因。
- - 如果封面图源信息之后还有一个独立的普通文本行，则把该行视为末尾标题；标题不需要带 `#`。
- - 把 `&gt; 字数 字 | 标签` 转换为博客所用的居中蓝色加粗 HTML。
- - 把正文中两个以上连续空白行表示的场景分隔转换为 `&lt;br /&gt;`。
-@@ -205,13 +242,9 @@
- 
- ## 微信公众号文章转换
- 
--将微信公众号文本编辑器中的文章粘贴到 `assets/wechat-origin.md`，复制文章标题后，在仓库根目录运行：
--
--```powershell
--.\assets\convert-wechat-article.ps1
--```
-+将微信公众号文本编辑器中的文章粘贴到 `assets/wechat-origin.md`，然后双击 `assets/convert-wechat-article.cmd`（或在仓库根目录运行 `.\assets\convert-wechat-article.cmd`）。复制过标题时脚本直接使用剪贴板标题，否则会提示输入标题。
- 
--脚本会读取剪贴板标题，按博客格式转换文章，并输出到 `src/生活碎笔/文章与写作/`。详细格式与其他标题输入方式见 `assets/AGENTS.md`。
-+脚本按博客格式转换文章，并输出到 `src/生活碎笔/文章与写作/`。详细格式与其他标题输入方式见 `assets/AGENTS.md`。
- 
- CI 使用 `assets/generate-last-updated-md.sh` 生成最近更新页面，并使用无需第三方依赖的 `assets/generate-rss.py` 生成 RSS。
- 
-
-</code></pre>
-</details>
-<p><a id="f-520419096-assets-convert-wechat-article-cmd-1876348669"></a></p>
-<h4 id="assetsconvert-wechat-articlecmd"><a class="header" href="#assetsconvert-wechat-articlecmd">assets/convert-wechat-article.cmd</a></h4>
-<details>
-<summary><code>+38 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/assets/convert-wechat-article.cmd b/assets/convert-wechat-article.cmd
-new file mode 100644
-index 000000000..159f7848f
---- /dev/null
-+++ b/assets/convert-wechat-article.cmd
-@@ -0,0 +1,38 @@
-+@echo off
-+rem ===========================================================================
-+rem  Double-click launcher for convert-wechat-article.ps1
-+rem
-+rem  Why this file exists:
-+rem    * This machine has no "Microsoft.PowerShellScript.1" registration, so
-+rem      Explorer offers no "Run with PowerShell" entry for .ps1 files
-+rem      (HKLM\SOFTWARE\Classes\.ps1 does not exist either).
-+rem    * The .ps1 extension may be associated with Notepad, in which case a
-+rem      double-click only opens the source instead of running it.
-+rem    * A bare "&amp; .\convert-wechat-article.ps1" call can be rejected by the
-+rem      machine execution policy ("... is not digitally signed").
-+rem
-+rem  This launcher starts Windows PowerShell 5.1 with a process-scope Bypass
-+rem  and forwards every argument. Whether the window stays open is decided by
-+rem  the .ps1 itself (see Wait-BeforeExit there): a double-click keeps the
-+rem  result readable, while a piped or automated run never blocks.
-+rem
-+rem  Keep this file ASCII-only: cmd.exe reads batch files with the OEM code
-+rem  page, so non-ASCII text here turns into mojibake. The .ps1 owns all
-+rem  Chinese output and stays UTF-8 with BOM.
-+rem ===========================================================================
-+setlocal
-+
-+set "SCRIPT=%~dp0convert-wechat-article.ps1"
-+if not exist "%SCRIPT%" (
-+    echo [ERROR] Missing: "%SCRIPT%"
-+    pause
-+    exit /b 1
-+)
-+
-+set "PSEXE=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe"
-+if not exist "%PSEXE%" set "PSEXE=powershell.exe"
-+
-+"%PSEXE%" -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT%" %*
-+set "RC=%ERRORLEVEL%"
-+
-+endlocal &amp; exit /b %RC%
-
-</code></pre>
-</details>
-<p><a id="f-520419096-assets-convert-wechat-article-ps1-688062784"></a></p>
-<h4 id="assetsconvert-wechat-articleps1"><a class="header" href="#assetsconvert-wechat-articleps1">assets/convert-wechat-article.ps1</a></h4>
-<details>
-<summary><code>+135 / -36</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/assets/convert-wechat-article.ps1 b/assets/convert-wechat-article.ps1
-index 6c4580ecf..201132dc7 100644
---- a/assets/convert-wechat-article.ps1
-+++ b/assets/convert-wechat-article.ps1
-@@ -7,32 +7,94 @@ param(
- 
-     [string]$Title,
- 
--    [switch]$Force
-+    [switch]$Force,
-+
-+    [switch]$NoPause
- )
- 
- $ErrorActionPreference = "Stop"
- 
--# "Run with PowerShell" starts the script from the assets directory (and closes
--# the transient console immediately). Keep all default paths rooted at the
--# repository, and leave Explorer-launched windows open so errors are visible.
-+# A shell-launched script gets a console window of its own, and that window
-+# closes the moment the script ends. Keep all default paths rooted at the
-+# repository, and keep such a window open so the result stays readable.
- $projectRoot = Split-Path -Parent $PSScriptRoot
--$launchedFromExplorer = $false
--try {
--    $parentProcessId = (Get-CimInstance Win32_Process -Filter "ProcessId=$PID").ParentProcessId
--    $launchedFromExplorer = (Get-Process -Id $parentProcessId).ProcessName -eq 'explorer'
-+
-+function Test-ShellLaunched {
-+    # Walk up the process tree: a double-click, "Open with" or "Run with
-+    # PowerShell" launch ends at a shell host, an ordinary console run does not.
-+    $shellHosts = @(
-+        'explorer.exe'
-+        'dllhost.exe'
-+        'shellexperiencehost.exe'
-+        'startmenuexperiencehost.exe'
-+        'runtimebroker.exe'
-+        'applicationframehost.exe'
-+    )
-+
-+    $currentProcessId = $PID
-+    for ($depth = 0; $depth -lt 6; $depth++) {
-+        $process = Get-CimInstance Win32_Process -Filter "ProcessId=$currentProcessId" -ErrorAction SilentlyContinue
-+        if (-not $process) { return $false }
-+
-+        $parentProcessId = [int]$process.ParentProcessId
-+        if ($parentProcessId -le 0 -or $parentProcessId -eq $currentProcessId) { return $false }
-+
-+        $parent = Get-CimInstance Win32_Process -Filter "ProcessId=$parentProcessId" -ErrorAction SilentlyContinue
-+        if (-not $parent) { return $false }
-+
-+        if ($shellHosts -contains $parent.Name.ToLowerInvariant()) { return $true }
-+
-+        $currentProcessId = $parentProcessId
-+    }
-+
-+    return $false
- }
--catch {
-+
-+function Test-InteractiveConsole {
-+    # A windowed console (double-click, "Run with PowerShell", a terminal tab)
-+    # redirects neither stdin nor stdout; a piped run does.
-+    if ($Host.Name -ne 'ConsoleHost') { return $false }
-+    if ([Console]::IsInputRedirected) { return $false }
-+    if ([Console]::IsOutputRedirected) { return $false }
-+
-+    return $true
- }
- 
--function Wait-ForDirectLaunch {
--    if ($launchedFromExplorer) {
--        Read-Host '按 Enter 关闭此窗口' | Out-Null
-+$shellLaunched = $false
-+try { $shellLaunched = Test-ShellLaunched } catch { }
-+
-+# Pause rules, most explicit first:
-+#   1. -NoPause              never pause;
-+#   2. CONVERT_WECHAT_PAUSE  0 = never, 1 = always;
-+#   3. redirected stdin      never pause, so a piped or agent-driven run cannot
-+#      block on Read-Host even if the process tree ends at a shell host;
-+#   4. shell launch, or an interactive console  pause, because a human is
-+#      looking at this window (double-click, "Open with", terminal tab).
-+$pauseBeforeExit = $false
-+if (-not $NoPause) {
-+    if ($env:CONVERT_WECHAT_PAUSE -eq '0') {
-+        $pauseBeforeExit = $false
-+    }
-+    elseif ($env:CONVERT_WECHAT_PAUSE -eq '1') {
-+        $pauseBeforeExit = $true
-+    }
-+    elseif ([Console]::IsInputRedirected) {
-+        $pauseBeforeExit = $false
-+    }
-+    elseif ($shellLaunched -or (Test-InteractiveConsole)) {
-+        $pauseBeforeExit = $true
-     }
- }
- 
-+function Wait-BeforeExit {
-+    if (-not $pauseBeforeExit) { return }
-+
-+    Read-Host '按 Enter 关闭此窗口' | Out-Null
-+}
-+
- trap {
-     Write-Host "转换失败：$($_.Exception.Message)" -ForegroundColor Red
--    Wait-ForDirectLaunch
-+    Wait-BeforeExit
-     exit 1
- }
- 
-@@ -75,6 +137,64 @@ function Normalize-Body {
-     return $normalized.Trim("`n")
- }
- 
-+function Test-UsableTitle {
-+    param([Parameter(Mandatory = $true)][string]$Candidate)
-+
-+    if ([string]::IsNullOrWhiteSpace($Candidate)) { return $false }
-+    if ($Candidate -match "`r|`n") { return $false }
-+
-+    foreach ($invalidCharacter in [System.IO.Path]::GetInvalidFileNameChars()) {
-+        if ($Candidate.Contains([string]$invalidCharacter)) { return $false }
-+    }
-+
-+    return $true
-+}
-+
-+function Resolve-ArticleTitle {
-+    param([string]$ExplicitTitle, [string]$TrailingTitle)
-+
-+    $candidates = @()
-+    if (-not [string]::IsNullOrWhiteSpace($ExplicitTitle)) {
-+        $candidates += [pscustomobject]@{ Source = '-Title 参数'; Value = $ExplicitTitle.Trim() }
-+    }
-+    if (-not [string]::IsNullOrWhiteSpace($TrailingTitle)) {
-+        $candidates += [pscustomobject]@{ Source = '输入末尾的标题行'; Value = $TrailingTitle.Trim() }
-+    }
-+
-+    try {
-+        $clipboardText = ([string](Get-Clipboard -Raw -ErrorAction Stop)).Trim()
-+        if (-not [string]::IsNullOrWhiteSpace($clipboardText)) {
-+            $candidates += [pscustomobject]@{ Source = '剪贴板'; Value = $clipboardText }
-+        }
-+    }
-+    catch {
-+    }
-+
-+    # A stale clipboard (a copied path, a whole paragraph) must not abort the
-+    # run: report why the candidate was skipped and keep looking.
-+    foreach ($candidate in $candidates) {
-+        if (Test-UsableTitle -Candidate $candidate.Value) { return $candidate.Value }
-+
-+        $preview = $candidate.Value -replace "`r?`n", ' / '
-+        Write-Host "已忽略$($candidate.Source)中的标题（含换行或 Windows 文件名非法字符）：$preview" -ForegroundColor Yellow
-+    }
-+
-+    if (Test-InteractiveConsole) {
-+        Write-Host '输入里没有一级标题，剪贴板里也没有可用的单行标题。' -ForegroundColor Yellow
-+        for ($attempt = 0; $attempt -lt 5; $attempt++) {
-+            $answer = [string](Read-Host '请输入文章标题（直接回车取消）')
-+            if ([string]::IsNullOrWhiteSpace($answer)) { break }
-+
-+            $answer = $answer.Trim()
-+            if (Test-UsableTitle -Candidate $answer) { return $answer }
-+
-+            Write-Host '标题不能含换行，也不能含 \ / : * ? " &lt; &gt; | 等字符，请重试。' -ForegroundColor Yellow
-+        }
-+    }
-+
-+    throw '输入没有一级标题，且未能从 -Title、末尾标题行、剪贴板或手动输入得到可用标题。请复制标题后重试，或把标题粘成输入的最后一行，或使用 -Title "文章标题"。'
-+}
-+
- $inputFullPath = Resolve-ProjectPath -Path $InputPath
- if (-not (Test-Path -LiteralPath $inputFullPath -PathType Leaf)) {
-     throw "Input file does not exist: $inputFullPath"
-@@ -101,28 +221,7 @@ else {
-         $content = $content.Substring(0, $trailingTitleMatch.Groups[2].Index).TrimEnd() + "`n"
-     }
- 
--    $title = ([string]$Title).Trim()
--
--    if ([string]::IsNullOrWhiteSpace($title) -and -not [string]::IsNullOrWhiteSpace($trailingTitle)) {
--        $title = $trailingTitle
--    }
--
--    if ([string]::IsNullOrWhiteSpace($title)) {
--        try {
--            $title = ([string](Get-Clipboard -Raw -ErrorAction Stop)).Trim()
--        }
--        catch {
--        throw "The input has no level-one title and the clipboard could not be read. Copy the title before running, paste it as the final standalone line, or pass -Title '文章标题'."
--        }
--    }
--
--    if ([string]::IsNullOrWhiteSpace($title)) {
--        throw "The input has no level-one title and the clipboard is empty. Copy the title before running, paste it as the final standalone line, or pass -Title '文章标题'."
--    }
--
--    if ($title -match "`r|`n") {
--        throw "The input has no level-one title, but the clipboard contains multiple lines. Copy only the article title, or pass -Title '文章标题'."
--    }
-+    $title = Resolve-ArticleTitle -ExplicitTitle ([string]$Title) -TrailingTitle $trailingTitle
- 
-     # The rest of the converter can now use one canonical input shape.
-     $content = "# $title`n`n" + $content.TrimStart("`n")
-@@ -181,4 +280,4 @@ if ((Test-Path -LiteralPath $outputPath) -and -not $Force) {
- 
- [System.IO.File]::WriteAllText($outputPath, $content, $utf8NoBom)
- Write-Output $outputPath
--Wait-ForDirectLaunch
-+Wait-BeforeExit
-
-</code></pre>
-</details>
-<p><a id="f-520419096-assets-wechat-origin-md-2464248456"></a></p>
-<h4 id="assetswechat-originmd"><a class="header" href="#assetswechat-originmd">assets/wechat-origin.md</a></h4>
-<details>
-<summary><code>+37 / -113</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/assets/wechat-origin.md b/assets/wechat-origin.md
-index 5d54d4d06..4fc005516 100644
---- a/assets/wechat-origin.md
-+++ b/assets/wechat-origin.md
-@@ -1,165 +1,89 @@
- ## 写在前面
- 
--&gt; 1632 字 | 思念 | 爱恋 | 经历 | 过往 | 认知 | 思考 | 喜欢 | 成长
-+&gt; 1174 字 | 农村 | 城市 | 思考 | 乡村 | 食物 | 生活 | 经历
- 
- ## 正文
- 
--　　时至今日，我仍然很难说出那位小姐的名字。
-+　　不知为什么，现在每次回家，都让我想起之前的那一幕。
- 
--　　然而，相比之前的畏缩与胆怯，我想，现在只是有些不太习惯。
-+　　之前某一次，来家里所在地出差，晚上不住酒店，住家里。给父母也是临时说的，他们只回了一句：“好。”
- 
--　　害怕的心情已经不太存在了。
-+　　下班了。父亲来接。依旧是开了很久的小货车，上货架框一般得踩轮胎上去。
- 
--　　我曾写过很多关于她的文章。或明，或暗。明的，直接将她的名字浸在一众人中。暗的更不必多说，也许随意的一篇文章，就处处透露她的气息。
-+　　回到家时，母亲正在煮饭。
- 
-+　　她说了一句我到现在都还记得的话。
- 
-+　　“不知道你今天回来，白天都还在坡上种地呢，没买菜，”母亲一边淘米，用手把米拦住，把水倒掉，“回来也不知道吃啥，逼急了，才出去扯了一把猪草回来，打算炒了吃。”
- 
--　　2026 年 8 月，飞往宁波。
-+　　倒完淘米水，母亲转向我，眼角掩饰不住的笑意。
- 
--　　出发之前，她的闺蜜星岚，已经提前打了预防针。她非常忙，极大概率见不到。我说，那就和你聊聊天也挺好。
-+　　“从小到大没吃过猪草吧？应该还是第一次？”说完开始笑。
- 
--　　事实证明，降低预期真的有效。
-+　　“忘了，”我听完了哭笑不得，“猪草一般不是给猪吃的吗？”
- 
--　　坐上车，星岚拿着手机聊天，得到回复后转过头跟我说，说她在陪弟弟玩，可能晚一点，有机会可以一起吃饭。
-+　　“人也可以吃的，只是一般没人吃。”
- 
--　　那一瞬间，我的大脑一片空白。
-+　　这我还是第一次知道。
- 
--　　前所未有的焦虑。
- 
--　　少年的心绪那一刻达到了顶峰。
- 
--　　那是我日夜思念的人。
-+　　猪草。一般都用来煮猪食用。在我们这个川渝边陲，一般都是指红薯叶、红薯藤。也指一些乱七八糟的、我不认识的大叶子菜。产量大、又不好吃，所以喂猪。
- 
--　　我曾无数次梦见过她，每次梦醒之后都很难过。我不清楚原因，但我大概能猜到。
-+　　我原来曾写过一篇文章，说，虽然参加工作不久，但我似乎也被城市化裹挟了，变成一座城市里的幽灵，不再能在大自然面前抬起头来。
- 
--　　我从来没有放过我自己，也没有放过她。
-+　　那一瞬间，我想起了我亲手写下的这篇文章。
- 
--　　我无数次地提醒自己：你喜欢的那个人，已经死在了时间里，现在的她不是你梦想中的她，只是时间残留下来的幻影。
-+　　我本以为会很抗拒，毕竟原来是猪食原料。
- 
--　　没有用。
-+　　没有。意外地心平气和。
- 
--　　听不进去。
-+　　挑了一筷子，尝了一下，跟其他菜其实没什么两样。
- 
--　　执拗。
- 
--　　死撞南墙不回头。
- 
--　　她几乎是我唯一一个心结。
-+　　现在每次回家，我都会想起这一幕。
- 
--　　我对自己承诺过，她的故事，将只有最重要的几个人知道。其余的人，我将保持缄默。
-+　　想起母亲做饭，想起像是“不速之客”一般的我，想起不知道用什么炒菜的母亲，然后想起那盘猪草。
- 
--　　而见到她之后，我却意外地平静。
-+　　父母亲用了一辈子，想让我们脱离农村环境。
- 
--　　这种感觉我有过——每次表演、大考、面试之前，我都会紧张得无以复加，但真正到了那个时刻，每每都是，内心无比平静。
-+　　最终，父母也得偿所愿。至少现在是，我和兄长都有一份看起来还算体面的工作。
- 
--　　事后回想，竟会哑然失笑：莫不成，她对我来说，已经成了一场大考了吗？
-+　　但我总觉得，我没办法纯粹地做一个城市人。
- 
-+　　我在城市里还是想念农村。
- 
-+　　我在父亲的车上闻过难闻的家禽味，在祖母的红砖灶前闻过猪食特有的杂食味，也闻过母亲做生意时酥麻的生花椒香；吃过正宗的柴火里随手埋进去的烤红薯，那和城里卖的烤红薯有天壤之别；也独自放过牛；在回风炉上写作业，本子还差点被烧掉；土豆堆在堂屋里一年四季放到发芽也吃不完；夏天掰玉米、脱粒，总要和多到难以计数的蚊子，大战到天昏地暗。
- 
--　　我曾因为她，跟我最好的朋友之一吵过架。
-+　　当然不是想念农村的这种环境，那种东西谁也不会想再体验一次。
- 
--　　灵见证过我的过往。那个时候，幼稚的少年一错再错，如同指尖的流沙，越用力紧握，流失得越多。但争吵，却不在那个时候，在前段时间。
-+　　小时候我总以为，这样的环境对我来说是顶级折磨。
- 
--　　灵的初心，是帮我“脱敏”——然而，我究竟还是太过敏感。
-+　　我在想，如果让幼时的我体验过一次城市，大概就再难回到农村了吧。
- 
--　　她们高中一个宿舍，于是灵在过年时带给我消息，说那位小姐今年打算讲男朋友带回家见家长。
-+　　现在能心平气和地吃红薯叶，里面大概也多少藏了小时候的影子。农村里，家禽家畜，除了物种不同，并未比人低级多少，不少农村人就靠着这些过活，相依为命。
- 
--　　那个时候，我竟会生气。
-+　　我总以为，生命的韧性，只有同时看过阴沟与太阳才能得到体现。小时候的我，替我完成了前半部分。
- 
--　　灵不仅带给我了关于她的最新消息，而且还说了一些话，让我觉得很受刺激。
-+　　只是那个时候，他还不懂，顶级折磨的背后，是城市里难以拥有的珍贵。
- 
--　　那应该是我第一次跟她严肃地发消息，说：“我生气了。”
- 
--　　“那我不说了。”她回。
- 
--　　此后，我们之间便再也没有说过任何关于那位小姐的事。
-+　　无论见过多么肮脏与丑陋的环境，洗去浮尘，都有着难以想象的生命力和精神气。
- 
--　　**像是伊甸园的苹果。**
--
--
--
--　　“感觉这次去宁波还是很有意义，”我发消息给灵，“有一种‘我知道了你很好，现在我也终于能往前走了’的感觉。”
--
--　　“不是我打击你，”她回了条消息，带了个狗头，“人家一直都很好。”
--
--　　末尾，还补了一句：“只是你一直沉浸在里面。”
--
--　　“是啊，”我想了想，“打击得挺好。”
--
--　　“别别别，心里别偷偷骂我就好了。”
--
--　　“以前有可能，现在真觉得你骂得对。”
--
--　　“你咋了？觉醒了？”
--
--　　我哭笑不得。
--
--
--
--　　在许久之前，我曾在日记里定义，说如果这次的宁波日本之旅，见不到那位小姐，那么整场旅行，无论怎样都是失败的。
--
--　　而在见到她之后，我却对宁波之旅下了一个核心的定义：失落。
--
--　　失落，是我见到她之后最深的感受。
--
--　　并非源于我们已经渐行渐远，这点我早有心理准备，而是，她似乎不再是我认为的那样了。
--
--　　她依然很好，就像灵所说，只是好像不再是我印象中的那种好了。
--
--　　我终于感受到了时间的威力。
--
--
--
--　　如果说，在异性感情上要选出两个最重要的人，那么，一个是佳芯小姐，另一个便是她了。
--
--　　佳芯小姐教会我“被喜欢”是什么样的感觉，而那位小姐则是教会我“喜欢”的感觉。
--
--　　世人疯狂痴迷于前者，而我在这股洪流中，却隐隐觉得后者更重要。
--
--　　撞没撞南墙，我不知道。
--
--　　我只知道，或许，我现在已经在开始回头了。
--
--
--
--　　**谢谢你，懿。**
--
--　　**谢谢你出现在我的生命里。**
--
--　　**你曾问我，我是不是喜欢你。**
--
--　　**大学期间，我曾胆怯地在文章里承认了，同时觉得被看穿心意是一件害羞且尴尬的事情。**
--
--　　**那么今天，我现在终于敢大大方方地承认了。**
--
--　　**我喜欢你。**
--
--　　**只是现在，我可能会做回自己，不再时常凝望着那个闪闪发光、高悬天空的你了。**
-+　　城市很繁华，而我在城市里日益萧条。
- 
- 
- 
- 　　南国微雪 Miyuki
- 
--　　2026 年 9 月 24 日
--
--## 引用及附注
--
--　　1.[《八字手链人物传记计划——懿》](https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489052&amp;idx=1&amp;sn=0dba5269d357be86f275b6ea53cf69f4&amp;scene=21#wechat_redirect)
--
--　　2.[《我的恋爱只能在梦里》](https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247489587&amp;idx=1&amp;sn=bda97aec1b5b103ee9b4a5db34217dd0&amp;scene=21#wechat_redirect)
--
--　　3.[《篮球女孩》](https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247484221&amp;idx=1&amp;sn=7675abe83222b200b5308bb4e98223f6&amp;scene=21#wechat_redirect)
--
--　　4.[《只是随手写下了想你》](https://mp.weixin.qq.com/s?__biz=Mzg5NTcwNjA4Nw==&amp;mid=2247495054&amp;idx=1&amp;sn=cc196d7a85ee51ee5da39fdbe4dd1b76&amp;scene=21#wechat_redirect)
-+　　2026 年 10 月 6 日 回乡有感
- 
- ## 封面图
- 
--![img](https://mmbiz.qpic.cn/mmbiz_png/hcnZjo7bq6PSxgJHbkEq3KUE7XxgbZxKhU5GJBDsDud8DbVIqLfDcibSZrawzItMDrZmmhVicdedBNCcGSUia9eSaz4g1zQcAgLmOibKKcbwkLM/640?wx_fmt=png&amp;from=appmsg)
--
--　　图为宁波鄞州区环球银泰城会见懿及星岚时所摄。
--
--　　从左至右依次为：星岚的表弟，星岚，懿的弟弟，懿，懿的男友。
-+![img](https://mmbiz.qpic.cn/sz_mmbiz_jpg/hcnZjo7bq6NablyJ8BJWUWOGXfliahfSTdNg2OxW3X2eAQCQP9ACR6icPFT2RoT5cWrOqrAsHm9bAYBdKt6iaicSVrYVRYfUicng0O6ZfjWTWXTs/640?wx_fmt=jpeg&amp;from=appmsg)
- 
--&gt; 摄影师・画师 | 南国微雪
-+&gt; 摄影师・画师 | peng wang
- &gt;
--&gt; 图源 | 生活
-\ No newline at end of file
-+&gt; 图源 | Unsplash
-\ No newline at end of file
-
-</code></pre>
-</details>
-<p><a id="f-520419096-src-summary-md-3501257646"></a></p>
-<h4 id="srcsummarymd-7"><a class="header" href="#srcsummarymd-7">src/SUMMARY.md</a></h4>
-<details>
-<summary><code>+1 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/src/SUMMARY.md b/src/SUMMARY.md
-index aa0d3d055..8bb8c201d 100644
---- a/src/SUMMARY.md
-+++ b/src/SUMMARY.md
-@@ -12,6 +12,7 @@
- -----
- 
- - [⭐️文章与写作 | Literature](生活碎笔/文章与写作/文章.md)
-+  - [猪草](生活碎笔/文章与写作/猪草.md)
-   - [那位小姐](生活碎笔/文章与写作/那位小姐.md)
-   - [进步空间](生活碎笔/文章与写作/进步空间.md)
-   - [不是所有的事情，都必须做到最好](生活碎笔/文章与写作/不是所有的事情，都必须做到最好.md)
-
-</code></pre>
-</details>
-<p><a id="f-520419096-src-学习与进步-计算机科学极简入门指南-agents-md-3318719775"></a></p>
-<h4 id="src学习与进步计算机科学极简入门指南agentsmd"><a class="header" href="#src学习与进步计算机科学极简入门指南agentsmd">src/学习与进步/计算机科学极简入门指南/AGENTS.md</a></h4>
-<details>
-<summary><code>+88 / -4</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/AGENTS.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/AGENTS.md"
-index e820ea56b..463630396 100644
---- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/AGENTS.md"
-+++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/AGENTS.md"
-@@ -71,7 +71,91 @@
- - 不引入超出当前进度的知识；若必须提前提及，注明“后面会讲”。
- - 思考题要能运用本章知识，并尽量把前面几章串起来，不要考死记硬背。
- 
--## 六、文件与构建
-+## 六、去 AIGC 味（硬性，写完必查）
-+
-+早期章节由 AI 起草，最常见的毛病不是术语写错，而是三样：一句话里并排放两条线、用套话充当推进、读完记不住这一章在讲什么。以下五条针对这三样。它们与《学海计划》的规范同源，已按本系列的文体改写：本系列允许代码块、图示与小节标题，其余照旧。
-+
-+### 1. 推进方式：一条线走到底（硬性）
-+
-+人读东西时，脑子里只跑得动一条线。技术讲解更该如此——造零件本来就是一步接一步的过程，中途岔开，读者就接不回原来的线了。
-+
-+1. **一段话只走一条线。** 先把一个点讲透，再转下一个，不要在同一段里来回横跳。
-+2. **要对比，也顺着走。** 先讲 A，A 讲完再讲 B。不要写“既是 A 又是 B”“不仅……而且……”这种两头都够、两头都不到的句子；顺序推进（先……再……）和因果推进（所以……因为……）更像人说话。
-+3. **中途别插不重要的话。** 真要插（补一个数据、补一个反例），插完**在原处接回去**。本章允许的中断只有两种：括号旁注，和新开的小节。
-+4. **同时给两条路，要有明确理由。** 确认读者确实站在岔路口（两种实现各有取舍、需要他自己选），才并排给出；否则一次只讲一条。
-+
-+**自检**：把正文画成一条箭头链（A→B→C→D），而不是一棵树。某段同时抛出两个以上并列说法，或连续几段各抛几个，就是广度搜索，得改成一条线走到底。
-+
-+**例**（同一条信息，两种走法）：
-+
-+- 广度：“进程看到的地址并不是物理地址，而是一张操作系统发下来的映射表。”读者一次要接两件事：不是物理地址、是映射表。
-+- 深度：“进程看到的地址，是操作系统发下来的一张映射表。表后面才对应真正的物理内存。”先把“映射表”这条走完，再转到它对应什么。
-+
-+### 2. AI 腔硬性禁表（绝对不得出现）
-+
-+以下表达任何情况下都不许写进正文、小标题、`## TL;DR` 与 `## 小结`；写完先搜一遍，命中就改。
-+
-+**一、特定短语**
-+
-+- “不是 X，是 Y”“不是 X，而是 Y”
-+- 堆砌形容词，如“用最直白、最不绕弯子的方式讲清楚”
-+- 对话式讨好话术：“你太懂了”“稳稳接住你”
-+
-+**二、承诺式与宣言式套话**
-+
-+- “我不是要……而是要……”“不是为了……而是基于……”“不是简单的……而是深刻的……”
-+- “我这就用最 XX 的方式给你解释／说明／拆解”
-+- “保证你一听就懂”“一听就懂”“最直白”“最不绕弯子”“掰开了揉碎了”
-+- “深度拆解”“底层逻辑”（本系列里“底层”是技术词，“底层的门电路”“底层实现”照写；禁的是拿它当修辞，如“搞懂底层逻辑，就掌握了整个计算机”）
-+- “通往……的黄金钥匙”
-+- “这不仅仅……更……”
-+
-+**三、悬空修辞与通货膨胀的比喻**
-+
-+- “达摩克利斯之剑”“历史的十字路口”“人性贪婪的深渊凝视”
-+- “一场……的博弈”“一次对……的凝视”
-+- 用“危言耸听”这类贩卖焦虑的大词给段落开场
-+
-+**四、强迫式干货感连词堆叠**
-+
-+- “今天我必须要把这个事情给大家说清楚”
-+- “我们把这个概念……”
-+- “知道了……就拥有了……”
-+
-+**“不是 X，而是 Y”怎么改**：它被硬禁，但句子里承载的信息不能丢（可能是在纠正一个真实误解，也可能两半都有实义）。改法是把话说直：
-+
-+- 说“错误发生在保存阶段”，不要写“不在读取阶段，而在保存阶段”。
-+- 说“虚拟地址要先经 MMU 翻译”，不要写“不是直接访问物理内存，而是先翻译虚拟地址”。
-+- 确实需要对比时，把否定半句挪到后面、单独成句：“重点在保存阶段。读取阶段没有出错。”
-+
-+**登记**：正文里出现禁表之外的 AI 腔（例如“值得注意的是”“不难发现”“这意味着”在同一篇里反复出现），在提交信息里记一行，不要写进正文；这类句式同一篇里出现一次就够。
-+
-+### 3. 结构清晰（硬性）
-+
-+`## TL;DR` 和 `## 小结` 是结论清单，不等于正文结构清晰——读者在**读正文的过程中**就要能看出这一章分几步、每步在做什么。三条要求：
-+
-+1. **开篇让读者知道这一章要造什么、往下分几步。** 可以是路线图（“往下分三步：先……再……最后……”），也可以由上一章留下的问题直接带出。别让读者读到中段才知道在干什么。
-+2. **每一步的开始要能看出来。** 用 `###` 小标题、加粗领起句、序号都可以；一层讲完再开下一层，同一层的意思不要散在章里反复出现（前面说过、中间又说、小结再说一遍，就是串场）。
-+3. **章末要能一句话说清结论。** 读者读完能回答“所以呢”。
-+
-+**要避免的两件事**：一是每章套同一个骨架（这章用路线图，下一章就换序号或提问切入，别一个模子刻到底）；二是用手段掩盖空结构——加了小标题却没有对应的内容层次，路线图承诺三步、正文只有两步，比不加更糟。
-+
-+**自检**：通读一遍，回答——这章分几步？每步在讲什么？结论是什么？答得出来才算过。
-+
-+### 4. 多样性与节奏（软性）
-+
-+- **长短句交错。** 连续三句都超过四十字就要拆；反过来，连着五六个短句也会读得发飘。
-+- **句式换着来。** “不是……而是……”“值得注意的是”“不难发现”“这意味着”这类句式，同一篇里出现一次就够；同一段里连着两句用同一句式，改掉一句。
-+- **用词别回环。** 同一个意思别反复用同一个词，同一个连接词别承包全章。
-+- **推进方式也要多样。** 例子、数字、反例、边界、换个角度复述，轮着来；不要每段都是“提出判断—补一个限定”。
-+
-+**一句话判据**：出声念一遍，念到一半要停下来回一口气，或者得回头重排一遍句子，这句就太长了。默读会自动替你把句子补顺，问题就漏掉了。
-+
-+### 5. 收尾不升华、不喊口号
-+
-+章末可以预告下一章，但不要打鸡血、不要替读者激动、不要做道德审判。工程上的取舍就把取舍摆出来；结论留边界（“视具体实现而定”“这一层还有代价”），不要写成口号。
-+
-+## 七、文件与构建
- 
- - 章节文件名格式：`第X章：标题.md`（冒号为全角）。
- - **文件名不得包含 ASCII 空格**（会导致 mdBook 解析 `src/SUMMARY.md` 失败）。确需空格时，在 `src/SUMMARY.md` 中把空格写成 `%20`。
-@@ -79,11 +163,11 @@
- - 提交前在仓库根目录执行 `mdbook build`，确认构建通过。
- - 改动范围限定在《计算机科学极简入门指南》目录内，不要修改其它分册与无关文章。
- 
--## 七、提交
-+## 八、提交
- 
- - 提交信息用中文：首行简短概括，正文分点说明“改了什么、为什么”。
- 
--## 八、风格示例
-+## 九、风格示例
- 
- 以下段落的语气、句式与标点，即为本系列应当追求的效果（摘自早期章节）：
- 
-@@ -91,4 +175,4 @@
- &gt;
- &gt; 　　现在问题来到：**负数在计算机中该怎么表示**？
- 
--写完后，请对照本文件逐项检查：结构是否齐全、**复习每条是否为 `主题：要点` 形式（主题后有全角冒号）且恰好对应紧邻的前三章（滑动窗口，顺序为 N-3、N-2、N-1）**、引号是否成对、是否出现章号或 HTML 标签、术语是否先解释后命名。
-+写完后，请对照本文件逐项检查：结构是否齐全、**复习每条是否为 `主题：要点` 形式（主题后有全角冒号）且恰好对应紧邻的前三章（滑动窗口，顺序为 N-3、N-2、N-1）**、引号是否成对、是否出现章号或 HTML 标签、术语是否先解释后命名；再按第六节过一遍：正文是不是一条箭头链、有没有命中 AI 腔禁表、能不能说出这一章分几步。
-
-</code></pre>
-</details>
-<p><a id="f-520419096-src-学习与进步-计算机科学极简入门指南-计算机组成原理-第二十章-触发器-md-145588725"></a></p>
-<h4 id="src学习与进步计算机科学极简入门指南计算机组成原理第二十章触发器md"><a class="header" href="#src学习与进步计算机科学极简入门指南计算机组成原理第二十章触发器md">src/学习与进步/计算机科学极简入门指南/计算机组成原理/第二十章：触发器.md</a></h4>
-<details>
-<summary><code>+26 / -34</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\344\272\214\345\215\201\347\253\240\357\274\232\350\247\246\345\217\221\345\231\250.md" "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\344\272\214\345\215\201\347\253\240\357\274\232\350\247\246\345\217\221\345\231\250.md"
-index e3d487999..c21abf7a7 100644
---- "a/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\344\272\214\345\215\201\347\253\240\357\274\232\350\247\246\345\217\221\345\231\250.md"
-+++ "b/src/\345\255\246\344\271\240\344\270\216\350\277\233\346\255\245/\350\256\241\347\256\227\346\234\272\347\247\221\345\255\246\346\236\201\347\256\200\345\205\245\351\227\250\346\214\207\345\215\227/\350\256\241\347\256\227\346\234\272\347\273\204\346\210\220\345\216\237\347\220\206/\347\254\254\344\272\214\345\215\201\347\253\240\357\274\232\350\247\246\345\217\221\345\231\250.md"
-@@ -11,36 +11,32 @@
- - 触发器是一种“只在时钟边沿更新”的一位记忆单元
- - 它由两级锁存器（主从结构）串联而成，两级用相反相位的时钟控制
- - 边沿之间，D 怎么变，Q 都不动；只有边沿那一刻才把 D 搬进 Q
--- 触发器让同步电路“一拍一个动作”成为可能，是寄存器与 CPU 的基础
-+- 触发器让同步电路“一拍一个动作”成为可能，也是后面寄存器的基本积木
- 
- ## 正文
- 
--　　上一章我们拿到了时钟，更早已经造出了锁存器。可真把两者配到一起，会发现一个尴尬：**锁存器“开门”的是一整段时间，而时钟的边沿只是一个瞬间。** 两者根本对不上。
-+　　我们之前造出了锁存器，上一章拿到了时钟。可真把两者配到一起，会发现一个尴尬： **锁存器“开门”的是一整段时间，而时钟的边沿只是一个瞬间。** 两者根本对不上。
- 
--　　锁存器在使能为 1 的整段时间里都是透明的——D 一变，Q 就跟着变。时钟明明给了我们“大家统一交接”的时刻，锁存器却根本不听“时刻”，它只听“电平”。所以我们缺的，是一个全新的记忆单元：**平时关着门，只在时钟边沿那一瞬间开门，把门口的 D 拉进来，然后立刻关上。**
-+　　锁存器在使能为 1（也就是开关为开）的整段时间里都是透明的——D 一变，Q 就跟着变。时钟明明给了“大家统一交接”的时刻，锁存器却根本不听“时刻”，它只听“电平”。所以我们缺的，是一个全新的记忆单元： **平时关着门，只在时钟边沿那一瞬间开门，把门口的 D 拉进来，然后立刻关上。**
- 
--　　这个部件，就是**触发器**（flip-flop）。
-+　　这个部件，就是 **触发器**（flip-flop）。
- 
- ### 为什么不能直接拿锁存器顶替
- 
--　　先看一把锁存器的脾气：
-+　　先看锁存器的行为：
- 
- - `E = 1`：透明，Q 跟随 D
- - `E = 0`：保持，Q 不动
- 
--　　那么，直接把时钟接到 `E` 上会怎样？`CLK = 1` 的半个周期里，锁存器一直透明，D 在这段时间里的任何变化都会一路传到 Q。**我们想躲开的“整段时间都开放”，原封不动地又回来了。**
-+　　那么，直接把时钟接到 `E` 上会怎样？`CLK = 1` 的半个周期里，锁存器一直透明，D 在这段时间里的任何变化都会一路传到 Q。我们想躲开的“整段时间都开放”，原封不动地又回来了。
- 
--　　问题的根子在于：锁存器是**电平敏感**的——它看的是“使能是高还是低”；而我们想要的是**边沿敏感**——只看“时钟有没有跳变”这一瞬间。电平敏感和边沿敏感，是两种截然不同的脾气，**单靠一个锁存器，改不出来。**
--
-- **思考题 1** 
--
--&gt; 　　如果只是把时钟接到 D 锁存器的使能端，能得到“只在边沿更新”的效果吗？为什么？
-+　　问题在于：锁存器是 **电平敏感** 的——它看的是“使能是高还是低”；而我们想要的是 **边沿敏感**：只看“时钟有没有跳变”这一瞬间。电平敏感和边沿敏感，截然不同。单靠一个锁存器，改不出来。
- 
- ### 一个锁存器做不到，那就用两个
- 
--　　回头想想：锁存器之所以“透明”，是因为在使能期间，它一直把输入放行到输出。那么换一个思路——**在它放行的时候，把后面死死挡住；等它挡住的时候，再把后面放开。** 从外面看，是不是就只剩下“交接的那一瞬间”了？
-+　　回头想想：锁存器之所以“透明”，是因为在使能期间，它一直把输入放行到输出。那么换一个思路—— **在它放行的时候，把后面死死挡住；等它挡住的时候，再把后面放开。** 从外面看，是不是就只剩下“交接的那一瞬间”了？
- 
--　　为了做到“轮流开合”，我们把**两个锁存器一前一后串起来**，并用**相反相位的时钟**分别控制它们：
-+　　为了做到“轮流开合”，我们把两个锁存器一前一后串起来，并用 **相反相位的时钟** 分别控制它们：
- 
- ```text
- D ──&gt; [ 主锁存器 ] ──&gt; [ 从锁存器 ] ──&gt; Q
-@@ -50,7 +46,7 @@ D ──&gt; [ 主锁存器 ] ──&gt; [ 从锁存器 ] ──&gt; Q
- - **主锁存器**：时钟为 0 时透明（跟随 D），为 1 时保持
- - **从锁存器**：时钟为 1 时透明，为 0 时保持
- 
--　　注意两者的使能正好相反：**一个开门时，另一个必定关门。** 这样串起来的两级，整体上就不再是“电平敏感”的了。
-+　　注意两者的使能正好相反： **一个开门时，另一个必定关门。** 这样串起来的两级，整体上就不再是“电平敏感”的了。
- 
- ### 跟着时钟走一遍
- 
-@@ -59,17 +55,17 @@ D ──&gt; [ 主锁存器 ] ──&gt; [ 从锁存器 ] ──&gt; Q
- | 阶段 | 主锁存器 | 从锁存器 | 结果 |
- | :--- | :--- | :--- | :--- |
- | `CLK = 0` | 透明（悄悄跟随 D） | 保持 | Q 不动 |
--| `CLK` 上升沿 | 转为保持 | 转为透明 | 主把边沿前的 D 冻结下来交给从，**Q 更新** |
-+| `CLK` 上升沿 | 转为保持 | 转为透明 | 主把边沿前的 D 冻结下来交给从， **Q 更新** |
- | `CLK = 1` | 保持 | 透明 | Q 保持，主不再看 D |
- | `CLK` 下降沿 | 转为透明 | 转为保持 | Q 冻结，主重新开始跟随 D |
- 
--　　看第一行：`CLK = 0` 时，从锁存器关着门，所以 Q 不动；与此同时，主锁存器正偷偷跟着 D。到了**上升沿**，主锁存器“啪”地一下闭上——它把刚刚（边沿前一刻）D 的值锁住，而从锁存器这时打开，把这个值送到 Q。**于是 Q 只在上升沿更新，且更新的正是边沿前站稳的那个 D。**
-+　　看第一行：`CLK = 0` 时，从锁存器关着门，所以 Q 不动；与此同时，主锁存器正偷偷跟着 D。到了 **上升沿**，主锁存器“啪”地一下闭上——它把刚刚（边沿前一刻）D 的值锁住，而从锁存器这时打开，把这个值送到 Q。 **于是 Q 只在上升沿更新，且更新的正是边沿前站稳的那个 D。**
- 
--　　这正好接上上一章的结论：**D 必须在边沿前稳定一小段时间（建立时间），再在边沿后稳定一小段时间（保持时间）。** 主锁存器锁住的，就是这个早已站稳的 D；如果 D 恰好在边沿附近跳变，主锁存器锁到的就是“没站稳”的值，结果便不可靠。
-+　　这正好应证上一章的结论： **D 必须在边沿前稳定一小段时间（建立时间），再在边沿后稳定一小段时间（保持时间）。** 主锁存器锁住的，就是这个早已站稳的 D；如果 D 恰好在边沿附近跳变，主锁存器锁到的就是“没站稳”的值，结果便不可靠。
- 
--　　一句话概括：**主锁存器负责在边沿“拍照”，从锁存器负责把这张照片一直举在 Q 上。** 这里并没有发明新的记忆原理，反馈依旧负责“记住”；两级反相开合，只是把“开门的时间”从一整段，收窄成了一个点。
-+　　**主锁存器负责在边沿“拍照”，从锁存器负责把这张照片一直举在 Q 上。** 两级反相开合，把“开门的时间”从一整段，收窄成了一个点。
- 
-- **思考题 2** 
-+ **思考题 1** 
- 
- &gt; 　　主从结构里，两级锁存器为什么要用相反相位的时钟？如果两级用同一个时钟，会怎样？
- 
-@@ -92,34 +88,32 @@ D ──&gt; [ 主锁存器 ] ──&gt; [ 从锁存器 ] ──&gt; Q
- | 第 2 次 | 1 | 1 |
- | 第 3 次 | 0 | 0 |
- 
--　　第 1 次与第 2 次之间，D 即使来回变化，Q 也一直稳稳停在 1。**这正是触发器与锁存器最本质的差别。**
-+　　第 1 次与第 2 次之间，D 即使来回变化，Q 也一直稳稳停在 1。这就是触发器与锁存器的差别所在。
- 
- ### 为什么非要边沿敏感
- 
--　　到这一步，值得停下来想一想：多花一级锁存器，换来“不透明”，到底值不值？
-+　　多花一级锁存器，只为换来“不透明”，到底值不值？
- 
--　　设想我们要做多步计算。如果用的是锁存器：在一个周期内，信号可能从第一级穿透到第二级、第三级……**半拍之间，一个结果还没定，后面已经被它带着变了**，我们根本说不清“这一拍算出来的到底是什么”。这叫穿透（race-through），是同步电路的大忌。
-+　　设想我们要做多步计算。如果用的是锁存器：在它敞着门的那半拍里，信号可能从第一级穿透到第二级、第三级…… **一个结果还没定，后面已经被它带着变了**，我们根本说不清“这一拍算出来的到底是什么”。这叫穿透（race-through），同步电路的噩梦。
- 
- 　　换成触发器，一切就清楚了：
- 
- - **周期内**：组合逻辑慢慢算，触发器一律关着门，谁也不许动
- - **边沿一到**：所有触发器同时开门，把各自算好的结果一起收下，然后立刻关门
- 
--　　**“算”发生在周期里，“交”发生在边沿上。** 时间被整齐地切成一拍一拍，每一步都踩在点子上，这正是时钟想要的效果。而触发器，就是把时钟的意图真正落实下去的那个部件。**没有触发器，时钟只是一个滴答作响的节拍器，指挥不动任何人。**
-+　　**“算”发生在周期里，“交”发生在边沿上。** 时间被整齐地切成一拍一拍，每一步都踩在点子上，这正是时钟想要的效果；把它落到电路上的，就是触发器。
- 
--　　换个角度看，触发器其实做了一件很了不起的事：**它把“连续流逝的时间”，变成了“离散的步骤”。** 有了它，机器才能说“第一拍做这个、第二拍做那个”。
--
-- **思考题 3** 
-+ **思考题 2** 
- 
--&gt; 　　为什么边沿触发比“整段时间都开放”的锁存方式更容易组织多步计算？
-+&gt; 　　把时钟直接接到 D 锁存器的使能端，能得到“只在边沿更新”的效果吗？这样的锁存器拿去做多步计算，又会出什么问题？
- 
- ### 触发器不止一种
- 
--　　按功能分，触发器还有 JK、T、SR 等多种；但它们的共同点，都是“在边沿更新”。其中 **D 触发器**只需要一根数据线，用起来最省事，也最常用。本指南之后提到的触发器，一律默认为 D 触发器。
-+　　按功能分，触发器还有 JK、T、SR 等几种类型，区别只在输入端的信号各不相同。它们的共同点都是“在边沿更新”。其中 **D 触发器** 只需要一根数据线，用起来最省事，也最常用。本指南之后提到的触发器，一律默认为 D 触发器。
- 
- ### 一只触发器，一个比特
- 
--　　触发器只记一个比特。这听起来很少，但已经足够当积木了：**要保存一个 8 位数，把 8 只触发器并排放好、共用一个时钟就行。** 这，正是下一章要做的事。
-+　　触发器只记一个比特。这听起来很少，但已经足够当积木了： **要保存一个 8 位数，把 8 只触发器并排放好、共用一个时钟就行。**
- 
- ## 小结
- 
-@@ -139,15 +133,13 @@ D ──&gt; [ 主锁存器 ] ──&gt; [ 从锁存器 ] ──&gt; Q
- 
- #### 思考题 1
- 
--　　不能。锁存器是电平敏感的：把时钟接到使能端后，`CLK = 1` 的整个半周期它都透明，D 的变化照样传到 Q，“边沿那一刻”对它没有意义。要得到边沿敏感，必须在结构上改变（例如下一节的主从两级）。
-+　　如果两级用同一个时钟，它们会同时透明或同时保持：同时透明时，D 直接穿透两级到达 Q，等于一个“加长的锁存器”，边沿敏感无从谈起；同时保持时，值又传不下去。只有让两级反相，才能做到“一级开门时另一级关门”，把交接压缩到边沿那么短。
- 
- #### 思考题 2
- 
--　　如果两级用同一个时钟，它们会同时透明或同时保持：同时透明时，D 直接穿透两级到达 Q，等于一个“加长的锁存器”，边沿敏感无从谈起；同时保持时，值又传不下去。只有让两级反相，才能做到“一级开门时另一级关门”，把交接压缩到边沿那么短。
--
--#### 思考题 3
-+　　不能。锁存器是电平敏感的：把时钟接到使能端后，`CLK = 1` 的整个半周期它都透明，D 的变化照样传到 Q，“边沿那一刻”对它没有意义。要得到边沿敏感，必须在结构上改变，这就是前面用两级锁存器拼出主从结构的理由。
- 
--　　因为多步计算要求“这一步的结果定下来之后，才进行下一步”。边沿触发把每一拍的交接固定在同一个时刻，级与级之间不会在同一拍里互相穿透，先后关系明确；锁存器则可能在半拍内把变化一级级传下去，几步计算搅在一起，无法可靠地分步。
-+　　多步计算的前提是“这一步的结果定下来之后，才进行下一步”。锁存器满足不了这个前提：它可能在半拍内把变化一级级传下去，几步计算搅在一起，说不清这一拍的结果到底是什么。触发器把每一拍的交接固定在同一个时刻，级与级之间不会在同一拍里互相穿透，先后关系才明确。
- 
- ## 协议
- 
-
-</code></pre>
-</details>
-<p><a id="f-520419096-src-生活碎笔-文章与写作-猪草-md-1693121996"></a></p>
-<h4 id="src生活碎笔文章与写作猪草md"><a class="header" href="#src生活碎笔文章与写作猪草md">src/生活碎笔/文章与写作/猪草.md</a></h4>
-<details>
-<summary><code>+91 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\347\214\252\350\215\211.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\347\214\252\350\215\211.md"
-new file mode 100644
-index 000000000..6b797c19f
---- /dev/null
-+++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\346\226\207\347\253\240\344\270\216\345\206\231\344\275\234/\347\214\252\350\215\211.md"
-@@ -0,0 +1,91 @@
-+# 猪草
-+
-+## 写在前面
-+
-+&lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&gt;1174 字 | 农村 | 城市 | 思考 | 乡村 | 食物 | 生活 | 经历&lt;/p&gt;
-+
-+## 正文
-+
-+　　不知为什么，现在每次回家，都让我想起之前的那一幕。
-+
-+　　之前某一次，来家里所在地出差，晚上不住酒店，住家里。给父母也是临时说的，他们只回了一句：“好。”
-+
-+　　下班了。父亲来接。依旧是开了很久的小货车，上货架框一般得踩轮胎上去。
-+
-+　　回到家时，母亲正在煮饭。
-+
-+　　她说了一句我到现在都还记得的话。
-+
-+　　“不知道你今天回来，白天都还在坡上种地呢，没买菜，”母亲一边淘米，用手把米拦住，把水倒掉，“回来也不知道吃啥，逼急了，才出去扯了一把猪草回来，打算炒了吃。”
-+
-+　　倒完淘米水，母亲转向我，眼角掩饰不住的笑意。
-+
-+　　“从小到大没吃过猪草吧？应该还是第一次？”说完开始笑。
-+
-+　　“忘了，”我听完了哭笑不得，“猪草一般不是给猪吃的吗？”
-+
-+　　“人也可以吃的，只是一般没人吃。”
-+
-+　　这我还是第一次知道。
-+
-+&lt;br /&gt;
-+
-+　　猪草。一般都用来煮猪食用。在我们这个川渝边陲，一般都是指红薯叶、红薯藤。也指一些乱七八糟的、我不认识的大叶子菜。产量大、又不好吃，所以喂猪。
-+
-+　　我原来曾写过一篇文章，说，虽然参加工作不久，但我似乎也被城市化裹挟了，变成一座城市里的幽灵，不再能在大自然面前抬起头来。
-+
-+　　那一瞬间，我想起了我亲手写下的这篇文章。
-+
-+　　我本以为会很抗拒，毕竟原来是猪食原料。
-+
-+　　没有。意外地心平气和。
-+
-+　　挑了一筷子，尝了一下，跟其他菜其实没什么两样。
-+
-+&lt;br /&gt;
-+
-+　　现在每次回家，我都会想起这一幕。
-+
-+　　想起母亲做饭，想起像是“不速之客”一般的我，想起不知道用什么炒菜的母亲，然后想起那盘猪草。
-+
-+　　父母亲用了一辈子，想让我们脱离农村环境。
-+
-+　　最终，父母也得偿所愿。至少现在是，我和兄长都有一份看起来还算体面的工作。
-+
-+　　但我总觉得，我没办法纯粹地做一个城市人。
-+
-+　　我在城市里还是想念农村。
-+
-+　　我在父亲的车上闻过难闻的家禽味，在祖母的红砖灶前闻过猪食特有的杂食味，也闻过母亲做生意时酥麻的生花椒香；吃过正宗的柴火里随手埋进去的烤红薯，那和城里卖的烤红薯有天壤之别；也独自放过牛；在回风炉上写作业，本子还差点被烧掉；土豆堆在堂屋里一年四季放到发芽也吃不完；夏天掰玉米、脱粒，总要和多到难以计数的蚊子，大战到天昏地暗。
-+
-+　　当然不是想念农村的这种环境，那种东西谁也不会想再体验一次。
-+
-+　　小时候我总以为，这样的环境对我来说是顶级折磨。
-+
-+　　我在想，如果让幼时的我体验过一次城市，大概就再难回到农村了吧。
-+
-+　　现在能心平气和地吃红薯叶，里面大概也多少藏了小时候的影子。农村里，家禽家畜，除了物种不同，并未比人低级多少，不少农村人就靠着这些过活，相依为命。
-+
-+　　我总以为，生命的韧性，只有同时看过阴沟与太阳才能得到体现。小时候的我，替我完成了前半部分。
-+
-+　　只是那个时候，他还不懂，顶级折磨的背后，是城市里难以拥有的珍贵。
-+
-+&lt;br /&gt;
-+
-+　　无论见过多么肮脏与丑陋的环境，洗去浮尘，都有着难以想象的生命力和精神气。
-+
-+　　城市很繁华，而我在城市里日益萧条。
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 10 月 6 日 回乡有感
-+
-+## 封面图
-+
-+![](https://img.tinysnow.cn/blog/articles/literature/peng-wang-Zl3DeWyrkmU-unsplash.jpg)
-+
-+&gt; 摄影师・画师 | peng wang
-+&gt;
-+&gt; 图源 | Unsplash
-
-</code></pre>
-</details>
-<p><a id="f-520419096-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-复盘的时候-别假装自己当时就知道结局-md-2990626526"></a></p>
-<h4 id="src生活碎笔随笔随记实用类随记aigc人工校对复盘的时候别假装自己当时就知道结局md"><a class="header" href="#src生活碎笔随笔随记实用类随记aigc人工校对复盘的时候别假装自己当时就知道结局md">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】复盘的时候，别假装自己当时就知道结局.md</a></h4>
-<details>
-<summary><code>+67 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\345\244\215\347\233\230\347\232\204\346\227\266\345\200\231\357\274\214\345\210\253\345\201\207\350\243\205\350\207\252\345\267\261\345\275\223\346\227\266\345\260\261\347\237\245\351\201\223\347\273\223\345\261\200.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\345\244\215\347\233\230\347\232\204\346\227\266\345\200\231\357\274\214\345\210\253\345\201\207\350\243\205\350\207\252\345\267\261\345\275\223\346\227\266\345\260\261\347\237\245\351\201\223\347\273\223\345\261\200.md"
-new file mode 100644
-index 000000000..81ea20d54
---- /dev/null
-+++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\345\244\215\347\233\230\347\232\204\346\227\266\345\200\231\357\274\214\345\210\253\345\201\207\350\243\205\350\207\252\345\267\261\345\275\223\346\227\266\345\260\261\347\237\245\351\201\223\347\273\223\345\261\200.md"
-@@ -0,0 +1,67 @@
-+# 复盘的时候，别假装自己当时就知道结局
-+
-+&lt;!-- daily-essay-id: 2026-10-10 --&gt;
-+
-+&lt;!-- wechat-digest: 复盘要回到做决定时掌握的信息，分清能改进的疏漏和无法提前知道的结果，才能留下下次用得上的办法，而不只是多一个责怪自己的理由。 --&gt;
-+
-+　　事情搞砸之后，最没用的一句话，可能就是“早知道就不这样了”。
-+
-+　　知道下雨就不出门，知道对方会爽约就不等，知道最后用不上就不买。听起来没任何问题。可要是把结局提前告诉你，那还用得着做决定吗？照着答案抄就行了。
-+
-+　　复盘真正难的地方， **是结果已经摆在眼前，你还能不能记得，当时并不知道这么多** 。
-+
-+　　假设几个朋友约好周末去郊外走走。出发前看过天气，问过大家的时间，也查过路况，得到的信息都没有显示当天不适合出行。结果走到半路，天气突然变了，一行人淋了雨，原定的行程也没走完。
-+
-+　　回来之后，有人说：“就不该出去，待在家里什么事都没有。”
-+
-+　　这句话能解释当天怎样不淋雨，却很难指导下一次出游。因为下一次，你依然没办法提前知道所有变化。如果只有保证不出岔子才能出发，那以后都不用约了。
-+
-+　　但也不能反过来一摊手：天气的事情谁说得准，没什么好想的。
-+
-+　　雨为什么来，未必能控制。出发前有没有查看最新消息，途中有没有注意变化，有没有准备可以中止行程的办法，这些却能一件件核对。
-+
-+　　同样是淋雨，如果出发前已经有明确的恶劣天气提醒，只是嫌改计划麻烦而没理会，那就有具体的判断需要改。下次该改的，是对提醒的处理方式。
-+
-+　　如果当时并没有这样的信息，回来之后再要求自己“应该预见到”，就很容易变成一道永远做不对的题。
-+
-+　　**该问的是：当时有哪条值得注意的信息，被我漏掉或者轻看了？**
-+
-+　　这和“后来发生了什么”是两个问题。
-+
-+　　我觉得不少所谓的复盘，最容易在这里偷懒。拿到结果之后，把所有线索重新排列，事情看上去就从头到尾都很明显，连路上随口说的一句话都像预兆。
-+
-+　　可回到出发前，那句话旁边还有许多别的信息。有的支持出行，有的让人犹豫。你需要做的是在它们之间判断，并没有一条线索会提前亮起来，告诉你“注意，我才是这次真正重要的那个”。
-+
-+　　事后把它挑出来不难。难的是说清楚，下次遇到类似情况，凭什么能在当时把它挑出来。
-+
-+　　如果说不清，所谓教训就可能只是一句“以后小心点”。小心到什么程度？看什么、问什么、什么情况下停下来？都没有。最后留下的只有紧张，办法一个没多。
-+
-+　　**所以不妨在做稍微重要一点的决定时，给自己留几句简单的记录：现在知道什么，为什么这样选，哪些变化出现之后要重新考虑。**
-+
-+　　不需要给每顿晚饭写报告。花时间记这些，是为了以后有东西可以核对，免得把“当时觉得很有可能”和“当时明明知道一定会发生”混成一回事。
-+
-+　　比如几个人共同筹备一场活动，你预计周五能拿到场地确认，就答应周六发通知。后来场地迟迟没定，通知也跟着耽误了。
-+
-+　　回头看，是对方已经提醒过时间不确定，你却把估计当成了承诺？还是对方明确确认后，又临时改变了安排？又或者，你明知道这个环节没定，却没有告诉等通知的人？
-+
-+　　这几种情况，下一次要改的东西并不一样。都用一句“我不该答应周六”收尾，反而把最有用的区别抹掉了。
-+
-+　　**还有一件容易忘的事：顺利做成的事情，也值得这么问。**
-+
-+　　没查路线、没留时间，碰巧赶上了最后一班车，不足以说明这个安排很周到。下次照着来，未必还有同样的运气。只在失败时挑毛病，在成功时把所有做法都留下，学到的经验可能越来越奇怪。
-+
-+　　当然，分清判断和结果，不是在给自己免除责任。你组织的活动出了问题，该处理的后续仍然要处理；别人因为你的安排受了影响，也不能用“我当时有理由”就让人闭嘴。
-+
-+　　解释当时为什么这样选，是为了找到能改的地方。该承担多少后果，还得看自己的职责和具体做过什么。这两件事可以一起做。
-+
-+　　同样，一次不顺也许不足以推翻整个办法，但相似的问题接连出现，就该重新检查原来的依据。不能每次都说自己倒霉，始终不肯改。
-+
-+　　下一次想起一件做砸的事，先别急着骂自己怎么那么蠢。把时间拨回做决定的那一刻，列出当时确实能知道、能做到的事情。
-+
-+　　漏看的提醒，下次补上；说得太满的承诺，下次留出余地。至于那个只有事情发生后才揭晓的答案，就别再要求过去的自己提前交卷了。
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 10 月 10 日
-
-</code></pre>
-</details>
-<p><a id="f-520419096-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-爱好接了单-连不想做的部分也要交付-md-2448431962"></a></p>
-<h4 id="src生活碎笔随笔随记实用类随记aigc人工校对爱好接了单连不想做的部分也要交付md"><a class="header" href="#src生活碎笔随笔随记实用类随记aigc人工校对爱好接了单连不想做的部分也要交付md">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】爱好接了单，连不想做的部分也要交付.md</a></h4>
-<details>
-<summary><code>+65 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\347\210\261\345\245\275\346\216\245\344\272\206\345\215\225\357\274\214\350\277\236\344\270\215\346\203\263\345\201\232\347\232\204\351\203\250\345\210\206\344\271\237\350\246\201\344\272\244\344\273\230.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\347\210\261\345\245\275\346\216\245\344\272\206\345\215\225\357\274\214\350\277\236\344\270\215\346\203\263\345\201\232\347\232\204\351\203\250\345\210\206\344\271\237\350\246\201\344\272\244\344\273\230.md"
-new file mode 100644
-index 000000000..b3ede0810
---- /dev/null
-+++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\344\272\272\345\267\245\346\240\241\345\257\271\343\200\221\347\210\261\345\245\275\346\216\245\344\272\206\345\215\225\357\274\214\350\277\236\344\270\215\346\203\263\345\201\232\347\232\204\351\203\250\345\210\206\344\271\237\350\246\201\344\272\244\344\273\230.md"
-@@ -0,0 +1,65 @@
-+# 爱好接了单，连不想做的部分也要交付
-+
-+&lt;!-- daily-essay-id: 2026-10-11 --&gt;
-+
-+&lt;!-- wechat-digest: 把爱好变成收入之前，需要试过从确认要求到修改交付的完整过程，看看自己能否接受其中重复而琐碎的工作，再决定愿意接下多少承诺。 --&gt;
-+
-+　　把爱好做成生意，最容易漏算的，是自己平时可以不做的那些事情。
-+
-+　　假设你喜欢做手工。周末挑一块喜欢的布，缝一个小包，颜色自己选，大小自己定。缝到一半觉得没意思，放着，下周再说。做出来有点歪，反而觉得挺可爱。
-+
-+　　朋友看见照片，说这个好看，应该拿去卖。
-+
-+　　听起来很顺理成章。本来就在做，顺便赚点钱，多好。
-+
-+　　于是有人来订同款，要求换一种颜色，背带加长，里面再加个小口袋。你算了算，多费一点工夫，也能做，就答应了。
-+
-+　　接下来，对方要看布料在自然光下的颜色，问背带具体有多长，确认下周出门前能不能收到。你得找尺子、拍照、回消息，还要说明照片和实物可能有色差。
-+
-+　　这些事情都很合理。人家是在买一个准备拿来用的包，当然会问清楚。
-+
-+　　可你原本喜欢的是坐在桌前慢慢缝东西。现在布还没裁，已经聊了半个晚上。
-+
-+　　等到真正开始做，你又发现，这次不能随便放着了。对方等着出门用，你答应的时间在那里。哪怕今天突然更想试另一种布，也得先把手上这个做完。
-+
-+　　**订单一旦接下，确认、重复、修改和交付，就都成了这件事的一部分。**
-+
-+　　只算坐在缝纫机前的时间，很容易高估自己有多喜欢这份工作。
-+
-+　　我觉得“做喜欢的事就不会累”这句话，最容易让人误会的地方也在这里。你喜欢的究竟是某个动作，还是围绕它发生的整套工作？这得分开看。
-+
-+　　做一个自己想要的包，和连续做几个别人已经选好的包，手上的技术差不多，时间却由不同的人和事情来安排。前者可以跟着兴致走，后者要回应已经给出去的承诺。
-+
-+　　原本让你放松的，可能恰好就是那种随时能改、随时能停的自由。收费之后，这部分自由就需要重新商量了。
-+
-+　　当然，也有人正好喜欢订单带来的明确要求。自己做时不知道从哪开始，有人告诉他用途、尺寸和期限，他反而更容易投入。把一件东西做好交到别人手里，也能带来满足。
-+
-+　　所以没必要替所有爱好下结论，说一收钱就变味，或者不赚钱就是浪费天赋。先看看完整做过一遍之后，自己还愿不愿意再来一次。
-+
-+　　想试，可以从要求简单、自己确实做得到的小件开始。样式、完成时间、能改哪些地方，提前讲清楚。做完之后，把沟通、采购、制作、整理和交付花的工夫放在一起看。
-+
-+　　哪一段最让人抗拒？是还不熟练，所以费劲，还是即使熟练了，也不想反复做？这两种情况，需要的处理办法不一样。
-+
-+　　比如拍照太麻烦，可以把已有的布料集中拍好；反复解释尺寸，可以把尺寸写清楚。做过几次之后，有些琐事确实能省下来。
-+
-+　　但如果你最不愿意的是重复同一个款式，偏偏来问的人都想要同款，那就得认真想想自己准备卖什么。不能一边答应照着做，一边埋怨买家没有欣赏新设计的眼光。
-+
-+　　你也可以只做现货，让别人从已经完成的作品里选；或者只接受自己愿意做的几种定制。这样做会放弃一些订单，不过留下来的工作，也许更接近你愿意过的日子。
-+
-+　　这仍然需要沟通、打包和处理问题。只是范围由你先划出来，对方觉得合适再买。接到自己不想做的要求，也不用为了证明能力把它硬接下来。
-+
-+　　反过来，刚做一次觉得累，也不用马上断定自己不适合。第一次可能花了很多时间找材料、定尺寸，下次未必还要从头来。多看几次实际做完的感受，比在兴头上或者疲惫时给自己定终身，都有用一点。
-+
-+　　还有个小区别：朋友因为喜欢你，愿意宽容你的拖延，和一个普通买家接受同样的安排，是两回事。试做时得到的赞美可以收下，但别把对方的体谅也算成自己已经能稳定提供的东西。
-+
-+　　最后，就算完整试过，发现自己只愿意偶尔做一个送人，那也挺明确了。以后再有人说“你应该拿去卖”，你知道这个建议会给自己的周末添上什么。
-+
-+　　愿意接单，就把不那么有趣的部分也安排进去。不愿意，也可以把那块布留到下次有兴致的时候再裁。
-+
-+　　做包是你的爱好。至于回消息、核尺寸、赶交付的这一整份工作，要不要接下来，可以另外决定。
-+
-+&lt;br /&gt;
-+
-+　　南国微雪 Miyuki
-+
-+　　2026 年 10 月 11 日
 
 </code></pre>
 </details>
@@ -9592,32 +10193,16 @@ index 000000000..b3ede0810
         </script>
 
 
+        <!-- 搜索面板依赖：必须在 additional-js（theme/customized/search.js）之前同步加载 -->
+        <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.19.12/dist/umd/index.production.js"></script>
+        <!-- 仅作为自建面板初始化失败时的兜底 -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js"></script>
+
         <!-- Custom JS scripts -->
         <script src="assets/custom-d0d8e44b.js"></script>
+        <script src="theme/customized/search-c3a94c36.js"></script>
 
 
-        <!-- <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script> -->
-        <!-- <script> -->
-            <!-- const { autocomplete } = window['@algolia/autocomplete-js']; -->
-        <!-- </script> -->
-        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-
-        <script type="text/javascript">
-            docsearch({
-                appId: 'GX9RTL51BH',
-                apiKey: 'c4caea4202132489213a6c5366c9952d',
-                indexName: 'tinysnowio',
-                container: '#docsearch',
-                debug: false // Set debug to true if you want to inspect the modal
-            });
-            // autocomplete({
-            //   container: '#docsearch',
-            //   placeholder: '搜索 / Search',
-            //   getSources() {
-            //     return [];
-            //   },
-            // });
-        </script>
     </div>
     </body>
 </html>
