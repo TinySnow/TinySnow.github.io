@@ -35,7 +35,7 @@
 2. **额外写一份「按词」的可搜索属性**：`hierarchy_words` / `content_words`，用 `Intl.Segmenter`（ICU 中文词典，与 Algolia 引擎声称使用的 CJK 词典是同一套 ICU 数据）分词，例如
    `重装系统 8->7` → `重装 系统 8 7`。
    **原来的 `hierarchy` / `content` 继续保留可搜索**，所以在「引擎自己按词切分」和「引擎仍然按字切分」两种情况下都不会把搜索改坏，只是多占一点索引存储。
-3. **抽取范围收窄到 `<main>`**：删除选择器修正为 `main ...` / `#mdbook-content ...`，正文选择器改为 `p, li, td, th, code, dd, dt`（去掉会重复的内联元素，补上表格），标题改为 `main h1..h6`，并跳过图片 `alt` 里无信息量的文件名。
+3. **抽取范围收窄到 `<main>`**：删除选择器修正为 `main ...` / `#mdbook-content ...`，正文选择器改为 `p, li, td, th, code, dd, dt`（去掉会重复的内联元素，补上表格），标题改为 `main h1..h6`，并跳过图片 `alt` 里无信息量的文件名。**标题兜底必须自己写、不能交给 helper**：`main` 里没有 `h1` 的页面（实测 23 个，内科学那批）由代码用 `<title>` 补 `lvl1` 并去掉「 - 微雪博客」后缀；如果把 `head > title` 交给 helper 当兜底，它会取文档顺序最靠前的候选，**所有页面**的 lvl1 都会变成 `<title>`（见第七节）。
 4. **保留 `toc.html` 作为全站发现入口**：站点静态 HTML 的首页只有 `print.html` / `last-updated.html` 两个站内链接、**没有任何 prev/next**，而 `toc.html` 里有 **2359 条站内链接**——它是全站唯一的「链接中枢」。所以 `toc.html` 列进 `startUrls` 保证一定被抓到（不依赖 iframe 能否被识别），再用 `pathsToMatch` 的 `!` 把它排除出索引：只发现链接、不产生记录。**实测教训：把它和另外两页一起丢进 `exclusionPatterns`，覆盖率会从 2360 个页面掉到 297 个**（只剩「生活碎笔」那条章节链，因为只有它的页面能从 `last-updated.html` 顺着 prev/next 走到）。
 5. **不抓** `print.html`（19MB 合订本）/ `404.html`，用 `exclusionPatterns` 拦掉下载；页面体积再由 `recordExtractor` 里的 `contentLength` 兜底。
 6. **故意不加站点的 sitemap**：`sitemap.xml` / `sitemap.txt` 的 2360 条 URL **全部不带 `.html`**（如 `/个人简介`），而 GitHub Pages 对 `/个人简介` 和 `/个人简介.html` **都直接返回 200、不是 301 跳转**（实测），加进去只会让每个页面被索引两份，配合按页面去重就是成对的重复结果。全站覆盖本来就能靠 `toc.html` + 站内链接拿满（改造前的旧索引就是这个覆盖率）。
@@ -202,7 +202,7 @@ mdbook build          # 或 mdbook serve
 
 | GPT 配置的写法 | 实测 / 文档依据 | 结论 |
 | --- | --- | --- |
-| `lvl1` 加 `head > title` 兜底 | **这条采纳之后翻车了**：DocSearch helper 会在所有候选选择器里取「文档顺序最靠前」的那个，`<title>` 在 `<head>` 里永远排第一，于是 lvl1 全变成「重装系统 - 微雪博客」，连 `微雪` / `博客` 都命中 **2342/2342** 个页面（实测） | **已撤销**，改回 `['main h1', '#mdbook-content h1']` |
+| `lvl1` 加 `head > title` 兜底 | **这条采纳之后翻车了**：DocSearch helper 会在所有候选选择器里取「文档顺序最靠前」的那个，`<title>` 在 `<head>` 里永远排第一，于是 lvl1 全变成「重装系统 - 微雪博客」，连 `微雪` / `博客` 都命中 **2342/2342** 个页面（实测） | **已撤销**：helper 只给 `['main h1', '#mdbook-content h1']`；23 个没有 `h1` 的页面改由代码在抽取后用 `<title>` 补（去掉站点名后缀） |
 | `distinct: false`，且删掉 `attributeForDistinct` | 在线上索引模拟该设置：`数据结构` 前 20 条命中 **20/20 全来自同一篇文章**，`读书` 10/20，`Docker` 7/20 | 不采纳，改为页面级去重（`url_without_anchor`） |
 | `aggregateContent: false` + 自写打包逻辑 | 统计 2,360 个页面 `<main>` 下的 `p/li/td/th/pre/dt/dd` 共 13.6 万个，加 1.6 万条标题 ≈ 15 万条记录（现状索引 4.2 万条）；它那段 700 条阈值的打包代码只有 **5 个**页面会触发 | 不采纳，保留官方默认的 `aggregateContent: true`（文档明确推荐用它来减少记录数） |
 | `removeWordsIfNoResults: "none"` | 长中文查询更容易变成 0 结果 | 不采纳，保留 `allOptional` |
