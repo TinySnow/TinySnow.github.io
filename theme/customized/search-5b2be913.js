@@ -172,6 +172,34 @@
         return wrapped;
     }
 
+    /* ===================== 结果条数提示 =====================
+     * DocSearch 默认界面上**不显示"共多少条命中"**，只看得到结果区顶部几行时
+     * 很容易以为"只有这么几条"。官方提供了 resultsFooterComponent，它会被渲染成
+     *   createElement(这个函数, { state })
+     * 而 state.context.nbHits 就是本次查询的命中总数（DocSearch 内部会
+     * setContext({ nbHits })）。
+     * 这里直接返回字符串（函数组件允许返回字符串），避免去构造 React/preact 元素。 */
+    function renderResultsFooter(props) {
+        try {
+            var state = props && props.state;
+            var total = state && state.context ? state.context.nbHits : null;
+            if (typeof total !== 'number' || total <= 0) {
+                return null;
+            }
+            var shown = 0;
+            var collections = state.collections || [];
+            for (var i = 0; i < collections.length; i++) {
+                shown += (collections[i].items || []).length;
+            }
+            if (shown > 0 && shown < total) {
+                return '共 ' + total + ' 条命中，当前显示前 ' + shown + ' 条，可在此区域滚动查看更多';
+            }
+            return '共 ' + total + ' 条命中';
+        } catch (e) {
+            return null;
+        }
+    }
+
     /* ===================== 启动 ===================== */
     function init() {
         if (typeof window.docsearch !== 'function') {
@@ -187,7 +215,8 @@
             container: CONFIG.container,
             maxResultsPerGroup: CONFIG.maxResultsPerGroup,
             searchParameters: { hitsPerPage: CONFIG.hitsPerPage },
-            transformSearchClient: wrapSearchClient
+            transformSearchClient: wrapSearchClient,
+            resultsFooterComponent: renderResultsFooter
         });
     }
 
