@@ -29,7 +29,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../../../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../../../../theme/customized/style-df7ab089.css">
+        <link rel="stylesheet" href="../../../../theme/customized/style-062644ea.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -48,13 +48,9 @@
           gtag('config', 'G-P9324YLFBW');
         </script>
 
-        <!-- Doc Search -->
-        <!-- 自建搜索面板用的 classic 主题，版本与下方 autocomplete-js 保持一致 -->
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.19.12/dist/theme.min.css"
-        />
-        <!-- 仅在自建搜索面板初始化失败时，给 DocSearch 弹窗兜底用 -->
+        <!-- Doc Search：UI 用 DocSearch 默认外观（按钮 + 弹窗）
+             查询清洗与「优先搜按词属性」都在 theme/customized/search.js 里，走官方
+             transformSearchClient 注入，不碰它的外观 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.9.0/dist/style.css" />
         <link rel="preconnect" href="https://GX9RTL51BH-dsn.algolia.net" crossorigin />
         
@@ -594,14 +590,12 @@
         </script>
 
 
-        <!-- 搜索面板依赖：必须在 additional-js（theme/customized/search.js）之前同步加载 -->
-        <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.19.12/dist/umd/index.production.js"></script>
-        <!-- 仅作为自建面板初始化失败时的兜底 -->
+        <!-- DocSearch：必须在 additional-js（theme/customized/search.js）之前同步加载 -->
         <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js"></script>
 
         <!-- Custom JS scripts -->
         <script src="../../../../assets/custom-d0d8e44b.js"></script>
-        <script src="../../../../theme/customized/search-4af4957d.js"></script>
+        <script src="../../../../theme/customized/search-e9d66eea.js"></script>
 
 
     </div>
