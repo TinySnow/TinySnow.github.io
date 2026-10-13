@@ -146,11 +146,15 @@
 
     /* ===================== 分页状态 ===================== */
     /* sent：实际发给 Algolia 的查询（可能是清洗过的）
-     * mode：'words' = 只搜按词属性；'all' = 搜全部属性 */
-    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
+     * mode：'words' = 只搜按词属性；'all' = 搜全部属性
+     * refresh：autocomplete 的刷新函数，从 getItems 的参数里捕获，供「加载更多」调用 */
+    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0, refresh: null, lastMoreAt: 0 };
 
     function resetStore(query) {
-        store = { query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
+        store = {
+            query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0,
+            refresh: store.refresh, lastMoreAt: 0
+        };
     }
 
     function mergeHits(list) {
@@ -179,11 +183,51 @@
     }
 
     function renderLoadMore(item, html) {
-        return html`<div class="aa-ItemContent md-search-more">
+        /* 这个「加载更多」行自己处理点击：
+         * autocomplete 的 item 点击路径会先执行 nextState:{isOpen:false}（关掉面板）
+         * 再调用 onSelect，如果不管它，新的一页就会渲染在已关闭的面板里。
+         * 这里在行内接管 click 并阻止冒泡——li 上的 onClick 不会触发，
+         * 面板保持打开，refresh() 出来的新一页就能正常显示。
+         * 键盘（上下键 + 回车）走不到 DOM click，由 onSelect 里的分支兜底。 */
+        return html`<div class="aa-ItemContent md-search-more"
+            onMouseDown=${stopEvent}
+            onClick=${onLoadMoreClick}>
             <div class="aa-ItemContentBody">
                 <div class="aa-ItemContentTitle">加载更多（已显示 ${String(item.shown)} / 共 ${String(item.total)} 条）</div>
             </div>
         </div>`;
+    }
+
+    /* 阻止事件继续冒泡/默认行为（避免面板失焦、避免触发 autocomplete 的 item 点击处理） */
+    function stopEvent(event) {
+        if (!event) {
+            return;
+        }
+        if (typeof event.preventDefault === 'function') {
+            event.preventDefault();
+        }
+        if (typeof event.stopPropagation === 'function') {
+            event.stopPropagation();
+        }
+    }
+
+    function onLoadMoreClick(event) {
+        stopEvent(event);
+        loadMore();
+    }
+
+    /* 翻到下一页。
+     * 250ms 内的重复触发会被忽略：鼠标点击与 onSelect 有可能同时到达。 */
+    function loadMore() {
+        var now = Date.now();
+        if (store.lastMoreAt && now - store.lastMoreAt < 250) {
+            return;
+        }
+        store.lastMoreAt = now;
+        store.page = store.page + 1;
+        if (typeof store.refresh === 'function') {
+            store.refresh();
+        }
     }
 
     function renderNotice(text, html) {
@@ -229,7 +273,10 @@
         }
         return [{
             sourceId: 'tinysnowio',
-            getItems: function () {
+            getItems: function (params) {
+                if (params && typeof params.refresh === 'function') {
+                    store.refresh = params.refresh;
+                }
                 if (store.query !== query) {
                     resetStore(query);
                 }
@@ -310,10 +357,12 @@
                     p.event.preventDefault();
                 }
                 if (item.__loadMore) {
-                    store.page = store.page + 1;
-                    if (typeof p.refresh === 'function') {
-                        p.refresh();
+                    /* 键盘选中时走这里：autocomplete 已经先把面板关掉了，要重新打开，
+                     * 否则刷新出来的下一页看不见（鼠标点击由行内 handler 接管）。 */
+                    if (typeof p.setIsOpen === 'function') {
+                        p.setIsOpen(true);
                     }
+                    loadMore();
                     return;
                 }
                 if (item.__notice) {
