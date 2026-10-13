@@ -26,11 +26,24 @@
         /* 每次「加载更多」追加多少条 */
         perPage: 20,
 
-        /* 中文查询分词：
-         * 索引里的 content_words / hierarchy_words 生效后再改成 true
-         * （判断方法见 assets/algolia-crawler.md 的「怎么验证分词真的生效了」）。
-         * 现在是 false，查询按原样发送，与改造前的检索行为一致。 */
-        segmentQuery: false,
+        /* ---- 查询处理（都在客户端做）----
+         * 引擎对中文是「按单字」切分的：实测把 indexLanguages/queryLanguages 设成
+         * ["zh","en"] 并重建索引后依旧如此——查「重装系统」的 _rankingInfo.words
+         * 恒为 4（重/装/系/统），查询中间加空格也一样。于是：
+         *   1. cleanQuery：先把中文虚词去掉，否则「怎么重装系统」会变成 6 个单字的
+         *      AND，正确页面因为没有「怎么」反而不满足，前几条全是无关文章；
+         *      清洗成「重装系统」后前三名正好是三篇重装系统文章（实测）。
+         *   2. preferWordAttributes：优先只搜爬虫写的「按词」属性
+         *      （content_words / hierarchy_words）。实测 52 条精确短语：top1 从 15
+         *      涨到 33、进不了前 20 的从 14 降到 5；而只搜按字原文属性的成绩与基线
+         *      完全相同（拖后腿的是它）。若一条都没命中，会自动退回「原查询 + 全部属性」。 */
+        cleanQuery: true,
+        preferWordAttributes: true,
+        wordAttributes: [
+            'hierarchy_words.lvl0', 'hierarchy_words.lvl1', 'hierarchy_words.lvl2',
+            'hierarchy_words.lvl3', 'hierarchy_words.lvl4', 'hierarchy_words.lvl5',
+            'hierarchy_words.lvl6', 'content_words'
+        ],
 
         /* 自建面板初始化失败时，退回 DocSearch 弹窗（每页条数已提高） */
         fallbackToDocSearch: true
@@ -49,17 +62,45 @@
     })();
     var HAS_CJK = /[\u3400-\u9FFF\uF900-\uFAFF]/;
 
-    function segmentQueryZh(text) {
-        if (!CONFIG.segmentQuery || !segmenter || !HAS_CJK.test(text)) {
-            return text;
+    /* 单字虚词：作为独立词出现时丢掉（不用正则，避免误伤「上海」里的「上」） */
+    var STOP_CHARS = '的了是在和与及也就都很更最又还只把被给对从到向着并而或但如果因为所以之其此该等';
+    /* 多字虚词：ICU 会把它们切成一个词，按词整体丢掉 */
+    var STOP_WORDS = {
+        '怎么': 1, '怎样': 1, '如何': 1, '什么': 1, '为什么': 1, '哪个': 1, '哪些': 1,
+        '可以': 1, '能否': 1, '是否': 1, '这个': 1, '那个': 1, '这些': 1, '那些': 1,
+        '我们': 1, '你们': 1, '他们': 1, '就是': 1, '还是': 1, '只是': 1, '不是': 1,
+        '因为': 1, '所以': 1, '但是': 1, '不过': 1, '如果': 1, '需要': 1, '应该': 1,
+        '一个': 1, '一种': 1, '一下': 1, '一些': 1, '一直': 1, '已经': 1, '正在': 1,
+        '以及': 1, '并且': 1, '或者': 1, '然后': 1, '这样': 1, '那样': 1, '多少': 1,
+        '时候': 1, '现在': 1, '开始': 1, '进行': 1, '关于': 1, '对于': 1, '由于': 1
+    };
+
+    /* 把用户输入变成更容易命中的查询；不需要清洗时返回 null（表示按原样发送） */
+    function analyzeQuery(text) {
+        if (!CONFIG.cleanQuery || !segmenter || !HAS_CJK.test(text)) {
+            return null;
         }
+        var parts = Array.from(segmenter.segment(text));
         var words = [];
-        Array.prototype.forEach.call(Array.from(segmenter.segment(text)), function (part) {
-            if (part.isWordLike) {
-                words.push(part.segment);
+        for (var i = 0; i < parts.length; i++) {
+            var part = parts[i];
+            if (!part.isWordLike) {
+                continue;
             }
-        });
-        return words.length ? words.join(' ') : text;
+            var word = part.segment;
+            if (STOP_WORDS[word]) {
+                continue;
+            }
+            if (word.length === 1 && STOP_CHARS.indexOf(word) !== -1) {
+                continue;
+            }
+            words.push(word);
+        }
+        if (!words.length) {
+            return null;      // 全是虚词，别清洗，直接按原样查
+        }
+        var out = words.join(' ');
+        return out === text ? null : out;
     }
 
     /* ===================== Algolia 查询 ===================== */
@@ -68,7 +109,7 @@
             + encodeURIComponent(CONFIG.indexName) + '/query';
     }
 
-    function fetchPage(query, page) {
+    function fetchPage(query, page, useWordAttributes) {
         var payload = {
             query: query,
             hitsPerPage: CONFIG.perPage,
@@ -80,6 +121,9 @@
             highlightPostTag: '</mark>',
             snippetEllipsisText: '…'
         };
+        if (useWordAttributes && CONFIG.preferWordAttributes) {
+            payload.restrictSearchableAttributes = CONFIG.wordAttributes;
+        }
         var init = {
             method: 'POST',
             headers: {
@@ -101,10 +145,12 @@
     }
 
     /* ===================== 分页状态 ===================== */
-    var store = { query: '', page: 0, hits: [], nbHits: 0 };
+    /* sent：实际发给 Algolia 的查询（可能是清洗过的）
+     * mode：'words' = 只搜按词属性；'all' = 搜全部属性 */
+    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
 
     function resetStore(query) {
-        store = { query: query, page: 0, hits: [], nbHits: 0 };
+        store = { query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
     }
 
     function mergeHits(list) {
@@ -187,13 +233,13 @@
                 if (store.query !== query) {
                     resetStore(query);
                 }
+                if (!store.sent) {
+                    store.sent = analyzeQuery(query) || query;   // 清洗虚词，返回 null 就用原查询
+                    store.mode = 'words';
+                }
                 var page = store.page;
-                var sent = segmentQueryZh(query);
-                return fetchPage(sent, page).then(function (data) {
-                    /* 查询已经变了，丢掉过期结果 */
-                    if (store.query !== query) {
-                        return [];
-                    }
+
+                function collect(data) {
                     store.hits = mergeHits(store.hits.concat((data && data.hits) || []));
                     if (data && typeof data.nbHits === 'number') {
                         store.nbHits = data.nbHits;
@@ -208,6 +254,25 @@
                         });
                     }
                     return items;
+                }
+
+                return fetchPage(store.sent, page, store.mode === 'words').then(function (data) {
+                    /* 查询已经变了，丢掉过期结果 */
+                    if (store.query !== query) {
+                        return [];
+                    }
+                    /* 只搜「按词」属性一条都没命中 → 退回「原查询 + 全部属性」再试一次 */
+                    if (page === 0 && store.mode === 'words' && data && data.nbHits === 0) {
+                        store.mode = 'all';
+                        store.sent = query;
+                        return fetchPage(query, 0, false).then(function (fallback) {
+                            if (store.query !== query) {
+                                return [];
+                            }
+                            return collect(fallback);
+                        });
+                    }
+                    return collect(data);
                 }).catch(function (err) {
                     if (window.console && console.warn) {
                         console.warn('[search] 查询失败：', err);
