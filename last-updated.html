@@ -244,8 +244,165 @@
 <p>NOTICE: This content is presented as <code>git diff</code>.</p>
 </blockquote>
 <!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-10-13-180141-cmt-utc8--ad11627f8"><a class="header" href="#更新记录2026-10-13-180141-cmt-utc8--ad11627f8">更新记录（2026-10-13 18:01:41 CMT (UTC+8) | ad11627f8）</a></h2>
+<h2 id="更新记录2026-10-13-185501-cmt-utc8--d70db98cd"><a class="header" href="#更新记录2026-10-13-185501-cmt-utc8--d70db98cd">更新记录（2026-10-13 18:55:01 CMT (UTC+8) | d70db98cd）</a></h2>
 <h3 id="summary"><a class="header" href="#summary">Summary</a></h3>
+<ul>
+<li>Generated at: <code>2026-10-13 18:55:01 CMT (UTC+8)</code></li>
+<li>Base commit: <code>d70db98cd</code></li>
+<li>Diff source: <code>ad11627f86dab249725903d99e09598977d54c79..d70db98cdd6e88ecb9ba5cecf3c21fd8375447c5</code></li>
+<li>Changed files: <code>1</code></li>
+<li>Total lines: <code>+57 / -8</code></li>
+</ul>
+<h3 id="commit-messages"><a class="header" href="#commit-messages">Commit Messages</a></h3>
+<ul>
+<li>
+<p><code>d70db98c</code> 搜索：修复「加载更多」点不动——autocomplete 会先关面板再回调 onSelect</p>
+<blockquote>
+<p>从 @algolia/autocomplete-js@1.19.12 的真实包读出点击路径：
+(itemUrl ? resolve() : setState({ nextState: { isOpen: false } })).then(() =&gt; source.onSelect({…}))
+也就是点 item 时它先把面板关掉、再调用 onSelect，所以 refresh() 出来的下一页
+渲染在已关闭的面板里 —— 现象就是「点加载更多没反应」。我的 Node 测试只覆盖了
+数据层（手动调 getItems），没覆盖这条交互路径，所以漏了。</p>
+<p>修复（两条路径都覆盖）：</p>
+<ul>
+<li>鼠标：在「加载更多」行内挂 onClick/onMouseDown，preventDefault + stopPropagation，
+li 上的 autocomplete 处理不会触发 → 面板保持打开，refresh() 直接渲染新一页</li>
+<li>键盘（↑↓ + 回车）：走 onSelect 分支，先 setIsOpen(true) 重新打开面板再 refresh()</li>
+<li>250ms 去重：防止鼠标与 onSelect 同时到达导致一次跳两页</li>
+<li>store.refresh 从 getItems 的参数捕获（真实包里 getItems 确实收到 refresh）</li>
+</ul>
+<p>验证（用真实 htm/preact 渲染出节点后模拟交互）：</p>
+<ul>
+<li>鼠标点击：stopPropagation 生效、refresh 1 次、刷新后 40 条、请求 page=1</li>
+<li>键盘：setIsOpen(true)、refresh 1 次</li>
+<li>同步连点两次 / 点击+onSelect 双触发：都只翻一页</li>
+<li>命中不足 20 条时不显示「加载更多」</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<ol>
+<li><a href="#f-3344729701-theme-customized-search-js-2827483100">theme/customized/search.js</a> <code>+57 / -8</code></li>
+</ol>
+<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<p><a id="f-3344729701-theme-customized-search-js-2827483100"></a></p>
+<h4 id="themecustomizedsearchjs"><a class="header" href="#themecustomizedsearchjs">theme/customized/search.js</a></h4>
+<details>
+<summary><code>+57 / -8</code> Click to expand diff</summary>
+<pre><code class="language-diff">diff --git a/theme/customized/search.js b/theme/customized/search.js
+index c078aa98e..ac5780e0c 100644
+--- a/theme/customized/search.js
++++ b/theme/customized/search.js
+@@ -146,11 +146,15 @@
+ 
+     /* ===================== 分页状态 ===================== */
+     /* sent：实际发给 Algolia 的查询（可能是清洗过的）
+-     * mode：'words' = 只搜按词属性；'all' = 搜全部属性 */
+-    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
++     * mode：'words' = 只搜按词属性；'all' = 搜全部属性
++     * refresh：autocomplete 的刷新函数，从 getItems 的参数里捕获，供「加载更多」调用 */
++    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0, refresh: null, lastMoreAt: 0 };
+ 
+     function resetStore(query) {
+-        store = { query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
++        store = {
++            query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0,
++            refresh: store.refresh, lastMoreAt: 0
++        };
+     }
+ 
+     function mergeHits(list) {
+@@ -179,13 +183,53 @@
+     }
+ 
+     function renderLoadMore(item, html) {
+-        return html`&lt;div class="aa-ItemContent md-search-more"&gt;
++        /* 这个「加载更多」行自己处理点击：
++         * autocomplete 的 item 点击路径会先执行 nextState:{isOpen:false}（关掉面板）
++         * 再调用 onSelect，如果不管它，新的一页就会渲染在已关闭的面板里。
++         * 这里在行内接管 click 并阻止冒泡——li 上的 onClick 不会触发，
++         * 面板保持打开，refresh() 出来的新一页就能正常显示。
++         * 键盘（上下键 + 回车）走不到 DOM click，由 onSelect 里的分支兜底。 */
++        return html`&lt;div class="aa-ItemContent md-search-more"
++            onMouseDown=${stopEvent}
++            onClick=${onLoadMoreClick}&gt;
+             &lt;div class="aa-ItemContentBody"&gt;
+                 &lt;div class="aa-ItemContentTitle"&gt;加载更多（已显示 ${String(item.shown)} / 共 ${String(item.total)} 条）&lt;/div&gt;
+             &lt;/div&gt;
+         &lt;/div&gt;`;
+     }
+ 
++    /* 阻止事件继续冒泡/默认行为（避免面板失焦、避免触发 autocomplete 的 item 点击处理） */
++    function stopEvent(event) {
++        if (!event) {
++            return;
++        }
++        if (typeof event.preventDefault === 'function') {
++            event.preventDefault();
++        }
++        if (typeof event.stopPropagation === 'function') {
++            event.stopPropagation();
++        }
++    }
++
++    function onLoadMoreClick(event) {
++        stopEvent(event);
++        loadMore();
++    }
++
++    /* 翻到下一页。
++     * 250ms 内的重复触发会被忽略：鼠标点击与 onSelect 有可能同时到达。 */
++    function loadMore() {
++        var now = Date.now();
++        if (store.lastMoreAt &amp;&amp; now - store.lastMoreAt &lt; 250) {
++            return;
++        }
++        store.lastMoreAt = now;
++        store.page = store.page + 1;
++        if (typeof store.refresh === 'function') {
++            store.refresh();
++        }
++    }
++
+     function renderNotice(text, html) {
+         return html`&lt;div class="aa-ItemContent md-search-notice"&gt;
+             &lt;div class="aa-ItemContentBody"&gt;
+@@ -229,7 +273,10 @@
+         }
+         return [{
+             sourceId: 'tinysnowio',
+-            getItems: function () {
++            getItems: function (params) {
++                if (params &amp;&amp; typeof params.refresh === 'function') {
++                    store.refresh = params.refresh;
++                }
+                 if (store.query !== query) {
+                     resetStore(query);
+                 }
+@@ -310,10 +357,12 @@
+                     p.event.preventDefault();
+                 }
+                 if (item.__loadMore) {
+-                    store.page = store.page + 1;
+-                    if (typeof p.refresh === 'function') {
+-                        p.refresh();
++                    /* 键盘选中时走这里：autocomplete 已经先把面板关掉了，要重新打开，
++                     * 否则刷新出来的下一页看不见（鼠标点击由行内 handler 接管）。 */
++                    if (typeof p.setIsOpen === 'function') {
++                        p.setIsOpen(true);
+                     }
++                    loadMore();
+                     return;
+                 }
+                 if (item.__notice) {
+
+</code></pre>
+</details>
+<!-- LAST_UPDATED_ENTRY_END -->
+<!-- LAST_UPDATED_ENTRY_START -->
+<h2 id="更新记录2026-10-13-180141-cmt-utc8--ad11627f8"><a class="header" href="#更新记录2026-10-13-180141-cmt-utc8--ad11627f8">更新记录（2026-10-13 18:01:41 CMT (UTC+8) | ad11627f8）</a></h2>
+<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 18:01:41 CMT (UTC+8)</code></li>
 <li>Base commit: <code>ad11627f8</code></li>
@@ -253,16 +410,16 @@
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+24 / -0</code></li>
 </ul>
-<h3 id="commit-messages"><a class="header" href="#commit-messages">Commit Messages</a></h3>
+<h3 id="commit-messages-1"><a class="header" href="#commit-messages-1">Commit Messages</a></h3>
 <ul>
 <li><code>ad11627f</code> 每日一文：血钻 - 阿林·贝克</li>
 </ul>
-<h3 id="index"><a class="header" href="#index">Index</a></h3>
+<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
 <ol>
 <li><a href="#f-3427183660-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-3427183660-src-阅读-每日一文-血钻-阿林-贝克-md-249991412">src/阅读/每日一文/血钻-阿林·贝克.md</a> <code>+23 / -0</code></li>
 </ol>
-<h3 id="diffs"><a class="header" href="#diffs">Diffs</a></h3>
+<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
 <p><a id="f-3427183660-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd"><a class="header" href="#srcsummarymd">src/SUMMARY.md</a></h4>
 <details>
@@ -321,7 +478,7 @@ index 000000000..595c68378
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-13-174946-cmt-utc8--cd8a93c3d"><a class="header" href="#更新记录2026-10-13-174946-cmt-utc8--cd8a93c3d">更新记录（2026-10-13 17:49:46 CMT (UTC+8) | cd8a93c3d）</a></h2>
-<h3 id="summary-1"><a class="header" href="#summary-1">Summary</a></h3>
+<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 17:49:46 CMT (UTC+8)</code></li>
 <li>Base commit: <code>cd8a93c3d</code></li>
@@ -329,7 +486,7 @@ index 000000000..595c68378
 <li>Changed files: <code>8</code></li>
 <li>Total lines: <code>+1386 / -97</code></li>
 </ul>
-<h3 id="commit-messages-1"><a class="header" href="#commit-messages-1">Commit Messages</a></h3>
+<h3 id="commit-messages-2"><a class="header" href="#commit-messages-2">Commit Messages</a></h3>
 <ul>
 <li>
 <p><code>cd8a93c3</code> 搜索：没有 h1 的 23 个页面改由代码补标题，不再把 head &gt; title 交给 helper</p>
@@ -485,7 +642,7 @@ image-20260531144550242 / Snipaste_2023-10-22 这类文件名，原来会被放�
 </blockquote>
 </li>
 </ul>
-<h3 id="index-1"><a class="header" href="#index-1">Index</a></h3>
+<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
 <ol>
 <li><a href="#f-383127424-assets-algolia-crawler-config-js-1386373420">assets/algolia-crawler-config.js</a> <code>+289 / -0</code></li>
 <li><a href="#f-383127424-assets-algolia-crawler-md-203506374">assets/algolia-crawler.md</a> <code>+215 / -0</code></li>
@@ -496,7 +653,7 @@ image-20260531144550242 / Snipaste_2023-10-22 这类文件名，原来会被放�
 <li><a href="#f-383127424-theme-customized-style-css-2110612380">theme/customized/style.css</a> <code>+120 / -0</code></li>
 <li><a href="#f-383127424-theme-index-hbs-1765250716">theme/index.hbs</a> <code>+10 / -25</code></li>
 </ol>
-<h3 id="diffs-1"><a class="header" href="#diffs-1">Diffs</a></h3>
+<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
 <p><a id="f-383127424-assets-algolia-crawler-config-js-1386373420"></a></p>
 <h4 id="assetsalgolia-crawler-configjs"><a class="header" href="#assetsalgolia-crawler-configjs">assets/algolia-crawler-config.js</a></h4>
 <details>
@@ -1557,7 +1714,7 @@ index c4779e5e8..de6d10498 100644
 </code></pre>
 </details>
 <p><a id="f-383127424-theme-customized-search-js-2827483100"></a></p>
-<h4 id="themecustomizedsearchjs"><a class="header" href="#themecustomizedsearchjs">theme/customized/search.js</a></h4>
+<h4 id="themecustomizedsearchjs-1"><a class="header" href="#themecustomizedsearchjs-1">theme/customized/search.js</a></h4>
 <details>
 <summary><code>+382 / -0</code> Click to expand diff</summary>
 <pre><code class="language-diff">diff --git a/theme/customized/search.js b/theme/customized/search.js
@@ -2168,7 +2325,7 @@ index 25183d11e..3ec4b8b5d 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-13-125845-cmt-utc8--59ca20519"><a class="header" href="#更新记录2026-10-13-125845-cmt-utc8--59ca20519">更新记录（2026-10-13 12:58:45 CMT (UTC+8) | 59ca20519）</a></h2>
-<h3 id="summary-2"><a class="header" href="#summary-2">Summary</a></h3>
+<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 12:58:45 CMT (UTC+8)</code></li>
 <li>Base commit: <code>59ca20519</code></li>
@@ -2176,12 +2333,12 @@ index 25183d11e..3ec4b8b5d 100644
 <li>Changed files: <code>85</code></li>
 <li>Total lines: <code>+6018 / -84</code></li>
 </ul>
-<h3 id="commit-messages-2"><a class="header" href="#commit-messages-2">Commit Messages</a></h3>
+<h3 id="commit-messages-3"><a class="header" href="#commit-messages-3">Commit Messages</a></h3>
 <ul>
 <li><code>59ca2051</code> 情感类随记：一级标题同步改为短标题</li>
 <li><code>16562c19</code> 情感类随记：文件名由日期改为短标题，并同步 SUMMARY 目录</li>
 </ul>
-<h3 id="index-2"><a class="header" href="#index-2">Index</a></h3>
+<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
 <ol>
 <li><a href="#f-3737320117-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+84 / -84</code></li>
 <li><a href="#f-3737320117-src-生活碎笔-随笔随记-情感类随记-随记-一句别理他-md-2835464952">src/生活碎笔/随笔随记/情感类随记/随记-一句别理他.md</a> <code>+78 / -0</code></li>
@@ -2269,7 +2426,7 @@ index 25183d11e..3ec4b8b5d 100644
 <li><a href="#f-3737320117-src-生活碎笔-随笔随记-情感类随记-随记-黑白格子-md-2814159259">src/生活碎笔/随笔随记/情感类随记/随记-黑白格子.md</a> <code>+51 / -0</code></li>
 <li><a href="#f-3737320117-src-生活碎笔-随笔随记-情感类随记-随记-鼎下的空气墙-md-4145229456">src/生活碎笔/随笔随记/情感类随记/随记-鼎下的空气墙.md</a> <code>+93 / -0</code></li>
 </ol>
-<h3 id="diffs-2"><a class="header" href="#diffs-2">Diffs</a></h3>
+<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
 <p><a id="f-3737320117-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-1"><a class="header" href="#srcsummarymd-1">src/SUMMARY.md</a></h4>
 <details>
@@ -9568,7 +9725,7 @@ index 000000000..b0bdd5f13
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-13-122812-cmt-utc8--2eef0b4eb"><a class="header" href="#更新记录2026-10-13-122812-cmt-utc8--2eef0b4eb">更新记录（2026-10-13 12:28:12 CMT (UTC+8) | 2eef0b4eb）</a></h2>
-<h3 id="summary-3"><a class="header" href="#summary-3">Summary</a></h3>
+<h3 id="summary-4"><a class="header" href="#summary-4">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 12:28:12 CMT (UTC+8)</code></li>
 <li>Base commit: <code>2eef0b4eb</code></li>
@@ -9576,15 +9733,15 @@ index 000000000..b0bdd5f13
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+1 / -1</code></li>
 </ul>
-<h3 id="commit-messages-3"><a class="header" href="#commit-messages-3">Commit Messages</a></h3>
+<h3 id="commit-messages-4"><a class="header" href="#commit-messages-4">Commit Messages</a></h3>
 <ul>
 <li><code>2eef0b4e</code> 随笔校对目录：2026-10-13</li>
 </ul>
-<h3 id="index-3"><a class="header" href="#index-3">Index</a></h3>
+<h3 id="index-4"><a class="header" href="#index-4">Index</a></h3>
 <ol>
 <li><a href="#f-987945327-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -1</code></li>
 </ol>
-<h3 id="diffs-3"><a class="header" href="#diffs-3">Diffs</a></h3>
+<h3 id="diffs-4"><a class="header" href="#diffs-4">Diffs</a></h3>
 <p><a id="f-987945327-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-2"><a class="header" href="#srcsummarymd-2">src/SUMMARY.md</a></h4>
 <details>
@@ -9608,7 +9765,7 @@ index 5a0e5d194..2ab1f7b7a 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-13-122407-cmt-utc8--9c942e6f2"><a class="header" href="#更新记录2026-10-13-122407-cmt-utc8--9c942e6f2">更新记录（2026-10-13 12:24:07 CMT (UTC+8) | 9c942e6f2）</a></h2>
-<h3 id="summary-4"><a class="header" href="#summary-4">Summary</a></h3>
+<h3 id="summary-5"><a class="header" href="#summary-5">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 12:24:07 CMT (UTC+8)</code></li>
 <li>Base commit: <code>9c942e6f2</code></li>
@@ -9616,15 +9773,15 @@ index 5a0e5d194..2ab1f7b7a 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+69 / -0</code></li>
 </ul>
-<h3 id="commit-messages-4"><a class="header" href="#commit-messages-4">Commit Messages</a></h3>
+<h3 id="commit-messages-5"><a class="header" href="#commit-messages-5">Commit Messages</a></h3>
 <ul>
 <li><code>9c942e6f</code> 每日实用类随记校对：2026.10.13</li>
 </ul>
-<h3 id="index-4"><a class="header" href="#index-4">Index</a></h3>
+<h3 id="index-5"><a class="header" href="#index-5">Index</a></h3>
 <ol>
 <li><a href="#f-1416328560-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-别拿状态最好的一天-给以后的每一天定任务-md-1689770614">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】别拿状态最好的一天，给以后的每一天定任务.md</a> <code>+69 / -0</code></li>
 </ol>
-<h3 id="diffs-4"><a class="header" href="#diffs-4">Diffs</a></h3>
+<h3 id="diffs-5"><a class="header" href="#diffs-5">Diffs</a></h3>
 <p><a id="f-1416328560-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-别拿状态最好的一天-给以后的每一天定任务-md-1689770614"></a></p>
 <h4 id="src生活碎笔随笔随记实用类随记aigc人工校对别拿状态最好的一天给以后的每一天定任务md"><a class="header" href="#src生活碎笔随笔随记实用类随记aigc人工校对别拿状态最好的一天给以后的每一天定任务md">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】别拿状态最好的一天，给以后的每一天定任务.md</a></h4>
 <details>
@@ -9710,7 +9867,7 @@ index 000000000..eb07acabc
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-13-063118-cmt-utc8--95b3d389b"><a class="header" href="#更新记录2026-10-13-063118-cmt-utc8--95b3d389b">更新记录（2026-10-13 06:31:18 CMT (UTC+8) | 95b3d389b）</a></h2>
-<h3 id="summary-5"><a class="header" href="#summary-5">Summary</a></h3>
+<h3 id="summary-6"><a class="header" href="#summary-6">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-13 06:31:18 CMT (UTC+8)</code></li>
 <li>Base commit: <code>95b3d389b</code></li>
@@ -9718,16 +9875,16 @@ index 000000000..eb07acabc
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+68 / -0</code></li>
 </ul>
-<h3 id="commit-messages-5"><a class="header" href="#commit-messages-5">Commit Messages</a></h3>
+<h3 id="commit-messages-6"><a class="header" href="#commit-messages-6">Commit Messages</a></h3>
 <ul>
 <li><code>95b3d389</code> 随笔初稿：别拿状态最好的一天，给以后的每一天定任务</li>
 </ul>
-<h3 id="index-5"><a class="header" href="#index-5">Index</a></h3>
+<h3 id="index-6"><a class="header" href="#index-6">Index</a></h3>
 <ol>
 <li><a href="#f-406773431-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-406773431-src-生活碎笔-随笔随记-实用类随记-aigc待校对-别拿状态最好的一天-给以后的每一天定任务-md-714042844">src/生活碎笔/随笔随记/实用类随记/【AIGC待校对】别拿状态最好的一天，给以后的每一天定任务.md</a> <code>+67 / -0</code></li>
 </ol>
-<h3 id="diffs-5"><a class="header" href="#diffs-5">Diffs</a></h3>
+<h3 id="diffs-6"><a class="header" href="#diffs-6">Diffs</a></h3>
 <p><a id="f-406773431-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-3"><a class="header" href="#srcsummarymd-3">src/SUMMARY.md</a></h4>
 <details>
@@ -9830,7 +9987,7 @@ index 000000000..d9f301fee
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-12-125050-cmt-utc8--f82ce2aa4"><a class="header" href="#更新记录2026-10-12-125050-cmt-utc8--f82ce2aa4">更新记录（2026-10-12 12:50:50 CMT (UTC+8) | f82ce2aa4）</a></h2>
-<h3 id="summary-6"><a class="header" href="#summary-6">Summary</a></h3>
+<h3 id="summary-7"><a class="header" href="#summary-7">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-12 12:50:50 CMT (UTC+8)</code></li>
 <li>Base commit: <code>f82ce2aa4</code></li>
@@ -9838,15 +9995,15 @@ index 000000000..d9f301fee
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+1 / -1</code></li>
 </ul>
-<h3 id="commit-messages-6"><a class="header" href="#commit-messages-6">Commit Messages</a></h3>
+<h3 id="commit-messages-7"><a class="header" href="#commit-messages-7">Commit Messages</a></h3>
 <ul>
 <li><code>f82ce2aa</code> 随笔校对目录：2026-10-12</li>
 </ul>
-<h3 id="index-6"><a class="header" href="#index-6">Index</a></h3>
+<h3 id="index-7"><a class="header" href="#index-7">Index</a></h3>
 <ol>
 <li><a href="#f-3055637888-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -1</code></li>
 </ol>
-<h3 id="diffs-6"><a class="header" href="#diffs-6">Diffs</a></h3>
+<h3 id="diffs-7"><a class="header" href="#diffs-7">Diffs</a></h3>
 <p><a id="f-3055637888-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-4"><a class="header" href="#srcsummarymd-4">src/SUMMARY.md</a></h4>
 <details>
@@ -9870,7 +10027,7 @@ index 3c609d5b4..be0fa03a5 100644
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-12-124630-cmt-utc8--78fea4fb0"><a class="header" href="#更新记录2026-10-12-124630-cmt-utc8--78fea4fb0">更新记录（2026-10-12 12:46:30 CMT (UTC+8) | 78fea4fb0）</a></h2>
-<h3 id="summary-7"><a class="header" href="#summary-7">Summary</a></h3>
+<h3 id="summary-8"><a class="header" href="#summary-8">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-12 12:46:30 CMT (UTC+8)</code></li>
 <li>Base commit: <code>78fea4fb0</code></li>
@@ -9878,15 +10035,15 @@ index 3c609d5b4..be0fa03a5 100644
 <li>Changed files: <code>1</code></li>
 <li>Total lines: <code>+63 / -0</code></li>
 </ul>
-<h3 id="commit-messages-7"><a class="header" href="#commit-messages-7">Commit Messages</a></h3>
+<h3 id="commit-messages-8"><a class="header" href="#commit-messages-8">Commit Messages</a></h3>
 <ul>
 <li><code>78fea4fb</code> 每日实用类随记校对：2026.10.12</li>
 </ul>
-<h3 id="index-7"><a class="header" href="#index-7">Index</a></h3>
+<h3 id="index-8"><a class="header" href="#index-8">Index</a></h3>
 <ol>
 <li><a href="#f-3581593091-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-接受一次帮助-不必立刻还成等价交换-md-3540879356">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】接受一次帮助，不必立刻还成等价交换.md</a> <code>+63 / -0</code></li>
 </ol>
-<h3 id="diffs-7"><a class="header" href="#diffs-7">Diffs</a></h3>
+<h3 id="diffs-8"><a class="header" href="#diffs-8">Diffs</a></h3>
 <p><a id="f-3581593091-src-生活碎笔-随笔随记-实用类随记-aigc人工校对-接受一次帮助-不必立刻还成等价交换-md-3540879356"></a></p>
 <h4 id="src生活碎笔随笔随记实用类随记aigc人工校对接受一次帮助不必立刻还成等价交换md"><a class="header" href="#src生活碎笔随笔随记实用类随记aigc人工校对接受一次帮助不必立刻还成等价交换md">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】接受一次帮助，不必立刻还成等价交换.md</a></h4>
 <details>
@@ -9966,7 +10123,7 @@ index 000000000..bb1e8d413
 <!-- LAST_UPDATED_ENTRY_END -->
 <!-- LAST_UPDATED_ENTRY_START -->
 <h2 id="更新记录2026-10-12-063215-cmt-utc8--8186e6b40"><a class="header" href="#更新记录2026-10-12-063215-cmt-utc8--8186e6b40">更新记录（2026-10-12 06:32:15 CMT (UTC+8) | 8186e6b40）</a></h2>
-<h3 id="summary-8"><a class="header" href="#summary-8">Summary</a></h3>
+<h3 id="summary-9"><a class="header" href="#summary-9">Summary</a></h3>
 <ul>
 <li>Generated at: <code>2026-10-12 06:32:15 CMT (UTC+8)</code></li>
 <li>Base commit: <code>8186e6b40</code></li>
@@ -9974,16 +10131,16 @@ index 000000000..bb1e8d413
 <li>Changed files: <code>2</code></li>
 <li>Total lines: <code>+62 / -0</code></li>
 </ul>
-<h3 id="commit-messages-8"><a class="header" href="#commit-messages-8">Commit Messages</a></h3>
+<h3 id="commit-messages-9"><a class="header" href="#commit-messages-9">Commit Messages</a></h3>
 <ul>
 <li><code>8186e6b4</code> 随笔初稿：接受一次帮助，不必立刻还成等价交换</li>
 </ul>
-<h3 id="index-8"><a class="header" href="#index-8">Index</a></h3>
+<h3 id="index-9"><a class="header" href="#index-9">Index</a></h3>
 <ol>
 <li><a href="#f-3365849202-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
 <li><a href="#f-3365849202-src-生活碎笔-随笔随记-实用类随记-aigc待校对-接受一次帮助-不必立刻还成等价交换-md-1940635491">src/生活碎笔/随笔随记/实用类随记/【AIGC待校对】接受一次帮助，不必立刻还成等价交换.md</a> <code>+61 / -0</code></li>
 </ol>
-<h3 id="diffs-8"><a class="header" href="#diffs-8">Diffs</a></h3>
+<h3 id="diffs-9"><a class="header" href="#diffs-9">Diffs</a></h3>
 <p><a id="f-3365849202-src-summary-md-3501257646"></a></p>
 <h4 id="srcsummarymd-5"><a class="header" href="#srcsummarymd-5">src/SUMMARY.md</a></h4>
 <details>
@@ -10078,86 +10235,6 @@ index 000000000..55ec5192d
 </code></pre>
 </details>
 <!-- LAST_UPDATED_ENTRY_END -->
-<!-- LAST_UPDATED_ENTRY_START -->
-<h2 id="更新记录2026-10-12-060114-cmt-utc8--5e991f3eb"><a class="header" href="#更新记录2026-10-12-060114-cmt-utc8--5e991f3eb">更新记录（2026-10-12 06:01:14 CMT (UTC+8) | 5e991f3eb）</a></h2>
-<h3 id="summary-9"><a class="header" href="#summary-9">Summary</a></h3>
-<ul>
-<li>Generated at: <code>2026-10-12 06:01:14 CMT (UTC+8)</code></li>
-<li>Base commit: <code>5e991f3eb</code></li>
-<li>Diff source: <code>2ad238315613b9c60c4263db9c28446e290e16e7..5e991f3ebcbf83d0d8db7e05832eeb1d29e6d12a</code></li>
-<li>Changed files: <code>2</code></li>
-<li>Total lines: <code>+28 / -0</code></li>
-</ul>
-<h3 id="commit-messages-9"><a class="header" href="#commit-messages-9">Commit Messages</a></h3>
-<ul>
-<li><code>5e991f3e</code> 每日一文：叙述爱的无穷种方式 - 维维阿娜</li>
-</ul>
-<h3 id="index-9"><a class="header" href="#index-9">Index</a></h3>
-<ol>
-<li><a href="#f-1601757752-src-summary-md-3501257646">src/SUMMARY.md</a> <code>+1 / -0</code></li>
-<li><a href="#f-1601757752-src-阅读-每日一文-叙述爱的无穷种方式-维维阿娜-md-1907933038">src/阅读/每日一文/叙述爱的无穷种方式-维维阿娜.md</a> <code>+27 / -0</code></li>
-</ol>
-<h3 id="diffs-9"><a class="header" href="#diffs-9">Diffs</a></h3>
-<p><a id="f-1601757752-src-summary-md-3501257646"></a></p>
-<h4 id="srcsummarymd-6"><a class="header" href="#srcsummarymd-6">src/SUMMARY.md</a></h4>
-<details>
-<summary><code>+1 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git a/src/SUMMARY.md b/src/SUMMARY.md
-index 1154d855b..4d4aae42e 100644
---- a/src/SUMMARY.md
-+++ b/src/SUMMARY.md
-@@ -1452,6 +1452,7 @@
-     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
-     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
- - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
-+  - [叙述爱的无穷种方式 - 维维阿娜](阅读/每日一文/叙述爱的无穷种方式-维维阿娜.md)
-   - [分手唯一的真相 - 陆琪](阅读/每日一文/分手唯一的真相-陆琪.md)
-   - [可以吃的纸 - 梁文道](阅读/每日一文/可以吃的纸-梁文道.md)
-   - [比邻而居 - 王安忆](阅读/每日一文/比邻而居-王安忆.md)
-
-</code></pre>
-</details>
-<p><a id="f-1601757752-src-阅读-每日一文-叙述爱的无穷种方式-维维阿娜-md-1907933038"></a></p>
-<h4 id="src阅读每日一文叙述爱的无穷种方式-维维阿娜md"><a class="header" href="#src阅读每日一文叙述爱的无穷种方式-维维阿娜md">src/阅读/每日一文/叙述爱的无穷种方式-维维阿娜.md</a></h4>
-<details>
-<summary><code>+27 / -0</code> Click to expand diff</summary>
-<pre><code class="language-diff">diff --git "a/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\217\231\350\277\260\347\210\261\347\232\204\346\227\240\347\251\267\347\247\215\346\226\271\345\274\217-\347\273\264\347\273\264\351\230\277\345\250\234.md" "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\217\231\350\277\260\347\210\261\347\232\204\346\227\240\347\251\267\347\247\215\346\226\271\345\274\217-\347\273\264\347\273\264\351\230\277\345\250\234.md"
-new file mode 100644
-index 000000000..5405afc15
---- /dev/null
-+++ "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\217\231\350\277\260\347\210\261\347\232\204\346\227\240\347\251\267\347\247\215\346\226\271\345\274\217-\347\273\264\347\273\264\351\230\277\345\250\234.md"
-@@ -0,0 +1,27 @@
-+# 叙述爱的无穷种方式
-+
-+*维维阿娜*
-+
-+## 一
-+
-+　　我看见了前面的阴影，在她说出分手这两个字之后。今夜，大概没有人会相信，在这样的夜晚，11 点整，她曾陪我一起等末班车，在过去的三年里，风雨无阻。此刻我形单影只，所以，当最后一趟车不断地在按喇叭，我依旧没看它一眼。她在，我才回家；她不在，家只是一个虚词。
-+
-+　　其实对于她的变化，我并不是毫无察觉，就像黑暗的侵袭，也是在平淡中逐渐地将光明吞噬。以太晚为借口，把我的末班车变成替罪羊，还莫名其妙地给我一张空白的纸，或许真的是无话可说了。可我真想说出来，在某个不加班的夜里，看见一个非常绅士的老男人优雅地把她邀上一辆兰博基尼，她笑了。
-+
-+　　她的笑将我的爱情挫败，但我的尊严还在。所以，如果有一天，末班车不再，我依旧会奋斗到这么晚，不为兰博基尼，只为让她明白。
-+
-+## 二
-+
-+　　我看见了前面的阴影，在他表现得漠不关心之后。今夜，大概没有人会相信，在这样的夜晚，11 点整，我正准备去做人流手术，独自一个人。在过去的三年里，我一直认为，爱一个为事业奋斗的男人，是自己最理智、最无悔的选择，哪怕在每个寒冷而无聊的夜里，和他一起等最后的末班车，只为让他有尊严地活着。
-+
-+　　父亲说不要委屈自己，甚至要把他的兰博基尼送给他。我说都坚持三年了，相信他，我爱的男人一定会成功。可是我又怎么可以容忍，医院检查的证明明明亲手递给了他，他却连看都没看一眼，这难道就是所谓的地老天荒？我哭了。
-+
-+　　他的事业把我的爱情挫败，但我的家还在。所以，如果有一天，当他开着属于他的兰博基尼来看我，我也绝对不会后悔，不为金钱，只为爱的誓言。
-+
-+## 三
-+
-+　　我看见了前面的阴影，在我把车熄火之后。今夜，大概没有人会相信，在这样的夜晚，11 点整，一个公交车司机会走下车，去与一位陌生人攀谈。其实严格来说，我对他并不陌生，在过去的三年里，几乎在每个夜里的这个站，我都会看见他和他的爱人一起登上车，恩爱甜蜜的样子总会让我觉得自己满载着幸福，可是，幸福突然中断。
-+
-+　　公司规定要竭诚为乘客服务，其实即便没有这样的规定，我也会很真诚地做每一件力所能及的事，就像现在，我知道必须把手里的医院证明给他，告诉他，是他把它不小心留在车上的，并祝福他即将成为一个父亲。我想，他一定会兴奋地跳起来，或许，我与他，甚至她会成为永远的朋友。
-+
-+　　他的疯狂把我的友好挫败，但我的思考还在。所以，如果有一天，他们还能一起搭上我的公交车，我一定会邀请他们与我一起，在公交车的窗下刷下爱的忠告：如果看见前面有阴影，那是因为背后有阳光。
-
-</code></pre>
-</details>
-<!-- LAST_UPDATED_ENTRY_END -->
 
                         <script src="https://giscus.app/client.js"
                             data-repo="TinySnow/TinySnow.github.io"
@@ -10236,7 +10313,7 @@ index 000000000..5405afc15
 
         <!-- Custom JS scripts -->
         <script src="assets/custom-d0d8e44b.js"></script>
-        <script src="theme/customized/search-c3a94c36.js"></script>
+        <script src="theme/customized/search-4af4957d.js"></script>
 
 
     </div>

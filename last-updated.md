@@ -5,6 +5,168 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-10-13 18:55:01 CMT (UTC+8) | d70db98cd）
+
+### Summary
+
+- Generated at: `2026-10-13 18:55:01 CMT (UTC+8)`
+- Base commit: `d70db98cd`
+- Diff source: `ad11627f86dab249725903d99e09598977d54c79..d70db98cdd6e88ecb9ba5cecf3c21fd8375447c5`
+- Changed files: `1`
+- Total lines: `+57 / -8`
+
+### Commit Messages
+
+- `d70db98c` 搜索：修复「加载更多」点不动——autocomplete 会先关面板再回调 onSelect
+
+  > 从 @algolia/autocomplete-js@1.19.12 的真实包读出点击路径：
+  >   (itemUrl ? resolve() : setState({ nextState: { isOpen: false } })).then(() => source.onSelect({...}))
+  > 也就是点 item 时它先把面板关掉、再调用 onSelect，所以 refresh() 出来的下一页
+  > 渲染在已关闭的面板里 —— 现象就是「点加载更多没反应」。我的 Node 测试只覆盖了
+  > 数据层（手动调 getItems），没覆盖这条交互路径，所以漏了。
+  >
+  > 修复（两条路径都覆盖）：
+  > - 鼠标：在「加载更多」行内挂 onClick/onMouseDown，preventDefault + stopPropagation，
+  >   li 上的 autocomplete 处理不会触发 → 面板保持打开，refresh() 直接渲染新一页
+  > - 键盘（↑↓ + 回车）：走 onSelect 分支，先 setIsOpen(true) 重新打开面板再 refresh()
+  > - 250ms 去重：防止鼠标与 onSelect 同时到达导致一次跳两页
+  > - store.refresh 从 getItems 的参数捕获（真实包里 getItems 确实收到 refresh）
+  >
+  > 验证（用真实 htm/preact 渲染出节点后模拟交互）：
+  > - 鼠标点击：stopPropagation 生效、refresh 1 次、刷新后 40 条、请求 page=1
+  > - 键盘：setIsOpen(true)、refresh 1 次
+  > - 同步连点两次 / 点击+onSelect 双触发：都只翻一页
+  > - 命中不足 20 条时不显示「加载更多」
+
+
+### Index
+
+1. [theme/customized/search.js](#f-3344729701-theme-customized-search-js-2827483100) `+57 / -8`
+
+### Diffs
+
+<a id="f-3344729701-theme-customized-search-js-2827483100"></a>
+#### theme/customized/search.js
+
+<details>
+<summary><code>+57 / -8</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/theme/customized/search.js b/theme/customized/search.js
+index c078aa98e..ac5780e0c 100644
+--- a/theme/customized/search.js
++++ b/theme/customized/search.js
+@@ -146,11 +146,15 @@
+ 
+     /* ===================== 分页状态 ===================== */
+     /* sent：实际发给 Algolia 的查询（可能是清洗过的）
+-     * mode：'words' = 只搜按词属性；'all' = 搜全部属性 */
+-    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
++     * mode：'words' = 只搜按词属性；'all' = 搜全部属性
++     * refresh：autocomplete 的刷新函数，从 getItems 的参数里捕获，供「加载更多」调用 */
++    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0, refresh: null, lastMoreAt: 0 };
+ 
+     function resetStore(query) {
+-        store = { query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
++        store = {
++            query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0,
++            refresh: store.refresh, lastMoreAt: 0
++        };
+     }
+ 
+     function mergeHits(list) {
+@@ -179,13 +183,53 @@
+     }
+ 
+     function renderLoadMore(item, html) {
+-        return html`<div class="aa-ItemContent md-search-more">
++        /* 这个「加载更多」行自己处理点击：
++         * autocomplete 的 item 点击路径会先执行 nextState:{isOpen:false}（关掉面板）
++         * 再调用 onSelect，如果不管它，新的一页就会渲染在已关闭的面板里。
++         * 这里在行内接管 click 并阻止冒泡——li 上的 onClick 不会触发，
++         * 面板保持打开，refresh() 出来的新一页就能正常显示。
++         * 键盘（上下键 + 回车）走不到 DOM click，由 onSelect 里的分支兜底。 */
++        return html`<div class="aa-ItemContent md-search-more"
++            onMouseDown=${stopEvent}
++            onClick=${onLoadMoreClick}>
+             <div class="aa-ItemContentBody">
+                 <div class="aa-ItemContentTitle">加载更多（已显示 ${String(item.shown)} / 共 ${String(item.total)} 条）</div>
+             </div>
+         </div>`;
+     }
+ 
++    /* 阻止事件继续冒泡/默认行为（避免面板失焦、避免触发 autocomplete 的 item 点击处理） */
++    function stopEvent(event) {
++        if (!event) {
++            return;
++        }
++        if (typeof event.preventDefault === 'function') {
++            event.preventDefault();
++        }
++        if (typeof event.stopPropagation === 'function') {
++            event.stopPropagation();
++        }
++    }
++
++    function onLoadMoreClick(event) {
++        stopEvent(event);
++        loadMore();
++    }
++
++    /* 翻到下一页。
++     * 250ms 内的重复触发会被忽略：鼠标点击与 onSelect 有可能同时到达。 */
++    function loadMore() {
++        var now = Date.now();
++        if (store.lastMoreAt && now - store.lastMoreAt < 250) {
++            return;
++        }
++        store.lastMoreAt = now;
++        store.page = store.page + 1;
++        if (typeof store.refresh === 'function') {
++            store.refresh();
++        }
++    }
++
+     function renderNotice(text, html) {
+         return html`<div class="aa-ItemContent md-search-notice">
+             <div class="aa-ItemContentBody">
+@@ -229,7 +273,10 @@
+         }
+         return [{
+             sourceId: 'tinysnowio',
+-            getItems: function () {
++            getItems: function (params) {
++                if (params && typeof params.refresh === 'function') {
++                    store.refresh = params.refresh;
++                }
+                 if (store.query !== query) {
+                     resetStore(query);
+                 }
+@@ -310,10 +357,12 @@
+                     p.event.preventDefault();
+                 }
+                 if (item.__loadMore) {
+-                    store.page = store.page + 1;
+-                    if (typeof p.refresh === 'function') {
+-                        p.refresh();
++                    /* 键盘选中时走这里：autocomplete 已经先把面板关掉了，要重新打开，
++                     * 否则刷新出来的下一页看不见（鼠标点击由行内 handler 接管）。 */
++                    if (typeof p.setIsOpen === 'function') {
++                        p.setIsOpen(true);
+                     }
++                    loadMore();
+                     return;
+                 }
+                 if (item.__notice) {
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-13 18:01:41 CMT (UTC+8) | ad11627f8）
 
 ### Summary
@@ -92,7 +254,6 @@ index 000000000..595c68378
 </details>
 
 <!-- LAST_UPDATED_ENTRY_END -->
-
 
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-13 17:49:46 CMT (UTC+8) | cd8a93c3d）
@@ -10347,99 +10508,6 @@ index 000000000..55ec5192d
 +南国微雪 Miyuki
 +
 +2026 年 10 月 12 日
-
-~~~~~
-
-</details>
-
-<!-- LAST_UPDATED_ENTRY_END -->
-
-<!-- LAST_UPDATED_ENTRY_START -->
-## 更新记录（2026-10-12 06:01:14 CMT (UTC+8) | 5e991f3eb）
-
-### Summary
-
-- Generated at: `2026-10-12 06:01:14 CMT (UTC+8)`
-- Base commit: `5e991f3eb`
-- Diff source: `2ad238315613b9c60c4263db9c28446e290e16e7..5e991f3ebcbf83d0d8db7e05832eeb1d29e6d12a`
-- Changed files: `2`
-- Total lines: `+28 / -0`
-
-### Commit Messages
-
-- `5e991f3e` 每日一文：叙述爱的无穷种方式 - 维维阿娜
-
-### Index
-
-1. [src/SUMMARY.md](#f-1601757752-src-summary-md-3501257646) `+1 / -0`
-2. [src/阅读/每日一文/叙述爱的无穷种方式-维维阿娜.md](#f-1601757752-src-阅读-每日一文-叙述爱的无穷种方式-维维阿娜-md-1907933038) `+27 / -0`
-
-### Diffs
-
-<a id="f-1601757752-src-summary-md-3501257646"></a>
-#### src/SUMMARY.md
-
-<details>
-<summary><code>+1 / -0</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/src/SUMMARY.md b/src/SUMMARY.md
-index 1154d855b..4d4aae42e 100644
---- a/src/SUMMARY.md
-+++ b/src/SUMMARY.md
-@@ -1452,6 +1452,7 @@
-     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
-     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
- - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
-+  - [叙述爱的无穷种方式 - 维维阿娜](阅读/每日一文/叙述爱的无穷种方式-维维阿娜.md)
-   - [分手唯一的真相 - 陆琪](阅读/每日一文/分手唯一的真相-陆琪.md)
-   - [可以吃的纸 - 梁文道](阅读/每日一文/可以吃的纸-梁文道.md)
-   - [比邻而居 - 王安忆](阅读/每日一文/比邻而居-王安忆.md)
-
-~~~~~
-
-</details>
-
-<a id="f-1601757752-src-阅读-每日一文-叙述爱的无穷种方式-维维阿娜-md-1907933038"></a>
-#### src/阅读/每日一文/叙述爱的无穷种方式-维维阿娜.md
-
-<details>
-<summary><code>+27 / -0</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git "a/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\217\231\350\277\260\347\210\261\347\232\204\346\227\240\347\251\267\347\247\215\346\226\271\345\274\217-\347\273\264\347\273\264\351\230\277\345\250\234.md" "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\217\231\350\277\260\347\210\261\347\232\204\346\227\240\347\251\267\347\247\215\346\226\271\345\274\217-\347\273\264\347\273\264\351\230\277\345\250\234.md"
-new file mode 100644
-index 000000000..5405afc15
---- /dev/null
-+++ "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\217\231\350\277\260\347\210\261\347\232\204\346\227\240\347\251\267\347\247\215\346\226\271\345\274\217-\347\273\264\347\273\264\351\230\277\345\250\234.md"
-@@ -0,0 +1,27 @@
-+# 叙述爱的无穷种方式
-+
-+*维维阿娜*
-+
-+## 一
-+
-+　　我看见了前面的阴影，在她说出分手这两个字之后。今夜，大概没有人会相信，在这样的夜晚，11 点整，她曾陪我一起等末班车，在过去的三年里，风雨无阻。此刻我形单影只，所以，当最后一趟车不断地在按喇叭，我依旧没看它一眼。她在，我才回家；她不在，家只是一个虚词。
-+
-+　　其实对于她的变化，我并不是毫无察觉，就像黑暗的侵袭，也是在平淡中逐渐地将光明吞噬。以太晚为借口，把我的末班车变成替罪羊，还莫名其妙地给我一张空白的纸，或许真的是无话可说了。可我真想说出来，在某个不加班的夜里，看见一个非常绅士的老男人优雅地把她邀上一辆兰博基尼，她笑了。
-+
-+　　她的笑将我的爱情挫败，但我的尊严还在。所以，如果有一天，末班车不再，我依旧会奋斗到这么晚，不为兰博基尼，只为让她明白。
-+
-+## 二
-+
-+　　我看见了前面的阴影，在他表现得漠不关心之后。今夜，大概没有人会相信，在这样的夜晚，11 点整，我正准备去做人流手术，独自一个人。在过去的三年里，我一直认为，爱一个为事业奋斗的男人，是自己最理智、最无悔的选择，哪怕在每个寒冷而无聊的夜里，和他一起等最后的末班车，只为让他有尊严地活着。
-+
-+　　父亲说不要委屈自己，甚至要把他的兰博基尼送给他。我说都坚持三年了，相信他，我爱的男人一定会成功。可是我又怎么可以容忍，医院检查的证明明明亲手递给了他，他却连看都没看一眼，这难道就是所谓的地老天荒？我哭了。
-+
-+　　他的事业把我的爱情挫败，但我的家还在。所以，如果有一天，当他开着属于他的兰博基尼来看我，我也绝对不会后悔，不为金钱，只为爱的誓言。
-+
-+## 三
-+
-+　　我看见了前面的阴影，在我把车熄火之后。今夜，大概没有人会相信，在这样的夜晚，11 点整，一个公交车司机会走下车，去与一位陌生人攀谈。其实严格来说，我对他并不陌生，在过去的三年里，几乎在每个夜里的这个站，我都会看见他和他的爱人一起登上车，恩爱甜蜜的样子总会让我觉得自己满载着幸福，可是，幸福突然中断。
-+
-+　　公司规定要竭诚为乘客服务，其实即便没有这样的规定，我也会很真诚地做每一件力所能及的事，就像现在，我知道必须把手里的医院证明给他，告诉他，是他把它不小心留在车上的，并祝福他即将成为一个父亲。我想，他一定会兴奋地跳起来，或许，我与他，甚至她会成为永远的朋友。
-+
-+　　他的疯狂把我的友好挫败，但我的思考还在。所以，如果有一天，他们还能一起搭上我的公交车，我一定会邀请他们与我一起，在公交车的窗下刷下爱的忠告：如果看见前面有阴影，那是因为背后有阳光。
 
 ~~~~~
 
