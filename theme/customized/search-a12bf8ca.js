@@ -21,7 +21,10 @@
 
     var CONFIG = {
         appId: 'GX9RTL51BH',
-        apiKey: 'c4caea4202132489213a6c5366c9952d',
+        /* Algolia 内置的 Search API Key（Dashboard 里标着 "Safe in the browser"），
+         * 只能搜索、不能写（实测删索引返回 403），客户端公开它是官方标准做法。
+         * 原来的 c4caea… 是当初配置 DocSearch 时生成的自定义 key，已弃用。 */
+        apiKey: 'ee1efca03f00f872ec56adaf5218131b',
         indexName: 'tinysnowio',
         container: '#docsearch',
 
