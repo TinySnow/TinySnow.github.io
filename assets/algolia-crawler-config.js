@@ -11,15 +11,25 @@ new Crawler({
   rateLimit: 8,
   maxDepth: 10,
   maxUrls: 5000,
-  startUrls: ['https://tinysnow.github.io'],
+  startUrls: [
+    'https://tinysnow.github.io',
+    // ⚠️ toc.html 必须留在 startUrls 里：站点静态 HTML 里首页只有
+    // print.html / last-updated.html 两个站内链接、没有任何 prev/next，
+    // 而 toc.html 里有 2359 条站内链接，是全站唯一的「发现入口」。
+    // 少了它，实测覆盖率会从 2360 个页面掉到 297 个（只剩「生活碎笔」那条章节链）。
+    // 它自己不会进索引：见下面的 pathsToMatch 排除 + recordExtractor 里的 SKIP_PATHS。
+    'https://tinysnow.github.io/toc.html',
+  ],
   renderJavaScript: false,
+  // 故意不用站点的 sitemap：它的 2360 条 URL 全部不带 .html（如 /个人简介），
+  // 而 GitHub Pages 对 /个人简介 和 /个人简介.html 都直接返回 200（不是 301 跳转），
+  // 用它会变成每个页面被索引两份。全站覆盖靠 toc.html 这个入口 + 站内链接。
   sitemaps: [],
   ignoreCanonicalTo: false,
-  // 排除非文章页：print.html 是整本书合订本（19MB），toc.html / 404.html 也不是内容。
-  // 用它能拦掉下载，比只在 recordExtractor 里 return [] 更省流量。
+  // 排除不需要下载的页面：print.html 是整本书合订本（19MB），404.html 没有内容。
+  // ⚠️ 千万不要把 toc.html 放进来——它是发现入口，排除它等于掐掉全站链接。
   exclusionPatterns: [
     'https://tinysnow.github.io/print.html',
-    'https://tinysnow.github.io/toc.html',
     'https://tinysnow.github.io/404.html',
   ],
   discoveryPatterns: ['https://tinysnow.github.io/**'],
@@ -27,7 +37,13 @@ new Crawler({
   actions: [
     {
       indexName: 'tinysnowio',
-      pathsToMatch: ['https://tinysnow.github.io/**'],
+      // 抓但不建索引的三个页面：toc.html 只用来发现链接，print/404 不是内容
+      pathsToMatch: [
+        'https://tinysnow.github.io/**',
+        '!https://tinysnow.github.io/toc.html',
+        '!https://tinysnow.github.io/print.html',
+        '!https://tinysnow.github.io/404.html',
+      ],
       recordExtractor: ({ url, $, contentLength, helpers }) => {
         /* ============================ 开关 ============================ */
         const SKIP_PATHS = ['/print.html', '/toc.html', '/404.html'];

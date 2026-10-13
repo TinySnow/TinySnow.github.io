@@ -36,10 +36,12 @@
    `重装系统 8->7` → `重装 系统 8 7`。
    **原来的 `hierarchy` / `content` 继续保留可搜索**，所以在「引擎自己按词切分」和「引擎仍然按字切分」两种情况下都不会把搜索改坏，只是多占一点索引存储。
 3. **抽取范围收窄到 `<main>`**：删除选择器修正为 `main ...` / `#mdbook-content ...`，正文选择器改为 `p, li, td, th, code, dd, dt`（去掉会重复的内联元素，补上表格），标题改为 `main h1..h6`，并跳过图片 `alt` 里无信息量的文件名。
-4. **跳过** `print.html` / `toc.html` / `404.html`，以及超过 4MB 的页面。前三个用官方的 `exclusionPatterns` 排除（能拦掉下载，19MB 的合订本不会被抓），页面体积则由 `recordExtractor` 里的 `contentLength` 判断兜底。
-5. **`attributeForDistinct` 从 `url` 改成 `url_without_anchor`**（按页面而不是按锚点去重）：同一篇文章只出一条命中，避免单页刷屏。实测「数据结构」这类词，前 20 条命中原本只落在 3~11 个页面上，改成页面级去重后最多能覆盖 20 个页面。这项**只能写进索引设置**（不能作为查询参数传，传了会 400），所以第 2 步的 JSON 里必须一起改。
-6. 其余设置（ranking、customRanking、weights、`removeWordsIfNoResults: allOptional`、`advancedSyntax`、`aggregateContent: true`）保持你原来的值。
-7. **单页记录数保护网**：爬虫单页超过 750 条记录会直接报 `Extractors returned too many records`；超过 700 条时把同一锚点的正文块合并（先在副本上合并，不改动原记录；合并后重新计算按词副本）。按当前的段落级聚合抽取方式几乎不会触发，属于保险。
+4. **保留 `toc.html` 作为全站发现入口**：站点静态 HTML 的首页只有 `print.html` / `last-updated.html` 两个站内链接、**没有任何 prev/next**，而 `toc.html` 里有 **2359 条站内链接**——它是全站唯一的「链接中枢」。所以 `toc.html` 列进 `startUrls` 保证一定被抓到（不依赖 iframe 能否被识别），再用 `pathsToMatch` 的 `!` 把它排除出索引：只发现链接、不产生记录。**实测教训：把它和另外两页一起丢进 `exclusionPatterns`，覆盖率会从 2360 个页面掉到 297 个**（只剩「生活碎笔」那条章节链，因为只有它的页面能从 `last-updated.html` 顺着 prev/next 走到）。
+5. **不抓** `print.html`（19MB 合订本）/ `404.html`，用 `exclusionPatterns` 拦掉下载；页面体积再由 `recordExtractor` 里的 `contentLength` 兜底。
+6. **故意不加站点的 sitemap**：`sitemap.xml` / `sitemap.txt` 的 2360 条 URL **全部不带 `.html`**（如 `/个人简介`），而 GitHub Pages 对 `/个人简介` 和 `/个人简介.html` **都直接返回 200、不是 301 跳转**（实测），加进去只会让每个页面被索引两份，配合按页面去重就是成对的重复结果。全站覆盖本来就能靠 `toc.html` + 站内链接拿满（改造前的旧索引就是这个覆盖率）。
+7. **`attributeForDistinct` 从 `url` 改成 `url_without_anchor`**（按页面而不是按锚点去重）：同一篇文章只出一条命中，避免单页刷屏。实测「数据结构」这类词，前 20 条命中原本只落在 3~11 个页面上，改成页面级去重后最多能覆盖 20 个页面。这项**只能写进索引设置**（不能作为查询参数传，传了会 400）。
+8. 其余设置（ranking、customRanking、weights、`removeWordsIfNoResults: allOptional`、`advancedSyntax`、`aggregateContent: true`）保持你原来的值。
+9. **单页记录数保护网**：爬虫单页超过 750 条记录会直接报 `Extractors returned too many records`；超过 700 条时把同一锚点的正文块合并（先在副本上合并，不改动原记录；合并后重新计算按词副本）。按当前的段落级聚合抽取方式几乎不会触发，属于保险。
 
 ## 三、怎么用（第 2 步千万别省）
 
@@ -107,7 +109,9 @@
 
 ## 四、怎么验证分词真的生效了
 
-爬完之后，用同一个 search-only key 分别查这两个词，看 `_rankingInfo.words`（数字 = 查询被切成了几个 token）：
+**先确认覆盖率没掉**：查一次空查询（`{"query":"","hitsPerPage":0}`，索引现在是按页面去重的），`nbHits` 应该接近 **2360**。如果只有几百，说明全站发现入口又出问题了——先看 `startUrls` 里有没有 `toc.html`、`exclusionPatterns` 里是不是又把它排除了。
+
+然后再看分词。用同一个 search-only key 分别查这两个词，看 `_rankingInfo.words`（数字 = 查询被切成了几个 token）：
 
 | 查询 | 分词生效（按词） | 分词没生效（按字，即现状） |
 | --- | --- | --- |
@@ -182,7 +186,8 @@ mdbook build          # 或 mdbook serve
 | `distinct: false`，且删掉 `attributeForDistinct` | 在线上索引模拟该设置：`数据结构` 前 20 条命中 **20/20 全来自同一篇文章**，`读书` 10/20，`Docker` 7/20 | 不采纳，改为页面级去重（`url_without_anchor`） |
 | `aggregateContent: false` + 自写打包逻辑 | 统计 2,360 个页面 `<main>` 下的 `p/li/td/th/pre/dt/dd` 共 13.6 万个，加 1.6 万条标题 ≈ 15 万条记录（现状索引 4.2 万条）；它那段 700 条阈值的打包代码只有 **5 个**页面会触发 | 不采纳，保留官方默认的 `aggregateContent: true`（文档明确推荐用它来减少记录数） |
 | `removeWordsIfNoResults: "none"` | 长中文查询更容易变成 0 结果 | 不采纳，保留 `allOptional` |
-| 只在校验层跳过 `print.html`；反而把 `toc.html` 加进 `startUrls` | 19MB 的合订本每次爬取仍会被下载；586KB 的目录页抓完又全部丢弃 | 不采纳，改为在 `discoveryPatterns` 和 `pathsToMatch` 里用 `!` 排除，连下载都省掉 |
+| 把 `toc.html` 加进 `startUrls` | **这一条我当时判断错了**：站点静态 HTML 的首页只有 `print.html` / `last-updated.html` 两个站内链接、没有任何 prev/next，而 `toc.html` 有 2359 条站内链接，是全站唯一的发现入口。实测不抓它，覆盖率从 2360 个页面掉到 297 个 | **已改正并采纳**：`toc.html` 进 `startUrls`，再用 `pathsToMatch` 的 `!` 把它排除出索引（只发现链接、不产生记录） |
+| `print.html` 只在校验层跳过 | 19MB 的合订本每次爬取仍会被下载 | 不采纳它的做法，改用 `exclusionPatterns` 拦掉下载 |
 | 删掉 `advancedSyntax` / `attributeCriteriaComputedByMinProximity` / `ignorePlurals` | 无说明的行为变更 | 不采纳，保持原值 |
 | 没有「按词」兜底属性 | 两份配置都还没验证 `indexLanguages` 是否真能让索引按词切分；只有本配置额外写了 `content_words` / `hierarchy_words` 这第二条路 | 保留兜底 |
 
