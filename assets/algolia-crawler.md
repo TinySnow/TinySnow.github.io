@@ -36,7 +36,7 @@
    `重装系统 8->7` → `重装 系统 8 7`。
    **原来的 `hierarchy` / `content` 继续保留可搜索**，所以在「引擎自己按词切分」和「引擎仍然按字切分」两种情况下都不会把搜索改坏，只是多占一点索引存储。
 3. **抽取范围收窄到 `<main>`**：删除选择器修正为 `main ...` / `#mdbook-content ...`，正文选择器改为 `p, li, td, th, code, dd, dt`（去掉会重复的内联元素，补上表格），标题改为 `main h1..h6`，并跳过图片 `alt` 里无信息量的文件名。
-4. **跳过** `print.html` / `toc.html` / `404.html`，以及超过 4MB 的页面。
+4. **跳过** `print.html` / `toc.html` / `404.html`，以及超过 4MB 的页面。前三个用官方的 `exclusionPatterns` 排除（能拦掉下载，19MB 的合订本不会被抓），页面体积则由 `recordExtractor` 里的 `contentLength` 判断兜底。
 5. **`attributeForDistinct` 从 `url` 改成 `url_without_anchor`**（按页面而不是按锚点去重）：同一篇文章只出一条命中，避免单页刷屏。实测「数据结构」这类词，前 20 条命中原本只落在 3~11 个页面上，改成页面级去重后最多能覆盖 20 个页面。这项**只能写进索引设置**（不能作为查询参数传，传了会 400），所以第 2 步的 JSON 里必须一起改。
 6. 其余设置（ranking、customRanking、weights、`removeWordsIfNoResults: allOptional`、`advancedSyntax`、`aggregateContent: true`）保持你原来的值。
 7. **单页记录数保护网**：爬虫单页超过 750 条记录会直接报 `Extractors returned too many records`；超过 700 条时把同一锚点的正文块合并（先在副本上合并，不改动原记录；合并后重新计算按词副本）。按当前的段落级聚合抽取方式几乎不会触发，属于保险。
@@ -45,7 +45,11 @@
 
 > ⚠️ **`initialIndexSettings` 只在索引「第一次」爬取时生效**（[官方文档](https://www.algolia.com/doc/tools/crawler/apis/configuration/initial-index-settings/)："only applied during the first crawl of an index"）。`tinysnowio` 已经存在，所以**光换 Editor 配置，线上设置一点都不会变**，`indexLanguages` 不会生效，预设的中文分词也就白写了。
 
-**第 1 步**：Algolia Crawler Dashboard → 你的 Crawler → **Editor** → 用 [`algolia-crawler-config.js`](./algolia-crawler-config.js) 整体替换 → 末尾的 `apiKey` 改回你原来的值（文件里是 `PlaceHolder`，避免把可写 key 提交进公开仓库）→ Save。
+> ⚠️ **编辑器要求 `new Crawler(` 出现在第 1 行**，前面不能有任何注释或代码，否则报 `invalid configuration`（[algolia/docsearch#2190](https://github.com/algolia/docsearch/issues/2190)）。所以 `algolia-crawler-config.js` 顶部没有说明性注释，全部开关和函数都写在 `recordExtractor` 内部——**整份文件就是一条 `new Crawler({...})` 表达式，请从第 1 行开始原样粘贴**，不要在前面加注释头。
+
+> 💡 编辑器有时会提示「add a sitemap」，**这里故意不采纳**：你线上的 `sitemap.xml` 有 2360 条 URL，但**全部是不带 `.html` 的**（如 `/个人简介`），而爬虫顺着页面链接发现的是 `.html` 版本。加进去会让每个页面以两种 URL 各索引一份，配合按页面去重就是成对的重复结果。站点的 2360 个页面本来就能通过链接全部覆盖（实测抽样 60 个页面的标题，索引里都有记录）。
+
+**第 1 步**：Algolia Crawler Dashboard → 你的 Crawler → **Editor** → 用 [`algolia-crawler-config.js`](./algolia-crawler-config.js) 整体替换（从第 1 行开始，不要在前面加东西）→ 末尾的 `apiKey` 改回你原来的值（文件里是 `PlaceHolder`，避免把可写 key 提交进公开仓库）→ Save。
 
 **第 2 步：应用索引设置**，两种选一种：
 
