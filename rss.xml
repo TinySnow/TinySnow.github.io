@@ -1,10 +1,603 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
     <title>微雪博客 RSS</title>
     <link>https://tinysnow.github.io</link>
     <description>包含本次 Git 提交中的所有文章更新</description>
     <language>zh-CN</language>
     <atom:link href="https://tinysnow.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[更新] 第七章：肾血管疾病</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%8C%E5%B0%BF%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%9A%E8%82%BE%E8%A1%80%E7%AE%A1%E7%96%BE%E7%97%85.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第七章：肾血管疾病.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第七章：肾血管疾病 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第七章：肾血管疾病&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第三章：继发性肾病</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%8C%E5%B0%BF%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E7%BB%A7%E5%8F%91%E6%80%A7%E8%82%BE%E7%97%85.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第三章：继发性肾病.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第三章：继发性肾病 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第三章：继发性肾病&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第五部分：泌尿系统疾病</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%8C%E5%B0%BF%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%8C%E5%B0%BF%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第五部分：泌尿系统疾病.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第五部分：泌尿系统疾病 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第五部分：泌尿系统疾病
+
+内科学的泌尿系统疾病。&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第八章：遗传性肾病</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%8C%E5%B0%BF%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%85%AB%E7%AB%A0%EF%BC%9A%E9%81%97%E4%BC%A0%E6%80%A7%E8%82%BE%E7%97%85.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第八章：遗传性肾病.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第八章：遗传性肾病 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第八章：遗传性肾病
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第六章：肾小管疾病</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%8C%E5%B0%BF%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%85%AD%E7%AB%A0%EF%BC%9A%E8%82%BE%E5%B0%8F%E7%AE%A1%E7%96%BE%E7%97%85.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第六章：肾小管疾病.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第六章：肾小管疾病 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第六章：肾小管疾病
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第十一章：肾脏替代治疗</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%8C%E5%B0%BF%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E8%82%BE%E8%84%8F%E6%9B%BF%E4%BB%A3%E6%B2%BB%E7%96%97.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第十一章：肾脏替代治疗.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第十一章：肾脏替代治疗 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第十一章：肾脏替代治疗&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第四章：间质性肾炎</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86%EF%BC%9A%E6%B3%8C%E5%B0%BF%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E9%97%B4%E8%B4%A8%E6%80%A7%E8%82%BE%E7%82%8E.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第五部分：泌尿系统疾病/第四章：间质性肾炎.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第四章：间质性肾炎 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第四章：间质性肾炎&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第一章：血液系统疾病总论</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E4%B8%80%E7%AB%A0%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85%E6%80%BB%E8%AE%BA.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第一章：血液系统疾病总论.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第一章：血液系统疾病总论 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第一章：血液系统疾病总论
+
+本章的视频课里没有总论。&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第七章：白细胞减少和粒细胞缺乏症</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E4%B8%83%E7%AB%A0%EF%BC%9A%E7%99%BD%E7%BB%86%E8%83%9E%E5%87%8F%E5%B0%91%E5%92%8C%E7%B2%92%E7%BB%86%E8%83%9E%E7%BC%BA%E4%B9%8F%E7%97%87.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第七章：白细胞减少和粒细胞缺乏症.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第七章：白细胞减少和粒细胞缺乏症 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第七章：白细胞减少和粒细胞缺乏症&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第二十章：造血干细胞移植</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0%EF%BC%9A%E9%80%A0%E8%A1%80%E5%B9%B2%E7%BB%86%E8%83%9E%E7%A7%BB%E6%A4%8D.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第二十章：造血干细胞移植.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第二十章：造血干细胞移植 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第二十章：造血干细胞移植&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第六部分：血液系统疾病</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第六部分：血液系统疾病.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第六部分：血液系统疾病 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第六部分：血液系统疾病
+
+内科学的血液系统疾病。
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第十七章：弥散性血管内凝血</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0%EF%BC%9A%E5%BC%A5%E6%95%A3%E6%80%A7%E8%A1%80%E7%AE%A1%E5%86%85%E5%87%9D%E8%A1%80.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第十七章：弥散性血管内凝血.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第十七章：弥散性血管内凝血 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第十七章：弥散性血管内凝血
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第十三章：脾功能亢进</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%84%BE%E5%8A%9F%E8%83%BD%E4%BA%A2%E8%BF%9B.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第十三章：脾功能亢进.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第十三章：脾功能亢进 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第十三章：脾功能亢进&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第十九章：输血和输血反应</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0%EF%BC%9A%E8%BE%93%E8%A1%80%E5%92%8C%E8%BE%93%E8%A1%80%E5%8F%8D%E5%BA%94.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第十九章：输血和输血反应.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第十九章：输血和输血反应 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第十九章：输血和输血反应
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第十二章：骨髓增殖性肿瘤</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%EF%BC%9A%E9%AA%A8%E9%AB%93%E5%A2%9E%E6%AE%96%E6%80%A7%E8%82%BF%E7%98%A4.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第十二章：骨髓增殖性肿瘤.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第十二章：骨髓增殖性肿瘤 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第十二章：骨髓增殖性肿瘤&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第十八章：血栓性疾病</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0%EF%BC%9A%E8%A1%80%E6%A0%93%E6%80%A7%E7%96%BE%E7%97%85.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第十八章：血栓性疾病.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第十八章：血栓性疾病 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第十八章：血栓性疾病
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第十六章：凝血障碍性疾病</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0%EF%BC%9A%E5%87%9D%E8%A1%80%E9%9A%9C%E7%A2%8D%E6%80%A7%E7%96%BE%E7%97%85.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第十六章：凝血障碍性疾病.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第十六章：凝血障碍性疾病 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第十六章：凝血障碍性疾病&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 第四章：巨幼细胞贫血</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E5%8C%BB%E5%AD%A6/%E5%86%85%E7%A7%91%E5%AD%A6/%E7%AC%AC%E5%85%AD%E9%83%A8%E5%88%86%EF%BC%9A%E8%A1%80%E6%B6%B2%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%B7%A8%E5%B9%BC%E7%BB%86%E8%83%9E%E8%B4%AB%E8%A1%80.html</link>
+      <guid isPermaLink="false">src/学习与进步/医学/内科学/第六部分：血液系统疾病/第四章：巨幼细胞贫血.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 第四章：巨幼细胞贫血 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 第四章：巨幼细胞贫血
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] MySQL 与 ElasticSearch 的数据同步尝试</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%A4%87%E5%BF%98%E5%BD%95/MySQL%E4%B8%8EElasticSearch%E7%9A%84%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5%E5%B0%9D%E8%AF%95.html</link>
+      <guid isPermaLink="false">src/学习与进步/计算机/备忘录/MySQL与ElasticSearch的数据同步尝试.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: MySQL 与 ElasticSearch 的数据同步尝试 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# MySQL 与 Elastic Search 的数据同步尝试
+
+## 起因
+
+1. 毕业设计想要集成一个搜索引擎
+2. MySQL 语句为正向搜索，效率低，不精准
+3. 考虑技术选型，决定使用 Elastic Search 倒排搜索
+4. 然后出现问题：Elastic Search 和 MySQL 之间的数据同步
+5. MySQL 为上游源（生产者），Elastic Search 为下游（消费者）
+6. 考虑两种方案：全量同步和增量同步
+7. 决定使用增量同步
+8. 增量同步目前流行方案为 Canal
+
+## 原理
+
+- Canal 伪装成 MySQL slave 从机，订阅 master MySQL 的 binlog，然后重放到 Elastic Search 数据库中
+
+## 前置准备
+
+- 参照 Canal [官方文档](https://github.com/alibaba/canal/wiki/QuickStart)
+
+1. 下载 canal-example, canal-adapter, canal-deployer, canal-admin 四个压缩包并到对应文件夹解压
+
+   - 建议专门建立一个编程环境的文件夹 environment
+
+2. 开启 MySQL binlog，此处使用 MySQL 8.0
+
+   - 找到 `my.ini`
+   - 添加内容
+
+     ```ini
+     
+       [mysqld]
+       log-bin=mysql-bin # 开启 binlog
+       binlog-format=ROW # 选择 ROW 模式
+       server_id=1 # 配置 MySQL replaction 需要定义，不要和 canal 的 slaveId 重复
+     
+     ```
+   
+   - 注意，如果下载的 MySQL 8.0 以上可以不用配置，因为默认开启
+   - 可以通过 `show variables like '%log%'` 查看
+   - 配置文件位置
+   
+     - Windows：一般为 `C:\ProgramData\MySQL\MySQL Server 5.6\my.ini`
+     - Ubuntu：一般为 `/etc/mysql/mysql.conf.d/mysqld.cnf`
+
+   - 后续会迁移到 Docker 上
+
+3. 配置数据库用户并授权
+
+   - 按官方文档创建一个 `canal` 的用户，密码也为 `canal`
+   
+     ```sql
+     
+       CREATE USER canal IDENTIFIED BY 'canal';  
+       GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'canal'@'%';
+       -- GRANT ALL PRIVILEGES ON *.* TO 'canal'@'%' ;
+       FLUSH PRIVILEGES;
+     
+     ```
+
+4. 配置 canal-deployer
+
+   - 打开 `conf/example` 文件夹，修改 `instance.properties`
+   
+     ```properties
+     
+       # position info
+       canal.instance.master.address=127.0.0.1:3306
+     
+       # username/password
+       canal.instance.dbUsername=root
+       canal.instance.dbPassword=
+     
+     ```
+
+   - 修改主机数据库地址和数据库用户名密码
+   
+      - 此处的密码是需要连接到主机数据库的用户名和密码
+      - 不是 `canal` 此数据库用户的用户名和密码
+      
+   - 其他配置项暂时不用管
+
+5. 开启 canal-deployer
+
+   - 进入 `bin` 目录开启 `startup.bat`(Windows) 或 `startup.sh`(Linux) 即可
+   - 查看日志是否启动成功
+   - 日志一般在 `logs` 文件夹
+   
+      - `canal` 文件夹存放 canal 主服务器启动和停止的日志
+      - 其他文件夹记录该 instance 的 binlog 变动
+   
+   - 注意，如果没有日志，或者日志报错不能启动，修改对应出错代码即可
+   
+      - 因此处使用 JDK17 所以有些 java options 不支持
+      - 报错信息：`canal Unrecognized VM option 'AggressiveOpts'`
+      - 在 `startup.bat`(Windows) 或 `startup.sh`(Linux) 删除 ` -XX:+AggressiveOpts` 即可
+      
+          - 需要能看懂 bash 脚本，或者直接 \&amp;lt;C-h\&amp;gt; 搜索也可以
+
+## 使用 canal-example 
+
+### 原因
+
+- 首先使用 example 观察是否能够成功运行和消费 binlog
+- 小步前进，成功后再使用更复杂的 adapter
+
+### 步骤
+
+1. canal-example 的配置文件不用改，可以直接运行 `startup.bat`(Windows) 或 `startup.sh`(Linux)
+
+   - conf 文件夹不要动
+   
+2. 如果开启之后 logs 文件夹没有文件，说明 example 没有运行
+
+3. 错误日志就在 `bin` 文件夹下面的 `nohup.out` 文件里面
+
+   - 如果是 JDK17，也需要对应修改 `startup.bat`(Windows) 或 `startup.sh`(Linux)，详情参照[前置准备](#前置准备)第五步
+
+
+4. 修改完成之后再启动，即可在 logs 文件夹里观察到 example 的消费记录
+
+## 使用 canal-adapter
+
+1. 前置准备，参照 [Elastic Search 启用](https://tinysnow.github.io/技术/实践记录/ElasticSearch启用.html)
+
+2. 配置 application.yml
+
+   - srcDataSources 取消注释，改为自己的数据库信息
+   
+      - url 也要改
+      - 如果有兴趣，也可以把 defaultDS 这个名字替换成任意名字，然后同步更改相应 es 文件夹里每一个 dataSourceKey 即可
+      
+   - 注释 `- name: logger`
+   - 取消注释 es，并把 name 改为 es6 或者 es7，一定要改
+
+3. 配置对应 es 文件夹的每个 yml 文件
+
+## 注意事项
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 其他 | Others</title>
+      <link>https://tinysnow.github.io/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%BF%9B%E6%AD%A5/%E9%9F%B3%E4%B9%90/%E5%85%B6%E4%BB%96/%E5%85%B6%E4%BB%96.html</link>
+      <guid isPermaLink="false">src/学习与进步/音乐/其他/其他.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 其他 | Others - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 其他
+
+音乐领域下，一些零碎的、杂七杂八的资料。
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] Default Man（默认角色）</title>
+      <link>https://tinysnow.github.io/%E7%94%9F%E6%B4%BB%E7%A2%8E%E7%AC%94/%E6%96%87%E7%AB%A0%E4%B8%8E%E5%86%99%E4%BD%9C/Default%20Man%EF%BC%88%E9%BB%98%E8%AE%A4%E8%A7%92%E8%89%B2%EF%BC%89.html</link>
+      <guid isPermaLink="false">src/生活碎笔/文章与写作/Default Man（默认角色）.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: Default Man（默认角色） - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# Default Man（默认角色）
+
+## 写在前面
+
+&amp;lt;p style="color:#0f4c81; text-align:center; font-weight:bold; font-size:larger;"&amp;gt;1568 字 | 规训 | 社会学 | 压迫 | 反抗 | 想法 | 理念 | 认知&amp;lt;/p&amp;gt;
+
+&amp;lt;p style="text-align:center;"&amp;gt;愿你我都有被讨厌的勇气。&amp;lt;/p&amp;gt;
+
+## 正文
+
+　　前两天从母亲口中得知，有个朋友说我很倔强。宁愿对抗压力也不愿意低头。当时我有些迷惑。后来想了想，她们大概不知道我的内心想法，便释然了。
+
+　　一旦认定了路，不论怎样也要走下去，我是这样的人。当然，也会根据情况持续调整，上下波动。
+
+　　我跟很多人说过 Default Man 这个概念。
+
+　　 **Default Man 在社会学语境中指标准人类模板。西方对此甚至有明确的几个属性（WASP）：白人、异性恋、中产阶级、健全人士和中年。一切活动、标准，都会按这个角色设定。** 例如：办公室空调温度过低，让女性可能需要披毯子；驾驶座按照男性体型设定；基础设施几乎忽略了残障和视盲人士；穷人、农民、群众在社会上没有什么话语权。
+
+　　 **如果转换到国内，Default Man 大概会有这么几个标签：白衬衫，西装裤，皮鞋，体制内，手握权力，党员，官腔，办公室工作以及大男子主义。** 
+
+　　我对抗压力的最初动力，就只是因为不想成为 Default Man，而最近这些压力的施加者，也恰好是一群 Default Man。而不想成为默认角色的最初动力，只是一个很简单的理由——纸上得来终觉浅，绝知此事要躬行。
+
+　　如果我不去体会她们的感受，我便不会理解；如果我不去了解穷人的困难，我便心存傲慢（不过在贫穷这件事情上，或许我已经本色出演了吧）；如果我不能感受孤独，或许我会肆意指摘。
+
+　　它是我认定的路，无论怎样也要走下去。信念如此。
+
+　　许多事情上，我都温和甚至怯懦，而涉及底线、原则或信念时，却意外地固执。在我眼中，这应该固执。
+
+　　突破底线会让我怀疑：自己究竟是什么？
+
+　　或许正因如此，周围的人对于我所执拗的这些事情相当困惑，不理解的声音众多且言辞锐利如荆棘。
+
+　　面对这些声音，顶住压力，也在我最初设想的情况之内。
+
+　　不过，最亲最看重的人，也让我真正反思最开始的命题：成为 Default Man，真的有想象中那么糟糕吗？
+
+　　有没有可能，我在讨论这个问题时，用了以结果导向的目光，完全不考量其过程？或许那些“让人厌恶”的默认角色，最初也不想成为这样的人？现在的结果最终只是一个被迫的结果？
+
+　　一直痛恨默认角色的坏处，是否一叶障目未曾看见它的好处？需要贯彻执行这种重大理念之前，我是否应该做一个全面的评估？
+
+　　想着这些，我忽然觉得——它或许并没有那么糟糕。
+
+　　前两天，我忽然想起我的初衷：体会他们的感受，如果在今后涉及到类似的裁判或决策，希望能对她们、他们、他们等等人群有更多的耐心和更大的宽容。
+
+　　而非彻底贯彻执行这件事。南辕北辙。
+
+　　Default Man 在社会上一直是权力的象征，顶梁柱的存在。这是不是社会和默认角色双向选择的结果，我们不去讨论，因为这种特性客观存在：经济支持、杀伐果断、决策能力，仿佛能撑起一片天空。
+
+　　&amp;lt;u&amp;gt;无可否认的是，Default Man 不好惹。而罹受灾难时，这种形象和角色，也能最大限度地带来安全感，而不管它是否名副其实——就像灾难来临之际时，看见迷彩服的人民解放军冲进山林一样。这也是默认角色的一种象征。&amp;lt;/u&amp;gt;
+
+　　所以，或许我最好的选择，不是对抗这种钢铁洪流、压力巨大的社会机器，而是选择性地执行。
+
+　　对外，选择成为 Default Man，为了保护身后的人不受侵犯；对内，卸下默认角色的面孔，因为体会过彼此的感受，用更多的平等、耐心和宽容相互交流。
+
+　　或许这才是我应该贯彻执行的决策。
+
+　　我正在体会彼此感受的过程中，这个过程不可或缺，如果残缺则最优决策无法成立。所以，如果他们能看到的话，希望能包容我这一段时间的任性吧。
+
+　　&amp;lt;u&amp;gt; **乖宝宝无法生存，总有需要面对压力的时刻。** &amp;lt;/u&amp;gt;
+
+　　撞车与保险公司和对面车主对峙的时候，受到人身伤害进入调解室的时候，过度医疗、诈骗侵犯的时候，有人掀桌子的时候，成为地震火灾当事人的时候……
+
+　　我现在正在训练这种能力，而我希望到时候面临这种巨大压力的时候，能有 Default Man 的实力，哪怕它之前于我而言“恨之入骨”。
+
+　　默认角色，或许是一种能力，而非一种形象。一种能随时装上和卸下的能力。
+
+　　希望你有，希望我们都有。
+
+&amp;lt;br /&amp;gt;
+
+　　南国微雪 Miyuki
+
+　　2025 年 7 月 7 日
+
+## 封面图
+
+![](https://raw.githubusercontent.com/TinySnow/GithubImageHosting/main/blog/articles/literature/chris-hardy-jMILWeXY0fM-unsplash.jpg)
+
+&amp;gt; 摄影师・画师 | Chris Hardy
+&amp;gt;
+&amp;gt; 图源 | Unsplash&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 【AIGC人工校对】在这个必须展示美好的朋友圈时代，我建议你做个“透明人”</title>
+      <link>https://tinysnow.github.io/%E7%94%9F%E6%B4%BB%E7%A2%8E%E7%AC%94/%E9%9A%8F%E7%AC%94%E9%9A%8F%E8%AE%B0/%E5%AE%9E%E7%94%A8%E7%B1%BB%E9%9A%8F%E8%AE%B0/%E3%80%90AIGC%E4%BA%BA%E5%B7%A5%E6%A0%A1%E5%AF%B9%E3%80%91%E5%9C%A8%E8%BF%99%E4%B8%AA%E5%BF%85%E9%A1%BB%E5%B1%95%E7%A4%BA%E7%BE%8E%E5%A5%BD%E7%9A%84%E6%9C%8B%E5%8F%8B%E5%9C%88%E6%97%B6%E4%BB%A3%EF%BC%8C%E6%88%91%E5%BB%BA%E8%AE%AE%E4%BD%A0%E5%81%9A%E4%B8%AA%E2%80%9C%E9%80%8F%E6%98%8E%E4%BA%BA%E2%80%9D.html</link>
+      <guid isPermaLink="false">src/生活碎笔/随笔随记/实用类随记/【AIGC人工校对】在这个必须展示美好的朋友圈时代，我建议你做个“透明人”.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 【AIGC人工校对】在这个必须展示美好的朋友圈时代，我建议你做个“透明人” - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 在这个必须展示美好的朋友圈时代，我建议你做个“透明人”
+
+## 一
+
+　　打开朋友圈，你会产生一种错觉：
+
+　　人类文明已经进化到了“乌托邦”阶段。
+
+　　张三在马尔代夫的无边泳池思考人生，李四刚拿了 A 轮融资正在感谢团队，王五晒出的精致 Brunch 仿佛出自米其林大厨之手。
+
+　　这是一个巨大的、光鲜亮丽的 **“拟态环境”（Pseudo-environment）** 。
+
+　　甚至连你自己，在发那张经过精修、调色、苦思冥想了半小时文案的照片时，也成为了这个庞大造景工程的包工头之一。
+
+　　你期待红点亮起，期待那种廉价的 **多巴胺（Dopamine）** 反馈。
+
+　　但我今天要泼一盆冷水：
+
+　　在这个全员表演的时代，做个“透明人”，可能是你对自己最大的保护，也是最高级的生存智慧。
+
+## 二
+
+　　首先，你要明白一个社会学概念： **“全景敞视监狱”（Panopticon）** 。
+
+　　社交网络本质上就是这样一个监狱。所有的目光都在监视着你，你也在监视着所有人。
+
+　　（对，说的就是你！微信朋友圈！）
+
+　　你每一次的“展示”，本质上都是在交出你的 **隐私权** ，来换取那一点点可怜的 **关注权** 。
+
+　　而在博弈论中，这简直是亏到姥姥家的买卖。
+
+　　你晒了豪车名表，收获了 99% 的嫉妒和 1% 的虚假恭维，同时可能引起了潜在借钱者、诈骗犯甚至税务机构的注意；
+
+　　你晒了恩爱伴侣，如果在未来某个时刻分手，这两张照片就会成为别人茶余饭后的笑料，和你深夜 emo 时的回旋镖。
+
+　　 **暴露坐标，就是增加风险。** 
+
+　　在刘慈欣的“黑暗森林”里，只有傻孩子才会点起火把大喊：“我在这儿，快来看我过得有多好！”
+
+　　聪明的猎人，从来都是在阴影里潜行的。
+
+## 三
+
+　　其次，我们要谈谈 **“信息不对称”** 的价值。
+
+　　那些整天在朋友圈直播生活细节的人，是在 **单向透明化** 自己。
+
+　　你对他了如指掌：他几点起床、喜欢吃什么、老板是谁、最近心情如何。
+
+　　而他对你的生活一无所知。
+
+　　这意味着什么？
+
+　　这意味着在不管是职场竞争还是人际博弈中，你掌握了所有的 **信息优势** 。
+
+　　做一个“透明人”，不是让你自闭，而是让你成为一个 **“观察者”** ，而不是 **“被观察者”** 。
+
+　　这是一种权力的倒置。
+
+　　真正的大佬，朋友圈通常只有三类：
+
+　　转发行业新闻（表明立场）、转发公司公关稿（工作需要）、或者是“仅三天可见”的一片空白。
+
+　　因为他们深知： **隐私由于稀缺，所以昂贵。** 
+
+　　只有底层逻辑还没跑通的人，才会急吼吼地把自己的生活切片，免费地抛洒给大众消费。
+
+## 四
+
+　　此外，维持一个“美好人设”的 **维护成本（Maintenance Cost）** 高得吓人。
+
+　　为了发那张看起来毫不费力的照片，你背后付出了多少必须费力的“情绪劳动”？
+
+　　为了维持“我很自律”的人设，你不敢在深夜发烧烤；
+
+　　为了维持“我很精英”的人设，你不敢发你的焦虑和崩溃。
+
+　　慢慢地，你会被你自己塑造的这个虚拟形象反向绑架。
+
+　　这种 **“异化”** ，会让你在现实中越来越疲惫。
+
+　　当你停止这种表演，你会发现你也切断了 **“社会比较”** 的焦虑源。
+
+　　你不需要过得比别人展示出来的样子好，你只需要对自己真实的感受负责。
+
+## 五
+
+　　在这个时代，“被看见”被过度吹捧了。
+
+　　在这个流量为王的逻辑里，似乎每个人都必须是一个 IP，都必须有鲜明的标签。
+
+　　但我更建议你做那条深海里的鱼。
+
+　　 **深潜，静默，然后野蛮生长。** 
+
+　　当你不再迫切地向世界证明“我过得很好”的时候。
+
+　　通常意味着，你真的过得还不错。
+
+　　把这种“隐身”当做一种特权吧。
+
+　　你看得见世界，世界看不透你。
+
+　　这才是安全感满级的活法。
+
+## 六
+
+　　对了，最后我补两句。
+
+　　我推荐你们这么做，然后我天天又在公众号发日记，这俩行为看起来冲突（其实应该说冲突得要死吧）。这实际上是因为我的公众号是开给朋友看的，而我并不觉得我的朋友们值得我上博弈论对待。
+
+　　世界并不总都是黑暗森林。
+
+　　Game Theory（博弈论）的前提假设，很多都是你死我活，我必须胜利，我必须是赢家。
+
+　　既然都是朋友了，何必呢，没必要捅朋友刀子吧。
+
+　　所以，我个人并不觉得这涉及什么安全感不安全感的问题。反而，跟朋友在一起就很有安全感。
+
+　　当然，这也就意味着我必须对进入我公众号的人进行把关，这是代价。
+
+　　所以我这个公众号基本没有同事看。但是微信朋友圈在工作和生活分不开的当下，已经很难当成纯“朋友圈”了，有微商有广告还有其他乱七八糟的东西，如果加了很多工作上的人，这部分人也会看的。
+
+　　大多数情况下，同事这种关系，以“竞争”为底色。只有极少数团队能做到心拧成一股绳，成为一个团队，大多数情况下同事也只是一个上班族，过来拿工资捞钱的。
+
+　　这个时候就得上博弈论了，信息对称不对称的也就很有必要了。
+
+　　至于陌生人？八竿子打不着，我在四川，人家有可能在宁波、苏州、北京、上海，喜欢看就看吧，无所谓了。
+
+&amp;lt;br /&amp;gt;
+
+　　南国微雪 Miyuki
+
+　　2026 年 1 月 17 日
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
+      <title>[更新] 电影音乐给谁听 - 梁文道</title>
+      <link>https://tinysnow.github.io/%E9%98%85%E8%AF%BB/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%96%87/%E7%94%B5%E5%BD%B1%E9%9F%B3%E4%B9%90%E7%BB%99%E8%B0%81%E5%90%AC-%E6%A2%81%E6%96%87%E9%81%93.html</link>
+      <guid isPermaLink="false">src/阅读/每日一文/电影音乐给谁听-梁文道.md#modified#2026-10-13T19:25:13+08:00</guid>
+      <pubDate>Tue, 13 Oct 2026 19:25:13 +0800</pubDate>
+      <description>更新: 电影音乐给谁听 - 梁文道 - 2026-10-13 19:25:13</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 电影音乐给谁听
+
+*梁文道*
+
+　　以前我不懂，为什么有那么多人喜欢买电影的原声唱片（soundtrack），使得稍有规模的唱片行都要开设专柜，去满足那些看了电影还要尸骸的迷哥迷姐。尸骸，就是过去电影音乐在我脑子里的印象。那些唱片犹如亲友骸骨，让悼亡人带回家去沉思想念，仿佛死者音容宛在。有时候看到一些人在唱片行的询问处开口要套烂片的原声唱片，我感觉更恶心，像是看见嫖客回到妓院问老鸨要姑娘的内裤做纪念。
+
+　　其实我也买这种唱片，骨灰盅和内裤都有。家里既有基耶斯洛夫斯基（Krzysztof Kieślowski）的老搭档普莱斯纳（Zbigniew  Preisner）的全部作品，也有很多乐评人嗤之以鼻的约翰·威廉姆斯（John  Williams）为《辛德勒的名单》作的配乐。可是我从不敢正面面对自己买它们的理由，因为我总是不懂该如何看待这些唱片：它们到底是可以独立听的音乐，抑或只不过是一部电影的“配乐”？其中当然有聆听价值极高的作品，但在欣赏的时候又总是无法排除记忆里的那些动人画面，这又会不会不够纯粹？如果有些音乐极好，甚至远胜它原来要陪衬的影片，这是否说明了作曲者和导演的合作有问题？
+
+　　于是我读罗展凤的《电影 × 音乐》，一本中文世界里难得专谈电影音乐的书。她写库布里克（Stanley Kubrick）与科波拉（Francis  Ford  Coppola）实在写得好，这两人用古典音乐实在用得出神入化。例如《2001 太空漫游》，谁会想过圆舞曲大王约翰·施特劳斯的《蓝色多瑙河》竟可以如此脱俗，在一部科幻电影里面，为星球和飞行器伴舞，演出一场太空华尔兹？罗展凤详细地交代了库布里克一直以来对音乐的看法，又把《蓝色多瑙河》在《2001 太空漫游》中出现三次的场面一一分析。她的叙述清楚又引人入胜，读了之后不仅让一般乐迷更理解施特劳斯的原意，也使影迷更佩服库布里克的大师手笔；他对这曲子的深刻认识，令他可以潇洒地使用它。难怪有人是从看库布里克的电影开始，才爱上古典音乐。
+
+　　罗展凤这本书叫我惊讶的是，竟有一章专谈小津安二郎的电影音乐。或许是我迟钝，在我的记忆中，小津的电影似乎总是没有音乐的。一段段平稳细琐的对话和平常生活，静静的镜头，怎还容得下多余的吵耳乐声？但罗展凤却说：“细听小津电影中的音乐，往往发现其低调简单的调子见精致细腻，平淡中充满了一股慑人的生命力，单独听来，更有一种舒缓的净化之感。与其说小津不在意音乐的好与不好，不如说小津把音乐的角色在电影中淡化，但淡而不薄，平淡中见典雅，不时为电影起到点睛的效用。”这么说来，小津不是不爱用音乐，而是用得太好，以至于我听过却不觉其在。那么写作那些单独听来也十分美好的曲子的作者又是谁？原来叫斋藤高顺。看来我得购回来听听了。
+
+　　但我还是没搞清楚电影音乐是种什么类型的音乐。我只能说自己“臭老九”的脾性太深，太喜欢纯粹的东西。这世上又有多少纯粹属于听觉的音乐呢？而电影，本来不就开宗明义是综合的艺术吗？其实我什么都不懂。&lt;/pre&gt;</content:encoded>
+    </item>
   </channel>
 </rss>
