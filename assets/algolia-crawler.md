@@ -45,7 +45,12 @@
 
 > ⚠️ **`initialIndexSettings` 只在索引「第一次」爬取时生效**（[官方文档](https://www.algolia.com/doc/tools/crawler/apis/configuration/initial-index-settings/)："only applied during the first crawl of an index"）。`tinysnowio` 已经存在，所以**光换 Editor 配置，线上设置一点都不会变**，`indexLanguages` 不会生效，预设的中文分词也就白写了。
 
-> ⚠️ **编辑器要求 `new Crawler(` 出现在第 1 行**，前面不能有任何注释或代码，否则报 `invalid configuration`（[algolia/docsearch#2190](https://github.com/algolia/docsearch/issues/2190)）。所以 `algolia-crawler-config.js` 顶部没有说明性注释，全部开关和函数都写在 `recordExtractor` 内部——**整份文件就是一条 `new Crawler({...})` 表达式，请从第 1 行开始原样粘贴**，不要在前面加注释头。
+> ⚠️ **Crawler 编辑器对配置有 3 条硬性要求**（都是实测踩出来的，改配置时请一并遵守）：
+> 1. **`new Crawler(` 必须出现在第 1 行**，前面不能有任何注释或代码，否则报 `invalid configuration`（[algolia/docsearch#2190](https://github.com/algolia/docsearch/issues/2190)）。
+> 2. **不要用模板字符串**（反引号），改用 `'<p>' + safe + '</p>'` 这样的拼接。
+> 3. **配置里不要出现嵌套函数 / 回调**。编辑器的静态检查解析不了嵌套作用域里的参数绑定，会把回调参数报成未定义标识符——实测就是对 `$('main img[alt]').each((_, el) => {...})` 里的 **`el`** 标红。
+>
+> 因此 `algolia-crawler-config.js` 里所有逻辑都写成 `recordExtractor` 内部的**直筒代码 + 下标循环**：没有闭包，没有 `.each()` / `.forEach()` 回调，也没有抽出来的公共函数（这就是它看起来有点长、有点重复的原因）。**整份文件就是一条 `new Crawler({...})` 表达式，请从第 1 行开始原样粘贴**，不要在前面加注释头。
 
 > 💡 编辑器有时会提示「add a sitemap」，**这里故意不采纳**：你线上的 `sitemap.xml` 有 2360 条 URL，但**全部是不带 `.html` 的**（如 `/个人简介`），而爬虫顺着页面链接发现的是 `.html` 版本。加进去会让每个页面以两种 URL 各索引一份，配合按页面去重就是成对的重复结果。站点的 2360 个页面本来就能通过链接全部覆盖（实测抽样 60 个页面的标题，索引里都有记录）。
 
