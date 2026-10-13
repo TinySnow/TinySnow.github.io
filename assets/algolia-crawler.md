@@ -149,46 +149,35 @@
 - 想让同一篇文章的多个小节都出现在结果里：把索引设置里的 `attributeForDistinct` 改回 `url`（含锚点，等于按段落去重）。
 - 只想恢复原行为：把本目录文件换回旧配置；索引设置按第 2 步把 `indexLanguages` / `queryLanguages` 删掉即可。
 
-## 六、第二阶段：结果展示与分页（已实现）
+## 六、搜索结果展示（当前：DocSearch 默认外观）
 
-### 之前的问题（实测 `@docsearch/js@3.9.0` 源码）
+### 「看不到后面的命中」的真正原因
 
-- `docsearch()` **每次查询只发 1 个请求**，且写死 `hitsPerPage: 20` → 第 21 条以后的命中根本没从 Algolia 取回来；界面上那个 `nbHits` 是全库统计，不是能看到的条数。
-- 取回后客户端再按 `maxResultsPerGroup`（**默认 5**）切片，而且外层按 lvl0、内层按 lvl1 各切一次 → 「只展示前几个」。
-- 它**没有任何分页 / 加载更多**，`docsearch()` 返回 `void`，拿不到内部实例，无法从外部驱动翻页。
+`@docsearch/js@3.9.0` 源码实测：
+
+- 每次查询只发 1 个请求、`hitsPerPage: 20` → 第 21 条以后的命中根本没从 Algolia 取回来；
+- 取回后按 `maxResultsPerGroup`（**默认 5**）分组截断。关键在分组键：`groupBy(hits, removeHighlightTags, max)`，而 `removeHighlightTags` 取的是 `hit._highlightResult.hierarchy.lvl0.value` —— 本站每条记录的 lvl0 都是「博客」，**所有命中都落在同一个分组里**。也就是说**可见条数直接等于 `maxResultsPerGroup`**，`hitsPerPage` 只是抓取上限。原配置没设这一项 → 永远只显示 5 条。
+- 它没有任何分页，`docsearch()` 返回 `void`，拿不到内部实例。
 
 ### 现在的实现
 
 | 文件 | 改动 |
 | --- | --- |
-| `theme/customized/search.js` | **新增**。用 `@algolia/autocomplete-js@1.19.12` 自建下拉面板 |
-| `theme/index.hbs` | CDN 依赖固定版本，并在 `additional-js` **之前**同步加载；删掉旧的 `docsearch({...})` 初始化 |
-| `book.toml` | `additional-js` 增加 `theme/customized/search.js` |
-| `theme/customized/style.css` | 面板样式，以及 ayu/navy/coal 暗色主题下的配色 |
+| `theme/customized/search.js` | DocSearch 初始化：`hitsPerPage: 100` + `maxResultsPerGroup: 100`（最多可见 100 条），并用官方 `transformSearchClient` 注入查询清洗与「优先搜按词属性」 |
+| `theme/index.hbs` | 只加载 `@docsearch/css@3.9.0` + `@docsearch/js@3.9.0`，删掉自建面板用的 autocomplete-js 与 classic 主题；脚本仍在 `additional-js` 之前同步加载 |
+| `theme/customized/style.css` | 自建面板的样式已删除，回到原样 |
+| `book.toml` | `additional-js` 仍是 `assets/custom.js` + `theme/customized/search.js` |
 
-面板行为：
+查询侧的两项改进都在 `search.js` 里，通过官方钩子注入，**不动外观**：
 
-- **每页 20 条，底部「加载更多（已显示 X / 共 Y 条）」逐页追加**，可以一直翻到最后一页（`search.js` 顶部的 `perPage` 可调）。
-- 顶部显示「共 N 条命中」，不再出现「明明很多命中却只看到 5 条」。
-- 每条命中展示：页面标题 + 层级路径（lvl2 › lvl3 …）+ 带 `<mark>` 高亮的正文摘要，点按/回车直接跳到对应锚点。
-- 查询直接走 Algolia 的 `POST /1/indexes/{index}/query`，**不引入 `algoliasearch` 客户端**，因此没有 v4（返回 `{results}`）与 v5（返回数组）的版本差异问题。
-- `search.js` 顶部 `segmentQuery`（默认 `false`）：改成 `true` 后，查询会先按词切开再发给 Algolia，用于配合本次爬虫新写的 `content_words` / `hierarchy_words`。**等第四节验证完再打开**。
-- 自建面板初始化失败时，会自动退回 DocSearch 弹窗（并把抓取条数从 20 提到 40、每组从 5 提到 20）。要强制用回 DocSearch，把 `search.js` 里的 `fallbackToDocSearch` 保持 `true` 并临时让 `window['@algolia/autocomplete-js']` 不可用即可；要彻底移除自建面板，从 `book.toml` 的 `additional-js` 里去掉 `theme/customized/search.js` 并恢复 `index.hbs` 里的 `docsearch({...})` 调用。
+1. **清洗中文虚词**：`怎么重装系统` → 实际发 `重装 系统`；
+2. **优先只搜按词属性**，一条都没命中时退回「原查询 + 全部属性」。
 
-### 怎么验证（本地）
+改动只涉及主题文件，`mdbook build` 之后 `book/` 下会生成带哈希的新文件名，部署走原有的 GitHub Actions 流程。
 
-```bash
-mdbook build          # 或 mdbook serve
-```
+### 历史说明：曾经有一版真正的分页
 
-然后打开任意页面，在菜单栏搜索框里输入中文，检查：
-
-1. 面板顶部有「共 N 条命中」；
-2. 列表一次 20 条，底部有「加载更多」，点它（或键盘上下选中后回车）会继续追加，且前面的结果不重复；
-3. 中文词有黄色高亮标记；
-4. 切换 mdBook 主题（Auto/Light/Rust/Coal/Navy/Ayu）后面板配色仍然正常。
-
-改动只涉及主题文件，`mdbook build` 之后 `book/` 下会生成带哈希的新文件名（`search-xxxxxxxx.js`、`style-xxxxxxxx.css`），部署走原有的 GitHub Actions 流程即可。
+中间曾用 `@algolia/autocomplete-js` 自建过一版下拉面板，底部有「加载更多（已显示 X / 共 Y 条）」可以逐页翻到最后一页（那一版还专门修过 autocomplete 点 item 时先关面板导致不刷新的坑）。后来按需求换回 DocSearch 默认外观，它就不再被加载了——代码在 git 历史里（`9b26f4e0a` 之后的提交，文件 `theme/customized/search.js`）。如果以后想要「DocSearch 的外观 + 真正的分页」，需要手工复刻 DocSearch 的样式类与变量，工作量比现在这条路线大。
 
 ## 七、与另一份 AI 生成配置的对比（留档）
 
