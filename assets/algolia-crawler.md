@@ -56,9 +56,25 @@
 
 **第 1 步**：Algolia Crawler Dashboard → 你的 Crawler → **Editor** → 用 [`algolia-crawler-config.js`](./algolia-crawler-config.js) 整体替换（从第 1 行开始，不要在前面加东西）→ 末尾的 `apiKey` 改回你原来的值（文件里是 `PlaceHolder`，避免把可写 key 提交进公开仓库）→ Save。
 
-**第 2 步：应用索引设置**，两种选一种：
+**第 2 步（建议先做，不碰索引）：用编辑器里的 URL Tester 验一次新配置**。Crawler → Editor 页面自带 URL Tester，填 1~2 个真实页面 URL 跑一下，确认：没有报错、抽出来的记录里有 `content_words` / `hierarchy_words`、`content` 里不再有重复句子。
 
-- **A（推荐，不丢数据）**：Algolia Dashboard → **Search** → 索引 `tinysnowio` → **Configuration** → JSON 编辑器，粘贴下面这段并保存（部分更新即可）：
+**第 3 步：应用索引设置。** 注意：**Algolia Dashboard 的索引设置页是分区表单，没有给索引设置用的 JSON 编辑器**（找不到是正常的）。三条路任选一条：
+
+- **A（最省事，推荐）：删掉索引再重爬。** Dashboard → **Search** → 选索引 `tinysnowio` → **Manage index > Delete**（输入 `DELETE` 确认）→ 回到 Crawler 点 **Restart crawl**。索引被重新创建时就算它的「第一次爬取」，`initialIndexSettings` 会整套自动套用，不必手改任何一项。代价是爬完之前站内搜索是空的；不用担心旧记录残留——官方文档写明[配置改动之后爬虫不再发条件请求](https://www.algolia.com/doc/tools/crawler/apis/configuration/cache/)，会自动全量重抓、重新抽取。
+- **B（不想删索引，手动改）**：Dashboard → **Search** → 索引 `tinysnowio` → **Configuration**，改这三处后 Save：
+  1. **Language** → Query Languages（有 Index Languages 就一并）选上 Chinese / English；
+  2. **Searchable attributes** → 按顺序加下面 JSON 里那 16 项（顺序不能乱，attribute 排序准则按先后顺序：前 8 项是按词副本，后 8 项是原文），每项都开 `unordered`；
+  3. **Distinct** → 开启，Attribute for distinct 填 `url_without_anchor`（这项在 Configuration 里通常归在 ranking 相关分区，实在找不到就走 A 或 C）。
+- **C（用脚本直接调 API）**：本目录已备好 [`apply-algolia-settings.mjs`](./apply-algolia-settings.mjs)，它从爬虫配置里读出设置再 `PUT` 到索引（设置只有一份来源，不会两边不一致）：
+
+  ```bash
+  node assets/apply-algolia-settings.mjs --dry-run                       # 先看要写入的 JSON
+  node assets/apply-algolia-settings.mjs --key <带 editSettings 的 Key>   # 真正写入
+  ```
+
+  需要 `editSettings` 权限的 key（Dashboard → API Keys）。写操作必须走 `{appId}.algolia.net`，`-dsn` 那个主机是只读的——脚本已经处理好了。
+
+  下面就是脚本会写入的内容（`--dry-run` 打印的同一份）：
 
   ```json
   {
@@ -87,9 +103,7 @@
   }
   ```
 
-- **B（省事）**：在 Dashboard 里删掉 `tinysnowio` 索引，再让爬虫跑一次——索引被重新创建时会自动套用 `initialIndexSettings`（爬完之前站内搜索会是空的）。
-
-**第 3 步**：Restart crawl（建议先看一次完整爬取日志，确认没有大面积报错再确认发布）。
+**第 4 步**：Restart crawl（建议先看一次完整爬取日志，确认没有大面积报错再确认发布）。
 
 ## 四、怎么验证分词真的生效了
 
