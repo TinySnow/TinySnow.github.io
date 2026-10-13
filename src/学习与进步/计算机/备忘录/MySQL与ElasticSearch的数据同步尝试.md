@@ -1,4 +1,4 @@
-《# MySQL 与 Elastic Search 的数据同步尝试
+# MySQL 与 Elastic Search 的数据同步尝试
 
 ## 起因
 
