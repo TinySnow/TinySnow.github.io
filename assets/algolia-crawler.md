@@ -37,7 +37,9 @@
    **原来的 `hierarchy` / `content` 继续保留可搜索**，所以在「引擎自己按词切分」和「引擎仍然按字切分」两种情况下都不会把搜索改坏，只是多占一点索引存储。
 3. **抽取范围收窄到 `<main>`**：删除选择器修正为 `main ...` / `#mdbook-content ...`，正文选择器改为 `p, li, td, th, code, dd, dt`（去掉会重复的内联元素，补上表格），标题改为 `main h1..h6`，并跳过图片 `alt` 里无信息量的文件名。
 4. **跳过** `print.html` / `toc.html` / `404.html`，以及超过 4MB 的页面。
-5. 索引设置里**只加不动**：新增 `indexLanguages` / `queryLanguages` 与按词属性，其余（ranking、customRanking、weights、distinct 等）保持你原来的值。
+5. **`attributeForDistinct` 从 `url` 改成 `url_without_anchor`**（按页面而不是按锚点去重）：同一篇文章只出一条命中，避免单页刷屏。实测「数据结构」这类词，前 20 条命中原本只落在 3~11 个页面上，改成页面级去重后最多能覆盖 20 个页面。这项**只能写进索引设置**（不能作为查询参数传，传了会 400），所以第 2 步的 JSON 里必须一起改。
+6. 其余设置（ranking、customRanking、weights、`removeWordsIfNoResults: allOptional`、`advancedSyntax`、`aggregateContent: true`）保持你原来的值。
+7. **单页记录数保护网**：爬虫单页超过 750 条记录会直接报 `Extractors returned too many records`；超过 700 条时把同一锚点的正文块合并（先在副本上合并，不改动原记录；合并后重新计算按词副本）。按当前的段落级聚合抽取方式几乎不会触发，属于保险。
 
 ## 三、怎么用（第 2 步千万别省）
 
@@ -53,6 +55,8 @@
   {
     "indexLanguages": ["zh", "en"],
     "queryLanguages": ["zh", "en"],
+    "distinct": true,
+    "attributeForDistinct": "url_without_anchor",
     "searchableAttributes": [
       "unordered(hierarchy_words.lvl0)",
       "unordered(hierarchy_words.lvl1)",
@@ -95,6 +99,7 @@
 ## 五、回退
 
 - 只想去掉预分词：把配置顶部 `OPTIONS.preSegment` 改成 `false`，`searchableAttributes` 会自动退回原来那 8 项（其余不受影响）。
+- 想让同一篇文章的多个小节都出现在结果里：把索引设置里的 `attributeForDistinct` 改回 `url`（含锚点，等于按段落去重）。
 - 只想恢复原行为：把本目录文件换回旧配置；索引设置按第 2 步把 `indexLanguages` / `queryLanguages` 删掉即可。
 
 ## 六、第二阶段：结果展示与分页（已实现）
@@ -137,4 +142,26 @@ mdbook build          # 或 mdbook serve
 4. 切换 mdBook 主题（Auto/Light/Rust/Coal/Navy/Ayu）后面板配色仍然正常。
 
 改动只涉及主题文件，`mdbook build` 之后 `book/` 下会生成带哈希的新文件名（`search-xxxxxxxx.js`、`style-xxxxxxxx.css`），部署走原有的 GitHub Actions 流程即可。
+
+## 七、与另一份 AI 生成配置的对比（留档）
+
+后来另有一份 GPT 生成的爬虫配置。两边**核心诊断一致**——都要求打开 `indexLanguages` / `queryLanguages`、把抽取范围收窄到 `<main>`、补上 `td/th/dt/dd`、跳过 `print.html` / `toc.html` / `404.html`。其中有 4 处细节更好，已经吸收进本配置：
+
+1. `lang` 改用 `recordProps.lang = { defaultValue: "zh-CN" }` 交给 helper 写入（比抽完再手写 `record.lang` 更正统），并把 `lang` 加进 `attributesToRetrieve`。
+2. `lvl1` 增加 `head > title` 作为最后兜底。
+3. 增加「`main` / `#mdbook-content` 都不存在就直接跳过」的判断。
+4. 知道爬虫「单页 >750 条记录会报错」的硬上限，据此加了 `packLargePage` 保护网。
+
+没有采纳的部分，以及对应的实测依据：
+
+| GPT 配置的写法 | 实测 / 文档依据 | 结论 |
+| --- | --- | --- |
+| `distinct: false`，且删掉 `attributeForDistinct` | 在线上索引模拟该设置：`数据结构` 前 20 条命中 **20/20 全来自同一篇文章**，`读书` 10/20，`Docker` 7/20 | 不采纳，改为页面级去重（`url_without_anchor`） |
+| `aggregateContent: false` + 自写打包逻辑 | 统计 2,360 个页面 `<main>` 下的 `p/li/td/th/pre/dt/dd` 共 13.6 万个，加 1.6 万条标题 ≈ 15 万条记录（现状索引 4.2 万条）；它那段 700 条阈值的打包代码只有 **5 个**页面会触发 | 不采纳，保留官方默认的 `aggregateContent: true`（文档明确推荐用它来减少记录数） |
+| `removeWordsIfNoResults: "none"` | 长中文查询更容易变成 0 结果 | 不采纳，保留 `allOptional` |
+| 只在校验层跳过 `print.html`；反而把 `toc.html` 加进 `startUrls` | 19MB 的合订本每次爬取仍会被下载；586KB 的目录页抓完又全部丢弃 | 不采纳，改为在 `discoveryPatterns` 和 `pathsToMatch` 里用 `!` 排除，连下载都省掉 |
+| 删掉 `advancedSyntax` / `attributeCriteriaComputedByMinProximity` / `ignorePlurals` | 无说明的行为变更 | 不采纳，保持原值 |
+| 没有「按词」兜底属性 | 两份配置都还没验证 `indexLanguages` 是否真能让索引按词切分；只有本配置额外写了 `content_words` / `hierarchy_words` 这第二条路 | 保留兜底 |
+
+**两份配置共同待验证的关键点**：重建索引后，查询 `重装系统` 的 `_rankingInfo.words` 是否从 4 变成 2（见第四节）。如果仍是 4 而 `重装 系统` 能命中，再把 `theme/customized/search.js` 里的 `segmentQuery` 打开。
 
