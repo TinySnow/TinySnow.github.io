@@ -5,6 +5,142 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-10-15 06:34:19 CMT (UTC+8) | ea23c773d）
+
+### Summary
+
+- Generated at: `2026-10-15 06:34:19 CMT (UTC+8)`
+- Base commit: `ea23c773d`
+- Diff source: `1b00354badbff679f8d14843fb3b2f16e2d58a38..ea23c773d7ae1b1b02937df2cb23029843529a9d`
+- Changed files: `2`
+- Total lines: `+70 / -0`
+
+### Commit Messages
+
+- `ea23c773` 随笔初稿：不喜欢一部作品，不必先证明它很差
+
+### Index
+
+1. [src/SUMMARY.md](#f-2673256051-src-summary-md-3501257646) `+1 / -0`
+2. [src/生活碎笔/随笔随记/实用类随记/【AIGC待校对】不喜欢一部作品，不必先证明它很差.md](#f-2673256051-src-生活碎笔-随笔随记-实用类随记-aigc待校对-不喜欢一部作品-不必先证明它很差-md-388950056) `+69 / -0`
+
+### Diffs
+
+<a id="f-2673256051-src-summary-md-3501257646"></a>
+#### src/SUMMARY.md
+
+<details>
+<summary><code>+1 / -0</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/src/SUMMARY.md b/src/SUMMARY.md
+index e176c9585..5c649f82d 100644
+--- a/src/SUMMARY.md
++++ b/src/SUMMARY.md
+@@ -269,6 +269,7 @@
+     - [随记 - 踩着石砖回家](生活碎笔/随笔随记/情感类随记/随记-踩着石砖回家.md)
+     - [随记 - 我想成为的人](生活碎笔/随笔随记/情感类随记/随记-我想成为的人.md)
+   - [实用类随记](生活碎笔/随笔随记/实用类随记/实用类随记.md)
++    - [【AIGC待校对】不喜欢一部作品，不必先证明它很差](生活碎笔/随笔随记/实用类随记/【AIGC待校对】不喜欢一部作品，不必先证明它很差.md)
+     - [【AIGC人工校对】已经决定的事，就别假装还在商量](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】已经决定的事，就别假装还在商量.md)
+     - [【AIGC人工校对】别拿状态最好的一天，给以后的每一天定任务](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】别拿状态最好的一天，给以后的每一天定任务.md)
+     - [【AIGC人工校对】接受一次帮助，不必立刻还成等价交换](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】接受一次帮助，不必立刻还成等价交换.md)
+
+~~~~~
+
+</details>
+
+<a id="f-2673256051-src-生活碎笔-随笔随记-实用类随记-aigc待校对-不喜欢一部作品-不必先证明它很差-md-388950056"></a>
+#### src/生活碎笔/随笔随记/实用类随记/【AIGC待校对】不喜欢一部作品，不必先证明它很差.md
+
+<details>
+<summary><code>+69 / -0</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\345\276\205\346\240\241\345\257\271\343\200\221\344\270\215\345\226\234\346\254\242\344\270\200\351\203\250\344\275\234\345\223\201\357\274\214\344\270\215\345\277\205\345\205\210\350\257\201\346\230\216\345\256\203\345\276\210\345\267\256.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\345\276\205\346\240\241\345\257\271\343\200\221\344\270\215\345\226\234\346\254\242\344\270\200\351\203\250\344\275\234\345\223\201\357\274\214\344\270\215\345\277\205\345\205\210\350\257\201\346\230\216\345\256\203\345\276\210\345\267\256.md"
+new file mode 100644
+index 000000000..14891c65c
+--- /dev/null
++++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\345\276\205\346\240\241\345\257\271\343\200\221\344\270\215\345\226\234\346\254\242\344\270\200\351\203\250\344\275\234\345\223\201\357\274\214\344\270\215\345\277\205\345\205\210\350\257\201\346\230\216\345\256\203\345\276\210\345\267\256.md"
+@@ -0,0 +1,69 @@
++# 不喜欢一部作品，不必先证明它很差
++
++<!-- daily-essay-id: 2026-10-15 -->
++
++<!-- wechat-digest: 个人感受不需要靠贬低作品来获得许可，评价作品则值得把依据说具体；分清这两件事，既能保留自己的口味，也能给理解不同的欣赏方式留一点余地。 -->
++
++　　一部作品有它的好，你也可以不喜欢。这两件事放在一起，没什么矛盾。
++
++　　麻烦的是，有时候连不喜欢都需要先找一个足够体面的理由。仿佛只要没能指出作品哪里差，就只能承认自己的欣赏水平不够。
++
++　　比如朋友推荐一部电影，说里面几段安静的镜头特别动人。你看了一半，只觉得慢，人物走来走去，迟迟没有发生自己想看的事情。
++
++　　朋友问怎么样。你说没看进去，他开始解释这些镜头里的光线、人物的处境，以及前后呼应的细节。
++
++　　你听懂了，也承认有些地方处理得细，但仍然不想接着看。
++
++　　到这里，本来就可以结束。偏偏聊天很容易继续往前拱：既然都听明白了，为什么还是不喜欢？是不是没认真看？你被问得烦了，干脆说这电影就是故弄玄虚，喜欢的人也不过是在装。
++
++　　一个人原本只是想关掉电影，最后却得把电影和喜欢它的人一起否定，才能走得理直气壮。
++
++　　这个弯绕得实在有点远。
++
++　　**承认一部作品有长处，并不等于答应把自己的时间交给它。**
++
++　　你知道某个镜头花了心思，知道一段文字写得精巧，也可能对它讲的事情毫无兴趣。做得用心、做得熟练，和你愿不愿意看下去，之间还隔着你此刻想得到什么。
++
++　　想轻松看个故事的时候，未必愿意跟着人物反复沉默。喜欢热闹的场面，也不需要先证明安静的场面没有价值。各自选想看的，原本没有那么难。
++
++　　我觉得，“我不喜欢”这句话很有用的一点，是它让人有机会把感受说准，而不必马上宣布一个对所有人都成立的结论。
++
++　　“中间那段我一直在等事情往前走，等得有点烦”，比“这导演根本不会拍电影”，更能说明你遇到了什么。别人听完，也更容易判断自己会不会有相似的感受。
++
++　　说得具体，并不见得就温和。某个转折让你觉得前面的铺垫全白费了，某段对白听起来很生硬，完全可以直接讲。喜欢它的人也可以指出，你漏掉了哪一处内容。
++
++　　这时候讨论才有东西可谈。双方可以回去核对，而不必争谁的品位比较高级。
++
++　　当然，也别把所有批评都塞进“口味不同”里。
++
++　　假设一部小说前面明确写过某个角色不知道一件事，后面却让他凭这件事做出关键决定，中间没有交代他如何得知。读者问这里是不是漏了什么，这就是一个可以检查的具体问题。
++
++　　有人觉得不影响阅读，有人因此看不下去，重视程度可以不同。但拿一句“你不懂欣赏”挡回去，并没有解释这个问题。
++
++　　反过来，读者也可能漏看了一段。别人把那一段找出来，承认自己记错就好，不需要再临时添一条罪名，保证这部作品始终站在自己不喜欢的位置上。
++
++　　纠正一处批评，不会强迫你改成喜欢。
++
++　　这点很省事。你不用为了保住自己的感受，连明明存在的优点都拒绝看见；也不用因为一个缺点被解释清楚，就勉强给出完全相反的评价。
++
++　　还有一种情况值得留一点余地：不喜欢的东西，未必永远都不会喜欢。
++
++　　某种叙事方式不熟悉，刚开始看觉得吃力，了解一点之后也许会有新的乐趣。愿意尝试，当然可以多看一点，听听别人具体喜欢哪里。
++
++　　但这个尝试最好来自好奇。为了避免被说没水平，硬把每次娱乐都变成补课，时间花了不少，最后只记住了自己受了多少罪，那也没什么必要。
++
++　　不必立刻接受，也不用提前把门焊死。今天不想看，关掉；哪天忽然感兴趣，再找回来。口味变了，说明你此刻有了别的感受，犯不着跟过去的自己打一架。
++
++　　如果轮到自己推荐作品，也可以留意一下，对方是在问你为什么喜欢，还是已经告诉你他不喜欢了。前者可以聊，后者未必需要再来一轮劝说。
++
++　　把自己觉得动人的地方分享出去，已经很好。朋友没有得到同样的感动，不代表你的分享失败，更不代表你要负责把他教到喜欢为止。
++
++　　那部电影可以继续是朋友心里的好电影，也可以停在你播放到一半的位置。你知道它哪里用心，也知道自己今晚更想看别的。
++
++　　换一部就是了，不必先把上一部判得一无是处。
++
++<br />
++
++　　南国微雪 Miyuki
++
++　　2026 年 10 月 15 日
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-15 06:01:11 CMT (UTC+8) | 1b00354ba）
 
 ### Summary
@@ -86,7 +222,6 @@ index 000000000..1de9778f8
 </details>
 
 <!-- LAST_UPDATED_ENTRY_END -->
-
 
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-14 12:08:12 CMT (UTC+8) | 543a60d7c）
@@ -1409,839 +1544,6 @@ index 0bd9b14db..31fd93b26 100644
  
  *梁文道*
  
-
-~~~~~
-
-</details>
-
-<!-- LAST_UPDATED_ENTRY_END -->
-
-<!-- LAST_UPDATED_ENTRY_START -->
-## 更新记录（2026-10-13 19:08:03 CMT (UTC+8) | 9488ce649）
-
-### Summary
-
-- Generated at: `2026-10-13 19:08:03 CMT (UTC+8)`
-- Base commit: `9488ce649`
-- Diff source: `d70db98cdd6e88ecb9ba5cecf3c21fd8375447c5..9488ce649391189cb00f20e9c11283b2a5086999`
-- Changed files: `4`
-- Total lines: `+121 / -493`
-
-### Commit Messages
-
-- `9488ce64` 搜索：结果展示换回 DocSearch 默认外观，可见条数上限从 5 提到 100
-
-  > - theme/customized/search.js 从「自建 autocomplete 面板」改为 DocSearch 初始化：
-  >   外观完全交给 @docsearch/js（按钮 + 弹窗），查询清洗与「优先搜按词属性」改走
-  >   官方 transformSearchClient 钩子注入
-  > - 找到「只展示前几个」的真正根因：DocSearch 3.9 的分组键是
-  >   hit._highlightResult.hierarchy.lvl0.value，而本站每条记录的 lvl0 都是「博客」，
-  >   所以所有命中都落进同一个分组 → 可见条数 = maxResultsPerGroup（默认 5），
-  >   hitsPerPage 只是抓取上限。现在两者都设成 100
-  > - theme/index.hbs 只加载 @docsearch/css@3.9.0 + @docsearch/js@3.9.0，
-  >   删掉 autocomplete-js 与 classic 主题的引用
-  > - theme/customized/style.css 删除自建面板样式，回到原样
-  > - README 第六节改写：记录分组键这个根因、当前实现，以及「曾经有一版真分页」的历史说明
-  > - 验证：docsearch() 选项、中文清洗（怎么重装系统 → 重装 系统）、限定按词属性、
-  >   参数保留、响应透传、0 命中自动回退、数组/空响应兼容
-
-
-### Index
-
-1. [assets/algolia-crawler.md](#f-1729175677-assets-algolia-crawler-md-203506374) `+17 / -28`
-2. [theme/customized/search.js](#f-1729175677-theme-customized-search-js-2827483100) `+100 / -335`
-3. [theme/customized/style.css](#f-1729175677-theme-customized-style-css-2110612380) `+0 / -120`
-4. [theme/index.hbs](#f-1729175677-theme-index-hbs-1765250716) `+4 / -10`
-
-### Diffs
-
-<a id="f-1729175677-assets-algolia-crawler-md-203506374"></a>
-#### assets/algolia-crawler.md
-
-<details>
-<summary><code>+17 / -28</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/assets/algolia-crawler.md b/assets/algolia-crawler.md
-index 99509bce7..f960b3bd9 100644
---- a/assets/algolia-crawler.md
-+++ b/assets/algolia-crawler.md
-@@ -149,46 +149,35 @@
- - 想让同一篇文章的多个小节都出现在结果里：把索引设置里的 `attributeForDistinct` 改回 `url`（含锚点，等于按段落去重）。
- - 只想恢复原行为：把本目录文件换回旧配置；索引设置按第 2 步把 `indexLanguages` / `queryLanguages` 删掉即可。
- 
--## 六、第二阶段：结果展示与分页（已实现）
-+## 六、搜索结果展示（当前：DocSearch 默认外观）
- 
--### 之前的问题（实测 `@docsearch/js@3.9.0` 源码）
-+### 「看不到后面的命中」的真正原因
- 
--- `docsearch()` **每次查询只发 1 个请求**，且写死 `hitsPerPage: 20` → 第 21 条以后的命中根本没从 Algolia 取回来；界面上那个 `nbHits` 是全库统计，不是能看到的条数。
--- 取回后客户端再按 `maxResultsPerGroup`（**默认 5**）切片，而且外层按 lvl0、内层按 lvl1 各切一次 → 「只展示前几个」。
--- 它**没有任何分页 / 加载更多**，`docsearch()` 返回 `void`，拿不到内部实例，无法从外部驱动翻页。
-+`@docsearch/js@3.9.0` 源码实测：
-+
-+- 每次查询只发 1 个请求、`hitsPerPage: 20` → 第 21 条以后的命中根本没从 Algolia 取回来；
-+- 取回后按 `maxResultsPerGroup`（**默认 5**）分组截断。关键在分组键：`groupBy(hits, removeHighlightTags, max)`，而 `removeHighlightTags` 取的是 `hit._highlightResult.hierarchy.lvl0.value` —— 本站每条记录的 lvl0 都是「博客」，**所有命中都落在同一个分组里**。也就是说**可见条数直接等于 `maxResultsPerGroup`**，`hitsPerPage` 只是抓取上限。原配置没设这一项 → 永远只显示 5 条。
-+- 它没有任何分页，`docsearch()` 返回 `void`，拿不到内部实例。
- 
- ### 现在的实现
- 
- | 文件 | 改动 |
- | --- | --- |
--| `theme/customized/search.js` | **新增**。用 `@algolia/autocomplete-js@1.19.12` 自建下拉面板 |
--| `theme/index.hbs` | CDN 依赖固定版本，并在 `additional-js` **之前**同步加载；删掉旧的 `docsearch({...})` 初始化 |
--| `book.toml` | `additional-js` 增加 `theme/customized/search.js` |
--| `theme/customized/style.css` | 面板样式，以及 ayu/navy/coal 暗色主题下的配色 |
--
--面板行为：
--
--- **每页 20 条，底部「加载更多（已显示 X / 共 Y 条）」逐页追加**，可以一直翻到最后一页（`search.js` 顶部的 `perPage` 可调）。
--- 顶部显示「共 N 条命中」，不再出现「明明很多命中却只看到 5 条」。
--- 每条命中展示：页面标题 + 层级路径（lvl2 › lvl3 …）+ 带 `<mark>` 高亮的正文摘要，点按/回车直接跳到对应锚点。
--- 查询直接走 Algolia 的 `POST /1/indexes/{index}/query`，**不引入 `algoliasearch` 客户端**，因此没有 v4（返回 `{results}`）与 v5（返回数组）的版本差异问题。
--- `search.js` 顶部 `segmentQuery`（默认 `false`）：改成 `true` 后，查询会先按词切开再发给 Algolia，用于配合本次爬虫新写的 `content_words` / `hierarchy_words`。**等第四节验证完再打开**。
--- 自建面板初始化失败时，会自动退回 DocSearch 弹窗（并把抓取条数从 20 提到 40、每组从 5 提到 20）。要强制用回 DocSearch，把 `search.js` 里的 `fallbackToDocSearch` 保持 `true` 并临时让 `window['@algolia/autocomplete-js']` 不可用即可；要彻底移除自建面板，从 `book.toml` 的 `additional-js` 里去掉 `theme/customized/search.js` 并恢复 `index.hbs` 里的 `docsearch({...})` 调用。
-+| `theme/customized/search.js` | DocSearch 初始化：`hitsPerPage: 100` + `maxResultsPerGroup: 100`（最多可见 100 条），并用官方 `transformSearchClient` 注入查询清洗与「优先搜按词属性」 |
-+| `theme/index.hbs` | 只加载 `@docsearch/css@3.9.0` + `@docsearch/js@3.9.0`，删掉自建面板用的 autocomplete-js 与 classic 主题；脚本仍在 `additional-js` 之前同步加载 |
-+| `theme/customized/style.css` | 自建面板的样式已删除，回到原样 |
-+| `book.toml` | `additional-js` 仍是 `assets/custom.js` + `theme/customized/search.js` |
- 
--### 怎么验证（本地）
-+查询侧的两项改进都在 `search.js` 里，通过官方钩子注入，**不动外观**：
- 
--```bash
--mdbook build          # 或 mdbook serve
--```
-+1. **清洗中文虚词**：`怎么重装系统` → 实际发 `重装 系统`；
-+2. **优先只搜按词属性**，一条都没命中时退回「原查询 + 全部属性」。
- 
--然后打开任意页面，在菜单栏搜索框里输入中文，检查：
-+改动只涉及主题文件，`mdbook build` 之后 `book/` 下会生成带哈希的新文件名，部署走原有的 GitHub Actions 流程。
- 
--1. 面板顶部有「共 N 条命中」；
--2. 列表一次 20 条，底部有「加载更多」，点它（或键盘上下选中后回车）会继续追加，且前面的结果不重复；
--3. 中文词有黄色高亮标记；
--4. 切换 mdBook 主题（Auto/Light/Rust/Coal/Navy/Ayu）后面板配色仍然正常。
-+### 历史说明：曾经有一版真正的分页
- 
--改动只涉及主题文件，`mdbook build` 之后 `book/` 下会生成带哈希的新文件名（`search-xxxxxxxx.js`、`style-xxxxxxxx.css`），部署走原有的 GitHub Actions 流程即可。
-+中间曾用 `@algolia/autocomplete-js` 自建过一版下拉面板，底部有「加载更多（已显示 X / 共 Y 条）」可以逐页翻到最后一页（那一版还专门修过 autocomplete 点 item 时先关面板导致不刷新的坑）。后来按需求换回 DocSearch 默认外观，它就不再被加载了——代码在 git 历史里（`9b26f4e0a` 之后的提交，文件 `theme/customized/search.js`）。如果以后想要「DocSearch 的外观 + 真正的分页」，需要手工复刻 DocSearch 的样式类与变量，工作量比现在这条路线大。
- 
- ## 七、与另一份 AI 生成配置的对比（留档）
- 
-
-~~~~~
-
-</details>
-
-<a id="f-1729175677-theme-customized-search-js-2827483100"></a>
-#### theme/customized/search.js
-
-<details>
-<summary><code>+100 / -335</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/theme/customized/search.js b/theme/customized/search.js
-index ac5780e0c..090a9d5ec 100644
---- a/theme/customized/search.js
-+++ b/theme/customized/search.js
-@@ -1,17 +1,20 @@
- /* ===========================================================================
-- * 微雪博客 · 自建 Algolia 搜索下拉面板
-+ * 微雪博客 · DocSearch 初始化
-  * ---------------------------------------------------------------------------
-- * 为什么不用 @docsearch/js：
-- *   DocSearch v3 每次查询只请求 hitsPerPage: 20 条，再在客户端按
-- *   maxResultsPerGroup（默认 5）切片，且没有任何分页；命中再多也看不到后面。
-- *   这里用 @algolia/autocomplete-js 自建下拉，支持「加载更多」逐页追加，
-- *   可以一直翻到最后一页。
-+ * UI 用 @docsearch/js 的**默认外观**（菜单栏搜索按钮 + 弹窗），
-+ * 搜索质量的两项改进挂在 DocSearch 官方的 transformSearchClient 上：
-  *
-- * 依赖（见 theme/index.hbs，必须在 additional-js 之前引入）：
-- *   https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.19.12/dist/umd/index.production.js
-- *   → window['@algolia/autocomplete-js']
-- * 查询直接走 Algolia 的 POST /1/indexes/{index}/query，所以不需要再引入
-- * algoliasearch 客户端，也就没有 v4（返回 {results}）与 v5（返回数组）的歧义。
-+ *   1. 清洗中文虚词。这个引擎对中文是「按单字」处理的（实测把
-+ *      indexLanguages/queryLanguages 设成 ["zh","en"] 并重建索引后，查
-+ *      「重装系统」的 _rankingInfo.words 仍是 4），所以「怎么重装系统」会变成
-+ *      6 个单字的 AND，正确页面因为没有「怎么」反而不满足；
-+ *      清洗成「重装系统」后前三名正好是三篇重装系统文章。
-+ *   2. 优先只搜「按词」属性（hierarchy_words.* / content_words.*）。
-+ *      实测 52 条精确短语：只搜按词属性 top1=33、只搜按字属性 top1=15（=基线）；
-+ *      若一条都没命中，自动退回「原查询 + 全部属性」。
-+ *
-+ * 依赖（见 theme/index.hbs，都在 additional-js 之前同步加载）：
-+ *   @docsearch/css@3.9.0 + @docsearch/js@3.9.0
-  * =========================================================================== */
- (function () {
-     'use strict';
-@@ -21,48 +24,38 @@
-         apiKey: 'c4caea4202132489213a6c5366c9952d',
-         indexName: 'tinysnowio',
-         container: '#docsearch',
--        placeholder: '搜索 / Search',
- 
--        /* 每次「加载更多」追加多少条 */
--        perPage: 20,
-+        /* 一次抓多少条（DocSearch 默认 20，弹窗内可滚动） */
-+        hitsPerPage: 100,
-+        /* 每个分组最多渲染多少条。
-+         * ⚠️ 这个值才是真正的「可见条数」上限：DocSearch 3.9 的分组键是
-+         * hierarchy.lvl0（见 docsearch-react 的 groupBy/removeHighlightTags），
-+         * 而本站每条记录的 lvl0 都是「博客」，所有命中都落在同一个分组里，
-+         * 所以能把结果全部截断的只有 maxResultsPerGroup。
-+         * 原配置没设它 → 用默认 5，这就是「明明很多命中却只看到几条」的根因。*/
-+        maxResultsPerGroup: 100,
- 
--        /* ---- 查询处理（都在客户端做）----
--         * 引擎对中文是「按单字」切分的：实测把 indexLanguages/queryLanguages 设成
--         * ["zh","en"] 并重建索引后依旧如此——查「重装系统」的 _rankingInfo.words
--         * 恒为 4（重/装/系/统），查询中间加空格也一样。于是：
--         *   1. cleanQuery：先把中文虚词去掉，否则「怎么重装系统」会变成 6 个单字的
--         *      AND，正确页面因为没有「怎么」反而不满足，前几条全是无关文章；
--         *      清洗成「重装系统」后前三名正好是三篇重装系统文章（实测）。
--         *   2. preferWordAttributes：优先只搜爬虫写的「按词」属性
--         *      （content_words / hierarchy_words）。实测 52 条精确短语：top1 从 15
--         *      涨到 33、进不了前 20 的从 14 降到 5；而只搜按字原文属性的成绩与基线
--         *      完全相同（拖后腿的是它）。若一条都没命中，会自动退回「原查询 + 全部属性」。 */
-         cleanQuery: true,
-         preferWordAttributes: true,
-         wordAttributes: [
-             'hierarchy_words.lvl0', 'hierarchy_words.lvl1', 'hierarchy_words.lvl2',
-             'hierarchy_words.lvl3', 'hierarchy_words.lvl4', 'hierarchy_words.lvl5',
-             'hierarchy_words.lvl6', 'content_words'
--        ],
--
--        /* 自建面板初始化失败时，退回 DocSearch 弹窗（每页条数已提高） */
--        fallbackToDocSearch: true
-+        ]
-     };
- 
--    /* ===================== 中文查询分词 ===================== */
--    /* 与爬虫端 assets/algolia-crawler-config.js 使用同一套 ICU 规则，
--     * 保证查询和索引切出来的词一致。 */
-+    /* ===================== 中文查询清洗 ===================== */
-     var segmenter = (function () {
-         try {
-             if (typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function') {
-                 return new Intl.Segmenter('zh-Hans', { granularity: 'word' });
-             }
--        } catch (e) { /* 环境不支持就不分词 */ }
-+        } catch (e) { /* 环境不支持就不清洗 */ }
-         return null;
-     })();
-     var HAS_CJK = /[\u3400-\u9FFF\uF900-\uFAFF]/;
- 
--    /* 单字虚词：作为独立词出现时丢掉（不用正则，避免误伤「上海」里的「上」） */
-+    /* 单字虚词：作为独立词出现时丢掉（不用正则替换字符，避免误伤「上海」的「上」） */
-     var STOP_CHARS = '的了是在和与及也就都很更最又还只把被给对从到向着并而或但如果因为所以之其此该等';
-     /* 多字虚词：ICU 会把它们切成一个词，按词整体丢掉 */
-     var STOP_WORDS = {
-@@ -75,7 +68,7 @@
-         '时候': 1, '现在': 1, '开始': 1, '进行': 1, '关于': 1, '对于': 1, '由于': 1
-     };
- 
--    /* 把用户输入变成更容易命中的查询；不需要清洗时返回 null（表示按原样发送） */
-+    /* 返回清洗后的查询；不需要清洗时返回 null（表示按原样发送） */
-     function analyzeQuery(text) {
-         if (!CONFIG.cleanQuery || !segmenter || !HAS_CJK.test(text)) {
-             return null;
-@@ -97,335 +90,107 @@
-             words.push(word);
-         }
-         if (!words.length) {
--            return null;      // 全是虚词，别清洗，直接按原样查
-+            return null;                     // 全是虚词，别清洗
-         }
-         var out = words.join(' ');
-         return out === text ? null : out;
-     }
- 
--    /* ===================== Algolia 查询 ===================== */
--    function searchUrl() {
--        return 'https://' + CONFIG.appId + '-dsn.algolia.net/1/indexes/'
--            + encodeURIComponent(CONFIG.indexName) + '/query';
--    }
--
--    function fetchPage(query, page, useWordAttributes) {
--        var payload = {
--            query: query,
--            hitsPerPage: CONFIG.perPage,
--            page: page,
--            attributesToRetrieve: ['hierarchy', 'content', 'url', 'url_without_anchor', 'anchor', 'type'],
--            attributesToHighlight: ['hierarchy'],
--            attributesToSnippet: ['content:24'],
--            highlightPreTag: '<mark>',
--            highlightPostTag: '</mark>',
--            snippetEllipsisText: '…'
--        };
--        if (useWordAttributes && CONFIG.preferWordAttributes) {
--            payload.restrictSearchableAttributes = CONFIG.wordAttributes;
--        }
--        var init = {
--            method: 'POST',
--            headers: {
--                'X-Algolia-Application-Id': CONFIG.appId,
--                'X-Algolia-API-Key': CONFIG.apiKey,
--                'Content-Type': 'application/json'
--            },
--            body: JSON.stringify(payload)
--        };
--        if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function') {
--            init.signal = AbortSignal.timeout(15000);
--        }
--        return fetch(searchUrl(), init).then(function (res) {
--            if (!res.ok) {
--                throw new Error('Algolia 返回 HTTP ' + res.status);
-+    /* ===================== 请求包装 ===================== */
-+    /* DocSearch 3.9 的请求是 v5 风格：{ indexName, query, hitsPerPage, ... } 参数在顶层，
-+     * searchParameters 在最后展开（所以我们的 searchParameters 能覆盖它的默认值）。 */
-+    function prepare(requests) {
-+        var list = (requests && requests.requests) ? requests.requests : [];
-+        var cleaned = [];
-+        var original = [];
-+        var changed = false;
-+
-+        for (var i = 0; i < list.length; i++) {
-+            var req = list[i];
-+            var rawQuery = String(req.query == null ? '' : req.query);
-+            var sent = analyzeQuery(rawQuery) || rawQuery;
-+
-+            var next = {};
-+            for (var key in req) {
-+                if (Object.prototype.hasOwnProperty.call(req, key)) {
-+                    next[key] = req[key];
-+                }
-             }
--            return res.json();
--        });
--    }
--
--    /* ===================== 分页状态 ===================== */
--    /* sent：实际发给 Algolia 的查询（可能是清洗过的）
--     * mode：'words' = 只搜按词属性；'all' = 搜全部属性
--     * refresh：autocomplete 的刷新函数，从 getItems 的参数里捕获，供「加载更多」调用 */
--    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0, refresh: null, lastMoreAt: 0 };
--
--    function resetStore(query) {
--        store = {
--            query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0,
--            refresh: store.refresh, lastMoreAt: 0
--        };
--    }
--
--    function mergeHits(list) {
--        var seen = Object.create(null);
--        var merged = [];
--        list.forEach(function (hit) {
--            if (!hit || !hit.objectID || seen[hit.objectID]) {
--                return;
-+            next.query = sent;
-+            if (CONFIG.preferWordAttributes) {
-+                next.restrictSearchableAttributes = CONFIG.wordAttributes;
-+            }
-+            cleaned.push(next);
-+            original.push(req);
-+            if (sent !== rawQuery) {
-+                changed = true;
-             }
--            seen[hit.objectID] = true;
--            merged.push(hit);
--        });
--        return merged;
--    }
--
--    /* ===================== 渲染 ===================== */
--    /* 优先用 Algolia 的高亮结果：它已经做过 HTML 转义，只额外插入 <mark>；
--     * 爬虫存进索引的层级文本本身也是实体转义过的，所以可以安全地当 HTML 用。 */
--    function levelHtml(item, level) {
--        var hl = item._highlightResult && item._highlightResult.hierarchy;
--        if (hl && hl[level] && hl[level].value) {
--            return hl[level].value;
-         }
--        var raw = item.hierarchy && item.hierarchy[level];
--        return raw ? String(raw) : '';
--    }
- 
--    function renderLoadMore(item, html) {
--        /* 这个「加载更多」行自己处理点击：
--         * autocomplete 的 item 点击路径会先执行 nextState:{isOpen:false}（关掉面板）
--         * 再调用 onSelect，如果不管它，新的一页就会渲染在已关闭的面板里。
--         * 这里在行内接管 click 并阻止冒泡——li 上的 onClick 不会触发，
--         * 面板保持打开，refresh() 出来的新一页就能正常显示。
--         * 键盘（上下键 + 回车）走不到 DOM click，由 onSelect 里的分支兜底。 */
--        return html`<div class="aa-ItemContent md-search-more"
--            onMouseDown=${stopEvent}
--            onClick=${onLoadMoreClick}>
--            <div class="aa-ItemContentBody">
--                <div class="aa-ItemContentTitle">加载更多（已显示 ${String(item.shown)} / 共 ${String(item.total)} 条）</div>
--            </div>
--        </div>`;
-+        return {
-+            requests: { requests: cleaned },
-+            original: { requests: original },
-+            /* 只有清洗过、或限定了属性时才值得回退重试 */
-+            canFallback: changed || CONFIG.preferWordAttributes
-+        };
-     }
- 
--    /* 阻止事件继续冒泡/默认行为（避免面板失焦、避免触发 autocomplete 的 item 点击处理） */
--    function stopEvent(event) {
--        if (!event) {
--            return;
--        }
--        if (typeof event.preventDefault === 'function') {
--            event.preventDefault();
--        }
--        if (typeof event.stopPropagation === 'function') {
--            event.stopPropagation();
-+    function firstResult(response) {
-+        if (!response) {
-+            return null;
-         }
--    }
--
--    function onLoadMoreClick(event) {
--        stopEvent(event);
--        loadMore();
--    }
--
--    /* 翻到下一页。
--     * 250ms 内的重复触发会被忽略：鼠标点击与 onSelect 有可能同时到达。 */
--    function loadMore() {
--        var now = Date.now();
--        if (store.lastMoreAt && now - store.lastMoreAt < 250) {
--            return;
-+        if (Array.isArray(response)) {
-+            return response[0] || null;
-         }
--        store.lastMoreAt = now;
--        store.page = store.page + 1;
--        if (typeof store.refresh === 'function') {
--            store.refresh();
-+        if (response.results && response.results.length) {
-+            return response.results[0];
-         }
-+        return null;
-     }
- 
--    function renderNotice(text, html) {
--        return html`<div class="aa-ItemContent md-search-notice">
--            <div class="aa-ItemContentBody">
--                <div class="aa-ItemContentTitle">${text}</div>
--            </div>
--        </div>`;
--    }
--
--    function renderHit(item, html) {
--        var title = levelHtml(item, 'lvl1') || levelHtml(item, 'lvl0') || '(无标题)';
--        var path = [];
--        ['lvl2', 'lvl3', 'lvl4', 'lvl5', 'lvl6'].forEach(function (level) {
--            var value = levelHtml(item, level);
--            if (value) {
--                path.push(value);
-+    function wrapSearchClient(searchClient) {
-+        var wrapped = {};
-+        for (var key in searchClient) {
-+            if (Object.prototype.hasOwnProperty.call(searchClient, key)) {
-+                wrapped[key] = searchClient[key];
-             }
--        });
--        var snippet = item._snippetResult && item._snippetResult.content
--            && item._snippetResult.content.value;
--        var pathText = path.join(' › ');
--
--        return html`<a class="aa-ItemLink" href="${item.url}">
--            <div class="aa-ItemContent">
--                <div class="aa-ItemIcon aa-ItemIcon--noBorder md-search-icon">
--                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
--                </div>
--                <div class="aa-ItemContentBody">
--                    <div class="aa-ItemContentTitle" dangerouslySetInnerHTML=${ { __html: title } }></div>
--                    ${pathText ? html`<div class="aa-ItemContentDescription md-search-path" dangerouslySetInnerHTML=${ { __html: pathText } }></div>` : null}
--                    ${snippet ? html`<div class="aa-ItemContentDescription md-search-snippet" dangerouslySetInnerHTML=${ { __html: snippet } }></div>` : null}
--                </div>
--            </div>
--        </a>`;
--    }
--
--    /* ===================== 数据源 ===================== */
--    function buildSources(params) {
--        var query = (params.query || '').trim();
--        if (!query) {
--            return [];
-         }
--        return [{
--            sourceId: 'tinysnowio',
--            getItems: function (params) {
--                if (params && typeof params.refresh === 'function') {
--                    store.refresh = params.refresh;
--                }
--                if (store.query !== query) {
--                    resetStore(query);
--                }
--                if (!store.sent) {
--                    store.sent = analyzeQuery(query) || query;   // 清洗虚词，返回 null 就用原查询
--                    store.mode = 'words';
--                }
--                var page = store.page;
--
--                function collect(data) {
--                    store.hits = mergeHits(store.hits.concat((data && data.hits) || []));
--                    if (data && typeof data.nbHits === 'number') {
--                        store.nbHits = data.nbHits;
--                    }
--                    var items = store.hits.slice();
--                    if (items.length > 0 && items.length < store.nbHits) {
--                        items.push({
--                            __loadMore: true,
--                            objectID: '__load_more__',
--                            shown: items.length,
--                            total: store.nbHits
--                        });
--                    }
--                    return items;
-+        wrapped.search = function (requests) {
-+            var prepared = prepare(requests);
-+            return searchClient.search(prepared.requests).then(function (response) {
-+                var first = firstResult(response);
-+                if (prepared.canFallback && first && first.nbHits === 0) {
-+                    /* 一条都没命中 → 退回「原查询 + 全部属性」，不牺牲召回 */
-+                    return searchClient.search(prepared.original);
-                 }
--
--                return fetchPage(store.sent, page, store.mode === 'words').then(function (data) {
--                    /* 查询已经变了，丢掉过期结果 */
--                    if (store.query !== query) {
--                        return [];
--                    }
--                    /* 只搜「按词」属性一条都没命中 → 退回「原查询 + 全部属性」再试一次 */
--                    if (page === 0 && store.mode === 'words' && data && data.nbHits === 0) {
--                        store.mode = 'all';
--                        store.sent = query;
--                        return fetchPage(query, 0, false).then(function (fallback) {
--                            if (store.query !== query) {
--                                return [];
--                            }
--                            return collect(fallback);
--                        });
--                    }
--                    return collect(data);
--                }).catch(function (err) {
--                    if (window.console && console.warn) {
--                        console.warn('[search] 查询失败：', err);
--                    }
--                    return [{ __notice: true, objectID: '__search_error__', text: '搜索服务暂时不可用，请稍后再试' }];
--                });
--            },
--            templates: {
--                header: function (props) {
--                    if (!store.nbHits) {
--                        return null;
--                    }
--                    return props.html`<div class="md-search-count">共 ${String(store.nbHits)} 条命中</div>`;
--                },
--                item: function (props) {
--                    var item = props.item;
--                    if (!item) {
--                        return null;
--                    }
--                    if (item.__loadMore) {
--                        return renderLoadMore(item, props.html);
--                    }
--                    if (item.__notice) {
--                        return renderNotice(item.text, props.html);
--                    }
--                    return renderHit(item, props.html);
--                },
--                noResults: function () {
--                    return '没有找到结果';
--                }
--            },
--            onSelect: function (p) {
--                var item = p.item || {};
--                if (p.event && typeof p.event.preventDefault === 'function') {
--                    p.event.preventDefault();
--                }
--                if (item.__loadMore) {
--                    /* 键盘选中时走这里：autocomplete 已经先把面板关掉了，要重新打开，
--                     * 否则刷新出来的下一页看不见（鼠标点击由行内 handler 接管）。 */
--                    if (typeof p.setIsOpen === 'function') {
--                        p.setIsOpen(true);
--                    }
--                    loadMore();
--                    return;
--                }
--                if (item.__notice) {
--                    return;
--                }
--                if (item.url) {
--                    window.location.href = item.url;
--                }
--            }
--        }];
-+                return response;
-+            });
-+        };
-+        return wrapped;
-     }
- 
-     /* ===================== 启动 ===================== */
--    function mountDocSearchFallback() {
--        if (!CONFIG.fallbackToDocSearch || typeof window.docsearch !== 'function') {
--            return;
--        }
--        try {
--            window.docsearch({
--                appId: CONFIG.appId,
--                apiKey: CONFIG.apiKey,
--                indexName: CONFIG.indexName,
--                container: CONFIG.container,
--                debug: false,
--                /* DocSearch 的默认值：抓 20 条、每组只渲染 5 条。这里都提高。 */
--                searchParameters: { hitsPerPage: 40 },
--                maxResultsPerGroup: 20
--            });
--        } catch (e) {
-+    function init() {
-+        if (typeof window.docsearch !== 'function') {
-             if (window.console && console.error) {
--                console.error('[search] DocSearch 兜底也失败了：', e);
-+                console.error('[search] @docsearch/js 没加载成功，搜索按钮不会出现');
-             }
--        }
--    }
--
--    function boot() {
--        var container = document.querySelector(CONFIG.container);
--        if (!container) {
-             return;
-         }
--        var AC = window['@algolia/autocomplete-js'];
--        if (!AC || typeof AC.autocomplete !== 'function' || typeof window.fetch !== 'function') {
--            mountDocSearchFallback();
--            return;
--        }
--        try {
--            AC.autocomplete({
--                container: container,
--                placeholder: CONFIG.placeholder,
--                openOnFocus: false,
--                getSources: buildSources
--            });
--        } catch (e) {
--            if (window.console && console.error) {
--                console.error('[search] 自建面板初始化失败，退回 DocSearch：', e);
--            }
--            mountDocSearchFallback();
--        }
-+        window.docsearch({
-+            appId: CONFIG.appId,
-+            apiKey: CONFIG.apiKey,
-+            indexName: CONFIG.indexName,
-+            container: CONFIG.container,
-+            maxResultsPerGroup: CONFIG.maxResultsPerGroup,
-+            searchParameters: { hitsPerPage: CONFIG.hitsPerPage },
-+            transformSearchClient: wrapSearchClient
-+        });
-     }
- 
-     if (document.readyState === 'loading') {
--        document.addEventListener('DOMContentLoaded', boot);
-+        document.addEventListener('DOMContentLoaded', init);
-     } else {
--        boot();
-+        init();
-     }
- })();
-
-~~~~~
-
-</details>
-
-<a id="f-1729175677-theme-customized-style-css-2110612380"></a>
-#### theme/customized/style.css
-
-<details>
-<summary><code>+0 / -120</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/theme/customized/style.css b/theme/customized/style.css
-index 2edd368d9..351d2218b 100644
---- a/theme/customized/style.css
-+++ b/theme/customized/style.css
-@@ -102,123 +102,3 @@ code.editable, .ace_scroller {
- .chapter li .md-viewed {
-     color: #777;
- }
--
--/* ===========================================================================
-- * 自建搜索面板（逻辑见 theme/customized/search.js）
-- * 搜索框占据菜单栏原有的 #docsearch 容器，下拉面板比搜索框宽，所以容器需要
-- * position: relative 作为定位参照。
-- * =========================================================================== */
--#docsearch {
--    position: relative;
--    align-self: center;
--    width: 210px;
--    margin-right: 6px;
--    z-index: 120;
--    /* classic 主题变量：面板高度、字号、层级 */
--    --aa-panel-max-height: min(70vh, 620px);
--    --aa-font-size: 1.4rem;
--    --aa-search-input-height: 30px;
--    --aa-base-z-index: 300;
--}
--
--#docsearch .aa-Autocomplete,
--#docsearch .aa-Form {
--    width: 100%;
--}
--
--#docsearch .aa-Form {
--    border-radius: 6px;
--    min-height: 30px;
--}
--
--#docsearch .aa-Input {
--    padding: 3px 6px;
--    height: 28px;
--}
--
--/* 面板贴合容器左边缘展开，并限制宽度避免在小屏溢出 */
--#docsearch .aa-Panel {
--    left: 0;
--    width: min(680px, calc(100vw - 32px));
--    border-radius: 8px;
--}
--
--#docsearch .md-search-count {
--    padding: 2px 4px 6px;
--    font-size: 1.2rem;
--    opacity: .65;
--}
--
--#docsearch .aa-ItemContentTitle {
--    font-size: 1.45rem;
--    line-height: 1.45;
--}
--
--#docsearch .md-search-path {
--    font-size: 1.2rem;
--    opacity: .7;
--}
--
--#docsearch .md-search-snippet {
--    display: -webkit-box;
--    -webkit-line-clamp: 2;
--    -webkit-box-orient: vertical;
--    overflow: hidden;
--    font-size: 1.25rem;
--    line-height: 1.5;
--}
--
--#docsearch .md-search-snippet mark,
--#docsearch .md-search-path mark,
--#docsearch .aa-ItemContentTitle mark {
--    background: rgba(255, 214, 0, .45);
--    color: inherit;
--    border-radius: 2px;
--    padding: 0 1px;
--}
--
--#docsearch .md-search-icon {
--    background: none;
--    box-shadow: none;
--}
--
--#docsearch .md-search-more,
--#docsearch .md-search-notice {
--    justify-content: center;
--    text-align: center;
--    color: var(--icons-hover, #7272ff);
--}
--
--#docsearch .md-search-more .aa-ItemContentTitle {
--    font-size: 1.3rem;
--    font-weight: 500;
--}
--
--/* 暗色主题：mdBook 用 html 上的 class 切主题，不是 prefers-color-scheme */
--html.ayu #docsearch,
--html.navy #docsearch,
--html.coal #docsearch {
--    --aa-text-color-rgb: 208, 208, 214;
--    --aa-background-color-rgb: 28, 31, 40;
--    --aa-input-background-color-rgb: 20, 22, 29;
--    --aa-primary-color-rgb: 158, 151, 255;
--    --aa-muted-color-rgb: 150, 150, 170;
--    --aa-icon-color-rgb: 170, 170, 200;
--    --aa-selected-color-rgb: 158, 151, 255;
--    --aa-selected-color-alpha: .28;
--    --aa-panel-border-color-rgb: 90, 94, 115;
--    --aa-input-border-color-rgb: 100, 104, 128;
--    --aa-description-highlight-background-color-rgb: 0, 255, 255;
--    --aa-description-highlight-background-color-alpha: .22;
--    --aa-scrollbar-track-background-color-rgb: 44, 46, 64;
--    --aa-panel-shadow: 0 0 0 1px rgba(120, 124, 150, .25), 0 8px 24px -6px rgba(0, 0, 0, .6);
--}
--
--@media only screen and (max-width: 700px) {
--    #docsearch {
--        width: 140px;
--    }
--    #docsearch .aa-Input {
--        font-size: 1.2rem;
--    }
--}
-\ No newline at end of file
-
-~~~~~
-
-</details>
-
-<a id="f-1729175677-theme-index-hbs-1765250716"></a>
-#### theme/index.hbs
-
-<details>
-<summary><code>+4 / -10</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/theme/index.hbs b/theme/index.hbs
-index 3ec4b8b5d..82f1fccac 100644
---- a/theme/index.hbs
-+++ b/theme/index.hbs
-@@ -67,13 +67,9 @@
-           gtag('config', 'G-P9324YLFBW');
-         </script>
- 
--        <!-- Doc Search -->
--        <!-- 自建搜索面板用的 classic 主题，版本与下方 autocomplete-js 保持一致 -->
--        <link
--            rel="stylesheet"
--            href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic@1.19.12/dist/theme.min.css"
--        />
--        <!-- 仅在自建搜索面板初始化失败时，给 DocSearch 弹窗兜底用 -->
-+        <!-- Doc Search：UI 用 DocSearch 默认外观（按钮 + 弹窗）
-+             查询清洗与「优先搜按词属性」都在 theme/customized/search.js 里，走官方
-+             transformSearchClient 注入，不碰它的外观 -->
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.9.0/dist/style.css" />
-         <link rel="preconnect" href="https://GX9RTL51BH-dsn.algolia.net" crossorigin />
-         
-@@ -443,9 +439,7 @@
-         </script>
- 
- 
--        <!-- 搜索面板依赖：必须在 additional-js（theme/customized/search.js）之前同步加载 -->
--        <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js@1.19.12/dist/umd/index.production.js"></script>
--        <!-- 仅作为自建面板初始化失败时的兜底 -->
-+        <!-- DocSearch：必须在 additional-js（theme/customized/search.js）之前同步加载 -->
-         <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js"></script>
- 
-         <!-- Custom JS scripts -->
 
 ~~~~~
 
