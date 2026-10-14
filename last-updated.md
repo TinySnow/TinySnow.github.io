@@ -5,6 +5,90 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-10-15 06:01:11 CMT (UTC+8) | 1b00354ba）
+
+### Summary
+
+- Generated at: `2026-10-15 06:01:11 CMT (UTC+8)`
+- Base commit: `1b00354ba`
+- Diff source: `543a60d7c1bcae1bf63f7b824a6865cb4f44d015..1b00354badbff679f8d14843fb3b2f16e2d58a38`
+- Changed files: `2`
+- Total lines: `+18 / -0`
+
+### Commit Messages
+
+- `1b00354b` 每日一文：卖笑人 - 伯尔
+
+### Index
+
+1. [src/SUMMARY.md](#f-1978055411-src-summary-md-3501257646) `+1 / -0`
+2. [src/阅读/每日一文/卖笑人-伯尔.md](#f-1978055411-src-阅读-每日一文-卖笑人-伯尔-md-616181417) `+17 / -0`
+
+### Diffs
+
+<a id="f-1978055411-src-summary-md-3501257646"></a>
+#### src/SUMMARY.md
+
+<details>
+<summary><code>+1 / -0</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/src/SUMMARY.md b/src/SUMMARY.md
+index 95466555f..e176c9585 100644
+--- a/src/SUMMARY.md
++++ b/src/SUMMARY.md
+@@ -1455,6 +1455,7 @@
+     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
+     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
+ - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
++  - [卖笑人 - 伯尔](阅读/每日一文/卖笑人-伯尔.md)
+   - [拒绝说它美丽 - 余秋雨](阅读/每日一文/拒绝说它美丽-余秋雨.md)
+   - [血钻 - 阿林·贝克](阅读/每日一文/血钻-阿林·贝克.md)
+   - [叙述爱的无穷种方式 - 维维阿娜](阅读/每日一文/叙述爱的无穷种方式-维维阿娜.md)
+
+~~~~~
+
+</details>
+
+<a id="f-1978055411-src-阅读-每日一文-卖笑人-伯尔-md-616181417"></a>
+#### src/阅读/每日一文/卖笑人-伯尔.md
+
+<details>
+<summary><code>+17 / -0</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git "a/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\215\226\347\254\221\344\272\272-\344\274\257\345\260\224.md" "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\215\226\347\254\221\344\272\272-\344\274\257\345\260\224.md"
+new file mode 100644
+index 000000000..1de9778f8
+--- /dev/null
++++ "b/src/\351\230\205\350\257\273/\346\257\217\346\227\245\344\270\200\346\226\207/\345\215\226\347\254\221\344\272\272-\344\274\257\345\260\224.md"
+@@ -0,0 +1,17 @@
++# 卖笑人
++
++*伯尔*
++
++　　倘若人家问起我的职业，那我就尴尬万分，唰地一下面红耳赤，张口结舌，不知所答，因为我是个有名的诚实可靠的人。我很羡慕瓦工可以回答说：我是瓦工。我妒忌会计师、理发师和作家，他们都可以直截了当地说出自己的职业，因为这些职业名副其实，用不着多费唇舌去解释。我没有办法，只好回答：我是卖笑人。人家听了不免还要追问下去：您靠卖笑为生吗？我不得不直说“是”。于是问题接二连三，没完没了。我的确靠卖笑为生，而且活得很好。用商业用语说，就是我的笑很畅销。我是拜过名师的笑的行家，无人能与伦比，无人能掌握我的维妙维肖的艺术。我长期把自己看作演员，其原因就不必说了。然而，我的语言能力和表演技巧太差，演员这称号我实在不配。我爱真理，而真理是：我是卖笑人。我不是小丑，也不是滑稽演员；我不逗引观众欢笑，我只是欢笑的化身。我笑得像一个罗马皇帝，像一个参加毕业考试时反应灵敏的中学生。19 世纪的笑是我的拿手好戏，17 世纪的笑我也笑得毫不逊色。如果有必要，我可以模拟各个世纪的笑，各个社会阶层的笑，各种年龄的笑。我像鞋匠学会钉鞋后跟一样，轻而易举地学会笑。我满腹都是美洲的笑、非洲的笑、白的笑、红的笑、黄的笑，只要给我适当的报酬，导演怎么说，我就怎么笑，我已成为不可缺少的人物了。我的笑灌制了唱片，我的笑录了音，广播剧导演更一刻不放过我。我苦笑、淡笑、狂笑，我笑得像电车售票员，像食品公司的学徒一样，早晨笑，晚上笑，夜里笑，黎明还笑。简而言之，不管何时、何地、何人，都会相信这种职业是很辛苦的。再说我还有逗人笑的特长，三、四流的滑稽演员也少不了我，因为他们正为自己的噱头是否叫座而提心吊胆。我差不多每天晚上都坐在杂耍场里，担任微妙的捧场者的角色，在节目淡而无味的当儿发出感染人的笑声。这事干起来得橡计量工作那样仔细，我的大胆的狂笑必须笑得正是时候，早了不行，迟了也不行。时候一到，我就得捧腹大笑，接着是观众的一阵哄堂大笑，于是不能引人兴趣的噱头就得救了。
++
++　　可是演出一结束，我就精疲力尽地溜进衣帽间，穿上大衣。终于下班了，心里无限高兴。通常在这样的时候，家里已经有“急需您笑，星期二录音”的电报在等着我。几小时后，我只得又在直达快车上奔驰，深为自己的命运而感慨不已。
++
++　　我下班后或休假时是不爱笑的，这是大家都理解的。挤奶员如能忘却奶牛，瓦工如能忘却灰浆，那该多美。常见木工家里的门关不上，抽屉拉不开，糕点工人喜爱酸黄瓜，屠宰工喜爱杏仁夹心糖，面包师傅宁要香肠而不要面包；斗牛士爱玩鸽子，拳击师见到自己的孩子鼻孔出血会大惊失色。凡此种种，我都明白；我自己历来就不在业余时间笑。我本是个不苟言笑的人，人家都说我是个悲观主义者，这也许不是没有道理的。
++
++　　结婚的头一年，老婆常对我说：“笑一个吧。”而这些年来她终于明白，我是无法实现她的愿望的。我紧张的面部肌肉和忧郁的心境，如真正得到松缓的时候，那我就感到无比幸福。说真的，旁人的笑声也会引起我心烦意乱，因为听到笑声难免要想起我的职业。我老婆也把笑的本能遗忘了，于是我俩的夫妇生活就显得冷冷清清、平平淡淡的。偶尔我逮住她脸上掠过的一丝笑容，我自己也怡然一笑。我俩常常是唧唧低语，因为我恨杂耍场的喧哗，恨录音室里可能出现的嘈杂。
++
++　　素不相识的人总以为我沉默寡言，这或许是对的，因为我得频繁地张着口去笑。
++
++　　我木然地走着我的人生之路，间或赐予自己一丝微笑。我常常想，我是否真的笑过。我确信我从未笑过。我的兄弟姐妹可以告诉你们，我从小就是一个严肃的男孩。
++
++　　我用各种各样的方式来表现笑，但是，我不知道自己究竟为何而笑。
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-14 12:08:12 CMT (UTC+8) | 543a60d7c）
 
 ### Summary
@@ -51,7 +135,6 @@ index 91bda7107..95466555f 100644
 </details>
 
 <!-- LAST_UPDATED_ENTRY_END -->
-
 
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-14 12:03:35 CMT (UTC+8) | 7222f7598）
@@ -2159,167 +2242,6 @@ index 3ec4b8b5d..82f1fccac 100644
          <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js"></script>
  
          <!-- Custom JS scripts -->
-
-~~~~~
-
-</details>
-
-<!-- LAST_UPDATED_ENTRY_END -->
-
-<!-- LAST_UPDATED_ENTRY_START -->
-## 更新记录（2026-10-13 18:55:01 CMT (UTC+8) | d70db98cd）
-
-### Summary
-
-- Generated at: `2026-10-13 18:55:01 CMT (UTC+8)`
-- Base commit: `d70db98cd`
-- Diff source: `ad11627f86dab249725903d99e09598977d54c79..d70db98cdd6e88ecb9ba5cecf3c21fd8375447c5`
-- Changed files: `1`
-- Total lines: `+57 / -8`
-
-### Commit Messages
-
-- `d70db98c` 搜索：修复「加载更多」点不动——autocomplete 会先关面板再回调 onSelect
-
-  > 从 @algolia/autocomplete-js@1.19.12 的真实包读出点击路径：
-  >   (itemUrl ? resolve() : setState({ nextState: { isOpen: false } })).then(() => source.onSelect({...}))
-  > 也就是点 item 时它先把面板关掉、再调用 onSelect，所以 refresh() 出来的下一页
-  > 渲染在已关闭的面板里 —— 现象就是「点加载更多没反应」。我的 Node 测试只覆盖了
-  > 数据层（手动调 getItems），没覆盖这条交互路径，所以漏了。
-  >
-  > 修复（两条路径都覆盖）：
-  > - 鼠标：在「加载更多」行内挂 onClick/onMouseDown，preventDefault + stopPropagation，
-  >   li 上的 autocomplete 处理不会触发 → 面板保持打开，refresh() 直接渲染新一页
-  > - 键盘（↑↓ + 回车）：走 onSelect 分支，先 setIsOpen(true) 重新打开面板再 refresh()
-  > - 250ms 去重：防止鼠标与 onSelect 同时到达导致一次跳两页
-  > - store.refresh 从 getItems 的参数捕获（真实包里 getItems 确实收到 refresh）
-  >
-  > 验证（用真实 htm/preact 渲染出节点后模拟交互）：
-  > - 鼠标点击：stopPropagation 生效、refresh 1 次、刷新后 40 条、请求 page=1
-  > - 键盘：setIsOpen(true)、refresh 1 次
-  > - 同步连点两次 / 点击+onSelect 双触发：都只翻一页
-  > - 命中不足 20 条时不显示「加载更多」
-
-
-### Index
-
-1. [theme/customized/search.js](#f-3344729701-theme-customized-search-js-2827483100) `+57 / -8`
-
-### Diffs
-
-<a id="f-3344729701-theme-customized-search-js-2827483100"></a>
-#### theme/customized/search.js
-
-<details>
-<summary><code>+57 / -8</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/theme/customized/search.js b/theme/customized/search.js
-index c078aa98e..ac5780e0c 100644
---- a/theme/customized/search.js
-+++ b/theme/customized/search.js
-@@ -146,11 +146,15 @@
- 
-     /* ===================== 分页状态 ===================== */
-     /* sent：实际发给 Algolia 的查询（可能是清洗过的）
--     * mode：'words' = 只搜按词属性；'all' = 搜全部属性 */
--    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
-+     * mode：'words' = 只搜按词属性；'all' = 搜全部属性
-+     * refresh：autocomplete 的刷新函数，从 getItems 的参数里捕获，供「加载更多」调用 */
-+    var store = { query: '', sent: '', mode: '', page: 0, hits: [], nbHits: 0, refresh: null, lastMoreAt: 0 };
- 
-     function resetStore(query) {
--        store = { query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0 };
-+        store = {
-+            query: query, sent: '', mode: '', page: 0, hits: [], nbHits: 0,
-+            refresh: store.refresh, lastMoreAt: 0
-+        };
-     }
- 
-     function mergeHits(list) {
-@@ -179,13 +183,53 @@
-     }
- 
-     function renderLoadMore(item, html) {
--        return html`<div class="aa-ItemContent md-search-more">
-+        /* 这个「加载更多」行自己处理点击：
-+         * autocomplete 的 item 点击路径会先执行 nextState:{isOpen:false}（关掉面板）
-+         * 再调用 onSelect，如果不管它，新的一页就会渲染在已关闭的面板里。
-+         * 这里在行内接管 click 并阻止冒泡——li 上的 onClick 不会触发，
-+         * 面板保持打开，refresh() 出来的新一页就能正常显示。
-+         * 键盘（上下键 + 回车）走不到 DOM click，由 onSelect 里的分支兜底。 */
-+        return html`<div class="aa-ItemContent md-search-more"
-+            onMouseDown=${stopEvent}
-+            onClick=${onLoadMoreClick}>
-             <div class="aa-ItemContentBody">
-                 <div class="aa-ItemContentTitle">加载更多（已显示 ${String(item.shown)} / 共 ${String(item.total)} 条）</div>
-             </div>
-         </div>`;
-     }
- 
-+    /* 阻止事件继续冒泡/默认行为（避免面板失焦、避免触发 autocomplete 的 item 点击处理） */
-+    function stopEvent(event) {
-+        if (!event) {
-+            return;
-+        }
-+        if (typeof event.preventDefault === 'function') {
-+            event.preventDefault();
-+        }
-+        if (typeof event.stopPropagation === 'function') {
-+            event.stopPropagation();
-+        }
-+    }
-+
-+    function onLoadMoreClick(event) {
-+        stopEvent(event);
-+        loadMore();
-+    }
-+
-+    /* 翻到下一页。
-+     * 250ms 内的重复触发会被忽略：鼠标点击与 onSelect 有可能同时到达。 */
-+    function loadMore() {
-+        var now = Date.now();
-+        if (store.lastMoreAt && now - store.lastMoreAt < 250) {
-+            return;
-+        }
-+        store.lastMoreAt = now;
-+        store.page = store.page + 1;
-+        if (typeof store.refresh === 'function') {
-+            store.refresh();
-+        }
-+    }
-+
-     function renderNotice(text, html) {
-         return html`<div class="aa-ItemContent md-search-notice">
-             <div class="aa-ItemContentBody">
-@@ -229,7 +273,10 @@
-         }
-         return [{
-             sourceId: 'tinysnowio',
--            getItems: function () {
-+            getItems: function (params) {
-+                if (params && typeof params.refresh === 'function') {
-+                    store.refresh = params.refresh;
-+                }
-                 if (store.query !== query) {
-                     resetStore(query);
-                 }
-@@ -310,10 +357,12 @@
-                     p.event.preventDefault();
-                 }
-                 if (item.__loadMore) {
--                    store.page = store.page + 1;
--                    if (typeof p.refresh === 'function') {
--                        p.refresh();
-+                    /* 键盘选中时走这里：autocomplete 已经先把面板关掉了，要重新打开，
-+                     * 否则刷新出来的下一页看不见（鼠标点击由行内 handler 接管）。 */
-+                    if (typeof p.setIsOpen === 'function') {
-+                        p.setIsOpen(true);
-                     }
-+                    loadMore();
-                     return;
-                 }
-                 if (item.__notice) {
 
 ~~~~~
 
