@@ -7,11 +7,32 @@
     <language>zh-CN</language>
     <atom:link href="https://tinysnow.github.io/rss.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>[新增] 后台朋友 - 林语堂</title>
+      <link>https://tinysnow.github.io/%E9%98%85%E8%AF%BB/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%96%87/%E5%90%8E%E5%8F%B0%E6%9C%8B%E5%8F%8B-%E6%9E%97%E8%AF%AD%E5%A0%82.html</link>
+      <guid isPermaLink="false">src/阅读/每日一文/后台朋友-林语堂.md#added#2026-10-19T06:00:05+08:00</guid>
+      <pubDate>Mon, 19 Oct 2026 06:00:05 +0800</pubDate>
+      <description>新增: 后台朋友 - 林语堂 - 2026-10-19 06:00:05</description>
+      <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# 后台朋友
+
+*林语堂*
+
+　　莎士比亚说：“人生如舞台。”
+
+　　人的一生有前台，也有后台。前台是粉墨登场的所在，费尽心思化好了妆，穿好了戏服，准备好了台词，端起了架势，调匀了呼吸，一步步踱出去，使出浑身解数：该唱的，唱得五音不乱；该说的，说得字正腔圆；该演的，演得淋漓尽致，于是博得满堂彩，名利双收，踌躇满志而归。
+
+　　然而，当他回到后台，脱下戏服，卸下妆彩，露出疲惫发黄的脸部时，后台有没有一个朋友在等他，和他说一句真心话，道一声辛苦了，或默默交换一个眼神，这眼神也许比前台的满堂彩都要受用，而且必要！
+
+　　后台的朋友，是心灵的休息地，在他面前，不必化妆，不必穿戏服，不必做事情，不必端架子，可以说真话，可以说泄气话，可以说没出息的话，可以让他知道你很脆弱、很懦弱、很害怕，每次要走入前台时都很紧张、很厌恶，因为你确知后台朋友只会安慰你，不会耻笑你，不会奚落你。
+
+　　况且，在他面前你早已没有形象可言了，也乐得继续没形象下去。人生有一个地方，有一个人，在这人面前，可以不必有出息，可以不必有形象，可以暴露弱点，可以是全身弱点，这是很大的解放。有此解放，人可以在解放一阵子之后，重拾勇气，重披戏服，再次化妆，再次端架子，走到前台去扮演好需扮演的角色，做一个人模人样的人物，博得世俗的赞美。
+&lt;/pre&gt;</content:encoded>
+    </item>
+    <item>
       <title>[更新] SUMMARY.md</title>
       <link>https://tinysnow.github.io/SUMMARY.html</link>
-      <guid isPermaLink="false">src/SUMMARY.md#modified#2026-10-18T16:26:06+08:00</guid>
-      <pubDate>Sun, 18 Oct 2026 16:26:06 +0800</pubDate>
-      <description>更新: SUMMARY.md - 2026-10-18 16:26:06</description>
+      <guid isPermaLink="false">src/SUMMARY.md#modified#2026-10-19T06:00:05+08:00</guid>
+      <pubDate>Mon, 19 Oct 2026 06:00:05 +0800</pubDate>
+      <description>更新: SUMMARY.md - 2026-10-19 06:00:05</description>
       <content:encoded>&lt;pre style="white-space:pre-wrap;word-wrap:break-word"&gt;# Summary
 
 - [简介 | Intro | プロフ | préface](个人简介.md)
@@ -1474,6 +1495,7 @@
     - [所有女生要知道](阅读/其他/书籍/所有女生要知道.md)
     - [意象的帝国：诗的写作课](阅读/其他/书籍/意象的帝国：诗的写作课.md)
 - [每日一文 | Daily Article](阅读/每日一文/每日一文.md)
+  - [后台朋友 - 林语堂](阅读/每日一文/后台朋友-林语堂.md)
   - [不买房 买梦想 - 高晓松](阅读/每日一文/不买房%20买梦想-高晓松.md)
   - [一个人应该活得是自己并且干净 - 顾城](阅读/每日一文/一个人应该活得是自己并且干净-顾城.md)
   - [借火柴 - 斯蒂芬·巴特勒·里柯克](阅读/每日一文/借火柴-斯蒂芬·巴特勒·里柯克.md)
