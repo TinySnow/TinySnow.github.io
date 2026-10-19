@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>哺乳期的女人 - 毕飞宇 - 微雪博客</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="南国微雪的博客">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css"> -->
+        <!--  -->
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/customized/style-062644ea.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <!-- Baidu Site Analytics -->
+        <meta name="baidu-site-verification" content="code-he9gAvXT8G" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P9324YLFBW"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P9324YLFBW');
+        </script>
+
+        <!-- Doc Search：UI 用 DocSearch 默认外观（按钮 + 弹窗）
+             查询清洗与「优先搜按词属性」都在 theme/customized/search.js 里，走官方
+             transformSearchClient 注入，不碰它的外观 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.9.0/dist/style.css" />
+        <link rel="preconnect" href="https://GX9RTL51BH-dsn.algolia.net" crossorigin />
+        
+
+        <!-- Provide site root to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "ayu";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-bc3f31c9.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <div id="docsearch" style="align-self: center;"></div>
+                    </div>
+
+                    <h1 class="menu-title">微雪博客</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/TinySnow/TinySnow.github.io" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    // Get viewed page store
+                    var viewed_key = 'mdbook-viewed';
+                    var viewed_map = {};
+                    try {
+                        var viewed_storage = localStorage.getItem(viewed_key);
+                        if (viewed_storage) {
+                            viewed_map = JSON.parse(viewed_storage)
+                        }
+                    } catch (e) { }
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                        
+                        // Apply viewed style
+                        if (viewed_map[link.pathname]) {
+                            link.classList.add('md-viewed')
+                        }
+                    }); 
+                    // Mark viewed after 30s
+                    setTimeout(function() {
+                        viewed_map[location.pathname] = 1;
+                        localStorage.setItem(viewed_key, JSON.stringify(viewed_map));
+                    }, 30000)
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+                    <main>
+                        <h1 id="哺乳期的女人"><a class="header" href="#哺乳期的女人">哺乳期的女人</a></h1>
+<p><em>毕飞宇</em></p>
+<p>　　断桥镇只有两条路，一条是三米多宽的石巷，一条是四米多宽的夹河。三排民居就是沿着石巷和夹河次第铺排开来的，都是统一的二层阁楼，楼与楼之间几乎没有间隙，这样的关系使断桥镇的邻居只有“对门”和“隔壁”这两种局面，当然，阁楼所连成的三条线并不是笔直的，它的蜿蜒程度等同于夹河的弯曲程度。断桥镇的石巷很安静，从头到尾洋溢着石头的光芒，又干净又安详。夹河里头也是水面如镜，那些石桥的拱形倒影就那么静卧在水里头，千百年了，身姿都龙钟了，有小舢板过来它们就颤悠悠地让开去，小舢板一过去它们便驼了背脊再回到原来的地方去。不过夹河到了断桥镇的最东头就不是夹河了，它汇进了一条相当阔大的水面，这条水面对断桥镇的年轻人来说意义重大，断桥镇所有的年轻人都是在这条水面上开始他们的人生航程的。他们不喜欢断桥镇上石头与水的反光，一到岁数便向着远方世界蜂拥而去。断桥镇的年轻人沿着水路消逝得无影无踪，都来不及在水面上留下背影。好在水面一直都是一副不记事的样子。旺旺家和惠嫂家对门。中间隔了一道石巷，惠嫂家傍山，是一座二三十米高的土丘；旺旺家依水，就是那条夹河。旺旺是一个七岁的男孩，其实并不叫旺旺。但是旺旺的手上整天都要提一袋旺旺饼干或旺旺雪饼，大家就喊他旺旺，旺旺的爷爷也这么叫，又顺口又喜气。旺旺一生下来就跟了爷爷了。他的爸爸和妈妈在一条拖挂船上跑运输，挣了不少钱，已经把旺旺的户口买到县城里去了。旺旺的妈妈说，他们挣的钱才够旺旺读大学，等到旺旺买房、成亲的钱都回来，他们就回老家，开一个酱油铺子。他们这刻儿正四处漂泊，家乡早就不是断桥镇了，而是水，或者说是水路。断桥镇在他们的记忆中越来越概念了，只是一行字，只是汇款单上遥远的收款地址。汇款单成了鳏父的儿女，汇款单也就成了独子旺旺的父母。</p>
+<p>　　旺旺没事的时候坐在自家的石门槛上看行人。手里提着一袋旺旺饼干或旺旺雪饼。旺旺的父亲在汇款单左侧的纸片上关照的，“每天一袋旺旺”。旺旺吃腻了饼干，但是爷爷不许他空着手坐在门槛上。旺旺无聊，坐久了就会把手伸到裤裆里，掏鸡鸡玩。一手提着袋子，一手捏住饼干，就好了。旺旺坐在门槛上刚好替惠嫂看杂货铺。惠嫂家的底楼其实就是一铺子。有人来了旺旺便尖叫。旺旺一叫惠嫂就从后头笑嘻嘻地走了出来。</p>
+<p>　　惠嫂原来也在外头，一九九六年的开春才回到断桥镇。惠嫂回家是生孩子的，生了一个男孩，还在吃奶。旺旺没有吃过母奶。爷爷说，旺旺的妈天生就没有汁。旺旺衔他妈妈的奶头只有一次，吮不出内容，妈妈就叫疼，旺旺生下来不久便让妈妈送到奶奶这边来了，那时候奶奶还没有埋到后山去。同时送来的还有一只不锈钢碗和不锈钢调羹。奶奶把乳糕、牛奶、亨氏营养奶糊、鸡蛋黄、豆粉盛在锃亮的不锈钢碗里，再用锃亮的不锈钢调羹一点一点送到旺旺的嘴巴里。吃完了旺旺便笑，奶奶便用不锈钢调羹击打不锈钢空碗，发出悦耳冰凉的工业品声响。奶奶说：“这是什么？这是你妈的奶子。”旺旺长得结结实实的，用奶奶的话说，比拱奶头拱出来的奶丸子还要硬铮。不过旺旺的爷爷倒是常说，现在的女人不行的，没水分，肚子让国家计划了，奶子总不该跟着瞎计划的。这时候奶奶总是对旺旺说，你老子吃我吃到五岁呢。吃到五岁呢。既像为自己骄傲又像替儿子高兴。</p>
+<p>　　不过惠嫂是例外。惠嫂的脸、眼、唇、手臂和小腿都给人圆嘟嘟的印象。矮墩墩胖乎乎的，又浑厚又溜圆。惠嫂面如满月，健康，亲切，见了人就笑，笑起来脸很光润，两只细小的酒窝便会在下唇的两侧窝出来，有一种产后的充盈与产后的幸福，通身笼罩了乳汁芬芳，浓郁绵软，鼻头猛吸一下便又似有若无。惠嫂的乳房硕健巨大，在衬衣的背后分外醒目，而乳汁也就源远流长了，给人以取之不尽、用之不竭的印象。惠嫂给孩子喂奶格外动人，她总是坐到铺子的外侧来。惠嫂不解扣子，直接把衬衣撩上去，把儿子的头搁到肘弯里，尔后将身子靠过去。等儿子衔住了才把上身直起来。惠嫂喂奶总是把脖子倾得很长，抚弄儿子的小指甲或小耳垂，弄住了便不放了。有人来买东西，惠嫂就说：“自己拿。”要找钱，惠嫂也说：“自己拿。”旺旺一直留意惠嫂喂奶的美好静态，惠嫂的乳房因乳水的肿胀洋溢出过分的母性，天蓝色的血管隐藏在表层下面。旺旺坚信惠嫂的奶水就是天蓝色的，温暖却清凉。惠嫂儿子吃奶时总要有一只手扶住妈妈的乳房，那只手又干净又娇嫩，抚在乳房的外侧，在阳光下面不像是被照耀，而是乳房和手自己就会放射出阳光来，有一种半透明的晶莹效果，近乎圣洁，近乎妖娆。惠嫂喂奶从来不避讳什么，事实上，断桥镇除了老人孩子只剩下几个中年妇女了。惠嫂的无遮无拦给旺旺带来了企盼与忧伤。旺旺被奶香缠绕住了，忧伤如奶香一样无力，奶香一样不绝如缕。</p>
+<p>　　惠嫂做梦也没有想到旺旺会做出这种事来。惠嫂坐在石门槛上给孩子喂奶，旺旺坐在对面隔着一条青石巷呢。惠嫂的儿子只吃了一只奶子就饱了，惠嫂把另一只送过去，她的儿子竟让开了，嘴里吐出奶的泡沫。但是惠嫂的这只乳房胀得厉害，便决定挤掉一些，惠嫂侧身站到墙边，双手握住了自己的奶子，用力一挤，奶水就喷涌出来了，一条线，带着一道弧线。旺旺一直注视着惠嫂的举动。旺旺看见那条雪白的乳汁喷在墙上，被墙的青砖吸干净了。旺旺闻到了那股奶香，在青石巷十分温暖十分慈祥地四处弥漫。旺旺悄悄走到对面去，躲在墙的拐角。惠嫂挤完了又把儿子抱到腿上来，孩子在哼唧，惠嫂又把衬衣撩上去。但孩子不肯吃，只是拍着妈妈的乳房自己和自己玩，嘴里说一些单调的听不懂的声音。惠嫂一点都没有留神旺旺已经过来了。旺旺拨开婴孩的手，埋下脑袋对准惠嫂的乳房就是一口。咬住了，不放。惠嫂的一声尖叫在中午的青石巷里又突兀又悠长，把半个断桥镇都吵醒了。要不是这一声尖叫旺旺肯定还是不肯松口的。旺旺没有跑，他半张着嘴巴，表情又愣又傻。旺旺看见惠嫂的右乳上印上了一对半圆形的牙印与血痕，惠嫂回过神来，还没有来得及安抚惊啼的孩子，左邻右舍就来人了。惠嫂又疼又羞，责怪旺旺说：“旺旺，你要死了。”</p>
+<p>　　旺旺的举动在当天下午便传遍了断桥镇。这个没有报纸的小镇到处在口播这条当日新闻。人们的话题自然集中在性上头，只是没有挑明了说。人们说：“要死了，小东西才七岁就这样了。”人们说：“断桥镇的大人也没有这么流氓过。”当然，人们的心情并不沉重，是愉快的，新奇的。人们都知道惠嫂的奶子让旺旺咬了，有人就拿惠嫂开心，在她的背后高声叫喊电视上的那句广告词，说：“惠嫂，大家都‘旺’一下。”这话很逗人，大伙都笑，惠嫂也笑。但是惠嫂的婆婆显得不开心，拉着一张脸走出来说：“水开了。”</p>
+<p>　　旺旺爷知道下午的事是在晚饭之后。尽管家里只有爷孙两个，爷爷每天还要做三顿饭，每顿饭都要亲手给旺旺喂下去。那只不锈钢碗和不锈钢调羹和昔日一样锃亮，看不出磨损与锈蚀。爷爷上了岁数，牙掉了，那根老舌头也就没人管了，越发无法无天，唠叨起来没完。往旺旺的嘴里喂一口就要唠叨一句，“张开嘴吃，闭上嘴嚼，吃完了上床睡大觉。”“一口蛋，一口肉，长大了挣钱不发愁。”诸如此类，都是他自编的顺口溜。但是旺旺今天不肯吃。调羹从右边喂过来他让到左边去，从左来了又让到右边去。爷爷说：“蛋也不吃，肉也不咬，将来怎么挣钞票？”旺旺的眼睛一直盯住惠嫂家那边。惠嫂家的铺子里有许多食品。爷爷问：“想要什么？”旺旺不开口。爷爷说：“克力架？”爷爷说：“德芙巧克力？”爷爷说：“亲亲八宝粥？”旺旺不开口，亲亲八宝粥旁边是澳洲的全脂粉，爷爷说：“想吃奶？”旺旺回过头，泪汪汪地正视爷爷。爷爷知道孙子想吃奶，到对门去买了一袋，用水冲了，端到旺旺的面前来。说：“旺旺吃奶了。”旺旺咬住不锈钢调羹，吐在了地上，顺手便把那只不锈钢碗也打翻了。不锈钢在石头地面活蹦乱跳，发出冰凉的金属声响。爷爷向旺旺的腮边伸出巴掌，大声说：“捡起来！</p>
+<p>　　”旺旺不动，像一块咸鱼，翻着一双白眼。爷爷把巴掌举高了，说：“捡不捡？”又高了，说：“捡不捡？”爷爷的巴掌举得越高，离旺旺也就越远。爷爷放下巴掌，说：“小祖宗，捡呀！”</p>
+<p>　　是爷爷自己把不锈钢餐具捡起来了。爷爷说：“你怎么能扔这个？你就是这个喂大的，这可是你的奶水，你还扔不扔？啊？扔不扔？——还有七个月就过年了，你看我不告诉你爸妈！”</p>
+<p>　　按照生活常规，晚饭过后，旺旺爷到南门屋檐下的石码头上洗碗。隔壁的刘三爷在洗衣裳。刘三爷一见到旺旺爷便笑，笑得很鬼。刘三爷说：“旺爷，你家旺旺吃人家惠嫂豆腐，你教的吧？”旺旺爷听不明白，但从刘三爷的皱纹里看到了七拐八弯的东西。刘三爷瞟他一眼，小声说：“你孙子下午把惠嫂的奶子啃了，出血啦！”</p>
+<p>　　旺旺爷明白过来脑子里就轰隆一声。可了不得了。这还了得？旺旺爷转过身就操起扫帚，倒过来握在手上，揪起旺旺冲着屁股就是三四下，小东西没有哭，泪水汪了一眼，掉下来一颗，又汪开来，又掉。他的泪无声无息，有一种出格的疼痛和出格的悲伤。这种哭法让人心软，叫大人再也下不了手。旺旺爷丢了扫帚，厉声诘问说：“谁教你的？是哪一个畜生教你的？”旺旺不语。旺旺低下头泪珠又一大颗一大颗往下丢。旺旺爷长叹一口气，说：“反正还有七个月就过年了。”</p>
+<p>　　旺旺的爸爸和妈妈每年只回断桥镇一次。一次六天，也就是大年三十到正月初五。旺旺的妈妈每次见旺旺之前都预备了好多激情，一见到旺旺又是抱又是亲。旺旺总有些生分，好多举动一下子不太做得出。这样一来旺旺被妈妈搂着就有些受罪的样子，被妈妈摆弄过来又摆弄过去。有些疼。有些别扭。有些需要拒绝和挣扎的地方。后来爸爸妈妈就会取出许多好玩的好吃的，都是与电视广告几乎同步的好东西，花花绿绿一大堆，旺旺这时候就会幸福，愣头愣脑地把肚子吃坏掉。旺旺总是在初三或者初四开始熟悉和喜欢他的爸爸和妈妈，喜欢他们的声音，气味。一喜欢便想把自己全部依赖过去，但每一次他刚刚依赖过去他们就突然消失了。旺旺总是扑空，总是落不到实处。这种坏感觉旺旺还没有学会用一句完整的话把它们说出来。旺旺就不说。初五的清早他们肯定要走的。旺旺在初四的晚上往往睡得很迟，到了初五的早上就醒不来了，爸爸的大拖挂就泊在镇东的阔大水面上。他们放下一条小舢板沿着夹河一直划到自家的屋檐底下。走的时候当然也是这样，从窗棂上解下绳子，沿夹河划到东头，然后，拖挂的粗重汽笛吼叫两声，他们的拖挂就远去了。他们走远了太阳就会升起来。旺旺赶来的时候天上只有太阳，地上只有水。旺旺的瞳孔里头只剩下一颗冬天的太阳，一汪冬天的水。太阳离开水面的时候总是拽着的，扯拉着的，有了痛楚和流血的症状。然后太阳就升高了，苍茫的水面成了金子与银子铺成的路。</p>
+<p>　　由于旺旺的意外袭击，惠嫂的喂奶自然变得小心些了。惠嫂总是躲在柜台的后面，再解开上衣上的第二个钮扣。但是接下来的两天惠嫂没有看见旺旺。原来天天在眼皮底下，不太留意，现在看不见，反倒格外惹眼了。惠嫂中午见到旺旺爷，顺嘴说：“旺爷，怎么没见旺旺了？”旺旺的爷爷这几天一直羞于碰上惠嫂，就像刘三爷说的那样，要是惠嫂也以为旺旺那样是爷爷教的，那可要羞死一张老脸了。旺旺的爷还是让惠嫂堵住了，一双老眼也不敢看她。旺旺爷顺着嘴说：“在医院里头打吊针呢。”惠嫂说：“怎么了？好好的怎么去打吊针了？”旺旺爷说：“发高烧，退不下去。”惠嫂说：“你吓唬孩子了吧？”旺旺爷十分愧疚地说：“不打不骂不成人。”惠嫂把孩子换到另一只手上去，有些责怪，说：“旺爷你说什么嘛？七岁的孩子，又能做错什么？”旺旺爷说：“不打不骂不成人。”惠嫂说：“没有伤着我的，就破了一点皮，都好了。”这么一说旺旺爷又低下头去了，红着脸说：“我从来都没有和他说过那些，从来没有。都是现在的电视教坏了。”惠嫂有些不高兴，甚至有些难受，说话的口气也重了：“旺爷你都说了什么嘛？</p>
+<p>　　旺旺出院后人瘦下去一圈。眼睛大了，眼皮也双了。嘎样子少了一些，都有点文静了。惠嫂说：“旺旺都病得好看了。”旺旺回家后再也不坐石门槛了，惠嫂猜得出是旺爷定下的新规矩，然而惠嫂知道旺旺躲在门缝的背后看自己喂奶，他的黑眼睛总是在某一个圆洞或木板的缝隙里忧伤地闪烁。旺爷不让旺旺和惠嫂有任何靠近，这让惠嫂有一种说不出的难受。旺旺因此而越发鬼祟，越发像幽灵一样无声游荡了。惠嫂有一回抱着孩子给旺旺送几块水果糖过来，惠嫂替他的儿子奶声奶气地说：“旺旺哥呢？我们请旺旺哥吃糖糖。”旺旺一见到惠嫂便藏到楼梯的背后去了。爷爷把惠嫂拦住说：“不能这样没规矩。”惠嫂被拦在门外，脸上有些挂不住，都忘了学儿子说话了，说：“就几块糖嘛。”旺爷虎着脸说：“不能这样没规矩。”惠嫂临走前回头看一眼旺旺，旺旺的眼神让所有当妈妈的女人看了都心酸，惠嫂说：“旺旺，过来。”爷爷说：“旺旺！”惠嫂说：“旺爷你这是干什么嘛！”但旺旺在偷看，这个无声的秘密只有旺旺和惠嫂两个人明白。这样下去旺旺会疯掉的，要不就是惠嫂疯掉。许多中午的阳光下面狭长的石巷两边悄然存放着这样的秘密。瘦长的阳光带横在青石路面上，这边是阴凉，那边也是阴凉。阳光显得有些过分了，把傍山依水的断桥镇十分锐利地劈成了两半，一边傍山，一边依水。一边忧伤，另一边还是忧伤。</p>
+<p>　　旺爷在午睡的时候也会打呼噜的。旺爷刚打上呼噜旺旺就逃到楼下来了。趴在木板上打量对面，旺旺就是在这天让惠嫂抓住的。惠嫂抓住他的腕弯，旺旺的脸给吓得脱去了颜色。惠嫂悄声说：“别怕，跟我过来。”旺旺被惠嫂拖到杂货铺的后院。后院外面就是山坡，金色的阳光正照在坡面上，坡面是大片大片的绿，又茂盛又肥沃，油油的全是太阳的绿色反光。旺旺喘着粗气，有些怕，被那阵奶香裹住了。惠嫂蹲下身子，撩起上衣，巨大浑圆的乳房明白无误地呈现在旺旺的面前。旺旺被那股气味弄得心碎，那是气味的母亲，气味的至高无上。惠嫂摸着旺旺的头，轻声说：“吃吧，吃。”旺旺不敢动。那只让他牵魂的母亲和他近在咫尺，就在鼻尖底下，伸手可及。旺旺抬起头来，一抬头就汪了满眼泪，脸上又羞愧又惶恐。惠嫂说：“是我，你吃我，吃。——别咬，衔住了，慢慢吸。”旺旺把头靠过来，两只小手慢慢抬起来了，抱向了惠嫂的右乳。但旺旺的双手在最后的关头却停住了。旺旺万分委屈地说：“我不。”</p>
+<p>　　惠嫂说：“傻孩子，弟弟吃不完的。”</p>
+<p>　　旺旺流出泪，他的泪在阳光底下发出六角形的光芒，有一种烁人的模样。旺旺盯住惠嫂的乳房拖着哭腔说：“我不。不是我妈妈！”旺旺丢下这句没头没脑的话回头就跑掉了。惠嫂拽下上衣，跟出去，大声喊道：“旺旺，旺旺？?”旺旺逃回家，反闩上门。整个过程在幽静的正午显得惊天动地。惠嫂的声音几乎也成了哭腔。她的手拍在门上，失声喊道：“旺旺！”</p>
+<p>　　旺旺的家里没有声音。过了一刻旺爷的鼾声就中止了。响起了急促的下楼声。再过了一会儿，屋里发出了另一种声音，是一把尺子抽在肉上的闷响，惠嫂站在原处，伤心地喊：“旺爷，旺爷！”</p>
+<p>　　又围过来许多人。人们看见惠嫂拍门的样子就知道旺旺这小东西又“出事”了。有人沉重地说：“这小东西，好不了啦。”</p>
+<p>　　惠嫂回过头来。她的泪水泛起了一脸青光，像母兽。有些惊人。惠嫂凶悍异常地吼道：“你们走！走——！你们知道什么？”</p>
+
+                        <script src="https://giscus.app/client.js"
+                            data-repo="TinySnow/TinySnow.github.io"
+                            data-repo-id="MDEwOlJlcG9zaXRvcnkzNTAxOTA3Mjc="
+                            data-category="Announcements"
+                            data-category-id="DIC_kwDOFN98h84CTDEp"
+                            data-mapping="pathname"
+                            data-strict="0"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-CN"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../阅读/每日一文/每日一文.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../阅读/每日一文/后台朋友-林语堂.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../阅读/每日一文/每日一文.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../阅读/每日一文/后台朋友-林语堂.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8">
+        var pagePath = "阅读/每日一文/哺乳期的女人-毕飞宇.md"
+        </script>
+
+
+        <!-- DocSearch：必须在 additional-js（theme/customized/search.js）之前同步加载 -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.9.0/dist/umd/index.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../../assets/custom-d0d8e44b.js"></script>
+        <script src="../../theme/customized/search-5b2be913.js"></script>
+
+
+    </div>
+    </body>
+</html>
