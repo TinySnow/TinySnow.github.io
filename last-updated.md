@@ -5,6 +5,55 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-10-21 14:48:41 CMT (UTC+8) | fc9701827）
+
+### Summary
+
+- Generated at: `2026-10-21 14:48:41 CMT (UTC+8)`
+- Base commit: `fc9701827`
+- Diff source: `ae974f4ad559307900d23b96ccd024d441da9af7..fc97018275699051bdad008481b91a8264a936a0`
+- Changed files: `1`
+- Total lines: `+1 / -1`
+
+### Commit Messages
+
+- `fc970182` 随笔校对目录：2026-10-21
+
+### Index
+
+1. [src/SUMMARY.md](#f-2039344712-src-summary-md-3501257646) `+1 / -1`
+
+### Diffs
+
+<a id="f-2039344712-src-summary-md-3501257646"></a>
+#### src/SUMMARY.md
+
+<details>
+<summary><code>+1 / -1</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/src/SUMMARY.md b/src/SUMMARY.md
+index 2c27bf814..e3473d3be 100644
+--- a/src/SUMMARY.md
++++ b/src/SUMMARY.md
+@@ -269,7 +269,7 @@
+     - [随记 - 踩着石砖回家](生活碎笔/随笔随记/情感类随记/随记-踩着石砖回家.md)
+     - [随记 - 我想成为的人](生活碎笔/随笔随记/情感类随记/随记-我想成为的人.md)
+   - [实用类随记](生活碎笔/随笔随记/实用类随记/实用类随记.md)
+-    - [【AIGC待校对】一件东西好不好用，要把收拾它的时间算进去](生活碎笔/随笔随记/实用类随记/【AIGC待校对】一件东西好不好用，要把收拾它的时间算进去.md)
++    - [【AIGC人工校对】一件东西好不好用，要把收拾它的时间算进去](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】一件东西好不好用，要把收拾它的时间算进去.md)
+     - [【AIGC人工校对】满减省下的钱，得跟不凑单的时候比](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】满减省下的钱，得跟不凑单的时候比.md)
+     - [【AIGC人工校对】收藏夹里的东西，不是你欠下的作业](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】收藏夹里的东西，不是你欠下的作业.md)
+     - [【AIGC人工校对】教人做事，少说一句“这很简单”](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】教人做事，少说一句“这很简单”.md)
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-21 14:44:26 CMT (UTC+8) | ae974f4ad）
 
 ### Summary
@@ -113,7 +162,6 @@ index 000000000..af9c4245a
 </details>
 
 <!-- LAST_UPDATED_ENTRY_END -->
-
 
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-21 06:35:19 CMT (UTC+8) | 3cbac381d）
@@ -980,54 +1028,6 @@ index 000000000..3ac8adbba
 +　　南国微雪 Miyuki
 +
 +　　2026 年 10 月 18 日
-
-~~~~~
-
-</details>
-
-<!-- LAST_UPDATED_ENTRY_END -->
-
-<!-- LAST_UPDATED_ENTRY_START -->
-## 更新记录（2026-10-20 11:42:27 CMT (UTC+8) | bab3b4226）
-
-### Summary
-
-- Generated at: `2026-10-20 11:42:27 CMT (UTC+8)`
-- Base commit: `bab3b4226`
-- Diff source: `3049aac755bba68c1a29d3990f4d4b96e82e4305..bab3b4226c79a15af898d5c73b42a2d295458063`
-- Changed files: `1`
-- Total lines: `+1 / -1`
-
-### Commit Messages
-
-- `bab3b422` 随笔校对目录：2026-10-19
-
-### Index
-
-1. [src/SUMMARY.md](#f-3247876474-src-summary-md-3501257646) `+1 / -1`
-
-### Diffs
-
-<a id="f-3247876474-src-summary-md-3501257646"></a>
-#### src/SUMMARY.md
-
-<details>
-<summary><code>+1 / -1</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/src/SUMMARY.md b/src/SUMMARY.md
-index 6c5098082..31fd0b287 100644
---- a/src/SUMMARY.md
-+++ b/src/SUMMARY.md
-@@ -270,7 +270,7 @@
-     - [随记 - 我想成为的人](生活碎笔/随笔随记/情感类随记/随记-我想成为的人.md)
-   - [实用类随记](生活碎笔/随笔随记/实用类随记/实用类随记.md)
-     - [【AIGC待校对】满减省下的钱，得跟不凑单的时候比](生活碎笔/随笔随记/实用类随记/【AIGC待校对】满减省下的钱，得跟不凑单的时候比.md)
--    - [【AIGC待校对】收藏夹里的东西，不是你欠下的作业](生活碎笔/随笔随记/实用类随记/【AIGC待校对】收藏夹里的东西，不是你欠下的作业.md)
-+    - [【AIGC人工校对】收藏夹里的东西，不是你欠下的作业](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】收藏夹里的东西，不是你欠下的作业.md)
-     - [【AIGC待校对】教人做事，少说一句“这很简单”](生活碎笔/随笔随记/实用类随记/【AIGC待校对】教人做事，少说一句“这很简单”.md)
-     - [【AIGC人工校对】坏消息说得早一点，别人就多一点选择](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】坏消息说得早一点，别人就多一点选择.md)
-     - [【AIGC人工校对】反复出现的例外，应该拿来修改规则](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】反复出现的例外，应该拿来修改规则.md)
 
 ~~~~~
 
