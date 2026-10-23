@@ -5,6 +5,154 @@
 > NOTICE: This content is presented as `git diff`.
 
 <!-- LAST_UPDATED_ENTRY_START -->
+## 更新记录（2026-10-24 06:34:30 CMT (UTC+8) | a6c0cce47）
+
+### Summary
+
+- Generated at: `2026-10-24 06:34:30 CMT (UTC+8)`
+- Base commit: `a6c0cce47`
+- Diff source: `08e7d7b2b35bf60d234533094094cd195c7e05bd..a6c0cce47956904a99fcf40b94d52f0d970c2e89`
+- Changed files: `2`
+- Total lines: `+82 / -0`
+
+### Commit Messages
+
+- `a6c0cce4` 随笔初稿：开始做事之前，先约好什么样算做完
+
+### Index
+
+1. [src/SUMMARY.md](#f-3298531975-src-summary-md-3501257646) `+1 / -0`
+2. [src/生活碎笔/随笔随记/实用类随记/【AIGC待校对】开始做事之前，先约好什么样算做完.md](#f-3298531975-src-生活碎笔-随笔随记-实用类随记-aigc待校对-开始做事之前-先约好什么样算做完-md-3985220560) `+81 / -0`
+
+### Diffs
+
+<a id="f-3298531975-src-summary-md-3501257646"></a>
+#### src/SUMMARY.md
+
+<details>
+<summary><code>+1 / -0</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git a/src/SUMMARY.md b/src/SUMMARY.md
+index 785d7ca2c..bf184990e 100644
+--- a/src/SUMMARY.md
++++ b/src/SUMMARY.md
+@@ -269,6 +269,7 @@
+     - [随记 - 踩着石砖回家](生活碎笔/随笔随记/情感类随记/随记-踩着石砖回家.md)
+     - [随记 - 我想成为的人](生活碎笔/随笔随记/情感类随记/随记-我想成为的人.md)
+   - [实用类随记](生活碎笔/随笔随记/实用类随记/实用类随记.md)
++    - [【AIGC待校对】开始做事之前，先约好什么样算做完](生活碎笔/随笔随记/实用类随记/【AIGC待校对】开始做事之前，先约好什么样算做完.md)
+     - [【AIGC待校对】一起旅行，最好留出分开行动的时间](生活碎笔/随笔随记/实用类随记/【AIGC待校对】一起旅行，最好留出分开行动的时间.md)
+     - [【AIGC待校对】能让你改主意的证据，值得提前说清楚](生活碎笔/随笔随记/实用类随记/【AIGC待校对】能让你改主意的证据，值得提前说清楚.md)
+     - [【AIGC人工校对】一件东西好不好用，要把收拾它的时间算进去](生活碎笔/随笔随记/实用类随记/【AIGC人工校对】一件东西好不好用，要把收拾它的时间算进去.md)
+
+~~~~~
+
+</details>
+
+<a id="f-3298531975-src-生活碎笔-随笔随记-实用类随记-aigc待校对-开始做事之前-先约好什么样算做完-md-3985220560"></a>
+#### src/生活碎笔/随笔随记/实用类随记/【AIGC待校对】开始做事之前，先约好什么样算做完.md
+
+<details>
+<summary><code>+81 / -0</code> Click to expand diff</summary>
+
+~~~~~diff
+diff --git "a/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\345\276\205\346\240\241\345\257\271\343\200\221\345\274\200\345\247\213\345\201\232\344\272\213\344\271\213\345\211\215\357\274\214\345\205\210\347\272\246\345\245\275\344\273\200\344\271\210\346\240\267\347\256\227\345\201\232\345\256\214.md" "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\345\276\205\346\240\241\345\257\271\343\200\221\345\274\200\345\247\213\345\201\232\344\272\213\344\271\213\345\211\215\357\274\214\345\205\210\347\272\246\345\245\275\344\273\200\344\271\210\346\240\267\347\256\227\345\201\232\345\256\214.md"
+new file mode 100644
+index 000000000..afdd0017e
+--- /dev/null
++++ "b/src/\347\224\237\346\264\273\347\242\216\347\254\224/\351\232\217\347\254\224\351\232\217\350\256\260/\345\256\236\347\224\250\347\261\273\351\232\217\350\256\260/\343\200\220AIGC\345\276\205\346\240\241\345\257\271\343\200\221\345\274\200\345\247\213\345\201\232\344\272\213\344\271\213\345\211\215\357\274\214\345\205\210\347\272\246\345\245\275\344\273\200\344\271\210\346\240\267\347\256\227\345\201\232\345\256\214.md"
+@@ -0,0 +1,81 @@
++# 开始做事之前，先约好什么样算做完
++
++<!-- daily-essay-id: 2026-10-24 -->
++
++<!-- wechat-digest: 把事情做完，需要双方对交付内容有共同理解；开工前用具体样例约定用途、范围和完成条件，遇到新增要求再一起调整安排，能减少忙完之后才发现彼此期待不同的返工。 -->
++
++　　“你把这个整理好。”一句话就能派出去的活，有时候要用好几个来回才能收回来。
++
++　　问题可能就藏在那个“好”字里面。
++
++　　比如几个人一起收集了一批活动资料，有照片、报名表、介绍文字，也有重复下载的文件。负责人说，整理一下，周五给大家用。
++
++　　接手的人花了一下午，按日期建好文件夹，把散落的文件搬进去，名字改得整整齐齐。发过去，等着对方接收。
++
++　　对方打开一看，说重复的还在，照片也没筛，怎么就算整理好了？
++
++　　接手的人也有理由：文件都归位了，想找哪天的就进哪个文件夹，这还不叫整理好吗？
++
++　　两个人说的是同一个词，脑子里却放着两份不同的成品。
++
++　　到了这里，再谈认真、负责、执行力，话就容易越说越重。可回到开工之前，“整理好”究竟包含哪些动作，双方确实没对过。
++
++　　我觉得，分配一件事的时候，有一个动作很值得做：先想象一下，交到手上的东西，接下来会被怎样使用。
++
++　　周五要拿它选照片做回顾，就得知道哪些照片能用，拍的是什么。如果只是准备把原始资料集中保存，重点则是来源清楚、文件齐全、以后找得到。
++
++　　用途一变，“好”的含义就变了。花同样一个下午，做出来的也可能是完全不同的东西。
++
++　　**做完一件事，得有一个双方都认得出来的样子。**
++
++　　这个样子可以很具体。比如先约好，这次只把资料集中起来，按活动日期分类，原文件全部保留，再附一张能找到各类资料的目录。
++
++　　至于挑选照片、修改介绍文字，另外安排。接手的人知道时间该花在哪里，负责人也知道周五拿到的是什么。
++
++　　说到这种程度，“做得怎么样”就有了能核对的内容。文件漏了，可以指出漏的是哪一份；目录找不到东西，也能具体看看哪一项需要补。
++
++　　比起把文件夹从头到尾翻一遍，然后说一句“感觉还差点意思”，这样的讨论更容易往前走。
++
++　　但要求也常常是在看见东西之后，才逐渐变清楚的。
++
++　　空口描述一份整理结果，有的人确实想象不出来。等目录摆到眼前，才发现自己平时找东西习惯按人名，而接手的人一直按日期分。
++
++　　这种差别，可以尽早拿一小部分试出来。
++
++　　先整理一个活动的资料，给对方实际找一份文件。看他先点哪里，卡在哪里，再决定后面的资料沿用这种分法，还是调整一下。
++
++　　一小份样例能说清楚的事，往往胜过一长串“清晰、完整、方便使用”。这些词大家都赞成，具体怎么做到，却各有各的理解。
++
++　　而且，样例留在那里，后面接手的人也能照着看。原先只存在某个人脑子里的习惯，终于成了大家看得见的办法。
++
++　　我更在意的是，完成条件说清楚之后，人能知道什么时候可以停下来。
++
++　　有些任务拖得很长，就因为每次交过去，都会长出一点新的东西。归好类了，顺便筛一下照片；筛完了，顺便写几句说明；说明写好了，顺便做成一份展示材料。
++
++　　每一步都有用。只是这些“顺便”加起来，已经成了另一项工作。
++
++　　如果真要加，可以把新增的部分摆出来：谁接着做，原来的时间往后挪多少，手里哪件事要先让一让。这样讨论，才能看清增加一个结果，要用掉多少工夫。
++
++　　否则最容易发生的，是内容越来越多，截止时间仍然停在最初那一天。最后大家只记得交晚了，最初约定的任务却早已换了模样。
++
++　　接手的人也可以把自己的理解说回来：“我这次会交文件夹和目录，照片先保留原样。”一句话，就有机会把藏着的差别提前带出来。
++
++　　如果中途发现文件有损坏，或者少了某一天的资料，交付时把这些情况标明，并说明已经查到哪一步。这样，拿到东西的人才知道哪里能直接用，哪里还要继续处理。
++
++　　已经约好的部分，则照着完成条件核对。把范围讲清楚，也让双方更容易认真检查范围里面的事情。
++
++　　探索性的工作，往往得先做出来看一看，才知道下一步要什么。那就先说清楚，这一次准备弄明白哪个问题。
++
++　　比如这次只用一小批资料，确认大家最常怎么查找；试完之后决定分类方式，再安排正式整理。
++
++　　探索也有这一轮的结束点。走到那里，停下来作一次判断，后面的工作才能接得清楚。
++
++　　所以我更愿意在开工前多花几分钟，把交付时的那一幕说具体：桌上会有什么，谁会拿走它，拿走之后准备做哪件事。
++
++　　等到周五，交文件的人说“好了”，接文件的人打开就知道该看哪里。这一句“好了”，才算在两个人那里有了同一个意思。
++
++<br />
++
++　　南国微雪 Miyuki
++
++　　2026 年 10 月 24 日
+
+~~~~~
+
+</details>
+
+<!-- LAST_UPDATED_ENTRY_END -->
+
+
+<!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-24 06:01:38 CMT (UTC+8) | 08e7d7b2b）
 
 ### Summary
@@ -124,7 +272,6 @@ index 000000000..bfc125f55
 </details>
 
 <!-- LAST_UPDATED_ENTRY_END -->
-
 
 <!-- LAST_UPDATED_ENTRY_START -->
 ## 更新记录（2026-10-23 06:33:16 CMT (UTC+8) | a7f3866e9）
@@ -1011,138 +1158,6 @@ index 000000000..ba7e30dea
 +　　“你可以把那些问题什么的全扔了，皮特。”拉里说，“我想我们是浪费了一些时间，可是管他呢，管他呢。”
 +
 +　　译者：孙仲旭
-
-~~~~~
-
-</details>
-
-<!-- LAST_UPDATED_ENTRY_END -->
-
-<!-- LAST_UPDATED_ENTRY_START -->
-## 更新记录（2026-10-20 16:15:35 CMT (UTC+8) | 65edcb27b）
-
-### Summary
-
-- Generated at: `2026-10-20 16:15:35 CMT (UTC+8)`
-- Base commit: `65edcb27b`
-- Diff source: `cc8f01412ccb8a531d32214d74db9a1c283a8c9d..65edcb27ba7d36793d6de04c811196950fec9efc`
-- Changed files: `2`
-- Total lines: `+18 / -24`
-
-### Commit Messages
-
-- `65edcb27` 修改了每日一文的格式错误，同时修正了镜像网站的顺序。
-
-### Index
-
-1. [README.md](#f-1105647003-readme-md-4140682621) `+5 / -5`
-2. [src/个人简介.md](#f-1105647003-src-个人简介-md-1285161500) `+13 / -19`
-
-### Diffs
-
-<a id="f-1105647003-readme-md-4140682621"></a>
-#### README.md
-
-<details>
-<summary><code>+5 / -5</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git a/README.md b/README.md
-index 0518ab807..2c53fff0d 100644
---- a/README.md
-+++ b/README.md
-@@ -17,10 +17,10 @@
- 
- ## Mirrors/镜像网站
- 
--- [https://tinysnow.netlify.app](https://tinysnow.netlify.app)
--- [https://tinysnow.vercel.app](https://tinysnow.vercel.app) / [https://tinysnowblog.vercel.app](https://tinysnowblog.vercel.app)
--- [https://tinysnow.pages.dev](https://tinysnow.pages.dev)
- - [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)（中国大陆用户推荐）
--- [https://blog.tinysnow.cn/](https://blog.tinysnow.cn/)
- - [http://tinysnow.dynv6.net:9264/](http://tinysnow.dynv6.net:9264/)（IPv6 用户推荐，不限国内和海外）
--- [https://tinysnow.edgeone.cool](https://tinysnow.edgeone.cool)
-+- [https://tinysnow.pages.dev](https://tinysnow.pages.dev)
-+- [https://blog.tinysnow.cn/](https://blog.tinysnow.cn/)
-+- [https://tinysnow.edgeone.cool](https://tinysnow.edgeone.cool)（仅能海外用户访问）
-+- [https://tinysnow.netlify.app](https://tinysnow.netlify.app)
-+- [https://tinysnow.vercel.app](https://tinysnow.vercel.app) / [https://tinysnowblog.vercel.app](https://tinysnowblog.vercel.app)
-
-~~~~~
-
-</details>
-
-<a id="f-1105647003-src-个人简介-md-1285161500"></a>
-#### src/个人简介.md
-
-<details>
-<summary><code>+13 / -19</code> Click to expand diff</summary>
-
-~~~~~diff
-diff --git "a/src/\344\270\252\344\272\272\347\256\200\344\273\213.md" "b/src/\344\270\252\344\272\272\347\256\200\344\273\213.md"
-index e4a5fdd35..e0c4b7d0c 100644
---- "a/src/\344\270\252\344\272\272\347\256\200\344\273\213.md"
-+++ "b/src/\344\270\252\344\272\272\347\256\200\344\273\213.md"
-@@ -4,12 +4,9 @@
- 
- ![](https://api.paugram.com/bing/)
- 
--## Prenote | 前言 | 前書き | Avant-propos
-+## Prenote | 前言
- 
- - 强烈推荐中国大陆用户访问[国内镜像网站](http://tinysnow.gitlink.net)，其他镜像网站见联系方式。
--- We strongly recommend that users in China mainland visit the [domestic mirror website](http://tinysnow.gitlink.net). For other mirror websites, please see the contact information.
--- 中国本土のユーザーには、[国内向けミラーサイト](http://tinysnow.gitlink.net)のご利用を強くお勧めします。その他のミラーサイトについては、連絡先情報をご覧ください。
--- Nous recommandons vivement aux utilisateurs de Chine continentale de consulter [le site miroir local](http://tinysnow.gitlink.net). Pour les autres sites miroirs, veuillez consulter les informations de contact.
- 
- ## Chinese（中文，简体）
- 
-@@ -69,18 +66,23 @@
- 
- ## 联系方式 | Contact | 連絡先 | Les coordonnées
- 
-+- Other mirror websites（其他镜像网站）
-+  - [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)（中国大陆用户推荐）
-+  - [http://tinysnow.dynv6.net:9264/](http://tinysnow.dynv6.net:9264/)（IPv6 用户推荐，不限国内和海外）
-+  - [https://tinysnow.pages.dev](https://tinysnow.pages.dev)
-+  - [https://blog.tinysnow.cn/](https://blog.tinysnow.cn/)
-+  - [https://tinysnow.edgeone.cool](https://tinysnow.edgeone.cool)（仅能海外用户访问）
-+  - [https://tinysnow.netlify.app](https://tinysnow.netlify.app)
-+  - [https://tinysnow.vercel.app](https://tinysnow.vercel.app) / [https://tinysnowblog.vercel.app](https://tinysnowblog.vercel.app)
- - Telegram：[https://t.me/TinySnow](https://t.me/TinySnow)
- - Telegram Channel
-   - [http://t.me/TinySnow4Yi](http://t.me/TinySnow4Yi)(main)
-   - [https://telegram-tinysnow.pages.dev](https://telegram-tinysnow.pages.dev)(website)
--- Gmail：[lo.tinysnow.ol@gmail.com](mailto:https://tinysnow.netlify.app/)
--- Outlook：[ancielin+blog@outlook.com](mailto:https://tinysnow.netlify.app/)
--- Foxmail：[lo.tinysnow.ol@foxmail.com](mailto:https://tinysnow.netlify.app/)
--
-+- Gmail：[ancielisnow+blog@gmail.com](mailto:ancielisnow+blog@gmail.com)
-+- Outlook：[ancielin+blog@outlook.com](mailto:ancielin+blog@outlook.com)
-+- Foxmail：[lo.tinysnow.ol@foxmail.com](mailto:ancielisnow.ol@foxmail.com)
- - LineID：lo.tinysnow.ol
--
- - Twitter / X：ITinySnowI
--
- - Wechat Media Platform（微信公众号）：微雪寻觅
- - QQ ID：ITinySnowI
- - Bilibili：南国微雪Miyuki
-@@ -91,12 +93,4 @@
- - 豆瓣：南国微雪
- - 小红书（Red Book）
-   - 微雪寻觅（写作号）
--  - 南国微雪 Miyuki（生活号）
--- Other mirror websites（其他镜像网站）
--  - [https://tinysnow.netlify.app](https://tinysnow.netlify.app)
--  - [https://tinysnow.vercel.app](https://tinysnow.vercel.app) / [https://tinysnowblog.vercel.app](https://tinysnowblog.vercel.app)
--  - [https://tinysnow.pages.dev](https://tinysnow.pages.dev)
--  - [http://tinysnow.gitlink.net](http://tinysnow.gitlink.net)（中国大陆用户推荐）
--  - [https://blog.tinysnow.cn/](https://blog.tinysnow.cn/)
--  - [http://tinysnow.dynv6.net:9264/](http://tinysnow.dynv6.net:9264/)（IPv6 用户推荐，不限国内和海外）
--  - [https://tinysnow.edgeone.cool](https://tinysnow.edgeone.cool)
-\ No newline at end of file
-+  - 南国微雪 Miyuki（生活号）
-\ No newline at end of file
 
 ~~~~~
 
