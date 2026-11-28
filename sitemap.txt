@@ -46,6 +46,7 @@ https://tinysnow.github.io/生活碎笔/感触/感触之五
 https://tinysnow.github.io/生活碎笔/感触/感触之六
 https://tinysnow.github.io/生活碎笔/感触/感触之四
 https://tinysnow.github.io/生活碎笔/感触/无题
+https://tinysnow.github.io/生活碎笔/感触/荒诞
 https://tinysnow.github.io/生活碎笔/感触/遇见，今天
 https://tinysnow.github.io/生活碎笔/感触/零言碎语
 https://tinysnow.github.io/生活碎笔/文章与写作/Default Man（默认角色）
@@ -367,6 +368,7 @@ https://tinysnow.github.io/阅读/每日一文/一个乡民的死-梁实秋
 https://tinysnow.github.io/阅读/每日一文/一个人应该活得是自己并且干净-顾城
 https://tinysnow.github.io/阅读/每日一文/一个人是群体-费尔南多·佩索阿
 https://tinysnow.github.io/阅读/每日一文/一个人死了-朱辉
+https://tinysnow.github.io/阅读/每日一文/一个人的晚餐-陈鲁豫
 https://tinysnow.github.io/阅读/每日一文/一个人要像一支队伍-刘瑜
 https://tinysnow.github.io/阅读/每日一文/一个国家，两个世界-余华
 https://tinysnow.github.io/阅读/每日一文/一个好人-詹姆斯·瑟伯
@@ -594,6 +596,7 @@ https://tinysnow.github.io/阅读/每日一文/吹兵-三毛
 https://tinysnow.github.io/阅读/每日一文/吾先生-杨绛
 https://tinysnow.github.io/阅读/每日一文/告别印象主义-刘瑜
 https://tinysnow.github.io/阅读/每日一文/告别萨莉-理查德·耶茨
+https://tinysnow.github.io/阅读/每日一文/告别遗体的队伍-周国平
 https://tinysnow.github.io/阅读/每日一文/命中注定-余华
 https://tinysnow.github.io/阅读/每日一文/命运-刘慈欣
 https://tinysnow.github.io/阅读/每日一文/和时间赛跑-林清玄
@@ -781,6 +784,7 @@ https://tinysnow.github.io/阅读/每日一文/想北平-老舍
 https://tinysnow.github.io/阅读/每日一文/想当上帝的司机-埃德加·凯里特
 https://tinysnow.github.io/阅读/每日一文/想念草地郎-龙应台
 https://tinysnow.github.io/阅读/每日一文/想我的母亲-梁实秋
+https://tinysnow.github.io/阅读/每日一文/想象-苏吉特·马拉
 https://tinysnow.github.io/阅读/每日一文/想起草药-许冬林
 https://tinysnow.github.io/阅读/每日一文/感情化了的电视机-星新一
 https://tinysnow.github.io/阅读/每日一文/愿你降临-周云蓬
@@ -819,6 +823,7 @@ https://tinysnow.github.io/阅读/每日一文/我所认识的李敖-林清玄
 https://tinysnow.github.io/阅读/每日一文/我改变的事物-刘亮程
 https://tinysnow.github.io/阅读/每日一文/我是个窃贼-阿·康帕尼尔
 https://tinysnow.github.io/阅读/每日一文/我是为你好-张小娴
+https://tinysnow.github.io/阅读/每日一文/我是哪一种女权主义者-王小波
 https://tinysnow.github.io/阅读/每日一文/我是怎样自杀的？-阿吉兹·涅辛
 https://tinysnow.github.io/阅读/每日一文/我最爱的人是你-张小娴
 https://tinysnow.github.io/阅读/每日一文/我村-龙应台
@@ -920,6 +925,7 @@ https://tinysnow.github.io/阅读/每日一文/杰德·彼得斯的运气-詹姆
 https://tinysnow.github.io/阅读/每日一文/枕头人-马丁·麦克多纳
 https://tinysnow.github.io/阅读/每日一文/林中猫的故事-彭蒂·哈恩帕
 https://tinysnow.github.io/阅读/每日一文/柔弱的人-安东·契诃夫
+https://tinysnow.github.io/阅读/每日一文/柜子上的小孩-佚名
 https://tinysnow.github.io/阅读/每日一文/标签战-刘瑜
 https://tinysnow.github.io/阅读/每日一文/树王-阿城
 https://tinysnow.github.io/阅读/每日一文/桃花心木-林清玄
@@ -1144,6 +1150,7 @@ https://tinysnow.github.io/阅读/每日一文/背带短裤-村上春树
 https://tinysnow.github.io/阅读/每日一文/胖子和瘦子-契诃夫
 https://tinysnow.github.io/阅读/每日一文/胡同文化-汪曾祺
 https://tinysnow.github.io/阅读/每日一文/脑-蔡澜
+https://tinysnow.github.io/阅读/每日一文/脱俗的女人与俗气的男人-冰炭同炉
 https://tinysnow.github.io/阅读/每日一文/自从我妈从台湾旅游回来-李娟
 https://tinysnow.github.io/阅读/每日一文/自信-蔡澜
 https://tinysnow.github.io/阅读/每日一文/自己带油上餐馆-梁文道
@@ -1244,6 +1251,7 @@ https://tinysnow.github.io/阅读/每日一文/赞美骨髓-蔡澜
 https://tinysnow.github.io/阅读/每日一文/赠与今年的大学毕业生-胡适
 https://tinysnow.github.io/阅读/每日一文/趁爱打劫-邓刚
 https://tinysnow.github.io/阅读/每日一文/超越爱情的永恒之死-加西亚·马尔克斯
+https://tinysnow.github.io/阅读/每日一文/超车-星新一
 https://tinysnow.github.io/阅读/每日一文/足底按摩-恰克·帕拉尼克
 https://tinysnow.github.io/阅读/每日一文/路上的情书-林清玄
 https://tinysnow.github.io/阅读/每日一文/身份认同-查伯
